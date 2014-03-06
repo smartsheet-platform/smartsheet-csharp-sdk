@@ -7,7 +7,7 @@
 
 :: Build documentation (sandcastle)
 cd documentation
-C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe /p:Configuration=Release smartsheet-csharp-sdk-docs.shfbproj
+C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe /p:Configuration=Release smartsheet-csharp-sdk-docs.shfbproj /t:rebuild
 cd ..
 
 :: zip dll's

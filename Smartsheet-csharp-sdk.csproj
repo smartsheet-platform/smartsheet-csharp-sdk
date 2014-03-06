@@ -72,7 +72,6 @@
     <Compile Include="main\Smartsheet\Api\Internal\CommentResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\DiscussionAttachmentResources.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\DiscussionResourcesImpl.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\EnumSet.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\FolderResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\HomeFolderResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\HomeResourcesImpl.cs" />
@@ -85,7 +84,7 @@
     <Compile Include="main\Smartsheet\Api\Internal\http\HttpRequest.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\http\HttpResponse.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\Json\IdExclusion.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\Json\JacksonJsonSerializer.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\Json\JsonNetSerializer.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\Json\JsonSerializer.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\Json\JSONSerializerException.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\OAuth\OAuthFlowImpl.cs" />
@@ -180,6 +179,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="smartsheet-csharp-sdk.licenseheader" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />

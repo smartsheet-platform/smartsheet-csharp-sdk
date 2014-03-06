@@ -1,4 +1,22 @@
-﻿namespace Smartsheet.Api
+﻿//    #[license]
+//    Smartsheet SDK for C#
+//    %%
+//    Copyright (C) 2014 Smartsheet
+//    %%
+//    Licensed under the Apache License, Version 2.0 (the "License");
+//    you may not use this file except in compliance with the License.
+//    You may obtain a copy of the License at
+//        
+//            http://www.apache.org/licenses/LICENSE-2.0
+//        
+//    Unless required by applicable law or agreed To in writing, software
+//    distributed under the License is distributed on an "AS IS" BASIS,
+//    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//    See the License for the specific language governing permissions and
+//    limitations under the License.
+//    %[license]
+
+namespace Smartsheet.Api
 {
 
 	/*
@@ -26,7 +44,7 @@
 	using SmartsheetImpl = Api.Internal.SmartsheetImpl;
 	using DefaultHttpClient = Api.Internal.http.DefaultHttpClient;
 	using HttpClient = Api.Internal.http.HttpClient;
-	using JacksonJsonSerializer = Api.Internal.Json.JacksonJsonSerializer;
+	using JsonNetSerializer = Api.Internal.Json.JsonNetSerializer;
 	using JsonSerializer = Api.Internal.Json.JsonSerializer;
 
 	/// <summary>
@@ -75,7 +93,7 @@
 		/// <summary>
 		/// <para>Represents the default base URI of the Smartsheet REST API.</para>
 		/// 
-		/// <para>It is a constant with Value "https://Api.Smartsheet.brettrocksandwillfixthis/1.1".</para>
+		/// <para>It is a constant with Value "https://Api.Smartsheet.com/1.1".</para>
 		/// </summary>
 		public const string DEFAULT_BASE_URI = "https://api.smartsheet.com/1.1/";
 
@@ -226,7 +244,7 @@
 
 			if (jsonSerializer == null)
 			{
-				jsonSerializer = new JacksonJsonSerializer();
+				jsonSerializer = new JsonNetSerializer();
 			}
 
 			if (baseURI == null)
