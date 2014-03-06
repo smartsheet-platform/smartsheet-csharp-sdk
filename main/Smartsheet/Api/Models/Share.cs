@@ -82,7 +82,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Access level for this specific share.
 			/// </summary>
-			/// <param Name="AccessLevel"> the access level </param>
+			/// <param name="accessLevel"> the access level </param>
 			/// <returns> the share To one builder </returns>
 			public virtual ShareToOneBuilder SetAccessLevel(AccessLevel? accessLevel)
 			{
@@ -93,7 +93,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Email address for this specific share.
 			/// </summary>
-			/// <param Name="Email"> the Email </param>
+			/// <param name="email"> the Email </param>
 			/// <returns> the share To one builder </returns>
 			public virtual ShareToOneBuilder SetEmail(string email)
 			{
@@ -154,7 +154,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Access level for the share.
 			/// </summary>
-			/// <param Name="AccessLevel"> the access level </param>
+			/// <param name="accessLevel"> the access level </param>
 			/// <returns> the update share builder </returns>
 			public virtual UpdateShareBuilder SetAccessLevel(AccessLevel? accessLevel)
 			{

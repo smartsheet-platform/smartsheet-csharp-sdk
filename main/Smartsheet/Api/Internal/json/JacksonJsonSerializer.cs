@@ -84,7 +84,7 @@ namespace Smartsheet.Api.Internal.json
         /// <summary>
         /// Sets if the OBJECT MAPPER should ignore unknown properties or fail when de-serializing the JSON data.
         /// </summary>
-        /// <param Name="Value">
+        /// <param name="value">
         ///            true if it should fail, false otherwise. </param>
         public virtual Newtonsoft.Json.MissingMemberHandling failOnUnknownProperties
         {
@@ -117,8 +117,8 @@ namespace Smartsheet.Api.Internal.json
         /// Exceptions: - IllegalArgumentException : if any argument is null - JSONSerializationException : if there is any
         /// other error occurred during the operation
         /// </summary>
-        /// <param Name="outputStream"> </param>
-        /// <param Name="object"> </param>
+        /// <param name="outputStream"> </param>
+        /// <param name="object"> </param>
         /// <exception cref="JSONSerializationException"> </exception>
         // @Override
         public virtual void serialize<T>(T @object, StreamWriter outputStream)
@@ -149,8 +149,8 @@ namespace Smartsheet.Api.Internal.json
         ///   - IllegalArgumentException : if any argument is null 
         ///   - JSONSerializationException : if there is any other error occurred during the operation
         /// </summary>
-        /// <param Name="inputStream"> the input stream from which the JSON will be read </param>
-        /// <param Name="objectClass"> the class of the object To de-serialize
+        /// <param name="inputStream"> the input stream from which the JSON will be read </param>
+        /// <param name="objectClass"> the class of the object To de-serialize
         /// @return </param>
         /// <exception cref="JSONSerializationException"> </exception>
         // @Override
@@ -184,8 +184,8 @@ namespace Smartsheet.Api.Internal.json
         ///   - IllegalArgumentException : if any argument is null 
         ///   - JSONSerializationException : if there is any other error occurred during the operation
         /// </summary>
-        /// <param Name="inputStream"> the input stream from which the JSON will be read </param>
-        /// <param Name="objectClass"> the class of the object (of the list) To de-serialize
+        /// <param name="inputStream"> the input stream from which the JSON will be read </param>
+        /// <param name="objectClass"> the class of the object (of the list) To de-serialize
         /// @return </param>
         /// <exception cref="JSONSerializationException"> </exception>
         // @Override
@@ -216,8 +216,8 @@ namespace Smartsheet.Api.Internal.json
         /// <summary>
         /// De-serialize To a map from JSON.
         /// </summary>
-        /// <param Name="objectClass"> </param>
-        /// <param Name="inputStream">
+        /// <param name="objectClass"> </param>
+        /// <param name="inputStream">
         /// @return </param>
         /// <exception cref="JSONSerializationException"> </exception>
         // @Override
@@ -250,8 +250,8 @@ namespace Smartsheet.Api.Internal.json
         ///   - IllegalArgumentException : if any argument is null 
         ///   - JSONSerializationException : if there is any other error occurred during the operation
         /// </summary>
-        /// <param Name="inputStream"> the input stream from which the JSON will be read </param>
-        /// <param Name="objectClass"> the class of the object (of the Result) To de-serialize </param>
+        /// <param name="inputStream"> the input stream from which the JSON will be read </param>
+        /// <param name="objectClass"> the class of the object (of the Result) To de-serialize </param>
         /// <returns> the de-serialized Result </returns>
         /// <exception cref="JSONSerializationException"> </exception>
         // @Override
@@ -288,8 +288,8 @@ namespace Smartsheet.Api.Internal.json
         ///   - IllegalArgumentException : if any argument is null 
         ///   - JSONSerializationException : if there is any other error occurred during the operation
         /// </summary>
-        /// <param Name="inputStream"> the input stream from which the JSON will be read </param>
-        /// <param Name="objectClass"> the class of the object (of the Result) To de-serialize
+        /// <param name="inputStream"> the input stream from which the JSON will be read </param>
+        /// <param name="objectClass"> the class of the object (of the Result) To de-serialize
         /// @return </param>
         /// <exception cref="JSONSerializationException"> </exception>
         // @Override

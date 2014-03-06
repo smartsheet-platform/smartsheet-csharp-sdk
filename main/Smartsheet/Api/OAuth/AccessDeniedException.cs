@@ -35,7 +35,7 @@
 		/// <summary>
 		/// Constructor.
 		/// </summary>
-		/// <param Name="Message"> the Message </param>
+		/// <param name="message"> the Message </param>
 		public AccessDeniedException(string message) : base(message)
 		{
 		}

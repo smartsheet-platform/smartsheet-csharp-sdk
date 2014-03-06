@@ -74,8 +74,8 @@ namespace Smartsheet.Api
 		/// 
 		/// <para>It mirrors To the following Smartsheet REST API method: GET /sheet/{Id}</para>
 		/// </summary>
-		/// <param Name="Id"> the Id of the sheet </param>
-		/// <param Name="includes"> used To specify the optional objects To include. </param>
+		/// <param name="id"> the Id of the sheet </param>
+		/// <param name="includes"> used To specify the optional objects To include. </param>
 		/// <returns> the sheet resource (note that if there is no such resource, this method will throw 
 		/// ResourceNotFoundException rather than returning null). </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
@@ -92,8 +92,8 @@ namespace Smartsheet.Api
 		/// <para>It mirrors To the following Smartsheet REST API method:<br />
 		/// GET /sheet/{Id} with "application/vnd.ms-excel" Accept HTTP header</para>
 		/// </summary>
-		/// <param Name="Id"> the Id of the sheet </param>
-		/// <param Name="outputStream"> the output stream To which the Excel file will be written. </param>
+		/// <param name="id"> the Id of the sheet </param>
+		/// <param name="outputStream"> the output stream To which the Excel file will be written. </param>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
@@ -108,9 +108,9 @@ namespace Smartsheet.Api
 		/// <para>It mirrors To the following Smartsheet REST API method:<br />
 		/// GET /sheet/{Id} with "application/pdf" Accept HTTP header</para>
 		/// </summary>
-		/// <param Name="Id"> the Id of the sheet </param>
-		/// <param Name="outputStream"> the output stream To which the PDF file will be written. </param>
-		/// <param Name="PaperSize"> the paper size </param>
+		/// <param name="id"> the Id of the sheet </param>
+		/// <param name="outputStream"> the output stream To which the PDF file will be written. </param>
+		/// <param name="paperSize"> the paper size </param>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
@@ -125,7 +125,7 @@ namespace Smartsheet.Api
 		/// <para>It mirrors To the following Smartsheet REST API method:<br />
 		///  POST /Sheets</para>
 		/// </summary>
-		/// <param Name="sheet"> the sheet To created </param>
+		/// <param name="sheet"> the sheet To created </param>
 		/// <returns> the created sheet </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -140,8 +140,8 @@ namespace Smartsheet.Api
 		/// 
 		/// <para>It mirrors To the following Smartsheet REST API method: POST /Sheets</para>
 		/// </summary>
-		/// <param Name="sheet"> the sheet To create </param>
-		/// <param Name="includes"> used To specify the optional objects To include. </param>
+		/// <param name="sheet"> the sheet To create </param>
+		/// <param name="includes"> used To specify the optional objects To include. </param>
 		/// <returns> the created sheet </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -156,8 +156,8 @@ namespace Smartsheet.Api
 		/// 
 		/// <para>It mirrors To the following Smartsheet REST API method: POST /folder/{folderId}/Sheets</para>
 		/// </summary>
-		/// <param Name="folderId"> the folder Id </param>
-		/// <param Name="sheet"> the sheet To create </param>
+		/// <param name="folderId"> the folder Id </param>
+		/// <param name="sheet"> the sheet To create </param>
 		/// <returns> the created sheet </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -172,9 +172,9 @@ namespace Smartsheet.Api
 		/// 
 		/// <para>It mirrors To the following Smartsheet REST API method: POST /folder/{folderId}/Sheets</para>
 		/// </summary>
-		/// <param Name="folderID"> the folder Id </param>
-		/// <param Name="sheet"> the sheet To create </param>
-		/// <param Name="used"> To specify the optional objects To include. </param>
+		/// <param name="folderID"> the folder Id </param>
+		/// <param name="sheet"> the sheet To create </param>
+		/// <param name="used"> To specify the optional objects To include. </param>
 		/// <returns> the created sheet </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -189,8 +189,8 @@ namespace Smartsheet.Api
 		/// 
 		/// <para>It mirrors To the following Smartsheet REST API method: POST /workspace/{workspaceId}/Sheets</para>
 		/// </summary>
-		/// <param Name="workspaceId"> the workspace Id </param>
-		/// <param Name="sheet"> the sheet To create </param>
+		/// <param name="workspaceId"> the workspace Id </param>
+		/// <param name="sheet"> the sheet To create </param>
 		/// <returns> the created sheet </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -205,9 +205,9 @@ namespace Smartsheet.Api
 		/// 
 		/// <para>It mirrors To the following Smartsheet REST API method: POST /workspace/{workspaceId}/Sheets</para>
 		/// </summary>
-		/// <param Name="workspaceId"> the workspace Id </param>
-		/// <param Name="sheet"> the sheet To create </param>
-		/// <param Name="includes"> used To specify the optional objects To include </param>
+		/// <param name="workspaceId"> the workspace Id </param>
+		/// <param name="sheet"> the sheet To create </param>
+		/// <param name="includes"> used To specify the optional objects To include </param>
 		/// <returns> the created sheet </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -227,7 +227,7 @@ namespace Smartsheet.Api
 		/// Returns: None
 		/// 
 		/// </summary>
-		/// <param Name="Id"> the Id </param>
+		/// <param name="id"> the Id </param>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
@@ -241,7 +241,7 @@ namespace Smartsheet.Api
 		/// 
 		/// <para>It mirrors To the following Smartsheet REST API method: PUT /sheet/{Id}</para>
 		/// </summary>
-		/// <param Name="sheet"> the sheet To update </param>
+		/// <param name="sheet"> the sheet To update </param>
 		/// <returns> the updated sheet </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -256,7 +256,7 @@ namespace Smartsheet.Api
 		/// 
 		/// <para>It mirrors To the following Smartsheet REST API method: GET /sheet/{Id}/Version</para>
 		/// </summary>
-		/// <param Name="Id"> the Id </param>
+		/// <param name="id"> the Id </param>
 		/// <returns> the sheet Version (note that if there is no such resource, this method will throw
 		/// ResourceNotFoundException) </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
@@ -272,8 +272,8 @@ namespace Smartsheet.Api
 		/// 
 		/// <para>It mirrors To the following Smartsheet REST API method: POST /sheet/{SheetId}/emails</para>
 		/// </summary>
-		/// <param Name="Id"> the Id </param>
-		/// <param Name="Email"> the Email </param>
+		/// <param name="id"> the Id </param>
+		/// <param name="email"> the Email </param>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
@@ -319,7 +319,7 @@ namespace Smartsheet.Api
 		/// 
 		/// <para>It mirrors To the following Smartsheet REST API method: GET /sheet/{SheetId}/publish</para>
 		/// </summary>
-		/// <param Name="Id"> the Id </param>
+		/// <param name="id"> the Id </param>
 		/// <returns> the publish Status (note that if there is no such resource, this method will throw ResourceNotFoundException rather than returning null) </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -334,8 +334,8 @@ namespace Smartsheet.Api
 		/// 
 		/// <para>It mirrors To the following Smartsheet REST API method: PUT /sheet/{SheetId}/publish</para>
 		/// </summary>
-		/// <param Name="Id"> the Id </param>
-		/// <param Name="publish"> the SheetPublish object limited. </param>
+		/// <param name="id"> the Id </param>
+		/// <param name="publish"> the SheetPublish object limited. </param>
 		/// <returns> the update SheetPublish object (note that if there is no such resource, this method will throw a 
 		/// ResourceNotFoundException rather than returning null). </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>

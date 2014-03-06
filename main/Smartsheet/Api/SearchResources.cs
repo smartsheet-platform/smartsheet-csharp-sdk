@@ -38,7 +38,7 @@
 		/// 
 		/// <para>It mirrors To the following Smartsheet REST API method: GET /search</para>
 		/// </summary>
-		/// <param Name="query"> the query Text </param>
+		/// <param name="query"> the query Text </param>
 		/// <returns> the search Result (note that if there is no such resource, this method will throw 
 		/// ResourceNotFoundException rather than returning null). </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
@@ -54,8 +54,8 @@
 		/// 
 		/// <para>It mirrors To the following Smartsheet REST API method: GET /search/sheet/{SheetId}</para>
 		/// </summary>
-		/// <param Name="SheetId"> the sheet Id </param>
-		/// <param Name="query"> the query Text </param>
+		/// <param name="sheetId"> the sheet Id </param>
+		/// <param name="query"> the query Text </param>
 		/// <returns> the search Result (note that if there is no such resource, this method will throw 
 		/// ResourceNotFoundException rather than returning null). </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>

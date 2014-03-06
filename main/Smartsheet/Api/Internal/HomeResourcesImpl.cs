@@ -46,7 +46,7 @@
 		/// 
 		/// Exceptions: - IllegalArgumentException : if any argument is null
 		/// </summary>
-		/// <param Name="Smartsheet"> the Smartsheet </param>
+		/// <param name="smartsheet"> the Smartsheet </param>
 		public HomeResourcesImpl(SmartsheetImpl smartsheet) : base(smartsheet)
 		{
 			this.folders = new HomeFolderResourcesImpl(smartsheet);
@@ -66,7 +66,7 @@
 		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="includes"> used To specify the optional objects To include, currently TEMPLATES is supported. </param>
+		/// <param name="includes"> used To specify the optional objects To include, currently TEMPLATES is supported. </param>
 		/// <returns> the resource (note that if there is no such resource, this method will throw ResourceNotFoundException
 		/// rather than returning null). </returns>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>

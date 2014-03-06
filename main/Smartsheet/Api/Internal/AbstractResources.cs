@@ -80,7 +80,7 @@ namespace Smartsheet.Api.Internal
             			/// <summary>
 			/// Gets the error Code.
 			/// </summary>
-			/// <param Name="errorNumber"> the error number </param>
+			/// <param name="errorNumber"> the error number </param>
 			/// <returns> the error Code </returns>
 			public static ErrorCode getErrorCode(HttpStatusCode errorNumber)
 			{
@@ -109,7 +109,7 @@ namespace Smartsheet.Api.Internal
             //            /// <summary>
             //            /// Gets the exception.
             //            /// </summary>
-            //            /// <param Name="error"> the error </param>
+            //            /// <param name="error"> the error </param>
             //            /// <returns> the exception </returns>
             //            /// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
             public SmartsheetRestException getException(Api.Models.Error error)
@@ -129,7 +129,7 @@ namespace Smartsheet.Api.Internal
 		/// <summary>
 		/// Constructor.
 		/// </summary>
-		/// <param Name="Smartsheet"> the Smartsheet </param>
+		/// <param name="smartsheet"> the Smartsheet </param>
 		protected internal AbstractResources(SmartsheetImpl smartsheet)
 		{
 			Util.ThrowIfNull(smartsheet);
@@ -154,8 +154,8 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
 		/// @param <T> the generic Type </param>
-		/// <param Name="path"> the relative path of the resource. </param>
-		/// <param Name="objectClass"> the object class </param>
+		/// <param name="path"> the relative path of the resource. </param>
+		/// <param name="objectClass"> the object class </param>
 		/// <returns> the resource </returns>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		protected internal virtual T GetResource<T>(string path, Type objectClass)
@@ -226,9 +226,9 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
 		/// @param <T> the generic Type </param>
-		/// <param Name="path"> the relative path of the resource collections </param>
-		/// <param Name="objectClass"> the resource object class </param>
-		/// <param Name="object"> the object To create </param>
+		/// <param name="path"> the relative path of the resource collections </param>
+		/// <param name="objectClass"> the resource object class </param>
+		/// <param name="object"> the object To create </param>
 		/// <returns> the created resource </returns>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		protected internal virtual T CreateResource<T>(string path, Type objectClass, T @object)
@@ -280,9 +280,9 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
 		/// @param <T> the generic Type </param>
-		/// <param Name="path"> the relative path of the resource </param>
-		/// <param Name="objectClass"> the resource object class </param>
-		/// <param Name="object"> the object To create </param>
+		/// <param name="path"> the relative path of the resource </param>
+		/// <param name="objectClass"> the resource object class </param>
+		/// <param name="object"> the object To create </param>
 		/// <returns> the updated resource </returns>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		protected internal virtual T UpdateResource<T>(string path, Type objectClass, T @object)
@@ -333,8 +333,8 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
 		/// @param <T> the generic Type </param>
-		/// <param Name="path"> the relative path of the resource collections </param>
-		/// <param Name="objectClass"> the resource object class </param>
+		/// <param name="path"> the relative path of the resource collections </param>
+		/// <param name="objectClass"> the resource object class </param>
 		/// <returns> the resources </returns>
 		/// <exception cref="SmartsheetException"> if an error occurred during the operation </exception>
 		protected internal virtual IList<T> ListResources<T>(string path, Type objectClass)
@@ -384,8 +384,8 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
 		/// @param <T> the generic Type </param>
-		/// <param Name="path"> the relative path of the resource </param>
-		/// <param Name="objectClass"> the resource object class </param>
+		/// <param name="path"> the relative path of the resource </param>
+		/// <param name="objectClass"> the resource object class </param>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		protected internal virtual void DeleteResource<T>(string path, Type objectClass)
 		{
@@ -434,9 +434,9 @@ namespace Smartsheet.Api.Internal
 		/// </summary>
 		/// @param <T> the generic Type </param>
 		/// @param <S> the generic Type </param>
-		/// <param Name="path"> the path </param>
-		/// <param Name="objectToPost"> the object To post </param>
-		/// <param Name="objectClassToReceive"> the object class To receive </param>
+		/// <param name="path"> the path </param>
+		/// <param name="objectToPost"> the object To post </param>
+		/// <param name="objectClassToReceive"> the object class To receive </param>
 		/// <returns> the list </returns>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		protected internal virtual IList<S> PostAndReceiveList<T, S>(string path, T objectToPost, Type objectClassToReceive)
@@ -488,9 +488,9 @@ namespace Smartsheet.Api.Internal
 		/// </summary>
 		/// @param <T> the generic Type </param>
 		/// @param <S> the generic Type </param>
-		/// <param Name="path"> the relative path of the resource collections </param>
-		/// <param Name="objectToPut"> the object To put </param>
-		/// <param Name="objectClassToReceive"> the resource object class To receive </param>
+		/// <param name="path"> the relative path of the resource collections </param>
+		/// <param name="objectToPut"> the object To put </param>
+		/// <param name="objectClassToReceive"> the resource object class To receive </param>
 		/// <returns> the object list </returns>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
         protected internal virtual IList<S> PutAndReceiveList<T, S>(string path, T objectToPut, Type objectClassToReceive)
@@ -534,8 +534,8 @@ namespace Smartsheet.Api.Internal
 		/// 
 		/// Exceptions: Any exception shall be propagated since it's a private method.
 		/// </summary>
-		/// <param Name="uri"> the URI </param>
-		/// <param Name="method"> the HttpMethod </param>
+		/// <param name="uri"> the URI </param>
+		/// <param name="method"> the HttpMethod </param>
 		/// <returns> the http request </returns>
 		protected internal virtual HttpRequest CreateHttpRequest(Uri uri, HttpMethod method)
 		{
@@ -562,7 +562,7 @@ namespace Smartsheet.Api.Internal
 		/// Exceptions: 
 		///   SmartsheetRestException : the exception corresponding To the error
 		/// </summary>
-		/// <param Name="response"> the HttpResponse </param>
+		/// <param name="response"> the HttpResponse </param>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		protected internal virtual void HandleError(HttpResponse response)
 		{

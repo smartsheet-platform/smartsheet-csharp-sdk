@@ -84,7 +84,7 @@ namespace Smartsheet.Api.Internal
 		/// 
 		/// Exceptions: - IllegalArgumentException : if any argument is null
 		/// </summary>
-		/// <param Name="Smartsheet"> the Smartsheet </param>
+		/// <param name="smartsheet"> the Smartsheet </param>
 		public SheetResourcesImpl(SmartsheetImpl smartsheet) : base(smartsheet)
 		{
 			this.shares = new ShareResourcesImpl(smartsheet, "sheet");
@@ -145,8 +145,8 @@ namespace Smartsheet.Api.Internal
 		///   - SmartsheetRestException : if there is any other REST API related error occurred during the operation 
 		///   - SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="Id"> the Id </param>
-		/// <param Name="includes"> used To specify the optional objects To include, currently DISCUSSIONS and
+		/// <param name="id"> the Id </param>
+		/// <param name="includes"> used To specify the optional objects To include, currently DISCUSSIONS and
 		/// ATTACHMENTS are supported. </param>
 		/// <returns> the resource (note that if there is no such resource, this method will throw ResourceNotFoundException
 		/// rather than returning null). </returns>
@@ -181,8 +181,8 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="Id"> the Id </param>
-		/// <param Name="outputStream"> the OutputStream To which the Excel file will be written </param>
+		/// <param name="id"> the Id </param>
+		/// <param name="outputStream"> the OutputStream To which the Excel file will be written </param>
 		/// <returns> the sheet as excel </returns>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		public virtual void GetSheetAsExcel(long id, StreamWriter outputStream)
@@ -205,9 +205,9 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="Id"> the Id </param>
-		/// <param Name="outputStream"> the output stream To which the PDF file will be written. </param>
-		/// <param Name="PaperSize"> the optional paper size </param>
+		/// <param name="id"> the Id </param>
+		/// <param name="outputStream"> the output stream To which the PDF file will be written. </param>
+		/// <param name="paperSize"> the optional paper size </param>
 		/// <returns> the sheet as pdf </returns>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		public virtual void GetSheetAsPDF(long id, StreamWriter outputStream, PaperSize? paperSize)
@@ -228,7 +228,7 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="sheet"> the sheet To create, limited To the following required attributes: * Name (string) *
+		/// <param name="sheet"> the sheet To create, limited To the following required attributes: * Name (string) *
 		/// Columns (array of Column objects, limited To the following attributes) - Title - Primary - Type - Symbol -
 		/// Options </param>
 		/// <returns> the created sheet </returns>
@@ -251,9 +251,9 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="sheet"> the sheet To create, limited To the following required attributes: * Name (string) * FromId
+		/// <param name="sheet"> the sheet To create, limited To the following required attributes: * Name (string) * FromId
 		/// (number): ID of the Sheet or Template from which To create the sheet. </param>
-		/// <param Name="includes"> used To specify the optional objects To include, currently DATA, DISCUSSIONS and ATTACHMENTS are 
+		/// <param name="includes"> used To specify the optional objects To include, currently DATA, DISCUSSIONS and ATTACHMENTS are 
 		/// supported. </param>
 		/// <returns> the sheet </returns>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
@@ -284,8 +284,8 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="folderId"> the folder Id </param>
-		/// <param Name="sheet"> the sheet To create, limited To the following required
+		/// <param name="folderId"> the folder Id </param>
+		/// <param name="sheet"> the sheet To create, limited To the following required
 		/// attributes: * Name (string) * Columns (array of Column objects, limited To the following attributes) - Title -
 		/// Primary - Type - Symbol - Options </param>
 		/// <returns> the created sheet </returns>
@@ -309,9 +309,9 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="folderId"> the folder Id </param>
-		/// <param Name="sheet"> the sheet </param>
-		/// <param Name="includes"> the includes </param>
+		/// <param name="folderId"> the folder Id </param>
+		/// <param name="sheet"> the sheet </param>
+		/// <param name="includes"> the includes </param>
 		/// <returns> the sheet To create, limited To the following required
 		/// attributes: * Name (string) * Columns (array of Column objects, limited To the following attributes) - Title -
 		/// Primary - Type - Symbol - Options </returns>
@@ -344,8 +344,8 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="workspaceId"> the workspace Id </param>
-		/// <param Name="sheet"> the sheet To create, limited To the following required attributes: * Name (string) * Columns 
+		/// <param name="workspaceId"> the workspace Id </param>
+		/// <param name="sheet"> the sheet To create, limited To the following required attributes: * Name (string) * Columns 
 		/// (array of Column objects, limited To the following attributes) - Title - Primary - Type - Symbol - Options </param>
 		/// <returns> the created sheet </returns>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
@@ -367,12 +367,12 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="workspaceId"> the workspace Id </param>
-		/// <param Name="sheet"> the sheet To create, limited To the following required
+		/// <param name="workspaceId"> the workspace Id </param>
+		/// <param name="sheet"> the sheet To create, limited To the following required
 		/// attributes: * Name (string) * FromId (number): ID of the Sheet or Template from which To create the sheet. -
 		/// includes : used To specify the optional objects To include, currently DATA, DISCUSSIONS and ATTACHMENTS are
 		/// supported. </param>
-		/// <param Name="includes"> the includes </param>
+		/// <param name="includes"> the includes </param>
 		/// <returns> the created sheet </returns>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		public virtual Sheet CreateSheetInWorkspaceFromExisting(long workspaceId, Sheet sheet, IEnumerable<ObjectInclusion> includes)
@@ -403,7 +403,7 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="Id"> the ID of the sheet </param>
+		/// <param name="id"> the ID of the sheet </param>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		public virtual void DeleteSheet(long id)
 		{
@@ -424,7 +424,7 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="sheet"> the sheet To update limited To the following attribute: * Name (string) </param>
+		/// <param name="sheet"> the sheet To update limited To the following attribute: * Name (string) </param>
 		/// <returns> the updated sheet (note that if there is no such resource, this method will throw
 		/// ResourceNotFoundException rather than returning null). </returns>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
@@ -446,7 +446,7 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="Id"> the Id </param>
+		/// <param name="id"> the Id </param>
 		/// <returns> the sheet Version (note that if there is no such resource, this method will throw
 		/// ResourceNotFoundException rather than returning null). </returns>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
@@ -468,8 +468,8 @@ namespace Smartsheet.Api.Internal
 		///   - SmartsheetRestException : if there is any other REST API related error occurred during the operation 
 		///   - SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="Id"> the Id </param>
-		/// <param Name="Email"> the Email </param>
+		/// <param name="id"> the Id </param>
+		/// <param name="email"> the Email </param>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		public virtual void SendSheet(long id, SheetEmail email)
 		{
@@ -539,7 +539,7 @@ namespace Smartsheet.Api.Internal
 		///   - SmartsheetRestException : if there is any other REST API related error occurred during the operation 
 		///   - SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="Id"> the Id </param>
+		/// <param name="id"> the Id </param>
 		/// <returns> the publish Status </returns>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		public virtual SheetPublish GetPublishStatus(long id)
@@ -561,8 +561,8 @@ namespace Smartsheet.Api.Internal
 		///   - SmartsheetRestException : if there is any other REST API related error occurred during the operation 
 		///   - SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="Id"> the Id </param>
-		/// <param Name="publish"> the SheetPublish object limited To the following attributes *
+		/// <param name="id"> the Id </param>
+		/// <param name="publish"> the SheetPublish object limited To the following attributes *
 		/// ReadOnlyLiteEnabled * ReadOnlyFullEnabled * ReadWriteEnabled * IcalEnabled </param>
 		/// <returns> the updated SheetPublish (note that if there is no such resource, this method will throw
 		/// ResourceNotFoundException rather than returning null). </returns>
@@ -583,10 +583,10 @@ namespace Smartsheet.Api.Internal
 		///   - SmartsheetRestException : if there is any other REST API related error occurred during the operation 
 		///   - SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="Id"> the Id </param>
-		/// <param Name="PaperSize"> the paper size </param>
-		/// <param Name="outputStream"> the OutputStream To which the Excel file will be written </param>
-		/// <param Name="ContentType"> the content Type </param>
+		/// <param name="id"> the Id </param>
+		/// <param name="paperSize"> the paper size </param>
+		/// <param name="outputStream"> the OutputStream To which the Excel file will be written </param>
+		/// <param name="contentType"> the content Type </param>
 		/// <returns> the sheet as file </returns>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		private void GetSheetAsFile(long id, PaperSize? paperSize, StreamWriter outputStream, string contentType)
@@ -638,8 +638,8 @@ namespace Smartsheet.Api.Internal
 		/// <summary>
 		/// Copy stream.
 		/// </summary>
-		/// <param Name="input"> the input </param>
-		/// <param Name="output"> the output </param>
+		/// <param name="input"> the input </param>
+		/// <param name="output"> the output </param>
 		/// <exception cref="IOException"> Signals that an I/O exception has occurred. </exception>
 		private static void CopyStream(Stream input, Stream output)
 		{

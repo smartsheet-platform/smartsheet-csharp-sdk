@@ -191,7 +191,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// The Text for the Comment.
 			/// </summary>
-			/// <param Name="Text"> the Text </param>
+			/// <param name="text"> the Text </param>
 			/// <returns> the adds the Comment builder </returns>
 			public virtual AddCommentBuilder SetText(string text)
 			{

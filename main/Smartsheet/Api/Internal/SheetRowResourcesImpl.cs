@@ -43,7 +43,7 @@ namespace Smartsheet.Api.Internal
 		/// 
 		/// Exceptions: - IllegalArgumentException : if any argument is null
 		/// </summary>
-		/// <param Name="Smartsheet"> the Smartsheet </param>
+		/// <param name="smartsheet"> the Smartsheet </param>
 		public SheetRowResourcesImpl(SmartsheetImpl smartsheet) : base(smartsheet)
 		{
 		}
@@ -62,8 +62,8 @@ namespace Smartsheet.Api.Internal
 		///   - SmartsheetRestException : if there is any other REST API related error occurred during the operation 
 		///   - SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="SheetId"> the sheet Id </param>
-		/// <param Name="rowWrapper"> he RowWrapper object, one of the following attributes should be specified: 
+		/// <param name="sheetId"> the sheet Id </param>
+		/// <param name="rowWrapper"> he RowWrapper object, one of the following attributes should be specified: 
 		/// * ToTop : Inserts the Rows at the top of the sheet. * ToBottom : Inserts the Rows at the
 		/// bottom of the sheet * ParentId : Inserts the Rows as the first child row of the parent. ToBottom=true can also be
 		/// set To add the row as the last child of the parent. * SiblingId : Inserts the row as the next sibling of the row
@@ -88,8 +88,8 @@ namespace Smartsheet.Api.Internal
 		///   - SmartsheetRestException : if there is any other REST API related error occurred during the operation 
 		///   - SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="Id"> the Id </param>
-		/// <param Name="RowNumber"> the row number </param>
+		/// <param name="id"> the Id </param>
+		/// <param name="rowNumber"> the row number </param>
 		/// <returns> the row (note that if there is no such resource, this method will throw ResourceNotFoundException rather
 		/// than returning null). </returns>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>

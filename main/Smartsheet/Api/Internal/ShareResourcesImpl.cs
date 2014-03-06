@@ -39,8 +39,8 @@ namespace Smartsheet.Api.Internal
 		/// 
 		/// Exceptions: - IllegalArgumentException : if any argument is null or empty string
 		/// </summary>
-		/// <param Name="Smartsheet"> the Smartsheet </param>
-		/// <param Name="masterResourceType"> the master resource Type (e.g. "sheet", "workspace") </param>
+		/// <param name="smartsheet"> the Smartsheet </param>
+		/// <param name="masterResourceType"> the master resource Type (e.g. "sheet", "workspace") </param>
 		public ShareResourcesImpl(SmartsheetImpl smartsheet, string masterResourceType) : base(smartsheet, masterResourceType)
 		{
 		}
@@ -58,7 +58,7 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="ObjectId"> the Id of the object To share. </param>
+		/// <param name="objectId"> the Id of the object To share. </param>
 		/// <returns> the shares (note that empty list will be returned if there is none) </returns>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		public virtual IList<Share> ListShares(long objectId)
@@ -80,8 +80,8 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="ObjectId"> the ID of the object To share </param>
-		/// <param Name="userId"> the ID of the user To whome the object is shared </param>
+		/// <param name="objectId"> the ID of the object To share </param>
+		/// <param name="userId"> the ID of the user To whome the object is shared </param>
 		/// <returns> the share (note that if there is no such resource, this method will throw ResourceNotFoundException
 		/// rather than returning null). </returns>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
@@ -104,8 +104,8 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="ObjectId"> the ID of the object To share - share : the share object </param>
-		/// <param Name="share"> the share </param>
+		/// <param name="objectId"> the ID of the object To share - share : the share object </param>
+		/// <param name="share"> the share </param>
 		/// <returns> the created share </returns>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		public virtual Share ShareTo(long objectId, Share share)
@@ -129,9 +129,9 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="ObjectId"> the Id of the object To share </param>
-		/// <param Name="share"> the share object </param>
-		/// <param Name="sendEmail"> whether To send Email </param>
+		/// <param name="objectId"> the Id of the object To share </param>
+		/// <param name="share"> the share object </param>
+		/// <param name="sendEmail"> whether To send Email </param>
 		/// <returns> the created share </returns>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		public virtual Share ShareTo(long objectId, Share share, bool sendEmail)
@@ -154,8 +154,8 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="ObjectId"> the ID of the object To share </param>
-		/// <param Name="multiShare"> the MultiShare object </param>
+		/// <param name="objectId"> the ID of the object To share </param>
+		/// <param name="multiShare"> the MultiShare object </param>
 		/// <returns> the created shares </returns>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		public virtual IList<Share> ShareTo(long objectId, MultiShare multiShare)
@@ -178,9 +178,9 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="ObjectId"> the ID of the object To share </param>
-		/// <param Name="multiShare"> the MultiShare object </param>
-		/// <param Name="sendEmail"> whether To send Email </param>
+		/// <param name="objectId"> the ID of the object To share </param>
+		/// <param name="multiShare"> the MultiShare object </param>
+		/// <param name="sendEmail"> whether To send Email </param>
 		/// <returns> the created shares </returns>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		public virtual IList<Share> ShareTo(long objectId, MultiShare multiShare, bool sendEmail)
@@ -203,9 +203,9 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="ObjectId"> the ID of the object To share </param>
-		/// <param Name="userId"> the ID of the user To whom the object is shared </param>
-		/// <param Name="share"> the share </param>
+		/// <param name="objectId"> the ID of the object To share </param>
+		/// <param name="userId"> the ID of the user To whom the object is shared </param>
+		/// <param name="share"> the share </param>
 		/// <returns> the updated share (note that if there is no such resource, this method will throw
 		/// ResourceNotFoundException rather than returning null). </returns>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
@@ -228,8 +228,8 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="ObjectId"> the ID of the object To share </param>
-		/// <param Name="userId"> the ID of the user To whom the object is shared </param>
+		/// <param name="objectId"> the ID of the object To share </param>
+		/// <param name="userId"> the ID of the user To whom the object is shared </param>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		public virtual void DeleteShare(long objectId, long userId)
 		{

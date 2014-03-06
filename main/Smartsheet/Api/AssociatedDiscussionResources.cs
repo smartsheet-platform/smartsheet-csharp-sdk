@@ -41,8 +41,8 @@
 		/// POST /sheet/{Id}/Discussions <br />
 		/// POST /row/{Id}/Discussions</para>
 		/// </summary>
-		/// <param Name="ObjectId"> the object Id (sheet Id or row Id) </param>
-		/// <param Name="discussion"> the discussion object </param>
+		/// <param name="objectId"> the object Id (sheet Id or row Id) </param>
+		/// <param name="discussion"> the discussion object </param>
 		/// <returns> the created discussion </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>

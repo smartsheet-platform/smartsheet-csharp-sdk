@@ -51,7 +51,7 @@
 		/// <summary>
 		/// Check if the given object equals To this object.
 		/// </summary>
-		/// <param Name="object"> the object To compare </param>
+		/// <param name="object"> the object To compare </param>
 		/// <returns> true if given object equals To this object, false otherwise </returns>
 		public override bool Equals(object @object)
 		{

@@ -45,7 +45,7 @@ namespace Smartsheet.Api
 		///   GET /sheet/{Id}/Attachments<br />
 		///   GET /row/{Id}/Attachments GET/Comment/{Id}/Attachments</para>
 		/// </summary>
-		/// <param Name="ObjectId"> the ID of the object To which the Attachments are associated </param>
+		/// <param name="objectId"> the ID of the object To which the Attachments are associated </param>
 		/// <returns> the Attachments (note that empty list will be returned if there is none) </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -63,9 +63,9 @@ namespace Smartsheet.Api
 		///   POST /sheet/{Id}/Attachments POST /row/{Id}/Attachments<br />
 		///   POST /Comment/{idd}/Attachments</para>
 		/// </summary>
-		/// <param Name="ObjectId"> the Id of the object </param>
-		/// <param Name="file"> the file To attach </param>
-		/// <param Name="ContentType"> the content Type of the file </param>
+		/// <param name="objectId"> the Id of the object </param>
+		/// <param name="file"> the file To attach </param>
+		/// <param name="contentType"> the content Type of the file </param>
 		/// <returns> the created attachment </returns>
 		/// <exception cref="FileNotFoundException"> the file not found exception </exception>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
@@ -86,8 +86,8 @@ namespace Smartsheet.Api
 		///   POST /sheet/{Id}/Attachments POST /row/{Id}/Attachments<br />
 		///   POST /Comment/{idd}/Attachments</para>
 		/// </summary>
-		/// <param Name="ObjectId"> the object Id </param>
-		/// <param Name="attachment"> the attachment object </param>
+		/// <param name="objectId"> the object Id </param>
+		/// <param name="attachment"> the attachment object </param>
 		/// <returns> the created attachment </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>

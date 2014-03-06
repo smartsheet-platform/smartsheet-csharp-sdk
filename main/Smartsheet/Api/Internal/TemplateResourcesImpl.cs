@@ -40,7 +40,7 @@ namespace Smartsheet.Api.Internal
 		/// 
 		/// Exceptions: - IllegalArgumentException : if any argument is
 		/// </summary>
-		/// <param Name="Smartsheet"> the Smartsheet </param>
+		/// <param name="smartsheet"> the Smartsheet </param>
 		public TemplateResourcesImpl(SmartsheetImpl smartsheet) : base(smartsheet)
 		{
 		}

@@ -55,7 +55,7 @@ namespace Smartsheet.Api.Internal
 		/// Exceptions: 
 		///   - IllegalArgumentException : if any argument is
 		/// </summary>
-		/// <param Name="Smartsheet"> the Smartsheet </param>
+		/// <param name="smartsheet"> the Smartsheet </param>
 		public WorkspaceResourcesImpl(SmartsheetImpl smartsheet) : base(smartsheet)
 		{
             this.folders = new WorkspaceFolderResourcesImpl(smartsheet);
@@ -106,7 +106,7 @@ namespace Smartsheet.Api.Internal
 		///   
 		///   - SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="Id"> the Id </param>
+		/// <param name="id"> the Id </param>
 		/// <returns> the resource (note that if there is no such resource, this method will throw ResourceNotFoundException
 		/// rather than returning null). </returns>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
@@ -134,7 +134,7 @@ namespace Smartsheet.Api.Internal
 		///   
 		///   - SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="workspace"> the workspace To create, limited To the following required attributes: * Name (string) </param>
+		/// <param name="workspace"> the workspace To create, limited To the following required attributes: * Name (string) </param>
 		/// <returns> the created workspace </returns>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		public virtual Workspace CreateWorkspace(Workspace workspace)
@@ -163,7 +163,7 @@ namespace Smartsheet.Api.Internal
 		///   
 		///   - SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="workspace"> the workspace To update limited To the following attribute: * Name (string) </param>
+		/// <param name="workspace"> the workspace To update limited To the following attribute: * Name (string) </param>
 		/// <returns> the updated workspace (note that if there is no such resource, this method will throw
 		/// ResourceNotFoundException rather than returning null). </returns>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
@@ -185,7 +185,7 @@ namespace Smartsheet.Api.Internal
 		///   - SmartsheetRestException : if there is any other REST API related error occurred during the operation 
 		///   - SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="Id"> the ID of the workspace </param>
+		/// <param name="id"> the ID of the workspace </param>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		public virtual void DeleteWorkspace(long id)
 		{

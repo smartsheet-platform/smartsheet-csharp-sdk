@@ -36,7 +36,7 @@
 		/// <summary>
 		/// Constructor.
 		/// </summary>
-		/// <param Name="Message"> the Message </param>
+		/// <param name="message"> the Message </param>
 		public UnsupportedOAuthGrantTypeException(string message) : base(message)
 		{
 		}

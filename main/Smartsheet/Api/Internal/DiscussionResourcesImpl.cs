@@ -45,7 +45,7 @@
 		/// 
 		/// Exceptions: - IllegalArgumentException : if any argument is null
 		/// </summary>
-		/// <param Name="Smartsheet"> the Smartsheet </param>
+		/// <param name="smartsheet"> the Smartsheet </param>
 		public DiscussionResourcesImpl(SmartsheetImpl smartsheet) : base(smartsheet)
 		{
             this.attachments = new DiscussionAttachmentResources(smartsheet);
@@ -69,7 +69,7 @@
 		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="Id"> the Id </param>
+		/// <param name="id"> the Id </param>
 		/// <returns> the discussion </returns>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		public virtual Discussion GetDiscussion(long id)
@@ -90,8 +90,8 @@
 		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="Id"> the discussion ID </param>
-		/// <param Name="Comment"> the Comment To add, limited To the following required attributes: Text </param>
+		/// <param name="id"> the discussion ID </param>
+		/// <param name="comment"> the Comment To add, limited To the following required attributes: Text </param>
 		/// <returns> the created Comment </returns>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		public virtual Comment AddDiscussionComment(long id, Comment comment)

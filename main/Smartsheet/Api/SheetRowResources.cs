@@ -41,8 +41,8 @@ namespace Smartsheet.Api
 		/// 
 		/// <para>It mirrors To the following Smartsheet REST API method: POST /sheet/{Id}/Rows</para>
 		/// </summary>
-		/// <param Name="SheetId"> the sheet Id </param>
-		/// <param Name="rowWrapper"> the row wrapper </param>
+		/// <param name="sheetId"> the sheet Id </param>
+		/// <param name="rowWrapper"> the row wrapper </param>
 		/// <returns> the list of created Rows </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -57,8 +57,8 @@ namespace Smartsheet.Api
 		/// 
 		/// It mirrors To the following Smartsheet REST API method: GET /sheet/{Id}/row/{number}
 		/// </summary>
-		/// <param Name="Id"> the Id </param>
-		/// <param Name="RowNumber"> the row number </param>
+		/// <param name="id"> the Id </param>
+		/// <param name="rowNumber"> the row number </param>
 		/// <returns> the created row (note that if there is no such resource, this method will throw ResourceNotFoundException rather
 		/// than returning null). </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>

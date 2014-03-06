@@ -113,7 +113,7 @@
 		/// <summary>
 		/// Set the HttpClient.
 		/// </summary>
-		/// <param Name="HttpClient"> the HttpClient </param>
+		/// <param name="httpClient"> the HttpClient </param>
 		/// <returns> the OAuthFlowBuilder </returns>
 		public virtual OAuthFlowBuilder SetHttpClient(HttpClient httpClient)
 		{
@@ -126,7 +126,7 @@
 		/// <summary>
 		/// <para>Set the JsonSerializer.</para>
 		/// </summary>
-		/// <param Name="JsonSerializer"> the JsonSerializer </param>
+		/// <param name="jsonSerializer"> the JsonSerializer </param>
 		/// <returns> the oAuthFlowBuilder </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null/empty string </exception>
 		public virtual OAuthFlowBuilder SetJsonSerializer(JsonSerializer jsonSerializer)
@@ -140,7 +140,7 @@
 		/// <summary>
 		/// Set the client ID
 		/// </summary>
-		/// <param Name="ClientId"> the Value To set </param>
+		/// <param name="clientId"> the Value To set </param>
 		/// <returns> the OAuthFlowBuilder </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null/empty string </exception>
 		public virtual OAuthFlowBuilder SetClientId(string clientId)
@@ -154,7 +154,7 @@
 		/// <summary>
 		/// Set the client secret.
 		/// </summary>
-		/// <param Name="ClientSecret"> the client secret </param>
+		/// <param name="clientSecret"> the client secret </param>
 		/// <returns> the OAuthFlowBuilder </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null/empty string </exception>
 		public virtual OAuthFlowBuilder SetClientSecret(string clientSecret)
@@ -168,7 +168,7 @@
 		/// <summary>
 		/// Set the redirect URL
 		/// </summary>
-		/// <param Name="RedirectURL"> the redirect Url </param>
+		/// <param name="redirectURL"> the redirect Url </param>
 		/// <returns> the OAuthFlowBuilder </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null/empty string </exception>
 		public virtual OAuthFlowBuilder SetRedirectURL(string redirectURL)
@@ -182,7 +182,7 @@
 		/// <summary>
 		/// Set the authorization URL.
 		/// </summary>
-		/// <param Name="AuthorizationURL"> the authorization URL </param>
+		/// <param name="authorizationURL"> the authorization URL </param>
 		/// <returns> the OAuthFlowBuilder </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null/empty string </exception>
 		public virtual OAuthFlowBuilder SetAuthorizationURL(string authorizationURL)
@@ -196,7 +196,7 @@
 		/// <summary>
 		/// Set the token URL.
 		/// </summary>
-		/// <param Name="TokenURL"> the token Url </param>
+		/// <param name="tokenURL"> the token Url </param>
 		/// <returns> the OAuthFlowBuilder </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null/empty string </exception>
 		public virtual OAuthFlowBuilder SetTokenURL(string tokenURL)

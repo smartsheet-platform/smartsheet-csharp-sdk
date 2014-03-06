@@ -221,9 +221,9 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Adds the cell.
 			/// </summary>
-			/// <param Name="ColumnId"> the column Id </param>
-			/// <param Name="Value"> the Value </param>
-			/// <param Name="Strict"> the Strict </param>
+			/// <param name="columnId"> the column Id </param>
+			/// <param name="value"> the Value </param>
+			/// <param name="strict"> the Strict </param>
 			/// <returns> the update row Cells builder </returns>
 			public virtual UpdateRowCellsBuilder AddCell(long? columnId, string value, bool? strict)
 			{
@@ -246,8 +246,8 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Adds the cell.
 			/// </summary>
-			/// <param Name="ColumnId"> the column Id </param>
-			/// <param Name="Value"> the Value </param>
+			/// <param name="columnId"> the column Id </param>
+			/// <param name="value"> the Value </param>
 			/// <returns> the update row Cells builder </returns>
 			public virtual UpdateRowCellsBuilder AddCell(long? columnId, string value)
 			{

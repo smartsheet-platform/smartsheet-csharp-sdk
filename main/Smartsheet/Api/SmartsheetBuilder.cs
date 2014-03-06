@@ -89,7 +89,7 @@
 		/// <summary>
 		/// <para>Set the HttpClient.</para>
 		/// </summary>
-		/// <param Name="HttpClient"> the http client </param>
+		/// <param name="httpClient"> the http client </param>
 		/// <returns> the Smartsheet builder </returns>
 		public virtual SmartsheetBuilder SetHttpClient(HttpClient httpClient)
 		{
@@ -100,7 +100,7 @@
 		/// <summary>
 		/// <para>Set the JsonSerializer.</para>
 		/// </summary>
-		/// <param Name="JsonSerializer"> the JsonSerializer </param>
+		/// <param name="jsonSerializer"> the JsonSerializer </param>
 		/// <returns> the SmartsheetBuilder </returns>
 		public virtual SmartsheetBuilder SetJsonSerializer(JsonSerializer jsonSerializer)
 		{
@@ -111,7 +111,7 @@
 		/// <summary>
 		/// <para>Set the base URI.</para>
 		/// </summary>
-		/// <param Name="BaseURI"> the base uri </param>
+		/// <param name="baseURI"> the base uri </param>
 		/// <returns> the Smartsheet builder </returns>
 		public virtual SmartsheetBuilder SetBaseURI(string baseURI)
 		{
@@ -122,7 +122,7 @@
 		/// <summary>
 		/// <para>Set the access token.</para>
 		/// </summary>
-		/// <param Name="AccessToken"> the access token </param>
+		/// <param name="accessToken"> the access token </param>
 		/// <returns> the Smartsheet builder </returns>
 		public virtual SmartsheetBuilder SetAccessToken(string accessToken)
 		{
@@ -133,7 +133,7 @@
 		/// <summary>
 		/// <para>Set the assumed user.</para>
 		/// </summary>
-		/// <param Name="AssumedUser"> the assumed user </param>
+		/// <param name="assumedUser"> the assumed user </param>
 		/// <returns> the Smartsheet builder </returns>
 		public virtual SmartsheetBuilder SetAssumedUser(string assumedUser)
 		{

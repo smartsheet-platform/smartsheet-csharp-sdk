@@ -92,7 +92,7 @@ namespace Smartsheet.Api.Models
 
 			/// <summary>
 			/// Set the workspace Id </summary>
-			/// <param Name="Id"> the workspace Id </param>
+			/// <param name="id"> the workspace Id </param>
 			public virtual UpdateWorkspaceBuilder SetID(long? id)
 			{
 				this.id = id;
@@ -102,7 +102,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// The Name of the workspace.
 			/// </summary>
-			/// <param Name="Name"> the Name </param>
+			/// <param name="name"> the Name </param>
 			/// <returns> the update workspace builder </returns>
 			public virtual UpdateWorkspaceBuilder SetName(string name)
 			{

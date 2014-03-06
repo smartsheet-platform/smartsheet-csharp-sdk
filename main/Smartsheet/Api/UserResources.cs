@@ -55,7 +55,7 @@ namespace Smartsheet.Api
 		/// 
 		/// <para>It mirrors To the following Smartsheet REST API method: POST /Users</para>
 		/// </summary>
-		/// <param Name="user"> the user object </param>
+		/// <param name="user"> the user object </param>
 		/// <returns> the user </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -70,8 +70,8 @@ namespace Smartsheet.Api
 		/// 
 		/// <para>It mirrors To the following Smartsheet REST API method: POST /Users</para>
 		/// </summary>
-		/// <param Name="user"> the user </param>
-		/// <param Name="sendEmail"> the send Email flag </param>
+		/// <param name="user"> the user </param>
+		/// <param name="sendEmail"> the send Email flag </param>
 		/// <returns> the created user </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -100,7 +100,7 @@ namespace Smartsheet.Api
 		/// 
 		/// <para>It mirrors To the following Smartsheet REST API method: PUT /user/{Id}</para>
 		/// </summary>
-		/// <param Name="user"> the user To update </param>
+		/// <param name="user"> the user To update </param>
 		/// <returns> the updated user </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -115,7 +115,7 @@ namespace Smartsheet.Api
 		/// 
 		/// <para>It mirrors To the following Smartsheet REST API method: DELETE /user{Id}</para>
 		/// </summary>
-		/// <param Name="Id"> the Id of the user </param>
+		/// <param name="id"> the Id of the user </param>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>

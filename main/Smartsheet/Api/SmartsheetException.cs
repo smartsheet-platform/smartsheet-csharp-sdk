@@ -39,7 +39,7 @@ namespace Smartsheet.Api
 		/// <summary>
 		/// <para>Constructor.</para>
 		/// </summary>
-		/// <param Name="Message"> the Message </param>
+		/// <param name="message"> the Message </param>
 		public SmartsheetException(string message) : base(message)
 		{
 		}
@@ -47,8 +47,8 @@ namespace Smartsheet.Api
 		/// <summary>
 		/// <para>Constructor.</para>
 		/// </summary>
-		/// <param Name="Message"> the Message </param>
-		/// <param Name="cause"> the cause </param>
+		/// <param name="message"> the Message </param>
+		/// <param name="cause"> the cause </param>
 		public SmartsheetException(string message, Exception cause) : base(message, cause)
 		{
 		}
@@ -56,7 +56,7 @@ namespace Smartsheet.Api
 		/// <summary>
 		/// <para>Instantiates a new Smartsheet exception.</para>
 		/// </summary>
-		/// <param Name="e"> the exception </param>
+		/// <param name="e"> the exception </param>
 		public SmartsheetException(Exception e) : base(e.Message,e)
 		{
 		}

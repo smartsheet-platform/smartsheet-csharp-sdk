@@ -39,8 +39,8 @@
 		/// <summary>
 		/// <para>Generate a new authorization URL.</para>
 		/// </summary>
-		/// <param Name="scopes"> the requested scopes </param>
-		/// <param Name="State"> an arbitrary string that will be returned To your app; intended To be used by you To ensure that 
+		/// <param name="scopes"> the requested scopes </param>
+		/// <param name="state"> an arbitrary string that will be returned To your app; intended To be used by you To ensure that 
 		/// this redirect is indeed from an OAuth flow that you initiated. </param>
 		/// <returns> the authorization URL </returns>
 		/// <exception cref="System.InvalidOperationException"> if scopes is null or empty </exception>
@@ -50,7 +50,7 @@
 		/// Extract AuthorizationResult from the authorization response URL (i.e. the RedirectURL with the response
 		/// parameters from Smartsheet OAuth server).
 		/// </summary>
-		/// <param Name="authorizationResponseURL"> the authorization response Url </param>
+		/// <param name="authorizationResponseURL"> the authorization response Url </param>
 		/// <returns> the authorization Result </returns>
 		/// <exception cref="UriFormatException"> the URI syntax exception </exception>
 		/// <exception cref="AccessDeniedException"> the access denied exception </exception>
@@ -63,7 +63,7 @@
 		/// <summary>
 		/// Obtain a new token using AuthorizationResult.
 		/// </summary>
-		/// <param Name="authorizationResult"> the authorization Result </param>
+		/// <param name="authorizationResult"> the authorization Result </param>
 		/// <returns> the token </returns>
 		/// <exception cref="OAuthTokenException"> the o auth token exception </exception>
 		/// <exception cref="JSONSerializationException"> the JSON serializer exception </exception>
@@ -75,7 +75,7 @@
 		/// <summary>
 		/// Refresh token.
 		/// </summary>
-		/// <param Name="token"> the token To refresh </param>
+		/// <param name="token"> the token To refresh </param>
 		/// <returns> the refreshed token </returns>
 		/// <exception cref="OAuthTokenException"> the o auth token exception </exception>
 		/// <exception cref="JSONSerializationException"> the JSON serializer exception </exception>

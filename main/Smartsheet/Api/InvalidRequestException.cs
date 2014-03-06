@@ -40,7 +40,7 @@
 		/// <summary>
 		/// Constructor.
 		/// </summary>
-		/// <param Name="error"> the Error object from Smartsheet REST API </param>
+		/// <param name="error"> the Error object from Smartsheet REST API </param>
 		public InvalidRequestException(Error error) : base(error)
 		{
 		}

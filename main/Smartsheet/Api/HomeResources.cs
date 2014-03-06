@@ -42,7 +42,7 @@
 		/// <para>It mirrors To the following Smartsheet REST API method:<br />
 		/// GET /home</para>
 		/// </summary>
-		/// <param Name="includes"> used To specify the optional objects To include. </param>
+		/// <param name="includes"> used To specify the optional objects To include. </param>
 		/// <returns> the home resource (note that if there is no such resource, this method will throw 
 		/// ResourceNotFoundException rather than returning null). </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>

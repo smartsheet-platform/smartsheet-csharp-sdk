@@ -192,10 +192,10 @@
 		/// 
 		/// Exceptions: - IllegalArgumentException : if serverURI/Version/AccessToken is null/empty
 		/// </summary>
-		/// <param Name="BaseURI"> the server uri </param>
-		/// <param Name="AccessToken"> the access token </param>
-		/// <param Name="HttpClient"> the http client (optional) </param>
-		/// <param Name="JsonSerializer"> the json serializer (optional) </param>
+		/// <param name="baseURI"> the server uri </param>
+		/// <param name="accessToken"> the access token </param>
+		/// <param name="httpClient"> the http client (optional) </param>
+		/// <param name="jsonSerializer"> the json serializer (optional) </param>
 		public SmartsheetImpl(string baseURI, string accessToken, HttpClient httpClient, JsonSerializer jsonSerializer)
 		{
 			Util.ThrowIfNull(baseURI);

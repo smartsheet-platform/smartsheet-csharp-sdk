@@ -40,8 +40,8 @@
 		/// Exceptions:
 		///   IllegalArgumentException : if any argument is null or empty string
 		/// </summary>
-		/// <param Name="Smartsheet"> the Smartsheet </param>
-		/// <param Name="masterResourceType"> the master resource Type (e.g. "sheet", "workspace") </param>
+		/// <param name="smartsheet"> the Smartsheet </param>
+		/// <param name="masterResourceType"> the master resource Type (e.g. "sheet", "workspace") </param>
 		public AssociatedDiscussionResourcesImpl(SmartsheetImpl smartsheet, string masterResourceType) : 
             base(smartsheet,masterResourceType)
 		{
@@ -63,8 +63,8 @@
 		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="ObjectId"> the ID of the object </param>
-		/// <param Name="discussion"> the discussion object limited To the following attributes: Title, Comment </param>
+		/// <param name="objectId"> the ID of the object </param>
+		/// <param name="discussion"> the discussion object limited To the following attributes: Title, Comment </param>
 		/// <returns> the created discussion </returns>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		public virtual Discussion CreateDiscussion(long objectId, Discussion discussion)

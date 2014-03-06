@@ -41,7 +41,7 @@
         /// Exceptions: - IllegalArgumentException : if any argument is null - HttpClientException : if there is any other
         /// error occurred during the operation
         /// </summary>
-        /// <param Name="request"> the request </param>
+        /// <param name="request"> the request </param>
         /// <returns> the http response </returns>
         /// <exception cref="HttpClientException"> the http client exception </exception>
         HttpResponse Request(HttpRequest request);

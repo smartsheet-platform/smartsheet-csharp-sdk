@@ -39,7 +39,7 @@
 		/// <para>It mirrors To the following Smartsheet REST API method:<br />
 		/// PUT /column/{Id}</para>
 		/// </summary>
-		/// <param Name="column"> the column To update </param>
+		/// <param name="column"> the column To update </param>
 		/// <returns> the updated Column (note that if there is no such resource, this method will throw 
 		/// ResourceNotFoundException rather than returning null). </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
@@ -56,8 +56,8 @@
 		/// <para>It mirrors To the following Smartsheet REST API method:<br />
 		/// DELETE /coluimn{Id}</para>
 		/// </summary>
-		/// <param Name="the"> Id of the column </param>
-		/// <param Name="SheetId"> the sheet Id </param>
+		/// <param name="the"> Id of the column </param>
+		/// <param name="sheetId"> the sheet Id </param>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>

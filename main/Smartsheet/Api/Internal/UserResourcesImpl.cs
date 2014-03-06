@@ -41,7 +41,7 @@ namespace Smartsheet.Api.Internal
 		/// 
 		/// Exceptions: - IllegalArgumentException : if any argument is null
 		/// </summary>
-		/// <param Name="Smartsheet"> the Smartsheet </param>
+		/// <param name="smartsheet"> the Smartsheet </param>
 		public UserResourcesImpl(SmartsheetImpl smartsheet) : base(smartsheet)
 		{
 		}
@@ -79,7 +79,7 @@ namespace Smartsheet.Api.Internal
 		///   - SmartsheetRestException : if there is any other REST API related error occurred during the operation 
 		///   - SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="user"> the user object limited To the following attributes: * Admin * Email * LicensedSheetCreator </param>
+		/// <param name="user"> the user object limited To the following attributes: * Admin * Email * LicensedSheetCreator </param>
 		/// <returns> the user </returns>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		public virtual User AddUser(User user)
@@ -101,8 +101,8 @@ namespace Smartsheet.Api.Internal
 		///   - SmartsheetRestException : if there is any other REST API related error occurred during the operation 
 		///   - SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="user"> the created user </param>
-		/// <param Name="sendEmail"> whether To send Email </param>
+		/// <param name="user"> the created user </param>
+		/// <param name="sendEmail"> whether To send Email </param>
 		/// <returns> the user object limited To the following attributes: * Admin * Email * LicensedSheetCreator </returns>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		public virtual User AddUser(User user, bool sendEmail)
@@ -148,7 +148,7 @@ namespace Smartsheet.Api.Internal
 		///   - SmartsheetRestException : if there is any other REST API related error occurred during the operation 
 		///   - SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="user"> the user To update limited To the following attributes: * Admin * LicensedSheetCreator </param>
+		/// <param name="user"> the user To update limited To the following attributes: * Admin * LicensedSheetCreator </param>
 		/// <returns> the updated user (note that if there is no such resource, this method will throw 
 		/// ResourceNotFoundException rather than returning null). </returns>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
@@ -170,7 +170,7 @@ namespace Smartsheet.Api.Internal
 		///   - SmartsheetRestException : if there is any other REST API related error occurred during the operation 
 		///   - SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="Id"> the Id </param>
+		/// <param name="id"> the Id </param>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		public virtual void DeleteUser(long id)
 		{

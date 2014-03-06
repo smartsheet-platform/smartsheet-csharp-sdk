@@ -132,7 +132,7 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// Get a column by it's Index.
 		/// </summary>
-		/// <param Name="Index"> the column Index </param>
+		/// <param name="index"> the column Index </param>
 		/// <returns> the column by Index </returns>
 		public virtual Column GetColumnByIndex(int index)
 		{
@@ -157,7 +157,7 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// Get a column by it's ID.
 		/// </summary>
-		/// <param Name="ColumnId"> the column Id </param>
+		/// <param name="columnId"> the column Id </param>
 		/// <returns> the column by Id </returns>
 		public virtual Column GetColumnById(long columnId)
 		{

@@ -38,7 +38,7 @@
 		/// <summary>
 		/// Instantiates a new access token expired exception.
 		/// </summary>
-		/// <param Name="error"> the error </param>
+		/// <param name="error"> the error </param>
 		public AccessTokenExpiredException(Error error) : base(error)
 		{
 		}

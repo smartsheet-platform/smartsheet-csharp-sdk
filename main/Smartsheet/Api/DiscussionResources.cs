@@ -40,7 +40,7 @@
 		/// <para>It mirrors To the following Smartsheet REST API method:<br />
 		/// GET /discussion/{Id}</para>
 		/// </summary>
-		/// <param Name="Id"> the Id </param>
+		/// <param name="id"> the Id </param>
 		/// <returns> the discussion (note that if there is no such resource, this method will throw ResourceNotFoundException
 		/// rather than returning null). </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
@@ -57,8 +57,8 @@
 		/// <para>It mirrors To the following Smartsheet REST API method:<br />
 		/// POST /discussion/{DiscussionId}/Comments</para>
 		/// </summary>
-		/// <param Name="Id"> the discussion Id </param>
-		/// <param Name="Comment"> the Comment To add </param>
+		/// <param name="id"> the discussion Id </param>
+		/// <param name="comment"> the Comment To add </param>
 		/// <returns> the created Comment </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>

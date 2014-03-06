@@ -110,13 +110,13 @@ namespace Smartsheet.Api.Internal.oauth
 		/// 
 		/// Exceptions: - 
 		/// </summary>
-		/// <param Name="ClientId"> the client Id </param>
-		/// <param Name="ClientSecret"> the client secret </param>
-		/// <param Name="RedirectURL"> the redirect Url </param>
-		/// <param Name="AuthorizationURL"> the authorization Url </param>
-		/// <param Name="TokenURL"> the token Url </param>
-		/// <param Name="HttpClient"> the http client </param>
-		/// <param Name="JsonSerializer"> the json serializer </param>
+		/// <param name="clientId"> the client Id </param>
+		/// <param name="clientSecret"> the client secret </param>
+		/// <param name="redirectURL"> the redirect Url </param>
+		/// <param name="authorizationURL"> the authorization Url </param>
+		/// <param name="tokenURL"> the token Url </param>
+		/// <param name="httpClient"> the http client </param>
+		/// <param name="jsonSerializer"> the json serializer </param>
 		/// <exception cref="System.InvalidOperationException"> If any argument is null, or empty string. </exception>
 		public OAuthFlowImpl(string clientId, string clientSecret, string redirectURL, string authorizationURL, 
             string tokenURL, HttpClient httpClient, JsonSerializer jsonSerializer)
@@ -138,8 +138,8 @@ namespace Smartsheet.Api.Internal.oauth
 		/// 
 		/// Exceptions: - IllegalArgumentException : if scopes is null/empty
 		/// </summary>
-		/// <param Name="scopes"> the scopes </param>
-		/// <param Name="State"> an arbitrary string that will be returned To your app; intended To be used by you To ensure that 
+		/// <param name="scopes"> the scopes </param>
+		/// <param name="state"> an arbitrary string that will be returned To your app; intended To be used by you To ensure that 
 		/// this redirect is indeed from an OAuth flow that you initiated </param>
 		/// <returns> the authorization URL </returns>
 		public virtual string NewAuthorizationURL(IEnumerable<AccessScope> scopes, string state)
@@ -179,7 +179,7 @@ namespace Smartsheet.Api.Internal.oauth
 		///   - InvalidScopeException : if some of the specified scopes are invalid 
 		///   - OAuthAuthorizationCodeException : if any other error occurred during the operation
 		/// </summary>
-		/// <param Name="authorizationResponseURL"> the authorization response URL </param>
+		/// <param name="authorizationResponseURL"> the authorization response URL </param>
 		/// <returns> the authorization Result </returns>
 		/// <exception cref="UriFormatException "> the URI syntax exception </exception>
 		/// <exception cref="OAuthAuthorizationCodeException"> the o auth authorization Code exception </exception>
@@ -258,7 +258,7 @@ namespace Smartsheet.Api.Internal.oauth
 		///   current implementation) 
 		///   - OAuthTokenException : if any other error occurred during the operation
 		/// </summary>
-		/// <param Name="authorizationResult"> the authorization Result </param>
+		/// <param name="authorizationResult"> the authorization Result </param>
 		/// <returns> the token </returns>
 		/// <exception cref="OAuthTokenException"> the o auth token exception </exception>
 		/// <exception cref="JSONSerializationException"> the JSON serializer exception </exception>
@@ -301,7 +301,7 @@ namespace Smartsheet.Api.Internal.oauth
 		///   - UnsupportedOAuthGrantTypeException : if the grant Type is invalid
 		///   - OAuthTokenException : if any other error occurred during the operation
 		/// </summary>
-		/// <param Name="token"> the token To refresh </param>
+		/// <param name="token"> the token To refresh </param>
 		/// <returns> the refreshed token </returns>
 		/// <exception cref="OAuthTokenException"> the o auth token exception </exception>
 		/// <exception cref="JSONSerializationException"> the JSON serializer exception </exception>
@@ -333,7 +333,7 @@ namespace Smartsheet.Api.Internal.oauth
 		///   - UnsupportedOAuthGrantTypeException : if the grant Type is invalid 
 		///   - OAuthTokenException : if any other error occurred during the operation
 		/// </summary>
-		/// <param Name="Url"> the URL (with request parameters) from which the token will be requested </param>
+		/// <param name="url"> the URL (with request parameters) from which the token will be requested </param>
 		/// <returns> the token </returns>
 		/// <exception cref="OAuthTokenException"> the o auth token exception </exception>
 		/// <exception cref="JSONSerializationException"> the JSON serializer exception </exception>
@@ -415,8 +415,8 @@ namespace Smartsheet.Api.Internal.oauth
 		/// Helper function To generate a URL using the base URL and the given parameters. It will encode each of the 
 		/// parameters as well.
 		/// </summary>
-		/// <param Name="baseURL"> The base URL that the parameters will be appended To. </param>
-		/// <param Name="parameters"> The parameters that will be appended To the base URL. Each parameter will be URL encoded. </param>
+		/// <param name="baseURL"> The base URL that the parameters will be appended To. </param>
+		/// <param name="parameters"> The parameters that will be appended To the base URL. Each parameter will be URL encoded. </param>
 		/// <returns> A string representing the full URL. </returns>
 		protected internal virtual string GenerateURL(string baseURL, IDictionary<string, string> parameters)
 		{

@@ -96,7 +96,7 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// Sets the position of the column.
 		/// </summary>
-		/// <param Name="Index"> the new Index </param>
+		/// <param name="index"> the new Index </param>
 		public virtual void SetIndex(int index)
 		{
 			this.index = index;
@@ -318,7 +318,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Sets the Primary flag for the column.
 			/// </summary>
-			/// <param Name="Primary"> the new Primary flag </param>
+			/// <param name="primary"> the new Primary flag </param>
 			public virtual AddColumnToSheetBuilder SetPrimary(bool? primary)
 			{
 				this.primary = primary;
@@ -328,7 +328,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Sets the Title for the column.
 			/// </summary>
-			/// <param Name="Title"> the Title </param>
+			/// <param name="title"> the Title </param>
 			/// <returns> the adds the column To sheet builder </returns>
 			public virtual AddColumnToSheetBuilder SetTitle(string title)
 			{
@@ -350,7 +350,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Sets the Type for the column.
 			/// </summary>
-			/// <param Name="Type"> the Type </param>
+			/// <param name="type"> the Type </param>
 			/// <returns> the adds the column To sheet builder </returns>
 			public virtual AddColumnToSheetBuilder SetType(ColumnType? type)
 			{
@@ -372,7 +372,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Sets the Options for the column.
 			/// </summary>
-			/// <param Name="Options"> the Options </param>
+			/// <param name="options"> the Options </param>
 			/// <returns> the adds the column To sheet builder </returns>
 			public virtual AddColumnToSheetBuilder SetOptions(IList<string> options)
 			{
@@ -394,7 +394,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Sets the Symbol for the column.
 			/// </summary>
-			/// <param Name="Symbol"> the Symbol </param>
+			/// <param name="symbol"> the Symbol </param>
 			/// <returns> the adds the column To sheet builder </returns>
 			public virtual AddColumnToSheetBuilder SetSymbol(Symbol? symbol)
 			{
@@ -416,7 +416,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Sets the system column Type.
 			/// </summary>
-			/// <param Name="SystemColumnType"> the system column Type </param>
+			/// <param name="systemColumnType"> the system column Type </param>
 			/// <returns> the adds the column To sheet builder </returns>
 			public virtual AddColumnToSheetBuilder SetSystemColumnType(SystemColumnType? systemColumnType)
 			{
@@ -438,7 +438,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Sets the Format for an auto number column.
 			/// </summary>
-			/// <param Name="AutoNumberFormat"> the auto number Format </param>
+			/// <param name="autoNumberFormat"> the auto number Format </param>
 			/// <returns> the adds the column To sheet builder </returns>
 			public virtual AddColumnToSheetBuilder SetAutoNumberFormat(AutoNumberFormat autoNumberFormat)
 			{
@@ -521,7 +521,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Sets the position for the column.
 			/// </summary>
-			/// <param Name="Index"> the position </param>
+			/// <param name="index"> the position </param>
 			/// <returns> the modify column builder </returns>
 			public virtual ModifyColumnBuilder SetIndex(int index)
 			{
@@ -532,7 +532,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Sets the Title for the column.
 			/// </summary>
-			/// <param Name="Title"> the Title </param>
+			/// <param name="title"> the Title </param>
 			/// <returns> the modify column builder </returns>
 			public virtual ModifyColumnBuilder SetTitle(string title)
 			{
@@ -543,7 +543,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Sets the Type for the column.
 			/// </summary>
-			/// <param Name="Type"> the Type </param>
+			/// <param name="type"> the Type </param>
 			/// <returns> the modify column builder </returns>
 			public virtual ModifyColumnBuilder SetType(ColumnType? type)
 			{
@@ -554,7 +554,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Sets the Options for the column.
 			/// </summary>
-			/// <param Name="Options"> the Options </param>
+			/// <param name="options"> the Options </param>
 			/// <returns> the modify column builder </returns>
 			public virtual ModifyColumnBuilder SetOptions(IList<string> options)
 			{
@@ -565,7 +565,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Sets the Symbol for the column.
 			/// </summary>
-			/// <param Name="Symbol"> the Symbol </param>
+			/// <param name="symbol"> the Symbol </param>
 			/// <returns> the modify column builder </returns>
 			public virtual ModifyColumnBuilder SetSymbol(Symbol? symbol)
 			{
@@ -576,7 +576,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Sets the system column Type for the column.
 			/// </summary>
-			/// <param Name="SystemColumnType"> the system column Type </param>
+			/// <param name="systemColumnType"> the system column Type </param>
 			/// <returns> the modify column builder </returns>
 			public virtual ModifyColumnBuilder SetSystemColumnType(SystemColumnType? systemColumnType)
 			{
@@ -587,7 +587,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Sets the Format for an auto number column.
 			/// </summary>
-			/// <param Name="AutoNumberFormat"> the auto number Format </param>
+			/// <param name="autoNumberFormat"> the auto number Format </param>
 			/// <returns> the modify column builder </returns>
 			public virtual ModifyColumnBuilder SetAutoNumberFormat(AutoNumberFormat autoNumberFormat)
 			{
@@ -598,7 +598,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Sets the sheet Id.
 			/// </summary>
-			/// <param Name="SheetId"> the sheet Id </param>
+			/// <param name="sheetId"> the sheet Id </param>
 			/// <returns> the modify column builder </returns>
 			public virtual ModifyColumnBuilder SetSheetId(long? sheetId)
 			{

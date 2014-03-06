@@ -54,7 +54,7 @@ namespace Smartsheet.Api
 		/// 
 		/// <para>It mirrors To the following Smartsheet REST API method: GET /workspace/{Id}</para>
 		/// </summary>
-		/// <param Name="Id"> the Id </param>
+		/// <param name="id"> the Id </param>
 		/// <returns> the workspace (note that if there is no such resource, this method will throw ResourceNotFoundException
 		/// rather than returning null) </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
@@ -71,7 +71,7 @@ namespace Smartsheet.Api
 		/// <para>It mirrors To the following Smartsheet REST API method: POST /Workspaces</para>
 		/// 
 		/// </summary>
-		/// <param Name="workspace"> the workspace To create </param>
+		/// <param name="workspace"> the workspace To create </param>
 		/// <returns> the created workspace </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -86,7 +86,7 @@ namespace Smartsheet.Api
 		/// 
 		/// <para>It mirrors To the following Smartsheet REST API method: PUT /workspace/{Id}</para>
 		/// </summary>
-		/// <param Name="workspace"> the workspace To update </param>
+		/// <param name="workspace"> the workspace To update </param>
 		/// <returns> the updated workspace (note that if there is no such resource, this method will throw
 		/// ResourceNotFoundException rather than returning null) </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
@@ -102,7 +102,7 @@ namespace Smartsheet.Api
 		/// 
 		/// <para>It mirrors To the following Smartsheet REST API method: DELETE /workspace{Id}</para>
 		/// </summary>
-		/// <param Name="Id"> the Id of the workspace </param>
+		/// <param name="id"> the Id of the workspace </param>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>

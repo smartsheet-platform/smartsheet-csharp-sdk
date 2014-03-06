@@ -116,7 +116,7 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// Get a column by Index.
 		/// </summary>
-		/// <param Name="Index"> the column Index </param>
+		/// <param name="index"> the column Index </param>
 		/// <returns> the column by Index </returns>
 		public virtual Column GetColumnByIndex(int index)
 		{
@@ -140,7 +140,7 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// Get a <seealso cref="Column"/> by ID.
 		/// </summary>
-		/// <param Name="ColumnId"> the column Id </param>
+		/// <param name="columnId"> the column Id </param>
 		/// <returns> the column by Id </returns>
 		public virtual Column GetColumnById(long columnId)
 		{
@@ -164,7 +164,7 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// Get a <seealso cref="Row"/> by row number.
 		/// </summary>
-		/// <param Name="RowNumber"> the row number </param>
+		/// <param name="rowNumber"> the row number </param>
 		/// <returns> the row by row number </returns>
 		public virtual Row GetRowByRowNumber(int rowNumber)
 		{
@@ -401,7 +401,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Sets the Columns for the sheet being created.
 			/// </summary>
-			/// <param Name="Columns"> The Columns To create with this sheet. </param>
+			/// <param name="columns"> The Columns To create with this sheet. </param>
 			/// <returns> the creates the builder </returns>
 			public virtual CreateSheetBuilder SetColumns(IList<Column> columns)
 			{
@@ -412,7 +412,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Sets the Name for the sheet being created.
 			/// </summary>
-			/// <param Name="Name"> The Name for the sheet being created. </param>
+			/// <param name="name"> The Name for the sheet being created. </param>
 			/// <returns> the creates the builder </returns>
 			public virtual CreateSheetBuilder SetName(string name)
 			{
@@ -477,7 +477,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Sets the Name for the sheet being created.
 			/// </summary>
-			/// <param Name="Name"> The Name for the sheet being created. </param>
+			/// <param name="name"> The Name for the sheet being created. </param>
 			/// <returns> the creates the from template or sheet builder </returns>
 			public virtual CreateFromTemplateOrSheetBuilder SetName(string name)
 			{
@@ -500,7 +500,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Set the from Id.
 			/// </summary>
-			/// <param Name="Id"> the Id </param>
+			/// <param name="id"> the Id </param>
 			/// <returns> the creates the from template or sheet builder </returns>
 			public virtual CreateFromTemplateOrSheetBuilder SetFromId(long? id)
 			{
@@ -562,7 +562,7 @@ namespace Smartsheet.Api.Models
 
 			/// <summary>
 			/// Set the sheet Id </summary>
-			/// <param Name="Id"> </param>
+			/// <param name="id"> </param>
 			/// <returns> the updateSheetBuilder object </returns>
 			public virtual UpdateSheetBuilder SetID(long? id)
 			{
@@ -573,7 +573,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Name.
 			/// </summary>
-			/// <param Name="Name"> the Name </param>
+			/// <param name="name"> the Name </param>
 			/// <returns> the update sheet builder </returns>
 			public virtual UpdateSheetBuilder SetName(string name)
 			{

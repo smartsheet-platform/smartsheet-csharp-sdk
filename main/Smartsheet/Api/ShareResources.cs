@@ -43,7 +43,7 @@ namespace Smartsheet.Api
 		/// GET /workspace/{Id}/shares <br />
 		/// GET /sheet/{Id}/shares</para>
 		/// </summary>
-		/// <param Name="ObjectId"> the object Id </param>
+		/// <param name="objectId"> the object Id </param>
 		/// <returns> the list of Share objects (note that an empty list will be returned if there is none). </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -60,8 +60,8 @@ namespace Smartsheet.Api
 		/// GET /workspace/{Id}/share/{userId}<br />
 		/// GET /sheet/{Id}/share/{userId}</para>
 		/// </summary>
-		/// <param Name="ObjectId"> the ID of the object To share </param>
-		/// <param Name="userId"> the ID of the user To whome the object is shared </param>
+		/// <param name="objectId"> the ID of the object To share </param>
+		/// <param name="userId"> the ID of the user To whome the object is shared </param>
 		/// <returns> the share (note that if there is no such resource, this method will throw ResourceNotFoundException
 		/// rather than returning null). </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
@@ -79,8 +79,8 @@ namespace Smartsheet.Api
 		/// POST /workspace/{Id}/shares<br />
 		/// POST /sheet/{Id}/shares</para>
 		/// </summary>
-		/// <param Name="ObjectId"> the Id of the object </param>
-		/// <param Name="share"> the share object </param>
+		/// <param name="objectId"> the Id of the object </param>
+		/// <param name="share"> the share object </param>
 		/// <returns> the created share </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -97,9 +97,9 @@ namespace Smartsheet.Api
 		/// POST /workspace/{Id}/shares<br />
 		/// POST /sheet/{Id}/shares</para>
 		/// </summary>
-		/// <param Name="ObjectId"> the ID of the object To share </param>
-		/// <param Name="share"> the share object </param>
-		/// <param Name="sendEmail"> the send Email flag </param>
+		/// <param name="objectId"> the ID of the object To share </param>
+		/// <param name="share"> the share object </param>
+		/// <param name="sendEmail"> the send Email flag </param>
 		/// <returns> the created share </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -116,8 +116,8 @@ namespace Smartsheet.Api
 		/// POST /workspace/{Id}/multishare<br />
 		/// POST /sheet/{Id}/multishare</para>
 		/// </summary>
-		/// <param Name="ObjectId"> the ID of the object To share </param>
-		/// <param Name="multiShare"> the multi share object </param>
+		/// <param name="objectId"> the ID of the object To share </param>
+		/// <param name="multiShare"> the multi share object </param>
 		/// <returns> the list of created Shares </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -137,9 +137,9 @@ namespace Smartsheet.Api
 		/// Parameters: - ObjectId : the ID of the object To share - multiShare : the MultiShare object - sendEmail : whether
 		/// To send Email
 		/// </summary>
-		/// <param Name="ObjectId"> the object Id </param>
-		/// <param Name="multiShare"> the multi share </param>
-		/// <param Name="sendEmail"> the send Email flag </param>
+		/// <param name="objectId"> the object Id </param>
+		/// <param name="multiShare"> the multi share </param>
+		/// <param name="sendEmail"> the send Email flag </param>
 		/// <returns> the list of shares that were created </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -156,9 +156,9 @@ namespace Smartsheet.Api
 		/// PUT /workspace/{Id}/share/{userId}<br />
 		/// PUT /sheet/{Id}/share/{userId}</para>
 		/// </summary>
-		/// <param Name="ObjectId"> the ID of the object To share </param>
-		/// <param Name="userId"> the Id of the user To whom the object is shared </param>
-		/// <param Name="share"> the share </param>
+		/// <param name="objectId"> the ID of the object To share </param>
+		/// <param name="userId"> the Id of the user To whom the object is shared </param>
+		/// <param name="share"> the share </param>
 		/// <returns> the updated share (note that if there is no such resource, this method will throw
 		///  ResourceNotFoundException rather than returning null). </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
@@ -176,8 +176,8 @@ namespace Smartsheet.Api
 		/// DELETE /workspace/{Id}/share/{userId}<br />
 		/// DELETE /sheet/{Id}/share/{userId}</para>
 		/// </summary>
-		/// <param Name="ObjectId"> the ID of the object To share </param>
-		/// <param Name="userId"> the ID of the user To whome the object is shared </param>
+		/// <param name="objectId"> the ID of the object To share </param>
+		/// <param name="userId"> the ID of the user To whome the object is shared </param>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>

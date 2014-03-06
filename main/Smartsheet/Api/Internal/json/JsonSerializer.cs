@@ -50,8 +50,8 @@ namespace Smartsheet.Api.Internal.json
 		/// other error occurred during the operation
 		/// </summary>
 		/// @param <T> the generic Type </param>
-		/// <param Name="object"> the object </param>
-		/// <param Name="outputStream"> the output stream </param>
+		/// <param name="object"> the object </param>
+		/// <param name="outputStream"> the output stream </param>
 		/// <exception cref="JSONSerializationException"> the JSON serializer exception </exception>
 		void serialize<T>(T @object, StreamWriter outputStream);
 
@@ -67,8 +67,8 @@ namespace Smartsheet.Api.Internal.json
 		/// other error occurred during the operation
 		/// </summary>
 		/// @param <T> the generic Type </param>
-		/// <param Name="objectClass"> the object class </param>
-		/// <param Name="inputStream"> the input stream </param>
+		/// <param name="objectClass"> the object class </param>
+		/// <param name="inputStream"> the input stream </param>
 		/// <returns> the t </returns>
 		/// <exception cref="JsonParseException"> the json parse exception </exception>
 		/// <exception cref="JsonMappingException"> the json mapping exception </exception>
@@ -87,8 +87,8 @@ namespace Smartsheet.Api.Internal.json
 		/// other error occurred during the operation
 		/// </summary>
 		/// @param <T> the generic Type </param>
-		/// <param Name="objectClass"> the object class </param>
-		/// <param Name="inputStream"> the input stream </param>
+		/// <param name="objectClass"> the object class </param>
+		/// <param name="inputStream"> the input stream </param>
 		/// <returns> the list </returns>
 		/// <exception cref="JSONSerializationException"> the JSON serializer exception </exception>
 		IList<T> deserializeList<T>(StreamReader inputStream);
@@ -97,7 +97,7 @@ namespace Smartsheet.Api.Internal.json
 		/// <summary>
 		/// De-serialize an object list from JSON To a Map.
 		/// </summary>
-		/// <param Name="inputStream"> the input stream </param>
+		/// <param name="inputStream"> the input stream </param>
 		/// <returns> the map </returns>
 		/// <exception cref="JSONSerializationException"> the JSON serializer exception </exception>
 		IDictionary<string, object> DeserializeMap(StreamReader inputStream);
@@ -114,8 +114,8 @@ namespace Smartsheet.Api.Internal.json
 		/// other error occurred during the operation
 		/// </summary>
 		/// @param <T> the generic Type </param>
-		/// <param Name="objectClass"> the object class </param>
-		/// <param Name="inputStream"> the input stream </param>
+		/// <param name="objectClass"> the object class </param>
+		/// <param name="inputStream"> the input stream </param>
 		/// <returns> the Result </returns>
 		/// <exception cref="JSONSerializationException"> the JSON serializer exception </exception>
 		Result<T> deserializeResult<T>(StreamReader inputStream);
@@ -132,8 +132,8 @@ namespace Smartsheet.Api.Internal.json
 		/// other error occurred during the operation
 		/// </summary>
 		/// @param <T> the generic Type </param>
-		/// <param Name="objectClass"> the object class </param>
-		/// <param Name="inputStream"> the input stream </param>
+		/// <param name="objectClass"> the object class </param>
+		/// <param name="inputStream"> the input stream </param>
 		/// <returns> the Result </returns>
 		/// <exception cref="JSONSerializationException"> the JSON serializer exception </exception>
 		Result<IList<T>> deserializeListResult<T>(StreamReader inputStream);

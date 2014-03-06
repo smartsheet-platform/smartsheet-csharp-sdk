@@ -40,7 +40,7 @@ namespace Smartsheet.Api.Internal
 		/// 
 		/// Exceptions: - IllegalArgumentException : if any argument is null
 		/// </summary>
-		/// <param Name="Smartsheet"> the Smartsheet </param>
+		/// <param name="smartsheet"> the Smartsheet </param>
 		public HomeFolderResourcesImpl(SmartsheetImpl smartsheet) : base(smartsheet)
 		{
 		}
@@ -78,7 +78,7 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="folder"> the folder To create </param>
+		/// <param name="folder"> the folder To create </param>
 		/// <returns> the created folder </returns>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		public virtual Folder CreateFolder(Folder folder)

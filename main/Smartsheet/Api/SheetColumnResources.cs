@@ -40,7 +40,7 @@ namespace Smartsheet.Api
 		/// 
 		/// <para>It mirrors To the following Smartsheet REST API method: GET /sheet/{Id}/Columns</para>
 		/// </summary>
-		/// <param Name="SheetId"> the sheet Id </param>
+		/// <param name="sheetId"> the sheet Id </param>
 		/// <returns> the list of Columns (note that an empty list will be returned if there is none) </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -55,8 +55,8 @@ namespace Smartsheet.Api
 		/// 
 		/// <para>It mirrors To the following Smartsheet REST API method: POST /sheet/{Id}/Columns</para>
 		/// </summary>
-		/// <param Name="SheetId"> the sheet Id </param>
-		/// <param Name="column"> the column object </param>
+		/// <param name="sheetId"> the sheet Id </param>
+		/// <param name="column"> the column object </param>
 		/// <returns> the created column </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>

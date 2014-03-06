@@ -40,7 +40,7 @@ namespace Smartsheet.Api.Internal
 		/// 
 		/// Exceptions: - IllegalArgumentException : if any argument is
 		/// </summary>
-		/// <param Name="Smartsheet"> the Smartsheet </param>
+		/// <param name="smartsheet"> the Smartsheet </param>
 		public WorkspaceFolderResourcesImpl(SmartsheetImpl smartsheet) : base(smartsheet)
 		{
 		}
@@ -58,7 +58,7 @@ namespace Smartsheet.Api.Internal
 		///   - SmartsheetRestException : if there is any other REST API related error occurred during the operation 
 		///   - SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="workspaceId"> the ID of the workspace </param>
+		/// <param name="workspaceId"> the ID of the workspace </param>
 		/// <returns> the Folders (note that empty list will be returned if there is none) </returns>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		public virtual IList<Folder> ListFolders(long workspaceId)
@@ -79,8 +79,8 @@ namespace Smartsheet.Api.Internal
 		///   - SmartsheetRestException : if there is any other REST API related error occurred during the operation 
 		///   - SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="workspaceId"> the workspace Id </param>
-		/// <param Name="folder"> the folder To create </param>
+		/// <param name="workspaceId"> the workspace Id </param>
+		/// <param name="folder"> the folder To create </param>
 		/// <returns> the created folder </returns>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		public virtual Folder CreateFolder(long workspaceId, Folder folder)

@@ -40,7 +40,7 @@ namespace Smartsheet.Api.Internal
 		/// 
 		/// Exceptions: - IllegalArgumentException : if any argument is null
 		/// </summary>
-		/// <param Name="Smartsheet"> the Smartsheet </param>
+		/// <param name="smartsheet"> the Smartsheet </param>
 		public FolderResourcesImpl(SmartsheetImpl smartsheet) : base(smartsheet)
 		{
 		}
@@ -58,7 +58,7 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="folderId"> the folder Id </param>
+		/// <param name="folderId"> the folder Id </param>
 		/// <returns> the folder (note that if there is no such resource, this method will throw ResourceNotFoundException
 		/// rather than returning null) </returns>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
@@ -81,7 +81,7 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="folder"> the folder To update </param>
+		/// <param name="folder"> the folder To update </param>
 		/// <returns> the updated folder (note that if there is no such folder, this method will throw
 		/// ResourceNotFoundException rather than returning null). </returns>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
@@ -104,7 +104,7 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="folderId"> the folder Id </param>
+		/// <param name="folderId"> the folder Id </param>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		public virtual void DeleteFolder(long folderId)
 		{
@@ -127,7 +127,7 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="parentFolderId"> the parent folder Id </param>
+		/// <param name="parentFolderId"> the parent folder Id </param>
 		/// <returns> the child Folders (note that empty list will be returned if no child folder found) </returns>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		public virtual IList<Folder> ListFolders(long parentFolderId)
@@ -149,8 +149,8 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="parentFolderId"> the parent folder Id </param>
-		/// <param Name="folder"> the folder To create </param>
+		/// <param name="parentFolderId"> the parent folder Id </param>
+		/// <param name="folder"> the folder To create </param>
 		/// <returns> the folder </returns>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		public virtual Folder CreateFolder(long parentFolderId, Folder folder)

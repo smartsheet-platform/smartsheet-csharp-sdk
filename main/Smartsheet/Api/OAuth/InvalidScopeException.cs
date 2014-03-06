@@ -37,7 +37,7 @@
 		/// <summary>
 		/// Constructor.
 		/// </summary>
-		/// <param Name="Message"> the Message </param>
+		/// <param name="message"> the Message </param>
 		public InvalidScopeException(string message) : base(message)
 		{
 		}

@@ -40,7 +40,7 @@ namespace Smartsheet.Api
 		/// 
 		/// <para>It mirrors To the following Smartsheet REST API method: GET /folder/{Id}</para>
 		/// </summary>
-		/// <param Name="folderId"> the folder Id </param>
+		/// <param name="folderId"> the folder Id </param>
 		/// <returns> the folder (note that if there is no such resource, this method will throw ResourceNotFoundException 
 		/// rather than returning null) </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
@@ -54,7 +54,7 @@ namespace Smartsheet.Api
 		/// <summary>
 		/// <para>Update a folder.</para>
 		/// </summary>
-		/// <param Name="folder"> the folder To update </param>
+		/// <param name="folder"> the folder To update </param>
 		/// <returns> the updated folder (note that if there is no such folder, this method will throw Resource Not Found 
 		/// Exception rather than returning null). </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
@@ -71,7 +71,7 @@ namespace Smartsheet.Api
 		/// <para>It mirrors To the following Smartsheet REST API method:<br />
 		/// DELETE /folder{Id}</para>
 		/// </summary>
-		/// <param Name="folderId"> the folder Id </param>
+		/// <param name="folderId"> the folder Id </param>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
@@ -85,7 +85,7 @@ namespace Smartsheet.Api
 		/// 
 		/// <para>It mirrors To the following Smartsheet REST API method:<br /> GET /folder/{Id}/Folders</para>
 		/// </summary>
-		/// <param Name="parentFolderId"> the parent folder Id </param>
+		/// <param name="parentFolderId"> the parent folder Id </param>
 		/// <returns> the child Folders (note that an empty list will be returned if no child folder is found). </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -101,8 +101,8 @@ namespace Smartsheet.Api
 		/// <para>It mirrors To the following Smartsheet REST API method:<br />
 		/// POST /folder/{Id}/Folders</para>
 		/// </summary>
-		/// <param Name="parentFolderId"> the parent folder Id </param>
-		/// <param Name="folder"> the folder To create </param>
+		/// <param name="parentFolderId"> the parent folder Id </param>
+		/// <param name="folder"> the folder To create </param>
 		/// <returns> the created folder </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>

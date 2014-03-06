@@ -38,7 +38,7 @@ namespace Smartsheet.Api.Internal.json
 		/// <summary>
 		/// Constructor.
 		/// </summary>
-		/// <param Name="Message"> the Message </param>
+		/// <param name="message"> the Message </param>
 		public JSONSerializationException(string message) : base(message)
 		{
 		}
@@ -46,8 +46,8 @@ namespace Smartsheet.Api.Internal.json
 		/// <summary>
 		/// Constructor.
 		/// </summary>
-		/// <param Name="Message"> the Message </param>
-		/// <param Name="cause"> the cause </param>
+		/// <param name="message"> the Message </param>
+		/// <param name="cause"> the cause </param>
 		public JSONSerializationException(string message, Exception cause) : base(message, cause)
 		{
 		}
@@ -55,7 +55,7 @@ namespace Smartsheet.Api.Internal.json
 		/// <summary>
 		/// Instantiates a new JSON serializer exception.
 		/// </summary>
-		/// <param Name="e"> the e </param>
+		/// <param name="e"> the e </param>
 		public JSONSerializationException(Exception e) : base(e)
 		{
 		}

@@ -42,8 +42,8 @@
 		/// <summary>
 		/// Constructor.
 		/// </summary>
-		/// <param Name="Smartsheet"> the Smartsheet </param>
-		/// <param Name="masterResourceType"> the master resource Type </param>
+		/// <param name="smartsheet"> the Smartsheet </param>
+		/// <param name="masterResourceType"> the master resource Type </param>
 		public AbstractAssociatedResources(SmartsheetImpl smartsheet, string masterResourceType) : base(smartsheet)
 		{
 			Util.ThrowIfNull(masterResourceType);

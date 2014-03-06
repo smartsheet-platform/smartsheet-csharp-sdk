@@ -40,7 +40,7 @@ namespace Smartsheet.Api
 		/// 
 		/// <para>It mirrors To the following Smartsheet REST API method: GET /workspace/{Id}/Folders</para>
 		/// </summary>
-		/// <param Name="workspaceId"> the workspace Id </param>
+		/// <param name="workspaceId"> the workspace Id </param>
 		/// <returns> the list of Folders (note that an empty list will be returned if there are none) </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -55,8 +55,8 @@ namespace Smartsheet.Api
 		/// 
 		/// <para>It mirrors To the following Smartsheet REST API method: POST /workspace/{Id}/Folders</para>
 		/// </summary>
-		/// <param Name="workspaceId"> the workspace Id </param>
-		/// <param Name="folder"> the folder To create </param>
+		/// <param name="workspaceId"> the workspace Id </param>
+		/// <param name="folder"> the folder To create </param>
 		/// <returns> the created folder </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>

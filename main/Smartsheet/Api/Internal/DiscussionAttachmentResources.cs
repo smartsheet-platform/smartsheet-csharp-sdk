@@ -41,7 +41,7 @@
 		/// 
 		/// Exceptions: - IllegalArgumentException : if any argument is null or empty string
 		/// </summary>
-		/// <param Name="Smartsheet"> the Smartsheet </param>
+		/// <param name="smartsheet"> the Smartsheet </param>
 		public DiscussionAttachmentResources(SmartsheetImpl smartsheet) : base(smartsheet, "discussion")
 		{
 		}
@@ -58,9 +58,9 @@
 		///   UnsupportedOperationException : this exception is always thrown since this method is not supported by 
 		///   discussion resources.
 		/// </summary>
-		/// <param Name="ObjectId"> the object Id </param>
-		/// <param Name="file"> the file To attach </param>
-		/// <param Name="ContentType"> the content Type of the file </param>
+		/// <param name="objectId"> the object Id </param>
+		/// <param name="file"> the file To attach </param>
+		/// <param name="contentType"> the content Type of the file </param>
 		/// <returns> the attachment </returns>
 		public override Attachment AttachFile(long objectId, string file, string contentType)
 		{
@@ -88,8 +88,8 @@
 		/// by discussion resources.
 		/// 
 		/// </summary>
-		/// <param Name="ObjectId"> the object Id </param>
-		/// <param Name="attachment"> the attachment </param>
+		/// <param name="objectId"> the object Id </param>
+		/// <param name="attachment"> the attachment </param>
 		/// <returns> the attachment </returns>
 		public override Attachment AttachURL(long objectId, Attachment attachment)
 		{

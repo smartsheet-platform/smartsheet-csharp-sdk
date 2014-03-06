@@ -149,7 +149,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Sets the Users that will be shared with. The Email address must be defined for each user.
 			/// </summary>
-			/// <param Name="Users"> the Users </param>
+			/// <param name="users"> the Users </param>
 			/// <returns> the share To many builder </returns>
 			public virtual ShareToManyBuilder SetUsers(IList<User> users)
 			{
@@ -160,7 +160,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Sets the access level.
 			/// </summary>
-			/// <param Name="AccessLevel"> the access level </param>
+			/// <param name="accessLevel"> the access level </param>
 			/// <returns> the share To many builder </returns>
 			public virtual ShareToManyBuilder SetAccessLevel(AccessLevel? accessLevel)
 			{
@@ -171,7 +171,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Sets the Subject of the Email that sent To notify the Users.
 			/// </summary>
-			/// <param Name="Subject"> the Subject </param>
+			/// <param name="subject"> the Subject </param>
 			/// <returns> the share To many builder </returns>
 			public virtual ShareToManyBuilder SetSubject(string subject)
 			{
@@ -182,7 +182,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Sets the Message To be included in the body of the Email that will be sent To the use.
 			/// </summary>
-			/// <param Name="Message"> the Message </param>
+			/// <param name="message"> the Message </param>
 			/// <returns> the share To many builder </returns>
 			public virtual ShareToManyBuilder SetMessage(string message)
 			{
@@ -193,7 +193,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Set the carbon copy me flag.
 			/// </summary>
-			/// <param Name="CCMe"> the carbon copy me flag. </param>
+			/// <param name="cCMe"> the carbon copy me flag. </param>
 			/// <returns> the share To many builder </returns>
 			public virtual ShareToManyBuilder SetCCMe(bool? ccMe)
 			{

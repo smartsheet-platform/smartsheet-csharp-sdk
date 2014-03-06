@@ -44,7 +44,7 @@
 		/// <summary>
 		/// <para>Constructor.</para>
 		/// </summary>
-		/// <param Name="error"> the Error object from Smartsheet REST API </param>
+		/// <param name="error"> the Error object from Smartsheet REST API </param>
 		public SmartsheetRestException(Error error) : base(error.Message)
 		{
             errorCode = error.ErrorCode;

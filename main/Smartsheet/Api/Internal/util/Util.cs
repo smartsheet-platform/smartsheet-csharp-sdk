@@ -31,7 +31,7 @@ namespace Smartsheet.Api.Internal.util
 
 		/// <summary>
 		/// Helper function that throws an IllegalArgumentException if one of the parameters is null. </summary>
-		/// <param Name="objects"> the paramters To  </param>
+		/// <param name="objects"> the paramters To  </param>
 		public static void ThrowIfNull(params object[] objects)
 		{
 			foreach (object obj in objects)

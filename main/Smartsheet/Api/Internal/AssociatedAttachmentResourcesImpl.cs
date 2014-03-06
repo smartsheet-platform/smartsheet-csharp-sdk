@@ -51,8 +51,8 @@ namespace Smartsheet.Api.Internal
 		/// Exceptions:
 		///   IllegalArgumentException : if any argument is null or empty string
 		/// </summary>
-		/// <param Name="Smartsheet"> the Smartsheet </param>
-		/// <param Name="masterResourceType"> the master resource Type (e.g. "sheet", "workspace") </param>
+		/// <param name="smartsheet"> the Smartsheet </param>
+		/// <param name="masterResourceType"> the master resource Type (e.g. "sheet", "workspace") </param>
 		public AssociatedAttachmentResourcesImpl(SmartsheetImpl smartsheet, string masterResourceType) : base(smartsheet, masterResourceType)
 		{
 		}
@@ -71,7 +71,7 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="ObjectId"> the ID of the object To which the Attachments are associated </param>
+		/// <param name="objectId"> the ID of the object To which the Attachments are associated </param>
 		/// <returns> the Attachments (note that empty list will be returned if there is none) </returns>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		public virtual IList<Attachment> ListAttachments(long objectId)
@@ -94,9 +94,9 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="ObjectId"> the object Id </param>
-		/// <param Name="file"> the file To attach </param>
-		/// <param Name="ContentType"> the content Type of the file </param>
+		/// <param name="objectId"> the object Id </param>
+		/// <param name="file"> the file To attach </param>
+		/// <param name="contentType"> the content Type of the file </param>
 		/// <returns> the created attachment </returns>
 		/// <exception cref="FileNotFoundException"> the file not found exception </exception>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
@@ -112,10 +112,10 @@ namespace Smartsheet.Api.Internal
 		/// <summary>
 		/// Attach file.
 		/// </summary>
-		/// <param Name="ObjectId"> the object Id </param>
-		/// <param Name="file"> the file </param>
-		/// <param Name="ContentType"> the content Type </param>
-		/// <param Name="ContentLength"> the content length </param>
+		/// <param name="objectId"> the object Id </param>
+		/// <param name="file"> the file </param>
+		/// <param name="contentType"> the content Type </param>
+		/// <param name="contentLength"> the content length </param>
 		/// <returns> the attachment </returns>
 		/// <exception cref="FileNotFoundException"> the file not found exception </exception>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
@@ -179,8 +179,8 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="ObjectId"> the object Id </param>
-		/// <param Name="attachment"> the attachment </param>
+		/// <param name="objectId"> the object Id </param>
+		/// <param name="attachment"> the attachment </param>
 		/// <returns> the attachment </returns>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		public virtual Attachment AttachURL(long objectId, Attachment attachment)

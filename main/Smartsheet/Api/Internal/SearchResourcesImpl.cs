@@ -40,7 +40,7 @@
 		/// 
 		/// Exceptions: - IllegalArgumentException : if any argument is null
 		/// </summary>
-		/// <param Name="Smartsheet"> the Smartsheet </param>
+		/// <param name="smartsheet"> the Smartsheet </param>
 		public SearchResourcesImpl(SmartsheetImpl smartsheet) : base(smartsheet)
 		{
 		}
@@ -58,7 +58,7 @@
 		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="query"> the query Text </param>
+		/// <param name="query"> the query Text </param>
 		/// <returns> the search Result (note that if there is no such resource, this method will throw
 		/// ResourceNotFoundException rather than returning null). </returns>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
@@ -81,8 +81,8 @@
 		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="SheetId"> the sheet Id </param>
-		/// <param Name="query"> the query </param>
+		/// <param name="sheetId"> the sheet Id </param>
+		/// <param name="query"> the query </param>
 		/// <returns> the search Result (note that if there is no such resource, this method will throw
 		/// ResourceNotFoundException rather than returning null). </returns>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>

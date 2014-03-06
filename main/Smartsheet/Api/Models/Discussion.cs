@@ -189,7 +189,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Sets the Title for the discussion.
 			/// </summary>
-			/// <param Name="Title"> the Title </param>
+			/// <param name="title"> the Title </param>
 			/// <returns> the creates the discussion builder </returns>
 			public virtual CreateDiscussionBuilder SetTitle(string title)
 			{
@@ -200,7 +200,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Sets the Comments for the discussion.
 			/// </summary>
-			/// <param Name="Comments"> the Comments </param>
+			/// <param name="comments"> the Comments </param>
 			/// <returns> the creates the discussion builder </returns>
 			public virtual CreateDiscussionBuilder SetComment(Comment comment)
 			{

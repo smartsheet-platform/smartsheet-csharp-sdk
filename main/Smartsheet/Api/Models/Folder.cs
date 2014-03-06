@@ -115,7 +115,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Name.
 			/// </summary>
-			/// <param Name="Name"> the Name </param>
+			/// <param name="name"> the Name </param>
 			/// <returns> the update folder builder </returns>
 			public virtual UpdateFolderBuilder SetName(string name)
 			{
@@ -150,7 +150,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Sets the folder Id.
 			/// </summary>
-			/// <param Name="Id"> the Id of the folder. </param>
+			/// <param name="id"> the Id of the folder. </param>
 			public virtual UpdateFolderBuilder SetID(long? id)
 			{
 				this.id = id;

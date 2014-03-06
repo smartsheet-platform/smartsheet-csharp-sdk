@@ -58,7 +58,7 @@ namespace Smartsheet.Api.Internal
 		/// 
 		/// Exceptions: - IllegalArgumentException : if any argument is null
 		/// </summary>
-		/// <param Name="Smartsheet"> the Smartsheet </param>
+		/// <param name="smartsheet"> the Smartsheet </param>
 		public RowResourcesImpl(SmartsheetImpl smartsheet) : base(smartsheet)
 		{
 			this.attachments = new AssociatedAttachmentResourcesImpl(smartsheet, "row");
@@ -78,8 +78,8 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="Id"> the Id </param>
-		/// <param Name="includes"> used To specify the optional objects To include, currently DISCUSSSIONS and ATTACHMENTS are 
+		/// <param name="id"> the Id </param>
+		/// <param name="includes"> used To specify the optional objects To include, currently DISCUSSSIONS and ATTACHMENTS are 
 		/// supported. </param>
 		/// <returns> the resource (note that if there is no such resource, this method will throw ResourceNotFoundException
 		/// rather than returning null). </returns>
@@ -113,8 +113,8 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="Id"> the Id </param>
-		/// <param Name="rowWrapper"> the the RowWrapper with one of the following attributes: 
+		/// <param name="id"> the Id </param>
+		/// <param name="rowWrapper"> the the RowWrapper with one of the following attributes: 
 		///   - ToTop : Moves the row (and children Rows, if any) To the top of the sheet. 
 		///   - ToBottom : Moves the row To the bottom of the sheet 
 		///   - ParentId : Moves the row as the first child row of the parent.
@@ -145,7 +145,7 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="Id"> the Id </param>
+		/// <param name="id"> the Id </param>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		public virtual void DeleteRow(long id)
 		{
@@ -165,8 +165,8 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="Id"> the Id of the row </param>
-		/// <param Name="Email"> the row Email </param>
+		/// <param name="id"> the Id of the row </param>
+		/// <param name="email"> the row Email </param>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		public virtual void SendRow(long id, RowEmail email)
 		{
@@ -187,8 +187,8 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="RowId"> the row Id </param>
-		/// <param Name="Cells"> the Cells To update (Cells must have the following attributes set: *
+		/// <param name="rowId"> the row Id </param>
+		/// <param name="cells"> the Cells To update (Cells must have the following attributes set: *
 		/// ColumnId * Value * Strict (optional) </param>
 		/// <returns> the updated Cells (note that if there is no such resource, this method will throw
 		/// ResourceNotFoundException rather than returning null). </returns>
@@ -211,8 +211,8 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="RowId"> the row Id </param>
-		/// <param Name="ColumnId"> the column Id </param>
+		/// <param name="rowId"> the row Id </param>
+		/// <param name="columnId"> the column Id </param>
 		/// <returns> the modification history (note that if there is no such resource, this method will throw
 		/// ResourceNotFoundException rather than returning null). </returns>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>

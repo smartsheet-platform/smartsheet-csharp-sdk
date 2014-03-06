@@ -47,8 +47,8 @@ namespace Smartsheet.Api
 		/// <para>It mirrors To the following Smartsheet REST API method:<br />
 		/// GET /row/{Id}</para>
 		/// </summary>
-		/// <param Name="Id"> the Id </param>
-		/// <param Name="includes"> used To specify the optional objects To include. </param>
+		/// <param name="id"> the Id </param>
+		/// <param name="includes"> used To specify the optional objects To include. </param>
 		/// <returns> the row resource (note that if there is no such resource, this method will throw 
 		/// ResourceNotFoundException rather than returning null). </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
@@ -64,8 +64,8 @@ namespace Smartsheet.Api
 		/// <para>It mirrors To the following Smartsheet REST API method:<br />
 		///  PUT /row/{Id}</para>
 		/// </summary>
-		/// <param Name="Id"> the Id of the row To move </param>
-		/// <param Name="rowWrapper"> the row wrapper that specifies where To move the row. </param>
+		/// <param name="id"> the Id of the row To move </param>
+		/// <param name="rowWrapper"> the row wrapper that specifies where To move the row. </param>
 		/// <returns> the list of Rows that have been moved by this operation. </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -81,7 +81,7 @@ namespace Smartsheet.Api
 		/// <para>It mirrors To the following Smartsheet REST API method:<br />
 		/// DELETE /row{Id}</para>
 		/// </summary>
-		/// <param Name="Id"> the Id of the row </param>
+		/// <param name="id"> the Id of the row </param>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
@@ -96,8 +96,8 @@ namespace Smartsheet.Api
 		/// <para>It mirrors To the following Smartsheet REST API method:<br />
 		///  POST /row/{Id}/emails</para>
 		/// </summary>
-		/// <param Name="Id"> the Id </param>
-		/// <param Name="Email"> the Email </param>
+		/// <param name="id"> the Id </param>
+		/// <param name="email"> the Email </param>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
@@ -111,8 +111,8 @@ namespace Smartsheet.Api
 		/// 
 		/// <para>It mirrors To the following Smartsheet REST API method: PUT /row/{Id}/Cells</para>
 		/// </summary>
-		/// <param Name="RowId"> the row Id </param>
-		/// <param Name="Cells"> the Cells To update </param>
+		/// <param name="rowId"> the row Id </param>
+		/// <param name="cells"> the Cells To update </param>
 		/// <returns> the list </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -128,8 +128,8 @@ namespace Smartsheet.Api
 		/// <para>It mirrors To the following Smartsheet REST API method:<br />
 		/// GET /row/{RowId}/column/{ColumnId}/history</para>
 		/// </summary>
-		/// <param Name="RowId"> the row Id </param>
-		/// <param Name="ColumnId"> the column Id </param>
+		/// <param name="rowId"> the row Id </param>
+		/// <param name="columnId"> the column Id </param>
 		/// <returns> the cell modification history (note that if there is no such resource, this method will throw 
 		/// ResourceeNotFoundException rather than returning null). </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>

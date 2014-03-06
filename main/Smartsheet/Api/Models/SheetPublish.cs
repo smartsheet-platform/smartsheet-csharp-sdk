@@ -217,7 +217,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Read only lite enabled.
 			/// </summary>
-			/// <param Name="ReadOnlyLiteEnabled"> the read only lite (static html UI) enabled </param>
+			/// <param name="readOnlyLiteEnabled"> the read only lite (static html UI) enabled </param>
 			/// <returns> the publish Status builder </returns>
 			public virtual PublishStatusBuilder SetReadOnlyLiteEnabled(bool? readOnlyLiteEnabled)
 			{
@@ -228,7 +228,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Read only full (fancy UI) enabled.
 			/// </summary>
-			/// <param Name="ReadOnlyFullEnabled"> the read only full enabled </param>
+			/// <param name="readOnlyFullEnabled"> the read only full enabled </param>
 			/// <returns> the publish Status builder </returns>
 			public virtual PublishStatusBuilder SetReadOnlyFullEnabled(bool? readOnlyFullEnabled)
 			{
@@ -239,7 +239,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Read write enabled.
 			/// </summary>
-			/// <param Name="ReadWriteEnabled"> the read write enabled </param>
+			/// <param name="readWriteEnabled"> the read write enabled </param>
 			/// <returns> the publish Status builder </returns>
 			public virtual PublishStatusBuilder SetReadWriteEnabled(bool? readWriteEnabled)
 			{
@@ -250,7 +250,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Ical enabled.
 			/// </summary>
-			/// <param Name="IcalEnabled"> the ical enabled </param>
+			/// <param name="icalEnabled"> the ical enabled </param>
 			/// <returns> the publish Status builder </returns>
 			public virtual PublishStatusBuilder SetIcalEnabled(bool? icalEnabled)
 			{

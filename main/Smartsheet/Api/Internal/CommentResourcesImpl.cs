@@ -44,7 +44,7 @@
 		/// 
 		/// Exceptions: - IllegalArgumentException : if any argument is null
 		/// </summary>
-		/// <param Name="Smartsheet"> the Smartsheet </param>
+		/// <param name="smartsheet"> the Smartsheet </param>
 		public CommentResourcesImpl(SmartsheetImpl smartsheet) : base(smartsheet)
 		{
 			this.attachments = new CommentAttachmentResources(smartsheet);
@@ -63,7 +63,7 @@
 		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="Id"> the Id </param>
+		/// <param name="id"> the Id </param>
 		/// <returns> the resource (note that if there is no such resource, this method will throw ResourceNotFoundException
 		/// rather than returning null) </returns>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
@@ -85,7 +85,7 @@
 		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="Id"> the ID of the Comment </param>
+		/// <param name="id"> the ID of the Comment </param>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		public virtual void DeleteComment(long id)
 		{

@@ -38,7 +38,7 @@ namespace Smartsheet.Api.OAuth
 		/// <summary>
 		/// Constructor.
 		/// </summary>
-		/// <param Name="Message"> the Message </param>
+		/// <param name="message"> the Message </param>
 		public OAuthAuthorizationCodeException(string message) : base(message)
 		{
 		}
@@ -46,8 +46,8 @@ namespace Smartsheet.Api.OAuth
 		/// <summary>
 		/// Constructor.
 		/// </summary>
-		/// <param Name="Message"> the Message </param>
-		/// <param Name="cause"> the cause </param>
+		/// <param name="message"> the Message </param>
+		/// <param name="cause"> the cause </param>
 		public OAuthAuthorizationCodeException(string message, Exception cause) : base(message, cause)
 		{
 		}

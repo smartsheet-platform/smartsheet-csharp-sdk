@@ -47,7 +47,7 @@
 		/// Exceptions:
 		///   IllegalArgumentException : if any argument is null
 		/// </summary>
-		/// <param Name="Smartsheet"> the Smartsheet </param>
+		/// <param name="smartsheet"> the Smartsheet </param>
 		public ColumnResourcesImpl(SmartsheetImpl smartsheet) : base(smartsheet)
 		{
 		}
@@ -66,7 +66,7 @@
 		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="column"> the column To update limited To the following attributes: Index (column's new Index in the sheet), 
+		/// <param name="column"> the column To update limited To the following attributes: Index (column's new Index in the sheet), 
 		/// Title, SheetId, Type, Options (optional), Symbol (optional), SystemColumnType (optional), 
 		/// AutoNumberFormat (optional) </param>
 		/// <returns> the updated sheet (note that if there is no such resource, this method will throw 
@@ -92,8 +92,8 @@
 		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="Id"> the ID of the column </param>
-		/// <param Name="SheetId"> the ID of the sheet </param>
+		/// <param name="id"> the ID of the column </param>
+		/// <param name="sheetId"> the ID of the sheet </param>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		public virtual void DeleteColumn(long id, long sheetId)
 		{

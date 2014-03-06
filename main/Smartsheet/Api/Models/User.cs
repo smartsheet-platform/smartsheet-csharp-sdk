@@ -107,7 +107,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Sets the Admin flag which allows managing Users and accounts.
 			/// </summary>
-			/// <param Name="Admin"> the Admin </param>
+			/// <param name="admin"> the Admin </param>
 			/// <returns> the adds the user builder </returns>
 			public virtual AddUserBuilder SetAdmin(bool? admin)
 			{
@@ -118,7 +118,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Sets the licensed sheet creator flag that allows creating and owning Sheets.
 			/// </summary>
-			/// <param Name="LicensedSheetCreator"> the licensed sheet creator </param>
+			/// <param name="licensedSheetCreator"> the licensed sheet creator </param>
 			/// <returns> the adds the user builder </returns>
 			public virtual AddUserBuilder SetLicensedSheetCreator(bool? licensedSheetCreator)
 			{
@@ -129,7 +129,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Sets the Email for the user.
 			/// </summary>
-			/// <param Name="Email"> the Email </param>
+			/// <param name="email"> the Email </param>
 			/// <returns> the adds the user builder </returns>
 			public virtual AddUserBuilder SetEmail(string email)
 			{
@@ -215,7 +215,7 @@ namespace Smartsheet.Api.Models
 
 			/// <summary>
 			/// Set the Id of the user </summary>
-			/// <param Name="Id"> </param>
+			/// <param name="id"> </param>
 			public virtual UpdateUserBuilder SetID(long? id)
 			{
 				this.id = id;
@@ -225,7 +225,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Sets the Admin flag which allows managing Users and accounts.
 			/// </summary>
-			/// <param Name="Admin"> the Admin </param>
+			/// <param name="admin"> the Admin </param>
 			/// <returns> the update user builder </returns>
 			public virtual UpdateUserBuilder SetAdmin(bool? admin)
 			{
@@ -236,7 +236,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Licensed sheet creator.
 			/// </summary>
-			/// <param Name="LicensedSheetCreator"> the licensed sheet creator </param>
+			/// <param name="licensedSheetCreator"> the licensed sheet creator </param>
 			/// <returns> the update user builder </returns>
 			public virtual UpdateUserBuilder SetLicensedSheetCreator(bool? licensedSheetCreator)
 			{

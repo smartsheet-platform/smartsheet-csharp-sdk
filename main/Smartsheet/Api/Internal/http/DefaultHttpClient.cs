@@ -82,7 +82,7 @@ namespace Smartsheet.Api.Internal.http
         /// 
         /// Exceptions: - IllegalArgumentException : if any argument is null
         /// </summary>
-        /// <param Name="HttpClient"> the http client </param>
+        /// <param name="httpClient"> the http client </param>
         public DefaultHttpClient(RestClient httpClient)
         {
             Util.ThrowIfNull(httpClient);
@@ -97,7 +97,7 @@ namespace Smartsheet.Api.Internal.http
         /// <summary>
         /// Make an HTTP request and return the response.
         /// </summary>
-        /// <param Name="smartsheetRequest"> the Smartsheet request </param>
+        /// <param name="smartsheetRequest"> the Smartsheet request </param>
         /// <returns> the HTTP response </returns>
         /// <exception cref="HttpClientException"> the HTTP client exception </exception>
         public virtual HttpResponse Request(HttpRequest smartsheetRequest)

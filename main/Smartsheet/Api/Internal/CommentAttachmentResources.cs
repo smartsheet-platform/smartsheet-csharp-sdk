@@ -46,7 +46,7 @@ namespace Smartsheet.Api.Internal
 		/// Exceptions:
 		///   IllegalArgumentException : if any argument is null or empty string
 		/// </summary>
-		/// <param Name="Smartsheet"> the Smartsheet </param>
+		/// <param name="smartsheet"> the Smartsheet </param>
 		public CommentAttachmentResources(SmartsheetImpl smartsheet) : base(smartsheet, "comment")
 		{
 		}
@@ -54,7 +54,7 @@ namespace Smartsheet.Api.Internal
         /// <summary>
         /// 
         /// </summary>
-        /// <param Name="ObjectId"></param>
+        /// <param name="objectId"></param>
         /// <returns></returns>
 		public override IList<Attachment> ListAttachments(long objectId)
 		{

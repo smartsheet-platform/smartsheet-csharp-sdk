@@ -38,7 +38,7 @@ namespace Smartsheet.Api.Internal
 		/// 
 		/// Exceptions: - IllegalArgumentException : if any argument is null
 		/// </summary>
-		/// <param Name="Smartsheet"> the Smartsheet </param>
+		/// <param name="smartsheet"> the Smartsheet </param>
 		public SheetColumnResourcesImpl(SmartsheetImpl smartsheet) : base(smartsheet)
 		{
 		}
@@ -56,7 +56,7 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="SheetId"> the sheet Id </param>
+		/// <param name="sheetId"> the sheet Id </param>
 		/// <returns> the Columns (note that empty list will be returned if there is none) </returns>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		public virtual IList<Column> ListColumns(long sheetId)
@@ -78,8 +78,8 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// <param Name="SheetId"> the sheet Id </param>
-		/// <param Name="column"> the coluimn object limited To the following attributes: *
+		/// <param name="sheetId"> the sheet Id </param>
+		/// <param name="column"> the coluimn object limited To the following attributes: *
 		/// Title * Type * Symbol (optional) * Options (optional) - array of Options * Index (zero-based) * SystemColumnType
 		/// (optional) * AutoNumberFormat (optional) </param>
 		/// <returns> the created column </returns>

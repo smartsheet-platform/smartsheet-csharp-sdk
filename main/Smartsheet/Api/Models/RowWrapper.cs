@@ -155,7 +155,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Sets the To top flag that puts the row at the top of the sheet.
 			/// </summary>
-			/// <param Name="ToTop"> the To top flag </param>
+			/// <param name="toTop"> the To top flag </param>
 			/// <returns> the insert Rows builder </returns>
 			public virtual InsertRowsBuilder SetToTop(bool? toTop)
 			{
@@ -166,7 +166,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Sets the To bottom flag that puts the row at the bottom of the sheet.
 			/// </summary>
-			/// <param Name="ToBottom"> the To bottom </param>
+			/// <param name="toBottom"> the To bottom </param>
 			/// <returns> the insert Rows builder </returns>
 			public virtual InsertRowsBuilder SetToBottom(bool? toBottom)
 			{
@@ -177,7 +177,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Sets the parent Id that puts the row as the first child of the specified Id.
 			/// </summary>
-			/// <param Name="ParentId"> the parent Id </param>
+			/// <param name="parentId"> the parent Id </param>
 			/// <returns> the insert Rows builder </returns>
 			public virtual InsertRowsBuilder SetParentId(long? parentId)
 			{
@@ -188,7 +188,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Sets the sibling Id that puts the row as the next row at the same hierarchical level of this row.
 			/// </summary>
-			/// <param Name="SiblingId"> the sibling Id </param>
+			/// <param name="siblingId"> the sibling Id </param>
 			/// <returns> the insert Rows builder </returns>
 			public virtual InsertRowsBuilder SetSiblingId(long? siblingId)
 			{
@@ -199,7 +199,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Sets the Rows.
 			/// </summary>
-			/// <param Name="Rows"> the Rows </param>
+			/// <param name="rows"> the Rows </param>
 			/// <returns> the insert Rows builder </returns>
 			public virtual InsertRowsBuilder SetRows(IList<Row> rows)
 			{
@@ -304,7 +304,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Sets the To top flag that puts the row at the top of the sheet.
 			/// </summary>
-			/// <param Name="ToTop"> the To top </param>
+			/// <param name="toTop"> the To top </param>
 			/// <returns> the move row builder </returns>
 			public virtual MoveRowBuilder SetToTop(bool? toTop)
 			{
@@ -315,7 +315,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Sets the To bottom flag that puts the row at the bottom of the sheet.
 			/// </summary>
-			/// <param Name="ToBottom"> the To bottom </param>
+			/// <param name="toBottom"> the To bottom </param>
 			/// <returns> the move row builder </returns>
 			public virtual MoveRowBuilder SetToBottom(bool? toBottom)
 			{
@@ -326,7 +326,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Sets the parent Id that puts the row as the first child of the specified Id.
 			/// </summary>
-			/// <param Name="ParentId"> the parent Id </param>
+			/// <param name="parentId"> the parent Id </param>
 			/// <returns> the move row builder </returns>
 			public virtual MoveRowBuilder SetParentId(long? parentId)
 			{
@@ -337,7 +337,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Sets the sibling Id that puts the row as the next row at the same hierarchical level of this row.
 			/// </summary>
-			/// <param Name="SiblingId"> the sibling Id </param>
+			/// <param name="siblingId"> the sibling Id </param>
 			/// <returns> the move row builder </returns>
 			public virtual MoveRowBuilder SetSiblingId(long? siblingId)
 			{
