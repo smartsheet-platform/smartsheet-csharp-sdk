@@ -26,8 +26,8 @@
 	using SmartsheetImpl = Api.Internal.SmartsheetImpl;
 	using DefaultHttpClient = Api.Internal.http.DefaultHttpClient;
 	using HttpClient = Api.Internal.http.HttpClient;
-	using JacksonJsonSerializer = Api.Internal.json.JacksonJsonSerializer;
-	using JsonSerializer = Api.Internal.json.JsonSerializer;
+	using JacksonJsonSerializer = Api.Internal.Json.JacksonJsonSerializer;
+	using JsonSerializer = Api.Internal.Json.JsonSerializer;
 
 	/// <summary>
 	/// <para>A convenience class To help create a <seealso cref="Smartsheet"/> instance with the appropriate fields.</para>
@@ -154,9 +154,9 @@
 		}
 
 		/// <summary>
-		/// <para>Gets the json serializer.</para>
+		/// <para>Gets the Json serializer.</para>
 		/// </summary>
-		/// <returns> the json serializer </returns>
+		/// <returns> the Json serializer </returns>
 		public virtual JsonSerializer JsonSerializer
 		{
 			get
@@ -217,7 +217,6 @@
 		/// <para>Build the Smartsheet instance.</para>
 		/// </summary>
 		/// <returns> the Smartsheet instance </returns>
-		/// <exception cref="IllegalStateException"> if AccessToken isn't set yet. </exception>
 		public virtual Smartsheet Build()
 		{
 			if (httpClient == null)

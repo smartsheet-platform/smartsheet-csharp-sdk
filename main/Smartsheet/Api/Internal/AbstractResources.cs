@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace Smartsheet.Api.Internal
 {
 
-    using Api.Internal.json;
+    using Api.Internal.Json;
     using Api.Models;
     using System.IO;
     using System.Net;
@@ -37,7 +37,7 @@ namespace Smartsheet.Api.Internal
     using HttpMethod = Api.Internal.http.HttpMethod;
     using HttpRequest = Api.Internal.http.HttpRequest;
     using HttpResponse = Api.Internal.http.HttpResponse;
-    using Util = Api.Internal.util.Util;
+    using Utils = Api.Internal.Utility.Utility;
 
 	/// <summary>
 	/// This is the base class of the Smartsheet REST API resources.
@@ -46,15 +46,45 @@ namespace Smartsheet.Api.Internal
 	/// </summary>
 	public abstract class AbstractResources
 	{
+        /// <summary>
+        /// Error code class for mapping specific error codes to Exceptions
+        /// </summary>
         public class ErrorCode{
+            /// <summary>
+            /// The bad request
+            /// </summary>
             public static readonly ErrorCode BAD_REQUEST = new ErrorCode(HttpStatusCode.BadRequest, typeof(Api.InvalidRequestException));
+            /// <summary>
+            /// The not authorized
+            /// </summary>
             public static readonly ErrorCode NOT_AUTHORIZED = new ErrorCode(HttpStatusCode.Unauthorized, typeof(Api.AuthorizationException));
+            /// <summary>
+            /// The forbidden
+            /// </summary>
             public static readonly ErrorCode FORBIDDEN = new ErrorCode(HttpStatusCode.Forbidden, typeof(Api.AuthorizationException));
+            /// <summary>
+            /// The not found
+            /// </summary>
             public static readonly ErrorCode NOT_FOUND = new ErrorCode(HttpStatusCode.NotFound, typeof(Api.ResourceNotFoundException));
+            /// <summary>
+            /// The method not supported
+            /// </summary>
             public static readonly ErrorCode METHOD_NOT_SUPPORTED = new ErrorCode(HttpStatusCode.MethodNotAllowed, typeof(Api.InvalidRequestException));
+            /// <summary>
+            /// The internal server error
+            /// </summary>
             public static readonly ErrorCode INTERNAL_SERVER_ERROR = new ErrorCode(HttpStatusCode.InternalServerError, typeof(Api.InvalidRequestException));
+            /// <summary>
+            /// The service unavailable
+            /// </summary>
             public static readonly ErrorCode SERVICE_UNAVAILABLE = new ErrorCode(HttpStatusCode.ServiceUnavailable, typeof(Api.ServiceUnavailableException));
 
+            /// <summary>
+            /// Gets an IEnumerable to iterate through the Error Codes.
+            /// </summary>
+            /// <value>
+            /// The IEnumerable to iterate through the Error Codes
+            /// </value>
             public static IEnumerable<ErrorCode> Values
             {
                 get{
@@ -95,23 +125,23 @@ namespace Smartsheet.Api.Internal
 				return null;
 			}
 
-            //            /// <summary>
-            //            /// Gets the exception.
-            //            /// </summary>
-            //            /// <returns> the exception </returns>
-            //            /// <exception cref="MemberAccessException"> the instantiation exception </exception>
-            //            /// <exception cre="IllegalAccessException"> the illegal access exception </exception>
+            /// <summary>
+            /// Gets the exception.
+            /// </summary>
+            /// <returns> the exception </returns>
+            /// <exception cref="MemberAccessException"> the instantiation exception </exception>
+            /// <exception cre="IllegalAccessException"> the illegal access exception </exception>
             public SmartsheetRestException getException()
             {
                 return (SmartsheetRestException)Activator.CreateInstance(exceptionClass);
             }
 
-            //            /// <summary>
-            //            /// Gets the exception.
-            //            /// </summary>
-            //            /// <param name="error"> the error </param>
-            //            /// <returns> the exception </returns>
-            //            /// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
+            /// <summary>
+            /// Gets the exception.
+            /// </summary>
+            /// <param name="error"> the error </param>
+            /// <returns> the exception </returns>
+            /// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
             public SmartsheetRestException getException(Api.Models.Error error)
             {
                 object[] args = new object[]{error};
@@ -132,7 +162,7 @@ namespace Smartsheet.Api.Internal
 		/// <param name="smartsheet"> the Smartsheet </param>
 		protected internal AbstractResources(SmartsheetImpl smartsheet)
 		{
-			Util.ThrowIfNull(smartsheet);
+			Utils.ThrowIfNull(smartsheet);
 
 			this.smartsheet = smartsheet;
 		}
@@ -153,14 +183,13 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// @param <T> the generic Type </param>
 		/// <param name="path"> the relative path of the resource. </param>
 		/// <param name="objectClass"> the object class </param>
 		/// <returns> the resource </returns>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		protected internal virtual T GetResource<T>(string path, Type objectClass)
 		{
-			Util.ThrowIfNull(path, objectClass);
+			Utils.ThrowIfNull(path, objectClass);
 
 			if (path == null || path.Length == 0)
 			{
@@ -225,7 +254,6 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// @param <T> the generic Type </param>
 		/// <param name="path"> the relative path of the resource collections </param>
 		/// <param name="objectClass"> the resource object class </param>
 		/// <param name="object"> the object To create </param>
@@ -233,8 +261,8 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		protected internal virtual T CreateResource<T>(string path, Type objectClass, T @object)
 		{
-			Util.ThrowIfNull(path, @object);
-			Util.ThrowIfEmpty(path);
+			Utils.ThrowIfNull(path, @object);
+			Utils.ThrowIfEmpty(path);
 
 			HttpRequest request = null;
 			try
@@ -279,7 +307,6 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// @param <T> the generic Type </param>
 		/// <param name="path"> the relative path of the resource </param>
 		/// <param name="objectClass"> the resource object class </param>
 		/// <param name="object"> the object To create </param>
@@ -287,8 +314,8 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		protected internal virtual T UpdateResource<T>(string path, Type objectClass, T @object)
 		{
-			Util.ThrowIfNull(path, @object);
-			Util.ThrowIfEmpty(path);
+			Utils.ThrowIfNull(path, @object);
+			Utils.ThrowIfEmpty(path);
 
 			HttpRequest request = null;
 			try
@@ -332,15 +359,14 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// @param <T> the generic Type </param>
 		/// <param name="path"> the relative path of the resource collections </param>
 		/// <param name="objectClass"> the resource object class </param>
 		/// <returns> the resources </returns>
 		/// <exception cref="SmartsheetException"> if an error occurred during the operation </exception>
 		protected internal virtual IList<T> ListResources<T>(string path, Type objectClass)
 		{
-			Util.ThrowIfNull(path, objectClass);
-			Util.ThrowIfEmpty(path);
+			Utils.ThrowIfNull(path, objectClass);
+			Utils.ThrowIfEmpty(path);
 
 			HttpRequest request = null;
 			try
@@ -383,14 +409,13 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// @param <T> the generic Type </param>
 		/// <param name="path"> the relative path of the resource </param>
 		/// <param name="objectClass"> the resource object class </param>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		protected internal virtual void DeleteResource<T>(string path, Type objectClass)
 		{
-			Util.ThrowIfNull(path, objectClass);
-			Util.ThrowIfEmpty(path);
+			Utils.ThrowIfNull(path, objectClass);
+			Utils.ThrowIfEmpty(path);
 
 			HttpRequest request = null;
 			try
@@ -432,8 +457,6 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// @param <T> the generic Type </param>
-		/// @param <S> the generic Type </param>
 		/// <param name="path"> the path </param>
 		/// <param name="objectToPost"> the object To post </param>
 		/// <param name="objectClassToReceive"> the object class To receive </param>
@@ -441,8 +464,8 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		protected internal virtual IList<S> PostAndReceiveList<T, S>(string path, T objectToPost, Type objectClassToReceive)
 		{
-			Util.ThrowIfNull(path, objectToPost, objectClassToReceive);
-			Util.ThrowIfEmpty(path);
+			Utils.ThrowIfNull(path, objectToPost, objectClassToReceive);
+			Utils.ThrowIfEmpty(path);
 
 			HttpRequest request = null;
 			try
@@ -486,8 +509,6 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
-		/// @param <T> the generic Type </param>
-		/// @param <S> the generic Type </param>
 		/// <param name="path"> the relative path of the resource collections </param>
 		/// <param name="objectToPut"> the object To put </param>
 		/// <param name="objectClassToReceive"> the resource object class To receive </param>
@@ -495,8 +516,8 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
         protected internal virtual IList<S> PutAndReceiveList<T, S>(string path, T objectToPut, Type objectClassToReceive)
 		{
-			Util.ThrowIfNull(path, objectToPut, objectClassToReceive);
-			Util.ThrowIfEmpty(path);
+			Utils.ThrowIfNull(path, objectToPut, objectClassToReceive);
+			Utils.ThrowIfEmpty(path);
 
 			HttpRequest request = null;
 			try
@@ -624,6 +645,12 @@ namespace Smartsheet.Api.Internal
 			}
 		}
 
+        /// <summary>
+        /// Serializes an object into an entity.
+        /// </summary>
+        /// <typeparam name="T">Object to Serialize to an Entity</typeparam>
+        /// <param name="objectToPost">The object to post.</param>
+        /// <returns></returns>
         protected HttpEntity serializeToEntity<T>(T objectToPost)
         {
             HttpEntity entity = new HttpEntity();

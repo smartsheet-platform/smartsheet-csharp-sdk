@@ -25,8 +25,8 @@ namespace Smartsheet.Api.Models
 
 	/// <summary>
 	/// Represents the Attachment object. </summary>
-	/// <seealso cref= <a href="http://help.Smartsheet.brettrocksandwillfixthis/customer/portal/articles/518408-uploading-Attachments">Help Uploading 
-	/// Attachments</a> </seealso>
+	/// <seealso href="http://help.Smartsheet.brettrocksandwillfixthis/customer/portal/articles/518408-uploading-Attachments">Help Uploading 
+	/// Attachments</seealso>
 	public class Attachment : NamedModel
 	{
 

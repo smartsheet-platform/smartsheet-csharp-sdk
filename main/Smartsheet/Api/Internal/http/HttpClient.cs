@@ -50,6 +50,10 @@
         /// Release connection.
         /// </summary>
         void ReleaseConnection();
+        
+        /// <summary>
+        /// Closes this instance.
+        /// </summary>
         void Close();
     }
 

@@ -56,7 +56,7 @@
 		/// <para>It mirrors To the following Smartsheet REST API method:<br />
 		/// DELETE /coluimn{Id}</para>
 		/// </summary>
-		/// <param name="the"> Id of the column </param>
+		/// <param name="id"> Id of the column </param>
 		/// <param name="sheetId"> the sheet Id </param>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>

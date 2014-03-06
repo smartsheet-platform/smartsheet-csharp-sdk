@@ -25,8 +25,8 @@
 
 	/// <summary>
 	/// Represents the Link object. </summary>
-	/// <seealso cref= <a href="http://help.Smartsheet.brettrocksandwillfixthis/customer/portal/articles/518326-creating-hyperlinks-To-Sheets-websites">
-	/// Help Creating Hyperlinks To Sheets & Websites</a> </seealso>
+	/// <seealso href="http://help.Smartsheet.brettrocksandwillfixthis/customer/portal/articles/518326-creating-hyperlinks-To-Sheets-websites">
+	/// Help Creating Hyperlinks To Sheets &amp; Websites</seealso>
 	public class Link
 	{
 		/// <summary>

@@ -2,7 +2,7 @@
 {
 
     using Api.Internal.http;
-    using Api.Internal.json;
+    using Api.Internal.Json;
     using System;
     /*
                  * #[license]
@@ -27,9 +27,9 @@
 
 
     using HttpClient = Api.Internal.http.HttpClient;
-    using JsonSerializer = Api.Internal.json.JsonSerializer;
-    using OAuthFlowImpl = Api.Internal.oauth.OAuthFlowImpl;
-    using Util = Api.Internal.util.Util;
+    using JsonSerializer = Api.Internal.Json.JsonSerializer;
+    using OAuthFlowImpl = Api.Internal.OAuth.OAuthFlowImpl;
+    using Util = Api.Internal.Utility.Utility;
 
 	/// <summary>
 	/// <para>This is the builder that is used To build <seealso cref="OAuthFlow"/> instances.</para>
@@ -244,9 +244,9 @@
 		}
 
 		/// <summary>
-		/// Gets the json serializer.
+		/// Gets the Json serializer.
 		/// </summary>
-		/// <returns> the json serializer </returns>
+		/// <returns> the Json serializer </returns>
 		public virtual JsonSerializer JsonSerializer
 		{
 			get

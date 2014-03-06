@@ -108,14 +108,12 @@
 		/// <summary>
 		/// <para>Set the Email of the user To assume.</para>
 		/// </summary>
-		/// <param name="assumedUser"> the new assumed user </param>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null/empty string </exception>
 		string AssumedUser {set;}
 
 		/// <summary>
 		/// <para>Set the access token To use.</para>
 		/// </summary>
-		/// <param name="accessToken"> the new access token </param>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null/empty string </exception>
 		string AccessToken {set;}
 	}

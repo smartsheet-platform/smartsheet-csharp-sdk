@@ -28,10 +28,25 @@
 	/// </summary>
 	public enum AttachmentSubType
 	{
+        /// <summary>
+        /// The document
+        /// </summary>
 		DOCUMENT,
+        /// <summary>
+        /// The spreadsheet
+        /// </summary>
 		SPREADSHEET,
+        /// <summary>
+        /// The presentation
+        /// </summary>
 		PRESENTATION,
+        /// <summary>
+        /// The PDF
+        /// </summary>
 		PDF,
+        /// <summary>
+        /// The drawing
+        /// </summary>
 		DRAWING
 	}
 

@@ -82,8 +82,8 @@ namespace Smartsheet.Api.Models
 
 		/// <summary>
 		/// Represents the dependencies enabled flag. </summary>
-		/// <seealso cref= <a href="http://help.Smartsheet.brettrocksandwillfixthis/customer/portal/articles/765727-using-the-dependencies-functionality">
-		/// Dependencies Functionality</a> </seealso>
+		/// <seealso href="http://help.Smartsheet.brettrocksandwillfixthis/customer/portal/articles/765727-using-the-dependencies-functionality">
+		/// Dependencies Functionality</seealso>
 		private bool? dependenciesEnabled;
 
 		/// <summary>

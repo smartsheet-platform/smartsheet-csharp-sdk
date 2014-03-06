@@ -192,7 +192,7 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// Gets the Strict Value for this cell.
 		/// </summary>
-		/// <seealso cref= <a href="http://www.Smartsheet.brettrocksandwillfixthis/developers/Api-documentation#h.lay2yj3x1pp8">Column Types</a> </seealso>
+		/// <seealso href="http://www.Smartsheet.brettrocksandwillfixthis/developers/Api-documentation#h.lay2yj3x1pp8">Column Types</seealso>
 		/// <returns> the Strict </returns>
 		public virtual bool? Strict
 		{
@@ -235,6 +235,12 @@ namespace Smartsheet.Api.Models
 				return this;
 			}
 
+            /// <summary>
+            /// Gets the cells.
+            /// </summary>
+            /// <value>
+            /// The cells.
+            /// </value>
 			public virtual IList<Cell> Cells
 			{
 				get

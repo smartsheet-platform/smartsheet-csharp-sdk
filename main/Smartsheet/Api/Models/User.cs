@@ -24,9 +24,9 @@ namespace Smartsheet.Api.Models
 
 	/// <summary>
 	/// Represents the User object. </summary>
-	/// <seealso cref= <a href="http://help.Smartsheet.brettrocksandwillfixthis/customer/portal/articles/795920-managing-Users-team-enterprise-only-">Help
-	/// Managing Users</a> </seealso>
-	/// <seealso cref= <a href="http://help.Smartsheet.brettrocksandwillfixthis/customer/portal/articles/520100-user-types">User Types Help</a> </seealso>
+	/// <seealso href="http://help.Smartsheet.brettrocksandwillfixthis/customer/portal/articles/795920-managing-Users-team-enterprise-only-">Help
+	/// Managing Users</seealso>
+	/// <seealso href="http://help.Smartsheet.brettrocksandwillfixthis/customer/portal/articles/520100-user-types">User Types Help</seealso>
 	public class User : UserProfile
 	{
 		/// <summary>
@@ -213,9 +213,11 @@ namespace Smartsheet.Api.Models
 				}
 			}
 
-			/// <summary>
-			/// Set the Id of the user </summary>
-			/// <param name="id"> </param>
+            /// <summary>
+            /// Set the Id of the user
+            /// </summary>
+            /// <param name="id">The identifier.</param>
+            /// <returns>the update user builder</returns>
 			public virtual UpdateUserBuilder SetID(long? id)
 			{
 				this.id = id;

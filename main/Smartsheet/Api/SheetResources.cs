@@ -174,7 +174,7 @@ namespace Smartsheet.Api
 		/// </summary>
 		/// <param name="folderID"> the folder Id </param>
 		/// <param name="sheet"> the sheet To create </param>
-		/// <param name="used"> To specify the optional objects To include. </param>
+		/// <param name="includes"> To specify the optional objects To include. </param>
 		/// <returns> the created sheet </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>

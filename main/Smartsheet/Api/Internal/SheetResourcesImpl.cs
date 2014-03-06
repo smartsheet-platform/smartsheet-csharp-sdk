@@ -26,7 +26,7 @@ namespace Smartsheet.Api.Internal
 
 	using HttpMethod = Api.Internal.http.HttpMethod;
 	using HttpRequest = Api.Internal.http.HttpRequest;
-	using Util = Api.Internal.util.Util;
+    using Utils = Api.Internal.Utility.Utility;
 	using ObjectInclusion = Api.Models.ObjectInclusion;
 	using PaperSize = Api.Models.PaperSize;
 	using Sheet = Api.Models.Sheet;
@@ -591,7 +591,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		private void GetSheetAsFile(long id, PaperSize? paperSize, StreamWriter outputStream, string contentType)
 		{
-			Util.ThrowIfNull(outputStream, contentType);
+            Utils.ThrowIfNull(outputStream, contentType);
 
 			string path = "sheet/" + id;
 			if (paperSize != null)

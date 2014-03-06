@@ -25,7 +25,7 @@
 
 	/// <summary>
 	/// A template object that is a default layout for future Sheets. </summary>
-	/// <seealso cref= <a href="http://help.Smartsheet.brettrocksandwillfixthis/customer/portal/articles/522123-using-Templates">Using Templates Help</a> </seealso>
+	/// <seealso href="http://help.Smartsheet.brettrocksandwillfixthis/customer/portal/articles/522123-using-Templates">Using Templates Help</seealso>
 	public class Template : NamedModel
 	{
 		/// <summary>

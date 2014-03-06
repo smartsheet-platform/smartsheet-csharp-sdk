@@ -24,7 +24,7 @@ namespace Smartsheet.Api.Models
 
 	/// <summary>
 	/// Represents a Share Object. </summary>
-	/// <seealso cref= <a href="http://help.Smartsheet.brettrocksandwillfixthis/customer/portal/articles/520104-sharing-Sheets">Sharing Sheets</a> </seealso>
+	/// <seealso href="http://help.Smartsheet.brettrocksandwillfixthis/customer/portal/articles/520104-sharing-Sheets">Sharing Sheets</seealso>
 	public class Share : NamedModel
 	{
 		/// <summary>

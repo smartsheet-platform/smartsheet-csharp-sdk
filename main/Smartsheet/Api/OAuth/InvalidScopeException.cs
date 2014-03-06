@@ -31,9 +31,6 @@
 	/// </summary>
 	public class InvalidScopeException : OAuthAuthorizationCodeException
 	{
-		/// 
-
-
 		/// <summary>
 		/// Constructor.
 		/// </summary>

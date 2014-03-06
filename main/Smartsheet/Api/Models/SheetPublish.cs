@@ -24,8 +24,8 @@ namespace Smartsheet.Api.Models
 
 	/// <summary>
 	/// Represents the publish Status of a sheet. </summary>
-	/// <seealso cref= <a href="http://help.Smartsheet.brettrocksandwillfixthis/customer/portal/articles/522078-publishing-Sheets">Help Publishing 
-	/// Sheets</a> </seealso>
+	/// <seealso href="http://help.Smartsheet.brettrocksandwillfixthis/customer/portal/articles/522078-publishing-Sheets">Help Publishing 
+	/// Sheets</seealso>
 	public class SheetPublish
 	{
 		/// <summary>

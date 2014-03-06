@@ -30,7 +30,7 @@ namespace Smartsheet.Api.Internal
 	using HttpMethod = Api.Internal.http.HttpMethod;
 	using HttpRequest = Api.Internal.http.HttpRequest;
 	using HttpResponse = Api.Internal.http.HttpResponse;
-	using Util = Api.Internal.util.Util;
+    using Utils = Api.Internal.Utility.Utility;
 	using Attachment = Api.Models.Attachment;
     using System.IO;
     using System.Net;
@@ -102,8 +102,8 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		public virtual Attachment AttachFile(long objectId, string file, string contentType)
 		{
-			Util.ThrowIfNull(objectId, file, contentType);
-			Util.ThrowIfEmpty(contentType);
+			Utils.ThrowIfNull(objectId, file, contentType);
+			Utils.ThrowIfEmpty(contentType);
 
             FileInfo fi = new FileInfo(file);
 			return AttachFile(objectId, file, contentType, fi.Length);
@@ -121,7 +121,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		public virtual Attachment AttachFile(long objectId, string file, string contentType, long contentLength)
 		{
-			Util.ThrowIfNull(file, contentType);
+            Utils.ThrowIfNull(file, contentType);
 
             FileInfo fi = new FileInfo(file);
 			HttpRequest request = CreateHttpRequest(new Uri(this.Smartsheet.BaseURI,MasterResourceType + "/" +
@@ -185,7 +185,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		public virtual Attachment AttachURL(long objectId, Attachment attachment)
 		{
-			Util.ThrowIfNull(objectId, attachment);
+            Utils.ThrowIfNull(objectId, attachment);
             //Result<T>
 			return this.CreateResource(MasterResourceType + "/" + objectId + "/attachments", 
                 typeof(Attachment), attachment);

@@ -27,7 +27,7 @@ namespace Smartsheet.Api.Models
 
 	/// <summary>
 	/// Represents the Home object. </summary>
-	/// <seealso cref= <a href="http://help.Smartsheet.brettrocksandwillfixthis/customer/portal/articles/522237-the-home-tab">Home Tab Help</a> </seealso>
+	/// <seealso href="http://help.Smartsheet.brettrocksandwillfixthis/customer/portal/articles/522237-the-home-tab">Home Tab Help</seealso>
 	public class Home
 	{
 		/// <summary>
@@ -40,9 +40,9 @@ namespace Smartsheet.Api.Models
 		/// </summary>
 		private IList<Folder> folders;
 
-		/// <summary>
-		/// Represents the reports in the home location.
-		/// </summary>
+		// <summary>
+		// Represents the reports in the home location.
+		// </summary>
 		//TODO: implement reports
 		// private List<Report> reports;
 

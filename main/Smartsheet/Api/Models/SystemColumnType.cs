@@ -25,7 +25,7 @@
 
 	/// <summary>
 	/// Represents the system column types. </summary>
-	/// <seealso cref= <a href="http://help.Smartsheet.brettrocksandwillfixthis/customer/portal/articles/504619-column-types">Column Types Help</a> </seealso>
+	/// <seealso href="http://help.Smartsheet.brettrocksandwillfixthis/customer/portal/articles/504619-column-types">Column Types Help</seealso>
 	public enum SystemColumnType
 	{
 		/// <summary>

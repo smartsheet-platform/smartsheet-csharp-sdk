@@ -26,7 +26,7 @@
 
 
     using HttpClientException = Api.Internal.http.HttpClientException;
-    using JSONSerializationException = Api.Internal.json.JSONSerializationException;
+    using JSONSerializationException = Api.Internal.Json.JSONSerializationException;
 
 	/// <summary>
 	/// <para>OAuthFlow interface provides methods To do the OAuth2 authorization.</para>
@@ -52,7 +52,7 @@
 		/// </summary>
 		/// <param name="authorizationResponseURL"> the authorization response Url </param>
 		/// <returns> the authorization Result </returns>
-		/// <exception cref="UriFormatException"> the URI syntax exception </exception>
+		/// <exception cref="System.UriFormatException"> the URI syntax exception </exception>
 		/// <exception cref="AccessDeniedException"> the access denied exception </exception>
 		/// <exception cref="UnsupportedResponseTypeException"> the unsupported response Type exception </exception>
 		/// <exception cref="InvalidScopeException"> the invalid scope exception </exception>
@@ -67,7 +67,7 @@
 		/// <returns> the token </returns>
 		/// <exception cref="OAuthTokenException"> the o auth token exception </exception>
 		/// <exception cref="JSONSerializationException"> the JSON serializer exception </exception>
-		/// <exception cref="UriFormatException"> the URI syntax exception </exception>
+		/// <exception cref="System.UriFormatException"> the URI syntax exception </exception>
 		/// <exception cref="InvalidRequestException"> the invalid request exception </exception>
 		/// <exception cref="System.InvalidOperationException"> if any other error occurred during the operation </exception>
 		Token ObtainNewToken(AuthorizationResult authorizationResult);
@@ -79,7 +79,7 @@
 		/// <returns> the refreshed token </returns>
 		/// <exception cref="OAuthTokenException"> the o auth token exception </exception>
 		/// <exception cref="JSONSerializationException"> the JSON serializer exception </exception>
-		/// <exception cref="UriFormatException"> the URI syntax exception </exception>
+		/// <exception cref="System.UriFormatException"> the URI syntax exception </exception>
 		/// <exception cref="InvalidRequestException"> the invalid request exception </exception>
 		/// <exception cref="System.InvalidOperationException"> if any other error occurred during the operation </exception>
 		Token RefreshToken(Token token);

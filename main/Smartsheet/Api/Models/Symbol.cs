@@ -25,7 +25,7 @@
 
 	/// <summary>
 	/// Represents the column symbols. </summary>
-	/// <seealso cref= <a href="http://help.Smartsheet.brettrocksandwillfixthis/customer/portal/articles/504619-column-types#symbols">Symbols Help</a> </seealso>
+	/// <see href="http://help.Smartsheet.brettrocksandwillfixthis/customer/portal/articles/504619-column-types#symbols">Symbols Help</see>
 	public enum Symbol
 	{
 		/// <summary>

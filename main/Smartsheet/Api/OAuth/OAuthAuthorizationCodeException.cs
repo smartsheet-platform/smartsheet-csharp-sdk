@@ -32,9 +32,6 @@ namespace Smartsheet.Api.OAuth
 	/// </summary>
 	public class OAuthAuthorizationCodeException : SmartsheetException
 	{
-		/// 
-
-
 		/// <summary>
 		/// Constructor.
 		/// </summary>

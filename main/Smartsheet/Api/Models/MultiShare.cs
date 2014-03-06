@@ -26,7 +26,7 @@ namespace Smartsheet.Api.Models
 
 	/// <summary>
 	/// Represents the MultiShare object. </summary>
-	/// <seealso cref= <a href="http://help.Smartsheet.brettrocksandwillfixthis/customer/portal/articles/520104-sharing-Sheets">Help Sharing Sheets</a> </seealso>
+	/// <seealso href="http://help.Smartsheet.brettrocksandwillfixthis/customer/portal/articles/520104-sharing-Sheets">Help Sharing Sheets</seealso>
 	public class MultiShare
 	{
 		/// <summary>
@@ -193,7 +193,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Set the carbon copy me flag.
 			/// </summary>
-			/// <param name="cCMe"> the carbon copy me flag. </param>
+			/// <param name="ccMe"> the carbon copy me flag. </param>
 			/// <returns> the share To many builder </returns>
 			public virtual ShareToManyBuilder SetCCMe(bool? ccMe)
 			{

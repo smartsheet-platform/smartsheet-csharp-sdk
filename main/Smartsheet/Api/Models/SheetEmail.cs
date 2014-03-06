@@ -25,8 +25,8 @@
 
 	/// <summary>
 	/// Represents Sheet Email object used for sending a sheet by Email. </summary>
-	/// <seealso cref= <a href="http://help.Smartsheet.brettrocksandwillfixthis/customer/portal/articles/504773-sending-Sheets-Rows-via-Email">Help Sending
-	/// Sheets & Rows via Email</a> </seealso>
+	/// <seealso href="http://help.Smartsheet.brettrocksandwillfixthis/customer/portal/articles/504773-sending-Sheets-Rows-via-Email">Help Sending
+	/// Sheets &amp; Rows via Email</seealso>
 	public class SheetEmail : Email
 	{
 		/// <summary>

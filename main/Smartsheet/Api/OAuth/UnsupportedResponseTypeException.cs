@@ -31,9 +31,6 @@
 	/// </summary>
 	public class UnsupportedResponseTypeException : OAuthAuthorizationCodeException
 	{
-		/// 
-
-
 		/// <summary>
 		/// Constructor.
 		/// </summary>

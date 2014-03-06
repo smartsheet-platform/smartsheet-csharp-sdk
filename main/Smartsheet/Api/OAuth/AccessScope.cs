@@ -29,6 +29,33 @@
 	/// </summary>
     public enum AccessScope
     {
-        READ_SHEETS, WRITE_SHEETS, SHARE_SHEETS, DELETE_SHEETS, CREATE_SHEETS, ADMIN_SHEETS, ADMIN_WORKSPACES
+        /// <summary>
+        /// The read sheets
+        /// </summary>
+        READ_SHEETS,
+        /// <summary>
+        /// The write sheets
+        /// </summary>
+        WRITE_SHEETS,
+        /// <summary>
+        /// The share sheets
+        /// </summary>
+        SHARE_SHEETS,
+        /// <summary>
+        /// The delete sheets
+        /// </summary>
+        DELETE_SHEETS,
+        /// <summary>
+        /// The create sheets
+        /// </summary>
+        CREATE_SHEETS,
+        /// <summary>
+        /// The admin sheets
+        /// </summary>
+        ADMIN_SHEETS,
+        /// <summary>
+        /// The admin workspaces
+        /// </summary>
+        ADMIN_WORKSPACES
     }
 }

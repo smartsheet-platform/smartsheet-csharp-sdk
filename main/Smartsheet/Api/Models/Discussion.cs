@@ -27,7 +27,7 @@ namespace Smartsheet.Api.Models
 
 	/// <summary>
 	/// Represents the Discussion object. </summary>
-	/// <seealso cref= <a href="http://help.Smartsheet.brettrocksandwillfixthis/customer/portal/articles/504767-using-Discussions">Help Using Discussions</a> </seealso>
+	/// <seealso href="http://help.Smartsheet.brettrocksandwillfixthis/customer/portal/articles/504767-using-Discussions">Help Using Discussions</seealso>
 	public class Discussion : IdentifiableModel
 	{
 		/// <summary>
@@ -200,7 +200,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Sets the Comments for the discussion.
 			/// </summary>
-			/// <param name="comments"> the Comments </param>
+			/// <param name="comment"> the Comments </param>
 			/// <returns> the creates the discussion builder </returns>
 			public virtual CreateDiscussionBuilder SetComment(Comment comment)
 			{

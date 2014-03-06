@@ -28,7 +28,7 @@
 	using HttpMethod = Api.Internal.http.HttpMethod;
 	using HttpRequest = Api.Internal.http.HttpRequest;
 	using HttpResponse = Api.Internal.http.HttpResponse;
-	using Util = Api.Internal.util.Util;
+	using Utils = Api.Internal.Utility.Utility;
 	using Column = Api.Models.Column;
     using System.Net;
     using System;
@@ -74,7 +74,7 @@
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		public virtual Column UpdateColumn(Column column)
 		{
-			Util.ThrowIfNull(column);
+			Utils.ThrowIfNull(column);
 
 			return this.UpdateResource("column/" + column.ID, typeof(Column), column);
 		}

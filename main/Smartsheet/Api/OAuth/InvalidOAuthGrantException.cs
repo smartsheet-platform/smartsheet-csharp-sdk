@@ -31,9 +31,6 @@
 	/// </summary>
 	public class InvalidOAuthGrantException : OAuthTokenException
 	{
-		/// 
-
-
 		/// <summary>
 		/// Constructor.
 		/// </summary>

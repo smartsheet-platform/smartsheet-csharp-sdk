@@ -28,9 +28,21 @@
 	/// </summary>
 	public enum AttachmentType
 	{
+        /// <summary>
+        /// The file
+        /// </summary>
 		FILE,
+        /// <summary>
+        /// Google drive
+        /// </summary>
 		GOOGLE_DRIVE,
+        /// <summary>
+        /// The link
+        /// </summary>
 		LINK,
+        /// <summary>
+        /// BOX
+        /// </summary>
 		BOX_COM
 	}
 

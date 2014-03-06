@@ -25,8 +25,8 @@ namespace Smartsheet.Api.Models
 	/// <summary>
 	/// Represents the Workspace object which is an area in which Sheets, reports, Templates and sub-Folders can be 
 	/// organized, similar To a folder. </summary>
-	/// <seealso cref= <a href="http://help.Smartsheet.brettrocksandwillfixthis/customer/portal/articles/506687-creating-a-workspace">Help Creating a 
-	/// Workspace</a> </seealso>
+	/// <seealso href="http://help.Smartsheet.brettrocksandwillfixthis/customer/portal/articles/506687-creating-a-workspace">Help Creating a 
+	/// Workspace</seealso>
 	public class Workspace : Folder
 	{
 		/// <summary>
@@ -90,9 +90,11 @@ namespace Smartsheet.Api.Models
 				}
 			}
 
-			/// <summary>
-			/// Set the workspace Id </summary>
-			/// <param name="id"> the workspace Id </param>
+            /// <summary>
+            /// Set the workspace Id
+            /// </summary>
+            /// <param name="id">the workspace Id</param>
+            /// <returns>the update workspace builder</returns>
 			public virtual UpdateWorkspaceBuilder SetID(long? id)
 			{
 				this.id = id;

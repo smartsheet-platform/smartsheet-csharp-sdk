@@ -26,7 +26,6 @@
 	/// <summary>
 	/// Result object To contain information about a PUT or POST request.
 	/// </summary>
-	/// @param <T> the generic Type </param>
 	public class Result<T>
 	{
 		/// <summary>
@@ -45,10 +44,13 @@
 		/// Represents the new Version of the sheet. It is only available on some operations. </summary>
 		private int? version;
 
-		/// <summary>
-		/// Gets the Result Code from the request.
-		/// </summary>
-		/// <returns> the Result Code </returns>
+        /// <summary>
+        /// Gets the Result Code from the request.
+        /// </summary>
+        /// <value>
+        /// The result code.
+        /// </value>
+        /// <returns> the Result Code </returns>
 		public virtual int? ResultCode
 		{
 			get
@@ -62,10 +64,13 @@
 		}
 
 
-		/// <summary>
-		/// Gets the Message from the request.
-		/// </summary>
-		/// <returns> the Message </returns>
+        /// <summary>
+        /// Gets the Message from the request.
+        /// </summary>
+        /// <value>
+        /// The message.
+        /// </value>
+        /// <returns> the Message </returns>
 		public virtual string Message
 		{
 			get
@@ -79,10 +84,13 @@
 		}
 
 
-		/// <summary>
-		/// Gets the Result from the request.
-		/// </summary>
-		/// <returns> the Result </returns>
+        /// <summary>
+        /// Gets the Result from the request.
+        /// </summary>
+        /// <value>
+        /// The result object.
+        /// </value>
+        /// <returns> the Result </returns>
 		public virtual T ResultObject
 		{
 			get
@@ -96,10 +104,13 @@
 		}
 
 
-		/// <summary>
-		/// Gets the new Version of the sheet. It is only available on some operations..
-		/// </summary>
-		/// <returns> the Version </returns>
+        /// <summary>
+        /// Gets the new Version of the sheet. It is only available on some operations..
+        /// </summary>
+        /// <value>
+        /// The version.
+        /// </value>
+        /// <returns> the Version </returns>
 		public virtual int? Version
 		{
 			get

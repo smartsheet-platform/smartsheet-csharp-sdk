@@ -42,9 +42,9 @@ namespace Smartsheet.Api.Models
 		/// </summary>
 		private IList<Folder> folders;
 
-		/// <summary>
-		/// Represents the reports.
-		/// </summary>
+		// <summary>
+		// Represents the reports.
+		// </summary>
 		//TODO: implement reports
 		// private List<Report> reports;
 
@@ -147,10 +147,11 @@ namespace Smartsheet.Api.Models
 				}
 			}
 
-			/// <summary>
-			/// Sets the folder Id.
-			/// </summary>
-			/// <param name="id"> the Id of the folder. </param>
+            /// <summary>
+            /// Sets the folder Id.
+            /// </summary>
+            /// <param name="id">the Id of the folder.</param>
+            /// <returns></returns>
 			public virtual UpdateFolderBuilder SetID(long? id)
 			{
 				this.id = id;

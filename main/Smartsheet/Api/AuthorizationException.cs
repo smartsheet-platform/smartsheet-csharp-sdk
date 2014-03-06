@@ -35,9 +35,6 @@
 	/// </summary>
 	public class AuthorizationException : SmartsheetRestException
 	{
-		/// 
-
-
 		/// <summary>
 		/// Constructor.
 		/// </summary>

@@ -84,11 +84,11 @@
     <Compile Include="main\Smartsheet\Api\Internal\http\HttpMethod.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\http\HttpRequest.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\http\HttpResponse.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\json\IdExclusion.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\json\JacksonJsonSerializer.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\json\JsonSerializer.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\json\JSONSerializerException.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\oauth\OAuthFlowImpl.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\Json\IdExclusion.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\Json\JacksonJsonSerializer.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\Json\JsonSerializer.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\Json\JSONSerializerException.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\OAuth\OAuthFlowImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\RowResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\SearchResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\ShareResourcesImpl.cs" />
@@ -98,7 +98,7 @@
     <Compile Include="main\Smartsheet\Api\Internal\SmartsheetImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\TemplateResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\UserResourcesImpl.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\util\Util.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\Util\Util.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\WorkspaceFolderResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\WorkspaceResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\InvalidRequestException.cs" />

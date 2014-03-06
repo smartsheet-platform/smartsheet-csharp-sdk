@@ -28,8 +28,17 @@
 	/// </summary>
 	public enum AttachmentParentType
 	{
+        /// <summary>
+        /// The sheet
+        /// </summary>
 		SHEET,
+        /// <summary>
+        /// The row
+        /// </summary>
 		ROW,
+        /// <summary>
+        /// The comment
+        /// </summary>
 		COMMENT
 	}
 

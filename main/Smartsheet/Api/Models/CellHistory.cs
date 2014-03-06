@@ -27,7 +27,7 @@ namespace Smartsheet.Api.Models
 
 	/// <summary>
 	/// Represents CellHistory object. </summary>
-	/// <seealso cref= <a href="http://help.Smartsheet.brettrocksandwillfixthis/customer/portal/articles/518314-viewing-cell-history">Cell History Documentation</a> </seealso>
+	/// <seealso href="http://help.Smartsheet.brettrocksandwillfixthis/customer/portal/articles/518314-viewing-cell-history">Cell History Documentation </seealso>
 	public class CellHistory : Cell
 	{
 		/// <summary>

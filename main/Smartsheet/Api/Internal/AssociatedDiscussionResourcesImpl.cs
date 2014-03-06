@@ -23,7 +23,7 @@
 
 
 
-	using Util = Api.Internal.util.Util;
+    using Utils = Api.Internal.Utility.Utility;
 	using Discussion = Api.Models.Discussion;
 
 	/// <summary>
@@ -69,7 +69,7 @@
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		public virtual Discussion CreateDiscussion(long objectId, Discussion discussion)
 		{
-			Util.ThrowIfNull(objectId, discussion);
+            Utils.ThrowIfNull(objectId, discussion);
 			return this.CreateResource<Discussion>(MasterResourceType + "/" + objectId + "/discussions", 
                 typeof(Discussion), discussion);
 		}

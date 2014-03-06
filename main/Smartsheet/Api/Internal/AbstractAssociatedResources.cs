@@ -1,7 +1,7 @@
 ﻿namespace Smartsheet.Api.Internal
 {
 
-	using Util = Api.Internal.util.Util;
+    using Utils = Api.Internal.Utility.Utility;
 
 	/*
 	 * #[license]
@@ -46,8 +46,8 @@
 		/// <param name="masterResourceType"> the master resource Type </param>
 		public AbstractAssociatedResources(SmartsheetImpl smartsheet, string masterResourceType) : base(smartsheet)
 		{
-			Util.ThrowIfNull(masterResourceType);
-			Util.ThrowIfEmpty(masterResourceType);
+			Utils.ThrowIfNull(masterResourceType);
+			Utils.ThrowIfEmpty(masterResourceType);
 
 			this.masterResourceType = masterResourceType;
 		}

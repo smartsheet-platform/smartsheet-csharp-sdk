@@ -25,8 +25,8 @@ namespace Smartsheet.Api.Models
 
 	/// <summary>
 	/// Represents the Results of a search. </summary>
-	/// <seealso cref= <a href="http://help.Smartsheet.brettrocksandwillfixthis/customer/portal/articles/522231-searching-in-Smartsheet">Help Searching in 
-	/// Smartsheet</a> </seealso>
+	/// <seealso href="http://help.Smartsheet.brettrocksandwillfixthis/customer/portal/articles/522231-searching-in-Smartsheet">Help Searching in 
+	/// Smartsheet</seealso>
 	public class SearchResult
 	{
 		/// <summary>

@@ -1,4 +1,7 @@
-﻿namespace Smartsheet.Api.Models
+﻿/// <summary>
+/// 
+/// </summary>
+namespace Smartsheet.Api.Models
 {
 
 	/*
@@ -25,13 +28,28 @@
 
 	/// <summary>
 	/// Represents access levels that Users can have. </summary>
-	/// <seealso cref= <a href="http://www.Smartsheet.brettrocksandwillfixthis/developers/Api-documentation#h.umfgm4xt25dq">Access Level Help</a> </seealso>
+	/// <seealso href="http://www.Smartsheet.brettrocksandwillfixthis/developers/Api-documentation#h.umfgm4xt25dq">Access Level Help</seealso>
 	public enum AccessLevel
 	{
+        /// <summary>
+        /// The viewer
+        /// </summary>
 		VIEWER,
+        /// <summary>
+        /// The editor
+        /// </summary>
 		EDITOR,
+        /// <summary>
+        /// The editor share
+        /// </summary>
 		EDITOR_SHARE,
+        /// <summary>
+        /// The admin
+        /// </summary>
 		ADMIN,
+        /// <summary>
+        /// The owner
+        /// </summary>
 		OWNER
 	}
 

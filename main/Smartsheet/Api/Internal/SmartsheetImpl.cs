@@ -28,9 +28,9 @@
 
     using DefaultHttpClient = Api.Internal.http.DefaultHttpClient;
     using HttpClient = Api.Internal.http.HttpClient;
-    using JacksonJsonSerializer = Api.Internal.json.JacksonJsonSerializer;
-    using JsonSerializer = Api.Internal.json.JsonSerializer;
-    using Util = Api.Internal.util.Util;
+    using JacksonJsonSerializer = Api.Internal.Json.JacksonJsonSerializer;
+    using JsonSerializer = Api.Internal.Json.JsonSerializer;
+    using Utils = Api.Internal.Utility.Utility;
 
 	/// <summary>
 	/// This is the implementation of Smartsheet interface.
@@ -195,11 +195,11 @@
 		/// <param name="baseURI"> the server uri </param>
 		/// <param name="accessToken"> the access token </param>
 		/// <param name="httpClient"> the http client (optional) </param>
-		/// <param name="jsonSerializer"> the json serializer (optional) </param>
+		/// <param name="jsonSerializer"> the Json serializer (optional) </param>
 		public SmartsheetImpl(string baseURI, string accessToken, HttpClient httpClient, JsonSerializer jsonSerializer)
 		{
-			Util.ThrowIfNull(baseURI);
-			Util.ThrowIfEmpty(baseURI);
+			Utils.ThrowIfNull(baseURI);
+			Utils.ThrowIfEmpty(baseURI);
 
 			this.baseURI = new Uri(baseURI);
 			this.httpClient = httpClient == null ? new DefaultHttpClient() : httpClient;
@@ -210,7 +210,7 @@
 		/// <summary>
 		/// Finalize the object, this method is overridden To close the HttpClient.
 		/// </summary>
-		/// <exception cref="IOException"> Signals that an I/O exception has occurred. </exception>
+		/// <exception cref="System.IO.IOException"> Signals that an I/O exception has occurred. </exception>
 		~SmartsheetImpl()
 		{
 			this.httpClient.Close();

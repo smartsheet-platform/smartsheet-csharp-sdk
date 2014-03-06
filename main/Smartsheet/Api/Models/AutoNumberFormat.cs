@@ -25,8 +25,8 @@
 
 	/// <summary>
 	/// Represents the AutoNumberFormat object. It describes how the the System Column Type of "AUTO_NUMBER" is auto-generated </summary>
-	/// <seealso cref= <a href="http://www.Smartsheet.brettrocksandwillfixthis/developers/Api-documentation#h.xu85ymcuwnmq">Auto Number Format API Documentation</a> </seealso>
-	/// <seealso cref= <a href="http://help.Smartsheet.brettrocksandwillfixthis/customer/portal/articles/1108408-auto-numbering">Auto Number Format Help</a> </seealso>
+	/// <seealso href="http://www.Smartsheet.brettrocksandwillfixthis/developers/Api-documentation#h.xu85ymcuwnmq">Auto Number Format API Documentation</seealso>
+	/// <seealso href="http://help.Smartsheet.brettrocksandwillfixthis/customer/portal/articles/1108408-auto-numbering">Auto Number Format Help</seealso>
 	public class AutoNumberFormat
 	{
 

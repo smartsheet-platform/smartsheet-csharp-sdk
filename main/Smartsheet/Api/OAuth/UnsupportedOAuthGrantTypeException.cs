@@ -30,9 +30,6 @@
 	/// </summary>
 	public class UnsupportedOAuthGrantTypeException : OAuthTokenException
 	{
-		/// 
-
-
 		/// <summary>
 		/// Constructor.
 		/// </summary>

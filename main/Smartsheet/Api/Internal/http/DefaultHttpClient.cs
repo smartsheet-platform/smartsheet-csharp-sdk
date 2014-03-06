@@ -37,7 +37,7 @@ namespace Smartsheet.Api.Internal.http
     //using CloseableHttpClient = org.apache.http.impl.client.CloseableHttpClient;
     //using HttpClients = org.apache.http.impl.client.HttpClients;
 
-    using Util = Api.Internal.util.Util;
+    using Util = Api.Internal.Utility.Utility;
     using RestSharp;
     using System.Reflection;
     using System;
@@ -67,9 +67,9 @@ namespace Smartsheet.Api.Internal.http
         /// The apache http response. </summary>
         private IRestResponse apacheHttpResponse;
 
-        ///// <summary>
-        ///// Constructor.
-        ///// </summary>
+        /// <summary>
+        /// Constructor.
+        /// </summary>
         public DefaultHttpClient()
             : this(new RestClient())
         {
@@ -198,9 +198,12 @@ namespace Smartsheet.Api.Internal.http
             // Not necessary with restsharp
         }
 
+        /// <summary>
+        /// Release connection - not currently used.
+        /// </summary>
         public virtual void ReleaseConnection()
         {
-            // Not necessar with restsharp
+            // Not necessary with restsharp
         }
 
         private string buildUserAgent()
