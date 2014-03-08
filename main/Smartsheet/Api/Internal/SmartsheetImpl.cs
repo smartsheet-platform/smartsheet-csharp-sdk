@@ -33,7 +33,7 @@ namespace Smartsheet.Api.Internal
 	/// Thread Safety: This class is thread safe because all its mutable fields are safe-guarded using AtomicReference To
 	/// ensure atomic modifications, and also the underlying HttpClient and JsonSerializer interfaces are thread safe.
 	/// </summary>
-	public class SmartsheetImpl : Smartsheet
+	public class SmartsheetImpl : SmartsheetClient
 	{
 		/// <summary>
 		/// Represents the HttpClient.

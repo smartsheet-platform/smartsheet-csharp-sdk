@@ -140,7 +140,7 @@ namespace Smartsheet.Api.Internal
 			{
 			case HttpStatusCode.OK:
                     attachment = this.Smartsheet.JsonSerializer.deserializeResult<Attachment>(
-                        response.Entity.getContent()).ResultObject;
+                        response.Entity.GetContent()).Result;
 				break;
 			default:
 				HandleError(response);
@@ -183,7 +183,7 @@ namespace Smartsheet.Api.Internal
 		public virtual Attachment AttachURL(long objectId, Attachment attachment)
 		{
             Utils.ThrowIfNull(objectId, attachment);
-            //Result<T>
+            //RequestResult<T>
 			return this.CreateResource(MasterResourceType + "/" + objectId + "/attachments", 
                 typeof(Attachment), attachment);
 		}

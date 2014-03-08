@@ -98,7 +98,7 @@ namespace Smartsheet.Api.Internal.http
         /// Gets the content as a stream
         /// </summary>
         /// <returns></returns>
-        public virtual StreamReader getContent()
+        public virtual StreamReader GetContent()
         {
             //FIXME: Modify restsharp To use a stream for the content To save memory.
             return new StreamReader(new MemoryStream(Encoding.UTF8.GetBytes(content)));

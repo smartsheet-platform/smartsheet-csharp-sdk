@@ -1,7 +1,7 @@
 ﻿//    #[license]
-//    Smartsheet SDK for C#
+//    SmartsheetClient SDK for C#
 //    %%
-//    Copyright (C) 2014 Smartsheet
+//    Copyright (C) 2014 SmartsheetClient
 //    %%
 //    Licensed under the Apache License, Version 2.0 (the "License");
 //    you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ namespace Smartsheet.Api.Internal
     using Utils = Api.Internal.Utility.Utility;
 
 	/// <summary>
-	/// This is the base class of the Smartsheet REST API resources.
+	/// This is the base class of the SmartsheetClient REST API resources.
 	/// 
 	/// Thread Safety: This class is thread safe because it is immutable and the underlying SmartsheetImpl is thread safe.
 	/// </summary>
@@ -135,7 +135,7 @@ namespace Smartsheet.Api.Internal
             /// </summary>
             /// <param name="error"> the error </param>
             /// <returns> the exception </returns>
-            /// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
+            /// <exception cref="SmartsheetException"> the SmartsheetClient exception </exception>
             public SmartsheetRestException getException(Api.Models.Error error)
             {
                 object[] args = new object[]{error};
@@ -153,7 +153,7 @@ namespace Smartsheet.Api.Internal
 		/// <summary>
 		/// Constructor.
 		/// </summary>
-		/// <param name="smartsheet"> the Smartsheet </param>
+		/// <param name="smartsheet"> the SmartsheetClient </param>
 		protected internal AbstractResources(SmartsheetImpl smartsheet)
 		{
 			Utils.ThrowIfNull(smartsheet);
@@ -162,7 +162,7 @@ namespace Smartsheet.Api.Internal
 		}
 
 		/// <summary>
-		/// Get a resource from Smartsheet REST API.
+		/// Get a resource from SmartsheetClient REST API.
 		/// 
 		/// Parameters: - path : the relative path of the resource - objectClass : the resource object class
 		/// 
@@ -180,7 +180,7 @@ namespace Smartsheet.Api.Internal
 		/// <param name="path"> the relative path of the resource. </param>
 		/// <param name="objectClass"> the object class </param>
 		/// <returns> the resource </returns>
-		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
+		/// <exception cref="SmartsheetException"> the SmartsheetClient exception </exception>
 		protected internal virtual T GetResource<T>(string path, Type objectClass)
 		{
 			Utils.ThrowIfNull(path, objectClass);
@@ -212,7 +212,7 @@ namespace Smartsheet.Api.Internal
                 case HttpStatusCode.OK:
 					try
 					{
-                        obj = this.smartsheet.JsonSerializer.deserialize<T>(response.Entity.getContent());
+                        obj = this.smartsheet.JsonSerializer.deserialize<T>(response.Entity.GetContent());
 					}
                     catch (JSONSerializationException ex)
 					{
@@ -238,7 +238,7 @@ namespace Smartsheet.Api.Internal
 		}
 
 		/// <summary>
-		/// Create a resource using Smartsheet REST API.
+		/// Create a resource using SmartsheetClient REST API.
 		/// 
 		/// Exceptions: 
 		///   IllegalArgumentException : if any argument is null, or path is empty string
@@ -252,7 +252,7 @@ namespace Smartsheet.Api.Internal
 		/// <param name="objectClass"> the resource object class </param>
 		/// <param name="object"> the object To create </param>
 		/// <returns> the created resource </returns>
-		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
+		/// <exception cref="SmartsheetException"> the SmartsheetClient exception </exception>
 		protected internal virtual T CreateResource<T>(string path, Type objectClass, T @object)
 		{
 			Utils.ThrowIfNull(path, @object);
@@ -277,7 +277,7 @@ namespace Smartsheet.Api.Internal
 			{
 				case HttpStatusCode.OK:
                     obj = this.smartsheet.JsonSerializer.deserializeResult<T>(
-                        response.Entity.getContent()).ResultObject;
+                        response.Entity.GetContent()).Result;
 					break;
 				default:
 					HandleError(response);
@@ -290,7 +290,7 @@ namespace Smartsheet.Api.Internal
 		}
 
 		/// <summary>
-		/// Update a resource using Smartsheet REST API.
+		/// Update a resource using SmartsheetClient REST API.
 		/// 
 		/// Exceptions:
 		///   IllegalArgumentException : if any argument is null, or path is empty string
@@ -305,7 +305,7 @@ namespace Smartsheet.Api.Internal
 		/// <param name="objectClass"> the resource object class </param>
 		/// <param name="object"> the object To create </param>
 		/// <returns> the updated resource </returns>
-		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
+		/// <exception cref="SmartsheetException"> the SmartsheetClient exception </exception>
 		protected internal virtual T UpdateResource<T>(string path, Type objectClass, T @object)
 		{
 			Utils.ThrowIfNull(path, @object);
@@ -329,8 +329,8 @@ namespace Smartsheet.Api.Internal
 			switch (response.StatusCode)
 			{
 				case HttpStatusCode.OK:
-					//obj = this.smartsheet.JsonSerializer.DeserializeResult(objectClass, response.Entity.content).Result;
-                    obj = this.smartsheet.JsonSerializer.deserializeResult<T>(response.Entity.getContent()).ResultObject;
+					//obj = this.smartsheet.JsonSerializer.DeserializeResult(objectClass, response.Entity.content).RequestResult;
+                    obj = this.smartsheet.JsonSerializer.deserializeResult<T>(response.Entity.GetContent()).Result;
 					break;
 				default:
 					HandleError(response);
@@ -343,7 +343,7 @@ namespace Smartsheet.Api.Internal
 		}
 
 		/// <summary>
-		/// List resources using Smartsheet REST API.
+		/// List resources using SmartsheetClient REST API.
 		/// 
 		/// Exceptions:
 		///   IllegalArgumentException : if any argument is null, or path is empty string
@@ -379,7 +379,7 @@ namespace Smartsheet.Api.Internal
 			{
 				case HttpStatusCode.OK:
 					//obj = this.smartsheet.JsonSerializer.DeserializeList(objectClass, response.Entity.content);
-                    obj = this.smartsheet.JsonSerializer.deserializeList<T>(response.Entity.getContent());
+                    obj = this.smartsheet.JsonSerializer.deserializeList<T>(response.Entity.GetContent());
 					break;
 				default:
 					HandleError(response);
@@ -392,7 +392,7 @@ namespace Smartsheet.Api.Internal
 		}
 
 		/// <summary>
-		/// Delete a resource from Smartsheet REST API.
+		/// Delete a resource from SmartsheetClient REST API.
 		/// 
 		/// Exceptions:
 		///   IllegalArgumentException : if any argument is null, or path is empty string
@@ -405,7 +405,7 @@ namespace Smartsheet.Api.Internal
 		/// </summary>
 		/// <param name="path"> the relative path of the resource </param>
 		/// <param name="objectClass"> the resource object class </param>
-		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
+		/// <exception cref="SmartsheetException"> the SmartsheetClient exception </exception>
 		protected internal virtual void DeleteResource<T>(string path, Type objectClass)
 		{
 			Utils.ThrowIfNull(path, objectClass);
@@ -425,7 +425,7 @@ namespace Smartsheet.Api.Internal
 			switch (response.StatusCode)
 			{
 				case HttpStatusCode.OK:
-                    this.smartsheet.JsonSerializer.deserializeResult<T>(response.Entity.getContent());
+                    this.smartsheet.JsonSerializer.deserializeResult<T>(response.Entity.GetContent());
 					break;
 				default:
 					HandleError(response);
@@ -436,7 +436,7 @@ namespace Smartsheet.Api.Internal
 		}
 
 		/// <summary>
-		/// Post an object To Smartsheet REST API and receive a list of objects from response.
+		/// Post an object To SmartsheetClient REST API and receive a list of objects from response.
 		/// 
 		/// Parameters: - path : the relative path of the resource collections - objectToPost : the object To post -
 		/// objectClassToReceive : the resource object class To receive
@@ -455,7 +455,7 @@ namespace Smartsheet.Api.Internal
 		/// <param name="objectToPost"> the object To post </param>
 		/// <param name="objectClassToReceive"> the object class To receive </param>
 		/// <returns> the list </returns>
-		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
+		/// <exception cref="SmartsheetException"> the SmartsheetClient exception </exception>
 		protected internal virtual IList<S> PostAndReceiveList<T, S>(string path, T objectToPost, Type objectClassToReceive)
 		{
 			Utils.ThrowIfNull(path, objectToPost, objectClassToReceive);
@@ -479,8 +479,7 @@ namespace Smartsheet.Api.Internal
 			switch (response.StatusCode)
 			{
 				case HttpStatusCode.OK:
-                    obj = this.smartsheet.JsonSerializer.deserializeListResult<S>(
-                        response.Entity.getContent()).ResultObject;
+                    obj = this.smartsheet.JsonSerializer.deserializeListResult<S>(response.Entity.GetContent()).Result;
 					break;
 				default:
 					HandleError(response);
@@ -493,7 +492,7 @@ namespace Smartsheet.Api.Internal
 		}
 
 		/// <summary>
-		/// Put an object To Smartsheet REST API and receive a list of objects from response.
+		/// Put an object To SmartsheetClient REST API and receive a list of objects from response.
 		/// 
 		/// Exceptions:
 		///   IllegalArgumentException : if any argument is null, or path is empty string
@@ -507,7 +506,7 @@ namespace Smartsheet.Api.Internal
 		/// <param name="objectToPut"> the object To put </param>
 		/// <param name="objectClassToReceive"> the resource object class To receive </param>
 		/// <returns> the object list </returns>
-		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
+		/// <exception cref="SmartsheetException"> the SmartsheetClient exception </exception>
         protected internal virtual IList<S> PutAndReceiveList<T, S>(string path, T objectToPut, Type objectClassToReceive)
 		{
 			Utils.ThrowIfNull(path, objectToPut, objectClassToReceive);
@@ -532,7 +531,7 @@ namespace Smartsheet.Api.Internal
 			{
 				case HttpStatusCode.OK:
                     obj = this.smartsheet.JsonSerializer.deserializeListResult<S>( 
-                        response.Entity.getContent()).ResultObject;
+                        response.Entity.GetContent()).Result;
 					break;
 				default:
 					HandleError(response);
@@ -572,13 +571,13 @@ namespace Smartsheet.Api.Internal
 		}
 
 		/// <summary>
-		/// Handles an error HttpResponse (non-200) returned by Smartsheet REST API.
+		/// Handles an error HttpResponse (non-200) returned by SmartsheetClient REST API.
 		/// 
 		/// Exceptions: 
 		///   SmartsheetRestException : the exception corresponding To the error
 		/// </summary>
 		/// <param name="response"> the HttpResponse </param>
-		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
+		/// <exception cref="SmartsheetException"> the SmartsheetClient exception </exception>
 		protected internal virtual void HandleError(HttpResponse response)
 		{
 
@@ -586,7 +585,7 @@ namespace Smartsheet.Api.Internal
 			try
 			{
                 error = this.smartsheet.JsonSerializer.deserialize<Api.Models.Error>(
-                    response.Entity.getContent());
+                    response.Entity.GetContent());
             }
             catch (JSONSerializationException ex)
             {
@@ -624,9 +623,9 @@ namespace Smartsheet.Api.Internal
 
 
 		/// <summary>
-		/// Gets the Smartsheet.
+		/// Gets the SmartsheetClient.
 		/// </summary>
-		/// <returns> the Smartsheet </returns>
+		/// <returns> the SmartsheetClient </returns>
 		public virtual SmartsheetImpl Smartsheet
 		{
 			get
@@ -653,10 +652,15 @@ namespace Smartsheet.Api.Internal
             {
                 this.smartsheet.JsonSerializer.serialize<T>(objectToPost, writer);
                 writer.Flush();
-
+                writer.BaseStream.Position = 0;
+                
                 using (StreamReader reader = new StreamReader(writer.BaseStream))
                 {
-                    entity.Content = reader.ReadToEnd();
+                    string serializedData = reader.ReadToEnd();
+                    #if DEBUG
+                        Console.WriteLine("Serialized Data: "+serializedData);
+                    #endif
+                    entity.Content = serializedData;
                     entity.ContentLength = reader.BaseStream.Length;
                 }
             }

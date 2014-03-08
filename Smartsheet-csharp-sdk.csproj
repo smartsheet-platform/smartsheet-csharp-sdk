@@ -83,10 +83,11 @@
     <Compile Include="main\Smartsheet\Api\Internal\http\HttpMethod.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\http\HttpRequest.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\http\HttpResponse.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\Json\IdExclusion.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\Json\ContractResolver.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\Json\JsonNetSerializer.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\Json\JsonSerializer.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\Json\JSONSerializerException.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\Json\LowerCaseContractResolver.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\OAuth\OAuthFlowImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\RowResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\SearchResourcesImpl.cs" />
@@ -167,7 +168,7 @@
     <Compile Include="main\Smartsheet\Api\SheetColumnResources.cs" />
     <Compile Include="main\Smartsheet\Api\SheetResources.cs" />
     <Compile Include="main\Smartsheet\Api\SheetRowResources.cs" />
-    <Compile Include="main\Smartsheet\Api\Smartsheet.cs" />
+    <Compile Include="main\Smartsheet\Api\SmartsheetClient.cs" />
     <Compile Include="main\Smartsheet\Api\SmartsheetBuilder.cs" />
     <Compile Include="main\Smartsheet\Api\SmartsheetException.cs" />
     <Compile Include="main\Smartsheet\Api\SmartsheetRestException.cs" />
@@ -181,7 +182,6 @@
     <None Include="packages.config" />
     <None Include="smartsheet-csharp-sdk.licenseheader" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
   <ProjectExtensions>
     <VisualStudio AllowExistingFolder="true" />

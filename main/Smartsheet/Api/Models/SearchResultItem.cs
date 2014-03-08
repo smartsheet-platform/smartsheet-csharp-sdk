@@ -23,47 +23,47 @@ namespace Smartsheet.Api.Models
 
 
 	/// <summary>
-	/// Represents one specific Result of a search.
+	/// Represents one specific RequestResult of a search.
 	/// </summary>
 	public class SearchResultItem
 	{
 		/// <summary>
-		/// Represents the Text for this specific search Result.
+		/// Represents the Text for this specific search RequestResult.
 		/// </summary>
 		private string text;
 
 		/// <summary>
-		/// Represents the object ID for this specific search Result.
+		/// Represents the object ID for this specific search RequestResult.
 		/// </summary>
 		private long? objectId;
 
 		/// <summary>
-		/// Represents the object Type (row, discussion, attach) for this specific search Result.
+		/// Represents the object Type (row, discussion, attach) for this specific search RequestResult.
 		/// </summary>
 		private string objectType;
 
 		/// <summary>
-		/// Represents the parent object ID for this specific search Result.
+		/// Represents the parent object ID for this specific search RequestResult.
 		/// </summary>
 		private long? parentObjectId;
 
 		/// <summary>
-		/// Represents the parent object Type for this specific search Result.
+		/// Represents the parent object Type for this specific search RequestResult.
 		/// </summary>
 		private string parentObjectType;
 
 		/// <summary>
-		/// Represents the parent object Name for this specific search Result.
+		/// Represents the parent object Name for this specific search RequestResult.
 		/// </summary>
 		private string parentObjectName;
 
 		/// <summary>
-		/// Represents the context data for this specific search Result.
+		/// Represents the context data for this specific search RequestResult.
 		/// </summary>
 		private IList<string> contextData;
 
 		/// <summary>
-		/// Gets the Text for this specific search Result.
+		/// Gets the Text for this specific search RequestResult.
 		/// </summary>
 		/// <returns> the Text </returns>
 		public virtual string Text
@@ -80,7 +80,7 @@ namespace Smartsheet.Api.Models
 
 
 		/// <summary>
-		/// Gets the object Id for this specific search Result.
+		/// Gets the object Id for this specific search RequestResult.
 		/// </summary>
 		/// <returns> the object Id </returns>
 		public virtual long? ObjectId
@@ -97,7 +97,7 @@ namespace Smartsheet.Api.Models
 
 
 		/// <summary>
-		/// Gets the object Type for this specific search Result.
+		/// Gets the object Type for this specific search RequestResult.
 		/// </summary>
 		/// <returns> the object Type </returns>
 		public virtual string ObjectType
@@ -114,7 +114,7 @@ namespace Smartsheet.Api.Models
 
 
 		/// <summary>
-		/// Gets the parent object Id for this specific search Result.
+		/// Gets the parent object Id for this specific search RequestResult.
 		/// </summary>
 		/// <returns> the parent object Id </returns>
 		public virtual long? ParentObjectId
@@ -131,7 +131,7 @@ namespace Smartsheet.Api.Models
 
 
 		/// <summary>
-		/// Gets the parent object Type for this specific search Result.
+		/// Gets the parent object Type for this specific search RequestResult.
 		/// </summary>
 		/// <returns> the parent object Type </returns>
 		public virtual string ParentObjectType
@@ -148,7 +148,7 @@ namespace Smartsheet.Api.Models
 
 
 		/// <summary>
-		/// Gets the parent object Name for this specific search Result.
+		/// Gets the parent object Name for this specific search RequestResult.
 		/// </summary>
 		/// <returns> the parent object Name </returns>
 		public virtual string ParentObjectName
@@ -165,7 +165,7 @@ namespace Smartsheet.Api.Models
 
 
 		/// <summary>
-		/// Gets the context data for this specific search Result.
+		/// Gets the context data for this specific search RequestResult.
 		/// </summary>
 		/// <returns> the context data </returns>
 		public virtual IList<string> ContextData

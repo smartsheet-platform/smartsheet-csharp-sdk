@@ -608,7 +608,7 @@ namespace Smartsheet.Api.Internal
 			case HttpStatusCode.OK:
 				try
 				{
-					CopyStream(response.Entity.getContent().BaseStream, outputStream.BaseStream);
+					CopyStream(response.Entity.GetContent().BaseStream, outputStream.BaseStream);
 				}
 				catch (IOException e)
 				{

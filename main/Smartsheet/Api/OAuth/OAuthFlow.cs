@@ -46,7 +46,7 @@ namespace Smartsheet.Api.OAuth
 		/// parameters from Smartsheet OAuth server).
 		/// </summary>
 		/// <param name="authorizationResponseURL"> the authorization response Url </param>
-		/// <returns> the authorization Result </returns>
+		/// <returns> the authorization RequestResult </returns>
 		/// <exception cref="System.UriFormatException"> the URI syntax exception </exception>
 		/// <exception cref="AccessDeniedException"> the access denied exception </exception>
 		/// <exception cref="UnsupportedResponseTypeException"> the unsupported response Type exception </exception>
@@ -58,7 +58,7 @@ namespace Smartsheet.Api.OAuth
 		/// <summary>
 		/// Obtain a new token using AuthorizationResult.
 		/// </summary>
-		/// <param name="authorizationResult"> the authorization Result </param>
+		/// <param name="authorizationResult"> the authorization RequestResult </param>
 		/// <returns> the token </returns>
 		/// <exception cref="OAuthTokenException"> the o auth token exception </exception>
 		/// <exception cref="JSONSerializationException"> the JSON serializer exception </exception>

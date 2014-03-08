@@ -124,9 +124,10 @@ namespace Smartsheet.Api.Internal.http
                 }
             }
             
-            if (smartsheetRequest.Entity != null && smartsheetRequest.Entity.getContent() != null)
+            if (smartsheetRequest.Entity != null && smartsheetRequest.Entity.GetContent() != null)
             {
-                restRequest.AddParameter("application/json", smartsheetRequest.Entity.getContent(), ParameterType.RequestBody);
+                restRequest.AddParameter("application/json", smartsheetRequest.Entity.GetContent().ReadToEnd(),
+                    ParameterType.RequestBody);
             }
 
             // Set the client base Url.

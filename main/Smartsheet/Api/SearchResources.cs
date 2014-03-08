@@ -36,7 +36,7 @@ namespace Smartsheet.Api
 		/// <para>It mirrors To the following Smartsheet REST API method: GET /search</para>
 		/// </summary>
 		/// <param name="query"> the query Text </param>
-		/// <returns> the search Result (note that if there is no such resource, this method will throw 
+		/// <returns> the search RequestResult (note that if there is no such resource, this method will throw 
 		/// ResourceNotFoundException rather than returning null). </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -53,7 +53,7 @@ namespace Smartsheet.Api
 		/// </summary>
 		/// <param name="sheetId"> the sheet Id </param>
 		/// <param name="query"> the query Text </param>
-		/// <returns> the search Result (note that if there is no such resource, this method will throw 
+		/// <returns> the search RequestResult (note that if there is no such resource, this method will throw 
 		/// ResourceNotFoundException rather than returning null). </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>

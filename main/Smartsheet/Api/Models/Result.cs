@@ -21,12 +21,12 @@ namespace Smartsheet.Api.Models
 
 
 	/// <summary>
-	/// Result object To contain information about a PUT or POST request.
+	/// RequestResult object To contain information about a PUT or POST request.
 	/// </summary>
-	public class Result<T>
+	public class RequestResult<T>
 	{
 		/// <summary>
-		/// Represents the Result Code from the request. </summary>
+		/// Represents the RequestResult Code from the request. </summary>
 		private int? resultCode;
 
 		/// <summary>
@@ -42,12 +42,12 @@ namespace Smartsheet.Api.Models
 		private int? version;
 
         /// <summary>
-        /// Gets the Result Code from the request.
+        /// Gets the RequestResult Code from the request.
         /// </summary>
         /// <value>
         /// The result code.
         /// </value>
-        /// <returns> the Result Code </returns>
+        /// <returns> the RequestResult Code </returns>
 		public virtual int? ResultCode
 		{
 			get
@@ -82,13 +82,13 @@ namespace Smartsheet.Api.Models
 
 
         /// <summary>
-        /// Gets the Result from the request.
+        /// Gets the RequestResult from the request.
         /// </summary>
         /// <value>
         /// The result object.
         /// </value>
-        /// <returns> the Result </returns>
-		public virtual T ResultObject
+        /// <returns> the RequestResult </returns>
+		public virtual T Result
 		{
 			get
 			{

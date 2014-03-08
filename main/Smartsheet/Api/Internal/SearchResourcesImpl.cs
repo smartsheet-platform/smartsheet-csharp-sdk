@@ -77,7 +77,7 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
 		/// <param name="query"> the query Text </param>
-		/// <returns> the search Result (note that if there is no such resource, this method will throw
+		/// <returns> the search RequestResult (note that if there is no such resource, this method will throw
 		/// ResourceNotFoundException rather than returning null). </returns>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		public virtual SearchResult Search(string query)
@@ -101,7 +101,7 @@ namespace Smartsheet.Api.Internal
 		/// </summary>
 		/// <param name="sheetId"> the sheet Id </param>
 		/// <param name="query"> the query </param>
-		/// <returns> the search Result (note that if there is no such resource, this method will throw
+		/// <returns> the search RequestResult (note that if there is no such resource, this method will throw
 		/// ResourceNotFoundException rather than returning null). </returns>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		public virtual SearchResult SearchSheet(long sheetId, string query)

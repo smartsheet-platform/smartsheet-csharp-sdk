@@ -23,7 +23,7 @@ namespace Smartsheet.Api.OAuth
 
 
 	/// <summary>
-	/// Represents an OAuth authorization Result.
+	/// Represents an OAuth authorization RequestResult.
 	/// </summary>
 	public class AuthorizationResult
 	{

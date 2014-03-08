@@ -1,7 +1,7 @@
 ﻿//    #[license]
-//    Smartsheet SDK for C#
+//    SmartsheetClient SDK for C#
 //    %%
-//    Copyright (C) 2014 Smartsheet
+//    Copyright (C) 2014 SmartsheetClient
 //    %%
 //    Licensed under the Apache License, Version 2.0 (the "License");
 //    you may not use this file except in compliance with the License.
@@ -21,9 +21,9 @@ namespace Smartsheet.Api
 
 	/*
 	 * #[license]
-	 * Smartsheet SDK for C#
+	 * SmartsheetClient SDK for C#
 	 * %%
-	 * Copyright (C) 2014 Smartsheet
+	 * Copyright (C) 2014 SmartsheetClient
 	 * %%
 	 * Licensed under the Apache License, Version 2.0 (the "License");
 	 * you may not use this file except in compliance with the License.
@@ -48,7 +48,7 @@ namespace Smartsheet.Api
 	using JsonSerializer = Api.Internal.Json.JsonSerializer;
 
 	/// <summary>
-	/// <para>A convenience class To help create a <seealso cref="Smartsheet"/> instance with the appropriate fields.</para>
+	/// <para>A convenience class To help create a <seealso cref="SmartsheetClient"/> instance with the appropriate fields.</para>
 	/// 
 	/// <para>Thread Safety: This class is not thread safe since it's mutable, one builder instance is NOT expected To be used in
 	/// multiple threads.</para>
@@ -91,9 +91,9 @@ namespace Smartsheet.Api
 		private string assumedUser;
 
 		/// <summary>
-		/// <para>Represents the default base URI of the Smartsheet REST API.</para>
+		/// <para>Represents the default base URI of the SmartsheetClient REST API.</para>
 		/// 
-		/// <para>It is a constant with Value "https://Api.Smartsheet.com/1.1".</para>
+		/// <para>It is a constant with Value "https://Api.SmartsheetClient.com/1.1".</para>
 		/// </summary>
 		public const string DEFAULT_BASE_URI = "https://api.smartsheet.com/1.1/";
 
@@ -108,7 +108,7 @@ namespace Smartsheet.Api
 		/// <para>Set the HttpClient.</para>
 		/// </summary>
 		/// <param name="httpClient"> the http client </param>
-		/// <returns> the Smartsheet builder </returns>
+		/// <returns> the SmartsheetClient builder </returns>
 		public virtual SmartsheetBuilder SetHttpClient(HttpClient httpClient)
 		{
 			this.httpClient = httpClient;
@@ -130,7 +130,7 @@ namespace Smartsheet.Api
 		/// <para>Set the base URI.</para>
 		/// </summary>
 		/// <param name="baseURI"> the base uri </param>
-		/// <returns> the Smartsheet builder </returns>
+		/// <returns> the SmartsheetClient builder </returns>
 		public virtual SmartsheetBuilder SetBaseURI(string baseURI)
 		{
 			this.baseURI = baseURI;
@@ -141,7 +141,7 @@ namespace Smartsheet.Api
 		/// <para>Set the access token.</para>
 		/// </summary>
 		/// <param name="accessToken"> the access token </param>
-		/// <returns> the Smartsheet builder </returns>
+		/// <returns> the SmartsheetClient builder </returns>
 		public virtual SmartsheetBuilder SetAccessToken(string accessToken)
 		{
 			this.accessToken = accessToken;
@@ -152,7 +152,7 @@ namespace Smartsheet.Api
 		/// <para>Set the assumed user.</para>
 		/// </summary>
 		/// <param name="assumedUser"> the assumed user </param>
-		/// <returns> the Smartsheet builder </returns>
+		/// <returns> the SmartsheetClient builder </returns>
 		public virtual SmartsheetBuilder SetAssumedUser(string assumedUser)
 		{
 			this.assumedUser = assumedUser;
@@ -232,10 +232,10 @@ namespace Smartsheet.Api
 		}
 
 		/// <summary>
-		/// <para>Build the Smartsheet instance.</para>
+		/// <para>Build the SmartsheetClient instance.</para>
 		/// </summary>
-		/// <returns> the Smartsheet instance </returns>
-		public virtual Smartsheet Build()
+		/// <returns> the SmartsheetClient instance </returns>
+		public virtual SmartsheetClient Build()
 		{
 			if (httpClient == null)
 			{
