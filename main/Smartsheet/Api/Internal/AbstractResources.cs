@@ -27,10 +27,10 @@ namespace Smartsheet.Api.Internal
     using System.IO;
     using System.Net;
 
-    using HttpEntity = Api.Internal.http.HttpEntity;
-    using HttpMethod = Api.Internal.http.HttpMethod;
-    using HttpRequest = Api.Internal.http.HttpRequest;
-    using HttpResponse = Api.Internal.http.HttpResponse;
+    using HttpEntity = Api.Internal.Http.HttpEntity;
+    using HttpMethod = Api.Internal.Http.HttpMethod;
+    using HttpRequest = Api.Internal.Http.HttpRequest;
+    using HttpResponse = Api.Internal.Http.HttpResponse;
     using Utils = Api.Internal.Utility.Utility;
 
 	/// <summary>
@@ -214,7 +214,7 @@ namespace Smartsheet.Api.Internal
 					{
                         obj = this.smartsheet.JsonSerializer.deserialize<T>(response.Entity.GetContent());
 					}
-                    catch (JSONSerializationException ex)
+                    catch (JsonSerializationException ex)
 					{
 						throw new SmartsheetException(ex);
 					}
@@ -587,7 +587,7 @@ namespace Smartsheet.Api.Internal
                 error = this.smartsheet.JsonSerializer.deserialize<Api.Models.Error>(
                     response.Entity.GetContent());
             }
-            catch (JSONSerializationException ex)
+            catch (JsonSerializationException ex)
             {
                 throw new SmartsheetException(ex);
             }

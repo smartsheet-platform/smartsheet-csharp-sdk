@@ -18,7 +18,7 @@
 
 using System.IO;
 using System.Text;
-namespace Smartsheet.Api.Internal.http
+namespace Smartsheet.Api.Internal.Http
 {
 
 	/// <summary>

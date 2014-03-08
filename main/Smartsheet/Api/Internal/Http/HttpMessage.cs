@@ -18,7 +18,7 @@
 
 using System.Collections.Generic;
 
-namespace Smartsheet.Api.Internal.http
+namespace Smartsheet.Api.Internal.Http
 {
 
 

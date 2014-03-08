@@ -21,8 +21,8 @@ namespace Smartsheet.Api.Internal
 
     using System;
     using System.Threading;
-    using DefaultHttpClient = Api.Internal.http.DefaultHttpClient;
-    using HttpClient = Api.Internal.http.HttpClient;
+    using DefaultHttpClient = Api.Internal.Http.DefaultHttpClient;
+    using HttpClient = Api.Internal.Http.HttpClient;
     using JsonNetSerializer = Api.Internal.Json.JsonNetSerializer;
     using JsonSerializer = Api.Internal.Json.JsonSerializer;
     using Utils = Api.Internal.Utility.Utility;

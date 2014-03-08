@@ -16,38 +16,62 @@
 //    limitations under the License.
 //    %[license]
 
-using System.Net;
-namespace Smartsheet.Api.Internal.http
+using System;
+namespace Smartsheet.Api.Internal.Http
 {
 
 
 	/// <summary>
-	/// This class represents an HTTP response.
+	/// This class represents an HTTP request.
 	/// 
 	/// Thread Safety: This class is not thread safe since it's mutable.
 	/// </summary>
-	public class HttpResponse : HttpMessage
+	public class HttpRequest : HttpMessage
 	{
 		/// <summary>
-		/// Represents the response Status Code.
+		/// Represents the URI.
 		/// 
 		/// It has a pair of setter/getter (not shown on class diagram for brevity).
 		/// </summary>
-		private HttpStatusCode statusCode;
+		private Uri uri;
 
 		/// <summary>
-		/// Gets the Status Code.
+		/// Represents the HTTP method.
+		/// 
+		/// It has a pair of setter/getter (not shown on class diagram for brevity).
 		/// </summary>
-		/// <returns> the Status Code </returns>
-		public virtual HttpStatusCode StatusCode
+		private HttpMethod? method;
+
+		/// <summary>
+		/// Gets the uri.
+		/// </summary>
+		/// <returns> the uri </returns>
+		public virtual Uri Uri
 		{
 			get
 			{
-				return statusCode;
+				return uri;
 			}
 			set
 			{
-				this.statusCode = value;
+				this.uri = value;
+			}
+		}
+
+
+		/// <summary>
+		/// Gets the method.
+		/// </summary>
+		/// <returns> the method </returns>
+		public virtual HttpMethod? Method
+		{
+			get
+			{
+				return method;
+			}
+			set
+			{
+				this.method = value;
 			}
 		}
 

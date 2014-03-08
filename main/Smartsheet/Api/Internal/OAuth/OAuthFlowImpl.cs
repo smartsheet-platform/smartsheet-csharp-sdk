@@ -45,12 +45,12 @@ namespace Smartsheet.Api.Internal.OAuth
 	 * %[license]
 	 */
 
-	using HttpClient = Api.Internal.http.HttpClient;
-	using HttpClientException = Api.Internal.http.HttpClientException;
-	using HttpMethod = Api.Internal.http.HttpMethod;
-	using HttpRequest = Api.Internal.http.HttpRequest;
-	using HttpResponse = Api.Internal.http.HttpResponse;
-	using JSONSerializationException = Api.Internal.Json.JSONSerializationException;
+	using HttpClient = Api.Internal.Http.HttpClient;
+	using HttpClientException = Api.Internal.Http.HttpClientException;
+	using HttpMethod = Api.Internal.Http.HttpMethod;
+	using HttpRequest = Api.Internal.Http.HttpRequest;
+	using HttpResponse = Api.Internal.Http.HttpResponse;
+	using JSONSerializationException = Api.Internal.Json.JsonSerializationException;
 	using JsonSerializer = Api.Internal.Json.JsonSerializer;
 	using Util = Api.Internal.Utility.Utility;
 	using AccessDeniedException = Api.OAuth.AccessDeniedException;

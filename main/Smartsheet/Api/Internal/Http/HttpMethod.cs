@@ -16,35 +16,32 @@
 //    limitations under the License.
 //    %[license]
 
-using System;
-
-namespace Smartsheet.Api.Internal.http
+namespace Smartsheet.Api.Internal.Http
 {
 
 
-	/// <summary>
-	/// This is the exception throw by HttpClient To indicate errors occurred during HTTP operation.
-	/// 
-	/// Thread safety: Exceptions are not thread safe.
-	/// </summary>
-	public class HttpClientException : SmartsheetException
+    /// <summary>
+    /// Represents HTTP methods.
+    /// Thread Safety: This enumeration is thread safe as it is immutable.
+    /// </summary>
+	public enum HttpMethod
 	{
-		/// <summary>
-		/// Constructor.
-		/// </summary>
-		/// <param name="message"> the Message </param>
-		public HttpClientException(string message) : base(message)
-		{
-		}
-
-		/// <summary>
-		/// Constructor.
-		/// </summary>
-		/// <param name="message"> the Message </param>
-		/// <param name="cause"> the cause </param>
-		public HttpClientException(string message, Exception cause) : base(message, cause)
-		{
-		}
+        /// <summary>
+        /// The get
+        /// </summary>
+		GET,
+        /// <summary>
+        /// The post
+        /// </summary>
+		POST,
+        /// <summary>
+        /// The put
+        /// </summary>
+		PUT,
+        /// <summary>
+        /// The delete
+        /// </summary>
+		DELETE
 	}
 
 }

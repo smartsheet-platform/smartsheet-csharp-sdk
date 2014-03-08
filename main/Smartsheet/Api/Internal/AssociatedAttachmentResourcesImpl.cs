@@ -23,10 +23,10 @@ namespace Smartsheet.Api.Internal
 
 
 
-	using HttpEntity = Api.Internal.http.HttpEntity;
-	using HttpMethod = Api.Internal.http.HttpMethod;
-	using HttpRequest = Api.Internal.http.HttpRequest;
-	using HttpResponse = Api.Internal.http.HttpResponse;
+	using HttpEntity = Api.Internal.Http.HttpEntity;
+	using HttpMethod = Api.Internal.Http.HttpMethod;
+	using HttpRequest = Api.Internal.Http.HttpRequest;
+	using HttpResponse = Api.Internal.Http.HttpResponse;
     using Utils = Api.Internal.Utility.Utility;
 	using Attachment = Api.Models.Attachment;
     using System.IO;

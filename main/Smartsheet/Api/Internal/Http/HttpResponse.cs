@@ -16,32 +16,41 @@
 //    limitations under the License.
 //    %[license]
 
-namespace Smartsheet.Api.Internal.http
+using System.Net;
+namespace Smartsheet.Api.Internal.Http
 {
 
 
-    /// <summary>
-    /// Represents HTTP methods.
-    /// Thread Safety: This enumeration is thread safe as it is immutable.
-    /// </summary>
-	public enum HttpMethod
+	/// <summary>
+	/// This class represents an HTTP response.
+	/// 
+	/// Thread Safety: This class is not thread safe since it's mutable.
+	/// </summary>
+	public class HttpResponse : HttpMessage
 	{
-        /// <summary>
-        /// The get
-        /// </summary>
-		GET,
-        /// <summary>
-        /// The post
-        /// </summary>
-		POST,
-        /// <summary>
-        /// The put
-        /// </summary>
-		PUT,
-        /// <summary>
-        /// The delete
-        /// </summary>
-		DELETE
+		/// <summary>
+		/// Represents the response Status Code.
+		/// 
+		/// It has a pair of setter/getter (not shown on class diagram for brevity).
+		/// </summary>
+		private HttpStatusCode statusCode;
+
+		/// <summary>
+		/// Gets the Status Code.
+		/// </summary>
+		/// <returns> the Status Code </returns>
+		public virtual HttpStatusCode StatusCode
+		{
+			get
+			{
+				return statusCode;
+			}
+			set
+			{
+				this.statusCode = value;
+			}
+		}
+
 	}
 
 }

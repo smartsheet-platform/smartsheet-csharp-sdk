@@ -21,8 +21,8 @@ using System.Collections.Generic;
 namespace Smartsheet.Api.Internal
 {
 
-	using HttpMethod = Api.Internal.http.HttpMethod;
-	using HttpRequest = Api.Internal.http.HttpRequest;
+	using HttpMethod = Api.Internal.Http.HttpMethod;
+	using HttpRequest = Api.Internal.Http.HttpRequest;
     using Utils = Api.Internal.Utility.Utility;
 	using ObjectInclusion = Api.Models.ObjectInclusion;
 	using PaperSize = Api.Models.PaperSize;
@@ -601,7 +601,7 @@ namespace Smartsheet.Api.Internal
 			request = CreateHttpRequest(new Uri(this.Smartsheet.BaseURI, path), HttpMethod.GET);
 			request.Headers["Accept"] = contentType;
 
-			Api.Internal.http.HttpResponse response = Smartsheet.HttpClient.Request(request);
+			Api.Internal.Http.HttpResponse response = Smartsheet.HttpClient.Request(request);
 
 			switch (response.StatusCode)
 			{

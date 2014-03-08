@@ -16,7 +16,7 @@
 //    limitations under the License.
 //    %[license]
 
-namespace Smartsheet.Api.Internal.http
+namespace Smartsheet.Api.Internal.Http
 {
 
 

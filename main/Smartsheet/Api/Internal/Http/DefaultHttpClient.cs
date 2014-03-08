@@ -17,8 +17,8 @@
 //    %[license]
 
 using System.Collections.Generic;
-using Smartsheet.Api.Internal.http;
-namespace Smartsheet.Api.Internal.http
+using Smartsheet.Api.Internal.Http;
+namespace Smartsheet.Api.Internal.Http
 {
     using Util = Api.Internal.Utility.Utility;
     using RestSharp;

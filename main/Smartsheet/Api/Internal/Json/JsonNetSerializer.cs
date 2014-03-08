@@ -106,7 +106,7 @@ namespace Smartsheet.Api.Internal.Json
         /// </summary>
         /// <param name="outputStream"> </param>
         /// <param name="object"> </param>
-        /// <exception cref="JSONSerializationException"> </exception>
+        /// <exception cref="JsonSerializationException"> </exception>
         // @Override
         public virtual void serialize<T>(T @object, StreamWriter outputStream)
         {
@@ -119,11 +119,11 @@ namespace Smartsheet.Api.Internal.Json
             }
             catch (Newtonsoft.Json.JsonException ex)
             {
-                throw new JSONSerializationException(ex);
+                throw new JsonSerializationException(ex);
             }
             catch (IOException ex)
             {
-                throw new JSONSerializationException(ex);
+                throw new JsonSerializationException(ex);
             }
         }
 
@@ -137,7 +137,7 @@ namespace Smartsheet.Api.Internal.Json
         ///   - JSONSerializationException : if there is any other error occurred during the operation
         /// </summary>
         /// <param name="inputStream"> the input stream from which the JSON will be read </param>
-        /// <exception cref="Api.Internal.Json.JSONSerializationException"> </exception>
+        /// <exception cref="Api.Internal.Json.JsonSerializationException"> </exception>
         //TODO: remove objectClass variable
         public virtual T deserialize<T>(StreamReader inputStream)
         {
@@ -148,12 +148,12 @@ namespace Smartsheet.Api.Internal.Json
             }
             catch (Newtonsoft.Json.JsonException ex)
             {
-                throw new JSONSerializationException(ex);
+                throw new JsonSerializationException(ex);
             }
             catch (IOException ex)
             {
                 
-                throw new JSONSerializationException(ex);
+                throw new JsonSerializationException(ex);
             }
 
 
@@ -170,7 +170,7 @@ namespace Smartsheet.Api.Internal.Json
         ///   - JSONSerializationException : if there is any other error occurred during the operation
         /// </summary>
         /// <param name="inputStream"> the input stream from which the JSON will be read </param>
-        /// <exception cref="JSONSerializationException"> </exception>
+        /// <exception cref="JsonSerializationException"> </exception>
         //TODO: remove objectClass variable
         public virtual IList<T> deserializeList<T>(StreamReader inputStream)
         {
@@ -185,11 +185,11 @@ namespace Smartsheet.Api.Internal.Json
             }
             catch (Newtonsoft.Json.JsonException ex)
             {
-                throw new JSONSerializationException(ex);
+                throw new JsonSerializationException(ex);
             }
             catch (IOException ex)
             {
-                throw new JSONSerializationException(ex);
+                throw new JsonSerializationException(ex);
             }
 
             return list;
@@ -200,7 +200,7 @@ namespace Smartsheet.Api.Internal.Json
         /// </summary>
         /// <param name="inputStream">
         /// @return </param>
-        /// <exception cref="JSONSerializationException"> </exception>
+        /// <exception cref="JsonSerializationException"> </exception>
         // @Override
         public virtual IDictionary<string, object> DeserializeMap(StreamReader inputStream)
         {
@@ -214,11 +214,11 @@ namespace Smartsheet.Api.Internal.Json
             }
             catch (Newtonsoft.Json.JsonException ex)
             {
-                throw new JSONSerializationException(ex);
+                throw new JsonSerializationException(ex);
             }
             catch (IOException ex)
             {
-                throw new JSONSerializationException(ex);
+                throw new JsonSerializationException(ex);
             }
 
             return map;
@@ -233,7 +233,7 @@ namespace Smartsheet.Api.Internal.Json
         /// </summary>
         /// <param name="inputStream"> the input stream from which the JSON will be read </param>
         /// <returns> the de-serialized RequestResult </returns>
-        /// <exception cref="JSONSerializationException"> </exception>
+        /// <exception cref="JsonSerializationException"> </exception>
         // @Override
         public virtual RequestResult<T> deserializeResult<T>(StreamReader inputStream)
         {
@@ -247,11 +247,11 @@ namespace Smartsheet.Api.Internal.Json
             }
             catch (Newtonsoft.Json.JsonException ex)
             {
-                throw new JSONSerializationException(ex);
+                throw new JsonSerializationException(ex);
             }
             catch (IOException ex)
             {
-                throw new JSONSerializationException(ex);
+                throw new JsonSerializationException(ex);
             }
 
             return result;
@@ -269,7 +269,7 @@ namespace Smartsheet.Api.Internal.Json
         ///   - JSONSerializationException : if there is any other error occurred during the operation
         /// </summary>
         /// <param name="inputStream"> the input stream from which the JSON will be read </param>
-        /// <exception cref="JSONSerializationException"> </exception>
+        /// <exception cref="JsonSerializationException"> </exception>
         // @Override
         public virtual RequestResult<IList<T>> deserializeListResult<T>(StreamReader inputStream)
         {
@@ -283,11 +283,11 @@ namespace Smartsheet.Api.Internal.Json
             }
             catch (Newtonsoft.Json.JsonException ex)
             {
-                throw new JSONSerializationException(ex);
+                throw new JsonSerializationException(ex);
             }
             catch (IOException ex)
             {
-                throw new JSONSerializationException(ex);
+                throw new JsonSerializationException(ex);
             }
 
             return result;

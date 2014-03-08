@@ -69,7 +69,7 @@ namespace Smartsheet.Api.Internal.Json
 		/// </summary>
 		/// <param name="object"> the object </param>
 		/// <param name="outputStream"> the output stream </param>
-		/// <exception cref="JSONSerializationException"> the JSON serializer exception </exception>
+		/// <exception cref="JsonSerializationException"> the JSON serializer exception </exception>
 		void serialize<T>(T @object, StreamWriter outputStream);
 
 		/// <summary>
@@ -102,7 +102,7 @@ namespace Smartsheet.Api.Internal.Json
 		/// </summary>
 		/// <param name="inputStream"> the input stream </param>
 		/// <returns> the list </returns>
-		/// <exception cref="JSONSerializationException"> the JSON serializer exception </exception>
+		/// <exception cref="JsonSerializationException"> the JSON serializer exception </exception>
 		IList<T> deserializeList<T>(StreamReader inputStream);
 
 
@@ -111,7 +111,7 @@ namespace Smartsheet.Api.Internal.Json
 		/// </summary>
 		/// <param name="inputStream"> the input stream </param>
 		/// <returns> the map </returns>
-		/// <exception cref="JSONSerializationException"> the JSON serializer exception </exception>
+		/// <exception cref="JsonSerializationException"> the JSON serializer exception </exception>
 		IDictionary<string, object> DeserializeMap(StreamReader inputStream);
 
 		/// <summary>
@@ -127,7 +127,7 @@ namespace Smartsheet.Api.Internal.Json
 		/// </summary>
 		/// <param name="inputStream"> the input stream </param>
 		/// <returns> the RequestResult </returns>
-		/// <exception cref="JSONSerializationException"> the JSON serializer exception </exception>
+		/// <exception cref="JsonSerializationException"> the JSON serializer exception </exception>
 		RequestResult<T> deserializeResult<T>(StreamReader inputStream);
 
 		/// <summary>
@@ -143,7 +143,7 @@ namespace Smartsheet.Api.Internal.Json
 		/// </summary>
 		/// <param name="inputStream"> the input stream </param>
 		/// <returns> the RequestResult </returns>
-		/// <exception cref="JSONSerializationException"> the JSON serializer exception </exception>
+		/// <exception cref="JsonSerializationException"> the JSON serializer exception </exception>
 		RequestResult<IList<T>> deserializeListResult<T>(StreamReader inputStream);
 
 	}
