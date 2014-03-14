@@ -183,7 +183,7 @@ namespace Smartsheet.Api.Internal.OAuth
 			{
                 scopeBuffer.Append(scope.ToString() + ",");
 			}
-            @params["scope"] = scopeBuffer.ToString().Substring(scopeBuffer.Length - 1);
+            @params["scope"] = scopeBuffer.ToString().Substring(0, scopeBuffer.Length - 1);
 
 			// Generate the URL with the parameters
 			return GenerateURL(authorizationURL, @params);
@@ -219,7 +219,7 @@ namespace Smartsheet.Api.Internal.OAuth
 			}
 
 			IDictionary<string, string> map = new Dictionary<string, string>();
-            string[] @params = query.Split(new Char[]{'&'});
+            string[] @params = query.TrimStart('?').Split(new Char[]{'&'});
             for (int i = 0; i < @params.Length; i++)
             {
                 int index = @params[i].IndexOf('=');
@@ -227,9 +227,9 @@ namespace Smartsheet.Api.Internal.OAuth
             }
 
 			// Check for an error response in the URL and throw it.
-			string error = map["error"];
-			if (error != null && error.Length > 0)
+			if (map.ContainsKey("error") && map["error"].Length > 0)
 			{
+                string error = map["error"];
 				if ("access_denied".Equals(error))
 				{
 					throw new AccessDeniedException("Access denied.");
@@ -250,8 +250,18 @@ namespace Smartsheet.Api.Internal.OAuth
 
             
 			AuthorizationResult authorizationResult = new AuthorizationResult();
-			authorizationResult.Code = map["code"];
-			authorizationResult.State = map["state"];
+
+
+            if (map.ContainsKey("code"))
+            {
+                authorizationResult.Code = map["code"];
+            }
+
+            if (map.ContainsKey("state"))
+            {
+                authorizationResult.State = map["state"];
+            }
+
 			long? expiresIn = 0L;
 			try
 			{
@@ -377,7 +387,7 @@ namespace Smartsheet.Api.Internal.OAuth
 			httpClient.ReleaseConnection();
 
 			// Check for a error response and throw it.
-			if (response.StatusCode != HttpStatusCode.OK && map["error"] != null)
+			if (response.StatusCode != HttpStatusCode.OK && map.ContainsKey("error") && map["error"] != null)
 			{
 				string errorType = map["error"].ToString();
 				string errorDescription = map["message"] == null?"":(string)map["message"];
@@ -615,7 +625,7 @@ namespace Smartsheet.Api.Internal.OAuth
             {
                 hashStr = string.Concat(hashStr, string.Format("{0:x2}", hash[i]));
             }
-            Console.WriteLine(hashStr);
+
             return hashStr;
         }
 

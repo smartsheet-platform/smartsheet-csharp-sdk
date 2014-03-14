@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4A9725A9-23D5-4D9B-A627-30F912330456}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TestSDK</RootNamespace>
+    <AssemblyName>TestSDK</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\Debug\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="Smartsheet\Api\AccessTokenExpiredExceptionTest.cs" />
+    <Compile Include="Smartsheet\Api\HttpTestServer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Smartsheet\Api\Internal\AssociatedAttachmentResourcesImplTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Smartsheet\Api\Internal\AssociatedDiscussionResourcesImplTest.cs" />
+    <Compile Include="Smartsheet\Api\Internal\AttachmentResourcesImplTest.cs" />
+    <Compile Include="Smartsheet\Api\Internal\ColumnResourcesImplTest.cs" />
+    <Compile Include="Smartsheet\Api\Internal\CommentAttachmentResourcesTest.cs" />
+    <Compile Include="Smartsheet\Api\Internal\CommentResourcesImplTest.cs" />
+    <Compile Include="Smartsheet\Api\Internal\DiscussionAttachmentResourcesTest.cs" />
+    <Compile Include="Smartsheet\Api\Internal\DiscussionResourcesImplTest.cs" />
+    <Compile Include="Smartsheet\Api\Internal\FolderResourcesImplTest.cs" />
+    <Compile Include="Smartsheet\Api\Internal\HomeFolderResourcesImplTest.cs" />
+    <Compile Include="Smartsheet\Api\Internal\HomeResourcesImplTest.cs" />
+    <Compile Include="Smartsheet\Api\Internal\Http\DefaultHttpClientTest.cs" />
+    <Compile Include="Smartsheet\Api\Internal\Json\JacksonJsonSerializerTest.cs" />
+    <Compile Include="Smartsheet\Api\Internal\Json\JSONSerializerExceptionTest.cs" />
+    <Compile Include="Smartsheet\Api\Internal\ResourcesImplBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Smartsheet\Api\Internal\RowResourcesImplTest.cs" />
+    <Compile Include="Smartsheet\Api\Internal\SearchResourcesImplTest.cs" />
+    <Compile Include="Smartsheet\Api\Internal\ShareResourcesImplTest.cs" />
+    <Compile Include="Smartsheet\Api\Internal\SheetColumnResourcesImplTest.cs" />
+    <Compile Include="Smartsheet\Api\Internal\SheetResourcesImplTest.cs" />
+    <Compile Include="Smartsheet\Api\Internal\SheetRowResourcesImplTest.cs" />
+    <Compile Include="Smartsheet\Api\Internal\SmartsheetImplTest.cs" />
+    <Compile Include="Smartsheet\Api\Internal\TemplateResourcesImplTest.cs" />
+    <Compile Include="Smartsheet\Api\Internal\UserResourcesImplTest.cs" />
+    <Compile Include="Smartsheet\Api\Internal\WorkspaceFolderResourcesImplTest.cs" />
+    <Compile Include="Smartsheet\Api\Internal\WorkspaceResourcesImplTest.cs" />
+    <Compile Include="Smartsheet\Api\Models\AccessLevelTest.cs" />
+    <Compile Include="Smartsheet\Api\Models\AccessScopeTest.cs" />
+    <Compile Include="Smartsheet\Api\Models\AttachmentParentTypeTest.cs" />
+    <Compile Include="Smartsheet\Api\Models\AttachmentSubTypeTest.cs" />
+    <Compile Include="Smartsheet\Api\Models\AttachmentTypeTest.cs" />
+    <Compile Include="Smartsheet\Api\Models\ColumnTagTest.cs" />
+    <Compile Include="Smartsheet\Api\Models\ColumnTypeTest.cs" />
+    <Compile Include="Smartsheet\Api\Models\IdentifiableModelTest.cs" />
+    <Compile Include="Smartsheet\Api\Models\LinkTypeTest.cs" />
+    <Compile Include="Smartsheet\Api\Models\ObjectInclusionTest.cs" />
+    <Compile Include="Smartsheet\Api\Models\PaperSizeTest.cs" />
+    <Compile Include="Smartsheet\Api\Models\RowTest.cs" />
+    <Compile Include="Smartsheet\Api\Models\SheetEmailFormatTest.cs" />
+    <Compile Include="Smartsheet\Api\Models\SheetTest.cs" />
+    <Compile Include="Smartsheet\Api\Models\SymbolTest.cs" />
+    <Compile Include="Smartsheet\Api\Models\SystemColumnTypeTest.cs" />
+    <Compile Include="Smartsheet\Api\Models\UserStatusTest.cs" />
+    <Compile Include="Smartsheet\Api\OAuth\OAuthTokenExceptionTest.cs" />
+    <Compile Include="Smartsheet\Api\ResourceNotFoundExceptionTest.cs" />
+    <Compile Include="Smartsheet\Api\ServiceUnavailableExceptionTest.cs" />
+    <Compile Include="Smartsheet\Api\SmartsheetBuilderTest.cs" />
+    <Compile Include="Smartsheet\Api\SmartsheetExceptionTest.cs" />
+    <Compile Include="UnitTest1.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Smartsheet-csharp-sdk.csproj">
+      <Project>{d697980c-2de8-4c5a-bd95-fc3ccddc7ecd}</Project>
+      <Name>Smartsheet-csharp-sdk</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

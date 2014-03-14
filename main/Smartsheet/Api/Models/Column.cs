@@ -82,21 +82,19 @@ namespace Smartsheet.Api.Models
 		private long? sheetId;
 
 		/// <summary>
-		/// Gets the position of the column.
+		/// Gets or Sets the position of the column.
 		/// </summary>
 		/// <returns> the Index </returns>
-		public virtual int? GetIndex()
+		public virtual int? Index
 		{
-			return index;
-		}
-
-		/// <summary>
-		/// Sets the position of the column.
-		/// </summary>
-		/// <param name="index"> the new Index </param>
-		public virtual void SetIndex(int index)
-		{
-			this.index = index;
+            get 
+            {
+                return index;
+            }
+            set
+            {
+                this.index = value;
+            }
 		}
 
 		/// <summary>

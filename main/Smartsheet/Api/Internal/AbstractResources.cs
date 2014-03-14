@@ -615,10 +615,6 @@ namespace Smartsheet.Api.Internal
 			{
 				throw new SmartsheetException(ex);
 			}
-			catch (Exception ex)
-			{
-				throw new SmartsheetException(ex);
-			}
 		}
 
 

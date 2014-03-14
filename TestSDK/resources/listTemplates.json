@@ -1,0 +1,58 @@
+[
+   {
+      "id":4705477956265860,
+      "name":"<feature> -  Issues Template",
+      "accessLevel":"ADMIN",
+      "description":"testing1234"
+   },
+   {
+      "id":4371295140898692,
+      "name":"Dev Checklist Template",
+      "accessLevel":"ADMIN"
+   },
+   {
+      "id":5219087325390724,
+      "name":"Draft of Release Master",
+      "accessLevel":"VIEWER"
+   },
+   {
+      "id":502148082493316,
+      "name":"Employee Feedback List",
+      "accessLevel":"VIEWER"
+   },
+   {
+      "id":7246827285178244,
+      "name":"ER Summary",
+      "accessLevel":"VIEWER"
+   },
+   {
+      "id":6819158064162692,
+      "name":"Expenses Template",
+      "accessLevel":"VIEWER"
+   },
+   {
+      "id":1689047262357380,
+      "name":"Feedback Sheet",
+      "accessLevel":"ADMIN"
+   },
+   {
+      "id":2533244559222660,
+      "name":"New Hire Checklist Template",
+      "accessLevel":"OWNER"
+   },
+   {
+      "id":6312847991957380,
+      "name":"New Hire Checklist Template",
+      "accessLevel":"VIEWER"
+   },
+   {
+      "id":7348772628916100,
+      "name":"Requirements Template",
+      "accessLevel":"ADMIN"
+   },
+   {
+      "id":3971072908388228,
+      "name":"Tasks & Deliverables Template",
+      "accessLevel":"ADMIN"
+   }
+]

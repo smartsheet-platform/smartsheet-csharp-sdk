@@ -81,7 +81,7 @@ namespace Smartsheet.Api.Internal
 		/// <returns> the resource (note that if there is no such resource, this method will throw ResourceNotFoundException
 		/// rather than returning null). </returns>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
-		public virtual Row GetRow(long id, IEnumerable<ObjectInclusion?> includes)
+		public virtual Row GetRow(long id, IEnumerable<ObjectInclusion> includes)
 		{
 			string path = "row/" + id;
 			if (includes != null)
@@ -237,7 +237,6 @@ namespace Smartsheet.Api.Internal
 		{
 			return this.discussions;
 		}
-
     }
 
 }

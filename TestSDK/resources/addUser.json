@@ -1,0 +1,11 @@
+{
+   "resultCode":0,
+   "result":{
+      "email":"test@test.com",
+      "name":"test425 test425",
+      "admin":false,
+      "licensedSheetCreator":true,
+      "id":3210982882338692
+   },
+   "message":"SUCCESS"
+}

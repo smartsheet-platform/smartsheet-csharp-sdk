@@ -1,0 +1,15 @@
+{
+   "resultCode":0,
+   "result":{
+      "id":2110316914993028,
+      "index":1,
+      "title":"Status",
+      "type":"PICKLIST",
+      "options":[
+         "Not Started",
+         "Started",
+         "Completed"
+      ]
+   },
+   "message":"SUCCESS"
+}

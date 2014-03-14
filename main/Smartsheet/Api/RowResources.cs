@@ -53,7 +53,7 @@ namespace Smartsheet.Api
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		Row GetRow(long id, IEnumerable<ObjectInclusion?> includes);
+		Row GetRow(long id, IEnumerable<ObjectInclusion> includes);
 
 		/// <summary>
 		/// <para>Move a row.</para>

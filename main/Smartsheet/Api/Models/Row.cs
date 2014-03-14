@@ -141,7 +141,7 @@ namespace Smartsheet.Api.Models
 			Column result = null;
 			foreach (Column column in columns)
 			{
-				if (column.GetIndex() == index)
+				if (column.Index == index)
 				{
 					result = column;
 					break;
