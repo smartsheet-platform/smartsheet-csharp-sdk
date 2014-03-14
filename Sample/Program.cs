@@ -15,35 +15,36 @@ namespace sdk_csharp_sample
 
         public static void Main(string[] args)
         {
-            Program.SampleCode();
+            SampleCode();
+            //OAuthExample();
         }
 
         public static void OAuthExample()
         {
+            
             // Setup the information that is necessary to request an authorization code
-		    OAuthFlow oauth = new OAuthFlowBuilder().SetClientId("YOUR_CLIENT_ID").SetClientSecret("YOUR_CLIENT_SECRET").
-			    SetRedirectURL("https://YOUR_DOMAIN.com/").Build();
-		
-		    // Create the URL that the user will go to grant authorization to the application
-		    String url = oauth.NewAuthorizationURL(new Smartsheet.Api.OAuth.AccessScope[]{
+            OAuthFlow oauth = new OAuthFlowBuilder().SetClientId("cxgnphqv52ixrylgux").SetClientSecret("1lllvnekmjhf5otw6si").
+                SetRedirectURL("https://batie.com/").Build();
+
+            // Create the URL that the user will go to grant authorization to the application
+            String url = oauth.NewAuthorizationURL(new Smartsheet.Api.OAuth.AccessScope[]{
                 Smartsheet.Api.OAuth.AccessScope.CREATE_SHEETS, Smartsheet.Api.OAuth.AccessScope.WRITE_SHEETS},
                 "key=YOUR_VALUE");
-		
-		    // Take the user to the following URL
-		    Console.WriteLine(url);
 
-		    // After the user accepts or declines the authorization they are taken to the redirect URL. The URL of the page
-		    // the user is taken to can be used to generate an authorization RequestResult object.
-		    String authorizationResponseURL = "https://yourDomain.com/?code=l4csislal82qi5h&expires_in=239550&state=key%3D12344";
-		
-		    // On this page pass in the full URL of the page to create an authorizationResult object  
-		    AuthorizationResult authResult = oauth.ExtractAuthorizationResult(authorizationResponseURL);
-		
-		    // Get the token from the authorization result
-		    Token token = oauth.ObtainNewToken(authResult);
-		
-		    // Save the token or use it.
+            // Take the user to the following URL
+            Console.WriteLine(url);
 
+            // After the user accepts or declines the authorization they are taken to the redirect URL. The URL of the page
+            // the user is taken to can be used to generate an authorization RequestResult object.
+            String authorizationResponseURL = "https://batie.com/?code=dxe7eykuh912rhs&expires_in=239824&state=key%3DYOUR_VALUE";
+
+            // On this page pass in the full URL of the page to create an authorizationResult object  
+            AuthorizationResult authResult = oauth.ExtractAuthorizationResult(authorizationResponseURL);
+
+            // Get the token from the authorization result
+            Token token = oauth.ObtainNewToken(authResult);
+
+            // Save the token or use it.
         }
 
         public static void SampleCode()
@@ -65,12 +66,14 @@ namespace sdk_csharp_sample
 		    foreach(Sheet tmpSheet in homeSheets) {
 		        Console.WriteLine("sheet:"+tmpSheet.Name);
 		    }
-
+            
             // Create folder in home
 		    Folder folder = new Folder();
 		    folder.Name = "New Folder";
 		    folder = smartsheet.Home().Folders().CreateFolder(folder);
 		    Console.WriteLine("Folder ID:"+folder.ID+", Folder Name:"+folder.Name);
+            //=========================================
+
 
             // Setup checkbox Column Object
             Column checkboxColumn = new Column.AddColumnToSheetBuilder().SetType(ColumnType.CHECKBOX).
@@ -86,13 +89,14 @@ namespace sdk_csharp_sample
                 new Column[]{checkboxColumn, textColumn}).Build();
             // Send the request to create the sheet @ Smartsheet
             sheet = smartsheet.Sheets().CreateSheet(sheet);
+            //=========================================
 
             // Update two cells on a row
             IList<Cell> cells = new Cell.UpdateRowCellsBuilder().AddCell(5111621270955908L, "test11", false).
                     AddCell(2859821457270660L, "test22").Build();
             smartsheet.Rows().UpdateCells(6497447011739524L, cells);
             //=========================================
-
+            
             // Create a row and sheet level discussion with an initial comment
             Comment comment = new Comment.AddCommentBuilder().SetText("Hello World").Build();
             Discussion discussion = new Discussion.CreateDiscussionBuilder().SetTitle("New Discussion").
@@ -101,12 +105,10 @@ namespace sdk_csharp_sample
             smartsheet.Sheets().Discussions().CreateDiscussion(7370846613333892L, discussion);
             //=========================================
 
-
             // Update a folder name
             folder = new Folder.UpdateFolderBuilder().SetName("A Brand New New Folder").SetID(2545279862892420L).Build();
             smartsheet.Folders().UpdateFolder(folder);
             //=========================================
-
 
             // Create 3 users to share a sheet with
             IList<User> users = new List<User>();
@@ -130,14 +132,12 @@ namespace sdk_csharp_sample
             smartsheet.Sheets().Shares().ShareTo(7370846613333892L, multiShare, true);
             //=========================================
 
-
             // Create a single share to a specified email address with the specified access level
             Share share = new Share.ShareToOneBuilder().SetEmail("bbatie+12@gmail.com").SetAccessLevel(AccessLevel.VIEWER)
                     .Build();
             // Add the share to a specific sheet
             smartsheet.Sheets().Shares().ShareTo(7370846613333892L, share);
             //=========================================
-
 
             // Create a share with the specified access level
             share = new Share.UpdateShareBuilder().SetAccessLevel(AccessLevel.VIEWER).Build();
@@ -196,6 +196,7 @@ namespace sdk_csharp_sample
                 ObjectInclusion.ATTACHMENTS, ObjectInclusion.DISCUSSIONS });
 		    //=========================================
 
+
             // Setup a sheet with a new name
 		    Sheet sheet2 = new Sheet.UpdateSheetBuilder().SetName("TESTING").SetID(7370846613333892L).Build();
 		
@@ -203,12 +204,14 @@ namespace sdk_csharp_sample
 		    smartsheet.Sheets().UpdateSheet(sheet2);
 		    //=========================================
 
+
         	// Setup a publishing status to give a rich version of the sheet as read only 
 		    SheetPublish publish = new SheetPublish.PublishStatusBuilder().SetReadOnlyFullEnabled(true).
 				    SetReadOnlyLiteEnabled(false).SetIcalEnabled(false).SetReadWriteEnabled(false).Build();
 		    // Setup the specified sheet with the new publishing status
 		    smartsheet.Sheets().UpdatePublishStatus(7370846613333892L, publish);
 		    //=========================================
+            
 
         	// Setup a user with an email address and full permission
 		    User user3 = new User.AddUserBuilder().SetEmail("newUser@batie.com").SetAdmin(true).
@@ -217,6 +220,7 @@ namespace sdk_csharp_sample
 		    smartsheet.Users().AddUser(user3);
 		    //=========================================
         
+
             // Setup a user with new privileges
 		    User user4 = new User.UpdateUserBuilder().SetAdmin(false).SetLicensedSheetCreator(false).
 				    SetID(4187958019417988L).Build();
@@ -224,7 +228,8 @@ namespace sdk_csharp_sample
 		    smartsheet.Users().UpdateUser(user4);
 		    //=========================================
 		
-		    // Create a workspace with a specific name and ID
+		    
+            // Create a workspace with a specific name and ID
 		    Workspace workspace = new Workspace.UpdateWorkspaceBuilder().SetName("Workspace Name1").
 				    SetID(8257948486002564L).Build();
 		    // Update the workspace with the new name.
