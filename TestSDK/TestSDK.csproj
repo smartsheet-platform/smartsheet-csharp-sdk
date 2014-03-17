@@ -77,6 +77,7 @@
     <Compile Include="Smartsheet\Api\Internal\Http\DefaultHttpClientTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\Json\JacksonJsonSerializerTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\Json\JSONSerializerExceptionTest.cs" />
+    <Compile Include="Smartsheet\Api\Internal\OAuth\OAuthFlowImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\ResourcesImplBase.cs">
       <SubType>Code</SubType>
     </Compile>

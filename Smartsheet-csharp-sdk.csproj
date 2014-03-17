@@ -128,7 +128,7 @@
     <Compile Include="main\Smartsheet\Api\Models\NamedModel.cs" />
     <Compile Include="main\Smartsheet\Api\Models\ObjectInclusion.cs" />
     <Compile Include="main\Smartsheet\Api\Models\PaperSize.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\Result.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\RequestResult.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Row.cs" />
     <Compile Include="main\Smartsheet\Api\Models\RowEmail.cs" />
     <Compile Include="main\Smartsheet\Api\Models\RowWrapper.cs" />
