@@ -126,7 +126,7 @@ namespace Smartsheet.Api.Internal.Http
             
             if (smartsheetRequest.Entity != null && smartsheetRequest.Entity.GetContent() != null)
             {
-                restRequest.AddParameter("application/json", smartsheetRequest.Entity.GetContent().ReadToEnd(),
+                restRequest.AddParameter("application/json", smartsheetRequest.Entity.GetContent(),
                     ParameterType.RequestBody);
             }
 
@@ -156,8 +156,7 @@ namespace Smartsheet.Api.Internal.Http
                 entity.ContentType = restResponse.ContentType;
                 entity.ContentLength = restResponse.ContentLength;
 
-                //TODO: response is saving the data to a string. It would be better if it streamed the data to a stream.
-                entity.Content = restResponse.Content;
+                entity.Content = restResponse.RawBytes;
                 smartsheetResponse.Entity = entity;
             }
 

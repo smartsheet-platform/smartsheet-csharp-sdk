@@ -182,7 +182,7 @@ namespace Smartsheet.Api.Internal
 		/// <param name="outputStream"> the OutputStream To which the Excel file will be written </param>
 		/// <returns> the sheet as excel </returns>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
-		public virtual void GetSheetAsExcel(long id, StreamWriter outputStream)
+		public virtual void GetSheetAsExcel(long id, BinaryWriter outputStream)
 		{
 			GetSheetAsFile(id, null, outputStream, "application/vnd.ms-excel");
 		}
@@ -207,7 +207,7 @@ namespace Smartsheet.Api.Internal
 		/// <param name="paperSize"> the optional paper size </param>
 		/// <returns> the sheet as pdf </returns>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
-		public virtual void GetSheetAsPDF(long id, StreamWriter outputStream, PaperSize? paperSize)
+		public virtual void GetSheetAsPDF(long id, BinaryWriter outputStream, PaperSize? paperSize)
 		{
 			GetSheetAsFile(id, paperSize, outputStream, "application/pdf");
 		}
@@ -586,10 +586,10 @@ namespace Smartsheet.Api.Internal
 		/// <param name="contentType"> the content Type </param>
 		/// <returns> the sheet as file </returns>
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
-		private void GetSheetAsFile(long id, PaperSize? paperSize, StreamWriter outputStream, string contentType)
+		private void GetSheetAsFile(long id, PaperSize? paperSize, BinaryWriter outputStream, string contentType)
 		{
             Utils.ThrowIfNull(outputStream, contentType);
-
+            
 			string path = "sheet/" + id;
 			if (paperSize != null)
 			{
@@ -608,7 +608,7 @@ namespace Smartsheet.Api.Internal
 			case HttpStatusCode.OK:
 				try
 				{
-					CopyStream(response.Entity.GetContent().BaseStream, outputStream.BaseStream);
+                    response.Entity.GetBinaryContent().BaseStream.CopyTo(outputStream.BaseStream);
 				}
 				catch (IOException e)
 				{

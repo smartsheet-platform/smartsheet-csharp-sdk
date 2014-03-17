@@ -26,7 +26,7 @@ namespace Smartsheet.Api.Internal
     using Api.Models;
     using System.IO;
     using System.Net;
-
+    using System.Text;
     using HttpEntity = Api.Internal.Http.HttpEntity;
     using HttpMethod = Api.Internal.Http.HttpMethod;
     using HttpRequest = Api.Internal.Http.HttpRequest;
@@ -650,9 +650,10 @@ namespace Smartsheet.Api.Internal
                 writer.Flush();
                 writer.BaseStream.Position = 0;
                 
-                using (StreamReader reader = new StreamReader(writer.BaseStream))
+                using (BinaryReader reader = new BinaryReader(writer.BaseStream))
                 {
-                    string serializedData = reader.ReadToEnd();
+                    
+                    byte[] serializedData = Utils.ReadAllBytes(reader);
                     #if DEBUG
                         Console.WriteLine("Serialized Data: "+serializedData);
                     #endif
