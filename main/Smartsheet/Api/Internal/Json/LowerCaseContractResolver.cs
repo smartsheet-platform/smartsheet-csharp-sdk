@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json.Serialization;
-//    #[license]
+﻿//    #[license]
 //    Smartsheet SDK for C#
 //    %%
 //    Copyright (C) 2014 Smartsheet
@@ -16,6 +15,8 @@
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
 //    %[license]
+
+using Newtonsoft.Json.Serialization;
 using System;
 using System.Collections.Generic;
 using System.Linq;

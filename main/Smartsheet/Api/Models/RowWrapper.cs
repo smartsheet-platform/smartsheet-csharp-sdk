@@ -399,7 +399,7 @@ namespace Smartsheet.Api.Models
 				if (toTop == null && toBottom == null && parentId == null && siblingId == null)
 				{
 					throw new InvalidOperationException("One of the following must be defined to move a row: toTop, "+
-                        "toBottom, parentId, siblingId.");
+						"toBottom, parentId, siblingId.");
 				}
 
 				RowWrapper rowWrapper = new RowWrapper();

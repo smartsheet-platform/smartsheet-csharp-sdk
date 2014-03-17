@@ -53,8 +53,8 @@ namespace Smartsheet.Api.Internal
 		/// <param name="smartsheet"> the Smartsheet </param>
 		public WorkspaceResourcesImpl(SmartsheetImpl smartsheet) : base(smartsheet)
 		{
-            this.folders = new WorkspaceFolderResourcesImpl(smartsheet);
-            this.shares = new ShareResourcesImpl(smartsheet, "workspace");
+            //this.folders = new WorkspaceFolderResourcesImpl(smartsheet);
+            //this.shares = new ShareResourcesImpl(smartsheet, "workspace");
 
 		}
 

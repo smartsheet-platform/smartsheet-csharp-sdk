@@ -35,7 +35,7 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// Represents the Value.
 		/// </summary>
-		private string value;
+		private object value;
 
 		/// <summary>
 		/// Represents the display Value.
@@ -88,7 +88,7 @@ namespace Smartsheet.Api.Models
 		/// Gets the Value.
 		/// </summary>
 		/// <returns> the Value </returns>
-		public virtual string Value
+		public virtual object Value
 		{
 			get
 			{
@@ -207,7 +207,6 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// A convenience class for quickly creating a List of Cells To update.
 		/// </summary>
-		// TODO: check if default values can be used for any of the builders.
 		public class UpdateRowCellsBuilder
 		{
 
@@ -222,7 +221,7 @@ namespace Smartsheet.Api.Models
 			/// <param name="value"> the Value </param>
 			/// <param name="strict"> the Strict </param>
 			/// <returns> the update row Cells builder </returns>
-			public virtual UpdateRowCellsBuilder AddCell(long? columnId, string value, bool? strict)
+			public virtual UpdateRowCellsBuilder AddCell(long? columnId, object value, bool? strict)
 			{
 				Cell cell = new Cell();
 				cell.columnId = columnId;
@@ -252,7 +251,7 @@ namespace Smartsheet.Api.Models
 			/// <param name="columnId"> the column Id </param>
 			/// <param name="value"> the Value </param>
 			/// <returns> the update row Cells builder </returns>
-			public virtual UpdateRowCellsBuilder AddCell(long? columnId, string value)
+			public virtual UpdateRowCellsBuilder AddCell(long? columnId, object value)
 			{
 				AddCell(columnId, value, true);
 				return this;

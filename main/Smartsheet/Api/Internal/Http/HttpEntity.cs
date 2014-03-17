@@ -47,7 +47,8 @@ namespace Smartsheet.Api.Internal.Http
 		/// 
 		/// It has a pair of setter/getter (not shown on class diagram for brevity).
 		/// </summary>
-		private string content;
+        //TODO: would be better to have the content in a stream so that all data is not stored in memory.
+		private byte[] content;
 
 		/// <summary>
 		/// Gets the content Type.
@@ -87,7 +88,7 @@ namespace Smartsheet.Api.Internal.Http
 		/// Gets the content.
 		/// </summary>
 		/// <returns> the content </returns>
-		public virtual string Content
+		public virtual byte[] Content
 		{
 			set
 			{
@@ -100,10 +101,17 @@ namespace Smartsheet.Api.Internal.Http
         /// <returns></returns>
         public virtual StreamReader GetContent()
         {
-            //FIXME: Modify restsharp To use a stream for the content To save memory.
-            return new StreamReader(new MemoryStream(Encoding.UTF8.GetBytes(content)));
+            if (content == null) { content = new byte[0]; }
+
+            return new StreamReader(new MemoryStream(content));
         }
 
+        public virtual BinaryReader GetBinaryContent()
+        {
+            if (content == null) { content = new byte[0]; }
+
+            return new BinaryReader(new MemoryStream(content));
+        }
 
 	}
 

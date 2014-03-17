@@ -125,6 +125,10 @@ namespace Smartsheet.Api.Internal.Json
             {
                 throw new JsonSerializationException(ex);
             }
+            catch (ObjectDisposedException ex)
+            {
+                throw new JsonSerializationException(ex);
+            }
         }
 
         /// <summary>
@@ -138,7 +142,6 @@ namespace Smartsheet.Api.Internal.Json
         /// </summary>
         /// <param name="inputStream"> the input stream from which the JSON will be read </param>
         /// <exception cref="Api.Internal.Json.JsonSerializationException"> </exception>
-        //TODO: remove objectClass variable
         public virtual T deserialize<T>(StreamReader inputStream)
         {
             Utils.ThrowIfNull(inputStream);
@@ -155,9 +158,6 @@ namespace Smartsheet.Api.Internal.Json
                 
                 throw new JsonSerializationException(ex);
             }
-
-
-            //return OBJECT_MAPPER.readValue(inputStream, objectClass);
         }
 
         /// <summary>
@@ -171,7 +171,6 @@ namespace Smartsheet.Api.Internal.Json
         /// </summary>
         /// <param name="inputStream"> the input stream from which the JSON will be read </param>
         /// <exception cref="JsonSerializationException"> </exception>
-        //TODO: remove objectClass variable
         public virtual IList<T> deserializeList<T>(StreamReader inputStream)
         {
             Utils.ThrowIfNull(inputStream);
@@ -250,6 +249,10 @@ namespace Smartsheet.Api.Internal.Json
                 throw new JsonSerializationException(ex);
             }
             catch (IOException ex)
+            {
+                throw new JsonSerializationException(ex);
+            }
+            catch (ObjectDisposedException ex)
             {
                 throw new JsonSerializationException(ex);
             }

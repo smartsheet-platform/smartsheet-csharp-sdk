@@ -128,8 +128,7 @@ namespace Smartsheet.Api.Internal
 			
             HttpEntity entity = new HttpEntity();
 			entity.ContentType = contentType;
-            //FIXME: major problem here reading the file into a string
-            entity.Content = File.ReadAllText(file);
+            entity.Content = Encoding.UTF8.GetBytes(File.ReadAllText(file));
 			entity.ContentLength = contentLength;
 			request.Entity = entity;
 

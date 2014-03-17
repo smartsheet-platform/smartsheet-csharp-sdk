@@ -27,32 +27,32 @@ namespace Smartsheet.Api.Models
 	/// <summary>
 	/// Represents specific objects that can be included in some responses.
 	/// </summary>
-    public enum ObjectInclusion
-    {
-        /// <summary>
-        /// The discussions
-        /// </summary>
-        [EnumMember(Value = "discussions")]
-        DISCUSSIONS,
-        /// <summary>
-        /// The attachments
-        /// </summary>
-        [EnumMember(Value = "attachments")]
-        ATTACHMENTS,
-        /// <summary>
-        /// The data
-        /// </summary>
-        [EnumMember(Value = "data")]
-        DATA,
-        /// <summary>
-        /// The columns
-        /// </summary>
-        [EnumMember(Value = "columns")]
-        COLUMNS,
-        /// <summary>
-        /// The templates
-        /// </summary>
-        [EnumMember(Value = "templates")]
-        TEMPLATES
-    }
+	public enum ObjectInclusion
+	{
+		/// <summary>
+		/// The discussions
+		/// </summary>
+		[EnumMember(Value = "discussions")]
+		DISCUSSIONS,
+		/// <summary>
+		/// The attachments
+		/// </summary>
+		[EnumMember(Value = "attachments")]
+		ATTACHMENTS,
+		/// <summary>
+		/// The data
+		/// </summary>
+		[EnumMember(Value = "data")]
+		DATA,
+		/// <summary>
+		/// The columns
+		/// </summary>
+		[EnumMember(Value = "columns")]
+		COLUMNS,
+		/// <summary>
+		/// The templates
+		/// </summary>
+		[EnumMember(Value = "templates")]
+		TEMPLATES
+	}
 }

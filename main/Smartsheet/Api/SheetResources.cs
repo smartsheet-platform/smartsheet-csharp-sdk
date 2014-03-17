@@ -95,7 +95,7 @@ namespace Smartsheet.Api
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		void GetSheetAsExcel(long id, StreamWriter outputStream);
+		void GetSheetAsExcel(long id, BinaryWriter outputStream);
 
 		/// <summary>
 		/// <para>Get a sheet as a PDF file.</para>
@@ -112,7 +112,7 @@ namespace Smartsheet.Api
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		void GetSheetAsPDF(long id, StreamWriter outputStream, PaperSize? paperSize);
+		void GetSheetAsPDF(long id, BinaryWriter outputStream, PaperSize? paperSize);
 
 		/// <summary>
 		/// <para>Create a sheet in default "Sheets" collection.</para>
