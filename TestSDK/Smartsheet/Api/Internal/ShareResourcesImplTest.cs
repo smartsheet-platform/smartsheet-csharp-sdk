@@ -33,7 +33,7 @@ namespace Smartsheet.Api.Internal
 		public virtual void TestListShares()
 		{
 
-			server.ResponseBody = "../../../TestSDK/resources/listShares.json";
+			server.setResponseBody("../../../TestSDK/resources/listShares.json");
 
 			IList<Share> shares = shareResourcesImpl.ListShares(2906571706525572L);
             Assert.True(shares.Count == 2, "The number of shares returned is incorrect.");
@@ -45,7 +45,7 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestGetShare()
 		{
-			server.ResponseBody = "../../../TestSDK/resources/getShare.json";
+			server.setResponseBody("../../../TestSDK/resources/getShare.json");
 
 			Share share = shareResourcesImpl.GetShare(1234L, 12344L);
 
@@ -57,7 +57,7 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestShareToLongShare()
 		{
-			server.ResponseBody = "../../../TestSDK/resources/shareToOne.json";
+			server.setResponseBody("../../../TestSDK/resources/shareToOne.json");
 
 			Share share = new Share();
 			share.Email = "email@email.com";
@@ -72,7 +72,7 @@ namespace Smartsheet.Api.Internal
 		public virtual void TestShareToLongShareBoolean()
 		{
 
-			server.ResponseBody = "../../../TestSDK/resources/shareToOne.json";
+			server.setResponseBody("../../../TestSDK/resources/shareToOne.json");
 
 			Share share = new Share();
 			share.Email = "email@email.com";
@@ -86,7 +86,7 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestShareToLongMultiShare()
 		{
-			server.ResponseBody = "../../../TestSDK/resources/shareToMany.json";
+			server.setResponseBody("../../../TestSDK/resources/shareToMany.json");
 
 			MultiShare share = new MultiShare();
 			share.AccessLevel = AccessLevel.ADMIN;
@@ -112,7 +112,7 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestShareToLongMultiShareBoolean()
 		{
-			server.ResponseBody = "../../../TestSDK/resources/shareToMany.json";
+			server.setResponseBody("../../../TestSDK/resources/shareToMany.json");
 
 			MultiShare share = new MultiShare();
 			share.AccessLevel = AccessLevel.ADMIN;
@@ -136,7 +136,7 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestUpdateShare()
 		{
-			server.ResponseBody = "../../../TestSDK/resources/updateShare.json";
+			server.setResponseBody("../../../TestSDK/resources/updateShare.json");
 			Share share = new Share();
 			share.AccessLevel = AccessLevel.ADMIN;
 			Share newShare = shareResourcesImpl.UpdateShare(1234L, 123454L, share);
@@ -146,7 +146,7 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestDeleteShare()
 		{
-			server.ResponseBody = "../../../TestSDK/resources/deleteShare.json";
+			server.setResponseBody("../../../TestSDK/resources/deleteShare.json");
 
 			shareResourcesImpl.DeleteShare(1234L, 142124L);
 		}

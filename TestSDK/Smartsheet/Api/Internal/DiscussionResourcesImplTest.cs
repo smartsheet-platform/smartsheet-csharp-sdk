@@ -30,7 +30,7 @@
 		[Test]
 		public virtual void TestGetDiscussion()
 		{
-			server.ResponseBody = "../../../TestSDK/resources/getDiscussion.json";
+			server.setResponseBody("../../../TestSDK/resources/getDiscussion.json");
 
 			Discussion discussion = discussionResources.GetDiscussion(1234L);
 
@@ -46,7 +46,7 @@
 		[Test]
 		public virtual void TestAddDiscussionComment()
 		{
-			server.ResponseBody = "../../../TestSDK/resources/addDiscussionComment.json";
+			server.setResponseBody("../../../TestSDK/resources/addDiscussionComment.json");
 
 			Comment comment = new Comment();
 			comment.Text = "Some new Text";
@@ -60,7 +60,7 @@
 		[Test]
 		public virtual void TestAttachments()
 		{
-            server.ResponseBody = "../../../TestSDK/resources/emptyFile.json";
+            server.setResponseBody("../../../TestSDK/resources/emptyFile.json");
 			Assert.Null(discussionResources.Attachments());
 		}
 

@@ -4,6 +4,7 @@ namespace Smartsheet.Api.Internal.Http
 {
 	using NUnit.Framework;
     using System;
+    using System.Text;
 
 
 
@@ -89,29 +90,10 @@ namespace Smartsheet.Api.Internal.Http
 			client.ReleaseConnection();
 
 			// Test request with set headers and http entity and some content
-			entity.Content ="Hello World!";
+			entity.Content = Encoding.UTF8.GetBytes("Hello World!");
 			request.Entity = entity;
 			client.Request(request);
 			client.ReleaseConnection();
-
-			// Test Client Protocol Exception by passing a second content-length
-			try
-			{
-				headers["Content-Length"] = "10";
-				request.Headers = headers;
-				client.Request(request);
-				client.ReleaseConnection();
-				Assert.Fail("Exception should have been thrown");
-			}
-			catch (HttpClientException)
-			{
-				// Expected
-			}
-			finally
-			{
-				headers.Remove("Content-Length");
-				request.Headers = headers;
-			}
 
 			// Test IOException
 			try

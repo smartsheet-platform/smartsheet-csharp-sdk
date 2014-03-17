@@ -4,17 +4,12 @@ using System.Collections.Generic;
 
 namespace Smartsheet.Api.Internal.Json
 {
-	using NUnit.Framework;
-
-
-
-
-
-	using JsonParseException = fasterxml.jackson.core.JsonParseException;
-	using JsonMappingException = fasterxml.jackson.databind.JsonMappingException;
-	using Folder = Smartsheet.Api.Models.Folder;
-	using Result = Smartsheet.Api.Models.Result;
-	using User = Smartsheet.Api.Models.User;
+    using NUnit.Framework;
+    using System.IO;
+    using System.Text;
+    using Smartsheet.Api.Models;
+    using Folder = Smartsheet.Api.Models.Folder;
+    using User = Smartsheet.Api.Models.User;
 
 	public class JacksonJsonSerializerTest
 	{
@@ -42,7 +37,7 @@ namespace Smartsheet.Api.Internal.Json
 				// Illegal Argument due to null
 				try
 				{
-					jjs.serialize(null, new ByteArrayOutputStream());
+					jjs.serialize<Object>(null, new StreamWriter(new MemoryStream()));
 					Assert.Fail("should throw exception");
 				}
 				catch (System.ArgumentException)
@@ -64,7 +59,7 @@ namespace Smartsheet.Api.Internal.Json
 				// Illegal Argument due to null
 				try
 				{
-					jjs.Serialize(null, null);
+					jjs.serialize<Object>(null, null);
 					Assert.Fail("should throw exception");
 				}
 				catch (System.ArgumentException)
@@ -72,46 +67,35 @@ namespace Smartsheet.Api.Internal.Json
 					//Expected
 				}
 			}
-			catch (JSONSerializerException ex)
+			catch (JsonSerializationException ex)
 			{
 				Assert.Fail("Shouldn't have thrown this exception: " + ex);
 			}
 
-			// Mapping Exception. Can't serialize to an object and can't create an empty bean serializer
-			try
-			{
-				jjs.serialize(new object(), new ByteArrayOutputStream());
-				Assert.Fail("Should throw a JSONMappingException");
-			}
-			catch (JSONSerializerException)
-			{
-				// Expected
-			}
-
 			// Test successful serialization
 			User user = new User();
-			user.email = "test@test.com";
+			user.Email = "test@test.com";
 			try
 			{
-				jjs.serialize(user, new ByteArrayOutputStream());
+				jjs.serialize(user, new StreamWriter(new MemoryStream()));
 			}
-			catch (JSONSerializerException)
+			catch (JsonSerializationException)
 			{
 				Assert.Fail("Shouldn't throw an exception");
 			}
 
 			// Test IOException
-			File tempFile = null;
+			string tempFile = null;
 			try
 			{
-				tempFile = File.createTempFile("json_test", ".tmp");
-				FileOutputStream fos = new FileOutputStream(tempFile);
-				fos.close();
+                tempFile = Path.GetTempPath() + "json_test"+Guid.NewGuid().ToString() + ".tmp";
+                StreamWriter fs = new StreamWriter(tempFile);
+                fs.Close();
 				try
 				{
-					jjs.serialize(user, fos);
+					jjs.serialize(user, fs);
 				}
-				catch (JSONSerializerException)
+				catch (JsonSerializationException)
 				{
 					// Expected
 
@@ -131,7 +115,7 @@ namespace Smartsheet.Api.Internal.Json
 				// Illegal argument due to null
 				try
 				{
-					jjs.deserialize(null, null);
+					jjs.deserialize<Object>(null);
 					Assert.Fail("Exception should have been thrown.");
 				}
 				catch (System.ArgumentException)
@@ -142,18 +126,7 @@ namespace Smartsheet.Api.Internal.Json
 				// Illegal argument due to null
 				try
 				{
-					jjs.deserialize(typeof(User), null);
-					Assert.Fail("Exception should have been thrown.");
-				}
-				catch (System.ArgumentException)
-				{
-					// Expected
-				}
-
-				// ILlegal argument due to null
-				try
-				{
-					jjs.deserialize(null, new ByteArrayInputStream(new sbyte[10]));
+					jjs.deserialize<User>(null);
 					Assert.Fail("Exception should have been thrown.");
 				}
 				catch (System.ArgumentException)
@@ -170,370 +143,328 @@ namespace Smartsheet.Api.Internal.Json
 			// Test Successful deserialize of a serialized user back to a User Object
 
 			// Serialize User
-			ByteArrayOutputStream b = new ByteArrayOutputStream();
+            StreamWriter s = new StreamWriter(new MemoryStream());
 			User originalUser = new User();
-			originalUser.firstName = "Test";
-			jjs.serialize(originalUser,b);
+			originalUser.FirstName = "Test";
+			jjs.serialize(originalUser,s);
+            s.Flush();
+            s.BaseStream.Position = 0;
 
 			// Deserialize User from a byte array
-			User user = jjs.deserialize(typeof(User), new ByteArrayInputStream(b.toByteArray()));
-			Assert.AreEqual(originalUser.firstName,user.firstName);
+            User user = jjs.deserialize<User>(new StreamReader(s.BaseStream));
+			Assert.AreEqual(originalUser.FirstName,user.FirstName);
 		}
 
-		[Test]
-		public virtual void TestDeserializeMap()
-		{
-			// Test null pointer exceptions
-			try
-			{
-				jjs.deserializeMap(null);
-				Assert.Fail("Exception should have been thrown.");
-			}
-			catch (System.ArgumentException)
-			{
-				// expected
-			}
+        [Test]
+        public virtual void TestDeserializeMap()
+        {
+            // Test null pointer exceptions
+            try
+            {
+                jjs.DeserializeMap(null);
+                Assert.Fail("Exception should have been thrown.");
+            }
+            catch (System.ArgumentException)
+            {
+                // expected
+            }
 
-			// Parse Exception / invalid json
-			try
-			{
-				string str = "test";
-				jjs.deserializeMap(new ByteArrayInputStream(str.GetBytes()));
-				Assert.Fail("Exception should have been thrown.");
-			}
-			catch (JSONSerializerException)
-			{
-				// expected
-			}
+            // Parse Exception / invalid json
+            try
+            {
+                string str = "test";
+                jjs.DeserializeMap(new StreamReader(new MemoryStream(Encoding.UTF8.GetBytes(str))));
+                Assert.Fail("Exception should have been thrown.");
+            }
+            catch (JsonSerializationException)
+            {
+                // expected
+            }
 
-			// Mapping Exception. Can't deserialize a JSON array to a Map object as the key would be an int
-			string str = "[\"test\",\"test1\"]";
-			try
-			{
-				jjs.deserializeMap(new ByteArrayInputStream(str.GetBytes()));
-				Assert.Fail("Exception should have been thrown.");
-			}
-			catch (JSONSerializerException)
-			{
-				//expected
-			}
+            // Mapping Exception. Can't deserialize a JSON array to a Map object as the key would be an int
+            string str1 = "[\"test\",\"test1\"]";
+            try
+            {
+                jjs.DeserializeMap(new StreamReader(new MemoryStream(Encoding.UTF8.GetBytes(str1))));
+                Assert.Fail("Exception should have been thrown.");
+            }
+            catch (JsonSerializationException)
+            {
+                //expected
+            }
 
-			// IO Exception
-			try
-			{
-				FileInputStream fis = new FileInputStream(File.createTempFile("json_test", ".tmp"));
-				fis.close();
+            // Valid deserialize
+            string str2 = "{'key':'value'},{'key':'value'}".Replace("'", "\"");
+            jjs.DeserializeMap(new StreamReader(new MemoryStream(Encoding.UTF8.GetBytes(str2))));
+        }
 
-				jjs.deserializeMap(fis);
-				Assert.Fail("Should have thrown an IOException");
-			}
-			catch (JSONSerializerException)
-			{
-				//expected
-			}
+        [Test]
+        public virtual void TestDeserializeList()
+        {
+            // Test null pointer exceptions
+            try
+            {
+                jjs.deserializeList<Object>(null);
+                Assert.Fail("Exception should have been thrown.");
+            }
+            catch (System.ArgumentException)
+            {
+                // expected
+            }
 
-			// Valid deserialize
-			str = "{'key':'value'},{'key':'value'}".Replace("'", "\"");
-			jjs.deserializeMap(new ByteArrayInputStream(str.GetBytes()));
-		}
+            // Test JsonParseException. Can't convert an invalid json array to a list.
+            try
+            {
+                jjs.deserializeList<IList>(new StreamReader(new MemoryStream(Encoding.UTF8.GetBytes("[broken jason"))));
+                Assert.Fail("Should have thrown a JsonParseException");
+            }
+            catch (JsonSerializationException)
+            {
+                // Expected
+            }
 
-		[Test]
-		public virtual void TestDeserializeList()
-		{
-			// Test null pointer exceptions
-			try
-			{
-				jjs.deserializeList(null, null);
-				Assert.Fail("Exception should have been thrown.");
-			}
-			catch (System.ArgumentException)
-			{
-				// expected
-			}
-			try
-			{
-				jjs.deserializeList(typeof(ArrayList), null);
-				Assert.Fail("Exception should have been thrown.");
-			}
-			catch (System.ArgumentException)
-			{
-				// expected
-			}
-			try
-			{
-				jjs.deserializeList(null, new ByteArrayInputStream(new sbyte[10]));
-				Assert.Fail("Exception should have been thrown.");
-			}
-			catch (System.ArgumentException)
-			{
-				// expected
-			}
+            // Serialize a User and fail since it is not an ArrayList
+            StreamWriter sw = new StreamWriter(new MemoryStream());
+            User originalUser = new User();
+            jjs.serialize<User>(originalUser, sw); //b has the user in json format in a byte array
+            sw.Flush();
+            sw.BaseStream.Position = 0;
 
-			// Test JsonParseException. Can't convert an invalid json array to a list.
-			try
-			{
-				jjs.deserializeList(typeof(IList), new ByteArrayInputStream("[broken jason".GetBytes()));
-				Assert.Fail("Should have thrown a JsonParseException");
-			}
-			catch (JSONSerializerException)
-			{
-				// Expected
-			}
+            try
+            {
 
-			// Serialize a User and fail since it is not an ArrayList
-			ByteArrayOutputStream b = new ByteArrayOutputStream();
-			User originalUser = new User();
-			jjs.serialize(originalUser,b); //b has the user in json format in a byte array
-			try
-			{
-				jjs.deserializeList(typeof(ArrayList), new ByteArrayInputStream(b.toByteArray()));
-				Assert.Fail("Exception should have been thrown.");
-			}
-			catch (JSONSerializerException)
-			{
-				//expected
-			}
+                jjs.deserializeList<ArrayList>(new StreamReader(sw.BaseStream));
+                Assert.Fail("Exception should have been thrown.");
+            }
+            catch (JsonSerializationException)
+            {
+                //expected
+            }
 
-			// Test serializing/deserializing a simple ArrayList
-			jjs = new JacksonJsonSerializer();
-			IList<string> originalList = new List<string>();
-			originalList.Add("something");
-			originalList.Add("something-else");
-			b = new ByteArrayOutputStream();
-			jjs.serialize(originalList, b);
-			IList<string> newList = jjs.deserializeList(typeof(string), new ByteArrayInputStream(b.toByteArray()));
-			// Verify that the serialized/deserialized object is equal to the original object.
-			if (!newList.Equals(originalList))
-			{
-				Assert.Fail("Types should be identical. Serialization/Deserialation might have failed.");
-			}
+            // Test serializing/deserializing a simple ArrayList
+            jjs = new JsonNetSerializer();
+            IList<string> originalList = new List<string>();
+            originalList.Add("something");
+            originalList.Add("something-else");
 
-			// Test JSONSerializerException
+            
+            StreamWriter sw1 = new StreamWriter(new MemoryStream());
+            jjs.serialize(originalList, sw1);
+            sw1.Flush();
+            sw1.BaseStream.Position = 0;
 
-			// Test IOException
-			try
-			{
-				FileInputStream fis = new FileInputStream(File.createTempFile("json_test", ".tmp"));
-				fis.close();
 
-				jjs.deserializeList(typeof(IList), fis);
-				Assert.Fail("Should have thrown an IOException");
-			}
-			catch (JSONSerializerException)
-			{
-				//expected
-			}
-		}
+            IList<string> newList = jjs.deserializeList<string>(new StreamReader(sw1.BaseStream));
+            // Verify that the serialized/deserialized object is equal to the original object.
+            Assert.AreEqual(originalList, newList);
+
+            // Test JSONSerializerException
+
+            // Test IOException
+            try
+            {
+                string tempFile1 = Path.GetTempPath() + "json_test" + Guid.NewGuid().ToString() + ".tmp";
+                StreamWriter fs = new StreamWriter(tempFile1);
+                fs.Flush();
+                fs.Close();
+
+                jjs.deserializeList<IList>(new StreamReader(fs.BaseStream));
+                Assert.Fail("Should have thrown an IOException");
+            }
+            catch (ArgumentNullException)
+            {
+                //expected
+            }
+        }
 
 
 
-		[Test]
-		public virtual void TestDeserializeResult()
-		{
-			try
-			{
-				try
-				{
-					jjs.deserializeResult(null, null);
-					Assert.Fail("Exception should have been thrown.");
-				}
-				catch (System.ArgumentException)
-				{
-					// Expected
-				}
+        [Test]
+        public virtual void TestDeserializeResult()
+        {
+            try
+            {
+                try
+                {
+                    jjs.deserializeResult<Object>(null);
+                    Assert.Fail("Exception should have been thrown.");
+                }
+                catch (System.ArgumentException)
+                {
+                    // Expected
+                }
 
-				try
-				{
-					jjs.deserializeResult(typeof(User), null);
-					Assert.Fail("Exception should have been thrown.");
-				}
-				catch (System.ArgumentException)
-				{
-					// Expected
-				}
+                try
+                {
+                    jjs.deserializeResult<User>(null);
+                    Assert.Fail("Exception should have been thrown.");
+                }
+                catch (System.ArgumentException)
+                {
+                    // Expected
+                }
+            }
+            catch (Exception ex)
+            {
+                Assert.Fail("Exception should not be thrown: " + ex);
+            }
 
-				try
-				{
-					jjs.deserializeResult(null, new ByteArrayInputStream(new sbyte[10]));
-					Assert.Fail("Exception should have been thrown.");
-				}
-				catch (System.ArgumentException)
-				{
-					// Expected
-				}
-			}
-			catch (Exception ex)
-			{
-				Assert.Fail("Exception should not be thrown: " + ex);
-			}
+            RequestResult<Folder> result = new RequestResult<Folder>();
+            result.Message = "Test Result";
+            StreamWriter sw = new StreamWriter(new MemoryStream());
+            sw.BaseStream.Flush();
+            sw.BaseStream.Position = 0;
 
-			Result<Folder> result = new Result<Folder>();
-			result.message = "Test Result";
-			ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+            // Test successful deserialization
+            try
+            {
+                jjs.serialize<RequestResult<Folder>>(result, sw);
+                jjs.deserializeResult<RequestResult<Folder>>(new StreamReader(sw.BaseStream));
+            }
+            catch (JsonSerializationException ex)
+            {
+                Assert.Fail("Exception should not be thrown: " + ex);
+            }
 
-			// Test successful deserialization
-			try
-			{
-				jjs.serialize(result, outputStream);
-				jjs.deserializeResult(typeof(Result), new ByteArrayInputStream(outputStream.toByteArray()));
-			}
-			catch (JSONSerializerException ex)
-			{
-				Assert.Fail("Exception should not be thrown: " + ex);
-			}
+            // Test IOException
+            try
+            {
+                FileStream fs = null;
+                try
+                {
+                    fs = File.Create(Path.GetTempPath() + "json_test" + Guid.NewGuid().ToString() + ".tmp");
+                }
+                catch (Exception ex)
+                {
+                    Assert.Fail("Issue running a test where a temp file is being created." + ex);
+                }
+                StreamReader sr = new StreamReader(fs);
+                sr.Close();
+                jjs.deserializeResult<RequestResult<Object>>(sr);
+                Assert.Fail("Should have thrown an IOException");
+            }
+            catch (JsonSerializationException)
+            {
+                //expected
+            }
 
-			// Test JSONMappingException - Test Mapping a list back to one object
-			try
-			{
-				outputStream = new ByteArrayOutputStream();
-				List<User> users = new List<User>();
-				jjs.serialize(users, outputStream);
-				jjs.deserializeResult(typeof(Result), new ByteArrayInputStream(outputStream.toByteArray()));
-				Assert.Fail("Exception should have been thrown");
-			}
-			catch (JSONSerializerException)
-			{
-				// Expected
-			}
+            // Test JsonParseException
+            try
+            {
+                jjs.deserializeResult<RequestResult<Object>>(new StreamReader(new MemoryStream(
+                    Encoding.UTF8.GetBytes("{oops it's broken"))));
+                Assert.Fail("Should have thrown a JsonParseException");
+            }
+            catch (JsonSerializationException)
+            {
+                // Expected
+            }
+        }
 
-			// Test IOException
-			try
-			{
-				FileInputStream fis = null;
-				try
-				{
-					fis = new FileInputStream(File.createTempFile("json_test", ".tmp"));
-					fis.close();
-				}
-				catch (Exception ex)
-				{
-					Assert.Fail("Issue running a test where a temp file is being created." + ex);
-				}
+    //    [Test]
+    //    public virtual void TestDeserializeListResult()
+    //    {
+    //        try
+    //        {
+    //            try
+    //            {
+    //                jjs.deserializeListResult(null, null);
+    //                Assert.Fail("Exception should have been thrown.");
+    //            }
+    //            catch (System.ArgumentException)
+    //            {
+    //                // Expected
+    //            }
 
-				jjs.deserializeResult(typeof(Result), fis);
-				Assert.Fail("Should have thrown an IOException");
-			}
-			catch (JSONSerializerException)
-			{
-				//expected
-			}
+    //            try
+    //            {
+    //                jjs.deserializeListResult(typeof(User), null);
+    //                Assert.Fail("Exception should have been thrown.");
+    //            }
+    //            catch (System.ArgumentException)
+    //            {
+    //                // Expected
+    //            }
 
-			// Test JsonParseException
-			try
-			{
-				jjs.deserializeResult(typeof(Result), new ByteArrayInputStream("{oops it's broken".GetBytes()));
-				Assert.Fail("Should have thrown a JsonParseException");
-			}
-			catch (JSONSerializerException)
-			{
-				// Expected
-			}
-		}
+    //            try
+    //            {
+    //                jjs.deserializeListResult(null, new ByteArrayInputStream(new sbyte[10]));
+    //                Assert.Fail("Exception should have been thrown.");
+    //            }
+    //            catch (System.ArgumentException)
+    //            {
+    //                // Expected
+    //            }
+    //        }
+    //        catch (Exception ex)
+    //        {
+    //            Assert.Fail("Exception should not be thrown: " + ex);
+    //        }
 
-		[Test]
-		public virtual void TestDeserializeListResult()
-		{
-			try
-			{
-				try
-				{
-					jjs.deserializeListResult(null, null);
-					Assert.Fail("Exception should have been thrown.");
-				}
-				catch (System.ArgumentException)
-				{
-					// Expected
-				}
+    //        Result<List<object>> result = new Result<List<object>>();
+    //        result.message = "Test Message";
+    //        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 
-				try
-				{
-					jjs.deserializeListResult(typeof(User), null);
-					Assert.Fail("Exception should have been thrown.");
-				}
-				catch (System.ArgumentException)
-				{
-					// Expected
-				}
+    //        // Test successful deserialization
+    //        try
+    //        {
+    //            jjs.serialize(result, outputStream);
+    //            jjs.deserializeListResult(typeof(Result), new ByteArrayInputStream(outputStream.toByteArray()));
+    //        }
+    //        catch (JSONSerializerException ex)
+    //        {
+    //            Assert.Fail("Exception should not be thrown: " + ex);
+    //        }
 
-				try
-				{
-					jjs.deserializeListResult(null, new ByteArrayInputStream(new sbyte[10]));
-					Assert.Fail("Exception should have been thrown.");
-				}
-				catch (System.ArgumentException)
-				{
-					// Expected
-				}
-			}
-			catch (Exception ex)
-			{
-				Assert.Fail("Exception should not be thrown: " + ex);
-			}
+    //        // Test IOException
+    //        try
+    //        {
+    //            FileInputStream fis = null;
+    //            try
+    //            {
+    //                fis = new FileInputStream(File.createTempFile("json_test", ".tmp"));
+    //                fis.close();
+    //            }
+    //            catch (Exception ex)
+    //            {
+    //                Assert.Fail("Issue running a test where a temp file is being created." + ex);
+    //            }
 
-			Result<List<object>> result = new Result<List<object>>();
-			result.message = "Test Message";
-			ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+    //            jjs.deserializeListResult(typeof(Result), fis);
+    //            Assert.Fail("Should have thrown an IOException");
+    //        }
+    //        catch (JSONSerializerException)
+    //        {
+    //            //expected
+    //        }
 
-			// Test successful deserialization
-			try
-			{
-				jjs.serialize(result, outputStream);
-				jjs.deserializeListResult(typeof(Result), new ByteArrayInputStream(outputStream.toByteArray()));
-			}
-			catch (JSONSerializerException ex)
-			{
-				Assert.Fail("Exception should not be thrown: " + ex);
-			}
-
-			// Test IOException
-			try
-			{
-				FileInputStream fis = null;
-				try
-				{
-					fis = new FileInputStream(File.createTempFile("json_test", ".tmp"));
-					fis.close();
-				}
-				catch (Exception ex)
-				{
-					Assert.Fail("Issue running a test where a temp file is being created." + ex);
-				}
-
-				jjs.deserializeListResult(typeof(Result), fis);
-				Assert.Fail("Should have thrown an IOException");
-			}
-			catch (JSONSerializerException)
-			{
-				//expected
-			}
-
-			// Test JSONMappingException - Test Mapping a list back to one object
-			try
-			{
-				outputStream = new ByteArrayOutputStream();
-				List<User> users = new List<User>();
-				jjs.serialize(users, outputStream);
-				jjs.deserializeListResult(typeof(Result), new ByteArrayInputStream(outputStream.toByteArray()));
-				Assert.Fail("Exception should have been thrown");
-			}
-			catch (JSONSerializerException)
-			{
-				// Expected
-			}
+    //        // Test JSONMappingException - Test Mapping a list back to one object
+    //        try
+    //        {
+    //            outputStream = new ByteArrayOutputStream();
+    //            List<User> users = new List<User>();
+    //            jjs.serialize(users, outputStream);
+    //            jjs.deserializeListResult(typeof(Result), new ByteArrayInputStream(outputStream.toByteArray()));
+    //            Assert.Fail("Exception should have been thrown");
+    //        }
+    //        catch (JSONSerializerException)
+    //        {
+    //            // Expected
+    //        }
 
 
-			// Test JsonParseException
-			try
-			{
-				jjs.deserializeListResult(typeof(Result), new ByteArrayInputStream("{bad json".GetBytes()));
-				Assert.Fail("Should have thrown a JsonParseException");
-			}
-			catch (JSONSerializerException)
-			{
-				// Expected
-			}
-		}
+    //        // Test JsonParseException
+    //        try
+    //        {
+    //            jjs.deserializeListResult(typeof(Result), new ByteArrayInputStream("{bad json".GetBytes()));
+    //            Assert.Fail("Should have thrown a JsonParseException");
+    //        }
+    //        catch (JSONSerializerException)
+    //        {
+    //            // Expected
+    //        }
+    //    }
 
-	}
+    }
 
 }

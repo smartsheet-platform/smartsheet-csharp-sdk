@@ -29,7 +29,7 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestListUsers()
 		{
-			server.ResponseBody = "../../../TestSDK/resources/listUsers.json";
+			server.setResponseBody("../../../TestSDK/resources/listUsers.json");
 
 			IList<User> users = userResources.ListUsers();
 			Assert.NotNull(users);
@@ -45,7 +45,7 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestAddUserUser()
 		{
-			server.ResponseBody = "../../../TestSDK/resources/addUser.json";
+			server.setResponseBody("../../../TestSDK/resources/addUser.json");
 
 			User user = new User();
 			user.Admin = true;
@@ -65,7 +65,7 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestAddUserUserBoolean()
 		{
-			server.ResponseBody = "../../../TestSDK/resources/addUser.json";
+			server.setResponseBody("../../../TestSDK/resources/addUser.json");
 
 			User user = new User();
 			user.Admin = true;
@@ -85,7 +85,7 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestGetCurrentUser()
 		{
-			server.ResponseBody = "../../../TestSDK/resources/getCurrentUser.json";
+			server.setResponseBody("../../../TestSDK/resources/getCurrentUser.json");
 
 			UserProfile user = userResources.currentUser;
 			Assert.AreEqual("email@email.com",user.Email);
@@ -97,7 +97,7 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestUpdateUser()
 		{
-			server.ResponseBody = "../../../TestSDK/resources/updateUser.json";
+			server.setResponseBody("../../../TestSDK/resources/updateUser.json");
 
 			User user = new User();
 			user.ID = 1234L;
@@ -114,7 +114,7 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestDeleteUser()
 		{
-			server.ResponseBody = "../../../TestSDK/resources/deleteUser.json";
+			server.setResponseBody("../../../TestSDK/resources/deleteUser.json");
 
 			userResources.DeleteUser(1234L);
 		}

@@ -31,7 +31,7 @@ namespace Smartsheet.Api.Internal
 		{
 
 			// Set a fake response
-			server.ResponseBody = "../../../TestSDK/resources/getFolder.json";
+			server.setResponseBody("../../../TestSDK/resources/getFolder.json");
 
 			//server.getClass().getClassLoader().getResourceAsStream(
 			//		"com/smartsheet/api/internal/getFolder.json"
@@ -54,7 +54,7 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestUpdateFolder()
 		{
-			server.ResponseBody = "../../../TestSDK/resources/updateFolder.json";
+			server.setResponseBody("../../../TestSDK/resources/updateFolder.json");
 
 			Folder newFolder = new Folder();
 			newFolder.Name = "New Name";
@@ -69,7 +69,7 @@ namespace Smartsheet.Api.Internal
 		public virtual void TestDeleteFolder()
 		{
 
-			server.ResponseBody = "../../../TestSDK/resources/deleteFolder.json";
+			server.setResponseBody("../../../TestSDK/resources/deleteFolder.json");
 
 			folderResource.DeleteFolder(7752230582413188L);
 		}
@@ -78,7 +78,7 @@ namespace Smartsheet.Api.Internal
 		public virtual void TestListFolders()
 		{
 
-			server.ResponseBody = "../../../TestSDK/resources/listFolders.json";
+			server.setResponseBody("../../../TestSDK/resources/listFolders.json");
 
 			IList<Folder> folders = folderResource.ListFolders(12345L);
 			Assert.AreEqual(2, folders.Count);
@@ -87,7 +87,7 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestCreateFolder()
 		{
-			server.ResponseBody = "../../../TestSDK/resources/createFolder.json";
+			server.setResponseBody("../../../TestSDK/resources/createFolder.json");
 
 			Folder newFolder = new Folder();
 			newFolder.Name = "new folder by brett";

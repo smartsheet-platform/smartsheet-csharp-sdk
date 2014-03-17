@@ -31,7 +31,7 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestCreateDiscussion()
 		{
-            server.ResponseBody = "../../../TestSDK/resources/createDiscussion.json";
+            server.setResponseBody("../../../TestSDK/resources/createDiscussion.json");
 
 			// Test success
 			IList<Comment> comments = new List<Comment>();
@@ -55,7 +55,7 @@ namespace Smartsheet.Api.Internal
 
 			// Test failure - CreatedBy not allowed & only one comment can be added when creating a discussion.
             server.Status = HttpStatusCode.BadRequest;
-            server.ResponseBody = "../../../TestSDK/resources/createDiscussion_1032.json";
+            server.setResponseBody("../../../TestSDK/resources/createDiscussion_1032.json");
 			comment = new Comment();
 			User user = new User();
 			user.Name = "John Doe";

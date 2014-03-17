@@ -27,7 +27,7 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestListFolders()
 		{
-			server.ResponseBody = "../../../TestSDK/resources/listWorkspaceFolders.json";
+			server.setResponseBody("../../../TestSDK/resources/listWorkspaceFolders.json");
 
 			IList<Folder> folders = workspaceFolderResources.ListFolders(1234L);
 			Assert.AreEqual(1,folders.Count);
@@ -39,7 +39,7 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestCreateFolder()
 		{
-			server.ResponseBody = "../../../TestSDK/resources/newWorkspaceFolder.json";
+			server.setResponseBody("../../../TestSDK/resources/newWorkspaceFolder.json");
 
 			Folder folder = new Folder();
 			folder.Name = "New Folder";

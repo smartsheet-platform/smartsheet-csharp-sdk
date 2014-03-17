@@ -1,13 +1,12 @@
 ﻿namespace Smartsheet.Api.Internal.OAuth
 {
 	using NUnit.Framework;
+    using System;
 
 
 	using DefaultHttpClient = Smartsheet.Api.Internal.Http.DefaultHttpClient;
 	using HttpClient = Smartsheet.Api.Internal.Http.HttpClient;
 	using HttpClientException = Smartsheet.Api.Internal.Http.HttpClientException;
-	using JSONSerializerException = Smartsheet.Api.Internal.Json.JSONSerializerException;
-	using JacksonJsonSerializer = Smartsheet.Api.Internal.Json.JacksonJsonSerializer;
 	using JsonSerializer = Smartsheet.Api.Internal.Json.JsonSerializer;
 	using AccessDeniedException = Smartsheet.Api.OAuth.AccessDeniedException;
 	using AccessScope = Smartsheet.Api.OAuth.AccessScope;
@@ -17,6 +16,8 @@
 	using OAuthTokenException = Smartsheet.Api.OAuth.OAuthTokenException;
 	using Token = Smartsheet.Api.OAuth.Token;
 	using UnsupportedResponseTypeException = Smartsheet.Api.OAuth.UnsupportedResponseTypeException;
+    using Smartsheet.Api.Internal.Json;
+    using System.Collections.Generic;
 
 	public class OAuthFlowImplTest
 	{
@@ -28,11 +29,11 @@
 		internal string authorizationURL = "authorizationURL";
 		internal string tokenURL = "tokenURL";
 		internal HttpClient httpClient = new DefaultHttpClient();
-		internal JsonSerializer json = new JacksonJsonSerializer();
+		internal JsonSerializer json = new JsonNetSerializer();
 
 		internal HttpTestServer server;
 
-//ORIGINAL LINE: @After public void baseTearDown() throws Exception
+        [TearDown]
 		public virtual void BaseTearDown()
 		{
 			server.Stop();
@@ -45,25 +46,24 @@
 
 			// Setup test server
 			server = new HttpTestServer();
-			server.port = 9090;
 			server.Start();
 
 			// Setup the serializer
-			JacksonJsonSerializer serializer = new JacksonJsonSerializer();
-			serializer.failOnUnknownProperties = true;
+			JsonNetSerializer serializer = new JsonNetSerializer();
+			serializer.failOnUnknownProperties = Newtonsoft.Json.MissingMemberHandling.Error;
 		}
 
 		[Test]
 		public virtual void TestOAuthFlowImpl()
 		{
 
-			Assert.AreEqual(clientId,oauth.clientId);
-			Assert.AreEqual(clientSecret, oauth.clientSecret);
-			Assert.AreEqual(redirectURL, oauth.redirectURL);
-			Assert.AreEqual(authorizationURL, oauth.authorizationURL);
-			Assert.AreEqual(tokenURL, oauth.tokenURL);
-			Assert.AreEqual(httpClient, oauth.httpClient);
-			Assert.AreEqual(json, oauth.jsonSerializer);
+			Assert.AreEqual(clientId,oauth.ClientId);
+			Assert.AreEqual(clientSecret, oauth.ClientSecret);
+			Assert.AreEqual(redirectURL, oauth.RedirectURL);
+			Assert.AreEqual(authorizationURL, oauth.AuthorizationURL);
+			Assert.AreEqual(tokenURL, oauth.TokenURL);
+			Assert.AreEqual(httpClient, oauth.HttpClient);
+			Assert.AreEqual(json, oauth.JsonSerializer);
 		}
 
 		[Test]
@@ -71,7 +71,7 @@
 		{
 			try
 			{
-				oauth.newAuthorizationURL(null, null);
+				oauth.NewAuthorizationURL(null, null);
 				Assert.Fail("Should have thrown an exception.");
 			}
 			catch (System.ArgumentException)
@@ -79,10 +79,13 @@
 				// Expected
 			}
 
-			oauth.newAuthorizationURL(EnumSet.of(AccessScope.READ_SHEETS), null);
-			string authURL = oauth.newAuthorizationURL(EnumSet.of(AccessScope.READ_SHEETS), "state");
+            oauth.NewAuthorizationURL(new List<AccessScope>((AccessScope[])Enum.GetValues(typeof(AccessScope))), null);
+            string authURL = oauth.NewAuthorizationURL(new List<AccessScope>((AccessScope[])Enum.GetValues(
+                typeof(AccessScope))), "state");
 
-			Assert.AreEqual("authorizationURL?scope=READ_SHEETS&response_type=code&redirect_uri=redirectURL&state=state&" + "client_id=clientID", authURL);
+            Assert.AreEqual("authorizationURL?response_type=code&client_id=clientID&redirect_uri=redirectURL&"+
+                "state=state&scope=READ_SHEETS%2CWRITE_SHEETS%2CSHARE_SHEETS%2CDELETE_SHEETS%2CCREATE_SHEETS%2"+
+                "CADMIN_SHEETS%2CADMIN_WORKSPACES", authURL);
 		}
 
 		[Test]
@@ -91,7 +94,7 @@
 
 			try
 			{
-				oauth.extractAuthorizationResult(null);
+				oauth.ExtractAuthorizationResult(null);
 				Assert.Fail("Should have thrown an exception.");
 			}
 			catch (System.ArgumentException)
@@ -101,7 +104,7 @@
 
 			try
 			{
-				oauth.extractAuthorizationResult("");
+				oauth.ExtractAuthorizationResult("");
 				Assert.Fail("Should have thrown an exception.");
 			}
 			catch (System.ArgumentException)
@@ -112,7 +115,7 @@
 			// Null query
 			try
 			{
-				oauth.extractAuthorizationResult("http://smartsheet.com");
+				oauth.ExtractAuthorizationResult("http://smartsheet.com");
 				Assert.Fail("Should have thrown an exception");
 			}
 			catch (OAuthAuthorizationCodeException)
@@ -122,7 +125,7 @@
 
 			try
 			{
-				oauth.extractAuthorizationResult("http://smartsheet.com?error=access_denied");
+				oauth.ExtractAuthorizationResult("http://smartsheet.com?error=access_denied");
 				Assert.Fail("Should have thrown an exception");
 			}
 			catch (AccessDeniedException)
@@ -132,7 +135,7 @@
 
 			try
 			{
-				oauth.extractAuthorizationResult("http://smartsheet.com?error=unsupported_response_type");
+				oauth.ExtractAuthorizationResult("http://smartsheet.com?error=unsupported_response_type");
 				Assert.Fail("Should have thrown an exception");
 			}
 			catch (UnsupportedResponseTypeException)
@@ -142,7 +145,7 @@
 
 			try
 			{
-				oauth.extractAuthorizationResult("http://smartsheet.com?error=invalid_scope");
+				oauth.ExtractAuthorizationResult("http://smartsheet.com?error=invalid_scope");
 				Assert.Fail("Should have thrown an exception");
 			}
 			catch (InvalidScopeException)
@@ -152,7 +155,7 @@
 
 			try
 			{
-				oauth.extractAuthorizationResult("http://smartsheet.com?error=something_undefined");
+				oauth.ExtractAuthorizationResult("http://smartsheet.com?error=something_undefined");
 				Assert.Fail("Should have thrown an exception");
 			}
 			catch (OAuthAuthorizationCodeException)
@@ -161,28 +164,28 @@
 			}
 
 			// No valid parameters (empty result)
-			oauth.extractAuthorizationResult("http://smartsheet.com?a=b");
+			oauth.ExtractAuthorizationResult("http://smartsheet.com?a=b");
 
 			// Empty Error (empty result)
-			oauth.extractAuthorizationResult("http://smartsheet.com?error=");
+			oauth.ExtractAuthorizationResult("http://smartsheet.com?error=");
 
 			// All parameters set (good response)
-			oauth.extractAuthorizationResult("http://smartsheet.com?code=code&state=state&expires_in=10");
+			oauth.ExtractAuthorizationResult("http://smartsheet.com?code=code&state=state&expires_in=10");
 		}
 
 		[Test]
 		public virtual void TestObtainNewToken()
 		{
-			server.status = 403;
-			server.contentType = "application/x-www-form-urlencoded";
-			server.ResponseBody = "../../../TestSDK/resources/OAuthException.json";
-			server.ResponseBody = "{\"errorCode\": \"1004\", " + "\"message\": \"You are not authorized to perform this action.\"}";
+			server.Status = System.Net.HttpStatusCode.Forbidden;
+			server.ContentType = "application/x-www-form-urlencoded";
+			server.setResponseBody("../../../TestSDK/resources/OAuthException.json");
+			server.setResponseBody("{\"errorCode\": \"1004\", " + "\"message\": \"You are not authorized to perform this action.\"}");
 
-			oauth.tokenURL = "http://localhost:9090/1.1/token";
+			oauth.TokenURL = "http://localhost:9090/1.1/token";
 			// 403 access forbidden
 			try
 			{
-				oauth.obtainNewToken(oauth.extractAuthorizationResult("http://localhost?a=b"));
+				oauth.ObtainNewToken(oauth.ExtractAuthorizationResult("http://localhost?a=b"));
 				Assert.Fail("Exception should have been thrown.");
 			}
 			catch (OAuthTokenException)
@@ -196,21 +199,21 @@
 		[Test]
 		public virtual void TestRefreshToken()
 		{
-			oauth.tokenURL = "https://api.smartsheet.com/1.1/token";
+			oauth.TokenURL = "https://api.smartsheet.com/1.1/token";
 
 			Token token = new Token();
-			token.accessToken = "AccessToken";
-			token.expiresInSeconds = 10L;
-			token.refreshToken = "refreshToken";
-			token.tokenType = "tokenType";
-			Assert.AreEqual("AccessToken", token.accessToken);
-			Assert.AreEqual("refreshToken", token.refreshToken);
-			Assert.AreEqual(10L, token.expiresInSeconds);
-			Assert.AreEqual("tokenType", token.tokenType);
+			token.AccessToken = "AccessToken";
+			token.ExpiresInSeconds = 10L;
+			token.RefreshToken = "refreshToken";
+			token.TokenType = "tokenType";
+			Assert.AreEqual("AccessToken", token.AccessToken);
+			Assert.AreEqual("refreshToken", token.RefreshToken);
+			Assert.AreEqual(10L, token.ExpiresInSeconds);
+			Assert.AreEqual("tokenType", token.TokenType);
 
 			try
 			{
-				oauth.refreshToken(token);
+				oauth.RefreshToken(token);
 				Assert.Fail("An expection should have been thrown.");
 			}
 			catch (InvalidOAuthClientException)

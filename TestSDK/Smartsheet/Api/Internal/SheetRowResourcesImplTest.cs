@@ -34,7 +34,7 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestInsertRows()
 		{
-			server.ResponseBody = "../../../TestSDK/resources/insertRows.json";
+			server.setResponseBody("../../../TestSDK/resources/insertRows.json");
 
 			// Create a set of cells
 			IList<Cell> cells = new List<Cell>();
@@ -75,7 +75,7 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestGetRow()
 		{
-			server.ResponseBody = "../../../TestSDK/resources/getRow.json";
+			server.setResponseBody("../../../TestSDK/resources/getRow.json");
 
 			Row row = sheetRowResource.GetRow(1234L, 1);
 

@@ -27,7 +27,7 @@
 		[Test]
 		public virtual void TestGetAttachment()
 		{
-            server.ResponseBody = "../../../TestSDK/resources/getAttachment.json";
+            server.setResponseBody("../../../TestSDK/resources/getAttachment.json");
 
 			Attachment attachment = attachmentResourcesImpl.GetAttachment(1234L);
 			Assert.NotNull(attachment.Url);
@@ -37,7 +37,7 @@
 		[Test]
 		public virtual void TestDeleteAttachment()
 		{
-            server.ResponseBody = "../../../TestSDK/resources/deleteAttachment.json";
+            server.setResponseBody("../../../TestSDK/resources/deleteAttachment.json");
 
 			attachmentResourcesImpl.DeleteAttachment(1234L);
 		}

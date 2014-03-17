@@ -25,7 +25,7 @@
 		[Test]
 		public virtual void TestUpdateColumn()
 		{
-			server.ResponseBody = "../../../TestSDK/resources/updateColumn.json";
+			server.setResponseBody("../../../TestSDK/resources/updateColumn.json");
 
 			Column col = new Column();
 
@@ -54,7 +54,7 @@
 		[Test]
 		public virtual void TestDeleteColumn()
 		{
-			server.ResponseBody = "../../../TestSDK/resources/deleteColumn.json";
+			server.setResponseBody("../../../TestSDK/resources/deleteColumn.json");
 			columnResource.DeleteColumn(179084870346628L, 2906571706525572L);
 		}
 

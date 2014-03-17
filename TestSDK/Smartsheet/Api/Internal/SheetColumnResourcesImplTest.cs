@@ -33,7 +33,7 @@ namespace Smartsheet.Api.Internal
 		public virtual void TestListColumns()
 		{
 
-			server.ResponseBody = "../../../TestSDK/resources/listColumns.json";
+			server.setResponseBody("../../../TestSDK/resources/listColumns.json");
 
 			IList<Column> columns = sheetColumnResourcesImpl.ListColumns(1234L);
 			Assert.True(columns.Count == 1);
@@ -43,7 +43,7 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestAddColumn()
 		{
-			server.ResponseBody = "../../../TestSDK/resources/addColumn.json";
+			server.setResponseBody("../../../TestSDK/resources/addColumn.json");
 			Column col = new Column();
 			col.Index = 1;
 			col.Title = "Status";

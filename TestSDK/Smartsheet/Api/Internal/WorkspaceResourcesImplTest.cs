@@ -30,7 +30,7 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestListWorkspaces()
 		{
-			server.ResponseBody = "../../../TestSDK/resources/listWorkspaces.json";
+			server.setResponseBody("../../../TestSDK/resources/listWorkspaces.json");
 
 			IList<Workspace> workspace = workspaceResources.ListWorkspaces();
 			Assert.AreEqual(7, workspace.Count);
@@ -43,7 +43,7 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestGetWorkspace()
 		{
-			server.ResponseBody = "../../../TestSDK/resources/getWorkspace.json";
+			server.setResponseBody("../../../TestSDK/resources/getWorkspace.json");
 
 			Workspace workspace = workspaceResources.GetWorkspace(1234L);
 			Assert.AreEqual(995897522841476L, (long)workspace.ID);
@@ -57,7 +57,7 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestCreateWorkspace()
 		{
-			server.ResponseBody = "../../../TestSDK/resources/createWorkspace.json";
+			server.setResponseBody("../../../TestSDK/resources/createWorkspace.json");
 
 			Workspace workspace = new Workspace();
 			workspace.Name = "New Workspace";
@@ -71,7 +71,7 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestUpdateWorkspace()
 		{
-			server.ResponseBody = "../../../TestSDK/resources/updateWorkspace.json";
+			server.setResponseBody("../../../TestSDK/resources/updateWorkspace.json");
 
 			Workspace workspace = new Workspace();
 			workspace.Name = "New Workspace";
@@ -85,7 +85,7 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestDeleteWorkspace()
 		{
-			server.ResponseBody = "../../../TestSDK/resources/deleteWorkspace.json";
+			server.setResponseBody("../../../TestSDK/resources/deleteWorkspace.json");
 			workspaceResources.DeleteWorkspace(1234L);
 		}
 

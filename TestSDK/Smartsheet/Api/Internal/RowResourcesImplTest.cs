@@ -39,7 +39,7 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestGetRow()
 		{
-			server.ResponseBody = "../../../TestSDK/resources/getRowByID.json";
+			server.setResponseBody("../../../TestSDK/resources/getRowByID.json");
 
             //IEnumerable<ObjectInclusion> test = new ObjectInclusion[]{ObjectInclusion.TEMPLATES,
             //    ObjectInclusion.DISCUSSIONS, ObjectInclusion.DATA, ObjectInclusion.COLUMNS,
@@ -55,12 +55,19 @@ namespace Smartsheet.Api.Internal
 			Assert.Null(row.Cells[0].Link.RowId);
 			Assert.True(row.Columns.Count == 2);
 			Assert.True(row.AccessLevel == AccessLevel.OWNER);
+
+			server.setResponseBody("../../../TestSDK/resources/getCell.json");
+			// Cell can contain a boolean or other type of object
+			row = rowResourcesImpl.GetRow(6089772474099588L, new List<ObjectInclusion>((ObjectInclusion[])Enum.
+				GetValues(typeof(ObjectInclusion))));
+			Assert.AreNotEqual(row.Cells[7].Value, "true");
+			Assert.AreEqual(row.Cells[7].Value, true);
 		}
 
 		[Test]
 		public virtual void TestMoveRow()
 		{
-			server.ResponseBody = "../../../TestSDK/resources/moveRow.json";
+			server.setResponseBody("../../../TestSDK/resources/moveRow.json");
 
 			RowWrapper rowWrapper = new RowWrapper();
 			rowWrapper.ToTop = true;
@@ -75,7 +82,7 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestDeleteRow()
 		{
-			server.ResponseBody = "../../../TestSDK/resources/deleteRow.json";
+			server.setResponseBody("../../../TestSDK/resources/deleteRow.json");
 
 			rowResourcesImpl.DeleteRow(12345L);
 		}
@@ -83,7 +90,7 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestSendRow()
 		{
-			server.ResponseBody = "../../../TestSDK/resources/sendRow.json";
+			server.setResponseBody("../../../TestSDK/resources/sendRow.json");
 
 			RowEmail email = new RowEmail();
 			IList<string> to = new List<string>();
@@ -100,7 +107,7 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestUpdateCells()
 		{
-			server.ResponseBody = "../../../TestSDK/resources/updateCell.json";
+			server.setResponseBody("../../../TestSDK/resources/updateCell.json");
 			IList<Cell> cells = new List<Cell>();
 			Cell cell = new Cell();
 			cell.ColumnId = 8764071660021636L;
@@ -120,7 +127,7 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestGetCellHistory()
 		{
-			server.ResponseBody = "../../../TestSDK/resources/getCellHistory.json";
+			server.setResponseBody("../../../TestSDK/resources/getCellHistory.json");
 
 			IList<CellHistory> history = rowResourcesImpl.GetCellHistory(1234L, 123124L);
 			Assert.True(history.Count == 2);

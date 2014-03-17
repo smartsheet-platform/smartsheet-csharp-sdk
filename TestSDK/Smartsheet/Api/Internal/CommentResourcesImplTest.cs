@@ -27,7 +27,7 @@
 		[Test]
 		public virtual void TestGetComment()
 		{
-			server.ResponseBody = "../../../TestSDK/resources/getComment.json";
+			server.setResponseBody("../../../TestSDK/resources/getComment.json");
 
 			Comment comment = commentResources.GetComment(1234L);
 			Assert.AreEqual(3831661625403268L, (long)comment.ID);
@@ -44,7 +44,7 @@
 		[Test]
 		public virtual void TestDeleteComment()
 		{
-			server.ResponseBody = "../../../TestSDK/resources/deleteComment.json";
+			server.setResponseBody("../../../TestSDK/resources/deleteComment.json");
 
 			commentResources.DeleteComment(1234L);
 		}

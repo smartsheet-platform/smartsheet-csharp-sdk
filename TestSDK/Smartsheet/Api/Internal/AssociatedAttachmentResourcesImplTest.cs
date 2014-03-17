@@ -34,7 +34,7 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestListAttachments()
 		{
-            server.ResponseBody = "../../../TestSDK/resources/listAssociatedAttachments.json";
+            server.setResponseBody("../../../TestSDK/resources/listAssociatedAttachments.json");
 
 			IList<Attachment> attachments = associatedAttachment.ListAttachments(1234L);
 			Assert.True(attachments.Count == 4);
@@ -44,7 +44,7 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestAttachFile()
 		{
-			server.ResponseBody = @"..\..\..\TestSDK\resources\attachFile.json";
+			server.setResponseBody(@"..\..\..\TestSDK\resources\attachFile.json");
             string file = @"..\..\..\TestSDK\resources\large_sheet.pdf";
 			Attachment attachment = associatedAttachment.AttachFile(1234L, file, "application/pdf");
 			Assert.True(attachment.ID == 7265404226692996L);
@@ -58,7 +58,7 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestAttachURL()
 		{
-			server.ResponseBody = @"..\..\..\TestSDK\resources\attachLink.json";
+			server.setResponseBody(@"..\..\..\TestSDK\resources\attachLink.json");
 
 			Attachment attachment = new Attachment();
 			attachment.Url = "http://www.smartsheet.com/sites/all/themes/blue_sky/logo.png";

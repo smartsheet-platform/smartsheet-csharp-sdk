@@ -31,7 +31,7 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestGetHome()
 		{
-			server.ResponseBody = "../../../TestSDK/resources/getHome.json";
+			server.setResponseBody("../../../TestSDK/resources/getHome.json");
 
 			IList<Home> homes = new List<Home>();
 			homes.Add(homeResources.GetHome(new ObjectInclusion[]{ObjectInclusion.TEMPLATES}));
@@ -52,7 +52,7 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestFolders()
 		{
-			server.ResponseBody = "../../../TestSDK/resources/getHomeFolders.json";
+			server.setResponseBody("../../../TestSDK/resources/getHomeFolders.json");
 
 			HomeFolderResources folders = homeResources.Folders();
 			Assert.NotNull(folders.ListFolders());

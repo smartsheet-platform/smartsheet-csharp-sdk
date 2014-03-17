@@ -34,7 +34,7 @@ namespace Smartsheet.Api.Internal
 		public virtual void TestListSheets()
 		{
 
-			server.ResponseBody = "../../../TestSDK/resources/listSheets.json";
+			server.setResponseBody("../../../TestSDK/resources/listSheets.json");
 
 			IList<Sheet> sheets = sheetResource.ListSheets();
 			Assert.AreEqual(2, sheets.Count);
@@ -44,7 +44,7 @@ namespace Smartsheet.Api.Internal
 		public virtual void TestListOrganizationSheets()
 		{
 
-			server.ResponseBody = "../../../TestSDK/resources/listSheets.json";
+			server.setResponseBody("../../../TestSDK/resources/listSheets.json");
 			IList<Sheet> sheets = sheetResource.ListOrganizationSheets();
 			Assert.AreEqual(2, sheets.Count);
 		}
@@ -53,7 +53,7 @@ namespace Smartsheet.Api.Internal
 		public virtual void TestGetSheet()
 		{
 
-			server.ResponseBody = "../../../TestSDK/resources/getSheet.json";
+			server.setResponseBody("../../../TestSDK/resources/getSheet.json");
 			Sheet sheet = sheetResource.GetSheet(123123L, null);
 			Assert.AreEqual(9,sheet.Columns.Count);
 			Assert.AreEqual(0,sheet.Rows.Count);
@@ -69,42 +69,41 @@ namespace Smartsheet.Api.Internal
 		public virtual void TestGetSheetAsExcel()
 		{
 			string file = "../../../TestSDK/resources/getExcel.xls";
-			server.ResponseBody = file;
+			server.setResponseBody(file);
 			server.ContentType = "application/vnd.ms-excel";
 
             MemoryStream ms = new MemoryStream();
-			StreamWriter output = new StreamWriter(ms);
+            BinaryWriter output = new BinaryWriter(ms);
 			sheetResource.GetSheetAsExcel(1234L, output);
 
 			Assert.NotNull(output);
 			Assert.True(ms.ToArray().Length > 0);
 
 			byte[] original = File.ReadAllBytes(file);
-			Assert.True(original.Length != ms.ToArray().Length);
+            Assert.AreEqual(original.Length, ms.Length);
 		}
 
 		[Test]
 		public virtual void TestGetSheetAsPDF()
 		{
 			string file = "../../../TestSDK/resources/getPDF.pdf";
-			server.ResponseBody = file;
+			server.setResponseBody(file);
 			server.ContentType = "application/pdf";
 
-            MemoryStream ms = new MemoryStream();
-            StreamWriter output = new StreamWriter(ms);
+            BinaryWriter output = new BinaryWriter(new MemoryStream());
 
 			sheetResource.GetSheetAsPDF(1234L, output, null);
 
             Assert.NotNull(output, "Downloaded PDF is null.");
-			Assert.True(ms.ToArray().Length > 0, "Downloaded PDF is empty.");
-            Assert.AreEqual(107906, ms.ToArray().Length, "Downloaded PDF does not match the original size.");
+			Assert.True(output.BaseStream.Length > 0, "Downloaded PDF is empty.");
+            Assert.AreEqual(107906, output.BaseStream.Length, "Downloaded PDF does not match the original size.");
 
 			//test a larger PDF
 			file = "../../../TestSDK/resources/large_sheet.pdf";
-			server.ResponseBody = file;
+			server.setResponseBody(file);
 			server.ContentType = "application/pdf";
-            ms = new MemoryStream();
-            output = new StreamWriter(ms);
+            MemoryStream ms = new MemoryStream();
+            output = new BinaryWriter(ms);
 			sheetResource.GetSheetAsPDF(1234L, output, PaperSize.LEGAL);
             Assert.NotNull(output, "Downloaded PDF is null.");
             Assert.True(ms.ToArray().Length > 0, "Downloaded PDF is empty.");
@@ -114,7 +113,7 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestCreateSheet()
 		{
-			server.ResponseBody = "../../../TestSDK/resources/createSheet.json";
+			server.setResponseBody("../../../TestSDK/resources/createSheet.json");
 
 			Sheet sheet = new Sheet();
 			sheet.Name = "NEW TEST SHEET";
@@ -142,7 +141,7 @@ namespace Smartsheet.Api.Internal
 		public virtual void TestCreateSheetFromExisting()
 		{
 
-			server.ResponseBody = "../../../TestSDK/resources/createSheetFromExisting.json";
+			server.setResponseBody("../../../TestSDK/resources/createSheetFromExisting.json");
 
 			Sheet sheet = new Sheet();
 			sheet.FromId = 2906571706525572L;
@@ -164,7 +163,7 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestCreateSheetInFolder()
 		{
-			server.ResponseBody = "../../../TestSDK/resources/createSheet.json";
+			server.setResponseBody("../../../TestSDK/resources/createSheet.json");
 
 			Sheet sheet = new Sheet();
 			sheet.Name = "NEW TEST SHEET";
@@ -196,7 +195,7 @@ namespace Smartsheet.Api.Internal
 		public virtual void TestCreateSheetInFolderFromExisting()
 		{
 
-			server.ResponseBody = "../../../TestSDK/resources/createSheetFromExisting.json";
+			server.setResponseBody("../../../TestSDK/resources/createSheetFromExisting.json");
 
 			Sheet sheet = new Sheet();
 			sheet.FromId = 2906571706525572L;
@@ -214,7 +213,7 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestCreateSheetInWorkspace()
 		{
-			server.ResponseBody = "../../../TestSDK/resources/createSheet.json";
+			server.setResponseBody("../../../TestSDK/resources/createSheet.json");
 
 			Sheet sheet = new Sheet();
 			sheet.Name = "NEW TEST SHEET";
@@ -237,7 +236,7 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestCreateSheetInWorkspaceFromExisting()
 		{
-			server.ResponseBody = "../../../TestSDK/resources/createSheetFromExisting.json";
+			server.setResponseBody("../../../TestSDK/resources/createSheetFromExisting.json");
 
 			Sheet sheet = new Sheet();
 			sheet.FromId = 2906571706525572L;
@@ -254,14 +253,14 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestDeleteSheet()
 		{
-			server.ResponseBody = "../../../TestSDK/resources/deleteSheet.json";
+			server.setResponseBody("../../../TestSDK/resources/deleteSheet.json");
 			sheetResource.DeleteSheet(1234L);
 		}
 
 		[Test]
 		public virtual void TestUpdateSheet()
 		{
-			server.ResponseBody = "../../../TestSDK/resources/updateSheet.json";
+			server.setResponseBody("../../../TestSDK/resources/updateSheet.json");
 
 			Sheet sheet = new Sheet();
 			sheet.Name = "new name";
@@ -274,7 +273,7 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestGetSheetVersion()
 		{
-			server.ResponseBody = "../../../TestSDK/resources/getSheetVersion.json";
+			server.setResponseBody("../../../TestSDK/resources/getSheetVersion.json");
 			int? version = sheetResource.GetSheetVersion(1234L);
 			if (version != 1)
 			{
@@ -285,7 +284,7 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestSendSheet()
 		{
-			server.ResponseBody = "../../../TestSDK/resources/sendEmails.json";
+			server.setResponseBody("../../../TestSDK/resources/sendEmails.json");
 
 			string[] emailAddress = new string[] {"someemail@somewhere.com"};
 			SheetEmail email = new SheetEmail();
@@ -330,7 +329,7 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestGetPublishStatus()
 		{
-			server.ResponseBody = "../../../TestSDK/resources/getPublishStatus.json";
+			server.setResponseBody("../../../TestSDK/resources/getPublishStatus.json");
 
 			SheetPublish publishStatus = sheetResource.GetPublishStatus(1234L);
 
@@ -347,7 +346,7 @@ namespace Smartsheet.Api.Internal
 		public virtual void TestUpdatePublishStatus()
 		{
 
-			server.ResponseBody = "../../../TestSDK/resources/setPublishStatus.json";
+			server.setResponseBody("../../../TestSDK/resources/setPublishStatus.json");
 
 			SheetPublish publish = new SheetPublish();
 			publish.IcalEnabled = true;

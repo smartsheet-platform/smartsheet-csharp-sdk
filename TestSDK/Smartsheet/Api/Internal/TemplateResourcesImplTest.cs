@@ -29,7 +29,7 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestListTemplates()
 		{
-			server.ResponseBody = "../../../TestSDK/resources/listTemplates.json";
+			server.setResponseBody("../../../TestSDK/resources/listTemplates.json");
 
 			IList<Template> templates = templateResources.ListTemplates();
 			Assert.NotNull(templates);

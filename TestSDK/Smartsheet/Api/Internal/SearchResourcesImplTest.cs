@@ -29,7 +29,7 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestSearch()
 		{
-			server.ResponseBody = "../../../TestSDK/resources/search.json";
+			server.setResponseBody("../../../TestSDK/resources/search.json");
 
 			SearchResult result = searchResources.Search("brett");
 			Assert.NotNull(result.Results);
@@ -46,7 +46,7 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestSearchSheet()
 		{
-			server.ResponseBody = "../../../TestSDK/resources/searchSheet.json";
+			server.setResponseBody("../../../TestSDK/resources/searchSheet.json");
 
 			SearchResult searchSheet = searchResources.SearchSheet(1234L, "java");
 			Assert.NotNull(searchSheet);

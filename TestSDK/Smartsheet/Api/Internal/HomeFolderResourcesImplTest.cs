@@ -30,7 +30,7 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestListFolders()
 		{
-			server.ResponseBody = "../../../TestSDK/resources/listFolders.json";
+			server.setResponseBody("../../../TestSDK/resources/listFolders.json");
 
 			IList<Folder> folders = homeFolderResources.ListFolders();
 
@@ -43,7 +43,7 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestCreateFolder()
 		{
-			server.ResponseBody = "../../../TestSDK/resources/createFolders.json";
+			server.setResponseBody("../../../TestSDK/resources/createFolders.json");
 
 			Folder folder = new Folder();
 			folder.Name = "Hello World";
