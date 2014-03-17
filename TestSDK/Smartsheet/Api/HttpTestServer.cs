@@ -8,6 +8,7 @@ using System.IO;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
+using Smartsheet.Api.Internal.Utility;
 
 namespace Smartsheet.Api
 {
@@ -16,7 +17,7 @@ namespace Smartsheet.Api
         int port;
         HttpListener server = null;
         string contentType;
-        string responseBody;
+        byte[] responseBody = new byte[0];
         HttpStatusCode status;
 
 
@@ -57,11 +58,9 @@ namespace Smartsheet.Api
                 response.ContentType = contentType;
                 response.StatusCode = (int)status;
 
-                byte[] buffer = Encoding.UTF8.GetBytes(responseBody);
-
-                response.ContentLength64 = buffer.Length;
+                response.ContentLength64 = responseBody.Length;
                 Stream st = response.OutputStream;
-                st.Write(buffer, 0, buffer.Length);
+                st.Write(responseBody, 0, responseBody.Length);
 
                 context.Response.Close();
             }
@@ -81,23 +80,22 @@ namespace Smartsheet.Api
             set { contentType = value; }
         }
 
-        public string ResponseBody
+        public byte[] ResponseBody
         {
             get { return responseBody; }
-            set
+        }
+
+        public void setResponseBody(string file)
+        {
+            if (File.Exists(file))
             {
-                if (File.Exists(value))
+                using (BinaryReader br = new BinaryReader(new FileStream(file, FileMode.Open)))
                 {
-                    responseBody = File.ReadAllText(value);
-                }
-                else
-                {
-                    //responseBody = value;
-                    throw new Exception("FILE NOT FOUND: " + value);
+                    responseBody = Utility.ReadAllBytes(br);
                 }
             }
-
-
         }
+
+
     }
 }
