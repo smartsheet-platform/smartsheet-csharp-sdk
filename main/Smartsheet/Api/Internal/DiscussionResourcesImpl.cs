@@ -45,7 +45,6 @@ namespace Smartsheet.Api.Internal
 		/// <param name="smartsheet"> the Smartsheet </param>
 		public DiscussionResourcesImpl(SmartsheetImpl smartsheet) : base(smartsheet)
 		{
-            this.attachments = new DiscussionAttachmentResources(smartsheet);
 		}
 
 		/// <summary>
