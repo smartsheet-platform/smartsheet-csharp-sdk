@@ -1,0 +1,1813 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpKI>
+  <HelpKINode Title="A0 enumeration member" Url="html/T_Smartsheet_Api_Models_PaperSize.htm" />
+  <HelpKINode Title="A1 enumeration member" Url="html/T_Smartsheet_Api_Models_PaperSize.htm" />
+  <HelpKINode Title="A2 enumeration member" Url="html/T_Smartsheet_Api_Models_PaperSize.htm" />
+  <HelpKINode Title="A3 enumeration member" Url="html/T_Smartsheet_Api_Models_PaperSize.htm" />
+  <HelpKINode Title="A4 enumeration member" Url="html/T_Smartsheet_Api_Models_PaperSize.htm" />
+  <HelpKINode Title="AccessDeniedException class">
+    <HelpKINode Title="AccessDeniedException Class" Url="html/T_Smartsheet_Api_OAuth_AccessDeniedException.htm" />
+    <HelpKINode Title="about AccessDeniedException class" Url="html/T_Smartsheet_Api_OAuth_AccessDeniedException.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_OAuth_AccessDeniedException__ctor.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AccessDeniedException.AccessDeniedException constructor" Url="html/M_Smartsheet_Api_OAuth_AccessDeniedException__ctor.htm" />
+  <HelpKINode Title="AccessLevel enumeration" Url="html/T_Smartsheet_Api_Models_AccessLevel.htm" />
+  <HelpKINode Title="AccessLevel property">
+    <HelpKINode Title="Discussion.AccessLevel Property " Url="html/P_Smartsheet_Api_Models_Discussion_AccessLevel.htm" />
+    <HelpKINode Title="MultiShare.AccessLevel Property " Url="html/P_Smartsheet_Api_Models_MultiShare_AccessLevel.htm" />
+    <HelpKINode Title="MultiShare.ShareToManyBuilder.AccessLevel Property " Url="html/P_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder_AccessLevel.htm" />
+    <HelpKINode Title="Row.AccessLevel Property " Url="html/P_Smartsheet_Api_Models_Row_AccessLevel.htm" />
+    <HelpKINode Title="Share.AccessLevel Property " Url="html/P_Smartsheet_Api_Models_Share_AccessLevel.htm" />
+    <HelpKINode Title="Share.ShareToOneBuilder.AccessLevel Property " Url="html/P_Smartsheet_Api_Models_Share_ShareToOneBuilder_AccessLevel.htm" />
+    <HelpKINode Title="Share.UpdateShareBuilder.AccessLevel Property " Url="html/P_Smartsheet_Api_Models_Share_UpdateShareBuilder_AccessLevel.htm" />
+    <HelpKINode Title="Sheet.AccessLevel Property " Url="html/P_Smartsheet_Api_Models_Sheet_AccessLevel.htm" />
+    <HelpKINode Title="Template.AccessLevel Property " Url="html/P_Smartsheet_Api_Models_Template_AccessLevel.htm" />
+    <HelpKINode Title="Workspace.AccessLevel Property " Url="html/P_Smartsheet_Api_Models_Workspace_AccessLevel.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AccessScope enumeration">
+    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_OAuth_AccessScope.htm" />
+    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_Models_AccessScope.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AccessToken property">
+    <HelpKINode Title="SmartsheetBuilder.AccessToken Property " Url="html/P_Smartsheet_Api_SmartsheetBuilder_AccessToken.htm" />
+    <HelpKINode Title="Token.AccessToken Property " Url="html/P_Smartsheet_Api_OAuth_Token_AccessToken.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AccessTokenExpiredException class">
+    <HelpKINode Title="AccessTokenExpiredException Class" Url="html/T_Smartsheet_Api_AccessTokenExpiredException.htm" />
+    <HelpKINode Title="about AccessTokenExpiredException class" Url="html/T_Smartsheet_Api_AccessTokenExpiredException.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_AccessTokenExpiredException__ctor.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AccessTokenExpiredException.AccessTokenExpiredException constructor" Url="html/M_Smartsheet_Api_AccessTokenExpiredException__ctor.htm" />
+  <HelpKINode Title="ACTIVE enumeration member" Url="html/T_Smartsheet_Api_Models_UserStatus.htm" />
+  <HelpKINode Title="AddCell method" Url="html/Overload_Smartsheet_Api_Models_Cell_UpdateRowCellsBuilder_AddCell.htm" />
+  <HelpKINode Title="AddColumn method" Url="html/M_Smartsheet_Api_SheetColumnResources_AddColumn.htm" />
+  <HelpKINode Title="AddDiscussionComment method" Url="html/M_Smartsheet_Api_DiscussionResources_AddDiscussionComment.htm" />
+  <HelpKINode Title="AddUser method" Url="html/Overload_Smartsheet_Api_UserResources_AddUser.htm" />
+  <HelpKINode Title="ADMIN enumeration member" Url="html/T_Smartsheet_Api_Models_AccessLevel.htm" />
+  <HelpKINode Title="Admin property">
+    <HelpKINode Title="User.AddUserBuilder.Admin Property " Url="html/P_Smartsheet_Api_Models_User_AddUserBuilder_Admin.htm" />
+    <HelpKINode Title="User.Admin Property " Url="html/P_Smartsheet_Api_Models_User_Admin.htm" />
+    <HelpKINode Title="User.UpdateUserBuilder.Admin Property " Url="html/P_Smartsheet_Api_Models_User_UpdateUserBuilder_Admin.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ADMIN_SHEETS enumeration member">
+    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_Models_AccessScope.htm" />
+    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_OAuth_AccessScope.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ADMIN_USERS enumeration member" Url="html/T_Smartsheet_Api_Models_AccessScope.htm" />
+  <HelpKINode Title="ADMIN_WORKSPACES enumeration member">
+    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_OAuth_AccessScope.htm" />
+    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_Models_AccessScope.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ARCHD enumeration member" Url="html/T_Smartsheet_Api_Models_PaperSize.htm" />
+  <HelpKINode Title="AssociatedAttachmentResources interface">
+    <HelpKINode Title="AssociatedAttachmentResources Interface" Url="html/T_Smartsheet_Api_AssociatedAttachmentResources.htm" />
+    <HelpKINode Title="about AssociatedAttachmentResources interface" Url="html/T_Smartsheet_Api_AssociatedAttachmentResources.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Smartsheet_Api_AssociatedAttachmentResources.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AssociatedAttachmentResources.AttachFile method" Url="html/M_Smartsheet_Api_AssociatedAttachmentResources_AttachFile.htm" />
+  <HelpKINode Title="AssociatedAttachmentResources.AttachURL method" Url="html/M_Smartsheet_Api_AssociatedAttachmentResources_AttachURL.htm" />
+  <HelpKINode Title="AssociatedAttachmentResources.ListAttachments method" Url="html/M_Smartsheet_Api_AssociatedAttachmentResources_ListAttachments.htm" />
+  <HelpKINode Title="AssociatedDiscussionResources interface">
+    <HelpKINode Title="AssociatedDiscussionResources Interface" Url="html/T_Smartsheet_Api_AssociatedDiscussionResources.htm" />
+    <HelpKINode Title="about AssociatedDiscussionResources interface" Url="html/T_Smartsheet_Api_AssociatedDiscussionResources.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Smartsheet_Api_AssociatedDiscussionResources.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AssociatedDiscussionResources.CreateDiscussion method" Url="html/M_Smartsheet_Api_AssociatedDiscussionResources_CreateDiscussion.htm" />
+  <HelpKINode Title="AssumedUser property" Url="html/P_Smartsheet_Api_SmartsheetBuilder_AssumedUser.htm" />
+  <HelpKINode Title="AttachFile method" Url="html/M_Smartsheet_Api_AssociatedAttachmentResources_AttachFile.htm" />
+  <HelpKINode Title="Attachment class">
+    <HelpKINode Title="Attachment Class" Url="html/T_Smartsheet_Api_Models_Attachment.htm" />
+    <HelpKINode Title="about Attachment class" Url="html/T_Smartsheet_Api_Models_Attachment.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_Models_Attachment__ctor.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_Models_Attachment.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Attachment.Attachment constructor" Url="html/M_Smartsheet_Api_Models_Attachment__ctor.htm" />
+  <HelpKINode Title="Attachment.AttachmentSubType property" Url="html/P_Smartsheet_Api_Models_Attachment_AttachmentSubType.htm" />
+  <HelpKINode Title="Attachment.AttachmentType property" Url="html/P_Smartsheet_Api_Models_Attachment_AttachmentType.htm" />
+  <HelpKINode Title="Attachment.CreatedAt property" Url="html/P_Smartsheet_Api_Models_Attachment_CreatedAt.htm" />
+  <HelpKINode Title="Attachment.MimeType property" Url="html/P_Smartsheet_Api_Models_Attachment_MimeType.htm" />
+  <HelpKINode Title="Attachment.ParentId property" Url="html/P_Smartsheet_Api_Models_Attachment_ParentId.htm" />
+  <HelpKINode Title="Attachment.ParentType property" Url="html/P_Smartsheet_Api_Models_Attachment_ParentType.htm" />
+  <HelpKINode Title="Attachment.SizeInKb property" Url="html/P_Smartsheet_Api_Models_Attachment_SizeInKb.htm" />
+  <HelpKINode Title="Attachment.Url property" Url="html/P_Smartsheet_Api_Models_Attachment_Url.htm" />
+  <HelpKINode Title="Attachment.UrlExpiresInMillis property" Url="html/P_Smartsheet_Api_Models_Attachment_UrlExpiresInMillis.htm" />
+  <HelpKINode Title="AttachmentParentType enumeration" Url="html/T_Smartsheet_Api_Models_AttachmentParentType.htm" />
+  <HelpKINode Title="AttachmentResources interface">
+    <HelpKINode Title="AttachmentResources Interface" Url="html/T_Smartsheet_Api_AttachmentResources.htm" />
+    <HelpKINode Title="about AttachmentResources interface" Url="html/T_Smartsheet_Api_AttachmentResources.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Smartsheet_Api_AttachmentResources.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AttachmentResources.DeleteAttachment method" Url="html/M_Smartsheet_Api_AttachmentResources_DeleteAttachment.htm" />
+  <HelpKINode Title="AttachmentResources.GetAttachment method" Url="html/M_Smartsheet_Api_AttachmentResources_GetAttachment.htm" />
+  <HelpKINode Title="ATTACHMENTS enumeration member" Url="html/T_Smartsheet_Api_Models_ObjectInclusion.htm" />
+  <HelpKINode Title="Attachments method">
+    <HelpKINode Title="CommentResources.Attachments Method " Url="html/M_Smartsheet_Api_CommentResources_Attachments.htm" />
+    <HelpKINode Title="DiscussionResources.Attachments Method " Url="html/M_Smartsheet_Api_DiscussionResources_Attachments.htm" />
+    <HelpKINode Title="RowResources.Attachments Method " Url="html/M_Smartsheet_Api_RowResources_Attachments.htm" />
+    <HelpKINode Title="SheetResources.Attachments Method " Url="html/M_Smartsheet_Api_SheetResources_Attachments.htm" />
+    <HelpKINode Title="SmartsheetClient.Attachments Method " Url="html/M_Smartsheet_Api_SmartsheetClient_Attachments.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Attachments property">
+    <HelpKINode Title="Comment.Attachments Property " Url="html/P_Smartsheet_Api_Models_Comment_Attachments.htm" />
+    <HelpKINode Title="Row.Attachments Property " Url="html/P_Smartsheet_Api_Models_Row_Attachments.htm" />
+    <HelpKINode Title="Sheet.Attachments Property " Url="html/P_Smartsheet_Api_Models_Sheet_Attachments.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AttachmentSubType enumeration" Url="html/T_Smartsheet_Api_Models_AttachmentSubType.htm" />
+  <HelpKINode Title="AttachmentSubType property" Url="html/P_Smartsheet_Api_Models_Attachment_AttachmentSubType.htm" />
+  <HelpKINode Title="AttachmentType enumeration" Url="html/T_Smartsheet_Api_Models_AttachmentType.htm" />
+  <HelpKINode Title="AttachmentType property" Url="html/P_Smartsheet_Api_Models_Attachment_AttachmentType.htm" />
+  <HelpKINode Title="AttachURL method" Url="html/M_Smartsheet_Api_AssociatedAttachmentResources_AttachURL.htm" />
+  <HelpKINode Title="AuthorizationException class">
+    <HelpKINode Title="AuthorizationException Class" Url="html/T_Smartsheet_Api_AuthorizationException.htm" />
+    <HelpKINode Title="about AuthorizationException class" Url="html/T_Smartsheet_Api_AuthorizationException.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_AuthorizationException__ctor.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AuthorizationException.AuthorizationException constructor" Url="html/M_Smartsheet_Api_AuthorizationException__ctor.htm" />
+  <HelpKINode Title="AuthorizationResult class">
+    <HelpKINode Title="AuthorizationResult Class" Url="html/T_Smartsheet_Api_OAuth_AuthorizationResult.htm" />
+    <HelpKINode Title="about AuthorizationResult class" Url="html/T_Smartsheet_Api_OAuth_AuthorizationResult.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_OAuth_AuthorizationResult__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Smartsheet_Api_OAuth_AuthorizationResult.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_OAuth_AuthorizationResult.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AuthorizationResult.AuthorizationResult constructor" Url="html/M_Smartsheet_Api_OAuth_AuthorizationResult__ctor.htm" />
+  <HelpKINode Title="AuthorizationResult.Code property" Url="html/P_Smartsheet_Api_OAuth_AuthorizationResult_Code.htm" />
+  <HelpKINode Title="AuthorizationResult.ExpiresInSeconds property" Url="html/P_Smartsheet_Api_OAuth_AuthorizationResult_ExpiresInSeconds.htm" />
+  <HelpKINode Title="AuthorizationResult.State property" Url="html/P_Smartsheet_Api_OAuth_AuthorizationResult_State.htm" />
+  <HelpKINode Title="AuthorizationResult.ToString method" Url="html/M_Smartsheet_Api_OAuth_AuthorizationResult_ToString.htm" />
+  <HelpKINode Title="AuthorizationURL property" Url="html/P_Smartsheet_Api_OAuth_OAuthFlowBuilder_AuthorizationURL.htm" />
+  <HelpKINode Title="AutoNumberFormat class">
+    <HelpKINode Title="AutoNumberFormat Class" Url="html/T_Smartsheet_Api_Models_AutoNumberFormat.htm" />
+    <HelpKINode Title="about AutoNumberFormat class" Url="html/T_Smartsheet_Api_Models_AutoNumberFormat.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_Models_AutoNumberFormat__ctor.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_Models_AutoNumberFormat.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AutoNumberFormat property">
+    <HelpKINode Title="Column.AddColumnToSheetBuilder.AutoNumberFormat Property " Url="html/P_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_AutoNumberFormat.htm" />
+    <HelpKINode Title="Column.AutoNumberFormat Property " Url="html/P_Smartsheet_Api_Models_Column_AutoNumberFormat.htm" />
+    <HelpKINode Title="Column.ModifyColumnBuilder.AutoNumberFormat Property " Url="html/P_Smartsheet_Api_Models_Column_ModifyColumnBuilder_AutoNumberFormat.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AutoNumberFormat.AutoNumberFormat constructor" Url="html/M_Smartsheet_Api_Models_AutoNumberFormat__ctor.htm" />
+  <HelpKINode Title="AutoNumberFormat.Fill property" Url="html/P_Smartsheet_Api_Models_AutoNumberFormat_Fill.htm" />
+  <HelpKINode Title="AutoNumberFormat.Prefix property" Url="html/P_Smartsheet_Api_Models_AutoNumberFormat_Prefix.htm" />
+  <HelpKINode Title="AutoNumberFormat.StartingNumber property" Url="html/P_Smartsheet_Api_Models_AutoNumberFormat_StartingNumber.htm" />
+  <HelpKINode Title="AutoNumberFormat.Suffix property" Url="html/P_Smartsheet_Api_Models_AutoNumberFormat_Suffix.htm" />
+  <HelpKINode Title="AUTO_NUMBER enumeration member" Url="html/T_Smartsheet_Api_Models_SystemColumnType.htm" />
+  <HelpKINode Title="BaseURI property" Url="html/P_Smartsheet_Api_SmartsheetBuilder_BaseURI.htm" />
+  <HelpKINode Title="BOX_COM enumeration member" Url="html/T_Smartsheet_Api_Models_AttachmentType.htm" />
+  <HelpKINode Title="Build method">
+    <HelpKINode Title="Cell.UpdateRowCellsBuilder.Build Method " Url="html/M_Smartsheet_Api_Models_Cell_UpdateRowCellsBuilder_Build.htm" />
+    <HelpKINode Title="Column.AddColumnToSheetBuilder.Build Method " Url="html/M_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_Build.htm" />
+    <HelpKINode Title="Column.ModifyColumnBuilder.Build Method " Url="html/M_Smartsheet_Api_Models_Column_ModifyColumnBuilder_Build.htm" />
+    <HelpKINode Title="Comment.AddCommentBuilder.Build Method " Url="html/M_Smartsheet_Api_Models_Comment_AddCommentBuilder_Build.htm" />
+    <HelpKINode Title="Discussion.CreateDiscussionBuilder.Build Method " Url="html/M_Smartsheet_Api_Models_Discussion_CreateDiscussionBuilder_Build.htm" />
+    <HelpKINode Title="Folder.UpdateFolderBuilder.Build Method " Url="html/M_Smartsheet_Api_Models_Folder_UpdateFolderBuilder_Build.htm" />
+    <HelpKINode Title="MultiShare.ShareToManyBuilder.Build Method " Url="html/M_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder_Build.htm" />
+    <HelpKINode Title="OAuthFlowBuilder.Build Method " Url="html/M_Smartsheet_Api_OAuth_OAuthFlowBuilder_Build.htm" />
+    <HelpKINode Title="RowWrapper.InsertRowsBuilder.Build Method " Url="html/M_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder_Build.htm" />
+    <HelpKINode Title="RowWrapper.MoveRowBuilder.Build Method " Url="html/M_Smartsheet_Api_Models_RowWrapper_MoveRowBuilder_Build.htm" />
+    <HelpKINode Title="Share.ShareToOneBuilder.Build Method " Url="html/M_Smartsheet_Api_Models_Share_ShareToOneBuilder_Build.htm" />
+    <HelpKINode Title="Share.UpdateShareBuilder.Build Method " Url="html/M_Smartsheet_Api_Models_Share_UpdateShareBuilder_Build.htm" />
+    <HelpKINode Title="Sheet.CreateFromTemplateOrSheetBuilder.Build Method " Url="html/M_Smartsheet_Api_Models_Sheet_CreateFromTemplateOrSheetBuilder_Build.htm" />
+    <HelpKINode Title="Sheet.CreateSheetBuilder.Build Method " Url="html/M_Smartsheet_Api_Models_Sheet_CreateSheetBuilder_Build.htm" />
+    <HelpKINode Title="Sheet.UpdateSheetBuilder.Build Method " Url="html/M_Smartsheet_Api_Models_Sheet_UpdateSheetBuilder_Build.htm" />
+    <HelpKINode Title="SheetPublish.PublishStatusBuilder.Build Method " Url="html/M_Smartsheet_Api_Models_SheetPublish_PublishStatusBuilder_Build.htm" />
+    <HelpKINode Title="SmartsheetBuilder.Build Method " Url="html/M_Smartsheet_Api_SmartsheetBuilder_Build.htm" />
+    <HelpKINode Title="User.AddUserBuilder.Build Method " Url="html/M_Smartsheet_Api_Models_User_AddUserBuilder_Build.htm" />
+    <HelpKINode Title="User.UpdateUserBuilder.Build Method " Url="html/M_Smartsheet_Api_Models_User_UpdateUserBuilder_Build.htm" />
+    <HelpKINode Title="Workspace.UpdateWorkspaceBuilder.Build Method " Url="html/M_Smartsheet_Api_Models_Workspace_UpdateWorkspaceBuilder_Build.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CALENDAR_END_DATE enumeration member" Url="html/T_Smartsheet_Api_Models_ColumnTag.htm" />
+  <HelpKINode Title="CALENDAR_START_DATE enumeration member" Url="html/T_Smartsheet_Api_Models_ColumnTag.htm" />
+  <HelpKINode Title="CCMe property">
+    <HelpKINode Title="Email.CCMe Property " Url="html/P_Smartsheet_Api_Models_Email_CCMe.htm" />
+    <HelpKINode Title="MultiShare.CCMe Property " Url="html/P_Smartsheet_Api_Models_MultiShare_CCMe.htm" />
+    <HelpKINode Title="MultiShare.ShareToManyBuilder.CCMe Property " Url="html/P_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder_CCMe.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Cell class">
+    <HelpKINode Title="Cell Class" Url="html/T_Smartsheet_Api_Models_Cell.htm" />
+    <HelpKINode Title="about Cell class" Url="html/T_Smartsheet_Api_Models_Cell.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_Models_Cell__ctor.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_Models_Cell.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Cell.Cell constructor" Url="html/M_Smartsheet_Api_Models_Cell__ctor.htm" />
+  <HelpKINode Title="Cell.ColumnId property" Url="html/P_Smartsheet_Api_Models_Cell_ColumnId.htm" />
+  <HelpKINode Title="Cell.DisplayValue property" Url="html/P_Smartsheet_Api_Models_Cell_DisplayValue.htm" />
+  <HelpKINode Title="Cell.Formula property" Url="html/P_Smartsheet_Api_Models_Cell_Formula.htm" />
+  <HelpKINode Title="Cell.Link property" Url="html/P_Smartsheet_Api_Models_Cell_Link.htm" />
+  <HelpKINode Title="Cell.RowId property" Url="html/P_Smartsheet_Api_Models_Cell_RowId.htm" />
+  <HelpKINode Title="Cell.Strict property" Url="html/P_Smartsheet_Api_Models_Cell_Strict.htm" />
+  <HelpKINode Title="Cell.Type property" Url="html/P_Smartsheet_Api_Models_Cell_Type.htm" />
+  <HelpKINode Title="Cell.UpdateRowCellsBuilder class">
+    <HelpKINode Title="Cell.UpdateRowCellsBuilder Class" Url="html/T_Smartsheet_Api_Models_Cell_UpdateRowCellsBuilder.htm" />
+    <HelpKINode Title="about Cell.UpdateRowCellsBuilder class" Url="html/T_Smartsheet_Api_Models_Cell_UpdateRowCellsBuilder.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_Models_Cell_UpdateRowCellsBuilder__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Smartsheet_Api_Models_Cell_UpdateRowCellsBuilder.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_Models_Cell_UpdateRowCellsBuilder.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Cell.UpdateRowCellsBuilder.AddCell method" Url="html/Overload_Smartsheet_Api_Models_Cell_UpdateRowCellsBuilder_AddCell.htm" />
+  <HelpKINode Title="Cell.UpdateRowCellsBuilder.Build method" Url="html/M_Smartsheet_Api_Models_Cell_UpdateRowCellsBuilder_Build.htm" />
+  <HelpKINode Title="Cell.UpdateRowCellsBuilder.Cells property" Url="html/P_Smartsheet_Api_Models_Cell_UpdateRowCellsBuilder_Cells.htm" />
+  <HelpKINode Title="Cell.UpdateRowCellsBuilder.UpdateRowCellsBuilder constructor" Url="html/M_Smartsheet_Api_Models_Cell_UpdateRowCellsBuilder__ctor.htm" />
+  <HelpKINode Title="Cell.Value property" Url="html/P_Smartsheet_Api_Models_Cell_Value.htm" />
+  <HelpKINode Title="CellHistory class">
+    <HelpKINode Title="CellHistory Class" Url="html/T_Smartsheet_Api_Models_CellHistory.htm" />
+    <HelpKINode Title="about CellHistory class" Url="html/T_Smartsheet_Api_Models_CellHistory.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_Models_CellHistory__ctor.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_Models_CellHistory.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CellHistory.CellHistory constructor" Url="html/M_Smartsheet_Api_Models_CellHistory__ctor.htm" />
+  <HelpKINode Title="CellHistory.ModifiedAt property" Url="html/P_Smartsheet_Api_Models_CellHistory_ModifiedAt.htm" />
+  <HelpKINode Title="CellHistory.ModifiedBy property" Url="html/P_Smartsheet_Api_Models_CellHistory_ModifiedBy.htm" />
+  <HelpKINode Title="CELLLINK enumeration member" Url="html/T_Smartsheet_Api_Models_LinkType.htm" />
+  <HelpKINode Title="Cells property">
+    <HelpKINode Title="Cell.UpdateRowCellsBuilder.Cells Property " Url="html/P_Smartsheet_Api_Models_Cell_UpdateRowCellsBuilder_Cells.htm" />
+    <HelpKINode Title="Row.Cells Property " Url="html/P_Smartsheet_Api_Models_Row_Cells.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CHECKBOX enumeration member" Url="html/T_Smartsheet_Api_Models_ColumnType.htm" />
+  <HelpKINode Title="ClientId property" Url="html/P_Smartsheet_Api_OAuth_OAuthFlowBuilder_ClientId.htm" />
+  <HelpKINode Title="ClientSecret property" Url="html/P_Smartsheet_Api_OAuth_OAuthFlowBuilder_ClientSecret.htm" />
+  <HelpKINode Title="Code property" Url="html/P_Smartsheet_Api_OAuth_AuthorizationResult_Code.htm" />
+  <HelpKINode Title="Column class">
+    <HelpKINode Title="Column Class" Url="html/T_Smartsheet_Api_Models_Column.htm" />
+    <HelpKINode Title="about Column class" Url="html/T_Smartsheet_Api_Models_Column.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_Models_Column__ctor.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_Models_Column.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Column.AddColumnToSheetBuilder class">
+    <HelpKINode Title="Column.AddColumnToSheetBuilder Class" Url="html/T_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder.htm" />
+    <HelpKINode Title="about Column.AddColumnToSheetBuilder class" Url="html/T_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Column.AddColumnToSheetBuilder.AddColumnToSheetBuilder constructor" Url="html/M_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder__ctor.htm" />
+  <HelpKINode Title="Column.AddColumnToSheetBuilder.AutoNumberFormat property" Url="html/P_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_AutoNumberFormat.htm" />
+  <HelpKINode Title="Column.AddColumnToSheetBuilder.Build method" Url="html/M_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_Build.htm" />
+  <HelpKINode Title="Column.AddColumnToSheetBuilder.Options property" Url="html/P_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_Options.htm" />
+  <HelpKINode Title="Column.AddColumnToSheetBuilder.Primary property" Url="html/P_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_Primary.htm" />
+  <HelpKINode Title="Column.AddColumnToSheetBuilder.SetAutoNumberFormat method" Url="html/M_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_SetAutoNumberFormat.htm" />
+  <HelpKINode Title="Column.AddColumnToSheetBuilder.SetOptions method" Url="html/M_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_SetOptions.htm" />
+  <HelpKINode Title="Column.AddColumnToSheetBuilder.SetPrimary method" Url="html/M_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_SetPrimary.htm" />
+  <HelpKINode Title="Column.AddColumnToSheetBuilder.SetSymbol method" Url="html/M_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_SetSymbol.htm" />
+  <HelpKINode Title="Column.AddColumnToSheetBuilder.SetSystemColumnType method" Url="html/M_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_SetSystemColumnType.htm" />
+  <HelpKINode Title="Column.AddColumnToSheetBuilder.SetTitle method" Url="html/M_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_SetTitle.htm" />
+  <HelpKINode Title="Column.AddColumnToSheetBuilder.SetType method" Url="html/M_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_SetType.htm" />
+  <HelpKINode Title="Column.AddColumnToSheetBuilder.Symbol property" Url="html/P_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_Symbol.htm" />
+  <HelpKINode Title="Column.AddColumnToSheetBuilder.SystemColumnType property" Url="html/P_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_SystemColumnType.htm" />
+  <HelpKINode Title="Column.AddColumnToSheetBuilder.Title property" Url="html/P_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_Title.htm" />
+  <HelpKINode Title="Column.AddColumnToSheetBuilder.Type property" Url="html/P_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_Type.htm" />
+  <HelpKINode Title="Column.AutoNumberFormat property" Url="html/P_Smartsheet_Api_Models_Column_AutoNumberFormat.htm" />
+  <HelpKINode Title="Column.Column constructor" Url="html/M_Smartsheet_Api_Models_Column__ctor.htm" />
+  <HelpKINode Title="Column.Hidden property" Url="html/P_Smartsheet_Api_Models_Column_Hidden.htm" />
+  <HelpKINode Title="Column.Index property" Url="html/P_Smartsheet_Api_Models_Column_Index.htm" />
+  <HelpKINode Title="Column.ModifyColumnBuilder class">
+    <HelpKINode Title="Column.ModifyColumnBuilder Class" Url="html/T_Smartsheet_Api_Models_Column_ModifyColumnBuilder.htm" />
+    <HelpKINode Title="about Column.ModifyColumnBuilder class" Url="html/T_Smartsheet_Api_Models_Column_ModifyColumnBuilder.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_Models_Column_ModifyColumnBuilder__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Smartsheet_Api_Models_Column_ModifyColumnBuilder.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_Models_Column_ModifyColumnBuilder.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Column.ModifyColumnBuilder.AutoNumberFormat property" Url="html/P_Smartsheet_Api_Models_Column_ModifyColumnBuilder_AutoNumberFormat.htm" />
+  <HelpKINode Title="Column.ModifyColumnBuilder.Build method" Url="html/M_Smartsheet_Api_Models_Column_ModifyColumnBuilder_Build.htm" />
+  <HelpKINode Title="Column.ModifyColumnBuilder.Index property" Url="html/P_Smartsheet_Api_Models_Column_ModifyColumnBuilder_Index.htm" />
+  <HelpKINode Title="Column.ModifyColumnBuilder.ModifyColumnBuilder constructor" Url="html/M_Smartsheet_Api_Models_Column_ModifyColumnBuilder__ctor.htm" />
+  <HelpKINode Title="Column.ModifyColumnBuilder.Options property" Url="html/P_Smartsheet_Api_Models_Column_ModifyColumnBuilder_Options.htm" />
+  <HelpKINode Title="Column.ModifyColumnBuilder.SetAutoNumberFormat method" Url="html/M_Smartsheet_Api_Models_Column_ModifyColumnBuilder_SetAutoNumberFormat.htm" />
+  <HelpKINode Title="Column.ModifyColumnBuilder.SetIndex method" Url="html/M_Smartsheet_Api_Models_Column_ModifyColumnBuilder_SetIndex.htm" />
+  <HelpKINode Title="Column.ModifyColumnBuilder.SetOptions method" Url="html/M_Smartsheet_Api_Models_Column_ModifyColumnBuilder_SetOptions.htm" />
+  <HelpKINode Title="Column.ModifyColumnBuilder.SetSheetId method" Url="html/M_Smartsheet_Api_Models_Column_ModifyColumnBuilder_SetSheetId.htm" />
+  <HelpKINode Title="Column.ModifyColumnBuilder.SetSymbol method" Url="html/M_Smartsheet_Api_Models_Column_ModifyColumnBuilder_SetSymbol.htm" />
+  <HelpKINode Title="Column.ModifyColumnBuilder.SetSystemColumnType method" Url="html/M_Smartsheet_Api_Models_Column_ModifyColumnBuilder_SetSystemColumnType.htm" />
+  <HelpKINode Title="Column.ModifyColumnBuilder.SetTitle method" Url="html/M_Smartsheet_Api_Models_Column_ModifyColumnBuilder_SetTitle.htm" />
+  <HelpKINode Title="Column.ModifyColumnBuilder.SetType method" Url="html/M_Smartsheet_Api_Models_Column_ModifyColumnBuilder_SetType.htm" />
+  <HelpKINode Title="Column.ModifyColumnBuilder.SheetId property" Url="html/P_Smartsheet_Api_Models_Column_ModifyColumnBuilder_SheetId.htm" />
+  <HelpKINode Title="Column.ModifyColumnBuilder.Symbol property" Url="html/P_Smartsheet_Api_Models_Column_ModifyColumnBuilder_Symbol.htm" />
+  <HelpKINode Title="Column.ModifyColumnBuilder.SystemColumnType property" Url="html/P_Smartsheet_Api_Models_Column_ModifyColumnBuilder_SystemColumnType.htm" />
+  <HelpKINode Title="Column.ModifyColumnBuilder.Title property" Url="html/P_Smartsheet_Api_Models_Column_ModifyColumnBuilder_Title.htm" />
+  <HelpKINode Title="Column.ModifyColumnBuilder.Type property" Url="html/P_Smartsheet_Api_Models_Column_ModifyColumnBuilder_Type.htm" />
+  <HelpKINode Title="Column.Options property" Url="html/P_Smartsheet_Api_Models_Column_Options.htm" />
+  <HelpKINode Title="Column.Primary property" Url="html/P_Smartsheet_Api_Models_Column_Primary.htm" />
+  <HelpKINode Title="Column.SheetId property" Url="html/P_Smartsheet_Api_Models_Column_SheetId.htm" />
+  <HelpKINode Title="Column.Symbol property" Url="html/P_Smartsheet_Api_Models_Column_Symbol.htm" />
+  <HelpKINode Title="Column.SystemColumnType property" Url="html/P_Smartsheet_Api_Models_Column_SystemColumnType.htm" />
+  <HelpKINode Title="Column.Tags property" Url="html/P_Smartsheet_Api_Models_Column_Tags.htm" />
+  <HelpKINode Title="Column.Title property" Url="html/P_Smartsheet_Api_Models_Column_Title.htm" />
+  <HelpKINode Title="Column.Type property" Url="html/P_Smartsheet_Api_Models_Column_Type.htm" />
+  <HelpKINode Title="ColumnId property">
+    <HelpKINode Title="Cell.ColumnId Property " Url="html/P_Smartsheet_Api_Models_Cell_ColumnId.htm" />
+    <HelpKINode Title="Link.ColumnId Property " Url="html/P_Smartsheet_Api_Models_Link_ColumnId.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ColumnResources interface">
+    <HelpKINode Title="ColumnResources Interface" Url="html/T_Smartsheet_Api_ColumnResources.htm" />
+    <HelpKINode Title="about ColumnResources interface" Url="html/T_Smartsheet_Api_ColumnResources.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Smartsheet_Api_ColumnResources.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ColumnResources.DeleteColumn method" Url="html/M_Smartsheet_Api_ColumnResources_DeleteColumn.htm" />
+  <HelpKINode Title="ColumnResources.UpdateColumn method" Url="html/M_Smartsheet_Api_ColumnResources_UpdateColumn.htm" />
+  <HelpKINode Title="COLUMNS enumeration member" Url="html/T_Smartsheet_Api_Models_ObjectInclusion.htm" />
+  <HelpKINode Title="Columns method">
+    <HelpKINode Title="SheetResources.Columns Method " Url="html/M_Smartsheet_Api_SheetResources_Columns.htm" />
+    <HelpKINode Title="SmartsheetClient.Columns Method " Url="html/M_Smartsheet_Api_SmartsheetClient_Columns.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Columns property">
+    <HelpKINode Title="Row.Columns Property " Url="html/P_Smartsheet_Api_Models_Row_Columns.htm" />
+    <HelpKINode Title="Sheet.Columns Property " Url="html/P_Smartsheet_Api_Models_Sheet_Columns.htm" />
+    <HelpKINode Title="Sheet.CreateSheetBuilder.Columns Property " Url="html/P_Smartsheet_Api_Models_Sheet_CreateSheetBuilder_Columns.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ColumnTag enumeration" Url="html/T_Smartsheet_Api_Models_ColumnTag.htm" />
+  <HelpKINode Title="ColumnType enumeration" Url="html/T_Smartsheet_Api_Models_ColumnType.htm" />
+  <HelpKINode Title="Comment class">
+    <HelpKINode Title="Comment Class" Url="html/T_Smartsheet_Api_Models_Comment.htm" />
+    <HelpKINode Title="about Comment class" Url="html/T_Smartsheet_Api_Models_Comment.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_Models_Comment__ctor.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_Models_Comment.htm" />
+  </HelpKINode>
+  <HelpKINode Title="COMMENT enumeration member" Url="html/T_Smartsheet_Api_Models_AttachmentParentType.htm" />
+  <HelpKINode Title="Comment property">
+    <HelpKINode Title="Discussion.Comment Property " Url="html/P_Smartsheet_Api_Models_Discussion_Comment.htm" />
+    <HelpKINode Title="Discussion.CreateDiscussionBuilder.Comment Property " Url="html/P_Smartsheet_Api_Models_Discussion_CreateDiscussionBuilder_Comment.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Comment.AddCommentBuilder class">
+    <HelpKINode Title="Comment.AddCommentBuilder Class" Url="html/T_Smartsheet_Api_Models_Comment_AddCommentBuilder.htm" />
+    <HelpKINode Title="about Comment.AddCommentBuilder class" Url="html/T_Smartsheet_Api_Models_Comment_AddCommentBuilder.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_Models_Comment_AddCommentBuilder__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Smartsheet_Api_Models_Comment_AddCommentBuilder.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_Models_Comment_AddCommentBuilder.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Comment.AddCommentBuilder.AddCommentBuilder constructor" Url="html/M_Smartsheet_Api_Models_Comment_AddCommentBuilder__ctor.htm" />
+  <HelpKINode Title="Comment.AddCommentBuilder.Build method" Url="html/M_Smartsheet_Api_Models_Comment_AddCommentBuilder_Build.htm" />
+  <HelpKINode Title="Comment.AddCommentBuilder.SetText method" Url="html/M_Smartsheet_Api_Models_Comment_AddCommentBuilder_SetText.htm" />
+  <HelpKINode Title="Comment.AddCommentBuilder.Text property" Url="html/P_Smartsheet_Api_Models_Comment_AddCommentBuilder_Text.htm" />
+  <HelpKINode Title="Comment.Attachments property" Url="html/P_Smartsheet_Api_Models_Comment_Attachments.htm" />
+  <HelpKINode Title="Comment.Comment constructor" Url="html/M_Smartsheet_Api_Models_Comment__ctor.htm" />
+  <HelpKINode Title="Comment.CreatedAt property" Url="html/P_Smartsheet_Api_Models_Comment_CreatedAt.htm" />
+  <HelpKINode Title="Comment.CreatedBy property" Url="html/P_Smartsheet_Api_Models_Comment_CreatedBy.htm" />
+  <HelpKINode Title="Comment.DiscussionId property" Url="html/P_Smartsheet_Api_Models_Comment_DiscussionId.htm" />
+  <HelpKINode Title="Comment.ModifiedAt property" Url="html/P_Smartsheet_Api_Models_Comment_ModifiedAt.htm" />
+  <HelpKINode Title="Comment.ModifiedDate property" Url="html/P_Smartsheet_Api_Models_Comment_ModifiedDate.htm" />
+  <HelpKINode Title="Comment.Text property" Url="html/P_Smartsheet_Api_Models_Comment_Text.htm" />
+  <HelpKINode Title="CommentAttachments property" Url="html/P_Smartsheet_Api_Models_Discussion_CommentAttachments.htm" />
+  <HelpKINode Title="CommentResources interface">
+    <HelpKINode Title="CommentResources Interface" Url="html/T_Smartsheet_Api_CommentResources.htm" />
+    <HelpKINode Title="about CommentResources interface" Url="html/T_Smartsheet_Api_CommentResources.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Smartsheet_Api_CommentResources.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CommentResources.Attachments method" Url="html/M_Smartsheet_Api_CommentResources_Attachments.htm" />
+  <HelpKINode Title="CommentResources.DeleteComment method" Url="html/M_Smartsheet_Api_CommentResources_DeleteComment.htm" />
+  <HelpKINode Title="CommentResources.GetComment method" Url="html/M_Smartsheet_Api_CommentResources_GetComment.htm" />
+  <HelpKINode Title="Comments method" Url="html/M_Smartsheet_Api_SmartsheetClient_Comments.htm" />
+  <HelpKINode Title="Comments property" Url="html/P_Smartsheet_Api_Models_Discussion_Comments.htm" />
+  <HelpKINode Title="CONTACT_LIST enumeration member" Url="html/T_Smartsheet_Api_Models_ColumnType.htm" />
+  <HelpKINode Title="ContextData property" Url="html/P_Smartsheet_Api_Models_SearchResultItem_ContextData.htm" />
+  <HelpKINode Title="CreatedAt property">
+    <HelpKINode Title="Attachment.CreatedAt Property " Url="html/P_Smartsheet_Api_Models_Attachment_CreatedAt.htm" />
+    <HelpKINode Title="Comment.CreatedAt Property " Url="html/P_Smartsheet_Api_Models_Comment_CreatedAt.htm" />
+    <HelpKINode Title="Row.CreatedAt Property " Url="html/P_Smartsheet_Api_Models_Row_CreatedAt.htm" />
+    <HelpKINode Title="Sheet.CreatedAt Property " Url="html/P_Smartsheet_Api_Models_Sheet_CreatedAt.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CreatedBy property" Url="html/P_Smartsheet_Api_Models_Comment_CreatedBy.htm" />
+  <HelpKINode Title="CreateDiscussion method" Url="html/M_Smartsheet_Api_AssociatedDiscussionResources_CreateDiscussion.htm" />
+  <HelpKINode Title="CREATED_BY enumeration member" Url="html/T_Smartsheet_Api_Models_SystemColumnType.htm" />
+  <HelpKINode Title="CREATED_DATE enumeration member" Url="html/T_Smartsheet_Api_Models_SystemColumnType.htm" />
+  <HelpKINode Title="CreateFolder method">
+    <HelpKINode Title="FolderResources.CreateFolder Method " Url="html/M_Smartsheet_Api_FolderResources_CreateFolder.htm" />
+    <HelpKINode Title="HomeFolderResources.CreateFolder Method " Url="html/M_Smartsheet_Api_HomeFolderResources_CreateFolder.htm" />
+    <HelpKINode Title="WorkspaceFolderResources.CreateFolder Method " Url="html/M_Smartsheet_Api_WorkspaceFolderResources_CreateFolder.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CreateSheet method" Url="html/M_Smartsheet_Api_SheetResources_CreateSheet.htm" />
+  <HelpKINode Title="CreateSheetFromExisting method" Url="html/M_Smartsheet_Api_SheetResources_CreateSheetFromExisting.htm" />
+  <HelpKINode Title="CreateSheetInFolder method" Url="html/M_Smartsheet_Api_SheetResources_CreateSheetInFolder.htm" />
+  <HelpKINode Title="CreateSheetInFolderFromExisting method" Url="html/M_Smartsheet_Api_SheetResources_CreateSheetInFolderFromExisting.htm" />
+  <HelpKINode Title="CreateSheetInWorkspace method" Url="html/M_Smartsheet_Api_SheetResources_CreateSheetInWorkspace.htm" />
+  <HelpKINode Title="CreateSheetInWorkspaceFromExisting method" Url="html/M_Smartsheet_Api_SheetResources_CreateSheetInWorkspaceFromExisting.htm" />
+  <HelpKINode Title="CreateWorkspace method" Url="html/M_Smartsheet_Api_WorkspaceResources_CreateWorkspace.htm" />
+  <HelpKINode Title="CREATE_SHEETS enumeration member">
+    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_Models_AccessScope.htm" />
+    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_OAuth_AccessScope.htm" />
+  </HelpKINode>
+  <HelpKINode Title="currentUser property" Url="html/P_Smartsheet_Api_UserResources_currentUser.htm" />
+  <HelpKINode Title="DATA enumeration member" Url="html/T_Smartsheet_Api_Models_ObjectInclusion.htm" />
+  <HelpKINode Title="DATE enumeration member" Url="html/T_Smartsheet_Api_Models_ColumnType.htm" />
+  <HelpKINode Title="DATETIME enumeration member" Url="html/T_Smartsheet_Api_Models_ColumnType.htm" />
+  <HelpKINode Title="DECLINED enumeration member" Url="html/T_Smartsheet_Api_Models_UserStatus.htm" />
+  <HelpKINode Title="DefaultAuthorizationUrl property" Url="html/P_Smartsheet_Api_OAuth_OAuthFlowBuilder_DefaultAuthorizationUrl.htm" />
+  <HelpKINode Title="DefaultBaseUri property" Url="html/P_Smartsheet_Api_SmartsheetBuilder_DefaultBaseUri.htm" />
+  <HelpKINode Title="DefaultTokenUrl property" Url="html/P_Smartsheet_Api_OAuth_OAuthFlowBuilder_DefaultTokenUrl.htm" />
+  <HelpKINode Title="DEFAULT_AUTHORIZATION_URL field" Url="html/F_Smartsheet_Api_OAuth_OAuthFlowBuilder_DEFAULT_AUTHORIZATION_URL.htm" />
+  <HelpKINode Title="DEFAULT_BASE_URI field" Url="html/F_Smartsheet_Api_SmartsheetBuilder_DEFAULT_BASE_URI.htm" />
+  <HelpKINode Title="DEFAULT_TOKEN_URL field" Url="html/F_Smartsheet_Api_OAuth_OAuthFlowBuilder_DEFAULT_TOKEN_URL.htm" />
+  <HelpKINode Title="DeleteAttachment method" Url="html/M_Smartsheet_Api_AttachmentResources_DeleteAttachment.htm" />
+  <HelpKINode Title="DeleteColumn method" Url="html/M_Smartsheet_Api_ColumnResources_DeleteColumn.htm" />
+  <HelpKINode Title="DeleteComment method" Url="html/M_Smartsheet_Api_CommentResources_DeleteComment.htm" />
+  <HelpKINode Title="DeleteFolder method" Url="html/M_Smartsheet_Api_FolderResources_DeleteFolder.htm" />
+  <HelpKINode Title="DeleteRow method" Url="html/M_Smartsheet_Api_RowResources_DeleteRow.htm" />
+  <HelpKINode Title="DeleteShare method" Url="html/M_Smartsheet_Api_ShareResources_DeleteShare.htm" />
+  <HelpKINode Title="DeleteSheet method" Url="html/M_Smartsheet_Api_SheetResources_DeleteSheet.htm" />
+  <HelpKINode Title="DeleteUser method" Url="html/M_Smartsheet_Api_UserResources_DeleteUser.htm" />
+  <HelpKINode Title="DeleteWorkspace method" Url="html/M_Smartsheet_Api_WorkspaceResources_DeleteWorkspace.htm" />
+  <HelpKINode Title="DELETE_SHEETS enumeration member">
+    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_Models_AccessScope.htm" />
+    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_OAuth_AccessScope.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DependenciesEnabled property" Url="html/P_Smartsheet_Api_Models_Sheet_DependenciesEnabled.htm" />
+  <HelpKINode Title="Description property" Url="html/P_Smartsheet_Api_Models_Template_Description.htm" />
+  <HelpKINode Title="Discussion class">
+    <HelpKINode Title="Discussion Class" Url="html/T_Smartsheet_Api_Models_Discussion.htm" />
+    <HelpKINode Title="about Discussion class" Url="html/T_Smartsheet_Api_Models_Discussion.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_Models_Discussion__ctor.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_Models_Discussion.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Discussion.AccessLevel property" Url="html/P_Smartsheet_Api_Models_Discussion_AccessLevel.htm" />
+  <HelpKINode Title="Discussion.Comment property" Url="html/P_Smartsheet_Api_Models_Discussion_Comment.htm" />
+  <HelpKINode Title="Discussion.CommentAttachments property" Url="html/P_Smartsheet_Api_Models_Discussion_CommentAttachments.htm" />
+  <HelpKINode Title="Discussion.Comments property" Url="html/P_Smartsheet_Api_Models_Discussion_Comments.htm" />
+  <HelpKINode Title="Discussion.CreateDiscussionBuilder class">
+    <HelpKINode Title="Discussion.CreateDiscussionBuilder Class" Url="html/T_Smartsheet_Api_Models_Discussion_CreateDiscussionBuilder.htm" />
+    <HelpKINode Title="about Discussion.CreateDiscussionBuilder class" Url="html/T_Smartsheet_Api_Models_Discussion_CreateDiscussionBuilder.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_Models_Discussion_CreateDiscussionBuilder__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Smartsheet_Api_Models_Discussion_CreateDiscussionBuilder.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_Models_Discussion_CreateDiscussionBuilder.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Discussion.CreateDiscussionBuilder.Build method" Url="html/M_Smartsheet_Api_Models_Discussion_CreateDiscussionBuilder_Build.htm" />
+  <HelpKINode Title="Discussion.CreateDiscussionBuilder.Comment property" Url="html/P_Smartsheet_Api_Models_Discussion_CreateDiscussionBuilder_Comment.htm" />
+  <HelpKINode Title="Discussion.CreateDiscussionBuilder.CreateDiscussionBuilder constructor" Url="html/M_Smartsheet_Api_Models_Discussion_CreateDiscussionBuilder__ctor.htm" />
+  <HelpKINode Title="Discussion.CreateDiscussionBuilder.SetComment method" Url="html/M_Smartsheet_Api_Models_Discussion_CreateDiscussionBuilder_SetComment.htm" />
+  <HelpKINode Title="Discussion.CreateDiscussionBuilder.SetTitle method" Url="html/M_Smartsheet_Api_Models_Discussion_CreateDiscussionBuilder_SetTitle.htm" />
+  <HelpKINode Title="Discussion.CreateDiscussionBuilder.Title property" Url="html/P_Smartsheet_Api_Models_Discussion_CreateDiscussionBuilder_Title.htm" />
+  <HelpKINode Title="Discussion.Discussion constructor" Url="html/M_Smartsheet_Api_Models_Discussion__ctor.htm" />
+  <HelpKINode Title="Discussion.LastCommentedAt property" Url="html/P_Smartsheet_Api_Models_Discussion_LastCommentedAt.htm" />
+  <HelpKINode Title="Discussion.LastCommentedUser property" Url="html/P_Smartsheet_Api_Models_Discussion_LastCommentedUser.htm" />
+  <HelpKINode Title="Discussion.Title property" Url="html/P_Smartsheet_Api_Models_Discussion_Title.htm" />
+  <HelpKINode Title="DiscussionId property" Url="html/P_Smartsheet_Api_Models_Comment_DiscussionId.htm" />
+  <HelpKINode Title="DiscussionResources interface">
+    <HelpKINode Title="DiscussionResources Interface" Url="html/T_Smartsheet_Api_DiscussionResources.htm" />
+    <HelpKINode Title="about DiscussionResources interface" Url="html/T_Smartsheet_Api_DiscussionResources.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Smartsheet_Api_DiscussionResources.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DiscussionResources.AddDiscussionComment method" Url="html/M_Smartsheet_Api_DiscussionResources_AddDiscussionComment.htm" />
+  <HelpKINode Title="DiscussionResources.Attachments method" Url="html/M_Smartsheet_Api_DiscussionResources_Attachments.htm" />
+  <HelpKINode Title="DiscussionResources.GetDiscussion method" Url="html/M_Smartsheet_Api_DiscussionResources_GetDiscussion.htm" />
+  <HelpKINode Title="DISCUSSIONS enumeration member" Url="html/T_Smartsheet_Api_Models_ObjectInclusion.htm" />
+  <HelpKINode Title="Discussions method">
+    <HelpKINode Title="RowResources.Discussions Method " Url="html/M_Smartsheet_Api_RowResources_Discussions.htm" />
+    <HelpKINode Title="SheetResources.Discussions Method " Url="html/M_Smartsheet_Api_SheetResources_Discussions.htm" />
+    <HelpKINode Title="SmartsheetClient.Discussions Method " Url="html/M_Smartsheet_Api_SmartsheetClient_Discussions.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Discussions property">
+    <HelpKINode Title="Row.Discussions Property " Url="html/P_Smartsheet_Api_Models_Row_Discussions.htm" />
+    <HelpKINode Title="Sheet.Discussions Property " Url="html/P_Smartsheet_Api_Models_Sheet_Discussions.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DisplayValue property" Url="html/P_Smartsheet_Api_Models_Cell_DisplayValue.htm" />
+  <HelpKINode Title="DOCUMENT enumeration member" Url="html/T_Smartsheet_Api_Models_AttachmentSubType.htm" />
+  <HelpKINode Title="DRAWING enumeration member" Url="html/T_Smartsheet_Api_Models_AttachmentSubType.htm" />
+  <HelpKINode Title="EDITOR enumeration member" Url="html/T_Smartsheet_Api_Models_AccessLevel.htm" />
+  <HelpKINode Title="EDITOR_SHARE enumeration member" Url="html/T_Smartsheet_Api_Models_AccessLevel.htm" />
+  <HelpKINode Title="Email class">
+    <HelpKINode Title="Email Class" Url="html/T_Smartsheet_Api_Models_Email.htm" />
+    <HelpKINode Title="about Email class" Url="html/T_Smartsheet_Api_Models_Email.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_Models_Email.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Email property">
+    <HelpKINode Title="Share.Email Property " Url="html/P_Smartsheet_Api_Models_Share_Email.htm" />
+    <HelpKINode Title="Share.ShareToOneBuilder.Email Property " Url="html/P_Smartsheet_Api_Models_Share_ShareToOneBuilder_Email.htm" />
+    <HelpKINode Title="UserProfile.Email Property " Url="html/P_Smartsheet_Api_Models_UserProfile_Email.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Email.CCMe property" Url="html/P_Smartsheet_Api_Models_Email_CCMe.htm" />
+  <HelpKINode Title="Email.Message property" Url="html/P_Smartsheet_Api_Models_Email_Message.htm" />
+  <HelpKINode Title="Email.Subject property" Url="html/P_Smartsheet_Api_Models_Email_Subject.htm" />
+  <HelpKINode Title="Email.To property" Url="html/P_Smartsheet_Api_Models_Email_To.htm" />
+  <HelpKINode Title="EmailAddress property" Url="html/P_Smartsheet_Api_Models_User_AddUserBuilder_EmailAddress.htm" />
+  <HelpKINode Title="Equals method" Url="html/M_Smartsheet_Api_Models_IdentifiableModel_Equals.htm" />
+  <HelpKINode Title="Error class">
+    <HelpKINode Title="Error Class" Url="html/T_Smartsheet_Api_Models_Error.htm" />
+    <HelpKINode Title="about Error class" Url="html/T_Smartsheet_Api_Models_Error.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_Models_Error__ctor.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_Models_Error.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Error.Error constructor" Url="html/M_Smartsheet_Api_Models_Error__ctor.htm" />
+  <HelpKINode Title="Error.ErrorCode property" Url="html/P_Smartsheet_Api_Models_Error_ErrorCode.htm" />
+  <HelpKINode Title="Error.Message property" Url="html/P_Smartsheet_Api_Models_Error_Message.htm" />
+  <HelpKINode Title="ErrorCode property">
+    <HelpKINode Title="Error.ErrorCode Property " Url="html/P_Smartsheet_Api_Models_Error_ErrorCode.htm" />
+    <HelpKINode Title="SmartsheetRestException.ErrorCode Property " Url="html/P_Smartsheet_Api_SmartsheetRestException_ErrorCode.htm" />
+  </HelpKINode>
+  <HelpKINode Title="EXCEL enumeration member" Url="html/T_Smartsheet_Api_Models_SheetEmailFormat.htm" />
+  <HelpKINode Title="Expanded property" Url="html/P_Smartsheet_Api_Models_Row_Expanded.htm" />
+  <HelpKINode Title="ExpiresInSeconds property">
+    <HelpKINode Title="AuthorizationResult.ExpiresInSeconds Property " Url="html/P_Smartsheet_Api_OAuth_AuthorizationResult_ExpiresInSeconds.htm" />
+    <HelpKINode Title="Token.ExpiresInSeconds Property " Url="html/P_Smartsheet_Api_OAuth_Token_ExpiresInSeconds.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ExtractAuthorizationResult method" Url="html/M_Smartsheet_Api_OAuth_OAuthFlow_ExtractAuthorizationResult.htm" />
+  <HelpKINode Title="FILE enumeration member" Url="html/T_Smartsheet_Api_Models_AttachmentType.htm" />
+  <HelpKINode Title="Fill property" Url="html/P_Smartsheet_Api_Models_AutoNumberFormat_Fill.htm" />
+  <HelpKINode Title="FirstName property" Url="html/P_Smartsheet_Api_Models_UserProfile_FirstName.htm" />
+  <HelpKINode Title="FLAG enumeration member" Url="html/T_Smartsheet_Api_Models_Symbol.htm" />
+  <HelpKINode Title="Folder class">
+    <HelpKINode Title="Folder Class" Url="html/T_Smartsheet_Api_Models_Folder.htm" />
+    <HelpKINode Title="about Folder class" Url="html/T_Smartsheet_Api_Models_Folder.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_Models_Folder__ctor.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_Models_Folder.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Folder.Folder constructor" Url="html/M_Smartsheet_Api_Models_Folder__ctor.htm" />
+  <HelpKINode Title="Folder.Folders property" Url="html/P_Smartsheet_Api_Models_Folder_Folders.htm" />
+  <HelpKINode Title="Folder.Sheets property" Url="html/P_Smartsheet_Api_Models_Folder_Sheets.htm" />
+  <HelpKINode Title="Folder.Templates property" Url="html/P_Smartsheet_Api_Models_Folder_Templates.htm" />
+  <HelpKINode Title="Folder.UpdateFolderBuilder class">
+    <HelpKINode Title="Folder.UpdateFolderBuilder Class" Url="html/T_Smartsheet_Api_Models_Folder_UpdateFolderBuilder.htm" />
+    <HelpKINode Title="about Folder.UpdateFolderBuilder class" Url="html/T_Smartsheet_Api_Models_Folder_UpdateFolderBuilder.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_Models_Folder_UpdateFolderBuilder__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Smartsheet_Api_Models_Folder_UpdateFolderBuilder.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_Models_Folder_UpdateFolderBuilder.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Folder.UpdateFolderBuilder.Build method" Url="html/M_Smartsheet_Api_Models_Folder_UpdateFolderBuilder_Build.htm" />
+  <HelpKINode Title="Folder.UpdateFolderBuilder.Id property" Url="html/P_Smartsheet_Api_Models_Folder_UpdateFolderBuilder_Id.htm" />
+  <HelpKINode Title="Folder.UpdateFolderBuilder.name property" Url="html/P_Smartsheet_Api_Models_Folder_UpdateFolderBuilder_name.htm" />
+  <HelpKINode Title="Folder.UpdateFolderBuilder.SetID method" Url="html/M_Smartsheet_Api_Models_Folder_UpdateFolderBuilder_SetID.htm" />
+  <HelpKINode Title="Folder.UpdateFolderBuilder.SetName method" Url="html/M_Smartsheet_Api_Models_Folder_UpdateFolderBuilder_SetName.htm" />
+  <HelpKINode Title="Folder.UpdateFolderBuilder.UpdateFolderBuilder constructor" Url="html/M_Smartsheet_Api_Models_Folder_UpdateFolderBuilder__ctor.htm" />
+  <HelpKINode Title="FolderResources interface">
+    <HelpKINode Title="FolderResources Interface" Url="html/T_Smartsheet_Api_FolderResources.htm" />
+    <HelpKINode Title="about FolderResources interface" Url="html/T_Smartsheet_Api_FolderResources.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Smartsheet_Api_FolderResources.htm" />
+  </HelpKINode>
+  <HelpKINode Title="FolderResources.CreateFolder method" Url="html/M_Smartsheet_Api_FolderResources_CreateFolder.htm" />
+  <HelpKINode Title="FolderResources.DeleteFolder method" Url="html/M_Smartsheet_Api_FolderResources_DeleteFolder.htm" />
+  <HelpKINode Title="FolderResources.GetFolder method" Url="html/M_Smartsheet_Api_FolderResources_GetFolder.htm" />
+  <HelpKINode Title="FolderResources.ListFolders method" Url="html/M_Smartsheet_Api_FolderResources_ListFolders.htm" />
+  <HelpKINode Title="FolderResources.UpdateFolder method" Url="html/M_Smartsheet_Api_FolderResources_UpdateFolder.htm" />
+  <HelpKINode Title="Folders method">
+    <HelpKINode Title="HomeResources.Folders Method " Url="html/M_Smartsheet_Api_HomeResources_Folders.htm" />
+    <HelpKINode Title="SmartsheetClient.Folders Method " Url="html/M_Smartsheet_Api_SmartsheetClient_Folders.htm" />
+    <HelpKINode Title="WorkspaceResources.Folders Method " Url="html/M_Smartsheet_Api_WorkspaceResources_Folders.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Folders property">
+    <HelpKINode Title="Folder.Folders Property " Url="html/P_Smartsheet_Api_Models_Folder_Folders.htm" />
+    <HelpKINode Title="Home.Folders Property " Url="html/P_Smartsheet_Api_Models_Home_Folders.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Format property" Url="html/P_Smartsheet_Api_Models_SheetEmail_Format.htm" />
+  <HelpKINode Title="FormatDetails class">
+    <HelpKINode Title="FormatDetails Class" Url="html/T_Smartsheet_Api_Models_FormatDetails.htm" />
+    <HelpKINode Title="about FormatDetails class" Url="html/T_Smartsheet_Api_Models_FormatDetails.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_Models_FormatDetails__ctor.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_Models_FormatDetails.htm" />
+  </HelpKINode>
+  <HelpKINode Title="FormatDetails property" Url="html/P_Smartsheet_Api_Models_SheetEmail_FormatDetails.htm" />
+  <HelpKINode Title="FormatDetails.FormatDetails constructor" Url="html/M_Smartsheet_Api_Models_FormatDetails__ctor.htm" />
+  <HelpKINode Title="FormatDetails.PaperSize property" Url="html/P_Smartsheet_Api_Models_FormatDetails_PaperSize.htm" />
+  <HelpKINode Title="Formula property" Url="html/P_Smartsheet_Api_Models_Cell_Formula.htm" />
+  <HelpKINode Title="FromId property">
+    <HelpKINode Title="Sheet.CreateFromTemplateOrSheetBuilder.FromId Property " Url="html/P_Smartsheet_Api_Models_Sheet_CreateFromTemplateOrSheetBuilder_FromId.htm" />
+    <HelpKINode Title="Sheet.FromId Property " Url="html/P_Smartsheet_Api_Models_Sheet_FromId.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GanttEnabled property" Url="html/P_Smartsheet_Api_Models_Sheet_GanttEnabled.htm" />
+  <HelpKINode Title="GANTT_ASSIGNED_RESOURCE enumeration member" Url="html/T_Smartsheet_Api_Models_ColumnTag.htm" />
+  <HelpKINode Title="GANTT_DISPLAY_LABEL enumeration member" Url="html/T_Smartsheet_Api_Models_ColumnTag.htm" />
+  <HelpKINode Title="GANTT_DURATION enumeration member" Url="html/T_Smartsheet_Api_Models_ColumnTag.htm" />
+  <HelpKINode Title="GANTT_END_DATE enumeration member" Url="html/T_Smartsheet_Api_Models_ColumnTag.htm" />
+  <HelpKINode Title="GANTT_PERCENT_COMPLETE enumeration member" Url="html/T_Smartsheet_Api_Models_ColumnTag.htm" />
+  <HelpKINode Title="GANTT_PREDECESSOR enumeration member" Url="html/T_Smartsheet_Api_Models_ColumnTag.htm" />
+  <HelpKINode Title="GANTT_START_DATE enumeration member" Url="html/T_Smartsheet_Api_Models_ColumnTag.htm" />
+  <HelpKINode Title="GANT_DISPLAY_LEVEL enumeration member" Url="html/T_Smartsheet_Api_Models_ColumnTag.htm" />
+  <HelpKINode Title="GANT_PERCENT_COMPLETE enumeration member" Url="html/T_Smartsheet_Api_Models_ColumnTag.htm" />
+  <HelpKINode Title="GetAttachment method" Url="html/M_Smartsheet_Api_AttachmentResources_GetAttachment.htm" />
+  <HelpKINode Title="GetCellHistory method" Url="html/M_Smartsheet_Api_RowResources_GetCellHistory.htm" />
+  <HelpKINode Title="GetColumnById method">
+    <HelpKINode Title="Row.GetColumnById Method " Url="html/M_Smartsheet_Api_Models_Row_GetColumnById.htm" />
+    <HelpKINode Title="Sheet.GetColumnById Method " Url="html/M_Smartsheet_Api_Models_Sheet_GetColumnById.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetColumnByIndex method">
+    <HelpKINode Title="Row.GetColumnByIndex Method " Url="html/M_Smartsheet_Api_Models_Row_GetColumnByIndex.htm" />
+    <HelpKINode Title="Sheet.GetColumnByIndex Method " Url="html/M_Smartsheet_Api_Models_Sheet_GetColumnByIndex.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetComment method" Url="html/M_Smartsheet_Api_CommentResources_GetComment.htm" />
+  <HelpKINode Title="GetDiscussion method" Url="html/M_Smartsheet_Api_DiscussionResources_GetDiscussion.htm" />
+  <HelpKINode Title="GetFolder method" Url="html/M_Smartsheet_Api_FolderResources_GetFolder.htm" />
+  <HelpKINode Title="GetHashCode method" Url="html/M_Smartsheet_Api_Models_IdentifiableModel_GetHashCode.htm" />
+  <HelpKINode Title="GetHome method" Url="html/M_Smartsheet_Api_HomeResources_GetHome.htm" />
+  <HelpKINode Title="GetPublishStatus method" Url="html/M_Smartsheet_Api_SheetResources_GetPublishStatus.htm" />
+  <HelpKINode Title="GetRow method">
+    <HelpKINode Title="RowResources.GetRow Method " Url="html/M_Smartsheet_Api_RowResources_GetRow.htm" />
+    <HelpKINode Title="SheetRowResources.GetRow Method " Url="html/M_Smartsheet_Api_SheetRowResources_GetRow.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetRowByRowNumber method" Url="html/M_Smartsheet_Api_Models_Sheet_GetRowByRowNumber.htm" />
+  <HelpKINode Title="GetShare method" Url="html/M_Smartsheet_Api_ShareResources_GetShare.htm" />
+  <HelpKINode Title="GetSheet method" Url="html/M_Smartsheet_Api_SheetResources_GetSheet.htm" />
+  <HelpKINode Title="GetSheetAsExcel method" Url="html/M_Smartsheet_Api_SheetResources_GetSheetAsExcel.htm" />
+  <HelpKINode Title="GetSheetAsPDF method" Url="html/M_Smartsheet_Api_SheetResources_GetSheetAsPDF.htm" />
+  <HelpKINode Title="GetSheetVersion method" Url="html/M_Smartsheet_Api_SheetResources_GetSheetVersion.htm" />
+  <HelpKINode Title="GetWorkspace method" Url="html/M_Smartsheet_Api_WorkspaceResources_GetWorkspace.htm" />
+  <HelpKINode Title="GOOGLE_DRIVE enumeration member" Url="html/T_Smartsheet_Api_Models_AttachmentType.htm" />
+  <HelpKINode Title="HARVEY_BALLS enumeration member" Url="html/T_Smartsheet_Api_Models_Symbol.htm" />
+  <HelpKINode Title="Hidden property" Url="html/P_Smartsheet_Api_Models_Column_Hidden.htm" />
+  <HelpKINode Title="Home class">
+    <HelpKINode Title="Home Class" Url="html/T_Smartsheet_Api_Models_Home.htm" />
+    <HelpKINode Title="about Home class" Url="html/T_Smartsheet_Api_Models_Home.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_Models_Home__ctor.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_Models_Home.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Home method" Url="html/M_Smartsheet_Api_SmartsheetClient_Home.htm" />
+  <HelpKINode Title="Home.Folders property" Url="html/P_Smartsheet_Api_Models_Home_Folders.htm" />
+  <HelpKINode Title="Home.Home constructor" Url="html/M_Smartsheet_Api_Models_Home__ctor.htm" />
+  <HelpKINode Title="Home.Sheets property" Url="html/P_Smartsheet_Api_Models_Home_Sheets.htm" />
+  <HelpKINode Title="Home.Templates property" Url="html/P_Smartsheet_Api_Models_Home_Templates.htm" />
+  <HelpKINode Title="Home.Workspaces property" Url="html/P_Smartsheet_Api_Models_Home_Workspaces.htm" />
+  <HelpKINode Title="HomeFolderResources interface">
+    <HelpKINode Title="HomeFolderResources Interface" Url="html/T_Smartsheet_Api_HomeFolderResources.htm" />
+    <HelpKINode Title="about HomeFolderResources interface" Url="html/T_Smartsheet_Api_HomeFolderResources.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Smartsheet_Api_HomeFolderResources.htm" />
+  </HelpKINode>
+  <HelpKINode Title="HomeFolderResources.CreateFolder method" Url="html/M_Smartsheet_Api_HomeFolderResources_CreateFolder.htm" />
+  <HelpKINode Title="HomeFolderResources.ListFolders method" Url="html/M_Smartsheet_Api_HomeFolderResources_ListFolders.htm" />
+  <HelpKINode Title="HomeResources interface">
+    <HelpKINode Title="HomeResources Interface" Url="html/T_Smartsheet_Api_HomeResources.htm" />
+    <HelpKINode Title="about HomeResources interface" Url="html/T_Smartsheet_Api_HomeResources.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Smartsheet_Api_HomeResources.htm" />
+  </HelpKINode>
+  <HelpKINode Title="HomeResources.Folders method" Url="html/M_Smartsheet_Api_HomeResources_Folders.htm" />
+  <HelpKINode Title="HomeResources.GetHome method" Url="html/M_Smartsheet_Api_HomeResources_GetHome.htm" />
+  <HelpKINode Title="HttpClient property">
+    <HelpKINode Title="OAuthFlowBuilder.HttpClient Property " Url="html/P_Smartsheet_Api_OAuth_OAuthFlowBuilder_HttpClient.htm" />
+    <HelpKINode Title="SmartsheetBuilder.HttpClient Property " Url="html/P_Smartsheet_Api_SmartsheetBuilder_HttpClient.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IcalEnabled property">
+    <HelpKINode Title="SheetPublish.IcalEnabled Property " Url="html/P_Smartsheet_Api_Models_SheetPublish_IcalEnabled.htm" />
+    <HelpKINode Title="SheetPublish.PublishStatusBuilder.IcalEnabled Property " Url="html/P_Smartsheet_Api_Models_SheetPublish_PublishStatusBuilder_IcalEnabled.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IcalUrl property" Url="html/P_Smartsheet_Api_Models_SheetPublish_IcalUrl.htm" />
+  <HelpKINode Title="ID property">
+    <HelpKINode Title="IdentifiableModel.ID Property " Url="html/P_Smartsheet_Api_Models_IdentifiableModel_ID.htm" />
+    <HelpKINode Title="Sheet.UpdateSheetBuilder.ID Property " Url="html/P_Smartsheet_Api_Models_Sheet_UpdateSheetBuilder_ID.htm" />
+    <HelpKINode Title="User.UpdateUserBuilder.ID Property " Url="html/P_Smartsheet_Api_Models_User_UpdateUserBuilder_ID.htm" />
+    <HelpKINode Title="Workspace.UpdateWorkspaceBuilder.ID Property " Url="html/P_Smartsheet_Api_Models_Workspace_UpdateWorkspaceBuilder_ID.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Id property" Url="html/P_Smartsheet_Api_Models_Folder_UpdateFolderBuilder_Id.htm" />
+  <HelpKINode Title="IdentifiableModel class">
+    <HelpKINode Title="IdentifiableModel Class" Url="html/T_Smartsheet_Api_Models_IdentifiableModel.htm" />
+    <HelpKINode Title="about IdentifiableModel class" Url="html/T_Smartsheet_Api_Models_IdentifiableModel.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Smartsheet_Api_Models_IdentifiableModel.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_Models_IdentifiableModel.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IdentifiableModel.Equals method" Url="html/M_Smartsheet_Api_Models_IdentifiableModel_Equals.htm" />
+  <HelpKINode Title="IdentifiableModel.GetHashCode method" Url="html/M_Smartsheet_Api_Models_IdentifiableModel_GetHashCode.htm" />
+  <HelpKINode Title="IdentifiableModel.ID property" Url="html/P_Smartsheet_Api_Models_IdentifiableModel_ID.htm" />
+  <HelpKINode Title="IncludeAttachments property" Url="html/P_Smartsheet_Api_Models_RowEmail_IncludeAttachments.htm" />
+  <HelpKINode Title="IncludeDiscussions property" Url="html/P_Smartsheet_Api_Models_RowEmail_IncludeDiscussions.htm" />
+  <HelpKINode Title="Index property">
+    <HelpKINode Title="Column.Index Property " Url="html/P_Smartsheet_Api_Models_Column_Index.htm" />
+    <HelpKINode Title="Column.ModifyColumnBuilder.Index Property " Url="html/P_Smartsheet_Api_Models_Column_ModifyColumnBuilder_Index.htm" />
+  </HelpKINode>
+  <HelpKINode Title="InsertRows method" Url="html/M_Smartsheet_Api_SheetRowResources_InsertRows.htm" />
+  <HelpKINode Title="InvalidOAuthClientException class">
+    <HelpKINode Title="InvalidOAuthClientException Class" Url="html/T_Smartsheet_Api_OAuth_InvalidOAuthClientException.htm" />
+    <HelpKINode Title="about InvalidOAuthClientException class" Url="html/T_Smartsheet_Api_OAuth_InvalidOAuthClientException.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_OAuth_InvalidOAuthClientException__ctor.htm" />
+  </HelpKINode>
+  <HelpKINode Title="InvalidOAuthClientException.InvalidOAuthClientException constructor" Url="html/M_Smartsheet_Api_OAuth_InvalidOAuthClientException__ctor.htm" />
+  <HelpKINode Title="InvalidOAuthGrantException class">
+    <HelpKINode Title="InvalidOAuthGrantException Class" Url="html/T_Smartsheet_Api_OAuth_InvalidOAuthGrantException.htm" />
+    <HelpKINode Title="about InvalidOAuthGrantException class" Url="html/T_Smartsheet_Api_OAuth_InvalidOAuthGrantException.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_OAuth_InvalidOAuthGrantException__ctor.htm" />
+  </HelpKINode>
+  <HelpKINode Title="InvalidOAuthGrantException.InvalidOAuthGrantException constructor" Url="html/M_Smartsheet_Api_OAuth_InvalidOAuthGrantException__ctor.htm" />
+  <HelpKINode Title="InvalidRequestException class">
+    <HelpKINode Title="InvalidRequestException Class" Url="html/T_Smartsheet_Api_InvalidRequestException.htm" />
+    <HelpKINode Title="about InvalidRequestException class" Url="html/T_Smartsheet_Api_InvalidRequestException.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_InvalidRequestException__ctor.htm" />
+  </HelpKINode>
+  <HelpKINode Title="InvalidRequestException.InvalidRequestException constructor" Url="html/M_Smartsheet_Api_InvalidRequestException__ctor.htm" />
+  <HelpKINode Title="InvalidScopeException class">
+    <HelpKINode Title="InvalidScopeException Class" Url="html/T_Smartsheet_Api_OAuth_InvalidScopeException.htm" />
+    <HelpKINode Title="about InvalidScopeException class" Url="html/T_Smartsheet_Api_OAuth_InvalidScopeException.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_OAuth_InvalidScopeException__ctor.htm" />
+  </HelpKINode>
+  <HelpKINode Title="InvalidScopeException.InvalidScopeException constructor" Url="html/M_Smartsheet_Api_OAuth_InvalidScopeException__ctor.htm" />
+  <HelpKINode Title="InvalidTokenRequestException class">
+    <HelpKINode Title="InvalidTokenRequestException Class" Url="html/T_Smartsheet_Api_OAuth_InvalidTokenRequestException.htm" />
+    <HelpKINode Title="about InvalidTokenRequestException class" Url="html/T_Smartsheet_Api_OAuth_InvalidTokenRequestException.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_OAuth_InvalidTokenRequestException__ctor.htm" />
+  </HelpKINode>
+  <HelpKINode Title="InvalidTokenRequestException.InvalidTokenRequestException constructor" Url="html/M_Smartsheet_Api_OAuth_InvalidTokenRequestException__ctor.htm" />
+  <HelpKINode Title="JsonSerializer property">
+    <HelpKINode Title="OAuthFlowBuilder.JsonSerializer Property " Url="html/P_Smartsheet_Api_OAuth_OAuthFlowBuilder_JsonSerializer.htm" />
+    <HelpKINode Title="SmartsheetBuilder.JsonSerializer Property " Url="html/P_Smartsheet_Api_SmartsheetBuilder_JsonSerializer.htm" />
+  </HelpKINode>
+  <HelpKINode Title="LastCommentedAt property" Url="html/P_Smartsheet_Api_Models_Discussion_LastCommentedAt.htm" />
+  <HelpKINode Title="LastCommentedUser property" Url="html/P_Smartsheet_Api_Models_Discussion_LastCommentedUser.htm" />
+  <HelpKINode Title="LastName property" Url="html/P_Smartsheet_Api_Models_UserProfile_LastName.htm" />
+  <HelpKINode Title="LEGAL enumeration member" Url="html/T_Smartsheet_Api_Models_PaperSize.htm" />
+  <HelpKINode Title="LETTER enumeration member" Url="html/T_Smartsheet_Api_Models_PaperSize.htm" />
+  <HelpKINode Title="LicensedSheetCreator property">
+    <HelpKINode Title="User.AddUserBuilder.LicensedSheetCreator Property " Url="html/P_Smartsheet_Api_Models_User_AddUserBuilder_LicensedSheetCreator.htm" />
+    <HelpKINode Title="User.LicensedSheetCreator Property " Url="html/P_Smartsheet_Api_Models_User_LicensedSheetCreator.htm" />
+    <HelpKINode Title="User.UpdateUserBuilder.LicensedSheetCreator Property " Url="html/P_Smartsheet_Api_Models_User_UpdateUserBuilder_LicensedSheetCreator.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Link class">
+    <HelpKINode Title="Link Class" Url="html/T_Smartsheet_Api_Models_Link.htm" />
+    <HelpKINode Title="about Link class" Url="html/T_Smartsheet_Api_Models_Link.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_Models_Link__ctor.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_Models_Link.htm" />
+  </HelpKINode>
+  <HelpKINode Title="LINK enumeration member" Url="html/T_Smartsheet_Api_Models_AttachmentType.htm" />
+  <HelpKINode Title="Link property" Url="html/P_Smartsheet_Api_Models_Cell_Link.htm" />
+  <HelpKINode Title="Link.ColumnId property" Url="html/P_Smartsheet_Api_Models_Link_ColumnId.htm" />
+  <HelpKINode Title="Link.Link constructor" Url="html/M_Smartsheet_Api_Models_Link__ctor.htm" />
+  <HelpKINode Title="Link.RowId property" Url="html/P_Smartsheet_Api_Models_Link_RowId.htm" />
+  <HelpKINode Title="Link.SheetId property" Url="html/P_Smartsheet_Api_Models_Link_SheetId.htm" />
+  <HelpKINode Title="Link.Type property" Url="html/P_Smartsheet_Api_Models_Link_Type.htm" />
+  <HelpKINode Title="Link.Url property" Url="html/P_Smartsheet_Api_Models_Link_Url.htm" />
+  <HelpKINode Title="LinkType enumeration" Url="html/T_Smartsheet_Api_Models_LinkType.htm" />
+  <HelpKINode Title="ListAttachments method" Url="html/M_Smartsheet_Api_AssociatedAttachmentResources_ListAttachments.htm" />
+  <HelpKINode Title="ListColumns method" Url="html/M_Smartsheet_Api_SheetColumnResources_ListColumns.htm" />
+  <HelpKINode Title="ListFolders method">
+    <HelpKINode Title="FolderResources.ListFolders Method " Url="html/M_Smartsheet_Api_FolderResources_ListFolders.htm" />
+    <HelpKINode Title="HomeFolderResources.ListFolders Method " Url="html/M_Smartsheet_Api_HomeFolderResources_ListFolders.htm" />
+    <HelpKINode Title="WorkspaceFolderResources.ListFolders Method " Url="html/M_Smartsheet_Api_WorkspaceFolderResources_ListFolders.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ListOrganizationSheets method" Url="html/M_Smartsheet_Api_SheetResources_ListOrganizationSheets.htm" />
+  <HelpKINode Title="ListShares method" Url="html/M_Smartsheet_Api_ShareResources_ListShares.htm" />
+  <HelpKINode Title="ListSheets method" Url="html/M_Smartsheet_Api_SheetResources_ListSheets.htm" />
+  <HelpKINode Title="ListTemplates method" Url="html/M_Smartsheet_Api_TemplateResources_ListTemplates.htm" />
+  <HelpKINode Title="ListUsers method" Url="html/M_Smartsheet_Api_UserResources_ListUsers.htm" />
+  <HelpKINode Title="ListWorkspaces method" Url="html/M_Smartsheet_Api_WorkspaceResources_ListWorkspaces.htm" />
+  <HelpKINode Title="Message property">
+    <HelpKINode Title="Email.Message Property " Url="html/P_Smartsheet_Api_Models_Email_Message.htm" />
+    <HelpKINode Title="Error.Message Property " Url="html/P_Smartsheet_Api_Models_Error_Message.htm" />
+    <HelpKINode Title="MultiShare.Message Property " Url="html/P_Smartsheet_Api_Models_MultiShare_Message.htm" />
+    <HelpKINode Title="MultiShare.ShareToManyBuilder.Message Property " Url="html/P_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder_Message.htm" />
+    <HelpKINode Title="RequestResult(T).Message Property " Url="html/P_Smartsheet_Api_Models_RequestResult_1_Message.htm" />
+  </HelpKINode>
+  <HelpKINode Title="MimeType property" Url="html/P_Smartsheet_Api_Models_Attachment_MimeType.htm" />
+  <HelpKINode Title="ModifiedAt property">
+    <HelpKINode Title="CellHistory.ModifiedAt Property " Url="html/P_Smartsheet_Api_Models_CellHistory_ModifiedAt.htm" />
+    <HelpKINode Title="Comment.ModifiedAt Property " Url="html/P_Smartsheet_Api_Models_Comment_ModifiedAt.htm" />
+    <HelpKINode Title="Row.ModifiedAt Property " Url="html/P_Smartsheet_Api_Models_Row_ModifiedAt.htm" />
+    <HelpKINode Title="Sheet.ModifiedAt Property " Url="html/P_Smartsheet_Api_Models_Sheet_ModifiedAt.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ModifiedBy property" Url="html/P_Smartsheet_Api_Models_CellHistory_ModifiedBy.htm" />
+  <HelpKINode Title="ModifiedDate property" Url="html/P_Smartsheet_Api_Models_Comment_ModifiedDate.htm" />
+  <HelpKINode Title="MODIFIED_BY enumeration member" Url="html/T_Smartsheet_Api_Models_SystemColumnType.htm" />
+  <HelpKINode Title="MODIFIED_DATE enumeration member" Url="html/T_Smartsheet_Api_Models_SystemColumnType.htm" />
+  <HelpKINode Title="MoveRow method" Url="html/M_Smartsheet_Api_RowResources_MoveRow.htm" />
+  <HelpKINode Title="MultiShare class">
+    <HelpKINode Title="MultiShare Class" Url="html/T_Smartsheet_Api_Models_MultiShare.htm" />
+    <HelpKINode Title="about MultiShare class" Url="html/T_Smartsheet_Api_Models_MultiShare.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_Models_MultiShare__ctor.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_Models_MultiShare.htm" />
+  </HelpKINode>
+  <HelpKINode Title="MultiShare.AccessLevel property" Url="html/P_Smartsheet_Api_Models_MultiShare_AccessLevel.htm" />
+  <HelpKINode Title="MultiShare.CCMe property" Url="html/P_Smartsheet_Api_Models_MultiShare_CCMe.htm" />
+  <HelpKINode Title="MultiShare.Message property" Url="html/P_Smartsheet_Api_Models_MultiShare_Message.htm" />
+  <HelpKINode Title="MultiShare.MultiShare constructor" Url="html/M_Smartsheet_Api_Models_MultiShare__ctor.htm" />
+  <HelpKINode Title="MultiShare.ShareToManyBuilder class">
+    <HelpKINode Title="MultiShare.ShareToManyBuilder Class" Url="html/T_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder.htm" />
+    <HelpKINode Title="about MultiShare.ShareToManyBuilder class" Url="html/T_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder.htm" />
+  </HelpKINode>
+  <HelpKINode Title="MultiShare.ShareToManyBuilder.AccessLevel property" Url="html/P_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder_AccessLevel.htm" />
+  <HelpKINode Title="MultiShare.ShareToManyBuilder.Build method" Url="html/M_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder_Build.htm" />
+  <HelpKINode Title="MultiShare.ShareToManyBuilder.CCMe property" Url="html/P_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder_CCMe.htm" />
+  <HelpKINode Title="MultiShare.ShareToManyBuilder.Message property" Url="html/P_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder_Message.htm" />
+  <HelpKINode Title="MultiShare.ShareToManyBuilder.SetAccessLevel method" Url="html/M_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder_SetAccessLevel.htm" />
+  <HelpKINode Title="MultiShare.ShareToManyBuilder.SetCCMe method" Url="html/M_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder_SetCCMe.htm" />
+  <HelpKINode Title="MultiShare.ShareToManyBuilder.SetMessage method" Url="html/M_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder_SetMessage.htm" />
+  <HelpKINode Title="MultiShare.ShareToManyBuilder.SetSubject method" Url="html/M_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder_SetSubject.htm" />
+  <HelpKINode Title="MultiShare.ShareToManyBuilder.SetUsers method" Url="html/M_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder_SetUsers.htm" />
+  <HelpKINode Title="MultiShare.ShareToManyBuilder.ShareToManyBuilder constructor" Url="html/M_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder__ctor.htm" />
+  <HelpKINode Title="MultiShare.ShareToManyBuilder.Subject property" Url="html/P_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder_Subject.htm" />
+  <HelpKINode Title="MultiShare.ShareToManyBuilder.Users property" Url="html/P_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder_Users.htm" />
+  <HelpKINode Title="MultiShare.Subject property" Url="html/P_Smartsheet_Api_Models_MultiShare_Subject.htm" />
+  <HelpKINode Title="MultiShare.Users property" Url="html/P_Smartsheet_Api_Models_MultiShare_Users.htm" />
+  <HelpKINode Title="Name property">
+    <HelpKINode Title="NamedModel.Name Property " Url="html/P_Smartsheet_Api_Models_NamedModel_Name.htm" />
+    <HelpKINode Title="Sheet.CreateFromTemplateOrSheetBuilder.Name Property " Url="html/P_Smartsheet_Api_Models_Sheet_CreateFromTemplateOrSheetBuilder_Name.htm" />
+    <HelpKINode Title="Sheet.CreateSheetBuilder.Name Property " Url="html/P_Smartsheet_Api_Models_Sheet_CreateSheetBuilder_Name.htm" />
+    <HelpKINode Title="Sheet.UpdateSheetBuilder.Name Property " Url="html/P_Smartsheet_Api_Models_Sheet_UpdateSheetBuilder_Name.htm" />
+    <HelpKINode Title="Workspace.UpdateWorkspaceBuilder.Name Property " Url="html/P_Smartsheet_Api_Models_Workspace_UpdateWorkspaceBuilder_Name.htm" />
+  </HelpKINode>
+  <HelpKINode Title="name property" Url="html/P_Smartsheet_Api_Models_Folder_UpdateFolderBuilder_name.htm" />
+  <HelpKINode Title="NamedModel class">
+    <HelpKINode Title="NamedModel Class" Url="html/T_Smartsheet_Api_Models_NamedModel.htm" />
+    <HelpKINode Title="about NamedModel class" Url="html/T_Smartsheet_Api_Models_NamedModel.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_Models_NamedModel.htm" />
+  </HelpKINode>
+  <HelpKINode Title="NamedModel.Name property" Url="html/P_Smartsheet_Api_Models_NamedModel_Name.htm" />
+  <HelpKINode Title="NewAuthorizationURL method" Url="html/M_Smartsheet_Api_OAuth_OAuthFlow_NewAuthorizationURL.htm" />
+  <HelpKINode Title="OAuthAuthorizationCodeException class">
+    <HelpKINode Title="OAuthAuthorizationCodeException Class" Url="html/T_Smartsheet_Api_OAuth_OAuthAuthorizationCodeException.htm" />
+    <HelpKINode Title="about OAuthAuthorizationCodeException class" Url="html/T_Smartsheet_Api_OAuth_OAuthAuthorizationCodeException.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_Smartsheet_Api_OAuth_OAuthAuthorizationCodeException__ctor.htm" />
+  </HelpKINode>
+  <HelpKINode Title="OAuthAuthorizationCodeException.OAuthAuthorizationCodeException constructor" Url="html/Overload_Smartsheet_Api_OAuth_OAuthAuthorizationCodeException__ctor.htm" />
+  <HelpKINode Title="OAuthFlow interface">
+    <HelpKINode Title="OAuthFlow Interface" Url="html/T_Smartsheet_Api_OAuth_OAuthFlow.htm" />
+    <HelpKINode Title="about OAuthFlow interface" Url="html/T_Smartsheet_Api_OAuth_OAuthFlow.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Smartsheet_Api_OAuth_OAuthFlow.htm" />
+  </HelpKINode>
+  <HelpKINode Title="OAuthFlow.ExtractAuthorizationResult method" Url="html/M_Smartsheet_Api_OAuth_OAuthFlow_ExtractAuthorizationResult.htm" />
+  <HelpKINode Title="OAuthFlow.NewAuthorizationURL method" Url="html/M_Smartsheet_Api_OAuth_OAuthFlow_NewAuthorizationURL.htm" />
+  <HelpKINode Title="OAuthFlow.ObtainNewToken method" Url="html/M_Smartsheet_Api_OAuth_OAuthFlow_ObtainNewToken.htm" />
+  <HelpKINode Title="OAuthFlow.RefreshToken method" Url="html/M_Smartsheet_Api_OAuth_OAuthFlow_RefreshToken.htm" />
+  <HelpKINode Title="OAuthFlowBuilder class">
+    <HelpKINode Title="OAuthFlowBuilder Class" Url="html/T_Smartsheet_Api_OAuth_OAuthFlowBuilder.htm" />
+    <HelpKINode Title="about OAuthFlowBuilder class" Url="html/T_Smartsheet_Api_OAuth_OAuthFlowBuilder.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_OAuth_OAuthFlowBuilder__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_Smartsheet_Api_OAuth_OAuthFlowBuilder.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Smartsheet_Api_OAuth_OAuthFlowBuilder.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_OAuth_OAuthFlowBuilder.htm" />
+  </HelpKINode>
+  <HelpKINode Title="OAuthFlowBuilder.AuthorizationURL property" Url="html/P_Smartsheet_Api_OAuth_OAuthFlowBuilder_AuthorizationURL.htm" />
+  <HelpKINode Title="OAuthFlowBuilder.Build method" Url="html/M_Smartsheet_Api_OAuth_OAuthFlowBuilder_Build.htm" />
+  <HelpKINode Title="OAuthFlowBuilder.ClientId property" Url="html/P_Smartsheet_Api_OAuth_OAuthFlowBuilder_ClientId.htm" />
+  <HelpKINode Title="OAuthFlowBuilder.ClientSecret property" Url="html/P_Smartsheet_Api_OAuth_OAuthFlowBuilder_ClientSecret.htm" />
+  <HelpKINode Title="OAuthFlowBuilder.DefaultAuthorizationUrl property" Url="html/P_Smartsheet_Api_OAuth_OAuthFlowBuilder_DefaultAuthorizationUrl.htm" />
+  <HelpKINode Title="OAuthFlowBuilder.DefaultTokenUrl property" Url="html/P_Smartsheet_Api_OAuth_OAuthFlowBuilder_DefaultTokenUrl.htm" />
+  <HelpKINode Title="OAuthFlowBuilder.DEFAULT_AUTHORIZATION_URL field" Url="html/F_Smartsheet_Api_OAuth_OAuthFlowBuilder_DEFAULT_AUTHORIZATION_URL.htm" />
+  <HelpKINode Title="OAuthFlowBuilder.DEFAULT_TOKEN_URL field" Url="html/F_Smartsheet_Api_OAuth_OAuthFlowBuilder_DEFAULT_TOKEN_URL.htm" />
+  <HelpKINode Title="OAuthFlowBuilder.HttpClient property" Url="html/P_Smartsheet_Api_OAuth_OAuthFlowBuilder_HttpClient.htm" />
+  <HelpKINode Title="OAuthFlowBuilder.JsonSerializer property" Url="html/P_Smartsheet_Api_OAuth_OAuthFlowBuilder_JsonSerializer.htm" />
+  <HelpKINode Title="OAuthFlowBuilder.OAuthFlowBuilder constructor" Url="html/M_Smartsheet_Api_OAuth_OAuthFlowBuilder__ctor.htm" />
+  <HelpKINode Title="OAuthFlowBuilder.RedirectURL property" Url="html/P_Smartsheet_Api_OAuth_OAuthFlowBuilder_RedirectURL.htm" />
+  <HelpKINode Title="OAuthFlowBuilder.SetAuthorizationURL method" Url="html/M_Smartsheet_Api_OAuth_OAuthFlowBuilder_SetAuthorizationURL.htm" />
+  <HelpKINode Title="OAuthFlowBuilder.SetClientId method" Url="html/M_Smartsheet_Api_OAuth_OAuthFlowBuilder_SetClientId.htm" />
+  <HelpKINode Title="OAuthFlowBuilder.SetClientSecret method" Url="html/M_Smartsheet_Api_OAuth_OAuthFlowBuilder_SetClientSecret.htm" />
+  <HelpKINode Title="OAuthFlowBuilder.SetHttpClient method" Url="html/M_Smartsheet_Api_OAuth_OAuthFlowBuilder_SetHttpClient.htm" />
+  <HelpKINode Title="OAuthFlowBuilder.SetJsonSerializer method" Url="html/M_Smartsheet_Api_OAuth_OAuthFlowBuilder_SetJsonSerializer.htm" />
+  <HelpKINode Title="OAuthFlowBuilder.SetRedirectURL method" Url="html/M_Smartsheet_Api_OAuth_OAuthFlowBuilder_SetRedirectURL.htm" />
+  <HelpKINode Title="OAuthFlowBuilder.SetTokenURL method" Url="html/M_Smartsheet_Api_OAuth_OAuthFlowBuilder_SetTokenURL.htm" />
+  <HelpKINode Title="OAuthFlowBuilder.TokenURL property" Url="html/P_Smartsheet_Api_OAuth_OAuthFlowBuilder_TokenURL.htm" />
+  <HelpKINode Title="OAuthTokenException class">
+    <HelpKINode Title="OAuthTokenException Class" Url="html/T_Smartsheet_Api_OAuth_OAuthTokenException.htm" />
+    <HelpKINode Title="about OAuthTokenException class" Url="html/T_Smartsheet_Api_OAuth_OAuthTokenException.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_Smartsheet_Api_OAuth_OAuthTokenException__ctor.htm" />
+  </HelpKINode>
+  <HelpKINode Title="OAuthTokenException.OAuthTokenException constructor" Url="html/Overload_Smartsheet_Api_OAuth_OAuthTokenException__ctor.htm" />
+  <HelpKINode Title="ObjectId property" Url="html/P_Smartsheet_Api_Models_SearchResultItem_ObjectId.htm" />
+  <HelpKINode Title="ObjectInclusion enumeration" Url="html/T_Smartsheet_Api_Models_ObjectInclusion.htm" />
+  <HelpKINode Title="ObjectType property" Url="html/P_Smartsheet_Api_Models_SearchResultItem_ObjectType.htm" />
+  <HelpKINode Title="ObtainNewToken method" Url="html/M_Smartsheet_Api_OAuth_OAuthFlow_ObtainNewToken.htm" />
+  <HelpKINode Title="Options property">
+    <HelpKINode Title="Column.AddColumnToSheetBuilder.Options Property " Url="html/P_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_Options.htm" />
+    <HelpKINode Title="Column.ModifyColumnBuilder.Options Property " Url="html/P_Smartsheet_Api_Models_Column_ModifyColumnBuilder_Options.htm" />
+    <HelpKINode Title="Column.Options Property " Url="html/P_Smartsheet_Api_Models_Column_Options.htm" />
+  </HelpKINode>
+  <HelpKINode Title="OWNER enumeration member" Url="html/T_Smartsheet_Api_Models_AccessLevel.htm" />
+  <HelpKINode Title="PaperSize enumeration" Url="html/T_Smartsheet_Api_Models_PaperSize.htm" />
+  <HelpKINode Title="PaperSize property" Url="html/P_Smartsheet_Api_Models_FormatDetails_PaperSize.htm" />
+  <HelpKINode Title="ParentId property">
+    <HelpKINode Title="Attachment.ParentId Property " Url="html/P_Smartsheet_Api_Models_Attachment_ParentId.htm" />
+    <HelpKINode Title="RowWrapper.InsertRowsBuilder.ParentId Property " Url="html/P_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder_ParentId.htm" />
+    <HelpKINode Title="RowWrapper.MoveRowBuilder.ParentId Property " Url="html/P_Smartsheet_Api_Models_RowWrapper_MoveRowBuilder_ParentId.htm" />
+    <HelpKINode Title="RowWrapper.ParentId Property " Url="html/P_Smartsheet_Api_Models_RowWrapper_ParentId.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ParentObjectId property" Url="html/P_Smartsheet_Api_Models_SearchResultItem_ParentObjectId.htm" />
+  <HelpKINode Title="ParentObjectName property" Url="html/P_Smartsheet_Api_Models_SearchResultItem_ParentObjectName.htm" />
+  <HelpKINode Title="ParentObjectType property" Url="html/P_Smartsheet_Api_Models_SearchResultItem_ParentObjectType.htm" />
+  <HelpKINode Title="ParentRowNumber property" Url="html/P_Smartsheet_Api_Models_Row_ParentRowNumber.htm" />
+  <HelpKINode Title="ParentType property" Url="html/P_Smartsheet_Api_Models_Attachment_ParentType.htm" />
+  <HelpKINode Title="PDF enumeration member">
+    <HelpKINode Title="AttachmentSubType Enumeration" Url="html/T_Smartsheet_Api_Models_AttachmentSubType.htm" />
+    <HelpKINode Title="SheetEmailFormat Enumeration" Url="html/T_Smartsheet_Api_Models_SheetEmailFormat.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PENDING enumeration member" Url="html/T_Smartsheet_Api_Models_UserStatus.htm" />
+  <HelpKINode Title="Permalink property">
+    <HelpKINode Title="Sheet.Permalink Property " Url="html/P_Smartsheet_Api_Models_Sheet_Permalink.htm" />
+    <HelpKINode Title="Workspace.Permalink Property " Url="html/P_Smartsheet_Api_Models_Workspace_Permalink.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PICKLIST enumeration member" Url="html/T_Smartsheet_Api_Models_ColumnType.htm" />
+  <HelpKINode Title="Prefix property" Url="html/P_Smartsheet_Api_Models_AutoNumberFormat_Prefix.htm" />
+  <HelpKINode Title="PRESENTATION enumeration member" Url="html/T_Smartsheet_Api_Models_AttachmentSubType.htm" />
+  <HelpKINode Title="Primary property">
+    <HelpKINode Title="Column.AddColumnToSheetBuilder.Primary Property " Url="html/P_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_Primary.htm" />
+    <HelpKINode Title="Column.Primary Property " Url="html/P_Smartsheet_Api_Models_Column_Primary.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PRIORITY enumeration member" Url="html/T_Smartsheet_Api_Models_Symbol.htm" />
+  <HelpKINode Title="ReadOnly property" Url="html/P_Smartsheet_Api_Models_Sheet_ReadOnly.htm" />
+  <HelpKINode Title="ReadOnlyFullEnabled property">
+    <HelpKINode Title="SheetPublish.PublishStatusBuilder.ReadOnlyFullEnabled Property " Url="html/P_Smartsheet_Api_Models_SheetPublish_PublishStatusBuilder_ReadOnlyFullEnabled.htm" />
+    <HelpKINode Title="SheetPublish.ReadOnlyFullEnabled Property " Url="html/P_Smartsheet_Api_Models_SheetPublish_ReadOnlyFullEnabled.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ReadOnlyFullUrl property" Url="html/P_Smartsheet_Api_Models_SheetPublish_ReadOnlyFullUrl.htm" />
+  <HelpKINode Title="ReadOnlyLiteEnabled property">
+    <HelpKINode Title="SheetPublish.PublishStatusBuilder.ReadOnlyLiteEnabled Property " Url="html/P_Smartsheet_Api_Models_SheetPublish_PublishStatusBuilder_ReadOnlyLiteEnabled.htm" />
+    <HelpKINode Title="SheetPublish.ReadOnlyLiteEnabled Property " Url="html/P_Smartsheet_Api_Models_SheetPublish_ReadOnlyLiteEnabled.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ReadOnlyLiteUrl property" Url="html/P_Smartsheet_Api_Models_SheetPublish_ReadOnlyLiteUrl.htm" />
+  <HelpKINode Title="ReadWriteEnabled property">
+    <HelpKINode Title="SheetPublish.PublishStatusBuilder.ReadWriteEnabled Property " Url="html/P_Smartsheet_Api_Models_SheetPublish_PublishStatusBuilder_ReadWriteEnabled.htm" />
+    <HelpKINode Title="SheetPublish.ReadWriteEnabled Property " Url="html/P_Smartsheet_Api_Models_SheetPublish_ReadWriteEnabled.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ReadWriteUrl property" Url="html/P_Smartsheet_Api_Models_SheetPublish_ReadWriteUrl.htm" />
+  <HelpKINode Title="READ_SHEETS enumeration member">
+    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_OAuth_AccessScope.htm" />
+    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_Models_AccessScope.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RedirectURL property" Url="html/P_Smartsheet_Api_OAuth_OAuthFlowBuilder_RedirectURL.htm" />
+  <HelpKINode Title="RefreshToken method" Url="html/M_Smartsheet_Api_OAuth_OAuthFlow_RefreshToken.htm" />
+  <HelpKINode Title="RefreshToken property" Url="html/P_Smartsheet_Api_OAuth_Token_RefreshToken.htm" />
+  <HelpKINode Title="RequestResult(Of T) class">
+    <HelpKINode Title="RequestResult(T) Class" Url="html/T_Smartsheet_Api_Models_RequestResult_1.htm" />
+    <HelpKINode Title="about RequestResult(Of T) class" Url="html/T_Smartsheet_Api_Models_RequestResult_1.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_Models_RequestResult_1__ctor.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_Models_RequestResult_1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RequestResult(Of T).Message property" Url="html/P_Smartsheet_Api_Models_RequestResult_1_Message.htm" />
+  <HelpKINode Title="RequestResult(Of T).RequestResult constructor" Url="html/M_Smartsheet_Api_Models_RequestResult_1__ctor.htm" />
+  <HelpKINode Title="RequestResult(Of T).Result property" Url="html/P_Smartsheet_Api_Models_RequestResult_1_Result.htm" />
+  <HelpKINode Title="RequestResult(Of T).ResultCode property" Url="html/P_Smartsheet_Api_Models_RequestResult_1_ResultCode.htm" />
+  <HelpKINode Title="RequestResult(Of T).Version property" Url="html/P_Smartsheet_Api_Models_RequestResult_1_Version.htm" />
+  <HelpKINode Title="RequestResult&lt;T&gt; class">
+    <HelpKINode Title="RequestResult(T) Class" Url="html/T_Smartsheet_Api_Models_RequestResult_1.htm" />
+    <HelpKINode Title="about RequestResult&lt;T&gt; class" Url="html/T_Smartsheet_Api_Models_RequestResult_1.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_Models_RequestResult_1__ctor.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_Models_RequestResult_1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RequestResult&lt;T&gt;.Message property" Url="html/P_Smartsheet_Api_Models_RequestResult_1_Message.htm" />
+  <HelpKINode Title="RequestResult&lt;T&gt;.RequestResult constructor" Url="html/M_Smartsheet_Api_Models_RequestResult_1__ctor.htm" />
+  <HelpKINode Title="RequestResult&lt;T&gt;.Result property" Url="html/P_Smartsheet_Api_Models_RequestResult_1_Result.htm" />
+  <HelpKINode Title="RequestResult&lt;T&gt;.ResultCode property" Url="html/P_Smartsheet_Api_Models_RequestResult_1_ResultCode.htm" />
+  <HelpKINode Title="RequestResult&lt;T&gt;.Version property" Url="html/P_Smartsheet_Api_Models_RequestResult_1_Version.htm" />
+  <HelpKINode Title="ResourceNotFoundException class">
+    <HelpKINode Title="ResourceNotFoundException Class" Url="html/T_Smartsheet_Api_ResourceNotFoundException.htm" />
+    <HelpKINode Title="about ResourceNotFoundException class" Url="html/T_Smartsheet_Api_ResourceNotFoundException.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_ResourceNotFoundException__ctor.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ResourceNotFoundException.ResourceNotFoundException constructor" Url="html/M_Smartsheet_Api_ResourceNotFoundException__ctor.htm" />
+  <HelpKINode Title="Result property" Url="html/P_Smartsheet_Api_Models_RequestResult_1_Result.htm" />
+  <HelpKINode Title="ResultCode property" Url="html/P_Smartsheet_Api_Models_RequestResult_1_ResultCode.htm" />
+  <HelpKINode Title="Results property" Url="html/P_Smartsheet_Api_Models_SearchResult_Results.htm" />
+  <HelpKINode Title="Row class">
+    <HelpKINode Title="Row Class" Url="html/T_Smartsheet_Api_Models_Row.htm" />
+    <HelpKINode Title="about Row class" Url="html/T_Smartsheet_Api_Models_Row.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_Models_Row__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Smartsheet_Api_Models_Row.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_Models_Row.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ROW enumeration member" Url="html/T_Smartsheet_Api_Models_AttachmentParentType.htm" />
+  <HelpKINode Title="Row.AccessLevel property" Url="html/P_Smartsheet_Api_Models_Row_AccessLevel.htm" />
+  <HelpKINode Title="Row.Attachments property" Url="html/P_Smartsheet_Api_Models_Row_Attachments.htm" />
+  <HelpKINode Title="Row.Cells property" Url="html/P_Smartsheet_Api_Models_Row_Cells.htm" />
+  <HelpKINode Title="Row.Columns property" Url="html/P_Smartsheet_Api_Models_Row_Columns.htm" />
+  <HelpKINode Title="Row.CreatedAt property" Url="html/P_Smartsheet_Api_Models_Row_CreatedAt.htm" />
+  <HelpKINode Title="Row.Discussions property" Url="html/P_Smartsheet_Api_Models_Row_Discussions.htm" />
+  <HelpKINode Title="Row.Expanded property" Url="html/P_Smartsheet_Api_Models_Row_Expanded.htm" />
+  <HelpKINode Title="Row.GetColumnById method" Url="html/M_Smartsheet_Api_Models_Row_GetColumnById.htm" />
+  <HelpKINode Title="Row.GetColumnByIndex method" Url="html/M_Smartsheet_Api_Models_Row_GetColumnByIndex.htm" />
+  <HelpKINode Title="Row.ModifiedAt property" Url="html/P_Smartsheet_Api_Models_Row_ModifiedAt.htm" />
+  <HelpKINode Title="Row.ParentRowNumber property" Url="html/P_Smartsheet_Api_Models_Row_ParentRowNumber.htm" />
+  <HelpKINode Title="Row.Row constructor" Url="html/M_Smartsheet_Api_Models_Row__ctor.htm" />
+  <HelpKINode Title="Row.RowNumber property" Url="html/P_Smartsheet_Api_Models_Row_RowNumber.htm" />
+  <HelpKINode Title="Row.SheetId property" Url="html/P_Smartsheet_Api_Models_Row_SheetId.htm" />
+  <HelpKINode Title="Row.Version property" Url="html/P_Smartsheet_Api_Models_Row_Version.htm" />
+  <HelpKINode Title="RowEmail class">
+    <HelpKINode Title="RowEmail Class" Url="html/T_Smartsheet_Api_Models_RowEmail.htm" />
+    <HelpKINode Title="about RowEmail class" Url="html/T_Smartsheet_Api_Models_RowEmail.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_Models_RowEmail__ctor.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_Models_RowEmail.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RowEmail.IncludeAttachments property" Url="html/P_Smartsheet_Api_Models_RowEmail_IncludeAttachments.htm" />
+  <HelpKINode Title="RowEmail.IncludeDiscussions property" Url="html/P_Smartsheet_Api_Models_RowEmail_IncludeDiscussions.htm" />
+  <HelpKINode Title="RowEmail.RowEmail constructor" Url="html/M_Smartsheet_Api_Models_RowEmail__ctor.htm" />
+  <HelpKINode Title="RowId property">
+    <HelpKINode Title="Cell.RowId Property " Url="html/P_Smartsheet_Api_Models_Cell_RowId.htm" />
+    <HelpKINode Title="Link.RowId Property " Url="html/P_Smartsheet_Api_Models_Link_RowId.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RowNumber property" Url="html/P_Smartsheet_Api_Models_Row_RowNumber.htm" />
+  <HelpKINode Title="RowResources interface">
+    <HelpKINode Title="RowResources Interface" Url="html/T_Smartsheet_Api_RowResources.htm" />
+    <HelpKINode Title="about RowResources interface" Url="html/T_Smartsheet_Api_RowResources.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Smartsheet_Api_RowResources.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RowResources.Attachments method" Url="html/M_Smartsheet_Api_RowResources_Attachments.htm" />
+  <HelpKINode Title="RowResources.DeleteRow method" Url="html/M_Smartsheet_Api_RowResources_DeleteRow.htm" />
+  <HelpKINode Title="RowResources.Discussions method" Url="html/M_Smartsheet_Api_RowResources_Discussions.htm" />
+  <HelpKINode Title="RowResources.GetCellHistory method" Url="html/M_Smartsheet_Api_RowResources_GetCellHistory.htm" />
+  <HelpKINode Title="RowResources.GetRow method" Url="html/M_Smartsheet_Api_RowResources_GetRow.htm" />
+  <HelpKINode Title="RowResources.MoveRow method" Url="html/M_Smartsheet_Api_RowResources_MoveRow.htm" />
+  <HelpKINode Title="RowResources.SendRow method" Url="html/M_Smartsheet_Api_RowResources_SendRow.htm" />
+  <HelpKINode Title="RowResources.UpdateCells method" Url="html/M_Smartsheet_Api_RowResources_UpdateCells.htm" />
+  <HelpKINode Title="Rows method">
+    <HelpKINode Title="SheetResources.Rows Method " Url="html/M_Smartsheet_Api_SheetResources_Rows.htm" />
+    <HelpKINode Title="SmartsheetClient.Rows Method " Url="html/M_Smartsheet_Api_SmartsheetClient_Rows.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Rows property">
+    <HelpKINode Title="RowWrapper.InsertRowsBuilder.Rows Property " Url="html/P_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder_Rows.htm" />
+    <HelpKINode Title="RowWrapper.Rows Property " Url="html/P_Smartsheet_Api_Models_RowWrapper_Rows.htm" />
+    <HelpKINode Title="Sheet.Rows Property " Url="html/P_Smartsheet_Api_Models_Sheet_Rows.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RowWrapper class">
+    <HelpKINode Title="RowWrapper Class" Url="html/T_Smartsheet_Api_Models_RowWrapper.htm" />
+    <HelpKINode Title="about RowWrapper class" Url="html/T_Smartsheet_Api_Models_RowWrapper.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_Models_RowWrapper__ctor.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_Models_RowWrapper.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RowWrapper.InsertRowsBuilder class">
+    <HelpKINode Title="RowWrapper.InsertRowsBuilder Class" Url="html/T_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder.htm" />
+    <HelpKINode Title="about RowWrapper.InsertRowsBuilder class" Url="html/T_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RowWrapper.InsertRowsBuilder.Build method" Url="html/M_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder_Build.htm" />
+  <HelpKINode Title="RowWrapper.InsertRowsBuilder.InsertRowsBuilder constructor" Url="html/M_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder__ctor.htm" />
+  <HelpKINode Title="RowWrapper.InsertRowsBuilder.ParentId property" Url="html/P_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder_ParentId.htm" />
+  <HelpKINode Title="RowWrapper.InsertRowsBuilder.Rows property" Url="html/P_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder_Rows.htm" />
+  <HelpKINode Title="RowWrapper.InsertRowsBuilder.SetParentId method" Url="html/M_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder_SetParentId.htm" />
+  <HelpKINode Title="RowWrapper.InsertRowsBuilder.SetRows method" Url="html/M_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder_SetRows.htm" />
+  <HelpKINode Title="RowWrapper.InsertRowsBuilder.SetSiblingId method" Url="html/M_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder_SetSiblingId.htm" />
+  <HelpKINode Title="RowWrapper.InsertRowsBuilder.SetToBottom method" Url="html/M_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder_SetToBottom.htm" />
+  <HelpKINode Title="RowWrapper.InsertRowsBuilder.SetToTop method" Url="html/M_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder_SetToTop.htm" />
+  <HelpKINode Title="RowWrapper.InsertRowsBuilder.SiblingId property" Url="html/P_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder_SiblingId.htm" />
+  <HelpKINode Title="RowWrapper.InsertRowsBuilder.ToBottom property" Url="html/P_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder_ToBottom.htm" />
+  <HelpKINode Title="RowWrapper.InsertRowsBuilder.ToTop property" Url="html/P_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder_ToTop.htm" />
+  <HelpKINode Title="RowWrapper.MoveRowBuilder class">
+    <HelpKINode Title="RowWrapper.MoveRowBuilder Class" Url="html/T_Smartsheet_Api_Models_RowWrapper_MoveRowBuilder.htm" />
+    <HelpKINode Title="about RowWrapper.MoveRowBuilder class" Url="html/T_Smartsheet_Api_Models_RowWrapper_MoveRowBuilder.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_Models_RowWrapper_MoveRowBuilder__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Smartsheet_Api_Models_RowWrapper_MoveRowBuilder.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_Models_RowWrapper_MoveRowBuilder.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RowWrapper.MoveRowBuilder.Build method" Url="html/M_Smartsheet_Api_Models_RowWrapper_MoveRowBuilder_Build.htm" />
+  <HelpKINode Title="RowWrapper.MoveRowBuilder.MoveRowBuilder constructor" Url="html/M_Smartsheet_Api_Models_RowWrapper_MoveRowBuilder__ctor.htm" />
+  <HelpKINode Title="RowWrapper.MoveRowBuilder.ParentId property" Url="html/P_Smartsheet_Api_Models_RowWrapper_MoveRowBuilder_ParentId.htm" />
+  <HelpKINode Title="RowWrapper.MoveRowBuilder.SetParentId method" Url="html/M_Smartsheet_Api_Models_RowWrapper_MoveRowBuilder_SetParentId.htm" />
+  <HelpKINode Title="RowWrapper.MoveRowBuilder.SetSiblingId method" Url="html/M_Smartsheet_Api_Models_RowWrapper_MoveRowBuilder_SetSiblingId.htm" />
+  <HelpKINode Title="RowWrapper.MoveRowBuilder.SetToBottom method" Url="html/M_Smartsheet_Api_Models_RowWrapper_MoveRowBuilder_SetToBottom.htm" />
+  <HelpKINode Title="RowWrapper.MoveRowBuilder.SetToTop method" Url="html/M_Smartsheet_Api_Models_RowWrapper_MoveRowBuilder_SetToTop.htm" />
+  <HelpKINode Title="RowWrapper.MoveRowBuilder.SiblingId property" Url="html/P_Smartsheet_Api_Models_RowWrapper_MoveRowBuilder_SiblingId.htm" />
+  <HelpKINode Title="RowWrapper.MoveRowBuilder.ToBottom property" Url="html/P_Smartsheet_Api_Models_RowWrapper_MoveRowBuilder_ToBottom.htm" />
+  <HelpKINode Title="RowWrapper.MoveRowBuilder.ToTop property" Url="html/P_Smartsheet_Api_Models_RowWrapper_MoveRowBuilder_ToTop.htm" />
+  <HelpKINode Title="RowWrapper.ParentId property" Url="html/P_Smartsheet_Api_Models_RowWrapper_ParentId.htm" />
+  <HelpKINode Title="RowWrapper.Rows property" Url="html/P_Smartsheet_Api_Models_RowWrapper_Rows.htm" />
+  <HelpKINode Title="RowWrapper.RowWrapper constructor" Url="html/M_Smartsheet_Api_Models_RowWrapper__ctor.htm" />
+  <HelpKINode Title="RowWrapper.SiblingId property" Url="html/P_Smartsheet_Api_Models_RowWrapper_SiblingId.htm" />
+  <HelpKINode Title="RowWrapper.ToBottom property" Url="html/P_Smartsheet_Api_Models_RowWrapper_ToBottom.htm" />
+  <HelpKINode Title="RowWrapper.ToTop property" Url="html/P_Smartsheet_Api_Models_RowWrapper_ToTop.htm" />
+  <HelpKINode Title="RYG enumeration member" Url="html/T_Smartsheet_Api_Models_Symbol.htm" />
+  <HelpKINode Title="Search method">
+    <HelpKINode Title="SearchResources.Search Method " Url="html/M_Smartsheet_Api_SearchResources_Search.htm" />
+    <HelpKINode Title="SmartsheetClient.Search Method " Url="html/M_Smartsheet_Api_SmartsheetClient_Search.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SearchResources interface">
+    <HelpKINode Title="SearchResources Interface" Url="html/T_Smartsheet_Api_SearchResources.htm" />
+    <HelpKINode Title="about SearchResources interface" Url="html/T_Smartsheet_Api_SearchResources.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Smartsheet_Api_SearchResources.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SearchResources.Search method" Url="html/M_Smartsheet_Api_SearchResources_Search.htm" />
+  <HelpKINode Title="SearchResources.SearchSheet method" Url="html/M_Smartsheet_Api_SearchResources_SearchSheet.htm" />
+  <HelpKINode Title="SearchResult class">
+    <HelpKINode Title="SearchResult Class" Url="html/T_Smartsheet_Api_Models_SearchResult.htm" />
+    <HelpKINode Title="about SearchResult class" Url="html/T_Smartsheet_Api_Models_SearchResult.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_Models_SearchResult__ctor.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_Models_SearchResult.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SearchResult.Results property" Url="html/P_Smartsheet_Api_Models_SearchResult_Results.htm" />
+  <HelpKINode Title="SearchResult.SearchResult constructor" Url="html/M_Smartsheet_Api_Models_SearchResult__ctor.htm" />
+  <HelpKINode Title="SearchResult.TotalCount property" Url="html/P_Smartsheet_Api_Models_SearchResult_TotalCount.htm" />
+  <HelpKINode Title="SearchResultItem class">
+    <HelpKINode Title="SearchResultItem Class" Url="html/T_Smartsheet_Api_Models_SearchResultItem.htm" />
+    <HelpKINode Title="about SearchResultItem class" Url="html/T_Smartsheet_Api_Models_SearchResultItem.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_Models_SearchResultItem__ctor.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_Models_SearchResultItem.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SearchResultItem.ContextData property" Url="html/P_Smartsheet_Api_Models_SearchResultItem_ContextData.htm" />
+  <HelpKINode Title="SearchResultItem.ObjectId property" Url="html/P_Smartsheet_Api_Models_SearchResultItem_ObjectId.htm" />
+  <HelpKINode Title="SearchResultItem.ObjectType property" Url="html/P_Smartsheet_Api_Models_SearchResultItem_ObjectType.htm" />
+  <HelpKINode Title="SearchResultItem.ParentObjectId property" Url="html/P_Smartsheet_Api_Models_SearchResultItem_ParentObjectId.htm" />
+  <HelpKINode Title="SearchResultItem.ParentObjectName property" Url="html/P_Smartsheet_Api_Models_SearchResultItem_ParentObjectName.htm" />
+  <HelpKINode Title="SearchResultItem.ParentObjectType property" Url="html/P_Smartsheet_Api_Models_SearchResultItem_ParentObjectType.htm" />
+  <HelpKINode Title="SearchResultItem.SearchResultItem constructor" Url="html/M_Smartsheet_Api_Models_SearchResultItem__ctor.htm" />
+  <HelpKINode Title="SearchResultItem.Text property" Url="html/P_Smartsheet_Api_Models_SearchResultItem_Text.htm" />
+  <HelpKINode Title="SearchSheet method" Url="html/M_Smartsheet_Api_SearchResources_SearchSheet.htm" />
+  <HelpKINode Title="SendRow method" Url="html/M_Smartsheet_Api_RowResources_SendRow.htm" />
+  <HelpKINode Title="SendSheet method" Url="html/M_Smartsheet_Api_SheetResources_SendSheet.htm" />
+  <HelpKINode Title="ServiceUnavailableException class">
+    <HelpKINode Title="ServiceUnavailableException Class" Url="html/T_Smartsheet_Api_ServiceUnavailableException.htm" />
+    <HelpKINode Title="about ServiceUnavailableException class" Url="html/T_Smartsheet_Api_ServiceUnavailableException.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_ServiceUnavailableException__ctor.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ServiceUnavailableException.ServiceUnavailableException constructor" Url="html/M_Smartsheet_Api_ServiceUnavailableException__ctor.htm" />
+  <HelpKINode Title="SetAccessLevel method">
+    <HelpKINode Title="MultiShare.ShareToManyBuilder.SetAccessLevel Method " Url="html/M_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder_SetAccessLevel.htm" />
+    <HelpKINode Title="Share.ShareToOneBuilder.SetAccessLevel Method " Url="html/M_Smartsheet_Api_Models_Share_ShareToOneBuilder_SetAccessLevel.htm" />
+    <HelpKINode Title="Share.UpdateShareBuilder.SetAccessLevel Method " Url="html/M_Smartsheet_Api_Models_Share_UpdateShareBuilder_SetAccessLevel.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SetAccessToken method" Url="html/M_Smartsheet_Api_SmartsheetBuilder_SetAccessToken.htm" />
+  <HelpKINode Title="SetAdmin method">
+    <HelpKINode Title="User.AddUserBuilder.SetAdmin Method " Url="html/M_Smartsheet_Api_Models_User_AddUserBuilder_SetAdmin.htm" />
+    <HelpKINode Title="User.UpdateUserBuilder.SetAdmin Method " Url="html/M_Smartsheet_Api_Models_User_UpdateUserBuilder_SetAdmin.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SetAssumedUser method" Url="html/M_Smartsheet_Api_SmartsheetBuilder_SetAssumedUser.htm" />
+  <HelpKINode Title="SetAuthorizationURL method" Url="html/M_Smartsheet_Api_OAuth_OAuthFlowBuilder_SetAuthorizationURL.htm" />
+  <HelpKINode Title="SetAutoNumberFormat method">
+    <HelpKINode Title="Column.AddColumnToSheetBuilder.SetAutoNumberFormat Method " Url="html/M_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_SetAutoNumberFormat.htm" />
+    <HelpKINode Title="Column.ModifyColumnBuilder.SetAutoNumberFormat Method " Url="html/M_Smartsheet_Api_Models_Column_ModifyColumnBuilder_SetAutoNumberFormat.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SetBaseURI method" Url="html/M_Smartsheet_Api_SmartsheetBuilder_SetBaseURI.htm" />
+  <HelpKINode Title="SetCCMe method" Url="html/M_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder_SetCCMe.htm" />
+  <HelpKINode Title="SetClientId method" Url="html/M_Smartsheet_Api_OAuth_OAuthFlowBuilder_SetClientId.htm" />
+  <HelpKINode Title="SetClientSecret method" Url="html/M_Smartsheet_Api_OAuth_OAuthFlowBuilder_SetClientSecret.htm" />
+  <HelpKINode Title="SetColumns method" Url="html/M_Smartsheet_Api_Models_Sheet_CreateSheetBuilder_SetColumns.htm" />
+  <HelpKINode Title="SetComment method" Url="html/M_Smartsheet_Api_Models_Discussion_CreateDiscussionBuilder_SetComment.htm" />
+  <HelpKINode Title="SetEmail method">
+    <HelpKINode Title="Share.ShareToOneBuilder.SetEmail Method " Url="html/M_Smartsheet_Api_Models_Share_ShareToOneBuilder_SetEmail.htm" />
+    <HelpKINode Title="User.AddUserBuilder.SetEmail Method " Url="html/M_Smartsheet_Api_Models_User_AddUserBuilder_SetEmail.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SetFromId method" Url="html/M_Smartsheet_Api_Models_Sheet_CreateFromTemplateOrSheetBuilder_SetFromId.htm" />
+  <HelpKINode Title="SetHttpClient method">
+    <HelpKINode Title="OAuthFlowBuilder.SetHttpClient Method " Url="html/M_Smartsheet_Api_OAuth_OAuthFlowBuilder_SetHttpClient.htm" />
+    <HelpKINode Title="SmartsheetBuilder.SetHttpClient Method " Url="html/M_Smartsheet_Api_SmartsheetBuilder_SetHttpClient.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SetIcalEnabled method" Url="html/M_Smartsheet_Api_Models_SheetPublish_PublishStatusBuilder_SetIcalEnabled.htm" />
+  <HelpKINode Title="SetID method">
+    <HelpKINode Title="Folder.UpdateFolderBuilder.SetID Method " Url="html/M_Smartsheet_Api_Models_Folder_UpdateFolderBuilder_SetID.htm" />
+    <HelpKINode Title="Sheet.UpdateSheetBuilder.SetID Method " Url="html/M_Smartsheet_Api_Models_Sheet_UpdateSheetBuilder_SetID.htm" />
+    <HelpKINode Title="User.UpdateUserBuilder.SetID Method " Url="html/M_Smartsheet_Api_Models_User_UpdateUserBuilder_SetID.htm" />
+    <HelpKINode Title="Workspace.UpdateWorkspaceBuilder.SetID Method " Url="html/M_Smartsheet_Api_Models_Workspace_UpdateWorkspaceBuilder_SetID.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SetIndex method" Url="html/M_Smartsheet_Api_Models_Column_ModifyColumnBuilder_SetIndex.htm" />
+  <HelpKINode Title="SetJsonSerializer method">
+    <HelpKINode Title="OAuthFlowBuilder.SetJsonSerializer Method " Url="html/M_Smartsheet_Api_OAuth_OAuthFlowBuilder_SetJsonSerializer.htm" />
+    <HelpKINode Title="SmartsheetBuilder.SetJsonSerializer Method " Url="html/M_Smartsheet_Api_SmartsheetBuilder_SetJsonSerializer.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SetLicensedSheetCreator method">
+    <HelpKINode Title="User.AddUserBuilder.SetLicensedSheetCreator Method " Url="html/M_Smartsheet_Api_Models_User_AddUserBuilder_SetLicensedSheetCreator.htm" />
+    <HelpKINode Title="User.UpdateUserBuilder.SetLicensedSheetCreator Method " Url="html/M_Smartsheet_Api_Models_User_UpdateUserBuilder_SetLicensedSheetCreator.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SetMessage method" Url="html/M_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder_SetMessage.htm" />
+  <HelpKINode Title="SetName method">
+    <HelpKINode Title="Folder.UpdateFolderBuilder.SetName Method " Url="html/M_Smartsheet_Api_Models_Folder_UpdateFolderBuilder_SetName.htm" />
+    <HelpKINode Title="Sheet.CreateFromTemplateOrSheetBuilder.SetName Method " Url="html/M_Smartsheet_Api_Models_Sheet_CreateFromTemplateOrSheetBuilder_SetName.htm" />
+    <HelpKINode Title="Sheet.CreateSheetBuilder.SetName Method " Url="html/M_Smartsheet_Api_Models_Sheet_CreateSheetBuilder_SetName.htm" />
+    <HelpKINode Title="Sheet.UpdateSheetBuilder.SetName Method " Url="html/M_Smartsheet_Api_Models_Sheet_UpdateSheetBuilder_SetName.htm" />
+    <HelpKINode Title="Workspace.UpdateWorkspaceBuilder.SetName Method " Url="html/M_Smartsheet_Api_Models_Workspace_UpdateWorkspaceBuilder_SetName.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SetOptions method">
+    <HelpKINode Title="Column.AddColumnToSheetBuilder.SetOptions Method " Url="html/M_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_SetOptions.htm" />
+    <HelpKINode Title="Column.ModifyColumnBuilder.SetOptions Method " Url="html/M_Smartsheet_Api_Models_Column_ModifyColumnBuilder_SetOptions.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SetParentId method">
+    <HelpKINode Title="RowWrapper.InsertRowsBuilder.SetParentId Method " Url="html/M_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder_SetParentId.htm" />
+    <HelpKINode Title="RowWrapper.MoveRowBuilder.SetParentId Method " Url="html/M_Smartsheet_Api_Models_RowWrapper_MoveRowBuilder_SetParentId.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SetPrimary method" Url="html/M_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_SetPrimary.htm" />
+  <HelpKINode Title="SetReadOnlyFullEnabled method" Url="html/M_Smartsheet_Api_Models_SheetPublish_PublishStatusBuilder_SetReadOnlyFullEnabled.htm" />
+  <HelpKINode Title="SetReadOnlyLiteEnabled method" Url="html/M_Smartsheet_Api_Models_SheetPublish_PublishStatusBuilder_SetReadOnlyLiteEnabled.htm" />
+  <HelpKINode Title="SetReadWriteEnabled method" Url="html/M_Smartsheet_Api_Models_SheetPublish_PublishStatusBuilder_SetReadWriteEnabled.htm" />
+  <HelpKINode Title="SetRedirectURL method" Url="html/M_Smartsheet_Api_OAuth_OAuthFlowBuilder_SetRedirectURL.htm" />
+  <HelpKINode Title="SetRows method" Url="html/M_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder_SetRows.htm" />
+  <HelpKINode Title="SetSheetId method" Url="html/M_Smartsheet_Api_Models_Column_ModifyColumnBuilder_SetSheetId.htm" />
+  <HelpKINode Title="SetSiblingId method">
+    <HelpKINode Title="RowWrapper.InsertRowsBuilder.SetSiblingId Method " Url="html/M_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder_SetSiblingId.htm" />
+    <HelpKINode Title="RowWrapper.MoveRowBuilder.SetSiblingId Method " Url="html/M_Smartsheet_Api_Models_RowWrapper_MoveRowBuilder_SetSiblingId.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SetSubject method" Url="html/M_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder_SetSubject.htm" />
+  <HelpKINode Title="SetSymbol method">
+    <HelpKINode Title="Column.AddColumnToSheetBuilder.SetSymbol Method " Url="html/M_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_SetSymbol.htm" />
+    <HelpKINode Title="Column.ModifyColumnBuilder.SetSymbol Method " Url="html/M_Smartsheet_Api_Models_Column_ModifyColumnBuilder_SetSymbol.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SetSystemColumnType method">
+    <HelpKINode Title="Column.AddColumnToSheetBuilder.SetSystemColumnType Method " Url="html/M_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_SetSystemColumnType.htm" />
+    <HelpKINode Title="Column.ModifyColumnBuilder.SetSystemColumnType Method " Url="html/M_Smartsheet_Api_Models_Column_ModifyColumnBuilder_SetSystemColumnType.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SetText method" Url="html/M_Smartsheet_Api_Models_Comment_AddCommentBuilder_SetText.htm" />
+  <HelpKINode Title="SetTitle method">
+    <HelpKINode Title="Column.AddColumnToSheetBuilder.SetTitle Method " Url="html/M_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_SetTitle.htm" />
+    <HelpKINode Title="Column.ModifyColumnBuilder.SetTitle Method " Url="html/M_Smartsheet_Api_Models_Column_ModifyColumnBuilder_SetTitle.htm" />
+    <HelpKINode Title="Discussion.CreateDiscussionBuilder.SetTitle Method " Url="html/M_Smartsheet_Api_Models_Discussion_CreateDiscussionBuilder_SetTitle.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SetToBottom method">
+    <HelpKINode Title="RowWrapper.InsertRowsBuilder.SetToBottom Method " Url="html/M_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder_SetToBottom.htm" />
+    <HelpKINode Title="RowWrapper.MoveRowBuilder.SetToBottom Method " Url="html/M_Smartsheet_Api_Models_RowWrapper_MoveRowBuilder_SetToBottom.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SetTokenURL method" Url="html/M_Smartsheet_Api_OAuth_OAuthFlowBuilder_SetTokenURL.htm" />
+  <HelpKINode Title="SetToTop method">
+    <HelpKINode Title="RowWrapper.InsertRowsBuilder.SetToTop Method " Url="html/M_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder_SetToTop.htm" />
+    <HelpKINode Title="RowWrapper.MoveRowBuilder.SetToTop Method " Url="html/M_Smartsheet_Api_Models_RowWrapper_MoveRowBuilder_SetToTop.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SetType method">
+    <HelpKINode Title="Column.AddColumnToSheetBuilder.SetType Method " Url="html/M_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_SetType.htm" />
+    <HelpKINode Title="Column.ModifyColumnBuilder.SetType Method " Url="html/M_Smartsheet_Api_Models_Column_ModifyColumnBuilder_SetType.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SetUsers method" Url="html/M_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder_SetUsers.htm" />
+  <HelpKINode Title="Share class">
+    <HelpKINode Title="Share Class" Url="html/T_Smartsheet_Api_Models_Share.htm" />
+    <HelpKINode Title="about Share class" Url="html/T_Smartsheet_Api_Models_Share.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_Models_Share__ctor.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_Models_Share.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Share.AccessLevel property" Url="html/P_Smartsheet_Api_Models_Share_AccessLevel.htm" />
+  <HelpKINode Title="Share.Email property" Url="html/P_Smartsheet_Api_Models_Share_Email.htm" />
+  <HelpKINode Title="Share.Share constructor" Url="html/M_Smartsheet_Api_Models_Share__ctor.htm" />
+  <HelpKINode Title="Share.ShareToOneBuilder class">
+    <HelpKINode Title="Share.ShareToOneBuilder Class" Url="html/T_Smartsheet_Api_Models_Share_ShareToOneBuilder.htm" />
+    <HelpKINode Title="about Share.ShareToOneBuilder class" Url="html/T_Smartsheet_Api_Models_Share_ShareToOneBuilder.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_Models_Share_ShareToOneBuilder__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Smartsheet_Api_Models_Share_ShareToOneBuilder.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_Models_Share_ShareToOneBuilder.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Share.ShareToOneBuilder.AccessLevel property" Url="html/P_Smartsheet_Api_Models_Share_ShareToOneBuilder_AccessLevel.htm" />
+  <HelpKINode Title="Share.ShareToOneBuilder.Build method" Url="html/M_Smartsheet_Api_Models_Share_ShareToOneBuilder_Build.htm" />
+  <HelpKINode Title="Share.ShareToOneBuilder.Email property" Url="html/P_Smartsheet_Api_Models_Share_ShareToOneBuilder_Email.htm" />
+  <HelpKINode Title="Share.ShareToOneBuilder.SetAccessLevel method" Url="html/M_Smartsheet_Api_Models_Share_ShareToOneBuilder_SetAccessLevel.htm" />
+  <HelpKINode Title="Share.ShareToOneBuilder.SetEmail method" Url="html/M_Smartsheet_Api_Models_Share_ShareToOneBuilder_SetEmail.htm" />
+  <HelpKINode Title="Share.ShareToOneBuilder.ShareToOneBuilder constructor" Url="html/M_Smartsheet_Api_Models_Share_ShareToOneBuilder__ctor.htm" />
+  <HelpKINode Title="Share.UpdateShareBuilder class">
+    <HelpKINode Title="Share.UpdateShareBuilder Class" Url="html/T_Smartsheet_Api_Models_Share_UpdateShareBuilder.htm" />
+    <HelpKINode Title="about Share.UpdateShareBuilder class" Url="html/T_Smartsheet_Api_Models_Share_UpdateShareBuilder.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_Models_Share_UpdateShareBuilder__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Smartsheet_Api_Models_Share_UpdateShareBuilder.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_Models_Share_UpdateShareBuilder.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Share.UpdateShareBuilder.AccessLevel property" Url="html/P_Smartsheet_Api_Models_Share_UpdateShareBuilder_AccessLevel.htm" />
+  <HelpKINode Title="Share.UpdateShareBuilder.Build method" Url="html/M_Smartsheet_Api_Models_Share_UpdateShareBuilder_Build.htm" />
+  <HelpKINode Title="Share.UpdateShareBuilder.SetAccessLevel method" Url="html/M_Smartsheet_Api_Models_Share_UpdateShareBuilder_SetAccessLevel.htm" />
+  <HelpKINode Title="Share.UpdateShareBuilder.UpdateShareBuilder constructor" Url="html/M_Smartsheet_Api_Models_Share_UpdateShareBuilder__ctor.htm" />
+  <HelpKINode Title="ShareResources interface">
+    <HelpKINode Title="ShareResources Interface" Url="html/T_Smartsheet_Api_ShareResources.htm" />
+    <HelpKINode Title="about ShareResources interface" Url="html/T_Smartsheet_Api_ShareResources.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Smartsheet_Api_ShareResources.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ShareResources.DeleteShare method" Url="html/M_Smartsheet_Api_ShareResources_DeleteShare.htm" />
+  <HelpKINode Title="ShareResources.GetShare method" Url="html/M_Smartsheet_Api_ShareResources_GetShare.htm" />
+  <HelpKINode Title="ShareResources.ListShares method" Url="html/M_Smartsheet_Api_ShareResources_ListShares.htm" />
+  <HelpKINode Title="ShareResources.ShareTo method" Url="html/Overload_Smartsheet_Api_ShareResources_ShareTo.htm" />
+  <HelpKINode Title="ShareResources.UpdateShare method" Url="html/M_Smartsheet_Api_ShareResources_UpdateShare.htm" />
+  <HelpKINode Title="Shares method">
+    <HelpKINode Title="SheetResources.Shares Method " Url="html/M_Smartsheet_Api_SheetResources_Shares.htm" />
+    <HelpKINode Title="WorkspaceResources.Shares Method " Url="html/M_Smartsheet_Api_WorkspaceResources_Shares.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ShareTo method" Url="html/Overload_Smartsheet_Api_ShareResources_ShareTo.htm" />
+  <HelpKINode Title="SHARE_SHEETS enumeration member">
+    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_OAuth_AccessScope.htm" />
+    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_Models_AccessScope.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Sheet class">
+    <HelpKINode Title="Sheet Class" Url="html/T_Smartsheet_Api_Models_Sheet.htm" />
+    <HelpKINode Title="about Sheet class" Url="html/T_Smartsheet_Api_Models_Sheet.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_Models_Sheet__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Smartsheet_Api_Models_Sheet.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_Models_Sheet.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SHEET enumeration member" Url="html/T_Smartsheet_Api_Models_AttachmentParentType.htm" />
+  <HelpKINode Title="Sheet.AccessLevel property" Url="html/P_Smartsheet_Api_Models_Sheet_AccessLevel.htm" />
+  <HelpKINode Title="Sheet.Attachments property" Url="html/P_Smartsheet_Api_Models_Sheet_Attachments.htm" />
+  <HelpKINode Title="Sheet.Columns property" Url="html/P_Smartsheet_Api_Models_Sheet_Columns.htm" />
+  <HelpKINode Title="Sheet.CreatedAt property" Url="html/P_Smartsheet_Api_Models_Sheet_CreatedAt.htm" />
+  <HelpKINode Title="Sheet.CreateFromTemplateOrSheetBuilder class">
+    <HelpKINode Title="Sheet.CreateFromTemplateOrSheetBuilder Class" Url="html/T_Smartsheet_Api_Models_Sheet_CreateFromTemplateOrSheetBuilder.htm" />
+    <HelpKINode Title="about Sheet.CreateFromTemplateOrSheetBuilder class" Url="html/T_Smartsheet_Api_Models_Sheet_CreateFromTemplateOrSheetBuilder.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_Models_Sheet_CreateFromTemplateOrSheetBuilder__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Smartsheet_Api_Models_Sheet_CreateFromTemplateOrSheetBuilder.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_Models_Sheet_CreateFromTemplateOrSheetBuilder.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Sheet.CreateFromTemplateOrSheetBuilder.Build method" Url="html/M_Smartsheet_Api_Models_Sheet_CreateFromTemplateOrSheetBuilder_Build.htm" />
+  <HelpKINode Title="Sheet.CreateFromTemplateOrSheetBuilder.CreateFromTemplateOrSheetBuilder constructor" Url="html/M_Smartsheet_Api_Models_Sheet_CreateFromTemplateOrSheetBuilder__ctor.htm" />
+  <HelpKINode Title="Sheet.CreateFromTemplateOrSheetBuilder.FromId property" Url="html/P_Smartsheet_Api_Models_Sheet_CreateFromTemplateOrSheetBuilder_FromId.htm" />
+  <HelpKINode Title="Sheet.CreateFromTemplateOrSheetBuilder.Name property" Url="html/P_Smartsheet_Api_Models_Sheet_CreateFromTemplateOrSheetBuilder_Name.htm" />
+  <HelpKINode Title="Sheet.CreateFromTemplateOrSheetBuilder.SetFromId method" Url="html/M_Smartsheet_Api_Models_Sheet_CreateFromTemplateOrSheetBuilder_SetFromId.htm" />
+  <HelpKINode Title="Sheet.CreateFromTemplateOrSheetBuilder.SetName method" Url="html/M_Smartsheet_Api_Models_Sheet_CreateFromTemplateOrSheetBuilder_SetName.htm" />
+  <HelpKINode Title="Sheet.CreateSheetBuilder class">
+    <HelpKINode Title="Sheet.CreateSheetBuilder Class" Url="html/T_Smartsheet_Api_Models_Sheet_CreateSheetBuilder.htm" />
+    <HelpKINode Title="about Sheet.CreateSheetBuilder class" Url="html/T_Smartsheet_Api_Models_Sheet_CreateSheetBuilder.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_Models_Sheet_CreateSheetBuilder__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Smartsheet_Api_Models_Sheet_CreateSheetBuilder.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_Models_Sheet_CreateSheetBuilder.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Sheet.CreateSheetBuilder.Build method" Url="html/M_Smartsheet_Api_Models_Sheet_CreateSheetBuilder_Build.htm" />
+  <HelpKINode Title="Sheet.CreateSheetBuilder.Columns property" Url="html/P_Smartsheet_Api_Models_Sheet_CreateSheetBuilder_Columns.htm" />
+  <HelpKINode Title="Sheet.CreateSheetBuilder.CreateSheetBuilder constructor" Url="html/M_Smartsheet_Api_Models_Sheet_CreateSheetBuilder__ctor.htm" />
+  <HelpKINode Title="Sheet.CreateSheetBuilder.Name property" Url="html/P_Smartsheet_Api_Models_Sheet_CreateSheetBuilder_Name.htm" />
+  <HelpKINode Title="Sheet.CreateSheetBuilder.SetColumns method" Url="html/M_Smartsheet_Api_Models_Sheet_CreateSheetBuilder_SetColumns.htm" />
+  <HelpKINode Title="Sheet.CreateSheetBuilder.SetName method" Url="html/M_Smartsheet_Api_Models_Sheet_CreateSheetBuilder_SetName.htm" />
+  <HelpKINode Title="Sheet.DependenciesEnabled property" Url="html/P_Smartsheet_Api_Models_Sheet_DependenciesEnabled.htm" />
+  <HelpKINode Title="Sheet.Discussions property" Url="html/P_Smartsheet_Api_Models_Sheet_Discussions.htm" />
+  <HelpKINode Title="Sheet.FromId property" Url="html/P_Smartsheet_Api_Models_Sheet_FromId.htm" />
+  <HelpKINode Title="Sheet.GanttEnabled property" Url="html/P_Smartsheet_Api_Models_Sheet_GanttEnabled.htm" />
+  <HelpKINode Title="Sheet.GetColumnById method" Url="html/M_Smartsheet_Api_Models_Sheet_GetColumnById.htm" />
+  <HelpKINode Title="Sheet.GetColumnByIndex method" Url="html/M_Smartsheet_Api_Models_Sheet_GetColumnByIndex.htm" />
+  <HelpKINode Title="Sheet.GetRowByRowNumber method" Url="html/M_Smartsheet_Api_Models_Sheet_GetRowByRowNumber.htm" />
+  <HelpKINode Title="Sheet.ModifiedAt property" Url="html/P_Smartsheet_Api_Models_Sheet_ModifiedAt.htm" />
+  <HelpKINode Title="Sheet.Permalink property" Url="html/P_Smartsheet_Api_Models_Sheet_Permalink.htm" />
+  <HelpKINode Title="Sheet.ReadOnly property" Url="html/P_Smartsheet_Api_Models_Sheet_ReadOnly.htm" />
+  <HelpKINode Title="Sheet.Rows property" Url="html/P_Smartsheet_Api_Models_Sheet_Rows.htm" />
+  <HelpKINode Title="Sheet.Sheet constructor" Url="html/M_Smartsheet_Api_Models_Sheet__ctor.htm" />
+  <HelpKINode Title="Sheet.UpdateSheetBuilder class">
+    <HelpKINode Title="Sheet.UpdateSheetBuilder Class" Url="html/T_Smartsheet_Api_Models_Sheet_UpdateSheetBuilder.htm" />
+    <HelpKINode Title="about Sheet.UpdateSheetBuilder class" Url="html/T_Smartsheet_Api_Models_Sheet_UpdateSheetBuilder.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_Models_Sheet_UpdateSheetBuilder__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Smartsheet_Api_Models_Sheet_UpdateSheetBuilder.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_Models_Sheet_UpdateSheetBuilder.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Sheet.UpdateSheetBuilder.Build method" Url="html/M_Smartsheet_Api_Models_Sheet_UpdateSheetBuilder_Build.htm" />
+  <HelpKINode Title="Sheet.UpdateSheetBuilder.ID property" Url="html/P_Smartsheet_Api_Models_Sheet_UpdateSheetBuilder_ID.htm" />
+  <HelpKINode Title="Sheet.UpdateSheetBuilder.Name property" Url="html/P_Smartsheet_Api_Models_Sheet_UpdateSheetBuilder_Name.htm" />
+  <HelpKINode Title="Sheet.UpdateSheetBuilder.SetID method" Url="html/M_Smartsheet_Api_Models_Sheet_UpdateSheetBuilder_SetID.htm" />
+  <HelpKINode Title="Sheet.UpdateSheetBuilder.SetName method" Url="html/M_Smartsheet_Api_Models_Sheet_UpdateSheetBuilder_SetName.htm" />
+  <HelpKINode Title="Sheet.UpdateSheetBuilder.UpdateSheetBuilder constructor" Url="html/M_Smartsheet_Api_Models_Sheet_UpdateSheetBuilder__ctor.htm" />
+  <HelpKINode Title="Sheet.Version property" Url="html/P_Smartsheet_Api_Models_Sheet_Version.htm" />
+  <HelpKINode Title="SheetColumnResources interface">
+    <HelpKINode Title="SheetColumnResources Interface" Url="html/T_Smartsheet_Api_SheetColumnResources.htm" />
+    <HelpKINode Title="about SheetColumnResources interface" Url="html/T_Smartsheet_Api_SheetColumnResources.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Smartsheet_Api_SheetColumnResources.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SheetColumnResources.AddColumn method" Url="html/M_Smartsheet_Api_SheetColumnResources_AddColumn.htm" />
+  <HelpKINode Title="SheetColumnResources.ListColumns method" Url="html/M_Smartsheet_Api_SheetColumnResources_ListColumns.htm" />
+  <HelpKINode Title="SheetEmail class">
+    <HelpKINode Title="SheetEmail Class" Url="html/T_Smartsheet_Api_Models_SheetEmail.htm" />
+    <HelpKINode Title="about SheetEmail class" Url="html/T_Smartsheet_Api_Models_SheetEmail.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_Models_SheetEmail__ctor.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_Models_SheetEmail.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SheetEmail.Format property" Url="html/P_Smartsheet_Api_Models_SheetEmail_Format.htm" />
+  <HelpKINode Title="SheetEmail.FormatDetails property" Url="html/P_Smartsheet_Api_Models_SheetEmail_FormatDetails.htm" />
+  <HelpKINode Title="SheetEmail.SheetEmail constructor" Url="html/M_Smartsheet_Api_Models_SheetEmail__ctor.htm" />
+  <HelpKINode Title="SheetEmailFormat enumeration" Url="html/T_Smartsheet_Api_Models_SheetEmailFormat.htm" />
+  <HelpKINode Title="SheetId property">
+    <HelpKINode Title="Column.ModifyColumnBuilder.SheetId Property " Url="html/P_Smartsheet_Api_Models_Column_ModifyColumnBuilder_SheetId.htm" />
+    <HelpKINode Title="Column.SheetId Property " Url="html/P_Smartsheet_Api_Models_Column_SheetId.htm" />
+    <HelpKINode Title="Link.SheetId Property " Url="html/P_Smartsheet_Api_Models_Link_SheetId.htm" />
+    <HelpKINode Title="Row.SheetId Property " Url="html/P_Smartsheet_Api_Models_Row_SheetId.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SHEETLINK enumeration member" Url="html/T_Smartsheet_Api_Models_LinkType.htm" />
+  <HelpKINode Title="SheetPublish class">
+    <HelpKINode Title="SheetPublish Class" Url="html/T_Smartsheet_Api_Models_SheetPublish.htm" />
+    <HelpKINode Title="about SheetPublish class" Url="html/T_Smartsheet_Api_Models_SheetPublish.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_Models_SheetPublish__ctor.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_Models_SheetPublish.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SheetPublish.IcalEnabled property" Url="html/P_Smartsheet_Api_Models_SheetPublish_IcalEnabled.htm" />
+  <HelpKINode Title="SheetPublish.IcalUrl property" Url="html/P_Smartsheet_Api_Models_SheetPublish_IcalUrl.htm" />
+  <HelpKINode Title="SheetPublish.PublishStatusBuilder class">
+    <HelpKINode Title="SheetPublish.PublishStatusBuilder Class" Url="html/T_Smartsheet_Api_Models_SheetPublish_PublishStatusBuilder.htm" />
+    <HelpKINode Title="about SheetPublish.PublishStatusBuilder class" Url="html/T_Smartsheet_Api_Models_SheetPublish_PublishStatusBuilder.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_Models_SheetPublish_PublishStatusBuilder__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Smartsheet_Api_Models_SheetPublish_PublishStatusBuilder.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_Models_SheetPublish_PublishStatusBuilder.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SheetPublish.PublishStatusBuilder.Build method" Url="html/M_Smartsheet_Api_Models_SheetPublish_PublishStatusBuilder_Build.htm" />
+  <HelpKINode Title="SheetPublish.PublishStatusBuilder.IcalEnabled property" Url="html/P_Smartsheet_Api_Models_SheetPublish_PublishStatusBuilder_IcalEnabled.htm" />
+  <HelpKINode Title="SheetPublish.PublishStatusBuilder.PublishStatusBuilder constructor" Url="html/M_Smartsheet_Api_Models_SheetPublish_PublishStatusBuilder__ctor.htm" />
+  <HelpKINode Title="SheetPublish.PublishStatusBuilder.ReadOnlyFullEnabled property" Url="html/P_Smartsheet_Api_Models_SheetPublish_PublishStatusBuilder_ReadOnlyFullEnabled.htm" />
+  <HelpKINode Title="SheetPublish.PublishStatusBuilder.ReadOnlyLiteEnabled property" Url="html/P_Smartsheet_Api_Models_SheetPublish_PublishStatusBuilder_ReadOnlyLiteEnabled.htm" />
+  <HelpKINode Title="SheetPublish.PublishStatusBuilder.ReadWriteEnabled property" Url="html/P_Smartsheet_Api_Models_SheetPublish_PublishStatusBuilder_ReadWriteEnabled.htm" />
+  <HelpKINode Title="SheetPublish.PublishStatusBuilder.SetIcalEnabled method" Url="html/M_Smartsheet_Api_Models_SheetPublish_PublishStatusBuilder_SetIcalEnabled.htm" />
+  <HelpKINode Title="SheetPublish.PublishStatusBuilder.SetReadOnlyFullEnabled method" Url="html/M_Smartsheet_Api_Models_SheetPublish_PublishStatusBuilder_SetReadOnlyFullEnabled.htm" />
+  <HelpKINode Title="SheetPublish.PublishStatusBuilder.SetReadOnlyLiteEnabled method" Url="html/M_Smartsheet_Api_Models_SheetPublish_PublishStatusBuilder_SetReadOnlyLiteEnabled.htm" />
+  <HelpKINode Title="SheetPublish.PublishStatusBuilder.SetReadWriteEnabled method" Url="html/M_Smartsheet_Api_Models_SheetPublish_PublishStatusBuilder_SetReadWriteEnabled.htm" />
+  <HelpKINode Title="SheetPublish.ReadOnlyFullEnabled property" Url="html/P_Smartsheet_Api_Models_SheetPublish_ReadOnlyFullEnabled.htm" />
+  <HelpKINode Title="SheetPublish.ReadOnlyFullUrl property" Url="html/P_Smartsheet_Api_Models_SheetPublish_ReadOnlyFullUrl.htm" />
+  <HelpKINode Title="SheetPublish.ReadOnlyLiteEnabled property" Url="html/P_Smartsheet_Api_Models_SheetPublish_ReadOnlyLiteEnabled.htm" />
+  <HelpKINode Title="SheetPublish.ReadOnlyLiteUrl property" Url="html/P_Smartsheet_Api_Models_SheetPublish_ReadOnlyLiteUrl.htm" />
+  <HelpKINode Title="SheetPublish.ReadWriteEnabled property" Url="html/P_Smartsheet_Api_Models_SheetPublish_ReadWriteEnabled.htm" />
+  <HelpKINode Title="SheetPublish.ReadWriteUrl property" Url="html/P_Smartsheet_Api_Models_SheetPublish_ReadWriteUrl.htm" />
+  <HelpKINode Title="SheetPublish.SheetPublish constructor" Url="html/M_Smartsheet_Api_Models_SheetPublish__ctor.htm" />
+  <HelpKINode Title="SheetResources interface">
+    <HelpKINode Title="SheetResources Interface" Url="html/T_Smartsheet_Api_SheetResources.htm" />
+    <HelpKINode Title="about SheetResources interface" Url="html/T_Smartsheet_Api_SheetResources.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Smartsheet_Api_SheetResources.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SheetResources.Attachments method" Url="html/M_Smartsheet_Api_SheetResources_Attachments.htm" />
+  <HelpKINode Title="SheetResources.Columns method" Url="html/M_Smartsheet_Api_SheetResources_Columns.htm" />
+  <HelpKINode Title="SheetResources.CreateSheet method" Url="html/M_Smartsheet_Api_SheetResources_CreateSheet.htm" />
+  <HelpKINode Title="SheetResources.CreateSheetFromExisting method" Url="html/M_Smartsheet_Api_SheetResources_CreateSheetFromExisting.htm" />
+  <HelpKINode Title="SheetResources.CreateSheetInFolder method" Url="html/M_Smartsheet_Api_SheetResources_CreateSheetInFolder.htm" />
+  <HelpKINode Title="SheetResources.CreateSheetInFolderFromExisting method" Url="html/M_Smartsheet_Api_SheetResources_CreateSheetInFolderFromExisting.htm" />
+  <HelpKINode Title="SheetResources.CreateSheetInWorkspace method" Url="html/M_Smartsheet_Api_SheetResources_CreateSheetInWorkspace.htm" />
+  <HelpKINode Title="SheetResources.CreateSheetInWorkspaceFromExisting method" Url="html/M_Smartsheet_Api_SheetResources_CreateSheetInWorkspaceFromExisting.htm" />
+  <HelpKINode Title="SheetResources.DeleteSheet method" Url="html/M_Smartsheet_Api_SheetResources_DeleteSheet.htm" />
+  <HelpKINode Title="SheetResources.Discussions method" Url="html/M_Smartsheet_Api_SheetResources_Discussions.htm" />
+  <HelpKINode Title="SheetResources.GetPublishStatus method" Url="html/M_Smartsheet_Api_SheetResources_GetPublishStatus.htm" />
+  <HelpKINode Title="SheetResources.GetSheet method" Url="html/M_Smartsheet_Api_SheetResources_GetSheet.htm" />
+  <HelpKINode Title="SheetResources.GetSheetAsExcel method" Url="html/M_Smartsheet_Api_SheetResources_GetSheetAsExcel.htm" />
+  <HelpKINode Title="SheetResources.GetSheetAsPDF method" Url="html/M_Smartsheet_Api_SheetResources_GetSheetAsPDF.htm" />
+  <HelpKINode Title="SheetResources.GetSheetVersion method" Url="html/M_Smartsheet_Api_SheetResources_GetSheetVersion.htm" />
+  <HelpKINode Title="SheetResources.ListOrganizationSheets method" Url="html/M_Smartsheet_Api_SheetResources_ListOrganizationSheets.htm" />
+  <HelpKINode Title="SheetResources.ListSheets method" Url="html/M_Smartsheet_Api_SheetResources_ListSheets.htm" />
+  <HelpKINode Title="SheetResources.Rows method" Url="html/M_Smartsheet_Api_SheetResources_Rows.htm" />
+  <HelpKINode Title="SheetResources.SendSheet method" Url="html/M_Smartsheet_Api_SheetResources_SendSheet.htm" />
+  <HelpKINode Title="SheetResources.Shares method" Url="html/M_Smartsheet_Api_SheetResources_Shares.htm" />
+  <HelpKINode Title="SheetResources.UpdatePublishStatus method" Url="html/M_Smartsheet_Api_SheetResources_UpdatePublishStatus.htm" />
+  <HelpKINode Title="SheetResources.UpdateSheet method" Url="html/M_Smartsheet_Api_SheetResources_UpdateSheet.htm" />
+  <HelpKINode Title="SheetRowResources interface">
+    <HelpKINode Title="SheetRowResources Interface" Url="html/T_Smartsheet_Api_SheetRowResources.htm" />
+    <HelpKINode Title="about SheetRowResources interface" Url="html/T_Smartsheet_Api_SheetRowResources.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Smartsheet_Api_SheetRowResources.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SheetRowResources.GetRow method" Url="html/M_Smartsheet_Api_SheetRowResources_GetRow.htm" />
+  <HelpKINode Title="SheetRowResources.InsertRows method" Url="html/M_Smartsheet_Api_SheetRowResources_InsertRows.htm" />
+  <HelpKINode Title="Sheets method" Url="html/M_Smartsheet_Api_SmartsheetClient_Sheets.htm" />
+  <HelpKINode Title="Sheets property">
+    <HelpKINode Title="Folder.Sheets Property " Url="html/P_Smartsheet_Api_Models_Folder_Sheets.htm" />
+    <HelpKINode Title="Home.Sheets Property " Url="html/P_Smartsheet_Api_Models_Home_Sheets.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SiblingId property">
+    <HelpKINode Title="RowWrapper.InsertRowsBuilder.SiblingId Property " Url="html/P_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder_SiblingId.htm" />
+    <HelpKINode Title="RowWrapper.MoveRowBuilder.SiblingId Property " Url="html/P_Smartsheet_Api_Models_RowWrapper_MoveRowBuilder_SiblingId.htm" />
+    <HelpKINode Title="RowWrapper.SiblingId Property " Url="html/P_Smartsheet_Api_Models_RowWrapper_SiblingId.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SizeInKb property" Url="html/P_Smartsheet_Api_Models_Attachment_SizeInKb.htm" />
+  <HelpKINode Title="Smartsheet.Api namespace" Url="html/N_Smartsheet_Api.htm" />
+  <HelpKINode Title="Smartsheet.Api.AccessTokenExpiredException class" Url="html/T_Smartsheet_Api_AccessTokenExpiredException.htm" />
+  <HelpKINode Title="Smartsheet.Api.AssociatedAttachmentResources interface" Url="html/T_Smartsheet_Api_AssociatedAttachmentResources.htm" />
+  <HelpKINode Title="Smartsheet.Api.AssociatedDiscussionResources interface" Url="html/T_Smartsheet_Api_AssociatedDiscussionResources.htm" />
+  <HelpKINode Title="Smartsheet.Api.AttachmentResources interface" Url="html/T_Smartsheet_Api_AttachmentResources.htm" />
+  <HelpKINode Title="Smartsheet.Api.AuthorizationException class" Url="html/T_Smartsheet_Api_AuthorizationException.htm" />
+  <HelpKINode Title="Smartsheet.Api.ColumnResources interface" Url="html/T_Smartsheet_Api_ColumnResources.htm" />
+  <HelpKINode Title="Smartsheet.Api.CommentResources interface" Url="html/T_Smartsheet_Api_CommentResources.htm" />
+  <HelpKINode Title="Smartsheet.Api.DiscussionResources interface" Url="html/T_Smartsheet_Api_DiscussionResources.htm" />
+  <HelpKINode Title="Smartsheet.Api.FolderResources interface" Url="html/T_Smartsheet_Api_FolderResources.htm" />
+  <HelpKINode Title="Smartsheet.Api.HomeFolderResources interface" Url="html/T_Smartsheet_Api_HomeFolderResources.htm" />
+  <HelpKINode Title="Smartsheet.Api.HomeResources interface" Url="html/T_Smartsheet_Api_HomeResources.htm" />
+  <HelpKINode Title="Smartsheet.Api.InvalidRequestException class" Url="html/T_Smartsheet_Api_InvalidRequestException.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models namespace" Url="html/N_Smartsheet_Api_Models.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.AccessLevel enumeration" Url="html/T_Smartsheet_Api_Models_AccessLevel.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.AccessScope enumeration" Url="html/T_Smartsheet_Api_Models_AccessScope.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.Attachment class" Url="html/T_Smartsheet_Api_Models_Attachment.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.AttachmentParentType enumeration" Url="html/T_Smartsheet_Api_Models_AttachmentParentType.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.AttachmentSubType enumeration" Url="html/T_Smartsheet_Api_Models_AttachmentSubType.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.AttachmentType enumeration" Url="html/T_Smartsheet_Api_Models_AttachmentType.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.AutoNumberFormat class" Url="html/T_Smartsheet_Api_Models_AutoNumberFormat.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.Cell class" Url="html/T_Smartsheet_Api_Models_Cell.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.Cell.UpdateRowCellsBuilder class" Url="html/T_Smartsheet_Api_Models_Cell_UpdateRowCellsBuilder.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.CellHistory class" Url="html/T_Smartsheet_Api_Models_CellHistory.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.Column class" Url="html/T_Smartsheet_Api_Models_Column.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.Column.AddColumnToSheetBuilder class" Url="html/T_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.Column.ModifyColumnBuilder class" Url="html/T_Smartsheet_Api_Models_Column_ModifyColumnBuilder.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.ColumnTag enumeration" Url="html/T_Smartsheet_Api_Models_ColumnTag.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.ColumnType enumeration" Url="html/T_Smartsheet_Api_Models_ColumnType.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.Comment class" Url="html/T_Smartsheet_Api_Models_Comment.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.Comment.AddCommentBuilder class" Url="html/T_Smartsheet_Api_Models_Comment_AddCommentBuilder.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.Discussion class" Url="html/T_Smartsheet_Api_Models_Discussion.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.Discussion.CreateDiscussionBuilder class" Url="html/T_Smartsheet_Api_Models_Discussion_CreateDiscussionBuilder.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.Email class" Url="html/T_Smartsheet_Api_Models_Email.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.Error class" Url="html/T_Smartsheet_Api_Models_Error.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.Folder class" Url="html/T_Smartsheet_Api_Models_Folder.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.Folder.UpdateFolderBuilder class" Url="html/T_Smartsheet_Api_Models_Folder_UpdateFolderBuilder.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.FormatDetails class" Url="html/T_Smartsheet_Api_Models_FormatDetails.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.Home class" Url="html/T_Smartsheet_Api_Models_Home.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.IdentifiableModel class" Url="html/T_Smartsheet_Api_Models_IdentifiableModel.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.Link class" Url="html/T_Smartsheet_Api_Models_Link.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.LinkType enumeration" Url="html/T_Smartsheet_Api_Models_LinkType.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.MultiShare class" Url="html/T_Smartsheet_Api_Models_MultiShare.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.MultiShare.ShareToManyBuilder class" Url="html/T_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.NamedModel class" Url="html/T_Smartsheet_Api_Models_NamedModel.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.ObjectInclusion enumeration" Url="html/T_Smartsheet_Api_Models_ObjectInclusion.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.PaperSize enumeration" Url="html/T_Smartsheet_Api_Models_PaperSize.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.RequestResult(Of T) class" Url="html/T_Smartsheet_Api_Models_RequestResult_1.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.RequestResult&lt;T&gt; class" Url="html/T_Smartsheet_Api_Models_RequestResult_1.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.Row class" Url="html/T_Smartsheet_Api_Models_Row.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.RowEmail class" Url="html/T_Smartsheet_Api_Models_RowEmail.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.RowWrapper class" Url="html/T_Smartsheet_Api_Models_RowWrapper.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.RowWrapper.InsertRowsBuilder class" Url="html/T_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.RowWrapper.MoveRowBuilder class" Url="html/T_Smartsheet_Api_Models_RowWrapper_MoveRowBuilder.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.SearchResult class" Url="html/T_Smartsheet_Api_Models_SearchResult.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.SearchResultItem class" Url="html/T_Smartsheet_Api_Models_SearchResultItem.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.Share class" Url="html/T_Smartsheet_Api_Models_Share.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.Share.ShareToOneBuilder class" Url="html/T_Smartsheet_Api_Models_Share_ShareToOneBuilder.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.Share.UpdateShareBuilder class" Url="html/T_Smartsheet_Api_Models_Share_UpdateShareBuilder.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.Sheet class" Url="html/T_Smartsheet_Api_Models_Sheet.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.Sheet.CreateFromTemplateOrSheetBuilder class" Url="html/T_Smartsheet_Api_Models_Sheet_CreateFromTemplateOrSheetBuilder.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.Sheet.CreateSheetBuilder class" Url="html/T_Smartsheet_Api_Models_Sheet_CreateSheetBuilder.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.Sheet.UpdateSheetBuilder class" Url="html/T_Smartsheet_Api_Models_Sheet_UpdateSheetBuilder.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.SheetEmail class" Url="html/T_Smartsheet_Api_Models_SheetEmail.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.SheetEmailFormat enumeration" Url="html/T_Smartsheet_Api_Models_SheetEmailFormat.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.SheetPublish class" Url="html/T_Smartsheet_Api_Models_SheetPublish.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.SheetPublish.PublishStatusBuilder class" Url="html/T_Smartsheet_Api_Models_SheetPublish_PublishStatusBuilder.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.Symbol enumeration" Url="html/T_Smartsheet_Api_Models_Symbol.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.SystemColumnType enumeration" Url="html/T_Smartsheet_Api_Models_SystemColumnType.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.Template class" Url="html/T_Smartsheet_Api_Models_Template.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.User class" Url="html/T_Smartsheet_Api_Models_User.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.User.AddUserBuilder class" Url="html/T_Smartsheet_Api_Models_User_AddUserBuilder.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.User.UpdateUserBuilder class" Url="html/T_Smartsheet_Api_Models_User_UpdateUserBuilder.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.UserProfile class" Url="html/T_Smartsheet_Api_Models_UserProfile.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.UserStatus enumeration" Url="html/T_Smartsheet_Api_Models_UserStatus.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.Workspace class" Url="html/T_Smartsheet_Api_Models_Workspace.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.Workspace.UpdateWorkspaceBuilder class" Url="html/T_Smartsheet_Api_Models_Workspace_UpdateWorkspaceBuilder.htm" />
+  <HelpKINode Title="Smartsheet.Api.OAuth namespace" Url="html/N_Smartsheet_Api_OAuth.htm" />
+  <HelpKINode Title="Smartsheet.Api.OAuth.AccessDeniedException class" Url="html/T_Smartsheet_Api_OAuth_AccessDeniedException.htm" />
+  <HelpKINode Title="Smartsheet.Api.OAuth.AccessScope enumeration" Url="html/T_Smartsheet_Api_OAuth_AccessScope.htm" />
+  <HelpKINode Title="Smartsheet.Api.OAuth.AuthorizationResult class" Url="html/T_Smartsheet_Api_OAuth_AuthorizationResult.htm" />
+  <HelpKINode Title="Smartsheet.Api.OAuth.InvalidOAuthClientException class" Url="html/T_Smartsheet_Api_OAuth_InvalidOAuthClientException.htm" />
+  <HelpKINode Title="Smartsheet.Api.OAuth.InvalidOAuthGrantException class" Url="html/T_Smartsheet_Api_OAuth_InvalidOAuthGrantException.htm" />
+  <HelpKINode Title="Smartsheet.Api.OAuth.InvalidScopeException class" Url="html/T_Smartsheet_Api_OAuth_InvalidScopeException.htm" />
+  <HelpKINode Title="Smartsheet.Api.OAuth.InvalidTokenRequestException class" Url="html/T_Smartsheet_Api_OAuth_InvalidTokenRequestException.htm" />
+  <HelpKINode Title="Smartsheet.Api.OAuth.OAuthAuthorizationCodeException class" Url="html/T_Smartsheet_Api_OAuth_OAuthAuthorizationCodeException.htm" />
+  <HelpKINode Title="Smartsheet.Api.OAuth.OAuthFlow interface" Url="html/T_Smartsheet_Api_OAuth_OAuthFlow.htm" />
+  <HelpKINode Title="Smartsheet.Api.OAuth.OAuthFlowBuilder class" Url="html/T_Smartsheet_Api_OAuth_OAuthFlowBuilder.htm" />
+  <HelpKINode Title="Smartsheet.Api.OAuth.OAuthTokenException class" Url="html/T_Smartsheet_Api_OAuth_OAuthTokenException.htm" />
+  <HelpKINode Title="Smartsheet.Api.OAuth.Token class" Url="html/T_Smartsheet_Api_OAuth_Token.htm" />
+  <HelpKINode Title="Smartsheet.Api.OAuth.UnsupportedOAuthGrantTypeException class" Url="html/T_Smartsheet_Api_OAuth_UnsupportedOAuthGrantTypeException.htm" />
+  <HelpKINode Title="Smartsheet.Api.OAuth.UnsupportedResponseTypeException class" Url="html/T_Smartsheet_Api_OAuth_UnsupportedResponseTypeException.htm" />
+  <HelpKINode Title="Smartsheet.Api.ResourceNotFoundException class" Url="html/T_Smartsheet_Api_ResourceNotFoundException.htm" />
+  <HelpKINode Title="Smartsheet.Api.RowResources interface" Url="html/T_Smartsheet_Api_RowResources.htm" />
+  <HelpKINode Title="Smartsheet.Api.SearchResources interface" Url="html/T_Smartsheet_Api_SearchResources.htm" />
+  <HelpKINode Title="Smartsheet.Api.ServiceUnavailableException class" Url="html/T_Smartsheet_Api_ServiceUnavailableException.htm" />
+  <HelpKINode Title="Smartsheet.Api.ShareResources interface" Url="html/T_Smartsheet_Api_ShareResources.htm" />
+  <HelpKINode Title="Smartsheet.Api.SheetColumnResources interface" Url="html/T_Smartsheet_Api_SheetColumnResources.htm" />
+  <HelpKINode Title="Smartsheet.Api.SheetResources interface" Url="html/T_Smartsheet_Api_SheetResources.htm" />
+  <HelpKINode Title="Smartsheet.Api.SheetRowResources interface" Url="html/T_Smartsheet_Api_SheetRowResources.htm" />
+  <HelpKINode Title="Smartsheet.Api.SmartsheetBuilder class" Url="html/T_Smartsheet_Api_SmartsheetBuilder.htm" />
+  <HelpKINode Title="Smartsheet.Api.SmartsheetClient interface" Url="html/T_Smartsheet_Api_SmartsheetClient.htm" />
+  <HelpKINode Title="Smartsheet.Api.SmartsheetException class" Url="html/T_Smartsheet_Api_SmartsheetException.htm" />
+  <HelpKINode Title="Smartsheet.Api.SmartsheetRestException class" Url="html/T_Smartsheet_Api_SmartsheetRestException.htm" />
+  <HelpKINode Title="Smartsheet.Api.TemplateResources interface" Url="html/T_Smartsheet_Api_TemplateResources.htm" />
+  <HelpKINode Title="Smartsheet.Api.UserResources interface" Url="html/T_Smartsheet_Api_UserResources.htm" />
+  <HelpKINode Title="Smartsheet.Api.WorkspaceFolderResources interface" Url="html/T_Smartsheet_Api_WorkspaceFolderResources.htm" />
+  <HelpKINode Title="Smartsheet.Api.WorkspaceResources interface" Url="html/T_Smartsheet_Api_WorkspaceResources.htm" />
+  <HelpKINode Title="SmartsheetBuilder class">
+    <HelpKINode Title="SmartsheetBuilder Class" Url="html/T_Smartsheet_Api_SmartsheetBuilder.htm" />
+    <HelpKINode Title="about SmartsheetBuilder class" Url="html/T_Smartsheet_Api_SmartsheetBuilder.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_SmartsheetBuilder__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_Smartsheet_Api_SmartsheetBuilder.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Smartsheet_Api_SmartsheetBuilder.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_SmartsheetBuilder.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SmartsheetBuilder.AccessToken property" Url="html/P_Smartsheet_Api_SmartsheetBuilder_AccessToken.htm" />
+  <HelpKINode Title="SmartsheetBuilder.AssumedUser property" Url="html/P_Smartsheet_Api_SmartsheetBuilder_AssumedUser.htm" />
+  <HelpKINode Title="SmartsheetBuilder.BaseURI property" Url="html/P_Smartsheet_Api_SmartsheetBuilder_BaseURI.htm" />
+  <HelpKINode Title="SmartsheetBuilder.Build method" Url="html/M_Smartsheet_Api_SmartsheetBuilder_Build.htm" />
+  <HelpKINode Title="SmartsheetBuilder.DefaultBaseUri property" Url="html/P_Smartsheet_Api_SmartsheetBuilder_DefaultBaseUri.htm" />
+  <HelpKINode Title="SmartsheetBuilder.DEFAULT_BASE_URI field" Url="html/F_Smartsheet_Api_SmartsheetBuilder_DEFAULT_BASE_URI.htm" />
+  <HelpKINode Title="SmartsheetBuilder.HttpClient property" Url="html/P_Smartsheet_Api_SmartsheetBuilder_HttpClient.htm" />
+  <HelpKINode Title="SmartsheetBuilder.JsonSerializer property" Url="html/P_Smartsheet_Api_SmartsheetBuilder_JsonSerializer.htm" />
+  <HelpKINode Title="SmartsheetBuilder.SetAccessToken method" Url="html/M_Smartsheet_Api_SmartsheetBuilder_SetAccessToken.htm" />
+  <HelpKINode Title="SmartsheetBuilder.SetAssumedUser method" Url="html/M_Smartsheet_Api_SmartsheetBuilder_SetAssumedUser.htm" />
+  <HelpKINode Title="SmartsheetBuilder.SetBaseURI method" Url="html/M_Smartsheet_Api_SmartsheetBuilder_SetBaseURI.htm" />
+  <HelpKINode Title="SmartsheetBuilder.SetHttpClient method" Url="html/M_Smartsheet_Api_SmartsheetBuilder_SetHttpClient.htm" />
+  <HelpKINode Title="SmartsheetBuilder.SetJsonSerializer method" Url="html/M_Smartsheet_Api_SmartsheetBuilder_SetJsonSerializer.htm" />
+  <HelpKINode Title="SmartsheetBuilder.SmartsheetBuilder constructor" Url="html/M_Smartsheet_Api_SmartsheetBuilder__ctor.htm" />
+  <HelpKINode Title="SmartsheetClient interface">
+    <HelpKINode Title="SmartsheetClient Interface" Url="html/T_Smartsheet_Api_SmartsheetClient.htm" />
+    <HelpKINode Title="about SmartsheetClient interface" Url="html/T_Smartsheet_Api_SmartsheetClient.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Smartsheet_Api_SmartsheetClient.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SmartsheetClient.Attachments method" Url="html/M_Smartsheet_Api_SmartsheetClient_Attachments.htm" />
+  <HelpKINode Title="SmartsheetClient.Columns method" Url="html/M_Smartsheet_Api_SmartsheetClient_Columns.htm" />
+  <HelpKINode Title="SmartsheetClient.Comments method" Url="html/M_Smartsheet_Api_SmartsheetClient_Comments.htm" />
+  <HelpKINode Title="SmartsheetClient.Discussions method" Url="html/M_Smartsheet_Api_SmartsheetClient_Discussions.htm" />
+  <HelpKINode Title="SmartsheetClient.Folders method" Url="html/M_Smartsheet_Api_SmartsheetClient_Folders.htm" />
+  <HelpKINode Title="SmartsheetClient.Home method" Url="html/M_Smartsheet_Api_SmartsheetClient_Home.htm" />
+  <HelpKINode Title="SmartsheetClient.Rows method" Url="html/M_Smartsheet_Api_SmartsheetClient_Rows.htm" />
+  <HelpKINode Title="SmartsheetClient.Search method" Url="html/M_Smartsheet_Api_SmartsheetClient_Search.htm" />
+  <HelpKINode Title="SmartsheetClient.Sheets method" Url="html/M_Smartsheet_Api_SmartsheetClient_Sheets.htm" />
+  <HelpKINode Title="SmartsheetClient.Templates method" Url="html/M_Smartsheet_Api_SmartsheetClient_Templates.htm" />
+  <HelpKINode Title="SmartsheetClient.Users method" Url="html/M_Smartsheet_Api_SmartsheetClient_Users.htm" />
+  <HelpKINode Title="SmartsheetClient.Workspaces method" Url="html/M_Smartsheet_Api_SmartsheetClient_Workspaces.htm" />
+  <HelpKINode Title="SmartsheetException class">
+    <HelpKINode Title="SmartsheetException Class" Url="html/T_Smartsheet_Api_SmartsheetException.htm" />
+    <HelpKINode Title="about SmartsheetException class" Url="html/T_Smartsheet_Api_SmartsheetException.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_Smartsheet_Api_SmartsheetException__ctor.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SmartsheetException.SmartsheetException constructor" Url="html/Overload_Smartsheet_Api_SmartsheetException__ctor.htm" />
+  <HelpKINode Title="SmartsheetRestException class">
+    <HelpKINode Title="SmartsheetRestException Class" Url="html/T_Smartsheet_Api_SmartsheetRestException.htm" />
+    <HelpKINode Title="about SmartsheetRestException class" Url="html/T_Smartsheet_Api_SmartsheetRestException.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_SmartsheetRestException__ctor.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_SmartsheetRestException.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SmartsheetRestException.ErrorCode property" Url="html/P_Smartsheet_Api_SmartsheetRestException_ErrorCode.htm" />
+  <HelpKINode Title="SmartsheetRestException.SmartsheetRestException constructor" Url="html/M_Smartsheet_Api_SmartsheetRestException__ctor.htm" />
+  <HelpKINode Title="SPREADSHEET enumeration member" Url="html/T_Smartsheet_Api_Models_AttachmentSubType.htm" />
+  <HelpKINode Title="STAR enumeration member" Url="html/T_Smartsheet_Api_Models_Symbol.htm" />
+  <HelpKINode Title="StartingNumber property" Url="html/P_Smartsheet_Api_Models_AutoNumberFormat_StartingNumber.htm" />
+  <HelpKINode Title="State property" Url="html/P_Smartsheet_Api_OAuth_AuthorizationResult_State.htm" />
+  <HelpKINode Title="Status property" Url="html/P_Smartsheet_Api_Models_User_Status.htm" />
+  <HelpKINode Title="Strict property" Url="html/P_Smartsheet_Api_Models_Cell_Strict.htm" />
+  <HelpKINode Title="Subject property">
+    <HelpKINode Title="Email.Subject Property " Url="html/P_Smartsheet_Api_Models_Email_Subject.htm" />
+    <HelpKINode Title="MultiShare.ShareToManyBuilder.Subject Property " Url="html/P_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder_Subject.htm" />
+    <HelpKINode Title="MultiShare.Subject Property " Url="html/P_Smartsheet_Api_Models_MultiShare_Subject.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Suffix property" Url="html/P_Smartsheet_Api_Models_AutoNumberFormat_Suffix.htm" />
+  <HelpKINode Title="Symbol enumeration" Url="html/T_Smartsheet_Api_Models_Symbol.htm" />
+  <HelpKINode Title="Symbol property">
+    <HelpKINode Title="Column.AddColumnToSheetBuilder.Symbol Property " Url="html/P_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_Symbol.htm" />
+    <HelpKINode Title="Column.ModifyColumnBuilder.Symbol Property " Url="html/P_Smartsheet_Api_Models_Column_ModifyColumnBuilder_Symbol.htm" />
+    <HelpKINode Title="Column.Symbol Property " Url="html/P_Smartsheet_Api_Models_Column_Symbol.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SystemColumnType enumeration" Url="html/T_Smartsheet_Api_Models_SystemColumnType.htm" />
+  <HelpKINode Title="SystemColumnType property">
+    <HelpKINode Title="Column.AddColumnToSheetBuilder.SystemColumnType Property " Url="html/P_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_SystemColumnType.htm" />
+    <HelpKINode Title="Column.ModifyColumnBuilder.SystemColumnType Property " Url="html/P_Smartsheet_Api_Models_Column_ModifyColumnBuilder_SystemColumnType.htm" />
+    <HelpKINode Title="Column.SystemColumnType Property " Url="html/P_Smartsheet_Api_Models_Column_SystemColumnType.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Tags property" Url="html/P_Smartsheet_Api_Models_Column_Tags.htm" />
+  <HelpKINode Title="Template class">
+    <HelpKINode Title="Template Class" Url="html/T_Smartsheet_Api_Models_Template.htm" />
+    <HelpKINode Title="about Template class" Url="html/T_Smartsheet_Api_Models_Template.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_Models_Template__ctor.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_Models_Template.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Template.AccessLevel property" Url="html/P_Smartsheet_Api_Models_Template_AccessLevel.htm" />
+  <HelpKINode Title="Template.Description property" Url="html/P_Smartsheet_Api_Models_Template_Description.htm" />
+  <HelpKINode Title="Template.Template constructor" Url="html/M_Smartsheet_Api_Models_Template__ctor.htm" />
+  <HelpKINode Title="TemplateResources interface">
+    <HelpKINode Title="TemplateResources Interface" Url="html/T_Smartsheet_Api_TemplateResources.htm" />
+    <HelpKINode Title="about TemplateResources interface" Url="html/T_Smartsheet_Api_TemplateResources.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Smartsheet_Api_TemplateResources.htm" />
+  </HelpKINode>
+  <HelpKINode Title="TemplateResources.ListTemplates method" Url="html/M_Smartsheet_Api_TemplateResources_ListTemplates.htm" />
+  <HelpKINode Title="TEMPLATES enumeration member" Url="html/T_Smartsheet_Api_Models_ObjectInclusion.htm" />
+  <HelpKINode Title="Templates method" Url="html/M_Smartsheet_Api_SmartsheetClient_Templates.htm" />
+  <HelpKINode Title="Templates property">
+    <HelpKINode Title="Folder.Templates Property " Url="html/P_Smartsheet_Api_Models_Folder_Templates.htm" />
+    <HelpKINode Title="Home.Templates Property " Url="html/P_Smartsheet_Api_Models_Home_Templates.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Text property">
+    <HelpKINode Title="Comment.AddCommentBuilder.Text Property " Url="html/P_Smartsheet_Api_Models_Comment_AddCommentBuilder_Text.htm" />
+    <HelpKINode Title="Comment.Text Property " Url="html/P_Smartsheet_Api_Models_Comment_Text.htm" />
+    <HelpKINode Title="SearchResultItem.Text Property " Url="html/P_Smartsheet_Api_Models_SearchResultItem_Text.htm" />
+  </HelpKINode>
+  <HelpKINode Title="TEXT_NUMBER enumeration member" Url="html/T_Smartsheet_Api_Models_ColumnType.htm" />
+  <HelpKINode Title="Title property">
+    <HelpKINode Title="Column.AddColumnToSheetBuilder.Title Property " Url="html/P_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_Title.htm" />
+    <HelpKINode Title="Column.ModifyColumnBuilder.Title Property " Url="html/P_Smartsheet_Api_Models_Column_ModifyColumnBuilder_Title.htm" />
+    <HelpKINode Title="Column.Title Property " Url="html/P_Smartsheet_Api_Models_Column_Title.htm" />
+    <HelpKINode Title="Discussion.CreateDiscussionBuilder.Title Property " Url="html/P_Smartsheet_Api_Models_Discussion_CreateDiscussionBuilder_Title.htm" />
+    <HelpKINode Title="Discussion.Title Property " Url="html/P_Smartsheet_Api_Models_Discussion_Title.htm" />
+  </HelpKINode>
+  <HelpKINode Title="To property" Url="html/P_Smartsheet_Api_Models_Email_To.htm" />
+  <HelpKINode Title="ToBottom property">
+    <HelpKINode Title="RowWrapper.InsertRowsBuilder.ToBottom Property " Url="html/P_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder_ToBottom.htm" />
+    <HelpKINode Title="RowWrapper.MoveRowBuilder.ToBottom Property " Url="html/P_Smartsheet_Api_Models_RowWrapper_MoveRowBuilder_ToBottom.htm" />
+    <HelpKINode Title="RowWrapper.ToBottom Property " Url="html/P_Smartsheet_Api_Models_RowWrapper_ToBottom.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Token class">
+    <HelpKINode Title="Token Class" Url="html/T_Smartsheet_Api_OAuth_Token.htm" />
+    <HelpKINode Title="about Token class" Url="html/T_Smartsheet_Api_OAuth_Token.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_OAuth_Token__ctor.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_OAuth_Token.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Token.AccessToken property" Url="html/P_Smartsheet_Api_OAuth_Token_AccessToken.htm" />
+  <HelpKINode Title="Token.ExpiresInSeconds property" Url="html/P_Smartsheet_Api_OAuth_Token_ExpiresInSeconds.htm" />
+  <HelpKINode Title="Token.RefreshToken property" Url="html/P_Smartsheet_Api_OAuth_Token_RefreshToken.htm" />
+  <HelpKINode Title="Token.Token constructor" Url="html/M_Smartsheet_Api_OAuth_Token__ctor.htm" />
+  <HelpKINode Title="Token.TokenType property" Url="html/P_Smartsheet_Api_OAuth_Token_TokenType.htm" />
+  <HelpKINode Title="TokenType property" Url="html/P_Smartsheet_Api_OAuth_Token_TokenType.htm" />
+  <HelpKINode Title="TokenURL property" Url="html/P_Smartsheet_Api_OAuth_OAuthFlowBuilder_TokenURL.htm" />
+  <HelpKINode Title="ToString method" Url="html/M_Smartsheet_Api_OAuth_AuthorizationResult_ToString.htm" />
+  <HelpKINode Title="TotalCount property" Url="html/P_Smartsheet_Api_Models_SearchResult_TotalCount.htm" />
+  <HelpKINode Title="ToTop property">
+    <HelpKINode Title="RowWrapper.InsertRowsBuilder.ToTop Property " Url="html/P_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder_ToTop.htm" />
+    <HelpKINode Title="RowWrapper.MoveRowBuilder.ToTop Property " Url="html/P_Smartsheet_Api_Models_RowWrapper_MoveRowBuilder_ToTop.htm" />
+    <HelpKINode Title="RowWrapper.ToTop Property " Url="html/P_Smartsheet_Api_Models_RowWrapper_ToTop.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Type property">
+    <HelpKINode Title="Cell.Type Property " Url="html/P_Smartsheet_Api_Models_Cell_Type.htm" />
+    <HelpKINode Title="Column.AddColumnToSheetBuilder.Type Property " Url="html/P_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_Type.htm" />
+    <HelpKINode Title="Column.ModifyColumnBuilder.Type Property " Url="html/P_Smartsheet_Api_Models_Column_ModifyColumnBuilder_Type.htm" />
+    <HelpKINode Title="Column.Type Property " Url="html/P_Smartsheet_Api_Models_Column_Type.htm" />
+    <HelpKINode Title="Link.Type Property " Url="html/P_Smartsheet_Api_Models_Link_Type.htm" />
+  </HelpKINode>
+  <HelpKINode Title="UnsupportedOAuthGrantTypeException class">
+    <HelpKINode Title="UnsupportedOAuthGrantTypeException Class" Url="html/T_Smartsheet_Api_OAuth_UnsupportedOAuthGrantTypeException.htm" />
+    <HelpKINode Title="about UnsupportedOAuthGrantTypeException class" Url="html/T_Smartsheet_Api_OAuth_UnsupportedOAuthGrantTypeException.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_OAuth_UnsupportedOAuthGrantTypeException__ctor.htm" />
+  </HelpKINode>
+  <HelpKINode Title="UnsupportedOAuthGrantTypeException.UnsupportedOAuthGrantTypeException constructor" Url="html/M_Smartsheet_Api_OAuth_UnsupportedOAuthGrantTypeException__ctor.htm" />
+  <HelpKINode Title="UnsupportedResponseTypeException class">
+    <HelpKINode Title="UnsupportedResponseTypeException Class" Url="html/T_Smartsheet_Api_OAuth_UnsupportedResponseTypeException.htm" />
+    <HelpKINode Title="about UnsupportedResponseTypeException class" Url="html/T_Smartsheet_Api_OAuth_UnsupportedResponseTypeException.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_OAuth_UnsupportedResponseTypeException__ctor.htm" />
+  </HelpKINode>
+  <HelpKINode Title="UnsupportedResponseTypeException.UnsupportedResponseTypeException constructor" Url="html/M_Smartsheet_Api_OAuth_UnsupportedResponseTypeException__ctor.htm" />
+  <HelpKINode Title="UpdateCells method" Url="html/M_Smartsheet_Api_RowResources_UpdateCells.htm" />
+  <HelpKINode Title="UpdateColumn method" Url="html/M_Smartsheet_Api_ColumnResources_UpdateColumn.htm" />
+  <HelpKINode Title="UpdateFolder method" Url="html/M_Smartsheet_Api_FolderResources_UpdateFolder.htm" />
+  <HelpKINode Title="UpdatePublishStatus method" Url="html/M_Smartsheet_Api_SheetResources_UpdatePublishStatus.htm" />
+  <HelpKINode Title="UpdateShare method" Url="html/M_Smartsheet_Api_ShareResources_UpdateShare.htm" />
+  <HelpKINode Title="UpdateSheet method" Url="html/M_Smartsheet_Api_SheetResources_UpdateSheet.htm" />
+  <HelpKINode Title="UpdateUser method" Url="html/M_Smartsheet_Api_UserResources_UpdateUser.htm" />
+  <HelpKINode Title="UpdateWorkspace method" Url="html/M_Smartsheet_Api_WorkspaceResources_UpdateWorkspace.htm" />
+  <HelpKINode Title="URL enumeration member" Url="html/T_Smartsheet_Api_Models_LinkType.htm" />
+  <HelpKINode Title="Url property">
+    <HelpKINode Title="Attachment.Url Property " Url="html/P_Smartsheet_Api_Models_Attachment_Url.htm" />
+    <HelpKINode Title="Link.Url Property " Url="html/P_Smartsheet_Api_Models_Link_Url.htm" />
+  </HelpKINode>
+  <HelpKINode Title="UrlExpiresInMillis property" Url="html/P_Smartsheet_Api_Models_Attachment_UrlExpiresInMillis.htm" />
+  <HelpKINode Title="User class">
+    <HelpKINode Title="User Class" Url="html/T_Smartsheet_Api_Models_User.htm" />
+    <HelpKINode Title="about User class" Url="html/T_Smartsheet_Api_Models_User.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_Models_User__ctor.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_Models_User.htm" />
+  </HelpKINode>
+  <HelpKINode Title="User.AddUserBuilder class">
+    <HelpKINode Title="User.AddUserBuilder Class" Url="html/T_Smartsheet_Api_Models_User_AddUserBuilder.htm" />
+    <HelpKINode Title="about User.AddUserBuilder class" Url="html/T_Smartsheet_Api_Models_User_AddUserBuilder.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_Models_User_AddUserBuilder__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Smartsheet_Api_Models_User_AddUserBuilder.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_Models_User_AddUserBuilder.htm" />
+  </HelpKINode>
+  <HelpKINode Title="User.AddUserBuilder.AddUserBuilder constructor" Url="html/M_Smartsheet_Api_Models_User_AddUserBuilder__ctor.htm" />
+  <HelpKINode Title="User.AddUserBuilder.Admin property" Url="html/P_Smartsheet_Api_Models_User_AddUserBuilder_Admin.htm" />
+  <HelpKINode Title="User.AddUserBuilder.Build method" Url="html/M_Smartsheet_Api_Models_User_AddUserBuilder_Build.htm" />
+  <HelpKINode Title="User.AddUserBuilder.EmailAddress property" Url="html/P_Smartsheet_Api_Models_User_AddUserBuilder_EmailAddress.htm" />
+  <HelpKINode Title="User.AddUserBuilder.LicensedSheetCreator property" Url="html/P_Smartsheet_Api_Models_User_AddUserBuilder_LicensedSheetCreator.htm" />
+  <HelpKINode Title="User.AddUserBuilder.SetAdmin method" Url="html/M_Smartsheet_Api_Models_User_AddUserBuilder_SetAdmin.htm" />
+  <HelpKINode Title="User.AddUserBuilder.SetEmail method" Url="html/M_Smartsheet_Api_Models_User_AddUserBuilder_SetEmail.htm" />
+  <HelpKINode Title="User.AddUserBuilder.SetLicensedSheetCreator method" Url="html/M_Smartsheet_Api_Models_User_AddUserBuilder_SetLicensedSheetCreator.htm" />
+  <HelpKINode Title="User.Admin property" Url="html/P_Smartsheet_Api_Models_User_Admin.htm" />
+  <HelpKINode Title="User.LicensedSheetCreator property" Url="html/P_Smartsheet_Api_Models_User_LicensedSheetCreator.htm" />
+  <HelpKINode Title="User.Status property" Url="html/P_Smartsheet_Api_Models_User_Status.htm" />
+  <HelpKINode Title="User.UpdateUserBuilder class">
+    <HelpKINode Title="User.UpdateUserBuilder Class" Url="html/T_Smartsheet_Api_Models_User_UpdateUserBuilder.htm" />
+    <HelpKINode Title="about User.UpdateUserBuilder class" Url="html/T_Smartsheet_Api_Models_User_UpdateUserBuilder.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_Models_User_UpdateUserBuilder__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Smartsheet_Api_Models_User_UpdateUserBuilder.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_Models_User_UpdateUserBuilder.htm" />
+  </HelpKINode>
+  <HelpKINode Title="User.UpdateUserBuilder.Admin property" Url="html/P_Smartsheet_Api_Models_User_UpdateUserBuilder_Admin.htm" />
+  <HelpKINode Title="User.UpdateUserBuilder.Build method" Url="html/M_Smartsheet_Api_Models_User_UpdateUserBuilder_Build.htm" />
+  <HelpKINode Title="User.UpdateUserBuilder.ID property" Url="html/P_Smartsheet_Api_Models_User_UpdateUserBuilder_ID.htm" />
+  <HelpKINode Title="User.UpdateUserBuilder.LicensedSheetCreator property" Url="html/P_Smartsheet_Api_Models_User_UpdateUserBuilder_LicensedSheetCreator.htm" />
+  <HelpKINode Title="User.UpdateUserBuilder.SetAdmin method" Url="html/M_Smartsheet_Api_Models_User_UpdateUserBuilder_SetAdmin.htm" />
+  <HelpKINode Title="User.UpdateUserBuilder.SetID method" Url="html/M_Smartsheet_Api_Models_User_UpdateUserBuilder_SetID.htm" />
+  <HelpKINode Title="User.UpdateUserBuilder.SetLicensedSheetCreator method" Url="html/M_Smartsheet_Api_Models_User_UpdateUserBuilder_SetLicensedSheetCreator.htm" />
+  <HelpKINode Title="User.UpdateUserBuilder.UpdateUserBuilder constructor" Url="html/M_Smartsheet_Api_Models_User_UpdateUserBuilder__ctor.htm" />
+  <HelpKINode Title="User.User constructor" Url="html/M_Smartsheet_Api_Models_User__ctor.htm" />
+  <HelpKINode Title="UserProfile class">
+    <HelpKINode Title="UserProfile Class" Url="html/T_Smartsheet_Api_Models_UserProfile.htm" />
+    <HelpKINode Title="about UserProfile class" Url="html/T_Smartsheet_Api_Models_UserProfile.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_Models_UserProfile__ctor.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_Models_UserProfile.htm" />
+  </HelpKINode>
+  <HelpKINode Title="UserProfile.Email property" Url="html/P_Smartsheet_Api_Models_UserProfile_Email.htm" />
+  <HelpKINode Title="UserProfile.FirstName property" Url="html/P_Smartsheet_Api_Models_UserProfile_FirstName.htm" />
+  <HelpKINode Title="UserProfile.LastName property" Url="html/P_Smartsheet_Api_Models_UserProfile_LastName.htm" />
+  <HelpKINode Title="UserProfile.UserProfile constructor" Url="html/M_Smartsheet_Api_Models_UserProfile__ctor.htm" />
+  <HelpKINode Title="UserResources interface">
+    <HelpKINode Title="UserResources Interface" Url="html/T_Smartsheet_Api_UserResources.htm" />
+    <HelpKINode Title="about UserResources interface" Url="html/T_Smartsheet_Api_UserResources.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Smartsheet_Api_UserResources.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_UserResources.htm" />
+  </HelpKINode>
+  <HelpKINode Title="UserResources.AddUser method" Url="html/Overload_Smartsheet_Api_UserResources_AddUser.htm" />
+  <HelpKINode Title="UserResources.currentUser property" Url="html/P_Smartsheet_Api_UserResources_currentUser.htm" />
+  <HelpKINode Title="UserResources.DeleteUser method" Url="html/M_Smartsheet_Api_UserResources_DeleteUser.htm" />
+  <HelpKINode Title="UserResources.ListUsers method" Url="html/M_Smartsheet_Api_UserResources_ListUsers.htm" />
+  <HelpKINode Title="UserResources.UpdateUser method" Url="html/M_Smartsheet_Api_UserResources_UpdateUser.htm" />
+  <HelpKINode Title="Users method" Url="html/M_Smartsheet_Api_SmartsheetClient_Users.htm" />
+  <HelpKINode Title="Users property">
+    <HelpKINode Title="MultiShare.ShareToManyBuilder.Users Property " Url="html/P_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder_Users.htm" />
+    <HelpKINode Title="MultiShare.Users Property " Url="html/P_Smartsheet_Api_Models_MultiShare_Users.htm" />
+  </HelpKINode>
+  <HelpKINode Title="UserStatus enumeration" Url="html/T_Smartsheet_Api_Models_UserStatus.htm" />
+  <HelpKINode Title="Value property" Url="html/P_Smartsheet_Api_Models_Cell_Value.htm" />
+  <HelpKINode Title="Version property">
+    <HelpKINode Title="RequestResult(T).Version Property " Url="html/P_Smartsheet_Api_Models_RequestResult_1_Version.htm" />
+    <HelpKINode Title="Row.Version Property " Url="html/P_Smartsheet_Api_Models_Row_Version.htm" />
+    <HelpKINode Title="Sheet.Version Property " Url="html/P_Smartsheet_Api_Models_Sheet_Version.htm" />
+  </HelpKINode>
+  <HelpKINode Title="VIEWER enumeration member" Url="html/T_Smartsheet_Api_Models_AccessLevel.htm" />
+  <HelpKINode Title="WIDE enumeration member" Url="html/T_Smartsheet_Api_Models_PaperSize.htm" />
+  <HelpKINode Title="Workspace class">
+    <HelpKINode Title="Workspace Class" Url="html/T_Smartsheet_Api_Models_Workspace.htm" />
+    <HelpKINode Title="about Workspace class" Url="html/T_Smartsheet_Api_Models_Workspace.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_Models_Workspace__ctor.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_Models_Workspace.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Workspace.AccessLevel property" Url="html/P_Smartsheet_Api_Models_Workspace_AccessLevel.htm" />
+  <HelpKINode Title="Workspace.Permalink property" Url="html/P_Smartsheet_Api_Models_Workspace_Permalink.htm" />
+  <HelpKINode Title="Workspace.UpdateWorkspaceBuilder class">
+    <HelpKINode Title="Workspace.UpdateWorkspaceBuilder Class" Url="html/T_Smartsheet_Api_Models_Workspace_UpdateWorkspaceBuilder.htm" />
+    <HelpKINode Title="about Workspace.UpdateWorkspaceBuilder class" Url="html/T_Smartsheet_Api_Models_Workspace_UpdateWorkspaceBuilder.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_Models_Workspace_UpdateWorkspaceBuilder__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Smartsheet_Api_Models_Workspace_UpdateWorkspaceBuilder.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_Models_Workspace_UpdateWorkspaceBuilder.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Workspace.UpdateWorkspaceBuilder.Build method" Url="html/M_Smartsheet_Api_Models_Workspace_UpdateWorkspaceBuilder_Build.htm" />
+  <HelpKINode Title="Workspace.UpdateWorkspaceBuilder.ID property" Url="html/P_Smartsheet_Api_Models_Workspace_UpdateWorkspaceBuilder_ID.htm" />
+  <HelpKINode Title="Workspace.UpdateWorkspaceBuilder.Name property" Url="html/P_Smartsheet_Api_Models_Workspace_UpdateWorkspaceBuilder_Name.htm" />
+  <HelpKINode Title="Workspace.UpdateWorkspaceBuilder.SetID method" Url="html/M_Smartsheet_Api_Models_Workspace_UpdateWorkspaceBuilder_SetID.htm" />
+  <HelpKINode Title="Workspace.UpdateWorkspaceBuilder.SetName method" Url="html/M_Smartsheet_Api_Models_Workspace_UpdateWorkspaceBuilder_SetName.htm" />
+  <HelpKINode Title="Workspace.UpdateWorkspaceBuilder.UpdateWorkspaceBuilder constructor" Url="html/M_Smartsheet_Api_Models_Workspace_UpdateWorkspaceBuilder__ctor.htm" />
+  <HelpKINode Title="Workspace.Workspace constructor" Url="html/M_Smartsheet_Api_Models_Workspace__ctor.htm" />
+  <HelpKINode Title="WorkspaceFolderResources interface">
+    <HelpKINode Title="WorkspaceFolderResources Interface" Url="html/T_Smartsheet_Api_WorkspaceFolderResources.htm" />
+    <HelpKINode Title="about WorkspaceFolderResources interface" Url="html/T_Smartsheet_Api_WorkspaceFolderResources.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Smartsheet_Api_WorkspaceFolderResources.htm" />
+  </HelpKINode>
+  <HelpKINode Title="WorkspaceFolderResources.CreateFolder method" Url="html/M_Smartsheet_Api_WorkspaceFolderResources_CreateFolder.htm" />
+  <HelpKINode Title="WorkspaceFolderResources.ListFolders method" Url="html/M_Smartsheet_Api_WorkspaceFolderResources_ListFolders.htm" />
+  <HelpKINode Title="WorkspaceResources interface">
+    <HelpKINode Title="WorkspaceResources Interface" Url="html/T_Smartsheet_Api_WorkspaceResources.htm" />
+    <HelpKINode Title="about WorkspaceResources interface" Url="html/T_Smartsheet_Api_WorkspaceResources.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Smartsheet_Api_WorkspaceResources.htm" />
+  </HelpKINode>
+  <HelpKINode Title="WorkspaceResources.CreateWorkspace method" Url="html/M_Smartsheet_Api_WorkspaceResources_CreateWorkspace.htm" />
+  <HelpKINode Title="WorkspaceResources.DeleteWorkspace method" Url="html/M_Smartsheet_Api_WorkspaceResources_DeleteWorkspace.htm" />
+  <HelpKINode Title="WorkspaceResources.Folders method" Url="html/M_Smartsheet_Api_WorkspaceResources_Folders.htm" />
+  <HelpKINode Title="WorkspaceResources.GetWorkspace method" Url="html/M_Smartsheet_Api_WorkspaceResources_GetWorkspace.htm" />
+  <HelpKINode Title="WorkspaceResources.ListWorkspaces method" Url="html/M_Smartsheet_Api_WorkspaceResources_ListWorkspaces.htm" />
+  <HelpKINode Title="WorkspaceResources.Shares method" Url="html/M_Smartsheet_Api_WorkspaceResources_Shares.htm" />
+  <HelpKINode Title="WorkspaceResources.UpdateWorkspace method" Url="html/M_Smartsheet_Api_WorkspaceResources_UpdateWorkspace.htm" />
+  <HelpKINode Title="Workspaces method" Url="html/M_Smartsheet_Api_SmartsheetClient_Workspaces.htm" />
+  <HelpKINode Title="Workspaces property" Url="html/P_Smartsheet_Api_Models_Home_Workspaces.htm" />
+  <HelpKINode Title="WRITE_SHEETS enumeration member">
+    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_OAuth_AccessScope.htm" />
+    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_Models_AccessScope.htm" />
+  </HelpKINode>
+</HelpKI>

@@ -1,1 +1,2570 @@
-TESTING
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+<title>Smartsheet C# SDK Documentation - Table of Content</title>
+<link rel="stylesheet" href="TOC.css">
+<link rel="shortcut icon" href="favicon.ico"/>
+<script type="text/javascript" src="TOC.js"></script>
+</head>
+
+<body onload="javascript: Initialize('.aspx');" onresize="javascript: ResizeTree();">
+<form id="IndexForm" runat="server">
+
+<div id="TOCDiv" class="TOCDiv">
+
+<div id="divSearchOpts" class="SearchOpts" style="height: 100px; display: none;">
+<img class="TOCLink" onclick="javascript: ShowHideSearch(false);"
+    src="CloseSearch.png" height="16" width="16" alt="Hide search" style="float: right;"/>
+Keyword(s) for which to search:
+<input id="txtSearchText" type="text" style="width: 100%;"
+  onkeypress="javascript: return OnSearchTextKeyPress(event);" /><br />
+<input id="chkSortByTitle" type="checkbox" /><label for="chkSortByTitle">&nbsp;Sort results by title</label><br />
+<input type="button" value="Search" onclick="javascript: return PerformSearch();" />
+</div>
+
+<div id="divIndexOpts" class="IndexOpts" style="height: 25px; display: none;">
+<img class="TOCLink" onclick="javascript: ShowHideIndex(false);"
+    src="CloseSearch.png" height="17" width="17" alt="Hide index" style="float: right;"/>
+Keyword Index
+</div>
+
+<div id="divNavOpts" class="NavOpts" style="height: 20px;">
+    <img class="TOCLink" onclick="javascript: SyncTOC();" src="SyncTOC.gif"
+        height="16" width="16" alt="Sync to TOC"/>
+    <img class="TOCLink" onclick="javascript: ExpandOrCollapseAll(false);"
+        src="CollapseAll.png" height="16" width="16" alt="Collapse all" />
+    <a href="#" title="Click to obtain a direct link to the displayed topic"
+        style="margin-left: 10px; vertical-align: top;"
+        onclick="javascript: ShowDirectLink();">Direct Link</a>
+</div>
+
+<div class="Tree" id="divSearchResults" style="display: none;"
+    onselectstart="javascript: return false;">
+</div>
+
+<div class="Tree" id="divIndexResults" style="display: none;"
+    onselectstart="javascript: return false;">
+</div>
+
+<div class="Tree" id="divTree" onselectstart="javascript: return false;">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/N_Smartsheet_Api.htm" target="TopicContent">Smartsheet.Api Namespace</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_AccessTokenExpiredException.htm" target="TopicContent">AccessTokenExpiredException Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_AccessTokenExpiredException__ctor.htm" target="TopicContent">AccessTokenExpiredException Constructor </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_AssociatedAttachmentResources.htm" target="TopicContent">AssociatedAttachmentResources Interface</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Smartsheet_Api_AssociatedAttachmentResources.htm" target="TopicContent">AssociatedAttachmentResources Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_AssociatedAttachmentResources_AttachFile.htm" target="TopicContent">AttachFile Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_AssociatedAttachmentResources_AttachURL.htm" target="TopicContent">AttachURL Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_AssociatedAttachmentResources_ListAttachments.htm" target="TopicContent">ListAttachments Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_AssociatedDiscussionResources.htm" target="TopicContent">AssociatedDiscussionResources Interface</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Smartsheet_Api_AssociatedDiscussionResources.htm" target="TopicContent">AssociatedDiscussionResources Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_AssociatedDiscussionResources_CreateDiscussion.htm" target="TopicContent">CreateDiscussion Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_AttachmentResources.htm" target="TopicContent">AttachmentResources Interface</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Smartsheet_Api_AttachmentResources.htm" target="TopicContent">AttachmentResources Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_AttachmentResources_DeleteAttachment.htm" target="TopicContent">DeleteAttachment Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_AttachmentResources_GetAttachment.htm" target="TopicContent">GetAttachment Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_AuthorizationException.htm" target="TopicContent">AuthorizationException Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_AuthorizationException__ctor.htm" target="TopicContent">AuthorizationException Constructor </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_ColumnResources.htm" target="TopicContent">ColumnResources Interface</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Smartsheet_Api_ColumnResources.htm" target="TopicContent">ColumnResources Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_ColumnResources_DeleteColumn.htm" target="TopicContent">DeleteColumn Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_ColumnResources_UpdateColumn.htm" target="TopicContent">UpdateColumn Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_CommentResources.htm" target="TopicContent">CommentResources Interface</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Smartsheet_Api_CommentResources.htm" target="TopicContent">CommentResources Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_CommentResources_Attachments.htm" target="TopicContent">Attachments Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_CommentResources_DeleteComment.htm" target="TopicContent">DeleteComment Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_CommentResources_GetComment.htm" target="TopicContent">GetComment Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_DiscussionResources.htm" target="TopicContent">DiscussionResources Interface</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Smartsheet_Api_DiscussionResources.htm" target="TopicContent">DiscussionResources Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_DiscussionResources_AddDiscussionComment.htm" target="TopicContent">AddDiscussionComment Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_DiscussionResources_Attachments.htm" target="TopicContent">Attachments Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_DiscussionResources_GetDiscussion.htm" target="TopicContent">GetDiscussion Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_FolderResources.htm" target="TopicContent">FolderResources Interface</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Smartsheet_Api_FolderResources.htm" target="TopicContent">FolderResources Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_FolderResources_CreateFolder.htm" target="TopicContent">CreateFolder Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_FolderResources_DeleteFolder.htm" target="TopicContent">DeleteFolder Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_FolderResources_GetFolder.htm" target="TopicContent">GetFolder Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_FolderResources_ListFolders.htm" target="TopicContent">ListFolders Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_FolderResources_UpdateFolder.htm" target="TopicContent">UpdateFolder Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_HomeFolderResources.htm" target="TopicContent">HomeFolderResources Interface</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Smartsheet_Api_HomeFolderResources.htm" target="TopicContent">HomeFolderResources Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_HomeFolderResources_CreateFolder.htm" target="TopicContent">CreateFolder Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_HomeFolderResources_ListFolders.htm" target="TopicContent">ListFolders Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_HomeResources.htm" target="TopicContent">HomeResources Interface</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Smartsheet_Api_HomeResources.htm" target="TopicContent">HomeResources Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_HomeResources_Folders.htm" target="TopicContent">Folders Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_HomeResources_GetHome.htm" target="TopicContent">GetHome Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_InvalidRequestException.htm" target="TopicContent">InvalidRequestException Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_InvalidRequestException__ctor.htm" target="TopicContent">InvalidRequestException Constructor </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_ResourceNotFoundException.htm" target="TopicContent">ResourceNotFoundException Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_ResourceNotFoundException__ctor.htm" target="TopicContent">ResourceNotFoundException Constructor </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_RowResources.htm" target="TopicContent">RowResources Interface</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Smartsheet_Api_RowResources.htm" target="TopicContent">RowResources Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_RowResources_Attachments.htm" target="TopicContent">Attachments Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_RowResources_DeleteRow.htm" target="TopicContent">DeleteRow Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_RowResources_Discussions.htm" target="TopicContent">Discussions Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_RowResources_GetCellHistory.htm" target="TopicContent">GetCellHistory Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_RowResources_GetRow.htm" target="TopicContent">GetRow Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_RowResources_MoveRow.htm" target="TopicContent">MoveRow Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_RowResources_SendRow.htm" target="TopicContent">SendRow Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_RowResources_UpdateCells.htm" target="TopicContent">UpdateCells Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_SearchResources.htm" target="TopicContent">SearchResources Interface</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Smartsheet_Api_SearchResources.htm" target="TopicContent">SearchResources Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_SearchResources_Search.htm" target="TopicContent">Search Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_SearchResources_SearchSheet.htm" target="TopicContent">SearchSheet Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_ServiceUnavailableException.htm" target="TopicContent">ServiceUnavailableException Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_ServiceUnavailableException__ctor.htm" target="TopicContent">ServiceUnavailableException Constructor </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_ShareResources.htm" target="TopicContent">ShareResources Interface</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Smartsheet_Api_ShareResources.htm" target="TopicContent">ShareResources Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_ShareResources_DeleteShare.htm" target="TopicContent">DeleteShare Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_ShareResources_GetShare.htm" target="TopicContent">GetShare Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_ShareResources_ListShares.htm" target="TopicContent">ListShares Method </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Overload_Smartsheet_Api_ShareResources_ShareTo.htm" target="TopicContent">ShareTo Method </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_ShareResources_ShareTo.htm" target="TopicContent">ShareTo Method (Int64, MultiShare)</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_ShareResources_ShareTo_2.htm" target="TopicContent">ShareTo Method (Int64, Share)</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_ShareResources_ShareTo_1.htm" target="TopicContent">ShareTo Method (Int64, MultiShare, Boolean)</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_ShareResources_ShareTo_3.htm" target="TopicContent">ShareTo Method (Int64, Share, Boolean)</a>
+</div>
+</div>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_ShareResources_UpdateShare.htm" target="TopicContent">UpdateShare Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_SheetColumnResources.htm" target="TopicContent">SheetColumnResources Interface</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Smartsheet_Api_SheetColumnResources.htm" target="TopicContent">SheetColumnResources Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_SheetColumnResources_AddColumn.htm" target="TopicContent">AddColumn Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_SheetColumnResources_ListColumns.htm" target="TopicContent">ListColumns Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_SheetResources.htm" target="TopicContent">SheetResources Interface</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Smartsheet_Api_SheetResources.htm" target="TopicContent">SheetResources Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_SheetResources_Attachments.htm" target="TopicContent">Attachments Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_SheetResources_Columns.htm" target="TopicContent">Columns Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_SheetResources_CreateSheet.htm" target="TopicContent">CreateSheet Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_SheetResources_CreateSheetFromExisting.htm" target="TopicContent">CreateSheetFromExisting Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_SheetResources_CreateSheetInFolder.htm" target="TopicContent">CreateSheetInFolder Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_SheetResources_CreateSheetInFolderFromExisting.htm" target="TopicContent">CreateSheetInFolderFromExisting Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_SheetResources_CreateSheetInWorkspace.htm" target="TopicContent">CreateSheetInWorkspace Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_SheetResources_CreateSheetInWorkspaceFromExisting.htm" target="TopicContent">CreateSheetInWorkspaceFromExisting Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_SheetResources_DeleteSheet.htm" target="TopicContent">DeleteSheet Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_SheetResources_Discussions.htm" target="TopicContent">Discussions Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_SheetResources_GetPublishStatus.htm" target="TopicContent">GetPublishStatus Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_SheetResources_GetSheet.htm" target="TopicContent">GetSheet Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_SheetResources_GetSheetAsExcel.htm" target="TopicContent">GetSheetAsExcel Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_SheetResources_GetSheetAsPDF.htm" target="TopicContent">GetSheetAsPDF Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_SheetResources_GetSheetVersion.htm" target="TopicContent">GetSheetVersion Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_SheetResources_ListOrganizationSheets.htm" target="TopicContent">ListOrganizationSheets Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_SheetResources_ListSheets.htm" target="TopicContent">ListSheets Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_SheetResources_Rows.htm" target="TopicContent">Rows Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_SheetResources_SendSheet.htm" target="TopicContent">SendSheet Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_SheetResources_Shares.htm" target="TopicContent">Shares Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_SheetResources_UpdatePublishStatus.htm" target="TopicContent">UpdatePublishStatus Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_SheetResources_UpdateSheet.htm" target="TopicContent">UpdateSheet Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_SheetRowResources.htm" target="TopicContent">SheetRowResources Interface</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Smartsheet_Api_SheetRowResources.htm" target="TopicContent">SheetRowResources Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_SheetRowResources_GetRow.htm" target="TopicContent">GetRow Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_SheetRowResources_InsertRows.htm" target="TopicContent">InsertRows Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_SmartsheetBuilder.htm" target="TopicContent">SmartsheetBuilder Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_SmartsheetBuilder__ctor.htm" target="TopicContent">SmartsheetBuilder Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Fields_T_Smartsheet_Api_SmartsheetBuilder.htm" target="TopicContent">SmartsheetBuilder Fields</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/F_Smartsheet_Api_SmartsheetBuilder_DEFAULT_BASE_URI.htm" target="TopicContent">DEFAULT_BASE_URI Field</a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Smartsheet_Api_SmartsheetBuilder.htm" target="TopicContent">SmartsheetBuilder Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_SmartsheetBuilder_Build.htm" target="TopicContent">Build Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_SmartsheetBuilder_SetAccessToken.htm" target="TopicContent">SetAccessToken Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_SmartsheetBuilder_SetAssumedUser.htm" target="TopicContent">SetAssumedUser Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_SmartsheetBuilder_SetBaseURI.htm" target="TopicContent">SetBaseURI Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_SmartsheetBuilder_SetHttpClient.htm" target="TopicContent">SetHttpClient Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_SmartsheetBuilder_SetJsonSerializer.htm" target="TopicContent">SetJsonSerializer Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_SmartsheetBuilder.htm" target="TopicContent">SmartsheetBuilder Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_SmartsheetBuilder_AccessToken.htm" target="TopicContent">AccessToken Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_SmartsheetBuilder_AssumedUser.htm" target="TopicContent">AssumedUser Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_SmartsheetBuilder_BaseURI.htm" target="TopicContent">BaseURI Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_SmartsheetBuilder_DefaultBaseUri.htm" target="TopicContent">DefaultBaseUri Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_SmartsheetBuilder_HttpClient.htm" target="TopicContent">HttpClient Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_SmartsheetBuilder_JsonSerializer.htm" target="TopicContent">JsonSerializer Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_SmartsheetClient.htm" target="TopicContent">SmartsheetClient Interface</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Smartsheet_Api_SmartsheetClient.htm" target="TopicContent">SmartsheetClient Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_SmartsheetClient_Attachments.htm" target="TopicContent">Attachments Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_SmartsheetClient_Columns.htm" target="TopicContent">Columns Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_SmartsheetClient_Comments.htm" target="TopicContent">Comments Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_SmartsheetClient_Discussions.htm" target="TopicContent">Discussions Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_SmartsheetClient_Folders.htm" target="TopicContent">Folders Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_SmartsheetClient_Home.htm" target="TopicContent">Home Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_SmartsheetClient_Rows.htm" target="TopicContent">Rows Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_SmartsheetClient_Search.htm" target="TopicContent">Search Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_SmartsheetClient_Sheets.htm" target="TopicContent">Sheets Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_SmartsheetClient_Templates.htm" target="TopicContent">Templates Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_SmartsheetClient_Users.htm" target="TopicContent">Users Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_SmartsheetClient_Workspaces.htm" target="TopicContent">Workspaces Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_SmartsheetException.htm" target="TopicContent">SmartsheetException Class</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Overload_Smartsheet_Api_SmartsheetException__ctor.htm" target="TopicContent">SmartsheetException Constructor </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_SmartsheetException__ctor.htm" target="TopicContent">SmartsheetException Constructor (Exception)</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_SmartsheetException__ctor_1.htm" target="TopicContent">SmartsheetException Constructor (String)</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_SmartsheetException__ctor_2.htm" target="TopicContent">SmartsheetException Constructor (String, Exception)</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_SmartsheetRestException.htm" target="TopicContent">SmartsheetRestException Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_SmartsheetRestException__ctor.htm" target="TopicContent">SmartsheetRestException Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_SmartsheetRestException.htm" target="TopicContent">SmartsheetRestException Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_SmartsheetRestException_ErrorCode.htm" target="TopicContent">ErrorCode Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_TemplateResources.htm" target="TopicContent">TemplateResources Interface</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Smartsheet_Api_TemplateResources.htm" target="TopicContent">TemplateResources Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_TemplateResources_ListTemplates.htm" target="TopicContent">ListTemplates Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_UserResources.htm" target="TopicContent">UserResources Interface</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Smartsheet_Api_UserResources.htm" target="TopicContent">UserResources Methods</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Overload_Smartsheet_Api_UserResources_AddUser.htm" target="TopicContent">AddUser Method </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_UserResources_AddUser.htm" target="TopicContent">AddUser Method (User)</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_UserResources_AddUser_1.htm" target="TopicContent">AddUser Method (User, Boolean)</a>
+</div>
+</div>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_UserResources_DeleteUser.htm" target="TopicContent">DeleteUser Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_UserResources_ListUsers.htm" target="TopicContent">ListUsers Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_UserResources_UpdateUser.htm" target="TopicContent">UpdateUser Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_UserResources.htm" target="TopicContent">UserResources Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_UserResources_currentUser.htm" target="TopicContent">currentUser Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_WorkspaceFolderResources.htm" target="TopicContent">WorkspaceFolderResources Interface</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Smartsheet_Api_WorkspaceFolderResources.htm" target="TopicContent">WorkspaceFolderResources Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_WorkspaceFolderResources_CreateFolder.htm" target="TopicContent">CreateFolder Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_WorkspaceFolderResources_ListFolders.htm" target="TopicContent">ListFolders Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_WorkspaceResources.htm" target="TopicContent">WorkspaceResources Interface</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Smartsheet_Api_WorkspaceResources.htm" target="TopicContent">WorkspaceResources Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_WorkspaceResources_CreateWorkspace.htm" target="TopicContent">CreateWorkspace Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_WorkspaceResources_DeleteWorkspace.htm" target="TopicContent">DeleteWorkspace Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_WorkspaceResources_Folders.htm" target="TopicContent">Folders Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_WorkspaceResources_GetWorkspace.htm" target="TopicContent">GetWorkspace Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_WorkspaceResources_ListWorkspaces.htm" target="TopicContent">ListWorkspaces Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_WorkspaceResources_Shares.htm" target="TopicContent">Shares Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_WorkspaceResources_UpdateWorkspace.htm" target="TopicContent">UpdateWorkspace Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/N_Smartsheet_Api_Models.htm" target="TopicContent">Smartsheet.Api.Models Namespace</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/T_Smartsheet_Api_Models_AccessLevel.htm" target="TopicContent">AccessLevel Enumeration</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/T_Smartsheet_Api_Models_AccessScope.htm" target="TopicContent">AccessScope Enumeration</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_Models_Attachment.htm" target="TopicContent">Attachment Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Attachment__ctor.htm" target="TopicContent">Attachment Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_Models_Attachment.htm" target="TopicContent">Attachment Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Attachment_AttachmentSubType.htm" target="TopicContent">AttachmentSubType Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Attachment_AttachmentType.htm" target="TopicContent">AttachmentType Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Attachment_CreatedAt.htm" target="TopicContent">CreatedAt Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Attachment_MimeType.htm" target="TopicContent">MimeType Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Attachment_ParentId.htm" target="TopicContent">ParentId Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Attachment_ParentType.htm" target="TopicContent">ParentType Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Attachment_SizeInKb.htm" target="TopicContent">SizeInKb Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Attachment_Url.htm" target="TopicContent">Url Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Attachment_UrlExpiresInMillis.htm" target="TopicContent">UrlExpiresInMillis Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/T_Smartsheet_Api_Models_AttachmentParentType.htm" target="TopicContent">AttachmentParentType Enumeration</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/T_Smartsheet_Api_Models_AttachmentSubType.htm" target="TopicContent">AttachmentSubType Enumeration</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/T_Smartsheet_Api_Models_AttachmentType.htm" target="TopicContent">AttachmentType Enumeration</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_Models_AutoNumberFormat.htm" target="TopicContent">AutoNumberFormat Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_AutoNumberFormat__ctor.htm" target="TopicContent">AutoNumberFormat Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_Models_AutoNumberFormat.htm" target="TopicContent">AutoNumberFormat Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_AutoNumberFormat_Fill.htm" target="TopicContent">Fill Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_AutoNumberFormat_Prefix.htm" target="TopicContent">Prefix Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_AutoNumberFormat_StartingNumber.htm" target="TopicContent">StartingNumber Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_AutoNumberFormat_Suffix.htm" target="TopicContent">Suffix Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_Models_Cell.htm" target="TopicContent">Cell Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Cell__ctor.htm" target="TopicContent">Cell Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_Models_Cell.htm" target="TopicContent">Cell Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Cell_ColumnId.htm" target="TopicContent">ColumnId Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Cell_DisplayValue.htm" target="TopicContent">DisplayValue Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Cell_Formula.htm" target="TopicContent">Formula Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Cell_Link.htm" target="TopicContent">Link Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Cell_RowId.htm" target="TopicContent">RowId Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Cell_Strict.htm" target="TopicContent">Strict Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Cell_Type.htm" target="TopicContent">Type Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Cell_Value.htm" target="TopicContent">Value Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_Models_Cell_UpdateRowCellsBuilder.htm" target="TopicContent">Cell.UpdateRowCellsBuilder Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Cell_UpdateRowCellsBuilder__ctor.htm" target="TopicContent">Cell.UpdateRowCellsBuilder Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Smartsheet_Api_Models_Cell_UpdateRowCellsBuilder.htm" target="TopicContent">Cell.UpdateRowCellsBuilder Methods</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Overload_Smartsheet_Api_Models_Cell_UpdateRowCellsBuilder_AddCell.htm" target="TopicContent">AddCell Method </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Cell_UpdateRowCellsBuilder_AddCell.htm" target="TopicContent">AddCell Method (Nullable(Int64), Object)</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Cell_UpdateRowCellsBuilder_AddCell_1.htm" target="TopicContent">AddCell Method (Nullable(Int64), Object, Nullable(Boolean))</a>
+</div>
+</div>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Cell_UpdateRowCellsBuilder_Build.htm" target="TopicContent">Build Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_Models_Cell_UpdateRowCellsBuilder.htm" target="TopicContent">Cell.UpdateRowCellsBuilder Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Cell_UpdateRowCellsBuilder_Cells.htm" target="TopicContent">Cells Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_Models_CellHistory.htm" target="TopicContent">CellHistory Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_CellHistory__ctor.htm" target="TopicContent">CellHistory Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_Models_CellHistory.htm" target="TopicContent">CellHistory Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_CellHistory_ModifiedAt.htm" target="TopicContent">ModifiedAt Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_CellHistory_ModifiedBy.htm" target="TopicContent">ModifiedBy Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_Models_Column.htm" target="TopicContent">Column Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Column__ctor.htm" target="TopicContent">Column Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_Models_Column.htm" target="TopicContent">Column Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Column_AutoNumberFormat.htm" target="TopicContent">AutoNumberFormat Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Column_Hidden.htm" target="TopicContent">Hidden Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Column_Index.htm" target="TopicContent">Index Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Column_Options.htm" target="TopicContent">Options Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Column_Primary.htm" target="TopicContent">Primary Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Column_SheetId.htm" target="TopicContent">SheetId Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Column_Symbol.htm" target="TopicContent">Symbol Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Column_SystemColumnType.htm" target="TopicContent">SystemColumnType Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Column_Tags.htm" target="TopicContent">Tags Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Column_Title.htm" target="TopicContent">Title Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Column_Type.htm" target="TopicContent">Type Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder.htm" target="TopicContent">Column.AddColumnToSheetBuilder Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder__ctor.htm" target="TopicContent">Column.AddColumnToSheetBuilder Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder.htm" target="TopicContent">Column.AddColumnToSheetBuilder Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_Build.htm" target="TopicContent">Build Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_SetAutoNumberFormat.htm" target="TopicContent">SetAutoNumberFormat Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_SetOptions.htm" target="TopicContent">SetOptions Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_SetPrimary.htm" target="TopicContent">SetPrimary Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_SetSymbol.htm" target="TopicContent">SetSymbol Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_SetSystemColumnType.htm" target="TopicContent">SetSystemColumnType Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_SetTitle.htm" target="TopicContent">SetTitle Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_SetType.htm" target="TopicContent">SetType Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder.htm" target="TopicContent">Column.AddColumnToSheetBuilder Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_AutoNumberFormat.htm" target="TopicContent">AutoNumberFormat Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_Options.htm" target="TopicContent">Options Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_Primary.htm" target="TopicContent">Primary Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_Symbol.htm" target="TopicContent">Symbol Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_SystemColumnType.htm" target="TopicContent">SystemColumnType Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_Title.htm" target="TopicContent">Title Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_Type.htm" target="TopicContent">Type Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_Models_Column_ModifyColumnBuilder.htm" target="TopicContent">Column.ModifyColumnBuilder Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Column_ModifyColumnBuilder__ctor.htm" target="TopicContent">Column.ModifyColumnBuilder Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Smartsheet_Api_Models_Column_ModifyColumnBuilder.htm" target="TopicContent">Column.ModifyColumnBuilder Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Column_ModifyColumnBuilder_Build.htm" target="TopicContent">Build Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Column_ModifyColumnBuilder_SetAutoNumberFormat.htm" target="TopicContent">SetAutoNumberFormat Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Column_ModifyColumnBuilder_SetIndex.htm" target="TopicContent">SetIndex Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Column_ModifyColumnBuilder_SetOptions.htm" target="TopicContent">SetOptions Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Column_ModifyColumnBuilder_SetSheetId.htm" target="TopicContent">SetSheetId Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Column_ModifyColumnBuilder_SetSymbol.htm" target="TopicContent">SetSymbol Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Column_ModifyColumnBuilder_SetSystemColumnType.htm" target="TopicContent">SetSystemColumnType Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Column_ModifyColumnBuilder_SetTitle.htm" target="TopicContent">SetTitle Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Column_ModifyColumnBuilder_SetType.htm" target="TopicContent">SetType Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_Models_Column_ModifyColumnBuilder.htm" target="TopicContent">Column.ModifyColumnBuilder Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Column_ModifyColumnBuilder_AutoNumberFormat.htm" target="TopicContent">AutoNumberFormat Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Column_ModifyColumnBuilder_Index.htm" target="TopicContent">Index Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Column_ModifyColumnBuilder_Options.htm" target="TopicContent">Options Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Column_ModifyColumnBuilder_SheetId.htm" target="TopicContent">SheetId Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Column_ModifyColumnBuilder_Symbol.htm" target="TopicContent">Symbol Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Column_ModifyColumnBuilder_SystemColumnType.htm" target="TopicContent">SystemColumnType Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Column_ModifyColumnBuilder_Title.htm" target="TopicContent">Title Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Column_ModifyColumnBuilder_Type.htm" target="TopicContent">Type Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/T_Smartsheet_Api_Models_ColumnTag.htm" target="TopicContent">ColumnTag Enumeration</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/T_Smartsheet_Api_Models_ColumnType.htm" target="TopicContent">ColumnType Enumeration</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_Models_Comment.htm" target="TopicContent">Comment Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Comment__ctor.htm" target="TopicContent">Comment Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_Models_Comment.htm" target="TopicContent">Comment Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Comment_Attachments.htm" target="TopicContent">Attachments Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Comment_CreatedAt.htm" target="TopicContent">CreatedAt Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Comment_CreatedBy.htm" target="TopicContent">CreatedBy Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Comment_DiscussionId.htm" target="TopicContent">DiscussionId Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Comment_ModifiedAt.htm" target="TopicContent">ModifiedAt Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Comment_ModifiedDate.htm" target="TopicContent">ModifiedDate Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Comment_Text.htm" target="TopicContent">Text Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_Models_Comment_AddCommentBuilder.htm" target="TopicContent">Comment.AddCommentBuilder Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Comment_AddCommentBuilder__ctor.htm" target="TopicContent">Comment.AddCommentBuilder Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Smartsheet_Api_Models_Comment_AddCommentBuilder.htm" target="TopicContent">Comment.AddCommentBuilder Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Comment_AddCommentBuilder_Build.htm" target="TopicContent">Build Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Comment_AddCommentBuilder_SetText.htm" target="TopicContent">SetText Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_Models_Comment_AddCommentBuilder.htm" target="TopicContent">Comment.AddCommentBuilder Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Comment_AddCommentBuilder_Text.htm" target="TopicContent">Text Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_Models_Discussion.htm" target="TopicContent">Discussion Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Discussion__ctor.htm" target="TopicContent">Discussion Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_Models_Discussion.htm" target="TopicContent">Discussion Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Discussion_AccessLevel.htm" target="TopicContent">AccessLevel Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Discussion_Comment.htm" target="TopicContent">Comment Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Discussion_CommentAttachments.htm" target="TopicContent">CommentAttachments Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Discussion_Comments.htm" target="TopicContent">Comments Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Discussion_LastCommentedAt.htm" target="TopicContent">LastCommentedAt Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Discussion_LastCommentedUser.htm" target="TopicContent">LastCommentedUser Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Discussion_Title.htm" target="TopicContent">Title Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_Models_Discussion_CreateDiscussionBuilder.htm" target="TopicContent">Discussion.CreateDiscussionBuilder Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Discussion_CreateDiscussionBuilder__ctor.htm" target="TopicContent">Discussion.CreateDiscussionBuilder Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Smartsheet_Api_Models_Discussion_CreateDiscussionBuilder.htm" target="TopicContent">Discussion.CreateDiscussionBuilder Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Discussion_CreateDiscussionBuilder_Build.htm" target="TopicContent">Build Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Discussion_CreateDiscussionBuilder_SetComment.htm" target="TopicContent">SetComment Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Discussion_CreateDiscussionBuilder_SetTitle.htm" target="TopicContent">SetTitle Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_Models_Discussion_CreateDiscussionBuilder.htm" target="TopicContent">Discussion.CreateDiscussionBuilder Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Discussion_CreateDiscussionBuilder_Comment.htm" target="TopicContent">Comment Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Discussion_CreateDiscussionBuilder_Title.htm" target="TopicContent">Title Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_Models_Email.htm" target="TopicContent">Email Class</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_Models_Email.htm" target="TopicContent">Email Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Email_CCMe.htm" target="TopicContent">CCMe Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Email_Message.htm" target="TopicContent">Message Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Email_Subject.htm" target="TopicContent">Subject Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Email_To.htm" target="TopicContent">To Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_Models_Error.htm" target="TopicContent">Error Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Error__ctor.htm" target="TopicContent">Error Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_Models_Error.htm" target="TopicContent">Error Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Error_ErrorCode.htm" target="TopicContent">ErrorCode Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Error_Message.htm" target="TopicContent">Message Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_Models_Folder.htm" target="TopicContent">Folder Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Folder__ctor.htm" target="TopicContent">Folder Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_Models_Folder.htm" target="TopicContent">Folder Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Folder_Folders.htm" target="TopicContent">Folders Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Folder_Sheets.htm" target="TopicContent">Sheets Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Folder_Templates.htm" target="TopicContent">Templates Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_Models_Folder_UpdateFolderBuilder.htm" target="TopicContent">Folder.UpdateFolderBuilder Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Folder_UpdateFolderBuilder__ctor.htm" target="TopicContent">Folder.UpdateFolderBuilder Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Smartsheet_Api_Models_Folder_UpdateFolderBuilder.htm" target="TopicContent">Folder.UpdateFolderBuilder Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Folder_UpdateFolderBuilder_Build.htm" target="TopicContent">Build Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Folder_UpdateFolderBuilder_SetID.htm" target="TopicContent">SetID Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Folder_UpdateFolderBuilder_SetName.htm" target="TopicContent">SetName Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_Models_Folder_UpdateFolderBuilder.htm" target="TopicContent">Folder.UpdateFolderBuilder Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Folder_UpdateFolderBuilder_Id.htm" target="TopicContent">Id Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Folder_UpdateFolderBuilder_name.htm" target="TopicContent">name Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_Models_FormatDetails.htm" target="TopicContent">FormatDetails Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_FormatDetails__ctor.htm" target="TopicContent">FormatDetails Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_Models_FormatDetails.htm" target="TopicContent">FormatDetails Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_FormatDetails_PaperSize.htm" target="TopicContent">PaperSize Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_Models_Home.htm" target="TopicContent">Home Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Home__ctor.htm" target="TopicContent">Home Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_Models_Home.htm" target="TopicContent">Home Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Home_Folders.htm" target="TopicContent">Folders Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Home_Sheets.htm" target="TopicContent">Sheets Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Home_Templates.htm" target="TopicContent">Templates Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Home_Workspaces.htm" target="TopicContent">Workspaces Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_Models_IdentifiableModel.htm" target="TopicContent">IdentifiableModel Class</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Smartsheet_Api_Models_IdentifiableModel.htm" target="TopicContent">IdentifiableModel Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_IdentifiableModel_Equals.htm" target="TopicContent">Equals Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_IdentifiableModel_GetHashCode.htm" target="TopicContent">GetHashCode Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_Models_IdentifiableModel.htm" target="TopicContent">IdentifiableModel Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_IdentifiableModel_ID.htm" target="TopicContent">ID Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_Models_Link.htm" target="TopicContent">Link Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Link__ctor.htm" target="TopicContent">Link Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_Models_Link.htm" target="TopicContent">Link Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Link_ColumnId.htm" target="TopicContent">ColumnId Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Link_RowId.htm" target="TopicContent">RowId Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Link_SheetId.htm" target="TopicContent">SheetId Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Link_Type.htm" target="TopicContent">Type Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Link_Url.htm" target="TopicContent">Url Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/T_Smartsheet_Api_Models_LinkType.htm" target="TopicContent">LinkType Enumeration</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_Models_MultiShare.htm" target="TopicContent">MultiShare Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_MultiShare__ctor.htm" target="TopicContent">MultiShare Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_Models_MultiShare.htm" target="TopicContent">MultiShare Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_MultiShare_AccessLevel.htm" target="TopicContent">AccessLevel Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_MultiShare_CCMe.htm" target="TopicContent">CCMe Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_MultiShare_Message.htm" target="TopicContent">Message Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_MultiShare_Subject.htm" target="TopicContent">Subject Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_MultiShare_Users.htm" target="TopicContent">Users Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder.htm" target="TopicContent">MultiShare.ShareToManyBuilder Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder__ctor.htm" target="TopicContent">MultiShare.ShareToManyBuilder Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder.htm" target="TopicContent">MultiShare.ShareToManyBuilder Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder_Build.htm" target="TopicContent">Build Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder_SetAccessLevel.htm" target="TopicContent">SetAccessLevel Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder_SetCCMe.htm" target="TopicContent">SetCCMe Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder_SetMessage.htm" target="TopicContent">SetMessage Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder_SetSubject.htm" target="TopicContent">SetSubject Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder_SetUsers.htm" target="TopicContent">SetUsers Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder.htm" target="TopicContent">MultiShare.ShareToManyBuilder Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder_AccessLevel.htm" target="TopicContent">AccessLevel Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder_CCMe.htm" target="TopicContent">CCMe Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder_Message.htm" target="TopicContent">Message Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder_Subject.htm" target="TopicContent">Subject Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder_Users.htm" target="TopicContent">Users Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_Models_NamedModel.htm" target="TopicContent">NamedModel Class</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_Models_NamedModel.htm" target="TopicContent">NamedModel Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_NamedModel_Name.htm" target="TopicContent">Name Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/T_Smartsheet_Api_Models_ObjectInclusion.htm" target="TopicContent">ObjectInclusion Enumeration</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/T_Smartsheet_Api_Models_PaperSize.htm" target="TopicContent">PaperSize Enumeration</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_Models_RequestResult_1.htm" target="TopicContent">RequestResult(T) Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_RequestResult_1__ctor.htm" target="TopicContent">RequestResult(T) Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_Models_RequestResult_1.htm" target="TopicContent">RequestResult(T) Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_RequestResult_1_Message.htm" target="TopicContent">Message Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_RequestResult_1_Result.htm" target="TopicContent">Result Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_RequestResult_1_ResultCode.htm" target="TopicContent">ResultCode Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_RequestResult_1_Version.htm" target="TopicContent">Version Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_Models_Row.htm" target="TopicContent">Row Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Row__ctor.htm" target="TopicContent">Row Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Smartsheet_Api_Models_Row.htm" target="TopicContent">Row Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Row_GetColumnById.htm" target="TopicContent">GetColumnById Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Row_GetColumnByIndex.htm" target="TopicContent">GetColumnByIndex Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_Models_Row.htm" target="TopicContent">Row Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Row_AccessLevel.htm" target="TopicContent">AccessLevel Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Row_Attachments.htm" target="TopicContent">Attachments Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Row_Cells.htm" target="TopicContent">Cells Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Row_Columns.htm" target="TopicContent">Columns Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Row_CreatedAt.htm" target="TopicContent">CreatedAt Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Row_Discussions.htm" target="TopicContent">Discussions Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Row_Expanded.htm" target="TopicContent">Expanded Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Row_ModifiedAt.htm" target="TopicContent">ModifiedAt Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Row_ParentRowNumber.htm" target="TopicContent">ParentRowNumber Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Row_RowNumber.htm" target="TopicContent">RowNumber Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Row_SheetId.htm" target="TopicContent">SheetId Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Row_Version.htm" target="TopicContent">Version Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_Models_RowEmail.htm" target="TopicContent">RowEmail Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_RowEmail__ctor.htm" target="TopicContent">RowEmail Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_Models_RowEmail.htm" target="TopicContent">RowEmail Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_RowEmail_IncludeAttachments.htm" target="TopicContent">IncludeAttachments Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_RowEmail_IncludeDiscussions.htm" target="TopicContent">IncludeDiscussions Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_Models_RowWrapper.htm" target="TopicContent">RowWrapper Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_RowWrapper__ctor.htm" target="TopicContent">RowWrapper Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_Models_RowWrapper.htm" target="TopicContent">RowWrapper Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_RowWrapper_ParentId.htm" target="TopicContent">ParentId Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_RowWrapper_Rows.htm" target="TopicContent">Rows Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_RowWrapper_SiblingId.htm" target="TopicContent">SiblingId Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_RowWrapper_ToBottom.htm" target="TopicContent">ToBottom Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_RowWrapper_ToTop.htm" target="TopicContent">ToTop Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder.htm" target="TopicContent">RowWrapper.InsertRowsBuilder Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder__ctor.htm" target="TopicContent">RowWrapper.InsertRowsBuilder Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder.htm" target="TopicContent">RowWrapper.InsertRowsBuilder Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder_Build.htm" target="TopicContent">Build Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder_SetParentId.htm" target="TopicContent">SetParentId Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder_SetRows.htm" target="TopicContent">SetRows Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder_SetSiblingId.htm" target="TopicContent">SetSiblingId Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder_SetToBottom.htm" target="TopicContent">SetToBottom Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder_SetToTop.htm" target="TopicContent">SetToTop Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder.htm" target="TopicContent">RowWrapper.InsertRowsBuilder Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder_ParentId.htm" target="TopicContent">ParentId Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder_Rows.htm" target="TopicContent">Rows Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder_SiblingId.htm" target="TopicContent">SiblingId Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder_ToBottom.htm" target="TopicContent">ToBottom Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder_ToTop.htm" target="TopicContent">ToTop Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_Models_RowWrapper_MoveRowBuilder.htm" target="TopicContent">RowWrapper.MoveRowBuilder Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_RowWrapper_MoveRowBuilder__ctor.htm" target="TopicContent">RowWrapper.MoveRowBuilder Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Smartsheet_Api_Models_RowWrapper_MoveRowBuilder.htm" target="TopicContent">RowWrapper.MoveRowBuilder Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_RowWrapper_MoveRowBuilder_Build.htm" target="TopicContent">Build Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_RowWrapper_MoveRowBuilder_SetParentId.htm" target="TopicContent">SetParentId Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_RowWrapper_MoveRowBuilder_SetSiblingId.htm" target="TopicContent">SetSiblingId Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_RowWrapper_MoveRowBuilder_SetToBottom.htm" target="TopicContent">SetToBottom Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_RowWrapper_MoveRowBuilder_SetToTop.htm" target="TopicContent">SetToTop Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_Models_RowWrapper_MoveRowBuilder.htm" target="TopicContent">RowWrapper.MoveRowBuilder Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_RowWrapper_MoveRowBuilder_ParentId.htm" target="TopicContent">ParentId Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_RowWrapper_MoveRowBuilder_SiblingId.htm" target="TopicContent">SiblingId Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_RowWrapper_MoveRowBuilder_ToBottom.htm" target="TopicContent">ToBottom Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_RowWrapper_MoveRowBuilder_ToTop.htm" target="TopicContent">ToTop Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_Models_SearchResult.htm" target="TopicContent">SearchResult Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_SearchResult__ctor.htm" target="TopicContent">SearchResult Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_Models_SearchResult.htm" target="TopicContent">SearchResult Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_SearchResult_Results.htm" target="TopicContent">Results Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_SearchResult_TotalCount.htm" target="TopicContent">TotalCount Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_Models_SearchResultItem.htm" target="TopicContent">SearchResultItem Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_SearchResultItem__ctor.htm" target="TopicContent">SearchResultItem Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_Models_SearchResultItem.htm" target="TopicContent">SearchResultItem Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_SearchResultItem_ContextData.htm" target="TopicContent">ContextData Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_SearchResultItem_ObjectId.htm" target="TopicContent">ObjectId Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_SearchResultItem_ObjectType.htm" target="TopicContent">ObjectType Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_SearchResultItem_ParentObjectId.htm" target="TopicContent">ParentObjectId Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_SearchResultItem_ParentObjectName.htm" target="TopicContent">ParentObjectName Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_SearchResultItem_ParentObjectType.htm" target="TopicContent">ParentObjectType Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_SearchResultItem_Text.htm" target="TopicContent">Text Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_Models_Share.htm" target="TopicContent">Share Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Share__ctor.htm" target="TopicContent">Share Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_Models_Share.htm" target="TopicContent">Share Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Share_AccessLevel.htm" target="TopicContent">AccessLevel Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Share_Email.htm" target="TopicContent">Email Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_Models_Share_ShareToOneBuilder.htm" target="TopicContent">Share.ShareToOneBuilder Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Share_ShareToOneBuilder__ctor.htm" target="TopicContent">Share.ShareToOneBuilder Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Smartsheet_Api_Models_Share_ShareToOneBuilder.htm" target="TopicContent">Share.ShareToOneBuilder Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Share_ShareToOneBuilder_Build.htm" target="TopicContent">Build Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Share_ShareToOneBuilder_SetAccessLevel.htm" target="TopicContent">SetAccessLevel Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Share_ShareToOneBuilder_SetEmail.htm" target="TopicContent">SetEmail Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_Models_Share_ShareToOneBuilder.htm" target="TopicContent">Share.ShareToOneBuilder Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Share_ShareToOneBuilder_AccessLevel.htm" target="TopicContent">AccessLevel Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Share_ShareToOneBuilder_Email.htm" target="TopicContent">Email Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_Models_Share_UpdateShareBuilder.htm" target="TopicContent">Share.UpdateShareBuilder Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Share_UpdateShareBuilder__ctor.htm" target="TopicContent">Share.UpdateShareBuilder Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Smartsheet_Api_Models_Share_UpdateShareBuilder.htm" target="TopicContent">Share.UpdateShareBuilder Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Share_UpdateShareBuilder_Build.htm" target="TopicContent">Build Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Share_UpdateShareBuilder_SetAccessLevel.htm" target="TopicContent">SetAccessLevel Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_Models_Share_UpdateShareBuilder.htm" target="TopicContent">Share.UpdateShareBuilder Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Share_UpdateShareBuilder_AccessLevel.htm" target="TopicContent">AccessLevel Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_Models_Sheet.htm" target="TopicContent">Sheet Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Sheet__ctor.htm" target="TopicContent">Sheet Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Smartsheet_Api_Models_Sheet.htm" target="TopicContent">Sheet Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Sheet_GetColumnById.htm" target="TopicContent">GetColumnById Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Sheet_GetColumnByIndex.htm" target="TopicContent">GetColumnByIndex Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Sheet_GetRowByRowNumber.htm" target="TopicContent">GetRowByRowNumber Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_Models_Sheet.htm" target="TopicContent">Sheet Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Sheet_AccessLevel.htm" target="TopicContent">AccessLevel Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Sheet_Attachments.htm" target="TopicContent">Attachments Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Sheet_Columns.htm" target="TopicContent">Columns Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Sheet_CreatedAt.htm" target="TopicContent">CreatedAt Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Sheet_DependenciesEnabled.htm" target="TopicContent">DependenciesEnabled Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Sheet_Discussions.htm" target="TopicContent">Discussions Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Sheet_FromId.htm" target="TopicContent">FromId Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Sheet_GanttEnabled.htm" target="TopicContent">GanttEnabled Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Sheet_ModifiedAt.htm" target="TopicContent">ModifiedAt Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Sheet_Permalink.htm" target="TopicContent">Permalink Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Sheet_ReadOnly.htm" target="TopicContent">ReadOnly Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Sheet_Rows.htm" target="TopicContent">Rows Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Sheet_Version.htm" target="TopicContent">Version Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_Models_Sheet_CreateFromTemplateOrSheetBuilder.htm" target="TopicContent">Sheet.CreateFromTemplateOrSheetBuilder Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Sheet_CreateFromTemplateOrSheetBuilder__ctor.htm" target="TopicContent">Sheet.CreateFromTemplateOrSheetBuilder Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Smartsheet_Api_Models_Sheet_CreateFromTemplateOrSheetBuilder.htm" target="TopicContent">Sheet.CreateFromTemplateOrSheetBuilder Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Sheet_CreateFromTemplateOrSheetBuilder_Build.htm" target="TopicContent">Build Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Sheet_CreateFromTemplateOrSheetBuilder_SetFromId.htm" target="TopicContent">SetFromId Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Sheet_CreateFromTemplateOrSheetBuilder_SetName.htm" target="TopicContent">SetName Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_Models_Sheet_CreateFromTemplateOrSheetBuilder.htm" target="TopicContent">Sheet.CreateFromTemplateOrSheetBuilder Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Sheet_CreateFromTemplateOrSheetBuilder_FromId.htm" target="TopicContent">FromId Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Sheet_CreateFromTemplateOrSheetBuilder_Name.htm" target="TopicContent">Name Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_Models_Sheet_CreateSheetBuilder.htm" target="TopicContent">Sheet.CreateSheetBuilder Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Sheet_CreateSheetBuilder__ctor.htm" target="TopicContent">Sheet.CreateSheetBuilder Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Smartsheet_Api_Models_Sheet_CreateSheetBuilder.htm" target="TopicContent">Sheet.CreateSheetBuilder Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Sheet_CreateSheetBuilder_Build.htm" target="TopicContent">Build Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Sheet_CreateSheetBuilder_SetColumns.htm" target="TopicContent">SetColumns Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Sheet_CreateSheetBuilder_SetName.htm" target="TopicContent">SetName Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_Models_Sheet_CreateSheetBuilder.htm" target="TopicContent">Sheet.CreateSheetBuilder Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Sheet_CreateSheetBuilder_Columns.htm" target="TopicContent">Columns Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Sheet_CreateSheetBuilder_Name.htm" target="TopicContent">Name Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_Models_Sheet_UpdateSheetBuilder.htm" target="TopicContent">Sheet.UpdateSheetBuilder Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Sheet_UpdateSheetBuilder__ctor.htm" target="TopicContent">Sheet.UpdateSheetBuilder Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Smartsheet_Api_Models_Sheet_UpdateSheetBuilder.htm" target="TopicContent">Sheet.UpdateSheetBuilder Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Sheet_UpdateSheetBuilder_Build.htm" target="TopicContent">Build Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Sheet_UpdateSheetBuilder_SetID.htm" target="TopicContent">SetID Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Sheet_UpdateSheetBuilder_SetName.htm" target="TopicContent">SetName Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_Models_Sheet_UpdateSheetBuilder.htm" target="TopicContent">Sheet.UpdateSheetBuilder Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Sheet_UpdateSheetBuilder_ID.htm" target="TopicContent">ID Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Sheet_UpdateSheetBuilder_Name.htm" target="TopicContent">Name Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_Models_SheetEmail.htm" target="TopicContent">SheetEmail Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_SheetEmail__ctor.htm" target="TopicContent">SheetEmail Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_Models_SheetEmail.htm" target="TopicContent">SheetEmail Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_SheetEmail_Format.htm" target="TopicContent">Format Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_SheetEmail_FormatDetails.htm" target="TopicContent">FormatDetails Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/T_Smartsheet_Api_Models_SheetEmailFormat.htm" target="TopicContent">SheetEmailFormat Enumeration</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_Models_SheetPublish.htm" target="TopicContent">SheetPublish Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_SheetPublish__ctor.htm" target="TopicContent">SheetPublish Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_Models_SheetPublish.htm" target="TopicContent">SheetPublish Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_SheetPublish_IcalEnabled.htm" target="TopicContent">IcalEnabled Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_SheetPublish_IcalUrl.htm" target="TopicContent">IcalUrl Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_SheetPublish_ReadOnlyFullEnabled.htm" target="TopicContent">ReadOnlyFullEnabled Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_SheetPublish_ReadOnlyFullUrl.htm" target="TopicContent">ReadOnlyFullUrl Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_SheetPublish_ReadOnlyLiteEnabled.htm" target="TopicContent">ReadOnlyLiteEnabled Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_SheetPublish_ReadOnlyLiteUrl.htm" target="TopicContent">ReadOnlyLiteUrl Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_SheetPublish_ReadWriteEnabled.htm" target="TopicContent">ReadWriteEnabled Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_SheetPublish_ReadWriteUrl.htm" target="TopicContent">ReadWriteUrl Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_Models_SheetPublish_PublishStatusBuilder.htm" target="TopicContent">SheetPublish.PublishStatusBuilder Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_SheetPublish_PublishStatusBuilder__ctor.htm" target="TopicContent">SheetPublish.PublishStatusBuilder Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Smartsheet_Api_Models_SheetPublish_PublishStatusBuilder.htm" target="TopicContent">SheetPublish.PublishStatusBuilder Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_SheetPublish_PublishStatusBuilder_Build.htm" target="TopicContent">Build Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_SheetPublish_PublishStatusBuilder_SetIcalEnabled.htm" target="TopicContent">SetIcalEnabled Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_SheetPublish_PublishStatusBuilder_SetReadOnlyFullEnabled.htm" target="TopicContent">SetReadOnlyFullEnabled Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_SheetPublish_PublishStatusBuilder_SetReadOnlyLiteEnabled.htm" target="TopicContent">SetReadOnlyLiteEnabled Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_SheetPublish_PublishStatusBuilder_SetReadWriteEnabled.htm" target="TopicContent">SetReadWriteEnabled Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_Models_SheetPublish_PublishStatusBuilder.htm" target="TopicContent">SheetPublish.PublishStatusBuilder Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_SheetPublish_PublishStatusBuilder_IcalEnabled.htm" target="TopicContent">IcalEnabled Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_SheetPublish_PublishStatusBuilder_ReadOnlyFullEnabled.htm" target="TopicContent">ReadOnlyFullEnabled Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_SheetPublish_PublishStatusBuilder_ReadOnlyLiteEnabled.htm" target="TopicContent">ReadOnlyLiteEnabled Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_SheetPublish_PublishStatusBuilder_ReadWriteEnabled.htm" target="TopicContent">ReadWriteEnabled Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/T_Smartsheet_Api_Models_Symbol.htm" target="TopicContent">Symbol Enumeration</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/T_Smartsheet_Api_Models_SystemColumnType.htm" target="TopicContent">SystemColumnType Enumeration</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_Models_Template.htm" target="TopicContent">Template Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Template__ctor.htm" target="TopicContent">Template Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_Models_Template.htm" target="TopicContent">Template Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Template_AccessLevel.htm" target="TopicContent">AccessLevel Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Template_Description.htm" target="TopicContent">Description Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_Models_User.htm" target="TopicContent">User Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_User__ctor.htm" target="TopicContent">User Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_Models_User.htm" target="TopicContent">User Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_User_Admin.htm" target="TopicContent">Admin Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_User_LicensedSheetCreator.htm" target="TopicContent">LicensedSheetCreator Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_User_Status.htm" target="TopicContent">Status Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_Models_User_AddUserBuilder.htm" target="TopicContent">User.AddUserBuilder Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_User_AddUserBuilder__ctor.htm" target="TopicContent">User.AddUserBuilder Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Smartsheet_Api_Models_User_AddUserBuilder.htm" target="TopicContent">User.AddUserBuilder Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_User_AddUserBuilder_Build.htm" target="TopicContent">Build Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_User_AddUserBuilder_SetAdmin.htm" target="TopicContent">SetAdmin Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_User_AddUserBuilder_SetEmail.htm" target="TopicContent">SetEmail Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_User_AddUserBuilder_SetLicensedSheetCreator.htm" target="TopicContent">SetLicensedSheetCreator Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_Models_User_AddUserBuilder.htm" target="TopicContent">User.AddUserBuilder Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_User_AddUserBuilder_Admin.htm" target="TopicContent">Admin Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_User_AddUserBuilder_EmailAddress.htm" target="TopicContent">EmailAddress Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_User_AddUserBuilder_LicensedSheetCreator.htm" target="TopicContent">LicensedSheetCreator Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_Models_User_UpdateUserBuilder.htm" target="TopicContent">User.UpdateUserBuilder Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_User_UpdateUserBuilder__ctor.htm" target="TopicContent">User.UpdateUserBuilder Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Smartsheet_Api_Models_User_UpdateUserBuilder.htm" target="TopicContent">User.UpdateUserBuilder Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_User_UpdateUserBuilder_Build.htm" target="TopicContent">Build Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_User_UpdateUserBuilder_SetAdmin.htm" target="TopicContent">SetAdmin Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_User_UpdateUserBuilder_SetID.htm" target="TopicContent">SetID Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_User_UpdateUserBuilder_SetLicensedSheetCreator.htm" target="TopicContent">SetLicensedSheetCreator Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_Models_User_UpdateUserBuilder.htm" target="TopicContent">User.UpdateUserBuilder Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_User_UpdateUserBuilder_Admin.htm" target="TopicContent">Admin Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_User_UpdateUserBuilder_ID.htm" target="TopicContent">ID Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_User_UpdateUserBuilder_LicensedSheetCreator.htm" target="TopicContent">LicensedSheetCreator Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_Models_UserProfile.htm" target="TopicContent">UserProfile Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_UserProfile__ctor.htm" target="TopicContent">UserProfile Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_Models_UserProfile.htm" target="TopicContent">UserProfile Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_UserProfile_Email.htm" target="TopicContent">Email Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_UserProfile_FirstName.htm" target="TopicContent">FirstName Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_UserProfile_LastName.htm" target="TopicContent">LastName Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/T_Smartsheet_Api_Models_UserStatus.htm" target="TopicContent">UserStatus Enumeration</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_Models_Workspace.htm" target="TopicContent">Workspace Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Workspace__ctor.htm" target="TopicContent">Workspace Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_Models_Workspace.htm" target="TopicContent">Workspace Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Workspace_AccessLevel.htm" target="TopicContent">AccessLevel Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Workspace_Permalink.htm" target="TopicContent">Permalink Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_Models_Workspace_UpdateWorkspaceBuilder.htm" target="TopicContent">Workspace.UpdateWorkspaceBuilder Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Workspace_UpdateWorkspaceBuilder__ctor.htm" target="TopicContent">Workspace.UpdateWorkspaceBuilder Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Smartsheet_Api_Models_Workspace_UpdateWorkspaceBuilder.htm" target="TopicContent">Workspace.UpdateWorkspaceBuilder Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Workspace_UpdateWorkspaceBuilder_Build.htm" target="TopicContent">Build Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Workspace_UpdateWorkspaceBuilder_SetID.htm" target="TopicContent">SetID Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_Models_Workspace_UpdateWorkspaceBuilder_SetName.htm" target="TopicContent">SetName Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_Models_Workspace_UpdateWorkspaceBuilder.htm" target="TopicContent">Workspace.UpdateWorkspaceBuilder Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Workspace_UpdateWorkspaceBuilder_ID.htm" target="TopicContent">ID Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_Models_Workspace_UpdateWorkspaceBuilder_Name.htm" target="TopicContent">Name Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/N_Smartsheet_Api_OAuth.htm" target="TopicContent">Smartsheet.Api.OAuth Namespace</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_OAuth_AccessDeniedException.htm" target="TopicContent">AccessDeniedException Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_OAuth_AccessDeniedException__ctor.htm" target="TopicContent">AccessDeniedException Constructor </a>
+</div>
+</div>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/T_Smartsheet_Api_OAuth_AccessScope.htm" target="TopicContent">AccessScope Enumeration</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_OAuth_AuthorizationResult.htm" target="TopicContent">AuthorizationResult Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_OAuth_AuthorizationResult__ctor.htm" target="TopicContent">AuthorizationResult Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Smartsheet_Api_OAuth_AuthorizationResult.htm" target="TopicContent">AuthorizationResult Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_OAuth_AuthorizationResult_ToString.htm" target="TopicContent">ToString Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_OAuth_AuthorizationResult.htm" target="TopicContent">AuthorizationResult Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_OAuth_AuthorizationResult_Code.htm" target="TopicContent">Code Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_OAuth_AuthorizationResult_ExpiresInSeconds.htm" target="TopicContent">ExpiresInSeconds Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_OAuth_AuthorizationResult_State.htm" target="TopicContent">State Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_OAuth_InvalidOAuthClientException.htm" target="TopicContent">InvalidOAuthClientException Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_OAuth_InvalidOAuthClientException__ctor.htm" target="TopicContent">InvalidOAuthClientException Constructor </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_OAuth_InvalidOAuthGrantException.htm" target="TopicContent">InvalidOAuthGrantException Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_OAuth_InvalidOAuthGrantException__ctor.htm" target="TopicContent">InvalidOAuthGrantException Constructor </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_OAuth_InvalidScopeException.htm" target="TopicContent">InvalidScopeException Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_OAuth_InvalidScopeException__ctor.htm" target="TopicContent">InvalidScopeException Constructor </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_OAuth_InvalidTokenRequestException.htm" target="TopicContent">InvalidTokenRequestException Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_OAuth_InvalidTokenRequestException__ctor.htm" target="TopicContent">InvalidTokenRequestException Constructor </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_OAuth_OAuthAuthorizationCodeException.htm" target="TopicContent">OAuthAuthorizationCodeException Class</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Overload_Smartsheet_Api_OAuth_OAuthAuthorizationCodeException__ctor.htm" target="TopicContent">OAuthAuthorizationCodeException Constructor </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_OAuth_OAuthAuthorizationCodeException__ctor.htm" target="TopicContent">OAuthAuthorizationCodeException Constructor (String)</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_OAuth_OAuthAuthorizationCodeException__ctor_1.htm" target="TopicContent">OAuthAuthorizationCodeException Constructor (String, Exception)</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_OAuth_OAuthFlow.htm" target="TopicContent">OAuthFlow Interface</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Smartsheet_Api_OAuth_OAuthFlow.htm" target="TopicContent">OAuthFlow Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_OAuth_OAuthFlow_ExtractAuthorizationResult.htm" target="TopicContent">ExtractAuthorizationResult Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_OAuth_OAuthFlow_NewAuthorizationURL.htm" target="TopicContent">NewAuthorizationURL Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_OAuth_OAuthFlow_ObtainNewToken.htm" target="TopicContent">ObtainNewToken Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_OAuth_OAuthFlow_RefreshToken.htm" target="TopicContent">RefreshToken Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_OAuth_OAuthFlowBuilder.htm" target="TopicContent">OAuthFlowBuilder Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_OAuth_OAuthFlowBuilder__ctor.htm" target="TopicContent">OAuthFlowBuilder Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Fields_T_Smartsheet_Api_OAuth_OAuthFlowBuilder.htm" target="TopicContent">OAuthFlowBuilder Fields</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/F_Smartsheet_Api_OAuth_OAuthFlowBuilder_DEFAULT_AUTHORIZATION_URL.htm" target="TopicContent">DEFAULT_AUTHORIZATION_URL Field</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/F_Smartsheet_Api_OAuth_OAuthFlowBuilder_DEFAULT_TOKEN_URL.htm" target="TopicContent">DEFAULT_TOKEN_URL Field</a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Smartsheet_Api_OAuth_OAuthFlowBuilder.htm" target="TopicContent">OAuthFlowBuilder Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_OAuth_OAuthFlowBuilder_Build.htm" target="TopicContent">Build Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_OAuth_OAuthFlowBuilder_SetAuthorizationURL.htm" target="TopicContent">SetAuthorizationURL Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_OAuth_OAuthFlowBuilder_SetClientId.htm" target="TopicContent">SetClientId Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_OAuth_OAuthFlowBuilder_SetClientSecret.htm" target="TopicContent">SetClientSecret Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_OAuth_OAuthFlowBuilder_SetHttpClient.htm" target="TopicContent">SetHttpClient Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_OAuth_OAuthFlowBuilder_SetJsonSerializer.htm" target="TopicContent">SetJsonSerializer Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_OAuth_OAuthFlowBuilder_SetRedirectURL.htm" target="TopicContent">SetRedirectURL Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_OAuth_OAuthFlowBuilder_SetTokenURL.htm" target="TopicContent">SetTokenURL Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_OAuth_OAuthFlowBuilder.htm" target="TopicContent">OAuthFlowBuilder Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_OAuth_OAuthFlowBuilder_AuthorizationURL.htm" target="TopicContent">AuthorizationURL Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_OAuth_OAuthFlowBuilder_ClientId.htm" target="TopicContent">ClientId Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_OAuth_OAuthFlowBuilder_ClientSecret.htm" target="TopicContent">ClientSecret Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_OAuth_OAuthFlowBuilder_DefaultAuthorizationUrl.htm" target="TopicContent">DefaultAuthorizationUrl Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_OAuth_OAuthFlowBuilder_DefaultTokenUrl.htm" target="TopicContent">DefaultTokenUrl Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_OAuth_OAuthFlowBuilder_HttpClient.htm" target="TopicContent">HttpClient Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_OAuth_OAuthFlowBuilder_JsonSerializer.htm" target="TopicContent">JsonSerializer Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_OAuth_OAuthFlowBuilder_RedirectURL.htm" target="TopicContent">RedirectURL Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_OAuth_OAuthFlowBuilder_TokenURL.htm" target="TopicContent">TokenURL Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_OAuth_OAuthTokenException.htm" target="TopicContent">OAuthTokenException Class</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Overload_Smartsheet_Api_OAuth_OAuthTokenException__ctor.htm" target="TopicContent">OAuthTokenException Constructor </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_OAuth_OAuthTokenException__ctor.htm" target="TopicContent">OAuthTokenException Constructor (String)</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_OAuth_OAuthTokenException__ctor_1.htm" target="TopicContent">OAuthTokenException Constructor (String, Exception)</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_OAuth_Token.htm" target="TopicContent">Token Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_OAuth_Token__ctor.htm" target="TopicContent">Token Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Smartsheet_Api_OAuth_Token.htm" target="TopicContent">Token Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_OAuth_Token_AccessToken.htm" target="TopicContent">AccessToken Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_OAuth_Token_ExpiresInSeconds.htm" target="TopicContent">ExpiresInSeconds Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_OAuth_Token_RefreshToken.htm" target="TopicContent">RefreshToken Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Smartsheet_Api_OAuth_Token_TokenType.htm" target="TopicContent">TokenType Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_OAuth_UnsupportedOAuthGrantTypeException.htm" target="TopicContent">UnsupportedOAuthGrantTypeException Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_OAuth_UnsupportedOAuthGrantTypeException__ctor.htm" target="TopicContent">UnsupportedOAuthGrantTypeException Constructor </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Smartsheet_Api_OAuth_UnsupportedResponseTypeException.htm" target="TopicContent">UnsupportedResponseTypeException Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Smartsheet_Api_OAuth_UnsupportedResponseTypeException__ctor.htm" target="TopicContent">UnsupportedResponseTypeException Constructor </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+</div>
+
+<div id="TOCSizer" class="TOCSizer" onmousedown="OnMouseDown(event)" onselectstart="javascript: return false;"></div>
+
+<iframe id="TopicContent" name="TopicContent" class="TopicContent" src="html/N_Smartsheet_Api.htm">
+This page uses an IFRAME but your browser does not support it.
+</iframe>
+
+</form>
+
+</body>
+
+</html>

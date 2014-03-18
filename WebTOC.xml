@@ -1,0 +1,905 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpTOC>
+
+  <HelpTOCNode Id="f7fc475d-b734-41dd-84fc-fe84837eb0a3" Title="Smartsheet.Api Namespace" Url="html/N_Smartsheet_Api.htm">
+    <HelpTOCNode Id="c31bc928-17e9-41a8-82b2-8bf78e1d284c" Title="AccessTokenExpiredException Class" Url="html/T_Smartsheet_Api_AccessTokenExpiredException.htm">
+      <HelpTOCNode Title="AccessTokenExpiredException Constructor " Url="html/M_Smartsheet_Api_AccessTokenExpiredException__ctor.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="cc75029f-93ff-43d2-8b05-39c98f6aae64" Title="AssociatedAttachmentResources Interface" Url="html/T_Smartsheet_Api_AssociatedAttachmentResources.htm">
+      <HelpTOCNode Id="0c97b69c-ca9e-4ffa-92cf-47236a20592d" Title="AssociatedAttachmentResources Methods" Url="html/Methods_T_Smartsheet_Api_AssociatedAttachmentResources.htm">
+        <HelpTOCNode Title="AttachFile Method " Url="html/M_Smartsheet_Api_AssociatedAttachmentResources_AttachFile.htm" />
+        <HelpTOCNode Title="AttachURL Method " Url="html/M_Smartsheet_Api_AssociatedAttachmentResources_AttachURL.htm" />
+        <HelpTOCNode Title="ListAttachments Method " Url="html/M_Smartsheet_Api_AssociatedAttachmentResources_ListAttachments.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="fcf70f5e-ed6e-4b24-b9b1-b21ea024aef2" Title="AssociatedDiscussionResources Interface" Url="html/T_Smartsheet_Api_AssociatedDiscussionResources.htm">
+      <HelpTOCNode Id="60d84920-8c51-474d-8dce-23f78e2a68c7" Title="AssociatedDiscussionResources Methods" Url="html/Methods_T_Smartsheet_Api_AssociatedDiscussionResources.htm">
+        <HelpTOCNode Title="CreateDiscussion Method " Url="html/M_Smartsheet_Api_AssociatedDiscussionResources_CreateDiscussion.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="2309a020-9491-46aa-a2f9-4441bf5d4c43" Title="AttachmentResources Interface" Url="html/T_Smartsheet_Api_AttachmentResources.htm">
+      <HelpTOCNode Id="4aee9e70-cea0-4250-82a6-53001914ac85" Title="AttachmentResources Methods" Url="html/Methods_T_Smartsheet_Api_AttachmentResources.htm">
+        <HelpTOCNode Title="DeleteAttachment Method " Url="html/M_Smartsheet_Api_AttachmentResources_DeleteAttachment.htm" />
+        <HelpTOCNode Title="GetAttachment Method " Url="html/M_Smartsheet_Api_AttachmentResources_GetAttachment.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="c254e302-b5f8-497f-b1ea-4125b7636c0f" Title="AuthorizationException Class" Url="html/T_Smartsheet_Api_AuthorizationException.htm">
+      <HelpTOCNode Title="AuthorizationException Constructor " Url="html/M_Smartsheet_Api_AuthorizationException__ctor.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="01e6ca3a-1c32-4d7c-a5a2-ee97690022f5" Title="ColumnResources Interface" Url="html/T_Smartsheet_Api_ColumnResources.htm">
+      <HelpTOCNode Id="e06a7a48-917d-4bf7-ac75-7d7c72470e5e" Title="ColumnResources Methods" Url="html/Methods_T_Smartsheet_Api_ColumnResources.htm">
+        <HelpTOCNode Title="DeleteColumn Method " Url="html/M_Smartsheet_Api_ColumnResources_DeleteColumn.htm" />
+        <HelpTOCNode Title="UpdateColumn Method " Url="html/M_Smartsheet_Api_ColumnResources_UpdateColumn.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="610a3fa3-d0ff-4a20-8c49-6c738acbddd2" Title="CommentResources Interface" Url="html/T_Smartsheet_Api_CommentResources.htm">
+      <HelpTOCNode Id="d6bc919f-6679-470e-814f-6e60d2d4b19f" Title="CommentResources Methods" Url="html/Methods_T_Smartsheet_Api_CommentResources.htm">
+        <HelpTOCNode Title="Attachments Method " Url="html/M_Smartsheet_Api_CommentResources_Attachments.htm" />
+        <HelpTOCNode Title="DeleteComment Method " Url="html/M_Smartsheet_Api_CommentResources_DeleteComment.htm" />
+        <HelpTOCNode Title="GetComment Method " Url="html/M_Smartsheet_Api_CommentResources_GetComment.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="b136aa52-ef42-43e9-a982-b05466437af6" Title="DiscussionResources Interface" Url="html/T_Smartsheet_Api_DiscussionResources.htm">
+      <HelpTOCNode Id="664e5e06-11bb-4a0a-988b-78a710a07d04" Title="DiscussionResources Methods" Url="html/Methods_T_Smartsheet_Api_DiscussionResources.htm">
+        <HelpTOCNode Title="AddDiscussionComment Method " Url="html/M_Smartsheet_Api_DiscussionResources_AddDiscussionComment.htm" />
+        <HelpTOCNode Title="Attachments Method " Url="html/M_Smartsheet_Api_DiscussionResources_Attachments.htm" />
+        <HelpTOCNode Title="GetDiscussion Method " Url="html/M_Smartsheet_Api_DiscussionResources_GetDiscussion.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="5b6db63c-0b22-44cf-8834-567d2a0b1da8" Title="FolderResources Interface" Url="html/T_Smartsheet_Api_FolderResources.htm">
+      <HelpTOCNode Id="7e053b52-4965-4ab1-bad5-513c5722e2c1" Title="FolderResources Methods" Url="html/Methods_T_Smartsheet_Api_FolderResources.htm">
+        <HelpTOCNode Title="CreateFolder Method " Url="html/M_Smartsheet_Api_FolderResources_CreateFolder.htm" />
+        <HelpTOCNode Title="DeleteFolder Method " Url="html/M_Smartsheet_Api_FolderResources_DeleteFolder.htm" />
+        <HelpTOCNode Title="GetFolder Method " Url="html/M_Smartsheet_Api_FolderResources_GetFolder.htm" />
+        <HelpTOCNode Title="ListFolders Method " Url="html/M_Smartsheet_Api_FolderResources_ListFolders.htm" />
+        <HelpTOCNode Title="UpdateFolder Method " Url="html/M_Smartsheet_Api_FolderResources_UpdateFolder.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="217cb148-eb46-4125-92cb-e1c0b1db46b0" Title="HomeFolderResources Interface" Url="html/T_Smartsheet_Api_HomeFolderResources.htm">
+      <HelpTOCNode Id="10b8899d-82cf-47f0-b6e5-fa34c89910bf" Title="HomeFolderResources Methods" Url="html/Methods_T_Smartsheet_Api_HomeFolderResources.htm">
+        <HelpTOCNode Title="CreateFolder Method " Url="html/M_Smartsheet_Api_HomeFolderResources_CreateFolder.htm" />
+        <HelpTOCNode Title="ListFolders Method " Url="html/M_Smartsheet_Api_HomeFolderResources_ListFolders.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="d6a5c67c-e2f3-49db-9242-c638be9e9730" Title="HomeResources Interface" Url="html/T_Smartsheet_Api_HomeResources.htm">
+      <HelpTOCNode Id="77fa1c70-11ca-48fd-8af0-a0dddac7838c" Title="HomeResources Methods" Url="html/Methods_T_Smartsheet_Api_HomeResources.htm">
+        <HelpTOCNode Title="Folders Method " Url="html/M_Smartsheet_Api_HomeResources_Folders.htm" />
+        <HelpTOCNode Title="GetHome Method " Url="html/M_Smartsheet_Api_HomeResources_GetHome.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="075a62c1-86a9-490d-af39-b8cec05c1d6e" Title="InvalidRequestException Class" Url="html/T_Smartsheet_Api_InvalidRequestException.htm">
+      <HelpTOCNode Title="InvalidRequestException Constructor " Url="html/M_Smartsheet_Api_InvalidRequestException__ctor.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="7b70fe35-f70e-4111-a3ee-d0820d012e19" Title="ResourceNotFoundException Class" Url="html/T_Smartsheet_Api_ResourceNotFoundException.htm">
+      <HelpTOCNode Title="ResourceNotFoundException Constructor " Url="html/M_Smartsheet_Api_ResourceNotFoundException__ctor.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="6ddce6e2-0191-494f-a99a-7ddd8d0e87a7" Title="RowResources Interface" Url="html/T_Smartsheet_Api_RowResources.htm">
+      <HelpTOCNode Id="d35c806a-738f-4efc-93ec-0c82f3d21b70" Title="RowResources Methods" Url="html/Methods_T_Smartsheet_Api_RowResources.htm">
+        <HelpTOCNode Title="Attachments Method " Url="html/M_Smartsheet_Api_RowResources_Attachments.htm" />
+        <HelpTOCNode Title="DeleteRow Method " Url="html/M_Smartsheet_Api_RowResources_DeleteRow.htm" />
+        <HelpTOCNode Title="Discussions Method " Url="html/M_Smartsheet_Api_RowResources_Discussions.htm" />
+        <HelpTOCNode Title="GetCellHistory Method " Url="html/M_Smartsheet_Api_RowResources_GetCellHistory.htm" />
+        <HelpTOCNode Title="GetRow Method " Url="html/M_Smartsheet_Api_RowResources_GetRow.htm" />
+        <HelpTOCNode Title="MoveRow Method " Url="html/M_Smartsheet_Api_RowResources_MoveRow.htm" />
+        <HelpTOCNode Title="SendRow Method " Url="html/M_Smartsheet_Api_RowResources_SendRow.htm" />
+        <HelpTOCNode Title="UpdateCells Method " Url="html/M_Smartsheet_Api_RowResources_UpdateCells.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="3c0d8ac1-0fc8-40a4-a500-63440650446a" Title="SearchResources Interface" Url="html/T_Smartsheet_Api_SearchResources.htm">
+      <HelpTOCNode Id="019f6f36-2bf5-40ae-8d12-eb421775a007" Title="SearchResources Methods" Url="html/Methods_T_Smartsheet_Api_SearchResources.htm">
+        <HelpTOCNode Title="Search Method " Url="html/M_Smartsheet_Api_SearchResources_Search.htm" />
+        <HelpTOCNode Title="SearchSheet Method " Url="html/M_Smartsheet_Api_SearchResources_SearchSheet.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="a67d69b1-c43e-442d-ac14-c7a4e6e67a45" Title="ServiceUnavailableException Class" Url="html/T_Smartsheet_Api_ServiceUnavailableException.htm">
+      <HelpTOCNode Title="ServiceUnavailableException Constructor " Url="html/M_Smartsheet_Api_ServiceUnavailableException__ctor.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="6751b42c-7a3d-42d2-8cee-7c171aa6984d" Title="ShareResources Interface" Url="html/T_Smartsheet_Api_ShareResources.htm">
+      <HelpTOCNode Id="377f7c8a-f4af-44ab-b982-f2a94cc2adab" Title="ShareResources Methods" Url="html/Methods_T_Smartsheet_Api_ShareResources.htm">
+        <HelpTOCNode Title="DeleteShare Method " Url="html/M_Smartsheet_Api_ShareResources_DeleteShare.htm" />
+        <HelpTOCNode Title="GetShare Method " Url="html/M_Smartsheet_Api_ShareResources_GetShare.htm" />
+        <HelpTOCNode Title="ListShares Method " Url="html/M_Smartsheet_Api_ShareResources_ListShares.htm" />
+        <HelpTOCNode Id="9f421f78-6a82-4527-8c97-852da6ae9ad0" Title="ShareTo Method " Url="html/Overload_Smartsheet_Api_ShareResources_ShareTo.htm">
+          <HelpTOCNode Title="ShareTo Method (Int64, MultiShare)" Url="html/M_Smartsheet_Api_ShareResources_ShareTo.htm" />
+          <HelpTOCNode Title="ShareTo Method (Int64, Share)" Url="html/M_Smartsheet_Api_ShareResources_ShareTo_2.htm" />
+          <HelpTOCNode Title="ShareTo Method (Int64, MultiShare, Boolean)" Url="html/M_Smartsheet_Api_ShareResources_ShareTo_1.htm" />
+          <HelpTOCNode Title="ShareTo Method (Int64, Share, Boolean)" Url="html/M_Smartsheet_Api_ShareResources_ShareTo_3.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="UpdateShare Method " Url="html/M_Smartsheet_Api_ShareResources_UpdateShare.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="f93b2356-5546-4046-b147-51e0564f7272" Title="SheetColumnResources Interface" Url="html/T_Smartsheet_Api_SheetColumnResources.htm">
+      <HelpTOCNode Id="bb17cdbc-ffa7-471c-a73e-6c63142fbbe3" Title="SheetColumnResources Methods" Url="html/Methods_T_Smartsheet_Api_SheetColumnResources.htm">
+        <HelpTOCNode Title="AddColumn Method " Url="html/M_Smartsheet_Api_SheetColumnResources_AddColumn.htm" />
+        <HelpTOCNode Title="ListColumns Method " Url="html/M_Smartsheet_Api_SheetColumnResources_ListColumns.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="6d068826-4db0-4c30-919b-f1a9e9cbc721" Title="SheetResources Interface" Url="html/T_Smartsheet_Api_SheetResources.htm">
+      <HelpTOCNode Id="fded5bda-01a4-4c0f-8c70-f0b5ba93e6c1" Title="SheetResources Methods" Url="html/Methods_T_Smartsheet_Api_SheetResources.htm">
+        <HelpTOCNode Title="Attachments Method " Url="html/M_Smartsheet_Api_SheetResources_Attachments.htm" />
+        <HelpTOCNode Title="Columns Method " Url="html/M_Smartsheet_Api_SheetResources_Columns.htm" />
+        <HelpTOCNode Title="CreateSheet Method " Url="html/M_Smartsheet_Api_SheetResources_CreateSheet.htm" />
+        <HelpTOCNode Title="CreateSheetFromExisting Method " Url="html/M_Smartsheet_Api_SheetResources_CreateSheetFromExisting.htm" />
+        <HelpTOCNode Title="CreateSheetInFolder Method " Url="html/M_Smartsheet_Api_SheetResources_CreateSheetInFolder.htm" />
+        <HelpTOCNode Title="CreateSheetInFolderFromExisting Method " Url="html/M_Smartsheet_Api_SheetResources_CreateSheetInFolderFromExisting.htm" />
+        <HelpTOCNode Title="CreateSheetInWorkspace Method " Url="html/M_Smartsheet_Api_SheetResources_CreateSheetInWorkspace.htm" />
+        <HelpTOCNode Title="CreateSheetInWorkspaceFromExisting Method " Url="html/M_Smartsheet_Api_SheetResources_CreateSheetInWorkspaceFromExisting.htm" />
+        <HelpTOCNode Title="DeleteSheet Method " Url="html/M_Smartsheet_Api_SheetResources_DeleteSheet.htm" />
+        <HelpTOCNode Title="Discussions Method " Url="html/M_Smartsheet_Api_SheetResources_Discussions.htm" />
+        <HelpTOCNode Title="GetPublishStatus Method " Url="html/M_Smartsheet_Api_SheetResources_GetPublishStatus.htm" />
+        <HelpTOCNode Title="GetSheet Method " Url="html/M_Smartsheet_Api_SheetResources_GetSheet.htm" />
+        <HelpTOCNode Title="GetSheetAsExcel Method " Url="html/M_Smartsheet_Api_SheetResources_GetSheetAsExcel.htm" />
+        <HelpTOCNode Title="GetSheetAsPDF Method " Url="html/M_Smartsheet_Api_SheetResources_GetSheetAsPDF.htm" />
+        <HelpTOCNode Title="GetSheetVersion Method " Url="html/M_Smartsheet_Api_SheetResources_GetSheetVersion.htm" />
+        <HelpTOCNode Title="ListOrganizationSheets Method " Url="html/M_Smartsheet_Api_SheetResources_ListOrganizationSheets.htm" />
+        <HelpTOCNode Title="ListSheets Method " Url="html/M_Smartsheet_Api_SheetResources_ListSheets.htm" />
+        <HelpTOCNode Title="Rows Method " Url="html/M_Smartsheet_Api_SheetResources_Rows.htm" />
+        <HelpTOCNode Title="SendSheet Method " Url="html/M_Smartsheet_Api_SheetResources_SendSheet.htm" />
+        <HelpTOCNode Title="Shares Method " Url="html/M_Smartsheet_Api_SheetResources_Shares.htm" />
+        <HelpTOCNode Title="UpdatePublishStatus Method " Url="html/M_Smartsheet_Api_SheetResources_UpdatePublishStatus.htm" />
+        <HelpTOCNode Title="UpdateSheet Method " Url="html/M_Smartsheet_Api_SheetResources_UpdateSheet.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="c1b87eca-6a12-48da-bdee-307296ab7cda" Title="SheetRowResources Interface" Url="html/T_Smartsheet_Api_SheetRowResources.htm">
+      <HelpTOCNode Id="ad1ab5e2-018c-4f2c-b2aa-1481ecef9159" Title="SheetRowResources Methods" Url="html/Methods_T_Smartsheet_Api_SheetRowResources.htm">
+        <HelpTOCNode Title="GetRow Method " Url="html/M_Smartsheet_Api_SheetRowResources_GetRow.htm" />
+        <HelpTOCNode Title="InsertRows Method " Url="html/M_Smartsheet_Api_SheetRowResources_InsertRows.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="0e67a6cf-c969-4ee8-b2e8-e94187471d5d" Title="SmartsheetBuilder Class" Url="html/T_Smartsheet_Api_SmartsheetBuilder.htm">
+      <HelpTOCNode Title="SmartsheetBuilder Constructor " Url="html/M_Smartsheet_Api_SmartsheetBuilder__ctor.htm" />
+      <HelpTOCNode Id="d9420279-2644-40f9-890a-c84aa87b26e7" Title="SmartsheetBuilder Fields" Url="html/Fields_T_Smartsheet_Api_SmartsheetBuilder.htm">
+        <HelpTOCNode Title="DEFAULT_BASE_URI Field" Url="html/F_Smartsheet_Api_SmartsheetBuilder_DEFAULT_BASE_URI.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="aa783c1a-1b38-4eeb-9372-01cecf71bf06" Title="SmartsheetBuilder Methods" Url="html/Methods_T_Smartsheet_Api_SmartsheetBuilder.htm">
+        <HelpTOCNode Title="Build Method " Url="html/M_Smartsheet_Api_SmartsheetBuilder_Build.htm" />
+        <HelpTOCNode Title="SetAccessToken Method " Url="html/M_Smartsheet_Api_SmartsheetBuilder_SetAccessToken.htm" />
+        <HelpTOCNode Title="SetAssumedUser Method " Url="html/M_Smartsheet_Api_SmartsheetBuilder_SetAssumedUser.htm" />
+        <HelpTOCNode Title="SetBaseURI Method " Url="html/M_Smartsheet_Api_SmartsheetBuilder_SetBaseURI.htm" />
+        <HelpTOCNode Title="SetHttpClient Method " Url="html/M_Smartsheet_Api_SmartsheetBuilder_SetHttpClient.htm" />
+        <HelpTOCNode Title="SetJsonSerializer Method " Url="html/M_Smartsheet_Api_SmartsheetBuilder_SetJsonSerializer.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="14b40b33-8052-41d4-b4b5-84f40f705b9c" Title="SmartsheetBuilder Properties" Url="html/Properties_T_Smartsheet_Api_SmartsheetBuilder.htm">
+        <HelpTOCNode Title="AccessToken Property " Url="html/P_Smartsheet_Api_SmartsheetBuilder_AccessToken.htm" />
+        <HelpTOCNode Title="AssumedUser Property " Url="html/P_Smartsheet_Api_SmartsheetBuilder_AssumedUser.htm" />
+        <HelpTOCNode Title="BaseURI Property " Url="html/P_Smartsheet_Api_SmartsheetBuilder_BaseURI.htm" />
+        <HelpTOCNode Title="DefaultBaseUri Property " Url="html/P_Smartsheet_Api_SmartsheetBuilder_DefaultBaseUri.htm" />
+        <HelpTOCNode Title="HttpClient Property " Url="html/P_Smartsheet_Api_SmartsheetBuilder_HttpClient.htm" />
+        <HelpTOCNode Title="JsonSerializer Property " Url="html/P_Smartsheet_Api_SmartsheetBuilder_JsonSerializer.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="731e01e3-1f72-4bec-8af7-75d6e6610143" Title="SmartsheetClient Interface" Url="html/T_Smartsheet_Api_SmartsheetClient.htm">
+      <HelpTOCNode Id="20008101-f048-4d60-b750-ca7add35bea2" Title="SmartsheetClient Methods" Url="html/Methods_T_Smartsheet_Api_SmartsheetClient.htm">
+        <HelpTOCNode Title="Attachments Method " Url="html/M_Smartsheet_Api_SmartsheetClient_Attachments.htm" />
+        <HelpTOCNode Title="Columns Method " Url="html/M_Smartsheet_Api_SmartsheetClient_Columns.htm" />
+        <HelpTOCNode Title="Comments Method " Url="html/M_Smartsheet_Api_SmartsheetClient_Comments.htm" />
+        <HelpTOCNode Title="Discussions Method " Url="html/M_Smartsheet_Api_SmartsheetClient_Discussions.htm" />
+        <HelpTOCNode Title="Folders Method " Url="html/M_Smartsheet_Api_SmartsheetClient_Folders.htm" />
+        <HelpTOCNode Title="Home Method " Url="html/M_Smartsheet_Api_SmartsheetClient_Home.htm" />
+        <HelpTOCNode Title="Rows Method " Url="html/M_Smartsheet_Api_SmartsheetClient_Rows.htm" />
+        <HelpTOCNode Title="Search Method " Url="html/M_Smartsheet_Api_SmartsheetClient_Search.htm" />
+        <HelpTOCNode Title="Sheets Method " Url="html/M_Smartsheet_Api_SmartsheetClient_Sheets.htm" />
+        <HelpTOCNode Title="Templates Method " Url="html/M_Smartsheet_Api_SmartsheetClient_Templates.htm" />
+        <HelpTOCNode Title="Users Method " Url="html/M_Smartsheet_Api_SmartsheetClient_Users.htm" />
+        <HelpTOCNode Title="Workspaces Method " Url="html/M_Smartsheet_Api_SmartsheetClient_Workspaces.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="95931b33-db73-410f-a65d-c1aab6190a49" Title="SmartsheetException Class" Url="html/T_Smartsheet_Api_SmartsheetException.htm">
+      <HelpTOCNode Id="6075e1e2-39a2-430d-9224-c8555d39778c" Title="SmartsheetException Constructor " Url="html/Overload_Smartsheet_Api_SmartsheetException__ctor.htm">
+        <HelpTOCNode Title="SmartsheetException Constructor (Exception)" Url="html/M_Smartsheet_Api_SmartsheetException__ctor.htm" />
+        <HelpTOCNode Title="SmartsheetException Constructor (String)" Url="html/M_Smartsheet_Api_SmartsheetException__ctor_1.htm" />
+        <HelpTOCNode Title="SmartsheetException Constructor (String, Exception)" Url="html/M_Smartsheet_Api_SmartsheetException__ctor_2.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="cc0d9bfd-ff9d-420f-a4f4-e521d0520ea3" Title="SmartsheetRestException Class" Url="html/T_Smartsheet_Api_SmartsheetRestException.htm">
+      <HelpTOCNode Title="SmartsheetRestException Constructor " Url="html/M_Smartsheet_Api_SmartsheetRestException__ctor.htm" />
+      <HelpTOCNode Id="e7db5fd2-b3c3-4351-99a6-7e9f6946e694" Title="SmartsheetRestException Properties" Url="html/Properties_T_Smartsheet_Api_SmartsheetRestException.htm">
+        <HelpTOCNode Title="ErrorCode Property " Url="html/P_Smartsheet_Api_SmartsheetRestException_ErrorCode.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="a5bc1e3f-9437-4900-8382-030bd7cee083" Title="TemplateResources Interface" Url="html/T_Smartsheet_Api_TemplateResources.htm">
+      <HelpTOCNode Id="76bbdabe-ed3c-4d59-a579-80835471eb0a" Title="TemplateResources Methods" Url="html/Methods_T_Smartsheet_Api_TemplateResources.htm">
+        <HelpTOCNode Title="ListTemplates Method " Url="html/M_Smartsheet_Api_TemplateResources_ListTemplates.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="00c16409-e8c7-4e53-8bae-cc354d61ce12" Title="UserResources Interface" Url="html/T_Smartsheet_Api_UserResources.htm">
+      <HelpTOCNode Id="e66c3f32-2e2d-4c9c-85f8-a752dceaf625" Title="UserResources Methods" Url="html/Methods_T_Smartsheet_Api_UserResources.htm">
+        <HelpTOCNode Id="6349c1c7-56cc-4efd-bbc8-1a0b75177335" Title="AddUser Method " Url="html/Overload_Smartsheet_Api_UserResources_AddUser.htm">
+          <HelpTOCNode Title="AddUser Method (User)" Url="html/M_Smartsheet_Api_UserResources_AddUser.htm" />
+          <HelpTOCNode Title="AddUser Method (User, Boolean)" Url="html/M_Smartsheet_Api_UserResources_AddUser_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="DeleteUser Method " Url="html/M_Smartsheet_Api_UserResources_DeleteUser.htm" />
+        <HelpTOCNode Title="ListUsers Method " Url="html/M_Smartsheet_Api_UserResources_ListUsers.htm" />
+        <HelpTOCNode Title="UpdateUser Method " Url="html/M_Smartsheet_Api_UserResources_UpdateUser.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="5852ec7d-f60a-4dfc-b5bc-2467a70da509" Title="UserResources Properties" Url="html/Properties_T_Smartsheet_Api_UserResources.htm">
+        <HelpTOCNode Title="currentUser Property " Url="html/P_Smartsheet_Api_UserResources_currentUser.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="8184d04f-e145-4590-94ee-66187f8efcd7" Title="WorkspaceFolderResources Interface" Url="html/T_Smartsheet_Api_WorkspaceFolderResources.htm">
+      <HelpTOCNode Id="a89c109f-19db-4be1-93d6-7b0a45de9e77" Title="WorkspaceFolderResources Methods" Url="html/Methods_T_Smartsheet_Api_WorkspaceFolderResources.htm">
+        <HelpTOCNode Title="CreateFolder Method " Url="html/M_Smartsheet_Api_WorkspaceFolderResources_CreateFolder.htm" />
+        <HelpTOCNode Title="ListFolders Method " Url="html/M_Smartsheet_Api_WorkspaceFolderResources_ListFolders.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="677e91e1-ea2f-4424-987f-420a0665fa78" Title="WorkspaceResources Interface" Url="html/T_Smartsheet_Api_WorkspaceResources.htm">
+      <HelpTOCNode Id="e84217eb-8b51-4341-8b9a-fdcdffe5167b" Title="WorkspaceResources Methods" Url="html/Methods_T_Smartsheet_Api_WorkspaceResources.htm">
+        <HelpTOCNode Title="CreateWorkspace Method " Url="html/M_Smartsheet_Api_WorkspaceResources_CreateWorkspace.htm" />
+        <HelpTOCNode Title="DeleteWorkspace Method " Url="html/M_Smartsheet_Api_WorkspaceResources_DeleteWorkspace.htm" />
+        <HelpTOCNode Title="Folders Method " Url="html/M_Smartsheet_Api_WorkspaceResources_Folders.htm" />
+        <HelpTOCNode Title="GetWorkspace Method " Url="html/M_Smartsheet_Api_WorkspaceResources_GetWorkspace.htm" />
+        <HelpTOCNode Title="ListWorkspaces Method " Url="html/M_Smartsheet_Api_WorkspaceResources_ListWorkspaces.htm" />
+        <HelpTOCNode Title="Shares Method " Url="html/M_Smartsheet_Api_WorkspaceResources_Shares.htm" />
+        <HelpTOCNode Title="UpdateWorkspace Method " Url="html/M_Smartsheet_Api_WorkspaceResources_UpdateWorkspace.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="10aa87f9-bc9e-42da-8da4-15da9fc3a28d" Title="Smartsheet.Api.Models Namespace" Url="html/N_Smartsheet_Api_Models.htm">
+    <HelpTOCNode Title="AccessLevel Enumeration" Url="html/T_Smartsheet_Api_Models_AccessLevel.htm" />
+    <HelpTOCNode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_Models_AccessScope.htm" />
+    <HelpTOCNode Id="da1f9a76-d38c-4c21-bbdc-40b7aa6d98ed" Title="Attachment Class" Url="html/T_Smartsheet_Api_Models_Attachment.htm">
+      <HelpTOCNode Title="Attachment Constructor " Url="html/M_Smartsheet_Api_Models_Attachment__ctor.htm" />
+      <HelpTOCNode Id="dc237af6-4056-421b-9952-74af680e9104" Title="Attachment Properties" Url="html/Properties_T_Smartsheet_Api_Models_Attachment.htm">
+        <HelpTOCNode Title="AttachmentSubType Property " Url="html/P_Smartsheet_Api_Models_Attachment_AttachmentSubType.htm" />
+        <HelpTOCNode Title="AttachmentType Property " Url="html/P_Smartsheet_Api_Models_Attachment_AttachmentType.htm" />
+        <HelpTOCNode Title="CreatedAt Property " Url="html/P_Smartsheet_Api_Models_Attachment_CreatedAt.htm" />
+        <HelpTOCNode Title="MimeType Property " Url="html/P_Smartsheet_Api_Models_Attachment_MimeType.htm" />
+        <HelpTOCNode Title="ParentId Property " Url="html/P_Smartsheet_Api_Models_Attachment_ParentId.htm" />
+        <HelpTOCNode Title="ParentType Property " Url="html/P_Smartsheet_Api_Models_Attachment_ParentType.htm" />
+        <HelpTOCNode Title="SizeInKb Property " Url="html/P_Smartsheet_Api_Models_Attachment_SizeInKb.htm" />
+        <HelpTOCNode Title="Url Property " Url="html/P_Smartsheet_Api_Models_Attachment_Url.htm" />
+        <HelpTOCNode Title="UrlExpiresInMillis Property " Url="html/P_Smartsheet_Api_Models_Attachment_UrlExpiresInMillis.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Title="AttachmentParentType Enumeration" Url="html/T_Smartsheet_Api_Models_AttachmentParentType.htm" />
+    <HelpTOCNode Title="AttachmentSubType Enumeration" Url="html/T_Smartsheet_Api_Models_AttachmentSubType.htm" />
+    <HelpTOCNode Title="AttachmentType Enumeration" Url="html/T_Smartsheet_Api_Models_AttachmentType.htm" />
+    <HelpTOCNode Id="651b5cde-1f55-49b5-938f-5802ff05cadf" Title="AutoNumberFormat Class" Url="html/T_Smartsheet_Api_Models_AutoNumberFormat.htm">
+      <HelpTOCNode Title="AutoNumberFormat Constructor " Url="html/M_Smartsheet_Api_Models_AutoNumberFormat__ctor.htm" />
+      <HelpTOCNode Id="e9556aca-bd0c-47fa-8d43-bae7d28a6153" Title="AutoNumberFormat Properties" Url="html/Properties_T_Smartsheet_Api_Models_AutoNumberFormat.htm">
+        <HelpTOCNode Title="Fill Property " Url="html/P_Smartsheet_Api_Models_AutoNumberFormat_Fill.htm" />
+        <HelpTOCNode Title="Prefix Property " Url="html/P_Smartsheet_Api_Models_AutoNumberFormat_Prefix.htm" />
+        <HelpTOCNode Title="StartingNumber Property " Url="html/P_Smartsheet_Api_Models_AutoNumberFormat_StartingNumber.htm" />
+        <HelpTOCNode Title="Suffix Property " Url="html/P_Smartsheet_Api_Models_AutoNumberFormat_Suffix.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="b7635e8d-3df9-4912-b69a-9f3fb91aa324" Title="Cell Class" Url="html/T_Smartsheet_Api_Models_Cell.htm">
+      <HelpTOCNode Title="Cell Constructor " Url="html/M_Smartsheet_Api_Models_Cell__ctor.htm" />
+      <HelpTOCNode Id="2c849e61-694d-45a5-9ebc-a2d7ee334bfe" Title="Cell Properties" Url="html/Properties_T_Smartsheet_Api_Models_Cell.htm">
+        <HelpTOCNode Title="ColumnId Property " Url="html/P_Smartsheet_Api_Models_Cell_ColumnId.htm" />
+        <HelpTOCNode Title="DisplayValue Property " Url="html/P_Smartsheet_Api_Models_Cell_DisplayValue.htm" />
+        <HelpTOCNode Title="Formula Property " Url="html/P_Smartsheet_Api_Models_Cell_Formula.htm" />
+        <HelpTOCNode Title="Link Property " Url="html/P_Smartsheet_Api_Models_Cell_Link.htm" />
+        <HelpTOCNode Title="RowId Property " Url="html/P_Smartsheet_Api_Models_Cell_RowId.htm" />
+        <HelpTOCNode Title="Strict Property " Url="html/P_Smartsheet_Api_Models_Cell_Strict.htm" />
+        <HelpTOCNode Title="Type Property " Url="html/P_Smartsheet_Api_Models_Cell_Type.htm" />
+        <HelpTOCNode Title="Value Property " Url="html/P_Smartsheet_Api_Models_Cell_Value.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="345f61d5-4f70-4712-ae12-abec7529d326" Title="Cell.UpdateRowCellsBuilder Class" Url="html/T_Smartsheet_Api_Models_Cell_UpdateRowCellsBuilder.htm">
+      <HelpTOCNode Title="Cell.UpdateRowCellsBuilder Constructor " Url="html/M_Smartsheet_Api_Models_Cell_UpdateRowCellsBuilder__ctor.htm" />
+      <HelpTOCNode Id="d0292235-bc4b-4e5e-a1e2-1b7eecbbc57b" Title="Cell.UpdateRowCellsBuilder Methods" Url="html/Methods_T_Smartsheet_Api_Models_Cell_UpdateRowCellsBuilder.htm">
+        <HelpTOCNode Id="69ecada9-0fe2-4f64-a363-e6124aea9ffb" Title="AddCell Method " Url="html/Overload_Smartsheet_Api_Models_Cell_UpdateRowCellsBuilder_AddCell.htm">
+          <HelpTOCNode Title="AddCell Method (Nullable(Int64), Object)" Url="html/M_Smartsheet_Api_Models_Cell_UpdateRowCellsBuilder_AddCell.htm" />
+          <HelpTOCNode Title="AddCell Method (Nullable(Int64), Object, Nullable(Boolean))" Url="html/M_Smartsheet_Api_Models_Cell_UpdateRowCellsBuilder_AddCell_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Build Method " Url="html/M_Smartsheet_Api_Models_Cell_UpdateRowCellsBuilder_Build.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="52f738cf-3c08-4f86-a13d-d07fed81517e" Title="Cell.UpdateRowCellsBuilder Properties" Url="html/Properties_T_Smartsheet_Api_Models_Cell_UpdateRowCellsBuilder.htm">
+        <HelpTOCNode Title="Cells Property " Url="html/P_Smartsheet_Api_Models_Cell_UpdateRowCellsBuilder_Cells.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="6ca641ce-763c-423f-a271-159d189d2ac3" Title="CellHistory Class" Url="html/T_Smartsheet_Api_Models_CellHistory.htm">
+      <HelpTOCNode Title="CellHistory Constructor " Url="html/M_Smartsheet_Api_Models_CellHistory__ctor.htm" />
+      <HelpTOCNode Id="edf19e81-e2b6-4a6b-8a2d-c29f5ac72acb" Title="CellHistory Properties" Url="html/Properties_T_Smartsheet_Api_Models_CellHistory.htm">
+        <HelpTOCNode Title="ModifiedAt Property " Url="html/P_Smartsheet_Api_Models_CellHistory_ModifiedAt.htm" />
+        <HelpTOCNode Title="ModifiedBy Property " Url="html/P_Smartsheet_Api_Models_CellHistory_ModifiedBy.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="0f65f00e-38ef-48fe-834d-09ce401f2933" Title="Column Class" Url="html/T_Smartsheet_Api_Models_Column.htm">
+      <HelpTOCNode Title="Column Constructor " Url="html/M_Smartsheet_Api_Models_Column__ctor.htm" />
+      <HelpTOCNode Id="32e7439d-ac3f-40af-a340-7542d27a8c0b" Title="Column Properties" Url="html/Properties_T_Smartsheet_Api_Models_Column.htm">
+        <HelpTOCNode Title="AutoNumberFormat Property " Url="html/P_Smartsheet_Api_Models_Column_AutoNumberFormat.htm" />
+        <HelpTOCNode Title="Hidden Property " Url="html/P_Smartsheet_Api_Models_Column_Hidden.htm" />
+        <HelpTOCNode Title="Index Property " Url="html/P_Smartsheet_Api_Models_Column_Index.htm" />
+        <HelpTOCNode Title="Options Property " Url="html/P_Smartsheet_Api_Models_Column_Options.htm" />
+        <HelpTOCNode Title="Primary Property " Url="html/P_Smartsheet_Api_Models_Column_Primary.htm" />
+        <HelpTOCNode Title="SheetId Property " Url="html/P_Smartsheet_Api_Models_Column_SheetId.htm" />
+        <HelpTOCNode Title="Symbol Property " Url="html/P_Smartsheet_Api_Models_Column_Symbol.htm" />
+        <HelpTOCNode Title="SystemColumnType Property " Url="html/P_Smartsheet_Api_Models_Column_SystemColumnType.htm" />
+        <HelpTOCNode Title="Tags Property " Url="html/P_Smartsheet_Api_Models_Column_Tags.htm" />
+        <HelpTOCNode Title="Title Property " Url="html/P_Smartsheet_Api_Models_Column_Title.htm" />
+        <HelpTOCNode Title="Type Property " Url="html/P_Smartsheet_Api_Models_Column_Type.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="7f4d0a0a-aca0-42ed-8cd8-930214ba18b7" Title="Column.AddColumnToSheetBuilder Class" Url="html/T_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder.htm">
+      <HelpTOCNode Title="Column.AddColumnToSheetBuilder Constructor " Url="html/M_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder__ctor.htm" />
+      <HelpTOCNode Id="db183a1c-eda5-4d06-a410-62b06a078db8" Title="Column.AddColumnToSheetBuilder Methods" Url="html/Methods_T_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder.htm">
+        <HelpTOCNode Title="Build Method " Url="html/M_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_Build.htm" />
+        <HelpTOCNode Title="SetAutoNumberFormat Method " Url="html/M_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_SetAutoNumberFormat.htm" />
+        <HelpTOCNode Title="SetOptions Method " Url="html/M_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_SetOptions.htm" />
+        <HelpTOCNode Title="SetPrimary Method " Url="html/M_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_SetPrimary.htm" />
+        <HelpTOCNode Title="SetSymbol Method " Url="html/M_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_SetSymbol.htm" />
+        <HelpTOCNode Title="SetSystemColumnType Method " Url="html/M_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_SetSystemColumnType.htm" />
+        <HelpTOCNode Title="SetTitle Method " Url="html/M_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_SetTitle.htm" />
+        <HelpTOCNode Title="SetType Method " Url="html/M_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_SetType.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="eb7701aa-eed3-44cb-8ad6-c72d1e81a1a8" Title="Column.AddColumnToSheetBuilder Properties" Url="html/Properties_T_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder.htm">
+        <HelpTOCNode Title="AutoNumberFormat Property " Url="html/P_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_AutoNumberFormat.htm" />
+        <HelpTOCNode Title="Options Property " Url="html/P_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_Options.htm" />
+        <HelpTOCNode Title="Primary Property " Url="html/P_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_Primary.htm" />
+        <HelpTOCNode Title="Symbol Property " Url="html/P_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_Symbol.htm" />
+        <HelpTOCNode Title="SystemColumnType Property " Url="html/P_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_SystemColumnType.htm" />
+        <HelpTOCNode Title="Title Property " Url="html/P_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_Title.htm" />
+        <HelpTOCNode Title="Type Property " Url="html/P_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_Type.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="be08bbc7-68e2-4105-90bf-d4038970099c" Title="Column.ModifyColumnBuilder Class" Url="html/T_Smartsheet_Api_Models_Column_ModifyColumnBuilder.htm">
+      <HelpTOCNode Title="Column.ModifyColumnBuilder Constructor " Url="html/M_Smartsheet_Api_Models_Column_ModifyColumnBuilder__ctor.htm" />
+      <HelpTOCNode Id="762ee1c0-63fa-478a-aad0-6ce013271c6c" Title="Column.ModifyColumnBuilder Methods" Url="html/Methods_T_Smartsheet_Api_Models_Column_ModifyColumnBuilder.htm">
+        <HelpTOCNode Title="Build Method " Url="html/M_Smartsheet_Api_Models_Column_ModifyColumnBuilder_Build.htm" />
+        <HelpTOCNode Title="SetAutoNumberFormat Method " Url="html/M_Smartsheet_Api_Models_Column_ModifyColumnBuilder_SetAutoNumberFormat.htm" />
+        <HelpTOCNode Title="SetIndex Method " Url="html/M_Smartsheet_Api_Models_Column_ModifyColumnBuilder_SetIndex.htm" />
+        <HelpTOCNode Title="SetOptions Method " Url="html/M_Smartsheet_Api_Models_Column_ModifyColumnBuilder_SetOptions.htm" />
+        <HelpTOCNode Title="SetSheetId Method " Url="html/M_Smartsheet_Api_Models_Column_ModifyColumnBuilder_SetSheetId.htm" />
+        <HelpTOCNode Title="SetSymbol Method " Url="html/M_Smartsheet_Api_Models_Column_ModifyColumnBuilder_SetSymbol.htm" />
+        <HelpTOCNode Title="SetSystemColumnType Method " Url="html/M_Smartsheet_Api_Models_Column_ModifyColumnBuilder_SetSystemColumnType.htm" />
+        <HelpTOCNode Title="SetTitle Method " Url="html/M_Smartsheet_Api_Models_Column_ModifyColumnBuilder_SetTitle.htm" />
+        <HelpTOCNode Title="SetType Method " Url="html/M_Smartsheet_Api_Models_Column_ModifyColumnBuilder_SetType.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="289d7a96-4087-4e83-8260-1dea95ec3112" Title="Column.ModifyColumnBuilder Properties" Url="html/Properties_T_Smartsheet_Api_Models_Column_ModifyColumnBuilder.htm">
+        <HelpTOCNode Title="AutoNumberFormat Property " Url="html/P_Smartsheet_Api_Models_Column_ModifyColumnBuilder_AutoNumberFormat.htm" />
+        <HelpTOCNode Title="Index Property " Url="html/P_Smartsheet_Api_Models_Column_ModifyColumnBuilder_Index.htm" />
+        <HelpTOCNode Title="Options Property " Url="html/P_Smartsheet_Api_Models_Column_ModifyColumnBuilder_Options.htm" />
+        <HelpTOCNode Title="SheetId Property " Url="html/P_Smartsheet_Api_Models_Column_ModifyColumnBuilder_SheetId.htm" />
+        <HelpTOCNode Title="Symbol Property " Url="html/P_Smartsheet_Api_Models_Column_ModifyColumnBuilder_Symbol.htm" />
+        <HelpTOCNode Title="SystemColumnType Property " Url="html/P_Smartsheet_Api_Models_Column_ModifyColumnBuilder_SystemColumnType.htm" />
+        <HelpTOCNode Title="Title Property " Url="html/P_Smartsheet_Api_Models_Column_ModifyColumnBuilder_Title.htm" />
+        <HelpTOCNode Title="Type Property " Url="html/P_Smartsheet_Api_Models_Column_ModifyColumnBuilder_Type.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Title="ColumnTag Enumeration" Url="html/T_Smartsheet_Api_Models_ColumnTag.htm" />
+    <HelpTOCNode Title="ColumnType Enumeration" Url="html/T_Smartsheet_Api_Models_ColumnType.htm" />
+    <HelpTOCNode Id="f9ed9516-5d56-4826-81df-73d022a413ca" Title="Comment Class" Url="html/T_Smartsheet_Api_Models_Comment.htm">
+      <HelpTOCNode Title="Comment Constructor " Url="html/M_Smartsheet_Api_Models_Comment__ctor.htm" />
+      <HelpTOCNode Id="1d118d27-d39d-4835-9112-588c93242e59" Title="Comment Properties" Url="html/Properties_T_Smartsheet_Api_Models_Comment.htm">
+        <HelpTOCNode Title="Attachments Property " Url="html/P_Smartsheet_Api_Models_Comment_Attachments.htm" />
+        <HelpTOCNode Title="CreatedAt Property " Url="html/P_Smartsheet_Api_Models_Comment_CreatedAt.htm" />
+        <HelpTOCNode Title="CreatedBy Property " Url="html/P_Smartsheet_Api_Models_Comment_CreatedBy.htm" />
+        <HelpTOCNode Title="DiscussionId Property " Url="html/P_Smartsheet_Api_Models_Comment_DiscussionId.htm" />
+        <HelpTOCNode Title="ModifiedAt Property " Url="html/P_Smartsheet_Api_Models_Comment_ModifiedAt.htm" />
+        <HelpTOCNode Title="ModifiedDate Property " Url="html/P_Smartsheet_Api_Models_Comment_ModifiedDate.htm" />
+        <HelpTOCNode Title="Text Property " Url="html/P_Smartsheet_Api_Models_Comment_Text.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="bc0ccdaf-0236-4193-b4c5-560d1977e32b" Title="Comment.AddCommentBuilder Class" Url="html/T_Smartsheet_Api_Models_Comment_AddCommentBuilder.htm">
+      <HelpTOCNode Title="Comment.AddCommentBuilder Constructor " Url="html/M_Smartsheet_Api_Models_Comment_AddCommentBuilder__ctor.htm" />
+      <HelpTOCNode Id="f8204b00-a1d2-4913-b054-dec179ca89e6" Title="Comment.AddCommentBuilder Methods" Url="html/Methods_T_Smartsheet_Api_Models_Comment_AddCommentBuilder.htm">
+        <HelpTOCNode Title="Build Method " Url="html/M_Smartsheet_Api_Models_Comment_AddCommentBuilder_Build.htm" />
+        <HelpTOCNode Title="SetText Method " Url="html/M_Smartsheet_Api_Models_Comment_AddCommentBuilder_SetText.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="70ead8e5-264c-43cc-81b7-a050022f13c0" Title="Comment.AddCommentBuilder Properties" Url="html/Properties_T_Smartsheet_Api_Models_Comment_AddCommentBuilder.htm">
+        <HelpTOCNode Title="Text Property " Url="html/P_Smartsheet_Api_Models_Comment_AddCommentBuilder_Text.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="989db778-b761-45a2-be05-9f9e426cd322" Title="Discussion Class" Url="html/T_Smartsheet_Api_Models_Discussion.htm">
+      <HelpTOCNode Title="Discussion Constructor " Url="html/M_Smartsheet_Api_Models_Discussion__ctor.htm" />
+      <HelpTOCNode Id="35e82269-ba88-4e0d-82cb-8707349ab007" Title="Discussion Properties" Url="html/Properties_T_Smartsheet_Api_Models_Discussion.htm">
+        <HelpTOCNode Title="AccessLevel Property " Url="html/P_Smartsheet_Api_Models_Discussion_AccessLevel.htm" />
+        <HelpTOCNode Title="Comment Property " Url="html/P_Smartsheet_Api_Models_Discussion_Comment.htm" />
+        <HelpTOCNode Title="CommentAttachments Property " Url="html/P_Smartsheet_Api_Models_Discussion_CommentAttachments.htm" />
+        <HelpTOCNode Title="Comments Property " Url="html/P_Smartsheet_Api_Models_Discussion_Comments.htm" />
+        <HelpTOCNode Title="LastCommentedAt Property " Url="html/P_Smartsheet_Api_Models_Discussion_LastCommentedAt.htm" />
+        <HelpTOCNode Title="LastCommentedUser Property " Url="html/P_Smartsheet_Api_Models_Discussion_LastCommentedUser.htm" />
+        <HelpTOCNode Title="Title Property " Url="html/P_Smartsheet_Api_Models_Discussion_Title.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="84db84d2-97a0-4d8a-ac27-5a167833c672" Title="Discussion.CreateDiscussionBuilder Class" Url="html/T_Smartsheet_Api_Models_Discussion_CreateDiscussionBuilder.htm">
+      <HelpTOCNode Title="Discussion.CreateDiscussionBuilder Constructor " Url="html/M_Smartsheet_Api_Models_Discussion_CreateDiscussionBuilder__ctor.htm" />
+      <HelpTOCNode Id="e11d76b4-232f-41e5-9f9b-6951a474270d" Title="Discussion.CreateDiscussionBuilder Methods" Url="html/Methods_T_Smartsheet_Api_Models_Discussion_CreateDiscussionBuilder.htm">
+        <HelpTOCNode Title="Build Method " Url="html/M_Smartsheet_Api_Models_Discussion_CreateDiscussionBuilder_Build.htm" />
+        <HelpTOCNode Title="SetComment Method " Url="html/M_Smartsheet_Api_Models_Discussion_CreateDiscussionBuilder_SetComment.htm" />
+        <HelpTOCNode Title="SetTitle Method " Url="html/M_Smartsheet_Api_Models_Discussion_CreateDiscussionBuilder_SetTitle.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="02504932-15bd-4d3f-8801-afd13244c572" Title="Discussion.CreateDiscussionBuilder Properties" Url="html/Properties_T_Smartsheet_Api_Models_Discussion_CreateDiscussionBuilder.htm">
+        <HelpTOCNode Title="Comment Property " Url="html/P_Smartsheet_Api_Models_Discussion_CreateDiscussionBuilder_Comment.htm" />
+        <HelpTOCNode Title="Title Property " Url="html/P_Smartsheet_Api_Models_Discussion_CreateDiscussionBuilder_Title.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="81a3d9e5-330e-42a7-baff-f5282791ba2a" Title="Email Class" Url="html/T_Smartsheet_Api_Models_Email.htm">
+      <HelpTOCNode Id="12b01e25-45b8-423a-b98b-9af9b1bf8d6b" Title="Email Properties" Url="html/Properties_T_Smartsheet_Api_Models_Email.htm">
+        <HelpTOCNode Title="CCMe Property " Url="html/P_Smartsheet_Api_Models_Email_CCMe.htm" />
+        <HelpTOCNode Title="Message Property " Url="html/P_Smartsheet_Api_Models_Email_Message.htm" />
+        <HelpTOCNode Title="Subject Property " Url="html/P_Smartsheet_Api_Models_Email_Subject.htm" />
+        <HelpTOCNode Title="To Property " Url="html/P_Smartsheet_Api_Models_Email_To.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="c7fc628b-82a2-4f34-861f-1d7173dd0ae1" Title="Error Class" Url="html/T_Smartsheet_Api_Models_Error.htm">
+      <HelpTOCNode Title="Error Constructor " Url="html/M_Smartsheet_Api_Models_Error__ctor.htm" />
+      <HelpTOCNode Id="54718cbb-c1ef-4801-84ee-74c502cd9f07" Title="Error Properties" Url="html/Properties_T_Smartsheet_Api_Models_Error.htm">
+        <HelpTOCNode Title="ErrorCode Property " Url="html/P_Smartsheet_Api_Models_Error_ErrorCode.htm" />
+        <HelpTOCNode Title="Message Property " Url="html/P_Smartsheet_Api_Models_Error_Message.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="1234d345-914c-42e1-ba91-56d7f616c72c" Title="Folder Class" Url="html/T_Smartsheet_Api_Models_Folder.htm">
+      <HelpTOCNode Title="Folder Constructor " Url="html/M_Smartsheet_Api_Models_Folder__ctor.htm" />
+      <HelpTOCNode Id="ac579055-9103-4111-9cfc-538df20820a0" Title="Folder Properties" Url="html/Properties_T_Smartsheet_Api_Models_Folder.htm">
+        <HelpTOCNode Title="Folders Property " Url="html/P_Smartsheet_Api_Models_Folder_Folders.htm" />
+        <HelpTOCNode Title="Sheets Property " Url="html/P_Smartsheet_Api_Models_Folder_Sheets.htm" />
+        <HelpTOCNode Title="Templates Property " Url="html/P_Smartsheet_Api_Models_Folder_Templates.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="49696e4d-067c-4b4e-ad99-4bb7485ad05b" Title="Folder.UpdateFolderBuilder Class" Url="html/T_Smartsheet_Api_Models_Folder_UpdateFolderBuilder.htm">
+      <HelpTOCNode Title="Folder.UpdateFolderBuilder Constructor " Url="html/M_Smartsheet_Api_Models_Folder_UpdateFolderBuilder__ctor.htm" />
+      <HelpTOCNode Id="f5bb0f97-5abd-4a80-9988-035d052d0cb2" Title="Folder.UpdateFolderBuilder Methods" Url="html/Methods_T_Smartsheet_Api_Models_Folder_UpdateFolderBuilder.htm">
+        <HelpTOCNode Title="Build Method " Url="html/M_Smartsheet_Api_Models_Folder_UpdateFolderBuilder_Build.htm" />
+        <HelpTOCNode Title="SetID Method " Url="html/M_Smartsheet_Api_Models_Folder_UpdateFolderBuilder_SetID.htm" />
+        <HelpTOCNode Title="SetName Method " Url="html/M_Smartsheet_Api_Models_Folder_UpdateFolderBuilder_SetName.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="df389a9c-faff-4942-8654-3675b0172335" Title="Folder.UpdateFolderBuilder Properties" Url="html/Properties_T_Smartsheet_Api_Models_Folder_UpdateFolderBuilder.htm">
+        <HelpTOCNode Title="Id Property " Url="html/P_Smartsheet_Api_Models_Folder_UpdateFolderBuilder_Id.htm" />
+        <HelpTOCNode Title="name Property " Url="html/P_Smartsheet_Api_Models_Folder_UpdateFolderBuilder_name.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="da7103f3-5e06-4675-8032-d625a969a51d" Title="FormatDetails Class" Url="html/T_Smartsheet_Api_Models_FormatDetails.htm">
+      <HelpTOCNode Title="FormatDetails Constructor " Url="html/M_Smartsheet_Api_Models_FormatDetails__ctor.htm" />
+      <HelpTOCNode Id="22ded66a-1bcc-4531-9005-4700b788f049" Title="FormatDetails Properties" Url="html/Properties_T_Smartsheet_Api_Models_FormatDetails.htm">
+        <HelpTOCNode Title="PaperSize Property " Url="html/P_Smartsheet_Api_Models_FormatDetails_PaperSize.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="173d00dc-82e8-45ce-84d5-3c5a518a35df" Title="Home Class" Url="html/T_Smartsheet_Api_Models_Home.htm">
+      <HelpTOCNode Title="Home Constructor " Url="html/M_Smartsheet_Api_Models_Home__ctor.htm" />
+      <HelpTOCNode Id="82f613c3-b323-458f-8584-1dea628889a5" Title="Home Properties" Url="html/Properties_T_Smartsheet_Api_Models_Home.htm">
+        <HelpTOCNode Title="Folders Property " Url="html/P_Smartsheet_Api_Models_Home_Folders.htm" />
+        <HelpTOCNode Title="Sheets Property " Url="html/P_Smartsheet_Api_Models_Home_Sheets.htm" />
+        <HelpTOCNode Title="Templates Property " Url="html/P_Smartsheet_Api_Models_Home_Templates.htm" />
+        <HelpTOCNode Title="Workspaces Property " Url="html/P_Smartsheet_Api_Models_Home_Workspaces.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="e4e0fdcf-3b16-4a97-bd2f-2ca41ee7ee56" Title="IdentifiableModel Class" Url="html/T_Smartsheet_Api_Models_IdentifiableModel.htm">
+      <HelpTOCNode Id="1314b2e6-bb3c-4675-87e9-ba2eedf86306" Title="IdentifiableModel Methods" Url="html/Methods_T_Smartsheet_Api_Models_IdentifiableModel.htm">
+        <HelpTOCNode Title="Equals Method " Url="html/M_Smartsheet_Api_Models_IdentifiableModel_Equals.htm" />
+        <HelpTOCNode Title="GetHashCode Method " Url="html/M_Smartsheet_Api_Models_IdentifiableModel_GetHashCode.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="b2d90064-e9dc-4508-99be-92568fec4eb0" Title="IdentifiableModel Properties" Url="html/Properties_T_Smartsheet_Api_Models_IdentifiableModel.htm">
+        <HelpTOCNode Title="ID Property " Url="html/P_Smartsheet_Api_Models_IdentifiableModel_ID.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="4737f521-07f9-4894-97d8-725499181bba" Title="Link Class" Url="html/T_Smartsheet_Api_Models_Link.htm">
+      <HelpTOCNode Title="Link Constructor " Url="html/M_Smartsheet_Api_Models_Link__ctor.htm" />
+      <HelpTOCNode Id="c588559b-9083-48e5-ba2f-414315d586f8" Title="Link Properties" Url="html/Properties_T_Smartsheet_Api_Models_Link.htm">
+        <HelpTOCNode Title="ColumnId Property " Url="html/P_Smartsheet_Api_Models_Link_ColumnId.htm" />
+        <HelpTOCNode Title="RowId Property " Url="html/P_Smartsheet_Api_Models_Link_RowId.htm" />
+        <HelpTOCNode Title="SheetId Property " Url="html/P_Smartsheet_Api_Models_Link_SheetId.htm" />
+        <HelpTOCNode Title="Type Property " Url="html/P_Smartsheet_Api_Models_Link_Type.htm" />
+        <HelpTOCNode Title="Url Property " Url="html/P_Smartsheet_Api_Models_Link_Url.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Title="LinkType Enumeration" Url="html/T_Smartsheet_Api_Models_LinkType.htm" />
+    <HelpTOCNode Id="3f1c2e1c-4307-4d80-8aa5-f6ea33f5bbea" Title="MultiShare Class" Url="html/T_Smartsheet_Api_Models_MultiShare.htm">
+      <HelpTOCNode Title="MultiShare Constructor " Url="html/M_Smartsheet_Api_Models_MultiShare__ctor.htm" />
+      <HelpTOCNode Id="032635e3-4a5d-4df5-ab27-46997389ebe4" Title="MultiShare Properties" Url="html/Properties_T_Smartsheet_Api_Models_MultiShare.htm">
+        <HelpTOCNode Title="AccessLevel Property " Url="html/P_Smartsheet_Api_Models_MultiShare_AccessLevel.htm" />
+        <HelpTOCNode Title="CCMe Property " Url="html/P_Smartsheet_Api_Models_MultiShare_CCMe.htm" />
+        <HelpTOCNode Title="Message Property " Url="html/P_Smartsheet_Api_Models_MultiShare_Message.htm" />
+        <HelpTOCNode Title="Subject Property " Url="html/P_Smartsheet_Api_Models_MultiShare_Subject.htm" />
+        <HelpTOCNode Title="Users Property " Url="html/P_Smartsheet_Api_Models_MultiShare_Users.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="59474cbc-a962-43c1-b9a6-0cd4454238aa" Title="MultiShare.ShareToManyBuilder Class" Url="html/T_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder.htm">
+      <HelpTOCNode Title="MultiShare.ShareToManyBuilder Constructor " Url="html/M_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder__ctor.htm" />
+      <HelpTOCNode Id="254a267c-50cd-495a-87e6-9fd036d5f897" Title="MultiShare.ShareToManyBuilder Methods" Url="html/Methods_T_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder.htm">
+        <HelpTOCNode Title="Build Method " Url="html/M_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder_Build.htm" />
+        <HelpTOCNode Title="SetAccessLevel Method " Url="html/M_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder_SetAccessLevel.htm" />
+        <HelpTOCNode Title="SetCCMe Method " Url="html/M_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder_SetCCMe.htm" />
+        <HelpTOCNode Title="SetMessage Method " Url="html/M_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder_SetMessage.htm" />
+        <HelpTOCNode Title="SetSubject Method " Url="html/M_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder_SetSubject.htm" />
+        <HelpTOCNode Title="SetUsers Method " Url="html/M_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder_SetUsers.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="7676296a-a0ba-44df-a579-ba7a58ed965e" Title="MultiShare.ShareToManyBuilder Properties" Url="html/Properties_T_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder.htm">
+        <HelpTOCNode Title="AccessLevel Property " Url="html/P_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder_AccessLevel.htm" />
+        <HelpTOCNode Title="CCMe Property " Url="html/P_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder_CCMe.htm" />
+        <HelpTOCNode Title="Message Property " Url="html/P_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder_Message.htm" />
+        <HelpTOCNode Title="Subject Property " Url="html/P_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder_Subject.htm" />
+        <HelpTOCNode Title="Users Property " Url="html/P_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder_Users.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="fb143d75-a45c-497d-8e5b-2eaf408ee3d8" Title="NamedModel Class" Url="html/T_Smartsheet_Api_Models_NamedModel.htm">
+      <HelpTOCNode Id="b89d4017-ef46-40a8-b4b4-71959fe83fc4" Title="NamedModel Properties" Url="html/Properties_T_Smartsheet_Api_Models_NamedModel.htm">
+        <HelpTOCNode Title="Name Property " Url="html/P_Smartsheet_Api_Models_NamedModel_Name.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Title="ObjectInclusion Enumeration" Url="html/T_Smartsheet_Api_Models_ObjectInclusion.htm" />
+    <HelpTOCNode Title="PaperSize Enumeration" Url="html/T_Smartsheet_Api_Models_PaperSize.htm" />
+    <HelpTOCNode Id="58bfdf18-06f3-4cfb-907b-48dfb7a961a5" Title="RequestResult(T) Class" Url="html/T_Smartsheet_Api_Models_RequestResult_1.htm">
+      <HelpTOCNode Title="RequestResult(T) Constructor " Url="html/M_Smartsheet_Api_Models_RequestResult_1__ctor.htm" />
+      <HelpTOCNode Id="aff8649a-d4c7-4183-977a-c0927bc0744b" Title="RequestResult(T) Properties" Url="html/Properties_T_Smartsheet_Api_Models_RequestResult_1.htm">
+        <HelpTOCNode Title="Message Property " Url="html/P_Smartsheet_Api_Models_RequestResult_1_Message.htm" />
+        <HelpTOCNode Title="Result Property " Url="html/P_Smartsheet_Api_Models_RequestResult_1_Result.htm" />
+        <HelpTOCNode Title="ResultCode Property " Url="html/P_Smartsheet_Api_Models_RequestResult_1_ResultCode.htm" />
+        <HelpTOCNode Title="Version Property " Url="html/P_Smartsheet_Api_Models_RequestResult_1_Version.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="9f822425-2752-46a1-b031-286c02874088" Title="Row Class" Url="html/T_Smartsheet_Api_Models_Row.htm">
+      <HelpTOCNode Title="Row Constructor " Url="html/M_Smartsheet_Api_Models_Row__ctor.htm" />
+      <HelpTOCNode Id="04029d9d-2691-4047-8d48-863a77783763" Title="Row Methods" Url="html/Methods_T_Smartsheet_Api_Models_Row.htm">
+        <HelpTOCNode Title="GetColumnById Method " Url="html/M_Smartsheet_Api_Models_Row_GetColumnById.htm" />
+        <HelpTOCNode Title="GetColumnByIndex Method " Url="html/M_Smartsheet_Api_Models_Row_GetColumnByIndex.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="030dc58d-4e94-4279-b4c4-260b4ff08644" Title="Row Properties" Url="html/Properties_T_Smartsheet_Api_Models_Row.htm">
+        <HelpTOCNode Title="AccessLevel Property " Url="html/P_Smartsheet_Api_Models_Row_AccessLevel.htm" />
+        <HelpTOCNode Title="Attachments Property " Url="html/P_Smartsheet_Api_Models_Row_Attachments.htm" />
+        <HelpTOCNode Title="Cells Property " Url="html/P_Smartsheet_Api_Models_Row_Cells.htm" />
+        <HelpTOCNode Title="Columns Property " Url="html/P_Smartsheet_Api_Models_Row_Columns.htm" />
+        <HelpTOCNode Title="CreatedAt Property " Url="html/P_Smartsheet_Api_Models_Row_CreatedAt.htm" />
+        <HelpTOCNode Title="Discussions Property " Url="html/P_Smartsheet_Api_Models_Row_Discussions.htm" />
+        <HelpTOCNode Title="Expanded Property " Url="html/P_Smartsheet_Api_Models_Row_Expanded.htm" />
+        <HelpTOCNode Title="ModifiedAt Property " Url="html/P_Smartsheet_Api_Models_Row_ModifiedAt.htm" />
+        <HelpTOCNode Title="ParentRowNumber Property " Url="html/P_Smartsheet_Api_Models_Row_ParentRowNumber.htm" />
+        <HelpTOCNode Title="RowNumber Property " Url="html/P_Smartsheet_Api_Models_Row_RowNumber.htm" />
+        <HelpTOCNode Title="SheetId Property " Url="html/P_Smartsheet_Api_Models_Row_SheetId.htm" />
+        <HelpTOCNode Title="Version Property " Url="html/P_Smartsheet_Api_Models_Row_Version.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="4159e834-bb89-4bd3-9fa5-f320e02a35bf" Title="RowEmail Class" Url="html/T_Smartsheet_Api_Models_RowEmail.htm">
+      <HelpTOCNode Title="RowEmail Constructor " Url="html/M_Smartsheet_Api_Models_RowEmail__ctor.htm" />
+      <HelpTOCNode Id="c7362ef8-eb07-4461-98dd-3466e2619980" Title="RowEmail Properties" Url="html/Properties_T_Smartsheet_Api_Models_RowEmail.htm">
+        <HelpTOCNode Title="IncludeAttachments Property " Url="html/P_Smartsheet_Api_Models_RowEmail_IncludeAttachments.htm" />
+        <HelpTOCNode Title="IncludeDiscussions Property " Url="html/P_Smartsheet_Api_Models_RowEmail_IncludeDiscussions.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="4c897b49-6a6a-4a0b-aef3-90d4fa5b3975" Title="RowWrapper Class" Url="html/T_Smartsheet_Api_Models_RowWrapper.htm">
+      <HelpTOCNode Title="RowWrapper Constructor " Url="html/M_Smartsheet_Api_Models_RowWrapper__ctor.htm" />
+      <HelpTOCNode Id="ad02f286-e15f-40a5-bf1d-1a0d94ba97bc" Title="RowWrapper Properties" Url="html/Properties_T_Smartsheet_Api_Models_RowWrapper.htm">
+        <HelpTOCNode Title="ParentId Property " Url="html/P_Smartsheet_Api_Models_RowWrapper_ParentId.htm" />
+        <HelpTOCNode Title="Rows Property " Url="html/P_Smartsheet_Api_Models_RowWrapper_Rows.htm" />
+        <HelpTOCNode Title="SiblingId Property " Url="html/P_Smartsheet_Api_Models_RowWrapper_SiblingId.htm" />
+        <HelpTOCNode Title="ToBottom Property " Url="html/P_Smartsheet_Api_Models_RowWrapper_ToBottom.htm" />
+        <HelpTOCNode Title="ToTop Property " Url="html/P_Smartsheet_Api_Models_RowWrapper_ToTop.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="c97809bd-72cd-4897-90e2-54b127186425" Title="RowWrapper.InsertRowsBuilder Class" Url="html/T_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder.htm">
+      <HelpTOCNode Title="RowWrapper.InsertRowsBuilder Constructor " Url="html/M_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder__ctor.htm" />
+      <HelpTOCNode Id="6eb0e94c-9382-4c52-967d-fe624f01df68" Title="RowWrapper.InsertRowsBuilder Methods" Url="html/Methods_T_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder.htm">
+        <HelpTOCNode Title="Build Method " Url="html/M_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder_Build.htm" />
+        <HelpTOCNode Title="SetParentId Method " Url="html/M_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder_SetParentId.htm" />
+        <HelpTOCNode Title="SetRows Method " Url="html/M_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder_SetRows.htm" />
+        <HelpTOCNode Title="SetSiblingId Method " Url="html/M_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder_SetSiblingId.htm" />
+        <HelpTOCNode Title="SetToBottom Method " Url="html/M_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder_SetToBottom.htm" />
+        <HelpTOCNode Title="SetToTop Method " Url="html/M_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder_SetToTop.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="d0302f91-f5d3-4d2a-8f71-958755d2fba6" Title="RowWrapper.InsertRowsBuilder Properties" Url="html/Properties_T_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder.htm">
+        <HelpTOCNode Title="ParentId Property " Url="html/P_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder_ParentId.htm" />
+        <HelpTOCNode Title="Rows Property " Url="html/P_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder_Rows.htm" />
+        <HelpTOCNode Title="SiblingId Property " Url="html/P_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder_SiblingId.htm" />
+        <HelpTOCNode Title="ToBottom Property " Url="html/P_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder_ToBottom.htm" />
+        <HelpTOCNode Title="ToTop Property " Url="html/P_Smartsheet_Api_Models_RowWrapper_InsertRowsBuilder_ToTop.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="a66fe55a-1d25-4b18-852b-1dcd2a4436e7" Title="RowWrapper.MoveRowBuilder Class" Url="html/T_Smartsheet_Api_Models_RowWrapper_MoveRowBuilder.htm">
+      <HelpTOCNode Title="RowWrapper.MoveRowBuilder Constructor " Url="html/M_Smartsheet_Api_Models_RowWrapper_MoveRowBuilder__ctor.htm" />
+      <HelpTOCNode Id="35fd2c30-5f58-405c-bff1-4916295b7f01" Title="RowWrapper.MoveRowBuilder Methods" Url="html/Methods_T_Smartsheet_Api_Models_RowWrapper_MoveRowBuilder.htm">
+        <HelpTOCNode Title="Build Method " Url="html/M_Smartsheet_Api_Models_RowWrapper_MoveRowBuilder_Build.htm" />
+        <HelpTOCNode Title="SetParentId Method " Url="html/M_Smartsheet_Api_Models_RowWrapper_MoveRowBuilder_SetParentId.htm" />
+        <HelpTOCNode Title="SetSiblingId Method " Url="html/M_Smartsheet_Api_Models_RowWrapper_MoveRowBuilder_SetSiblingId.htm" />
+        <HelpTOCNode Title="SetToBottom Method " Url="html/M_Smartsheet_Api_Models_RowWrapper_MoveRowBuilder_SetToBottom.htm" />
+        <HelpTOCNode Title="SetToTop Method " Url="html/M_Smartsheet_Api_Models_RowWrapper_MoveRowBuilder_SetToTop.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="142ad269-6956-483e-b201-ddaac3526f85" Title="RowWrapper.MoveRowBuilder Properties" Url="html/Properties_T_Smartsheet_Api_Models_RowWrapper_MoveRowBuilder.htm">
+        <HelpTOCNode Title="ParentId Property " Url="html/P_Smartsheet_Api_Models_RowWrapper_MoveRowBuilder_ParentId.htm" />
+        <HelpTOCNode Title="SiblingId Property " Url="html/P_Smartsheet_Api_Models_RowWrapper_MoveRowBuilder_SiblingId.htm" />
+        <HelpTOCNode Title="ToBottom Property " Url="html/P_Smartsheet_Api_Models_RowWrapper_MoveRowBuilder_ToBottom.htm" />
+        <HelpTOCNode Title="ToTop Property " Url="html/P_Smartsheet_Api_Models_RowWrapper_MoveRowBuilder_ToTop.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="6be14b6a-986c-4a37-8059-d8ccbffab982" Title="SearchResult Class" Url="html/T_Smartsheet_Api_Models_SearchResult.htm">
+      <HelpTOCNode Title="SearchResult Constructor " Url="html/M_Smartsheet_Api_Models_SearchResult__ctor.htm" />
+      <HelpTOCNode Id="3a8d7cfa-d801-4cac-b6a6-cf8646f341e8" Title="SearchResult Properties" Url="html/Properties_T_Smartsheet_Api_Models_SearchResult.htm">
+        <HelpTOCNode Title="Results Property " Url="html/P_Smartsheet_Api_Models_SearchResult_Results.htm" />
+        <HelpTOCNode Title="TotalCount Property " Url="html/P_Smartsheet_Api_Models_SearchResult_TotalCount.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="2c2b03d0-b892-4963-8f94-096e0607dda9" Title="SearchResultItem Class" Url="html/T_Smartsheet_Api_Models_SearchResultItem.htm">
+      <HelpTOCNode Title="SearchResultItem Constructor " Url="html/M_Smartsheet_Api_Models_SearchResultItem__ctor.htm" />
+      <HelpTOCNode Id="faee8ab3-ad39-4562-aaf8-a51967a1548e" Title="SearchResultItem Properties" Url="html/Properties_T_Smartsheet_Api_Models_SearchResultItem.htm">
+        <HelpTOCNode Title="ContextData Property " Url="html/P_Smartsheet_Api_Models_SearchResultItem_ContextData.htm" />
+        <HelpTOCNode Title="ObjectId Property " Url="html/P_Smartsheet_Api_Models_SearchResultItem_ObjectId.htm" />
+        <HelpTOCNode Title="ObjectType Property " Url="html/P_Smartsheet_Api_Models_SearchResultItem_ObjectType.htm" />
+        <HelpTOCNode Title="ParentObjectId Property " Url="html/P_Smartsheet_Api_Models_SearchResultItem_ParentObjectId.htm" />
+        <HelpTOCNode Title="ParentObjectName Property " Url="html/P_Smartsheet_Api_Models_SearchResultItem_ParentObjectName.htm" />
+        <HelpTOCNode Title="ParentObjectType Property " Url="html/P_Smartsheet_Api_Models_SearchResultItem_ParentObjectType.htm" />
+        <HelpTOCNode Title="Text Property " Url="html/P_Smartsheet_Api_Models_SearchResultItem_Text.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="83401d0a-2ba7-4013-9df4-20e062e2c061" Title="Share Class" Url="html/T_Smartsheet_Api_Models_Share.htm">
+      <HelpTOCNode Title="Share Constructor " Url="html/M_Smartsheet_Api_Models_Share__ctor.htm" />
+      <HelpTOCNode Id="d89362d5-1408-4b65-ac87-b73e7923a534" Title="Share Properties" Url="html/Properties_T_Smartsheet_Api_Models_Share.htm">
+        <HelpTOCNode Title="AccessLevel Property " Url="html/P_Smartsheet_Api_Models_Share_AccessLevel.htm" />
+        <HelpTOCNode Title="Email Property " Url="html/P_Smartsheet_Api_Models_Share_Email.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="4f95a87e-eeb5-46a5-a8fe-c1f5566acb20" Title="Share.ShareToOneBuilder Class" Url="html/T_Smartsheet_Api_Models_Share_ShareToOneBuilder.htm">
+      <HelpTOCNode Title="Share.ShareToOneBuilder Constructor " Url="html/M_Smartsheet_Api_Models_Share_ShareToOneBuilder__ctor.htm" />
+      <HelpTOCNode Id="216aa1ff-5253-4cd4-b440-1bc299ead953" Title="Share.ShareToOneBuilder Methods" Url="html/Methods_T_Smartsheet_Api_Models_Share_ShareToOneBuilder.htm">
+        <HelpTOCNode Title="Build Method " Url="html/M_Smartsheet_Api_Models_Share_ShareToOneBuilder_Build.htm" />
+        <HelpTOCNode Title="SetAccessLevel Method " Url="html/M_Smartsheet_Api_Models_Share_ShareToOneBuilder_SetAccessLevel.htm" />
+        <HelpTOCNode Title="SetEmail Method " Url="html/M_Smartsheet_Api_Models_Share_ShareToOneBuilder_SetEmail.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="bb831eb8-90e2-4b2e-81ba-8c47a34fedce" Title="Share.ShareToOneBuilder Properties" Url="html/Properties_T_Smartsheet_Api_Models_Share_ShareToOneBuilder.htm">
+        <HelpTOCNode Title="AccessLevel Property " Url="html/P_Smartsheet_Api_Models_Share_ShareToOneBuilder_AccessLevel.htm" />
+        <HelpTOCNode Title="Email Property " Url="html/P_Smartsheet_Api_Models_Share_ShareToOneBuilder_Email.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="b791f762-4157-4eee-b389-908c4db7c9b0" Title="Share.UpdateShareBuilder Class" Url="html/T_Smartsheet_Api_Models_Share_UpdateShareBuilder.htm">
+      <HelpTOCNode Title="Share.UpdateShareBuilder Constructor " Url="html/M_Smartsheet_Api_Models_Share_UpdateShareBuilder__ctor.htm" />
+      <HelpTOCNode Id="e16013d6-1888-482d-808a-e2891f3103c7" Title="Share.UpdateShareBuilder Methods" Url="html/Methods_T_Smartsheet_Api_Models_Share_UpdateShareBuilder.htm">
+        <HelpTOCNode Title="Build Method " Url="html/M_Smartsheet_Api_Models_Share_UpdateShareBuilder_Build.htm" />
+        <HelpTOCNode Title="SetAccessLevel Method " Url="html/M_Smartsheet_Api_Models_Share_UpdateShareBuilder_SetAccessLevel.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="aab26dd6-ac47-45e2-bf55-40c95265b50f" Title="Share.UpdateShareBuilder Properties" Url="html/Properties_T_Smartsheet_Api_Models_Share_UpdateShareBuilder.htm">
+        <HelpTOCNode Title="AccessLevel Property " Url="html/P_Smartsheet_Api_Models_Share_UpdateShareBuilder_AccessLevel.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="77f5d172-044b-4e0c-b61a-bef6d7c0dc21" Title="Sheet Class" Url="html/T_Smartsheet_Api_Models_Sheet.htm">
+      <HelpTOCNode Title="Sheet Constructor " Url="html/M_Smartsheet_Api_Models_Sheet__ctor.htm" />
+      <HelpTOCNode Id="a12c57c6-0455-4d8a-9f81-baa375cbf1c9" Title="Sheet Methods" Url="html/Methods_T_Smartsheet_Api_Models_Sheet.htm">
+        <HelpTOCNode Title="GetColumnById Method " Url="html/M_Smartsheet_Api_Models_Sheet_GetColumnById.htm" />
+        <HelpTOCNode Title="GetColumnByIndex Method " Url="html/M_Smartsheet_Api_Models_Sheet_GetColumnByIndex.htm" />
+        <HelpTOCNode Title="GetRowByRowNumber Method " Url="html/M_Smartsheet_Api_Models_Sheet_GetRowByRowNumber.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="9d703266-d91c-4af6-a8b4-fce24ba0ab24" Title="Sheet Properties" Url="html/Properties_T_Smartsheet_Api_Models_Sheet.htm">
+        <HelpTOCNode Title="AccessLevel Property " Url="html/P_Smartsheet_Api_Models_Sheet_AccessLevel.htm" />
+        <HelpTOCNode Title="Attachments Property " Url="html/P_Smartsheet_Api_Models_Sheet_Attachments.htm" />
+        <HelpTOCNode Title="Columns Property " Url="html/P_Smartsheet_Api_Models_Sheet_Columns.htm" />
+        <HelpTOCNode Title="CreatedAt Property " Url="html/P_Smartsheet_Api_Models_Sheet_CreatedAt.htm" />
+        <HelpTOCNode Title="DependenciesEnabled Property " Url="html/P_Smartsheet_Api_Models_Sheet_DependenciesEnabled.htm" />
+        <HelpTOCNode Title="Discussions Property " Url="html/P_Smartsheet_Api_Models_Sheet_Discussions.htm" />
+        <HelpTOCNode Title="FromId Property " Url="html/P_Smartsheet_Api_Models_Sheet_FromId.htm" />
+        <HelpTOCNode Title="GanttEnabled Property " Url="html/P_Smartsheet_Api_Models_Sheet_GanttEnabled.htm" />
+        <HelpTOCNode Title="ModifiedAt Property " Url="html/P_Smartsheet_Api_Models_Sheet_ModifiedAt.htm" />
+        <HelpTOCNode Title="Permalink Property " Url="html/P_Smartsheet_Api_Models_Sheet_Permalink.htm" />
+        <HelpTOCNode Title="ReadOnly Property " Url="html/P_Smartsheet_Api_Models_Sheet_ReadOnly.htm" />
+        <HelpTOCNode Title="Rows Property " Url="html/P_Smartsheet_Api_Models_Sheet_Rows.htm" />
+        <HelpTOCNode Title="Version Property " Url="html/P_Smartsheet_Api_Models_Sheet_Version.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="60b5643c-dd50-4b4e-91b1-ee181580243d" Title="Sheet.CreateFromTemplateOrSheetBuilder Class" Url="html/T_Smartsheet_Api_Models_Sheet_CreateFromTemplateOrSheetBuilder.htm">
+      <HelpTOCNode Title="Sheet.CreateFromTemplateOrSheetBuilder Constructor " Url="html/M_Smartsheet_Api_Models_Sheet_CreateFromTemplateOrSheetBuilder__ctor.htm" />
+      <HelpTOCNode Id="8ca9929c-c96b-4972-af54-b5383151d56e" Title="Sheet.CreateFromTemplateOrSheetBuilder Methods" Url="html/Methods_T_Smartsheet_Api_Models_Sheet_CreateFromTemplateOrSheetBuilder.htm">
+        <HelpTOCNode Title="Build Method " Url="html/M_Smartsheet_Api_Models_Sheet_CreateFromTemplateOrSheetBuilder_Build.htm" />
+        <HelpTOCNode Title="SetFromId Method " Url="html/M_Smartsheet_Api_Models_Sheet_CreateFromTemplateOrSheetBuilder_SetFromId.htm" />
+        <HelpTOCNode Title="SetName Method " Url="html/M_Smartsheet_Api_Models_Sheet_CreateFromTemplateOrSheetBuilder_SetName.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="f3852ad4-e706-41e8-8cce-45a527711e52" Title="Sheet.CreateFromTemplateOrSheetBuilder Properties" Url="html/Properties_T_Smartsheet_Api_Models_Sheet_CreateFromTemplateOrSheetBuilder.htm">
+        <HelpTOCNode Title="FromId Property " Url="html/P_Smartsheet_Api_Models_Sheet_CreateFromTemplateOrSheetBuilder_FromId.htm" />
+        <HelpTOCNode Title="Name Property " Url="html/P_Smartsheet_Api_Models_Sheet_CreateFromTemplateOrSheetBuilder_Name.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="f16c76c2-0db3-4fdb-b967-cefcbbb86f33" Title="Sheet.CreateSheetBuilder Class" Url="html/T_Smartsheet_Api_Models_Sheet_CreateSheetBuilder.htm">
+      <HelpTOCNode Title="Sheet.CreateSheetBuilder Constructor " Url="html/M_Smartsheet_Api_Models_Sheet_CreateSheetBuilder__ctor.htm" />
+      <HelpTOCNode Id="f2550346-44eb-482d-93c1-c9791791e480" Title="Sheet.CreateSheetBuilder Methods" Url="html/Methods_T_Smartsheet_Api_Models_Sheet_CreateSheetBuilder.htm">
+        <HelpTOCNode Title="Build Method " Url="html/M_Smartsheet_Api_Models_Sheet_CreateSheetBuilder_Build.htm" />
+        <HelpTOCNode Title="SetColumns Method " Url="html/M_Smartsheet_Api_Models_Sheet_CreateSheetBuilder_SetColumns.htm" />
+        <HelpTOCNode Title="SetName Method " Url="html/M_Smartsheet_Api_Models_Sheet_CreateSheetBuilder_SetName.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="880cc177-5eb4-46b4-9f21-a8443a54c5f5" Title="Sheet.CreateSheetBuilder Properties" Url="html/Properties_T_Smartsheet_Api_Models_Sheet_CreateSheetBuilder.htm">
+        <HelpTOCNode Title="Columns Property " Url="html/P_Smartsheet_Api_Models_Sheet_CreateSheetBuilder_Columns.htm" />
+        <HelpTOCNode Title="Name Property " Url="html/P_Smartsheet_Api_Models_Sheet_CreateSheetBuilder_Name.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="48d0c3e1-ded9-4e88-8a8c-45d7db7cbb5f" Title="Sheet.UpdateSheetBuilder Class" Url="html/T_Smartsheet_Api_Models_Sheet_UpdateSheetBuilder.htm">
+      <HelpTOCNode Title="Sheet.UpdateSheetBuilder Constructor " Url="html/M_Smartsheet_Api_Models_Sheet_UpdateSheetBuilder__ctor.htm" />
+      <HelpTOCNode Id="e346913b-67f4-4a19-b4c9-9f642eda5793" Title="Sheet.UpdateSheetBuilder Methods" Url="html/Methods_T_Smartsheet_Api_Models_Sheet_UpdateSheetBuilder.htm">
+        <HelpTOCNode Title="Build Method " Url="html/M_Smartsheet_Api_Models_Sheet_UpdateSheetBuilder_Build.htm" />
+        <HelpTOCNode Title="SetID Method " Url="html/M_Smartsheet_Api_Models_Sheet_UpdateSheetBuilder_SetID.htm" />
+        <HelpTOCNode Title="SetName Method " Url="html/M_Smartsheet_Api_Models_Sheet_UpdateSheetBuilder_SetName.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="6aa112ef-37fb-4724-bce1-8b902a6c2f12" Title="Sheet.UpdateSheetBuilder Properties" Url="html/Properties_T_Smartsheet_Api_Models_Sheet_UpdateSheetBuilder.htm">
+        <HelpTOCNode Title="ID Property " Url="html/P_Smartsheet_Api_Models_Sheet_UpdateSheetBuilder_ID.htm" />
+        <HelpTOCNode Title="Name Property " Url="html/P_Smartsheet_Api_Models_Sheet_UpdateSheetBuilder_Name.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="ec21dbf2-977a-406e-ae75-1697a9fc699b" Title="SheetEmail Class" Url="html/T_Smartsheet_Api_Models_SheetEmail.htm">
+      <HelpTOCNode Title="SheetEmail Constructor " Url="html/M_Smartsheet_Api_Models_SheetEmail__ctor.htm" />
+      <HelpTOCNode Id="21edeaeb-8ea6-40cc-b529-c09656fdb474" Title="SheetEmail Properties" Url="html/Properties_T_Smartsheet_Api_Models_SheetEmail.htm">
+        <HelpTOCNode Title="Format Property " Url="html/P_Smartsheet_Api_Models_SheetEmail_Format.htm" />
+        <HelpTOCNode Title="FormatDetails Property " Url="html/P_Smartsheet_Api_Models_SheetEmail_FormatDetails.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Title="SheetEmailFormat Enumeration" Url="html/T_Smartsheet_Api_Models_SheetEmailFormat.htm" />
+    <HelpTOCNode Id="870f97e5-7dd3-496a-928c-570bffbf4629" Title="SheetPublish Class" Url="html/T_Smartsheet_Api_Models_SheetPublish.htm">
+      <HelpTOCNode Title="SheetPublish Constructor " Url="html/M_Smartsheet_Api_Models_SheetPublish__ctor.htm" />
+      <HelpTOCNode Id="eb73e416-c985-46f0-baa0-ca9e06396818" Title="SheetPublish Properties" Url="html/Properties_T_Smartsheet_Api_Models_SheetPublish.htm">
+        <HelpTOCNode Title="IcalEnabled Property " Url="html/P_Smartsheet_Api_Models_SheetPublish_IcalEnabled.htm" />
+        <HelpTOCNode Title="IcalUrl Property " Url="html/P_Smartsheet_Api_Models_SheetPublish_IcalUrl.htm" />
+        <HelpTOCNode Title="ReadOnlyFullEnabled Property " Url="html/P_Smartsheet_Api_Models_SheetPublish_ReadOnlyFullEnabled.htm" />
+        <HelpTOCNode Title="ReadOnlyFullUrl Property " Url="html/P_Smartsheet_Api_Models_SheetPublish_ReadOnlyFullUrl.htm" />
+        <HelpTOCNode Title="ReadOnlyLiteEnabled Property " Url="html/P_Smartsheet_Api_Models_SheetPublish_ReadOnlyLiteEnabled.htm" />
+        <HelpTOCNode Title="ReadOnlyLiteUrl Property " Url="html/P_Smartsheet_Api_Models_SheetPublish_ReadOnlyLiteUrl.htm" />
+        <HelpTOCNode Title="ReadWriteEnabled Property " Url="html/P_Smartsheet_Api_Models_SheetPublish_ReadWriteEnabled.htm" />
+        <HelpTOCNode Title="ReadWriteUrl Property " Url="html/P_Smartsheet_Api_Models_SheetPublish_ReadWriteUrl.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="329bebf5-256a-4135-968c-b78109a50731" Title="SheetPublish.PublishStatusBuilder Class" Url="html/T_Smartsheet_Api_Models_SheetPublish_PublishStatusBuilder.htm">
+      <HelpTOCNode Title="SheetPublish.PublishStatusBuilder Constructor " Url="html/M_Smartsheet_Api_Models_SheetPublish_PublishStatusBuilder__ctor.htm" />
+      <HelpTOCNode Id="0547f5f3-7317-4432-8ccc-eac3591e513f" Title="SheetPublish.PublishStatusBuilder Methods" Url="html/Methods_T_Smartsheet_Api_Models_SheetPublish_PublishStatusBuilder.htm">
+        <HelpTOCNode Title="Build Method " Url="html/M_Smartsheet_Api_Models_SheetPublish_PublishStatusBuilder_Build.htm" />
+        <HelpTOCNode Title="SetIcalEnabled Method " Url="html/M_Smartsheet_Api_Models_SheetPublish_PublishStatusBuilder_SetIcalEnabled.htm" />
+        <HelpTOCNode Title="SetReadOnlyFullEnabled Method " Url="html/M_Smartsheet_Api_Models_SheetPublish_PublishStatusBuilder_SetReadOnlyFullEnabled.htm" />
+        <HelpTOCNode Title="SetReadOnlyLiteEnabled Method " Url="html/M_Smartsheet_Api_Models_SheetPublish_PublishStatusBuilder_SetReadOnlyLiteEnabled.htm" />
+        <HelpTOCNode Title="SetReadWriteEnabled Method " Url="html/M_Smartsheet_Api_Models_SheetPublish_PublishStatusBuilder_SetReadWriteEnabled.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="7a337fc1-b6df-4aa9-af91-e1c6d789228f" Title="SheetPublish.PublishStatusBuilder Properties" Url="html/Properties_T_Smartsheet_Api_Models_SheetPublish_PublishStatusBuilder.htm">
+        <HelpTOCNode Title="IcalEnabled Property " Url="html/P_Smartsheet_Api_Models_SheetPublish_PublishStatusBuilder_IcalEnabled.htm" />
+        <HelpTOCNode Title="ReadOnlyFullEnabled Property " Url="html/P_Smartsheet_Api_Models_SheetPublish_PublishStatusBuilder_ReadOnlyFullEnabled.htm" />
+        <HelpTOCNode Title="ReadOnlyLiteEnabled Property " Url="html/P_Smartsheet_Api_Models_SheetPublish_PublishStatusBuilder_ReadOnlyLiteEnabled.htm" />
+        <HelpTOCNode Title="ReadWriteEnabled Property " Url="html/P_Smartsheet_Api_Models_SheetPublish_PublishStatusBuilder_ReadWriteEnabled.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Title="Symbol Enumeration" Url="html/T_Smartsheet_Api_Models_Symbol.htm" />
+    <HelpTOCNode Title="SystemColumnType Enumeration" Url="html/T_Smartsheet_Api_Models_SystemColumnType.htm" />
+    <HelpTOCNode Id="ca0965d2-afce-4c80-87ff-8ed3dd034274" Title="Template Class" Url="html/T_Smartsheet_Api_Models_Template.htm">
+      <HelpTOCNode Title="Template Constructor " Url="html/M_Smartsheet_Api_Models_Template__ctor.htm" />
+      <HelpTOCNode Id="9f4bab85-d693-4cb8-8f87-bd2e5e24f08e" Title="Template Properties" Url="html/Properties_T_Smartsheet_Api_Models_Template.htm">
+        <HelpTOCNode Title="AccessLevel Property " Url="html/P_Smartsheet_Api_Models_Template_AccessLevel.htm" />
+        <HelpTOCNode Title="Description Property " Url="html/P_Smartsheet_Api_Models_Template_Description.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="57c11c02-d9df-4a00-8318-4ea6a2fb9869" Title="User Class" Url="html/T_Smartsheet_Api_Models_User.htm">
+      <HelpTOCNode Title="User Constructor " Url="html/M_Smartsheet_Api_Models_User__ctor.htm" />
+      <HelpTOCNode Id="7c1b1171-5699-4135-9abd-c642d66e59b6" Title="User Properties" Url="html/Properties_T_Smartsheet_Api_Models_User.htm">
+        <HelpTOCNode Title="Admin Property " Url="html/P_Smartsheet_Api_Models_User_Admin.htm" />
+        <HelpTOCNode Title="LicensedSheetCreator Property " Url="html/P_Smartsheet_Api_Models_User_LicensedSheetCreator.htm" />
+        <HelpTOCNode Title="Status Property " Url="html/P_Smartsheet_Api_Models_User_Status.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="37f176f6-940c-405e-b7fc-ad46a7f8a972" Title="User.AddUserBuilder Class" Url="html/T_Smartsheet_Api_Models_User_AddUserBuilder.htm">
+      <HelpTOCNode Title="User.AddUserBuilder Constructor " Url="html/M_Smartsheet_Api_Models_User_AddUserBuilder__ctor.htm" />
+      <HelpTOCNode Id="999bcfe4-05a6-4c1a-854a-a3066274f1d9" Title="User.AddUserBuilder Methods" Url="html/Methods_T_Smartsheet_Api_Models_User_AddUserBuilder.htm">
+        <HelpTOCNode Title="Build Method " Url="html/M_Smartsheet_Api_Models_User_AddUserBuilder_Build.htm" />
+        <HelpTOCNode Title="SetAdmin Method " Url="html/M_Smartsheet_Api_Models_User_AddUserBuilder_SetAdmin.htm" />
+        <HelpTOCNode Title="SetEmail Method " Url="html/M_Smartsheet_Api_Models_User_AddUserBuilder_SetEmail.htm" />
+        <HelpTOCNode Title="SetLicensedSheetCreator Method " Url="html/M_Smartsheet_Api_Models_User_AddUserBuilder_SetLicensedSheetCreator.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="abee1d24-ac1a-4c2b-a3fe-8c33c1ddd7bd" Title="User.AddUserBuilder Properties" Url="html/Properties_T_Smartsheet_Api_Models_User_AddUserBuilder.htm">
+        <HelpTOCNode Title="Admin Property " Url="html/P_Smartsheet_Api_Models_User_AddUserBuilder_Admin.htm" />
+        <HelpTOCNode Title="EmailAddress Property " Url="html/P_Smartsheet_Api_Models_User_AddUserBuilder_EmailAddress.htm" />
+        <HelpTOCNode Title="LicensedSheetCreator Property " Url="html/P_Smartsheet_Api_Models_User_AddUserBuilder_LicensedSheetCreator.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="c394b7b1-902f-4209-97fc-d78dd9dde392" Title="User.UpdateUserBuilder Class" Url="html/T_Smartsheet_Api_Models_User_UpdateUserBuilder.htm">
+      <HelpTOCNode Title="User.UpdateUserBuilder Constructor " Url="html/M_Smartsheet_Api_Models_User_UpdateUserBuilder__ctor.htm" />
+      <HelpTOCNode Id="218e81ef-6308-4d82-89fc-5aec618c4fc9" Title="User.UpdateUserBuilder Methods" Url="html/Methods_T_Smartsheet_Api_Models_User_UpdateUserBuilder.htm">
+        <HelpTOCNode Title="Build Method " Url="html/M_Smartsheet_Api_Models_User_UpdateUserBuilder_Build.htm" />
+        <HelpTOCNode Title="SetAdmin Method " Url="html/M_Smartsheet_Api_Models_User_UpdateUserBuilder_SetAdmin.htm" />
+        <HelpTOCNode Title="SetID Method " Url="html/M_Smartsheet_Api_Models_User_UpdateUserBuilder_SetID.htm" />
+        <HelpTOCNode Title="SetLicensedSheetCreator Method " Url="html/M_Smartsheet_Api_Models_User_UpdateUserBuilder_SetLicensedSheetCreator.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="885454b5-121d-4dec-a0c2-fca6afed5660" Title="User.UpdateUserBuilder Properties" Url="html/Properties_T_Smartsheet_Api_Models_User_UpdateUserBuilder.htm">
+        <HelpTOCNode Title="Admin Property " Url="html/P_Smartsheet_Api_Models_User_UpdateUserBuilder_Admin.htm" />
+        <HelpTOCNode Title="ID Property " Url="html/P_Smartsheet_Api_Models_User_UpdateUserBuilder_ID.htm" />
+        <HelpTOCNode Title="LicensedSheetCreator Property " Url="html/P_Smartsheet_Api_Models_User_UpdateUserBuilder_LicensedSheetCreator.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="91d859ed-ab48-4490-847a-a6650baa0181" Title="UserProfile Class" Url="html/T_Smartsheet_Api_Models_UserProfile.htm">
+      <HelpTOCNode Title="UserProfile Constructor " Url="html/M_Smartsheet_Api_Models_UserProfile__ctor.htm" />
+      <HelpTOCNode Id="360a56c8-b967-4762-9c29-419f0f6782cb" Title="UserProfile Properties" Url="html/Properties_T_Smartsheet_Api_Models_UserProfile.htm">
+        <HelpTOCNode Title="Email Property " Url="html/P_Smartsheet_Api_Models_UserProfile_Email.htm" />
+        <HelpTOCNode Title="FirstName Property " Url="html/P_Smartsheet_Api_Models_UserProfile_FirstName.htm" />
+        <HelpTOCNode Title="LastName Property " Url="html/P_Smartsheet_Api_Models_UserProfile_LastName.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Title="UserStatus Enumeration" Url="html/T_Smartsheet_Api_Models_UserStatus.htm" />
+    <HelpTOCNode Id="bd5dd97f-d3f5-48fb-b009-d75af010f3c4" Title="Workspace Class" Url="html/T_Smartsheet_Api_Models_Workspace.htm">
+      <HelpTOCNode Title="Workspace Constructor " Url="html/M_Smartsheet_Api_Models_Workspace__ctor.htm" />
+      <HelpTOCNode Id="bdfa42f2-a4f4-4a9f-ae68-22f426a16eb1" Title="Workspace Properties" Url="html/Properties_T_Smartsheet_Api_Models_Workspace.htm">
+        <HelpTOCNode Title="AccessLevel Property " Url="html/P_Smartsheet_Api_Models_Workspace_AccessLevel.htm" />
+        <HelpTOCNode Title="Permalink Property " Url="html/P_Smartsheet_Api_Models_Workspace_Permalink.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="aae31882-39c4-4f20-a7f8-9d00afabccee" Title="Workspace.UpdateWorkspaceBuilder Class" Url="html/T_Smartsheet_Api_Models_Workspace_UpdateWorkspaceBuilder.htm">
+      <HelpTOCNode Title="Workspace.UpdateWorkspaceBuilder Constructor " Url="html/M_Smartsheet_Api_Models_Workspace_UpdateWorkspaceBuilder__ctor.htm" />
+      <HelpTOCNode Id="9e80d5dc-1be8-46cc-a4a1-4fae42236a16" Title="Workspace.UpdateWorkspaceBuilder Methods" Url="html/Methods_T_Smartsheet_Api_Models_Workspace_UpdateWorkspaceBuilder.htm">
+        <HelpTOCNode Title="Build Method " Url="html/M_Smartsheet_Api_Models_Workspace_UpdateWorkspaceBuilder_Build.htm" />
+        <HelpTOCNode Title="SetID Method " Url="html/M_Smartsheet_Api_Models_Workspace_UpdateWorkspaceBuilder_SetID.htm" />
+        <HelpTOCNode Title="SetName Method " Url="html/M_Smartsheet_Api_Models_Workspace_UpdateWorkspaceBuilder_SetName.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="31a93ae6-e4f3-423f-b2ae-99b785cba8fb" Title="Workspace.UpdateWorkspaceBuilder Properties" Url="html/Properties_T_Smartsheet_Api_Models_Workspace_UpdateWorkspaceBuilder.htm">
+        <HelpTOCNode Title="ID Property " Url="html/P_Smartsheet_Api_Models_Workspace_UpdateWorkspaceBuilder_ID.htm" />
+        <HelpTOCNode Title="Name Property " Url="html/P_Smartsheet_Api_Models_Workspace_UpdateWorkspaceBuilder_Name.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="dc5b4060-367d-49a7-b3c5-914c6a6bc3ed" Title="Smartsheet.Api.OAuth Namespace" Url="html/N_Smartsheet_Api_OAuth.htm">
+    <HelpTOCNode Id="163bcd37-b111-4910-b264-f74d8df9310e" Title="AccessDeniedException Class" Url="html/T_Smartsheet_Api_OAuth_AccessDeniedException.htm">
+      <HelpTOCNode Title="AccessDeniedException Constructor " Url="html/M_Smartsheet_Api_OAuth_AccessDeniedException__ctor.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_OAuth_AccessScope.htm" />
+    <HelpTOCNode Id="a7d35116-f7cd-402a-b51a-d27100a70493" Title="AuthorizationResult Class" Url="html/T_Smartsheet_Api_OAuth_AuthorizationResult.htm">
+      <HelpTOCNode Title="AuthorizationResult Constructor " Url="html/M_Smartsheet_Api_OAuth_AuthorizationResult__ctor.htm" />
+      <HelpTOCNode Id="3c611728-c2e7-4316-9d40-871470b27a78" Title="AuthorizationResult Methods" Url="html/Methods_T_Smartsheet_Api_OAuth_AuthorizationResult.htm">
+        <HelpTOCNode Title="ToString Method " Url="html/M_Smartsheet_Api_OAuth_AuthorizationResult_ToString.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="421085da-6163-49b4-afbc-5528c86683ea" Title="AuthorizationResult Properties" Url="html/Properties_T_Smartsheet_Api_OAuth_AuthorizationResult.htm">
+        <HelpTOCNode Title="Code Property " Url="html/P_Smartsheet_Api_OAuth_AuthorizationResult_Code.htm" />
+        <HelpTOCNode Title="ExpiresInSeconds Property " Url="html/P_Smartsheet_Api_OAuth_AuthorizationResult_ExpiresInSeconds.htm" />
+        <HelpTOCNode Title="State Property " Url="html/P_Smartsheet_Api_OAuth_AuthorizationResult_State.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="ae59eefe-5025-44d7-9fec-266c86ede402" Title="InvalidOAuthClientException Class" Url="html/T_Smartsheet_Api_OAuth_InvalidOAuthClientException.htm">
+      <HelpTOCNode Title="InvalidOAuthClientException Constructor " Url="html/M_Smartsheet_Api_OAuth_InvalidOAuthClientException__ctor.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="a39f37a5-cdd7-47c0-bc46-ffc5509134f6" Title="InvalidOAuthGrantException Class" Url="html/T_Smartsheet_Api_OAuth_InvalidOAuthGrantException.htm">
+      <HelpTOCNode Title="InvalidOAuthGrantException Constructor " Url="html/M_Smartsheet_Api_OAuth_InvalidOAuthGrantException__ctor.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="6e3e64a2-5ece-4baf-beac-f59a52ad53dd" Title="InvalidScopeException Class" Url="html/T_Smartsheet_Api_OAuth_InvalidScopeException.htm">
+      <HelpTOCNode Title="InvalidScopeException Constructor " Url="html/M_Smartsheet_Api_OAuth_InvalidScopeException__ctor.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="891ce60d-e353-4c98-be09-f1661f9cf6a5" Title="InvalidTokenRequestException Class" Url="html/T_Smartsheet_Api_OAuth_InvalidTokenRequestException.htm">
+      <HelpTOCNode Title="InvalidTokenRequestException Constructor " Url="html/M_Smartsheet_Api_OAuth_InvalidTokenRequestException__ctor.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="5facbc1f-f599-4ff6-8c0e-cf4c6f6c663a" Title="OAuthAuthorizationCodeException Class" Url="html/T_Smartsheet_Api_OAuth_OAuthAuthorizationCodeException.htm">
+      <HelpTOCNode Id="26d83076-be4a-4e2c-915e-7381ba8a46d2" Title="OAuthAuthorizationCodeException Constructor " Url="html/Overload_Smartsheet_Api_OAuth_OAuthAuthorizationCodeException__ctor.htm">
+        <HelpTOCNode Title="OAuthAuthorizationCodeException Constructor (String)" Url="html/M_Smartsheet_Api_OAuth_OAuthAuthorizationCodeException__ctor.htm" />
+        <HelpTOCNode Title="OAuthAuthorizationCodeException Constructor (String, Exception)" Url="html/M_Smartsheet_Api_OAuth_OAuthAuthorizationCodeException__ctor_1.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="8a4ebe8d-117a-4c72-8b5f-3426d8235b96" Title="OAuthFlow Interface" Url="html/T_Smartsheet_Api_OAuth_OAuthFlow.htm">
+      <HelpTOCNode Id="9abdf4a8-484f-46ea-a611-e100ba50f266" Title="OAuthFlow Methods" Url="html/Methods_T_Smartsheet_Api_OAuth_OAuthFlow.htm">
+        <HelpTOCNode Title="ExtractAuthorizationResult Method " Url="html/M_Smartsheet_Api_OAuth_OAuthFlow_ExtractAuthorizationResult.htm" />
+        <HelpTOCNode Title="NewAuthorizationURL Method " Url="html/M_Smartsheet_Api_OAuth_OAuthFlow_NewAuthorizationURL.htm" />
+        <HelpTOCNode Title="ObtainNewToken Method " Url="html/M_Smartsheet_Api_OAuth_OAuthFlow_ObtainNewToken.htm" />
+        <HelpTOCNode Title="RefreshToken Method " Url="html/M_Smartsheet_Api_OAuth_OAuthFlow_RefreshToken.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="1b5e82b0-2355-47fa-9be6-cde4f817f86e" Title="OAuthFlowBuilder Class" Url="html/T_Smartsheet_Api_OAuth_OAuthFlowBuilder.htm">
+      <HelpTOCNode Title="OAuthFlowBuilder Constructor " Url="html/M_Smartsheet_Api_OAuth_OAuthFlowBuilder__ctor.htm" />
+      <HelpTOCNode Id="ab5bd2fe-c46b-41d7-8eaf-ea27f00838fb" Title="OAuthFlowBuilder Fields" Url="html/Fields_T_Smartsheet_Api_OAuth_OAuthFlowBuilder.htm">
+        <HelpTOCNode Title="DEFAULT_AUTHORIZATION_URL Field" Url="html/F_Smartsheet_Api_OAuth_OAuthFlowBuilder_DEFAULT_AUTHORIZATION_URL.htm" />
+        <HelpTOCNode Title="DEFAULT_TOKEN_URL Field" Url="html/F_Smartsheet_Api_OAuth_OAuthFlowBuilder_DEFAULT_TOKEN_URL.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="6f56907d-441b-4f87-b44d-1dfc398e06d9" Title="OAuthFlowBuilder Methods" Url="html/Methods_T_Smartsheet_Api_OAuth_OAuthFlowBuilder.htm">
+        <HelpTOCNode Title="Build Method " Url="html/M_Smartsheet_Api_OAuth_OAuthFlowBuilder_Build.htm" />
+        <HelpTOCNode Title="SetAuthorizationURL Method " Url="html/M_Smartsheet_Api_OAuth_OAuthFlowBuilder_SetAuthorizationURL.htm" />
+        <HelpTOCNode Title="SetClientId Method " Url="html/M_Smartsheet_Api_OAuth_OAuthFlowBuilder_SetClientId.htm" />
+        <HelpTOCNode Title="SetClientSecret Method " Url="html/M_Smartsheet_Api_OAuth_OAuthFlowBuilder_SetClientSecret.htm" />
+        <HelpTOCNode Title="SetHttpClient Method " Url="html/M_Smartsheet_Api_OAuth_OAuthFlowBuilder_SetHttpClient.htm" />
+        <HelpTOCNode Title="SetJsonSerializer Method " Url="html/M_Smartsheet_Api_OAuth_OAuthFlowBuilder_SetJsonSerializer.htm" />
+        <HelpTOCNode Title="SetRedirectURL Method " Url="html/M_Smartsheet_Api_OAuth_OAuthFlowBuilder_SetRedirectURL.htm" />
+        <HelpTOCNode Title="SetTokenURL Method " Url="html/M_Smartsheet_Api_OAuth_OAuthFlowBuilder_SetTokenURL.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="9251fcc0-1fe7-4404-b4d7-6b847cc071f1" Title="OAuthFlowBuilder Properties" Url="html/Properties_T_Smartsheet_Api_OAuth_OAuthFlowBuilder.htm">
+        <HelpTOCNode Title="AuthorizationURL Property " Url="html/P_Smartsheet_Api_OAuth_OAuthFlowBuilder_AuthorizationURL.htm" />
+        <HelpTOCNode Title="ClientId Property " Url="html/P_Smartsheet_Api_OAuth_OAuthFlowBuilder_ClientId.htm" />
+        <HelpTOCNode Title="ClientSecret Property " Url="html/P_Smartsheet_Api_OAuth_OAuthFlowBuilder_ClientSecret.htm" />
+        <HelpTOCNode Title="DefaultAuthorizationUrl Property " Url="html/P_Smartsheet_Api_OAuth_OAuthFlowBuilder_DefaultAuthorizationUrl.htm" />
+        <HelpTOCNode Title="DefaultTokenUrl Property " Url="html/P_Smartsheet_Api_OAuth_OAuthFlowBuilder_DefaultTokenUrl.htm" />
+        <HelpTOCNode Title="HttpClient Property " Url="html/P_Smartsheet_Api_OAuth_OAuthFlowBuilder_HttpClient.htm" />
+        <HelpTOCNode Title="JsonSerializer Property " Url="html/P_Smartsheet_Api_OAuth_OAuthFlowBuilder_JsonSerializer.htm" />
+        <HelpTOCNode Title="RedirectURL Property " Url="html/P_Smartsheet_Api_OAuth_OAuthFlowBuilder_RedirectURL.htm" />
+        <HelpTOCNode Title="TokenURL Property " Url="html/P_Smartsheet_Api_OAuth_OAuthFlowBuilder_TokenURL.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="3ed4a4a2-c446-439b-876f-5b227729621b" Title="OAuthTokenException Class" Url="html/T_Smartsheet_Api_OAuth_OAuthTokenException.htm">
+      <HelpTOCNode Id="fb7215b9-664b-4ced-a5b4-a7909e6b0a34" Title="OAuthTokenException Constructor " Url="html/Overload_Smartsheet_Api_OAuth_OAuthTokenException__ctor.htm">
+        <HelpTOCNode Title="OAuthTokenException Constructor (String)" Url="html/M_Smartsheet_Api_OAuth_OAuthTokenException__ctor.htm" />
+        <HelpTOCNode Title="OAuthTokenException Constructor (String, Exception)" Url="html/M_Smartsheet_Api_OAuth_OAuthTokenException__ctor_1.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="5b9c5292-de96-43f4-a496-cdd7dc1c0b77" Title="Token Class" Url="html/T_Smartsheet_Api_OAuth_Token.htm">
+      <HelpTOCNode Title="Token Constructor " Url="html/M_Smartsheet_Api_OAuth_Token__ctor.htm" />
+      <HelpTOCNode Id="8ab9ba81-0076-495a-9c74-10fb21f0e3d0" Title="Token Properties" Url="html/Properties_T_Smartsheet_Api_OAuth_Token.htm">
+        <HelpTOCNode Title="AccessToken Property " Url="html/P_Smartsheet_Api_OAuth_Token_AccessToken.htm" />
+        <HelpTOCNode Title="ExpiresInSeconds Property " Url="html/P_Smartsheet_Api_OAuth_Token_ExpiresInSeconds.htm" />
+        <HelpTOCNode Title="RefreshToken Property " Url="html/P_Smartsheet_Api_OAuth_Token_RefreshToken.htm" />
+        <HelpTOCNode Title="TokenType Property " Url="html/P_Smartsheet_Api_OAuth_Token_TokenType.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="f16199a8-0c92-4788-9e86-4d83368c1cc2" Title="UnsupportedOAuthGrantTypeException Class" Url="html/T_Smartsheet_Api_OAuth_UnsupportedOAuthGrantTypeException.htm">
+      <HelpTOCNode Title="UnsupportedOAuthGrantTypeException Constructor " Url="html/M_Smartsheet_Api_OAuth_UnsupportedOAuthGrantTypeException__ctor.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="5cc4e4e3-b34c-41da-a5c0-d64df5e7abda" Title="UnsupportedResponseTypeException Class" Url="html/T_Smartsheet_Api_OAuth_UnsupportedResponseTypeException.htm">
+      <HelpTOCNode Title="UnsupportedResponseTypeException Constructor " Url="html/M_Smartsheet_Api_OAuth_UnsupportedResponseTypeException__ctor.htm" />
+    </HelpTOCNode>
+  </HelpTOCNode>
+</HelpTOC>
