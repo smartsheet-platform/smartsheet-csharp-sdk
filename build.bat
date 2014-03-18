@@ -13,8 +13,8 @@ nuget pack Smartsheet-csharp-sdk.csproj -sym -IncludeReferencedProjects -Prop Co
 if not "%errorlevel%"=="0" goto nugetFailure
 
 echo "==================================================="
-echo "Now make is live on nuget with a command such as: "
-echo "nugetpush smartsheet-csharp-sdk.1.0.0.0.nupkg"
+echo "Now make it live on nuget with a command such as: "
+echo "nuget push smartsheet-csharp-sdk.1.0.0.0.nupkg"
 echo "==================================================="
 
 :: zip dll's
@@ -22,16 +22,14 @@ echo "==================================================="
 
 :: push docs to github.io
 
-
+exit /b 0
 :: Failure Cases
 :buildFailure
 echo "There was an issue building the solution"
-exit -1
+exit /b 1
 :nunitFailure
 echo "There was an issue running the unit tests"
-exit -1
+exit /b 1
 :nugetFailure
 echo "There was an issue packaging for nuget"
-exit -1
-
-
+exit /b 1
