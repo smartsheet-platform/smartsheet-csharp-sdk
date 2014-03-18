@@ -12,6 +12,14 @@ if not "%errorlevel%"=="0" goto nunitFailure
 nuget pack Smartsheet-csharp-sdk.csproj -sym -IncludeReferencedProjects -Prop Configuration=Release
 if not "%errorlevel%"=="0" goto nugetFailure
 
+:: Copy documentation to the git directory
+xcopy documentation\Website\* documentation\git-docs /E /Y
+cd documentation\git-docs\
+:: Push the docs to github.io
+git add *
+git push
+cd ..\..\
+
 echo "==================================================="
 echo "Now make it live on nuget with a command such as: "
 echo "nuget push smartsheet-csharp-sdk.1.0.0.0.nupkg"

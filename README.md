@@ -38,7 +38,7 @@ cd smartsheet-csharp-sdk
 ```
 
 ## Documentation
-The SDK API documentation can be viewed online at [http://smartsheet-platform.github.io/smartsheet-csharp-sdk](http://smartsheet-platform.github.io/smartsheet-charp-sdk).
+The SDK API documentation can be viewed online at [http://smartsheet-platform.github.io/smartsheet-csharp-sdk](http://smartsheet-platform.github.io/smartsheet-csharp-sdk/).
 
 
 ##Example Usage
