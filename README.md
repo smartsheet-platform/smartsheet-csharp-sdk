@@ -10,11 +10,11 @@ If unfamiliar with NuGet please take a look at the [documentation](http://docs.n
 
 To install the SDK in Visual Studio right click the **References** for the project and select **Manage NuGet Packages**.
 
-![Manage NuGet Packages](https://googledrive.com/host/0B0ESt9lII6BWZUcyZmls "Manage NuGet Packages")
+![Manage NuGet Packages](https://googledrive.com/host/0B0ESt9lII6BWZUcyZmlsalBDdlE/nuget1.png "Manage NuGet Packages")
 
 Next a dialog will open like the one below. Confirm that you are viewing the **Online** section on the left. Then type in **smartsheet** in the search box. Last click **Install** on the Smartsheet C# SDK.
 
-![Search for and Install Smartsheet C# SDK](https://googledrive.com/host/0B0ESt9lII6BWZUcyZmlsa "Install Smartsheet C# SDK")
+![Search for and Install Smartsheet C# SDK](https://googledrive.com/host/0B0ESt9lII6BWZUcyZmlsalBDdlE/nuget2.png "Install Smartsheet C# SDK")
 
 After clicking install, you will be asked to accept the License (Apache). Then it will install the Smartsheet SDK and the dependencies (RestSharp & Newtonsoft.Json) by adding these libraries to the **References** section for the project.
 
