@@ -1,4 +1,4 @@
-﻿//    #[license]
+//    #[license]
 //    SmartsheetClient SDK for C#
 //    %%
 //    Copyright (C) 2014 SmartsheetClient
@@ -23,71 +23,71 @@ using System.Management;
 
 namespace Smartsheet.Api.Internal.Utility
 {
-    public class Utility
-    {
-        public Utility()
-        {
-        }
+	public class Utility
+	{
+		public Utility()
+		{
+		}
 
-        public static string GetOSFriendlyName()
-        {
-            string result = string.Empty;
-            ManagementObjectCollection.ManagementObjectEnumerator enumerator = (
-                new ManagementObjectSearcher("SELECT Caption FROM Win32_OperatingSystem")).Get().GetEnumerator();
-            try
-            {
-                if (enumerator.MoveNext())
-                {
-                    result = ((ManagementObject)enumerator.Current)["Caption"].ToString();
-                }
-            }
-            finally
-            {
-                if (enumerator != null)
-                {
-                    ((IDisposable)enumerator).Dispose();
-                }
-            }
-            return result;
-        }
+		public static string GetOSFriendlyName()
+		{
+			string result = string.Empty;
+			ManagementObjectCollection.ManagementObjectEnumerator enumerator = (
+				new ManagementObjectSearcher("SELECT Caption FROM Win32_OperatingSystem")).Get().GetEnumerator();
+			try
+			{
+				if (enumerator.MoveNext())
+				{
+					result = ((ManagementObject)enumerator.Current)["Caption"].ToString();
+				}
+			}
+			finally
+			{
+				if (enumerator != null)
+				{
+					((IDisposable)enumerator).Dispose();
+				}
+			}
+			return result;
+		}
 
-	    /**
-	     * Helper function that throws an IllegalArgumentException if one of the parameters is null.
-	     * @param objects the paramters to 
-	     */
-        public static void ThrowIfNull(params object[] objects)
-        {
-            foreach (object obj in objects)
-            {
-                if (obj == null)
-                {
-                    throw new System.ArgumentException();
-                }
-            }
-        }
+		/**
+		 * Helper function that throws an IllegalArgumentException if one of the parameters is null.
+		 * @param objects the paramters to 
+		 */
+		public static void ThrowIfNull(params object[] objects)
+		{
+			foreach (object obj in objects)
+			{
+				if (obj == null)
+				{
+					throw new System.ArgumentException();
+				}
+			}
+		}
 
-        public static void ThrowIfEmpty(params string[] strings)
-        {
-            foreach (string @string in strings)
-            {
-                if (@string != null && @string.Length == 0)
-                {
-                    throw new System.ArgumentException();
-                }
-            }
-        }
+		public static void ThrowIfEmpty(params string[] strings)
+		{
+			foreach (string @string in strings)
+			{
+				if (@string != null && @string.Length == 0)
+				{
+					throw new System.ArgumentException();
+				}
+			}
+		}
 
-        public static byte[] ReadAllBytes(BinaryReader reader)
-        {
-            const int bufferSize = 4096;
-            using (var ms = new MemoryStream())
-            {
-                byte[] buffer = new byte[bufferSize];
-                int count;
-                while ((count = reader.Read(buffer, 0, buffer.Length)) != 0)
-                    ms.Write(buffer, 0, count);
-                return ms.ToArray();
-            }
-        }
-    }
+		public static byte[] ReadAllBytes(BinaryReader reader)
+		{
+			const int bufferSize = 4096;
+			using (var ms = new MemoryStream())
+			{
+				byte[] buffer = new byte[bufferSize];
+				int count;
+				while ((count = reader.Read(buffer, 0, buffer.Length)) != 0)
+					ms.Write(buffer, 0, count);
+					return ms.ToArray();
+			}
+		}
+	}
 }

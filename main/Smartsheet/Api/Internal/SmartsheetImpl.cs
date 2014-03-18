@@ -1,4 +1,4 @@
-﻿//    #[license]
+//    #[license]
 //    Smartsheet SDK for C#
 //    %%
 //    Copyright (C) 2014 Smartsheet
@@ -19,13 +19,13 @@
 namespace Smartsheet.Api.Internal
 {
 
-    using System;
-    using System.Threading;
-    using DefaultHttpClient = Api.Internal.Http.DefaultHttpClient;
-    using HttpClient = Api.Internal.Http.HttpClient;
-    using JsonNetSerializer = Api.Internal.Json.JsonNetSerializer;
-    using JsonSerializer = Api.Internal.Json.JsonSerializer;
-    using Utils = Api.Internal.Utility.Utility;
+	using System;
+	using System.Threading;
+	using DefaultHttpClient = Api.Internal.Http.DefaultHttpClient;
+	using HttpClient = Api.Internal.Http.HttpClient;
+	using JsonNetSerializer = Api.Internal.Json.JsonNetSerializer;
+	using JsonSerializer = Api.Internal.Json.JsonSerializer;
+	using Utils = Api.Internal.Utility.Utility;
 
 	/// <summary>
 	/// This is the implementation of Smartsheet interface.
@@ -63,7 +63,7 @@ namespace Smartsheet.Api.Internal
 		/// as null, and will be initialized To non-null at the first time it is accessed via corresponding getter, therefore
 		/// effectively the underlying Value is lazily created in a thread safe manner.
 		/// </summary>
-        private HomeResources home;
+		private HomeResources home;
 
 		/// <summary>
 		/// Represents the AtomicReference To WorkspaceResources.
@@ -287,8 +287,8 @@ namespace Smartsheet.Api.Internal
 		/// <returns> the home resources </returns>
 		public virtual HomeResources Home()
 		{
-            Interlocked.CompareExchange<HomeResources>(ref home, new HomeResourcesImpl(this), null);
-            return home;
+			Interlocked.CompareExchange<HomeResources>(ref home, new HomeResourcesImpl(this), null);
+			return home;
 		}
 
 		/// <summary>
@@ -297,8 +297,8 @@ namespace Smartsheet.Api.Internal
 		/// <returns> the workspace resources </returns>
 		public virtual WorkspaceResources Workspaces()
 		{
-            Interlocked.CompareExchange<WorkspaceResources>(ref workspaces, new WorkspaceResourcesImpl(this), null);
-            return workspaces;
+			Interlocked.CompareExchange<WorkspaceResources>(ref workspaces, new WorkspaceResourcesImpl(this), null);
+			return workspaces;
 		}
 
 		/// <summary>
@@ -307,8 +307,8 @@ namespace Smartsheet.Api.Internal
 		/// <returns> the folder resources </returns>
 		public virtual FolderResources Folders()
 		{
-            Interlocked.CompareExchange<FolderResources>(ref folders, new FolderResourcesImpl(this), null);
-            return folders;
+			Interlocked.CompareExchange<FolderResources>(ref folders, new FolderResourcesImpl(this), null);
+			return folders;
 		}
 
 		/// <summary>
@@ -317,8 +317,8 @@ namespace Smartsheet.Api.Internal
 		/// <returns> the template resources </returns>
 		public virtual TemplateResources Templates()
 		{
-            Interlocked.CompareExchange<TemplateResources>(ref templates, new TemplateResourcesImpl(this), null);
-            return templates;
+			Interlocked.CompareExchange<TemplateResources>(ref templates, new TemplateResourcesImpl(this), null);
+			return templates;
 		}
 
 		/// <summary>
@@ -327,8 +327,8 @@ namespace Smartsheet.Api.Internal
 		/// <returns> the sheet resources </returns>
 		public virtual SheetResources Sheets()
 		{
-            Interlocked.CompareExchange<SheetResources>(ref sheets, new SheetResourcesImpl(this), null);
-            return sheets;
+			Interlocked.CompareExchange<SheetResources>(ref sheets, new SheetResourcesImpl(this), null);
+			return sheets;
 		}
 
 		/// <summary>
@@ -337,8 +337,8 @@ namespace Smartsheet.Api.Internal
 		/// <returns> the column resources </returns>
 		public virtual ColumnResources Columns()
 		{
-            Interlocked.CompareExchange<ColumnResources>(ref columns, new ColumnResourcesImpl(this), null);
-            return columns;
+			Interlocked.CompareExchange<ColumnResources>(ref columns, new ColumnResourcesImpl(this), null);
+			return columns;
 		}
 
 		/// <summary>
@@ -347,8 +347,8 @@ namespace Smartsheet.Api.Internal
 		/// <returns> the row resources </returns>
 		public virtual RowResources Rows()
 		{
-            Interlocked.CompareExchange<RowResources>(ref rows, new RowResourcesImpl(this), null);
-            return rows;
+				Interlocked.CompareExchange<RowResources>(ref rows, new RowResourcesImpl(this), null);
+				return rows;
 		}
 
 		/// <summary>
@@ -357,8 +357,8 @@ namespace Smartsheet.Api.Internal
 		/// <returns> the attachment resources </returns>
 		public virtual AttachmentResources Attachments()
 		{
-            Interlocked.CompareExchange<AttachmentResources>(ref attachments, new AttachmentResourcesImpl(this), null);
-            return attachments;
+			Interlocked.CompareExchange<AttachmentResources>(ref attachments, new AttachmentResourcesImpl(this), null);
+			return attachments;
 		}
 
 		/// <summary>
@@ -367,8 +367,8 @@ namespace Smartsheet.Api.Internal
 		/// <returns> the discussion resources </returns>
 		public virtual DiscussionResources Discussions()
 		{
-            Interlocked.CompareExchange<DiscussionResources>(ref discussions, new DiscussionResourcesImpl(this), null);
-            return discussions;
+			Interlocked.CompareExchange<DiscussionResources>(ref discussions, new DiscussionResourcesImpl(this), null);
+			return discussions;
 		}
 
 		/// <summary>
@@ -377,8 +377,8 @@ namespace Smartsheet.Api.Internal
 		/// <returns> the Comment resources </returns>
 		public virtual CommentResources Comments()
 		{
-            Interlocked.CompareExchange<CommentResources>(ref comments, new CommentResourcesImpl(this), null);
-            return comments;
+			Interlocked.CompareExchange<CommentResources>(ref comments, new CommentResourcesImpl(this), null);
+			return comments;
 		}
 
 		/// <summary>
@@ -387,8 +387,8 @@ namespace Smartsheet.Api.Internal
 		/// <returns> the user resources </returns>
 		public virtual UserResources Users()
 		{
-            Interlocked.CompareExchange<UserResources>(ref users, new UserResourcesImpl(this), null);
-            return users;
+			Interlocked.CompareExchange<UserResources>(ref users, new UserResourcesImpl(this), null);
+			return users;
 		}
 
 		/// <summary>
@@ -397,11 +397,9 @@ namespace Smartsheet.Api.Internal
 		/// <returns> the search resources </returns>
 		public virtual SearchResources Search()
 		{
-            Interlocked.CompareExchange<SearchResources>(ref search, new SearchResourcesImpl(this), null);
-            return search;
+			Interlocked.CompareExchange<SearchResources>(ref search, new SearchResourcesImpl(this), null);
+			return search;
 		}
-
-
 	}
 
 }

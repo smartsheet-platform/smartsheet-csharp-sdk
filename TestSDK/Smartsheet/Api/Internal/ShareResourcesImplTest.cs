@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace Smartsheet.Api.Internal
 {
@@ -36,9 +36,9 @@ namespace Smartsheet.Api.Internal
 			server.setResponseBody("../../../TestSDK/resources/listShares.json");
 
 			IList<Share> shares = shareResourcesImpl.ListShares(2906571706525572L);
-            Assert.True(shares.Count == 2, "The number of shares returned is incorrect.");
+			Assert.True(shares.Count == 2, "The number of shares returned is incorrect.");
 
-            Assert.AreEqual("email@email.com", shares[0].Email, "Email attribute of the share is incorrect.");
+			Assert.AreEqual("email@email.com", shares[0].Email, "Email attribute of the share is incorrect.");
 			Assert.AreEqual("someone@somewhere.com", shares[1].Email, "Email attribute of the share is incorrect.");
 		}
 

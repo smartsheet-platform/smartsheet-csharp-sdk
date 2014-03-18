@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace Smartsheet.Api.Internal.Http
 {
 	using NUnit.Framework;
-    using System;
-    using System.Text;
+	 using System;
+	 using System.Text;
 
 
 
@@ -57,7 +57,7 @@ namespace Smartsheet.Api.Internal.Http
 				// Expected
 			}
 
-	////		// Test each http method
+			// Test each http method
 			request.Uri = new Uri("http://google.com");
 			request.Method = HttpMethod.GET;
 			client.Request(request);

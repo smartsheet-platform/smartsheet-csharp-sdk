@@ -1,8 +1,8 @@
-﻿namespace Smartsheet.Api.models
+namespace Smartsheet.Api.models
 {
 	using NUnit.Framework;
-    using Smartsheet.Api.Models;
-    using System;
+	using Smartsheet.Api.Models;
+	using System;
 
 	public class ColumnTagTest
 	{

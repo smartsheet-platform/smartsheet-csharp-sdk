@@ -24,35 +24,35 @@ namespace Smartsheet.Api.OAuth
 	/// Represents the access scope. These are the scopes that are required To access an end user's Smartsheet data and 
 	/// specifies the Type of operations that are permitted.
 	/// </summary>
-    public enum AccessScope
-    {
-        /// <summary>
-        /// The read sheets
-        /// </summary>
-        READ_SHEETS,
-        /// <summary>
-        /// The write sheets
-        /// </summary>
-        WRITE_SHEETS,
-        /// <summary>
-        /// The share sheets
-        /// </summary>
-        SHARE_SHEETS,
-        /// <summary>
-        /// The delete sheets
-        /// </summary>
-        DELETE_SHEETS,
-        /// <summary>
-        /// The create sheets
-        /// </summary>
-        CREATE_SHEETS,
-        /// <summary>
-        /// The admin sheets
-        /// </summary>
-        ADMIN_SHEETS,
-        /// <summary>
-        /// The admin workspaces
-        /// </summary>
-        ADMIN_WORKSPACES
-    }
+	public enum AccessScope
+	{
+		/// <summary>
+		/// The read sheets
+		/// </summary>
+		READ_SHEETS,
+		/// <summary>
+		/// The write sheets
+		/// </summary>
+		WRITE_SHEETS,
+		/// <summary>
+		/// The share sheets
+		/// </summary>
+		SHARE_SHEETS,
+		/// <summary>
+		/// The delete sheets
+		/// </summary>
+		DELETE_SHEETS,
+		/// <summary>
+		/// The create sheets
+		/// </summary>
+		CREATE_SHEETS,
+		/// <summary>
+		/// The admin sheets
+		/// </summary>
+		ADMIN_SHEETS,
+		/// <summary>
+		/// The admin workspaces
+		/// </summary>
+		ADMIN_WORKSPACES
+	}
 }

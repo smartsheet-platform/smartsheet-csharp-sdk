@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace Smartsheet.Api.Internal
@@ -10,7 +10,7 @@ namespace Smartsheet.Api.Internal
 	using Comment = Smartsheet.Api.Models.Comment;
 	using Discussion = Smartsheet.Api.Models.Discussion;
 	using User = Smartsheet.Api.Models.User;
-    using System.Net;
+	using System.Net;
 
 	public class AssociatedDiscussionResourcesImplTest : ResourcesImplBase
 	{
@@ -31,7 +31,7 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestCreateDiscussion()
 		{
-            server.setResponseBody("../../../TestSDK/resources/createDiscussion.json");
+				server.setResponseBody("../../../TestSDK/resources/createDiscussion.json");
 
 			// Test success
 			IList<Comment> comments = new List<Comment>();
@@ -54,8 +54,8 @@ namespace Smartsheet.Api.Internal
 
 
 			// Test failure - CreatedBy not allowed & only one comment can be added when creating a discussion.
-            server.Status = HttpStatusCode.BadRequest;
-            server.setResponseBody("../../../TestSDK/resources/createDiscussion_1032.json");
+				server.Status = HttpStatusCode.BadRequest;
+				server.setResponseBody("../../../TestSDK/resources/createDiscussion_1032.json");
 			comment = new Comment();
 			User user = new User();
 			user.Name = "John Doe";

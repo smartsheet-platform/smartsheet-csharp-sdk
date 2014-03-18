@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace Smartsheet.Api.Internal
@@ -29,7 +29,7 @@ namespace Smartsheet.Api.Internal
 		public virtual void SetUp()
 		{
 			rowResourcesImpl = new RowResourcesImpl(new SmartsheetImpl("http://localhost:9090/1.1/", "accessToken", 
-                new DefaultHttpClient(), serializer));
+				new DefaultHttpClient(), serializer));
 		}
 
 		[Test]
@@ -41,12 +41,12 @@ namespace Smartsheet.Api.Internal
 		{
 			server.setResponseBody("../../../TestSDK/resources/getRowByID.json");
 
-            //IEnumerable<ObjectInclusion> test = new ObjectInclusion[]{ObjectInclusion.TEMPLATES,
-            //    ObjectInclusion.DISCUSSIONS, ObjectInclusion.DATA, ObjectInclusion.COLUMNS,
-            //    ObjectInclusion.ATTACHMENTS};
-            Row row = rowResourcesImpl.GetRow(1234L, new List<ObjectInclusion>((ObjectInclusion[])Enum.
-                GetValues(typeof(ObjectInclusion))));
-           
+			//IEnumerable<ObjectInclusion> test = new ObjectInclusion[]{ObjectInclusion.TEMPLATES,
+			//    ObjectInclusion.DISCUSSIONS, ObjectInclusion.DATA, ObjectInclusion.COLUMNS,
+			//    ObjectInclusion.ATTACHMENTS};
+			Row row = rowResourcesImpl.GetRow(1234L, new List<ObjectInclusion>((ObjectInclusion[])Enum.
+				GetValues(typeof(ObjectInclusion))));
+
 			Assert.True(row.Cells.Count == 1);
 			Assert.AreEqual("http://domain.com",row.Cells[0].Link.Url);
 			Assert.AreEqual(LinkType.URL,row.Cells[0].Link.Type);
@@ -132,9 +132,8 @@ namespace Smartsheet.Api.Internal
 			IList<CellHistory> history = rowResourcesImpl.GetCellHistory(1234L, 123124L);
 			Assert.True(history.Count == 2);
 
-            DateTime d = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc).AddSeconds(1391109701000/1000);
-            Assert.AreEqual(d, history[0].ModifiedAt);
-
+			DateTime d = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc).AddSeconds(1391109701000/1000);
+			Assert.AreEqual(d, history[0].ModifiedAt);
 
 			User user = new User();
 			User newUser = history[0].ModifiedBy;
@@ -148,7 +147,7 @@ namespace Smartsheet.Api.Internal
 			user.ID = newUser.ID;
 
 			Assert.AreEqual(user, history[0].ModifiedBy);
-            Assert.AreEqual(user, history[0].ModifiedBy, "message");
+				Assert.AreEqual(user, history[0].ModifiedBy, "message");
 			Assert.AreEqual("Some New Text", history[0].DisplayValue);
 		}
 

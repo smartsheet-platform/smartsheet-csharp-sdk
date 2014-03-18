@@ -1,4 +1,4 @@
-﻿//    #[license]
+//    #[license]
 //    Smartsheet SDK for C#
 //    %%
 //    Copyright (C) 2014 Smartsheet
@@ -19,7 +19,7 @@
 namespace Smartsheet.Api.Internal
 {
 
-    using Utils = Api.Internal.Utility.Utility;
+	using Utils = Api.Internal.Utility.Utility;
 
 
 	/// <summary>

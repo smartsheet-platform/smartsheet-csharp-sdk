@@ -1,4 +1,4 @@
-﻿namespace Smartsheet.Api
+namespace Smartsheet.Api
 {
 	using NUnit.Framework;
 	using SmartsheetImpl = Smartsheet.Api.Internal.SmartsheetImpl;

@@ -1,12 +1,8 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace Smartsheet.Api.Internal
 {
 	using NUnit.Framework;
-
-
-
-
 
 	using DefaultHttpClient = Smartsheet.Api.Internal.Http.DefaultHttpClient;
 	using Cell = Smartsheet.Api.Models.Cell;
@@ -65,7 +61,7 @@ namespace Smartsheet.Api.Internal
 			IList<Row> newRows = sheetRowResource.InsertRows(1234L, rowWrapper);
 
 			Assert.NotNull(newRows);
-            Assert.AreEqual(rows.Count, newRows.Count, "The number of rows created & inserted is not correct.");
+				Assert.AreEqual(rows.Count, newRows.Count, "The number of rows created & inserted is not correct.");
 			Column col = new Column();
 			col.ID = 8764071660021636L;
 			Assert.Null(rows[0].GetColumnByIndex(0));
@@ -80,7 +76,7 @@ namespace Smartsheet.Api.Internal
 			Row row = sheetRowResource.GetRow(1234L, 1);
 
 			Assert.NotNull(row);
-            Assert.True(1 == row.RowNumber, "Wrong row retrieved.");
+				Assert.True(1 == row.RowNumber, "Wrong row retrieved.");
 		}
 
 	}

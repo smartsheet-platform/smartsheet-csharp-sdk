@@ -1,4 +1,4 @@
-﻿//    #[license]
+//    #[license]
 //    Smartsheet SDK for C#
 //    %%
 //    Copyright (C) 2014 Smartsheet
@@ -20,9 +20,6 @@ using System.Collections.Generic;
 
 namespace Smartsheet.Api.Internal
 {
-
-
-
 	using Cell = Api.Models.Cell;
 	using CellHistory = Api.Models.CellHistory;
 	using ObjectInclusion = Api.Models.ObjectInclusion;
@@ -237,6 +234,6 @@ namespace Smartsheet.Api.Internal
 		{
 			return this.discussions;
 		}
-    }
+	 }
 
 }

@@ -1,4 +1,4 @@
-﻿//    #[license]
+//    #[license]
 //    Smartsheet SDK for C#
 //    %%
 //    Copyright (C) 2014 Smartsheet
@@ -18,41 +18,38 @@
 
 namespace Smartsheet.Api.Internal.Http
 {
+	/// <summary>
+	/// This interface defines methods To make an HTTP request.
+	/// 
+	/// Thread Safety: Implementation of this interface must be thread safe.
+	/// </summary>
+	public interface HttpClient
+	{
 
+		/// <summary>
+		/// Make an HTTP request and return the response.
+		/// 
+		/// Parameters: - request : the HTTP request
+		/// 
+		/// Returns: the HTTP response
+		/// 
+		/// Exceptions: - IllegalArgumentException : if any argument is null - HttpClientException : if there is any other
+		/// error occurred during the operation
+		/// </summary>
+		/// <param name="request"> the request </param>
+		/// <returns> the http response </returns>
+		/// <exception cref="HttpClientException"> the http client exception </exception>
+		HttpResponse Request(HttpRequest request);
 
-
-    /// <summary>
-    /// This interface defines methods To make an HTTP request.
-    /// 
-    /// Thread Safety: Implementation of this interface must be thread safe.
-    /// </summary>
-    public interface HttpClient
-    {
-
-        /// <summary>
-        /// Make an HTTP request and return the response.
-        /// 
-        /// Parameters: - request : the HTTP request
-        /// 
-        /// Returns: the HTTP response
-        /// 
-        /// Exceptions: - IllegalArgumentException : if any argument is null - HttpClientException : if there is any other
-        /// error occurred during the operation
-        /// </summary>
-        /// <param name="request"> the request </param>
-        /// <returns> the http response </returns>
-        /// <exception cref="HttpClientException"> the http client exception </exception>
-        HttpResponse Request(HttpRequest request);
-
-        /// <summary>
-        /// Release connection.
-        /// </summary>
-        void ReleaseConnection();
-        
-        /// <summary>
-        /// Closes this instance.
-        /// </summary>
-        void Close();
-    }
+		/// <summary>
+		/// Release connection.
+		/// </summary>
+		void ReleaseConnection();
+		
+		/// <summary>
+		/// Closes this instance.
+		/// </summary>
+		void Close();
+	}
 
 }

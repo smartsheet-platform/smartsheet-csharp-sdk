@@ -1,4 +1,4 @@
-﻿//    #[license]
+//    #[license]
 //    Smartsheet SDK for C#
 //    %%
 //    Copyright (C) 2014 Smartsheet
@@ -44,7 +44,7 @@ namespace Smartsheet.Api
 		/// <param name="error"> the Error object from Smartsheet REST API </param>
 		public SmartsheetRestException(Error error) : base(error.Message)
 		{
-            errorCode = error.ErrorCode;
+				errorCode = error.ErrorCode;
 		}
 
 

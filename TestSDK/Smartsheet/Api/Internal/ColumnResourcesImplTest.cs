@@ -1,4 +1,4 @@
-﻿namespace Smartsheet.Api.Internal
+namespace Smartsheet.Api.Internal
 {
 	using NUnit.Framework;
 
@@ -15,7 +15,7 @@
 		public virtual void SetUp()
 		{
 			columnResource = new ColumnResourcesImpl(new SmartsheetImpl("http://localhost:9090/1.1/",
-                "accessToken", new DefaultHttpClient(), serializer));
+					"accessToken", new DefaultHttpClient(), serializer));
 		}
 
 		[Test]

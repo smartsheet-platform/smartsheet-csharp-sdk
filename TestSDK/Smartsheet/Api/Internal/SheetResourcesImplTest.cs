@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System;
 
 namespace Smartsheet.Api.Internal
@@ -16,7 +16,7 @@ namespace Smartsheet.Api.Internal
 	using SheetEmail = Smartsheet.Api.Models.SheetEmail;
 	using SheetEmailFormat = Smartsheet.Api.Models.SheetEmailFormat;
 	using SheetPublish = Smartsheet.Api.Models.SheetPublish;
-    using System.IO;
+	using System.IO;
 
 
 	public class SheetResourcesImplTest : ResourcesImplBase
@@ -59,8 +59,8 @@ namespace Smartsheet.Api.Internal
 			Assert.AreEqual(0,sheet.Rows.Count);
 
 
-            sheet = sheetResource.GetSheet(123123L, new List<ObjectInclusion>((ObjectInclusion[])Enum.
-                GetValues(typeof(ObjectInclusion))));
+			sheet = sheetResource.GetSheet(123123L, new List<ObjectInclusion>((ObjectInclusion[])Enum.
+				GetValues(typeof(ObjectInclusion))));
 			Assert.AreEqual(9,sheet.Columns.Count);
 			Assert.AreEqual(0,sheet.Rows.Count);
 		}
@@ -72,15 +72,15 @@ namespace Smartsheet.Api.Internal
 			server.setResponseBody(file);
 			server.ContentType = "application/vnd.ms-excel";
 
-            MemoryStream ms = new MemoryStream();
-            BinaryWriter output = new BinaryWriter(ms);
+			MemoryStream ms = new MemoryStream();
+			BinaryWriter output = new BinaryWriter(ms);
 			sheetResource.GetSheetAsExcel(1234L, output);
 
 			Assert.NotNull(output);
 			Assert.True(ms.ToArray().Length > 0);
 
 			byte[] original = File.ReadAllBytes(file);
-            Assert.AreEqual(original.Length, ms.Length);
+			Assert.AreEqual(original.Length, ms.Length);
 		}
 
 		[Test]
@@ -90,24 +90,24 @@ namespace Smartsheet.Api.Internal
 			server.setResponseBody(file);
 			server.ContentType = "application/pdf";
 
-            BinaryWriter output = new BinaryWriter(new MemoryStream());
+			BinaryWriter output = new BinaryWriter(new MemoryStream());
 
 			sheetResource.GetSheetAsPDF(1234L, output, null);
 
-            Assert.NotNull(output, "Downloaded PDF is null.");
+			Assert.NotNull(output, "Downloaded PDF is null.");
 			Assert.True(output.BaseStream.Length > 0, "Downloaded PDF is empty.");
-            Assert.AreEqual(107906, output.BaseStream.Length, "Downloaded PDF does not match the original size.");
+			Assert.AreEqual(107906, output.BaseStream.Length, "Downloaded PDF does not match the original size.");
 
 			//test a larger PDF
 			file = "../../../TestSDK/resources/large_sheet.pdf";
 			server.setResponseBody(file);
 			server.ContentType = "application/pdf";
-            MemoryStream ms = new MemoryStream();
-            output = new BinaryWriter(ms);
+			MemoryStream ms = new MemoryStream();
+			output = new BinaryWriter(ms);
 			sheetResource.GetSheetAsPDF(1234L, output, PaperSize.LEGAL);
-            Assert.NotNull(output, "Downloaded PDF is null.");
-            Assert.True(ms.ToArray().Length > 0, "Downloaded PDF is empty.");
-            Assert.AreEqual(936995, ms.ToArray().Length, "Downloaded PDF does not match the original size.");
+			Assert.NotNull(output, "Downloaded PDF is null.");
+			Assert.True(ms.ToArray().Length > 0, "Downloaded PDF is empty.");
+			Assert.AreEqual(936995, ms.ToArray().Length, "Downloaded PDF does not match the original size.");
 		}
 
 		[Test]
@@ -147,7 +147,7 @@ namespace Smartsheet.Api.Internal
 			sheet.FromId = 2906571706525572L;
 
 			Sheet newSheet = sheetResource.CreateSheetFromExisting(sheet, new List<ObjectInclusion>((ObjectInclusion[])Enum.
-    GetValues(typeof(ObjectInclusion))));
+				GetValues(typeof(ObjectInclusion))));
 
 			Assert.AreEqual(466343087630212L, (long)newSheet.ID);
 			Assert.AreEqual(AccessLevel.OWNER, newSheet.AccessLevel);
@@ -199,8 +199,8 @@ namespace Smartsheet.Api.Internal
 
 			Sheet sheet = new Sheet();
 			sheet.FromId = 2906571706525572L;
-            Sheet newSheet = sheetResource.CreateSheetInFolderFromExisting(1234L, sheet, 
-                new List<ObjectInclusion>((ObjectInclusion[])Enum.GetValues(typeof(ObjectInclusion))));
+				Sheet newSheet = sheetResource.CreateSheetInFolderFromExisting(1234L, sheet, 
+					new List<ObjectInclusion>((ObjectInclusion[])Enum.GetValues(typeof(ObjectInclusion))));
 
 			if (newSheet.ID.ToString().Length == 0 || newSheet.AccessLevel != AccessLevel.OWNER || newSheet.Permalink.ToString().Length == 0)
 			{
@@ -240,8 +240,8 @@ namespace Smartsheet.Api.Internal
 
 			Sheet sheet = new Sheet();
 			sheet.FromId = 2906571706525572L;
-            Sheet newSheet = sheetResource.CreateSheetInWorkspaceFromExisting(1234L, sheet, 
-                new List<ObjectInclusion>((ObjectInclusion[])Enum.GetValues(typeof(ObjectInclusion))));
+			Sheet newSheet = sheetResource.CreateSheetInWorkspaceFromExisting(1234L, sheet, 
+				new List<ObjectInclusion>((ObjectInclusion[])Enum.GetValues(typeof(ObjectInclusion))));
 
 			Assert.AreEqual(466343087630212L, (long)newSheet.ID);
 			Assert.AreEqual(AccessLevel.OWNER, newSheet.AccessLevel);
@@ -267,7 +267,7 @@ namespace Smartsheet.Api.Internal
 			sheet.ID = 1234L;
 			Sheet newSheet = sheetResource.UpdateSheet(sheet);
 
-            Assert.AreEqual("new name", newSheet.Name, "Sheet update (rename) failed.");
+			Assert.AreEqual("new name", newSheet.Name, "Sheet update (rename) failed.");
 		}
 
 		[Test]
@@ -334,8 +334,8 @@ namespace Smartsheet.Api.Internal
 			SheetPublish publishStatus = sheetResource.GetPublishStatus(1234L);
 
 			if (publishStatus == null || publishStatus.ReadOnlyFullEnabled != false || 
-                publishStatus.IcalEnabled != false || publishStatus.ReadOnlyLiteEnabled != false || 
-                publishStatus.ReadWriteEnabled != false)
+				publishStatus.IcalEnabled != false || publishStatus.ReadOnlyLiteEnabled != false || 
+				publishStatus.ReadWriteEnabled != false)
 			{
 
 				Assert.Fail("Issue creating the publish status object");

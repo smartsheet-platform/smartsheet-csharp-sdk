@@ -1,4 +1,4 @@
-﻿//    #[license]
+//    #[license]
 //    Smartsheet SDK for C#
 //    %%
 //    Copyright (C) 2014 Smartsheet
@@ -72,12 +72,12 @@ namespace Smartsheet.Api.Models
 		/// Return the hash Code of this object.
 		/// </summary>
 		/// <returns> the hash Code </returns>
-        public override int GetHashCode()
+		  public override int GetHashCode()
 		{
 			int result = 17;
 			if (this.id == null)
 			{
-                result = base.GetHashCode();
+					result = base.GetHashCode();
 			}
 			else
 			{

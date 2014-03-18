@@ -1,15 +1,15 @@
-﻿namespace Smartsheet.Api.Internal
+namespace Smartsheet.Api.Internal
 {
 	using NUnit.Framework;
-    using Smartsheet.Api.Internal.Json;
+	using Smartsheet.Api.Internal.Json;
 
 	public class ResourcesImplBase
 	{
 
 		internal HttpTestServer server;
-        internal JsonNetSerializer serializer;
+		internal JsonNetSerializer serializer;
 
-        [SetUp]
+		[SetUp]
 		public virtual void BaseSetUp()
 		{
 			// Setup test server
@@ -18,10 +18,10 @@
 
 			// Setup the serializer
 			serializer = new JsonNetSerializer();
-            serializer.failOnUnknownProperties = Newtonsoft.Json.MissingMemberHandling.Error;
+			serializer.failOnUnknownProperties = Newtonsoft.Json.MissingMemberHandling.Error;
 		}
 
-        [TearDown]
+		[TearDown]
 		public virtual void BaseTearDown()
 		{
 			server.Stop();

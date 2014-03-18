@@ -1,4 +1,4 @@
-﻿//    #[license]
+//    #[license]
 //    Smartsheet SDK for C#
 //    %%
 //    Copyright (C) 2014 Smartsheet
@@ -19,9 +19,9 @@
 namespace Smartsheet.Api.Internal
 {
 
-    using System.Collections.Generic;
-    using Home = Api.Models.Home;
-    using ObjectInclusion = Api.Models.ObjectInclusion;
+	using System.Collections.Generic;
+	using Home = Api.Models.Home;
+	using ObjectInclusion = Api.Models.ObjectInclusion;
 
 	/// <summary>
 	/// This is the implementation of the HomeResources.
@@ -77,7 +77,7 @@ namespace Smartsheet.Api.Internal
 				{
 					path += oi.ToString().ToLower() + ",";
 				}
-                path.TrimEnd(',');
+					 path.TrimEnd(',');
 			}
 
 			return this.GetResource<Home>(path, typeof(Home));

@@ -1,4 +1,4 @@
-﻿//    #[license]
+//    #[license]
 //    Smartsheet SDK for C#
 //    %%
 //    Copyright (C) 2014 Smartsheet
@@ -231,12 +231,12 @@ namespace Smartsheet.Api.Models
 				return this;
 			}
 
-            /// <summary>
-            /// Gets the cells.
-            /// </summary>
-            /// <value>
-            /// The cells.
-            /// </value>
+				/// <summary>
+				/// Gets the cells.
+				/// </summary>
+				/// <value>
+				/// The cells.
+				/// </value>
 			public virtual IList<Cell> Cells
 			{
 				get

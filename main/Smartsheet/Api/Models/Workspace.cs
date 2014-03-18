@@ -87,11 +87,11 @@ namespace Smartsheet.Api.Models
 				}
 			}
 
-            /// <summary>
-            /// Set the workspace Id
-            /// </summary>
-            /// <param name="id">the workspace Id</param>
-            /// <returns>the update workspace builder</returns>
+			/// <summary>
+			/// Set the workspace Id
+			/// </summary>
+			/// <param name="id">the workspace Id</param>
+			/// <returns>the update workspace builder</returns>
 			public virtual UpdateWorkspaceBuilder SetID(long? id)
 			{
 				this.id = id;

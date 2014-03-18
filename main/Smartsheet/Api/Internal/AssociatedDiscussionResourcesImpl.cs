@@ -1,4 +1,4 @@
-﻿//    #[license]
+//    #[license]
 //    Smartsheet SDK for C#
 //    %%
 //    Copyright (C) 2014 Smartsheet
@@ -20,7 +20,7 @@ namespace Smartsheet.Api.Internal
 {
 
 
-    using Utils = Api.Internal.Utility.Utility;
+	using Utils = Api.Internal.Utility.Utility;
 	using Discussion = Api.Models.Discussion;
 
 	/// <summary>
@@ -40,7 +40,7 @@ namespace Smartsheet.Api.Internal
 		/// <param name="smartsheet"> the Smartsheet </param>
 		/// <param name="masterResourceType"> the master resource Type (e.g. "sheet", "workspace") </param>
 		public AssociatedDiscussionResourcesImpl(SmartsheetImpl smartsheet, string masterResourceType) : 
-            base(smartsheet,masterResourceType)
+				base(smartsheet,masterResourceType)
 		{
 		}
 
@@ -66,9 +66,9 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		public virtual Discussion CreateDiscussion(long objectId, Discussion discussion)
 		{
-            Utils.ThrowIfNull(objectId, discussion);
+			Utils.ThrowIfNull(objectId, discussion);
 			return this.CreateResource<Discussion>(MasterResourceType + "/" + objectId + "/discussions", 
-                typeof(Discussion), discussion);
+				typeof(Discussion), discussion);
 		}
 	}
 

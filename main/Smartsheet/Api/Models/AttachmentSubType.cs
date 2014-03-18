@@ -1,4 +1,4 @@
-﻿//    #[license]
+//    #[license]
 //    Smartsheet SDK for C#
 //    %%
 //    Copyright (C) 2014 Smartsheet
@@ -25,25 +25,25 @@ namespace Smartsheet.Api.Models
 	/// </summary>
 	public enum AttachmentSubType
 	{
-        /// <summary>
-        /// The document
-        /// </summary>
+		/// <summary>
+		/// The document
+		/// </summary>
 		DOCUMENT,
-        /// <summary>
-        /// The spreadsheet
-        /// </summary>
+		/// <summary>
+		/// The spreadsheet
+		/// </summary>
 		SPREADSHEET,
-        /// <summary>
-        /// The presentation
-        /// </summary>
+		/// <summary>
+		/// The presentation
+		/// </summary>
 		PRESENTATION,
-        /// <summary>
-        /// The PDF
-        /// </summary>
+		/// <summary>
+		/// The PDF
+		/// </summary>
 		PDF,
-        /// <summary>
-        /// The drawing
-        /// </summary>
+		/// <summary>
+		/// The drawing
+		/// </summary>
 		DRAWING
 	}
 

@@ -1,4 +1,4 @@
-﻿//    #[license]
+//    #[license]
 //    Smartsheet SDK for C#
 //    %%
 //    Copyright (C) 2014 Smartsheet
@@ -25,37 +25,37 @@ namespace Smartsheet.Api.Models
 	/// <seealso href="http://www.Smartsheet.com/developers/Api-documentation#h.89hb3ivv7eum">Access Scopes Help</seealso>
 	public enum AccessScope
 	{
-        /// <summary>
-        /// The read sheets
-        /// </summary>
+		/// <summary>
+		/// The read sheets
+		/// </summary>
 		READ_SHEETS,
-        /// <summary>
-        /// The write sheets
-        /// </summary>
+		/// <summary>
+		/// The write sheets
+		/// </summary>
 		WRITE_SHEETS,
-        /// <summary>
-        /// The share sheets
-        /// </summary>
+		/// <summary>
+		/// The share sheets
+		/// </summary>
 		SHARE_SHEETS,
-        /// <summary>
-        /// The delete sheets
-        /// </summary>
+		/// <summary>
+		/// The delete sheets
+		/// </summary>
 		DELETE_SHEETS,
-        /// <summary>
-        /// The create sheets
-        /// </summary>
+		/// <summary>
+		/// The create sheets
+		/// </summary>
 		CREATE_SHEETS,
-        /// <summary>
-        /// The admin users
-        /// </summary>
+		/// <summary>
+		/// The admin users
+		/// </summary>
 		ADMIN_USERS,
-        /// <summary>
-        /// The admin sheets
-        /// </summary>
+		/// <summary>
+		/// The admin sheets
+		/// </summary>
 		ADMIN_SHEETS,
-        /// <summary>
-        /// The admin workspaces
-        /// </summary>
+		/// <summary>
+		/// The admin workspaces
+		/// </summary>
 		ADMIN_WORKSPACES
 	}
 

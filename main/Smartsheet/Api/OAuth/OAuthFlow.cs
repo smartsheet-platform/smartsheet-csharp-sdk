@@ -19,9 +19,9 @@
 namespace Smartsheet.Api.OAuth
 {
 
-    using System.Collections.Generic;
-    using HttpClientException = Api.Internal.Http.HttpClientException;
-    using JSONSerializationException = Api.Internal.Json.JsonSerializationException;
+	using System.Collections.Generic;
+	using HttpClientException = Api.Internal.Http.HttpClientException;
+	using JSONSerializationException = Api.Internal.Json.JsonSerializationException;
 
 	/// <summary>
 	/// <para>OAuthFlow interface provides methods To do the OAuth2 authorization.</para>

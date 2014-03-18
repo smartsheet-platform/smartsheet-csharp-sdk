@@ -1,17 +1,17 @@
-﻿namespace Smartsheet.Api.Models
+namespace Smartsheet.Api.Models
 {
-    using NUnit.Framework;
-    using System;
+	 using NUnit.Framework;
+	 using System;
 
 	public class AccessLevelTest
 	{
 
-        [SetUp]
+		[SetUp]
 		public virtual void SetUp()
 		{
 		}
 
-        [Test]
+		[Test]
 		public virtual void TestAccessLevel()
 		{
 			Assert.NotNull(AccessLevel.VIEWER);

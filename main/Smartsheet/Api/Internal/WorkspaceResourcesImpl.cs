@@ -1,4 +1,4 @@
-﻿//    #[license]
+//    #[license]
 //    Smartsheet SDK for C#
 //    %%
 //    Copyright (C) 2014 Smartsheet
@@ -53,8 +53,8 @@ namespace Smartsheet.Api.Internal
 		/// <param name="smartsheet"> the Smartsheet </param>
 		public WorkspaceResourcesImpl(SmartsheetImpl smartsheet) : base(smartsheet)
 		{
-            //this.folders = new WorkspaceFolderResourcesImpl(smartsheet);
-            //this.shares = new ShareResourcesImpl(smartsheet, "workspace");
+				//this.folders = new WorkspaceFolderResourcesImpl(smartsheet);
+				//this.shares = new ShareResourcesImpl(smartsheet, "workspace");
 
 		}
 
@@ -184,7 +184,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		public virtual void DeleteWorkspace(long id)
 		{
-            this.DeleteResource<Workspace>("workspace/" + id, typeof(Workspace));
+				this.DeleteResource<Workspace>("workspace/" + id, typeof(Workspace));
 		}
 
 		/// <summary>

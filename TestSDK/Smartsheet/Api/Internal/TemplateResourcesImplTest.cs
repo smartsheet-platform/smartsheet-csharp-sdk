@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace Smartsheet.Api.Internal
 {
@@ -19,7 +19,7 @@ namespace Smartsheet.Api.Internal
 		public virtual void SetUp()
 		{
 			templateResources = new TemplateResourcesImpl(new SmartsheetImpl("http://localhost:9090/1.1/", 
-                "accessToken", new DefaultHttpClient(), serializer));
+					"accessToken", new DefaultHttpClient(), serializer));
 		}
 
 		[Test]

@@ -1,4 +1,4 @@
-﻿//    #[license]
+//    #[license]
 //    Smartsheet SDK for C#
 //    %%
 //    Copyright (C) 2014 Smartsheet
@@ -27,25 +27,25 @@ namespace Smartsheet.Api.Models
 	/// <seealso href="http://www.Smartsheet.com/developers/Api-documentation#h.umfgm4xt25dq">Access Level Help</seealso>
 	public enum AccessLevel
 	{
-        /// <summary>
-        /// The viewer
-        /// </summary>
+		/// <summary>
+		/// The viewer
+		/// </summary>
 		VIEWER,
-        /// <summary>
-        /// The editor
-        /// </summary>
+		/// <summary>
+		/// The editor
+		/// </summary>
 		EDITOR,
-        /// <summary>
-        /// The editor share
-        /// </summary>
+		/// <summary>
+		/// The editor share
+		/// </summary>
 		EDITOR_SHARE,
-        /// <summary>
-        /// The admin
-        /// </summary>
+		/// <summary>
+		/// The admin
+		/// </summary>
 		ADMIN,
-        /// <summary>
-        /// The owner
-        /// </summary>
+		/// <summary>
+		/// The owner
+		/// </summary>
 		OWNER
 	}
 

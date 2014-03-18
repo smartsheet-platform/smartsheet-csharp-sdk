@@ -1,4 +1,4 @@
-﻿//    #[license]
+//    #[license]
 //    Smartsheet SDK for C#
 //    %%
 //    Copyright (C) 2014 Smartsheet
@@ -20,178 +20,176 @@ using System.Collections.Generic;
 using Smartsheet.Api.Internal.Http;
 namespace Smartsheet.Api.Internal.Http
 {
-    using Util = Api.Internal.Utility.Utility;
-    using RestSharp;
-    using System.Reflection;
-    using System;
-    using System.IO;
+	using Util = Api.Internal.Utility.Utility;
+	using RestSharp;
+	using System.Reflection;
+	using System;
+	using System.IO;
 
-    /// <summary>
-    /// This is the RestSharp based HttpClient implementation.
-    /// 
-    /// Thread Safety: This class is thread safe because it is immutable and the underlying http client is
-    /// thread safe.
-    /// </summary>
+	/// <summary>
+	/// This is the RestSharp based HttpClient implementation.
+	/// 
+	/// Thread Safety: This class is thread safe because it is immutable and the underlying http client is
+	/// thread safe.
+	/// </summary>
 
-    public class DefaultHttpClient : HttpClient
-    {
-        /// <summary>
-        /// Represents the underlying http client.
-        /// 
-        /// It will be initialized in constructor and will not change afterwards.
-        /// </summary>
-        private readonly RestClient httpClient;
+	public class DefaultHttpClient : HttpClient
+	{
+		/// <summary>
+		/// Represents the underlying http client.
+		/// 
+		/// It will be initialized in constructor and will not change afterwards.
+		/// </summary>
+		private readonly RestClient httpClient;
 
-        /// <summary>
-        /// The http request. </summary>
-        private RestRequest restRequest;
+		/// <summary>
+		/// The http request. </summary>
+		private RestRequest restRequest;
 
-        /// <summary>
-        /// The http response. </summary>
-        private IRestResponse restResponse;
+		/// <summary>
+		/// The http response. </summary>
+		private IRestResponse restResponse;
 
-        /// <summary>
-        /// Constructor.
-        /// </summary>
-        public DefaultHttpClient()
-            : this(new RestClient())
-        {
-        }
+		/// <summary>
+		/// Constructor.
+		/// </summary>
+		public DefaultHttpClient()
+			: this(new RestClient())
+		{
+		}
 
-        /// <summary>
-        /// Constructor.
-        /// 
-        /// Parameters: - HttpClient : the http client to use
-        /// 
-        /// Exceptions: - IllegalArgumentException : if any argument is null
-        /// </summary>
-        /// <param name="httpClient"> the http client </param>
-        public DefaultHttpClient(RestClient httpClient)
-        {
-            Util.ThrowIfNull(httpClient);
+		/// <summary>
+		/// Constructor.
+		/// 
+		/// Parameters: - HttpClient : the http client to use
+		/// 
+		/// Exceptions: - IllegalArgumentException : if any argument is null
+		/// </summary>
+		/// <param name="httpClient"> the http client </param>
+		public DefaultHttpClient(RestClient httpClient)
+		{
+			Util.ThrowIfNull(httpClient);
 
-            this.httpClient = httpClient;
-            this.httpClient.FollowRedirects = true;
-            this.httpClient.UserAgent = buildUserAgent();
-            
-            
-        }
+			this.httpClient = httpClient;
+			this.httpClient.FollowRedirects = true;
+			this.httpClient.UserAgent = buildUserAgent();
+		}
 
-        /// <summary>
-        /// Make an HTTP request and return the response.
-        /// </summary>
-        /// <param name="smartsheetRequest"> the Smartsheet request </param>
-        /// <returns> the HTTP response </returns>
-        /// <exception cref="HttpClientException"> the HTTP client exception </exception>
-        public virtual HttpResponse Request(HttpRequest smartsheetRequest)
-        {
-            Util.ThrowIfNull(smartsheetRequest);
-            if (smartsheetRequest.Uri == null)
-            {
-                throw new System.ArgumentException("A Request URI is required.");
-            }
+		/// <summary>
+		/// Make an HTTP request and return the response.
+		/// </summary>
+		/// <param name="smartsheetRequest"> the Smartsheet request </param>
+		/// <returns> the HTTP response </returns>
+		/// <exception cref="HttpClientException"> the HTTP client exception </exception>
+		public virtual HttpResponse Request(HttpRequest smartsheetRequest)
+		{
+			Util.ThrowIfNull(smartsheetRequest);
+			if (smartsheetRequest.Uri == null)
+			{
+				 throw new System.ArgumentException("A Request URI is required.");
+			}
 
-            HttpResponse smartsheetResponse = new HttpResponse();
+			HttpResponse smartsheetResponse = new HttpResponse();
 
-            // Create HTTP request based on the smartsheetRequest request Type
-            if (HttpMethod.GET == smartsheetRequest.Method)
-            {
-                restRequest = new RestRequest(smartsheetRequest.Uri, Method.GET);
-            }
-            else if (HttpMethod.POST == smartsheetRequest.Method)
-            {
-                restRequest = new RestRequest(smartsheetRequest.Uri, Method.POST);
-            }
-            else if (HttpMethod.PUT == smartsheetRequest.Method)
-            {
-                restRequest = new RestRequest(smartsheetRequest.Uri, Method.PUT);
-            }
-            else if (HttpMethod.DELETE == smartsheetRequest.Method)
-            {
-                restRequest = new RestRequest(smartsheetRequest.Uri, Method.DELETE);
-            }
-            else
-            {
-                throw new System.NotSupportedException("Request method " + smartsheetRequest.Method + " is not supported!");
-            }
+			// Create HTTP request based on the smartsheetRequest request Type
+			if (HttpMethod.GET == smartsheetRequest.Method)
+			{
+				 restRequest = new RestRequest(smartsheetRequest.Uri, Method.GET);
+			}
+			else if (HttpMethod.POST == smartsheetRequest.Method)
+			{
+				 restRequest = new RestRequest(smartsheetRequest.Uri, Method.POST);
+			}
+			else if (HttpMethod.PUT == smartsheetRequest.Method)
+			{
+				 restRequest = new RestRequest(smartsheetRequest.Uri, Method.PUT);
+			}
+			else if (HttpMethod.DELETE == smartsheetRequest.Method)
+			{
+				 restRequest = new RestRequest(smartsheetRequest.Uri, Method.DELETE);
+			}
+			else
+			{
+				throw new System.NotSupportedException("Request method " + smartsheetRequest.Method + " is not supported!");
+			}
 
-            // Set HTTP Headers
-            if (smartsheetRequest.Headers != null)
-            {
-                foreach (KeyValuePair<string, string> header in smartsheetRequest.Headers)
-                {
-                    restRequest.AddHeader(header.Key, header.Value);
-                }
-            }
-            
-            if (smartsheetRequest.Entity != null && smartsheetRequest.Entity.GetContent() != null)
-            {
-                restRequest.AddParameter("application/json", smartsheetRequest.Entity.GetContent(),
-                    ParameterType.RequestBody);
-            }
+			// Set HTTP Headers
+			if (smartsheetRequest.Headers != null)
+			{
+				foreach (KeyValuePair<string, string> header in smartsheetRequest.Headers)
+				{
+					restRequest.AddHeader(header.Key, header.Value);
+				}
+			}
+			
+			if (smartsheetRequest.Entity != null && smartsheetRequest.Entity.GetContent() != null)
+			{
+				restRequest.AddParameter("application/json", smartsheetRequest.Entity.GetContent(),
+					ParameterType.RequestBody);
+			}
 
-            // Set the client base Url.
-            httpClient.BaseUrl = smartsheetRequest.Uri.GetLeftPart(UriPartial.Authority);
+			// Set the client base Url.
+			httpClient.BaseUrl = smartsheetRequest.Uri.GetLeftPart(UriPartial.Authority);
 
-            // Make the HTTP request
-            restResponse = httpClient.Execute(restRequest);
+			// Make the HTTP request
+			restResponse = httpClient.Execute(restRequest);
 
-            if (restResponse.ResponseStatus == ResponseStatus.Error)
-            {
-                throw new HttpClientException("There was an issue connecting.");
-            }
+			if (restResponse.ResponseStatus == ResponseStatus.Error)
+			{
+				throw new HttpClientException("There was an issue connecting.");
+			}
 
-            // Set returned Headers
-            smartsheetResponse.Headers = new Dictionary<string, string>();
-            foreach (var header in restResponse.Headers)
-            {
-                smartsheetResponse.Headers[header.Name] = (String)header.Value;
-            }
-            smartsheetResponse.StatusCode = restResponse.StatusCode;
+			// Set returned Headers
+			smartsheetResponse.Headers = new Dictionary<string, string>();
+			foreach (var header in restResponse.Headers)
+			{
+				smartsheetResponse.Headers[header.Name] = (String)header.Value;
+			}
+			smartsheetResponse.StatusCode = restResponse.StatusCode;
 
-            // Set returned entities
-            if (restResponse.Content != null)
-            {
-                HttpEntity entity = new HttpEntity();
-                entity.ContentType = restResponse.ContentType;
-                entity.ContentLength = restResponse.ContentLength;
+			// Set returned entities
+			if (restResponse.Content != null)
+			{
+				HttpEntity entity = new HttpEntity();
+				entity.ContentType = restResponse.ContentType;
+				entity.ContentLength = restResponse.ContentLength;
 
-                entity.Content = restResponse.RawBytes;
-                smartsheetResponse.Entity = entity;
-            }
+				entity.Content = restResponse.RawBytes;
+				smartsheetResponse.Entity = entity;
+			}
 
-            return smartsheetResponse;
-        }
+			return smartsheetResponse;
+		}
 
-        /// <summary>
-        /// Close the HttpClient.
-        /// </summary>
-        public virtual void Close()
-        {
-            // Not necessary with restsharp
-        }
+		/// <summary>
+		/// Close the HttpClient.
+		/// </summary>
+		public virtual void Close()
+		{
+			// Not necessary with restsharp
+		}
 
-        /// <summary>
-        /// Release connection - not currently used.
-        /// </summary>
-        public virtual void ReleaseConnection()
-        {
-            // Not necessary with restsharp
-        }
+		/// <summary>
+		/// Release connection - not currently used.
+		/// </summary>
+		public virtual void ReleaseConnection()
+		{
+			// Not necessary with restsharp
+		}
 
-        private string buildUserAgent()
-        {
-            // Set User Agent
-            string thisVersion = "";
-            string title = "";
-            Assembly assembly = Assembly.GetEntryAssembly();
-            if (assembly != null)
-            {
-                thisVersion = assembly.GetName().Version.ToString();
-                title = assembly.GetName().Name;
-            }
-            return "smartsheet-csharp-sdk("+title + ")/" + thisVersion + " " + Util.GetOSFriendlyName();
-        }
-    }
+		private string buildUserAgent()
+		{
+			// Set User Agent
+			string thisVersion = "";
+			string title = "";
+			Assembly assembly = Assembly.GetEntryAssembly();
+			if (assembly != null)
+			{
+				thisVersion = assembly.GetName().Version.ToString();
+				title = assembly.GetName().Name;
+			}
+			return "smartsheet-csharp-sdk("+title + ")/" + thisVersion + " " + Util.GetOSFriendlyName();
+		}
+	}
 
 }

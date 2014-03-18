@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace Smartsheet.Api.Internal
 {
@@ -11,14 +11,14 @@ namespace Smartsheet.Api.Internal
 
 	public class FolderResourcesImplTest : ResourcesImplBase
 	{
-        FolderResourcesImpl folderResource; 
+		FolderResourcesImpl folderResource; 
 
-        [SetUp]
+		[SetUp]
 		public virtual void SetUp()
 		{
 			// Create a folder resource
 			folderResource = new FolderResourcesImpl(new SmartsheetImpl(
-                "http://localhost:9090/1.1/", "accessToken", new DefaultHttpClient(), serializer));
+				"http://localhost:9090/1.1/", "accessToken", new DefaultHttpClient(), serializer));
 		}
 
 		[Test]

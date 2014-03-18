@@ -1,4 +1,4 @@
-﻿//    #[license]
+//    #[license]
 //    Smartsheet SDK for C#
 //    %%
 //    Copyright (C) 2014 Smartsheet
@@ -27,12 +27,12 @@ namespace Smartsheet.Api.Internal
 	using HttpMethod = Api.Internal.Http.HttpMethod;
 	using HttpRequest = Api.Internal.Http.HttpRequest;
 	using HttpResponse = Api.Internal.Http.HttpResponse;
-    using Utils = Api.Internal.Utility.Utility;
+	using Utils = Api.Internal.Utility.Utility;
 	using Attachment = Api.Models.Attachment;
-    using System.IO;
-    using System.Net;
-    using System.Text;
-    using System;
+	using System.IO;
+	using System.Net;
+	using System.Text;
+	using System;
 
 	/// <summary>
 	/// This is the implementation of the AssociatedAttachmentResources.
@@ -73,7 +73,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		public virtual IList<Attachment> ListAttachments(long objectId)
 		{
-            return this.ListResources<Attachment>(MasterResourceType + "/" + objectId + "/attachments", typeof(Attachment));
+				return this.ListResources<Attachment>(MasterResourceType + "/" + objectId + "/attachments", typeof(Attachment));
 		}
 
 		/// <summary>
@@ -102,7 +102,7 @@ namespace Smartsheet.Api.Internal
 			Utils.ThrowIfNull(objectId, file, contentType);
 			Utils.ThrowIfEmpty(contentType);
 
-            FileInfo fi = new FileInfo(file);
+			FileInfo fi = new FileInfo(file);
 			return AttachFile(objectId, file, contentType, fi.Length);
 		}
 
@@ -118,17 +118,17 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		public virtual Attachment AttachFile(long objectId, string file, string contentType, long contentLength)
 		{
-            Utils.ThrowIfNull(file, contentType);
+			Utils.ThrowIfNull(file, contentType);
 
-            FileInfo fi = new FileInfo(file);
+			FileInfo fi = new FileInfo(file);
 			HttpRequest request = CreateHttpRequest(new Uri(this.Smartsheet.BaseURI,MasterResourceType + "/" +
-                objectId + "/attachments"), HttpMethod.POST);
-            
+					 objectId + "/attachments"), HttpMethod.POST);
+				
 			request.Headers["Content-Disposition"] = "attachment; filename=" + fi.Length;
 			
-            HttpEntity entity = new HttpEntity();
+			HttpEntity entity = new HttpEntity();
 			entity.ContentType = contentType;
-            entity.Content = Encoding.UTF8.GetBytes(File.ReadAllText(file));
+			entity.Content = Encoding.UTF8.GetBytes(File.ReadAllText(file));
 			entity.ContentLength = contentLength;
 			request.Entity = entity;
 
@@ -138,8 +138,8 @@ namespace Smartsheet.Api.Internal
 			switch (response.StatusCode)
 			{
 			case HttpStatusCode.OK:
-                    attachment = this.Smartsheet.JsonSerializer.deserializeResult<Attachment>(
-                        response.Entity.GetContent()).Result;
+				attachment = this.Smartsheet.JsonSerializer.deserializeResult<Attachment>(
+					response.Entity.GetContent()).Result;
 				break;
 			default:
 				HandleError(response);
@@ -181,10 +181,10 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		public virtual Attachment AttachURL(long objectId, Attachment attachment)
 		{
-            Utils.ThrowIfNull(objectId, attachment);
-            //RequestResult<T>
+			Utils.ThrowIfNull(objectId, attachment);
+			//RequestResult<T>
 			return this.CreateResource(MasterResourceType + "/" + objectId + "/attachments", 
-                typeof(Attachment), attachment);
+					typeof(Attachment), attachment);
 		}
 	}
 

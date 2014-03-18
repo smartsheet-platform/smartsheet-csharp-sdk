@@ -1,4 +1,4 @@
-﻿namespace Smartsheet.Api.Internal
+namespace Smartsheet.Api.Internal
 {
 	using NUnit.Framework;
 
@@ -23,7 +23,7 @@
 		{
 			try
 			{
-                discussionAttachmentResources.AttachFile(1234L, "../../../TestSDK/resources/getPDF.pdf", "application/pdf");
+				discussionAttachmentResources.AttachFile(1234L, "../../../TestSDK/resources/getPDF.pdf", "application/pdf");
 				Assert.Fail("Exception should have been thrown.");
 			}
 			catch (System.NotSupportedException)
@@ -41,7 +41,7 @@
 			try
 			{
 				discussionAttachmentResources.AttachFile(1234L, "../../../TestSDK/resources/getPDF.pdf",
-                    "application/pdf", 1234L);
+						"application/pdf", 1234L);
 				Assert.Fail("Exception should have been thrown.");
 			}
 			catch (System.NotSupportedException)

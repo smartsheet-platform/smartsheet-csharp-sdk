@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace Smartsheet.Api.Internal
 {
@@ -13,7 +13,7 @@ namespace Smartsheet.Api.Internal
 	using AttachmentSubType = Smartsheet.Api.Models.AttachmentSubType;
 	using AttachmentType = Smartsheet.Api.Models.AttachmentType;
 
-    [TestFixture]
+	[TestFixture]
 	public class AssociatedAttachmentResourcesImplTest : ResourcesImplBase
 	{
 
@@ -23,7 +23,7 @@ namespace Smartsheet.Api.Internal
 		public virtual void SetUp()
 		{
 			associatedAttachment = new AssociatedAttachmentResourcesImpl(new SmartsheetImpl(
-                "http://localhost:9090/1.1/", "accessToken", new DefaultHttpClient(), serializer),"sheet");
+					"http://localhost:9090/1.1/", "accessToken", new DefaultHttpClient(), serializer),"sheet");
 		}
 
 		[Test]
@@ -34,7 +34,7 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestListAttachments()
 		{
-            server.setResponseBody("../../../TestSDK/resources/listAssociatedAttachments.json");
+			server.setResponseBody("../../../TestSDK/resources/listAssociatedAttachments.json");
 
 			IList<Attachment> attachments = associatedAttachment.ListAttachments(1234L);
 			Assert.True(attachments.Count == 4);
@@ -45,7 +45,7 @@ namespace Smartsheet.Api.Internal
 		public virtual void TestAttachFile()
 		{
 			server.setResponseBody(@"..\..\..\TestSDK\resources\attachFile.json");
-            string file = @"..\..\..\TestSDK\resources\large_sheet.pdf";
+				string file = @"..\..\..\TestSDK\resources\large_sheet.pdf";
 			Attachment attachment = associatedAttachment.AttachFile(1234L, file, "application/pdf");
 			Assert.True(attachment.ID == 7265404226692996L);
 			Assert.AreEqual("Testing.PDF", attachment.Name);

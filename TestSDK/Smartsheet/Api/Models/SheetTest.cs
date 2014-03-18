@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace Smartsheet.Api.models
 {
 	using NUnit.Framework;
-    using Smartsheet.Api.Models;
-    using System;
+	using Smartsheet.Api.Models;
+	using System;
 
 
 

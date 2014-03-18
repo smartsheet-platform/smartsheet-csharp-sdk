@@ -1,4 +1,4 @@
-﻿//    #[license]
+//    #[license]
 //    Smartsheet SDK for C#
 //    %%
 //    Copyright (C) 2014 Smartsheet
@@ -144,11 +144,11 @@ namespace Smartsheet.Api.Models
 				}
 			}
 
-            /// <summary>
-            /// Sets the folder Id.
-            /// </summary>
-            /// <param name="id">the Id of the folder.</param>
-            /// <returns></returns>
+				/// <summary>
+				/// Sets the folder Id.
+				/// </summary>
+				/// <param name="id">the Id of the folder.</param>
+				/// <returns></returns>
 			public virtual UpdateFolderBuilder SetID(long? id)
 			{
 				this.id = id;

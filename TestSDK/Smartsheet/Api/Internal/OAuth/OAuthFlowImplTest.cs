@@ -1,7 +1,7 @@
-﻿namespace Smartsheet.Api.Internal.OAuth
+namespace Smartsheet.Api.Internal.OAuth
 {
 	using NUnit.Framework;
-    using System;
+	 using System;
 
 
 	using DefaultHttpClient = Smartsheet.Api.Internal.Http.DefaultHttpClient;
@@ -16,8 +16,8 @@
 	using OAuthTokenException = Smartsheet.Api.OAuth.OAuthTokenException;
 	using Token = Smartsheet.Api.OAuth.Token;
 	using UnsupportedResponseTypeException = Smartsheet.Api.OAuth.UnsupportedResponseTypeException;
-    using Smartsheet.Api.Internal.Json;
-    using System.Collections.Generic;
+	 using Smartsheet.Api.Internal.Json;
+	 using System.Collections.Generic;
 
 	public class OAuthFlowImplTest
 	{
@@ -33,7 +33,7 @@
 
 		internal HttpTestServer server;
 
-        [TearDown]
+		[TearDown]
 		public virtual void BaseTearDown()
 		{
 			server.Stop();
@@ -56,7 +56,6 @@
 		[Test]
 		public virtual void TestOAuthFlowImpl()
 		{
-
 			Assert.AreEqual(clientId,oauth.ClientId);
 			Assert.AreEqual(clientSecret, oauth.ClientSecret);
 			Assert.AreEqual(redirectURL, oauth.RedirectURL);
@@ -79,13 +78,13 @@
 				// Expected
 			}
 
-            oauth.NewAuthorizationURL(new List<AccessScope>((AccessScope[])Enum.GetValues(typeof(AccessScope))), null);
-            string authURL = oauth.NewAuthorizationURL(new List<AccessScope>((AccessScope[])Enum.GetValues(
-                typeof(AccessScope))), "state");
+			oauth.NewAuthorizationURL(new List<AccessScope>((AccessScope[])Enum.GetValues(typeof(AccessScope))), null);
+			string authURL = oauth.NewAuthorizationURL(new List<AccessScope>((AccessScope[])Enum.GetValues(
+				typeof(AccessScope))), "state");
 
-            Assert.AreEqual("authorizationURL?response_type=code&client_id=clientID&redirect_uri=redirectURL&"+
-                "state=state&scope=READ_SHEETS%2CWRITE_SHEETS%2CSHARE_SHEETS%2CDELETE_SHEETS%2CCREATE_SHEETS%2"+
-                "CADMIN_SHEETS%2CADMIN_WORKSPACES", authURL);
+			Assert.AreEqual("authorizationURL?response_type=code&client_id=clientID&redirect_uri=redirectURL&"+
+				"state=state&scope=READ_SHEETS%2CWRITE_SHEETS%2CSHARE_SHEETS%2CDELETE_SHEETS%2CCREATE_SHEETS%2"+
+				"CADMIN_SHEETS%2CADMIN_WORKSPACES", authURL);
 		}
 
 		[Test]

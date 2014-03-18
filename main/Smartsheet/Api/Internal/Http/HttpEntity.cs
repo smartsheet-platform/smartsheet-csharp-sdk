@@ -1,4 +1,4 @@
-﻿//    #[license]
+//    #[license]
 //    Smartsheet SDK for C#
 //    %%
 //    Copyright (C) 2014 Smartsheet
@@ -47,7 +47,7 @@ namespace Smartsheet.Api.Internal.Http
 		/// 
 		/// It has a pair of setter/getter (not shown on class diagram for brevity).
 		/// </summary>
-        //TODO: would be better to have the content in a stream so that all data is not stored in memory.
+		  //TODO: would be better to have the content in a stream so that all data is not stored in memory.
 		private byte[] content;
 
 		/// <summary>
@@ -95,23 +95,24 @@ namespace Smartsheet.Api.Internal.Http
 				this.content = value;
 			}
 		}
-        /// <summary>
-        /// Gets the content as a stream
-        /// </summary>
-        /// <returns></returns>
-        public virtual StreamReader GetContent()
-        {
-            if (content == null) { content = new byte[0]; }
+		
+		/// <summary>
+		/// Gets the content as a stream
+		/// </summary>
+		/// <returns></returns>
+		public virtual StreamReader GetContent()
+		{
+			if (content == null) { content = new byte[0]; }
 
-            return new StreamReader(new MemoryStream(content));
-        }
+			return new StreamReader(new MemoryStream(content));
+		}
 
-        public virtual BinaryReader GetBinaryContent()
-        {
-            if (content == null) { content = new byte[0]; }
+		public virtual BinaryReader GetBinaryContent()
+		{
+			if (content == null) { content = new byte[0]; }
 
-            return new BinaryReader(new MemoryStream(content));
-        }
+			return new BinaryReader(new MemoryStream(content));
+		}
 
 	}
 

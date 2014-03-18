@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace Smartsheet.Api.Internal
 {
@@ -21,7 +21,7 @@ namespace Smartsheet.Api.Internal
 		public virtual void SetUp()
 		{
 			sheetColumnResourcesImpl = new SheetColumnResourcesImpl(new SmartsheetImpl("http://localhost:9090/1.1/", 
-                "accessToken", new DefaultHttpClient(), serializer));
+				"accessToken", new DefaultHttpClient(), serializer));
 		}
 
 		[Test]
@@ -55,7 +55,7 @@ namespace Smartsheet.Api.Internal
 			format.Fill = "000";
 			col.AutoNumberFormat = format;
 
-            col.Options = new List<string>(new string[] { "Not Started", "Started", "Completed" });
+			col.Options = new List<string>(new string[] { "Not Started", "Started", "Completed" });
 
 			Column newCol = sheetColumnResourcesImpl.AddColumn(1234L, col);
 			Assert.AreEqual("Status", newCol.Title);

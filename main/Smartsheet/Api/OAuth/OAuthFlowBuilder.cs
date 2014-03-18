@@ -19,14 +19,14 @@
 namespace Smartsheet.Api.OAuth
 {
 
-    using Api.Internal.Http;
-    using Api.Internal.Json;
-    using System;
+	using Api.Internal.Http;
+	using Api.Internal.Json;
+	using System;
 
-    using HttpClient = Api.Internal.Http.HttpClient;
-    using JsonSerializer = Api.Internal.Json.JsonSerializer;
-    using OAuthFlowImpl = Api.Internal.OAuth.OAuthFlowImpl;
-    using Util = Api.Internal.Utility.Utility;
+	using HttpClient = Api.Internal.Http.HttpClient;
+	using JsonSerializer = Api.Internal.Json.JsonSerializer;
+	using OAuthFlowImpl = Api.Internal.OAuth.OAuthFlowImpl;
+	using Util = Api.Internal.Utility.Utility;
 
 	/// <summary>
 	/// <para>This is the builder that is used To build <seealso cref="OAuthFlow"/> instances.</para>
@@ -63,7 +63,7 @@ namespace Smartsheet.Api.OAuth
 		/// <para>It can be set using corresponding setter.</para>
 		/// </summary>
 		private JsonSerializer jsonSerializer
-            ;
+			;
 
 		/// <summary>
 		/// <para>Represents the client ID.</para>

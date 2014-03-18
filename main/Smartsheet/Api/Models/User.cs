@@ -210,11 +210,11 @@ namespace Smartsheet.Api.Models
 				}
 			}
 
-            /// <summary>
-            /// Set the Id of the user
-            /// </summary>
-            /// <param name="id">The identifier.</param>
-            /// <returns>the update user builder</returns>
+			/// <summary>
+			/// Set the Id of the user
+			/// </summary>
+			/// <param name="id">The identifier.</param>
+			/// <returns>the update user builder</returns>
 			public virtual UpdateUserBuilder SetID(long? id)
 			{
 				this.id = id;

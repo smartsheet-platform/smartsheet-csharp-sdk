@@ -1,4 +1,4 @@
-﻿//    #[license]
+//    #[license]
 //    Smartsheet SDK for C#
 //    %%
 //    Copyright (C) 2014 Smartsheet
@@ -19,9 +19,9 @@
 namespace Smartsheet.Api
 {
 
-    using System.Collections.Generic;
-    using Home = Api.Models.Home;
-    using ObjectInclusion = Api.Models.ObjectInclusion;
+	using System.Collections.Generic;
+	using Home = Api.Models.Home;
+	using ObjectInclusion = Api.Models.ObjectInclusion;
 
 	/// <summary>
 	/// <para>This interface provides methods To access Home resources.</para>

@@ -1,4 +1,4 @@
-﻿//    #[license]
+//    #[license]
 //    Smartsheet SDK for C#
 //    %%
 //    Copyright (C) 2014 Smartsheet
@@ -27,8 +27,8 @@ namespace Smartsheet.Api.Internal
 	using HttpResponse = Api.Internal.Http.HttpResponse;
 	using Utils = Api.Internal.Utility.Utility;
 	using Column = Api.Models.Column;
-    using System.Net;
-    using System;
+	using System.Net;
+	using System;
 
 	/// <summary>
 	/// This is the implementation of the ColumnResources.
@@ -95,12 +95,12 @@ namespace Smartsheet.Api.Internal
 		public virtual void DeleteColumn(long id, long sheetId)
 		{
 			HttpRequest request = null;
-            request = CreateHttpRequest(new Uri(Smartsheet.BaseURI, "column/"+id), HttpMethod.DELETE);
+				request = CreateHttpRequest(new Uri(Smartsheet.BaseURI, "column/"+id), HttpMethod.DELETE);
 
 			Column column = new Column();
 			column.SheetId = sheetId;
 
-            request.Entity = serializeToEntity<Column>(column);
+				request.Entity = serializeToEntity<Column>(column);
 
 			HttpResponse response = Smartsheet.HttpClient.Request(request);
 

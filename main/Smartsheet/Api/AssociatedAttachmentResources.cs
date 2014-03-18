@@ -21,8 +21,8 @@ using System.Collections.Generic;
 namespace Smartsheet.Api
 {
 
-    using System.IO;
-    using Attachment = Api.Models.Attachment;
+	using System.IO;
+	using Attachment = Api.Models.Attachment;
 
 	/// <summary>
 	/// <para>This interface provides methods To access Attachment resources that are associated To a resource object.</para>

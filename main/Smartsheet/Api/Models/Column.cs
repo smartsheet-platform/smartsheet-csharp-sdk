@@ -1,4 +1,4 @@
-﻿//    #[license]
+//    #[license]
 //    Smartsheet SDK for C#
 //    %%
 //    Copyright (C) 2014 Smartsheet
@@ -87,14 +87,14 @@ namespace Smartsheet.Api.Models
 		/// <returns> the Index </returns>
 		public virtual int? Index
 		{
-            get 
-            {
-                return index;
-            }
-            set
-            {
-                this.index = value;
-            }
+				get 
+				{
+					return index;
+				}
+				set
+				{
+					this.index = value;
+				}
 		}
 
 		/// <summary>
@@ -507,7 +507,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// The Format for an auto number column. </summary>
 			internal AutoNumberFormat autoNumberFormat
-                ;
+					 ;
 
 			/// <summary>
 			/// The sheet Id. </summary>

@@ -1,4 +1,4 @@
-﻿//    #[license]
+//    #[license]
 //    Smartsheet SDK for C#
 //    %%
 //    Copyright (C) 2014 Smartsheet
@@ -25,21 +25,21 @@ namespace Smartsheet.Api.Models
 	/// </summary>
 	public enum AttachmentType
 	{
-        /// <summary>
-        /// The file
-        /// </summary>
+		/// <summary>
+		/// The file
+		/// </summary>
 		FILE,
-        /// <summary>
-        /// Google drive
-        /// </summary>
+		/// <summary>
+		/// Google drive
+		/// </summary>
 		GOOGLE_DRIVE,
-        /// <summary>
-        /// The link
-        /// </summary>
+		/// <summary>
+		/// The link
+		/// </summary>
 		LINK,
-        /// <summary>
-        /// BOX
-        /// </summary>
+		/// <summary>
+		/// BOX
+		/// </summary>
 		BOX_COM
 	}
 

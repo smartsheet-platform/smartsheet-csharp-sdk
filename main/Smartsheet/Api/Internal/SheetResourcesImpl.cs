@@ -1,4 +1,4 @@
-﻿//    #[license]
+//    #[license]
 //    Smartsheet SDK for C#
 //    %%
 //    Copyright (C) 2014 Smartsheet
@@ -23,15 +23,15 @@ namespace Smartsheet.Api.Internal
 
 	using HttpMethod = Api.Internal.Http.HttpMethod;
 	using HttpRequest = Api.Internal.Http.HttpRequest;
-    using Utils = Api.Internal.Utility.Utility;
+	using Utils = Api.Internal.Utility.Utility;
 	using ObjectInclusion = Api.Models.ObjectInclusion;
 	using PaperSize = Api.Models.PaperSize;
 	using Sheet = Api.Models.Sheet;
 	using SheetEmail = Api.Models.SheetEmail;
 	using SheetPublish = Api.Models.SheetPublish;
-    using System.IO;
-    using System.Net;
-    using System;
+	using System.IO;
+	using System.Net;
+	using System;
 
 	/// <summary>
 	/// This is the implementation of the SheetResources.
@@ -588,8 +588,8 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		private void GetSheetAsFile(long id, PaperSize? paperSize, BinaryWriter outputStream, string contentType)
 		{
-            Utils.ThrowIfNull(outputStream, contentType);
-            
+			Utils.ThrowIfNull(outputStream, contentType);
+
 			string path = "sheet/" + id;
 			if (paperSize != null)
 			{
@@ -597,7 +597,7 @@ namespace Smartsheet.Api.Internal
 			}
 
 			HttpRequest request = null;
-            
+				
 			request = CreateHttpRequest(new Uri(this.Smartsheet.BaseURI, path), HttpMethod.GET);
 			request.Headers["Accept"] = contentType;
 
@@ -608,7 +608,7 @@ namespace Smartsheet.Api.Internal
 			case HttpStatusCode.OK:
 				try
 				{
-                    response.Entity.GetBinaryContent().BaseStream.CopyTo(outputStream.BaseStream);
+					response.Entity.GetBinaryContent().BaseStream.CopyTo(outputStream.BaseStream);
 				}
 				catch (IOException e)
 				{

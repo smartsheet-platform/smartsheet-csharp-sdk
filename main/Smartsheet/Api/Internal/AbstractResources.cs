@@ -1,4 +1,4 @@
-﻿//    #[license]
+//    #[license]
 //    SmartsheetClient SDK for C#
 //    %%
 //    Copyright (C) 2014 SmartsheetClient
@@ -22,16 +22,16 @@ using System.Collections.Generic;
 namespace Smartsheet.Api.Internal
 {
 
-    using Api.Internal.Json;
-    using Api.Models;
-    using System.IO;
-    using System.Net;
-    using System.Text;
-    using HttpEntity = Api.Internal.Http.HttpEntity;
-    using HttpMethod = Api.Internal.Http.HttpMethod;
-    using HttpRequest = Api.Internal.Http.HttpRequest;
-    using HttpResponse = Api.Internal.Http.HttpResponse;
-    using Utils = Api.Internal.Utility.Utility;
+	 using Api.Internal.Json;
+	 using Api.Models;
+	 using System.IO;
+	 using System.Net;
+	 using System.Text;
+	 using HttpEntity = Api.Internal.Http.HttpEntity;
+	 using HttpMethod = Api.Internal.Http.HttpMethod;
+	 using HttpRequest = Api.Internal.Http.HttpRequest;
+	 using HttpResponse = Api.Internal.Http.HttpResponse;
+	 using Utils = Api.Internal.Utility.Utility;
 
 	/// <summary>
 	/// This is the base class of the SmartsheetClient REST API resources.
@@ -40,68 +40,68 @@ namespace Smartsheet.Api.Internal
 	/// </summary>
 	public abstract class AbstractResources
 	{
-        /// <summary>
-        /// Error code class for mapping specific error codes to Exceptions
-        /// </summary>
-        public class ErrorCode{
-            /// <summary>
-            /// The bad request
-            /// </summary>
-            public static readonly ErrorCode BAD_REQUEST = new ErrorCode(HttpStatusCode.BadRequest, typeof(Api.InvalidRequestException));
-            /// <summary>
-            /// The not authorized
-            /// </summary>
-            public static readonly ErrorCode NOT_AUTHORIZED = new ErrorCode(HttpStatusCode.Unauthorized, typeof(Api.AuthorizationException));
-            /// <summary>
-            /// The forbidden
-            /// </summary>
-            public static readonly ErrorCode FORBIDDEN = new ErrorCode(HttpStatusCode.Forbidden, typeof(Api.AuthorizationException));
-            /// <summary>
-            /// The not found
-            /// </summary>
-            public static readonly ErrorCode NOT_FOUND = new ErrorCode(HttpStatusCode.NotFound, typeof(Api.ResourceNotFoundException));
-            /// <summary>
-            /// The method not supported
-            /// </summary>
-            public static readonly ErrorCode METHOD_NOT_SUPPORTED = new ErrorCode(HttpStatusCode.MethodNotAllowed, typeof(Api.InvalidRequestException));
-            /// <summary>
-            /// The internal server error
-            /// </summary>
-            public static readonly ErrorCode INTERNAL_SERVER_ERROR = new ErrorCode(HttpStatusCode.InternalServerError, typeof(Api.InvalidRequestException));
-            /// <summary>
-            /// The service unavailable
-            /// </summary>
-            public static readonly ErrorCode SERVICE_UNAVAILABLE = new ErrorCode(HttpStatusCode.ServiceUnavailable, typeof(Api.ServiceUnavailableException));
+		  /// <summary>
+		  /// Error code class for mapping specific error codes to Exceptions
+		  /// </summary>
+		  public class ErrorCode{
+				/// <summary>
+				/// The bad request
+				/// </summary>
+				public static readonly ErrorCode BAD_REQUEST = new ErrorCode(HttpStatusCode.BadRequest, typeof(Api.InvalidRequestException));
+				/// <summary>
+				/// The not authorized
+				/// </summary>
+				public static readonly ErrorCode NOT_AUTHORIZED = new ErrorCode(HttpStatusCode.Unauthorized, typeof(Api.AuthorizationException));
+				/// <summary>
+				/// The forbidden
+				/// </summary>
+				public static readonly ErrorCode FORBIDDEN = new ErrorCode(HttpStatusCode.Forbidden, typeof(Api.AuthorizationException));
+				/// <summary>
+				/// The not found
+				/// </summary>
+				public static readonly ErrorCode NOT_FOUND = new ErrorCode(HttpStatusCode.NotFound, typeof(Api.ResourceNotFoundException));
+				/// <summary>
+				/// The method not supported
+				/// </summary>
+				public static readonly ErrorCode METHOD_NOT_SUPPORTED = new ErrorCode(HttpStatusCode.MethodNotAllowed, typeof(Api.InvalidRequestException));
+				/// <summary>
+				/// The internal server error
+				/// </summary>
+				public static readonly ErrorCode INTERNAL_SERVER_ERROR = new ErrorCode(HttpStatusCode.InternalServerError, typeof(Api.InvalidRequestException));
+				/// <summary>
+				/// The service unavailable
+				/// </summary>
+				public static readonly ErrorCode SERVICE_UNAVAILABLE = new ErrorCode(HttpStatusCode.ServiceUnavailable, typeof(Api.ServiceUnavailableException));
 
-            /// <summary>
-            /// Gets an IEnumerable to iterate through the Error Codes.
-            /// </summary>
-            /// <value>
-            /// The IEnumerable to iterate through the Error Codes
-            /// </value>
-            public static IEnumerable<ErrorCode> Values
-            {
-                get{
-                    yield return BAD_REQUEST;
-                    yield return NOT_AUTHORIZED;
-                    yield return FORBIDDEN;
-                    yield return NOT_FOUND;
-                    yield return METHOD_NOT_SUPPORTED;
-                    yield return INTERNAL_SERVER_ERROR;
-                    yield return SERVICE_UNAVAILABLE;
-                }
-            }
+				/// <summary>
+				/// Gets an IEnumerable to iterate through the Error Codes.
+				/// </summary>
+				/// <value>
+				/// The IEnumerable to iterate through the Error Codes
+				/// </value>
+				public static IEnumerable<ErrorCode> Values
+				{
+					get{
+						yield return BAD_REQUEST;
+						yield return NOT_AUTHORIZED;
+						yield return FORBIDDEN;
+						yield return NOT_FOUND;
+						yield return METHOD_NOT_SUPPORTED;
+						yield return INTERNAL_SERVER_ERROR;
+						yield return SERVICE_UNAVAILABLE;
+					}
+				}
 
-            private readonly HttpStatusCode errorCode;
-            private readonly Type exceptionClass;
+				private readonly HttpStatusCode errorCode;
+				private readonly Type exceptionClass;
 
-            ErrorCode(HttpStatusCode errorCode, System.Type exceptionClass)
-            {
-                this.errorCode = errorCode;
-				this.exceptionClass = exceptionClass;
-            }
+				ErrorCode(HttpStatusCode errorCode, System.Type exceptionClass)
+				{
+					this.errorCode = errorCode;
+					this.exceptionClass = exceptionClass;
+				}
 
-            			/// <summary>
+							/// <summary>
 			/// Gets the error Code.
 			/// </summary>
 			/// <param name="errorNumber"> the error number </param>
@@ -119,29 +119,29 @@ namespace Smartsheet.Api.Internal
 				return null;
 			}
 
-            /// <summary>
-            /// Gets the exception.
-            /// </summary>
-            /// <returns> the exception </returns>
-            /// <exception cref="MemberAccessException"> the instantiation exception </exception>
-            /// <exception cre="IllegalAccessException"> the illegal access exception </exception>
-            public SmartsheetRestException getException()
-            {
-                return (SmartsheetRestException)Activator.CreateInstance(exceptionClass);
-            }
+				/// <summary>
+				/// Gets the exception.
+				/// </summary>
+				/// <returns> the exception </returns>
+				/// <exception cref="MemberAccessException"> the instantiation exception </exception>
+				/// <exception cre="IllegalAccessException"> the illegal access exception </exception>
+				public SmartsheetRestException getException()
+				{
+					return (SmartsheetRestException)Activator.CreateInstance(exceptionClass);
+				}
 
-            /// <summary>
-            /// Gets the exception.
-            /// </summary>
-            /// <param name="error"> the error </param>
-            /// <returns> the exception </returns>
-            /// <exception cref="SmartsheetException"> the SmartsheetClient exception </exception>
-            public SmartsheetRestException getException(Api.Models.Error error)
-            {
-                object[] args = new object[]{error};
-                return (SmartsheetRestException)Activator.CreateInstance(exceptionClass, args);
-            }
-        }
+				/// <summary>
+				/// Gets the exception.
+				/// </summary>
+				/// <param name="error"> the error </param>
+				/// <returns> the exception </returns>
+				/// <exception cref="SmartsheetException"> the SmartsheetClient exception </exception>
+				public SmartsheetRestException getException(Api.Models.Error error)
+				{
+					object[] args = new object[]{error};
+					return (SmartsheetRestException)Activator.CreateInstance(exceptionClass, args);
+				}
+		  }
 
 		/// <summary>
 		/// Represents the SmartsheetImpl.
@@ -194,38 +194,38 @@ namespace Smartsheet.Api.Internal
 
 			HttpRequest request = null;
 			try
-			{       
-                request = CreateHttpRequest(new Uri(smartsheet.BaseURI,path), HttpMethod.GET);
+			{
+					request = CreateHttpRequest(new Uri(smartsheet.BaseURI,path), HttpMethod.GET);
 			}
 			catch (Exception e)
 			{
 				throw new SmartsheetException(e);
 			}
 
-            HttpResponse response = this.smartsheet.HttpClient.Request(request);
-            
+				HttpResponse response = this.smartsheet.HttpClient.Request(request);
+				
 
 			Object obj = null;
-            
+				
 			switch (response.StatusCode)
 			{
-                case HttpStatusCode.OK:
+					 case HttpStatusCode.OK:
 					try
 					{
-                        obj = this.smartsheet.JsonSerializer.deserialize<T>(response.Entity.GetContent());
+								obj = this.smartsheet.JsonSerializer.deserialize<T>(response.Entity.GetContent());
 					}
-                    catch (JsonSerializationException ex)
+						catch (JsonSerializationException ex)
 					{
 						throw new SmartsheetException(ex);
 					}
-                    catch (Newtonsoft.Json.JsonException ex)
-                    {
-                        throw new SmartsheetException(ex);
-                    }
-                    catch (IOException ex)
-                    {
-                        throw new SmartsheetException(ex);
-                    }
+						catch (Newtonsoft.Json.JsonException ex)
+						{
+								throw new SmartsheetException(ex);
+						}
+						catch (IOException ex)
+						{
+								throw new SmartsheetException(ex);
+						}
 				break;
 				default:
 					HandleError(response);
@@ -261,23 +261,23 @@ namespace Smartsheet.Api.Internal
 			HttpRequest request = null;
 			try
 			{
-                request = CreateHttpRequest(new Uri(smartsheet.BaseURI, path), HttpMethod.POST);
+					request = CreateHttpRequest(new Uri(smartsheet.BaseURI, path), HttpMethod.POST);
 			}
-            catch (Exception e)
+				catch (Exception e)
 			{
 				throw new SmartsheetException(e);
 			}
 
-            request.Entity = serializeToEntity<T>(@object);
+			request.Entity = serializeToEntity<T>(@object);
 
 			HttpResponse response = this.smartsheet.HttpClient.Request(request);
 
-            Object obj = null;
+			Object obj = null;
 			switch (response.StatusCode)
 			{
 				case HttpStatusCode.OK:
-                    obj = this.smartsheet.JsonSerializer.deserializeResult<T>(
-                        response.Entity.GetContent()).Result;
+						obj = this.smartsheet.JsonSerializer.deserializeResult<T>(
+							response.Entity.GetContent()).Result;
 					break;
 				default:
 					HandleError(response);
@@ -314,23 +314,23 @@ namespace Smartsheet.Api.Internal
 			HttpRequest request = null;
 			try
 			{
-                request = CreateHttpRequest(new Uri(smartsheet.BaseURI, path), HttpMethod.PUT);
+					request = CreateHttpRequest(new Uri(smartsheet.BaseURI, path), HttpMethod.PUT);
 			}
 			catch (Exception e)
 			{
 				throw new SmartsheetException(e);
 			}
 
-            request.Entity = request.Entity = serializeToEntity<T>(@object);
+				request.Entity = request.Entity = serializeToEntity<T>(@object);
 
 			HttpResponse response = this.smartsheet.HttpClient.Request(request);
 
-            Object obj = null;
+				Object obj = null;
 			switch (response.StatusCode)
 			{
 				case HttpStatusCode.OK:
 					//obj = this.smartsheet.JsonSerializer.DeserializeResult(objectClass, response.Entity.content).RequestResult;
-                    obj = this.smartsheet.JsonSerializer.deserializeResult<T>(response.Entity.GetContent()).Result;
+					obj = this.smartsheet.JsonSerializer.deserializeResult<T>(response.Entity.GetContent()).Result;
 					break;
 				default:
 					HandleError(response);
@@ -365,7 +365,7 @@ namespace Smartsheet.Api.Internal
 			HttpRequest request = null;
 			try
 			{
-                request = CreateHttpRequest(new Uri(smartsheet.BaseURI, path), HttpMethod.GET);
+					request = CreateHttpRequest(new Uri(smartsheet.BaseURI, path), HttpMethod.GET);
 			}
 			catch (Exception e)
 			{
@@ -379,7 +379,7 @@ namespace Smartsheet.Api.Internal
 			{
 				case HttpStatusCode.OK:
 					//obj = this.smartsheet.JsonSerializer.DeserializeList(objectClass, response.Entity.content);
-                    obj = this.smartsheet.JsonSerializer.deserializeList<T>(response.Entity.GetContent());
+					obj = this.smartsheet.JsonSerializer.deserializeList<T>(response.Entity.GetContent());
 					break;
 				default:
 					HandleError(response);
@@ -414,7 +414,7 @@ namespace Smartsheet.Api.Internal
 			HttpRequest request = null;
 			try
 			{
-                request = CreateHttpRequest(new Uri(smartsheet.BaseURI, path), HttpMethod.DELETE);
+					request = CreateHttpRequest(new Uri(smartsheet.BaseURI, path), HttpMethod.DELETE);
 			}
 			catch (Exception e)
 			{
@@ -425,7 +425,7 @@ namespace Smartsheet.Api.Internal
 			switch (response.StatusCode)
 			{
 				case HttpStatusCode.OK:
-                    this.smartsheet.JsonSerializer.deserializeResult<T>(response.Entity.GetContent());
+					this.smartsheet.JsonSerializer.deserializeResult<T>(response.Entity.GetContent());
 					break;
 				default:
 					HandleError(response);
@@ -464,14 +464,14 @@ namespace Smartsheet.Api.Internal
 			HttpRequest request = null;
 			try
 			{
-                request = CreateHttpRequest(new Uri(smartsheet.BaseURI, path), HttpMethod.POST);
+					request = CreateHttpRequest(new Uri(smartsheet.BaseURI, path), HttpMethod.POST);
 			}
 			catch (Exception e)
 			{
 				throw new SmartsheetException(e);
 			}
 
-            request.Entity = serializeToEntity<T>(objectToPost);
+				request.Entity = serializeToEntity<T>(objectToPost);
 
 			HttpResponse response = this.smartsheet.HttpClient.Request(request);
 
@@ -479,7 +479,7 @@ namespace Smartsheet.Api.Internal
 			switch (response.StatusCode)
 			{
 				case HttpStatusCode.OK:
-                    obj = this.smartsheet.JsonSerializer.deserializeListResult<S>(response.Entity.GetContent()).Result;
+					obj = this.smartsheet.JsonSerializer.deserializeListResult<S>(response.Entity.GetContent()).Result;
 					break;
 				default:
 					HandleError(response);
@@ -507,7 +507,7 @@ namespace Smartsheet.Api.Internal
 		/// <param name="objectClassToReceive"> the resource object class To receive </param>
 		/// <returns> the object list </returns>
 		/// <exception cref="SmartsheetException"> the SmartsheetClient exception </exception>
-        protected internal virtual IList<S> PutAndReceiveList<T, S>(string path, T objectToPut, Type objectClassToReceive)
+		  protected internal virtual IList<S> PutAndReceiveList<T, S>(string path, T objectToPut, Type objectClassToReceive)
 		{
 			Utils.ThrowIfNull(path, objectToPut, objectClassToReceive);
 			Utils.ThrowIfEmpty(path);
@@ -515,14 +515,14 @@ namespace Smartsheet.Api.Internal
 			HttpRequest request = null;
 			try
 			{
-                request = CreateHttpRequest(new Uri(smartsheet.BaseURI, path), HttpMethod.PUT);
+				request = CreateHttpRequest(new Uri(smartsheet.BaseURI, path), HttpMethod.PUT);
 			}
 			catch (Exception e)
 			{
 				throw new SmartsheetException(e);
 			}
 
-            request.Entity = serializeToEntity<T>(objectToPut);
+				request.Entity = serializeToEntity<T>(objectToPut);
 
 			HttpResponse response = this.smartsheet.HttpClient.Request(request);
 
@@ -530,8 +530,8 @@ namespace Smartsheet.Api.Internal
 			switch (response.StatusCode)
 			{
 				case HttpStatusCode.OK:
-                    obj = this.smartsheet.JsonSerializer.deserializeListResult<S>( 
-                        response.Entity.GetContent()).Result;
+					obj = this.smartsheet.JsonSerializer.deserializeListResult<S>( 
+						response.Entity.GetContent()).Result;
 					break;
 				default:
 					HandleError(response);
@@ -584,22 +584,22 @@ namespace Smartsheet.Api.Internal
 			Api.Models.Error error;
 			try
 			{
-                error = this.smartsheet.JsonSerializer.deserialize<Api.Models.Error>(
-                    response.Entity.GetContent());
-            }
-            catch (JsonSerializationException ex)
-            {
-                throw new SmartsheetException(ex);
-            }
-            catch (Newtonsoft.Json.JsonException ex)
-            {
-                throw new SmartsheetException(ex);
-            }
-            catch (IOException ex)
-            {
-                throw new SmartsheetException(ex);
-            }
-            
+				error = this.smartsheet.JsonSerializer.deserialize<Api.Models.Error>(
+					response.Entity.GetContent());
+				}
+				catch (JsonSerializationException ex)
+				{
+					throw new SmartsheetException(ex);
+				}
+				catch (Newtonsoft.Json.JsonException ex)
+				{
+					throw new SmartsheetException(ex);
+				}
+				catch (IOException ex)
+				{
+					throw new SmartsheetException(ex);
+				}
+				
 			ErrorCode code = ErrorCode.getErrorCode(response.StatusCode);
 
 			if (code == null)
@@ -634,34 +634,34 @@ namespace Smartsheet.Api.Internal
 			}
 		}
 
-        /// <summary>
-        /// Serializes an object into an entity.
-        /// </summary>
-        /// <typeparam name="T">Object to Serialize to an Entity</typeparam>
-        /// <param name="objectToPost">The object to post.</param>
-        /// <returns></returns>
-        protected HttpEntity serializeToEntity<T>(T objectToPost)
-        {
-            HttpEntity entity = new HttpEntity();
-            entity.ContentType = "application/json";
-            using (StreamWriter writer = new StreamWriter(new MemoryStream()))
-            {
-                this.smartsheet.JsonSerializer.serialize<T>(objectToPost, writer);
-                writer.Flush();
-                writer.BaseStream.Position = 0;
-                
-                using (BinaryReader reader = new BinaryReader(writer.BaseStream))
-                {
-                    
-                    byte[] serializedData = Utils.ReadAllBytes(reader);
-                    #if DEBUG
-                        Console.WriteLine("Serialized Data: "+serializedData);
-                    #endif
-                    entity.Content = serializedData;
-                    entity.ContentLength = reader.BaseStream.Length;
-                }
-            }
-            return entity;
-        }
+		  /// <summary>
+		  /// Serializes an object into an entity.
+		  /// </summary>
+		  /// <typeparam name="T">Object to Serialize to an Entity</typeparam>
+		  /// <param name="objectToPost">The object to post.</param>
+		  /// <returns></returns>
+		  protected HttpEntity serializeToEntity<T>(T objectToPost)
+		  {
+				HttpEntity entity = new HttpEntity();
+				entity.ContentType = "application/json";
+				using (StreamWriter writer = new StreamWriter(new MemoryStream()))
+				{
+					this.smartsheet.JsonSerializer.serialize<T>(objectToPost, writer);
+					writer.Flush();
+					writer.BaseStream.Position = 0;
+					
+					using (BinaryReader reader = new BinaryReader(writer.BaseStream))
+					{
+						
+						byte[] serializedData = Utils.ReadAllBytes(reader);
+						#if DEBUG
+							Console.WriteLine("Serialized Data: "+serializedData);
+						#endif
+						entity.Content = serializedData;
+						entity.ContentLength = reader.BaseStream.Length;
+					 }
+				}
+				return entity;
+		  }
 	}
 }

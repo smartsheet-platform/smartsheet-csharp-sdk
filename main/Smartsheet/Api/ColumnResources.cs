@@ -21,7 +21,7 @@ namespace Smartsheet.Api
 
 
 	using Column = Api.Models.Column;
-    
+
 	/// <summary>
 	/// <para>This interface provides methods To access Column resources.</para>
 	/// 

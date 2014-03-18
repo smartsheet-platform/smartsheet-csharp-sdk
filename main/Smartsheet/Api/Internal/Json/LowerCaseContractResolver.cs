@@ -1,4 +1,4 @@
-﻿//    #[license]
+//    #[license]
 //    Smartsheet SDK for C#
 //    %%
 //    Copyright (C) 2014 Smartsheet
@@ -24,8 +24,8 @@ using System.Text;
 
 namespace Smartsheet.Api.Internal.Json
 {
-    public class LowercaseContractResolver : DefaultContractResolver
-    {
+	public class LowercaseContractResolver : DefaultContractResolver
+	{
 
-    }
+	}
 }

@@ -1,4 +1,4 @@
-﻿//    #[license]
+//    #[license]
 //    Smartsheet SDK for C#
 //    %%
 //    Copyright (C) 2014 Smartsheet
@@ -99,7 +99,7 @@ namespace Smartsheet.Api.Models
 				IList<Comment> comments = new List<Comment>();
 				comments.Add(value);
 				this.comments = comments;
-    
+	 
 				this.comment = value;
 			}
 		}

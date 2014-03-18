@@ -1,4 +1,4 @@
-﻿//    #[license]
+//    #[license]
 //    Smartsheet SDK for C#
 //    %%
 //    Copyright (C) 2014 Smartsheet
@@ -48,11 +48,11 @@ namespace Smartsheet.Api.Internal
 		{
 		}
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="objectId"></param>
-        /// <returns></returns>
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="objectId"></param>
+		/// <returns></returns>
 		public override IList<Attachment> ListAttachments(long objectId)
 		{
 			throw new System.NotSupportedException();

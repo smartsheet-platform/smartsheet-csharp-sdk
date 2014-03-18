@@ -1,4 +1,4 @@
-﻿//    #[license]
+//    #[license]
 //    Smartsheet SDK for C#
 //    %%
 //    Copyright (C) 2014 Smartsheet
@@ -47,9 +47,9 @@ namespace Smartsheet.Api.Internal.OAuth
 	using Token = Api.OAuth.Token;
 	using UnsupportedOAuthGrantTypeException = Api.OAuth.UnsupportedOAuthGrantTypeException;
 	using UnsupportedResponseTypeException = Api.OAuth.UnsupportedResponseTypeException;
-    using System.Security.Cryptography;
-    using System.IO;
-    using System.Net;
+	using System.Security.Cryptography;
+	using System.IO;
+	using System.Net;
 
 	/// <summary>
 	/// Default implementation of OAuthFlow.
@@ -121,7 +121,7 @@ namespace Smartsheet.Api.Internal.OAuth
 		/// <param name="jsonSerializer"> the Json serializer </param>
 		/// <exception cref="System.InvalidOperationException"> If any argument is null, or empty string. </exception>
 		public OAuthFlowImpl(string clientId, string clientSecret, string redirectURL, string authorizationURL, 
-            string tokenURL, HttpClient httpClient, JsonSerializer jsonSerializer)
+				string tokenURL, HttpClient httpClient, JsonSerializer jsonSerializer)
 		{
 			Util.ThrowIfNull(clientId, clientSecret, redirectURL, authorizationURL, tokenURL, httpClient, jsonSerializer);
 			Util.ThrowIfEmpty(clientId, clientSecret, redirectURL, authorizationURL, tokenURL);
@@ -162,9 +162,9 @@ namespace Smartsheet.Api.Internal.OAuth
 			StringBuilder scopeBuffer = new StringBuilder();
 			foreach (AccessScope scope in scopes)
 			{
-                scopeBuffer.Append(scope.ToString() + ",");
+					scopeBuffer.Append(scope.ToString() + ",");
 			}
-            @params["scope"] = scopeBuffer.ToString().Substring(0, scopeBuffer.Length - 1);
+				@params["scope"] = scopeBuffer.ToString().Substring(0, scopeBuffer.Length - 1);
 
 			// Generate the URL with the parameters
 			return GenerateURL(authorizationURL, @params);
@@ -200,17 +200,17 @@ namespace Smartsheet.Api.Internal.OAuth
 			}
 
 			IDictionary<string, string> map = new Dictionary<string, string>();
-            string[] @params = query.TrimStart('?').Split(new Char[]{'&'});
-            for (int i = 0; i < @params.Length; i++)
-            {
-                int index = @params[i].IndexOf('=');
-                map[@params[i].Substring(0, index)] = @params[i].Substring(index + 1);
-            }
+				string[] @params = query.TrimStart('?').Split(new Char[]{'&'});
+				for (int i = 0; i < @params.Length; i++)
+				{
+					 int index = @params[i].IndexOf('=');
+					 map[@params[i].Substring(0, index)] = @params[i].Substring(index + 1);
+				}
 
 			// Check for an error response in the URL and throw it.
 			if (map.ContainsKey("error") && map["error"].Length > 0)
 			{
-                string error = map["error"];
+				string error = map["error"];
 				if ("access_denied".Equals(error))
 				{
 					throw new AccessDeniedException("Access denied.");
@@ -229,19 +229,19 @@ namespace Smartsheet.Api.Internal.OAuth
 				}
 			}
 
-            
+				
 			AuthorizationResult authorizationResult = new AuthorizationResult();
 
 
-            if (map.ContainsKey("code"))
-            {
-                authorizationResult.Code = map["code"];
-            }
+			if (map.ContainsKey("code"))
+			{
+				authorizationResult.Code = map["code"];
+			}
 
-            if (map.ContainsKey("state"))
-            {
-                authorizationResult.State = map["state"];
-            }
+			if (map.ContainsKey("state"))
+			{
+				authorizationResult.State = map["state"];
+			}
 
 			long? expiresIn = 0L;
 			try
@@ -283,19 +283,13 @@ namespace Smartsheet.Api.Internal.OAuth
 				throw new System.ArgumentException();
 			}
 
-			 // Prepare the hash 
-			string doHash = clientSecret + "|" + authorizationResult.Code;
-            byte[] bytes = Encoding.UTF8.GetBytes(doHash);
-            SHA256Managed sha = new SHA256Managed();
-            byte[] hash = sha.ComputeHash(bytes);
-            
 			// create a Map of the parameters
 			Dictionary<string, string> @params = new Dictionary<string, string>();
 			@params["grant_type"] = "authorization_code";
 			@params["client_id"] = clientId;
 			@params["code"] = authorizationResult.Code;
 			@params["redirect_uri"] = redirectURL;
-            @params["hash"] = getHash(authorizationResult.Code);
+			@params["hash"] = getHash(authorizationResult.Code);
 
 			// Generate the URL and then get the token
 			return RequestToken(GenerateURL(tokenURL, @params));
@@ -326,7 +320,7 @@ namespace Smartsheet.Api.Internal.OAuth
 			@params["grant_type"] = "refresh_token";
 			@params["client_id"] = clientId;
 			@params["refresh_token"] = token.RefreshToken;
-            @params["redirect_uri"] = Uri.EscapeDataString(redirectURL);
+			@params["redirect_uri"] = Uri.EscapeDataString(redirectURL);
 			@params["hash"] = getHash(token.RefreshToken);
 
 			// Generate the URL and get the token
@@ -414,7 +408,7 @@ namespace Smartsheet.Api.Internal.OAuth
 			{
 				expiresIn = Convert.ToInt64(Convert.ToString(map["expires_in"]));
 			}
-            catch (Exception)
+				catch (Exception)
 			{
 				expiresIn = 0L;
 			}
@@ -464,7 +458,7 @@ namespace Smartsheet.Api.Internal.OAuth
 					}
 					needsAmpersand = true; // this only matters for the first &;
 
-                    sb.Append(Uri.EscapeDataString(param.Key));
+					sb.Append(Uri.EscapeDataString(param.Key));
 					sb.Append("=");
 
 					string key = param.Value;
@@ -596,19 +590,19 @@ namespace Smartsheet.Api.Internal.OAuth
 			}
 		}
 
-        private string getHash(string str)
-        {
-            string doHash = string.Concat(this.clientSecret, "|", str);
-            SHA256 sha = new SHA256Managed();
-            byte[] hash = sha.ComputeHash(Encoding.UTF8.GetBytes(doHash));
-            string hashStr = "";
-            for (int i = 0; i < (int)hash.Length; i++)
-            {
-                hashStr = string.Concat(hashStr, string.Format("{0:x2}", hash[i]));
-            }
+		private string getHash(string str)
+		{
+			string doHash = string.Concat(this.clientSecret, "|", str);
+			SHA256 sha = new SHA256Managed();
+			byte[] hash = sha.ComputeHash(Encoding.UTF8.GetBytes(doHash));
+			string hashStr = "";
+			for (int i = 0; i < (int)hash.Length; i++)
+			{
+				hashStr = string.Concat(hashStr, string.Format("{0:x2}", hash[i]));
+			}
 
-            return hashStr;
-        }
+			return hashStr;
+		}
 
 	}
 

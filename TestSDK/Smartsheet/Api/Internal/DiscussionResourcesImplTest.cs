@@ -1,11 +1,6 @@
-﻿namespace Smartsheet.Api.Internal
+namespace Smartsheet.Api.Internal
 {
 	using NUnit.Framework;
-
-
-
-
-
 	using DefaultHttpClient = Smartsheet.Api.Internal.Http.DefaultHttpClient;
 	using Comment = Smartsheet.Api.Models.Comment;
 	using Discussion = Smartsheet.Api.Models.Discussion;
@@ -19,7 +14,7 @@
 		public virtual void SetUp()
 		{
 			discussionResources = new DiscussionResourcesImpl(new SmartsheetImpl("http://localhost:9090/1.1/", 
-                "accessToken", new DefaultHttpClient(), serializer));
+					"accessToken", new DefaultHttpClient(), serializer));
 		}
 
 		[Test]
@@ -60,7 +55,7 @@
 		[Test]
 		public virtual void TestAttachments()
 		{
-            server.setResponseBody("../../../TestSDK/resources/emptyFile.json");
+				server.setResponseBody("../../../TestSDK/resources/emptyFile.json");
 			Assert.Null(discussionResources.Attachments());
 		}
 

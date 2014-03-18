@@ -1,4 +1,4 @@
-﻿//    #[license]
+//    #[license]
 //    Smartsheet SDK for C#
 //    %%
 //    Copyright (C) 2014 Smartsheet
@@ -25,17 +25,17 @@ namespace Smartsheet.Api.Models
 	/// </summary>
 	public enum AttachmentParentType
 	{
-        /// <summary>
-        /// The sheet
-        /// </summary>
+		/// <summary>
+		/// The sheet
+		/// </summary>
 		SHEET,
-        /// <summary>
-        /// The row
-        /// </summary>
+		/// <summary>
+		/// The row
+		/// </summary>
 		ROW,
-        /// <summary>
-        /// The comment
-        /// </summary>
+		/// <summary>
+		/// The comment
+		/// </summary>
 		COMMENT
 	}
 

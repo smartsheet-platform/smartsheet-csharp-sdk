@@ -1,8 +1,8 @@
-﻿namespace Smartsheet.Api.models
+namespace Smartsheet.Api.models
 {
 	using NUnit.Framework;
-    using Smartsheet.Api.Models;
-    using System;
+	using Smartsheet.Api.Models;
+	using System;
 
 	public class ColumnTypeTest
 	{
@@ -20,7 +20,7 @@
 			Assert.NotNull(ColumnType.DATE);
 			Assert.NotNull(ColumnType.CONTACT_LIST);
 			Assert.NotNull(ColumnType.CHECKBOX);
-            Assert.NotNull(ColumnType.DATETIME);
+				Assert.NotNull(ColumnType.DATETIME);
 
 			Assert.AreEqual(6, Enum.GetValues(typeof(ColumnType)).Length);
 		}

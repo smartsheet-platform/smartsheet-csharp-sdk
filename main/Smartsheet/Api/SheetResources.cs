@@ -1,4 +1,4 @@
-﻿//    #[license]
+//    #[license]
 //    Smartsheet SDK for C#
 //    %%
 //    Copyright (C) 2014 Smartsheet
@@ -21,12 +21,12 @@ using System.Collections.Generic;
 namespace Smartsheet.Api
 {
 
-    using System.IO;
-    using ObjectInclusion = Api.Models.ObjectInclusion;
-    using PaperSize = Api.Models.PaperSize;
-    using Sheet = Api.Models.Sheet;
-    using SheetEmail = Api.Models.SheetEmail;
-    using SheetPublish = Api.Models.SheetPublish;
+	using System.IO;
+	using ObjectInclusion = Api.Models.ObjectInclusion;
+	using PaperSize = Api.Models.PaperSize;
+	using Sheet = Api.Models.Sheet;
+	using SheetEmail = Api.Models.SheetEmail;
+	using SheetPublish = Api.Models.SheetPublish;
 
 	/// <summary>
 	/// <para>This interface provides methods To access Sheet resources.</para>

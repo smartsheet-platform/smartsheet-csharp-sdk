@@ -1,8 +1,8 @@
-﻿namespace com.smartsheet.api.models
+namespace com.smartsheet.api.models
 {
 	using NUnit.Framework;
-    using Smartsheet.Api.Models;
-    using System;
+	using Smartsheet.Api.Models;
+	using System;
 
 
 	public class AccessScopeTest
@@ -24,7 +24,7 @@
 			Assert.NotNull(AccessScope.ADMIN_USERS);
 			Assert.NotNull(AccessScope.ADMIN_SHEETS);
 			Assert.NotNull(AccessScope.ADMIN_WORKSPACES);
-            Assert.AreEqual(8, Enum.GetValues(typeof(AccessScope)).Length);
+			Assert.AreEqual(8, Enum.GetValues(typeof(AccessScope)).Length);
 		}
 
 	}
