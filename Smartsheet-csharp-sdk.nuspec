@@ -6,7 +6,7 @@
     <title>$title$</title>
     <authors>$author$</authors>
     <owners>$author$</owners>
-    <licenseUrl>https://github.com/smartsheet-platform/smartsheet-csharp-sdk/LICENSE.txt</licenseUrl>
+    <licenseUrl>https://raw.github.com/smartsheet-platform/smartsheet-csharp-sdk/master/LICENSE.txt</licenseUrl>
     <projectUrl>https://github.com/smartsheet-platform/smartsheet-csharp-sdk</projectUrl>
     <!-- This should be a 32x32-pixel .png file that has a transparent background.
     <iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>-->
