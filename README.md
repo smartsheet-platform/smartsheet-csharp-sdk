@@ -27,7 +27,7 @@ Install-Package smartsheet-csharp-sdk
 ###Compile from source
 The source code for the SDK can be downloaded from Github and then compiled. This can be accomplished using [git](http://git-scm.com/) and then building it in Visual Studio or using a program such as [MSBuild](http://msdn.microsoft.com/en-us/library/wea2sca5(v=vs.90).aspx).
 
-In Visual Studio you can open the entire solution with the file **Smartsheet-csharp-sdk.sln** or open the specific project **Smartsheet-csharp-sdk.csproj**. Once one of these is open in Visual Studio you can hit **F6** to build the solution.
+In Visual Studio you can open the entire solution with the file **Smartsheet-csharp-sdk.sln** or open the specific project **Smartsheet-csharp-sdk.csproj**. Once the project is open in Visual Studio you can hit **F6** to build the solution.
 
 This can also be accomplished via the command line with the following three commands. Note: The path to msbuild may very.
 
@@ -43,16 +43,19 @@ The SDK API documentation can be viewed online at [http://smartsheet-platform.gi
 
 ##Example Usage
 
-```cs
+<!-- note: java has better syntax highlighting on github -->
+```java
 // Set the Access Token
 Token token = new Token();
 token.AccessToken = "INSERT_YOUR_TOKEN_HERE";
 
 // Use the Smartsheet Builder to create a Smartsheet
-SmartsheetClient smartsheet = (new SmartsheetBuilder()).SetAccessToken("1lv9aoebptd2ljf1n3x93o5ris").Build();
+SmartsheetClient smartsheet = (new SmartsheetBuilder()).SetAccessToken(
+    "1lv9aoebptd2ljf1n3x93o5ris").Build();
 
 // Get home
-Home home = smartsheet.Home().GetHome(new ObjectInclusion[]{ObjectInclusion.TEMPLATES});
+Home home = smartsheet.Home().GetHome(new ObjectInclusion[]{
+    ObjectInclusion.TEMPLATES});
 
 // List home folders
 IList<Folder> homeFolders = home.Folders;
@@ -74,12 +77,13 @@ Console.WriteLine("Folder ID:"+folder.ID+", Folder Name:"+folder.Name);
 
 
 // Setup checkbox Column Object
-Column checkboxColumn = new Column.AddColumnToSheetBuilder().SetType(ColumnType.CHECKBOX).
+Column checkboxColumn = new Column.AddColumnToSheetBuilder().SetType(
+    ColumnType.CHECKBOX).
     SetTitle("Finished").Build();
 
 // Setup text Column Object
-Column textColumn = new Column.AddColumnToSheetBuilder().SetPrimary(true).SetTitle("To Do List").
-    SetType(ColumnType.TEXT_NUMBER).Build();
+Column textColumn = new Column.AddColumnToSheetBuilder().SetPrimary(true).
+    SetTitle("To Do List").SetType(ColumnType.TEXT_NUMBER).Build();
 
 
 // Add the 2 Columns (flag & text) to a new Sheet Object
