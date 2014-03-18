@@ -1,6 +1,6 @@
-#Smartsheet Java SDK
+#Smartsheet C# SDK
 
-This is a C# SDK to simplify connecting to [Smartsheet API](http://www.smartsheet.com/developers/api-documentation) in Java applications.
+This is a C# SDK to simplify connecting to the [Smartsheet API](http://www.smartsheet.com/developers/api-documentation) from applications.
 
 ##Installation
 The SDK can be installed by using NuGet or by compiling from source. These two steps are outlined below.
@@ -38,7 +38,7 @@ cd smartsheet-csharp-sdk
 ```
 
 ## Documentation
-The SDK API documentation can be viewed online at [http://smartsheet-platform.github.io/smartsheet-csharp-sdk](http://smartsheet-platform.github.io/smartsheet-java-sdk).
+The SDK API documentation can be viewed online at [http://smartsheet-platform.github.io/smartsheet-csharp-sdk](http://smartsheet-platform.github.io/smartsheet-charp-sdk).
 
 
 ##Example Usage
@@ -89,7 +89,7 @@ Sheet sheet = new Sheet.CreateSheetBuilder().SetName("New Sheet").SetColumns(
 sheet = smartsheet.Sheets().CreateSheet(sheet);
 ```
 
-<!--More examples available [here](https://github.com/smartsheet-platform/samples/blob/master/csharp-sdk/JavaSDKSample.java).-->
+More examples available [here](https://github.com/smartsheet-platform/smartsheet-csharp-sdk/blob/master/Sample/Program.cs).
 
 ## Contributing
 If you would like to contribute a change to the SDK, please fork a branch and then submit a pull request. [More info here](https://help.github.com/articles/using-pull-requests).
@@ -99,7 +99,7 @@ If you have any questions or issues with this SDK please post on [StackOverflow 
 
 ##Release Notes
 
-Each specific release is available for download via [Github](https://github.com/smartsheet-platform/smartsheet-csharp-sdk/tags) or the [NuGet repository](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22com.smartsheet%22%20AND%20a%3A%22smartsheet-sdk-java%22).
+Each specific release is available for download via [Github](https://github.com/smartsheet-platform/smartsheet-csharp-sdk/tags) or the [NuGet repository](https://www.nuget.org/packages/smartsheet-csharp-sdk/).
 
 **1.0.0 (Feb 19, 2014)**
 * Initial Release of the Smartsheet C# SDK
