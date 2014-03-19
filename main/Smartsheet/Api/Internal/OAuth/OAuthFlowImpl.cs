@@ -320,7 +320,7 @@ namespace Smartsheet.Api.Internal.OAuth
 			@params["grant_type"] = "refresh_token";
 			@params["client_id"] = clientId;
 			@params["refresh_token"] = token.RefreshToken;
-			@params["redirect_uri"] = Uri.EscapeDataString(redirectURL);
+			@params["redirect_uri"] = redirectURL;
 			@params["hash"] = getHash(token.RefreshToken);
 
 			// Generate the URL and get the token

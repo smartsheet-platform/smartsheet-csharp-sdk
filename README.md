@@ -106,7 +106,10 @@ If you have any questions or issues with this SDK please post on [StackOverflow 
 
 Each specific release is available for download via [Github](https://github.com/smartsheet-platform/smartsheet-csharp-sdk/tags) or the [NuGet repository](https://www.nuget.org/packages/smartsheet-csharp-sdk/).
 
-**1.0.0 (Feb 19, 2014)**
+**1.0.1 (Mar 19, 2014)**
+* Fixed issue when refreshing an existing OAuth token.
+
+**1.0.0 (Feb 18, 2014)**
 * Initial Release of the Smartsheet C# SDK
 
 [![githalytics.com alpha](https://cruel-carlota.pagodabox.com/9200efe449798ebbc03d9ec9f0a11ff1 "githalytics.com")](http://githalytics.com/smartsheet-platform/smartsheet-csharp-sdk)
