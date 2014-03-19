@@ -6,30 +6,31 @@ This is a C# SDK to simplify connecting to the [Smartsheet API](http://www.smart
 The SDK can be installed by using NuGet or by compiling from source. These two steps are outlined below.
 
 ###Install with NuGet
-If unfamiliar with NuGet please take a look at the [documentation](http://docs.nuget.org/). 
+If unfamiliar with NuGet, please take a look at the [NuGet documentation](http://docs.nuget.org/). 
 
-To install the SDK in Visual Studio right click the **References** for the project and select **Manage NuGet Packages**.
+To install the SDK in Visual Studio, right click the **References** for the project and select **Manage NuGet Packages**.
 
 ![Manage NuGet Packages](https://googledrive.com/host/0B0ESt9lII6BWZUcyZmlsalBDdlE/nuget1.png "Manage NuGet Packages")
 
-Next a dialog will open like the one below. Confirm that you are viewing the **Online** section on the left. Then type in **smartsheet** in the search box. Last click **Install** on the Smartsheet C# SDK.
+Next a dialog will open like the one below. Check the left sidebar to confirm that you are viewing the **Online** section. Then type in **smartsheet** in the search box. Lastly, click **Install** on the Smartsheet C# SDK.
 
 ![Search for and Install Smartsheet C# SDK](https://googledrive.com/host/0B0ESt9lII6BWZUcyZmlsalBDdlE/nuget2.png "Install Smartsheet C# SDK")
 
-After clicking install, you will be asked to accept the License (Apache). Then it will install the Smartsheet SDK and the dependencies (RestSharp & Newtonsoft.Json) by adding these libraries to the **References** section for the project.
+After clicking **Install**, you will be asked to accept the License (Apache). Then it will install the Smartsheet SDK and the dependencies (RestSharp & Newtonsoft.Json) by adding these libraries to the **References** section of the project.
 
-The SDK can also be installed with the following command in the **[Package Manager Console](http://docs.nuget.org/docs/start-here/using-the-package-manager-console)**.
+The SDK can also be installed with the following command in the **[Package Manager Console](http://docs.nuget.org/docs/start-here/using-the-package-manager-console)**:
 
 ```dos
 Install-Package smartsheet-csharp-sdk
 ```
 
 ###Compile from source
-The source code for the SDK can be downloaded from Github and then compiled. This can be accomplished using [git](http://git-scm.com/) and then building it in Visual Studio or using a program such as [MSBuild](http://msdn.microsoft.com/en-us/library/wea2sca5(v=vs.90).aspx).
+The source code for the SDK can be downloaded from Github and then compiled. This can be accomplished using [git](http://git-scm.com/) to fetch it and then using Visual Studio or a program such as [MSBuild](http://msdn.microsoft.com/en-us/library/wea2sca5(v=vs.90).aspx) to built it.
 
-In Visual Studio you can open the entire solution with the file **Smartsheet-csharp-sdk.sln** or open the specific project **Smartsheet-csharp-sdk.csproj**. Once the project is open in Visual Studio you can hit **F6** to build the solution.
+In Visual Studio you can open the entire solution with the file **Smartsheet-csharp-sdk.sln**, or open the specific project **Smartsheet-csharp-sdk.csproj**. Once the project is open in Visual Studio, you can hit **F6** to build the solution.
 
-This can also be accomplished via the command line with the following three commands. Note: The path to msbuild may very.
+This can also be accomplished via the command line with the following three commands.
+Note: The path to **msbuild** may very.
 
 ```dos
 git clone https://github.com/smartsheet-platform/smartsheet-csharp-sdk.git
@@ -93,10 +94,10 @@ Sheet sheet = new Sheet.CreateSheetBuilder().SetName("New Sheet").SetColumns(
 sheet = smartsheet.Sheets().CreateSheet(sheet);
 ```
 
-More examples available [here](https://github.com/smartsheet-platform/smartsheet-csharp-sdk/blob/master/Sample/Program.cs).
+More examples are available [here](https://github.com/smartsheet-platform/smartsheet-csharp-sdk/blob/master/Sample/Program.cs).
 
 ## Contributing
-If you would like to contribute a change to the SDK, please fork a branch and then submit a pull request. [More info here](https://help.github.com/articles/using-pull-requests).
+If you would like to contribute a change to the SDK, please fork a branch and then submit a pull request. More info [here](https://help.github.com/articles/using-pull-requests).
 
 ##Support
 If you have any questions or issues with this SDK please post on [StackOverflow using the tag "smartsheet-api"](http://stackoverflow.com/questions/tagged/smartsheet-api) or contact us directly at api@smartsheet.com.
@@ -108,5 +109,4 @@ Each specific release is available for download via [Github](https://github.com/
 **1.0.0 (Feb 19, 2014)**
 * Initial Release of the Smartsheet C# SDK
 
-
-[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/4b2c0d7b11c532fb1693dec0e5f300d5 "githalytics.com")](http://githalytics.com/smartsheet-platform/smartsheet-charp-sdk)
+[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/9200efe449798ebbc03d9ec9f0a11ff1 "githalytics.com")](http://githalytics.com/smartsheet-platform/smartsheet-csharp-sdk)
