@@ -51,8 +51,8 @@ Token token = new Token();
 token.AccessToken = "INSERT_YOUR_TOKEN_HERE";
 
 // Use the Smartsheet Builder to create a Smartsheet
-SmartsheetClient smartsheet = (new SmartsheetBuilder()).SetAccessToken(
-    "1lv9aoebptd2ljf1n3x93o5ris").Build();
+SmartsheetClient smartsheet = new SmartsheetBuilder().SetAccessToken(
+    token.AccessToken).Build();
 
 // Get home
 Home home = smartsheet.Home().GetHome(new ObjectInclusion[]{
