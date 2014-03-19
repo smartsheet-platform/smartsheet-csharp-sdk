@@ -782,9 +782,9 @@
   <HelpKINode Title="MultiShare.Users property" Url="html/P_Smartsheet_Api_Models_MultiShare_Users.htm" />
   <HelpKINode Title="Name property">
     <HelpKINode Title="NamedModel.Name Property " Url="html/P_Smartsheet_Api_Models_NamedModel_Name.htm" />
+    <HelpKINode Title="Sheet.UpdateSheetBuilder.Name Property " Url="html/P_Smartsheet_Api_Models_Sheet_UpdateSheetBuilder_Name.htm" />
     <HelpKINode Title="Sheet.CreateFromTemplateOrSheetBuilder.Name Property " Url="html/P_Smartsheet_Api_Models_Sheet_CreateFromTemplateOrSheetBuilder_Name.htm" />
     <HelpKINode Title="Sheet.CreateSheetBuilder.Name Property " Url="html/P_Smartsheet_Api_Models_Sheet_CreateSheetBuilder_Name.htm" />
-    <HelpKINode Title="Sheet.UpdateSheetBuilder.Name Property " Url="html/P_Smartsheet_Api_Models_Sheet_UpdateSheetBuilder_Name.htm" />
     <HelpKINode Title="Workspace.UpdateWorkspaceBuilder.Name Property " Url="html/P_Smartsheet_Api_Models_Workspace_UpdateWorkspaceBuilder_Name.htm" />
   </HelpKINode>
   <HelpKINode Title="name property" Url="html/P_Smartsheet_Api_Models_Folder_UpdateFolderBuilder_name.htm" />
