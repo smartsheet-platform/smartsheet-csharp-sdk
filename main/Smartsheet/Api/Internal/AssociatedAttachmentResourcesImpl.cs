@@ -124,11 +124,12 @@ namespace Smartsheet.Api.Internal
 			HttpRequest request = CreateHttpRequest(new Uri(this.Smartsheet.BaseURI,MasterResourceType + "/" +
 					 objectId + "/attachments"), HttpMethod.POST);
 				
-			request.Headers["Content-Disposition"] = "attachment; filename=" + fi.Length;
+			request.Headers["Content-Disposition"] = "attachment; filename=\"" + fi.Name + "\"";
 			
 			HttpEntity entity = new HttpEntity();
 			entity.ContentType = contentType;
-			entity.Content = Encoding.UTF8.GetBytes(File.ReadAllText(file));
+			
+			entity.Content = File.ReadAllBytes(file);
 			entity.ContentLength = contentLength;
 			request.Entity = entity;
 
