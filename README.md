@@ -109,7 +109,7 @@ Each specific release is available for download via [Github](https://github.com/
 **1.0.2 (Apr 17, 2014)**
 * Fixed issue with post requests where content body was not handled correctly.
 * Added index to the ColumnToSheetBuilder class.
-* Added filename to when uploading an attachment.
+* Added filename when uploading an attachment.
 
 **1.0.1 (Mar 19, 2014)**
 * Fixed issue when refreshing an existing OAuth token.
