@@ -655,7 +655,7 @@ namespace Smartsheet.Api.Internal
 						
 						byte[] serializedData = Utils.ReadAllBytes(reader);
 						#if DEBUG
-							Console.WriteLine("Serialized Data: "+serializedData);
+							Console.WriteLine("Serialized Data: "+System.Text.Encoding.Default.GetString(serializedData));
 						#endif
 						entity.Content = serializedData;
 						entity.ContentLength = reader.BaseStream.Length;

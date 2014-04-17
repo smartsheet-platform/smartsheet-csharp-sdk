@@ -85,8 +85,11 @@ namespace Smartsheet.Api.Internal.Utility
 				byte[] buffer = new byte[bufferSize];
 				int count;
 				while ((count = reader.Read(buffer, 0, buffer.Length)) != 0)
+				{
 					ms.Write(buffer, 0, count);
-					return ms.ToArray();
+				}
+				ms.Position = 0;
+				return ms.ToArray();
 			}
 		}
 	}

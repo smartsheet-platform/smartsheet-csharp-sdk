@@ -121,10 +121,10 @@ namespace Smartsheet.Api.Internal.Http
 					restRequest.AddHeader(header.Key, header.Value);
 				}
 			}
-			
+
 			if (smartsheetRequest.Entity != null && smartsheetRequest.Entity.GetContent() != null)
 			{
-				restRequest.AddParameter("application/json", smartsheetRequest.Entity.GetContent(),
+				restRequest.AddParameter("application/json", Util.ReadAllBytes(smartsheetRequest.Entity.GetBinaryContent()),
 					ParameterType.RequestBody);
 			}
 
