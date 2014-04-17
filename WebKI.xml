@@ -25,8 +25,8 @@
     <HelpKINode Title="Workspace.AccessLevel Property " Url="html/P_Smartsheet_Api_Models_Workspace_AccessLevel.htm" />
   </HelpKINode>
   <HelpKINode Title="AccessScope enumeration">
-    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_OAuth_AccessScope.htm" />
     <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_Models_AccessScope.htm" />
+    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_OAuth_AccessScope.htm" />
   </HelpKINode>
   <HelpKINode Title="AccessToken property">
     <HelpKINode Title="SmartsheetBuilder.AccessToken Property " Url="html/P_Smartsheet_Api_SmartsheetBuilder_AccessToken.htm" />
@@ -50,8 +50,8 @@
     <HelpKINode Title="User.UpdateUserBuilder.Admin Property " Url="html/P_Smartsheet_Api_Models_User_UpdateUserBuilder_Admin.htm" />
   </HelpKINode>
   <HelpKINode Title="ADMIN_SHEETS enumeration member">
-    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_Models_AccessScope.htm" />
     <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_OAuth_AccessScope.htm" />
+    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_Models_AccessScope.htm" />
   </HelpKINode>
   <HelpKINode Title="ADMIN_USERS enumeration member" Url="html/T_Smartsheet_Api_Models_AccessScope.htm" />
   <HelpKINode Title="ADMIN_WORKSPACES enumeration member">
@@ -244,9 +244,11 @@
   <HelpKINode Title="Column.AddColumnToSheetBuilder.AddColumnToSheetBuilder constructor" Url="html/M_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder__ctor.htm" />
   <HelpKINode Title="Column.AddColumnToSheetBuilder.AutoNumberFormat property" Url="html/P_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_AutoNumberFormat.htm" />
   <HelpKINode Title="Column.AddColumnToSheetBuilder.Build method" Url="html/M_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_Build.htm" />
+  <HelpKINode Title="Column.AddColumnToSheetBuilder.Index property" Url="html/P_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_Index.htm" />
   <HelpKINode Title="Column.AddColumnToSheetBuilder.Options property" Url="html/P_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_Options.htm" />
   <HelpKINode Title="Column.AddColumnToSheetBuilder.Primary property" Url="html/P_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_Primary.htm" />
   <HelpKINode Title="Column.AddColumnToSheetBuilder.SetAutoNumberFormat method" Url="html/M_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_SetAutoNumberFormat.htm" />
+  <HelpKINode Title="Column.AddColumnToSheetBuilder.SetIndex method" Url="html/M_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_SetIndex.htm" />
   <HelpKINode Title="Column.AddColumnToSheetBuilder.SetOptions method" Url="html/M_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_SetOptions.htm" />
   <HelpKINode Title="Column.AddColumnToSheetBuilder.SetPrimary method" Url="html/M_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_SetPrimary.htm" />
   <HelpKINode Title="Column.AddColumnToSheetBuilder.SetSymbol method" Url="html/M_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_SetSymbol.htm" />
@@ -407,8 +409,8 @@
   <HelpKINode Title="DeleteUser method" Url="html/M_Smartsheet_Api_UserResources_DeleteUser.htm" />
   <HelpKINode Title="DeleteWorkspace method" Url="html/M_Smartsheet_Api_WorkspaceResources_DeleteWorkspace.htm" />
   <HelpKINode Title="DELETE_SHEETS enumeration member">
-    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_Models_AccessScope.htm" />
     <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_OAuth_AccessScope.htm" />
+    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_Models_AccessScope.htm" />
   </HelpKINode>
   <HelpKINode Title="DependenciesEnabled property" Url="html/P_Smartsheet_Api_Models_Sheet_DependenciesEnabled.htm" />
   <HelpKINode Title="Description property" Url="html/P_Smartsheet_Api_Models_Template_Description.htm" />
@@ -635,13 +637,13 @@
     <HelpKINode Title="SheetPublish.PublishStatusBuilder.IcalEnabled Property " Url="html/P_Smartsheet_Api_Models_SheetPublish_PublishStatusBuilder_IcalEnabled.htm" />
   </HelpKINode>
   <HelpKINode Title="IcalUrl property" Url="html/P_Smartsheet_Api_Models_SheetPublish_IcalUrl.htm" />
+  <HelpKINode Title="Id property" Url="html/P_Smartsheet_Api_Models_Folder_UpdateFolderBuilder_Id.htm" />
   <HelpKINode Title="ID property">
     <HelpKINode Title="IdentifiableModel.ID Property " Url="html/P_Smartsheet_Api_Models_IdentifiableModel_ID.htm" />
     <HelpKINode Title="Sheet.UpdateSheetBuilder.ID Property " Url="html/P_Smartsheet_Api_Models_Sheet_UpdateSheetBuilder_ID.htm" />
     <HelpKINode Title="User.UpdateUserBuilder.ID Property " Url="html/P_Smartsheet_Api_Models_User_UpdateUserBuilder_ID.htm" />
     <HelpKINode Title="Workspace.UpdateWorkspaceBuilder.ID Property " Url="html/P_Smartsheet_Api_Models_Workspace_UpdateWorkspaceBuilder_ID.htm" />
   </HelpKINode>
-  <HelpKINode Title="Id property" Url="html/P_Smartsheet_Api_Models_Folder_UpdateFolderBuilder_Id.htm" />
   <HelpKINode Title="IdentifiableModel class">
     <HelpKINode Title="IdentifiableModel Class" Url="html/T_Smartsheet_Api_Models_IdentifiableModel.htm" />
     <HelpKINode Title="about IdentifiableModel class" Url="html/T_Smartsheet_Api_Models_IdentifiableModel.htm" />
@@ -654,6 +656,7 @@
   <HelpKINode Title="IncludeAttachments property" Url="html/P_Smartsheet_Api_Models_RowEmail_IncludeAttachments.htm" />
   <HelpKINode Title="IncludeDiscussions property" Url="html/P_Smartsheet_Api_Models_RowEmail_IncludeDiscussions.htm" />
   <HelpKINode Title="Index property">
+    <HelpKINode Title="Column.AddColumnToSheetBuilder.Index Property " Url="html/P_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_Index.htm" />
     <HelpKINode Title="Column.Index Property " Url="html/P_Smartsheet_Api_Models_Column_Index.htm" />
     <HelpKINode Title="Column.ModifyColumnBuilder.Index Property " Url="html/P_Smartsheet_Api_Models_Column_ModifyColumnBuilder_Index.htm" />
   </HelpKINode>
@@ -781,10 +784,10 @@
   <HelpKINode Title="MultiShare.Subject property" Url="html/P_Smartsheet_Api_Models_MultiShare_Subject.htm" />
   <HelpKINode Title="MultiShare.Users property" Url="html/P_Smartsheet_Api_Models_MultiShare_Users.htm" />
   <HelpKINode Title="Name property">
-    <HelpKINode Title="NamedModel.Name Property " Url="html/P_Smartsheet_Api_Models_NamedModel_Name.htm" />
-    <HelpKINode Title="Sheet.UpdateSheetBuilder.Name Property " Url="html/P_Smartsheet_Api_Models_Sheet_UpdateSheetBuilder_Name.htm" />
-    <HelpKINode Title="Sheet.CreateFromTemplateOrSheetBuilder.Name Property " Url="html/P_Smartsheet_Api_Models_Sheet_CreateFromTemplateOrSheetBuilder_Name.htm" />
     <HelpKINode Title="Sheet.CreateSheetBuilder.Name Property " Url="html/P_Smartsheet_Api_Models_Sheet_CreateSheetBuilder_Name.htm" />
+    <HelpKINode Title="Sheet.UpdateSheetBuilder.Name Property " Url="html/P_Smartsheet_Api_Models_Sheet_UpdateSheetBuilder_Name.htm" />
+    <HelpKINode Title="NamedModel.Name Property " Url="html/P_Smartsheet_Api_Models_NamedModel_Name.htm" />
+    <HelpKINode Title="Sheet.CreateFromTemplateOrSheetBuilder.Name Property " Url="html/P_Smartsheet_Api_Models_Sheet_CreateFromTemplateOrSheetBuilder_Name.htm" />
     <HelpKINode Title="Workspace.UpdateWorkspaceBuilder.Name Property " Url="html/P_Smartsheet_Api_Models_Workspace_UpdateWorkspaceBuilder_Name.htm" />
   </HelpKINode>
   <HelpKINode Title="name property" Url="html/P_Smartsheet_Api_Models_Folder_UpdateFolderBuilder_name.htm" />
@@ -901,8 +904,8 @@
   </HelpKINode>
   <HelpKINode Title="ReadWriteUrl property" Url="html/P_Smartsheet_Api_Models_SheetPublish_ReadWriteUrl.htm" />
   <HelpKINode Title="READ_SHEETS enumeration member">
-    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_OAuth_AccessScope.htm" />
     <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_Models_AccessScope.htm" />
+    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_OAuth_AccessScope.htm" />
   </HelpKINode>
   <HelpKINode Title="RedirectURL property" Url="html/P_Smartsheet_Api_OAuth_OAuthFlowBuilder_RedirectURL.htm" />
   <HelpKINode Title="RefreshToken method" Url="html/M_Smartsheet_Api_OAuth_OAuthFlow_RefreshToken.htm" />
@@ -1127,7 +1130,10 @@
     <HelpKINode Title="User.UpdateUserBuilder.SetID Method " Url="html/M_Smartsheet_Api_Models_User_UpdateUserBuilder_SetID.htm" />
     <HelpKINode Title="Workspace.UpdateWorkspaceBuilder.SetID Method " Url="html/M_Smartsheet_Api_Models_Workspace_UpdateWorkspaceBuilder_SetID.htm" />
   </HelpKINode>
-  <HelpKINode Title="SetIndex method" Url="html/M_Smartsheet_Api_Models_Column_ModifyColumnBuilder_SetIndex.htm" />
+  <HelpKINode Title="SetIndex method">
+    <HelpKINode Title="Column.AddColumnToSheetBuilder.SetIndex Method " Url="html/M_Smartsheet_Api_Models_Column_AddColumnToSheetBuilder_SetIndex.htm" />
+    <HelpKINode Title="Column.ModifyColumnBuilder.SetIndex Method " Url="html/M_Smartsheet_Api_Models_Column_ModifyColumnBuilder_SetIndex.htm" />
+  </HelpKINode>
   <HelpKINode Title="SetJsonSerializer method">
     <HelpKINode Title="OAuthFlowBuilder.SetJsonSerializer Method " Url="html/M_Smartsheet_Api_OAuth_OAuthFlowBuilder_SetJsonSerializer.htm" />
     <HelpKINode Title="SmartsheetBuilder.SetJsonSerializer Method " Url="html/M_Smartsheet_Api_SmartsheetBuilder_SetJsonSerializer.htm" />
