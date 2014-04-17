@@ -273,6 +273,10 @@ namespace Smartsheet.Api.Models
 		public class AddColumnToSheetBuilder
 		{
 			/// <summary>
+			/// The position of the column. </summary>
+			internal int index;
+
+			/// <summary>
 			/// The Title. </summary>
 			internal string title;
 
@@ -311,6 +315,17 @@ namespace Smartsheet.Api.Models
 			}
 
 			/// <summary>
+			/// Sets the position for the column.
+			/// </summary>
+			/// <param name="index"> the position </param>
+			/// <returns> the modify column builder </returns>
+			public virtual AddColumnToSheetBuilder SetIndex(int index)
+			{
+				this.index = index;
+				return this;
+			}
+
+			/// <summary>
 			/// Sets the Primary flag for the column.
 			/// </summary>
 			/// <param name="primary"> the new Primary flag </param>
@@ -329,6 +344,18 @@ namespace Smartsheet.Api.Models
 			{
 				this.title = title;
 				return this;
+			}
+
+			/// <summary>
+			/// Gets the Index.
+			/// </summary>
+			/// <returns> the Index </returns>
+			public virtual int Index
+			{
+				get
+				{
+					return index;
+				}
 			}
 
 			/// <summary>
