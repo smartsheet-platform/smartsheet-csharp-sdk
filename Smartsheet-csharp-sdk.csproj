@@ -182,6 +182,9 @@
     <None Include="packages.config" />
     <None Include="smartsheet-csharp-sdk.licenseheader" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="icons\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
   <ProjectExtensions>
     <VisualStudio AllowExistingFolder="true" />

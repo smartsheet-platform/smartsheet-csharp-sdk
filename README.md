@@ -106,6 +106,12 @@ If you have any questions or issues with this SDK please post on [StackOverflow 
 
 Each specific release is available for download via [Github](https://github.com/smartsheet-platform/smartsheet-csharp-sdk/tags) or the [NuGet repository](https://www.nuget.org/packages/smartsheet-csharp-sdk/).
 
+<!--
+**1.0.2
+* Updated web documentation to use Visual Studio 2013 format and include searching.
+* 
+-->
+
 **1.0.1 (Mar 19, 2014)**
 * Fixed issue when refreshing an existing OAuth token.
 
