@@ -103,7 +103,7 @@ namespace Smartsheet.Api.Internal.Http
 				client.ReleaseConnection();
 				Assert.Fail("Exception should have been thrown.");
 			}
-			catch (HttpClientException)
+			catch (Exception)
 			{
 				// Expected
 			}

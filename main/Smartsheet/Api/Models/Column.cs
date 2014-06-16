@@ -74,7 +74,7 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// Represents the Tags To indicate a special Type of column.
 		/// </summary>
-		private IList<ColumnTag> tags;
+		private IList<ColumnTag?> tags;
 
 		/// <summary>
 		/// Represents the sheet ID.
@@ -237,7 +237,7 @@ namespace Smartsheet.Api.Models
 		/// Gets the Tags that indicate a special Type of column.
 		/// </summary>
 		/// <returns> the Tags </returns>
-		public virtual IList<ColumnTag> Tags
+		public virtual IList<ColumnTag?> Tags
 		{
 			get
 			{

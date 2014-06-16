@@ -112,6 +112,11 @@ Each specific release is available for download via [Github](https://github.com/
 * 
 -->
 
+**1.0.3 (Jun 16, 2014)**
+* Upgraded json.net library to latest version
+* Added support for GANTT_ALLOCATION ColumnTag
+* Made enum serialization more flexible
+
 **1.0.2 (Apr 17, 2014)**
 * Fixed issue with post requests where content body was not handled correctly.
 * Added index to the ColumnToSheetBuilder class.

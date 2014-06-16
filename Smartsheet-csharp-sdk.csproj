@@ -33,10 +33,9 @@
     <RootNamespace>Smartsheet_csharp_sdk</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>packages\Newtonsoft.Json.6.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <HintPath>packages\Newtonsoft.Json.6.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="RestSharp">
       <HintPath>packages\RestSharp.104.4.0\lib\net4\RestSharp.dll</HintPath>
@@ -84,6 +83,7 @@
     <Compile Include="main\Smartsheet\Api\Internal\Http\HttpRequest.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\Http\HttpResponse.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\Json\ContractResolver.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\Json\JsonEnumTypeConverter.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\Json\JsonNetSerializer.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\Json\JsonSerializer.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\Json\JsonSerializationException.cs" />
@@ -183,7 +183,7 @@
     <None Include="smartsheet-csharp-sdk.licenseheader" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="icons\" />
+    <Content Include="icons\logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
   <ProjectExtensions>
