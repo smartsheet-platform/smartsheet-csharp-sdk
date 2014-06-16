@@ -26,8 +26,9 @@ namespace Smartsheet.Api.models
 			Assert.NotNull(ColumnTag.GANTT_PREDECESSOR);
 			Assert.NotNull(ColumnTag.GANTT_DURATION);
 			Assert.NotNull(ColumnTag.GANTT_ASSIGNED_RESOURCE);
+			Assert.NotNull(ColumnTag.GANTT_ALLOCATION);
 
-			Assert.AreEqual(11,Enum.GetValues(typeof(ColumnTag)).Length);
+			Assert.AreEqual(12,Enum.GetValues(typeof(ColumnTag)).Length);
 		}
 
 	}
