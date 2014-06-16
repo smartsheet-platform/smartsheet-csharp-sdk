@@ -17,6 +17,7 @@ xcopy documentation\Website\* documentation\git-docs /E /Y
 cd documentation\git-docs\
 :: Push the docs to github.io
 git add *
+git commit -m "Updating Docs"
 git push
 cd ..\..\
 
