@@ -111,6 +111,8 @@ Each specific release is available for download via [Github](https://github.com/
 * Updated web documentation to use Visual Studio 2013 format and include searching.
 * 
 -->
+**1.0.4 (Jun 16, 2014)**
+* Made enum serialization more flexible
 
 **1.0.3 (Jun 16, 2014)**
 * Upgraded json.net library to latest version
