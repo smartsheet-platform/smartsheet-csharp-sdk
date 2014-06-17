@@ -48,7 +48,6 @@ namespace Smartsheet.Api.Internal.Json
 
 		static JsonNetSerializer()
 		{
-
 			// No formatting To decrease the length;
 			serializer.Formatting = Newtonsoft.Json.Formatting.None;
 
@@ -64,6 +63,8 @@ namespace Smartsheet.Api.Internal.Json
 			// Excludes "Id" field from being serialized To JSON for any IdentifiableModel class
 			serializer.ContractResolver = new ContractResolver();
 
+			// Handles enum serialization
+			serializer.Converters.Add(new JsonEnumTypeConverter());
 			// Convert all enums To a string representation for serialization
 			serializer.Converters.Add(new Newtonsoft.Json.Converters.StringEnumConverter());
 		}
@@ -111,7 +112,6 @@ namespace Smartsheet.Api.Internal.Json
 		public virtual void serialize<T>(T @object, StreamWriter outputStream)
 		{
 			Utils.ThrowIfNull(@object, outputStream);
-
 			try
 			{
 				 serializer.Serialize(new Newtonsoft.Json.JsonTextWriter(outputStream), @object);
@@ -147,7 +147,7 @@ namespace Smartsheet.Api.Internal.Json
 			Utils.ThrowIfNull(inputStream);
 			try
 			{
-				 return serializer.Deserialize<T>(new Newtonsoft.Json.JsonTextReader(inputStream));
+				return serializer.Deserialize<T>(new Newtonsoft.Json.JsonTextReader(inputStream));
 			}
 			catch (Newtonsoft.Json.JsonException ex)
 			{
