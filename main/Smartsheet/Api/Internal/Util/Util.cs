@@ -32,15 +32,25 @@ namespace Smartsheet.Api.Internal.Utility
 		public static string GetOSFriendlyName()
 		{
 			string result = string.Empty;
-			ManagementObjectCollection.ManagementObjectEnumerator enumerator = (
-				new ManagementObjectSearcher("SELECT Caption FROM Win32_OperatingSystem")).Get().GetEnumerator();
+            ManagementObjectCollection.ManagementObjectEnumerator enumerator = null;
+
 			try
 			{
+                enumerator = (
+                        new ManagementObjectSearcher("SELECT Caption FROM Win32_OperatingSystem")
+                    ).Get()
+                    .GetEnumerator();
+
 				if (enumerator.MoveNext())
 				{
 					result = ((ManagementObject)enumerator.Current)["Caption"].ToString();
 				}
-			}
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                // Hosted solution - Many not allow access to WMI
+                return "Hosted";
+            }
 			finally
 			{
 				if (enumerator != null)
