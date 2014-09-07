@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30110.0
+# Visual Studio Express 2013 for Windows Desktop
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smartsheet-csharp-sdk", "Smartsheet-csharp-sdk.csproj", "{D697980C-2DE8-4C5A-BD95-FC3CCDDC7ECD}"
 EndProject
@@ -10,6 +10,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSDK", "TestSDK\TestSDK.csproj", "{4A9725A9-23D5-4D9B-A627-30F912330456}"
 EndProject
 Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "smartsheet-csharp-sdk-docs", "documentation\smartsheet-csharp-sdk-docs.shfbproj", "{3F8D8D90-F2B2-496B-86EF-5A49322D5837}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{E2B77A15-A7BC-440A-95A1-ED51625E835F}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
