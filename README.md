@@ -111,11 +111,12 @@ Each specific release is available for download via [Github](https://github.com/
 * Updated web documentation to use Visual Studio 2013 format and include searching.
 * 
 -->
+**1.0.4 (Jun 16, 2014)**
+* Made enum serialization more flexible
 
 **1.0.3 (Jun 16, 2014)**
 * Upgraded json.net library to latest version
 * Added support for GANTT_ALLOCATION ColumnTag
-* Made enum serialization more flexible
 
 **1.0.2 (Apr 17, 2014)**
 * Fixed issue with post requests where content body was not handled correctly.
