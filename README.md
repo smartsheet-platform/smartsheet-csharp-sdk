@@ -107,9 +107,12 @@ If you have any questions or issues with this SDK please post on [StackOverflow 
 Each specific release is available for download via [Github](https://github.com/smartsheet-platform/smartsheet-csharp-sdk/tags) or the [NuGet repository](https://www.nuget.org/packages/smartsheet-csharp-sdk/).
 
 <!--
-**1.0.3
+**1.0.
 * Updated web documentation to use Visual Studio 2013 format and include searching.
 * 
+* Updated to the latest version of Newtonsoft.Json
+* Added support for code on Azure.
+
 -->
 **1.0.4 (Jun 16, 2014)**
 * Made enum serialization more flexible
