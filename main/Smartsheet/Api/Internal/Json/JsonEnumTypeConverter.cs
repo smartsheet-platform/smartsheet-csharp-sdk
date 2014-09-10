@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json;
-//    #[license]
+//    #[ license]
 //    SmartsheetClient SDK for C#
 //    %%
 //    Copyright (C) 2014 SmartsheetClient
@@ -20,6 +19,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Newtonsoft.Json;
 
 namespace Smartsheet.Api.Internal.Json
 {
