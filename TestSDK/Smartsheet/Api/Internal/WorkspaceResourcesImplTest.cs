@@ -92,13 +92,13 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestFolders()
 		{
-			Assert.Null(workspaceResources.Folders());
+			Assert.NotNull(workspaceResources.Folders());
 		}
 
 		[Test]
 		public virtual void TestShares()
 		{
-			Assert.Null(workspaceResources.Shares());
+			Assert.NotNull(workspaceResources.Shares());
 		}
 
 	}
