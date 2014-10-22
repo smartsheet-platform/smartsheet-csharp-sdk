@@ -5,7 +5,7 @@ if not "%errorlevel%"=="0" goto buildFailure
 
 
 :: Run unit tests
-"%programfiles%\NUnit 2.6.3\bin\nunit-console.exe" TestSDK/bin/Release/TestSDK.dll /stoponerror 
+"C:\Program Files (x86)\NUnit 2.6.3\bin\nunit-console.exe" TestSDK/bin/Release/TestSDK.dll /stoponerror 
 if not "%errorlevel%"=="0" goto nunitFailure
 
 :: package for nuget
