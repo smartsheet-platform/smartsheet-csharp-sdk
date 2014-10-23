@@ -40,7 +40,14 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// BOX
 		/// </summary>
-		BOX_COM
+		BOX_COM,
+		/// <summary>
+		/// Dropbox
+		/// </summary>
+		DROPBOX,
+		/// <summary>
+		/// Evernote
+		/// </summary>
+		EVERNOTE
 	}
-
 }
