@@ -533,13 +533,14 @@ namespace Smartsheet.Api.Models
 
 			/// <summary>
 			/// The Format for an auto number column. </summary>
-			internal AutoNumberFormat autoNumberFormat
-					 ;
+			internal AutoNumberFormat autoNumberFormat;
 
 			/// <summary>
 			/// The sheet Id. </summary>
 			internal long? sheetId;
 
+			/// <summary> The Column Id</summary>
+			internal long? columnId;
 			/// <summary>
 			/// Sets the position for the column.
 			/// </summary>
@@ -627,6 +628,19 @@ namespace Smartsheet.Api.Models
 				this.sheetId = sheetId;
 				return this;
 			}
+
+
+			/// <summary>
+			/// Sets the column Id.
+			/// </summary>
+			/// <param name="sheetId">The column Id </param>
+			/// <returns> the modify column builder </returns>
+			public virtual ModifyColumnBuilder SetColumnId(long? columnId)
+			{
+				this.columnId = columnId;
+				return this;
+			}
+
 
 			/// <summary>
 			/// Gets the Index.
@@ -725,6 +739,18 @@ namespace Smartsheet.Api.Models
 			}
 
 			/// <summary>
+			/// Gets the column Id.
+			/// </summary>
+			/// <returns> the sheet Id </returns>
+			public virtual long? ColumnId
+			{
+				get
+				{
+					return columnId;
+				}
+			}
+
+			/// <summary>
 			/// Builds the column.
 			/// </summary>
 			/// <returns> the column </returns>
@@ -744,6 +770,7 @@ namespace Smartsheet.Api.Models
 				column.systemColumnType = systemColumnType;
 				column.autoNumberFormat = autoNumberFormat;
 				column.sheetId = sheetId;
+				column.ID = columnId;
 				return column;
 			}
 		}

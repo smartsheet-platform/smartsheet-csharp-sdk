@@ -114,6 +114,10 @@ Each specific release is available for download via [Github](https://github.com/
 * Added support for code on Azure.
 
 -->
+**1.0.6 (Oct 29, 2014)**
+* Added Dropbox and Evernote as attachment types
+* Added setColumnId to ModifyColumnBuilder
+
 **1.0.5 (Oct 22, 2014)**
 * Fixed an issue where WorkspaceResourcesImpl was not working correctly with folders and shares.
 
