@@ -19,8 +19,10 @@ namespace Smartsheet.Api.models
 			Assert.NotNull(AttachmentType.GOOGLE_DRIVE);
 			Assert.NotNull(AttachmentType.LINK);
 			Assert.NotNull(AttachmentType.BOX_COM);
+			Assert.NotNull(AttachmentType.EVERNOTE);
+			Assert.NotNull(AttachmentType.DROPBOX);
 
-			Assert.AreEqual(4,Enum.GetValues(typeof(AttachmentType)).Length);
+			Assert.AreEqual(6,Enum.GetValues(typeof(AttachmentType)).Length);
 		}
 
 	}
