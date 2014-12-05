@@ -1,7 +1,8 @@
-﻿//    #[license]
+﻿//   [license]
 //    SmartsheetClient SDK for C#
 //    %%
 //    Copyright (C) 2014 SmartsheetClient
+//    Copyright (C) 2014 Dumitru-Bogdan Sireteanu
 //    %%
 //    Licensed under the Apache License, Version 2.0 (the "License");
 //    you may not use this file except in compliance with the License.
@@ -22,10 +23,11 @@ using System.Collections.Generic;
 namespace Smartsheet.Api.Models
 {
 
+	public class Row : AbstractRow<Column, Cell> { }
 	/// <summary>
 	/// Represents the Row object.
 	/// </summary>
-	public class Row : IdentifiableModel
+	public class AbstractRow<TColumn,TCell> : IdentifiableModel where TCell:Cell where TColumn:Column
 	{
 		/// <summary>
 		/// Represents the Sheet ID. </summary>
@@ -41,7 +43,7 @@ namespace Smartsheet.Api.Models
 
 		/// <summary>
 		/// Represents the Cells for this row. </summary>
-		private IList<Cell> cells;
+		private IList<TCell> cells;
 
 		/// <summary>
 		/// Represents the Discussions for this row. </summary>
@@ -53,7 +55,7 @@ namespace Smartsheet.Api.Models
 
 		/// <summary>
 		/// Represents the Columns for this row. </summary>
-		private IList<Column> columns;
+		private IList<TColumn> columns;
 
 		/// <summary>
 		/// Represents the date and time the row was created. </summary>
@@ -231,7 +233,7 @@ namespace Smartsheet.Api.Models
 		/// Gets the Cells.
 		/// </summary>
 		/// <returns> the Cells </returns>
-		public virtual IList<Cell> Cells
+		public virtual IList<TCell> Cells
 		{
 			get
 			{
@@ -282,7 +284,7 @@ namespace Smartsheet.Api.Models
 		/// Gets the Columns.
 		/// </summary>
 		/// <returns> the Columns </returns>
-		public virtual IList<Column> Columns
+		public virtual IList<TColumn> Columns
 		{
 			get
 			{

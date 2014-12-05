@@ -2,6 +2,7 @@
 //    SmartsheetClient SDK for C#
 //    %%
 //    Copyright (C) 2014 SmartsheetClient
+//    Copyright (C) 2014 Dumitru-Bogdan Sireteanu
 //    %%
 //    Licensed under the Apache License, Version 2.0 (the "License");
 //    you may not use this file except in compliance with the License.
@@ -15,8 +16,6 @@
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
 //    %[license]
-using System;
-
 namespace Smartsheet.Api
 {
 	///<summary>
@@ -50,6 +49,12 @@ namespace Smartsheet.Api
 		/// </summary>
 		/// <returns> the template resources instance </returns>
 		TemplateResources Templates();
+
+		/// <summary>
+		/// <para>Returns the ReportResources instance that provides access to Report resources.</para>
+		/// </summary>
+		/// <returns> the report resources instance </returns>
+		ReportResources Reports();
 
 		/// <summary>
 		/// <para>Returns the SheetResources instance that provides access to Sheet resources.</para>

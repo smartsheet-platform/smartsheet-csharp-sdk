@@ -2,6 +2,7 @@
 //    SmartsheetClient SDK for C#
 //    %%
 //    Copyright (C) 2014 SmartsheetClient
+//    Copyright (C) 2014 Dumitru-Bogdan Sireteanu
 //    %%
 //    Licensed under the Apache License, Version 2.0 (the "License");
 //    you may not use this file except in compliance with the License.
@@ -15,7 +16,6 @@
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
 //    %[license]
-
 namespace Smartsheet.Api.Internal
 {
 
@@ -91,6 +91,15 @@ namespace Smartsheet.Api.Internal
 		/// effectively the underlying Value is lazily created in a thread safe manner.
 		/// </summary>
 		private TemplateResources templates;
+
+		/// <summary>
+		/// Represents the AtomicReference To ReportResources.
+		/// 
+		/// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
+		/// as null, and will be initialized To non-null at the first time it is accessed via corresponding getter, therefore
+		/// effectively the underlying Value is lazily created in a thread safe manner.
+		/// </summary>
+		private ReportResources reports;
 
 		/// <summary>
 		/// Represents the AtomicReference To SheetResources.
@@ -319,6 +328,17 @@ namespace Smartsheet.Api.Internal
 		{
 			Interlocked.CompareExchange<TemplateResources>(ref templates, new TemplateResourcesImpl(this), null);
 			return templates;
+		}
+
+
+		/// <summary>
+		/// Returns the TemplateResources instance that provides access To Template resources.
+		/// </summary>
+		/// <returns> the template resources </returns>
+		public virtual ReportResources Reports()
+		{
+			Interlocked.CompareExchange<ReportResources>(ref reports, new ReportResourcesImpl(this), null);
+			return reports;
 		}
 
 		/// <summary>

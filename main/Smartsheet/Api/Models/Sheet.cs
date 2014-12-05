@@ -2,6 +2,7 @@
 //    SmartsheetClient SDK for C#
 //    %%
 //    Copyright (C) 2014 SmartsheetClient
+//    Copyright (C) 2014 Dumitru-Bogdan Sireteanu
 //    %%
 //    Licensed under the Apache License, Version 2.0 (the "License");
 //    you may not use this file except in compliance with the License.
@@ -22,20 +23,96 @@ using System.Collections.Generic;
 namespace Smartsheet.Api.Models
 {
 
+	public class Sheet : AbstractSheet<Row, Column>
+	{
+		/// <summary>
+		/// Get a column by Index.
+		/// </summary>
+		/// <param name="index"> the column Index </param>
+		/// <returns> the column by Index </returns>
+		public virtual Column GetColumnByIndex(int index)
+		{
+			if (columns == null)
+			{
+				return null;
+			}
+
+			Column result = null;
+			foreach (Column column in columns)
+			{
+				if (column.Index == index)
+				{
+					result = column;
+					break;
+				}
+			}
+			return result;
+		}
+
+
+		/// <summary>
+		/// Get a <seealso cref="Column"/> by ID.
+		/// </summary>
+		/// <param name="columnId"> the column Id </param>
+		/// <returns> the column by Id </returns>
+		public virtual Column GetColumnById(long columnId)
+		{
+			if (columns == null)
+			{
+				return null;
+			}
+
+			Column result = null;
+			foreach (Column column in columns)
+			{
+				if (column.ID == columnId)
+				{
+					result = column;
+					break;
+				}
+			}
+			return result;
+		}
+
+
+		/// <summary>
+		/// Get a <seealso cref="Row"/> by row number.
+		/// </summary>
+		/// <param name="rowNumber"> the row number </param>
+		/// <returns> the row by row number </returns>
+		public virtual Row GetRowByRowNumber(int rowNumber)
+		{
+			if (rows == null)
+			{
+				return null;
+			}
+
+			Row result = null;
+			foreach (Row row in rows)
+			{
+				if (row.RowNumber == rowNumber)
+				{
+					result = row;
+					break;
+				}
+			}
+			return result;
+		}
+	}
 	/// <summary>
 	/// Represents the Sheet object.
 	/// </summary>
-	public class Sheet : NamedModel
+	public class AbstractSheet<TRow, TColumn> : NamedModel
 	{
 		/// <summary>
 		/// Represents the Columns for the sheet.
 		/// </summary>
-		private IList<Column> columns;
+		protected IList<TColumn> columns;
 
 		/// <summary>
 		/// Represents the Rows for the sheet.
 		/// </summary>
-		private IList<Row> rows;
+		protected IList<TRow> rows;
 
 		/// <summary>
 		/// Represents the access level for the sheet.
@@ -110,83 +187,13 @@ namespace Smartsheet.Api.Models
 		}
 
 
-		/// <summary>
-		/// Get a column by Index.
-		/// </summary>
-		/// <param name="index"> the column Index </param>
-		/// <returns> the column by Index </returns>
-		public virtual Column GetColumnByIndex(int index)
-		{
-			if (columns == null)
-			{
-				return null;
-			}
 
-			Column result = null;
-			foreach (Column column in columns)
-			{
-				if (column.Index == index)
-				{
-					result = column;
-					break;
-				}
-			}
-			return result;
-		}
-
-		/// <summary>
-		/// Get a <seealso cref="Column"/> by ID.
-		/// </summary>
-		/// <param name="columnId"> the column Id </param>
-		/// <returns> the column by Id </returns>
-		public virtual Column GetColumnById(long columnId)
-		{
-			if (columns == null)
-			{
-				return null;
-			}
-
-			Column result = null;
-			foreach (Column column in columns)
-			{
-				if (column.ID == columnId)
-				{
-					result = column;
-					break;
-				}
-			}
-			return result;
-		}
-
-		/// <summary>
-		/// Get a <seealso cref="Row"/> by row number.
-		/// </summary>
-		/// <param name="rowNumber"> the row number </param>
-		/// <returns> the row by row number </returns>
-		public virtual Row GetRowByRowNumber(int rowNumber)
-		{
-			if (rows == null)
-			{
-				return null;
-			}
-
-			Row result = null;
-			foreach (Row row in rows)
-			{
-				if (row.RowNumber == rowNumber)
-				{
-					result = row;
-					break;
-				}
-			}
-			return result;
-		}
 
 		/// <summary>
 		/// Gets the Columns for the sheet.
 		/// </summary>
 		/// <returns> the Columns </returns>
-		public virtual IList<Column> Columns
+		public virtual IList<TColumn> Columns
 		{
 			get
 			{
@@ -203,7 +210,7 @@ namespace Smartsheet.Api.Models
 		/// Gets the Rows for the sheet.
 		/// </summary>
 		/// <returns> the Rows </returns>
-		public virtual IList<Row> Rows
+		public virtual IList<TRow> Rows
 		{
 			get
 			{
