@@ -20,8 +20,9 @@ namespace Smartsheet.Api.models
 			Assert.NotNull(ObjectInclusion.DATA);
 			Assert.NotNull(ObjectInclusion.COLUMNS);
 			Assert.NotNull(ObjectInclusion.TEMPLATES);
+            Assert.NotNull(ObjectInclusion.REPORTS);
 
-			Assert.AreEqual(5,Enum.GetValues(typeof(ObjectInclusion)).Length);
+			Assert.AreEqual(6,Enum.GetValues(typeof(ObjectInclusion)).Length);
 		}
 
 	}
