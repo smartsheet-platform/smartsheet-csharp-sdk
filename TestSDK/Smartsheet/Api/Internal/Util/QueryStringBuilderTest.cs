@@ -32,7 +32,7 @@ namespace TestSDK.Smartsheet.Api.Internal.Util
         }
 
         [Test]
-        public virtual void AddParamenter_WhenNoParametersWereAdded_QueryStringValueIsUrlEscaped()
+        public virtual void AddParamenter_WhenNoParametersWereAdded_QueryStringValueIsUrlEncoded()
         {
             const string parameterName = "testParameter";
             const string parameterValue = "test&ParameterValue";
