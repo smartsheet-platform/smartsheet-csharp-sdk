@@ -58,13 +58,11 @@ namespace TestSDK.Smartsheet.Api.Internal.Util
         {
             const string parameterName = "testParameter";
             const string parameterValue = "testParameterValue";
-            // should be ?testParameter=testParameterValue
-            const int expectedEqualsIndex = 14;
 
             //act
             _builder.AddParameter(parameterName, parameterValue);
             //assert
-            Assert.AreEqual(_builder.QueryString[expectedEqualsIndex], '=');
+            Assert.True(_builder.QueryString.Contains("=testParameterValue"));
         }
 
         [Test]
