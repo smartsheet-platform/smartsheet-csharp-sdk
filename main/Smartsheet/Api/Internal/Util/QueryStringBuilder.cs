@@ -15,6 +15,8 @@
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
 //    %[license]
+
+using System;
 using System.Text;
 
 namespace Smartsheet.Api.Internal.Utility
@@ -29,7 +31,7 @@ namespace Smartsheet.Api.Internal.Utility
 
         public void AddParameter<T>(string name, T value)
         {
-            _querryString.AppendFormat(_querryString.Length == 0 ? "?{0}={1}" : "&{0}={1}", name, value);
+            _querryString.AppendFormat(_querryString.Length == 0 ? "?{0}={1}" : "&{0}={1}", name, Uri.EscapeDataString(value.ToString()));
         }
         public string QueryString { get { return _querryString.ToString(); } }
 
