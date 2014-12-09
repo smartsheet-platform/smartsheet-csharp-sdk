@@ -49,6 +49,11 @@ namespace Smartsheet.Api.Models
 		private IList<Template> templates;
 
 		/// <summary>
+		/// Represents the Reports in the home location.
+		/// </summary>
+		private IList<Report> reports;
+
+		/// <summary>
 		/// Represents the Workspaces in the home location.
 		/// </summary>
 		private IList<Workspace> workspaces;
@@ -103,6 +108,21 @@ namespace Smartsheet.Api.Models
 			}
 		}
 
+		/// <summary>
+		/// Gets the Reports in the home location.
+		/// </summary>
+		/// <returns> the Templates </returns>
+		public virtual IList<Report> Reports
+		{
+			get
+			{
+				return reports;
+			}
+			set
+			{
+				this.reports = value;
+			}
+		}
 
 		/// <summary>
 		/// Gets the Workspaces in the home location.

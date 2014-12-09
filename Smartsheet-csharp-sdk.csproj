@@ -103,6 +103,7 @@
     <Compile Include="main\Smartsheet\Api\Internal\Json\JsonSerializationException.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\Json\LowerCaseContractResolver.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\OAuth\OAuthFlowImpl.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\ReportResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\RowResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\SearchResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\ShareResourcesImpl.cs" />
@@ -112,10 +113,13 @@
     <Compile Include="main\Smartsheet\Api\Internal\SmartsheetImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\TemplateResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\UserResourcesImpl.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\Util\QueryStringBuilder.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\Util\Util.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\WorkspaceFolderResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\WorkspaceResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\InvalidRequestException.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\AbstractRow.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\AbstractSheet.cs" />
     <Compile Include="main\Smartsheet\Api\Models\AccessLevel.cs" />
     <Compile Include="main\Smartsheet\Api\Models\AccessScope.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Attachment.cs" />
@@ -142,6 +146,10 @@
     <Compile Include="main\Smartsheet\Api\Models\NamedModel.cs" />
     <Compile Include="main\Smartsheet\Api\Models\ObjectInclusion.cs" />
     <Compile Include="main\Smartsheet\Api\Models\PaperSize.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Report.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\ReportCell.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\ReportColumn.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\ReportRow.cs" />
     <Compile Include="main\Smartsheet\Api\Models\RequestResult.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Row.cs" />
     <Compile Include="main\Smartsheet\Api\Models\RowEmail.cs" />
@@ -174,6 +182,7 @@
     <Compile Include="main\Smartsheet\Api\OAuth\Token.cs" />
     <Compile Include="main\Smartsheet\Api\OAuth\UnsupportedOAuthGrantTypeException.cs" />
     <Compile Include="main\Smartsheet\Api\OAuth\UnsupportedResponseTypeException.cs" />
+    <Compile Include="main\Smartsheet\Api\ReportResources.cs" />
     <Compile Include="main\Smartsheet\Api\ResourceNotFoundException.cs" />
     <Compile Include="main\Smartsheet\Api\RowResources.cs" />
     <Compile Include="main\Smartsheet\Api\SearchResources.cs" />

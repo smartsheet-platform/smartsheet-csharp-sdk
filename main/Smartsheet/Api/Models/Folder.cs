@@ -35,6 +35,11 @@ namespace Smartsheet.Api.Models
 		private IList<Sheet> sheets;
 
 		/// <summary>
+		/// Represents the Reports contained in the folder.
+		/// </summary>
+		private IList<Report> reports;
+
+		/// <summary>
 		/// Represents the child Folders contained in the folder.
 		/// </summary>
 		private IList<Folder> folders;
@@ -66,7 +71,21 @@ namespace Smartsheet.Api.Models
 			}
 		}
 
-
+		/// <summary>
+		/// Gets the Reports in the folder.
+		/// </summary>
+		/// <returns> the Sheets </returns>
+		public virtual IList<Report> Reports
+		{
+			get
+			{
+				return reports;
+			}
+			set
+			{
+				this.reports = value;
+			}
+		}
 		/// <summary>
 		/// Gets the Folders contained in this folder.
 		/// </summary>

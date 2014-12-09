@@ -15,8 +15,6 @@
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
 //    %[license]
-using System;
-
 namespace Smartsheet.Api
 {
 	///<summary>
@@ -50,6 +48,12 @@ namespace Smartsheet.Api
 		/// </summary>
 		/// <returns> the template resources instance </returns>
 		TemplateResources Templates();
+
+		/// <summary>
+		/// <para>Returns the ReportResources instance that provides access to Report resources.</para>
+		/// </summary>
+		/// <returns> the report resources instance </returns>
+		ReportResources Reports();
 
 		/// <summary>
 		/// <para>Returns the SheetResources instance that provides access to Sheet resources.</para>
