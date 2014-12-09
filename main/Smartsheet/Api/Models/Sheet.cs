@@ -16,7 +16,6 @@
 //    limitations under the License.
 //    %[license]
 
-using Smartsheet_csharp_sdk.main.Smartsheet.Api.Models;
 using System;
 using System.Collections.Generic;
 

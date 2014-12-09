@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Smartsheet_csharp_sdk.main.Smartsheet.Api.Models
+namespace Smartsheet.Api.Models
 {
 	/// <summary>
 	/// A report column is a "virtual" column, in that it appears identical to source sheet column(s), but is in fact a different column belonging to the report.  

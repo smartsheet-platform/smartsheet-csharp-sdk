@@ -1,5 +1,4 @@
-﻿using Smartsheet_csharp_sdk.main.Smartsheet.Api.Models;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Smartsheet.Api.Models
 {
