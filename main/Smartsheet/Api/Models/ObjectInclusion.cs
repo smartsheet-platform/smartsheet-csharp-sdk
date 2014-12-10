@@ -63,7 +63,7 @@ namespace Smartsheet.Api.Models
 		/// The reports
 		/// </summary>
 		[EnumMember(Value = "sourceSheets")]
-		SOURCE_SHEETS,
+		SOURCESHEETS,
 		/// <summary>
 		/// The reports
 		/// </summary>
