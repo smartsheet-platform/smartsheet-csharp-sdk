@@ -114,6 +114,9 @@ Each specific release is available for download via [Github](https://github.com/
 * Added support for code on Azure.
 
 -->
+**1.0.7 (Dec 9, 2014)**
+* Added ability to retrieve Reports
+
 **1.0.6 (Oct 29, 2014)**
 * Added Dropbox and Evernote as attachment types
 * Added setColumnId to ModifyColumnBuilder
