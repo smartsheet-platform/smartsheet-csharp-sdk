@@ -153,7 +153,7 @@ namespace Smartsheet.Api.Internal
 		public virtual Folder CreateFolder(long parentFolderId, Folder folder)
 		{
 
-			return this.CreateResource<Folder>("folder/" + parentFolderId + "/folders", typeof(Folder), folder);
+			return this.CreateResource<Folder>("folders/" + parentFolderId + "/folders", typeof(Folder), folder);
 		}
 	}
 
