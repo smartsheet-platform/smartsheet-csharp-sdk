@@ -3,9 +3,7 @@ using System.Collections.Generic;
 namespace Smartsheet.Api.Internal
 {
 	using NUnit.Framework;
-
-
-
+	using Smartsheet.Api.Models;
 	using DefaultHttpClient = Smartsheet.Api.Internal.Http.DefaultHttpClient;
 	using Folder = Smartsheet.Api.Models.Folder;
 
@@ -40,14 +38,14 @@ namespace Smartsheet.Api.Internal
 
 			//folderResource.getSmartsheet().getHttpClient().close();
 
-			Folder folder = folderResource.GetFolder(123L);
-	//		folder.setTemplates(new ArrayList<Template>());
-	//		folder.setWorkspaces(new ArrayList<Workspace>());
-			folderResource.GetFolder(123L);
+			Folder folder = folderResource.GetFolder(123L, new List<ObjectInclusion>{ObjectInclusion.ATTACHMENTS});
+			//folder.setTemplates(new ArrayList<Template>());
+			//folder.setWorkspaces(new ArrayList<Workspace>());
+			//folderResource.GetFolder(123L, null);
 
 			// Verify results
-			Assert.AreEqual("Personal", folder.Name);
-			Assert.AreEqual(2, folder.Sheets.Count);
+			Assert.AreEqual("Projects", folder.Name);
+			Assert.AreEqual(1, folder.Sheets.Count);
 			Assert.AreEqual(0, folder.Folders.Count);
 		}
 
