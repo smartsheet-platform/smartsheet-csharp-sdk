@@ -134,6 +134,7 @@
     <Compile Include="main\Smartsheet\Api\Models\ColumnTag.cs" />
     <Compile Include="main\Smartsheet\Api\Models\ColumnType.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Comment.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\DataWrapper.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Discussion.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Email.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Error.cs" />
