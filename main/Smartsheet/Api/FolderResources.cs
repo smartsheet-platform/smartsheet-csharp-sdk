@@ -24,6 +24,7 @@ namespace Smartsheet.Api
 
 	using Folder = Api.Models.Folder;
 	using FolderInclude = Api.Models.FolderInclude;
+	using DataWrapper = Api.Models.DataWrapper<Api.Models.Folder>;
 
 	/// <summary>
 	/// <para>This interface provides methods To access Folder resources.</para>
@@ -91,7 +92,7 @@ namespace Smartsheet.Api
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		IList<Folder> ListFolders(long folderId, bool includeAll, long? pageSize, long? page);
+		DataWrapper ListFolders(long folderId, bool includeAll, long? pageSize, long? page);
 
 		/// <summary>
 		/// <para>Creates a Folder in the specified Folder.</para>
