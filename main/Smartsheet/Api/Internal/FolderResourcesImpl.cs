@@ -22,7 +22,10 @@ namespace Smartsheet.Api.Internal
 {
 	using Smartsheet.Api.Internal.Utility;
 using Folder = Api.Models.Folder;
+	using DataWrapper = Api.Models.DataWrapper<Api.Models.Folder>;
+
 using FolderInclude = Api.Models.FolderInclude;
+
 
 	/// <summary>
 	/// This is the implementation of the FolderResources.
@@ -117,10 +120,10 @@ using FolderInclude = Api.Models.FolderInclude;
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual IList<Folder> ListFolders(long folderId, bool includeAll, long? pageSize, long? page)
+		public virtual DataWrapper ListFolders(long folderId, bool includeAll, long? pageSize, long? page)
 		{
 			string pathAndQuery = PathAndQueryWrapper.CreatePathAndQueryWithPaging("folders/" + folderId + "/folders", includeAll, pageSize, page);
-			return this.ListResources<Folder>(pathAndQuery, typeof(Folder));
+			return this.ListResourcesWithWrapper<Folder>(pathAndQuery);
 		}
 
 
