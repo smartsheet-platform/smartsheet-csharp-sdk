@@ -23,7 +23,7 @@ namespace Smartsheet.Api
 
 
 	using Folder = Api.Models.Folder;
-	using ObjectInclusion = Api.Models.ObjectInclusion;
+	using FolderInclude = Api.Models.FolderInclude;
 
 	/// <summary>
 	/// <para>This interface provides methods To access Folder resources.</para>
@@ -47,7 +47,7 @@ namespace Smartsheet.Api
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		Folder GetFolder(long folderId, IEnumerable<ObjectInclusion> include);
+		Folder GetFolder(long folderId, IEnumerable<FolderInclude> include);
 
 		/// <summary>
 		/// <para>Updates a folder.</para>
