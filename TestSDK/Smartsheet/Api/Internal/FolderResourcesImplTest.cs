@@ -38,7 +38,10 @@ namespace Smartsheet.Api.Internal
 
 			//folderResource.getSmartsheet().getHttpClient().close();
 
-			Folder folder = folderResource.GetFolder(123L, new List<ObjectInclusion>{ObjectInclusion.ATTACHMENTS});
+			// User can get Folder by specifying a list of FolderInclude enum values or specifying null.
+			Folder folder = folderResource.GetFolder(123L, new List<FolderInclude>{FolderInclude.SOURCE});
+			folder = folderResource.GetFolder(123L, null);
+
 			//folder.setTemplates(new ArrayList<Template>());
 			//folder.setWorkspaces(new ArrayList<Workspace>());
 			//folderResource.GetFolder(123L, null);
