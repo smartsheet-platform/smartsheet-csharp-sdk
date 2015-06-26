@@ -28,6 +28,10 @@ namespace Smartsheet.Api.Models
 	/// </summary>
 	public class Folder : NamedModel
 	{
+		/// <summary>
+		/// Represents whether Folder is marked as favorite in Home folder
+		/// </summary>
+		private bool? favorite;
 
 		/// <summary>
 		/// Represents the Sheets contained in the folder.
@@ -56,7 +60,17 @@ namespace Smartsheet.Api.Models
 		private IList<Template> templates;
 
 		/// <summary>
-		/// Gets the Sheets in the folder.
+		/// Gets and Sets the whether this Folder is favorited.
+		/// </summary>
+		/// <returns> the Sheets </returns>
+		public bool? Favorite
+		{
+			get { return favorite; }
+			set { favorite = value; }
+		}
+
+		/// <summary>
+		/// Gets and Sets the Sheets in the folder.
 		/// </summary>
 		/// <returns> the Sheets </returns>
 		public virtual IList<Sheet> Sheets
@@ -72,7 +86,7 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// Gets the Reports in the folder.
+		/// Gets and Sets the Reports in the folder.
 		/// </summary>
 		/// <returns> the Sheets </returns>
 		public virtual IList<Report> Reports
@@ -87,7 +101,7 @@ namespace Smartsheet.Api.Models
 			}
 		}
 		/// <summary>
-		/// Gets the Folders contained in this folder.
+		/// Gets and Sets the Folders contained in this folder.
 		/// </summary>
 		/// <returns> the Folders </returns>
 		public virtual IList<Folder> Folders
@@ -104,7 +118,7 @@ namespace Smartsheet.Api.Models
 
 
 		/// <summary>
-		/// Gets the Templates contained in this folder.
+		/// Gets and Sets the Templates contained in this folder.
 		/// </summary>
 		/// <returns> the Templates </returns>
 		public virtual IList<Template> Templates
