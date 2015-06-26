@@ -113,6 +113,7 @@
     <Compile Include="main\Smartsheet\Api\Internal\SmartsheetImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\TemplateResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\UserResourcesImpl.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\Util\PathAndQueryWrapperBuilder.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\Util\QueryStringBuilder.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\Util\Util.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\WorkspaceFolderResourcesImpl.cs" />
@@ -137,6 +138,7 @@
     <Compile Include="main\Smartsheet\Api\Models\Email.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Error.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Folder.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\FolderInclude.cs" />
     <Compile Include="main\Smartsheet\Api\Models\FormatDetails.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Home.cs" />
     <Compile Include="main\Smartsheet\Api\Models\IdentifiableModel.cs" />
