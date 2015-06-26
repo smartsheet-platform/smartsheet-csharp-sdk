@@ -55,8 +55,8 @@ namespace Smartsheet.Api.Internal
 			server.setResponseBody("../../../TestSDK/resources/updateFolder.json");
 
 			Folder newFolder = new Folder();
-			newFolder.Name = "New Name";
-			newFolder.ID = 1138268709382020L;
+			newFolder.Name = "New name for folder";
+			newFolder.ID = 1486948649985924;
 
 			Folder resultFolder = folderResource.UpdateFolder(newFolder);
 
