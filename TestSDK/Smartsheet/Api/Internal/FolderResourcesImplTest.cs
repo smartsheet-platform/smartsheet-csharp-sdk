@@ -49,7 +49,7 @@ namespace Smartsheet.Api.Internal
 			// Verify results
 			Assert.AreEqual("Projects", folder.Name);
 			Assert.AreEqual(1, folder.Sheets.Count);
-			Assert.AreEqual(0, folder.Folders.Count);
+			Assert.AreEqual(null, folder.Folders);
 		}
 
 		[Test]
@@ -81,8 +81,8 @@ namespace Smartsheet.Api.Internal
 
 			server.setResponseBody("../../../TestSDK/resources/listFolders.json");
 
-			IList<Folder> folders = folderResource.ListFolders(12345L, false, null, null);
-			Assert.AreEqual(2, folders.Count);
+			DataWrapper<Folder> result = folderResource.ListFolders(12345L, false, null, null);
+			Assert.AreEqual(2, result.Data.Count);
 		}
 
 		[Test]
