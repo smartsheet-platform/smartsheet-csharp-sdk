@@ -78,7 +78,7 @@ namespace Smartsheet.Api.Internal
 
 			server.setResponseBody("../../../TestSDK/resources/listFolders.json");
 
-			IList<Folder> folders = folderResource.ListFolders(12345L);
+			IList<Folder> folders = folderResource.ListFolders(12345L, false, null, null);
 			Assert.AreEqual(2, folders.Count);
 		}
 
