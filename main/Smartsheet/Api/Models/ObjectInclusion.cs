@@ -60,12 +60,12 @@ namespace Smartsheet.Api.Models
 		[EnumMember(Value = "reports")]
 		REPORTS,
 		/// <summary>
-		/// The reports
+		/// The source Sheets
 		/// </summary>
 		[EnumMember(Value = "sourceSheets")]
 		SOURCESHEETS,
 		/// <summary>
-		/// The reports
+		/// The format
 		/// </summary>
 		[EnumMember(Value = "format")]
 		FORMAT
