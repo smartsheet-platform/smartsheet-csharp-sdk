@@ -46,11 +46,11 @@ namespace Smartsheet.Api.Internal.Utility
 		/// <param name="includeAll"> whether to append includeAll=true to the query or not </param>
 		/// <param name="page"> appends the page number to the query </param>
 		/// <param name="pageSize"> appends the page size to the query </param>
-		public static string CreatePathAndQueryWithIncludeAndPaging<T>(string path, IEnumerable<T>? includes, bool? includeAll, long? page, long? pageSize)
+		public static string CreatePathAndQueryWithIncludeAndPaging<T>(string path, IEnumerable<T> includes, bool? includeAll, long? page, long? pageSize)
 		{
 			StringBuilder pathAndQuery = new StringBuilder(path);
 			QueryStringBuilder queryStringBuilder = new QueryStringBuilder();
-			if (includes.HasValue)
+			if (includes != null)
 			{
 				queryStringBuilder.AddParameter(IncludeParameterName, FormatIncludeValue(includes));
 			}
@@ -108,7 +108,7 @@ namespace Smartsheet.Api.Internal.Utility
 		/// </summary>
 		/// <param name="inclusions"> Elements to be stringed together by commas. </param>
 		/// <returns> Newly formated string to be appended in the query. </returns>
-		public static string FormatIncludeValue<T>(IEnumerable<T>? inclusions)
+		public static string FormatIncludeValue<T>(IEnumerable<T> inclusions)
 		{
 			var includesArray = new List<string>();
 			foreach (T element in inclusions)
