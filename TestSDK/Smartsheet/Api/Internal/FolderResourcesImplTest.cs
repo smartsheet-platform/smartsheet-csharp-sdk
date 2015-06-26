@@ -88,7 +88,7 @@ namespace Smartsheet.Api.Internal
 			server.setResponseBody("../../../TestSDK/resources/createFolder.json");
 
 			Folder newFolder = new Folder();
-			newFolder.Name = "new folder by brett";
+			newFolder.Name = "New folder";
 			Folder createdFolder = folderResource.CreateFolder(123L, newFolder);
 
 			Assert.AreEqual(createdFolder.Name, newFolder.Name);
