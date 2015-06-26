@@ -34,6 +34,11 @@ namespace Smartsheet.Api.Models
 		private bool? favorite;
 
 		/// <summary>
+		/// Direct URL to Folder
+		/// </summary>
+		private string permalink;
+
+		/// <summary>
 		/// Represents the Sheets contained in the folder.
 		/// </summary>
 		private IList<Sheet> sheets;
@@ -67,6 +72,16 @@ namespace Smartsheet.Api.Models
 		{
 			get { return favorite; }
 			set { favorite = value; }
+		}
+
+		/// <summary>
+		/// Gets and Sets the permalink of this folder.
+		/// </summary>
+		/// <returns> the Sheets </returns>
+		public string Permalink
+		{
+			get { return permalink; }
+			set { permalink = value; }
 		}
 
 		/// <summary>
