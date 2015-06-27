@@ -20,7 +20,13 @@ using System.Collections.Generic;
 
 namespace Smartsheet.Api.Internal
 {
+	using Smartsheet.Api.Internal.Utility;
 	using Folder = Api.Models.Folder;
+	using DataWrapper = Api.Models.DataWrapper<Api.Models.Folder>;
+	using FolderInclude = Api.Models.FolderInclude;
+	using PaginationParameters = Api.Models.PaginationParameters;
+	using Smartsheet.Api.Internal.Util;
+
 
 	/// <summary>
 	/// This is the implementation of the FolderResources.
@@ -43,118 +49,101 @@ namespace Smartsheet.Api.Internal
 		}
 
 		/// <summary>
-		/// Get a folder.
-		/// 
-		/// It mirrors To the following Smartsheet REST API method: GET /folder/{Id}
-		/// 
-		/// Exceptions:
-		///   InvalidRequestException : if there is any problem with the REST API request
-		///   AuthorizationException : if there is any problem with the REST API authorization(access token)
-		///   ResourceNotFoundException : if the resource can not be found
-		///   ServiceUnavailableException : if the REST API service is not available (possibly due To rate limiting)
-		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
-		///   SmartsheetException : if there is any other error occurred during the operation
+		/// <para>Gets the specified Folder (and lists its contents).</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: GET /folders/{folderId}</para>
 		/// </summary>
 		/// <param name="folderId"> the folder Id </param>
-		/// <returns> the folder (note that if there is no such resource, this method will throw ResourceNotFoundException
+		/// <param name="include"> (optional) – comma-separated list of elements to include in the respons</param>
+		/// <returns> the folder (note that if there is no such resource, this method will throw ResourceNotFoundException 
 		/// rather than returning null) </returns>
-		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
-		public virtual Folder GetFolder(long folderId)
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public virtual Folder GetFolder(long folderId, IEnumerable<FolderInclude> include)
 		{
-			return this.GetResource<Folder>("folder/" + folderId, typeof(Folder));
+			string pathAndQuery = "folders/" + folderId + "include=" + QueryUtil.GenerateCommaSeparatedList<FolderInclude>(include);
+			return this.GetResource<Folder>(pathAndQuery, typeof(Folder));
 		}
 
 		/// <summary>
-		/// Update a folder.
-		/// 
-		/// It mirrors To the following Smartsheet REST API method: PUT /folder/{Id}
-		/// 
-		/// Exceptions:
-		///   IllegalArgumentException : if folder is null
-		///   InvalidRequestException : if there is any problem with the REST API request
-		///   AuthorizationException : if there is any problem with the REST API authorization(access token)
-		///   ResourceNotFoundException : if the resource can not be found
-		///   ServiceUnavailableException : if the REST API service is not available (possibly due To rate limiting)
-		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
-		///   SmartsheetException : if there is any other error occurred during the operation
-		/// </summary>
-		/// <param name="folder"> the folder To update </param>
-		/// <returns> the updated folder (note that if there is no such folder, this method will throw
-		/// ResourceNotFoundException rather than returning null). </returns>
-		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
-		public virtual Folder UpdateFolder(Folder folder)
-		{
-
-			return this.UpdateResource<Folder>("folder/" + folder.ID, typeof(Folder), folder);
-		}
-
-		/// <summary>
-		/// Delete a folder.
-		/// 
-		/// It mirrors To the following Smartsheet REST API method: DELETE /folder{Id}
-		/// 
-		/// Exceptions:
-		///   InvalidRequestException : if there is any problem with the REST API request
-		///   AuthorizationException : if there is any problem with the REST API authorization(access token) 
-		///   ResourceNotFoundException : if the resource can not be found
-		///   ServiceUnavailableException : if the REST API service is not available (possibly due To rate limiting)
-		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
-		///   SmartsheetException : if there is any other error occurred during the operation
+		/// <para>Updates a folder.</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: PUT /folders/{folderId}</para>
 		/// </summary>
 		/// <param name="folderId"> the folder Id </param>
-		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
+		/// <param name="folder"> the folder To update </param>
+		/// <returns> the updated folder (note that if there is no such folder, this method will throw Resource Not Found 
+		/// Exception rather than returning null). </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public virtual Folder UpdateFolder(long folderId, Folder folder)
+		{
+
+			return this.UpdateResource<Folder>("folders/" + folderId, typeof(Folder), folder);
+		}
+
+		/// <summary>
+		/// <para>Deletes a folder.</para>
+		/// <para>It mirrors To the following Smartsheet REST API method:<br />
+		/// DELETE /folders/{folderId}</para>
+		/// </summary>
+		/// <param name="folderId"> the folder Id </param>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual void DeleteFolder(long folderId)
 		{
 
-			this.DeleteResource<Folder>("folder/" + folderId, typeof(Folder));
+			this.DeleteResource<Folder>("folders/" + folderId, typeof(Folder));
 		}
 
 		/// <summary>
-		/// List child Folders of a given folder.
-		/// 
-		/// It mirrors To the following Smartsheet REST API method: GET /folder/{Id}/Folders
-		/// 
-		/// Parameters: - parentFolderId : the parent folder ID
-		/// 
-		/// Exceptions:
-		///   InvalidRequestException : if there is any problem with the REST API request
-		///   AuthorizationException : if there is any problem with the REST API authorization(access token)
-		///   ResourceNotFoundException : if the resource can not be found
-		///   ServiceUnavailableException : if the REST API service is not available (possibly due To rate limiting)
-		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
-		///   SmartsheetException : if there is any other error occurred during the operation
+		/// <para>Gets a list of the top-level child Folders within the specified Folder.</para>
+		/// <remarks>This operation supports pagination of results. For more information, see Paging.</remarks>
+		/// <para>It mirrors To the following Smartsheet REST API method:<br /> GET /folders/{folderId}/folders</para>
 		/// </summary>
-		/// <param name="parentFolderId"> the parent folder Id </param>
-		/// <returns> the child Folders (note that empty list will be returned if no child folder found) </returns>
-		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
-		public virtual IList<Folder> ListFolders(long parentFolderId)
+		/// <param name="folderId"> the folderId </param>
+		/// <param name="includeAll"> If true, include all results (i.e. do not paginate). </param>
+		/// <param name="pageSize"> The maximum number of items to return per page. Defaults to 100 if null.</param>
+		/// <param name="page"> Which page to return. Defaults to 1 if null. </param>
+		/// <returns> the child Folders (note that an empty list will be returned if no child folder is found). </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public virtual DataWrapper ListFolders(long folderId, PaginationParameters paging)
 		{
-
-			return this.ListResources<Folder>("folder/" + parentFolderId + "/folders", typeof(Folder));
+			return this.ListResourcesWithWrapper<Folder>("folders/" + folderId + "/folders" + paging.ToQueryString());
 		}
 
 		/// <summary>
-		/// Create a folder.
-		/// 
-		/// It mirrors To the following Smartsheet REST API method: POST /folder/{Id}/Folders
-		/// 
-		/// Exceptions:
-		///   IllegalArgumentException : if folder is null
-		///   InvalidRequestException : if there is any problem with the REST API request
-		///   AuthorizationException : if there is any problem with the REST API authorization(access token)
-		///   ServiceUnavailableException : if the REST API service is not available (possibly due To rate limiting)
-		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
-		///   SmartsheetException : if there is any other error occurred during the operation
+		/// <para>Creates a Folder in the specified Folder.</para>
+		/// <para>It mirrors To the following Smartsheet REST API method:<br />
+		/// POST /folders/{folderId}/folders</para>
 		/// </summary>
-		/// <param name="parentFolderId"> the parent folder Id </param>
+		/// <param name="folderId"> the parent folder Id </param>
 		/// <param name="folder"> the folder To create </param>
-		/// <returns> the folder </returns>
-		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
-		public virtual Folder CreateFolder(long parentFolderId, Folder folder)
+		/// <returns> the created folder </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public virtual Folder CreateFolder(long folderId, Folder folder)
 		{
-
-			return this.CreateResource<Folder>("folder/" + parentFolderId + "/folders", typeof(Folder), folder);
+			return this.CreateResource<Folder>("folders/" + folderId + "/folders", typeof(Folder), folder);
 		}
 	}
-
 }

@@ -1,1 +1,18 @@
-[{"id":1138268709382020,"name":"Personal"},{"id":3213635561514884,"name":"Expenses"},{"id":2364623606310788,"name":"new folder by brett"},{"id":907281073235844,"name":"Test Sheets"},{"id":6821399500220292,"name":"hello world"}]
+{
+    "pageNumber": 1,
+    "pageSize": 100,
+    "totalPages": 1,
+    "totalCount": 2,
+    "data": [
+        {
+            "id": 7116448184199044,
+            "name": "Folder 1",
+            "permalink": "https://app.smartsheet.com/b/home?lx=9sljohj8jEXqvJIbTrK2Hb"
+        },
+        {
+            "id": 7116448184188022,
+            "name": "Folder 2",
+            "permalink": "https://app.smartsheet.com/b/home?lx=xgDVrNNbi-O9XwINEpT5Er"
+        }
+    ]
+}
