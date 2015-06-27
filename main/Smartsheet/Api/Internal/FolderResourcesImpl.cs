@@ -21,10 +21,11 @@ using System.Collections.Generic;
 namespace Smartsheet.Api.Internal
 {
 	using Smartsheet.Api.Internal.Utility;
-using Folder = Api.Models.Folder;
+	using Folder = Api.Models.Folder;
 	using DataWrapper = Api.Models.DataWrapper<Api.Models.Folder>;
-
-using FolderInclude = Api.Models.FolderInclude;
+	using FolderInclude = Api.Models.FolderInclude;
+	using PaginationParameters = Api.Models.PaginationParameters;
+	using Smartsheet.Api.Internal.Util;
 
 
 	/// <summary>
@@ -63,7 +64,7 @@ using FolderInclude = Api.Models.FolderInclude;
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual Folder GetFolder(long folderId, IEnumerable<FolderInclude> include)
 		{
-			string pathAndQuery = PathAndQueryWrapper.CreatePathAndQueryWithIncludeAndPaging<FolderInclude>("folders/" + folderId, include, null, null, null);
+			string pathAndQuery = "folders/" + folderId + "include=" + QueryUtil.GenerateCommaSeparatedList<FolderInclude>(include);
 			return this.GetResource<Folder>(pathAndQuery, typeof(Folder));
 		}
 
@@ -71,6 +72,7 @@ using FolderInclude = Api.Models.FolderInclude;
 		/// <para>Updates a folder.</para>
 		/// <para>It mirrors To the following Smartsheet REST API method: PUT /folders/{folderId}</para>
 		/// </summary>
+		/// <param name="folderId"> the folder Id </param>
 		/// <param name="folder"> the folder To update </param>
 		/// <returns> the updated folder (note that if there is no such folder, this method will throw Resource Not Found 
 		/// Exception rather than returning null). </returns>
@@ -80,10 +82,10 @@ using FolderInclude = Api.Models.FolderInclude;
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual Folder UpdateFolder(Folder folder)
+		public virtual Folder UpdateFolder(long folderId, Folder folder)
 		{
 
-			return this.UpdateResource<Folder>("folder/" + folder.ID, typeof(Folder), folder);
+			return this.UpdateResource<Folder>("folders/" + folderId, typeof(Folder), folder);
 		}
 
 		/// <summary>
@@ -120,12 +122,10 @@ using FolderInclude = Api.Models.FolderInclude;
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual DataWrapper ListFolders(long folderId, bool includeAll, long? pageSize, long? page)
+		public virtual DataWrapper ListFolders(long folderId, PaginationParameters paging)
 		{
-			string pathAndQuery = PathAndQueryWrapper.CreatePathAndQueryWithPaging("folders/" + folderId + "/folders", includeAll, pageSize, page);
-			return this.ListResourcesWithWrapper<Folder>(pathAndQuery);
+			return this.ListResourcesWithWrapper<Folder>("folders/" + folderId + "/folders" + paging.ToQueryString());
 		}
-
 
 		/// <summary>
 		/// <para>Creates a Folder in the specified Folder.</para>
