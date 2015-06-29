@@ -83,6 +83,7 @@
     <Compile Include="Smartsheet\Api\Internal\DiscussionAttachmentResourcesTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\DiscussionResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\FolderResourcesImplTest.cs" />
+    <Compile Include="Smartsheet\Api\Internal\GroupResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\HomeFolderResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\HomeResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\Http\DefaultHttpClientTest.cs" />
@@ -137,6 +138,9 @@
       <Project>{d697980c-2de8-4c5a-bd95-fc3ccddc7ecd}</Project>
       <Name>Smartsheet-csharp-sdk</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="resources\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

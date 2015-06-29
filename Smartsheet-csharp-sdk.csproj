@@ -73,6 +73,8 @@
     <Compile Include="main\Smartsheet\Api\CommentResources.cs" />
     <Compile Include="main\Smartsheet\Api\DiscussionResources.cs" />
     <Compile Include="main\Smartsheet\Api\FolderResources.cs" />
+    <Compile Include="main\Smartsheet\Api\GroupMemberResources.cs" />
+    <Compile Include="main\Smartsheet\Api\GroupResources.cs" />
     <Compile Include="main\Smartsheet\Api\HomeFolderResources.cs" />
     <Compile Include="main\Smartsheet\Api\HomeResources.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\AbstractAssociatedResources.cs" />
@@ -86,6 +88,8 @@
     <Compile Include="main\Smartsheet\Api\Internal\DiscussionAttachmentResources.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\DiscussionResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\FolderResourcesImpl.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\GroupMemberResourcesImpl.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\GroupResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\HomeFolderResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\HomeResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\Http\DefaultHttpClient.cs" />
@@ -113,8 +117,8 @@
     <Compile Include="main\Smartsheet\Api\Internal\SmartsheetImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\TemplateResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\UserResourcesImpl.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\Util\PathAndQueryWrapperBuilder.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\Util\QueryStringBuilder.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\Util\QueryUtil.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\Util\Util.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\WorkspaceFolderResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\WorkspaceResourcesImpl.cs" />
@@ -141,6 +145,8 @@
     <Compile Include="main\Smartsheet\Api\Models\Folder.cs" />
     <Compile Include="main\Smartsheet\Api\Models\FolderInclude.cs" />
     <Compile Include="main\Smartsheet\Api\Models\FormatDetails.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Group.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\GroupMember.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Home.cs" />
     <Compile Include="main\Smartsheet\Api\Models\IdentifiableModel.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Link.cs" />
@@ -148,6 +154,7 @@
     <Compile Include="main\Smartsheet\Api\Models\MultiShare.cs" />
     <Compile Include="main\Smartsheet\Api\Models\NamedModel.cs" />
     <Compile Include="main\Smartsheet\Api\Models\ObjectInclusion.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\PaginationParameters.cs" />
     <Compile Include="main\Smartsheet\Api\Models\PaperSize.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Report.cs" />
     <Compile Include="main\Smartsheet\Api\Models\ReportCell.cs" />
