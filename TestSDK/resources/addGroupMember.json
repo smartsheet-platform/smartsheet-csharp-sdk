@@ -1,0 +1,13 @@
+{
+    "resultCode": 0,
+    "result": [
+        {
+            "id": 1539725208119172,
+            "email": "jane.doe@smartsheet.com",
+            "firstName": "Jane",
+            "lastName": "Doe",
+            "name": "Jane Doe"
+        }
+    ],
+    "message": "SUCCESS"
+}
