@@ -3,9 +3,7 @@
 namespace Smartsheet.Api.Internal
 {
 	using NUnit.Framework;
-
-
-
+	using Smartsheet.Api.Models;
 	using DefaultHttpClient = Smartsheet.Api.Internal.Http.DefaultHttpClient;
 	using Folder = Smartsheet.Api.Models.Folder;
 
@@ -29,10 +27,10 @@ namespace Smartsheet.Api.Internal
 		{
 			server.setResponseBody("../../../TestSDK/resources/listWorkspaceFolders.json");
 
-			IList<Folder> folders = workspaceFolderResources.ListFolders(1234L);
-			Assert.AreEqual(1,folders.Count);
-			Assert.AreEqual(4298196408133508L, (long)folders[0].ID);
-			Assert.AreEqual("Human Resources", folders[0].Name);
+			DataWrapper<Folder> result = workspaceFolderResources.ListFolders(1234L, new PaginationParameters(false, 123, 117));
+			Assert.AreEqual(2,result.Data.Count);
+			Assert.AreEqual(7116448184188022L, (long)result.Data[1].ID);
+			Assert.AreEqual("https://app.smartsheet.com/b/home?lx=9sljohj8jEXqvJIbTrK2Hb", result.Data[0].Permalink);
 
 		}
 
@@ -42,10 +40,10 @@ namespace Smartsheet.Api.Internal
 			server.setResponseBody("../../../TestSDK/resources/newWorkspaceFolder.json");
 
 			Folder folder = new Folder();
-			folder.Name = "New Folder";
+			folder.Name = "New folder";
 			Folder newFolder = workspaceFolderResources.CreateFolder(1234L, folder);
-			Assert.AreEqual(8121709439018884L, (long)newFolder.ID);
-			Assert.AreEqual("New Folder", newFolder.Name);
+			Assert.AreEqual(1486948649985924L, (long)newFolder.ID);
+			Assert.AreEqual("New folder", newFolder.Name);
 		}
 
 	}

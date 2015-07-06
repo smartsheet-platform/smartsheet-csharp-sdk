@@ -25,49 +25,14 @@ namespace Smartsheet.Api.Models
 
 
 	/// <summary>
-	/// Represents specific objects that can be included in some responses.
+	/// Represents specific elements to include in a Folder response
 	/// </summary>
-	public enum ObjectInclusion
+	public enum FolderInclude
 	{
 		/// <summary>
-		/// The discussions
+		/// The source for each sheet
 		/// </summary>
-		[EnumMember(Value = "discussions")]
-		DISCUSSIONS,
-		/// <summary>
-		/// The attachments
-		/// </summary>
-		[EnumMember(Value = "attachments")]
-		ATTACHMENTS,
-		/// <summary>
-		/// The data
-		/// </summary>
-		[EnumMember(Value = "data")]
-		DATA,
-		/// <summary>
-		/// The columns
-		/// </summary>
-		[EnumMember(Value = "columns")]
-		COLUMNS,
-		/// <summary>
-		/// The templates
-		/// </summary>
-		[EnumMember(Value = "templates")]
-		TEMPLATES,
-		/// <summary>
-		/// The reports
-		/// </summary>
-		[EnumMember(Value = "reports")]
-		REPORTS,
-		/// <summary>
-		/// The source Sheets
-		/// </summary>
-		[EnumMember(Value = "sourceSheets")]
-		SOURCESHEETS,
-		/// <summary>
-		/// The format
-		/// </summary>
-		[EnumMember(Value = "format")]
-		FORMAT
+		[EnumMember(Value = "source")]
+		SOURCE
 	}
 }

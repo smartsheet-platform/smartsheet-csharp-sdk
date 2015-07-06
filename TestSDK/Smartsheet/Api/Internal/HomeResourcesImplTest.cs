@@ -55,8 +55,8 @@ namespace Smartsheet.Api.Internal
 			server.setResponseBody("../../../TestSDK/resources/getHomeFolders.json");
 
 			HomeFolderResources folders = homeResources.Folders();
-			Assert.NotNull(folders.ListFolders());
-			Assert.True(folders.ListFolders().Count == 5);
+			Assert.NotNull(folders.ListFolders(new Models.PaginationParameters(false, null, null)));
+			Assert.True(folders.ListFolders(new Models.PaginationParameters(false, null, null)).Data.Count == 2);
 		}
 
 	}

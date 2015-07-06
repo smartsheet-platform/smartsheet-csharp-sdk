@@ -3,10 +3,7 @@ using System.Collections.Generic;
 namespace Smartsheet.Api.Internal
 {
 	using NUnit.Framework;
-
-
-
-
+	using Smartsheet.Api.Models;
 	using DefaultHttpClient = Smartsheet.Api.Internal.Http.DefaultHttpClient;
 	using Folder = Smartsheet.Api.Models.Folder;
 
@@ -32,12 +29,12 @@ namespace Smartsheet.Api.Internal
 		{
 			server.setResponseBody("../../../TestSDK/resources/listFolders.json");
 
-			IList<Folder> folders = homeFolderResources.ListFolders();
+			DataWrapper<Folder> result = homeFolderResources.ListFolders(new PaginationParameters(false, null, null));
 
-			Assert.True(folders.Count == 2);
-			Assert.AreEqual("Personal", folders[0].Name);
-			Assert.AreEqual("Expenses", folders[1].Name);
-			Assert.True(1138268709382020L == folders[0].ID);
+			Assert.True(result.Data.Count == 2);
+			Assert.AreEqual("Folder 1", result.Data[0].Name);
+			Assert.AreEqual("Folder 2", result.Data[1].Name);
+			Assert.True(7116448184199044L == result.Data[0].ID);
 		}
 
 		[Test]
@@ -46,11 +43,11 @@ namespace Smartsheet.Api.Internal
 			server.setResponseBody("../../../TestSDK/resources/createFolders.json");
 
 			Folder folder = new Folder();
-			folder.Name = "Hello World";
+			folder.Name = "New folder";
 
 			Folder newFolder = homeFolderResources.CreateFolder(folder);
-			Assert.True(6821399500220292L == newFolder.ID);
-			Assert.AreEqual("hello world", newFolder.Name);
+			Assert.True(1486948649985924L == newFolder.ID);
+			Assert.AreEqual(folder.Name, newFolder.Name);
 		}
 	}
 
