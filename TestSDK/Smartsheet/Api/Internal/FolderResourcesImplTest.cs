@@ -35,7 +35,7 @@ namespace Smartsheet.Api.Internal
 			Folder folder = folderResource.GetFolder(123L, new List<FolderInclude>{FolderInclude.SOURCE});
 
 			// Verify results
-			Assert.AreEqual("Projects", folder.Name);
+			Assert.AreEqual("Human Resources", folder.Name);
 			Assert.AreEqual(9, folder.Sheets.Count);
 			Assert.AreEqual(1, folder.Folders.Count);
 			//Uncomment below once Sheet is implemented with Source object to test whether Source test validates.
