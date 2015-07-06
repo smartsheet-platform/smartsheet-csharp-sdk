@@ -1,99 +1,29 @@
 {
-   "id":295123319904012164,
-   "name":"test project sheet",
-   "version":0,
-   "columns":[
-      {
-         "id":1233880841485380,
-         "index":0,
-         "title":"Task Name",
-         "type":"TEXT_NUMBER",
-         "primary":true
-      },
-      {
-         "id":1122824277380,
-         "index":1,
-         "title":"Duration",
-         "type":"TEXT_NUMBER",
-         "tags":[
-            "GANTT_DURATION"
-         ]
-      },
-      {
-         "id":4521387451647876,
-         "index":2,
-         "title":"Start",
-         "type":"DATE",
-         "tags":[
-            "CALENDAR_START_DATE",
-            "GANTT_START_DATE"
-         ]
-      },
-      {
-         "id":2339587337962628,
-         "index":3,
-         "title":"Finish",
-         "type":"DATE",
-         "tags":[
-            "CALENDAR_END_DATE",
-            "GANTT_END_DATE"
-         ]
-      },
-      {
-         "id":6843187265553124,
-         "index":4,
-         "title":"Predecessors",
-         "type":"TEXT_NUMBER",
-         "tags":[
-            "GANTT_PREDECESSOR"
-         ]
-      },
-      {
-         "id":121368712314520004,
-         "index":5,
-         "title":"Assigned To",
-         "type":"CONTACT_LIST",
-         "tags":[
-            "GANTT_ASSIGNED_RESOURCE",
-            "GANTT_DISPLAY_LABEL"
-         ]
-      },
-      {
-         "id":5717887358490500,
-         "index":6,
-         "title":"% Complete",
-         "type":"TEXT_NUMBER",
-         "tags":[
-            "GANTT_PERCENT_COMPLETE"
-         ]
-      },
-      {
-         "id":34654123544805252,
-         "index":7,
-         "title":"Status",
-         "type":"PICKLIST",
-         "options":[
-            "Not Started",
-            "In Progress",
-            "On Track",
-            "At Risk",
-            "Complete"
-         ]
-      },
-      {
-         "id":79123087551732748,
-         "index":8,
-         "title":"Comments",
-         "type":"TEXT_NUMBER"
-      }
-   ],
-   "rows":[
-
-   ],
-   "accessLevel":"OWNER",
-   "ganttEnabled":true,
-   "dependenciesEnabled":true,
-   "permalink":"https://app.smartsheet.com/b/home?lx=eadf",
-   "createdAt":"2014-01-06T16:25:57-08:00",
-   "modifiedAt":"2014-01-06T16:25:57-08:00"
+    "accessLevel": "OWNER",
+    "columns": [
+        {
+            "id": 4583173393803140,
+            "index": 0,
+            "primary": true,
+            "title": "Primary Column",
+            "type": "TEXT_NUMBER"
+        },
+        {
+            "id": 2331373580117892,
+            "index": 1,
+            "options": [
+                "new",
+                "in progress",
+                "completed"
+            ],
+            "title": "status",
+            "type": "PICKLIST"
+        }
+    ],
+    "createdAt": "2012-07-24T18:22:29-07:00",
+    "id": 4583173393803140,
+    "modifiedAt": "2012-07-24T18:30:52-07:00",
+    "name": "sheet 1",
+    "permalink": "https://app.smartsheet.com/b/home?lx=pWNSDH9itjBXxBzFmyf-5w",
+    "rows": []
 }
