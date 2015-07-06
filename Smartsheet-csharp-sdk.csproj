@@ -1,219 +1,220 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D697980C-2DE8-4C5A-BD95-FC3CCDDC7ECD}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <NoStandardLibraries>false</NoStandardLibraries>
-    <AssemblyName>smartsheet-csharp-sdk</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\SmartSheet\</SolutionDir>
-    <RestorePackages>true</RestorePackages>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\smartsheet-csharp-sdk.XML</DocumentationFile>
-    <LangVersion>4</LangVersion>
-  </PropertyGroup>
-  <PropertyGroup>
-    <RootNamespace>Smartsheet_csharp_sdk</RootNamespace>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>packages\Newtonsoft.Json.6.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="nunit.core">
-      <HintPath>packages\NUnitTestAdapter.1.2\lib\nunit.core.dll</HintPath>
-    </Reference>
-    <Reference Include="nunit.core.interfaces">
-      <HintPath>packages\NUnitTestAdapter.1.2\lib\nunit.core.interfaces.dll</HintPath>
-    </Reference>
-    <Reference Include="nunit.util">
-      <HintPath>packages\NUnitTestAdapter.1.2\lib\nunit.util.dll</HintPath>
-    </Reference>
-    <Reference Include="NUnit.VisualStudio.TestAdapter">
-      <HintPath>packages\NUnitTestAdapter.1.2\lib\NUnit.VisualStudio.TestAdapter.dll</HintPath>
-    </Reference>
-    <Reference Include="RestSharp">
-      <HintPath>packages\RestSharp.104.4.0\lib\net4\RestSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Management" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Xml.Linq" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="main\Smartsheet\Api\AccessTokenExpiredException.cs" />
-    <Compile Include="main\Smartsheet\Api\AssociatedAttachmentResources.cs" />
-    <Compile Include="main\Smartsheet\Api\AssociatedDiscussionResources.cs" />
-    <Compile Include="main\Smartsheet\Api\AttachmentResources.cs" />
-    <Compile Include="main\Smartsheet\Api\AuthorizationException.cs" />
-    <Compile Include="main\Smartsheet\Api\ColumnResources.cs" />
-    <Compile Include="main\Smartsheet\Api\CommentResources.cs" />
-    <Compile Include="main\Smartsheet\Api\DiscussionResources.cs" />
-    <Compile Include="main\Smartsheet\Api\FolderResources.cs" />
-    <Compile Include="main\Smartsheet\Api\HomeFolderResources.cs" />
-    <Compile Include="main\Smartsheet\Api\HomeResources.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\AbstractAssociatedResources.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\AbstractResources.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\AssociatedAttachmentResourcesImpl.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\AssociatedDiscussionResourcesImpl.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\AttachmentResourcesImpl.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\ColumnResourcesImpl.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\CommentAttachmentResources.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\CommentResourcesImpl.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\DiscussionAttachmentResources.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\DiscussionResourcesImpl.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\FolderResourcesImpl.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\HomeFolderResourcesImpl.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\HomeResourcesImpl.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\Http\DefaultHttpClient.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\Http\HttpClient.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\Http\HttpClientException.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\Http\HttpEntity.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\Http\HttpMessage.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\Http\HttpMethod.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\Http\HttpRequest.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\Http\HttpResponse.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\Json\ContractResolver.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\Json\JsonEnumTypeConverter.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\Json\JsonNetSerializer.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\Json\JsonSerializer.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\Json\JsonSerializationException.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\Json\LowerCaseContractResolver.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\OAuth\OAuthFlowImpl.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\ReportResourcesImpl.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\RowResourcesImpl.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\SearchResourcesImpl.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\ShareResourcesImpl.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\SheetColumnResourcesImpl.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\SheetResourcesImpl.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\SheetRowResourcesImpl.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\SmartsheetImpl.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\TemplateResourcesImpl.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\UserResourcesImpl.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\Util\PathAndQueryWrapperBuilder.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\Util\QueryStringBuilder.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\Util\Util.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\WorkspaceFolderResourcesImpl.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\WorkspaceResourcesImpl.cs" />
-    <Compile Include="main\Smartsheet\Api\InvalidRequestException.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\AbstractRow.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\AbstractSheet.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\AccessLevel.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\AccessScope.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\Attachment.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\AttachmentParentType.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\AttachmentSubType.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\AttachmentType.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\AutoNumberFormat.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\Cell.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\CellHistory.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\Column.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\ColumnTag.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\ColumnType.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\Comment.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\DataWrapper.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\Discussion.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\Email.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\Error.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\Folder.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\FolderInclude.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\FormatDetails.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\Home.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\IdentifiableModel.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\Link.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\LinkType.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\MultiShare.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\NamedModel.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\ObjectInclusion.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\PaperSize.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\Report.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\ReportCell.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\ReportColumn.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\ReportRow.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\RequestResult.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\Row.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\RowEmail.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\RowWrapper.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\SearchResult.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\SearchResultItem.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\Share.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\Sheet.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\SheetEmail.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\SheetEmailFormat.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\SheetPublish.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\Symbol.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\SystemColumnType.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\Template.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\User.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\UserProfile.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\UserStatus.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\Workspace.cs" />
-    <Compile Include="main\Smartsheet\Api\OAuth\AccessDeniedException.cs" />
-    <Compile Include="main\Smartsheet\Api\OAuth\AccessScope.cs" />
-    <Compile Include="main\Smartsheet\Api\OAuth\AuthorizationResult.cs" />
-    <Compile Include="main\Smartsheet\Api\OAuth\InvalidOAuthClientException.cs" />
-    <Compile Include="main\Smartsheet\Api\OAuth\InvalidOAuthGrantException.cs" />
-    <Compile Include="main\Smartsheet\Api\OAuth\InvalidScopeException.cs" />
-    <Compile Include="main\Smartsheet\Api\OAuth\InvalidTokenRequestException.cs" />
-    <Compile Include="main\Smartsheet\Api\OAuth\OAuthAuthorizationCodeException.cs" />
-    <Compile Include="main\Smartsheet\Api\OAuth\OAuthFlow.cs" />
-    <Compile Include="main\Smartsheet\Api\OAuth\OAuthFlowBuilder.cs" />
-    <Compile Include="main\Smartsheet\Api\OAuth\OAuthTokenException.cs" />
-    <Compile Include="main\Smartsheet\Api\OAuth\Token.cs" />
-    <Compile Include="main\Smartsheet\Api\OAuth\UnsupportedOAuthGrantTypeException.cs" />
-    <Compile Include="main\Smartsheet\Api\OAuth\UnsupportedResponseTypeException.cs" />
-    <Compile Include="main\Smartsheet\Api\ReportResources.cs" />
-    <Compile Include="main\Smartsheet\Api\ResourceNotFoundException.cs" />
-    <Compile Include="main\Smartsheet\Api\RowResources.cs" />
-    <Compile Include="main\Smartsheet\Api\SearchResources.cs" />
-    <Compile Include="main\Smartsheet\Api\ServiceUnavailableException.cs" />
-    <Compile Include="main\Smartsheet\Api\ShareResources.cs" />
-    <Compile Include="main\Smartsheet\Api\SheetColumnResources.cs" />
-    <Compile Include="main\Smartsheet\Api\SheetResources.cs" />
-    <Compile Include="main\Smartsheet\Api\SheetRowResources.cs" />
-    <Compile Include="main\Smartsheet\Api\SmartsheetClient.cs" />
-    <Compile Include="main\Smartsheet\Api\SmartsheetBuilder.cs" />
-    <Compile Include="main\Smartsheet\Api\SmartsheetException.cs" />
-    <Compile Include="main\Smartsheet\Api\SmartsheetRestException.cs" />
-    <Compile Include="main\Smartsheet\Api\TemplateResources.cs" />
-    <Compile Include="main\Smartsheet\Api\UserResources.cs" />
-    <Compile Include="main\Smartsheet\Api\WorkspaceFolderResources.cs" />
-    <Compile Include="main\Smartsheet\Api\WorkspaceResources.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-    <None Include="smartsheet-csharp-sdk.licenseheader" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="icons\logo.png" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
-  <ProjectExtensions>
-    <VisualStudio AllowExistingFolder="true" />
-  </ProjectExtensions>
-  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+	<PropertyGroup>
+		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+		<ProjectGuid>{D697980C-2DE8-4C5A-BD95-FC3CCDDC7ECD}</ProjectGuid>
+		<OutputType>Library</OutputType>
+		<NoStandardLibraries>false</NoStandardLibraries>
+		<AssemblyName>smartsheet-csharp-sdk</AssemblyName>
+		<TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+		<FileAlignment>512</FileAlignment>
+		<SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\SmartSheet\</SolutionDir>
+		<RestorePackages>true</RestorePackages>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>full</DebugType>
+		<Optimize>false</Optimize>
+		<OutputPath>bin\Debug\</OutputPath>
+		<DefineConstants>DEBUG;TRACE</DefineConstants>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+		<DebugType>pdbonly</DebugType>
+		<Optimize>true</Optimize>
+		<OutputPath>bin\Release\</OutputPath>
+		<DefineConstants>TRACE</DefineConstants>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+		<DocumentationFile>bin\Release\smartsheet-csharp-sdk.XML</DocumentationFile>
+		<LangVersion>4</LangVersion>
+	</PropertyGroup>
+	<PropertyGroup>
+		<RootNamespace>Smartsheet_csharp_sdk</RootNamespace>
+	</PropertyGroup>
+	<ItemGroup>
+		<Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>packages\Newtonsoft.Json.6.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+		</Reference>
+		<Reference Include="nunit.core">
+			<HintPath>packages\NUnitTestAdapter.1.2\lib\nunit.core.dll</HintPath>
+		</Reference>
+		<Reference Include="nunit.core.interfaces">
+			<HintPath>packages\NUnitTestAdapter.1.2\lib\nunit.core.interfaces.dll</HintPath>
+		</Reference>
+		<Reference Include="nunit.util">
+			<HintPath>packages\NUnitTestAdapter.1.2\lib\nunit.util.dll</HintPath>
+		</Reference>
+		<Reference Include="NUnit.VisualStudio.TestAdapter">
+			<HintPath>packages\NUnitTestAdapter.1.2\lib\NUnit.VisualStudio.TestAdapter.dll</HintPath>
+		</Reference>
+		<Reference Include="RestSharp">
+			<HintPath>packages\RestSharp.104.4.0\lib\net4\RestSharp.dll</HintPath>
+		</Reference>
+		<Reference Include="System" />
+		<Reference Include="System.Core" />
+		<Reference Include="System.Data" />
+		<Reference Include="System.Data.DataSetExtensions" />
+		<Reference Include="System.Management" />
+		<Reference Include="System.Runtime.Serialization" />
+		<Reference Include="System.Xml" />
+		<Reference Include="System.Xml.Linq" />
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Include="main\Smartsheet\Api\AccessTokenExpiredException.cs" />
+		<Compile Include="main\Smartsheet\Api\AssociatedAttachmentResources.cs" />
+		<Compile Include="main\Smartsheet\Api\AssociatedDiscussionResources.cs" />
+		<Compile Include="main\Smartsheet\Api\AttachmentResources.cs" />
+		<Compile Include="main\Smartsheet\Api\AuthorizationException.cs" />
+		<Compile Include="main\Smartsheet\Api\ColumnResources.cs" />
+		<Compile Include="main\Smartsheet\Api\CommentResources.cs" />
+		<Compile Include="main\Smartsheet\Api\DiscussionResources.cs" />
+		<Compile Include="main\Smartsheet\Api\FolderResources.cs" />
+		<Compile Include="main\Smartsheet\Api\HomeFolderResources.cs" />
+		<Compile Include="main\Smartsheet\Api\HomeResources.cs" />
+		<Compile Include="main\Smartsheet\Api\Internal\AbstractAssociatedResources.cs" />
+		<Compile Include="main\Smartsheet\Api\Internal\AbstractResources.cs" />
+		<Compile Include="main\Smartsheet\Api\Internal\AssociatedAttachmentResourcesImpl.cs" />
+		<Compile Include="main\Smartsheet\Api\Internal\AssociatedDiscussionResourcesImpl.cs" />
+		<Compile Include="main\Smartsheet\Api\Internal\AttachmentResourcesImpl.cs" />
+		<Compile Include="main\Smartsheet\Api\Internal\ColumnResourcesImpl.cs" />
+		<Compile Include="main\Smartsheet\Api\Internal\CommentAttachmentResources.cs" />
+		<Compile Include="main\Smartsheet\Api\Internal\CommentResourcesImpl.cs" />
+		<Compile Include="main\Smartsheet\Api\Internal\DiscussionAttachmentResources.cs" />
+		<Compile Include="main\Smartsheet\Api\Internal\DiscussionResourcesImpl.cs" />
+		<Compile Include="main\Smartsheet\Api\Internal\FolderResourcesImpl.cs" />
+		<Compile Include="main\Smartsheet\Api\Internal\HomeFolderResourcesImpl.cs" />
+		<Compile Include="main\Smartsheet\Api\Internal\HomeResourcesImpl.cs" />
+		<Compile Include="main\Smartsheet\Api\Internal\Http\DefaultHttpClient.cs" />
+		<Compile Include="main\Smartsheet\Api\Internal\Http\HttpClient.cs" />
+		<Compile Include="main\Smartsheet\Api\Internal\Http\HttpClientException.cs" />
+		<Compile Include="main\Smartsheet\Api\Internal\Http\HttpEntity.cs" />
+		<Compile Include="main\Smartsheet\Api\Internal\Http\HttpMessage.cs" />
+		<Compile Include="main\Smartsheet\Api\Internal\Http\HttpMethod.cs" />
+		<Compile Include="main\Smartsheet\Api\Internal\Http\HttpRequest.cs" />
+		<Compile Include="main\Smartsheet\Api\Internal\Http\HttpResponse.cs" />
+		<Compile Include="main\Smartsheet\Api\Internal\Json\ContractResolver.cs" />
+		<Compile Include="main\Smartsheet\Api\Internal\Json\JsonEnumTypeConverter.cs" />
+		<Compile Include="main\Smartsheet\Api\Internal\Json\JsonNetSerializer.cs" />
+		<Compile Include="main\Smartsheet\Api\Internal\Json\JsonSerializer.cs" />
+		<Compile Include="main\Smartsheet\Api\Internal\Json\JsonSerializationException.cs" />
+		<Compile Include="main\Smartsheet\Api\Internal\Json\LowerCaseContractResolver.cs" />
+		<Compile Include="main\Smartsheet\Api\Internal\OAuth\OAuthFlowImpl.cs" />
+		<Compile Include="main\Smartsheet\Api\Internal\ReportResourcesImpl.cs" />
+		<Compile Include="main\Smartsheet\Api\Internal\RowResourcesImpl.cs" />
+		<Compile Include="main\Smartsheet\Api\Internal\SearchResourcesImpl.cs" />
+		<Compile Include="main\Smartsheet\Api\Internal\ShareResourcesImpl.cs" />
+		<Compile Include="main\Smartsheet\Api\Internal\SheetColumnResourcesImpl.cs" />
+		<Compile Include="main\Smartsheet\Api\Internal\SheetResourcesImpl.cs" />
+		<Compile Include="main\Smartsheet\Api\Internal\SheetRowResourcesImpl.cs" />
+		<Compile Include="main\Smartsheet\Api\Internal\SmartsheetImpl.cs" />
+		<Compile Include="main\Smartsheet\Api\Internal\TemplateResourcesImpl.cs" />
+		<Compile Include="main\Smartsheet\Api\Internal\UserResourcesImpl.cs" />
+		<Compile Include="main\Smartsheet\Api\Internal\Util\QueryStringBuilder.cs" />
+		<Compile Include="main\Smartsheet\Api\Internal\Util\Util.cs" />
+		<Compile Include="main\Smartsheet\Api\Internal\Util\QueryUtil.cs" />
+		<Compile Include="main\Smartsheet\Api\Internal\WorkspaceFolderResourcesImpl.cs" />
+		<Compile Include="main\Smartsheet\Api\Internal\WorkspaceResourcesImpl.cs" />
+		<Compile Include="main\Smartsheet\Api\InvalidRequestException.cs" />
+		<Compile Include="main\Smartsheet\Api\Models\AbstractRow.cs" />
+		<Compile Include="main\Smartsheet\Api\Models\AbstractSheet.cs" />
+		<Compile Include="main\Smartsheet\Api\Models\AccessLevel.cs" />
+		<Compile Include="main\Smartsheet\Api\Models\AccessScope.cs" />
+		<Compile Include="main\Smartsheet\Api\Models\Attachment.cs" />
+		<Compile Include="main\Smartsheet\Api\Models\AttachmentParentType.cs" />
+		<Compile Include="main\Smartsheet\Api\Models\AttachmentSubType.cs" />
+		<Compile Include="main\Smartsheet\Api\Models\AttachmentType.cs" />
+		<Compile Include="main\Smartsheet\Api\Models\AutoNumberFormat.cs" />
+		<Compile Include="main\Smartsheet\Api\Models\Cell.cs" />
+		<Compile Include="main\Smartsheet\Api\Models\CellHistory.cs" />
+		<Compile Include="main\Smartsheet\Api\Models\Column.cs" />
+		<Compile Include="main\Smartsheet\Api\Models\ColumnTag.cs" />
+		<Compile Include="main\Smartsheet\Api\Models\ColumnType.cs" />
+		<Compile Include="main\Smartsheet\Api\Models\Comment.cs" />
+		<Compile Include="main\Smartsheet\Api\Models\DataWrapper.cs" />
+		<Compile Include="main\Smartsheet\Api\Models\Discussion.cs" />
+		<Compile Include="main\Smartsheet\Api\Models\Email.cs" />
+		<Compile Include="main\Smartsheet\Api\Models\Error.cs" />
+		<Compile Include="main\Smartsheet\Api\Models\Folder.cs" />
+		<Compile Include="main\Smartsheet\Api\Models\FolderInclude.cs" />
+		<Compile Include="main\Smartsheet\Api\Models\FormatDetails.cs" />
+		<Compile Include="main\Smartsheet\Api\Models\Home.cs" />
+		<Compile Include="main\Smartsheet\Api\Models\IdentifiableModel.cs" />
+		<Compile Include="main\Smartsheet\Api\Models\Link.cs" />
+		<Compile Include="main\Smartsheet\Api\Models\LinkType.cs" />
+		<Compile Include="main\Smartsheet\Api\Models\MultiShare.cs" />
+		<Compile Include="main\Smartsheet\Api\Models\NamedModel.cs" />
+		<Compile Include="main\Smartsheet\Api\Models\ObjectInclusion.cs" />
+		<Compile Include="main\Smartsheet\Api\Models\PaginationParameters.cs" />
+		<Compile Include="main\Smartsheet\Api\Models\PaperSize.cs" />
+		<Compile Include="main\Smartsheet\Api\Models\Report.cs" />
+		<Compile Include="main\Smartsheet\Api\Models\ReportCell.cs" />
+		<Compile Include="main\Smartsheet\Api\Models\ReportColumn.cs" />
+		<Compile Include="main\Smartsheet\Api\Models\ReportRow.cs" />
+		<Compile Include="main\Smartsheet\Api\Models\RequestResult.cs" />
+		<Compile Include="main\Smartsheet\Api\Models\Row.cs" />
+		<Compile Include="main\Smartsheet\Api\Models\RowEmail.cs" />
+		<Compile Include="main\Smartsheet\Api\Models\RowWrapper.cs" />
+		<Compile Include="main\Smartsheet\Api\Models\SearchResult.cs" />
+		<Compile Include="main\Smartsheet\Api\Models\SearchResultItem.cs" />
+		<Compile Include="main\Smartsheet\Api\Models\Share.cs" />
+		<Compile Include="main\Smartsheet\Api\Models\Sheet.cs" />
+		<Compile Include="main\Smartsheet\Api\Models\SheetEmail.cs" />
+		<Compile Include="main\Smartsheet\Api\Models\SheetEmailFormat.cs" />
+		<Compile Include="main\Smartsheet\Api\Models\SheetPublish.cs" />
+		<Compile Include="main\Smartsheet\Api\Models\Symbol.cs" />
+		<Compile Include="main\Smartsheet\Api\Models\SystemColumnType.cs" />
+		<Compile Include="main\Smartsheet\Api\Models\Template.cs" />
+		<Compile Include="main\Smartsheet\Api\Models\User.cs" />
+		<Compile Include="main\Smartsheet\Api\Models\UserProfile.cs" />
+		<Compile Include="main\Smartsheet\Api\Models\UserStatus.cs" />
+		<Compile Include="main\Smartsheet\Api\Models\Workspace.cs" />
+		<Compile Include="main\Smartsheet\Api\OAuth\AccessDeniedException.cs" />
+		<Compile Include="main\Smartsheet\Api\OAuth\AccessScope.cs" />
+		<Compile Include="main\Smartsheet\Api\OAuth\AuthorizationResult.cs" />
+		<Compile Include="main\Smartsheet\Api\OAuth\InvalidOAuthClientException.cs" />
+		<Compile Include="main\Smartsheet\Api\OAuth\InvalidOAuthGrantException.cs" />
+		<Compile Include="main\Smartsheet\Api\OAuth\InvalidScopeException.cs" />
+		<Compile Include="main\Smartsheet\Api\OAuth\InvalidTokenRequestException.cs" />
+		<Compile Include="main\Smartsheet\Api\OAuth\OAuthAuthorizationCodeException.cs" />
+		<Compile Include="main\Smartsheet\Api\OAuth\OAuthFlow.cs" />
+		<Compile Include="main\Smartsheet\Api\OAuth\OAuthFlowBuilder.cs" />
+		<Compile Include="main\Smartsheet\Api\OAuth\OAuthTokenException.cs" />
+		<Compile Include="main\Smartsheet\Api\OAuth\Token.cs" />
+		<Compile Include="main\Smartsheet\Api\OAuth\UnsupportedOAuthGrantTypeException.cs" />
+		<Compile Include="main\Smartsheet\Api\OAuth\UnsupportedResponseTypeException.cs" />
+		<Compile Include="main\Smartsheet\Api\ReportResources.cs" />
+		<Compile Include="main\Smartsheet\Api\ResourceNotFoundException.cs" />
+		<Compile Include="main\Smartsheet\Api\RowResources.cs" />
+		<Compile Include="main\Smartsheet\Api\SearchResources.cs" />
+		<Compile Include="main\Smartsheet\Api\ServiceUnavailableException.cs" />
+		<Compile Include="main\Smartsheet\Api\ShareResources.cs" />
+		<Compile Include="main\Smartsheet\Api\SheetColumnResources.cs" />
+		<Compile Include="main\Smartsheet\Api\SheetResources.cs" />
+		<Compile Include="main\Smartsheet\Api\SheetRowResources.cs" />
+		<Compile Include="main\Smartsheet\Api\SmartsheetClient.cs" />
+		<Compile Include="main\Smartsheet\Api\SmartsheetBuilder.cs" />
+		<Compile Include="main\Smartsheet\Api\SmartsheetException.cs" />
+		<Compile Include="main\Smartsheet\Api\SmartsheetRestException.cs" />
+		<Compile Include="main\Smartsheet\Api\TemplateResources.cs" />
+		<Compile Include="main\Smartsheet\Api\UserResources.cs" />
+		<Compile Include="main\Smartsheet\Api\WorkspaceFolderResources.cs" />
+		<Compile Include="main\Smartsheet\Api\WorkspaceResources.cs" />
+		<Compile Include="Properties\AssemblyInfo.cs" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="packages.config" />
+		<None Include="smartsheet-csharp-sdk.licenseheader" />
+	</ItemGroup>
+	<ItemGroup>
+		<Content Include="icons\logo.png" />
+	</ItemGroup>
+	<Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+	<ProjectExtensions>
+		<VisualStudio AllowExistingFolder="true" />
+	</ProjectExtensions>
+	<Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
 </Project>
