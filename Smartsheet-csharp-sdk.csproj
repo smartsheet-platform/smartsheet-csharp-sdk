@@ -113,6 +113,7 @@
     <Compile Include="main\Smartsheet\Api\Internal\SmartsheetImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\TemplateResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\UserResourcesImpl.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\UserSheetResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\Util\QueryStringBuilder.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\Util\QueryUtil.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\Util\Util.cs" />
@@ -134,6 +135,7 @@
     <Compile Include="main\Smartsheet\Api\Models\ColumnTag.cs" />
     <Compile Include="main\Smartsheet\Api\Models\ColumnType.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Comment.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\DataWrapper.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Discussion.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Email.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Error.cs" />
@@ -145,6 +147,7 @@
     <Compile Include="main\Smartsheet\Api\Models\LinkType.cs" />
     <Compile Include="main\Smartsheet\Api\Models\MultiShare.cs" />
     <Compile Include="main\Smartsheet\Api\Models\NamedModel.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\ObjectExclusion.cs" />
     <Compile Include="main\Smartsheet\Api\Models\ObjectInclusion.cs" />
     <Compile Include="main\Smartsheet\Api\Models\PaperSize.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Report.cs" />
@@ -161,7 +164,10 @@
     <Compile Include="main\Smartsheet\Api\Models\Sheet.cs" />
     <Compile Include="main\Smartsheet\Api\Models\SheetEmail.cs" />
     <Compile Include="main\Smartsheet\Api\Models\SheetEmailFormat.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\SheetInclusion.cs" />
     <Compile Include="main\Smartsheet\Api\Models\SheetPublish.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\SheetUserSettings.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Source.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Symbol.cs" />
     <Compile Include="main\Smartsheet\Api\Models\SystemColumnType.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Template.cs" />
@@ -198,6 +204,7 @@
     <Compile Include="main\Smartsheet\Api\SmartsheetRestException.cs" />
     <Compile Include="main\Smartsheet\Api\TemplateResources.cs" />
     <Compile Include="main\Smartsheet\Api\UserResources.cs" />
+    <Compile Include="main\Smartsheet\Api\UserSheetResources.cs" />
     <Compile Include="main\Smartsheet\Api\WorkspaceFolderResources.cs" />
     <Compile Include="main\Smartsheet\Api\WorkspaceResources.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
