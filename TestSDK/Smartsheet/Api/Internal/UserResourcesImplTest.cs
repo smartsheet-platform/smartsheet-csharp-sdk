@@ -3,13 +3,8 @@
 namespace Smartsheet.Api.Internal
 {
 	using NUnit.Framework;
-
-
-
 	using DefaultHttpClient = Smartsheet.Api.Internal.Http.DefaultHttpClient;
-	using User = Smartsheet.Api.Models.User;
-	using UserProfile = Smartsheet.Api.Models.UserProfile;
-	using UserStatus = Smartsheet.Api.Models.UserStatus;
+	using Smartsheet.Api.Models;
 
 	public class UserResourcesImplTest : ResourcesImplBase
 	{
@@ -31,9 +26,9 @@ namespace Smartsheet.Api.Internal
 		{
 			server.setResponseBody("../../../TestSDK/resources/listUsers.json");
 
-			IList<User> users = userResources.ListUsers();
+			IList<User> users = userResources.ListUsers(new List<string> { "john.doe@smartsheet.com" }, new PaginationParameters(false, 123, 117));
 			Assert.NotNull(users);
-			Assert.AreEqual(2, users.Count);
+			Assert.AreEqual(1, users.Count);
 			Assert.AreEqual(94094820842L, (long)users[0].ID);
 			Assert.AreEqual(true, users[0].Admin);
 			Assert.AreEqual("john.doe@smartsheet.com", users[0].Email);
@@ -43,55 +38,51 @@ namespace Smartsheet.Api.Internal
 		}
 
 		[Test]
-		public virtual void TestAddUserUser()
+		public virtual void TestAddUser()
 		{
 			server.setResponseBody("../../../TestSDK/resources/addUser.json");
 
-			User user = new User();
-			user.Admin = true;
-			user.Email = "test@test.com";
-			user.FirstName = "test425";
-			user.LastName = "test425";
-			user.LicensedSheetCreator = true;
-			User newUser = userResources.AddUser(user);
-
-			Assert.AreEqual("test@test.com", newUser.Email);
-			Assert.AreEqual("test425 test425", newUser.Name);
-			Assert.AreEqual(false, newUser.Admin);
-			Assert.AreEqual(true, newUser.LicensedSheetCreator);
-			Assert.AreEqual(3210982882338692L, (long)newUser.ID);
-		}
-
-		[Test]
-		public virtual void TestAddUserUserBoolean()
-		{
-			server.setResponseBody("../../../TestSDK/resources/addUser.json");
-
-			User user = new User();
-			user.Admin = true;
-			user.Email = "test@test.com";
-			user.FirstName = "test425";
-			user.LastName = "test425";
-			user.LicensedSheetCreator = true;
+			User user = new User.AddUserBuilder().SetAdmin(false).SetEmail("NEW_USER_EMAIL").SetFirstName("John")
+			.SetLastName("Doe").SetLicensedSheetCreator(true).Build();
 			User newUser = userResources.AddUser(user, false);
 
-			Assert.AreEqual("test@test.com", newUser.Email);
-			Assert.AreEqual("test425 test425", newUser.Name);
+			Assert.AreEqual("NEW_USER_EMAIL", newUser.Email);
+			Assert.AreEqual("John Doe", newUser.Name);
 			Assert.AreEqual(false, newUser.Admin);
 			Assert.AreEqual(true, newUser.LicensedSheetCreator);
-			Assert.AreEqual(3210982882338692L, (long)newUser.ID);
+			Assert.AreEqual(1768423626696580L, (long)newUser.ID);
 		}
+
+		//[Test]
+		//public virtual void TestAddUserUserBoolean()
+		//{
+		//	server.setResponseBody("../../../TestSDK/resources/addUser.json");
+
+		//	User user = new User();
+		//	user.Admin = true;
+		//	user.Email = "test@test.com";
+		//	user.FirstName = "test425";
+		//	user.LastName = "test425";
+		//	user.LicensedSheetCreator = true;
+		//	User newUser = userResources.AddUser(user, false);
+
+		//	Assert.AreEqual("test@test.com", newUser.Email);
+		//	Assert.AreEqual("test425 test425", newUser.Name);
+		//	Assert.AreEqual(false, newUser.Admin);
+		//	Assert.AreEqual(true, newUser.LicensedSheetCreator);
+		//	Assert.AreEqual(3210982882338692L, (long)newUser.ID);
+		//}
 
 		[Test]
 		public virtual void TestGetCurrentUser()
 		{
 			server.setResponseBody("../../../TestSDK/resources/getCurrentUser.json");
 
-			UserProfile user = userResources.currentUser;
-			Assert.AreEqual("email@email.com",user.Email);
-			Assert.AreEqual(6199527427336068L, (long)user.ID);
-			Assert.AreEqual("Brett", user.FirstName);
-			Assert.AreEqual("Batie", user.LastName);
+			UserProfile user = userResources.GetCurrentUser();
+			Assert.AreEqual("john.doe@smartsheet.com", user.Email);
+			Assert.AreEqual(48569348493401200L, (long)user.ID);
+			Assert.AreEqual("John", user.FirstName);
+			Assert.AreEqual("Doe", user.LastName);
 		}
 
 		[Test]
@@ -99,16 +90,10 @@ namespace Smartsheet.Api.Internal
 		{
 			server.setResponseBody("../../../TestSDK/resources/updateUser.json");
 
-			User user = new User();
-			user.ID = 1234L;
-			user.Admin = true;
-			user.LicensedSheetCreator = true;
-			User updatedUser = userResources.UpdateUser(user);
-			Assert.AreEqual("email@email.com", updatedUser.Email);
-			Assert.AreEqual(false, updatedUser.Admin);
+			User user = new User.UpdateUserBuilder().SetAdmin(true).SetLicensedSheetCreator(true).Build();
+			User updatedUser = userResources.UpdateUser(123L, user);
+			Assert.AreEqual(true, updatedUser.Admin);
 			Assert.AreEqual(true, updatedUser.LicensedSheetCreator);
-			Assert.AreEqual(8166691168380804L, (long)updatedUser.ID);
-			Assert.AreEqual(UserStatus.ACTIVE, updatedUser.Status);
 		}
 
 		[Test]
@@ -116,9 +101,7 @@ namespace Smartsheet.Api.Internal
 		{
 			server.setResponseBody("../../../TestSDK/resources/deleteUser.json");
 
-			userResources.DeleteUser(1234L);
+			userResources.RemoveUser(123L, 456L, false, null);
 		}
-
 	}
-
 }
