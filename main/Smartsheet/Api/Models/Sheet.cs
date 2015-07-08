@@ -256,7 +256,7 @@ namespace Smartsheet.Api.Models
 			/// Gets the sheet's user settings.
 			/// </summary>
 			/// <returns> the sheet Name </returns>
-			public virtual string GetUserSettings()
+			public virtual SheetUserSettings GetUserSettings()
 			{
 				return userSettings;
 			}
