@@ -28,7 +28,7 @@ namespace Smartsheet.Api.Internal
 	/// 
 	/// Thread Safety: This class is thread safe because it is immutable and its base class is thread safe.
 	/// </summary>
-	class UserSheetResourcesImpl : AbstractResources, UserSheetResources
+	public class UserSheetResourcesImpl : AbstractResources, UserSheetResources
 	{
 		/// <summary>
 		/// Constructor.
