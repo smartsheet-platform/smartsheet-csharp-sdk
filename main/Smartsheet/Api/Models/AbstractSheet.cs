@@ -111,6 +111,28 @@ namespace Smartsheet.Api.Models
 
 		private Source source;
 
+		private string owner;
+
+		private long? ownerId;
+
+		/// <summary>
+		/// Represents the email of the owner
+		/// </summary>
+		public string Owner
+		{
+			get { return owner; }
+			set { owner = value; }
+		}
+
+		/// <summary>
+		/// Represents the Id of the Owner
+		/// </summary>
+		public long? OwnerId
+		{
+			get { return ownerId; }
+			set { ownerId = value; }
+		}
+
 
 		/// <summary>
 		/// Gets the dependencies enabled flag.
