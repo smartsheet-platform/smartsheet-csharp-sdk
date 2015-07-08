@@ -101,6 +101,7 @@
     <Compile Include="Smartsheet\Api\Internal\SmartsheetImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\TemplateResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\UserResourcesImplTest.cs" />
+    <Compile Include="Smartsheet\Api\Internal\UserSheetResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\Util\QueryStringBuilderTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\WorkspaceFolderResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\WorkspaceResourcesImplTest.cs" />
