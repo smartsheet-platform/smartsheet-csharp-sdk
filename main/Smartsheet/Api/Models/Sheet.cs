@@ -21,7 +21,6 @@ using System.Collections.Generic;
 
 namespace Smartsheet.Api.Models
 {
-
 	public class Sheet : AbstractSheet<Row, Column, Cell>
 	{
 		/// <summary>
@@ -48,14 +47,14 @@ namespace Smartsheet.Api.Models
 			return result;
 		}
 
-				/// <summary>
+		/// <summary>
 		/// A convenience class To make a <seealso cref="Sheet"/> object with the necessary fields To create the sheet by posting it 
 		/// To Smartsheet.
 		/// </summary>
 		public class CreateSheetBuilder
 		{
-			internal IList<Column> columns;
-			internal string name;
+			private IList<Column> columns;
+			private string name;
 
 			/// <summary>
 			/// Sets the Columns for the sheet being created.
@@ -83,24 +82,22 @@ namespace Smartsheet.Api.Models
 			/// Returns the list of Columns.
 			/// </summary>
 			/// <returns> the Columns </returns>
-			public virtual IList<Column> Columns
+			public virtual IList<Column> GetColumns()
 			{
-				get
-				{
-					return columns;
-				}
+
+				return columns;
+
 			}
 
 			/// <summary>
 			/// Returns the Name for the sheet.
 			/// </summary>
 			/// <returns> the Name </returns>
-			public virtual string Name
+			public virtual string GetName()
 			{
-				get
-				{
-					return name;
-				}
+
+				return name;
+
 			}
 
 			/// <summary>
@@ -111,10 +108,10 @@ namespace Smartsheet.Api.Models
 			{
 				Sheet sheet = new Sheet();
 
-				if (columns == null || name == null)
-				{
-					throw new InvalidOperationException();
-				}
+				//if (columns == null || name == null)
+				//{
+				//	throw new InvalidOperationException();
+				//}
 
 				sheet.columns = columns;
 				sheet.Name = name;
@@ -130,8 +127,8 @@ namespace Smartsheet.Api.Models
 		/// </summary>
 		public class CreateFromTemplateOrSheetBuilder
 		{
-			internal string name;
-			internal long? fromId;
+			private string name;
+			private long? fromId;
 
 			/// <summary>
 			/// Sets the Name for the sheet being created.
@@ -148,12 +145,9 @@ namespace Smartsheet.Api.Models
 			/// Returns the Name for the sheet.
 			/// </summary>
 			/// <returns> the Name </returns>
-			public virtual string Name
+			public virtual string GetName()
 			{
-				get
-				{
-					return name;
-				}
+				return name;
 			}
 
 			/// <summary>
@@ -171,12 +165,9 @@ namespace Smartsheet.Api.Models
 			/// Gets the from Id.
 			/// </summary>
 			/// <returns> the from Id </returns>
-			public virtual long? FromId
+			public virtual long? GetFromId()
 			{
-				get
-				{
-					return fromId;
-				}
+				return fromId;
 			}
 
 			/// <summary>
@@ -187,10 +178,10 @@ namespace Smartsheet.Api.Models
 			{
 				Sheet sheet = new Sheet();
 
-				if (fromId == null || name == null)
-				{
-					throw new InvalidOperationException();
-				}
+				//if (fromId == null || name == null)
+				//{
+				//	throw new InvalidOperationException();
+				//}
 
 				sheet.FromId = fromId;
 				sheet.Name = name;
@@ -204,33 +195,34 @@ namespace Smartsheet.Api.Models
 		/// </summary>
 		public class UpdateSheetBuilder
 		{
-			internal string sheetName;
-			internal long? id;
+			private string sheetName;
+			//internal long? id;
+			private SheetUserSettings userSettings;
+
+			///// <summary>
+			///// Get the Id of the sheet
+			///// @return
+			///// </summary>
+			//public virtual long? ID
+			//{
+			//	get
+			//	{
+			//		return id;
+			//	}
+			//}
+
+			///// <summary>
+			///// Set the sheet Id </summary>
+			///// <param name="id"> </param>
+			///// <returns> the updateSheetBuilder object </returns>
+			//public virtual UpdateSheetBuilder SetID(long? id)
+			//{
+			//	this.id = id;
+			//	return this;
+			//}
 
 			/// <summary>
-			/// Get the Id of the sheet
-			/// @return
-			/// </summary>
-			public virtual long? ID
-			{
-				get
-				{
-					return id;
-				}
-			}
-
-			/// <summary>
-			/// Set the sheet Id </summary>
-			/// <param name="id"> </param>
-			/// <returns> the updateSheetBuilder object </returns>
-			public virtual UpdateSheetBuilder SetID(long? id)
-			{
-				this.id = id;
-				return this;
-			}
-
-			/// <summary>
-			/// Name.
+			/// Sets the Sheet Name.
 			/// </summary>
 			/// <param name="name"> the Name </param>
 			/// <returns> the update sheet builder </returns>
@@ -244,33 +236,48 @@ namespace Smartsheet.Api.Models
 			/// Gets the sheet Name.
 			/// </summary>
 			/// <returns> the sheet Name </returns>
-			public virtual string Name
+			public virtual string GetName()
 			{
-				get
-				{
-					return sheetName;
-				}
+				return sheetName;
 			}
 
+			/// <summary>
+			/// Sets the Sheet's user settings.
+			/// </summary>
+			/// <param name="name"> the Name </param>
+			/// <returns> the update sheet builder </returns>
+			public virtual UpdateSheetBuilder SetUserSettings(SheetUserSettings userSettings)
+			{
+				this.userSettings = userSettings;
+				return this;
+			}
 
 			/// <summary>
-			/// Builds the.
+			/// Gets the sheet's user settings.
+			/// </summary>
+			/// <returns> the sheet Name </returns>
+			public virtual string GetUserSettings()
+			{
+				return userSettings;
+			}
+
+			/// <summary>
+			/// Builds the Sheet.
 			/// </summary>
 			/// <returns> the sheet </returns>
 			public virtual Sheet Build()
 			{
-				if (sheetName == null)
-				{
-					throw new InvalidOperationException();
-				}
+				//if (sheetName == null)
+				//{
+				//	throw new InvalidOperationException();
+				//}
 
 				Sheet sheet = new Sheet();
-				sheet.Name = sheetName;
-				sheet.ID = id;
+				sheet.Name = this.sheetName;
+				sheet.UserSettings = this.userSettings;
+				//sheet.ID = id;
 				return sheet;
 			}
 		}
 	}
-
-
 }
