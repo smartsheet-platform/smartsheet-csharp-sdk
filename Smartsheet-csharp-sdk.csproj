@@ -107,7 +107,10 @@
     <Compile Include="main\Smartsheet\Api\Internal\RowResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\SearchResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\ShareResourcesImpl.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\SheetAttachmentResources.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\SheetColumnResourcesImpl.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\SheetCommentResourcesImpl.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\SheetDiscussionResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\SheetResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\SheetRowResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\SmartsheetImpl.cs" />
@@ -196,7 +199,10 @@
     <Compile Include="main\Smartsheet\Api\SearchResources.cs" />
     <Compile Include="main\Smartsheet\Api\ServiceUnavailableException.cs" />
     <Compile Include="main\Smartsheet\Api\ShareResources.cs" />
+    <Compile Include="main\Smartsheet\Api\SheetAttachmentResources.cs" />
     <Compile Include="main\Smartsheet\Api\SheetColumnResources.cs" />
+    <Compile Include="main\Smartsheet\Api\SheetCommentResources.cs" />
+    <Compile Include="main\Smartsheet\Api\SheetDiscussionResources.cs" />
     <Compile Include="main\Smartsheet\Api\SheetResources.cs" />
     <Compile Include="main\Smartsheet\Api\SheetRowResources.cs" />
     <Compile Include="main\Smartsheet\Api\SmartsheetClient.cs" />
