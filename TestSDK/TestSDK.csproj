@@ -116,6 +116,7 @@
     <Compile Include="Smartsheet\Api\Models\IdentifiableModelTest.cs" />
     <Compile Include="Smartsheet\Api\Models\LinkTypeTest.cs" />
     <Compile Include="Smartsheet\Api\Models\ObjectInclusionTest.cs" />
+    <Compile Include="Smartsheet\Api\Models\PaginationParametersTest.cs" />
     <Compile Include="Smartsheet\Api\Models\PaperSizeTest.cs" />
     <Compile Include="Smartsheet\Api\Models\RowTest.cs" />
     <Compile Include="Smartsheet\Api\Models\SheetEmailFormatTest.cs" />
