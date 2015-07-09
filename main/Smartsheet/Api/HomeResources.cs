@@ -19,6 +19,7 @@
 namespace Smartsheet.Api
 {
 
+	using Smartsheet.Api.Models;
 	using System.Collections.Generic;
 	using Home = Api.Models.Home;
 	using ObjectInclusion = Api.Models.ObjectInclusion;
@@ -30,30 +31,31 @@ namespace Smartsheet.Api
 	/// </summary>
 	public interface HomeResources
 	{
-
 		/// <summary>
-		/// <para>Get a nested list of all Home objects, including Sheets, Workspaces and Folders, and optionally reports and/or
-		/// Templates, as shown on the Home tab.</para>
-		/// 
-		/// <para>It mirrors To the following Smartsheet REST API method:<br />
-		/// GET /home</para>
+		/// <para>
+		/// Get a nested list of all Home objects, including Sheets, Workspaces and Folders, and optionally reports and/or
+		/// Templates, as shown on the Home tab..
+		/// </para>
+		/// <para>
+		/// It mirrors To the following Smartsheet REST API method: GET /home
+		/// </para>
 		/// </summary>
-		/// <param name="includes"> used To specify the optional objects To include. </param>
-		/// <returns> the home resource (note that if there is no such resource, this method will throw 
-		/// ResourceNotFoundException rather than returning null). </returns>
-		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
-		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
-		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
-		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		Home GetHome(IEnumerable<ObjectInclusion> includes);
+		/// <param name="includes"> used To specify the optional objects To include, currently TEMPLATES is supported. </param>
+		/// <exception cref="InvalidRequestException">if there is any problem with the REST API request</exception>
+		/// <exception cref="AuthorizationException">if there is any problem with the REST API authorization(access token)</exception>
+		/// <exception cref="InvalidRequestException">if the resource can not be found</exception>
+		/// <exception cref="ResourceNotFoundException">if the REST API service is not available (possibly due To rate limiting)</exception>
+		/// <exception cref="ServiceUnavailableException">if there is any other REST API related error occurred during the operation</exception>
+		/// <exception cref="SmartsheetException">if there is any other error occurred during the operation</exception>
+		/// <returns> the resource (note that if there is no such resource, this method will throw ResourceNotFoundException
+		/// rather than returning null). </returns>
+		Home GetHome(IEnumerable<SourceInclusion> includes);
 
 		/// <summary>
-		/// <para>Return the HomeFolderResources object that provides access To Folder resources under home.</para>
+		/// <para>Return the HomeFolderResources object that provides access To Folder Resources under home.</para>
 		/// </summary>
 		/// <returns> the home folder resources </returns>
-		HomeFolderResources Folders();
+		HomeFolderResources FolderResources();
 	}
 
 }
