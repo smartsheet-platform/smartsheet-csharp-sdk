@@ -325,6 +325,29 @@ namespace Smartsheet.Api.Internal.Json
 
 			return result;
 		}
+
+		public virtual CopyOrMoveRowResult DeserializeRowResult(StreamReader inputStream)
+		{
+			Utils.ThrowIfNull(inputStream);
+
+			CopyOrMoveRowResult result = null;
+
+			try
+			{
+				result = serializer.Deserialize<CopyOrMoveRowResult>(new Newtonsoft.Json.JsonTextReader(inputStream));
+			}
+			catch (Newtonsoft.Json.JsonException ex)
+			{
+				throw new JsonSerializationException(ex);
+			}
+			catch (IOException ex)
+			{
+				throw new JsonSerializationException(ex);
+			}
+
+			return result;
+		}
+
 	}
 
 }

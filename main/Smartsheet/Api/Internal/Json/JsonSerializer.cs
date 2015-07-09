@@ -139,6 +139,22 @@ namespace Smartsheet.Api.Internal.Json
 		/// <exception cref="JsonSerializationException"> the JSON serializer exception </exception>
 		RequestResult<IList<T>> deserializeListResult<T>(StreamReader inputStream);
 
+		/// <summary>
+		/// De-serialize a CopyOrMoveRowResult object from JSON.
+		/// 
+		/// Parameters: - objectClass : the class of the object To de-serialize - inputStream : the input
+		/// stream from which the JSON will be read
+		/// 
+		/// Returns: the de-serialized CopyOrMoveRowResult
+		/// 
+		/// Exceptions: - IllegalArgumentException : if any argument is null - JSONSerializationException : if there is any
+		/// other error occurred during the operation
+		/// </summary>
+		/// <param name="inputStream"> the input stream </param>
+		/// <returns> the CopyOrMoveRowResult </returns>
+		/// <exception cref="JsonSerializationException"> the JSON serializer exception </exception>
+		CopyOrMoveRowResult DeserializeRowResult(StreamReader inputStream);
+
 	}
 
 }
