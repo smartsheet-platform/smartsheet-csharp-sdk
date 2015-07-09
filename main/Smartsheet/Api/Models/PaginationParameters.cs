@@ -48,17 +48,17 @@ namespace Smartsheet.Api.Models
 		{
 			Dictionary<string, string> parameters = new Dictionary<string, string>();
 
-			parameters.Add("includeAll", includeAll.ToString());
+			parameters.Add("includeAll", includeAll.ToString().ToLower());
 
 			if (!includeAll)
 			{
 				if (pageSize.HasValue)
 				{
-					parameters.Add("pageSize", pageSize.ToString());
+					parameters.Add("pageSize", pageSize.ToString().ToLower());
 				}
 				if (page.HasValue)
 				{
-					parameters.Add("page", page.ToString());
+					parameters.Add("page", page.ToString().ToLower());
 				}
 			}
 			return parameters;
