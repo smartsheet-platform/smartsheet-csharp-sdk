@@ -6,18 +6,8 @@ namespace Smartsheet.Api.Internal
 	using NUnit.Framework;
 
 	using DefaultHttpClient = Smartsheet.Api.Internal.Http.DefaultHttpClient;
-	using AccessLevel = Smartsheet.Api.Models.AccessLevel;
-	using Column = Smartsheet.Api.Models.Column;
-	using ColumnType = Smartsheet.Api.Models.ColumnType;
-	using FormatDetails = Smartsheet.Api.Models.FormatDetails;
-	using ObjectInclusion = Smartsheet.Api.Models.ObjectInclusion;
-	using PaperSize = Smartsheet.Api.Models.PaperSize;
-	using Sheet = Smartsheet.Api.Models.Sheet;
-	using SheetEmail = Smartsheet.Api.Models.SheetEmail;
-	using SheetEmailFormat = Smartsheet.Api.Models.SheetEmailFormat;
-	using SheetPublish = Smartsheet.Api.Models.SheetPublish;
+	using Api.Models;
 	using System.IO;
-
 
 	public class SheetResourcesImplTest : ResourcesImplBase
 	{
@@ -36,33 +26,28 @@ namespace Smartsheet.Api.Internal
 
 			server.setResponseBody("../../../TestSDK/resources/listSheets.json");
 
-			IList<Sheet> sheets = sheetResource.ListSheets();
-			Assert.AreEqual(2, sheets.Count);
+			DataWrapper<Sheet> result = sheetResource.ListSheets(null);
+			Assert.AreEqual(2, result.Data.Count);
 		}
 
-		[Test]
-		public virtual void TestListOrganizationSheets()
-		{
+		//List all Org Sheets is in UserResources which is not yet implemented
+		//[Test]
+		//public virtual void TestListOrganizationSheets()
+		//{
 
-			server.setResponseBody("../../../TestSDK/resources/listSheets.json");
-			IList<Sheet> sheets = sheetResource.ListOrganizationSheets();
-			Assert.AreEqual(2, sheets.Count);
-		}
+		//	server.setResponseBody("../../../TestSDK/resources/listOrgSheets.json");
+		//	IList<Sheet> sheets = sheetResource.ListOrganizationSheets();
+		//	Assert.AreEqual(2, sheets.Count);
+		//}
 
 		[Test]
 		public virtual void TestGetSheet()
 		{
 
 			server.setResponseBody("../../../TestSDK/resources/getSheet.json");
-			Sheet sheet = sheetResource.GetSheet(123123L, null);
-			Assert.AreEqual(9,sheet.Columns.Count);
-			Assert.AreEqual(0,sheet.Rows.Count);
-
-
-			sheet = sheetResource.GetSheet(123123L, new List<ObjectInclusion>((ObjectInclusion[])Enum.
-				GetValues(typeof(ObjectInclusion))));
-			Assert.AreEqual(9,sheet.Columns.Count);
-			Assert.AreEqual(0,sheet.Rows.Count);
+			Sheet sheet = sheetResource.GetSheet(123123L, null, null, null, null, null, null, null);
+			Assert.AreEqual(2, sheet.Columns.Count);
+			Assert.AreEqual(0, sheet.Rows.Count);
 		}
 
 		[Test]
@@ -143,112 +128,111 @@ namespace Smartsheet.Api.Internal
 
 			server.setResponseBody("../../../TestSDK/resources/createSheetFromExisting.json");
 
-			Sheet sheet = new Sheet();
-			sheet.FromId = 2906571706525572L;
+			Sheet sheet = new Sheet.CreateFromTemplateOrSheetBuilder().SetFromId(2906571706525572L).Build();
 
-			Sheet newSheet = sheetResource.CreateSheetFromExisting(sheet, new List<ObjectInclusion>((ObjectInclusion[])Enum.
+			Sheet newSheet = sheetResource.CreateSheetFromTemplate(sheet, new List<ObjectInclusion>((ObjectInclusion[])Enum.
 				GetValues(typeof(ObjectInclusion))));
 
 			Assert.AreEqual(466343087630212L, (long)newSheet.ID);
 			Assert.AreEqual(AccessLevel.OWNER, newSheet.AccessLevel);
-			Assert.AreEqual("https://app.smartsheet.com/b/home?lx=asdf",newSheet.Permalink);
+			Assert.AreEqual("https://app.smartsheet.com/b/home?lx=asdf", newSheet.Permalink);
 
-			newSheet = sheetResource.CreateSheetFromExisting(sheet, null);
+			newSheet = sheetResource.CreateSheetFromTemplate(sheet, null);
 			Assert.AreEqual(466343087630212L, (long)newSheet.ID);
 			Assert.AreEqual(AccessLevel.OWNER, newSheet.AccessLevel);
-			Assert.AreEqual("https://app.smartsheet.com/b/home?lx=asdf",newSheet.Permalink);
+			Assert.AreEqual("https://app.smartsheet.com/b/home?lx=asdf", newSheet.Permalink);
 
 		}
 
-		[Test]
-		public virtual void TestCreateSheetInFolder()
-		{
-			server.setResponseBody("../../../TestSDK/resources/createSheet.json");
+		//[Test]
+		//public virtual void TestCreateSheetInFolder()
+		//{
+		//	server.setResponseBody("../../../TestSDK/resources/createSheet.json");
 
-			Sheet sheet = new Sheet();
-			sheet.Name = "NEW TEST SHEET";
-			List<Column> list = new List<Column>();
-			Column col = new Column();
-			col.Primary = true;
-			col.Title = "column1";
-			col.Type = ColumnType.TEXT_NUMBER;
-			list.Add(col);
-			col = new Column();
-			col.Title = "column2";
-			col.Type = ColumnType.TEXT_NUMBER;
-			col.ID = 4049365800118148L;
-			list.Add(col);
+		//	Sheet sheet = new Sheet();
+		//	sheet.Name = "NEW TEST SHEET";
+		//	List<Column> list = new List<Column>();
+		//	Column col = new Column();
+		//	col.Primary = true;
+		//	col.Title = "column1";
+		//	col.Type = ColumnType.TEXT_NUMBER;
+		//	list.Add(col);
+		//	col = new Column();
+		//	col.Title = "column2";
+		//	col.Type = ColumnType.TEXT_NUMBER;
+		//	col.ID = 4049365800118148L;
+		//	list.Add(col);
 
-			sheet.Columns = list;
-			Sheet newSheet = sheetResource.CreateSheetInFolder(12345L, sheet);
+		//	sheet.Columns = list;
+		//	Sheet newSheet = sheetResource.CreateSheetInFolder(12345L, sheet);
 
-			Assert.AreEqual(2, newSheet.Columns.Count);
-			Assert.AreEqual(col,newSheet.GetColumnByIndex(1));
-			Assert.AreNotEqual(col, newSheet.GetColumnByIndex(0));
-			Assert.Null((new Sheet()).GetColumnByIndex(100));
-			Assert.AreEqual(col,newSheet.GetColumnById(4049365800118148L));
-			Assert.AreNotEqual(col,newSheet.GetColumnById(4032471613368196L));
-			Assert.Null((new Sheet()).GetColumnById(100));
-		}
+		//	Assert.AreEqual(2, newSheet.Columns.Count);
+		//	Assert.AreEqual(col,newSheet.GetColumnByIndex(1));
+		//	Assert.AreNotEqual(col, newSheet.GetColumnByIndex(0));
+		//	Assert.Null((new Sheet()).GetColumnByIndex(100));
+		//	Assert.AreEqual(col,newSheet.GetColumnById(4049365800118148L));
+		//	Assert.AreNotEqual(col,newSheet.GetColumnById(4032471613368196L));
+		//	Assert.Null((new Sheet()).GetColumnById(100));
+		//}
 
-		[Test]
-		public virtual void TestCreateSheetInFolderFromExisting()
-		{
+		//[Test]
+		//public virtual void TestCreateSheetInFolderFromExisting()
+		//{
 
-			server.setResponseBody("../../../TestSDK/resources/createSheetFromExisting.json");
+		//	server.setResponseBody("../../../TestSDK/resources/createSheetFromExisting.json");
 
-			Sheet sheet = new Sheet();
-			sheet.FromId = 2906571706525572L;
-				Sheet newSheet = sheetResource.CreateSheetInFolderFromExisting(1234L, sheet, 
-					new List<ObjectInclusion>((ObjectInclusion[])Enum.GetValues(typeof(ObjectInclusion))));
+		//	Sheet sheet = new Sheet();
+		//	sheet.FromId = 2906571706525572L;
+		//		Sheet newSheet = sheetResource.CreateSheetInFolderFromTemplate(1234L, sheet, 
+		//			new List<ObjectInclusion>((ObjectInclusion[])Enum.GetValues(typeof(ObjectInclusion))));
 
-			if (newSheet.ID.ToString().Length == 0 || newSheet.AccessLevel != AccessLevel.OWNER || newSheet.Permalink.ToString().Length == 0)
-			{
-				Assert.Fail("Sheet not correctly copied");
-			}
+		//	if (newSheet.ID.ToString().Length == 0 || newSheet.AccessLevel != AccessLevel.OWNER || newSheet.Permalink.ToString().Length == 0)
+		//	{
+		//		Assert.Fail("Sheet not correctly copied");
+		//	}
 
-			newSheet = sheetResource.CreateSheetInFolderFromExisting(1234L, sheet, null);
-		}
+		//	newSheet = sheetResource.CreateSheetInFolderFromTemplate(1234L, sheet, null);
+		//}
 
-		[Test]
-		public virtual void TestCreateSheetInWorkspace()
-		{
-			server.setResponseBody("../../../TestSDK/resources/createSheet.json");
+		//[Test]
+		//public virtual void TestCreateSheetInWorkspace()
+		//{
+		//	server.setResponseBody("../../../TestSDK/resources/createSheet.json");
 
-			Sheet sheet = new Sheet();
-			sheet.Name = "NEW TEST SHEET";
-			List<Column> list = new List<Column>();
-			Column col = new Column();
-			col.Primary = true;
-			col.Title = "column1";
-			col.Type = ColumnType.TEXT_NUMBER;
-			list.Add(col);
-			col = new Column();
-			col.Title = "column2";
-			col.Type = ColumnType.TEXT_NUMBER;
-			list.Add(col);
+		//	Sheet sheet = new Sheet();
+		//	sheet.Name = "NEW TEST SHEET";
+		//	List<Column> list = new List<Column>();
+		//	Column col = new Column();
+		//	col.Primary = true;
+		//	col.Title = "column1";
+		//	col.Type = ColumnType.TEXT_NUMBER;
+		//	list.Add(col);
+		//	col = new Column();
+		//	col.Title = "column2";
+		//	col.Type = ColumnType.TEXT_NUMBER;
+		//	list.Add(col);
 
-			sheet.Columns = list;
-			Sheet newSheet = sheetResource.CreateSheetInWorkspace(1234L, sheet);
-			Assert.AreEqual(2, newSheet.Columns.Count);
-		}
+		//	sheet.Columns = list;
+		//	Sheet newSheet = sheetResource.CreateSheetInWorkspace(1234L, sheet);
+		//	Assert.AreEqual(2, newSheet.Columns.Count);
+		//}
 
-		[Test]
-		public virtual void TestCreateSheetInWorkspaceFromExisting()
-		{
-			server.setResponseBody("../../../TestSDK/resources/createSheetFromExisting.json");
+		//[Test]
+		//public virtual void TestCreateSheetInWorkspaceFromExisting()
+		//{
+		//	server.setResponseBody("../../../TestSDK/resources/createSheetFromExisting.json");
 
-			Sheet sheet = new Sheet();
-			sheet.FromId = 2906571706525572L;
-			Sheet newSheet = sheetResource.CreateSheetInWorkspaceFromExisting(1234L, sheet, 
-				new List<ObjectInclusion>((ObjectInclusion[])Enum.GetValues(typeof(ObjectInclusion))));
+		//	Sheet sheet = new Sheet();
+		//	sheet.FromId = 2906571706525572L;
+		//	Sheet newSheet = sheetResource.CreateSheetInWorkspaceFromTemplate(1234L, sheet, 
+		//		new List<ObjectInclusion>((ObjectInclusion[])Enum.GetValues(typeof(ObjectInclusion))));
 
-			Assert.AreEqual(466343087630212L, (long)newSheet.ID);
-			Assert.AreEqual(AccessLevel.OWNER, newSheet.AccessLevel);
-			Assert.AreEqual("https://app.smartsheet.com/b/home?lx=asdf",newSheet.Permalink);
+		//	Assert.AreEqual(466343087630212L, (long)newSheet.ID);
+		//	Assert.AreEqual(AccessLevel.OWNER, newSheet.AccessLevel);
+		//	Assert.AreEqual("https://app.smartsheet.com/b/home?lx=asdf",newSheet.Permalink);
 
-			newSheet = sheetResource.CreateSheetInWorkspaceFromExisting(1234L, sheet, null);
-		}
+		//	newSheet = sheetResource.CreateSheetInWorkspaceFromTemplate(1234L, sheet, null);
+		//}
 
 		[Test]
 		public virtual void TestDeleteSheet()
@@ -262,106 +246,104 @@ namespace Smartsheet.Api.Internal
 		{
 			server.setResponseBody("../../../TestSDK/resources/updateSheet.json");
 
-			Sheet sheet = new Sheet();
-			sheet.Name = "new name";
-			sheet.ID = 1234L;
-			Sheet newSheet = sheetResource.UpdateSheet(sheet);
+			Sheet sheet = new Sheet.UpdateSheetBuilder().SetName("new name").Build();
+			Sheet newSheet = sheetResource.UpdateSheet(123, sheet);
 
 			Assert.AreEqual("new name", newSheet.Name, "Sheet update (rename) failed.");
 		}
 
-		[Test]
-		public virtual void TestGetSheetVersion()
-		{
-			server.setResponseBody("../../../TestSDK/resources/getSheetVersion.json");
-			int? version = sheetResource.GetSheetVersion(1234L);
-			if (version != 1)
-			{
-				Assert.Fail("Issue getting sheet version");
-			}
-		}
+		//[Test]
+		//public virtual void TestGetSheetVersion()
+		//{
+		//	server.setResponseBody("../../../TestSDK/resources/getSheetVersion.json");
+		//	int? version = sheetResource.GetSheetVersion(1234L);
+		//	if (version != 1)
+		//	{
+		//		Assert.Fail("Issue getting sheet version");
+		//	}
+		//}
 
-		[Test]
-		public virtual void TestSendSheet()
-		{
-			server.setResponseBody("../../../TestSDK/resources/sendEmails.json");
+		//[Test]
+		//public virtual void TestSendSheet()
+		//{
+		//	server.setResponseBody("../../../TestSDK/resources/sendEmails.json");
 
-			string[] emailAddress = new string[] {"someemail@somewhere.com"};
-			SheetEmail email = new SheetEmail();
-			email.Format = SheetEmailFormat.PDF;
-			FormatDetails format = new FormatDetails();
-			format.PaperSize = PaperSize.A0;
-			email.FormatDetails = format;
-			email.To = new List<string>(emailAddress);
-			sheetResource.SendSheet(1234L, email);
-		}
+		//	string[] emailAddress = new string[] { "someemail@somewhere.com" };
+		//	SheetEmail email = new SheetEmail();
+		//	email.Format = SheetEmailFormat.PDF;
+		//	FormatDetails format = new FormatDetails();
+		//	format.PaperSize = PaperSize.A0;
+		//	email.FormatDetails = format;
+		//	email.To = new List<string>(emailAddress);
+		//	sheetResource.SendSheet(1234L, email);
+		//}
 
 		[Test]
 		public virtual void TestShares()
 		{
-			sheetResource.Shares();
+			sheetResource.ShareResources();
 		}
 
 		[Test]
 		public virtual void TestRows()
 		{
-			sheetResource.Rows();
+			sheetResource.RowResources();
 		}
 
 		[Test]
 		public virtual void TestColumns()
 		{
-			sheetResource.Columns();
+			sheetResource.ColumnResources();
 		}
 
 		[Test]
 		public virtual void TestAttachments()
 		{
-			sheetResource.Attachments();
+			sheetResource.AttachmentResources();
 		}
 
 		[Test]
 		public virtual void TestDiscussions()
 		{
-			sheetResource.Discussions();
+			sheetResource.DiscussionResources();
 		}
 
-		[Test]
-		public virtual void TestGetPublishStatus()
-		{
-			server.setResponseBody("../../../TestSDK/resources/getPublishStatus.json");
+		//[Test]
+		//public virtual void TestGetPublishStatus()
+		//{
+		//	server.setResponseBody("../../../TestSDK/resources/getPublishStatus.json");
 
-			SheetPublish publishStatus = sheetResource.GetPublishStatus(1234L);
+		//	SheetPublish publishStatus = sheetResource.GetPublishStatus(1234L);
 
-			if (publishStatus == null || publishStatus.ReadOnlyFullEnabled != false || 
-				publishStatus.IcalEnabled != false || publishStatus.ReadOnlyLiteEnabled != false || 
-				publishStatus.ReadWriteEnabled != false)
-			{
+		//	if (publishStatus == null || publishStatus.ReadOnlyFullEnabled != false ||
+		//		publishStatus.IcalEnabled != false || publishStatus.ReadOnlyLiteEnabled != false ||
+		//		publishStatus.ReadWriteEnabled != false)
+		//	{
 
-				Assert.Fail("Issue creating the publish status object");
-			}
-		}
+		//		Assert.Fail("Issue creating the publish status object");
+		//	}
+		//}
 
-		[Test]
-		public virtual void TestUpdatePublishStatus()
-		{
+		//[Test]
+		//public virtual void TestUpdatePublishStatus()
+		//{
 
-			server.setResponseBody("../../../TestSDK/resources/setPublishStatus.json");
+		//	server.setResponseBody("../../../TestSDK/resources/setPublishStatus.json");
 
-			SheetPublish publish = new SheetPublish();
-			publish.IcalEnabled = true;
-			publish.ReadOnlyFullEnabled = true;
-			publish.ReadOnlyLiteEnabled = true;
-			publish.ReadWriteEnabled = true;
-			publish.IcalUrl = "http://somedomain.com";
-			SheetPublish newPublish = sheetResource.UpdatePublishStatus(1234L, publish);
+		//	SheetPublish publish = new SheetPublish();
+		//	publish.IcalEnabled = true;
+		//	publish.ReadOnlyFullEnabled = true;
+		//	publish.ReadOnlyLiteEnabled = true;
+		//	publish.ReadWriteEnabled = true;
+		//	publish.IcalUrl = "http://somedomain.com";
+		//	SheetPublish newPublish = sheetResource.UpdatePublishStatus(1234L, publish);
 
-			Assert.Null(newPublish.IcalUrl);
-			Assert.NotNull(newPublish.ReadOnlyFullUrl);
-			Assert.NotNull(newPublish.ReadOnlyLiteUrl);
-			Assert.NotNull(newPublish.ReadWriteUrl);
+		//	Assert.Null(newPublish.IcalUrl);
+		//	Assert.NotNull(newPublish.ReadOnlyFullUrl);
+		//	Assert.NotNull(newPublish.ReadOnlyLiteUrl);
+		//	Assert.NotNull(newPublish.ReadWriteUrl);
 
-		}
+		//}
 	}
 
 }
