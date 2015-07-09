@@ -104,6 +104,8 @@
     <Compile Include="main\Smartsheet\Api\Internal\Json\LowerCaseContractResolver.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\OAuth\OAuthFlowImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\ReportResourcesImpl.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\RowAttachmentResourcesImpl.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\RowDiscussionResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\RowResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\SearchResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\ShareResourcesImpl.cs" />
@@ -138,6 +140,9 @@
     <Compile Include="main\Smartsheet\Api\Models\ColumnTag.cs" />
     <Compile Include="main\Smartsheet\Api\Models\ColumnType.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Comment.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\CopyOrMoveRowDestination.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\CopyOrMoveRowDirective.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\CopyOrMoveRowResult.cs" />
     <Compile Include="main\Smartsheet\Api\Models\DataWrapper.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Discussion.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Email.cs" />
@@ -161,6 +166,8 @@
     <Compile Include="main\Smartsheet\Api\Models\RequestResult.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Row.cs" />
     <Compile Include="main\Smartsheet\Api\Models\RowEmail.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\RowIncludeFlags.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\RowMapping.cs" />
     <Compile Include="main\Smartsheet\Api\Models\RowWrapper.cs" />
     <Compile Include="main\Smartsheet\Api\Models\SearchResult.cs" />
     <Compile Include="main\Smartsheet\Api\Models\SearchResultItem.cs" />
@@ -195,6 +202,8 @@
     <Compile Include="main\Smartsheet\Api\OAuth\UnsupportedResponseTypeException.cs" />
     <Compile Include="main\Smartsheet\Api\ReportResources.cs" />
     <Compile Include="main\Smartsheet\Api\ResourceNotFoundException.cs" />
+    <Compile Include="main\Smartsheet\Api\RowAttachmentResources.cs" />
+    <Compile Include="main\Smartsheet\Api\RowDiscussionResources.cs" />
     <Compile Include="main\Smartsheet\Api\RowResources.cs" />
     <Compile Include="main\Smartsheet\Api\SearchResources.cs" />
     <Compile Include="main\Smartsheet\Api\ServiceUnavailableException.cs" />
