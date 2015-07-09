@@ -28,7 +28,7 @@
 			Assert.AreEqual("?includeAll=true", parameters2.ToQueryString());
 
 			PaginationParameters parameters3 = new PaginationParameters(false, 1, 1);
-			Assert.AreEqual("?page=1&pageSize=1&includeAll=false", parameters3.ToQueryString());
+			Assert.AreEqual("?includeAll=false&pageSize=1&page=1", parameters3.ToQueryString());
 		}
 
 		[Test]
