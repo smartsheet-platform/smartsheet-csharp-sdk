@@ -53,7 +53,7 @@ namespace Smartsheet.Api.Internal
 		/// 
 		/// It will be initialized in constructor and will not change afterwards.
 		/// </summary>
-		private ShareResources shares;
+		private SheetShareResources shares;
 		/// <summary>
 		/// Represents the SheetRowResources.
 		/// 
@@ -94,7 +94,7 @@ namespace Smartsheet.Api.Internal
 		public SheetResourcesImpl(SmartsheetImpl smartsheet)
 			: base(smartsheet)
 		{
-			this.shares = new ShareResourcesImpl(smartsheet, "sheet");
+			this.shares = new SheetShareResourcesImpl(smartsheet, "sheet");
 			this.rows = new SheetRowResourcesImpl(smartsheet);
 			this.columns = new SheetColumnResourcesImpl(smartsheet);
 			this.attachments = new SheetAttachmentResourcesImpl(smartsheet);
@@ -422,48 +422,48 @@ namespace Smartsheet.Api.Internal
 			return this.UpdateResource("sheets/" + sheetId, typeof(Sheet), sheet);
 		}
 
-		///// <summary>
-		///// <para>Gets the Sheet version without loading the entire Sheet.</para>
-		///// 
-		///// <para>It mirrors To the following Smartsheet REST API method: GET /sheets/{sheetId}/version</para>
-		///// </summary>
-		///// <param name="sheetId"> the sheetId </param>
-		///// <returns> the sheet Version (note that if there is no such resource, this method will throw
-		///// ResourceNotFoundException) </returns>
-		///// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
-		///// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		///// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
-		///// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		///// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
-		///// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		//public virtual int? GetSheetVersion(long sheetId)
-		//{
-		//	return this.GetResource<Sheet>("sheets/" + sheetId + "/version", typeof(Sheet)).Version;
-		//}
+		/// <summary>
+		/// <para>Gets the Sheet version without loading the entire Sheet.</para>
+		/// 
+		/// <para>It mirrors To the following Smartsheet REST API method: GET /sheets/{sheetId}/version</para>
+		/// </summary>
+		/// <param name="sheetId"> the sheetId </param>
+		/// <returns> the sheet Version (note that if there is no such resource, this method will throw
+		/// ResourceNotFoundException) </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public virtual int? GetSheetVersion(long sheetId)
+		{
+			return this.GetResource<Sheet>("sheets/" + sheetId + "/version", typeof(Sheet)).Version;
+		}
 
-		///// <summary>
-		///// <para>Send a sheet as a PDF attachment via Email To the designated recipients.</para>
-		///// 
-		///// <para>It mirrors To the following Smartsheet REST API method: POST /sheets/{sheetId}/emails</para>
-		///// </summary>
-		///// <param name="sheetId"> the sheetId </param>
-		///// <param name="email"> the Email </param>
-		///// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
-		///// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		///// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
-		///// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		///// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
-		///// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		//public virtual void SendSheet(long sheetId, SheetEmail email)
-		//{
-		//	this.CreateResource<SheetEmail>("sheets/" + sheetId + "/emails", typeof(SheetEmail), email);
-		//}
+		/// <summary>
+		/// <para>Send a sheet as a PDF attachment via Email To the designated recipients.</para>
+		/// 
+		/// <para>It mirrors To the following Smartsheet REST API method: POST /sheets/{sheetId}/emails</para>
+		/// </summary>
+		/// <param name="sheetId"> the sheetId </param>
+		/// <param name="email"> the Email </param>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public virtual void SendSheet(long sheetId, SheetEmail email)
+		{
+			this.CreateResource<SheetEmail>("sheets/" + sheetId + "/emails", typeof(SheetEmail), email);
+		}
 
 		/// <summary>
 		/// Return the ShareResources object that provides access To Share resources associated with Sheet resources.
 		/// </summary>
 		/// <returns> the ShareResources object </returns>
-		public virtual ShareResources ShareResources()
+		public virtual SheetShareResources ShareResources()
 		{
 			return this.shares;
 		}
