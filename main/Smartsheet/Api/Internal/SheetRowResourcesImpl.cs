@@ -38,6 +38,8 @@ namespace Smartsheet.Api.Internal
 
 		private RowDiscussionResources discussions;
 
+		private RowColumnResources cells;
+
 		/// <summary>
 		/// Constructor.
 		/// 
@@ -51,6 +53,7 @@ namespace Smartsheet.Api.Internal
 		{
 			this.attachments = new RowAttachmentResourcesImpl(smartsheet);
 			this.discussions = new RowDiscussionResourcesImpl(smartsheet);
+			this.cells = new RowColumnResourcesImpl(smartsheet);
 		}
 
 		/// <summary>
@@ -236,6 +239,11 @@ namespace Smartsheet.Api.Internal
 		public RowDiscussionResources DiscussionResources()
 		{
 			return this.discussions;
+		}
+
+		public RowColumnResources CellResources()
+		{
+			return this.cells;
 		}
 
 		private CopyOrMoveRowResult CopyOrMoveRowsToAnotherSheet(CopyOrMoveRowDirective directive, string path)

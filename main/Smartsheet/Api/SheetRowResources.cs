@@ -157,5 +157,7 @@ namespace Smartsheet.Api
 		RowAttachmentResources AttachmentResources();
 
 		RowDiscussionResources DiscussionResources();
+
+		RowColumnResources CellResources();
 	}
 }
