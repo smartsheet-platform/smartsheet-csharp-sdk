@@ -172,6 +172,7 @@
     <Compile Include="main\Smartsheet\Api\Models\SheetPublish.cs" />
     <Compile Include="main\Smartsheet\Api\Models\SheetUserSettings.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Source.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\SourceInclusion.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Symbol.cs" />
     <Compile Include="main\Smartsheet\Api\Models\SystemColumnType.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Template.cs" />
