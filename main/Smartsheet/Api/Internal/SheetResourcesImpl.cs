@@ -94,7 +94,7 @@ namespace Smartsheet.Api.Internal
 		public SheetResourcesImpl(SmartsheetImpl smartsheet)
 			: base(smartsheet)
 		{
-			this.shares = new ShareResourcesImpl(smartsheet, "sheet");
+			this.shares = new ShareResourcesImpl(smartsheet, "sheets");
 			this.rows = new SheetRowResourcesImpl(smartsheet);
 			this.columns = new SheetColumnResourcesImpl(smartsheet);
 			this.attachments = new SheetAttachmentResourcesImpl(smartsheet);
@@ -114,14 +114,18 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual DataWrapper<Sheet> ListSheets(PaginationParameters paging)
+		public virtual DataWrapper<Sheet> ListSheets(IEnumerable<SourceInclusion> includes, PaginationParameters paging)
 		{
-			StringBuilder path = new StringBuilder("sheets");
+			IDictionary<string, string> parameters = new Dictionary<string, string>();
 			if (paging != null)
 			{
-				path.Append(paging.ToQueryString());
+				parameters = paging.toDictionary();
 			}
-			return this.ListResourcesWithWrapper<Sheet>(path.ToString());
+			if (includes != null)
+			{
+				parameters.Add("include", QueryUtil.GenerateCommaSeparatedList(includes));
+			}
+			return this.ListResourcesWithWrapper<Sheet>("sheets" + QueryUtil.GenerateUrl(null, parameters));
 		}
 
 		/// <summary>
