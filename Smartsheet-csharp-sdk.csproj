@@ -105,6 +105,7 @@
     <Compile Include="main\Smartsheet\Api\Internal\OAuth\OAuthFlowImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\ReportResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\RowAttachmentResourcesImpl.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\RowColumnResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\RowDiscussionResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\RowResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\SearchResourcesImpl.cs" />
@@ -136,6 +137,7 @@
     <Compile Include="main\Smartsheet\Api\Models\AutoNumberFormat.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Cell.cs" />
     <Compile Include="main\Smartsheet\Api\Models\CellHistory.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\CellLink.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Column.cs" />
     <Compile Include="main\Smartsheet\Api\Models\ColumnTag.cs" />
     <Compile Include="main\Smartsheet\Api\Models\ColumnType.cs" />
@@ -203,6 +205,7 @@
     <Compile Include="main\Smartsheet\Api\ReportResources.cs" />
     <Compile Include="main\Smartsheet\Api\ResourceNotFoundException.cs" />
     <Compile Include="main\Smartsheet\Api\RowAttachmentResources.cs" />
+    <Compile Include="main\Smartsheet\Api\RowColumnResources.cs" />
     <Compile Include="main\Smartsheet\Api\RowDiscussionResources.cs" />
     <Compile Include="main\Smartsheet\Api\RowResources.cs" />
     <Compile Include="main\Smartsheet\Api\SearchResources.cs" />
