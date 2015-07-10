@@ -92,6 +92,7 @@
     <Compile Include="Smartsheet\Api\Internal\ResourcesImplBase.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Smartsheet\Api\Internal\RowColumnResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\RowResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\SearchResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\ShareResourcesImplTest.cs" />
