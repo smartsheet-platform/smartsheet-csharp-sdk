@@ -28,6 +28,6 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// The ID of the sheet that this row originates from.
 		/// </summary>
-		public long SheetId { get; set; }
+		public long? SheetId { get; set; }
 	}
 }
