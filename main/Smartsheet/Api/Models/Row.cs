@@ -221,6 +221,12 @@ namespace Smartsheet.Api.Models
 			private bool? expanded;
 			private IList<Cell> cells;
 			private bool? locked;
+			private long? id;
+
+			public UpdateRowBuilder(long? rowId)
+			{
+				this.id = rowId;
+			}
 
 			/// <summary>
 			/// Sets the To top flag that puts the row at the top of the sheet.
@@ -391,6 +397,15 @@ namespace Smartsheet.Api.Models
 			}
 
 			/// <summary>
+			/// Gets the row id.
+			/// </summary>
+			/// <returns> the row id </returns>
+			public virtual long? GetId()
+			{
+				return id;
+			}
+
+			/// <summary>
 			/// Builds the Row.
 			/// </summary>
 			/// <returns> the row </returns>
@@ -405,7 +420,8 @@ namespace Smartsheet.Api.Models
 					Locked = locked,
 					Format = format,
 					Expanded = expanded,
-					Cells = cells
+					Cells = cells,
+					ID = id
 				};
 				return row;
 			}
