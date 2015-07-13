@@ -83,6 +83,7 @@
     <Compile Include="Smartsheet\Api\Internal\DiscussionAttachmentResourcesTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\DiscussionResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\FolderResourcesImplTest.cs" />
+    <Compile Include="Smartsheet\Api\Internal\GroupResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\HomeFolderResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\HomeResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\Http\DefaultHttpClientTest.cs" />
