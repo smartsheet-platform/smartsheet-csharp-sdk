@@ -26,8 +26,9 @@ namespace Smartsheet.Api.Internal
 		{
 			server.setResponseBody("../../../TestSDK/resources/listUsers.json");
 
-			IList<User> users = userResources.ListUsers(new List<string> { "john.doe@smartsheet.com" }, new PaginationParameters(false, 123, 117));
-			Assert.NotNull(users);
+			DataWrapper<User> result = userResources.ListUsers(new string[] { "john.doe@smartsheet.com" }, new PaginationParameters(false, 123, 117));
+			Assert.NotNull(result);
+			IList<User> users = result.Data;
 			Assert.AreEqual(1, users.Count);
 			Assert.AreEqual(94094820842L, (long)users[0].ID);
 			Assert.AreEqual(true, users[0].Admin);
@@ -42,8 +43,7 @@ namespace Smartsheet.Api.Internal
 		{
 			server.setResponseBody("../../../TestSDK/resources/addUser.json");
 
-			User user = new User.AddUserBuilder().SetAdmin(false).SetEmail("NEW_USER_EMAIL").SetFirstName("John")
-			.SetLastName("Doe").SetLicensedSheetCreator(true).Build();
+			User user = new User.AddUserBuilder("NEW_USER_EMAIL", false, true).SetFirstName("John").SetLastName("Doe").Build();
 			User newUser = userResources.AddUser(user, false);
 
 			Assert.AreEqual("NEW_USER_EMAIL", newUser.Email);
@@ -90,7 +90,7 @@ namespace Smartsheet.Api.Internal
 		{
 			server.setResponseBody("../../../TestSDK/resources/updateUser.json");
 
-			User user = new User.UpdateUserBuilder().SetAdmin(true).SetLicensedSheetCreator(true).Build();
+			User user = new User.UpdateUserBuilder(true, true).Build();
 			User updatedUser = userResources.UpdateUser(123L, user);
 			Assert.AreEqual(true, updatedUser.Admin);
 			Assert.AreEqual(true, updatedUser.LicensedSheetCreator);
