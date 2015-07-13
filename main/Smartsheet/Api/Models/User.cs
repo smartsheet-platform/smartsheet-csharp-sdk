@@ -133,6 +133,18 @@ namespace Smartsheet.Api.Models
 			private string lastName;
 			private bool? resourceViewer;
 
+			/// <summary>
+			/// User object with required attributes
+			/// </summary>
+			/// <param name="email">email (required)</param>
+			/// <param name="admin">admin (required)</param>
+			/// <param name="licensedSheetCreator">licensedSheetCreator (required)</param>
+			public AddUserBuilder(string email, bool? admin, bool? licensedSheetCreator)
+			{
+				this.emailAddress = email;
+				this.admin = admin;
+				this.licensedSheetCreator = licensedSheetCreator;
+			}
 
 			/// <summary>
 			/// Sets the Admin flag which allows managing Users and accounts.
@@ -288,6 +300,17 @@ namespace Smartsheet.Api.Models
 			private string firstName;
 			private string lastName;
 			private bool? resourceViewer;
+
+			/// <summary>
+			/// User object containing the required attributes:
+			/// </summary>
+			/// <param name="admin">admin (required)</param>
+			/// <param name="licensedSheetCreator">licensedSheetCreator (required)</param>
+			public UpdateUserBuilder(bool? admin, bool? licensedSheetCreator)
+			{
+				this.admin = admin;
+				this.licensedSheetCreator = licensedSheetCreator;
+			}
 
 			/// <summary>
 			/// Sets the Admin flag which allows managing Users and accounts.
