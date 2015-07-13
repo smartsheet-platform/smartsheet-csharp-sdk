@@ -21,6 +21,7 @@ using System.Collections.Generic;
 namespace Smartsheet.Api.Internal
 {
 	using Api.Models;
+	using Smartsheet.Api.Internal.Util;
 	using System.Text;
 
 	/// <summary>
@@ -168,15 +169,15 @@ namespace Smartsheet.Api.Internal
 			IDictionary<string, string> parameters = new Dictionary<string, string>();
 			if (transferTo != null)
 			{
-				parameters.Add("pageSize", transferTo.ToString());
+				parameters.Add("transferTo", transferTo.ToString());
 			}
 			if (transferSheets != null)
 			{
-				parameters.Add("pageSize", transferSheets.ToString());
+				parameters.Add("transferSheets", transferSheets.ToString());
 			}
 			if (removeFromSharing != null)
 			{
-				parameters.Add("pageSize", removeFromSharing.ToString());
+				parameters.Add("removeFromSharing", removeFromSharing.ToString());
 			}
 			this.DeleteResource<User>("users/" + userId + QueryUtil.GenerateUrl(null, parameters), typeof(User));
 		}
