@@ -1,10 +1,10 @@
 {
-   "resultCode":0,
-   "result":{
-      "id":2349499415848836,
-      "name":"New Workspace",
-      "accessLevel":"OWNER",
-      "permalink":"https://app.smartsheet.com/b/home?lx=Jasdfa"
-   },
-   "message":"SUCCESS"
+    "message": "SUCCESS",
+    "result": {
+        "accessLevel": "OWNER",
+        "id": 7960873114331012,
+        "name": "New workspace",
+        "permalink": "https://app.smartsheet.com/b/home?lx=rBU8QqUVPCJ3geRgl7L8yQ"
+    },
+    "resultCode": 0
 }
