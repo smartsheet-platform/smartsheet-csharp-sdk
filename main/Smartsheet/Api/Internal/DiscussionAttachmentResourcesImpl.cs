@@ -30,7 +30,7 @@ namespace Smartsheet.Api.Internal
 	/// 
 	/// Thread Safety: This class is thread safe because it is immutable and its base class is thread safe.
 	/// </summary>
-	public class DiscussionAttachmentResources : AssociatedAttachmentResourcesImpl
+	public class DiscussionAttachmentResourcesImpl : AbstractResources, DiscussionAttachmentResources
 	{
 
 		/// <summary>
@@ -39,7 +39,7 @@ namespace Smartsheet.Api.Internal
 		/// Exceptions: - IllegalArgumentException : if any argument is null or empty string
 		/// </summary>
 		/// <param name="smartsheet"> the Smartsheet </param>
-		public DiscussionAttachmentResources(SmartsheetImpl smartsheet) : base(smartsheet, "discussion")
+		public DiscussionAttachmentResourcesImpl(SmartsheetImpl smartsheet) : base(smartsheet)
 		{
 		}
 
