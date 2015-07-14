@@ -128,10 +128,9 @@ namespace Smartsheet.Api.Internal
 
 			server.setResponseBody("../../../TestSDK/resources/createSheetFromExisting.json");
 
-			Sheet sheet = new Sheet.CreateFromTemplateOrSheetBuilder().SetFromId(2906571706525572L).Build();
+			Sheet sheet = new Sheet.CreateFromTemplateBuilder().SetFromId(2906571706525572L).Build();
 
-			Sheet newSheet = sheetResource.CreateSheetFromTemplate(sheet, new List<ObjectInclusion>((ObjectInclusion[])Enum.
-				GetValues(typeof(ObjectInclusion))));
+			Sheet newSheet = sheetResource.CreateSheetFromTemplate(sheet, null);
 
 			Assert.AreEqual(466343087630212L, (long)newSheet.ID);
 			Assert.AreEqual(AccessLevel.OWNER, newSheet.AccessLevel);
