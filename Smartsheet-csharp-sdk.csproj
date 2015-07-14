@@ -122,6 +122,7 @@
     <Compile Include="main\Smartsheet\Api\Internal\Util\Util.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\WorkspaceFolderResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\WorkspaceResourcesImpl.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\WorkspaceSheetResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\InvalidRequestException.cs" />
     <Compile Include="main\Smartsheet\Api\Models\AbstractRow.cs" />
     <Compile Include="main\Smartsheet\Api\Models\AbstractSheet.cs" />
@@ -176,6 +177,7 @@
     <Compile Include="main\Smartsheet\Api\Models\Symbol.cs" />
     <Compile Include="main\Smartsheet\Api\Models\SystemColumnType.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Template.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\TemplateInclusion.cs" />
     <Compile Include="main\Smartsheet\Api\Models\User.cs" />
     <Compile Include="main\Smartsheet\Api\Models\UserProfile.cs" />
     <Compile Include="main\Smartsheet\Api\Models\UserStatus.cs" />
@@ -215,6 +217,7 @@
     <Compile Include="main\Smartsheet\Api\UserSheetResources.cs" />
     <Compile Include="main\Smartsheet\Api\WorkspaceFolderResources.cs" />
     <Compile Include="main\Smartsheet\Api\WorkspaceResources.cs" />
+    <Compile Include="main\Smartsheet\Api\WorkspaceSheetResources.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
