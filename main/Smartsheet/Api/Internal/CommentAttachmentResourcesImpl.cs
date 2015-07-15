@@ -49,15 +49,15 @@ namespace Smartsheet.Api.Internal
 		{
 		}
 
-		/// <summary>
-		/// 
-		/// </summary>
-		/// <param name="objectId"></param>
-		/// <returns></returns>
-		public override IList<Attachment> ListAttachments(long objectId)
-		{
-			throw new System.NotSupportedException();
-		}
+		///// <summary>
+		///// 
+		///// </summary>
+		///// <param name="objectId"></param>
+		///// <returns></returns>
+		//public virtual IList<Attachment> ListAttachments(long objectId)
+		//{
+		//	throw new System.NotSupportedException();
+		//}
 	}
 
 }

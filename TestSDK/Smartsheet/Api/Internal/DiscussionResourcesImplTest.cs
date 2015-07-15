@@ -38,26 +38,26 @@ namespace Smartsheet.Api.Internal
 			Assert.AreEqual("email@email.com", discussion.Comments[0].CreatedBy.Email);
 		}
 
-		[Test]
-		public virtual void TestAddDiscussionComment()
-		{
-			server.setResponseBody("../../../TestSDK/resources/addDiscussionComment.json");
+		//[Test]
+		//public virtual void TestAddDiscussionComment()
+		//{
+		//	server.setResponseBody("../../../TestSDK/resources/addDiscussionComment.json");
 
-			Comment comment = new Comment();
-			comment.Text = "Some new Text";
+		//	Comment comment = new Comment();
+		//	comment.Text = "Some new Text";
 
-			Comment newComment = discussionResources.AddDiscussionComment(1234L, comment);
+		//	Comment newComment = discussionResources.AddDiscussionComment(1234L, comment);
 
-			Assert.AreEqual("Some new text",newComment.Text);
-			Assert.AreEqual("Brett Batie", newComment.CreatedBy.Name);
-		}
+		//	Assert.AreEqual("Some new text",newComment.Text);
+		//	Assert.AreEqual("Brett Batie", newComment.CreatedBy.Name);
+		//}
 
-		[Test]
-		public virtual void TestAttachments()
-		{
-				server.setResponseBody("../../../TestSDK/resources/emptyFile.json");
-			Assert.Null(discussionResources.Attachments());
-		}
+		//[Test]
+		//public virtual void TestAttachments()
+		//{
+		//		server.setResponseBody("../../../TestSDK/resources/emptyFile.json");
+		//	Assert.Null(discussionResources.Attachments());
+		//}
 
 	}
 
