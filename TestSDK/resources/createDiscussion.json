@@ -1,1 +1,20 @@
-{"resultCode":0,"result":{"id":6156877865215876,"title":"New Discussion","comments":[{"id":3831661625403268,"text":"This text is the body of the first comment","createdBy":{"email":"email@email.com","name":"Brett Batie"},"modifiedDate":"2014-01-31T10:56:26-08:00","createdAt":"2014-01-31T10:56:26-08:00","modifiedAt":"2014-01-31T10:56:26-08:00"}]},"message":"SUCCESS"}
+{
+	"message": "SUCCESS",
+	"result": {
+		"comments": [
+			{
+				"createdAt": "2013-02-28T22:00:56-08:00",
+				"createdBy": {
+					"email": "jane.doev@smartsheet.com",
+					"name": "Jane Doe"
+				},
+				"id": 4583173393803140,
+				"modifiedAt": "2013-02-28T22:00:56-08:00",
+				"text": "This text is the body of the first comment"
+			}
+		],
+		"id": 4583173393803140,
+		"title": "This is a new discussion"
+	},
+	"resultCode": 0
+}
