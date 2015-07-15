@@ -20,21 +20,10 @@ using System.Collections.Generic;
 
 namespace Smartsheet.Api.Internal
 {
-
 	using HttpMethod = Api.Internal.Http.HttpMethod;
 	using HttpRequest = Api.Internal.Http.HttpRequest;
 	using Utils = Api.Internal.Utility.Utility;
-	using ObjectInclusion = Api.Models.ObjectInclusion;
-	using PaperSize = Api.Models.PaperSize;
-	using Sheet = Api.Models.Sheet;
-	using SheetEmail = Api.Models.SheetEmail;
-	using SheetPublish = Api.Models.SheetPublish;
-	using System.IO;
-	using System.Net;
-	using System;
 	using Smartsheet.Api.Models;
-	using Smartsheet.Api.Internal.Util;
-	using System.Text;
 
 	/// <summary>
 	/// This is the implementation of the RowAttachmentResources.
