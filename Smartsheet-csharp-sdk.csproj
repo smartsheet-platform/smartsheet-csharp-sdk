@@ -145,6 +145,8 @@
     <Compile Include="main\Smartsheet\Api\Models\Comment.cs" />
     <Compile Include="main\Smartsheet\Api\Models\DataWrapper.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Discussion.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\DiscussionInclusion.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\DiscussionParentType.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Email.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Error.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Folder.cs" />
