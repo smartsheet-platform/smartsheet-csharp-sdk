@@ -108,6 +108,8 @@
     <Compile Include="main\Smartsheet\Api\Internal\Json\LowerCaseContractResolver.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\OAuth\OAuthFlowImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\ReportResourcesImpl.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\RowAttachmentResourcesImpl.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\RowDiscussionResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\RowResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\SearchResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\ShareResourcesImpl.cs" />
@@ -204,6 +206,8 @@
     <Compile Include="main\Smartsheet\Api\OAuth\UnsupportedResponseTypeException.cs" />
     <Compile Include="main\Smartsheet\Api\ReportResources.cs" />
     <Compile Include="main\Smartsheet\Api\ResourceNotFoundException.cs" />
+    <Compile Include="main\Smartsheet\Api\RowAttachmentResources.cs" />
+    <Compile Include="main\Smartsheet\Api\RowDiscussionResources.cs" />
     <Compile Include="main\Smartsheet\Api\RowResources.cs" />
     <Compile Include="main\Smartsheet\Api\SearchResources.cs" />
     <Compile Include="main\Smartsheet\Api\ServiceUnavailableException.cs" />
