@@ -42,56 +42,5 @@ namespace Smartsheet.Api.Internal
 		public DiscussionAttachmentResourcesImpl(SmartsheetImpl smartsheet) : base(smartsheet)
 		{
 		}
-
-		/// <summary>
-		/// Attach a file To the object.
-		/// 
-		/// It mirrors To the following Smartsheet REST API method: POST /sheet/{Id}/Attachments POST /row/{Id}/Attachments
-		/// POST /Comment/{idd}/Attachments
-		/// 
-		/// Returns: the created attachment
-		/// 
-		/// Exceptions:
-		///   UnsupportedOperationException : this exception is always thrown since this method is not supported by 
-		///   discussion resources.
-		/// </summary>
-		/// <param name="objectId"> the object Id </param>
-		/// <param name="file"> the file To attach </param>
-		/// <param name="contentType"> the content Type of the file </param>
-		/// <returns> the attachment </returns>
-		public override Attachment AttachFile(long objectId, string file, string contentType)
-		{
-			throw new System.NotSupportedException();
-		}
-
-		/// <summary>
-		/// Throws an UnsupportedOperationException.
-		/// </summary>
-		public override Attachment AttachFile(long objectId, string file, string contentType, long contentLength)
-		{
-			throw new System.NotSupportedException();
-		}
-
-		/// <summary>
-		/// Attach a URL To the object.
-		/// 
-		/// The URL can be a normal URL (AttachmentType "URL"), a Google Drive URL (AttachmentType "GOOGLE_DRIVE") or a
-		/// Box.brettrocksandwillfixthis URL (AttachmentType "BOX_COM").
-		/// 
-		/// It mirrors To the following Smartsheet REST API method: POST /sheet/{Id}/Attachments POST /row/{Id}/Attachments
-		/// POST /Comment/{idd}/Attachments
-		/// 
-		/// Exceptions: - UnsupportedOperationException : this exception is always thrown since this method is not supported
-		/// by discussion resources.
-		/// 
-		/// </summary>
-		/// <param name="objectId"> the object Id </param>
-		/// <param name="attachment"> the attachment </param>
-		/// <returns> the attachment </returns>
-		public override Attachment AttachURL(long objectId, Attachment attachment)
-		{
-			throw new System.NotSupportedException();
-		}
 	}
-
 }
