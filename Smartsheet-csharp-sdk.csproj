@@ -170,7 +170,6 @@
     <Compile Include="main\Smartsheet\Api\Models\SearchResult.cs" />
     <Compile Include="main\Smartsheet\Api\Models\SearchResultItem.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Share.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\ShareType.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Sheet.cs" />
     <Compile Include="main\Smartsheet\Api\Models\SheetEmail.cs" />
     <Compile Include="main\Smartsheet\Api\Models\SheetEmailFormat.cs" />

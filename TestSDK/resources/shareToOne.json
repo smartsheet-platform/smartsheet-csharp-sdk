@@ -1,14 +1,1 @@
-{
-	"resultCode": 0,
-	"result": [
-		{
-			"id": "AAAFeF82FOeE",
-			"type": "USER",
-			"userId": 1539725208119172,
-			"email": "jane.doe@smartsheet.com",
-			"name": "Jane Doe",
-			"accessLevel": "EDITOR"
-		}
-	],
-	"message": "SUCCESS"
-}
+{"resultCode":0,"result":{"name":"Brett Batie","email":"email@email.com","accessLevel":"ADMIN","id":6199527427336068},"message":"SUCCESS"}
