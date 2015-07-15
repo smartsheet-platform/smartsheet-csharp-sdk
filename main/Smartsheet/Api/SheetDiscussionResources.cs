@@ -78,7 +78,7 @@ namespace Smartsheet.Api
 
 		/// <summary>
 		/// <para>Gets a list of all Discussions associated with the specified Sheet (both sheet-level discussions and row-level discussions).</para>
-		/// <para>It mirrors To the following Smartsheet REST API method: GET /Sheets</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: GET /sheets/{sheetId}/discussions</para>
 		/// <remarks>This operation supports pagination of results. For more information, see Paging.</remarks>
 		/// </summary>
 		/// <param name="sheetId"> the sheet Id </param>

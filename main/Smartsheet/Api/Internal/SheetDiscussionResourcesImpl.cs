@@ -103,7 +103,7 @@ namespace Smartsheet.Api.Internal
 
 		/// <summary>
 		/// <para>Gets a list of all Discussions associated with the specified Sheet (both sheet-level discussions and row-level discussions).</para>
-		/// <para>It mirrors To the following Smartsheet REST API method: GET /Sheets</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: GET /sheets/{sheetId}/discussions</para>
 		/// <remarks>This operation supports pagination of results. For more information, see Paging.</remarks>
 		/// </summary>
 		/// <param name="sheetId"> the sheet Id </param>
@@ -124,7 +124,7 @@ namespace Smartsheet.Api.Internal
 				parameters = paging.toDictionary();
 			}
 			parameters.Add("include", Util.QueryUtil.GenerateCommaSeparatedList(include));
-			return this.ListResourcesWithWrapper<Discussion>(Util.QueryUtil.GenerateUrl(null, parameters));
+			return this.ListResourcesWithWrapper<Discussion>("sheets/" + sheetId + "/discussions" + Util.QueryUtil.GenerateUrl(null, parameters));
 		}
 
 
