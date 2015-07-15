@@ -29,6 +29,40 @@ namespace Smartsheet.Api
 	/// </summary>
 	public interface RowDiscussionResources
 	{
+		/// <summary>
+		/// <para>Creates a new Discussion on a Row.</para>
+		/// <para>It mirrors To the following Smartsheet REST API method:<br />
+		/// POST /sheets/{sheetId}/rows/{rowId}/discussions</para>
+		/// </summary>
+		/// <param name="sheetId"> the id of the sheet </param>
+		/// <param name="rowId"> the id of the row </param>
+		/// <param name="discussion"> the discussion to add </param>
+		/// <returns> the created discussion </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		Discussion CreateDiscussion(long sheetId, long rowId, Discussion discussion);
+
+		/// <summary>
+		/// <para>Gets a list of all Discussions associated with the specified Row.</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: GET /sheets/{sheetId}/rows/{rowId}/discussions</para>
+		/// <remarks>This operation supports pagination of results. For more information, see Paging.</remarks>
+		/// </summary>
+		/// <param name="sheetId"> the sheet Id </param>
+		/// <param name="rowId"> the row Id </param>
+		/// <param name="include">elements to include in response</param>
+		/// <param name="paging">the pagination</param>
+		/// <returns> list of all Discussions </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		DataWrapper<Discussion> ListDiscussions(long sheetId, long rowId, IEnumerable<DiscussionInclusion> include, PaginationParameters paging);
 	}
 
 }
