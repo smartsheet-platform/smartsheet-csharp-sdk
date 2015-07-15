@@ -16,17 +16,19 @@
 //    limitations under the License.
 //    %[license]
 
+using Smartsheet.Api.Models;
 using System.Collections.Generic;
 
 namespace Smartsheet.Api.Internal
 {
 	/// <summary>
 	/// This is the implementation of the SheetCommentResources.
-	/// 
 	/// Thread Safety: This class is thread safe because it is immutable and its base class is thread safe.
 	/// </summary>
 	public class SheetCommentResourcesImpl : AbstractResources, SheetCommentResources
 	{
+		private CommentAttachmentResources attachments;
+
 		/// <summary>
 		/// Constructor.
 		/// </summary>
@@ -35,6 +37,51 @@ namespace Smartsheet.Api.Internal
 		public SheetCommentResourcesImpl(SmartsheetImpl smartsheet)
 			: base(smartsheet)
 		{
+			this.attachments = new CommentAttachmentResourcesImpl(smartsheet);
+		}
+
+		/// <summary>
+		/// <para>Deletes the Comment specified in the URL.</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: DELETE /sheets/{sheetId}/comments/{commentId}</para>
+		/// </summary>
+		/// <param name="sheetId"> the sheetId </param>
+		/// <param name="commentId">the commentId</param>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public virtual void DeleteComment(long sheetId, long commentId)
+		{
+			this.DeleteResource<Comment>("sheets/" + sheetId + "/comments/" + commentId, typeof(Comment));
+		}
+
+		/// <summary>
+		/// <para>Gets the Comment specified in the URL.</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: GET /sheets/{sheetId}/comments/{commentId}</para>
+		/// </summary>
+		/// <param name="sheetId">the id of the sheet</param>
+		/// <param name="commentId">the id the of the comment</param>
+		/// <returns> the comment object </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public virtual Comment GetComment(long sheetId, long commentId)
+		{
+			return this.GetResource<Comment>("sheets/" + sheetId + "/comments/" + commentId, typeof(Comment));
+		}
+
+		/// <summary>
+		/// Return the CommentAttachmentResources object that provides access To Attachment resources associated with Comment resources.
+		/// </summary>
+		/// <returns> the Attachment resources </returns>
+		public virtual CommentAttachmentResources AttachmentResources()
+		{
+			return this.attachments;
 		}
 	}
 }
