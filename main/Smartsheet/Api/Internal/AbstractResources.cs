@@ -308,8 +308,10 @@ namespace Smartsheet.Api.Internal
 		/// <param name="object"> the object To create </param>
 		/// <returns> the created resource </returns>
 		/// <exception cref="SmartsheetException"> the SmartsheetClient exception </exception>
-		protected internal virtual T CreateResourceWithAttachment<T>(string path, T comment, string file, string fileType)
+		protected internal virtual T CreateResourceWithAttachment<T>(string path, T @object, string file, string fileType)
 		{
+			Utils.ThrowIfNull(path, @object);
+
 			HttpRequest request = null;
 			try
 			{
