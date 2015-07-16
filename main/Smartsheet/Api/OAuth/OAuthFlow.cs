@@ -78,6 +78,17 @@ namespace Smartsheet.Api.OAuth
 		/// <exception cref="InvalidRequestException"> the invalid request exception </exception>
 		/// <exception cref="System.InvalidOperationException"> if any other error occurred during the operation </exception>
 		Token RefreshToken(Token token);
+
+		/// <summary>
+		/// Revoke token.
+		/// </summary>
+		/// <param name="accessToken"> the the access token </param>
+		/// <exception cref="OAuthTokenException"> the o auth token exception </exception>
+		/// <exception cref="JSONSerializationException"> the JSON serializer exception </exception>
+		/// <exception cref="System.UriFormatException"> the URI syntax exception </exception>
+		/// <exception cref="InvalidRequestException"> the invalid request exception </exception>
+		/// <exception cref="System.InvalidOperationException"> if any other error occurred during the operation </exception>
+		void RevokeTokenAccess(string accessToken);
 	}
 
 }
