@@ -70,6 +70,28 @@ namespace Smartsheet.Api.Models
 		/// </summary>
 		private long? sizeInKb;
 
+		private User createdBy;
+
+		private string description;
+
+		/// <summary>
+		/// Applicable when attaching to sheet or row only
+		/// </summary>
+		public string Description
+		{
+			get { return description; }
+			set { description = value; }
+		}
+
+		/// <summary>
+		/// User object containing name and email of the creator of this attachment
+		/// </summary>
+		public User CreatedBy
+		{
+			get { return createdBy; }
+			set { createdBy = value; }
+		}
+
 		/// <summary>
 		/// Gets the URL.
 		/// </summary>
@@ -219,6 +241,92 @@ namespace Smartsheet.Api.Models
 			set
 			{
 				this.sizeInKb = value;
+			}
+		}
+
+		/// <summary>
+		/// A convenience class for quickly creating an Attachment to a URL.
+		/// </summary>
+		public class CreateAttachmentBuilder
+		{
+			private string name;
+			private string description;
+			private string url;
+			private AttachmentType attachmentType;
+			private AttachmentSubType attachmentSubType;
+
+			/// <summary>
+			/// Builds the Attachment with required parameters
+			/// </summary>
+			/// <param name="url">Attachment temporary URL (files only)</param>
+			/// <param name="attachmentType">Attachment type (one of FILE, GOOGLE_DRIVE,
+			/// LINK, BOX_COM, DROPBOX, or EVERNOTE)</param>
+			public CreateAttachmentBuilder(string url, AttachmentType attachmentType)
+			{
+				this.url = url;
+				this.attachmentType = attachmentType;
+			}
+
+			/// <summary>
+			/// Attachment name
+			/// </summary>
+			/// <param name="name">Attachment name</param>
+			/// <returns> the CreateAttachmentBuilder object </returns>
+			public CreateAttachmentBuilder SetName(string name)
+			{
+				this.name = name;
+				return this;
+			}
+
+			/// <summary>
+			/// Applicable when attaching to sheet or row only
+			/// </summary>
+			/// <param name="description"> the description </param>
+			/// <returns> the CreateAttachmentBuilder object </returns>
+			public CreateAttachmentBuilder SetDescription(string description)
+			{
+				this.description = description;
+				return this;
+			}
+
+			/// <summary>
+			/// Attachment temporary URL (files only)
+			/// </summary>
+			/// <param name="url"> the url </param>
+			/// <returns> the CreateAttachmentBuilder object </returns>
+			public CreateAttachmentBuilder SetUrl(string url)
+			{
+				this.url = url;
+				return this;
+			}
+
+			/// <summary>
+			/// Attachment sub type, only
+			/// for GOOGLE_DRIVE type attachments; one of
+			/// (DOCUMENT, SPREADSHEET, PRESENTATION, PDF, DRAWING)
+			/// </summary>
+			/// <param name="attachmentSubType"> the attachmentSubType </param>
+			/// <returns> the CreateAttachmentBuilder object </returns>
+			public CreateAttachmentBuilder SetAttachmentSubType(AttachmentSubType attachmentSubType)
+			{
+				this.attachmentSubType = attachmentSubType;
+				return this;
+			}
+
+			/// <summary>
+			/// Returns the Attachment.
+			/// </summary>
+			/// <returns> the attachment </returns>
+			public Attachment Build()
+			{
+				return new Attachment
+				{
+					Name = name,
+					Description = description,
+					Url = url,
+					AttachmentType = attachmentType,
+					AttachmentSubType = attachmentSubType
+				};
 			}
 		}
 
