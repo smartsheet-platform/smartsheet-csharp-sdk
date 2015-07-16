@@ -112,6 +112,7 @@
     <Compile Include="main\Smartsheet\Api\Internal\RowDiscussionResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\RowResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\SearchResourcesImpl.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\ServerInfoResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\ShareResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\SheetAttachmentResources.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\SheetColumnResourcesImpl.cs" />
@@ -145,12 +146,16 @@
     <Compile Include="main\Smartsheet\Api\Models\ColumnTag.cs" />
     <Compile Include="main\Smartsheet\Api\Models\ColumnType.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Comment.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Currency.cs" />
     <Compile Include="main\Smartsheet\Api\Models\DataWrapper.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Discussion.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Email.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Error.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\FeatureInfo.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Folder.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\FontFamily.cs" />
     <Compile Include="main\Smartsheet\Api\Models\FormatDetails.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\FormatTables.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Home.cs" />
     <Compile Include="main\Smartsheet\Api\Models\IdentifiableModel.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Link.cs" />
@@ -171,6 +176,7 @@
     <Compile Include="main\Smartsheet\Api\Models\RowWrapper.cs" />
     <Compile Include="main\Smartsheet\Api\Models\SearchResult.cs" />
     <Compile Include="main\Smartsheet\Api\Models\SearchResultItem.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\ServerInfo.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Share.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Sheet.cs" />
     <Compile Include="main\Smartsheet\Api\Models\SheetEmail.cs" />
@@ -208,6 +214,7 @@
     <Compile Include="main\Smartsheet\Api\RowDiscussionResources.cs" />
     <Compile Include="main\Smartsheet\Api\RowResources.cs" />
     <Compile Include="main\Smartsheet\Api\SearchResources.cs" />
+    <Compile Include="main\Smartsheet\Api\ServerInfoResources.cs" />
     <Compile Include="main\Smartsheet\Api\ServiceUnavailableException.cs" />
     <Compile Include="main\Smartsheet\Api\ShareResources.cs" />
     <Compile Include="main\Smartsheet\Api\SheetAttachmentResources.cs" />
