@@ -31,13 +31,11 @@ namespace Smartsheet.Api
 	{
 
 		/// <summary>
-		/// <para>Performs a search across all Sheets To which user has access.</para>
-		/// 
+		/// <para>Searches all Sheets that the User can access, for the specified text.</para>
 		/// <para>It mirrors To the following Smartsheet REST API method: GET /search</para>
 		/// </summary>
-		/// <param name="query"> the query Text </param>
-		/// <returns> the search RequestResult (note that if there is no such resource, this method will throw 
-		/// ResourceNotFoundException rather than returning null). </returns>
+		/// <param name="query"> (required): Text with which to perform the search. </param>
+		/// <returns> SearchResult object that contains a maximum of 100 SearchResultems </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
@@ -47,14 +45,12 @@ namespace Smartsheet.Api
 		SearchResult Search(string query);
 
 		/// <summary>
-		/// <para>Performs a search within a sheet.</para>
-		/// 
-		/// <para>It mirrors To the following Smartsheet REST API method: GET /search/sheet/{SheetId}</para>
+		/// <para>Searches a Sheet for the specified text.</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: GET /search/sheets/{sheetId}</para>
 		/// </summary>
 		/// <param name="sheetId"> the sheet Id </param>
 		/// <param name="query"> the query Text </param>
-		/// <returns> the search RequestResult (note that if there is no such resource, this method will throw 
-		/// ResourceNotFoundException rather than returning null). </returns>
+		/// <returns> SearchResult object that contains a maximum of 100 SearchResultems </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
@@ -63,5 +59,4 @@ namespace Smartsheet.Api
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		SearchResult SearchSheet(long sheetId, string query);
 	}
-
 }
