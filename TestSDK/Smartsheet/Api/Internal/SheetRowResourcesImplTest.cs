@@ -101,8 +101,8 @@ namespace Smartsheet.Api.Internal
 		{
 			server.setResponseBody("../../../TestSDK/resources/updateRows.json");
 
-			Row row = new Row.UpdateRowBuilder().SetLocked(true).SetExpanded(true).Build();
-			Row row2 = new Row.UpdateRowBuilder().SetToBottom(true).SetExpanded(false).Build();
+			Row row = new Row.UpdateRowBuilder(65654654).SetLocked(true).SetExpanded(true).Build();
+			Row row2 = new Row.UpdateRowBuilder(4554684).SetToBottom(true).SetExpanded(false).Build();
 
 			IList<Row> rows = sheetRowResource.UpdateRows(123, new List<Row> { row, row2 });
 
