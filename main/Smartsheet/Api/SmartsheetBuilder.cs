@@ -73,9 +73,9 @@ namespace Smartsheet.Api
 		/// <summary>
 		/// <para>Represents the default base URI of the SmartsheetClient REST API.</para>
 		/// 
-		/// <para>It is a constant with Value "https://Api.SmartsheetClient.com/1.1".</para>
+		/// <para>It is a constant with Value "https://Api.SmartsheetClient.com/2.0".</para>
 		/// </summary>
-		public const string DEFAULT_BASE_URI = "https://api.smartsheet.com/1.1/";
+		public const string DEFAULT_BASE_URI = "https://api.smartsheet.com/2.0/";
 
 		/// <summary>
 		/// Constructor.

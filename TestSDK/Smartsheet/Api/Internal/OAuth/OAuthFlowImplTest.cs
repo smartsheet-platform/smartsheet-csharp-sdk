@@ -198,7 +198,7 @@ namespace Smartsheet.Api.Internal.OAuth
 		[Test]
 		public virtual void TestRefreshToken()
 		{
-			oauth.TokenURL = "https://api.smartsheet.com/1.1/token";
+			oauth.TokenURL = "https://api.smartsheet.com/2.0/token";
 
 			Token token = new Token();
 			token.AccessToken = "AccessToken";

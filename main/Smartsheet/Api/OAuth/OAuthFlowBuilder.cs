@@ -46,9 +46,9 @@ namespace Smartsheet.Api.OAuth
 		/// <summary>
 		/// <para>Represents the default token URL</para>
 		/// 
-		/// <para>It is a constant with Value "https://Api.Smartsheet.com/1.1/token".</para>
+		/// <para>It is a constant with Value "https://Api.Smartsheet.com/2.0/token".</para>
 		/// </summary>
-		public const string DEFAULT_TOKEN_URL = "https://api.smartsheet.com/1.1/token";
+		public const string DEFAULT_TOKEN_URL = "https://api.smartsheet.com/2.0/token";
 
 		/// <summary>
 		/// <para>Represents the HttpClient.</para>
