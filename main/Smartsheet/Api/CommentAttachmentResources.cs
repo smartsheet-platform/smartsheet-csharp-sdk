@@ -18,7 +18,7 @@
 
 using System.Collections.Generic;
 
-namespace Smartsheet.Api.Internal
+namespace Smartsheet.Api
 {
 	using Attachment = Api.Models.Attachment;
 
