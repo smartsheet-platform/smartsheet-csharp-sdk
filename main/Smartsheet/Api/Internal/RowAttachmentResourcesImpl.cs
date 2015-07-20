@@ -18,15 +18,29 @@
 
 using System.Collections.Generic;
 
-namespace Smartsheet.Api
+namespace Smartsheet.Api.Internal
 {
-	/// <summary>
-	/// <para>This interface provides methods To access Comment resources that are associated To a sheet object.</para>
-	/// 
-	/// <para>Thread Safety: Implementation of this interface must be thread safe.</para>
-	/// </summary>
-	public interface SheetCommentResources
-	{
+	using HttpMethod = Api.Internal.Http.HttpMethod;
+	using HttpRequest = Api.Internal.Http.HttpRequest;
+	using Utils = Api.Internal.Utility.Utility;
+	using Smartsheet.Api.Models;
 
+	/// <summary>
+	/// This is the implementation of the RowAttachmentResources.
+	/// 
+	/// Thread Safety: This class is thread safe because it is immutable and its base class is thread safe.
+	/// </summary>
+	public class RowAttachmentResourcesImpl : AbstractResources, RowAttachmentResources
+	{
+		/// <summary>
+		/// Constructor.
+		/// 
+		/// Exceptions: - IllegalArgumentException : if any argument is null
+		/// </summary>
+		/// <param name="smartsheet"> the Smartsheet </param>
+		public RowAttachmentResourcesImpl(SmartsheetImpl smartsheet)
+			: base(smartsheet)
+		{
+		}
 	}
 }
