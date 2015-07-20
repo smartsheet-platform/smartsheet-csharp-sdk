@@ -23,7 +23,7 @@ namespace Smartsheet.Api
 	using Attachment = Api.Models.Attachment;
 
 	public interface CommentAttachmentResources
-	{ 
-	}
+	{
 
+	}
 }
