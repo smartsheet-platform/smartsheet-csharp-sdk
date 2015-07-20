@@ -18,62 +18,53 @@
 
 using System.Collections.Generic;
 
-namespace Smartsheet.Api.Internal
+namespace Smartsheet.Api
 {
-	using Api.Models;
+	using Attachment = Api.Models.Attachment;
 
-	/// <summary>
-	/// This is the implementation of the HomeFolderResources.
-	/// 
-	/// Thread Safety: This class is thread safe because it is immutable and its base class is thread safe.
-	/// </summary>
-	public class HomeFolderResourcesImpl : AbstractResources, HomeFolderResources
+	public interface CommentAttachmentResources
 	{
 		/// <summary>
-		/// Constructor.
+		/// <para>Attaches a file to the Comment.</para>
+		/// <para>This operation will always create a new attachment.
+		/// To upload a new version of the same attachment, use the Attach New Version operation.</para>
+		/// <para>It mirrors To the following Smartsheet REST API method:
+		/// POST /sheets/{sheetId}/comments/{commentId}/attachments</para>
 		/// </summary>
-		/// <param name="smartsheet"> the Smartsheet </param>
-		/// <exception cref="IllegalArgumentException">if any argument is null</exception>
-		public HomeFolderResourcesImpl(SmartsheetImpl smartsheet)
-			: base(smartsheet)
-		{
-		}
-
-		/// <summary>
-		/// <para>List Folders under home.</para>
-		/// 
-		/// <para>It mirrors To the following Smartsheet REST API method:<br />
-		/// GET /home/Folders</para>
-		/// </summary>
-		/// <returns> the list of Folders (note that an empty list will be returned if there is none) </returns>
+		/// <param name="sheetId"> the sheetId </param>
+		/// <param name="commentId"> the comment Id </param>
+		/// <param name="file"> the file path </param>
+		/// <param name="fileType"> the file type </param>
+		/// <returns> the newly created Attachment </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual DataWrapper<Folder> ListFolders(PaginationParameters paging)
-		{
-			return ListResourcesWithWrapper<Folder>("home/folders" + paging.ToQueryString());
-		}
+		Attachment AttachFile(long sheetId, long commentId, string file, string fileType);
 
 		/// <summary>
-		/// <para>Create a folder in home.</para>
-		/// 
-		/// <para>It mirrors To the following Smartsheet REST API method:<br />
-		/// POST /home/Folders</para>
+		/// <para>Attaches a URL to the Comment.</para>
+		/// <para>It mirrors To the following Smartsheet REST API method:
+		/// POST /sheets/{sheetId}/comments/{commentId}/attachments</para>
+		/// <remarks><para>attachmentSubType is valid only for GOOGLE_DRIVE attachments which are Google Docs.
+		/// It can optionally be included to indicate the type of a file.
+		/// The following attachmentSubTypes are valid for GOOGLE_DRIVE attachments "DOCUMENT", "SPREADSHEET", "PRESENTATION", "PDF", "DRAWING".</para>
+		/// <para>When the attachment type is BOX_COM, DROPBOX, or GOOGLE_DRIVE (without an attachmentSubType specified),
+		/// the mimeType will be derived by the file extension specified on the “name”.</para>
+		/// </remarks>
 		/// </summary>
-		/// <param name="folder"> the folder To create </param>
-		/// <returns> the folder </returns>
+		/// <param name="sheetId"> the sheetId </param>
+		/// <param name="commentId"> the comment Id </param>
+		/// <param name="attachment"> the attachment object </param>
+		/// <returns> the newly created Attachment </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual Folder CreateFolder(Folder folder)
-		{
-			return this.CreateResource<Folder>("home/folders", typeof(Folder), folder);
-		}
+		Attachment AttachUrl(long sheetId, long commentId, Attachment attachment);
 	}
 }

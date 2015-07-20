@@ -49,15 +49,15 @@ namespace Smartsheet.Api.Internal
 			}
 		}
 
-		[Test]
-		public virtual void TestFolders()
-		{
-			server.setResponseBody("../../../TestSDK/resources/getHomeFolders.json");
+		//[Test]
+		//public virtual void TestFolders()
+		//{
+		//	server.setResponseBody("../../../TestSDK/resources/getHomeFolders.json");
 
-			HomeFolderResources folders = homeResources.Folders();
-			Assert.NotNull(folders.ListFolders());
-			Assert.True(folders.ListFolders().Count == 5);
-		}
+		//	HomeFolderResources folders = homeResources.Folders();
+		//	Assert.NotNull(folders.ListFolders());
+		//	Assert.True(folders.ListFolders().Count == 5);
+		//}
 
 	}
 

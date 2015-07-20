@@ -56,6 +56,12 @@ namespace Smartsheet.Api.Models
 			private IList<Column> columns;
 			private string name;
 
+			public CreateSheetBuilder(string name, IList<Column> columns)
+			{
+				this.name = name;
+				this.columns = columns;
+			}
+
 			/// <summary>
 			/// Sets the Columns for the sheet being created.
 			/// </summary>
@@ -125,7 +131,7 @@ namespace Smartsheet.Api.Models
 		/// @author brett
 		/// 
 		/// </summary>
-		public class CreateFromTemplateOrSheetBuilder
+		public class CreateFromTemplateBuilder
 		{
 			private string name;
 			private long? fromId;
@@ -135,7 +141,7 @@ namespace Smartsheet.Api.Models
 			/// </summary>
 			/// <param name="name"> The Name for the sheet being created. </param>
 			/// <returns> the creates the from template or sheet builder </returns>
-			public virtual CreateFromTemplateOrSheetBuilder SetName(string name)
+			public virtual CreateFromTemplateBuilder SetName(string name)
 			{
 				this.name = name;
 				return this;
@@ -155,7 +161,7 @@ namespace Smartsheet.Api.Models
 			/// </summary>
 			/// <param name="id"> the Id </param>
 			/// <returns> the creates the from template or sheet builder </returns>
-			public virtual CreateFromTemplateOrSheetBuilder SetFromId(long? id)
+			public virtual CreateFromTemplateBuilder SetFromId(long? id)
 			{
 				this.fromId = id;
 				return this;
