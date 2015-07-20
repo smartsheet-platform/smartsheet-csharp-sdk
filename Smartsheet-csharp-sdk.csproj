@@ -68,6 +68,7 @@
     <Compile Include="main\Smartsheet\Api\AssociatedAttachmentResources.cs" />
     <Compile Include="main\Smartsheet\Api\AssociatedDiscussionResources.cs" />
     <Compile Include="main\Smartsheet\Api\AttachmentResources.cs" />
+    <Compile Include="main\Smartsheet\Api\AttachmentVersioningResources.cs" />
     <Compile Include="main\Smartsheet\Api\AuthorizationException.cs" />
     <Compile Include="main\Smartsheet\Api\ColumnResources.cs" />
     <Compile Include="main\Smartsheet\Api\CommentAttachmentResources.cs" />
@@ -83,6 +84,7 @@
     <Compile Include="main\Smartsheet\Api\Internal\AssociatedAttachmentResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\AssociatedDiscussionResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\AttachmentResourcesImpl.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\AttachmentVersioningResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\ColumnResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\CommentAttachmentResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\CommentResourcesImpl.cs" />
@@ -113,7 +115,7 @@
     <Compile Include="main\Smartsheet\Api\Internal\RowResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\SearchResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\ShareResourcesImpl.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\SheetAttachmentResources.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\SheetAttachmentResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\SheetColumnResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\SheetCommentResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\SheetDiscussionResourcesImpl.cs" />
