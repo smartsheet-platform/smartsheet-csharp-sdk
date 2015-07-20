@@ -67,7 +67,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public Attachment AttachFile(long sheetId, long commentId, string file, string fileType)
+		public virtual Attachment AttachFile(long sheetId, long commentId, string file, string fileType)
 		{
 			return AttachFile("sheets/" + sheetId + "/comments/" + commentId + "/attachments", file, fileType);
 		}
@@ -93,7 +93,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public Attachment AttachUrl(long sheetId, long commentId, Attachment attachment)
+		public virtual Attachment AttachUrl(long sheetId, long commentId, Attachment attachment)
 		{
 			return this.CreateResource("sheets/" + sheetId + "/comments/" + commentId + "/attachments", typeof(Attachment), attachment);
 		}
