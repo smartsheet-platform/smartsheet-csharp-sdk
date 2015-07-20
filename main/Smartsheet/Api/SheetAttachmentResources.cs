@@ -27,6 +27,5 @@ namespace Smartsheet.Api
 	/// </summary>
 	public interface SheetAttachmentResources
 	{
-
 	}
 }

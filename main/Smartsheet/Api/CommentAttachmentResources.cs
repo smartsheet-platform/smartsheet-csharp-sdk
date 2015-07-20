@@ -24,6 +24,5 @@ namespace Smartsheet.Api
 
 	public interface CommentAttachmentResources
 	{
-
 	}
 }
