@@ -54,17 +54,17 @@ namespace Smartsheet.Api.Internal
 			throw new NotImplementedException();
 		}
 
-		public Attachment GetAttachment(long sheetId, long attachmentId)
+		public virtual Attachment GetAttachment(long sheetId, long attachmentId)
 		{
 			throw new NotImplementedException();
 		}
 
-		public DataWrapper<Attachment> ListAttachments(long sheetId, PaginationParameters paging)
+		public virtual DataWrapper<Attachment> ListAttachments(long sheetId, PaginationParameters paging)
 		{
 			throw new NotImplementedException();
 		}
 
-		public AttachmentVersioningResources VersioningResources()
+		public virtual AttachmentVersioningResources VersioningResources()
 		{
 			throw new NotImplementedException();
 		}
