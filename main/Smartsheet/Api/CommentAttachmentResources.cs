@@ -67,5 +67,4 @@ namespace Smartsheet.Api
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		Attachment AttachUrl(long sheetId, long commentId, Attachment attachment);
 	}
-
 }

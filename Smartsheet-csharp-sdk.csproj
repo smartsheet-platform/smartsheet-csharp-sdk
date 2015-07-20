@@ -74,7 +74,7 @@
     <Compile Include="main\Smartsheet\Api\CommentAttachmentResources.cs" />
     <Compile Include="main\Smartsheet\Api\CommentResources.cs" />
     <Compile Include="main\Smartsheet\Api\DiscussionAttachmentResources.cs" />
-    <Compile Include="main\Smartsheet\Api\DiscussionCommentResources..cs" />
+    <Compile Include="main\Smartsheet\Api\DiscussionCommentResources.cs" />
     <Compile Include="main\Smartsheet\Api\DiscussionResources.cs" />
     <Compile Include="main\Smartsheet\Api\FolderResources.cs" />
     <Compile Include="main\Smartsheet\Api\HomeFolderResources.cs" />

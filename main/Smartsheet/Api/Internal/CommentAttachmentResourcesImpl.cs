@@ -143,5 +143,4 @@ namespace Smartsheet.Api.Internal
 			return attachment;
 		}
 	}
-
 }
