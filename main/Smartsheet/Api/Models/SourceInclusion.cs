@@ -22,15 +22,13 @@ using System.Runtime.Serialization;
 
 namespace Smartsheet.Api.Models
 {
-
-
 	/// <summary>
-	/// Represents specific elements to include in a Folder response
+	/// Represents the source element to include in a response
 	/// </summary>
 	public enum SourceInclusion
 	{
 		/// <summary>
-		/// The source for each sheet
+		/// The source for and object
 		/// </summary>
 		[EnumMember(Value = "source")]
 		SOURCE

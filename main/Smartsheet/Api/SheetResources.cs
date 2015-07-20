@@ -36,6 +36,8 @@ namespace Smartsheet.Api
 		/// 
 		/// <para>It mirrors To the following Smartsheet REST API method: GET /Sheets</para>
 		/// </summary>
+		/// <param name="includes">elements to include in response</param>
+		/// <param name="paging">the pagination</param>
 		/// <returns> A list of all Sheets (note that an empty list will be returned if there are none). </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -43,13 +45,14 @@ namespace Smartsheet.Api
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		DataWrapper<Sheet> ListSheets(PaginationParameters paging);
+		DataWrapper<Sheet> ListSheets(IEnumerable<SourceInclusion> includes, PaginationParameters paging);
 
 		/// <summary>
 		/// <para>List all Sheets in the organization.</para>
 		/// 
 		/// <para>It mirrors To the following Smartsheet REST API method: GET /Users/Sheets</para>
 		/// </summary>
+		/// <param name="paging">the pagination</param>
 		/// <returns> the list of all Sheets (note that an empty list will be returned if there are none) </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -170,7 +173,7 @@ namespace Smartsheet.Api
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		Sheet CreateSheetFromTemplate(Sheet sheet, IEnumerable<ObjectInclusion> includes);
+		Sheet CreateSheetFromTemplate(Sheet sheet, IEnumerable<TemplateInclusion> include);
 
 		///// <summary>
 		///// <para>Create a sheet in given folder.</para>
@@ -204,39 +207,6 @@ namespace Smartsheet.Api
 		///// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		///// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		//Sheet CreateSheetInFolderFromTemplate(long folderID, Sheet sheet, IEnumerable<ObjectInclusion> includes);
-
-		///// <summary>
-		///// <para>Create a sheet in given workspace.</para>
-		///// 
-		///// <para>It mirrors To the following Smartsheet REST API method: POST /workspaces/{workspaceId}/Sheets</para>
-		///// </summary>
-		///// <param name="workspaceId"> the workspace Id </param>
-		///// <param name="sheet"> the sheet To create </param>
-		///// <returns> the created sheet </returns>
-		///// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
-		///// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		///// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
-		///// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		///// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
-		///// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		//Sheet CreateSheetInWorkspace(long workspaceId, Sheet sheet);
-
-		///// <summary>
-		///// <para>Create a sheet (from existing sheet or template) in given workspace.</para>
-		///// 
-		///// <para>It mirrors To the following Smartsheet REST API method: POST /workspaces/{workspaceId}/Sheets</para>
-		///// </summary>
-		///// <param name="workspaceId"> the workspace Id </param>
-		///// <param name="sheet"> the sheet To create </param>
-		///// <param name="includes"> used To specify the optional objects To include </param>
-		///// <returns> the created sheet </returns>
-		///// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
-		///// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		///// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
-		///// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		///// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
-		///// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		//Sheet CreateSheetInWorkspaceFromTemplate(long workspaceId, Sheet sheet, IEnumerable<ObjectInclusion> includes);
 
 		/// <summary>
 		/// <para>Delete a sheet.</para>
@@ -272,68 +242,68 @@ namespace Smartsheet.Api
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		Sheet UpdateSheet(long sheetId, Sheet sheet);
 
-		///// <summary>
-		///// <para>Gets the Sheet version without loading the entire Sheet.</para>
-		///// 
-		///// <para>It mirrors To the following Smartsheet REST API method: GET /sheets/{sheetId}/version</para>
-		///// </summary>
-		///// <param name="sheetId"> the sheetId </param>
-		///// <returns> the sheet Version (note that if there is no such resource, this method will throw
-		///// ResourceNotFoundException) </returns>
-		///// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
-		///// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		///// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
-		///// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		///// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
-		///// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		//int? GetSheetVersion(long sheetId);
+		/// <summary>
+		/// <para>Gets the Sheet version without loading the entire Sheet.</para>
+		/// 
+		/// <para>It mirrors To the following Smartsheet REST API method: GET /sheets/{sheetId}/version</para>
+		/// </summary>
+		/// <param name="sheetId"> the sheetId </param>
+		/// <returns> the sheet Version (note that if there is no such resource, this method will throw
+		/// ResourceNotFoundException) </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		int? GetSheetVersion(long sheetId);
 
-		///// <summary>
-		///// <para>Send a sheet as a PDF attachment via Email To the designated recipients.</para>
-		///// 
-		///// <para>It mirrors To the following Smartsheet REST API method: POST /sheets/{sheetId}/emails</para>
-		///// </summary>
-		///// <param name="sheetId"> the sheetId </param>
-		///// <param name="email"> the Email </param>
-		///// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
-		///// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		///// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
-		///// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		///// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
-		///// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		//void SendSheet(long sheetId, SheetEmail email);
+		/// <summary>
+		/// <para>Send a sheet as a PDF attachment via Email To the designated recipients.</para>
+		/// 
+		/// <para>It mirrors To the following Smartsheet REST API method: POST /sheets/{sheetId}/emails</para>
+		/// </summary>
+		/// <param name="sheetId"> the sheetId </param>
+		/// <param name="email"> the Email </param>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		void SendSheet(long sheetId, SheetEmail email);
 
-		///// <summary>
-		///// <para>Get the Status of the Publish settings of the sheet, including the URLs of any enabled publishings.</para>
-		///// 
-		///// <para>It mirrors To the following Smartsheet REST API method: GET /sheets/{sheetId}/publish</para>
-		///// </summary>
-		///// <param name="sheetId"> the sheetId </param>
-		///// <returns> the publish Status (note that if there is no such resource, this method will throw ResourceNotFoundException rather than returning null) </returns>
-		///// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
-		///// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		///// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
-		///// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		///// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
-		///// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		//SheetPublish GetPublishStatus(long sheetId);
+		/// <summary>
+		/// <para>Get the Status of the Publish settings of the sheet, including the URLs of any enabled publishings.</para>
+		/// 
+		/// <para>It mirrors To the following Smartsheet REST API method: GET /sheets/{sheetId}/publish</para>
+		/// </summary>
+		/// <param name="sheetId"> the sheetId </param>
+		/// <returns> the publish Status (note that if there is no such resource, this method will throw ResourceNotFoundException rather than returning null) </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		SheetPublish GetPublishStatus(long sheetId);
 
-		///// <summary>
-		///// <para>Sets the publish Status of a sheet and returns the new Status, including the URLs of any enabled publishings.</para>
-		///// 
-		///// <para>It mirrors To the following Smartsheet REST API method: PUT /sheets/{sheetId}/publish</para>
-		///// </summary>
-		///// <param name="id"> the sheetId </param>
-		///// <param name="publish"> the SheetPublish object limited. </param>
-		///// <returns> the update SheetPublish object (note that if there is no such resource, this method will throw a 
-		///// ResourceNotFoundException rather than returning null). </returns>
-		///// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
-		///// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		///// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
-		///// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		///// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
-		///// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		//SheetPublish UpdatePublishStatus(long sheetId, SheetPublish publish);
+		/// <summary>
+		/// <para>Sets the publish Status of a sheet and returns the new Status, including the URLs of any enabled publishings.</para>
+		/// 
+		/// <para>It mirrors To the following Smartsheet REST API method: PUT /sheets/{sheetId}/publish</para>
+		/// </summary>
+		/// <param name="id"> the sheetId </param>
+		/// <param name="publish"> the SheetPublish object limited. </param>
+		/// <returns> the update SheetPublish object (note that if there is no such resource, this method will throw a 
+		/// ResourceNotFoundException rather than returning null). </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		SheetPublish UpdatePublishStatus(long sheetId, SheetPublish publish);
 
 		/// <summary>
 		/// <para>Return the ShareResources object that provides access To Share resources associated with Sheet resources.</para>
