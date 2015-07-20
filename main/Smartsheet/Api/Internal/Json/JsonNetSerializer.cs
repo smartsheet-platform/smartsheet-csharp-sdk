@@ -195,6 +195,36 @@ namespace Smartsheet.Api.Internal.Json
 		}
 
 		/// <summary>
+		/// De-serialize to a DataWrapper (holds pagination info) from JSON
+		/// </summary>
+		/// <returns>DataWrapper containing data and pagination info</returns>
+		/// <param name="inputStream"> the input stream from which the JSON will be read </param>
+		/// <exception cref="IllegalArgumentException"> if any argument is null </exception>
+		/// <exception cref="JSONSerializationException">if there is any other error occurred during the operation </exception>
+		public DataWrapper<T> DeserializeDataWrapper<T>(StreamReader inputStream)
+		{
+			Utils.ThrowIfNull(inputStream);
+
+			DataWrapper<T> rw = null;
+
+			try
+			{
+				// Read the Json input stream into a List.
+				rw = serializer.Deserialize<DataWrapper<T>>(new Newtonsoft.Json.JsonTextReader(inputStream));
+			}
+			catch (Newtonsoft.Json.JsonException ex)
+			{
+				throw new JsonSerializationException(ex);
+			}
+			catch (IOException ex)
+			{
+				throw new JsonSerializationException(ex);
+			}
+
+			return rw;
+		}
+
+		/// <summary>
 		/// De-serialize To a map from JSON.
 		/// </summary>
 		/// <param name="inputStream">
@@ -295,6 +325,29 @@ namespace Smartsheet.Api.Internal.Json
 
 			return result;
 		}
+
+		public virtual CopyOrMoveRowResult DeserializeRowResult(StreamReader inputStream)
+		{
+			Utils.ThrowIfNull(inputStream);
+
+			CopyOrMoveRowResult result = null;
+
+			try
+			{
+				result = serializer.Deserialize<CopyOrMoveRowResult>(new Newtonsoft.Json.JsonTextReader(inputStream));
+			}
+			catch (Newtonsoft.Json.JsonException ex)
+			{
+				throw new JsonSerializationException(ex);
+			}
+			catch (IOException ex)
+			{
+				throw new JsonSerializationException(ex);
+			}
+
+			return result;
+		}
+
 	}
 
 }
