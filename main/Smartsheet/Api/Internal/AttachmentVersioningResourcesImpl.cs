@@ -1,4 +1,4 @@
-//    #[license]
+﻿//    #[license]
 //    SmartsheetClient SDK for C#
 //    %%
 //    Copyright (C) 2014 SmartsheetClient
@@ -16,42 +16,47 @@
 //    limitations under the License.
 //    %[license]
 
-using System.Collections.Generic;
-
 namespace Smartsheet.Api.Internal
 {
-
-	using Attachment = Api.Models.Attachment;
-
+	using Smartsheet.Api.Models;
+	using System;
+	using System.Text;
+	using Row = Api.Models.Row;
+	using RowWrapper = Api.Models.RowWrapper;
 
 	/// <summary>
-	/// This is the implementation of the AssociatedAttachmentResources for Comments.
-	/// 
-	/// It extends AssociatedAttachmentResourcesImpl and overrides listAttachments method by throwing
-	/// UnsupportedOperationException (since it's not supported for Comments).
+	/// This is the implementation of the AttachmentVersioningResources.
 	/// 
 	/// Thread Safety: This class is thread safe because it is immutable and its base class is thread safe.
 	/// </summary>
-	public class CommentAttachmentResourcesImpl : AbstractResources, CommentAttachmentResources
+	public class AttachmentVersioningResourcesImpl : AbstractResources, AttachmentVersioningResources
 	{
 		/// <summary>
 		/// Constructor.
+		/// 
+		/// Parameters: - Smartsheet : the SmartsheetImpl
+		/// 
+		/// Exceptions: - IllegalArgumentException : if any argument is null
 		/// </summary>
 		/// <param name="smartsheet"> the Smartsheet </param>
-		/// <exception cref="IllegalArgumentException">if any argument is null</exception>
-		public CommentAttachmentResourcesImpl(SmartsheetImpl smartsheet)
+		public AttachmentVersioningResourcesImpl(SmartsheetImpl smartsheet)
 			: base(smartsheet)
 		{
 		}
 
-		public Attachment AttachFile(long sheetId, long commentId, string file, string fileType)
+		public Attachment AttachNewVersion(long sheetId, long attachmentId, string file, string fileType)
 		{
-			throw new System.NotImplementedException();
+			throw new NotImplementedException();
 		}
 
-		public Attachment AttachUrl(long sheetId, long commentId, Attachment attachment)
+		public void DeleteAllVersions(long sheetId, long attachmentId)
 		{
-			throw new System.NotImplementedException();
+			throw new NotImplementedException();
+		}
+
+		public DataWrapper<Attachment> ListVersions(long sheetId, long attachmentId, PaginationParameters paging)
+		{
+			throw new NotImplementedException();
 		}
 	}
 }
