@@ -32,7 +32,7 @@ namespace Smartsheet.Api.Internal
 	/// 
 	/// Thread Safety: This class is thread safe because it is immutable and its base class is thread safe.
 	/// </summary>
-	public class CommentAttachmentResources : AssociatedAttachmentResourcesImpl, AssociatedAttachmentResources
+	public class CommentAttachmentResourcesImpl : AbstractResources, CommentAttachmentResources
 	{
 
 		/// <summary>
@@ -44,19 +44,20 @@ namespace Smartsheet.Api.Internal
 		///   IllegalArgumentException : if any argument is null or empty string
 		/// </summary>
 		/// <param name="smartsheet"> the Smartsheet </param>
-		public CommentAttachmentResources(SmartsheetImpl smartsheet) : base(smartsheet, "comment")
+		public CommentAttachmentResourcesImpl(SmartsheetImpl smartsheet)
+			: base(smartsheet)
 		{
 		}
 
-		/// <summary>
-		/// 
-		/// </summary>
-		/// <param name="objectId"></param>
-		/// <returns></returns>
-		public override IList<Attachment> ListAttachments(long objectId)
-		{
-			throw new System.NotSupportedException();
-		}
+		///// <summary>
+		///// 
+		///// </summary>
+		///// <param name="objectId"></param>
+		///// <returns></returns>
+		//public virtual IList<Attachment> ListAttachments(long objectId)
+		//{
+		//	throw new System.NotSupportedException();
+		//}
 	}
 
 }

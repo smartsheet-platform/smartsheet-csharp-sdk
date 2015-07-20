@@ -291,6 +291,60 @@ namespace Smartsheet.Api.Internal
             return (T)obj;
         }
 
+		/// <summary>
+		/// NOT FULLY IMPLEMENTED YET
+		/// Create a resource with an attachment using SmartsheetClient REST API.
+		/// 
+		/// Exceptions: 
+		///   IllegalArgumentException : if any argument is null, or path is empty string
+		///   InvalidRequestException : if there is any problem with the REST API request
+		///   AuthorizationException : if there is any problem with the REST API authorization(access token)
+		///   ServiceUnavailableException : if the REST API service is not available (possibly due To rate limiting)
+		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
+		///   SmartsheetException : if there is any other error occurred during the operation
+		/// </summary>
+		/// <param name="path"> the relative path of the resource collections </param>
+		/// <param name="objectClass"> the resource object class </param>
+		/// <param name="object"> the object To create </param>
+		/// <returns> the created resource </returns>
+		/// <exception cref="SmartsheetException"> the SmartsheetClient exception </exception>
+		protected internal virtual T CreateResourceWithAttachment<T>(string path, T @object, string file, string fileType)
+		{
+			Utils.ThrowIfNull(path, @object);
+
+			HttpRequest request = null;
+			try
+			{
+				request = CreateHttpRequest(new Uri(Smartsheet.BaseURI, path), HttpMethod.POST);
+			}
+			catch (Exception e)
+			{
+				throw new SmartsheetException(e);
+			}
+			HttpEntity entity = new HttpEntity();
+			string boundary = DateTime.Now.Millisecond.ToString();
+			entity.ContentType = "multipart/form-data; boundary=----" + boundary;
+
+			request.Entity = entity;
+			HttpResponse response = this.Smartsheet.HttpClient.Request(request);
+
+			Object obj = null;
+			switch (response.StatusCode)
+			{
+				case HttpStatusCode.OK:
+					obj = this.Smartsheet.JsonSerializer.deserializeResult<Comment>(
+						response.Entity.GetContent()).Result;
+					break;
+				default:
+					HandleError(response);
+					break;
+			}
+
+			Smartsheet.HttpClient.ReleaseConnection();
+
+			return (T)obj;
+		}
+
         /// <summary>
         /// Update a resource using SmartsheetClient REST API.
         /// 

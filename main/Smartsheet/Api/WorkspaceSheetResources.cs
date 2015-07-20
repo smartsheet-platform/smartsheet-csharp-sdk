@@ -18,62 +18,47 @@
 
 using System.Collections.Generic;
 
-namespace Smartsheet.Api.Internal
+namespace Smartsheet.Api
 {
 	using Api.Models;
 
 	/// <summary>
-	/// This is the implementation of the HomeFolderResources.
+	/// <para>This interface provides methods To access Sheet resources that are associated To a workspace object.</para>
 	/// 
-	/// Thread Safety: This class is thread safe because it is immutable and its base class is thread safe.
+	/// <para>Thread Safety: Implementation of this interface must be thread safe.</para>
 	/// </summary>
-	public class HomeFolderResourcesImpl : AbstractResources, HomeFolderResources
+	public interface WorkspaceSheetResources
 	{
 		/// <summary>
-		/// Constructor.
-		/// </summary>
-		/// <param name="smartsheet"> the Smartsheet </param>
-		/// <exception cref="IllegalArgumentException">if any argument is null</exception>
-		public HomeFolderResourcesImpl(SmartsheetImpl smartsheet)
-			: base(smartsheet)
-		{
-		}
-
-		/// <summary>
-		/// <para>List Folders under home.</para>
+		/// <para>Create a sheet in given workspace.</para>
 		/// 
-		/// <para>It mirrors To the following Smartsheet REST API method:<br />
-		/// GET /home/Folders</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: POST /workspaces/{workspaceId}/Sheets</para>
 		/// </summary>
-		/// <returns> the list of Folders (note that an empty list will be returned if there is none) </returns>
+		/// <param name="workspaceId"> the workspace Id </param>
+		/// <param name="sheet"> the sheet To create </param>
+		/// <returns> the created sheet </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual DataWrapper<Folder> ListFolders(PaginationParameters paging)
-		{
-			return ListResourcesWithWrapper<Folder>("home/folders" + paging.ToQueryString());
-		}
+		Sheet CreateSheet(long workspaceId, Sheet sheet);
 
 		/// <summary>
-		/// <para>Create a folder in home.</para>
-		/// 
-		/// <para>It mirrors To the following Smartsheet REST API method:<br />
-		/// POST /home/Folders</para>
+		/// <para>Creates a Sheet at the top-level of the specified Workspace, from the specified Template. </para>
+		/// <para>It mirrors To the following Smartsheet REST API method: POST /workspaces/{workspaceId}/Sheets</para>
 		/// </summary>
-		/// <param name="folder"> the folder To create </param>
-		/// <returns> the folder </returns>
+		/// <param name="workspaceId"> the workspace Id </param>
+		/// <param name="sheet"> the sheet To create </param>
+		/// <param name="includes"> used To specify the optional objects To include </param>
+		/// <returns> the created sheet </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual Folder CreateFolder(Folder folder)
-		{
-			return this.CreateResource<Folder>("home/folders", typeof(Folder), folder);
-		}
+		Sheet CreateSheetFromTemplate(long workspaceId, Sheet sheet, IEnumerable<TemplateInclusion> includes);
 	}
 }
