@@ -40,7 +40,9 @@ namespace Smartsheet.Api.Internal
 		public SheetColumnResourcesImpl(SmartsheetImpl smartsheet)
 			: base(smartsheet)
 		{
+
 		}
+
 
 		/// <summary>
 		/// <para>Gets a list of all Columns belonging to the Sheet specified in the URL.</para>
