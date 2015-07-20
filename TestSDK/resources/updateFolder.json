@@ -1,1 +1,8 @@
-{"resultCode":0,"result":{"id":1111168111311120,"name":"New Name"},"message":"SUCCESS"}
+{
+    "message": "SUCCESS",
+    "result": {
+        "id": 1486948649985924,
+        "name": "New name for folder"
+    },
+    "resultCode": 0
+}

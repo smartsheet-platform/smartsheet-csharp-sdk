@@ -1,4 +1,4 @@
-//    #[license]
+﻿//    #[license]
 //    SmartsheetClient SDK for C#
 //    %%
 //    Copyright (C) 2014 SmartsheetClient
@@ -20,43 +20,21 @@ using System.Collections.Generic;
 
 namespace Smartsheet.Api.Internal
 {
-
-	using Attachment = Api.Models.Attachment;
-
-
 	/// <summary>
-	/// This is the implementation of the AssociatedAttachmentResources for Comments.
-	/// 
-	/// It extends AssociatedAttachmentResourcesImpl and overrides listAttachments method by throwing
-	/// UnsupportedOperationException (since it's not supported for Comments).
+	/// This is the implementation of the SheetCommentResources.
 	/// 
 	/// Thread Safety: This class is thread safe because it is immutable and its base class is thread safe.
 	/// </summary>
-	public class CommentAttachmentResources : AssociatedAttachmentResourcesImpl, AssociatedAttachmentResources
+	public class SheetCommentResourcesImpl : AbstractResources, SheetCommentResources
 	{
-
 		/// <summary>
 		/// Constructor.
-		/// 
-		/// Parameters: - Smartsheet : the SmartsheetImpl
-		/// 
-		/// Exceptions:
-		///   IllegalArgumentException : if any argument is null or empty string
 		/// </summary>
 		/// <param name="smartsheet"> the Smartsheet </param>
-		public CommentAttachmentResources(SmartsheetImpl smartsheet) : base(smartsheet, "comment")
+		/// <exception cref="IllegalArgumentException">if any argument is null</exception>
+		public SheetCommentResourcesImpl(SmartsheetImpl smartsheet)
+			: base(smartsheet)
 		{
-		}
-
-		/// <summary>
-		/// 
-		/// </summary>
-		/// <param name="objectId"></param>
-		/// <returns></returns>
-		public override IList<Attachment> ListAttachments(long objectId)
-		{
-			throw new System.NotSupportedException();
 		}
 	}
-
 }
