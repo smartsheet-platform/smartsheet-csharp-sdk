@@ -16,23 +16,14 @@
 //    limitations under the License.
 //    %[license]
 
-using Smartsheet.Api.Internal.Http;
-using Smartsheet.Api.Internal.Util;
-using Smartsheet.Api.Models;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Net;
-using System.Text;
-
 namespace Smartsheet.Api.Internal
 {
-
-
+	using Smartsheet.Api.Internal.Http;
 	using Smartsheet.Api.Models;
+	using System;
+	using System.IO;
+	using System.Net;
 	using System.Text;
-	using Row = Api.Models.Row;
-	using RowWrapper = Api.Models.RowWrapper;
 
 	/// <summary>
 	/// This is the implementation of the AttachmentVersioningResources.

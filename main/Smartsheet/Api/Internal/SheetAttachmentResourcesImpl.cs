@@ -16,14 +16,9 @@
 //    limitations under the License.
 //    %[license]
 
-using Smartsheet.Api.Internal.Http;
-using Smartsheet.Api.Internal.Util;
 using Smartsheet.Api.Models;
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Net;
-using System.Text;
 
 namespace Smartsheet.Api.Internal
 {
@@ -34,8 +29,6 @@ namespace Smartsheet.Api.Internal
 	/// </summary>
 	public class SheetAttachmentResourcesImpl : AbstractResources, SheetAttachmentResources
 	{
-		private AttachmentVersioningResources versioning;
-
 		/// <summary>
 		/// Constructor.
 		/// </summary>
@@ -44,170 +37,36 @@ namespace Smartsheet.Api.Internal
 		public SheetAttachmentResourcesImpl(SmartsheetImpl smartsheet)
 			: base(smartsheet)
 		{
-			this.versioning = new AttachmentVersioningResourcesImpl(smartsheet);
 		}
 
-		/// <summary>
-		/// <para>Attaches a file to the Sheet.</para>
-		/// <para>This operation will always create a new attachment.
-		/// To upload a new version of the same attachment, use the Attach New Version operation.</para>
-		/// <para>It mirrors To the following Smartsheet REST API method:
-		/// POST /sheets/{sheetId}/attachments</para>
-		/// </summary>
-		/// <param name="sheetId"> the sheetId </param>
-		/// <param name="file"> the file path </param>
-		/// <param name="fileType"> the file type </param>
-		/// <returns> the newly created Attachment </returns>
-		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
-		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
-		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
-		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual Attachment AttachFile(long sheetId, string file, string fileType)
+		public Attachment AttachFile(long sheetId, string file, string fileType)
 		{
-			return AttachFile("sheets/" + sheetId + "/attachments", file, fileType);
+			throw new System.NotImplementedException();
 		}
 
-		/// <summary>
-		/// <para>Attaches a URL to the Sheet.</para>
-		/// <para>It mirrors To the following Smartsheet REST API method:
-		/// POST /sheets/{sheetId}/attachments</para>
-		/// <remarks><para>attachmentSubType is valid only for GOOGLE_DRIVE attachments which are Google Docs.
-		/// It can optionally be included to indicate the type of a file.
-		/// The following attachmentSubTypes are valid for GOOGLE_DRIVE attachments "DOCUMENT", "SPREADSHEET", "PRESENTATION", "PDF", "DRAWING".</para>
-		/// <para>When the attachment type is BOX_COM, DROPBOX, or GOOGLE_DRIVE (without an attachmentSubType specified),
-		/// the mimeType will be derived by the file extension specified on the “name”.</para>
-		/// </remarks>
-		/// </summary>
-		/// <param name="sheetId"> the sheetId </param>
-		/// <param name="attachment"> the attachment object </param>
-		/// <returns> the newly created Attachment </returns>
-		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
-		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
-		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
-		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual Attachment AttachUrl(long sheetId, Attachment attachment)
+		public Attachment AttachUrl(long sheetId, Attachment attachment)
 		{
-			return this.CreateResource("sheets/" + sheetId + "/attachments", typeof(Attachment), attachment);
+			throw new System.NotImplementedException();
 		}
 
-		/// <summary>
-		/// <para>Deletes the Attachment.</para>
-		/// <remarks>If the Attachment has multiple versions this deletes only
-		/// the specific version specified by the attachmentId (each version has a different attachment ID).</remarks>
-		/// <para>It mirrors To the following Smartsheet REST API method: DELETE /sheets/{sheetId}/attachments/{attachmentId}</para>
-		/// </summary>
-		/// <param name="sheetId"> the sheetId </param>
-		/// <param name="attachmentId"> the attachmentId </param>
-		/// <returns> the newly created Attachment </returns>
-		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
-		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
-		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
-		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual void DeleteAttachment(long sheetId, long attachmentId)
+		public void DeleteAttachment(long sheetId, long attachmentId)
 		{
-			this.DeleteResource<Attachment>("sheets/" + sheetId + "/attachments/" + attachmentId, typeof(Attachment));
+			throw new NotImplementedException();
 		}
 
-		/// <summary>
-		/// <para>Fetches the Attachment.</para>
-		/// <para>It mirrors To the following Smartsheet REST API method: GET /sheets/{sheetId}/attachments/{attachmentId}</para>
-		/// </summary>
-		/// <param name="sheetId"> the sheetId </param>
-		/// <param name="attachmentId"> the attachmentId </param>
-		/// <returns> the Attachment object. For File attachments, this will include a temporary URL for downloading the file.
-		/// Currently, the temporary URL is set to expire in 120000 milliseconds, or 2 minutes.</returns>
-		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
-		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
-		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
-		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual Attachment GetAttachment(long sheetId, long attachmentId)
+		public Attachment GetAttachment(long sheetId, long attachmentId)
 		{
-			return this.GetResource<Attachment>("sheets/" + sheetId + "/attachments/" + attachmentId, typeof(Attachment));
+			throw new NotImplementedException();
 		}
 
-		/// <summary>
-		/// <para>Gets a list of all Attachments that are on the Sheet, including Sheet, Row, and Discussion level Attachments.</para>
-		/// <remarks>This operation supports pagination of results. For more information, see Paging.</remarks>
-		/// <para>It mirrors To the following Smartsheet REST API method: GET /sheets/{sheetId}/attachments</para>
-		/// </summary>
-		/// <param name="sheetId"> the sheetId </param>
-		/// <param name="paging"> the pagination </param>
-		/// <returns> list of Attachment objects </returns>
-		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
-		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
-		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
-		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual DataWrapper<Attachment> ListAttachments(long sheetId, PaginationParameters paging)
+		public DataWrapper<Attachment> ListAttachments(long sheetId, PaginationParameters paging)
 		{
-			StringBuilder path = new StringBuilder("sheets/" + sheetId + "/attachments");
-			if (paging != null)
-			{
-				path.Append(paging.ToQueryString());
-			}
-			return this.ListResourcesWithWrapper<Attachment>(path.ToString());
+			throw new NotImplementedException();
 		}
 
-		/// <summary>
-		/// Return the AttachmentVersioningResources object that provides access To Versioning resources associated with Attachment resources.
-		/// </summary>
-		/// <returns> the attachment versioning resources </returns>
-		public virtual AttachmentVersioningResources VersioningResources()
+		public AttachmentVersioningResources VersioningResources()
 		{
-			return this.versioning;
-		}
-
-		/// <summary>
-		/// Attach file.
-		/// </summary>
-		/// <param name="path"> the url path </param>
-		/// <param name="file"> the file </param>
-		/// <param name="contentType"> the content Type </param>
-		/// <returns> the attachment </returns>
-		/// <exception cref="FileNotFoundException"> the file not found exception </exception>
-		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
-		private Attachment AttachFile(string path, string file, string contentType)
-		{
-			Utility.Utility.ThrowIfNull(file, contentType);
-
-			FileInfo fi = new FileInfo(file);
-			HttpRequest request = CreateHttpRequest(new Uri(this.Smartsheet.BaseURI, path), HttpMethod.POST);
-
-			request.Headers["Content-Disposition"] = "attachment; filename=\"" + fi.Name + "\"";
-
-			HttpEntity entity = new HttpEntity();
-			entity.ContentType = contentType;
-
-			entity.Content = File.ReadAllBytes(file);
-			entity.ContentLength = fi.Length;
-			request.Entity = entity;
-
-			HttpResponse response = this.Smartsheet.HttpClient.Request(request);
-
-			Attachment attachment = null;
-			switch (response.StatusCode)
-			{
-				case HttpStatusCode.OK:
-					attachment = this.Smartsheet.JsonSerializer.deserializeResult<Attachment>(
-						response.Entity.GetContent()).Result;
-					break;
-				default:
-					HandleError(response);
-					break;
-			}
-
-			this.Smartsheet.HttpClient.ReleaseConnection();
-
-			return attachment;
+			throw new NotImplementedException();
 		}
 	}
 }

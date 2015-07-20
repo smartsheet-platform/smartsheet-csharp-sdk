@@ -49,7 +49,6 @@ namespace Smartsheet.Api.Internal
 		{
 		}
 
-
 		/// <summary>
 		/// <para>Attaches a file to the Comment.</para>
 		/// <para>This operation will always create a new attachment.
