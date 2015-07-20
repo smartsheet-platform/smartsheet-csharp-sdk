@@ -34,8 +34,10 @@ namespace Smartsheet.Api.Internal
 		/// </summary>
 		/// <param name="smartsheet"> the Smartsheet </param>
 		/// <exception cref="IllegalArgumentException">if any argument is null</exception>
-		public SheetColumnResourcesImpl(SmartsheetImpl smartsheet) : base(smartsheet)
+		public SheetColumnResourcesImpl(SmartsheetImpl smartsheet)
+			: base(smartsheet)
 		{
+
 		}
 
 		/// <summary>
