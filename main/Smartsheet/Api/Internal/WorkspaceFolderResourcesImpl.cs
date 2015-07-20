@@ -21,6 +21,7 @@ using System.Collections.Generic;
 namespace Smartsheet.Api.Internal
 {
 	using Api.Models;
+	using System.Text;
 
 	/// <summary>
 	/// This is the implementation of the WorkspaceFolderResources.
@@ -55,7 +56,12 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual DataWrapper<Folder> ListFolders(long workspaceId, PaginationParameters paging)
 		{
-			return this.ListResourcesWithWrapper<Folder>("workspaces/" + workspaceId + "/folders" + paging.ToQueryString());
+			StringBuilder path = new StringBuilder("workspaces/" + workspaceId + "/folders");
+			if (paging != null)
+			{
+				path.Append(paging.ToQueryString());
+			}
+			return this.ListResourcesWithWrapper<Folder>(path.ToString());
 		}
 
 		/// <summary>

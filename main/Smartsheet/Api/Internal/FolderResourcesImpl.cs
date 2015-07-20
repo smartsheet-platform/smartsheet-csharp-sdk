@@ -22,6 +22,7 @@ namespace Smartsheet.Api.Internal
 {
 	using Api.Models;
 	using Smartsheet.Api.Internal.Util;
+	using System.Text;
 
 	/// <summary>
 	/// This is the implementation of the FolderResources.
@@ -114,7 +115,12 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual DataWrapper<Folder> ListFolders(long folderId, PaginationParameters paging)
 		{
-			return this.ListResourcesWithWrapper<Folder>("folders/" + folderId + "/folders" + paging.ToQueryString());
+			StringBuilder path = new StringBuilder("folders/" + folderId + "/folders");
+			if (paging != null)
+			{
+				path.Append(paging.ToQueryString());
+			}
+			return this.ListResourcesWithWrapper<Folder>(path.ToString());
 		}
 
 		/// <summary>
