@@ -16,6 +16,8 @@
 //    limitations under the License.
 //    %[license]
 
+using Smartsheet.Api.Models;
+using System;
 using System.Collections.Generic;
 
 namespace Smartsheet.Api.Internal
@@ -35,6 +37,36 @@ namespace Smartsheet.Api.Internal
 		public SheetAttachmentResourcesImpl(SmartsheetImpl smartsheet)
 			: base(smartsheet)
 		{
+		}
+
+		public virtual Attachment AttachFile(long sheetId, string file, string fileType)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public virtual Attachment AttachUrl(long sheetId, Attachment attachment)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public virtual void DeleteAttachment(long sheetId, long attachmentId)
+		{
+			throw new NotImplementedException();
+		}
+
+		public virtual Attachment GetAttachment(long sheetId, long attachmentId)
+		{
+			throw new NotImplementedException();
+		}
+
+		public virtual DataWrapper<Attachment> ListAttachments(long sheetId, PaginationParameters paging)
+		{
+			throw new NotImplementedException();
+		}
+
+		public virtual AttachmentVersioningResources VersioningResources()
+		{
+			throw new NotImplementedException();
 		}
 	}
 }
