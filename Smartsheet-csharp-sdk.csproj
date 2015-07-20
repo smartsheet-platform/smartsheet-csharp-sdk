@@ -68,9 +68,13 @@
     <Compile Include="main\Smartsheet\Api\AssociatedAttachmentResources.cs" />
     <Compile Include="main\Smartsheet\Api\AssociatedDiscussionResources.cs" />
     <Compile Include="main\Smartsheet\Api\AttachmentResources.cs" />
+    <Compile Include="main\Smartsheet\Api\AttachmentVersioningResources.cs" />
     <Compile Include="main\Smartsheet\Api\AuthorizationException.cs" />
     <Compile Include="main\Smartsheet\Api\ColumnResources.cs" />
+    <Compile Include="main\Smartsheet\Api\CommentAttachmentResources.cs" />
     <Compile Include="main\Smartsheet\Api\CommentResources.cs" />
+    <Compile Include="main\Smartsheet\Api\DiscussionAttachmentResources.cs" />
+    <Compile Include="main\Smartsheet\Api\DiscussionCommentResources.cs" />
     <Compile Include="main\Smartsheet\Api\DiscussionResources.cs" />
     <Compile Include="main\Smartsheet\Api\FolderResources.cs" />
     <Compile Include="main\Smartsheet\Api\HomeFolderResources.cs" />
@@ -80,10 +84,12 @@
     <Compile Include="main\Smartsheet\Api\Internal\AssociatedAttachmentResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\AssociatedDiscussionResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\AttachmentResourcesImpl.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\AttachmentVersioningResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\ColumnResourcesImpl.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\CommentAttachmentResources.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\CommentAttachmentResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\CommentResourcesImpl.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\DiscussionAttachmentResources.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\DiscussionAttachmentResourcesImpl.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\DiscussionCommentResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\DiscussionResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\FolderResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\HomeFolderResourcesImpl.cs" />
@@ -104,10 +110,12 @@
     <Compile Include="main\Smartsheet\Api\Internal\Json\LowerCaseContractResolver.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\OAuth\OAuthFlowImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\ReportResourcesImpl.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\RowAttachmentResourcesImpl.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\RowDiscussionResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\RowResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\SearchResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\ShareResourcesImpl.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\SheetAttachmentResources.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\SheetAttachmentResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\SheetColumnResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\SheetCommentResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\SheetDiscussionResourcesImpl.cs" />
@@ -122,6 +130,7 @@
     <Compile Include="main\Smartsheet\Api\Internal\Util\Util.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\WorkspaceFolderResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\WorkspaceResourcesImpl.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\WorkspaceSheetResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\InvalidRequestException.cs" />
     <Compile Include="main\Smartsheet\Api\Models\AbstractRow.cs" />
     <Compile Include="main\Smartsheet\Api\Models\AbstractSheet.cs" />
@@ -174,9 +183,11 @@
     <Compile Include="main\Smartsheet\Api\Models\SheetPublish.cs" />
     <Compile Include="main\Smartsheet\Api\Models\SheetUserSettings.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Source.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\SourceInclusion.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Symbol.cs" />
     <Compile Include="main\Smartsheet\Api\Models\SystemColumnType.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Template.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\TemplateInclusion.cs" />
     <Compile Include="main\Smartsheet\Api\Models\User.cs" />
     <Compile Include="main\Smartsheet\Api\Models\UserModelWithName.cs" />
     <Compile Include="main\Smartsheet\Api\Models\UserProfile.cs" />
@@ -198,6 +209,8 @@
     <Compile Include="main\Smartsheet\Api\OAuth\UnsupportedResponseTypeException.cs" />
     <Compile Include="main\Smartsheet\Api\ReportResources.cs" />
     <Compile Include="main\Smartsheet\Api\ResourceNotFoundException.cs" />
+    <Compile Include="main\Smartsheet\Api\RowAttachmentResources.cs" />
+    <Compile Include="main\Smartsheet\Api\RowDiscussionResources.cs" />
     <Compile Include="main\Smartsheet\Api\RowResources.cs" />
     <Compile Include="main\Smartsheet\Api\SearchResources.cs" />
     <Compile Include="main\Smartsheet\Api\ServiceUnavailableException.cs" />
@@ -217,6 +230,7 @@
     <Compile Include="main\Smartsheet\Api\UserSheetResources.cs" />
     <Compile Include="main\Smartsheet\Api\WorkspaceFolderResources.cs" />
     <Compile Include="main\Smartsheet\Api\WorkspaceResources.cs" />
+    <Compile Include="main\Smartsheet\Api\WorkspaceSheetResources.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
