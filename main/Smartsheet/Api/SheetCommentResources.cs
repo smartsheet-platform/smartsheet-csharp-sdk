@@ -26,5 +26,7 @@ namespace Smartsheet.Api
 	/// <para>Thread Safety: Implementation of this interface must be thread safe.</para>
 	/// </summary>
 	public interface SheetCommentResources
-	{ }
+	{
+
+	}
 }
