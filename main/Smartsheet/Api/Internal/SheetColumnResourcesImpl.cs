@@ -32,13 +32,11 @@ namespace Smartsheet.Api.Internal
 	/// </summary>
 	public class SheetColumnResourcesImpl : AbstractResources, SheetColumnResources
 	{
-
 		/// <summary>
 		/// Constructor.
-		/// 
-		/// Exceptions: - IllegalArgumentException : if any argument is null
 		/// </summary>
 		/// <param name="smartsheet"> the Smartsheet </param>
+		/// <exception cref="IllegalArgumentException">if any argument is null</exception>
 		public SheetColumnResourcesImpl(SmartsheetImpl smartsheet)
 			: base(smartsheet)
 		{

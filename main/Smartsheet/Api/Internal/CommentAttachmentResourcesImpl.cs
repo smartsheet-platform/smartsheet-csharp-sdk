@@ -34,16 +34,11 @@ namespace Smartsheet.Api.Internal
 	/// </summary>
 	public class CommentAttachmentResourcesImpl : AbstractResources, CommentAttachmentResources
 	{
-
 		/// <summary>
 		/// Constructor.
-		/// 
-		/// Parameters: - Smartsheet : the SmartsheetImpl
-		/// 
-		/// Exceptions:
-		///   IllegalArgumentException : if any argument is null or empty string
 		/// </summary>
 		/// <param name="smartsheet"> the Smartsheet </param>
+		/// <exception cref="IllegalArgumentException">if any argument is null</exception>
 		public CommentAttachmentResourcesImpl(SmartsheetImpl smartsheet)
 			: base(smartsheet)
 		{
@@ -59,5 +54,4 @@ namespace Smartsheet.Api.Internal
 		//	throw new System.NotSupportedException();
 		//}
 	}
-
 }
