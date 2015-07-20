@@ -26,7 +26,7 @@ namespace Smartsheet.Api.Internal
 	using Smartsheet.Api.Models;
 
 	/// <summary>
-	/// This is the implementation of the SheetResources.
+	/// This is the implementation of the RowDiscussionResources.
 	/// 
 	/// Thread Safety: This class is thread safe because it is immutable and its base class is thread safe.
 	/// </summary>
