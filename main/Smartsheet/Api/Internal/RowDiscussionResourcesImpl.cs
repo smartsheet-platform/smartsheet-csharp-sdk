@@ -20,6 +20,11 @@ using System.Collections.Generic;
 
 namespace Smartsheet.Api.Internal
 {
+	using HttpMethod = Api.Internal.Http.HttpMethod;
+	using HttpRequest = Api.Internal.Http.HttpRequest;
+	using Utils = Api.Internal.Utility.Utility;
+	using Smartsheet.Api.Models;
+
 	/// <summary>
 	/// This is the implementation of the RowDiscussionResources.
 	/// 
@@ -37,5 +42,6 @@ namespace Smartsheet.Api.Internal
 			: base(smartsheet)
 		{
 		}
+
 	}
 }
