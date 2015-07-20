@@ -16,17 +16,41 @@
 //    limitations under the License.
 //    %[license]
 
-using System.Collections.Generic;
+using System.Runtime.Serialization;
 
-namespace Smartsheet.Api
+namespace Smartsheet.Api.Models
 {
-	/// <summary>
-	/// <para>This interface provides methods To access Comment resources that are associated To a sheet object.</para>
-	/// 
-	/// <para>Thread Safety: Implementation of this interface must be thread safe.</para>
-	/// </summary>
-	public interface SheetCommentResources
-	{
 
+
+	/// <summary>
+	/// Represents specific elements that can be copied from a Template or Sheet into a new Sheet.
+	/// </summary>
+	public enum TemplateInclusion
+	{
+		/// <summary>
+		/// The discussions
+		/// </summary>
+		[EnumMember(Value = "data")]
+		DATA,
+		/// <summary>
+		/// The attachments
+		/// </summary>
+		[EnumMember(Value = "attachments")]
+		ATTACHMENTS,
+		/// <summary>
+		/// The format
+		/// </summary>
+		[EnumMember(Value = "discussions")]
+		DISCUSSIONS,
+		/// <summary>
+		/// The filters
+		/// </summary>
+		[EnumMember(Value = "cellLinks")]
+		CELL_LINKS,
+		/// <summary>
+		/// The columnType
+		/// </summary>
+		[EnumMember(Value = "forms")]
+		FORMS
 	}
 }
