@@ -18,23 +18,12 @@
 
 using System.Collections.Generic;
 
-namespace Smartsheet.Api.Internal
+namespace Smartsheet.Api
 {
-	/// <summary>
-	/// This is the implementation of the SheetAttachmentResources.
-	/// 
-	/// Thread Safety: This class is thread safe because it is immutable and its base class is thread safe.
-	/// </summary>
-	public class SheetAttachmentResourcesImpl : AbstractResources, SheetAttachmentResources
+	using Attachment = Api.Models.Attachment;
+
+	public interface DiscussionAttachmentResources
 	{
-		/// <summary>
-		/// Constructor.
-		/// </summary>
-		/// <param name="smartsheet"> the Smartsheet </param>
-		/// <exception cref="IllegalArgumentException">if any argument is null</exception>
-		public SheetAttachmentResourcesImpl(SmartsheetImpl smartsheet)
-			: base(smartsheet)
-		{
-		}
 	}
+
 }

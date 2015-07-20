@@ -17,16 +17,20 @@
 //    %[license]
 
 using System.Collections.Generic;
+using Newtonsoft.Json.Converters;
+using System.Runtime.Serialization;
 
-namespace Smartsheet.Api
+namespace Smartsheet.Api.Models
 {
 	/// <summary>
-	/// <para>This interface provides methods To access Comment resources that are associated To a sheet object.</para>
-	/// 
-	/// <para>Thread Safety: Implementation of this interface must be thread safe.</para>
+	/// Represents the source element to include in a response
 	/// </summary>
-	public interface SheetCommentResources
+	public enum SourceInclusion
 	{
-
+		/// <summary>
+		/// The source for and object
+		/// </summary>
+		[EnumMember(Value = "source")]
+		SOURCE
 	}
 }

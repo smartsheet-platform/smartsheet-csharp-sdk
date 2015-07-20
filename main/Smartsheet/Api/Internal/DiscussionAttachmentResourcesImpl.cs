@@ -16,32 +16,31 @@
 //    limitations under the License.
 //    %[license]
 
-using System.Collections.Generic;
-
 namespace Smartsheet.Api.Internal
 {
-	using HttpMethod = Api.Internal.Http.HttpMethod;
-	using HttpRequest = Api.Internal.Http.HttpRequest;
-	using Utils = Api.Internal.Utility.Utility;
-	using Smartsheet.Api.Models;
+
+
+	using Attachment = Api.Models.Attachment;
 
 	/// <summary>
-	/// This is the implementation of the RowDiscussionResources.
+	/// This is the implementation of the AssociatedAttachmentResources for Discussions.
+	/// 
+	/// It extends AssociatedAttachmentResourcesImpl and overrides attachFile/attachURL methods by throwing
+	/// UnsupportedOperationException (since they're not supported for Discussions).
 	/// 
 	/// Thread Safety: This class is thread safe because it is immutable and its base class is thread safe.
 	/// </summary>
-	public class RowDiscussionResourcesImpl : AbstractResources, RowDiscussionResources
+	public class DiscussionAttachmentResourcesImpl : AbstractResources, DiscussionAttachmentResources
 	{
+
 		/// <summary>
 		/// Constructor.
 		/// 
-		/// Exceptions: - IllegalArgumentException : if any argument is null
+		/// Exceptions: - IllegalArgumentException : if any argument is null or empty string
 		/// </summary>
 		/// <param name="smartsheet"> the Smartsheet </param>
-		public RowDiscussionResourcesImpl(SmartsheetImpl smartsheet)
-			: base(smartsheet)
+		public DiscussionAttachmentResourcesImpl(SmartsheetImpl smartsheet) : base(smartsheet)
 		{
 		}
-
 	}
 }

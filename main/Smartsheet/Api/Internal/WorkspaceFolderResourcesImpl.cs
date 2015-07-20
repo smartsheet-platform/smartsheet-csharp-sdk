@@ -20,9 +20,7 @@ using System.Collections.Generic;
 
 namespace Smartsheet.Api.Internal
 {
-
-
-	using Folder = Api.Models.Folder;
+	using Api.Models;
 
 	/// <summary>
 	/// This is the implementation of the WorkspaceFolderResources.
@@ -31,59 +29,52 @@ namespace Smartsheet.Api.Internal
 	/// </summary>
 	public class WorkspaceFolderResourcesImpl : AbstractResources, WorkspaceFolderResources
 	{
-
 		/// <summary>
 		/// Constructor.
 		/// 
 		/// Exceptions: - IllegalArgumentException : if any argument is
 		/// </summary>
 		/// <param name="smartsheet"> the Smartsheet </param>
-		public WorkspaceFolderResourcesImpl(SmartsheetImpl smartsheet) : base(smartsheet)
+		public WorkspaceFolderResourcesImpl(SmartsheetImpl smartsheet)
+			: base(smartsheet)
 		{
 		}
 
 		/// <summary>
-		/// List Folders of a given workspace.
+		/// <para>List Folders of a given workspace.</para>
 		/// 
-		/// It mirrors To the following Smartsheet REST API method: GET /workspace/{Id}/Folders
-		/// 
-		/// Exceptions: 
-		///   - InvalidRequestException : if there is any problem with the REST API request 
-		///   - AuthorizationException : if there is any problem with the REST API authorization(access token) 
-		///   - ResourceNotFoundException : if the resource can not be found 
-		///   - ServiceUnavailableException : if the REST API service is not available (possibly due To rate limiting) 
-		///   - SmartsheetRestException : if there is any other REST API related error occurred during the operation 
-		///   - SmartsheetException : if there is any other error occurred during the operation
+		/// <para>It mirrors To the following Smartsheet REST API method: GET /workspaces/{workspaceId}/Folders</para>
 		/// </summary>
-		/// <param name="workspaceId"> the ID of the workspace </param>
-		/// <returns> the Folders (note that empty list will be returned if there is none) </returns>
-		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
-		public virtual IList<Folder> ListFolders(long workspaceId)
+		/// <param name="workspaceId"> the workspace Id </param>
+		/// <returns> the list of Folders (note that an empty list will be returned if there are none) </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public virtual DataWrapper<Folder> ListFolders(long workspaceId, PaginationParameters paging)
 		{
-			return this.ListResources<Folder>("workspace/" + workspaceId + "/folders", typeof(Folder));
+			return this.ListResourcesWithWrapper<Folder>("workspaces/" + workspaceId + "/folders" + paging.ToQueryString());
 		}
 
 		/// <summary>
-		/// Create a folder in the workspace.
+		/// <para>Create a folder in the workspace.</para>
 		/// 
-		/// It mirrors To the following Smartsheet REST API method: POST /workspace/{Id}/Folders
-		/// 
-		/// Exceptions: 
-		///   - IllegalArgumentException : if folder is null 
-		///   - InvalidRequestException : if there is any problem with the REST API request 
-		///   - AuthorizationException : if there is any problem with the REST API authorization(access token) 
-		///   - ServiceUnavailableException : if the REST API service is not available (possibly due To rate limiting) 
-		///   - SmartsheetRestException : if there is any other REST API related error occurred during the operation 
-		///   - SmartsheetException : if there is any other error occurred during the operation
+		/// <para>It mirrors To the following Smartsheet REST API method: POST /workspaces/{workspaceId}/Folders</para>
 		/// </summary>
 		/// <param name="workspaceId"> the workspace Id </param>
 		/// <param name="folder"> the folder To create </param>
 		/// <returns> the created folder </returns>
-		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual Folder CreateFolder(long workspaceId, Folder folder)
 		{
-			return this.CreateResource<Folder>("workspace/" + workspaceId + "/folders", typeof(Folder), folder);
+			return this.CreateResource<Folder>("workspaces/" + workspaceId + "/folders", typeof(Folder), folder);
 		}
 	}
-
 }

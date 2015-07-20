@@ -20,11 +20,14 @@ using System.Collections.Generic;
 
 namespace Smartsheet.Api
 {
+	using Api.Models;
+
 	/// <summary>
-	/// <para>This interface provides methods To access Discussion resources from a Row resources.</para>
+	/// <para>This interface provides methods To access Discussion resources associated to a row resource.</para>
 	/// 
 	/// <para>Thread Safety: Implementation of this interface must be thread safe.</para>
 	/// </summary>
 	public interface RowDiscussionResources
-	{ }
+	{
+	}
 }
