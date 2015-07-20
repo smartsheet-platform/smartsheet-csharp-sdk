@@ -62,6 +62,5 @@ namespace Smartsheet.Api
 		/// </summary>
 		/// <returns> the Attachment resources </returns>
 		CommentAttachmentResources AttachmentResources();
-	 
 	}
 }
