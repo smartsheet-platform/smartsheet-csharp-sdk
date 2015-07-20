@@ -20,9 +20,14 @@ using System.Collections.Generic;
 
 namespace Smartsheet.Api
 {
-	using Attachment = Api.Models.Attachment;
+	using Api.Models;
 
-	public interface DiscussionAttachmentResources
+	/// <summary>
+	/// <para>This interface provides methods To access Attachment resources associated to a row resource.</para>
+	/// 
+	/// <para>Thread Safety: Implementation of this interface must be thread safe.</para>
+	/// </summary>
+	public interface RowAttachmentResources
 	{
 	}
 

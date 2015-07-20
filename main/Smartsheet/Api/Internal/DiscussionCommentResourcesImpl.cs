@@ -10,12 +10,13 @@ namespace Smartsheet.Api.Internal
 	{
 		/// <summary>
 		/// Constructor.
-		/// 
-		/// Exceptions: - IllegalArgumentException : if any argument is null
 		/// </summary>
 		/// <param name="smartsheet"> the Smartsheet </param>
+		/// <exception cref="IllegalArgumentException">if any argument is null</exception>
 		public DiscussionCommentResourcesImpl(SmartsheetImpl smartsheet)
 			: base(smartsheet)
-		{ }
+		{
+
+		}
 	}
 }
