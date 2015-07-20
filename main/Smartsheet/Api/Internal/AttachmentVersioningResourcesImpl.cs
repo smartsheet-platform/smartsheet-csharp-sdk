@@ -20,9 +20,6 @@ namespace Smartsheet.Api.Internal
 {
 	using Smartsheet.Api.Models;
 	using System;
-	using System.Text;
-	using Row = Api.Models.Row;
-	using RowWrapper = Api.Models.RowWrapper;
 
 	/// <summary>
 	/// This is the implementation of the AttachmentVersioningResources.
@@ -44,17 +41,17 @@ namespace Smartsheet.Api.Internal
 		{
 		}
 
-		public Attachment AttachNewVersion(long sheetId, long attachmentId, string file, string fileType)
+		public virtual Attachment AttachNewVersion(long sheetId, long attachmentId, string file, string fileType)
 		{
 			throw new NotImplementedException();
 		}
 
-		public void DeleteAllVersions(long sheetId, long attachmentId)
+		public virtual void DeleteAllVersions(long sheetId, long attachmentId)
 		{
 			throw new NotImplementedException();
 		}
 
-		public DataWrapper<Attachment> ListVersions(long sheetId, long attachmentId, PaginationParameters paging)
+		public virtual DataWrapper<Attachment> ListVersions(long sheetId, long attachmentId, PaginationParameters paging)
 		{
 			throw new NotImplementedException();
 		}

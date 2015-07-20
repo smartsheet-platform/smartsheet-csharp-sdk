@@ -44,12 +44,12 @@ namespace Smartsheet.Api.Internal
 		{
 		}
 
-		public Attachment AttachFile(long sheetId, long commentId, string file, string fileType)
+		public virtual Attachment AttachFile(long sheetId, long commentId, string file, string fileType)
 		{
 			throw new System.NotImplementedException();
 		}
 
-		public Attachment AttachUrl(long sheetId, long commentId, Attachment attachment)
+		public virtual Attachment AttachUrl(long sheetId, long commentId, Attachment attachment)
 		{
 			throw new System.NotImplementedException();
 		}

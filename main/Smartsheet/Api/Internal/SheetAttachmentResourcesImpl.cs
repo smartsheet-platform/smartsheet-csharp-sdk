@@ -39,17 +39,17 @@ namespace Smartsheet.Api.Internal
 		{
 		}
 
-		public Attachment AttachFile(long sheetId, string file, string fileType)
+		public virtual Attachment AttachFile(long sheetId, string file, string fileType)
 		{
 			throw new System.NotImplementedException();
 		}
 
-		public Attachment AttachUrl(long sheetId, Attachment attachment)
+		public virtual Attachment AttachUrl(long sheetId, Attachment attachment)
 		{
 			throw new System.NotImplementedException();
 		}
 
-		public void DeleteAttachment(long sheetId, long attachmentId)
+		public virtual void DeleteAttachment(long sheetId, long attachmentId)
 		{
 			throw new NotImplementedException();
 		}
