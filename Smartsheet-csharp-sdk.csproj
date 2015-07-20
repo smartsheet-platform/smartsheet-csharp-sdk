@@ -115,7 +115,7 @@
     <Compile Include="main\Smartsheet\Api\Internal\RowResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\SearchResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\ShareResourcesImpl.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\SheetAttachmentResources.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\SheetAttachmentResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\SheetColumnResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\SheetCommentResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\SheetDiscussionResourcesImpl.cs" />
