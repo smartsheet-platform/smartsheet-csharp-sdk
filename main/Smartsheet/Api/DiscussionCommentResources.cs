@@ -18,12 +18,7 @@
 
 namespace Smartsheet.Api
 {
-	using System.IO;
 	using Api.Models;
-	using Smartsheet.Api.Internal.Util;
-	using Smartsheet.Api.Internal.Utility;
-	using Smartsheet.Api.Internal.Http;
-	using Smartsheet.Api.Internal;
 
 	/// <summary>
 	/// <para>This interface provides methods To access Comment resources.</para>
@@ -32,7 +27,6 @@ namespace Smartsheet.Api
 	/// </summary>
 	public interface DiscussionCommentResources
 	{
-
 		/// <summary>
 		/// <para>Adds a Comment to a Discussion.</para>
 		/// <para>It mirrors To the following Smartsheet REST API method: POST /sheets/{sheetId}/discussions/{discussionId}/comments</para>
@@ -56,6 +50,8 @@ namespace Smartsheet.Api
 		/// <param name="sheetId"> the id of the sheet </param>
 		/// <param name="discussionId"> the id of the discussion </param>
 		/// <param name="comment"> Comment object </param>
+		/// <param name="file"> the file path </param>
+		/// <param name="fileType"> the file type, can be left null </param>
 		/// <returns> the created comment </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -66,4 +62,3 @@ namespace Smartsheet.Api
 		Comment AddCommentWithAttachment(long sheetId, long discussionId, Comment comment, string file, string fileType);
 	}
 }
-
