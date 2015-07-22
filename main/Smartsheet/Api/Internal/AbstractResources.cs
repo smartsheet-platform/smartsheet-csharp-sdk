@@ -306,9 +306,11 @@ namespace Smartsheet.Api.Internal
 			Utils.ThrowIfNull(path, @object, file);
 			Utils.ThrowIfEmpty(path, file, fileType);
 
+			path = this.smartsheet.BaseURI + path;
+
 			HttpWebRequest request = (HttpWebRequest)WebRequest.Create(path);
 			request.Method = "POST";
-			request.Headers["Authorization"] = "Bearer 47ieup4lwsu9nj34j7kitol7nb";
+			request.Headers["Authorization"] = "Bearer " + this.Smartsheet.AccessToken;
 			string boundary = "----" + DateTime.Now.Millisecond;
 			request.ContentType = "multipart/form-data; boundary=" + boundary;
 			request.KeepAlive = true;
@@ -374,7 +376,7 @@ namespace Smartsheet.Api.Internal
 				WebResponse webResponse = request.GetResponse();
 				Stream responseStream = webResponse.GetResponseStream();
 				StreamReader streamReader = new StreamReader(responseStream);
-				obj = this.Smartsheet.JsonSerializer.deserializeResult<Comment>(streamReader);
+				obj = this.Smartsheet.JsonSerializer.deserializeResult<T>(streamReader);
 			}
 			catch
 			{
