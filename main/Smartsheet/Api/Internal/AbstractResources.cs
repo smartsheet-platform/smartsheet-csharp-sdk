@@ -303,84 +303,36 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="IllegalArgumentException"> if any argument is null, or path is empty string </exception>
 		protected internal virtual T CreateResourceWithAttachment<T>(string path, T @object, string objectType, string file, string fileType)
 		{
-			Utils.ThrowIfNull(path, @object, file);
-			Utils.ThrowIfEmpty(path, file, fileType);
+			Utils.ThrowIfNull(path, @object);
+			Utils.ThrowIfEmpty(path);
 
-			path = this.smartsheet.BaseURI + path;
-
-			HttpWebRequest request = (HttpWebRequest)WebRequest.Create(path);
-			request.Method = "POST";
-			request.Headers["Authorization"] = "Bearer " + this.Smartsheet.AccessToken;
-			string boundary = "----" + DateTime.Now.Millisecond;
-			request.ContentType = "multipart/form-data; boundary=" + boundary;
-			request.KeepAlive = true;
-			request.Credentials = System.Net.CredentialCache.DefaultCredentials;
-
-			Stream rs = request.GetRequestStream();
-
-			FileInfo fi = new FileInfo(file);
-
-			byte[] a = Encoding.UTF8.GetBytes("--" + boundary + "\r\n");
-			rs.Write(a, 0, a.Length);
-
-			byte[] b = Encoding.UTF8.GetBytes(string.Format("Content-Disposition: form-data; name=\"{0}\"\r\n", objectType));
-			rs.Write(b, 0, b.Length);
-
-			byte[] c = Encoding.UTF8.GetBytes("Content-Type: application/json\r\n\r\n");
-			rs.Write(c, 0, c.Length);
-
-			string serializedObject = null;
-			using (StreamWriter writer = new StreamWriter(new MemoryStream()))
-			{
-				this.smartsheet.JsonSerializer.serialize<T>(@object, writer);
-				writer.Flush();
-				writer.BaseStream.Position = 0;
-
-				using (StreamReader reader = new StreamReader(writer.BaseStream))
-				{
-					serializedObject = reader.ReadToEnd();
-				}
-			}
-			byte[] serializedData = Encoding.UTF8.GetBytes(serializedObject);
-			rs.Write(serializedData, 0, serializedData.Length);
-
-			byte[] d = Encoding.UTF8.GetBytes("\r\n--" + boundary + "\r\n");
-			rs.Write(d, 0, d.Length);
-
-			byte[] e = Encoding.UTF8.GetBytes(string.Format("Content-Disposition: form-data; name=\"file\"; filename=\"{0}\"\r\n", fi.Name));
-			rs.Write(e, 0, e.Length);
-
-			if (fileType == null)
-			{
-				fileType = "application/octet-stream";
-			}
-			byte[] f = Encoding.UTF8.GetBytes(string.Format("Content-Type: {0}\r\n\r\n", fileType));
-			rs.Write(f, 0, f.Length);
-
-			FileStream fileStream = new FileStream(file, FileMode.Open, FileAccess.Read);
-			byte[] buffer = new byte[4096];
-			int bytesRead = 0;
-			while ((bytesRead = fileStream.Read(buffer, 0, buffer.Length)) != 0)
-			{
-				rs.Write(buffer, 0, bytesRead);
-			}
-			fileStream.Close();
-
-			byte[] g = Encoding.UTF8.GetBytes("\r\n--" + boundary + "--\r\n");
-			rs.Write(g, 0, g.Length);
-			rs.Close();
-
-			Object obj = null;
+			HttpRequest request = null;
 			try
 			{
-				WebResponse webResponse = request.GetResponse();
-				Stream responseStream = webResponse.GetResponseStream();
-				StreamReader streamReader = new StreamReader(responseStream);
-				obj = this.Smartsheet.JsonSerializer.deserializeResult<T>(streamReader);
+				request = CreateHttpRequest(new Uri(smartsheet.BaseURI, path), HttpMethod.POST);
 			}
-			catch
+			catch (Exception e)
 			{
+				throw new SmartsheetException(e);
 			}
+
+			request.Entity = serializeToEntity<T>(@object);
+			HttpResponse response = this.smartsheet.HttpClient.Request(request, objectType, file, fileType);
+
+			Object obj = null;
+			switch (response.StatusCode)
+			{
+				case HttpStatusCode.OK:
+					obj = this.smartsheet.JsonSerializer.deserializeResult<T>(
+						response.Entity.GetContent()).Result;
+					break;
+				default:
+					HandleError(response);
+					break;
+			}
+
+			smartsheet.HttpClient.ReleaseConnection();
+
 			return (T)obj;
 		}
 
