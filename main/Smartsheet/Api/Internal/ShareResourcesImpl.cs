@@ -20,6 +20,8 @@ using System.Collections.Generic;
 
 namespace Smartsheet.Api.Internal
 {
+	using Smartsheet.Api.Models;
+	using System.Text;
 	using MultiShare = Api.Models.MultiShare;
 	using Share = Api.Models.Share;
 
@@ -37,200 +39,128 @@ namespace Smartsheet.Api.Internal
 		/// Exceptions: - IllegalArgumentException : if any argument is null or empty string
 		/// </summary>
 		/// <param name="smartsheet"> the Smartsheet </param>
-		/// <param name="masterResourceType"> the master resource Type (e.g. "sheet", "workspace") </param>
-		public ShareResourcesImpl(SmartsheetImpl smartsheet, string masterResourceType) : base(smartsheet, masterResourceType)
+		/// <param name="masterResourceType"> the master resource Type (e.g. "sheets", "workspaces", "reports") </param>
+		public ShareResourcesImpl(SmartsheetImpl smartsheet, string masterResourceType)
+			: base(smartsheet, masterResourceType)
 		{
 		}
 
 		/// <summary>
-		/// List shares of a given object.
-		/// 
-		/// It mirrors To the following Smartsheet REST API method: GET /workspace/{Id}/shares GET /sheet/{Id}/shares
-		/// 
-		/// Exceptions:
-		///   InvalidRequestException : if there is any problem with the REST API request
-		///   AuthorizationException : if there is any problem with the REST API authorization(access token)
-		///   ResourceNotFoundException : if the resource can not be found
-		///   ServiceUnavailableException : if the REST API service is not available (possibly due To rate limiting)
-		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
-		///   SmartsheetException : if there is any other error occurred during the operation
+		/// <para>List shares of a given object.</para>
+		/// <para>It mirrors To the following Smartsheet REST API method:<br />
+		/// GET /workspaces/{workspaceId}/shares <br />
+		/// GET /sheets/{sheetId}/shares <br />
+		/// GET /reports/{reportId}/shares</para>
 		/// </summary>
-		/// <param name="objectId"> the Id of the object To share. </param>
-		/// <returns> the shares (note that empty list will be returned if there is none) </returns>
-		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
-		public virtual IList<Share> ListShares(long objectId)
+		/// <param name="objectId"> the object Id </param>
+		/// <param name="paging"> the pagination request </param>
+		/// <returns> the list of Share objects (note that an empty list will be returned if there is none). </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public virtual DataWrapper<Share> ListShares(long objectId, Models.PaginationParameters paging)
 		{
-			return this.ListResources<Share>(MasterResourceType + "/" + objectId + "/shares", typeof(Share));
+			return this.ListResourcesWithWrapper<Share>(MasterResourceType + "/" + objectId + "/shares");
 		}
 
+
 		/// <summary>
-		/// Get a Share.
-		/// 
-		/// It mirrors To the following Smartsheet REST API method: GET /workspace/{Id}/share/{userId} GET
-		/// /sheet/{Id}/share/{userId}
-		/// 
-		/// Exceptions:
-		///   InvalidRequestException : if there is any problem with the REST API request
-		///   AuthorizationException : if there is any problem with the REST API authorization(access token)
-		///   ResourceNotFoundException : if the resource can not be found
-		///   ServiceUnavailableException : if the REST API service is not available (possibly due To rate limiting)
-		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
-		///   SmartsheetException : if there is any other error occurred during the operation
+		/// <para>Get a Share.</para>
+		/// <para>It mirrors To the following Smartsheet REST API method:<br />
+		/// GET /workspaces/{workspaceId}/shares/{shareId}<br />
+		/// GET /sheets/{sheetId}/shares/{shareId}<br />
+		/// GET /reports/{reportId}/shares/{shareId}</para>
 		/// </summary>
 		/// <param name="objectId"> the ID of the object To share </param>
-		/// <param name="userId"> the ID of the user To whome the object is shared </param>
+		/// <param name="shareId"> the ID of the share instance </param>
 		/// <returns> the share (note that if there is no such resource, this method will throw ResourceNotFoundException
 		/// rather than returning null). </returns>
-		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
-		public virtual Share GetShare(long objectId, long userId)
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public virtual Share GetShare(long objectId, long shareId)
 		{
-			return this.GetResource<Share>(MasterResourceType + "/" + objectId + "/share/" + userId, typeof(Share));
+			return this.GetResource<Share>(MasterResourceType + "/" + objectId + "/shares/" + shareId, typeof(Share));
 		}
 
+
 		/// <summary>
-		/// Share the object, without sending Email.
+		/// <para>Shares a Sheet with the specified Users and Groups.</para>
 		/// 
-		/// It mirrors To the following Smartsheet REST API method: POST /workspace/{Id}/shares POST /sheet/{Id}/shares
-		/// 
-		/// Exceptions:
-		///   IllegalArgumentException : if share is null
-		///   InvalidRequestException : if there is any problem with the REST API request
-		///   AuthorizationException : if there is any problem with the REST API authorization(access token)
-		///   ResourceNotFoundException : if the resource can not be found
-		///   ServiceUnavailableException : if the REST API service is not available (possibly due To rate limiting)
-		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
-		///   SmartsheetException : if there is any other error occurred during the operation
+		/// <para>It mirrors To the following Smartsheet REST API method:<br />
+		/// POST /workspaces/{workspaceId}/shares<br />
+		/// POST /sheets/{sheetId}/shares<br />
+		/// POST /reports/{reportId}/shares</para>
 		/// </summary>
-		/// <param name="objectId"> the ID of the object To share - share : the share object </param>
-		/// <param name="share"> the share </param>
+		/// <param name="objectId"> the Id of the object </param>
+		/// <param name="shares"> the share objects </param>
+		/// <param name="sendEmail">(optional): Either true or false to indicate whether or not
+		/// to notify the user by email. Default is false.</param>
 		/// <returns> the created share </returns>
-		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
-		public virtual Share ShareTo(long objectId, Share share)
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public virtual IList<Share> ShareTo(long objectId, IEnumerable<Share> shares, bool? sendEmail)
 		{
-			return this.CreateResource<Share>(MasterResourceType + "/" + objectId + "/shares", typeof(Share), share);
+			StringBuilder path = new StringBuilder(MasterResourceType + "/" + objectId + "/shares");
+			if (sendEmail != null)
+			{
+				path.Append(sendEmail.ToString());
+			}
+			return this.PostAndReceiveList<IEnumerable<Share>, Share>(path.ToString(), shares, typeof(Share));
 		}
 
-		/// <summary>
-		/// Share the object.
-		/// 
-		/// It mirrors To the following Smartsheet REST API method: POST /workspace/{Id}/shares POST /sheet/{Id}/shares
-		/// 
-		/// Returns: the created share
-		/// 
-		/// Exceptions:
-		///   IllegalArgumentException : if share is null
-		///   InvalidRequestException : if there is any problem with the REST API request
-		///   AuthorizationException : if there is any problem with the REST API authorization(access token)
-		///   ResourceNotFoundException : if the resource can not be found
-		///   ServiceUnavailableException : if the REST API service is not available (possibly due To rate limiting)
-		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
-		///   SmartsheetException : if there is any other error occurred during the operation
-		/// </summary>
-		/// <param name="objectId"> the Id of the object To share </param>
-		/// <param name="share"> the share object </param>
-		/// <param name="sendEmail"> whether To send Email </param>
-		/// <returns> the created share </returns>
-		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
-		public virtual Share ShareTo(long objectId, Share share, bool sendEmail)
-		{
-			return this.CreateResource<Share>(MasterResourceType + "/" + objectId + "/shares?sendEmail=" + sendEmail, typeof(Share), share);
-		}
 
 		/// <summary>
-		/// Share the object with multiple Users, without sending Email.
-		/// 
-		/// It mirrors To the following Smartsheet REST API method: POST /workspace/{Id}/multishare POST
-		/// /sheet/{Id}/multishare
-		/// 
-		/// Exceptions:
-		///   IllegalArgumentException : if multiShare is null
-		///   InvalidRequestException : if there is any problem with the REST API request
-		///   AuthorizationException : if there is any problem with the REST API authorization(access token)
-		///   ResourceNotFoundException : if the resource can not be found
-		///   ServiceUnavailableException : if the REST API service is not available (possibly due To rate limiting)
-		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
-		///   SmartsheetException : if there is any other error occurred during the operation
+		/// <para>Updates the access level of a User or Group for the specified Object.</para>
+		/// <para>It mirrors To the following Smartsheet REST API method:<br />
+		/// PUT /workspaces/{workspaceId}/shares/{shareId}<br />
+		/// PUT /sheets/{sheetId}/shares/{shareId}<br />
+		/// PUT /reports/{reportId}/shares/{shareId}</para>
 		/// </summary>
 		/// <param name="objectId"> the ID of the object To share </param>
-		/// <param name="multiShare"> the MultiShare object </param>
-		/// <returns> the created shares </returns>
-		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
-		public virtual IList<Share> ShareTo(long objectId, MultiShare multiShare)
-		{
-			return this.PostAndReceiveList<MultiShare,Share>(MasterResourceType + "/" + objectId + "/multishare", multiShare, typeof(Share));
-		}
-
-		/// <summary>
-		/// Share the object with multiple Users.
-		/// 
-		/// It mirrors To the following Smartsheet REST API method: POST /workspace/{Id}/multishare POST
-		/// /sheet/{Id}/multishare
-		/// 
-		/// Exceptions:
-		///   IllegalArgumentException : if multiShare is null
-		///   InvalidRequestException : if there is any problem with the REST API request
-		///   AuthorizationException : if there is any problem with the REST API authorization(access token)
-		///   ResourceNotFoundException : if the resource can not be found
-		///   ServiceUnavailableException : if the REST API service is not available (possibly due To rate limiting)
-		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
-		///   SmartsheetException : if there is any other error occurred during the operation
-		/// </summary>
-		/// <param name="objectId"> the ID of the object To share </param>
-		/// <param name="multiShare"> the MultiShare object </param>
-		/// <param name="sendEmail"> whether To send Email </param>
-		/// <returns> the created shares </returns>
-		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
-		public virtual IList<Share> ShareTo(long objectId, MultiShare multiShare, bool sendEmail)
-		{
-			return this.PostAndReceiveList<MultiShare,Share>(MasterResourceType + "/" + objectId + "/multishare?sendEmail=" + sendEmail, multiShare, typeof(Share));
-		}
-
-		/// <summary>
-		/// Update a share.
-		/// 
-		/// It mirrors To the following Smartsheet REST API method: PUT /workspace/{Id}/share/{userId} PUT
-		/// /sheet/{Id}/share/{userId}
-		/// 
-		/// Exceptions:
-		///   IllegalArgumentException : if share is null
-		///   InvalidRequestException : if there is any problem with the REST API request
-		///   AuthorizationException : if there is any problem with the REST API authorization(access token)
-		///   ResourceNotFoundException : if the resource can not be found
-		///   ServiceUnavailableException : if the REST API service is not available (possibly due To rate limiting)
-		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
-		///   SmartsheetException : if there is any other error occurred during the operation
-		/// </summary>
-		/// <param name="objectId"> the ID of the object To share </param>
-		/// <param name="userId"> the ID of the user To whom the object is shared </param>
+		/// <param name="shareId"> the Id of the share instance </param>
 		/// <param name="share"> the share </param>
 		/// <returns> the updated share (note that if there is no such resource, this method will throw
-		/// ResourceNotFoundException rather than returning null). </returns>
-		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
-		public virtual Share UpdateShare(long objectId, long userId, Share share)
+		///  ResourceNotFoundException rather than returning null). </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public virtual Share UpdateShare(long objectId, long shareId, Share share)
 		{
-			return this.UpdateResource<Share>(MasterResourceType + "/" + objectId + "/share/" + userId, typeof(Share), share);
+			return this.UpdateResource<Share>(MasterResourceType + "/" + objectId + "/shares/" + shareId, typeof(Share), share);
 		}
 
 		/// <summary>
-		/// Delete a share.
-		/// 
-		/// It mirrors To the following Smartsheet REST API method: DELETE /workspace/{Id}/share/{userId} DELETE
-		/// /sheet/{Id}/share/{userId}
-		/// 
-		/// Exceptions:
-		///   InvalidRequestException : if there is any problem with the REST API request
-		///   AuthorizationException : if there is any problem with the REST API authorization(access token)
-		///   ResourceNotFoundException : if the resource can not be found
-		///   ServiceUnavailableException : if the REST API service is not available (possibly due To rate limiting)
-		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
-		///   SmartsheetException : if there is any other error occurred during the operation
+		/// <para>Delete a share.</para>
+		/// <para>It mirrors To the following Smartsheet REST API method:<br />
+		/// DELETE /workspaces/{workspaceId}/shares/{shareId}<br />
+		/// DELETE /sheets/{sheetId}/shares/{shareId}<br />
+		/// DELETE /reports/{reportId}/shares/{shareId}</para>
 		/// </summary>
 		/// <param name="objectId"> the ID of the object To share </param>
-		/// <param name="userId"> the ID of the user To whom the object is shared </param>
-		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
-		public virtual void DeleteShare(long objectId, long userId)
+		/// <param name="shareId"> the ID of the user To whome the object is shared </param>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public virtual void DeleteShare(long objectId, long shareId)
 		{
-			this.DeleteResource<Share>(MasterResourceType + "/" + objectId + "/share/" + userId, typeof(Share));
+			this.DeleteResource<Share>(MasterResourceType + "/" + objectId + "/shares/" + shareId, typeof(Share));
 		}
 	}
 

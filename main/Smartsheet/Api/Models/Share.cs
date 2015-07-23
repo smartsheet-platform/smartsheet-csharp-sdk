@@ -24,6 +24,22 @@ namespace Smartsheet.Api.Models
 	/// <seealso href="http://help.Smartsheet.com/customer/portal/articles/520104-sharing-Sheets">Sharing Sheets</seealso>
 	public class Share : NamedModel
 	{
+		//For, now this will overide the ID of the NamedModel interface. Once SDK is almost finalized, I will change
+		// IEnumerable to IEnumerable<T> to accept long or string ID's.
+		private string id;
+
+		private ShareType type;
+
+		private long? userId;
+
+		private long? groupId;
+
+		private string subject;
+
+		private string message;
+
+		private bool? ccMe;
+
 		/// <summary>
 		/// Represents the access level for this specific share.
 		/// </summary>
@@ -67,17 +83,99 @@ namespace Smartsheet.Api.Models
 			}
 		}
 
+		/// <summary>
+		/// Share ID, unlike other Smartsheet object ids, this id is an alphanumeric string.
+		/// </summary>
+		public virtual string ID
+		{
+			get { return id; }
+			set { id = value; }
+		}
+
+		/// <summary>
+		/// The type of this share. One of USER or GROUP.
+		/// </summary>
+		public ShareType Type
+		{
+			get { return type; }
+			set { type = value; }
+		}
+
+		/// <summary>
+		/// User ID if the share is a user share, else null.
+		/// </summary>
+		public long? UserId
+		{
+			get { return userId; }
+			set { userId = value; }
+		}
+
+		/// <summary>
+		/// Group ID if the share is a group share, else null.
+		/// </summary>
+		public long? GroupId
+		{
+			get { return groupId; }
+			set { groupId = value; }
+		}
+
+		/// <summary>
+		/// The subject of the email that will optionally be sent to notify the recipient.
+		/// This attribute can be specified in a request, but will never be present in a response.
+		/// </summary>
+		public string Subject
+		{
+			get { return subject; }
+			set { subject = value; }
+		}
+
+		/// <summary>
+		/// The message to be included in the body of the email that will optionally be sent to the recipient.
+		/// This attribute can be specified in a request, but will never be present in a response.
+		/// </summary>
+		public string Message
+		{
+			get { return message; }
+			set { message = value; }
+		}
+
+		/// <summary>
+		/// Flag to indicate whether or not to send a copy of the email to the sharer of the sheet.
+		/// This attribute can be specified in a request, but will never be present in a response.
+		/// </summary>
+		public bool? CcMe
+		{
+			get { return ccMe; }
+			set { ccMe = value; }
+		}
 
 		/// <summary>
 		/// A convenience class for creating a <seealso cref="Share"/> with the necessary fields for sharing the sheet To one user.
 		/// </summary>
 		public class ShareToOneBuilder
 		{
-			internal AccessLevel? accessLevel;
-			internal string email;
+			private AccessLevel? accessLevel;
+			private string email;
+			private long? groupId;
+			private string subject;
+			private string message;
+			private bool? ccMe;
+
+
+			public ShareToOneBuilder(string email, AccessLevel? accessLevel)
+			{
+				this.email = email;
+				this.accessLevel = accessLevel;
+			}
+
+			public ShareToOneBuilder(long? groupId, AccessLevel? accessLevel)
+			{
+				this.groupId = groupId;
+				this.accessLevel = accessLevel;
+			}
 
 			/// <summary>
-			/// Access level for this specific share.
+			/// (required) Access level for this specific share.
 			/// </summary>
 			/// <param name="accessLevel"> the access level </param>
 			/// <returns> the share To one builder </returns>
@@ -88,7 +186,8 @@ namespace Smartsheet.Api.Models
 			}
 
 			/// <summary>
-			/// Email address for this specific share.
+			///  (optional) Email address for this specific share.
+			///  NOTE: One of email or groupId must be specified, but not both.
 			/// </summary>
 			/// <param name="email"> the Email </param>
 			/// <returns> the share To one builder </returns>
@@ -99,27 +198,102 @@ namespace Smartsheet.Api.Models
 			}
 
 			/// <summary>
+			/// the group share recipient’s group ID.
+			/// NOTE: One of email or groupId must be specified, but not both.
+			/// </summary>
+			/// <param name="groupId"> the groupId </param>
+			/// <returns> the share To one builder </returns>
+			public virtual ShareToOneBuilder SetGroupId(long? groupId)
+			{
+				this.groupId = groupId;
+				return this;
+			}
+
+			/// <summary>
+			/// (optional): The subject of the email that will optionally be sent to notify the recipient.
+			/// </summary>
+			/// <param name="subject"> the subject </param>
+			/// <returns> the share To one builder </returns>
+			public virtual ShareToOneBuilder SetSubject(string subject)
+			{
+				this.subject = subject;
+				return this;
+			}
+
+			/// <summary>
+			/// (optional): The message to be included in the body of the email that will optionally be sent to the recipient.
+			/// </summary>
+			/// <param name="message"> the message </param>
+			/// <returns> the share To one builder </returns>
+			public virtual ShareToOneBuilder SetAccessLevel(string message)
+			{
+				this.message = message;
+				return this;
+			}
+
+			/// <summary>
+			/// (optional): Boolean flag to indicate whether or not to CC the user sharing the sheet.
+			/// </summary>
+			/// <param name="ccMe"> the ccMe </param>
+			/// <returns> the share To one builder </returns>
+			public virtual ShareToOneBuilder SetCcMe(bool? ccMe)
+			{
+				this.ccMe = ccMe;
+				return this;
+			}
+
+			/// <summary>
 			/// Gets the access level.
 			/// </summary>
 			/// <returns> the access level </returns>
-			public virtual AccessLevel? AccessLevel
+			public virtual AccessLevel? GetAccessLevel()
 			{
-				get
-				{
-					return accessLevel;
-				}
+				return accessLevel;
 			}
 
 			/// <summary>
 			/// Gets the Email.
 			/// </summary>
 			/// <returns> the Email </returns>
-			public virtual string Email
+			public virtual string GetEmail()
 			{
-				get
-				{
-					return email;
-				}
+				return email;
+			}
+
+			/// <summary>
+			/// Gets the GroupId.
+			/// </summary>
+			/// <returns> the GroupId </returns>
+			public virtual long? GetGroupId()
+			{
+				return groupId;
+			}
+
+			/// <summary>
+			/// Gets the Subject.
+			/// </summary>
+			/// <returns> the Subject </returns>
+			public virtual string GetSubject()
+			{
+				return subject;
+			}
+
+			/// <summary>
+			/// Gets the Message.
+			/// </summary>
+			/// <returns> the Message </returns>
+			public virtual string GetMessage()
+			{
+				return message;
+			}
+
+			/// <summary>
+			/// Gets the CcMe.
+			/// </summary>
+			/// <returns> the CcMe </returns>
+			public virtual bool? GetCcMe()
+			{
+				return ccMe;
 			}
 
 			/// <summary>
@@ -128,16 +302,20 @@ namespace Smartsheet.Api.Models
 			/// <returns> the share </returns>
 			public virtual Share Build()
 			{
-				if (email == null || accessLevel == null)
+				//if (email == null || accessLevel == null)
+				//{
+				//	throw new InvalidOperationException("The email and accessLevel are required.");
+				//}
+
+				return new Share()
 				{
-					throw new InvalidOperationException("The email and accessLevel are required.");
-				}
-
-				Share share = new Share();
-				share.accessLevel = accessLevel;
-				share.email = email;
-
-				return share;
+					AccessLevel = accessLevel,
+					Email = email,
+					GroupId = groupId,
+					Subject = subject,
+					Message = message,
+					CcMe = ccMe
+				};
 			}
 		}
 
@@ -147,6 +325,11 @@ namespace Smartsheet.Api.Models
 		public class UpdateShareBuilder
 		{
 			internal AccessLevel? accessLevel;
+
+			public UpdateShareBuilder(AccessLevel? accessLevel)
+			{
+				this.accessLevel = accessLevel;
+			}
 
 			/// <summary>
 			/// Access level for the share.
@@ -163,12 +346,9 @@ namespace Smartsheet.Api.Models
 			/// Gets the access level.
 			/// </summary>
 			/// <returns> the access level </returns>
-			public virtual AccessLevel? AccessLevel
+			public virtual AccessLevel? GetAccessLevel()
 			{
-				get
-				{
-					return accessLevel;
-				}
+				return accessLevel;
 			}
 
 			/// <summary>
@@ -177,10 +357,10 @@ namespace Smartsheet.Api.Models
 			/// <returns> the share </returns>
 			public virtual Share Build()
 			{
-				if (accessLevel == null)
-				{
-					throw new InvalidOperationException("The access level must be specified.");
-				}
+				//if (accessLevel == null)
+				//{
+				//	throw new InvalidOperationException("The access level must be specified.");
+				//}
 
 				Share share = new Share();
 				share.accessLevel = accessLevel;
