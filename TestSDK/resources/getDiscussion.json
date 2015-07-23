@@ -1,1 +1,14 @@
-{"id":7802571894089604,"title":"New Discussion","comments":[{"id":966334323419012,"text":"This text is the body of the first comment4","createdBy":{"email":"email@email.com","name":"Brett Batie"},"modifiedDate":"2014-01-31T12:32:09-08:00","createdAt":"2014-01-31T11:28:12-08:00","modifiedAt":"2014-01-31T12:32:09-08:00"},{"id":6405618346026884,"text":"A simple response.","createdBy":{"email":"email@email.com","name":"Brett Batie"},"modifiedDate":"2014-01-31T11:38:20-08:00","createdAt":"2014-01-31T11:38:20-08:00","modifiedAt":"2014-01-31T11:38:20-08:00"},{"id":7250043276158852,"text":"Hmm, another response.","createdBy":{"email":"email@email.com","name":"Brett Batie"},"modifiedDate":"2014-01-31T11:38:32-08:00","createdAt":"2014-01-31T11:38:32-08:00","modifiedAt":"2014-01-31T11:38:32-08:00"}],"accessLevel":"OWNER"}
+{
+	"title": "This is a new discussion",
+	"id": 2331373580117892,
+	"comments": [
+		{
+			"id": 2331373580117892,
+			"text": "This text is the body of the discussion",
+			"createdBy": {
+				"email": "john.doe@smartsheet.com"
+			},
+			"modifiedAt": "2012-07-25T00:02:42-07:00"
+		}
+	]
+}
