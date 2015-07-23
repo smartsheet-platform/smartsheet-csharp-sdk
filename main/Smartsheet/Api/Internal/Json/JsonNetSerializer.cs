@@ -61,6 +61,7 @@ namespace Smartsheet.Api.Internal.Json
 			serializer.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
 
 			// Excludes "Id" field from being serialized To JSON for any IdentifiableModel class
+			// The above statement is deprecated in SDK 2.0. Now includes "Id". "Id" SHOULD be serialized!
 			serializer.ContractResolver = new ContractResolver();
 
 			// Handles enum serialization
@@ -114,20 +115,20 @@ namespace Smartsheet.Api.Internal.Json
 			Utils.ThrowIfNull(@object, outputStream);
 			try
 			{
-				 serializer.Serialize(new Newtonsoft.Json.JsonTextWriter(outputStream), @object);
-				 outputStream.Flush();
+				serializer.Serialize(new Newtonsoft.Json.JsonTextWriter(outputStream), @object);
+				outputStream.Flush();
 			}
 			catch (Newtonsoft.Json.JsonException ex)
 			{
-				 throw new JsonSerializationException(ex);
+				throw new JsonSerializationException(ex);
 			}
 			catch (IOException ex)
 			{
-				 throw new JsonSerializationException(ex);
+				throw new JsonSerializationException(ex);
 			}
 			catch (ObjectDisposedException ex)
 			{
-				 throw new JsonSerializationException(ex);
+				throw new JsonSerializationException(ex);
 			}
 		}
 
@@ -151,12 +152,12 @@ namespace Smartsheet.Api.Internal.Json
 			}
 			catch (Newtonsoft.Json.JsonException ex)
 			{
-				 throw new JsonSerializationException(ex);
+				throw new JsonSerializationException(ex);
 			}
 			catch (IOException ex)
 			{
-				 
-				 throw new JsonSerializationException(ex);
+
+				throw new JsonSerializationException(ex);
 			}
 		}
 
@@ -179,16 +180,16 @@ namespace Smartsheet.Api.Internal.Json
 
 			try
 			{
-				 // Read the Json input stream into a List.
-				 list = serializer.Deserialize<IList<T>>(new Newtonsoft.Json.JsonTextReader(inputStream));
+				// Read the Json input stream into a List.
+				list = serializer.Deserialize<IList<T>>(new Newtonsoft.Json.JsonTextReader(inputStream));
 			}
 			catch (Newtonsoft.Json.JsonException ex)
 			{
-				 throw new JsonSerializationException(ex);
+				throw new JsonSerializationException(ex);
 			}
 			catch (IOException ex)
 			{
-				 throw new JsonSerializationException(ex);
+				throw new JsonSerializationException(ex);
 			}
 
 			return list;
@@ -239,15 +240,15 @@ namespace Smartsheet.Api.Internal.Json
 
 			try
 			{
-				 map = serializer.Deserialize<IDictionary<string,object>>(new Newtonsoft.Json.JsonTextReader(inputStream));
+				map = serializer.Deserialize<IDictionary<string, object>>(new Newtonsoft.Json.JsonTextReader(inputStream));
 			}
 			catch (Newtonsoft.Json.JsonException ex)
 			{
-				 throw new JsonSerializationException(ex);
+				throw new JsonSerializationException(ex);
 			}
 			catch (IOException ex)
 			{
-				 throw new JsonSerializationException(ex);
+				throw new JsonSerializationException(ex);
 			}
 
 			return map;
@@ -272,19 +273,19 @@ namespace Smartsheet.Api.Internal.Json
 
 			try
 			{
-				 result = serializer.Deserialize<RequestResult<T>>(new Newtonsoft.Json.JsonTextReader(inputStream));
+				result = serializer.Deserialize<RequestResult<T>>(new Newtonsoft.Json.JsonTextReader(inputStream));
 			}
 			catch (Newtonsoft.Json.JsonException ex)
 			{
-				 throw new JsonSerializationException(ex);
+				throw new JsonSerializationException(ex);
 			}
 			catch (IOException ex)
 			{
-				 throw new JsonSerializationException(ex);
+				throw new JsonSerializationException(ex);
 			}
 			catch (ObjectDisposedException ex)
 			{
-				 throw new JsonSerializationException(ex);
+				throw new JsonSerializationException(ex);
 			}
 
 			return result;
@@ -312,15 +313,15 @@ namespace Smartsheet.Api.Internal.Json
 
 			try
 			{
-				 result = serializer.Deserialize<RequestResult<IList<T>>>(new Newtonsoft.Json.JsonTextReader(inputStream));
+				result = serializer.Deserialize<RequestResult<IList<T>>>(new Newtonsoft.Json.JsonTextReader(inputStream));
 			}
 			catch (Newtonsoft.Json.JsonException ex)
 			{
-				 throw new JsonSerializationException(ex);
+				throw new JsonSerializationException(ex);
 			}
 			catch (IOException ex)
 			{
-				 throw new JsonSerializationException(ex);
+				throw new JsonSerializationException(ex);
 			}
 
 			return result;
