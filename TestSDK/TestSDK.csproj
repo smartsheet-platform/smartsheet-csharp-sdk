@@ -97,6 +97,7 @@
     <Compile Include="Smartsheet\Api\Internal\SearchResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\ShareResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\SheetColumnResourcesImplTest.cs" />
+    <Compile Include="Smartsheet\Api\Internal\SheetDiscussionResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\SheetResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\SheetRowResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\SmartsheetImplTest.cs" />
