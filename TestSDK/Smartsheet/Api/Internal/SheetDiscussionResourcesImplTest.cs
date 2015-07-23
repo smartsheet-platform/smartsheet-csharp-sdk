@@ -67,5 +67,22 @@ namespace Smartsheet.Api.Internal
 			Assert.True(discussion.Comment.Text == newDiscussion.Comments[0].Text);
 			Assert.True(newDiscussion.Comments[0].CreatedBy.Email == "jane.doev@smartsheet.com");
 		}
+
+		[Test]
+		public virtual void TestCreateDiscussionWithAttachment()
+		{
+			// Will fail unless Attachment is properly implemented
+			server.setResponseBody("../../../TestSDK/resources/createDiscussionWithAttachment.json");
+
+			string file = @"..\..\..\TestSDK\resources\wordFile.docx";
+			Comment comment = new Comment();
+			comment.Text = "Please review the attached image.";
+			Discussion discussion = new Discussion.CreateDiscussionBuilder("a title", comment).Build();
+			Discussion newDiscussion = sheetDiscussionResourcesImpl.CreateDiscussionWithAttachment(13654, discussion, file, null);
+			Assert.True(discussion.Title == newDiscussion.Title);
+			Assert.True(discussion.Comment.Text == newDiscussion.Comments[0].Text);
+			Assert.True(newDiscussion.Comments[0].CreatedBy.Email == "jane.doev@smartsheet.com");
+			Assert.True(newDiscussion.CommentAttachments[0].ParentId == 5706209564092292);
+		}
 	}
 }
