@@ -76,6 +76,7 @@
     <Compile Include="main\Smartsheet\Api\DiscussionAttachmentResources.cs" />
     <Compile Include="main\Smartsheet\Api\DiscussionCommentResources.cs" />
     <Compile Include="main\Smartsheet\Api\DiscussionResources.cs" />
+    <Compile Include="main\Smartsheet\Api\FavoriteResources.cs" />
     <Compile Include="main\Smartsheet\Api\FolderResources.cs" />
     <Compile Include="main\Smartsheet\Api\GroupResources.cs" />
     <Compile Include="main\Smartsheet\Api\HomeFolderResources.cs" />
@@ -92,6 +93,7 @@
     <Compile Include="main\Smartsheet\Api\Internal\DiscussionAttachmentResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\DiscussionCommentResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\DiscussionResourcesImpl.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\FavoriteResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\FolderResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\GroupResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\HomeFolderResourcesImpl.cs" />
@@ -166,6 +168,7 @@
     <Compile Include="main\Smartsheet\Api\Models\Filter.cs" />
     <Compile Include="main\Smartsheet\Api\Models\FilterInclusion.cs" />
     <Compile Include="main\Smartsheet\Api\Models\FilterType.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Favorite.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Folder.cs" />
     <Compile Include="main\Smartsheet\Api\Models\FormatDetails.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Home.cs" />
@@ -177,6 +180,7 @@
     <Compile Include="main\Smartsheet\Api\Models\ObjectExclusion.cs" />
     <Compile Include="main\Smartsheet\Api\Models\ObjectInclusion.cs" />
     <Compile Include="main\Smartsheet\Api\Models\CriteriaOperator.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\ObjectType.cs" />
     <Compile Include="main\Smartsheet\Api\Models\PaginationParameters.cs" />
     <Compile Include="main\Smartsheet\Api\Models\PaperSize.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Report.cs" />

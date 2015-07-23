@@ -82,6 +82,7 @@
     <Compile Include="Smartsheet\Api\Internal\CommentResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\DiscussionAttachmentResourcesTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\DiscussionResourcesImplTest.cs" />
+    <Compile Include="Smartsheet\Api\Internal\FavoriteResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\FolderResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\GroupResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\HomeFolderResourcesImplTest.cs" />
