@@ -419,6 +419,14 @@ namespace Smartsheet.Api.Internal
 			Interlocked.CompareExchange<SearchResources>(ref search, new SearchResourcesImpl(this), null);
 			return search;
 		}
+
+		private DiscussionCommentResources discussionCommentResources;
+
+		public virtual DiscussionCommentResources ds()
+		{
+			Interlocked.CompareExchange<DiscussionCommentResources>(ref discussionCommentResources, new DiscussionCommentResourcesImpl(this), null);
+			return discussionCommentResources;
+		}
 	}
 
 }

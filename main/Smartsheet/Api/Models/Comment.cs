@@ -36,9 +36,9 @@ namespace Smartsheet.Api.Models
 		/// Represents the user that created the Comment. </summary>
 		private User createdBy;
 
-		/// <summary>
-		/// Represents the date the Comment was modified. </summary>
-		private DateTime? modifiedDate;
+		///// <summary>
+		///// Represents the date the Comment was modified. </summary>
+		//private DateTime? modifiedDate;
 
 		/// <summary>
 		/// Represents the Attachments for the Comment. </summary>
@@ -90,21 +90,21 @@ namespace Smartsheet.Api.Models
 		}
 
 
-		/// <summary>
-		/// Gets the date the Comment was last modified.
-		/// </summary>
-		/// <returns> the modified date </returns>
-		public virtual DateTime? ModifiedDate
-		{
-			get
-			{
-				return modifiedDate;
-			}
-			set
-			{
-				this.modifiedDate = value;
-			}
-		}
+		///// <summary>
+		///// Gets the date the Comment was last modified.
+		///// </summary>
+		///// <returns> the modified date </returns>
+		//public virtual DateTime? ModifiedDate
+		//{
+		//	get
+		//	{
+		//		return modifiedDate;
+		//	}
+		//	set
+		//	{
+		//		this.modifiedDate = value;
+		//	}
+		//}
 
 
 		/// <summary>

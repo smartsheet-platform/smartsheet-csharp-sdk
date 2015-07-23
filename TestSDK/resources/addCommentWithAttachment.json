@@ -1,0 +1,30 @@
+{
+	"resultCode": 0,
+	"result": {
+		"id": 2570595675203460,
+		"text": "Please review the attached file.",
+		"createdBy": {
+			"name": "Eric Yan",
+			"email": "email@outlook.com"
+		},
+		"createdAt": "2015-07-15T17:18:13Z",
+		"modifiedAt": "2015-07-15T17:18:13Z",
+		"attachments": [
+			{
+				"id": 6130526026262404,
+				"name": "wordFile.docx",
+				"attachmentType": "FILE",
+				"mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+				"sizeInKb": 12,
+				"parentType": "COMMENT",
+				"parentId": 2570595675203460,
+				"createdBy": {
+					"name": "Eric Yan",
+					"email": "email@outlook.com"
+				},
+				"createdAt": "2015-07-15T17:18:13Z"
+			}
+		]
+	},
+	"message": "SUCCESS"
+}
