@@ -38,6 +38,8 @@ namespace Smartsheet.Api.Internal
 
 		private RowDiscussionResources discussions;
 
+		private RowColumnResources cells;
+
 		/// <summary>
 		/// Constructor.
 		/// 
@@ -51,6 +53,7 @@ namespace Smartsheet.Api.Internal
 		{
 			this.attachments = new RowAttachmentResourcesImpl(smartsheet);
 			this.discussions = new RowDiscussionResourcesImpl(smartsheet);
+			this.cells = new RowColumnResourcesImpl(smartsheet);
 		}
 
 		/// <summary>
@@ -188,6 +191,7 @@ namespace Smartsheet.Api.Internal
 			return CopyOrMoveRowsToAnotherSheet(directive, path);
 		}
 
+
 		/// <summary>
 		/// <para>Sends a Row via email.</para>
 		/// <para>It mirrors To the following Smartsheet REST API method: POST /sheets/{sheetId}/rows/{rowId}/emails</para>
@@ -237,6 +241,13 @@ namespace Smartsheet.Api.Internal
 		{
 			return this.discussions;
 		}
+
+
+		public RowColumnResources CellResources()
+		{
+			return this.cells;
+		}
+
 
 		private CopyOrMoveRowResult CopyOrMoveRowsToAnotherSheet(CopyOrMoveRowDirective directive, string path)
 		{

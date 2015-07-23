@@ -63,6 +63,7 @@ namespace Smartsheet.Api
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		Row GetRow(long sheetId, long rowId, IEnumerable<RowIncludeFlags> include, IEnumerable<ObjectExclusion> exclude);
 
+
 		/// <summary>
 		/// <para>Copies Row(s) from the Sheet specified in the URL to (the bottom of) another sheet.</para>
 		/// 
@@ -136,6 +137,23 @@ namespace Smartsheet.Api
 		///// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		//void SendRow(long sheetId, long rowId, RowEmail email);
 
+
+		///// <summary>
+		///// <para>Sends a Row via email.</para>
+		///// <para>It mirrors To the following Smartsheet REST API method: POST /sheets/{sheetId}/rows/{rowId}/emails</para>
+		///// </summary>
+		///// <param name="sheetId"> the sheetId </param>
+		///// <param name="rowId"> the rowId </param>
+		///// <param name="email"> the email </param>
+		///// <returns> the row object </returns>
+		///// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		///// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		///// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		///// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		///// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		///// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		//void SendRow(long sheetId, long rowId, RowEmail email);
+
 		/// <summary>
 		/// <para>Updates cell values in the specified row(s), expands/collapses the specified row(s), 
 		/// and/or modifies the position of specified rows (including indenting/outdenting).</para>
@@ -157,5 +175,7 @@ namespace Smartsheet.Api
 		RowAttachmentResources AttachmentResources();
 
 		RowDiscussionResources DiscussionResources();
+
+		RowColumnResources CellResources();
 	}
 }

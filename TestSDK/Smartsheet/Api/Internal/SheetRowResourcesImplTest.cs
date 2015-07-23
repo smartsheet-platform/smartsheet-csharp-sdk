@@ -30,18 +30,7 @@ namespace Smartsheet.Api.Internal
 
 			// Create a set of cells
 			IList<Cell> cells = new List<Cell>();
-			Cell cell = new Cell();
-			cell.DisplayValue = "Testing";
-			cell.ColumnId = 8764071660021636L;
-			cell.RowId = 1234L;
-			Link link = new Link();
-			link.Url = "http://google.com";
-			link.Type = LinkType.URL;
-			link.SheetId = 1234L;
-			link.ColumnId = 1234L;
-			link.RowId = 1234L;
-			cell.Link = link;
-			cell.Formula = "=1+1";
+			Cell cell = new Cell.AddCellBuilder(123, "lala").SetStrict(true).Build();
 			cells.Add(cell);
 
 			// Create a row and add the cells to it.
@@ -74,7 +63,6 @@ namespace Smartsheet.Api.Internal
 			Assert.True(1 == row.RowNumber, "Wrong row retrieved.");
 		}
 
-		[Test]
 		public virtual void TestCopyRowsToAnotherSheet()
 		{
 			server.setResponseBody("../../../TestSDK/resources/copyOrMoveRowResult.json");
@@ -96,12 +84,17 @@ namespace Smartsheet.Api.Internal
 			Assert.AreEqual(row.RowMappings[1].To, 2256565987239812);
 		}
 
+
 		[Test]
 		public virtual void TestUpdateRows()
 		{
 			server.setResponseBody("../../../TestSDK/resources/updateRows.json");
 
-			Row row = new Row.UpdateRowBuilder(65654654).SetLocked(true).SetExpanded(true).Build();
+			Cell cell1 = new Cell.UpdateCellBuilder(117, true).Build();
+			Cell cell2 = new Cell.UpdateCellBuilder(343, 99999999).Build();
+			IList<Cell> cells = new List<Cell> { cell1, cell2 };
+
+			Row row = new Row.UpdateRowBuilder(65654654).SetLocked(true).SetExpanded(true).SetCells(cells).Build();
 			Row row2 = new Row.UpdateRowBuilder(4554684).SetToBottom(true).SetExpanded(false).Build();
 
 			IList<Row> rows = sheetRowResource.UpdateRows(123, new List<Row> { row, row2 });
