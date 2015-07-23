@@ -1,0 +1,49 @@
+{
+    "message": "SUCCESS",
+    "result": [
+        {
+            "id": 7670198317672324,
+            "sheetId": 2331373580117892,
+            "rowNumber": 1,
+            "expanded": true,
+            "createdAt": "2013-02-28T17:45:13-08:00",
+            "modifiedAt": "2013-02-28T17:45:13-08:00",
+            "cells": [
+                {
+                    "columnId": 7960873114331012,
+                    "type": "CHECKBOX",
+                    "value": true
+                },
+                {
+                    "columnId": 642523719853956,
+                    "displayValue": "New status",
+                    "type": "TEXT_NUMBER",
+                    "value": "New status"
+                }
+            ]
+        },
+        {
+            "id": 2040698783459204,
+            "sheetId": 2331373580117892,
+            "rowNumber": 2,
+            "expanded": true,
+            "createdAt": "2013-02-28T17:45:13-08:00",
+            "modifiedAt": "2013-02-28T17:45:13-08:00",
+            "cells": [
+                {
+                    "columnId": 7960873114331012,
+                    "type": "CHECKBOX",
+                    "value": true
+                },
+                {
+                    "columnId": 642523719853956,
+                    "displayValue": "New status",
+                    "type": "TEXT_NUMBER",
+                    "value": "New status"
+                }
+            ]
+        }
+    ],
+    "version": 14, 
+    "resultCode": 0
+}
