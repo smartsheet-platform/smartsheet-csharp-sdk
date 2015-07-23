@@ -33,7 +33,7 @@ namespace Smartsheet.Api.Internal
 			Assert.True(result.Data.Count == 2);
 			Assert.AreEqual("Folder 1", result.Data[0].Name);
 			Assert.AreEqual("Folder 2", result.Data[1].Name);
-			Assert.True(7116448184199044L == result.Data[0].ID);
+			Assert.True(7116448184199044L == result.Data[0].Id);
 		}
 
 		[Test]
@@ -44,7 +44,7 @@ namespace Smartsheet.Api.Internal
 			Folder folder = new Folder.CreateFolderBuilder().SetName("New folder").Build();
 
 			Folder newFolder = homeFolderResources.CreateFolder(folder);
-			Assert.True(1486948649985924L == newFolder.ID);
+			Assert.True(1486948649985924L == newFolder.Id);
 			Assert.AreEqual(folder.Name, newFolder.Name);
 		}
 	}

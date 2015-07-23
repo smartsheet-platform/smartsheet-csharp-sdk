@@ -30,7 +30,7 @@ namespace Smartsheet.Api.Internal
 			Assert.NotNull(result);
 			IList<User> users = result.Data;
 			Assert.AreEqual(1, users.Count);
-			Assert.AreEqual(94094820842L, (long)users[0].ID);
+			Assert.AreEqual(94094820842L, (long)users[0].Id);
 			Assert.AreEqual(true, users[0].Admin);
 			Assert.AreEqual("john.doe@smartsheet.com", users[0].Email);
 			Assert.AreEqual("John Doe", users[0].Name);
@@ -50,7 +50,7 @@ namespace Smartsheet.Api.Internal
 			Assert.AreEqual("John Doe", newUser.Name);
 			Assert.AreEqual(false, newUser.Admin);
 			Assert.AreEqual(true, newUser.LicensedSheetCreator);
-			Assert.AreEqual(1768423626696580L, (long)newUser.ID);
+			Assert.AreEqual(1768423626696580L, (long)newUser.Id);
 		}
 
 		//[Test]
@@ -80,7 +80,7 @@ namespace Smartsheet.Api.Internal
 
 			UserProfile user = userResources.GetCurrentUser();
 			Assert.AreEqual("john.doe@smartsheet.com", user.Email);
-			Assert.AreEqual(48569348493401200L, (long)user.ID);
+			Assert.AreEqual(48569348493401200L, (long)user.Id);
 			Assert.AreEqual("John", user.FirstName);
 			Assert.AreEqual("Doe", user.LastName);
 		}

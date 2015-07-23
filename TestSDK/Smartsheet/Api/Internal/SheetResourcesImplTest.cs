@@ -128,16 +128,16 @@ namespace Smartsheet.Api.Internal
 
 			server.setResponseBody("../../../TestSDK/resources/createSheetFromExisting.json");
 
-			Sheet sheet = new Sheet.CreateFromTemplateBuilder().SetFromId(2906571706525572L).Build();
+			Sheet sheet = new Sheet.CreateFromTemplateBuilder(2906571706525572L, "bleh").Build();
 
 			Sheet newSheet = sheetResource.CreateSheetFromTemplate(sheet, null);
 
-			Assert.AreEqual(466343087630212L, (long)newSheet.ID);
+			Assert.AreEqual(466343087630212L, (long)newSheet.Id);
 			Assert.AreEqual(AccessLevel.OWNER, newSheet.AccessLevel);
 			Assert.AreEqual("https://app.smartsheet.com/b/home?lx=asdf", newSheet.Permalink);
 
 			newSheet = sheetResource.CreateSheetFromTemplate(sheet, null);
-			Assert.AreEqual(466343087630212L, (long)newSheet.ID);
+			Assert.AreEqual(466343087630212L, (long)newSheet.Id);
 			Assert.AreEqual(AccessLevel.OWNER, newSheet.AccessLevel);
 			Assert.AreEqual("https://app.smartsheet.com/b/home?lx=asdf", newSheet.Permalink);
 

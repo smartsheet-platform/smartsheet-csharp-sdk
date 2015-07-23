@@ -195,7 +195,7 @@ namespace Smartsheet.Api.Models
 			TColumn result = null;
 			foreach (TColumn column in columns)
 			{
-				if (column.ID == columnId)
+				if (column.Id == columnId)
 				{
 					result = column;
 					break;

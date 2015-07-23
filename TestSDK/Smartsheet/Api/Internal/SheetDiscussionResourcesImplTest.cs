@@ -29,9 +29,9 @@ namespace Smartsheet.Api.Internal
 			// not yet implemented in the Attachment object
 			DataWrapper<Discussion> result = sheetDiscussionResourcesImpl.ListDiscussions
 			(1234L, new DiscussionInclusion[] { DiscussionInclusion.ATTACHMENTS }, null);
-			Assert.True(result.Data[0].ID == 3138415114905476);
+			Assert.True(result.Data[0].Id == 3138415114905476);
 			Assert.True(result.Data[0].Title == "Lincoln");
-			Assert.True(result.Data[0].Comments[0].ID == 7320407591151492);
+			Assert.True(result.Data[0].Comments[0].Id == 7320407591151492);
 			Assert.True(result.Data[0].Comments[0].Text == "16th President");
 			Assert.True(result.Data[0].Comments[0].CreatedBy.Name == "Test User");
 			Assert.True(result.Data[0].Comments[0].Attachments[0].Name == "test.html");
@@ -48,7 +48,7 @@ namespace Smartsheet.Api.Internal
 			server.setResponseBody("../../../TestSDK/resources/getDiscussion.json");
 
 			Discussion discussion = sheetDiscussionResourcesImpl.GetDiscussion(13654, 534654654);
-			Assert.True(discussion.ID == 2331373580117892);
+			Assert.True(discussion.Id == 2331373580117892);
 			Assert.True(discussion.Title == "This is a new discussion");
 			Assert.True(discussion.Comments[0].Text == "This text is the body of the discussion");
 		}

@@ -47,7 +47,7 @@ namespace Smartsheet.Api.Internal
 			Assert.AreEqual(2331373580117892, newRows[1].SheetId);
 
 			Column col = new Column();
-			col.ID = 8764071660021636L;
+			col.Id = 8764071660021636L;
 			Assert.Null(rows[0].GetColumnByIndex(0));
 			Assert.Null(rows[0].GetColumnById(8764071660021636L));
 		}

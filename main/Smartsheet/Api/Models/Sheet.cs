@@ -38,7 +38,7 @@ namespace Smartsheet.Api.Models
 			Column result = null;
 			foreach (Column column in columns)
 			{
-				if (column.ID == columnId)
+				if (column.Id == columnId)
 				{
 					result = column;
 					break;
@@ -135,6 +135,12 @@ namespace Smartsheet.Api.Models
 		{
 			private string name;
 			private long? fromId;
+
+			public CreateFromTemplateBuilder(long? fromId, string name)
+			{
+				this.fromId = fromId;
+				this.name = name;
+			}
 
 			/// <summary>
 			/// Sets the Name for the sheet being created.

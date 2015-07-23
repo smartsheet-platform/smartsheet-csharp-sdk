@@ -73,7 +73,7 @@ namespace Smartsheet.Api.Internal
 		{
 			Utils.ThrowIfNull(column);
 
-			return this.UpdateResource("column/" + column.ID, typeof(Column), column);
+			return this.UpdateResource("column/" + column.Id, typeof(Column), column);
 		}
 
 		/// <summary>

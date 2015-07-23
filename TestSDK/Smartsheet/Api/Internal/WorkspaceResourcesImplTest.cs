@@ -35,7 +35,7 @@ namespace Smartsheet.Api.Internal
 
 			DataWrapper<Workspace> result = workspaceResources.ListWorkspaces(null);
 			Assert.AreEqual(2, result.TotalCount);
-			Assert.AreEqual(3457273486960516, (long)result.Data[0].ID);
+			Assert.AreEqual(3457273486960516, (long)result.Data[0].Id);
 			Assert.AreEqual("workspace 1", result.Data[0].Name);
 			Assert.AreEqual(AccessLevel.OWNER, result.Data[0].AccessLevel);
 			Assert.AreEqual("https://app.smartsheet.com/b/home?lx=JLiJbgXtXc0pzni9tzAKiR", result.Data[1].Permalink);
@@ -47,7 +47,7 @@ namespace Smartsheet.Api.Internal
 			server.setResponseBody("../../../TestSDK/resources/getWorkspace.json");
 
 			Workspace workspace = workspaceResources.GetWorkspace(1234L, false, null);
-			Assert.AreEqual(7116448184199044, (long)workspace.ID);
+			Assert.AreEqual(7116448184199044, (long)workspace.Id);
 			Assert.AreEqual("New workspace", workspace.Name);
 			Assert.AreEqual(1, workspace.Sheets.Count);
 			Assert.AreEqual(null, workspace.Folders);
@@ -62,7 +62,7 @@ namespace Smartsheet.Api.Internal
 
 			Workspace workspace = new Workspace.CreateWorkspaceBuilder("New workspace").Build();
 			Workspace newWorkspace = workspaceResources.CreateWorkspace(workspace);
-			Assert.AreEqual(7960873114331012, (long)newWorkspace.ID);
+			Assert.AreEqual(7960873114331012, (long)newWorkspace.Id);
 			Assert.AreEqual("New workspace", newWorkspace.Name);
 			Assert.AreEqual(AccessLevel.OWNER, newWorkspace.AccessLevel);
 			Assert.AreEqual("https://app.smartsheet.com/b/home?lx=rBU8QqUVPCJ3geRgl7L8yQ", newWorkspace.Permalink);
@@ -75,7 +75,7 @@ namespace Smartsheet.Api.Internal
 
 			Workspace workspace = new Workspace.UpdateWorkspaceBuilder("Updated workspace").Build();
 			Workspace newWorkspace = workspaceResources.UpdateWorkspace(32434534, workspace);
-			Assert.AreEqual(7960873114331012, (long)newWorkspace.ID);
+			Assert.AreEqual(7960873114331012, (long)newWorkspace.Id);
 			Assert.AreEqual("Updated workspace", newWorkspace.Name);
 			Assert.AreEqual(AccessLevel.OWNER, newWorkspace.AccessLevel);
 			Assert.AreEqual("https://app.smartsheet.com/b/home?lx=rBU8QqUVPCJ3geRgl7L8yQ", newWorkspace.Permalink);

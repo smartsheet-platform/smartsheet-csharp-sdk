@@ -24,8 +24,11 @@ namespace Smartsheet.Api.Models
 	/// <seealso href="http://help.Smartsheet.com/customer/portal/articles/520104-sharing-Sheets">Sharing Sheets</seealso>
 	public class Share : NamedModel
 	{
-		//For, now this will overide the ID of the NamedModel interface. Once SDK is almost finalized, I will change
-		// IEnumerable to IEnumerable<T> to accept long or string ID's.
+		//Since ID is alphanumeric.
+		// We can either overide the ID of the NamedModel interface. 
+		//Or
+		// Update IdentifiableModel to IdentifiableModel<T> to accept either a long or string type.
+		//For now, we are overiding ID.
 		private string id;
 
 		private ShareType type;
@@ -86,8 +89,9 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// Share ID, unlike other Smartsheet object ids, this id is an alphanumeric string.
 		/// </summary>
-		public virtual string ID
+		public virtual string Id
 		{
+			// This should hide inherited member "Id".
 			get { return id; }
 			set { id = value; }
 		}

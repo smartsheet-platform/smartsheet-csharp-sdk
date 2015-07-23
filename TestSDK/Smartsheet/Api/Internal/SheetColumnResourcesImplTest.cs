@@ -61,7 +61,7 @@ namespace Smartsheet.Api.Internal
 			Assert.AreEqual(150, newCols[0].Width);
 			Assert.IsTrue(newCols[0].Type == ColumnType.PICKLIST);
 			Assert.IsTrue(newCols[0].Index == 4);
-			Assert.IsTrue(newCols[2].ID == 6755394238748795);
+			Assert.IsTrue(newCols[2].Id == 6755394238748795);
 			Assert.IsTrue(newCols[2].Title == "New Picklist Column 2");
 			Assert.IsTrue(newCols[2].Options[1] == "2");
 		}
@@ -75,7 +75,7 @@ namespace Smartsheet.Api.Internal
 
 			Assert.IsTrue(newCol.Type == ColumnType.CHECKBOX);
 			Assert.IsTrue(newCol.Index == 2);
-			Assert.IsTrue(newCol.ID == 7960873114331012);
+			Assert.IsTrue(newCol.Id == 7960873114331012);
 			Assert.IsTrue(newCol.Title == "Favorite");
 		}
 
@@ -92,7 +92,7 @@ namespace Smartsheet.Api.Internal
 			Column newCol = sheetColumnResourcesImpl.UpdateColumn(1234L, 132, col1);
 			Assert.IsTrue(newCol.Type == ColumnType.PICKLIST);
 			Assert.IsTrue(newCol.Index == 0);
-			Assert.IsTrue(newCol.ID == 5005385858869124);
+			Assert.IsTrue(newCol.Id == 5005385858869124);
 			Assert.IsTrue(newCol.Title == "First Column");
 			Assert.IsTrue(newCol.Options[0] == "One");
 			Assert.IsTrue(newCol.Options[1] == "Two");

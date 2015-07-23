@@ -32,7 +32,7 @@ namespace Smartsheet.Api.Internal
 			Assert.NotNull(result);
 			Assert.AreEqual(2,result.Data.Count);
 			Assert.AreEqual(AccessLevel.OWNER,result.Data[0].AccessLevel);
-			Assert.AreEqual(3457273486960516, result.Data[0].ID);
+			Assert.AreEqual(3457273486960516, result.Data[0].Id);
 			Assert.AreEqual("This is template 1", result.Data[0].Description);
 			Assert.AreEqual("This is template 2", result.Data[1].Description);
 			Assert.AreEqual(AccessLevel.VIEWER, result.Data[1].AccessLevel);
@@ -47,7 +47,7 @@ namespace Smartsheet.Api.Internal
 			Assert.NotNull(result);
 			Assert.AreEqual(2, result.Data.Count);
 			Assert.AreEqual(AccessLevel.OWNER, result.Data[0].AccessLevel);
-			Assert.AreEqual(3457273486960516, result.Data[0].ID);
+			Assert.AreEqual(3457273486960516, result.Data[0].Id);
 			Assert.AreEqual("This is template 1", result.Data[0].Description);
 			Assert.AreEqual("This is template 2", result.Data[1].Description);
 			Assert.AreEqual(AccessLevel.VIEWER, result.Data[1].AccessLevel);

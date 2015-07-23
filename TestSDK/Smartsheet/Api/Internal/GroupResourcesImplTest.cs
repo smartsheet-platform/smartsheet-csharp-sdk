@@ -57,7 +57,7 @@ namespace Smartsheet.Api.Internal
 			DataWrapper<Group> result = groupResources.ListGroups(new PaginationParameters(false, 100, 1));
 
 			Assert.IsTrue(result.Data.Count == result.TotalCount);
-			Assert.IsTrue(result.Data[0].ID == 4583173393803140);
+			Assert.IsTrue(result.Data[0].Id == 4583173393803140);
 			Assert.IsTrue(result.Data[0].Name == "Group 1");
 			Assert.IsTrue(result.Data[0].Description == "My group");
 			Assert.IsTrue(result.Data[0].OwnerId == 2331373580117892);
@@ -77,7 +77,7 @@ namespace Smartsheet.Api.Internal
 			Assert.AreEqual(newGroup.Name, createdGroup.Name);
 			Assert.AreEqual(newGroup.Description, createdGroup.Description);
 			Assert.AreEqual(newGroup.Members[0].Email, createdGroup.Members[0].Email);
-			Assert.AreEqual(4583173393803140, createdGroup.Members[0].ID);
+			Assert.AreEqual(4583173393803140, createdGroup.Members[0].Id);
 
 		}
 

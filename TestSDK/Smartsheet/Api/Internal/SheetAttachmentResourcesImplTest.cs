@@ -27,7 +27,7 @@ namespace Smartsheet.Api.Internal
 			Attachment attachment = sheetAttachmentResource.AttachFile(56545654, file, "application/msword");
 			Assert.IsTrue(attachment.AttachmentType == AttachmentType.FILE);
 			Assert.IsTrue(attachment.CreatedAt == DateTime.Parse("2013-02-28T21:04:56-08:00"));
-			Assert.IsTrue(attachment.ID == 4583173393803140);
+			Assert.IsTrue(attachment.Id == 4583173393803140);
 			Assert.IsTrue(attachment.MimeType == "application/msword");
 			Assert.IsTrue(attachment.Name == "ProgressReport.docx");
 		}
@@ -42,7 +42,7 @@ namespace Smartsheet.Api.Internal
 			Attachment newAttachment = sheetAttachmentResource.AttachUrl(56545654, attachment);
 			Assert.IsTrue(newAttachment.AttachmentType == AttachmentType.LINK);
 			Assert.IsTrue(newAttachment.CreatedAt.Value.ToUniversalTime() == DateTime.Parse("2013-02-28T21:52:40-08:00").ToUniversalTime());
-			Assert.IsTrue(newAttachment.ID == 1205473673275268);
+			Assert.IsTrue(newAttachment.Id == 1205473673275268);
 			Assert.IsTrue(newAttachment.Description == "A popular search engine");
 			Assert.IsTrue(newAttachment.Name == "Search Engine");
 			Assert.IsTrue(newAttachment.Url == "http://google.com");
@@ -57,7 +57,7 @@ namespace Smartsheet.Api.Internal
 			Attachment attachment = sheetAttachmentResource.GetAttachment(56545654, 56464654);
 			Assert.IsTrue(attachment.AttachmentType == AttachmentType.FILE);
 			Assert.IsTrue(attachment.MimeType == "image/png");
-			Assert.IsTrue(attachment.ID == 4583173393803140);
+			Assert.IsTrue(attachment.Id == 4583173393803140);
 			Assert.IsTrue(attachment.Description == null);
 			Assert.IsTrue(attachment.Name == "at3.png");
 			Assert.IsTrue(attachment.Url == "URL_TO_ATTACHMENT");
@@ -71,14 +71,14 @@ namespace Smartsheet.Api.Internal
 			DataWrapper<Attachment> result = sheetAttachmentResource.ListAttachments(56545654, null);
 			Assert.IsTrue(result.Data[0].AttachmentType == AttachmentType.FILE);
 			Assert.IsTrue(result.Data[0].MimeType == "image/png");
-			Assert.IsTrue(result.Data[0].ID == 4583173393803140);
+			Assert.IsTrue(result.Data[0].Id == 4583173393803140);
 			Assert.IsTrue(result.Data[0].ParentType == AttachmentParentType.SHEET);
 			Assert.IsTrue(result.Data[0].Name == "att3.png");
 			Assert.IsTrue(result.Data[0].ParentId == 341847495283);
 
 			Assert.IsTrue(result.Data[1].AttachmentType == AttachmentType.FILE);
 			Assert.IsTrue(result.Data[1].MimeType == "image/png");
-			Assert.IsTrue(result.Data[1].ID == 4583173393803140);
+			Assert.IsTrue(result.Data[1].Id == 4583173393803140);
 			Assert.IsTrue(result.Data[1].ParentType == AttachmentParentType.ROW);
 			Assert.IsTrue(result.Data[1].Name == "att4.png");
 			Assert.IsTrue(result.Data[1].ParentId == 684956754834557);

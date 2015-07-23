@@ -27,7 +27,7 @@ namespace Smartsheet.Api.Internal
 
 			DataWrapper<Folder> result = workspaceFolderResources.ListFolders(1234L, new PaginationParameters(false, 123, 117));
 			Assert.AreEqual(2, result.Data.Count);
-			Assert.AreEqual(7116448184188022L, (long)result.Data[1].ID);
+			Assert.AreEqual(7116448184188022L, (long)result.Data[1].Id);
 			Assert.AreEqual("https://app.smartsheet.com/b/home?lx=9sljohj8jEXqvJIbTrK2Hb", result.Data[0].Permalink);
 
 		}
@@ -39,7 +39,7 @@ namespace Smartsheet.Api.Internal
 
 			Folder folder = new Folder.CreateFolderBuilder().SetName("New folder").Build();
 			Folder newFolder = workspaceFolderResources.CreateFolder(1234L, folder);
-			Assert.AreEqual(1486948649985924L, (long)newFolder.ID);
+			Assert.AreEqual(1486948649985924L, (long)newFolder.Id);
 			Assert.AreEqual("New folder", newFolder.Name);
 		}
 

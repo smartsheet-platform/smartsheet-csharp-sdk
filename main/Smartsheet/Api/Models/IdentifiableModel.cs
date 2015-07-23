@@ -32,7 +32,7 @@ namespace Smartsheet.Api.Models
 		/// Gets the Id.
 		/// </summary>
 		/// <returns> the Id </returns>
-		public virtual long? ID
+		public virtual long? Id
 		{
 			get
 			{

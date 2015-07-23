@@ -37,7 +37,7 @@ namespace Smartsheet.Api.Internal
 			Assert.IsTrue(ShareType.USER == result.Data[0].Type);
 			Assert.IsTrue(2331373580117892 == result.Data[1].GroupId);
 			Assert.IsTrue(ShareType.GROUP == result.Data[1].Type);
-			Assert.IsTrue("AQAISF82FOeE" == result.Data[1].ID);
+			Assert.IsTrue("AQAISF82FOeE" == result.Data[1].Id);
 			Assert.IsTrue(AccessLevel.ADMIN == result.Data[1].AccessLevel);
 
 		}
@@ -52,7 +52,7 @@ namespace Smartsheet.Api.Internal
 			Assert.AreEqual(null, share.Email);
 			Assert.AreEqual(2331373580117892, share.GroupId);
 			Assert.AreEqual(AccessLevel.ADMIN, share.AccessLevel);
-			Assert.AreEqual("AQAISF82FOeE", share.ID);
+			Assert.AreEqual("AQAISF82FOeE", share.Id);
 			Assert.AreEqual("Group 1", share.Name);
 
 		}
@@ -67,7 +67,7 @@ namespace Smartsheet.Api.Internal
 
 			Assert.AreEqual("jane.doe@smartsheet.com", shares[0].Email);
 			Assert.AreEqual(AccessLevel.EDITOR, shares[0].AccessLevel);
-			Assert.AreEqual("AAAFeF82FOeE", shares[0].ID);
+			Assert.AreEqual("AAAFeF82FOeE", shares[0].Id);
 			Assert.AreEqual(ShareType.USER, shares[0].Type);
 			Assert.AreEqual("Jane Doe", shares[0].Name);
 
