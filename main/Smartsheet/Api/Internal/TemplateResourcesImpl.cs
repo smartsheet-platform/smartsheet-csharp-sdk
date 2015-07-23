@@ -20,9 +20,8 @@ using System.Collections.Generic;
 
 namespace Smartsheet.Api.Internal
 {
-
-
-	using Template = Api.Models.Template;
+	using Api.Models;
+	using System.Text;
 
 	/// <summary>
 	/// This is the implementation of the TemplateResources.
@@ -43,23 +42,47 @@ namespace Smartsheet.Api.Internal
 		}
 
 		/// <summary>
-		/// List all Templates.
-		/// 
-		/// It mirrors To the following Smartsheet REST API method: GET /Templates
-		/// 
-		/// Exceptions: 
-		///   - InvalidRequestException : if there is any problem with the REST API request 
-		///   - AuthorizationException : if there is any problem with the REST API authorization(access token) 
-		///   - ServiceUnavailableException : if the REST API service is not available (possibly due To rate limiting) 
-		///   - SmartsheetRestException : if there is any other REST API related error occurred during the operation 
-		///   - SmartsheetException : if there is any other error occurred during the operation
+		/// <para>Gets the list of public Templates to which the user has access.</para>
+		/// <remarks>This operation supports pagination of results. For more information, see Paging.</remarks>
+		/// <para>It mirrors To the following Smartsheet REST API method: GET /templates/public</para>
 		/// </summary>
-		/// <returns> all Templates (note that empty list will be returned if there is none) </returns>
-		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
-		public virtual IList<Template> ListTemplates()
+		/// <returns> the list of Templates (note that an empty list will be returned if there are none). </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public virtual DataWrapper<Template> ListPublicTemplates(PaginationParameters paging)
 		{
-			return this.ListResources<Template>("templates", typeof(Template));
+			StringBuilder path = new StringBuilder("templates/public");
+			if (paging != null)
+			{
+				path.Append(paging.ToQueryString());
+			}
+			return this.ListResourcesWithWrapper<Template>(path.ToString());
+		}
+
+		/// <summary>
+		/// <para>Gets the list of user-created Templates to which the user has access.</para>
+		/// <remarks>This operation supports pagination of results. For more information, see Paging.</remarks>
+		/// <para>It mirrors To the following Smartsheet REST API method: GET /templates</para>
+		/// </summary>
+		/// <returns> the list of Templates (note that an empty list will be returned if there are none). </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public virtual DataWrapper<Template> ListUserCreatedTemplates(PaginationParameters paging)
+		{
+			StringBuilder path = new StringBuilder("templates");
+			if (paging != null)
+			{
+				path.Append(paging.ToQueryString());
+			}
+			return this.ListResourcesWithWrapper<Template>(path.ToString());
 		}
 	}
-
 }
