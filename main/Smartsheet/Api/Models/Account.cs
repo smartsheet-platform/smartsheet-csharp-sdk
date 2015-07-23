@@ -19,41 +19,9 @@
 namespace Smartsheet.Api.Models
 {
 	/// <summary>
-	/// A user profile object.
+	/// Represents the Account object.
 	/// </summary>
-	public class UserProfile : UserModel
+	public class Account : NamedModel
 	{
-		private string timeZone;
-
-		private string locale;
-
-		private Account account;
-
-		/// <summary>
-		/// Current user’s time zone ID
-		/// </summary>
-		public string TimeZone
-		{
-			get { return timeZone; }
-			set { timeZone = value; }
-		}
-
-		/// <summary>
-		/// Current user’s locale (see Server Information)
-		/// </summary>
-		public string Locale
-		{
-			get { return locale; }
-			set { locale = value; }
-		}
-
-		/// <summary>
-		/// Account object representing the current user’s customer account
-		/// </summary>
-		public Account Account
-		{
-			get { return account; }
-			set { account = value; }
-		}
 	}
 }

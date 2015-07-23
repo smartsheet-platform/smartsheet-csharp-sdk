@@ -15,45 +15,50 @@
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
 //    %[license]
+using Smartsheet.Api.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
 namespace Smartsheet.Api.Models
 {
 	/// <summary>
-	/// A user profile object.
+	/// Represents an UserModel.
 	/// </summary>
-	public class UserProfile : UserModel
+	public abstract class UserModel : IdentifiableModel
 	{
-		private string timeZone;
+		private string email;
 
-		private string locale;
+		private string firstName;
 
-		private Account account;
+		private string lastName;
 
 		/// <summary>
-		/// Current user’s time zone ID
+		/// Current user’s email address
 		/// </summary>
-		public string TimeZone
+		public string Email
 		{
-			get { return timeZone; }
-			set { timeZone = value; }
+			get { return email; }
+			set { email = value; }
 		}
 
 		/// <summary>
-		/// Current user’s locale (see Server Information)
+		/// Current user’s first name
 		/// </summary>
-		public string Locale
+		public string FirstName
 		{
-			get { return locale; }
-			set { locale = value; }
+			get { return firstName; }
+			set { firstName = value; }
 		}
 
 		/// <summary>
-		/// Account object representing the current user’s customer account
+		/// Current user’s last name
 		/// </summary>
-		public Account Account
+		public string LastName
 		{
-			get { return account; }
-			set { account = value; }
+			get { return lastName; }
+			set { lastName = value; }
 		}
 	}
 }

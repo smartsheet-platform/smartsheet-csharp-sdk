@@ -135,8 +135,10 @@
     <Compile Include="main\Smartsheet\Api\InvalidRequestException.cs" />
     <Compile Include="main\Smartsheet\Api\Models\AbstractRow.cs" />
     <Compile Include="main\Smartsheet\Api\Models\AbstractSheet.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\UserModel.cs" />
     <Compile Include="main\Smartsheet\Api\Models\AccessLevel.cs" />
     <Compile Include="main\Smartsheet\Api\Models\AccessScope.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Account.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Attachment.cs" />
     <Compile Include="main\Smartsheet\Api\Models\AttachmentParentType.cs" />
     <Compile Include="main\Smartsheet\Api\Models\AttachmentSubType.cs" />
@@ -199,6 +201,7 @@
     <Compile Include="main\Smartsheet\Api\Models\Template.cs" />
     <Compile Include="main\Smartsheet\Api\Models\TemplateInclusion.cs" />
     <Compile Include="main\Smartsheet\Api\Models\User.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\UserModelWithName.cs" />
     <Compile Include="main\Smartsheet\Api\Models\UserProfile.cs" />
     <Compile Include="main\Smartsheet\Api\Models\UserStatus.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Workspace.cs" />

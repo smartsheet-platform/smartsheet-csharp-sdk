@@ -20,10 +20,7 @@ using System.Collections.Generic;
 
 namespace Smartsheet.Api
 {
-
-
-	using User = Api.Models.User;
-	using UserProfile = Api.Models.UserProfile;
+	using Api.Models;
 
 	/// <summary>
 	/// <para>This interface provides methods To access User resources.</para>
@@ -32,12 +29,12 @@ namespace Smartsheet.Api
 	/// </summary>
 	public interface UserResources
 	{
-
 		/// <summary>
 		/// <para>List all Users.</para>
-		/// 
 		/// <para>It mirrors To the following Smartsheet REST API method: GET /Users</para>
 		/// </summary>
+		/// <param name="emails">list of emails</param>
+		/// <param name="paging"> the pagination</param>
 		/// <returns> the list of all Users </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -45,30 +42,29 @@ namespace Smartsheet.Api
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		IList<User> ListUsers();
+		DataWrapper<User> ListUsers(IEnumerable<string> emails, PaginationParameters paging);
+
+		///// <summary>
+		///// <para>Add a user To the organization, without sending Email.</para>
+		///// 
+		///// <para>It mirrors To the following Smartsheet REST API method: POST /Users</para>
+		///// </summary>
+		///// <param name="user"> the user object </param>
+		///// <returns> the user </returns>
+		///// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		///// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		///// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		///// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		///// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		///// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		//User AddUser(User user);
 
 		/// <summary>
 		/// <para>Add a user To the organization, without sending Email.</para>
-		/// 
-		/// <para>It mirrors To the following Smartsheet REST API method: POST /Users</para>
-		/// </summary>
-		/// <param name="user"> the user object </param>
-		/// <returns> the user </returns>
-		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
-		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
-		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
-		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		User AddUser(User user);
-
-		/// <summary>
-		/// <para>Add a user To the organization, without sending Email.</para>
-		/// 
 		/// <para>It mirrors To the following Smartsheet REST API method: POST /Users</para>
 		/// </summary>
 		/// <param name="user"> the user </param>
-		/// <param name="sendEmail"> the send Email flag </param>
+		/// <param name="sendEmail"> flag indicating whether or not to send a welcome email. Defaults to false. </param>
 		/// <returns> the created user </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -76,12 +72,11 @@ namespace Smartsheet.Api
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		User AddUser(User user, bool sendEmail);
+		User AddUser(User user, bool? sendEmail);
 
 		/// <summary>
 		/// <para>Get the current user.</para>
-		/// 
-		/// <para>It mirrors To the following Smartsheet REST API method: GET /user/me</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: GET /users/me</para>
 		/// </summary>
 		/// <returns> the current user </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
@@ -90,13 +85,13 @@ namespace Smartsheet.Api
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		UserProfile currentUser {get;}
+		UserProfile GetCurrentUser();
 
 		/// <summary>
 		/// <para>Update a user.</para>
-		/// 
-		/// <para>It mirrors To the following Smartsheet REST API method: PUT /user/{Id}</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: PUT /users/{userId}</para>
 		/// </summary>
+		/// <param name="userId"> the userId </param>
 		/// <param name="user"> the user To update </param>
 		/// <returns> the updated user </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
@@ -105,21 +100,32 @@ namespace Smartsheet.Api
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		User UpdateUser(User user);
+		User UpdateUser(long userId, User user);
 
 		/// <summary>
-		/// <para>Delete a user in the organization.</para>
-		/// 
+		/// <para>Removes a User from an organization. User is transitioned to a free collaborator with read-only access to owned sheets (unless those are optionally transferred to another user).</para>
+		/// <remarks>This operation is only available to system administrators.</remarks>
 		/// <para>It mirrors To the following Smartsheet REST API method: DELETE /user{Id}</para>
 		/// </summary>
-		/// <param name="id"> the Id of the user </param>
+		/// <param name="userId"> the Id of the user </param>
+		/// <param name="transferTo">(required if user owns groups): The ID of the user to transfer ownership to. 
+		/// If the user being deleted owns groups, they will be transferred to this user. 
+		/// If the user owns sheets, and transferSheets is true, then the deleted user’s sheets will be transferred to this user.</param>
+		/// <param name="transferSheets">If true, and transferTo is specified, the deleted user’s sheets will be transferred. Else, sheets will not be transferred. Defaults to false.</param>
+		/// <param name="removeFromSharing">Set to true to remove the user from sharing for all sheets/workspaces in the organization. If not specified, User will not be removed from sharing.</param>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		void DeleteUser(long id);
-	}
+		void RemoveUser(long userId, long? transferTo, bool? transferSheets, bool? removeFromSharing);
 
+		/// <summary>
+		/// <para>Return the UserSheetResources object that provides access To sheets resources associated with
+		/// User resources.</para>
+		/// </summary>
+		/// <returns> the associated discussion resources </returns>
+		UserSheetResources SheetResources();
+	}
 }
