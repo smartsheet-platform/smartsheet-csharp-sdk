@@ -71,7 +71,7 @@ namespace Smartsheet.Api.Internal
 		/// <param name="sheetId"> the id of the sheet </param>
 		/// <param name="discussion"> the discussion to add </param>
 		/// <param name="file"> the file path </param>
-		/// <param name="fileType"> the file type </param>
+		/// <param name="fileType"> the file type, can be null </param>
 		/// <returns> the created discussion </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -81,7 +81,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual Discussion CreateDiscussionWithAttachment(long sheetId, Discussion discussion, string file, string fileType)
 		{
-			return this.CreateResourceWithAttachment("sheets/" + sheetId, discussion, file, fileType);
+			return this.CreateResourceWithAttachment("sheets/" + sheetId, discussion, "discussion", file, fileType);
 		}
 
 		/// <summary>
