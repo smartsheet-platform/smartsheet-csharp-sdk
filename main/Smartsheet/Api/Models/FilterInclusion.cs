@@ -16,13 +16,18 @@
 //    limitations under the License.
 //    %[license]
 
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using System.Runtime.Serialization;
 namespace Smartsheet.Api.Models
 {
 	/// <summary>
 	/// Represents filter inclusion
 	/// </summary>
+	[JsonConverter(typeof(StringEnumConverter))]
 	public enum FilterInclusion
 	{
+		[EnumMember(Value = "filters")]
 		FILTERS
 	}
 

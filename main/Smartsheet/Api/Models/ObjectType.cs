@@ -16,17 +16,26 @@
 //    limitations under the License.
 //    %[license]
 
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using System.Runtime.Serialization;
 namespace Smartsheet.Api.Models
 {
 	/// <summary>
 	/// Represents object types.
 	/// </summary>
+	[JsonConverter(typeof(StringEnumConverter))]
 	public enum ObjectType
 	{
+		[EnumMember(Value = "workspace")]
 		WORKSPACE,
+		[EnumMember(Value = "folder")]
 		FOLDER,
+		[EnumMember(Value = "sheet")]
 		SHEET,
+		[EnumMember(Value = "report")]
 		REPORT,
+		[EnumMember(Value = "template")]
 		TEMPLATE
 	}
 
