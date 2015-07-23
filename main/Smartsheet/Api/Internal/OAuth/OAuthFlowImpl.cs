@@ -120,7 +120,7 @@ namespace Smartsheet.Api.Internal.OAuth
 		/// <param name="httpClient"> the http client </param>
 		/// <param name="jsonSerializer"> the Json serializer </param>
 		/// <exception cref="System.InvalidOperationException"> If any argument is null, or empty string. </exception>
-		public OAuthFlowImpl(string clientId, string clientSecret, string redirectURL, string authorizationURL, 
+		public OAuthFlowImpl(string clientId, string clientSecret, string redirectURL, string authorizationURL,
 				string tokenURL, HttpClient httpClient, JsonSerializer jsonSerializer)
 		{
 			Util.ThrowIfNull(clientId, clientSecret, redirectURL, authorizationURL, tokenURL, httpClient, jsonSerializer);
@@ -162,9 +162,9 @@ namespace Smartsheet.Api.Internal.OAuth
 			StringBuilder scopeBuffer = new StringBuilder();
 			foreach (AccessScope scope in scopes)
 			{
-					scopeBuffer.Append(scope.ToString() + ",");
+				scopeBuffer.Append(scope.ToString() + ",");
 			}
-				@params["scope"] = scopeBuffer.ToString().Substring(0, scopeBuffer.Length - 1);
+			@params["scope"] = scopeBuffer.ToString().Substring(0, scopeBuffer.Length - 1);
 
 			// Generate the URL with the parameters
 			return GenerateURL(authorizationURL, @params);
@@ -200,12 +200,12 @@ namespace Smartsheet.Api.Internal.OAuth
 			}
 
 			IDictionary<string, string> map = new Dictionary<string, string>();
-				string[] @params = query.TrimStart('?').Split(new Char[]{'&'});
-				for (int i = 0; i < @params.Length; i++)
-				{
-					 int index = @params[i].IndexOf('=');
-					 map[@params[i].Substring(0, index)] = @params[i].Substring(index + 1);
-				}
+			string[] @params = query.TrimStart('?').Split(new Char[] { '&' });
+			for (int i = 0; i < @params.Length; i++)
+			{
+				int index = @params[i].IndexOf('=');
+				map[@params[i].Substring(0, index)] = @params[i].Substring(index + 1);
+			}
 
 			// Check for an error response in the URL and throw it.
 			if (map.ContainsKey("error") && map["error"].Length > 0)
@@ -229,7 +229,7 @@ namespace Smartsheet.Api.Internal.OAuth
 				}
 			}
 
-				
+
 			AuthorizationResult authorizationResult = new AuthorizationResult();
 
 
@@ -365,7 +365,7 @@ namespace Smartsheet.Api.Internal.OAuth
 			if (response.StatusCode != HttpStatusCode.OK && map.ContainsKey("error") && map["error"] != null)
 			{
 				string errorType = map["error"].ToString();
-				string errorDescription = map["message"] == null?"":(string)map["message"];
+				string errorDescription = map["message"] == null ? "" : (string)map["message"];
 				if ("invalid_request".Equals(errorType))
 				{
 					throw new InvalidTokenRequestException(errorDescription);
@@ -397,24 +397,50 @@ namespace Smartsheet.Api.Internal.OAuth
 			// Create a token based on the response
 			Token token = new Token();
 			object tempObj = map["access_token"];
-			token.AccessToken = tempObj == null?"":(string)tempObj;
+			token.AccessToken = tempObj == null ? "" : (string)tempObj;
 			tempObj = map["token_type"];
-			token.TokenType = tempObj == null?"":(string)tempObj;
+			token.TokenType = tempObj == null ? "" : (string)tempObj;
 			tempObj = map["refresh_token"];
-			token.RefreshToken = tempObj == null?"":(string)tempObj;
+			token.RefreshToken = tempObj == null ? "" : (string)tempObj;
 
 			long? expiresIn = 0L;
 			try
 			{
 				expiresIn = Convert.ToInt64(Convert.ToString(map["expires_in"]));
 			}
-				catch (Exception)
+			catch (Exception)
 			{
 				expiresIn = 0L;
 			}
 			token.ExpiresInSeconds = expiresIn;
 
 			return token;
+		}
+
+		/// <summary>
+		/// Revoke token.
+		/// </summary>
+		/// <param name="token"> the  token </param>
+		/// <exception cref="OAuthTokenException"> the o auth token exception </exception>
+		/// <exception cref="JSONSerializationException"> the JSON serializer exception </exception>
+		/// <exception cref="System.UriFormatException"> the URI syntax exception </exception>
+		/// <exception cref="InvalidRequestException"> the invalid request exception </exception>
+		/// <exception cref="System.InvalidOperationException"> if any other error occurred during the operation </exception>
+		public virtual void RevokeTokenAccess(Token token)
+		{
+			// Create the request and send it To get the response/token.
+			HttpRequest request = new HttpRequest();
+			request.Uri = new Uri(tokenURL);
+			request.Method = HttpMethod.DELETE;
+			// Set authorization header 
+			request.Headers["Authorization"] = "Bearer " + token.AccessToken;
+			HttpResponse response = httpClient.Request(request);
+			// Another error by not getting a 200 RequestResult
+			if (response.StatusCode != HttpStatusCode.OK)
+			{
+				throw new OAuthTokenException("Token request failed with http error code: " + response.StatusCode);
+			}
+			httpClient.ReleaseConnection();
 		}
 
 		/// <summary>
