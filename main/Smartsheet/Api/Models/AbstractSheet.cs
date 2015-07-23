@@ -103,9 +103,9 @@ namespace Smartsheet.Api.Models
 
 		private bool? resourceManagementEnabled;
 
-		private bool favorite;
+		private bool? favorite;
 
-		private bool showParentRowsForFilters;
+		private bool? showParentRowsForFilters;
 
 		private SheetUserSettings userSettings;
 
@@ -440,7 +440,7 @@ namespace Smartsheet.Api.Models
 		/// Returned only if the User has marked this sheet as a favorite in their Home tab (value = “true”).
 		/// </summary>
 		/// <returns> true if marked as favorite, false otherwise </returns>
-		public virtual bool Favorite
+		public virtual bool? Favorite
 		{
 			get { return favorite; }
 			set { favorite = value; }
@@ -451,7 +451,7 @@ namespace Smartsheet.Api.Models
 		/// Returned only if there are column filters on the Sheet. Value = “true” if “show parent rows” is enabled for the filters.
 		/// </summary>
 		/// <returns> “true” if “show parent rows” is enabled for the filters </returns>
-		public virtual bool ShowParentRowsForFilters
+		public virtual bool? ShowParentRowsForFilters
 		{
 			get { return showParentRowsForFilters; }
 			set { showParentRowsForFilters = value; }
