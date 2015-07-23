@@ -69,7 +69,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual Comment AddCommentWithAttachment(long sheetId, long discussionId, Comment comment, string file, string fileType)
 		{
-			return this.CreateResourceWithAttachment("sheets/" + sheetId + "/discussions/" + discussionId + "/comments", comment, file, fileType);
+			return this.CreateResourceWithAttachment("sheets/" + sheetId + "/discussions/" + discussionId + "/comments", comment, "comment", file, fileType);
 		}
 	}
 }

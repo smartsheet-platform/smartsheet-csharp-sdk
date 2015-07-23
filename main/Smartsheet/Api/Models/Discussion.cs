@@ -36,9 +36,9 @@ namespace Smartsheet.Api.Models
 		private IList<Comment> comments;
 		private Comment comment;
 
-		/// <summary>
-		/// Represents the Comment Attachments. </summary>
-		private IList<Attachment> commentAttachments;
+		///// <summary>
+		///// Represents the Comment Attachments. </summary>
+		//private IList<Attachment> attachments;
 
 		/// <summary>
 		/// Represents the date a Comment was last added To a discussion. </summary>
@@ -113,21 +113,21 @@ namespace Smartsheet.Api.Models
 			}
 		}
 
-		/// <summary>
-		/// Gets the Comment Attachments.
-		/// </summary>
-		/// <returns> the Comment Attachments </returns>
-		public virtual IList<Attachment> CommentAttachments
-		{
-			get
-			{
-				return commentAttachments;
-			}
-			set
-			{
-				this.commentAttachments = value;
-			}
-		}
+		///// <summary>
+		///// Gets the Comment Attachments.
+		///// </summary>
+		///// <returns> the Comment Attachments </returns>
+		//public virtual IList<Attachment> Attachments
+		//{
+		//	get
+		//	{
+		//		return attachments;
+		//	}
+		//	set
+		//	{
+		//		this.attachments = value;
+		//	}
+		//}
 
 
 		/// <summary>

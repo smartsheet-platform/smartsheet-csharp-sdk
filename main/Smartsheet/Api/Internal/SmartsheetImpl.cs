@@ -456,8 +456,8 @@ namespace Smartsheet.Api.Internal
 		/// <returns> the server information resources </returns>
 		public virtual ServerInfoResources ServerInfoResources()
 		{
-			Interlocked.CompareExchange<ServerInfoResources>(ref search, new ServerInfoResourcesImpl(this), null);
-			return search;
+			Interlocked.CompareExchange<ServerInfoResources>(ref serverInfo, new ServerInfoResourcesImpl(this), null);
+			return serverInfo;
 		}
 
 		/// <summary>
@@ -466,8 +466,8 @@ namespace Smartsheet.Api.Internal
 		/// <returns> the group resources </returns>
 		public virtual GroupResources GroupResources()
 		{
-			Interlocked.CompareExchange<GroupResources>(ref search, new GroupResourcesImpl(this), null);
-			return search;
+			Interlocked.CompareExchange<GroupResources>(ref groups, new GroupResourcesImpl(this), null);
+			return groups;
 		}
 
 		/// <summary>
@@ -476,8 +476,8 @@ namespace Smartsheet.Api.Internal
 		/// <returns> the favorite resources </returns>
 		public virtual FavoriteResources FavoriteResources()
 		{
-			Interlocked.CompareExchange<FavoriteResources>(ref search, new FavoriteResourcesImpl(this), null);
-			return search;
+			Interlocked.CompareExchange<FavoriteResources>(ref favorites, new FavoriteResourcesImpl(this), null);
+			return favorites;
 		}
 	}
 }

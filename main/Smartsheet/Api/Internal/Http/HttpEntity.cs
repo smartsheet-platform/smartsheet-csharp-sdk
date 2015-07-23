@@ -90,6 +90,10 @@ namespace Smartsheet.Api.Internal.Http
 		/// <returns> the content </returns>
 		public virtual byte[] Content
 		{
+			get
+			{
+				return content;
+			}
 			set
 			{
 				this.content = value;
