@@ -1,0 +1,13 @@
+{
+    "resultCode": 0,
+    "result": {
+        "id": 2331373580117892,
+        "name": "Renamed Group",
+        "description": "Some new description",
+        "owner": "john.doe@smartsheet.com",
+        "ownerId": 4583173393803140,
+        "createdAt": "2014-05-29T16:28:49-07:00",
+        "modifiedAt": "2014-05-29T17:00:23-07:00"
+    },
+    "message": "SUCCESS"
+}

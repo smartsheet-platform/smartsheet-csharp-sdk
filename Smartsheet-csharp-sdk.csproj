@@ -77,6 +77,7 @@
     <Compile Include="main\Smartsheet\Api\DiscussionCommentResources.cs" />
     <Compile Include="main\Smartsheet\Api\DiscussionResources.cs" />
     <Compile Include="main\Smartsheet\Api\FolderResources.cs" />
+    <Compile Include="main\Smartsheet\Api\GroupResources.cs" />
     <Compile Include="main\Smartsheet\Api\HomeFolderResources.cs" />
     <Compile Include="main\Smartsheet\Api\HomeResources.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\AbstractAssociatedResources.cs" />
@@ -92,6 +93,7 @@
     <Compile Include="main\Smartsheet\Api\Internal\DiscussionCommentResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\DiscussionResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\FolderResourcesImpl.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\GroupResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\HomeFolderResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\HomeResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\Http\DefaultHttpClient.cs" />
@@ -135,6 +137,8 @@
     <Compile Include="main\Smartsheet\Api\InvalidRequestException.cs" />
     <Compile Include="main\Smartsheet\Api\Models\AbstractRow.cs" />
     <Compile Include="main\Smartsheet\Api\Models\AbstractSheet.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Group.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\GroupMember.cs" />
     <Compile Include="main\Smartsheet\Api\Models\UserModel.cs" />
     <Compile Include="main\Smartsheet\Api\Models\AccessLevel.cs" />
     <Compile Include="main\Smartsheet\Api\Models\AccessScope.cs" />
