@@ -31,11 +31,11 @@ namespace Smartsheet.Api.Internal
 			(1234L, new DiscussionInclusion[] { DiscussionInclusion.ATTACHMENTS }, null);
 			Assert.True(result.Data[0].ID == 3138415114905476);
 			Assert.True(result.Data[0].Title == "Lincoln");
-			Assert.True(result.Data[0].Comment.ID == 7320407591151492);
-			Assert.True(result.Data[0].Comment.Text == "16th President");
-			Assert.True(result.Data[0].Comment.CreatedBy.Name == "Test User");
-			Assert.True(result.Data[0].Comment.Attachments[0].Name == "test.html");
-			Assert.True(result.Data[0].Comment.Attachments[0].AttachmentType == AttachmentType.FILE);
+			Assert.True(result.Data[0].Comments[0].ID == 7320407591151492);
+			Assert.True(result.Data[0].Comments[0].Text == "16th President");
+			Assert.True(result.Data[0].Comments[0].CreatedBy.Name == "Test User");
+			Assert.True(result.Data[0].Comments[0].Attachments[0].Name == "test.html");
+			Assert.True(result.Data[0].Comments[0].Attachments[0].AttachmentType == AttachmentType.FILE);
 			Assert.True(result.Data[0].AccessLevel == AccessLevel.OWNER);
 			Assert.True(result.Data[0].ParentId == 4508369022150532);
 			Assert.True(result.Data[0].ReadOnly == false);

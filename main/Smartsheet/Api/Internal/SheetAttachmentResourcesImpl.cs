@@ -16,9 +16,13 @@
 //    limitations under the License.
 //    %[license]
 
+using Smartsheet.Api.Internal.Http;
 using Smartsheet.Api.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Net;
+using System.Text;
 
 namespace Smartsheet.Api.Internal
 {
@@ -29,6 +33,8 @@ namespace Smartsheet.Api.Internal
 	/// </summary>
 	public class SheetAttachmentResourcesImpl : AbstractResources, SheetAttachmentResources
 	{
+		private AttachmentVersioningResources versioning;
+
 		/// <summary>
 		/// Constructor.
 		/// </summary>
@@ -37,36 +43,85 @@ namespace Smartsheet.Api.Internal
 		public SheetAttachmentResourcesImpl(SmartsheetImpl smartsheet)
 			: base(smartsheet)
 		{
+			this.versioning = new AttachmentVersioningResourcesImpl(smartsheet);
 		}
 
 		public virtual Attachment AttachFile(long sheetId, string file, string fileType)
 		{
-			throw new System.NotImplementedException();
+			return AttachFile("sheets/" + sheetId + "/attachments", file, fileType);
 		}
-
 		public virtual Attachment AttachUrl(long sheetId, Attachment attachment)
 		{
-			throw new System.NotImplementedException();
+			return this.CreateResource("sheets/" + sheetId + "/attachments", typeof(Attachment), attachment);
 		}
 
 		public virtual void DeleteAttachment(long sheetId, long attachmentId)
 		{
-			throw new NotImplementedException();
+			this.DeleteResource<Attachment>("sheets/" + sheetId + "/attachments/" + attachmentId, typeof(Attachment));
 		}
 
 		public virtual Attachment GetAttachment(long sheetId, long attachmentId)
 		{
-			throw new NotImplementedException();
+			return this.GetResource<Attachment>("sheets/" + sheetId + "/attachments/" + attachmentId, typeof(Attachment));
 		}
 
 		public virtual DataWrapper<Attachment> ListAttachments(long sheetId, PaginationParameters paging)
 		{
-			throw new NotImplementedException();
+			StringBuilder path = new StringBuilder("sheets/" + sheetId + "/attachments");
+			if (paging != null)
+			{
+				path.Append(paging.ToQueryString());
+			}
+			return this.ListResourcesWithWrapper<Attachment>(path.ToString());
 		}
 
 		public virtual AttachmentVersioningResources VersioningResources()
 		{
-			throw new NotImplementedException();
+			return this.versioning;
+		}
+
+		/// <summary>
+		/// Attach file.
+		/// </summary>
+		/// <param name="path"> the url path </param>
+		/// <param name="file"> the file </param>
+		/// <param name="contentType"> the content Type </param>
+		/// <returns> the attachment </returns>
+		/// <exception cref="FileNotFoundException"> the file not found exception </exception>
+		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
+		private Attachment AttachFile(string path, string file, string contentType)
+		{
+			Utility.Utility.ThrowIfNull(file, contentType);
+
+			FileInfo fi = new FileInfo(file);
+			HttpRequest request = CreateHttpRequest(new Uri(this.Smartsheet.BaseURI, path), HttpMethod.POST);
+
+			request.Headers["Content-Disposition"] = "attachment; filename=\"" + fi.Name + "\"";
+
+			HttpEntity entity = new HttpEntity();
+			entity.ContentType = contentType;
+
+			entity.Content = File.ReadAllBytes(file);
+			entity.ContentLength = fi.Length;
+			request.Entity = entity;
+
+			HttpResponse response = this.Smartsheet.HttpClient.Request(request);
+
+			Attachment attachment = null;
+			switch (response.StatusCode)
+			{
+				case HttpStatusCode.OK:
+					attachment = this.Smartsheet.JsonSerializer.deserializeResult<Attachment>(
+						response.Entity.GetContent()).Result;
+					break;
+				default:
+					HandleError(response);
+					break;
+			}
+
+			this.Smartsheet.HttpClient.ReleaseConnection();
+
+			return attachment;
 		}
 	}
 }

@@ -69,7 +69,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual Attachment AttachFile(long sheetId, long commentId, string file, string fileType)
 		{
-			throw new System.NotImplementedException();
+			return AttachFile("sheets/" + sheetId + "/comments/" + commentId + "/attachments", file, fileType);
 		}
 
 		/// <summary>
@@ -80,7 +80,7 @@ namespace Smartsheet.Api.Internal
 		/// It can optionally be included to indicate the type of a file.
 		/// The following attachmentSubTypes are valid for GOOGLE_DRIVE attachments "DOCUMENT", "SPREADSHEET", "PRESENTATION", "PDF", "DRAWING".</para>
 		/// <para>When the attachment type is BOX_COM, DROPBOX, or GOOGLE_DRIVE (without an attachmentSubType specified),
-		/// the mimeType will be derived by the file extension specified on the name.</para>
+		/// the mimeType will be derived by the file extension specified on the "name".</para>
 		/// </remarks>
 		/// </summary>
 		/// <param name="sheetId"> the sheetId </param>
@@ -95,7 +95,51 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual Attachment AttachUrl(long sheetId, long commentId, Attachment attachment)
 		{
-			throw new System.NotImplementedException();
+			return this.CreateResource("sheets/" + sheetId + "/comments/" + commentId + "/attachments", typeof(Attachment), attachment);
+		}
+
+		/// <summary>
+		/// Attach file.
+		/// </summary>
+		/// <param name="path"> the url path </param>
+		/// <param name="file"> the file </param>
+		/// <param name="contentType"> the content Type </param>
+		/// <returns> the attachment </returns>
+		/// <exception cref="FileNotFoundException"> the file not found exception </exception>
+		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
+		private Attachment AttachFile(string path, string file, string contentType)
+		{
+			Utility.Utility.ThrowIfNull(file, contentType);
+
+			FileInfo fi = new FileInfo(file);
+			HttpRequest request = CreateHttpRequest(new Uri(this.Smartsheet.BaseURI, path), HttpMethod.POST);
+
+			request.Headers["Content-Disposition"] = "attachment; filename=\"" + fi.Name + "\"";
+
+			HttpEntity entity = new HttpEntity();
+			entity.ContentType = contentType;
+
+			entity.Content = File.ReadAllBytes(file);
+			entity.ContentLength = fi.Length;
+			request.Entity = entity;
+
+			HttpResponse response = this.Smartsheet.HttpClient.Request(request);
+
+			Attachment attachment = null;
+			switch (response.StatusCode)
+			{
+				case HttpStatusCode.OK:
+					attachment = this.Smartsheet.JsonSerializer.deserializeResult<Attachment>(
+						response.Entity.GetContent()).Result;
+					break;
+				default:
+					HandleError(response);
+					break;
+			}
+
+			this.Smartsheet.HttpClient.ReleaseConnection();
+
+			return attachment;
 		}
 	}
 }

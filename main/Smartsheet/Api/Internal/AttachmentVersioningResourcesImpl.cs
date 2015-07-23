@@ -66,7 +66,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual Attachment AttachNewVersion(long sheetId, long attachmentId, string file, string fileType)
 		{
-			throw new NotImplementedException();
+			return AttachFile("sheets/" + sheetId + "/attachments/" + attachmentId + "/versions", file, fileType);
 		}
 
 		/// <summary>
@@ -84,7 +84,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual void DeleteAllVersions(long sheetId, long attachmentId)
 		{
-			throw new NotImplementedException();
+			this.DeleteResource<Attachment>("sheets/" + sheetId + "/attachments/" + attachmentId + "/versions", typeof(Attachment));
 		}
 
 		/// <summary>
@@ -105,7 +105,56 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual DataWrapper<Attachment> ListVersions(long sheetId, long attachmentId, PaginationParameters paging)
 		{
-			throw new NotImplementedException();
+			StringBuilder path = new StringBuilder("sheets/" + sheetId + "/attachments/" + attachmentId + "/versions");
+			if (paging != null)
+			{
+				path.Append(paging.ToQueryString());
+			}
+			return this.ListResourcesWithWrapper<Attachment>(path.ToString());
+		}
+
+		/// <summary>
+		/// Attach file.
+		/// </summary>
+		/// <param name="path"> the url path </param>
+		/// <param name="file"> the file </param>
+		/// <param name="contentType"> the content Type </param>
+		/// <returns> the attachment </returns>
+		/// <exception cref="FileNotFoundException"> the file not found exception </exception>
+		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
+		private Attachment AttachFile(string path, string file, string contentType)
+		{
+			Utility.Utility.ThrowIfNull(file, contentType);
+
+			FileInfo fi = new FileInfo(file);
+			HttpRequest request = CreateHttpRequest(new Uri(this.Smartsheet.BaseURI, path), HttpMethod.POST);
+
+			request.Headers["Content-Disposition"] = "attachment; filename=\"" + fi.Name + "\"";
+
+			HttpEntity entity = new HttpEntity();
+			entity.ContentType = contentType;
+
+			entity.Content = File.ReadAllBytes(file);
+			entity.ContentLength = fi.Length;
+			request.Entity = entity;
+
+			HttpResponse response = this.Smartsheet.HttpClient.Request(request);
+
+			Attachment attachment = null;
+			switch (response.StatusCode)
+			{
+				case HttpStatusCode.OK:
+					attachment = this.Smartsheet.JsonSerializer.deserializeResult<Attachment>(
+						response.Entity.GetContent()).Result;
+					break;
+				default:
+					HandleError(response);
+					break;
+			}
+
+			this.Smartsheet.HttpClient.ReleaseConnection();
+
+			return attachment;
 		}
 	}
 }
