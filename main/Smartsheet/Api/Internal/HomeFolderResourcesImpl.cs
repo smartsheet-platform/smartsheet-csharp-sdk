@@ -21,6 +21,7 @@ using System.Collections.Generic;
 namespace Smartsheet.Api.Internal
 {
 	using Api.Models;
+	using System.Text;
 
 	/// <summary>
 	/// This is the implementation of the HomeFolderResources.
@@ -54,7 +55,12 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual DataWrapper<Folder> ListFolders(PaginationParameters paging)
 		{
-			return ListResourcesWithWrapper<Folder>("home/folders" + paging.ToQueryString());
+			StringBuilder path = new StringBuilder("home/folders");
+			if (paging != null)
+			{
+				path.Append(paging.ToQueryString());
+			}
+			return ListResourcesWithWrapper<Folder>(path.ToString());
 		}
 
 		/// <summary>
