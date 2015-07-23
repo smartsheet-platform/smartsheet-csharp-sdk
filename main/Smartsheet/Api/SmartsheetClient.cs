@@ -102,8 +102,6 @@ namespace Smartsheet.Api
 		/// </summary>
 		/// <returns> the search resources instance </returns>
 		SearchResources Search();
-
-		DiscussionCommentResources ds();
 	}
 
 }
