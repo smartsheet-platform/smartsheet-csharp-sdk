@@ -150,10 +150,14 @@
     <Compile Include="main\Smartsheet\Api\Models\CopyOrMoveRowDestination.cs" />
     <Compile Include="main\Smartsheet\Api\Models\CopyOrMoveRowDirective.cs" />
     <Compile Include="main\Smartsheet\Api\Models\CopyOrMoveRowResult.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Criteria.cs" />
     <Compile Include="main\Smartsheet\Api\Models\DataWrapper.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Discussion.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Email.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Error.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Filter.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\FilterInclusion.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\FilterType.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Folder.cs" />
     <Compile Include="main\Smartsheet\Api\Models\FormatDetails.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Home.cs" />
@@ -164,6 +168,7 @@
     <Compile Include="main\Smartsheet\Api\Models\NamedModel.cs" />
     <Compile Include="main\Smartsheet\Api\Models\ObjectExclusion.cs" />
     <Compile Include="main\Smartsheet\Api\Models\ObjectInclusion.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\CriteriaOperator.cs" />
     <Compile Include="main\Smartsheet\Api\Models\PaginationParameters.cs" />
     <Compile Include="main\Smartsheet\Api\Models\PaperSize.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Report.cs" />

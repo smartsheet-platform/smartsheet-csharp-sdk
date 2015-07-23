@@ -32,13 +32,11 @@ namespace Smartsheet.Api.Internal
 	/// </summary>
 	public class DiscussionAttachmentResourcesImpl : AbstractResources, DiscussionAttachmentResources
 	{
-
 		/// <summary>
 		/// Constructor.
-		/// 
-		/// Exceptions: - IllegalArgumentException : if any argument is null or empty string
 		/// </summary>
 		/// <param name="smartsheet"> the Smartsheet </param>
+		/// <exception cref="IllegalArgumentException">if any argument is null</exception>
 		public DiscussionAttachmentResourcesImpl(SmartsheetImpl smartsheet) : base(smartsheet)
 		{
 		}
