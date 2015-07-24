@@ -158,6 +158,15 @@ namespace Smartsheet.Api.Models
 			//internal long? id;
 
 			/// <summary>
+			/// Sets the required the fields for updating a Folder.
+			/// </summary>
+			/// <param name="name"> the name of the folder, need not be unique </param>
+			public UpdateFolderBuilder(string name)
+			{
+				this.folderName = name;
+			}
+
+			/// <summary>
 			/// Set the Name of the Folder.
 			/// </summary>
 			/// <param name="name"> the Name </param>
@@ -218,9 +227,21 @@ namespace Smartsheet.Api.Models
 			}
 		}
 
+		/// <summary>
+		/// A convenience class for setting up a folder with the appropriate fields for creation.
+		/// </summary>
 		public class CreateFolderBuilder
 		{
 			private string folderName;
+
+			/// <summary>
+			/// Sets the required the fields for creating a Folder.
+			/// </summary>
+			/// <param name="name"> the name of the folder, need not be unique </param>
+			public CreateFolderBuilder(string name)
+			{
+				this.folderName = name;
+			}
 
 			/// <summary>
 			/// Set the Name of the Folder.

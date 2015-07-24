@@ -57,8 +57,12 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual Folder GetFolder(long folderId, IEnumerable<SourceInclusion> include)
 		{
-			string pathAndQuery = "folders/" + folderId + "include=" + QueryUtil.GenerateCommaSeparatedList<SourceInclusion>(include);
-			return this.GetResource<Folder>(pathAndQuery, typeof(Folder));
+			StringBuilder path = new StringBuilder("folders/" + folderId);
+			if (include != null)
+			{
+				path.Append("?include=" + QueryUtil.GenerateCommaSeparatedList(include));
+			}
+			return this.GetResource<Folder>(path.ToString(), typeof(Folder));
 		}
 
 		/// <summary>
