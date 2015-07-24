@@ -52,7 +52,7 @@ namespace Smartsheet.Api
 		Home GetHome(IEnumerable<SourceInclusion> includes);
 
 		/// <summary>
-		/// <para>Return the HomeFolderResources object that provides access To Folder Resources under home.</para>
+		/// <para>Returns the HomeFolderResources object that provides access To Folder Resources under home.</para>
 		/// </summary>
 		/// <returns> the home folder resources </returns>
 		HomeFolderResources FolderResources();
