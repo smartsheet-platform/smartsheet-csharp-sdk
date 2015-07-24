@@ -143,6 +143,7 @@
     <Compile Include="main\Smartsheet\Api\Models\AbstractSheet.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Group.cs" />
     <Compile Include="main\Smartsheet\Api\Models\GroupMember.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Recipient.cs" />
     <Compile Include="main\Smartsheet\Api\Models\UserModel.cs" />
     <Compile Include="main\Smartsheet\Api\Models\AccessLevel.cs" />
     <Compile Include="main\Smartsheet\Api\Models\AccessScope.cs" />
