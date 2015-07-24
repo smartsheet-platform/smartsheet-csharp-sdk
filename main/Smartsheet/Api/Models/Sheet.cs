@@ -56,6 +56,11 @@ namespace Smartsheet.Api.Models
 			private IList<Column> columns;
 			private string name;
 
+			/// <summary>
+			/// Sets the required properties for creating a Sheet.
+			/// </summary>
+			/// <param name="name"> the name of the Sheet, need not be unique </param>
+			/// <param name="columns"> list of columns </param>
 			public CreateSheetBuilder(string name, IList<Column> columns)
 			{
 				this.name = name;
@@ -127,16 +132,19 @@ namespace Smartsheet.Api.Models
 
 
 		/// <summary>
-		/// A class To simplify the creation of a sheet from another sheet or another template.
-		/// @author brett
-		/// 
+		/// A class To simplify the creation of a Sheet from another Sheet or another Template.
 		/// </summary>
-		public class CreateFromTemplateBuilder
+		public class CreateSheetFromTemplateBuilder
 		{
 			private string name;
 			private long? fromId;
 
-			public CreateFromTemplateBuilder(long? fromId, string name)
+			/// <summary>
+			/// Sets the required propeties for creating a Sheet from a Sheet or Template.
+			/// </summary>
+			/// <param name="fromId">the ID of the Sheet or Template from which to create the Sheet</param>
+			/// <param name="name"> the name of the Sheet of the Template, need not be unique </param>
+			public CreateSheetFromTemplateBuilder(long? fromId, string name)
 			{
 				this.fromId = fromId;
 				this.name = name;
@@ -147,7 +155,7 @@ namespace Smartsheet.Api.Models
 			/// </summary>
 			/// <param name="name"> The Name for the sheet being created. </param>
 			/// <returns> the creates the from template or sheet builder </returns>
-			public virtual CreateFromTemplateBuilder SetName(string name)
+			public virtual CreateSheetFromTemplateBuilder SetName(string name)
 			{
 				this.name = name;
 				return this;
@@ -167,7 +175,7 @@ namespace Smartsheet.Api.Models
 			/// </summary>
 			/// <param name="id"> the Id </param>
 			/// <returns> the creates the from template or sheet builder </returns>
-			public virtual CreateFromTemplateBuilder SetFromId(long? id)
+			public virtual CreateSheetFromTemplateBuilder SetFromId(long? id)
 			{
 				this.fromId = id;
 				return this;
@@ -208,30 +216,7 @@ namespace Smartsheet.Api.Models
 		public class UpdateSheetBuilder
 		{
 			private string sheetName;
-			//internal long? id;
 			private SheetUserSettings userSettings;
-
-			///// <summary>
-			///// Get the Id of the sheet
-			///// @return
-			///// </summary>
-			//public virtual long? ID
-			//{
-			//	get
-			//	{
-			//		return id;
-			//	}
-			//}
-
-			///// <summary>
-			///// Set the sheet Id </summary>
-			///// <param name="id"> </param>
-			///// <returns> the updateSheetBuilder object </returns>
-			//public virtual UpdateSheetBuilder SetID(long? id)
-			//{
-			//	this.id = id;
-			//	return this;
-			//}
 
 			/// <summary>
 			/// Sets the Sheet Name.
