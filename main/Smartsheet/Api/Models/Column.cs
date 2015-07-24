@@ -297,6 +297,13 @@ namespace Smartsheet.Api.Models
 		/// </summary>
 		public class AddColumnBuilder
 		{
+			public AddColumnBuilder(string title, int? index, ColumnType? type)
+			{
+				this.title = title;
+				this.index = index;
+				this.type = type;
+			}
+
 			/// <summary>
 			/// The position of the column. </summary>
 			private int? index;
@@ -328,26 +335,11 @@ namespace Smartsheet.Api.Models
 			private long? width;
 
 
-
-			//internal bool? primary;
-
-			///// <summary>
-			///// Gets the Primary flag for the column.
-			///// </summary>
-			///// <returns> the Primary flag </returns>
-			//public virtual bool? Primary
-			//{
-			//    get
-			//    {
-			//        return primary;
-			//    }
-			//}
-
 			/// <summary>
 			/// Sets the position for the column.
 			/// </summary>
 			/// <param name="index"> the position </param>
-			/// <returns> the modify column builder </returns>
+			/// <returns> the add column builder </returns>
 			public virtual AddColumnBuilder SetIndex(int index)
 			{
 				this.index = index;
@@ -358,6 +350,7 @@ namespace Smartsheet.Api.Models
 			/// Sets the Primary flag for the column.
 			/// </summary>
 			/// <param name="primary"> the new Primary flag </param>
+			/// <returns> the add column builder </returns>
 			public virtual AddColumnBuilder SetWidth(long? width)
 			{
 				this.width = width;
@@ -372,6 +365,50 @@ namespace Smartsheet.Api.Models
 			public virtual AddColumnBuilder SetTitle(string title)
 			{
 				this.title = title;
+				return this;
+			}
+
+			/// <summary>
+			/// Sets the Type for the column.
+			/// </summary>
+			/// <param name="type"> the Type </param>
+			/// <returns> the adds the column To sheet builder </returns>
+			public virtual AddColumnBuilder SetType(ColumnType? type)
+			{
+				this.type = type;
+				return this;
+			}
+
+			/// <summary>
+			/// Sets the Options for the column.
+			/// </summary>
+			/// <param name="options"> the Options </param>
+			/// <returns> the adds the column To sheet builder </returns>
+			public virtual AddColumnBuilder SetOptions(IList<string> options)
+			{
+				this.options = options;
+				return this;
+			}
+
+			/// <summary>
+			/// Sets the system column Type.
+			/// </summary>
+			/// <param name="systemColumnType"> the system column Type </param>
+			/// <returns> the adds the column To sheet builder </returns>
+			public virtual AddColumnBuilder SetSystemColumnType(SystemColumnType? systemColumnType)
+			{
+				this.systemColumnType = systemColumnType;
+				return this;
+			}
+
+			/// <summary>
+			/// Sets the Format for an auto number column.
+			/// </summary>
+			/// <param name="autoNumberFormat"> the auto number Format </param>
+			/// <returns> the adds the column To sheet builder </returns>
+			public virtual AddColumnBuilder SetAutoNumberFormat(AutoNumberFormat autoNumberFormat)
+			{
+				this.autoNumberFormat = autoNumberFormat;
 				return this;
 			}
 
@@ -392,16 +429,6 @@ namespace Smartsheet.Api.Models
 				return title;
 			}
 
-			/// <summary>
-			/// Sets the Type for the column.
-			/// </summary>
-			/// <param name="type"> the Type </param>
-			/// <returns> the adds the column To sheet builder </returns>
-			public virtual AddColumnBuilder SetType(ColumnType? type)
-			{
-				this.type = type;
-				return this;
-			}
 
 			/// <summary>
 			/// Gets the Type for the column. </summary>
@@ -411,16 +438,6 @@ namespace Smartsheet.Api.Models
 				return type;
 			}
 
-			/// <summary>
-			/// Sets the Options for the column.
-			/// </summary>
-			/// <param name="options"> the Options </param>
-			/// <returns> the adds the column To sheet builder </returns>
-			public virtual AddColumnBuilder SetOptions(IList<string> options)
-			{
-				this.options = options;
-				return this;
-			}
 
 			/// <summary>
 			/// Gets the option for the column. </summary>
@@ -449,16 +466,6 @@ namespace Smartsheet.Api.Models
 				return symbol;
 			}
 
-			/// <summary>
-			/// Sets the system column Type.
-			/// </summary>
-			/// <param name="systemColumnType"> the system column Type </param>
-			/// <returns> the adds the column To sheet builder </returns>
-			public virtual AddColumnBuilder SetSystemColumnType(SystemColumnType? systemColumnType)
-			{
-				this.systemColumnType = systemColumnType;
-				return this;
-			}
 
 			/// <summary>
 			/// Gets the system column Type. </summary>
@@ -468,16 +475,6 @@ namespace Smartsheet.Api.Models
 				return systemColumnType;
 			}
 
-			/// <summary>
-			/// Sets the Format for an auto number column.
-			/// </summary>
-			/// <param name="autoNumberFormat"> the auto number Format </param>
-			/// <returns> the adds the column To sheet builder </returns>
-			public virtual AddColumnBuilder SetAutoNumberFormat(AutoNumberFormat autoNumberFormat)
-			{
-				this.autoNumberFormat = autoNumberFormat;
-				return this;
-			}
 
 			/// <summary>
 			/// Gets the Format for an auto number column. </summary>
@@ -519,11 +516,263 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
+		/// A convenience class To help create a column object with the appropriate fields for adding To a Sheet being created.
+		/// </summary>
+		public class CreateSheetColumnBuilder
+		{
+			/// <summary>
+			/// Sets the required properties for a Column.
+			/// </summary>
+			/// <param name="title"> must be unique within the Sheet </param>
+			/// <param name="primary"> one and only one Column may be a Primary column </param>
+			/// <param name="type"> must be set to TEXT_NUMBER if column is primary </param>
+			public CreateSheetColumnBuilder(string title, bool? primary, ColumnType? type)
+			{
+				this.title = title;
+				this.primary = primary;
+				this.type = type;
+			}
+
+			/// <summary>
+			/// The position of the column. </summary>
+			private int? index;
+
+			/// <summary>
+			/// The Title. </summary>
+			private string title;
+
+			/// <summary>
+			/// The Type. </summary>
+			private ColumnType? type;
+
+			/// <summary>
+			/// The Options. </summary>
+			private IList<string> options;
+
+			/// <summary>
+			/// The Symbol. </summary>
+			private Symbol? symbol;
+
+			/// <summary>
+			/// The system column Type. </summary>
+			private SystemColumnType? systemColumnType;
+
+			/// <summary>
+			/// The auto number Format. </summary>
+			private AutoNumberFormat autoNumberFormat;
+
+			private long? width;
+
+			private bool? primary;
+
+			/// <summary>
+			/// Sets whether the column is the Primary Column.
+			/// </summary>
+			/// <param name="primary"> the primary </param>
+			/// <returns> the CreateSheetColumnBuilder </returns>
+			public virtual CreateSheetColumnBuilder SetPrimary(bool? primary)
+			{
+				this.primary = primary;
+				return this;
+			}
+
+			/// <summary>
+			/// Sets the position for the column.
+			/// </summary>
+			/// <param name="index"> the position </param>
+			/// <returns> the CreateSheetColumnBuilder </returns>
+			public virtual CreateSheetColumnBuilder SetIndex(int index)
+			{
+				this.index = index;
+				return this;
+			}
+
+			/// <summary>
+			/// Sets the Primary flag for the column.
+			/// </summary>
+			/// <param name="primary"> the new Primary flag </param>
+			/// <returns> the CreateSheetColumnBuilder </returns>
+			public virtual CreateSheetColumnBuilder SetWidth(long? width)
+			{
+				this.width = width;
+				return this;
+			}
+
+			/// <summary>
+			/// Sets the Title for the column.
+			/// </summary>
+			/// <param name="title"> the Title </param>
+			/// <returns> the adds the column To sheet builder </returns>
+			public virtual CreateSheetColumnBuilder SetTitle(string title)
+			{
+				this.title = title;
+				return this;
+			}
+
+			/// <summary>
+			/// Sets the Type for the column.
+			/// </summary>
+			/// <param name="type"> the Type </param>
+			/// <returns> the CreateSheetColumnBuilder </returns>
+			public virtual CreateSheetColumnBuilder SetType(ColumnType? type)
+			{
+				this.type = type;
+				return this;
+			}
+
+			/// <summary>
+			/// Sets the Options for the column.
+			/// </summary>
+			/// <param name="options"> the Options </param>
+			/// <returns> the CreateSheetColumnBuilder </returns>
+			public virtual CreateSheetColumnBuilder SetOptions(IList<string> options)
+			{
+				this.options = options;
+				return this;
+			}
+
+			/// <summary>
+			/// Sets the system column Type.
+			/// </summary>
+			/// <param name="systemColumnType"> the system column Type </param>
+			/// <returns> the CreateSheetColumnBuilder </returns>
+			public virtual CreateSheetColumnBuilder SetSystemColumnType(SystemColumnType? systemColumnType)
+			{
+				this.systemColumnType = systemColumnType;
+				return this;
+			}
+
+			/// <summary>
+			/// Sets the Format for an auto number column.
+			/// </summary>
+			/// <param name="autoNumberFormat"> the auto number Format </param>
+			/// <returns> the CreateSheetColumnBuilder </returns>
+			public virtual CreateSheetColumnBuilder SetAutoNumberFormat(AutoNumberFormat autoNumberFormat)
+			{
+				this.autoNumberFormat = autoNumberFormat;
+				return this;
+			}
+
+			/// <summary>
+			/// Gets the whether the Column is the Primary Column.
+			/// </summary>
+			/// <returns> the primary </returns>
+			public virtual bool? GetPrimary()
+			{
+				return primary;
+			}
+
+			/// <summary>
+			/// Gets the Index.
+			/// </summary>
+			/// <returns> the Index </returns>
+			public virtual int? GetIndex()
+			{
+				return index;
+			}
+
+			/// <summary>
+			/// Gets the Title. </summary>
+			/// <returns> the Title </returns>
+			public virtual string GetTitle()
+			{
+				return title;
+			}
+
+
+			/// <summary>
+			/// Gets the Type for the column. </summary>
+			/// <returns> the Type </returns>
+			public virtual ColumnType? GetType()
+			{
+				return type;
+			}
+
+
+			/// <summary>
+			/// Gets the option for the column. </summary>
+			/// <returns> the option </returns>
+			public virtual IList<string> GetOptions()
+			{
+				return options;
+			}
+
+			/// <summary>
+			/// Sets the Symbol for the column.
+			/// </summary>
+			/// <param name="symbol"> the Symbol </param>
+			/// <returns> the CreateSheetColumnBuilder </returns>
+			public virtual CreateSheetColumnBuilder SetSymbol(Symbol? symbol)
+			{
+				this.symbol = symbol;
+				return this;
+			}
+
+			/// <summary>
+			/// Gets the Symbol for the column. </summary>
+			/// <returns> the Symbol </returns>
+			public virtual Symbol? GetSymbol()
+			{
+				return symbol;
+			}
+
+
+			/// <summary>
+			/// Gets the system column Type. </summary>
+			/// <returns> the system column Type </returns>
+			public virtual SystemColumnType? GetSystemColumnType()
+			{
+				return systemColumnType;
+			}
+
+
+			/// <summary>
+			/// Gets the Format for an auto number column. </summary>
+			/// <returns> the Format for an auto number column </returns>
+			public virtual AutoNumberFormat GetAutoNumberFormat()
+			{
+				return autoNumberFormat;
+			}
+
+			/// <summary>
+			/// Gets the display width. </summary>
+			/// <returns> the display width </returns>
+			public virtual long? GetWidth()
+			{
+				return width;
+			}
+
+			/// <summary>
+			/// Builds the column.
+			/// </summary>
+			/// <returns> the column </returns>
+			public virtual Column Build()
+			{
+				//if (title == null || type == null || index == null)
+				//{
+				//	throw new MemberAccessException("A title, type, and index must be set.");
+				//}
+
+				Column column = new Column();
+				column.title = title;
+				column.type = type;
+				column.options = options;
+				column.symbol = symbol;
+				column.width = width;
+				column.systemColumnType = systemColumnType;
+				column.autoNumberFormat = autoNumberFormat;
+				column.primary = primary;
+				return column;
+			}
+		}
+
+		/// <summary>
 		/// The convinience Class UpdateColumnBuilder to build a Column object to be updated, moved, and/or renamed.
 		/// The Column's index, title, and sheetId properties must be set.
 		/// </summary>
 		public class UpdateColumnBuilder
 		{
+
 			/// <summary>
 			/// The position of the column. </summary>
 			private int? index;
