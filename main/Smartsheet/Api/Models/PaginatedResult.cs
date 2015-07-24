@@ -23,10 +23,11 @@ namespace Smartsheet.Api.Models
 {
 
 	/// <summary>
-	/// A wrapper object used to Wrap the data that comes back from the API. <br />
-	/// It holds the paging info as well as a List of objects of the specified type.
+	/// <para>Object returned for all GET operations against index endpoints.</para>
+	/// This object provides metadata which can be used to perform paging on potentially
+	/// large data sets.
 	/// </summary>
-	public class DataWrapper<T>
+	public class PaginatedResult<T>
 	{
 		private int? pageNumber;
 
@@ -38,30 +39,46 @@ namespace Smartsheet.Api.Models
 
 		private IList<T> data;
 
+		/// <summary>
+		/// The current page in the full result set that the data array represents.
+		/// </summary>
 		public int? PageNumber
 		{
 			get { return pageNumber; }
 			set { pageNumber = value; }
 		}
 
+		/// <summary>
+		/// The number of items in a page. Omitted if there is no limit to page size (and hence, all results are included).
+		/// Unless otherwise specified, this defaults to 100 for most endpoints.
+		/// </summary>
 		public int? PageSize
 		{
 			get { return pageSize; }
 			set { pageSize = value; }
 		}
 
+		/// <summary>
+		/// The total number of pages in the full result set.
+		/// </summary>
 		public int? TotalCount
 		{
 			get { return totalCount; }
 			set { totalCount = value; }
 		}
 
+		/// <summary>
+		/// The total number of items in the full result set.
+		/// </summary>
 		public int? TotalPages
 		{
 			get { return totalPages; }
 			set { totalPages = value; }
 		}
 
+		/// <summary>
+		/// A list of objects representing the current page of data in the result set.
+		/// </summary>
 		public IList<T> Data
 		{
 			get { return data; }

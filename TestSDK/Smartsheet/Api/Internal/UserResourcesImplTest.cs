@@ -26,7 +26,7 @@ namespace Smartsheet.Api.Internal
 		{
 			server.setResponseBody("../../../TestSDK/resources/listUsers.json");
 
-			DataWrapper<User> result = userResources.ListUsers(new string[] { "john.doe@smartsheet.com" }, new PaginationParameters(false, 123, 117));
+			PaginatedResult<User> result = userResources.ListUsers(new string[] { "john.doe@smartsheet.com" }, new PaginationParameters(false, 123, 117));
 			Assert.NotNull(result);
 			IList<User> users = result.Data;
 			Assert.AreEqual(1, users.Count);

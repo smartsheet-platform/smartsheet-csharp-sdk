@@ -53,7 +53,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual DataWrapper<Template> ListPublicTemplates(PaginationParameters paging)
+		public virtual PaginatedResult<Template> ListPublicTemplates(PaginationParameters paging)
 		{
 			StringBuilder path = new StringBuilder("templates/public");
 			if (paging != null)
@@ -75,7 +75,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual DataWrapper<Template> ListUserCreatedTemplates(PaginationParameters paging)
+		public virtual PaginatedResult<Template> ListUserCreatedTemplates(PaginationParameters paging)
 		{
 			StringBuilder path = new StringBuilder("templates");
 			if (paging != null)

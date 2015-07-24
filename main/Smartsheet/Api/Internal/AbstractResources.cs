@@ -404,7 +404,7 @@ namespace Smartsheet.Api.Internal
 		/// <param name="objectClass"> the resource object class </param>
 		/// <returns> the resources </returns>
 		/// <exception cref="SmartsheetException"> if an error occurred during the operation </exception>
-		protected internal virtual DataWrapper<T> ListResourcesWithWrapper<T>(string path)
+		protected internal virtual PaginatedResult<T> ListResourcesWithWrapper<T>(string path)
 		{
 			Utils.ThrowIfNull(path);
 			Utils.ThrowIfEmpty(path);
@@ -421,7 +421,7 @@ namespace Smartsheet.Api.Internal
 
 			HttpResponse response = this.smartsheet.HttpClient.Request(request);
 
-			DataWrapper<T> obj = null;
+			PaginatedResult<T> obj = null;
 			switch (response.StatusCode)
 			{
 				case HttpStatusCode.OK:

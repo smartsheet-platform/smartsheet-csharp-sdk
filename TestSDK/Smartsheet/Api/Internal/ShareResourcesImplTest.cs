@@ -28,7 +28,7 @@ namespace Smartsheet.Api.Internal
 
 			server.setResponseBody("../../../TestSDK/resources/listShares.json");
 
-			DataWrapper<Share> result = shareResourcesImpl.ListShares(2906571706525572L, new PaginationParameters(false, 100, 1));
+			PaginatedResult<Share> result = shareResourcesImpl.ListShares(2906571706525572L, new PaginationParameters(false, 100, 1));
 			Assert.True(result.Data.Count == 2, "The number of shares returned is incorrect.");
 
 			Assert.AreEqual("john.doe@smartsheet.com", result.Data[0].Email, "Email attribute of the share is incorrect.");

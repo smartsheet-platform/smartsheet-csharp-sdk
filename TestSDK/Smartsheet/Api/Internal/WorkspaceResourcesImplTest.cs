@@ -33,7 +33,7 @@ namespace Smartsheet.Api.Internal
 		{
 			server.setResponseBody("../../../TestSDK/resources/listWorkspaces.json");
 
-			DataWrapper<Workspace> result = workspaceResources.ListWorkspaces(null);
+			PaginatedResult<Workspace> result = workspaceResources.ListWorkspaces(null);
 			Assert.AreEqual(2, result.TotalCount);
 			Assert.AreEqual(3457273486960516, (long)result.Data[0].Id);
 			Assert.AreEqual("workspace 1", result.Data[0].Name);

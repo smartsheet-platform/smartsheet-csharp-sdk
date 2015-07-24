@@ -65,7 +65,7 @@ namespace Smartsheet.Api.Internal
 			return this.GetResource<Attachment>("sheets/" + sheetId + "/attachments/" + attachmentId, typeof(Attachment));
 		}
 
-		public virtual DataWrapper<Attachment> ListAttachments(long sheetId, PaginationParameters paging)
+		public virtual PaginatedResult<Attachment> ListAttachments(long sheetId, PaginationParameters paging)
 		{
 			StringBuilder path = new StringBuilder("sheets/" + sheetId + "/attachments");
 			if (paging != null)

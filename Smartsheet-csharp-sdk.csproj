@@ -164,7 +164,7 @@
     <Compile Include="main\Smartsheet\Api\Models\CopyOrMoveRowResult.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Criteria.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Currency.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\DataWrapper.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\PaginatedResult.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Discussion.cs" />
     <Compile Include="main\Smartsheet\Api\Models\DiscussionInclusion.cs" />
     <Compile Include="main\Smartsheet\Api\Models\DiscussionParentType.cs" />

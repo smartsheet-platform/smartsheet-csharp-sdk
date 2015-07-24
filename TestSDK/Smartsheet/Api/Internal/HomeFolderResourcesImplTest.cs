@@ -28,7 +28,7 @@ namespace Smartsheet.Api.Internal
 		{
 			server.setResponseBody("../../../TestSDK/resources/listFoldersInHome.json");
 
-			DataWrapper<Folder> result = homeFolderResources.ListFolders(new PaginationParameters(false, null, null));
+			PaginatedResult<Folder> result = homeFolderResources.ListFolders(new PaginationParameters(false, null, null));
 
 			Assert.True(result.Data.Count == 2);
 			Assert.AreEqual("Folder 1", result.Data[0].Name);

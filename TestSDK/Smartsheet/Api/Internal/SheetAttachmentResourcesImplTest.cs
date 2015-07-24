@@ -68,7 +68,7 @@ namespace Smartsheet.Api.Internal
 		public virtual void TestListAttachments()
 		{
 			server.setResponseBody("../../../TestSDK/resources/listAttachments.json");
-			DataWrapper<Attachment> result = sheetAttachmentResource.ListAttachments(56545654, null);
+			PaginatedResult<Attachment> result = sheetAttachmentResource.ListAttachments(56545654, null);
 			Assert.IsTrue(result.Data[0].AttachmentType == AttachmentType.FILE);
 			Assert.IsTrue(result.Data[0].MimeType == "image/png");
 			Assert.IsTrue(result.Data[0].Id == 4583173393803140);

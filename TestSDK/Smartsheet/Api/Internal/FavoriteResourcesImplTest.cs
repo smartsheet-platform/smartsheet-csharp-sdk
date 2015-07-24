@@ -25,7 +25,7 @@ namespace Smartsheet.Api.Internal
 		{
 			server.setResponseBody("../../../TestSDK/resources/listFavorites.json");
 
-			DataWrapper<Favorite> result = favoriteResource.ListFavorites(null);
+			PaginatedResult<Favorite> result = favoriteResource.ListFavorites(null);
 
 			Assert.IsTrue(result.Data[0].Type == ObjectType.SHEET);
 			Assert.IsTrue(result.Data[0].ObjectId == 5897312590423940);

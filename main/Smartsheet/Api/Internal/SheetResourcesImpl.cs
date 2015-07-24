@@ -114,7 +114,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual DataWrapper<Sheet> ListSheets(IEnumerable<SourceInclusion> includes, PaginationParameters paging)
+		public virtual PaginatedResult<Sheet> ListSheets(IEnumerable<SourceInclusion> includes, PaginationParameters paging)
 		{
 			IDictionary<string, string> parameters = new Dictionary<string, string>();
 			if (paging != null)
@@ -140,7 +140,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual DataWrapper<Sheet> ListOrganizationSheets(PaginationParameters paging)
+		public virtual PaginatedResult<Sheet> ListOrganizationSheets(PaginationParameters paging)
 		{
 			StringBuilder path = new StringBuilder("users/sheets");
 			if (paging != null)

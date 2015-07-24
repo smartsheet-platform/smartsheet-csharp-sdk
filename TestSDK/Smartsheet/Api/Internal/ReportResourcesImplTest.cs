@@ -26,7 +26,7 @@ namespace Smartsheet.Api.Internal
 
 			server.setResponseBody("../../../TestSDK/resources/listReports.json");
 
-			DataWrapper<Report> result = reportResource.ListReports(null);
+			PaginatedResult<Report> result = reportResource.ListReports(null);
 			Assert.AreEqual(2, result.Data.Count);
 			Assert.IsTrue("r1" == result.Data[0].Name);
 

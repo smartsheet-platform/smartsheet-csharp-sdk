@@ -202,16 +202,16 @@ namespace Smartsheet.Api.Internal.Json
 		/// <param name="inputStream"> the input stream from which the JSON will be read </param>
 		/// <exception cref="IllegalArgumentException"> if any argument is null </exception>
 		/// <exception cref="JSONSerializationException">if there is any other error occurred during the operation </exception>
-		public DataWrapper<T> DeserializeDataWrapper<T>(StreamReader inputStream)
+		public PaginatedResult<T> DeserializeDataWrapper<T>(StreamReader inputStream)
 		{
 			Utils.ThrowIfNull(inputStream);
 
-			DataWrapper<T> rw = null;
+			PaginatedResult<T> rw = null;
 
 			try
 			{
 				// Read the Json input stream into a List.
-				rw = serializer.Deserialize<DataWrapper<T>>(new Newtonsoft.Json.JsonTextReader(inputStream));
+				rw = serializer.Deserialize<PaginatedResult<T>>(new Newtonsoft.Json.JsonTextReader(inputStream));
 			}
 			catch (Newtonsoft.Json.JsonException ex)
 			{

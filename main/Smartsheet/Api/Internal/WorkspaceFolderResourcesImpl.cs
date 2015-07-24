@@ -54,7 +54,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual DataWrapper<Folder> ListFolders(long workspaceId, PaginationParameters paging)
+		public virtual PaginatedResult<Folder> ListFolders(long workspaceId, PaginationParameters paging)
 		{
 			StringBuilder path = new StringBuilder("workspaces/" + workspaceId + "/folders");
 			if (paging != null)

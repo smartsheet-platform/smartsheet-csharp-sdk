@@ -27,7 +27,7 @@ namespace Smartsheet.Api.Internal
 
 			// Will fail if Attachment object is not updated to API2.0 due to the property 'createdBy'
 			// not yet implemented in the Attachment object
-			DataWrapper<Discussion> result = sheetDiscussionResourcesImpl.ListDiscussions
+			PaginatedResult<Discussion> result = sheetDiscussionResourcesImpl.ListDiscussions
 			(1234L, new DiscussionInclusion[] { DiscussionInclusion.ATTACHMENTS }, null);
 			Assert.True(result.Data[0].Id == 3138415114905476);
 			Assert.True(result.Data[0].Title == "Lincoln");

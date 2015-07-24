@@ -28,7 +28,7 @@ namespace Smartsheet.Api.Internal
 		{
 			server.setResponseBody("../../../TestSDK/resources/listTemplates.json");
 
-			DataWrapper<Template> result = templateResources.ListPublicTemplates(new PaginationParameters(false, null, null));
+			PaginatedResult<Template> result = templateResources.ListPublicTemplates(new PaginationParameters(false, null, null));
 			Assert.NotNull(result);
 			Assert.AreEqual(2,result.Data.Count);
 			Assert.AreEqual(AccessLevel.OWNER,result.Data[0].AccessLevel);
@@ -43,7 +43,7 @@ namespace Smartsheet.Api.Internal
 		{
 			server.setResponseBody("../../../TestSDK/resources/listTemplates.json");
 
-			DataWrapper<Template> result = templateResources.ListUserCreatedTemplates(new PaginationParameters(false, null, null));
+			PaginatedResult<Template> result = templateResources.ListUserCreatedTemplates(new PaginationParameters(false, null, null));
 			Assert.NotNull(result);
 			Assert.AreEqual(2, result.Data.Count);
 			Assert.AreEqual(AccessLevel.OWNER, result.Data[0].AccessLevel);

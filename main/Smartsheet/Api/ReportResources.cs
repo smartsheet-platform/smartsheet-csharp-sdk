@@ -64,7 +64,7 @@ namespace Smartsheet.Api
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		DataWrapper<Report> ListReports(PaginationParameters paging);
+		PaginatedResult<Report> ListReports(PaginationParameters paging);
 
 		/// <summary>
 		/// <para>Gets the Report in the format specified, based on the Report ID.</para>

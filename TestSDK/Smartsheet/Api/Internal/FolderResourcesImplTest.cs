@@ -69,7 +69,7 @@ namespace Smartsheet.Api.Internal
 
 			server.setResponseBody("../../../TestSDK/resources/listFolders.json");
 
-			DataWrapper<Folder> result = folderResource.ListFolders(12345L, new PaginationParameters(false, null, null));
+			PaginatedResult<Folder> result = folderResource.ListFolders(12345L, new PaginationParameters(false, null, null));
 			Assert.AreEqual(2, result.Data.Count);
 		}
 

@@ -54,7 +54,7 @@ namespace Smartsheet.Api.Internal
 
 			server.setResponseBody("../../../TestSDK/resources/listGroups.json");
 
-			DataWrapper<Group> result = groupResources.ListGroups(new PaginationParameters(false, 100, 1));
+			PaginatedResult<Group> result = groupResources.ListGroups(new PaginationParameters(false, 100, 1));
 
 			Assert.IsTrue(result.Data.Count == result.TotalCount);
 			Assert.IsTrue(result.Data[0].Id == 4583173393803140);

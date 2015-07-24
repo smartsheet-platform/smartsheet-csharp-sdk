@@ -97,7 +97,7 @@ namespace Smartsheet.Api.Internal.Json
 		/// <returns> the t </returns>
 		/// <exception cref="Newtonsoft.Json.JsonException"> the Json parse exception </exception>
 		/// <exception cref="IOException"> Signals that an I/O exception has occurred. </exception>
-		DataWrapper<T> DeserializeDataWrapper<T>(StreamReader inputStream);
+		PaginatedResult<T> DeserializeDataWrapper<T>(StreamReader inputStream);
 
 		/// <summary>
 		/// De-serialize an object list from JSON To a Map.

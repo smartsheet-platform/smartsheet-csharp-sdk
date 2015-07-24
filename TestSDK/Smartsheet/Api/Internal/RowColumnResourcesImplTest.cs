@@ -23,7 +23,7 @@ namespace Smartsheet.Api.Internal
 		{
 			server.setResponseBody("../../../TestSDK/resources/getCellHistory.json");
 
-			DataWrapper<CellHistory> histories = cellResources.GetCellHistory(1231654654, 313213132, 4555465465, null);
+			PaginatedResult<CellHistory> histories = cellResources.GetCellHistory(1231654654, 313213132, 4555465465, null);
 
 			Assert.IsTrue(histories.TotalCount == 3);
 			Assert.IsTrue(histories.Data[0].ColumnId == 642523719853956);

@@ -45,7 +45,7 @@ namespace Smartsheet.Api
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		DataWrapper<Workspace> ListWorkspaces(PaginationParameters paging);
+		PaginatedResult<Workspace> ListWorkspaces(PaginationParameters paging);
 
 		/// <summary>
 		/// <para>Gets the specified Workspace (and lists its contents).</para>
