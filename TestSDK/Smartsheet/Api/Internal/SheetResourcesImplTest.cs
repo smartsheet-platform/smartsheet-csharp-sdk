@@ -128,7 +128,7 @@ namespace Smartsheet.Api.Internal
 
 			server.setResponseBody("../../../TestSDK/resources/createSheetFromExisting.json");
 
-			Sheet sheet = new Sheet.CreateFromTemplateBuilder(2906571706525572L, "bleh").Build();
+			Sheet sheet = new Sheet.CreateSheetFromTemplateBuilder(2906571706525572L, "bleh").Build();
 
 			Sheet newSheet = sheetResource.CreateSheetFromTemplate(sheet, null);
 

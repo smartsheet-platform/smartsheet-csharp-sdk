@@ -52,8 +52,8 @@ namespace Smartsheet.Api.Internal
 		public virtual void TestAddColumn()
 		{
 			server.setResponseBody("../../../TestSDK/resources/addColumn.json");
-			Column col1 = new Column.AddColumnBuilder().SetTitle("New Picklist Column 1").SetType(ColumnType.PICKLIST).Build();
-			Column col2 = new Column.AddColumnBuilder().SetTitle("New Picklist Column 1").SetType(ColumnType.PICKLIST).Build();
+			Column col1 = new Column.AddColumnBuilder("New Picklist Column 1", 4, ColumnType.PICKLIST).Build();
+			Column col2 = new Column.AddColumnBuilder("New Picklist Column 1", 1, ColumnType.PICKLIST).Build();
 
 			col1.Options = new List<string> { "First", "Second", "Third" };
 
