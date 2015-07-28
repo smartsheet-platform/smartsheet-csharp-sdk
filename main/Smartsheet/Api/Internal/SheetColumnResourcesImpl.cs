@@ -62,14 +62,15 @@ namespace Smartsheet.Api.Internal
 		public virtual PaginatedResult<Column> ListColumns(long sheetId, IEnumerable<FilterInclusion> include, PaginationParameters paging)
 		{
 			StringBuilder path = new StringBuilder("sheets/" + sheetId + "/columns");
+			IDictionary<string, string> parameters = new Dictionary<string, string>();
 			if (paging != null)
 			{
-				path.Append(paging.ToQueryString());
+				parameters = paging.toDictionary();
 			} if (include != null)
 			{
-				path.Append("&include=" + QueryUtil.GenerateCommaSeparatedList<FilterInclusion>(include));
+				parameters.Add("include", QueryUtil.GenerateCommaSeparatedList(include));
 			}
-			return this.ListResourcesWithWrapper<Column>(path.ToString());
+			return this.ListResourcesWithWrapper<Column>(QueryUtil.GenerateUrl("sheets/" + sheetId + "/columns", parameters));
 		}
 
 		/// <summary>
