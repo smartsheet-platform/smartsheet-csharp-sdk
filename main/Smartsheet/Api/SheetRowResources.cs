@@ -72,7 +72,7 @@ namespace Smartsheet.Api
 		/// but if the total number of rows in the destination sheet after the copy exceeds the Smartsheet row limit, 
 		/// an error response will be returned.</remarks>
 		/// </summary>
-		/// <param name="sheetId"> the sheet Id </param>
+		/// <param name="sheetId"> the sheet Id to copy from </param>
 		/// <param name="include"> objects to include </param>
 		/// <param name="ignoreRowsNotFound"> ignoreRowsNotFound </param>
 		/// <param name="directive"> directive </param>
@@ -83,7 +83,7 @@ namespace Smartsheet.Api
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		CopyOrMoveRowResult CopyRowsToAnotherSheet(long sheetId, IEnumerable<ObjectInclusion> include, bool? ignoreRowsNotFound, CopyOrMoveRowDirective directive);
+		CopyOrMoveRowResult CopyRowsToAnotherSheet(long sheetId, IEnumerable<CopyRowInclusion> include, bool? ignoreRowsNotFound, CopyOrMoveRowDirective directive);
 
 		/// <summary>
 		/// <para>Deletes the Row specified in the URL.</para>
@@ -109,7 +109,7 @@ namespace Smartsheet.Api
 		/// <para>Any child rows of the rows specified in the request will also be moved. 
 		/// Parent-child relationships amongst rows will be preserved within the destination sheet.</para></remarks>
 		/// </summary>
-		/// <param name="sheetId"> the sheet Id </param>
+		/// <param name="sheetId"> the sheet Id to move from </param>
 		/// <param name="ignoreRowsNotFound"> ignoreRowsNotFound </param>
 		/// <param name="directive"> directive </param>
 		/// <returns> CopyOrMoveRowResult object </returns>
@@ -119,40 +119,23 @@ namespace Smartsheet.Api
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		CopyOrMoveRowResult MoveRowsToAnotherSheet(long sheetId, IEnumerable<ObjectInclusion> include, bool? ignoreRowsNotFound, CopyOrMoveRowDirective directive);
+		CopyOrMoveRowResult MoveRowsToAnotherSheet(long sheetId, IEnumerable<MoveRowInclusion> include, bool? ignoreRowsNotFound, CopyOrMoveRowDirective directive);
 
-		///// <summary>
-		///// <para>Sends a Row via email.</para>
-		///// <para>It mirrors To the following Smartsheet REST API method: POST /sheets/{sheetId}/rows/{rowId}/emails</para>
-		///// </summary>
-		///// <param name="sheetId"> the sheetId </param>
-		///// <param name="rowId"> the rowId </param>
-		///// <param name="email"> the email </param>
-		///// <returns> the row object </returns>
-		///// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
-		///// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		///// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
-		///// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		///// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
-		///// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		//void SendRow(long sheetId, long rowId, RowEmail email);
-
-
-		///// <summary>
-		///// <para>Sends a Row via email.</para>
-		///// <para>It mirrors To the following Smartsheet REST API method: POST /sheets/{sheetId}/rows/{rowId}/emails</para>
-		///// </summary>
-		///// <param name="sheetId"> the sheetId </param>
-		///// <param name="rowId"> the rowId </param>
-		///// <param name="email"> the email </param>
-		///// <returns> the row object </returns>
-		///// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
-		///// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		///// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
-		///// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		///// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
-		///// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		//void SendRow(long sheetId, long rowId, RowEmail email);
+		/// <summary>
+		/// <para>Sends a Row via email.</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: POST /sheets/{sheetId}/rows/{rowId}/emails</para>
+		/// </summary>
+		/// <param name="sheetId"> the sheetId </param>
+		/// <param name="rowId"> the rowId </param>
+		/// <param name="email"> the email </param>
+		/// <returns> the row object </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		void SendRow(long sheetId, long rowId, RowEmail email);
 
 		/// <summary>
 		/// <para>Updates cell values in the specified row(s), expands/collapses the specified row(s), 
