@@ -28,6 +28,12 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// A convenience class for creating a Row with the necessary fields for inserting into a list of Rows.
 		/// </summary>
+		/// <remarks>
+		/// If multiple rows are specified in the request,
+		/// all rows must be inserted at the same location
+		/// (i.e. the toTop, toBottom, parentId, siblingId,
+		/// and above attributes must be the same for all rows in the request).
+		/// </remarks>
 		public class AddRowBuilder
 		{
 			private bool? toTop;
@@ -38,6 +44,30 @@ namespace Smartsheet.Api.Models
 			private string format;
 			private bool? expanded;
 			private IList<Cell> cells;
+
+			/// <summary>
+			/// Sets the required property/properties for Adding a Row
+			/// </summary>
+			/// <remarks>
+			/// If multiple rows are specified in the request,
+			/// all rows must be inserted at the same location
+			/// (i.e. the toTop, toBottom, parentId, siblingId,
+			/// and above attributes must be the same for all rows in the request).
+			/// </remarks>
+			/// <param name="toTop"> Indicates that the row should be added to the top of the sheet. </param>
+			/// <param name="toBottom"> Indicates that the row should be added to the bottom of the sheet, or, if used in conjunction with parentId, added as the last child of the parent. </param>
+			/// <param name="parentId"> Indicates that the row should be added as the first child of this row. </param>
+			/// <param name="siblingId"> Indicates that the row should be added as the next row at the same hierarchical level of this row. </param>
+			/// <param name="above"> Optionally used in conjunction with siblingId with a value of true to indicate that the row should be added above the specified sibling row. </param>
+			public AddRowBuilder(bool? toTop, bool? toBottom, long? parentId, long? siblingId, bool? above)
+			{
+				this.toTop = toTop;
+				this.toBottom = toBottom;
+				this.parentId = parentId;
+				this.siblingId = siblingId;
+				this.above = above;
+			}
+
 
 			/// <summary>
 			/// Sets the To top flag that puts the row at the top of the sheet.
