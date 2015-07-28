@@ -30,10 +30,11 @@ namespace Smartsheet.Api
 	public interface UserResources
 	{
 		/// <summary>
-		/// <para>List all Users.</para>
+		/// <para>Gets the list of Users in the organization. To filter by email, use the optional email query string
+		/// parameter to specify a list of users’ email addresses.</para>
 		/// <para>It mirrors To the following Smartsheet REST API method: GET /Users</para>
 		/// </summary>
-		/// <param name="emails">list of emails</param>
+		/// <param name="emails">list of email addresses on which to filter the results</param>
 		/// <param name="paging"> the pagination</param>
 		/// <returns> the list of all Users </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
@@ -44,23 +45,8 @@ namespace Smartsheet.Api
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		PaginatedResult<User> ListUsers(IEnumerable<string> emails, PaginationParameters paging);
 
-		///// <summary>
-		///// <para>Add a user To the organization, without sending Email.</para>
-		///// 
-		///// <para>It mirrors To the following Smartsheet REST API method: POST /Users</para>
-		///// </summary>
-		///// <param name="user"> the user object </param>
-		///// <returns> the user </returns>
-		///// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
-		///// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		///// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
-		///// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		///// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
-		///// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		//User AddUser(User user);
-
 		/// <summary>
-		/// <para>Add a user To the organization, without sending Email.</para>
+		/// <para>Add a user To the organization</para>
 		/// <para>It mirrors To the following Smartsheet REST API method: POST /Users</para>
 		/// </summary>
 		/// <param name="user"> the user </param>
