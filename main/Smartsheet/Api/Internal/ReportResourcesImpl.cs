@@ -73,7 +73,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual Report GetReport(long reportId, IEnumerable<ObjectInclusion> includes, int? pageSize, int? page)
+		public virtual Report GetReport(long reportId, IEnumerable<ReportInclusion> includes, int? pageSize, int? page)
 		{
 			IDictionary<string, string> parameters = new Dictionary<string, string>();
 			if (includes != null)
@@ -126,15 +126,20 @@ namespace Smartsheet.Api.Internal
 		/// <para>It mirrors To the following Smartsheet REST API method:<br />
 		/// GET /reports/{reportId} with "application/vnd.ms-excel" Accept HTTP header</para>
 		/// </summary>
-		/// <param name="sheetId"> the Id of the report </param>
+		/// <param name="reportId"> the Id of the report </param>
 		/// <param name="outputStream"> the output stream To which the Excel file will be written. </param>
+		/// <param name="include"> the elements to include in the response </param>
+		/// <param name="pageSize"> Number of rows per page. If not specified, the default value is 100. This operation can
+		/// return a maximum of 500 rows per page. </param>
+		/// <param name="page"> Which page number (1-based) to return. If not specified, the default value is 1. If a page
+		/// number is specified that is greater than the number of total pages, the last page will be returned. </param>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual void GetReportAsExcel(long reportId, BinaryWriter outputStream, IEnumerable<ObjectInclusion> includes, int? pageSize, int? page)
+		public virtual void GetReportAsExcel(long reportId, BinaryWriter outputStream, IEnumerable<ReportInclusion> includes, int? pageSize, int? page)
 		{
 			IDictionary<string, string> parameters = new Dictionary<string, string>();
 			if (includes != null)
@@ -159,14 +164,19 @@ namespace Smartsheet.Api.Internal
 		/// GET /reports/{reportId} with "text/csv" Accept HTTP header</para>
 		/// </summary>
 		/// <param name="reportId"> the Id of the report </param>
-		/// <param name="outputStream"> the output stream To which the PDF file will be written. </param>
+		/// <param name="outputStream"> the output stream To which the Excel file will be written. </param>
+		/// <param name="include"> the elements to include in the response </param>
+		/// <param name="pageSize"> Number of rows per page. If not specified, the default value is 100. This operation can
+		/// return a maximum of 500 rows per page. </param>
+		/// <param name="page"> Which page number (1-based) to return. If not specified, the default value is 1. If a page
+		/// number is specified that is greater than the number of total pages, the last page will be returned. </param>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual void GetReportAsCSV(long reportId, BinaryWriter outputStream, IEnumerable<ObjectInclusion> includes, int? pageSize, int? page)
+		public virtual void GetReportAsCSV(long reportId, BinaryWriter outputStream, IEnumerable<ReportInclusion> includes, int? pageSize, int? page)
 		{
 			IDictionary<string, string> parameters = new Dictionary<string, string>();
 			if (includes != null)
@@ -197,9 +207,9 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual void SendSheet(long reportId, SheetEmail email)
+		public virtual void SendReport(long reportId, SheetEmail email)
 		{
-			this.CreateResource<SheetEmail>("sheets/" + reportId + "/emails", typeof(SheetEmail), email);
+			this.CreateResource<SheetEmail>("reports/" + reportId + "/emails", typeof(SheetEmail), email);
 		}
 
 		public virtual ShareResources ShareResources()
@@ -253,6 +263,5 @@ namespace Smartsheet.Api.Internal
 
 			Smartsheet.HttpClient.ReleaseConnection();
 		}
-
 	}
 }
