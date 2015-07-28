@@ -27,6 +27,9 @@ namespace Smartsheet.Api.Models
 	[JsonConverter(typeof(StringEnumConverter))]
 	public enum FilterInclusion
 	{
+		/// <summary>
+		/// Response will include the filter that the user has applied to each column (if any).
+		/// </summary>
 		[EnumMember(Value = "filters")]
 		FILTERS
 	}
