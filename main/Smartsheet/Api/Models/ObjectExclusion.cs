@@ -16,6 +16,8 @@
 //    limitations under the License.
 //    %[license]
 
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using System.Runtime.Serialization;
 
 namespace Smartsheet.Api.Models
@@ -25,6 +27,7 @@ namespace Smartsheet.Api.Models
 	/// <summary>
 	/// Represents specific objects that can be excluded in some responses.
 	/// </summary>
+	[JsonConverter(typeof(StringEnumConverter))]
 	public enum ObjectExclusion
 	{
 		/// <summary>
