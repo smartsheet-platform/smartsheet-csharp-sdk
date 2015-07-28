@@ -26,6 +26,7 @@ namespace Smartsheet.Api.Internal
 	using Smartsheet.Api.Models;
 	using System.Net;
 	using System;
+	using System.Text;
 
 	/// <summary>
 	/// This is the implementation of the SheetRowResources.
@@ -117,22 +118,22 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public CopyOrMoveRowResult CopyRowsToAnotherSheet(long sheetId, IEnumerable<ObjectInclusion> include, bool? ignoreRowsNotFound, CopyOrMoveRowDirective directive)
+		public CopyOrMoveRowResult CopyRowsToAnotherSheet(long sheetId, IEnumerable<CopyRowInclusion> include, bool? ignoreRowsNotFound, CopyOrMoveRowDirective directive)
 		{
 			Utility.Utility.ThrowIfNull(directive);
-			string path = "sheets/" + sheetId + "/rows/copy?" + QueryUtil.GenerateCommaSeparatedList<ObjectInclusion>(include);
+			StringBuilder path = new StringBuilder("sheets/" + sheetId + "/rows/copy?" + QueryUtil.GenerateCommaSeparatedList(include));
 			if (ignoreRowsNotFound.HasValue)
 			{
 				if (ignoreRowsNotFound.Value)
 				{
-					path += "&ignoreRowsNotFound=true";
+					path.Append("&ignoreRowsNotFound=true");
 				}
 				else
 				{
-					path += "&ignoreRowsNotFound=false";
+					path.Append("&ignoreRowsNotFound=false");
 				}
 			}
-			return CopyOrMoveRowsToAnotherSheet(directive, path);
+			return CopyOrMoveRowsToAnotherSheet(directive, path.ToString());
 		}
 
 
@@ -173,22 +174,22 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public CopyOrMoveRowResult MoveRowsToAnotherSheet(long sheetId, IEnumerable<ObjectInclusion> include, bool? ignoreRowsNotFound, CopyOrMoveRowDirective directive)
+		public CopyOrMoveRowResult MoveRowsToAnotherSheet(long sheetId, IEnumerable<MoveRowInclusion> include, bool? ignoreRowsNotFound, CopyOrMoveRowDirective directive)
 		{
 			Utility.Utility.ThrowIfNull(directive);
-			string path = "sheets/" + sheetId + "/rows/move?" + QueryUtil.GenerateCommaSeparatedList<ObjectInclusion>(include);
+			StringBuilder path = new StringBuilder("sheets/" + sheetId + "/rows/move?" + QueryUtil.GenerateCommaSeparatedList(include));
 			if (ignoreRowsNotFound.HasValue)
 			{
 				if (ignoreRowsNotFound.Value)
 				{
-					path += "&ignoreRowsNotFound=true";
+					path.Append("&ignoreRowsNotFound=true");
 				}
 				else
 				{
-					path += "&ignoreRowsNotFound=false";
+					path.Append("&ignoreRowsNotFound=false");
 				}
 			}
-			return CopyOrMoveRowsToAnotherSheet(directive, path);
+			return CopyOrMoveRowsToAnotherSheet(directive, path.ToString());
 		}
 
 
