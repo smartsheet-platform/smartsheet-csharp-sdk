@@ -85,7 +85,7 @@ namespace Smartsheet.Api.Internal
 			server.setResponseBody("../../../TestSDK/resources/updateColumn.json");
 			IList<string> options = new List<string> { "First", "Second", "Third" };
 
-			Column col1 = new Column.UpdateColumnBuilder().SetTitle("First Column").SetIndex(0)
+			Column col1 = new Column.UpdateColumnBuilder("First Column", 0)
 			.SetType(ColumnType.PICKLIST).SetOptions(options).Build();
 
 

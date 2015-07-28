@@ -22,7 +22,7 @@
 		public virtual void TestAddCommentWithAttachment()
 		{
 			string file = @"..\..\..\TestSDK\resources\wordFile.docx";
-			Comment comment = new Comment.AddCommentBuilder().SetText("Please review the attached file.").Build();
+			Comment comment = new Comment.AddCommentBuilder("Please review the attached file.").Build();
 			server.setResponseBody("../../../TestSDK/resources/addCommentWithAttachment.json");
 			Comment newComment = commentResources.AddCommentWithAttachment(8357140688594820, 5773448686397316, comment, file, "application/msword");
 			Assert.IsTrue(newComment.Id == 2570595675203460);
@@ -39,7 +39,7 @@
 		[Test]
 		public virtual void TestAddComment()
 		{
-			Comment comment = new Comment.AddCommentBuilder().SetText("This is a new comment.").Build();
+			Comment comment = new Comment.AddCommentBuilder("This is a new comment.").Build();
 			server.setResponseBody("../../../TestSDK/resources/addComment.json");
 			comment = commentResources.AddComment(8357140688594820, 5773448686397316, comment);
 

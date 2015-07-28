@@ -36,8 +36,8 @@ namespace Smartsheet.Api.Internal
 			// Create a row and add the cells to it.
 			IList<Row> rows = new List<Row>
 			{
-				new Row.AddRowBuilder().SetAbove(true).SetToBottom(true).SetCells(cells).Build(),
-				new Row.AddRowBuilder().SetParentId(123).SetToTop(true).SetFormat("A").Build()
+				new Row.AddRowBuilder(true, null, null, null, null).SetCells(cells).Build(),
+				new Row.AddRowBuilder(null, null, 123, null, null).SetFormat("A").Build()
 			};
 
 			IList<Row> newRows = sheetRowResource.AddRows(2331373580117892L, rows);
