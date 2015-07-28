@@ -180,6 +180,10 @@ namespace Smartsheet.Api.Models
 		/// </summary>
 		public class AddCommentBuilder
 		{
+			public AddCommentBuilder(string text)
+			{
+				this.text = text;
+			}
 
 			/// <summary>
 			/// The Text. </summary>
