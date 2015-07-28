@@ -16,6 +16,7 @@
 //    limitations under the License.
 //    %[license]
 
+using System.Collections.Generic;
 namespace Smartsheet.Api.Models
 {
 
@@ -69,7 +70,82 @@ namespace Smartsheet.Api.Models
 			}
 		}
 
+		public class CreateSheetEmail
+		{
+			/// <summary>
+			/// Represents the sheet Email Format (PDF or Excel).
+			/// </summary>
+			private SheetEmailFormat? format;
 
+			/// <summary>
+			/// Represents the Format details (paper dimensions).
+			/// </summary>
+			private FormatDetails formatDetails;
+
+			/// <summary>
+			/// Represents the Email recipient(s).
+			/// </summary>
+			private IList<Recipient> sendTo;
+
+			/// <summary>
+			/// Represents the Subject.
+			/// </summary>
+			private string subject;
+
+			/// <summary>
+			/// Represents the Message.
+			/// </summary>
+			private string message;
+
+			/// <summary>
+			/// Represents the CC me flag.
+			/// </summary>
+			private bool? ccMe;
+
+			public CreateSheetEmail(IList<Recipient> sendTo, SheetEmailFormat? format)
+			{
+				this.sendTo = sendTo;
+				this.format = format;
+			}
+
+			public CreateSheetEmail SetSubject(string subject)
+			{
+				this.subject = subject;
+				return this;
+			}
+
+			public CreateSheetEmail SetMessage(string message)
+			{
+				this.message = message;
+				return this;
+			}
+
+			public CreateSheetEmail SetCcMe(bool? ccMe)
+			{
+				this.ccMe = ccMe;
+				return this;
+			}
+
+			public CreateSheetEmail SetFormatDetails(FormatDetails formatDetails)
+			{
+				this.formatDetails = formatDetails;
+				return this;
+			}
+
+
+			public SheetEmail Build()
+			{
+				return new SheetEmail 
+				{
+					SendTo = sendTo,
+					Format = format,
+					FormatDetails = formatDetails,
+					Subject = subject,
+					Message = message,
+					CcMe = ccMe
+				};
+			}
+		}
 
 	}
 
