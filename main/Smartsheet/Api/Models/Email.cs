@@ -102,7 +102,7 @@ namespace Smartsheet.Api.Models
 		/// Gets the carbon copy me flag.
 		/// </summary>
 		/// <returns> the cc me </returns>
-		public virtual bool? CCMe
+		public virtual bool? CcMe
 		{
 			get
 			{
