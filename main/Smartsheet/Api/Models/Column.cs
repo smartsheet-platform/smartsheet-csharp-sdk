@@ -27,7 +27,7 @@ namespace Smartsheet.Api.Models
 	public class Column : IdentifiableModel
 	{
 		/// <summary>
-		/// Represents the position.
+		/// Represents the position, (zero-based).
 		/// </summary>
 		private int? index;
 
@@ -89,7 +89,7 @@ namespace Smartsheet.Api.Models
 
 
 		/// <summary>
-		/// Gets or Sets the position of the column.
+		/// Gets or Sets the position of the column (zero-based).
 		/// </summary>
 		/// <returns> the Index </returns>
 		public virtual int? Index
@@ -297,6 +297,12 @@ namespace Smartsheet.Api.Models
 		/// </summary>
 		public class AddColumnBuilder
 		{
+			/// <summary>
+			/// Sets the required properties for adding a Column to a Sheet.
+			/// </summary>
+			/// <param name="title"> the Column title </param>
+			/// <param name="index"> the Column index (zero-based) </param>
+			/// <param name="type"> the Column Type </param>
 			public AddColumnBuilder(string title, int? index, ColumnType? type)
 			{
 				this.title = title;
@@ -504,6 +510,7 @@ namespace Smartsheet.Api.Models
 				//}
 
 				Column column = new Column();
+				column.index = index;
 				column.title = title;
 				column.type = type;
 				column.options = options;
@@ -532,10 +539,6 @@ namespace Smartsheet.Api.Models
 				this.primary = primary;
 				this.type = type;
 			}
-
-			/// <summary>
-			/// The position of the column. </summary>
-			private int? index;
 
 			/// <summary>
 			/// The Title. </summary>
@@ -573,17 +576,6 @@ namespace Smartsheet.Api.Models
 			public virtual CreateSheetColumnBuilder SetPrimary(bool? primary)
 			{
 				this.primary = primary;
-				return this;
-			}
-
-			/// <summary>
-			/// Sets the position for the column.
-			/// </summary>
-			/// <param name="index"> the position </param>
-			/// <returns> the CreateSheetColumnBuilder </returns>
-			public virtual CreateSheetColumnBuilder SetIndex(int index)
-			{
-				this.index = index;
 				return this;
 			}
 
@@ -662,14 +654,6 @@ namespace Smartsheet.Api.Models
 				return primary;
 			}
 
-			/// <summary>
-			/// Gets the Index.
-			/// </summary>
-			/// <returns> the Index </returns>
-			public virtual int? GetIndex()
-			{
-				return index;
-			}
 
 			/// <summary>
 			/// Gets the Title. </summary>
@@ -767,7 +751,7 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// The convinience Class UpdateColumnBuilder to build a Column object to be updated, moved, and/or renamed.
+		/// The convenience Class UpdateColumnBuilder to build a Column object to be updated, moved, and/or renamed.
 		/// The Column's index, title, and sheetId properties must be set.
 		/// </summary>
 		public class UpdateColumnBuilder
@@ -801,17 +785,29 @@ namespace Smartsheet.Api.Models
 			/// The Format for an auto number column. </summary>
 			private AutoNumberFormat autoNumberFormat;
 
-			/// <summary>
-			/// The sheet Id. </summary>
-			private long? sheetId;
+			///// <summary>
+			///// The sheet Id. </summary>
+			//private long? sheetId;
 
 			/// <summary>
 			/// The Display width of the column in pixels. </summary>
 			private long? width;
 
+			private string format;
+
 			///// <summary> The Column Id</summary>
 			//internal long? columnId;
 
+			/// <summary>
+			/// Sets the required properties for updating a column.
+			/// </summary>
+			/// <param name="title"> the new Column title </param>
+			/// <param name="index"> the new Column index (zero-based) </param>
+			public UpdateColumnBuilder(string title, int index)
+			{
+				this.title = title;
+				this.index = index;
+			}
 
 			/// <summary>
 			/// Sets the position for the column.
@@ -821,6 +817,17 @@ namespace Smartsheet.Api.Models
 			public virtual UpdateColumnBuilder SetIndex(int index)
 			{
 				this.index = index;
+				return this;
+			}
+
+			/// <summary>
+			/// Sets the format descriptor.
+			/// </summary>
+			/// <param name="format"> the format </param>
+			/// <returns> the modify column builder </returns>
+			public virtual UpdateColumnBuilder SetFormat(string format)
+			{
+				this.format = format;
 				return this;
 			}
 
@@ -890,16 +897,16 @@ namespace Smartsheet.Api.Models
 				return this;
 			}
 
-			/// <summary>
-			/// Sets the sheet Id.
-			/// </summary>
-			/// <param name="sheetId"> the sheet Id </param>
-			/// <returns> the modify column builder </returns>
-			public virtual UpdateColumnBuilder SetSheetId(long sheetId)
-			{
-				this.sheetId = sheetId;
-				return this;
-			}
+			///// <summary>
+			///// Sets the sheet Id.
+			///// </summary>
+			///// <param name="sheetId"> the sheet Id </param>
+			///// <returns> the modify column builder </returns>
+			//public virtual UpdateColumnBuilder SetSheetId(long sheetId)
+			//{
+			//	this.sheetId = sheetId;
+			//	return this;
+			//}
 
 
 			///// <summary>
@@ -924,6 +931,14 @@ namespace Smartsheet.Api.Models
 				return this;
 			}
 
+			/// <summary>
+			/// Gets the Format.
+			/// </summary>
+			/// <returns> the Index </returns>
+			public virtual int? GetFormat()
+			{
+				return index;
+			}
 
 			/// <summary>
 			/// Gets the Index.
@@ -988,14 +1003,14 @@ namespace Smartsheet.Api.Models
 				return autoNumberFormat;
 			}
 
-			/// <summary>
-			/// Gets the sheet Id.
-			/// </summary>
-			/// <returns> the sheet Id </returns>
-			public virtual long? GetSheetId()
-			{
-				return sheetId;
-			}
+			///// <summary>
+			///// Gets the sheet Id.
+			///// </summary>
+			///// <returns> the sheet Id </returns>
+			//public virtual long? GetSheetId()
+			//{
+			//	return sheetId;
+			//}
 
 			///// <summary>
 			///// Gets the column Id.
@@ -1023,13 +1038,14 @@ namespace Smartsheet.Api.Models
 				Column column = new Column();
 				column.index = index;
 				column.title = title;
-				column.sheetId = sheetId;
+				//column.sheetId = sheetId;
 				column.type = type;
 				column.options = options;
 				column.symbol = symbol;
 				column.systemColumnType = systemColumnType;
 				column.autoNumberFormat = autoNumberFormat;
 				column.width = width;
+				column.format = format;
 				//column.ID = columnId;
 				return column;
 			}
