@@ -141,8 +141,10 @@
     <Compile Include="main\Smartsheet\Api\InvalidRequestException.cs" />
     <Compile Include="main\Smartsheet\Api\Models\AbstractRow.cs" />
     <Compile Include="main\Smartsheet\Api\Models\AbstractSheet.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\CopyRowInclusion.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Group.cs" />
     <Compile Include="main\Smartsheet\Api\Models\GroupMember.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\MoveRowInclusion.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Recipient.cs" />
     <Compile Include="main\Smartsheet\Api\Models\UserModel.cs" />
     <Compile Include="main\Smartsheet\Api\Models\AccessLevel.cs" />
