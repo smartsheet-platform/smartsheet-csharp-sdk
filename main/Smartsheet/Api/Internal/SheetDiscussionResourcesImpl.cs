@@ -60,7 +60,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual Discussion CreateDiscussion(long sheetId, Discussion discussion)
 		{
-			return this.CreateResource("sheets/" + sheetId, typeof(Discussion), discussion);
+			return this.CreateResource("sheets/" + sheetId + "/discussions", typeof(Discussion), discussion);
 		}
 
 		/// <summary>
@@ -81,7 +81,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual Discussion CreateDiscussionWithAttachment(long sheetId, Discussion discussion, string file, string fileType)
 		{
-			return this.CreateResourceWithAttachment("sheets/" + sheetId, discussion, "discussion", file, fileType);
+			return this.CreateResourceWithAttachment("sheets/" + sheetId + "/discussions", discussion, "discussion", file, fileType);
 		}
 
 		/// <summary>
