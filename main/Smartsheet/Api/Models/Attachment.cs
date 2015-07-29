@@ -252,16 +252,16 @@ namespace Smartsheet.Api.Models
 			private string name;
 			private string description;
 			private string url;
-			private AttachmentType attachmentType;
-			private AttachmentSubType attachmentSubType;
+			private AttachmentType? attachmentType;
+			private AttachmentSubType? attachmentSubType;
 
 			/// <summary>
-			/// Builds the Attachment with required parameters
+			/// Sets the required attributes for creating an Attachment.
 			/// </summary>
 			/// <param name="url">Attachment temporary URL (files only)</param>
 			/// <param name="attachmentType">Attachment type (one of FILE, GOOGLE_DRIVE,
 			/// LINK, BOX_COM, DROPBOX, or EVERNOTE)</param>
-			public CreateAttachmentBuilder(string url, AttachmentType attachmentType)
+			public CreateAttachmentBuilder(string url, AttachmentType? attachmentType)
 			{
 				this.url = url;
 				this.attachmentType = attachmentType;
@@ -307,7 +307,7 @@ namespace Smartsheet.Api.Models
 			/// </summary>
 			/// <param name="attachmentSubType"> the attachmentSubType </param>
 			/// <returns> the CreateAttachmentBuilder object </returns>
-			public CreateAttachmentBuilder SetAttachmentSubType(AttachmentSubType attachmentSubType)
+			public CreateAttachmentBuilder SetAttachmentSubType(AttachmentSubType? attachmentSubType)
 			{
 				this.attachmentSubType = attachmentSubType;
 				return this;
