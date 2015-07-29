@@ -84,7 +84,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual Share GetShare(long objectId, long shareId)
+		public virtual Share GetShare(long objectId, string shareId)
 		{
 			return this.GetResource<Share>(MasterResourceType + "/" + objectId + "/shares/" + shareId, typeof(Share));
 		}
@@ -138,7 +138,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual Share UpdateShare(long objectId, long shareId, Share share)
+		public virtual Share UpdateShare(long objectId, string shareId, Share share)
 		{
 			return this.UpdateResource<Share>(MasterResourceType + "/" + objectId + "/shares/" + shareId, typeof(Share), share);
 		}
@@ -158,7 +158,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual void DeleteShare(long objectId, long shareId)
+		public virtual void DeleteShare(long objectId, string shareId)
 		{
 			this.DeleteResource<Share>(MasterResourceType + "/" + objectId + "/shares/" + shareId, typeof(Share));
 		}
