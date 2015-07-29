@@ -33,9 +33,9 @@ namespace Smartsheet.Api.Models
 
 		private IList<GroupMember> members;
 
-		private DateTime createdAt;
+		private DateTime? createdAt;
 
-		private DateTime modifiedAt;
+		private DateTime? modifiedAt;
 
 		/// <summary>
 		/// Group owner’s email address
@@ -67,7 +67,7 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// Time of creation
 		/// </summary>
-		public DateTime CreatedAt
+		public DateTime? CreatedAt
 		{
 			get { return createdAt; }
 			set { createdAt = value; }
@@ -76,7 +76,7 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// Time of last modification
 		/// </summary>
-		public DateTime ModifiedAt
+		public DateTime? ModifiedAt
 		{
 			get { return modifiedAt; }
 			set { modifiedAt = value; }
@@ -100,6 +100,11 @@ namespace Smartsheet.Api.Models
 			private string description;
 			private IList<GroupMember> members;
 
+			/// <summary>
+			/// Sets the required attributes for creating a Group.
+			/// </summary>
+			/// <param name="name"> name of group, must be unique within the organization </param>
+			/// <param name="description">description of group </param>
 			public CreateGroupBuilder(string name, string description)
 			{
 				this.name = name;
@@ -139,6 +144,10 @@ namespace Smartsheet.Api.Models
 				return this.members;
 			}
 
+			/// <summary>
+			/// Builds and returns the Group object
+			/// </summary>
+			/// <returns> the Group object built. </returns>
 			public Group Build()
 			{
 				Group group = new Group
