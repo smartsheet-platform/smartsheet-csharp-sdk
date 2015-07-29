@@ -30,6 +30,23 @@ namespace Smartsheet.Api
 	public interface RowAttachmentResources
 	{
 		/// <summary>
+		/// <para>Gets a list of all Attachments that are on the Row, including Row and Discussion level Attachments.</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: <br />
+		/// GET /sheets/{sheetId}/rows/{rowId}/attachments</para>
+		/// </summary>
+		/// <param name="sheetId"> the sheetId </param>
+		/// <param name="rowId"> the row Id </param>
+		/// <param name="paging"> the paging </param>
+		/// <returns> list of all Attachments that are in the Discussion. </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		PaginatedResult<Attachment> ListAttachments(long sheetId, long rowId, PaginationParameters paging);
+
+		/// <summary>
 		/// <para>Attaches a file to the Row.</para>
 		/// <para>This operation will always create a new attachment.
 		/// To upload a new version of the same attachment, use the Attach New Version operation.</para>
@@ -39,7 +56,7 @@ namespace Smartsheet.Api
 		/// <param name="sheetId"> the sheetId </param>
 		/// <param name="rowId"> the row Id </param>
 		/// <param name="file"> the file path </param>
-		/// <param name="fileType"> the file type </param>
+		/// <param name="fileType"> the file type, can be null </param>
 		/// <returns> the newly created Attachment </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
