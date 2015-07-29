@@ -20,10 +20,25 @@ using System.Collections.Generic;
 
 namespace Smartsheet.Api
 {
-	using Attachment = Api.Models.Attachment;
+	using Smartsheet.Api.Models;
 
 	public interface DiscussionAttachmentResources
 	{
+		/// <summary>
+		/// <para>Gets a list of all Attachments that are in the Discussion</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: <br />
+		/// GET /sheets/{sheetId}/discussions/{discussionId}/attachments</para>
+		/// </summary>
+		/// <param name="sheetId"> the sheetId </param>
+		/// <param name="discussionId"> the discussion Id </param>
+		/// <param name="paging"> the paging </param>
+		/// <returns> list of all Attachments that are in the Discussion. </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		PaginatedResult<Attachment> ListAttachments(long sheetId, long discussionId, PaginationParameters paging);
 	}
-
 }
