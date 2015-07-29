@@ -28,6 +28,7 @@ namespace Smartsheet.Api.Internal
 	using Smartsheet.Api.Internal.Http;
 	using System.Net;
 	using System;
+	using System.Text;
 
 	/// <summary>
 	/// This is the implementation of the RowAttachmentResources.
@@ -44,6 +45,31 @@ namespace Smartsheet.Api.Internal
 		public RowAttachmentResourcesImpl(SmartsheetImpl smartsheet)
 			: base(smartsheet)
 		{
+		}
+
+		/// <summary>
+		/// <para>Gets a list of all Attachments that are on the Row, including Row and Discussion level Attachments.</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: <br />
+		/// GET /sheets/{sheetId}/rows/{rowId}/attachments</para>
+		/// </summary>
+		/// <param name="sheetId"> the sheetId </param>
+		/// <param name="rowId"> the row Id </param>
+		/// <param name="paging"> the paging </param>
+		/// <returns> list of all Attachments that are in the Discussion. </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public virtual PaginatedResult<Attachment> ListAttachments(long sheetId, long rowId, PaginationParameters paging)
+		{
+			StringBuilder path = new StringBuilder("sheets/" + sheetId + "/rows/" + rowId + "/attachments");
+			if (paging != null)
+			{
+				path.Append(paging.ToQueryString());
+			}
+			return this.ListResourcesWithWrapper<Attachment>(path.ToString());
 		}
 
 		/// <summary>
@@ -106,8 +132,11 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		private Attachment AttachFile(string path, string file, string contentType)
 		{
-			Utility.Utility.ThrowIfNull(file, contentType);
-
+			Utility.Utility.ThrowIfNull(path, file);
+			if (contentType == null)
+			{
+				contentType = "application/octet-stream";
+			}
 			FileInfo fi = new FileInfo(file);
 			HttpRequest request = CreateHttpRequest(new Uri(this.Smartsheet.BaseURI, path), HttpMethod.POST);
 
