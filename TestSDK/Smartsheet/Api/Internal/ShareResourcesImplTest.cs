@@ -47,7 +47,7 @@ namespace Smartsheet.Api.Internal
 		{
 			server.setResponseBody("../../../TestSDK/resources/getShare.json");
 
-			Share share = shareResourcesImpl.GetShare(1234L, 12344L);
+			Share share = shareResourcesImpl.GetShare(1234L, "12sdf3fg44L");
 
 			Assert.AreEqual(null, share.Email);
 			Assert.AreEqual(2331373580117892, share.GroupId);
@@ -143,7 +143,7 @@ namespace Smartsheet.Api.Internal
 		{
 			server.setResponseBody("../../../TestSDK/resources/updateShare.json");
 			Share share = new Share.UpdateShareBuilder(AccessLevel.VIEWER).Build();
-			Share newShare = shareResourcesImpl.UpdateShare(1234L, 123454L, share);
+			Share newShare = shareResourcesImpl.UpdateShare(1234L, "12dfgfg34sdf54L", share);
 			Assert.AreEqual(share.AccessLevel, newShare.AccessLevel);
 			Assert.AreEqual(newShare.UserId, 1539725208119172);
 		}
@@ -153,7 +153,7 @@ namespace Smartsheet.Api.Internal
 		{
 			server.setResponseBody("../../../TestSDK/resources/deleteShare.json");
 
-			shareResourcesImpl.DeleteShare(1234L, 142124L);
+			shareResourcesImpl.DeleteShare(1234L, "1dfg42124hgL");
 		}
 
 	}
