@@ -75,7 +75,7 @@ namespace Smartsheet.Api
 		/// </list>
 		/// </para>
 		/// </summary>
-		/// <param name="objectIds">(required): a comma-separated list of object IDs representing the items to remove from Favorites</param>
+		/// <param name="objectIds">(required): object IDs representing the items to remove from Favorites. If type is "template", only private sheet-type template ID is allowed.</param>
 		/// <param name="type">the object type to remove </param>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
