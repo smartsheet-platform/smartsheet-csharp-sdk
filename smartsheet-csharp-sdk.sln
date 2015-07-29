@@ -16,7 +16,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{E2B77A
 		.nuget\packages.config = .nuget\packages.config
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationTestSDK", "..\IntegrationTestSDK\IntegrationTestSDK.csproj", "{A67F9A93-7640-43F9-85F8-91C7CE082104}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationTestSDK", "IntegrationTestSDK\IntegrationTestSDK.csproj", "{A67F9A93-7640-43F9-85F8-91C7CE082104}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
