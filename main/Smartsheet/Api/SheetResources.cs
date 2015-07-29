@@ -338,7 +338,7 @@ namespace Smartsheet.Api
 		SheetDiscussionResources DiscussionResources();
 
 		/// <summary>
-		/// <para>Return the SheetCommentResources object that provides access To discussion resources associated with
+		/// <para>Return the SheetCommentResources object that provides access To comment resources associated with
 		/// Sheet resources.</para>
 		/// </summary>
 		/// <returns> the associated discussion resources </returns>
