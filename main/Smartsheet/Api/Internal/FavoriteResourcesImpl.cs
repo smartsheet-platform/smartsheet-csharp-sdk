@@ -94,6 +94,7 @@ namespace Smartsheet.Api.Internal
 
 		/// <summary>
 		/// <para>Removes one or multiple objects from the user’s list of Favorite items.</para>
+		/// <para>objectIds must not be null or empty.</para>
 		/// <para>It mirrors To the following Smartsheet REST API methods: 
 		/// <list type="bullets">
 		/// <item>DELETE /favorites/folder</item>
@@ -114,7 +115,12 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual void RemoveFavorites(ObjectType type, IList<long> objectIds)
 		{
-			this.DeleteResource<Favorite>("favorites/" + Enum.GetName(typeof(ObjectType), type), typeof(Favorite));
+			StringBuilder path = new StringBuilder("favorites/" + Enum.GetName(typeof(ObjectType), type).ToLower());
+			if (objectIds != null)
+			{
+				path.Append("?objectIds=" + QueryUtil.GenerateCommaSeparatedList(objectIds));
+			}
+			this.DeleteResource<Favorite>(path.ToString(), typeof(Favorite));
 		}
 	}
 }
