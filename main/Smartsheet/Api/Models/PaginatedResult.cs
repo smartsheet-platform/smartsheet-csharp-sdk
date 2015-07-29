@@ -59,7 +59,7 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// The total number of pages in the full result set.
+		/// The total number of items in the full result set.
 		/// </summary>
 		public int? TotalCount
 		{
@@ -68,7 +68,7 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// The total number of items in the full result set.
+		/// The total number of pages in the full result set.
 		/// </summary>
 		public int? TotalPages
 		{
