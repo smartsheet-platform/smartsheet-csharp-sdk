@@ -40,7 +40,7 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// ID of the favorited item. If type is “template”, only private sheet-type template ID is allowed.
+		/// ID of the favorited item. If type is "template", only private sheet-type template ID is allowed.
 		/// </summary>
 		public long? ObjectId
 		{
@@ -56,12 +56,21 @@ namespace Smartsheet.Api.Models
 			private ObjectType? type;
 			private long? objectId;
 
+			/// <summary>
+			/// Sets the required propeties for createing a Favorite.
+			/// </summary>
+			/// <param name="type"> the object type </param>
+			/// <param name="objectId"> ID of the favorited item. If type is "template", only private sheet-type template ID is allowed.</param>
 			public AddFavoriteBuilder(ObjectType? type, long? objectId)
 			{
 				this.type = type;
 				this.objectId = objectId;
 			}
 
+			/// <summary>
+			/// Builds and returns the Favorite object.
+			/// </summary>
+			/// <returns> the Favorite object </returns>
 			public Favorite Build()
 			{
 				return new Favorite
