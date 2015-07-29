@@ -40,7 +40,7 @@ namespace Smartsheet.Api
 		/// GET /sheets/{sheetId}/shares <br />
 		/// GET /reports/{reportId}/shares</para>
 		/// </summary>
-		/// <param name="objectId"> the object Id </param>
+		/// <param name="objectId"> the object Id, (report, sheet, or workspace)  </param>
 		/// <param name="paging"> the pagination request </param>
 		/// <returns> the list of Share objects (note that an empty list will be returned if there is none). </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
@@ -69,7 +69,7 @@ namespace Smartsheet.Api
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		Share GetShare(long objectId, long shareId);
+		Share GetShare(long objectId, string shareId);
 
 		/// <summary>
 		/// <para>Shares a Sheet with the specified Users and Groups.</para>
@@ -79,7 +79,7 @@ namespace Smartsheet.Api
 		/// POST /sheets/{sheetId}/shares<br />
 		/// POST /reports/{reportId}/shares</para>
 		/// </summary>
-		/// <param name="objectId"> the Id of the object </param>
+		/// <param name="objectId"> the Id of the object, (report, sheet, or workspace) </param>
 		/// <param name="shares"> the share objects </param>
 		/// <param name="sendEmail">(optional): Either true or false to indicate whether or not
 		/// to notify the user by email. Default is false.</param>
@@ -158,7 +158,7 @@ namespace Smartsheet.Api
 		/// PUT /sheets/{sheetId}/shares/{shareId}<br />
 		/// PUT /reports/{reportId}/shares/{shareId}</para>
 		/// </summary>
-		/// <param name="objectId"> the ID of the object To share </param>
+		/// <param name="objectId"> the ID of the object To share, (report, sheet, or workspace)  </param>
 		/// <param name="shareId"> the Id of the share instance </param>
 		/// <param name="share"> the share </param>
 		/// <returns> the updated share (note that if there is no such resource, this method will throw
@@ -169,7 +169,7 @@ namespace Smartsheet.Api
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		Share UpdateShare(long objectId, long shareId, Share share);
+		Share UpdateShare(long objectId, string shareId, Share share);
 
 		/// <summary>
 		/// <para>Delete a share.</para>
@@ -178,7 +178,7 @@ namespace Smartsheet.Api
 		/// DELETE /sheets/{sheetId}/shares/{shareId}<br />
 		/// DELETE /reports/{reportId}/shares/{shareId}</para>
 		/// </summary>
-		/// <param name="objectId"> the ID of the object To share </param>
+		/// <param name="objectId"> the ID of the object To share, (report, sheet, or workspace)  </param>
 		/// <param name="shareId"> the ID of the user To whome the object is shared </param>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -186,7 +186,7 @@ namespace Smartsheet.Api
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		void DeleteShare(long objectId, long shareId);
+		void DeleteShare(long objectId, string shareId);
 	}
 
 }
