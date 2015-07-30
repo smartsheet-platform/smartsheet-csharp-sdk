@@ -74,7 +74,8 @@ namespace Smartsheet.Api
 		/// </summary>
 		/// <param name="sheetId"> the sheet Id to copy from </param>
 		/// <param name="include"> objects to include </param>
-		/// <param name="ignoreRowsNotFound"> ignoreRowsNotFound </param>
+		/// <param name="ignoreRowsNotFound"> default is false. If set to true, specifying row Ids that do not exist within the source sheet will not cause an error response.
+		/// If omitted or set to false, specifying row Ids that do not exist within the source sheet will cause an error response (and no rows will be copied). </param>
 		/// <param name="directive"> directive </param>
 		/// <returns> CopyOrMoveRowResult object </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
@@ -83,7 +84,7 @@ namespace Smartsheet.Api
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		CopyOrMoveRowResult CopyRowsToAnotherSheet(long sheetId, IEnumerable<CopyRowInclusion> include, bool? ignoreRowsNotFound, CopyOrMoveRowDirective directive);
+		CopyOrMoveRowResult CopyRowsToAnotherSheet(long sheetId, CopyOrMoveRowDirective directive, IEnumerable<CopyRowInclusion> include, bool? ignoreRowsNotFound);
 
 		/// <summary>
 		/// <para>Deletes the Row specified in the URL.</para>
@@ -110,7 +111,8 @@ namespace Smartsheet.Api
 		/// Parent-child relationships amongst rows will be preserved within the destination sheet.</para></remarks>
 		/// </summary>
 		/// <param name="sheetId"> the sheet Id to move from </param>
-		/// <param name="ignoreRowsNotFound"> ignoreRowsNotFound </param>
+		/// <param name="ignoreRowsNotFound"> default is false. If set to true, specifying row Ids that do not exist within the source sheet will not cause an error response.
+		/// If omitted or set to false, specifying row Ids that do not exist within the source sheet will cause an error response (and no rows will be copied). </param>
 		/// <param name="directive"> directive </param>
 		/// <returns> CopyOrMoveRowResult object </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
@@ -119,7 +121,7 @@ namespace Smartsheet.Api
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		CopyOrMoveRowResult MoveRowsToAnotherSheet(long sheetId, IEnumerable<MoveRowInclusion> include, bool? ignoreRowsNotFound, CopyOrMoveRowDirective directive);
+		CopyOrMoveRowResult MoveRowsToAnotherSheet(long sheetId, CopyOrMoveRowDirective directive, IEnumerable<MoveRowInclusion> include, bool? ignoreRowsNotFound);
 
 		/// <summary>
 		/// <para>Sends a Row via email.</para>
@@ -155,10 +157,22 @@ namespace Smartsheet.Api
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		IList<Row> UpdateRows(long sheetId, IEnumerable<Row> rows);
 
+		/// <summary>
+		/// Returns the RowAttachmentResources object that provides access To attachment resources associated with Row Resources.
+		/// </summary>
+		/// <returns> the RowAttachmentResources </returns>
 		RowAttachmentResources AttachmentResources();
 
+		/// <summary>
+		/// Returns the RowDiscussionResources object that provides access To discussion resources associated with Row Resources.
+		/// </summary>
+		/// <returns> the RowDiscussionResources </returns>
 		RowDiscussionResources DiscussionResources();
 
+		/// <summary>
+		/// Returns the RowColumnResources object that provides access To column resources associated with Row Resources (Cell Resources).
+		/// </summary>
+		/// <returns> the RowColumnResources </returns>
 		RowColumnResources CellResources();
 	}
 }
