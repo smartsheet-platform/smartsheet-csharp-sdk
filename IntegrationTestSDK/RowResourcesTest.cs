@@ -49,7 +49,7 @@ namespace IntegrationTestSDK
 			long tempSheetId = smartsheet.SheetResources().CreateSheet(new Sheet.CreateSheetBuilder("tempSheet", new Column[] { new Column.CreateSheetColumnBuilder("col1", true, ColumnType.TEXT_NUMBER).Build() }).Build()).Id.Value;
 			CopyOrMoveRowDestination destination = new CopyOrMoveRowDestination { SheetId = tempSheetId };
 			CopyOrMoveRowDirective directive = new CopyOrMoveRowDirective { RowIds = new long[] { rowId }, To = destination };
-			CopyOrMoveRowResult result = smartsheet.SheetResources().RowResources().CopyRowsToAnotherSheet(sheetId, new CopyRowInclusion[] { CopyRowInclusion.CHILDREN }, false, directive);
+			CopyOrMoveRowResult result = smartsheet.SheetResources().RowResources().CopyRowsToAnotherSheet(sheetId, directive, new CopyRowInclusion[] { CopyRowInclusion.CHILDREN }, false);
 		}
 
 		private static long AddRows(SmartsheetClient smartsheet, long sheetId, long columnId, Cell[] cellsToAdd)
