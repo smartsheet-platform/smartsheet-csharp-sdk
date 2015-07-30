@@ -31,6 +31,8 @@ namespace Smartsheet.Api.Internal
 	/// </summary>
 	public class FolderResourcesImpl : AbstractResources, FolderResources
 	{
+		private FolderSheetResources sheets;
+
 		/// <summary>
 		/// Constructor.
 		/// </summary>
@@ -39,6 +41,7 @@ namespace Smartsheet.Api.Internal
 		public FolderResourcesImpl(SmartsheetImpl smartsheet)
 			: base(smartsheet)
 		{
+			this.sheets = new FolderSheetResourcesImpl(smartsheet);
 		}
 
 		/// <summary>
@@ -144,6 +147,15 @@ namespace Smartsheet.Api.Internal
 		public virtual Folder CreateFolder(long folderId, Folder folder)
 		{
 			return this.CreateResource<Folder>("folders/" + folderId + "/folders", typeof(Folder), folder);
+		}
+
+		/// <summary>
+		/// <para>Return the SheetResources object that provides access To Sheet resources associated with Folder resources.</para>
+		/// </summary>
+		/// <returns> the SheetResources object </returns>
+		public virtual FolderSheetResources SheetResources()
+		{
+			return this.sheets;
 		}
 	}
 
