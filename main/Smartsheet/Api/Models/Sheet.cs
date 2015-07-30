@@ -143,8 +143,8 @@ namespace Smartsheet.Api.Models
 			/// Sets the required propeties for creating a Sheet from a Sheet or Template.
 			/// </summary>
 			/// <param name="fromId">the ID of the Sheet or Template from which to create the Sheet</param>
-			/// <param name="name"> the name of the Sheet of the Template, need not be unique </param>
-			public CreateSheetFromTemplateBuilder(long? fromId, string name)
+			/// <param name="name"> the name of the Sheet, need not be unique </param>
+			public CreateSheetFromTemplateBuilder(string name, long? fromId)
 			{
 				this.fromId = fromId;
 				this.name = name;
