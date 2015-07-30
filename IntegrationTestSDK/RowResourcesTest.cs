@@ -76,7 +76,7 @@ namespace IntegrationTestSDK
 		private static long CreateSheetFromTemplate(SmartsheetClient smartsheet, long templateId)
 		{
 			// Create a new sheet off of that template.
-			Sheet newSheet = smartsheet.SheetResources().CreateSheetFromTemplate(new Sheet.CreateSheetFromTemplateBuilder(templateId, "New Sheet").Build(), new TemplateInclusion[] { TemplateInclusion.DATA });
+			Sheet newSheet = smartsheet.SheetResources().CreateSheetFromTemplate(new Sheet.CreateSheetFromTemplateBuilder("New Sheet", templateId).Build(), new TemplateInclusion[] { TemplateInclusion.DATA });
 			return newSheet.Id.Value;
 		}
 	}
