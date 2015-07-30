@@ -124,8 +124,11 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
 		private Attachment AttachFile(string path, string file, string contentType)
 		{
-			Utility.Utility.ThrowIfNull(file, contentType);
-
+			Utility.Utility.ThrowIfNull(file);
+			if (contentType == null)
+			{
+				contentType = "application/octet-stream";
+			}
 			FileInfo fi = new FileInfo(file);
 			HttpRequest request = CreateHttpRequest(new Uri(this.Smartsheet.BaseURI, path), HttpMethod.POST);
 
