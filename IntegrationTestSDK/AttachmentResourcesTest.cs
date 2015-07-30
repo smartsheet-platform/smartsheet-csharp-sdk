@@ -28,9 +28,25 @@ namespace IntegrationTestSDK
 
 			GetAttachment(smartsheet, sheetId, attachmentId);
 
+			AttachNewVersion(smartsheet, sheetId, attachmentId);
+
+			ListAttachmentVersions(smartsheet, sheetId, attachmentId);
+
+
 			DeleteAttachment(smartsheet, sheetId, attachmentId);
 
 			smartsheet.SheetResources().DeleteSheet(sheetId);
+		}
+
+		private static void ListAttachmentVersions(SmartsheetClient smartsheet, long sheetId, long attachmentId)
+		{
+			PaginatedResult<Attachment> attachmentVersions = smartsheet.SheetResources().AttachmentResources().VersioningResources().ListVersions(sheetId, attachmentId, null);
+			Assert.IsTrue(attachmentVersions.Data.Count == 2);
+		}
+
+		private void AttachNewVersion(SmartsheetClient smartsheet, long sheetId, long attachmentId)
+		{
+			smartsheet.SheetResources().AttachmentResources().VersioningResources().AttachNewVersion(sheetId, attachmentId, path, "text/plain");
 		}
 
 		private static void ListRowAttachments(SmartsheetClient smartsheet, long sheetId, long rowId)
@@ -62,18 +78,20 @@ namespace IntegrationTestSDK
 		private void GetAttachment(SmartsheetClient smartsheet, long sheetId, long attachmentId)
 		{
 			Attachment attachment = smartsheet.SheetResources().AttachmentResources().GetAttachment(sheetId, attachmentId);
-			Assert.IsTrue(attachment.Name == "http://www.smartsheet.com");
+			Assert.IsTrue(attachment.Name == "TestFile.txt");
 		}
 
 		private long AttachFileAndUrlToSheet(SmartsheetClient smartsheet, long sheetId)
 		{
-			Attachment attachment = smartsheet.SheetResources().AttachmentResources().AttachFile(sheetId, path, null);
+			Attachment attachToResource = new Attachment.CreateAttachmentBuilder("http://www.smartsheet.com", AttachmentType.LINK).Build();
+			Attachment attachment = smartsheet.SheetResources().AttachmentResources().AttachUrl(sheetId, attachToResource);
+			Assert.IsTrue(attachment.Url == "http://www.smartsheet.com");
+
+			attachment = smartsheet.SheetResources().AttachmentResources().AttachFile(sheetId, path, null);
 			Assert.IsTrue(attachment.AttachmentType == AttachmentType.FILE);
 			Assert.IsTrue(attachment.Name == "TestFile.txt");
 
-			Attachment attachToResource = new Attachment.CreateAttachmentBuilder("http://www.smartsheet.com", AttachmentType.LINK).Build();
-			attachment = smartsheet.SheetResources().AttachmentResources().AttachUrl(sheetId, attachToResource);
-			Assert.IsTrue(attachment.Url == "http://www.smartsheet.com");
+
 			return attachment.Id.Value;
 		}
 
