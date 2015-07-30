@@ -31,7 +31,7 @@ namespace Smartsheet.Api.Models
 		//For now, we are overiding ID.
 		private string id;
 
-		private ShareType type;
+		private ShareType? type;
 
 		private long? userId;
 
@@ -99,7 +99,7 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// The type of this share. One of USER or GROUP.
 		/// </summary>
-		public ShareType Type
+		public ShareType? Type
 		{
 			get { return type; }
 			set { type = value; }
