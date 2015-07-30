@@ -105,6 +105,12 @@ namespace Smartsheet.Api
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		Folder CreateFolder(long folderId, Folder folder);
+
+		/// <summary>
+		/// <para>Return the SheetResources object that provides access To Sheet resources associated with Folder resources.</para>
+		/// </summary>
+		/// <returns> the SheetResources object </returns>
+		FolderSheetResources SheetResources();
 	}
 
 }
