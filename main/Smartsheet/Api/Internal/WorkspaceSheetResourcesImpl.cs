@@ -58,7 +58,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual Sheet CreateSheet(long workspaceId, Sheet sheet)
 		{
-			return this.CreateResource<Sheet>("workspaces/" + workspaceId, typeof(Sheet), sheet);
+			return this.CreateResource<Sheet>("workspaces/" + workspaceId + "/sheets", typeof(Sheet), sheet);
 		}
 
 		/// <summary>
@@ -77,7 +77,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual Sheet CreateSheetFromTemplate(long workspaceId, Sheet sheet, IEnumerable<TemplateInclusion> includes)
 		{
-			StringBuilder path = new StringBuilder("workspaces/" + workspaceId);
+			StringBuilder path = new StringBuilder("workspaces/" + workspaceId + "/sheets");
 			if (includes != null)
 			{
 				path.Append("?include=" + QueryUtil.GenerateCommaSeparatedList(includes));
