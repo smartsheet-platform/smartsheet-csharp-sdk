@@ -15,40 +15,43 @@ namespace IntegrationTestSDK
 		{
 			SmartsheetClient smartsheet = new SmartsheetBuilder().SetAccessToken("47ieup4lwsu9nj34j7kitol7nb").Build();
 			long sheetId = CreateSheet(smartsheet);
-			long reportId = CreateReport(smartsheet);
+			//long reportId = CreateReport(smartsheet);
 			long workspaceId = CreateWorkspace(smartsheet);
 
-			Share share = new Share.ShareToOneBuilder("aditi.nioding@smartsheet.com", AccessLevel.OWNER).Build();
-			string reportShareId = ShareReport(smartsheet, reportId, share);
+			Share share = new Share.ShareToOneBuilder("aditi.nioding@smartsheet.com", AccessLevel.EDITOR).Build();
+			//string reportShareId = ShareReport(smartsheet, reportId, share);
 			string sheetShareId = ShareSheet(smartsheet, sheetId, share);
 			string workspaceShareId = ShareWorkspace(smartsheet, workspaceId, share);
 
-			UpdateObjectShares(smartsheet, sheetId, reportId, workspaceId, reportShareId, sheetShareId, workspaceShareId);
+			UpdateObjectShares(smartsheet, sheetId, workspaceId, sheetShareId, workspaceShareId);
 
-			ListReportShares(smartsheet, reportId);
+			//ListReportShares(smartsheet, reportId);
 			ListSheetShares(smartsheet, sheetId);
 			ListWorkspaceShares(smartsheet, workspaceId);
+
+			smartsheet.SheetResources().DeleteSheet(sheetId);
+			smartsheet.WorkspaceResources().DeleteWorkspace(workspaceId);
 		}
 
 		private static void ListSheetShares(SmartsheetClient smartsheet, long sheetId)
 		{
 			PaginatedResult<Share> shares = smartsheet.SheetResources().ShareResources().ListShares(sheetId, null);
-			Assert.IsTrue(shares.Data.Count == 1);
-			Assert.IsTrue(shares.Data[0].Email == "aditi.nioding@smartsheet.com");
+			Assert.IsTrue(shares.Data.Count == 2);
+			Assert.IsTrue(shares.Data[0].Email == "aditi.nioding@smartsheet.com" || shares.Data[1].Email == "aditi.nioding@smartsheet.com");
 		}
 
 		private static void ListWorkspaceShares(SmartsheetClient smartsheet, long workspaceId)
 		{
 			PaginatedResult<Share> shares = smartsheet.WorkspaceResources().ShareResources().ListShares(workspaceId, null);
-			Assert.IsTrue(shares.Data.Count == 1);
-			Assert.IsTrue(shares.Data[0].Email == "aditi.nioding@smartsheet.com");
+			Assert.IsTrue(shares.Data.Count == 2);
+			Assert.IsTrue(shares.Data[0].Email == "aditi.nioding@smartsheet.com" || shares.Data[1].Email == "aditi.nioding@smartsheet.com");
 		}
 
 		private static void ListReportShares(SmartsheetClient smartsheet, long reportId)
 		{
 			PaginatedResult<Share> shares = smartsheet.ReportResources().ShareResources().ListShares(reportId, null);
-			Assert.IsTrue(shares.Data.Count == 1);
-			Assert.IsTrue(shares.Data[0].Email == "aditi.nioding@smartsheet.com");
+			Assert.IsTrue(shares.Data.Count == 2);
+			Assert.IsTrue(shares.Data[0].Email == "aditi.nioding@smartsheet.com" || shares.Data[1].Email == "aditi.nioding@smartsheet.com");
 		}
 
 		private static string ShareWorkspace(SmartsheetClient smartsheet, long workspaceId, Share share)
@@ -63,18 +66,18 @@ namespace IntegrationTestSDK
 			return sheetShareId;
 		}
 
-		private static string ShareReport(SmartsheetClient smartsheet, long reportId, Share share)
-		{
-			string reportShareId = smartsheet.ReportResources().ShareResources().ShareTo(reportId, new Share[] { share }, true)[0].Id;
-			return reportShareId;
-		}
+		//private static string ShareReport(SmartsheetClient smartsheet, long reportId, Share share)
+		//{
+		//	IList<Share> shares = smartsheet.ReportResources().ShareResources().ShareTo(reportId, new Share[] { share }, true);
+		//	return shares[0].Id;
+		//}
 
-		private static void UpdateObjectShares(SmartsheetClient smartsheet, long sheetId, long reportId, long workspaceId, string reportShareId, string sheetShareId, string workspaceShareId)
+		private static void UpdateObjectShares(SmartsheetClient smartsheet, long sheetId, long workspaceId, string sheetShareId, string workspaceShareId)
 		{
-			Share updatedShare = smartsheet.ReportResources().ShareResources().UpdateShare(reportId, reportShareId, new Share.UpdateShareBuilder(AccessLevel.VIEWER).Build());
+			Share updatedShare = smartsheet.SheetResources().ShareResources().UpdateShare(sheetId, sheetShareId, new Share.UpdateShareBuilder(AccessLevel.VIEWER).Build());
 			Assert.IsTrue(updatedShare.AccessLevel == AccessLevel.VIEWER);
-			updatedShare = smartsheet.SheetResources().ShareResources().UpdateShare(sheetId, sheetShareId, new Share.UpdateShareBuilder(AccessLevel.VIEWER).Build());
-			Assert.IsTrue(updatedShare.AccessLevel == AccessLevel.VIEWER);
+			//updatedShare = smartsheet.ReportResources().ShareResources().UpdateShare(reportId, reportShareId, new Share.UpdateShareBuilder(AccessLevel.VIEWER).Build());
+			//Assert.IsTrue(updatedShare.AccessLevel == AccessLevel.VIEWER);
 			updatedShare = smartsheet.WorkspaceResources().ShareResources().UpdateShare(workspaceId, workspaceShareId, new Share.UpdateShareBuilder(AccessLevel.VIEWER).Build());
 			Assert.IsTrue(updatedShare.AccessLevel == AccessLevel.VIEWER);
 		}
