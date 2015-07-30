@@ -101,5 +101,44 @@ namespace Smartsheet.Api
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		void DeleteGroup(long groupId);
+
+		/// <summary>
+		/// <para>Adds one or more members to a Group.</para>
+		/// <remarks><para>If called with a single GroupMember object, and that group member already exists, error code 1129 will be returned.
+		/// If called with an array of GroupMember objects any users specified in the array that are already group members will be ignored and omitted from the response.</para>
+		/// <para>This operation is only available to group administrators and system administrators.</para>
+		/// <para>This operation is asynchronous, meaning the users may not yet have sharing access to sheets for a period of time after this operation returns.
+		/// For small groups with limited sharing, the operation should complete quickly (within a few seconds).
+		/// For large groups with many shares, this operation could possibly take more than a minute to complete.</para></remarks>
+		/// <para>It mirrors To the following Smartsheet REST API method: POST /groups/{groupId}/members</para>
+		/// </summary>
+		/// <param name="groupId"> the Id of the group </param>
+		/// <param name="groupMembers"> array of Group Member objects </param>
+		/// <returns> the members added to the group </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		IList<GroupMember> AddGroupMembers(long groupId, IEnumerable<GroupMember> groupMembers);
+
+		/// <summary>
+		/// <para>Removes a member from a Group.</para>
+		/// <remarks><para>This operation is only available to group administrators and system administrators.</para>
+		/// <para>This operation is asynchronous, meaning group members may retain their sharing access for a brief period of time after the call returns.
+		/// For small groups with limited sharing, the operation should complete quickly (within a few seconds).
+		/// For large groups with many shares, this operation could possibly take more than a minute to complete.</para></remarks>
+		/// <para>It mirrors To the following Smartsheet REST API method: DELETE /groups/{groupId}/members/{userId}</para>
+		/// </summary>
+		/// <param name="groupId"> the Id of the group </param>
+		/// <param name="userId"> the Id of the user </param>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		void RemoveGroupMember(long groupId, long userId);
 	}
 }
