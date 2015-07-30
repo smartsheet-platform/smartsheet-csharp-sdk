@@ -114,7 +114,7 @@ namespace Smartsheet.Api.Internal
 			StringBuilder path = new StringBuilder(MasterResourceType + "/" + objectId + "/shares");
 			if (sendEmail != null)
 			{
-				path.Append(sendEmail.ToString());
+				path.Append("?sendEmail=" + sendEmail.ToString().ToLower());
 			}
 			return this.PostAndReceiveList<IEnumerable<Share>, Share>(path.ToString(), shares, typeof(Share));
 		}
