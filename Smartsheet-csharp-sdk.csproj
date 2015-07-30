@@ -137,6 +137,7 @@
     <Compile Include="main\Smartsheet\Api\Internal\Util\Util.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\WorkspaceFolderResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\WorkspaceResourcesImpl.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\FolderSheetResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\WorkspaceSheetResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\InvalidRequestException.cs" />
     <Compile Include="main\Smartsheet\Api\Models\AbstractRow.cs" />
@@ -266,6 +267,7 @@
     <Compile Include="main\Smartsheet\Api\UserSheetResources.cs" />
     <Compile Include="main\Smartsheet\Api\WorkspaceFolderResources.cs" />
     <Compile Include="main\Smartsheet\Api\WorkspaceResources.cs" />
+    <Compile Include="main\Smartsheet\Api\FolderSheetResources.cs" />
     <Compile Include="main\Smartsheet\Api\WorkspaceSheetResources.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
