@@ -66,7 +66,7 @@ namespace Smartsheet.Api.Internal
 		{
 			this.folders = new WorkspaceFolderResourcesImpl(smartsheet);
 			this.sheets = new WorkspaceSheetResourcesImpl(smartsheet);
-			this.shares = new ShareResourcesImpl(smartsheet, "workspace");
+			this.shares = new ShareResourcesImpl(smartsheet, "workspaces");
 		}
 
 		/// <summary>
@@ -173,7 +173,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual void DeleteWorkspace(long id)
 		{
-			this.DeleteResource<Workspace>("workspace/" + id, typeof(Workspace));
+			this.DeleteResource<Workspace>("workspaces/" + id, typeof(Workspace));
 		}
 
 		/// <summary>
