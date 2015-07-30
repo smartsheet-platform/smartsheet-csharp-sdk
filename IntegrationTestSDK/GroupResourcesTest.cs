@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Smartsheet.Api;
 using Smartsheet.Api.Models;
+using System.Collections.Generic;
 
 namespace IntegrationTestSDK
 {
@@ -17,11 +18,21 @@ namespace IntegrationTestSDK
 
 			UpdateGroup(smartsheet, groupId);
 
+			AddGroupMember(smartsheet, groupId);
+
 			GetGroup(smartsheet, groupId);
 
 			ListGroups(smartsheet);
 
 			DeleteGroup(smartsheet, groupId);
+		}
+
+		private static void AddGroupMember(SmartsheetClient smartsheet, long groupId)
+		{
+			GroupMember member = new GroupMember.AddGroupMemberBuilder("eric.yan@smartsheet.com").Build();
+			IList<GroupMember> members = smartsheet.GroupResources().AddGroupMembers(groupId, new GroupMember[] { member });
+			Assert.IsTrue(members.Count == 1);
+			Assert.IsTrue(members[0].Email == "eric.yan@smartsheet.com");
 		}
 
 		private static void DeleteGroup(SmartsheetClient smartsheet, long groupId)
