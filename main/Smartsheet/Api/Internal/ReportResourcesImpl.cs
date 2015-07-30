@@ -50,7 +50,7 @@ namespace Smartsheet.Api.Internal
 		public ReportResourcesImpl(SmartsheetImpl smartsheet)
 			: base(smartsheet)
 		{
-			this.shares = new ShareResourcesImpl(smartsheet, "sheets");
+			this.shares = new ShareResourcesImpl(smartsheet, "reports");
 		}
 
 
