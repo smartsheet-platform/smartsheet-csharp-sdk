@@ -39,7 +39,7 @@ namespace Smartsheet.Api
 		/// <param name="sheetId"> the sheet id </param>
 		/// <param name="attachmentId"> the attachment id </param>
 		/// <param name="file"> the file path </param>
-		/// <param name="fileType"> the file type </param>
+		/// <param name="fileType"> the file type, can be null </param>
 		/// <returns> Attachment object for the newly created attachment </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
