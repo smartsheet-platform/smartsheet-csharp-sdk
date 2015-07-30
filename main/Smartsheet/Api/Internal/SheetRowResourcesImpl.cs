@@ -118,7 +118,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public CopyOrMoveRowResult CopyRowsToAnotherSheet(long sheetId, IEnumerable<CopyRowInclusion> include, bool? ignoreRowsNotFound, CopyOrMoveRowDirective directive)
+		public CopyOrMoveRowResult CopyRowsToAnotherSheet(long sheetId, CopyOrMoveRowDirective directive, IEnumerable<CopyRowInclusion> include, bool? ignoreRowsNotFound)
 		{
 			Utility.Utility.ThrowIfNull(directive);
 			StringBuilder path = new StringBuilder("sheets/" + sheetId + "/rows/copy?" + QueryUtil.GenerateCommaSeparatedList(include));
@@ -174,7 +174,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public CopyOrMoveRowResult MoveRowsToAnotherSheet(long sheetId, IEnumerable<MoveRowInclusion> include, bool? ignoreRowsNotFound, CopyOrMoveRowDirective directive)
+		public CopyOrMoveRowResult MoveRowsToAnotherSheet(long sheetId, CopyOrMoveRowDirective directive, IEnumerable<MoveRowInclusion> include, bool? ignoreRowsNotFound)
 		{
 			Utility.Utility.ThrowIfNull(directive);
 			StringBuilder path = new StringBuilder("sheets/" + sheetId + "/rows/move?" + QueryUtil.GenerateCommaSeparatedList(include));
