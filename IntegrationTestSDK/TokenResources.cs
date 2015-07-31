@@ -18,9 +18,9 @@ namespace IntegrationTestSDK
 
 			OAuthFlow oauth = new OAuthFlowBuilder().SetClientId("1tziajulcsbqsswgy37").SetClientSecret("sxouqll7zluvzmact3").SetRedirectURL("smartsheet.com").Build();
 			
-			//oauth.ObtainNewToken(new AuthorizationResult().)
-			
-			//oauth.RevokeTokenAccess(new Token() { AccessToken = ConfigurationManager.AppSettings["accessToken"] });
+			//oauth.ObtainNewToken(authorizationResult);
+			//oauth.RefreshToken(token);
+			//oauth.RevokeTokenAccess(token);
 		}
 	}
 }
