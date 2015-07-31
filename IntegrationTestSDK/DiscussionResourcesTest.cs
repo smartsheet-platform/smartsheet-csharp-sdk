@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Smartsheet.Api;
 using Smartsheet.Api.Models;
 using System.Collections.Generic;
+using System.Configuration;
 
 namespace IntegrationTestSDK
 {
@@ -12,8 +13,9 @@ namespace IntegrationTestSDK
 		[TestMethod]
 		public void TestDiscussionResources()
 		{
-			SmartsheetClient smartsheet = new SmartsheetBuilder().SetAccessToken("47ieup4lwsu9nj34j7kitol7nb").Build();
-			long sheetId = CreateSheet(smartsheet);
+			string accessToken = ConfigurationManager.AppSettings["accessToken"];
+
+			SmartsheetClient smartsheet = new SmartsheetBuilder().SetAccessToken(accessToken).Build(); long sheetId = CreateSheet(smartsheet);
 
 			Discussion discussionToCreate = new Discussion.CreateDiscussionBuilder("A discussion", new Comment.AddCommentBuilder("a comment").Build()).Build();
 			Discussion createdDiscussion = smartsheet.SheetResources().DiscussionResources().CreateDiscussion(sheetId, discussionToCreate);

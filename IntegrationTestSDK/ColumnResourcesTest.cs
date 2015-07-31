@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Smartsheet.Api;
 using Smartsheet.Api.Models;
 using System.Collections.Generic;
+using System.Configuration;
 
 namespace IntegrationTestSDK
 {
@@ -12,8 +13,9 @@ namespace IntegrationTestSDK
 		[TestMethod]
 		public void TestColumnResources()
 		{
-			SmartsheetClient smartsheet = new SmartsheetBuilder().SetAccessToken("47ieup4lwsu9nj34j7kitol7nb").Build();
+			string accessToken = ConfigurationManager.AppSettings["accessToken"];
 
+			SmartsheetClient smartsheet = new SmartsheetBuilder().SetAccessToken(accessToken).Build();
 			long sheetId = CreateSheet(smartsheet);
 			AddColumns(smartsheet, sheetId);
 
