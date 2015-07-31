@@ -19,9 +19,9 @@
 namespace Smartsheet.Api.Internal
 {
 
-	 using System;
+	using System;
 
-	 using SearchResult = Api.Models.SearchResult;
+	using SearchResult = Api.Models.SearchResult;
 
 	/// <summary>
 	/// This is the implementation of the SearchResources.
@@ -37,7 +37,8 @@ namespace Smartsheet.Api.Internal
 		/// Exceptions: - IllegalArgumentException : if any argument is null
 		/// </summary>
 		/// <param name="smartsheet"> the Smartsheet </param>
-		public SearchResourcesImpl(SmartsheetImpl smartsheet) : base(smartsheet)
+		public SearchResourcesImpl(SmartsheetImpl smartsheet)
+			: base(smartsheet)
 		{
 		}
 
@@ -73,8 +74,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual SearchResult SearchSheet(long sheetId, string query)
 		{
-			return this.GetResource<SearchResult>("search/sheets/" + sheetId + "?query=" + Uri.EscapeDataString(query),
-					typeof(SearchResult));
+			return this.GetResource<SearchResult>("search/sheets/" + sheetId + "?query=" + Uri.EscapeDataString(query), typeof(SearchResult));
 		}
 	}
 }
