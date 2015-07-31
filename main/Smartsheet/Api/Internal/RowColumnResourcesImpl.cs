@@ -61,7 +61,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual PaginatedResult<CellHistory> GetCellHistory(long sheetId, long rowId, long columnId, PaginationParameters paging)
 		{
-			StringBuilder path = new StringBuilder("/sheets/" + sheetId + "/rows/{" + rowId + "/columns/" + columnId + "/history");
+			StringBuilder path = new StringBuilder("sheets/" + sheetId + "/rows/" + rowId + "/columns/" + columnId + "/history");
 			if (paging != null)
 			{
 				path.Append(paging.ToQueryString());
