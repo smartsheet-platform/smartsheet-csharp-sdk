@@ -97,11 +97,11 @@ namespace Smartsheet.Api.Internal
 		/// <remarks><para>By default, this operation only returns the top-level items in the Workspace. To load all of the contents, 
 		/// including nested Folders, include the loadAll query string parameter with a value of true.</para>
 		/// <para>If no Folders, Sheets, Reports, or Templates are present in the Workspace, the corresponding attribute 
-		/// (e.g., “folders”, “sheets”) will not be present in the response object.</para></remarks>
+		/// (e.g., "folders", "sheets") will not be present in the response object.</para></remarks>
 		/// </summary>
 		/// <param name="workspaceid">the workspace id</param>
-		/// <param name="loadAll">(optional) – true or false (defaults to false)</param>
-		/// <param name="include">(optional): when specified with a value of “source”, response will include the source for any sheet that was created from another sheet or template</param>
+		/// <param name="loadAll"> Defaults to false. If true, loads all of the contents, including nested Folders. </param>
+		/// <param name="include"> When specified with a value of "source", response will include the source for any sheet that was created from another sheet or template</param>
 		/// <returns> the workspace (note that if there is no such resource, this method will throw ResourceNotFoundException
 		/// rather than returning null) </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
@@ -121,7 +121,7 @@ namespace Smartsheet.Api.Internal
 			{
 				parameters.Add("include", QueryUtil.GenerateCommaSeparatedList(include));
 			}
-			return this.GetResource<Workspace>("workspaces" + workspaceId + QueryUtil.GenerateUrl(null, parameters), typeof(Workspace));
+			return this.GetResource<Workspace>(QueryUtil.GenerateUrl("workspaces/" + workspaceId, parameters), typeof(Workspace));
 		}
 
 		/// <summary>
