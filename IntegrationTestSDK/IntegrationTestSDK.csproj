@@ -53,6 +53,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="CellResourcesTest.cs" />
     <Compile Include="ColumnResourcesTest.cs" />
     <Compile Include="AttachmentResourcesTest.cs" />
     <Compile Include="CommentResourcesTest.cs" />
