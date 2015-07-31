@@ -57,6 +57,7 @@
     <Compile Include="ColumnResourcesTest.cs" />
     <Compile Include="AttachmentResourcesTest.cs" />
     <Compile Include="CommentResourcesTest.cs" />
+    <Compile Include="ServerInformationResourcesTest.cs" />
     <Compile Include="ShareResourcesTest.cs" />
     <Compile Include="HomeResourcesTest.cs" />
     <Compile Include="GroupResourcesTest.cs" />
