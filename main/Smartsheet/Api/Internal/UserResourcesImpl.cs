@@ -130,6 +130,23 @@ namespace Smartsheet.Api.Internal
 		}
 
 		/// <summary>
+		/// <para>Gets the user.</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: GET /users/{userId}</para>
+		/// </summary>
+		/// <param name="userId"> the user Id </param>
+		/// <returns> the user </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public virtual UserProfile GetUser(long userId)
+		{
+			return this.GetResource<UserProfile>("users/" + userId, typeof(UserProfile));
+		}
+
+		/// <summary>
 		/// <para>Update a user.</para>
 		/// <para>It mirrors To the following Smartsheet REST API method: PUT /users/{userId}</para>
 		/// </summary>
