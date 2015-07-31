@@ -146,6 +146,7 @@
     <Compile Include="main\Smartsheet\Api\Models\Group.cs" />
     <Compile Include="main\Smartsheet\Api\Models\GroupMember.cs" />
     <Compile Include="main\Smartsheet\Api\Models\MoveRowInclusion.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\SearchObjectType.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Recipient.cs" />
     <Compile Include="main\Smartsheet\Api\Models\ReportInclusion.cs" />
     <Compile Include="main\Smartsheet\Api\Models\UserModel.cs" />
