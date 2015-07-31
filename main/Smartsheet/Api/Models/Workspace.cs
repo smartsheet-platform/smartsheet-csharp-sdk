@@ -112,7 +112,7 @@ namespace Smartsheet.Api.Models
 			private string workspaceName;
 
 			/// <summary>
-			/// Build workspace with required parameter name.
+			/// Sets the required parameters to create a Workspace.
 			/// </summary>
 			/// <param name="name">the name of the workspace</param>
 			public CreateWorkspaceBuilder(string name)
