@@ -61,6 +61,7 @@
     <Compile Include="HomeResourcesTest.cs" />
     <Compile Include="GroupResourcesTest.cs" />
     <Compile Include="FavoriteResourcesTest.cs" />
+    <Compile Include="WorkspaceResourcesTest.cs" />
     <Compile Include="UserResourcesTest.cs" />
     <Compile Include="ReportResourcesTest.cs" />
     <Compile Include="DiscussionResourcesTest.cs" />
