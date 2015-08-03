@@ -16,6 +16,7 @@
 //    limitations under the License.
 //    %[license]
 
+using Smartsheet.Api.Internal.Util;
 using Smartsheet.Api.Models;
 using System.Collections.Generic;
 
@@ -123,8 +124,11 @@ namespace Smartsheet.Api.Internal
 			{
 				parameters = paging.toDictionary();
 			}
-			parameters.Add("include", Util.QueryUtil.GenerateCommaSeparatedList(include));
-			return this.ListResourcesWithWrapper<Discussion>("sheets/" + sheetId + "/discussions" + Util.QueryUtil.GenerateUrl(null, parameters));
+			if (include != null)
+			{
+				parameters.Add("include", Util.QueryUtil.GenerateCommaSeparatedList(include));
+			}
+			return this.ListResourcesWithWrapper<Discussion>(QueryUtil.GenerateUrl("sheets/" + sheetId + "/discussions", parameters));
 		}
 
 
