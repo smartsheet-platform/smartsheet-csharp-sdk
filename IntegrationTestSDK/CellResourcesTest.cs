@@ -26,6 +26,7 @@ namespace IntegrationTestSDK
 			long rowId = AddRows(smartsheet, sheetId, columnId, cellsToAdd);
 
 			PaginatedResult<CellHistory> histories = smartsheet.SheetResources.RowResources.CellResources.GetCellHistory(sheetId, rowId, columnId, new CellInclusion[] { CellInclusion.COLUMN_TYPE }, null);
+			Assert.IsTrue(histories.Data[0].ColumnType == ColumnType.TEXT_NUMBER);
 			Assert.IsTrue(histories.Data.Count == 1);
 			Assert.IsTrue(histories.Data[0].ColumnId == columnId);
 		}
