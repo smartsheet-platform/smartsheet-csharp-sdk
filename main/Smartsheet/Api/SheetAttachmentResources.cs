@@ -121,6 +121,6 @@ namespace Smartsheet.Api
 		/// Return the AttachmentVersioningResources object that provides access To Versioning resources associated with Attachment resources.
 		/// </summary>
 		/// <returns> the attachment versioning resources </returns>
-		AttachmentVersioningResources VersioningResources();
+		AttachmentVersioningResources VersioningResources { get; }
 	}
 }

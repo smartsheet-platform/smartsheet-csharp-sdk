@@ -13,7 +13,7 @@ namespace IntegrationTestSDK
 		private static string myEmail = "ericyan99@outlook.com";
 
 		[TestMethod]
-		public void TestUserResources()
+		public void TestUserResources
 		{
 			string accessToken = ConfigurationManager.AppSettings["accessToken"];
 
@@ -34,17 +34,17 @@ namespace IntegrationTestSDK
 
 		private static void RemoveUser(SmartsheetClient smartsheet, long userId)
 		{
-			smartsheet.UserResources().RemoveUser(userId, null, null, true);
+			smartsheet.UserResources.RemoveUser(userId, null, null, true);
 		}
 
 		private static void ListUserSheets(SmartsheetClient smartsheet)
 		{
-			PaginatedResult<Sheet> sheets = smartsheet.UserResources().SheetResources().ListSheets();
+			PaginatedResult<Sheet> sheets = smartsheet.UserResources.SheetResources.ListSheets();
 		}
 
 		private static void ListUsers(SmartsheetClient smartsheet)
 		{
-			PaginatedResult<User> users = smartsheet.UserResources().ListUsers(null, null);
+			PaginatedResult<User> users = smartsheet.UserResources.ListUsers(null, null);
 			Assert.IsTrue(users.TotalCount == 2);
 			if (users.Data[0].Email == otherEmail)
 			{
@@ -62,19 +62,19 @@ namespace IntegrationTestSDK
 
 		private static void UpdateUser(SmartsheetClient smartsheet, long userId)
 		{
-			smartsheet.UserResources().UpdateUser(userId, new User.UpdateUserBuilder(false, false).Build());
+			smartsheet.UserResources.UpdateUser(userId, new User.UpdateUserBuilder(false, false).Build());
 		}
 
 		private static void GetMe(SmartsheetClient smartsheet)
 		{
-			UserProfile userMe = smartsheet.UserResources().GetCurrentUser();
+			UserProfile userMe = smartsheet.UserResources.GetCurrentUser();
 			Assert.IsTrue(userMe.FirstName == "Eric");
 			Assert.IsTrue(userMe.Email == myEmail);
 		}
 
 		private static long AddUser(SmartsheetClient smartsheet)
 		{
-			User user = smartsheet.UserResources().AddUser(new User.AddUserBuilder(otherEmail, true, true).Build(), true);
+			User user = smartsheet.UserResources.AddUser(new User.AddUserBuilder(otherEmail, true, true).Build(), true);
 			long userId = user.Id.Value;
 			Assert.IsTrue(user.Admin.Value);
 			Assert.IsTrue(user.LicensedSheetCreator.Value);

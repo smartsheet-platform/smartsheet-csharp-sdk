@@ -110,7 +110,7 @@ namespace Smartsheet.Api
 		/// <para>Return the SheetResources object that provides access To Sheet resources associated with Folder resources.</para>
 		/// </summary>
 		/// <returns> the SheetResources object </returns>
-		FolderSheetResources SheetResources();
+		FolderSheetResources SheetResources { get; }
 	}
 
 }

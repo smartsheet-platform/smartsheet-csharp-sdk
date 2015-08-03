@@ -121,6 +121,6 @@ namespace Smartsheet.Api
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		void SendReport(long reportId, SheetEmail email);
 
-		ShareResources ShareResources();
+		ShareResources ShareResources { get; }
 	}
 }

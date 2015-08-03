@@ -151,9 +151,12 @@ namespace Smartsheet.Api.Internal
 		/// To Attachment resources associated with Discussion resources.</para>
 		/// </summary>
 		/// <returns> the attachment resources object </returns>
-		public virtual DiscussionAttachmentResources AttachmentResources()
+		public virtual DiscussionAttachmentResources AttachmentResources
 		{
-			return this.attachments;
+			get
+			{
+				return this.attachments;
+			}
 		}
 
 		/// <summary>
@@ -161,9 +164,12 @@ namespace Smartsheet.Api.Internal
 		/// To Comment resources associated with Discussion resources.</para>
 		/// </summary>
 		/// <returns> the comment resources object </returns>
-		public virtual DiscussionCommentResources CommentResources()
+		public virtual DiscussionCommentResources CommentResources
 		{
-			return this.comments;
+			get
+			{
+				return this.comments;
+			}
 		}
 	}
 }

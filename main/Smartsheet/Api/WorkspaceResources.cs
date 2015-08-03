@@ -116,21 +116,21 @@ namespace Smartsheet.Api
 		/// resources.</para>
 		/// </summary>
 		/// <returns> the workspace folder resources </returns>
-		WorkspaceFolderResources FolderResources();
+		WorkspaceFolderResources FolderResources { get; }
 
 		/// <summary>
 		/// <para>Return the WorkspaceFolderResources object that provides access To Folder resources associated with Workspace
 		/// resources.</para>
 		/// </summary>
 		/// <returns> the workspace folder resources </returns>
-		WorkspaceSheetResources SheetResources();
+		WorkspaceSheetResources SheetResources { get; }
 
 		/// <summary>
 		/// <para>Return the ShareResources object that provides access To Share resources associated with Workspace 
 		/// resources.</para>
 		/// </summary>
 		/// <returns> the share resources object </returns>
-		ShareResources ShareResources();
+		ShareResources ShareResources { get; }
 	}
 
 }

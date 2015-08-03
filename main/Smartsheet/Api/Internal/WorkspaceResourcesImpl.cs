@@ -181,9 +181,12 @@ namespace Smartsheet.Api.Internal
 		/// resources.</para>
 		/// </summary>
 		/// <returns> the workspace folder resources </returns>
-		public virtual WorkspaceSheetResources SheetResources()
+		public virtual WorkspaceSheetResources SheetResources
 		{
-			return this.sheets;
+			get
+			{
+				return this.sheets;
+			}
 		}
 
 		/// <summary>
@@ -191,18 +194,24 @@ namespace Smartsheet.Api.Internal
 		/// resources.
 		/// </summary>
 		/// <returns> the workspace folder resources </returns>
-		public virtual WorkspaceFolderResources FolderResources()
+		public virtual WorkspaceFolderResources FolderResources
 		{
-			return this.folders;
+			get
+			{
+				return this.folders;
+			}
 		}
 
 		/// <summary>
 		/// Return the ShareResources object that provides access To Share resources associated with Workspace resources.
 		/// </summary>
 		/// <returns> the share resources </returns>
-		public virtual ShareResources ShareResources()
+		public virtual ShareResources ShareResources
 		{
-			return this.shares;
+			get
+			{
+				return this.shares;
+			}
 		}
 	}
 

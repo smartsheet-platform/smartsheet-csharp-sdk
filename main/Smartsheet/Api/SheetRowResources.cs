@@ -161,18 +161,18 @@ namespace Smartsheet.Api
 		/// Returns the RowAttachmentResources object that provides access To attachment resources associated with Row Resources.
 		/// </summary>
 		/// <returns> the RowAttachmentResources </returns>
-		RowAttachmentResources AttachmentResources();
+		RowAttachmentResources AttachmentResources { get; }
 
 		/// <summary>
 		/// Returns the RowDiscussionResources object that provides access To discussion resources associated with Row Resources.
 		/// </summary>
 		/// <returns> the RowDiscussionResources </returns>
-		RowDiscussionResources DiscussionResources();
+		RowDiscussionResources DiscussionResources { get; }
 
 		/// <summary>
 		/// Returns the RowColumnResources object that provides access To column resources associated with Row Resources (Cell Resources).
 		/// </summary>
 		/// <returns> the RowColumnResources </returns>
-		RowColumnResources CellResources();
+		RowColumnResources CellResources { get; }
 	}
 }

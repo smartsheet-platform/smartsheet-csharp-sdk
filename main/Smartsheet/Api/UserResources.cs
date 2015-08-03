@@ -126,6 +126,6 @@ namespace Smartsheet.Api
 		/// User resources.</para>
 		/// </summary>
 		/// <returns> the associated discussion resources </returns>
-		UserSheetResources SheetResources();
+		UserSheetResources SheetResources { get; }
 	}
 }

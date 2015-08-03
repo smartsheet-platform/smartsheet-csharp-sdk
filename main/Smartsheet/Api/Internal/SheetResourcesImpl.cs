@@ -429,27 +429,36 @@ namespace Smartsheet.Api.Internal
 		/// Return the ShareResources object that provides access To Share resources associated with Sheet resources.
 		/// </summary>
 		/// <returns> the ShareResources object </returns>
-		public virtual ShareResources ShareResources()
+		public virtual ShareResources ShareResources
 		{
-			return this.shares;
+			get
+			{
+				return this.shares;
+			}
 		}
 
 		/// <summary>
 		/// Return the SheetRowResources object that provides access To Row resources associated with Sheet resources.
 		/// </summary>
 		/// <returns> the sheet row resources </returns>
-		public virtual SheetRowResources RowResources()
+		public virtual SheetRowResources RowResources
 		{
-			return this.rows;
+			get
+			{
+				return this.rows;
+			}
 		}
 
 		/// <summary>
 		/// Return the SheetColumnResources object that provides access To Column resources associated with Sheet resources.
 		/// </summary>
 		/// <returns> the sheet column resources </returns>
-		public virtual SheetColumnResources ColumnResources()
+		public virtual SheetColumnResources ColumnResources
 		{
-			return this.columns;
+			get
+			{
+				return this.columns;
+			}
 		}
 
 		/// <summary>
@@ -457,9 +466,12 @@ namespace Smartsheet.Api.Internal
 		/// Sheet resources.
 		/// </summary>
 		/// <returns> the associated attachment resources </returns>
-		public virtual SheetAttachmentResources AttachmentResources()
+		public virtual SheetAttachmentResources AttachmentResources
 		{
-			return this.attachments;
+			get
+			{
+				return this.attachments;
+			}
 		}
 
 		/// <summary>
@@ -467,9 +479,12 @@ namespace Smartsheet.Api.Internal
 		/// Sheet resources.
 		/// </summary>
 		/// <returns> the associated discussion resources </returns>
-		public virtual SheetDiscussionResources DiscussionResources()
+		public virtual SheetDiscussionResources DiscussionResources
 		{
-			return this.discussions;
+			get
+			{
+				return this.discussions;
+			}
 		}
 
 		/// <summary>
@@ -477,9 +492,12 @@ namespace Smartsheet.Api.Internal
 		/// Sheet resources.
 		/// </summary>
 		/// <returns> the associated discussion resources </returns>
-		public SheetCommentResources CommentResources()
+		public SheetCommentResources CommentResources
 		{
-			return this.comments;
+			get
+			{
+				return this.comments;
+			}
 		}
 
 		/// <summary>

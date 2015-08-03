@@ -79,9 +79,12 @@ namespace Smartsheet.Api.Internal
 		/// Return the CommentAttachmentResources object that provides access To Attachment resources associated with Comment resources.
 		/// </summary>
 		/// <returns> the Attachment resources </returns>
-		public virtual CommentAttachmentResources AttachmentResources()
+		public virtual CommentAttachmentResources AttachmentResources
 		{
-			return this.attachments;
+			get
+			{
+				return this.attachments;
+			}
 		}
 	}
 }

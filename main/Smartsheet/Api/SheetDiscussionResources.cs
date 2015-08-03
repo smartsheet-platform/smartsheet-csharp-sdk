@@ -114,13 +114,13 @@ namespace Smartsheet.Api
 		/// To Attachment resources associated with Discussion resources.</para>
 		/// </summary>
 		/// <returns> the attachment resources object </returns>
-		DiscussionAttachmentResources AttachmentResources();
+		DiscussionAttachmentResources AttachmentResources { get; }
 
 		/// <summary>
 		/// <para>Return the DiscussionCommentResources object that provides access
 		/// To Comment resources associated with Discussion resources.</para>
 		/// </summary>
 		/// <returns> the comment resources object </returns>
-		DiscussionCommentResources CommentResources();
+		DiscussionCommentResources CommentResources { get; }
 	}
 }

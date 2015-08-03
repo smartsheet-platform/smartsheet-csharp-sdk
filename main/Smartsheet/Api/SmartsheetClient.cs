@@ -29,37 +29,37 @@ namespace Smartsheet.Api
 		/// <para>Returns the HomeResources instance that provides access to Home resources.</para>
 		/// </summary>
 		/// <returns> the home resources instance </returns>
-		HomeResources HomeResources();
+		HomeResources HomeResources { get; }
 
 		/// <summary>
 		/// <para>Returns the WorkspaceResources instance that provides access to Workspace resources.</para>
 		/// </summary>
 		/// <returns> the workspace resources instance </returns>
-		WorkspaceResources WorkspaceResources();
+		WorkspaceResources WorkspaceResources { get; }
 
 		/// <summary>
 		/// <para>Returns the FolderResources instance that provides access to Folder resources.</para>
 		/// </summary>
 		/// <returns> the folder resources instance </returns>
-		FolderResources FolderResources();
+		FolderResources FolderResources { get; }
 
 		/// <summary>
 		/// <para>Returns the TemplateResources instance that provides access to Template resources.</para>
 		/// </summary>
 		/// <returns> the template resources instance </returns>
-		TemplateResources TemplateResources();
+		TemplateResources TemplateResources { get; }
 
 		/// <summary>
 		/// <para>Returns the ReportResources instance that provides access to Report resources.</para>
 		/// </summary>
 		/// <returns> the report resources instance </returns>
-		ReportResources ReportResources();
+		ReportResources ReportResources { get; }
 
 		/// <summary>
 		/// <para>Returns the SheetResources instance that provides access to Sheet resources.</para>
 		/// </summary>
 		/// <returns> the sheet resources instance </returns>
-		SheetResources SheetResources();
+		SheetResources SheetResources { get; }
 
 		///// <summary>
 		///// <para>Returns the ColumnResources instance that provides access to Column resources.</para>
@@ -95,31 +95,31 @@ namespace Smartsheet.Api
 		/// <para>Returns the UserResources instance that provides access to User resources.</para>
 		/// </summary>
 		/// <returns> the user resources instance </returns>
-		UserResources UserResources();
+		UserResources UserResources { get; }
 
 		/// <summary>
 		/// <para>Returns the SearchResources instance that provides access to searching resources.</para>
 		/// </summary>
 		/// <returns> the search resources instance </returns>
-		SearchResources SearchResources();
+		SearchResources SearchResources { get; }
 
 		/// <summary>
 		/// <para>Returns the ServerInfoResources instance that provides access to server information resources.</para>
 		/// </summary>
 		/// <returns> the server info resources instance </returns>
-		ServerInfoResources ServerInfoResources();
+		ServerInfoResources ServerInfoResources { get; }
 
 		/// <summary>
 		/// <para>Returns the GroupResources instance that provides access to group resources.</para>
 		/// </summary>
 		/// <returns> the group resources instance </returns>
-		GroupResources GroupResources();
+		GroupResources GroupResources { get; }
 
 
 		/// <summary>
 		/// <para>Returns the FavoriteResources instance that provides access to favorite resources.</para>
 		/// </summary>
 		/// <returns> the favorite resources instance </returns>
-		FavoriteResources FavoriteResources();
+		FavoriteResources FavoriteResources { get; }
 	}
 }

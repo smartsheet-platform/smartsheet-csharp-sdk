@@ -55,7 +55,7 @@ namespace Smartsheet.Api
 		/// <para>Returns the HomeFolderResources object that provides access To Folder Resources under home.</para>
 		/// </summary>
 		/// <returns> the home folder resources </returns>
-		HomeFolderResources FolderResources();
+		HomeFolderResources FolderResources { get; }
 	}
 
 }

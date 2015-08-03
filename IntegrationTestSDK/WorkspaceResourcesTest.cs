@@ -10,7 +10,7 @@ namespace IntegrationTestSDK
 	public class WorkspaceResourcesTest
 	{
 		[TestMethod]
-		public void TestWorkspaceResources()
+		public void TestWorkspaceResources
 		{
 			string accessToken = ConfigurationManager.AppSettings["accessToken"];
 
@@ -29,10 +29,10 @@ namespace IntegrationTestSDK
 
 		private static void DeleteWorkspace(SmartsheetClient smartsheet, long workspaceId)
 		{
-			smartsheet.WorkspaceResources().DeleteWorkspace(workspaceId);
+			smartsheet.WorkspaceResources.DeleteWorkspace(workspaceId);
 			try
 			{
-				smartsheet.WorkspaceResources().GetWorkspace(workspaceId, null, null);
+				smartsheet.WorkspaceResources.GetWorkspace(workspaceId, null, null);
 				Assert.Fail("Cannot get a workspace that was deleted.");
 			}
 			catch
@@ -43,7 +43,7 @@ namespace IntegrationTestSDK
 
 		private static void ListWorkspaces(SmartsheetClient smartsheet, long workspaceId)
 		{
-			PaginatedResult<Workspace> workspaceResult = smartsheet.WorkspaceResources().ListWorkspaces(null);
+			PaginatedResult<Workspace> workspaceResult = smartsheet.WorkspaceResources.ListWorkspaces(null);
 			Assert.IsTrue(workspaceResult.Data.Count > 0);
 			bool contains = false;
 			foreach (Workspace ws in workspaceResult.Data)
@@ -58,7 +58,7 @@ namespace IntegrationTestSDK
 		}
 		private static void GetWorkspace(SmartsheetClient smartsheet, long workspaceId)
 		{
-			Workspace workspace = smartsheet.WorkspaceResources().GetWorkspace(workspaceId, true, new SourceInclusion[] { SourceInclusion.SOURCE });
+			Workspace workspace = smartsheet.WorkspaceResources.GetWorkspace(workspaceId, true, new SourceInclusion[] { SourceInclusion.SOURCE });
 			Assert.IsTrue(workspace.Id.Value == workspaceId);
 		}
 
@@ -66,7 +66,7 @@ namespace IntegrationTestSDK
 		{
 			Workspace workspace = new Workspace.UpdateWorkspaceBuilder("updated workspace").Build();
 
-			Workspace updatedWorkspace = smartsheet.WorkspaceResources().UpdateWorkspace(workspaceId, workspace);
+			Workspace updatedWorkspace = smartsheet.WorkspaceResources.UpdateWorkspace(workspaceId, workspace);
 
 			Assert.IsTrue(updatedWorkspace.Name == "updated workspace");
 		}
@@ -75,7 +75,7 @@ namespace IntegrationTestSDK
 		{
 			Workspace workspace = new Workspace.CreateWorkspaceBuilder("workspace").Build();
 
-			Workspace createdWorkspace = smartsheet.WorkspaceResources().CreateWorkspace(workspace);
+			Workspace createdWorkspace = smartsheet.WorkspaceResources.CreateWorkspace(workspace);
 			Assert.IsTrue(createdWorkspace.Name == "workspace");
 			return createdWorkspace.Id.Value;
 		}

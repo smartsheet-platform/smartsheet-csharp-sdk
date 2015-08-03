@@ -233,20 +233,29 @@ namespace Smartsheet.Api.Internal
 			return this.PutAndReceiveList<IEnumerable<Row>, Row>("sheets/" + sheetId + "/rows", rows, typeof(Row));
 		}
 
-		public RowAttachmentResources AttachmentResources()
+		public RowAttachmentResources AttachmentResources
 		{
-			return this.attachments;
+			get
+			{
+				return this.attachments;
+			}
 		}
 
-		public RowDiscussionResources DiscussionResources()
+		public RowDiscussionResources DiscussionResources
 		{
-			return this.discussions;
+			get
+			{
+				return this.discussions;
+			}
 		}
 
 
-		public RowColumnResources CellResources()
+		public RowColumnResources CellResources
 		{
-			return this.cells;
+			get
+			{
+				return this.cells;
+			}
 		}
 
 

@@ -12,13 +12,13 @@ namespace IntegrationTestSDK
 	{
 
 		[TestMethod]
-		public void TestServerInfoResources()
+		public void TestServerInfoResources
 		{
 			string accessToken = ConfigurationManager.AppSettings["accessToken"];
 
 			SmartsheetClient smartsheet = new SmartsheetBuilder().SetAccessToken(accessToken).Build();
 
-			ServerInfo info = smartsheet.ServerInfoResources().GetServerInfo();
+			ServerInfo info = smartsheet.ServerInfoResources.GetServerInfo();
 			Assert.IsTrue(info.FeatureInfo != null);
 			Assert.IsTrue(info.Formats != null);
 			Assert.IsTrue(info.SupportedLocales != null);

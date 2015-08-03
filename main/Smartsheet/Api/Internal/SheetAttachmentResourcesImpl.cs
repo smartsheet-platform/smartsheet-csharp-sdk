@@ -75,9 +75,12 @@ namespace Smartsheet.Api.Internal
 			return this.ListResourcesWithWrapper<Attachment>(path.ToString());
 		}
 
-		public virtual AttachmentVersioningResources VersioningResources()
+		public virtual AttachmentVersioningResources VersioningResources
 		{
-			return this.versioning;
+			get
+			{
+				return this.versioning;
+			}
 		}
 
 		/// <summary>

@@ -18,14 +18,14 @@ namespace IntegrationTestSDK
 
 			SmartsheetClient smartsheet = new SmartsheetBuilder().SetAccessToken(accessToken).Build(); long sheetId = CreateSheet(smartsheet);
 
-			PaginatedResult<Column> columnsResult = smartsheet.SheetResources().ColumnResources().ListColumns(sheetId, null, null);
+			PaginatedResult<Column> columnsResult = smartsheet.SheetResources.ColumnResources().ListColumns(sheetId, null, null);
 			long columnId = columnsResult.Data[0].Id.Value;
 
 			Cell[] cellsToAdd = new Cell[] { new Cell.AddCellBuilder(columnId, true).SetValue("hello").SetStrict(false).Build() };
 
 			long rowId = AddRows(smartsheet, sheetId, columnId, cellsToAdd);
 
-			PaginatedResult<CellHistory> histories = smartsheet.SheetResources().RowResources().CellResources().GetCellHistory(sheetId, rowId, columnId, null);
+			PaginatedResult<CellHistory> histories = smartsheet.SheetResources.RowResources().CellResources().GetCellHistory(sheetId, rowId, columnId, null);
 			Assert.IsTrue(histories.Data.Count == 1);
 			Assert.IsTrue(histories.Data[0].ColumnId == columnId);
 		}
@@ -33,7 +33,7 @@ namespace IntegrationTestSDK
 		private static long AddRows(SmartsheetClient smartsheet, long sheetId, long columnId, Cell[] cellsToAdd)
 		{
 			Row row = new Row.AddRowBuilder(true, null, null, null, null).SetCells(cellsToAdd).Build();
-			IList<Row> rows = smartsheet.SheetResources().RowResources().AddRows(sheetId, new Row[] { row });
+			IList<Row> rows = smartsheet.SheetResources.RowResources().AddRows(sheetId, new Row[] { row });
 			Assert.IsTrue(rows.Count == 1);
 			long rowId = rows[0].Id.Value;
 			bool foundValue = false;
@@ -57,7 +57,7 @@ namespace IntegrationTestSDK
 			new Column.CreateSheetColumnBuilder("col 2", false, ColumnType.DATE).Build(),
 			new Column.CreateSheetColumnBuilder("col 3", false, ColumnType.TEXT_NUMBER).Build(),
 			};
-			Sheet createdSheet = smartsheet.SheetResources().CreateSheet(new Sheet.CreateSheetBuilder("new sheet", columnsToCreate).Build());
+			Sheet createdSheet = smartsheet.SheetResources.CreateSheet(new Sheet.CreateSheetBuilder("new sheet", columnsToCreate).Build());
 			Assert.IsTrue(createdSheet.Columns.Count == 3);
 			Assert.IsTrue(createdSheet.Columns[1].Title == "col 2");
 			return createdSheet.Id.Value;

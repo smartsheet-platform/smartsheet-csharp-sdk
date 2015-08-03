@@ -153,9 +153,12 @@ namespace Smartsheet.Api.Internal
 		/// <para>Return the SheetResources object that provides access To Sheet resources associated with Folder resources.</para>
 		/// </summary>
 		/// <returns> the SheetResources object </returns>
-		public virtual FolderSheetResources SheetResources()
+		public virtual FolderSheetResources SheetResources
 		{
-			return this.sheets;
+			get
+			{
+				return this.sheets;
+			}
 		}
 	}
 

@@ -30,7 +30,7 @@ namespace IntegrationTestSDK
 
 		private static void SearchSheet(SmartsheetClient smartsheet, string query, long sheetId)
 		{
-			SearchResult result = smartsheet.SearchResources().SearchSheet(sheetId, query);
+			SearchResult result = smartsheet.SearchResources.SearchSheet(sheetId, query);
 			Assert.IsTrue(result.Results.Count == 1);
 			Assert.IsTrue(result.Results[0].ParentObjectId == sheetId);
 			Assert.IsTrue(result.Results[0].ParentObjectType == ObjectType.SHEET);
@@ -41,7 +41,7 @@ namespace IntegrationTestSDK
 
 		private static void SearchEverywhere(SmartsheetClient smartsheet, string query, long sheetId)
 		{
-			SearchResult result = smartsheet.SearchResources().Search(query);
+			SearchResult result = smartsheet.SearchResources.Search(query);
 			Assert.IsTrue(result.Results.Count == 1);
 			Assert.IsTrue(result.Results[0].ParentObjectId == sheetId);
 			Assert.IsTrue(result.Results[0].ParentObjectType == ObjectType.SHEET);
@@ -51,12 +51,12 @@ namespace IntegrationTestSDK
 
 		private static void AddValuesToSheet(SmartsheetClient smartsheet, long sheetId, string query)
 		{
-			Sheet sheet = smartsheet.SheetResources().GetSheet(sheetId, null, null, null, null, null, null, null);
+			Sheet sheet = smartsheet.SheetResources.GetSheet(sheetId, null, null, null, null, null, null, null);
 			long columnId = sheet.Columns[0].Id.Value;
 			Cell cell = new Cell.AddCellBuilder(columnId, query).SetStrict(false).Build();
 			Row[] rows = new Row[] { new Row.AddRowBuilder(true, null, null, null, false).SetCells(new Cell[] { cell }).Build() };
 
-			smartsheet.SheetResources().RowResources().AddRows(sheetId, rows);
+			smartsheet.SheetResources.RowResources().AddRows(sheetId, rows);
 		}
 
 		private static long CreateSheet(SmartsheetClient smartsheet)
@@ -66,7 +66,7 @@ namespace IntegrationTestSDK
 			new Column.CreateSheetColumnBuilder("col 2", false, ColumnType.DATE).Build(),
 			new Column.CreateSheetColumnBuilder("col 3", false, ColumnType.TEXT_NUMBER).Build(),
 			};
-			Sheet createdSheet = smartsheet.SheetResources().CreateSheet(new Sheet.CreateSheetBuilder("new sheet", columnsToCreate).Build());
+			Sheet createdSheet = smartsheet.SheetResources.CreateSheet(new Sheet.CreateSheetBuilder("new sheet", columnsToCreate).Build());
 			Assert.IsTrue(createdSheet.Columns.Count == 3);
 			Assert.IsTrue(createdSheet.Columns[1].Title == "col 2");
 			return createdSheet.Id.Value;

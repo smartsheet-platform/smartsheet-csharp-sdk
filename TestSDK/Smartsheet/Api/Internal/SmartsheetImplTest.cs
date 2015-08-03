@@ -61,31 +61,31 @@
 		[Test]
 		public virtual void TestHome()
 		{
-			Assert.NotNull(smartsheet.HomeResources());
+			Assert.NotNull(smartsheet.HomeResources);
 		}
 
 		[Test]
 		public virtual void TestWorkspaces()
 		{
-			Assert.NotNull(smartsheet.WorkspaceResources());
+			Assert.NotNull(smartsheet.WorkspaceResources);
 		}
 
 		[Test]
 		public virtual void TestFolders()
 		{
-			Assert.NotNull(smartsheet.FolderResources());
+			Assert.NotNull(smartsheet.FolderResources);
 		}
 
 		[Test]
 		public virtual void TestTemplates()
 		{
-			Assert.NotNull(smartsheet.TemplateResources());
+			Assert.NotNull(smartsheet.TemplateResources);
 		}
 
 		[Test]
 		public virtual void TestSheets()
 		{
-			Assert.NotNull(smartsheet.SheetResources());
+			Assert.NotNull(smartsheet.SheetResources);
 		}
 
 		//[Test]
@@ -121,13 +121,13 @@
 		[Test]
 		public virtual void TestUsers()
 		{
-			Assert.NotNull(smartsheet.UserResources());
+			Assert.NotNull(smartsheet.UserResources);
 		}
 
 		[Test]
 		public virtual void TestSearch()
 		{
-			Assert.NotNull(smartsheet.SearchResources());
+			Assert.NotNull(smartsheet.SearchResources);
 		}
 
 		[Test]

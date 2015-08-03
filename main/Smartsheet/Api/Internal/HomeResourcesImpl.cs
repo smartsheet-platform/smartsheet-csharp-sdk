@@ -46,7 +46,8 @@ namespace Smartsheet.Api.Internal
 		/// Exceptions: - IllegalArgumentException : if any argument is null
 		/// </summary>
 		/// <param name="smartsheet"> the Smartsheet </param>
-		public HomeResourcesImpl(SmartsheetImpl smartsheet) : base(smartsheet)
+		public HomeResourcesImpl(SmartsheetImpl smartsheet)
+			: base(smartsheet)
 		{
 			this.folders = new HomeFolderResourcesImpl(smartsheet);
 		}
@@ -83,9 +84,12 @@ namespace Smartsheet.Api.Internal
 		/// Return the HomeFolderResources object that provides access To Folder resources under home.
 		/// </summary>
 		/// <returns> the home folder resources </returns>
-		public virtual HomeFolderResources FolderResources()
+		public virtual HomeFolderResources FolderResources
 		{
-			return this.folders;
+			get
+			{
+				return this.folders;
+			}
 		}
 
 

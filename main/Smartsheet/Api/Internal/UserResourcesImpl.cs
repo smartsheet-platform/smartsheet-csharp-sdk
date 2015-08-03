@@ -199,9 +199,12 @@ namespace Smartsheet.Api.Internal
 			this.DeleteResource<User>("users/" + userId + QueryUtil.GenerateUrl(null, parameters), typeof(User));
 		}
 
-		public virtual UserSheetResources SheetResources()
+		public virtual UserSheetResources SheetResources
 		{
-			return this.sheets;
-		} 
+			get
+			{
+				return this.sheets;
+			}
+		}
 	}
 }

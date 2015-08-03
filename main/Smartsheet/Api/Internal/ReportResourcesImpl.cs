@@ -212,9 +212,12 @@ namespace Smartsheet.Api.Internal
 			this.CreateResource<SheetEmail>("reports/" + reportId + "/emails", typeof(SheetEmail), email);
 		}
 
-		public virtual ShareResources ShareResources()
+		public virtual ShareResources ShareResources
 		{
-			return this.shares;
+			get
+			{
+				return this.shares;
+			}
 		}
 
 		/// <summary>

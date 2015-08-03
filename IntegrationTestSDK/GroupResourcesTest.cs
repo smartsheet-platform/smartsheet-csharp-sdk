@@ -32,17 +32,17 @@ namespace IntegrationTestSDK
 		private static void AddGroupMember(SmartsheetClient smartsheet, long groupId)
 		{
 			GroupMember member = new GroupMember.AddGroupMemberBuilder("eric.yan@smartsheet.com").Build();
-			IList<GroupMember> members = smartsheet.GroupResources().AddGroupMembers(groupId, new GroupMember[] { member });
+			IList<GroupMember> members = smartsheet.GroupResources.AddGroupMembers(groupId, new GroupMember[] { member });
 			Assert.IsTrue(members.Count == 1);
 			Assert.IsTrue(members[0].Email == "eric.yan@smartsheet.com");
 		}
 
 		private static void DeleteGroup(SmartsheetClient smartsheet, long groupId)
 		{
-			smartsheet.GroupResources().DeleteGroup(groupId);
+			smartsheet.GroupResources.DeleteGroup(groupId);
 			try
 			{
-				smartsheet.GroupResources().GetGroup(groupId);
+				smartsheet.GroupResources.GetGroup(groupId);
 				Assert.Fail("Cannot get a deleted group");
 			}
 			catch
@@ -53,21 +53,21 @@ namespace IntegrationTestSDK
 
 		private static void ListGroups(SmartsheetClient smartsheet)
 		{
-			PaginatedResult<Group> groups = smartsheet.GroupResources().ListGroups(null);
+			PaginatedResult<Group> groups = smartsheet.GroupResources.ListGroups(null);
 			Assert.IsTrue(groups.Data.Count == 1);
 			Assert.IsTrue(groups.Data[0].Name == "a group");
 		}
 
 		private static void GetGroup(SmartsheetClient smartsheet, long groupId)
 		{
-			Group group = smartsheet.GroupResources().GetGroup(groupId);
+			Group group = smartsheet.GroupResources.GetGroup(groupId);
 			Assert.IsTrue(group.Name == "a group");
 			Assert.IsTrue(group.Description == "updated desc");
 		}
 
 		private static void UpdateGroup(SmartsheetClient smartsheet, long groupId)
 		{
-			Group group = smartsheet.GroupResources().UpdateGroup(groupId, new Group.UpdateGroupBuilder().SetDescription("updated desc").Build());
+			Group group = smartsheet.GroupResources.UpdateGroup(groupId, new Group.UpdateGroupBuilder().SetDescription("updated desc").Build());
 
 			Assert.IsTrue(group.Name == "a group");
 			Assert.IsTrue(group.Description == "updated desc");
@@ -77,7 +77,7 @@ namespace IntegrationTestSDK
 		{
 			GroupMember member = new GroupMember.AddGroupMemberBuilder("aditi.nioding@smartsheet.com").Build();
 
-			Group group = smartsheet.GroupResources().CreateGroup(new Group.CreateGroupBuilder("a group", "this is a group").SetMembers(new GroupMember[] { member }).Build());
+			Group group = smartsheet.GroupResources.CreateGroup(new Group.CreateGroupBuilder("a group", "this is a group").SetMembers(new GroupMember[] { member }).Build());
 
 			Assert.IsTrue(group.Name == "a group");
 			return group.Id.Value;

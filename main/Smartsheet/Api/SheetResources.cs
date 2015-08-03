@@ -309,40 +309,40 @@ namespace Smartsheet.Api
 		/// <para>Return the ShareResources object that provides access To Share resources associated with Sheet resources.</para>
 		/// </summary>
 		/// <returns> the share resources object </returns>
-		ShareResources ShareResources();
+		ShareResources ShareResources { get; }
 
 		/// <summary>
 		/// <para>Return the SheetRowResources object that provides access To Row resources associated with Sheet resources.</para>
 		/// </summary>
 		/// <returns> the sheet row resources </returns>
-		SheetRowResources RowResources();
+		SheetRowResources RowResources { get; }
 
 		/// <summary>
 		/// <para>Return the SheetColumnResources object that provides access To Column resources associated with Sheet resources.</para>
 		/// </summary>
 		/// <returns> the sheet column resources </returns>
-		SheetColumnResources ColumnResources();
+		SheetColumnResources ColumnResources { get; }
 
 		/// <summary>
 		/// <para>Return the SheetAttachmentResources object that provides access To attachment resources associated with
 		/// Sheet resources.</para>
 		/// </summary>
 		/// <returns> the associated attachment resources </returns>
-		SheetAttachmentResources AttachmentResources();
+		SheetAttachmentResources AttachmentResources { get; }
 
 		/// <summary>
 		/// <para>Return the SheetDiscussionResources object that provides access To discussion resources associated with
 		/// Sheet resources.</para>
 		/// </summary>
 		/// <returns> the associated discussion resources </returns>
-		SheetDiscussionResources DiscussionResources();
+		SheetDiscussionResources DiscussionResources { get; }
 
 		/// <summary>
 		/// <para>Return the SheetCommentResources object that provides access To comment resources associated with
 		/// Sheet resources.</para>
 		/// </summary>
 		/// <returns> the associated discussion resources </returns>
-		SheetCommentResources CommentResources();
+		SheetCommentResources CommentResources { get; }
 	}
 
 }

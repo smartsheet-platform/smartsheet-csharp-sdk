@@ -323,40 +323,52 @@ namespace Smartsheet.Api.Internal
 		/// Returns the HomeResources instance that provides access To Home resources.
 		/// </summary>
 		/// <returns> the home resources </returns>
-		public virtual HomeResources HomeResources()
+		public virtual HomeResources HomeResources
 		{
-			Interlocked.CompareExchange<HomeResources>(ref home, new HomeResourcesImpl(this), null);
-			return home;
+			get
+			{
+				Interlocked.CompareExchange<HomeResources>(ref home, new HomeResourcesImpl(this), null);
+				return home;
+			}
 		}
 
 		/// <summary>
 		/// Returns the WorkspaceResources instance that provides access To Workspace resources.
 		/// </summary>
 		/// <returns> the workspace resources </returns>
-		public virtual WorkspaceResources WorkspaceResources()
+		public virtual WorkspaceResources WorkspaceResources
 		{
-			Interlocked.CompareExchange<WorkspaceResources>(ref workspaces, new WorkspaceResourcesImpl(this), null);
-			return workspaces;
+			get
+			{
+				Interlocked.CompareExchange<WorkspaceResources>(ref workspaces, new WorkspaceResourcesImpl(this), null);
+				return workspaces;
+			}
 		}
 
 		/// <summary>
 		/// Returns the FolderResources instance that provides access To Folder resources.
 		/// </summary>
 		/// <returns> the folder resources </returns>
-		public virtual FolderResources FolderResources()
+		public virtual FolderResources FolderResources
 		{
-			Interlocked.CompareExchange<FolderResources>(ref folders, new FolderResourcesImpl(this), null);
-			return folders;
+			get
+			{
+				Interlocked.CompareExchange<FolderResources>(ref folders, new FolderResourcesImpl(this), null);
+				return folders;
+			}
 		}
 
 		/// <summary>
 		/// Returns the TemplateResources instance that provides access To Template resources.
 		/// </summary>
 		/// <returns> the template resources </returns>
-		public virtual TemplateResources TemplateResources()
+		public virtual TemplateResources TemplateResources
 		{
-			Interlocked.CompareExchange<TemplateResources>(ref templates, new TemplateResourcesImpl(this), null);
-			return templates;
+			get
+			{
+				Interlocked.CompareExchange<TemplateResources>(ref templates, new TemplateResourcesImpl(this), null);
+				return templates;
+			}
 		}
 
 
@@ -364,20 +376,26 @@ namespace Smartsheet.Api.Internal
 		/// Returns the TemplateResources instance that provides access To Template resources.
 		/// </summary>
 		/// <returns> the template resources </returns>
-		public virtual ReportResources ReportResources()
+		public virtual ReportResources ReportResources
 		{
-			Interlocked.CompareExchange<ReportResources>(ref reports, new ReportResourcesImpl(this), null);
-			return reports;
+			get
+			{
+				Interlocked.CompareExchange<ReportResources>(ref reports, new ReportResourcesImpl(this), null);
+				return reports;
+			}
 		}
 
 		/// <summary>
 		/// Returns the SheetResources instance that provides access To Sheet resources.
 		/// </summary>
 		/// <returns> the sheet resources </returns>
-		public virtual SheetResources SheetResources()
+		public virtual SheetResources SheetResources
 		{
-			Interlocked.CompareExchange<SheetResources>(ref sheets, new SheetResourcesImpl(this), null);
-			return sheets;
+			get
+			{
+				Interlocked.CompareExchange<SheetResources>(ref sheets, new SheetResourcesImpl(this), null);
+				return sheets;
+			}
 		}
 
 		///// <summary>
@@ -434,50 +452,65 @@ namespace Smartsheet.Api.Internal
 		/// Returns the UserResources instance that provides access To User resources.
 		/// </summary>
 		/// <returns> the user resources </returns>
-		public virtual UserResources UserResources()
+		public virtual UserResources UserResources
 		{
-			Interlocked.CompareExchange<UserResources>(ref users, new UserResourcesImpl(this), null);
-			return users;
+			get
+			{
+				Interlocked.CompareExchange<UserResources>(ref users, new UserResourcesImpl(this), null);
+				return users;
+			}
 		}
 
 		/// <summary>
 		/// Returns the SearchResources instance that provides access To searching resources.
 		/// </summary>
 		/// <returns> the search resources </returns>
-		public virtual SearchResources SearchResources()
+		public virtual SearchResources SearchResources
 		{
-			Interlocked.CompareExchange<SearchResources>(ref search, new SearchResourcesImpl(this), null);
-			return search;
+			get
+			{
+				Interlocked.CompareExchange<SearchResources>(ref search, new SearchResourcesImpl(this), null);
+				return search;
+			}
 		}
 
 		/// <summary>
 		/// Returns the ServerInfoResources instance that provides access To server information resources.
 		/// </summary>
 		/// <returns> the server information resources </returns>
-		public virtual ServerInfoResources ServerInfoResources()
+		public virtual ServerInfoResources ServerInfoResources
 		{
-			Interlocked.CompareExchange<ServerInfoResources>(ref serverInfo, new ServerInfoResourcesImpl(this), null);
-			return serverInfo;
+			get
+			{
+				Interlocked.CompareExchange<ServerInfoResources>(ref serverInfo, new ServerInfoResourcesImpl(this), null);
+				return serverInfo;
+			}
 		}
 
 		/// <summary>
 		/// Returns the GroupResources instance that provides access To group resources.
 		/// </summary>
 		/// <returns> the group resources </returns>
-		public virtual GroupResources GroupResources()
+		public virtual GroupResources GroupResources
 		{
-			Interlocked.CompareExchange<GroupResources>(ref groups, new GroupResourcesImpl(this), null);
-			return groups;
+			get
+			{
+				Interlocked.CompareExchange<GroupResources>(ref groups, new GroupResourcesImpl(this), null);
+				return groups;
+			}
 		}
 
 		/// <summary>
 		/// Returns the FavoriteResources instance that provides access To favorite resources.
 		/// </summary>
 		/// <returns> the favorite resources </returns>
-		public virtual FavoriteResources FavoriteResources()
+		public FavoriteResources FavoriteResources
 		{
-			Interlocked.CompareExchange<FavoriteResources>(ref favorites, new FavoriteResourcesImpl(this), null);
-			return favorites;
+			get
+			{
+				Interlocked.CompareExchange<FavoriteResources>(ref favorites, new FavoriteResourcesImpl(this), null);
+				return favorites;
+			}
 		}
 	}
 }

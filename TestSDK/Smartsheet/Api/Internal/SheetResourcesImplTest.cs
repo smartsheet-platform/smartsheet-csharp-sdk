@@ -280,31 +280,31 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestShares()
 		{
-			sheetResource.ShareResources();
+			Assert.IsNotNull(sheetResource.ShareResources);
 		}
 
 		[Test]
 		public virtual void TestRows()
 		{
-			sheetResource.RowResources();
+			Assert.IsNotNull(sheetResource.RowResources);
 		}
 
 		[Test]
 		public virtual void TestColumns()
 		{
-			sheetResource.ColumnResources();
+			Assert.IsNotNull(sheetResource.ColumnResources);
 		}
 
 		[Test]
 		public virtual void TestAttachments()
 		{
-			sheetResource.AttachmentResources();
+			Assert.IsNotNull(sheetResource.AttachmentResources);
 		}
 
 		[Test]
 		public virtual void TestDiscussions()
 		{
-			sheetResource.DiscussionResources();
+			Assert.IsNotNull(sheetResource.DiscussionResources);
 		}
 
 		//[Test]
