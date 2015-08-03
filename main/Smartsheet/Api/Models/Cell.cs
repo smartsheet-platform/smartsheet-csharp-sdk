@@ -30,7 +30,7 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// Represents the column Type.
 		/// </summary>
-		private ColumnType? type;
+		private ColumnType? columnType;
 
 		/// <summary>
 		/// Represents the Value.
@@ -100,15 +100,15 @@ namespace Smartsheet.Api.Models
 		/// Gets the column Type.
 		/// </summary>
 		/// <returns> the Type </returns>
-		public virtual ColumnType? Type
+		public virtual ColumnType? ColumnType
 		{
 			get
 			{
-				return type;
+				return columnType;
 			}
 			set
 			{
-				this.type = value;
+				this.columnType = value;
 			}
 		}
 
