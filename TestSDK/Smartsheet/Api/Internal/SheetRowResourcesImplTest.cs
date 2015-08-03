@@ -103,7 +103,7 @@ namespace Smartsheet.Api.Internal
 			Assert.AreEqual(rows[1].ParentId, 4624744004773764);
 			Assert.AreEqual(rows[1].Expanded, true);
 			Assert.AreEqual(rows[1].CreatedAt.Value.ToString(), DateTime.Parse("2015-01-09T11:41:55-08:00").ToString());
-			Assert.AreEqual(rows[1].Cells[1].Type, ColumnType.PICKLIST);
+			Assert.AreEqual(rows[1].Cells[1].ColumnType, ColumnType.PICKLIST);
 			Assert.AreEqual(rows[1].Cells[1].Value, rows[1].Cells[1].DisplayValue);
 		}
 	}
