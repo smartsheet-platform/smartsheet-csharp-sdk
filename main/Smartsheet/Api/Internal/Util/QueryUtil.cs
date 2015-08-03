@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Smartsheet.Api.Internal.Util
 {
@@ -17,10 +18,27 @@ namespace Smartsheet.Api.Internal.Util
 				return string.Empty;
 			}
 
+			Regex regex = new Regex(@"[^_]+");
 			List<string> includesList = new List<string>();
 			foreach (T element in include)
 			{
-				includesList.Add(element.ToString().ToLower());
+				// Converts the enum members to camel case to be passed in the url as a parameter.
+				// For example, 'COLUMN_TYPE' becomes 'columnType' and is appended to the path.
+				// Different from JsonEnymTypeConverter because this does not involve serialization/deserialization.
+				MatchCollection matches = regex.Matches(element.ToString());
+				List<string> values = new List<string>();
+				foreach (Match match in matches)
+				{
+					if (values.Count == 0)
+					{
+						values.Add(match.Value.ToLower());
+					}
+					else
+					{
+						values.Add(match.Value.Substring(0, 1).ToUpper() + match.Value.Substring(1).ToLower());
+					}
+				}
+				includesList.Add(string.Join(string.Empty, values));
 			}
 			return string.Join(",", includesList);
 		}
