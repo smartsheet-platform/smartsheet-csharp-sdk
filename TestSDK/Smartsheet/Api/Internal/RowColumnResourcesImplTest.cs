@@ -23,12 +23,12 @@ namespace Smartsheet.Api.Internal
 		{
 			server.setResponseBody("../../../TestSDK/resources/getCellHistory.json");
 
-			PaginatedResult<CellHistory> histories = cellResources.GetCellHistory(1231654654, 313213132, 4555465465, null);
+			PaginatedResult<CellHistory> histories = cellResources.GetCellHistory(1231654654, 313213132, 4555465465, null, null);
 
 			Assert.IsTrue(histories.TotalCount == 3);
 			Assert.IsTrue(histories.Data[0].ColumnId == 642523719853956);
 			Assert.IsTrue(histories.Data[1].DisplayValue == "Revision 2");
-			Assert.IsTrue(histories.Data[1].Type == ColumnType.TEXT_NUMBER);
+			Assert.IsTrue(histories.Data[1].ColumnType == ColumnType.TEXT_NUMBER);
 			Assert.IsTrue(histories.Data[0].ModifiedBy.Email == "jane.smart@smartsheet.com");
 		}
 	}
