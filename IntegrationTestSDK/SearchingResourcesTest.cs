@@ -56,7 +56,7 @@ namespace IntegrationTestSDK
 			Cell cell = new Cell.AddCellBuilder(columnId, query).SetStrict(false).Build();
 			Row[] rows = new Row[] { new Row.AddRowBuilder(true, null, null, null, false).SetCells(new Cell[] { cell }).Build() };
 
-			smartsheet.SheetResources.RowResources().AddRows(sheetId, rows);
+			smartsheet.SheetResources.RowResources.AddRows(sheetId, rows);
 		}
 
 		private static long CreateSheet(SmartsheetClient smartsheet)

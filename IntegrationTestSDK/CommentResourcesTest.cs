@@ -39,10 +39,10 @@ namespace IntegrationTestSDK
 		private static void DeleteComment(SmartsheetClient smartsheet, long sheetId, long commentId)
 		{
 
-			smartsheet.SheetResources.CommentResources().DeleteComment(sheetId, commentId);
+			smartsheet.SheetResources.CommentResources.DeleteComment(sheetId, commentId);
 			try
 			{
-				smartsheet.SheetResources.CommentResources().GetComment(sheetId, commentId);
+				smartsheet.SheetResources.CommentResources.GetComment(sheetId, commentId);
 				Assert.Fail("Cannot get deleted comment");
 			}
 			catch
@@ -53,14 +53,14 @@ namespace IntegrationTestSDK
 
 		private static void GetComment(SmartsheetClient smartsheet, long sheetId, long commentId)
 		{
-			Comment getComment = smartsheet.SheetResources.CommentResources().GetComment(sheetId, commentId);
+			Comment getComment = smartsheet.SheetResources.CommentResources.GetComment(sheetId, commentId);
 			Assert.IsTrue(getComment.Id.Value == commentId);
 			Assert.IsTrue(getComment.Text == "commented2");
 		}
 
 		private long AddCommentWithAttachment(SmartsheetClient smartsheet, long sheetId, long discussionId)
 		{
-			Comment addedCommentWithAttachment = smartsheet.SheetResources.DiscussionResources().CommentResources()
+			Comment addedCommentWithAttachment = smartsheet.SheetResources.DiscussionResources.CommentResources
 			.AddCommentWithAttachment(sheetId, discussionId, new Comment.AddCommentBuilder("commented2").Build(), path, null);
 			//Assert.IsTrue(addedCommentWithAttachment.DiscussionId == discussionId);
 			Assert.IsTrue(addedCommentWithAttachment.Text == "commented2");
@@ -72,7 +72,7 @@ namespace IntegrationTestSDK
 
 		private static void AddCommentWithoutAttachment(SmartsheetClient smartsheet, long sheetId, long discussionId)
 		{
-			Comment addedComment = smartsheet.SheetResources.DiscussionResources().CommentResources()
+			Comment addedComment = smartsheet.SheetResources.DiscussionResources.CommentResources
 			.AddComment(sheetId, discussionId, new Comment.AddCommentBuilder("commented").Build());
 			//Assert.IsTrue(addedComment.DiscussionId == discussionId);
 			Assert.IsTrue(addedComment.Text == "commented");
@@ -81,7 +81,7 @@ namespace IntegrationTestSDK
 		private static long CreateDiscussion(SmartsheetClient smartsheet, long sheetId)
 		{
 			Comment commentToAdd = new Comment.AddCommentBuilder("this is a comment").Build();
-			Discussion discussion = smartsheet.SheetResources.DiscussionResources().CreateDiscussion(sheetId, new Discussion.CreateDiscussionBuilder("a discussion", commentToAdd).Build());
+			Discussion discussion = smartsheet.SheetResources.DiscussionResources.CreateDiscussion(sheetId, new Discussion.CreateDiscussionBuilder("a discussion", commentToAdd).Build());
 			long discussionId = discussion.Id.Value;
 			return discussionId;
 		}

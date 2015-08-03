@@ -10,7 +10,7 @@ namespace IntegrationTestSDK
 	public class WorkspaceResourcesTest
 	{
 		[TestMethod]
-		public void TestWorkspaceResources
+		public void TestWorkspaceResources()
 		{
 			string accessToken = ConfigurationManager.AppSettings["accessToken"];
 

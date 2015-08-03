@@ -13,7 +13,7 @@ namespace IntegrationTestSDK
 		private static string myEmail = "ericyan99@outlook.com";
 
 		[TestMethod]
-		public void TestUserResources
+		public void TestUserResources()
 		{
 			string accessToken = ConfigurationManager.AppSettings["accessToken"];
 

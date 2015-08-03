@@ -12,7 +12,7 @@ namespace IntegrationTestSDK
 	{
 
 		[TestMethod]
-		public void TestServerInfoResources
+		public void TestServerInfoResources()
 		{
 			string accessToken = ConfigurationManager.AppSettings["accessToken"];
 
