@@ -62,7 +62,7 @@ namespace Smartsheet.Api.Internal
 		{
 			server.setResponseBody("../../../TestSDK/resources/shareToOne.json");
 
-			Share share = new Share.ShareToOneBuilder("jane.doe@smartsheet.com", AccessLevel.EDITOR).Build();
+			Share share = new Share.CreateShareBuilder("jane.doe@smartsheet.com", AccessLevel.EDITOR).Build();
 			IList<Share> shares = shareResourcesImpl.ShareTo(1234L, new Share[] { share }, true);
 
 			Assert.AreEqual("jane.doe@smartsheet.com", shares[0].Email);

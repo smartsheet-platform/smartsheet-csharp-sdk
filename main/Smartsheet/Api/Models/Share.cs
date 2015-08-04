@@ -156,7 +156,7 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// A convenience class for creating a <seealso cref="Share"/> with the necessary fields for sharing the sheet To one user.
 		/// </summary>
-		public class ShareToOneBuilder
+		public class CreateShareBuilder
 		{
 			private AccessLevel? accessLevel;
 			private string email;
@@ -166,13 +166,13 @@ namespace Smartsheet.Api.Models
 			private bool? ccMe;
 
 
-			public ShareToOneBuilder(string email, AccessLevel? accessLevel)
+			public CreateShareBuilder(string email, AccessLevel? accessLevel)
 			{
 				this.email = email;
 				this.accessLevel = accessLevel;
 			}
 
-			public ShareToOneBuilder(long? groupId, AccessLevel? accessLevel)
+			public CreateShareBuilder(long? groupId, AccessLevel? accessLevel)
 			{
 				this.groupId = groupId;
 				this.accessLevel = accessLevel;
@@ -183,7 +183,7 @@ namespace Smartsheet.Api.Models
 			/// </summary>
 			/// <param name="accessLevel"> the access level </param>
 			/// <returns> the share To one builder </returns>
-			public virtual ShareToOneBuilder SetAccessLevel(AccessLevel? accessLevel)
+			public virtual CreateShareBuilder SetAccessLevel(AccessLevel? accessLevel)
 			{
 				this.accessLevel = accessLevel;
 				return this;
@@ -195,7 +195,7 @@ namespace Smartsheet.Api.Models
 			/// </summary>
 			/// <param name="email"> the Email </param>
 			/// <returns> the share To one builder </returns>
-			public virtual ShareToOneBuilder SetEmail(string email)
+			public virtual CreateShareBuilder SetEmail(string email)
 			{
 				this.email = email;
 				return this;
@@ -207,7 +207,7 @@ namespace Smartsheet.Api.Models
 			/// </summary>
 			/// <param name="groupId"> the groupId </param>
 			/// <returns> the share To one builder </returns>
-			public virtual ShareToOneBuilder SetGroupId(long? groupId)
+			public virtual CreateShareBuilder SetGroupId(long? groupId)
 			{
 				this.groupId = groupId;
 				return this;
@@ -218,7 +218,7 @@ namespace Smartsheet.Api.Models
 			/// </summary>
 			/// <param name="subject"> the subject </param>
 			/// <returns> the share To one builder </returns>
-			public virtual ShareToOneBuilder SetSubject(string subject)
+			public virtual CreateShareBuilder SetSubject(string subject)
 			{
 				this.subject = subject;
 				return this;
@@ -229,7 +229,7 @@ namespace Smartsheet.Api.Models
 			/// </summary>
 			/// <param name="message"> the message </param>
 			/// <returns> the share To one builder </returns>
-			public virtual ShareToOneBuilder SetAccessLevel(string message)
+			public virtual CreateShareBuilder SetAccessLevel(string message)
 			{
 				this.message = message;
 				return this;
@@ -240,7 +240,7 @@ namespace Smartsheet.Api.Models
 			/// </summary>
 			/// <param name="ccMe"> the ccMe </param>
 			/// <returns> the share To one builder </returns>
-			public virtual ShareToOneBuilder SetCcMe(bool? ccMe)
+			public virtual CreateShareBuilder SetCcMe(bool? ccMe)
 			{
 				this.ccMe = ccMe;
 				return this;

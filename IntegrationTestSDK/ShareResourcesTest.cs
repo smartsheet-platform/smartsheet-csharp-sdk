@@ -22,7 +22,7 @@ namespace IntegrationTestSDK
 			//long reportId = CreateReport(smartsheet);
 			long workspaceId = CreateWorkspace(smartsheet);
 
-			Share share = new Share.ShareToOneBuilder("aditi.nioding@smartsheet.com", AccessLevel.EDITOR).Build();
+			Share share = new Share.CreateShareBuilder("aditi.nioding@smartsheet.com", AccessLevel.EDITOR).Build();
 			//string reportShareId = ShareReport(smartsheet, reportId, share);
 			string sheetShareId = ShareSheet(smartsheet, sheetId, share);
 			string workspaceShareId = ShareWorkspace(smartsheet, workspaceId, share);
