@@ -34,14 +34,14 @@
             "cells": [
                 {
                     "virtualColumnId": 4583173393803140,
-                    "type": "TEXT_NUMBER",
+                    "columnType": "TEXT_NUMBER",
                     "value": "My Sheet",
                     "displayValue": "My Sheet"
                 },
                 {
                     "columnId": 8467747974735748,
                     "virtualColumnId": 2331373580117892,
-                    "type": "TEXT_NUMBER",
+                    "columnType": "TEXT_NUMBER",
                     "value": "In Progress",
                     "displayValue": "In Progress"
                 }

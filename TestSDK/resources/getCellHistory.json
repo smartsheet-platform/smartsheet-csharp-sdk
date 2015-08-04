@@ -7,7 +7,7 @@
         {
             "columnId":642523719853956,
             "displayValue": "Revision 3",
-            "type": "TEXT_NUMBER",
+            "columnType": "TEXT_NUMBER",
             "value": "Revision 3",
             "modifiedAt": "2013-06-24T00:10:18Z",
             "modifiedBy" : {
@@ -18,7 +18,7 @@
         {
             "columnId":642523719853956,
             "displayValue": "Revision 2",
-            "type": "TEXT_NUMBER",
+            "columnType": "TEXT_NUMBER",
             "value": "Revision 2",
             "modifiedAt": "2013-06-23T00:10:18Z",
             "modifiedBy" : {
@@ -29,7 +29,7 @@
         {
             "columnId":642523719853956,
             "displayValue": "Revision 1",
-            "type": "TEXT_NUMBER",
+            "columnType": "TEXT_NUMBER",
             "value": "Revision 1",
             "modifiedAt": "2013-06-22T00:10:18Z",
             "modifiedBy" : {

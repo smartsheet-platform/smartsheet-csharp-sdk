@@ -12,19 +12,19 @@
             "cells": [
                 {
                     "columnId": 7518312134403972,
-                    "type": "TEXT_NUMBER",
+                    "columnType": "TEXT_NUMBER",
                     "value": "desc_updated",
                     "displayValue": "desc_updated"
                 },
                 {
                     "columnId": 1888812600190852,
-                    "type": "PICKLIST",
+                    "columnType": "PICKLIST",
                     "value": "B",
                     "displayValue": "B"
                 },
                 {
                     "columnId": 6392412227561348,
-                    "type": "TEXT_NUMBER",
+                    "columnType": "TEXT_NUMBER",
                     "value": 1,
                     "displayValue": "1"
                 }
@@ -41,19 +41,19 @@
             "cells": [
                 {
                     "columnId": 7518312134403972,
-                    "type": "TEXT_NUMBER",
+                    "columnType": "TEXT_NUMBER",
                     "value": "new value",
                     "displayValue": "desc_updated"
                 },
                 {
                     "columnId": 1888812600190852,
-                    "type": "PICKLIST",
+                    "columnType": "PICKLIST",
                     "value": "A",
                     "displayValue": "A"
                 },
                 {
                     "columnId": 6392412227561348,
-                    "type": "TEXT_NUMBER",
+                    "columnType": "TEXT_NUMBER",
                     "value": 1,
                     "displayValue": "1"
                 }

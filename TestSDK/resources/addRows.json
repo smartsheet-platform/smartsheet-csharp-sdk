@@ -11,13 +11,13 @@
             "cells": [
                 {
                     "columnId": 7960873114331012,
-                    "type": "CHECKBOX",
+                    "columnType": "CHECKBOX",
                     "value": true
                 },
                 {
                     "columnId": 642523719853956,
                     "displayValue": "New status",
-                    "type": "TEXT_NUMBER",
+                    "columnType": "TEXT_NUMBER",
                     "value": "New status"
                 }
             ]
@@ -32,13 +32,13 @@
             "cells": [
                 {
                     "columnId": 7960873114331012,
-                    "type": "CHECKBOX",
+                    "columnType": "CHECKBOX",
                     "value": true
                 },
                 {
                     "columnId": 642523719853956,
                     "displayValue": "New status",
-                    "type": "TEXT_NUMBER",
+                    "columnType": "TEXT_NUMBER",
                     "value": "New status"
                 }
             ]
