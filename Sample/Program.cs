@@ -57,7 +57,7 @@ namespace sdk_csharp_sample
 			SmartsheetClient smartsheet = new SmartsheetBuilder().SetAccessToken(token.AccessToken).Build();
 
 			// Get home
-			Home home = smartsheet.HomeResources.GetHome(new SourceInclusion[] { SourceInclusion.SOURCE });
+			Home home = smartsheet.HomeResources.GetHome(new HomeInclusion[] { HomeInclusion.SOURCE });
 
 			// List home folders
 			IList<Folder> homeFolders = home.Folders;

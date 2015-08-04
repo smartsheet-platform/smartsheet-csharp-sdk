@@ -17,7 +17,7 @@ namespace IntegrationTestSDK
 			string accessToken = ConfigurationManager.AppSettings["accessToken"];
 
 			SmartsheetClient smartsheet = new SmartsheetBuilder().SetAccessToken(accessToken).Build();
-
+			smartsheet.SheetResources.ListSheets(new SheetInclusion[] {SheetInclusion.SOURCE}, )
 			long sheetId = CreateSheet(smartsheet);
 			SendSheet(smartsheet, sheetId);
 			UpdateSheet(smartsheet, sheetId);
@@ -44,6 +44,8 @@ namespace IntegrationTestSDK
 		{
 			BinaryWriter writer = new BinaryWriter(new MemoryStream());
 			smartsheet.SheetResources.GetSheetAsPDF(sheetId, writer, PaperSize.A3);
+			//smartsheet.SheetResources.GetSheetAsExcel(sheetId, writer);
+			//smartsheet.SheetResources.GetSheetAsCSV(sheetId, writer);
 		}
 
 		private static void UpdatePublishSheetStatus(SmartsheetClient smartsheet, long sheetId)

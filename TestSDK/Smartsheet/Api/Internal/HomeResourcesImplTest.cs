@@ -30,7 +30,7 @@ namespace Smartsheet.Api.Internal
 			server.setResponseBody("../../../TestSDK/resources/getHome.json");
 
 			IList<Home> homes = new List<Home>();
-			homes.Add(homeResources.GetHome(new SourceInclusion[] { SourceInclusion.SOURCE }));
+			homes.Add(homeResources.GetHome(new HomeInclusion[] { HomeInclusion.SOURCE }));
 			homes.Add(homeResources.GetHome(null));
 			foreach (Home home in homes)
 			{

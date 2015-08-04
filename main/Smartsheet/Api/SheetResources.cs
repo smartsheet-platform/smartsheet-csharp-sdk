@@ -45,7 +45,7 @@ namespace Smartsheet.Api
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		PaginatedResult<Sheet> ListSheets(IEnumerable<SourceInclusion> includes, PaginationParameters paging);
+		PaginatedResult<Sheet> ListSheets(IEnumerable<SheetInclusion> includes, PaginationParameters paging);
 
 		/// <summary>
 		/// <para>List all Sheets in the organization.</para>
@@ -85,8 +85,8 @@ namespace Smartsheet.Api
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		Sheet GetSheet(
 					long sheetId,
-					IEnumerable<SheetInclusion> includes,
-					IEnumerable<ObjectExclusion> excludes,
+					IEnumerable<SheetLevelInclusion> includes,
+					IEnumerable<SheetLevelExclusion> excludes,
 					IEnumerable<long> rowIds,
 					IEnumerable<int> rowNumbers,
 					IEnumerable<long> columnIds,

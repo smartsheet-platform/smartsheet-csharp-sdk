@@ -16,49 +16,20 @@
 //    limitations under the License.
 //    %[license]
 
-using Newtonsoft.Json;
+using System.Collections.Generic;
 using Newtonsoft.Json.Converters;
 using System.Runtime.Serialization;
 
 namespace Smartsheet.Api.Models
 {
-
-
 	/// <summary>
-	/// Represents specific objects that can be included in Sheet responses.
+	/// Represents specific elements to include in a response.
 	/// </summary>
-	[JsonConverter(typeof(StringEnumConverter))]
-	public enum SheetInclusion
+	public enum ColumnInclusion
 	{
 		/// <summary>
-		/// The discussions
+		/// The filter that the user has applied to the column (if any)
 		/// </summary>
-		[EnumMember(Value = "discussions")]
-		DISCUSSIONS,
-		/// <summary>
-		/// The attachments
-		/// </summary>
-		[EnumMember(Value = "attachments")]
-		ATTACHMENTS,
-		/// <summary>
-		/// The format
-		/// </summary>
-		[EnumMember(Value = "format")]
-		FORMAT,
-		/// <summary>
-		/// The filters
-		/// </summary>
-		[EnumMember(Value = "filters")]
-		FILTERS,
-		/// <summary>
-		/// The columnType
-		/// </summary>
-		[EnumMember(Value = "columnType")]
-		COLUMN_TYPE,
-		/// <summary>
-		/// The source
-		/// </summary>
-		[EnumMember(Value = "source")]
-		SOURCE
+		FILTERS
 	}
 }

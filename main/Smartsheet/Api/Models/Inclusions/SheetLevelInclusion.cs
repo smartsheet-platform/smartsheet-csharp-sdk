@@ -22,33 +22,39 @@ using System.Runtime.Serialization;
 
 namespace Smartsheet.Api.Models
 {
-
-
 	/// <summary>
-	/// Represents specific objects that can be included in Report responses.
+	/// Represents specific elements to include in a response.
 	/// </summary>
-	[JsonConverter(typeof(StringEnumConverter))]
-	public enum ReportInclusion
+	public enum SheetLevelInclusion
 	{
 		/// <summary>
-		/// The discussions
+		/// Includes sheet-level and row-level discussions.
 		/// </summary>
-		[EnumMember(Value = "discussions")]
 		DISCUSSIONS,
+
 		/// <summary>
-		/// The attachments
+		/// Includes sheet-level and row-level attachments.
 		/// </summary>
-		[EnumMember(Value = "attachments")]
 		ATTACHMENTS,
+
 		/// <summary>
-		/// The format
+		/// Includes column, row, and cell formatting.
 		/// </summary>
-		[EnumMember(Value = "format")]
 		FORMAT,
+
 		/// <summary>
-		/// The source
+		/// Includes column filters, and row.filteredOut attribute.
 		/// </summary>
-		[EnumMember(Value = "sourceSheets")]
-		SOURCE_SHEETS
+		FILTERS,
+
+		/// <summary>
+		/// Includes the cells' column types.
+		/// </summary>
+		COLUMN_TYPE,	//columnType
+
+		/// <summary>
+		/// Includes the source object indicating which sheet or template the sheet was created from, if any.
+		/// </summary>
+		SOURCE
 	}
 }

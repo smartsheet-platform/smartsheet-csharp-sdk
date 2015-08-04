@@ -16,22 +16,20 @@
 //    limitations under the License.
 //    %[license]
 
-using Newtonsoft.Json;
+using System.Collections.Generic;
 using Newtonsoft.Json.Converters;
 using System.Runtime.Serialization;
+
 namespace Smartsheet.Api.Models
 {
 	/// <summary>
-	/// Represents filter inclusion
+	/// Represents specific elements to include in a response.
 	/// </summary>
-	[JsonConverter(typeof(StringEnumConverter))]
-	public enum FilterInclusion
+	public enum FolderInclusion
 	{
 		/// <summary>
-		/// Response will include the filter that the user has applied to each column (if any).
+		/// Includes the source for any sheet that was created from another sheet or template
 		/// </summary>
-		[EnumMember(Value = "filters")]
-		FILTERS
+		SOURCE
 	}
-
 }

@@ -22,18 +22,29 @@ using System.Runtime.Serialization;
 
 namespace Smartsheet.Api.Models
 {
-
-
 	/// <summary>
-	/// Represents specific objects that can be excluded in some responses.
+	/// Represents specific elements to include in a response.
 	/// </summary>
-	[JsonConverter(typeof(StringEnumConverter))]
-	public enum ObjectExclusion
+	public enum ReportInclusion
 	{
 		/// <summary>
-		/// The discussions
+		/// Includes the discussions.
 		/// </summary>
-		[EnumMember(Value = "nonexistentCells")]
-		NONEXISTENT_CELLS
+		DISCUSSIONS,
+
+		/// <summary>
+		/// Includes the attachments.
+		/// </summary>
+		ATTACHMENTS,
+
+		/// <summary>
+		/// Includes the format.
+		/// </summary>
+		FORMAT,
+
+		/// <summary>
+		/// Includes the source.
+		/// </summary>
+		SOURCE_SHEETS
 	}
 }

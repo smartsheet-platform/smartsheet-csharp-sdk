@@ -58,7 +58,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual Folder GetFolder(long folderId, IEnumerable<SourceInclusion> include)
+		public virtual Folder GetFolder(long folderId, IEnumerable<FolderInclusion> include)
 		{
 			StringBuilder path = new StringBuilder("folders/" + folderId);
 			if (include != null)

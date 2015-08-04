@@ -58,7 +58,7 @@ namespace IntegrationTestSDK
 		}
 		private static void GetWorkspace(SmartsheetClient smartsheet, long workspaceId)
 		{
-			Workspace workspace = smartsheet.WorkspaceResources.GetWorkspace(workspaceId, true, new SourceInclusion[] { SourceInclusion.SOURCE });
+			Workspace workspace = smartsheet.WorkspaceResources.GetWorkspace(workspaceId, true, new WorkspaceInclusion[] { WorkspaceInclusion.SOURCE });
 			Assert.IsTrue(workspace.Id.Value == workspaceId);
 		}
 

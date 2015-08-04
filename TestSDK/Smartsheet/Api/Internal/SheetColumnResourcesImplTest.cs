@@ -36,7 +36,7 @@ namespace Smartsheet.Api.Internal
 
 			server.setResponseBody("../../../TestSDK/resources/listColumns.json");
 
-			PaginatedResult<Column> result = sheetColumnResourcesImpl.ListColumns(1234L, new List<FilterInclusion> { FilterInclusion.FILTERS }, null);
+			PaginatedResult<Column> result = sheetColumnResourcesImpl.ListColumns(1234L, new List<ColumnInclusion> { ColumnInclusion.FILTERS }, null);
 			Assert.True(result.TotalCount == 9);
 			Assert.AreEqual(result.Data[2].Title, "Start");
 			Assert.IsTrue(result.Data[3].Filter != null);

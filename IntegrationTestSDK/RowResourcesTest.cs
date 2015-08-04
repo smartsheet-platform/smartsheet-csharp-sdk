@@ -38,7 +38,7 @@ namespace IntegrationTestSDK
 			smartsheet.SheetResources.RowResources.DeleteRow(sheetId, rowId);
 			try
 			{
-				smartsheet.SheetResources.RowResources.GetRow(sheetId, rowId, null, null);
+				smartsheet.SheetResources.RowResources.GetRow(sheetId, rowId, new RowInclusion[] { RowInclusion.COLUMNS }, null);
 				Assert.Fail("Cannot get a deleted row.");
 			}
 			catch

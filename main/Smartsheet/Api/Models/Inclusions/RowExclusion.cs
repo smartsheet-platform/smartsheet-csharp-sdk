@@ -19,23 +19,17 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.Runtime.Serialization;
+
 namespace Smartsheet.Api.Models
 {
 	/// <summary>
-	/// Represents the list of row elements to move in addition to the cell data.
+	/// Represents specific elements that can be excluded in a response.
 	/// </summary>
-	[JsonConverter(typeof(StringEnumConverter))]
-	public enum MoveRowInclusion
+	public enum RowExclusion
 	{
 		/// <summary>
-		/// The attachments.
+		/// Excludes the nonexistent cells.
 		/// </summary>
-		[EnumMember(Value = "attachments")]
-		ATTACHMENTS,
-		/// <summary>
-		/// The discussions.
-		/// </summary>
-		[EnumMember(Value = "discussions")]
-		DISCUSSIONS
+		NONEXISTENT_CELLS
 	}
 }

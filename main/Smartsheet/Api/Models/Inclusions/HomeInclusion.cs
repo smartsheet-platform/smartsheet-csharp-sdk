@@ -16,23 +16,20 @@
 //    limitations under the License.
 //    %[license]
 
-using System.Collections.Generic;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using System.ComponentModel;
 
 namespace Smartsheet.Api.Models
 {
 	/// <summary>
-	/// Represents the elements to include in a response
+	/// Represents specific elements to include in a response.
 	/// </summary>
-	public enum CellInclusion
+	public enum HomeInclusion
 	{
 		/// <summary>
-		/// The columnType attribute for a cell.
+		/// Includes the source for any sheet that was created from another sheet or template.
 		/// </summary>
-		[EnumMember(Value = "columnType")]
-		COLUMN_TYPE
+		SOURCE
 	}
 }

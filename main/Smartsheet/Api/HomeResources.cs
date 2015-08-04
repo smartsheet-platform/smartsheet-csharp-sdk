@@ -49,7 +49,7 @@ namespace Smartsheet.Api
 		/// <exception cref="SmartsheetException">if there is any other error occurred during the operation</exception>
 		/// <returns> the resource (note that if there is no such resource, this method will throw ResourceNotFoundException
 		/// rather than returning null). </returns>
-		Home GetHome(IEnumerable<SourceInclusion> includes);
+		Home GetHome(IEnumerable<HomeInclusion> includes);
 
 		/// <summary>
 		/// <para>Returns the HomeFolderResources object that provides access To Folder Resources under home.</para>

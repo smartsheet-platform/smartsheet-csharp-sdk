@@ -31,7 +31,7 @@ namespace Smartsheet.Api.Internal
 			server.setResponseBody("../../../TestSDK/resources/getFolder.json");
 
 			// User can get Folder by specifying a list of FolderInclude enum values or specifying null.
-			Folder folder = folderResource.GetFolder(123L, new List<SourceInclusion> { SourceInclusion.SOURCE });
+			Folder folder = folderResource.GetFolder(123L, new List<FolderInclusion> { FolderInclusion.SOURCE });
 
 			// Verify results
 			Assert.AreEqual("Projects", folder.Name);

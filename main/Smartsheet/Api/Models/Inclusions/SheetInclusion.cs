@@ -16,51 +16,20 @@
 //    limitations under the License.
 //    %[license]
 
-using System.Collections.Generic;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.Runtime.Serialization;
 
 namespace Smartsheet.Api.Models
 {
-
-
 	/// <summary>
-	/// Endpoints which returns rows (e.g. get sheet, get row) support the optional include query string parameter,
-	/// whose value is a comma-delimited list of include flags which if specified, will add additional attributes to the returned Row objects.
+	/// Represents specific elements to include in a response.
 	/// </summary>
-	public enum RowIncludeFlags
+	public enum SheetInclusion
 	{
 		/// <summary>
-		/// The discussions
+		/// Includes the source for any sheet that was created from another sheet or template.
 		/// </summary>
-		[EnumMember(Value = "discussions")]
-		DISCUSSIONS,
-		/// <summary>
-		/// The attachments
-		/// </summary>
-		[EnumMember(Value = "attachments")]
-		ATTACHMENTS,
-		/// <summary>
-		/// The format
-		/// </summary>
-		[EnumMember(Value = "format")]
-		FORMAT,
-		/// <summary>
-		/// The filters
-		/// </summary>
-		[EnumMember(Value = "filters")]
-		FILTERS,
-		/// <summary>
-		/// The columnType
-		/// </summary>
-		[EnumMember(Value = "columnType")]
-		COLUMN_TYPE,
-
-
-		/// <summary>
-		/// The columns
-		/// </summary>
-		[EnumMember(Value = "columns")]
-		COLUMNS
+		SOURCE
 	}
 }

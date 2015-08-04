@@ -16,21 +16,20 @@
 //    limitations under the License.
 //    %[license]
 
-using System.Collections.Generic;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.Runtime.Serialization;
 
 namespace Smartsheet.Api.Models
 {
 	/// <summary>
-	/// Represents the source element to include in a response
+	/// Represents specific elements that can be excluded in a response.
 	/// </summary>
-	public enum SourceInclusion
+	public enum SheetLevelExclusion
 	{
 		/// <summary>
-		/// The source for and object
+		/// Excludes the nonexistent cells.
 		/// </summary>
-		[EnumMember(Value = "source")]
-		SOURCE
+		NONEXISTENT_CELLS
 	}
 }

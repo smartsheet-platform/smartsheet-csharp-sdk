@@ -70,12 +70,12 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="SmartsheetException">if there is any other error occurred during the operation</exception>
 		/// <returns> the resource (note that if there is no such resource, this method will throw ResourceNotFoundException
 		/// rather than returning null). </returns>
-		public virtual Home GetHome(IEnumerable<SourceInclusion> includes)
+		public virtual Home GetHome(IEnumerable<HomeInclusion> includes)
 		{
 			StringBuilder path = new StringBuilder("home");
 			if (includes != null)
 			{
-				path.Append("?include=" + QueryUtil.GenerateCommaSeparatedList<SourceInclusion>(includes));
+				path.Append("?include=" + QueryUtil.GenerateCommaSeparatedList(includes));
 			}
 			return this.GetResource<Home>(path.ToString(), typeof(Home));
 		}

@@ -16,8 +16,8 @@ namespace IntegrationTestSDK
 			string accessToken = ConfigurationManager.AppSettings["accessToken"];
 
 			SmartsheetClient smartsheet = new SmartsheetBuilder().SetAccessToken(accessToken).Build();
-						
-			Home home = smartsheet.HomeResources.GetHome(new SourceInclusion[] { SourceInclusion.SOURCE });
+
+			Home home = smartsheet.HomeResources.GetHome(new HomeInclusion[] { HomeInclusion.SOURCE });
 
 			Assert.IsTrue(home != null);
 		}

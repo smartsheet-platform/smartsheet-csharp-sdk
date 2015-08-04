@@ -16,41 +16,24 @@
 //    limitations under the License.
 //    %[license]
 
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using System.Runtime.Serialization;
-
 namespace Smartsheet.Api.Models
 {
-
-
 	/// <summary>
-	/// Represents specific elements that can be copied from a Template or Sheet into a new Sheet.
+	/// Represents the list of row elements to move in addition to the cell data.
 	/// </summary>
-	public enum TemplateInclusion
+	[JsonConverter(typeof(StringEnumConverter))]
+	public enum MoveRowInclusion
 	{
 		/// <summary>
-		/// The discussions
+		/// The attachments.
 		/// </summary>
-		[EnumMember(Value = "data")]
-		DATA,
-		/// <summary>
-		/// The attachments
-		/// </summary>
-		[EnumMember(Value = "attachments")]
 		ATTACHMENTS,
 		/// <summary>
-		/// The format
+		/// The discussions.
 		/// </summary>
-		[EnumMember(Value = "discussions")]
-		DISCUSSIONS,
-		/// <summary>
-		/// The filters
-		/// </summary>
-		[EnumMember(Value = "cellLinks")]
-		CELL_LINKS,
-		/// <summary>
-		/// The columnType
-		/// </summary>
-		[EnumMember(Value = "forms")]
-		FORMS
+		DISCUSSIONS
 	}
 }
