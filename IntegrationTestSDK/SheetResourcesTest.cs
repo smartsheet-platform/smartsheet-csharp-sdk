@@ -17,7 +17,6 @@ namespace IntegrationTestSDK
 			string accessToken = ConfigurationManager.AppSettings["accessToken"];
 
 			SmartsheetClient smartsheet = new SmartsheetBuilder().SetAccessToken(accessToken).Build();
-			smartsheet.SheetResources.ListSheets(new SheetInclusion[] {SheetInclusion.SOURCE}, )
 			long sheetId = CreateSheet(smartsheet);
 			SendSheet(smartsheet, sheetId);
 			UpdateSheet(smartsheet, sheetId);
