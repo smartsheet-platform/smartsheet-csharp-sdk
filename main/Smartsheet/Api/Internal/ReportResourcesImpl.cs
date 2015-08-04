@@ -89,7 +89,7 @@ namespace Smartsheet.Api.Internal
 				parameters.Add("page", page.ToString());
 			}
 
-			return this.GetResource<Report>("reports/" + reportId + QueryUtil.GenerateUrl(null, parameters), typeof(Report));
+			return this.GetResource<Report>(QueryUtil.GenerateUrl("reports/" + reportId, parameters), typeof(Report));
 		}
 
 		/// <summary>
@@ -128,33 +128,15 @@ namespace Smartsheet.Api.Internal
 		/// </summary>
 		/// <param name="reportId"> the Id of the report </param>
 		/// <param name="outputStream"> the output stream To which the Excel file will be written. </param>
-		/// <param name="include"> the elements to include in the response </param>
-		/// <param name="pageSize"> Number of rows per page. If not specified, the default value is 100. This operation can
-		/// return a maximum of 500 rows per page. </param>
-		/// <param name="page"> Which page number (1-based) to return. If not specified, the default value is 1. If a page
-		/// number is specified that is greater than the number of total pages, the last page will be returned. </param>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual void GetReportAsExcel(long reportId, BinaryWriter outputStream, IEnumerable<ReportInclusion> includes, int? pageSize, int? page)
+		public virtual void GetReportAsExcel(long reportId, BinaryWriter outputStream)
 		{
-			IDictionary<string, string> parameters = new Dictionary<string, string>();
-			if (includes != null)
-			{
-				parameters.Add("include", QueryUtil.GenerateCommaSeparatedList(includes));
-			}
-			if (pageSize != null)
-			{
-				parameters.Add("pageSize", pageSize.ToString());
-			}
-			if (page != null)
-			{
-				parameters.Add("page", page.ToString());
-			}
-			GetReportAsFile("reports/" + reportId + QueryUtil.GenerateUrl(null, parameters), outputStream, "application/vnd.ms-excel");
+			GetReportAsFile("reports/" + reportId, outputStream, "application/vnd.ms-excel");
 		}
 
 		/// <summary>
@@ -165,33 +147,15 @@ namespace Smartsheet.Api.Internal
 		/// </summary>
 		/// <param name="reportId"> the Id of the report </param>
 		/// <param name="outputStream"> the output stream To which the Excel file will be written. </param>
-		/// <param name="include"> the elements to include in the response </param>
-		/// <param name="pageSize"> Number of rows per page. If not specified, the default value is 100. This operation can
-		/// return a maximum of 500 rows per page. </param>
-		/// <param name="page"> Which page number (1-based) to return. If not specified, the default value is 1. If a page
-		/// number is specified that is greater than the number of total pages, the last page will be returned. </param>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual void GetReportAsCSV(long reportId, BinaryWriter outputStream, IEnumerable<ReportInclusion> includes, int? pageSize, int? page)
+		public virtual void GetReportAsCSV(long reportId, BinaryWriter outputStream)
 		{
-			IDictionary<string, string> parameters = new Dictionary<string, string>();
-			if (includes != null)
-			{
-				parameters.Add("include", QueryUtil.GenerateCommaSeparatedList(includes));
-			}
-			if (pageSize != null)
-			{
-				parameters.Add("pageSize", pageSize.ToString());
-			}
-			if (page != null)
-			{
-				parameters.Add("page", page.ToString());
-			}
-			GetReportAsFile("reports/" + reportId + QueryUtil.GenerateUrl(null, parameters), outputStream, "text/csv");
+			GetReportAsFile("reports/" + reportId, outputStream, "text/csv");
 		}
 
 		/// <summary>

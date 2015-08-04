@@ -54,7 +54,7 @@ namespace Smartsheet.Api.Internal
 
 			MemoryStream ms = new MemoryStream();
 			BinaryWriter output = new BinaryWriter(ms);
-			reportResource.GetReportAsExcel(1234L, output, null, null, null );
+			reportResource.GetReportAsExcel(1234L, output);
 
 			Assert.NotNull(output);
 			Assert.True(ms.ToArray().Length > 0);

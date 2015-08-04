@@ -72,18 +72,13 @@ namespace Smartsheet.Api
 		/// </summary>
 		/// <param name="reportId"> the Id of the report </param>
 		/// <param name="outputStream"> the output stream To which the Excel file will be written. </param>
-		/// <param name="include"> the elements to include in the response </param>
-		/// <param name="pageSize"> Number of rows per page. If not specified, the default value is 100. This operation can
-		/// return a maximum of 500 rows per page. </param>
-		/// <param name="page"> Which page number (1-based) to return. If not specified, the default value is 1. If a page
-		/// number is specified that is greater than the number of total pages, the last page will be returned. </param>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		void GetReportAsExcel(long reportId, BinaryWriter outputStream, IEnumerable<ReportInclusion> include, int? pageSize, int? page);
+		void GetReportAsExcel(long reportId, BinaryWriter outputStream);
 
 		/// <summary>
 		/// <para>Get a report as a CSV file.</para>
@@ -93,18 +88,13 @@ namespace Smartsheet.Api
 		/// </summary>
 		/// <param name="reportId"> the Id of the report </param>
 		/// <param name="outputStream"> the output stream To which the Excel file will be written. </param>
-		/// <param name="include"> the elements to include in the response </param>
-		/// <param name="pageSize"> Number of rows per page. If not specified, the default value is 100. This operation can
-		/// return a maximum of 500 rows per page. </param>
-		/// <param name="page"> Which page number (1-based) to return. If not specified, the default value is 1. If a page
-		/// number is specified that is greater than the number of total pages, the last page will be returned. </param>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		void GetReportAsCSV(long reportId, BinaryWriter outputStream, IEnumerable<ReportInclusion> includes, int? pageSize, int? page);
+		void GetReportAsCSV(long reportId, BinaryWriter outputStream);
 
 		/// <summary>
 		/// <para>Send a report as a PDF attachment via Email To the designated recipients.</para>
@@ -121,6 +111,10 @@ namespace Smartsheet.Api
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		void SendReport(long reportId, SheetEmail email);
 
+		/// <summary>
+		/// <para>Return the ShareResources object that provides access To Share resources associated with Report resources.</para>
+		/// </summary>
+		/// <returns> the share resources object </returns>
 		ShareResources ShareResources { get; }
 	}
 }
