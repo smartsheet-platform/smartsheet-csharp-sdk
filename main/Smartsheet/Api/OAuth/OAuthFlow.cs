@@ -88,7 +88,7 @@ namespace Smartsheet.Api.OAuth
 		/// <exception cref="System.UriFormatException"> the URI syntax exception </exception>
 		/// <exception cref="InvalidRequestException"> the invalid request exception </exception>
 		/// <exception cref="System.InvalidOperationException"> if any other error occurred during the operation </exception>
-		void RevokeTokenAccess(Token token);
+		void RevokeToken(Token token);
 	}
 
 }
