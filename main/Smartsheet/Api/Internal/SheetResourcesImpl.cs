@@ -426,6 +426,24 @@ namespace Smartsheet.Api.Internal
 		}
 
 		/// <summary>
+		/// <para>Creates an Update Request for the specified Row(s) within the Sheet. An email notification
+		/// (containing a link to the update request) will be asynchronously sent to the specified recipient(s).</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: POST /sheets/{sheetId}/updaterequests</para>
+		/// </summary>
+		/// <param name="sheetId"> the sheetId </param>
+		/// <param name="email"> the Email </param>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public virtual UpdateRequest SendUpdateRequest(long sheetId, MultiRowEmail email)
+		{
+			return this.CreateResource<RequestResult<UpdateRequest>, MultiRowEmail>("sheets/" + sheetId + "/updaterequests", email).Result;
+		}
+
+		/// <summary>
 		/// <para>Creates a copy of the specified Sheet.</para>
 		/// <para>It mirrors To the following Smartsheet REST API method:<br />
 		/// POST /sheets/{sheetId}/copy</para>
