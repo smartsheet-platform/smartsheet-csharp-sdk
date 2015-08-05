@@ -162,7 +162,7 @@ namespace Smartsheet.Api.Internal.OAuth
 			StringBuilder scopeBuffer = new StringBuilder();
 			foreach (AccessScope scope in scopes)
 			{
-				scopeBuffer.Append(scope.ToString() + ",");
+				scopeBuffer.Append(scope.ToString() + " ");
 			}
 			@params["scope"] = scopeBuffer.ToString().Substring(0, scopeBuffer.Length - 1);
 
@@ -426,7 +426,7 @@ namespace Smartsheet.Api.Internal.OAuth
 		/// <exception cref="System.UriFormatException"> the URI syntax exception </exception>
 		/// <exception cref="InvalidRequestException"> the invalid request exception </exception>
 		/// <exception cref="System.InvalidOperationException"> if any other error occurred during the operation </exception>
-		public virtual void RevokeTokenAccess(Token token)
+		public virtual void RevokeToken(Token token)
 		{
 			// Create the request and send it To get the response/token.
 			HttpRequest request = new HttpRequest();
