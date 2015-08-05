@@ -104,6 +104,9 @@ namespace Smartsheet.Api.Models
 		/// The user's permissions on the sheet. </summary>
 		private AccessLevel? accessLevel;
 
+		private string permalink;
+
+
 		/// <summary>
 		/// Gets the user's permissions on the sheet.
 		/// </summary>
@@ -482,6 +485,16 @@ namespace Smartsheet.Api.Models
 		{
 			get { return inCriticalPath; }
 			set { inCriticalPath = value; }
+		}
+
+		/// <summary>
+		/// URL that represents a direct link to the Row in Smartsheet 
+		/// Only returned if the include query string parameter contains rowPermalink.
+		/// </summary>
+		public string Permalink
+		{
+			get { return permalink; }
+			set { permalink = value; }
 		}
 	}
 }
