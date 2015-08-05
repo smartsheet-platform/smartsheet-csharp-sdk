@@ -107,6 +107,45 @@ namespace Smartsheet.Api
 		Folder CreateFolder(long folderId, Folder folder);
 
 		/// <summary>
+		/// <para>Creates a copy of the specified Folder.</para>
+		/// <para>It mirrors To the following Smartsheet REST API method:<br />
+		/// POST /folders/{folderId}/copy</para>
+		/// </summary>
+		/// <param name="folderId"> the folder Id </param>
+		/// <param name="destination"> the destination to copy to </param>
+		/// <param name="include"> the elements to copy. Note: Cell history will not be copied, regardless of which include parameter values are specified.</param>
+		/// <param name="skipRemap"> the references to NOT re-map for the newly created folder
+		/// <para>
+		/// If “cellLinks” is specified in the skipRemap parameter value, the cell links within the newly created folder will continue to point to the original source sheets.
+		/// If “reports” is specified in the skipRemap parameter value, the reports within the newly created folder will continue to point to the original source sheets.
+		/// </para>
+		/// </param>
+		/// <returns> the created folder </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		Folder CopyFolder(long folderId, ContainerDestination destination, IEnumerable<FolderCopyInclusion> include, IEnumerable<FolderRemapExclusion> skipRemap);
+
+		/// <summary>
+		/// <para>Moves the specified Folder to another location.</para>
+		/// <para>It mirrors To the following Smartsheet REST API method:<br />
+		/// POST /folders/{folderId}/move</para>
+		/// </summary>
+		/// <param name="folderId"> the folder Id </param>
+		/// <param name="destination"> the destination to copy to </param>
+		/// <returns> the moved folder </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		Folder MoveFolder(long folderId, ContainerDestination destination);
+
+		/// <summary>
 		/// <para>Return the SheetResources object that provides access To Sheet resources associated with Folder resources.</para>
 		/// </summary>
 		/// <returns> the SheetResources object </returns>

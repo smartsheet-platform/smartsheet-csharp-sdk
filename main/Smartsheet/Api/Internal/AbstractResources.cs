@@ -255,6 +255,58 @@ namespace Smartsheet.Api.Internal
 		/// <param name="object"> the object To create </param>
 		/// <returns> the created resource </returns>
 		/// <exception cref="SmartsheetException"> the SmartsheetClient exception </exception>
+		protected internal virtual S CreateResource<S, T>(string path, T @object)
+		{
+			Utils.ThrowIfNull(path, @object);
+			Utils.ThrowIfEmpty(path);
+
+			HttpRequest request = null;
+			try
+			{
+				request = CreateHttpRequest(new Uri(smartsheet.BaseURI, path), HttpMethod.POST);
+			}
+			catch (Exception e)
+			{
+				throw new SmartsheetException(e);
+			}
+
+			request.Entity = serializeToEntity<T>(@object);
+
+			HttpResponse response = this.smartsheet.HttpClient.Request(request);
+
+			Object obj = null;
+			switch (response.StatusCode)
+			{
+				case HttpStatusCode.OK:
+					obj = this.smartsheet.JsonSerializer.deserialize<T>(
+						response.Entity.GetContent());
+					break;
+				default:
+					HandleError(response);
+					break;
+			}
+
+			smartsheet.HttpClient.ReleaseConnection();
+
+			return (S)obj;
+		}
+
+		/// <summary>
+		/// Create a resource using SmartsheetClient REST API.
+		/// 
+		/// Exceptions: 
+		///   IllegalArgumentException : if any argument is null, or path is empty string
+		///   InvalidRequestException : if there is any problem with the REST API request
+		///   AuthorizationException : if there is any problem with the REST API authorization(access token)
+		///   ServiceUnavailableException : if the REST API service is not available (possibly due To rate limiting)
+		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
+		///   SmartsheetException : if there is any other error occurred during the operation
+		/// </summary>
+		/// <param name="path"> the relative path of the resource collections </param>
+		/// <param name="objectClass"> the resource object class </param>
+		/// <param name="object"> the object To create </param>
+		/// <returns> the created resource </returns>
+		/// <exception cref="SmartsheetException"> the SmartsheetClient exception </exception>
 		protected internal virtual T CreateResource<T>(string path, Type objectClass, T @object)
 		{
 			Utils.ThrowIfNull(path, @object);
