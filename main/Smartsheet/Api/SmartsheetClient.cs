@@ -121,5 +121,12 @@ namespace Smartsheet.Api
 		/// </summary>
 		/// <returns> the favorite resources instance </returns>
 		FavoriteResources FavoriteResources { get; }
+
+
+		/// <summary>
+		/// <para>Returns the TokenResources instance that provides access to token resources.</para>
+		/// </summary>
+		/// <returns> the token resources instance </returns>
+		TokenResources TokenResources { get; }
 	}
 }
