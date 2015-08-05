@@ -554,6 +554,52 @@ namespace Smartsheet.Api.Internal
 		/// <param name="path"> the relative path of the resource </param>
 		/// <param name="objectClass"> the resource object class </param>
 		/// <exception cref="SmartsheetException"> the SmartsheetClient exception </exception>
+		protected internal virtual T DeleteResource<T>(string path)
+		{
+			Utils.ThrowIfNull(path);
+			Utils.ThrowIfEmpty(path);
+
+			HttpRequest request = null;
+			try
+			{
+				request = CreateHttpRequest(new Uri(smartsheet.BaseURI, path), HttpMethod.DELETE);
+			}
+			catch (Exception e)
+			{
+				throw new SmartsheetException(e);
+			}
+			HttpResponse response = this.smartsheet.HttpClient.Request(request);
+			Object obj = null;
+			switch (response.StatusCode)
+			{
+				case HttpStatusCode.OK:
+					obj = this.smartsheet.JsonSerializer.deserializeResult<T>(response.Entity.GetContent()).Result;
+					break;
+				default:
+					HandleError(response);
+					break;
+			}
+
+			smartsheet.HttpClient.ReleaseConnection();
+
+			return (T)obj;
+		}
+
+		/// <summary>
+		/// Delete a resource from SmartsheetClient REST API.
+		/// 
+		/// Exceptions:
+		///   IllegalArgumentException : if any argument is null, or path is empty string
+		///   InvalidRequestException : if there is any problem with the REST API request
+		///   AuthorizationException : if there is any problem with the REST API authorization(access token)
+		///   ResourceNotFoundException : if the resource can not be found
+		///   ServiceUnavailableException : if the REST API service is not available (possibly due To rate limiting)
+		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
+		///   SmartsheetException : if there is any other error occurred during the operation
+		/// </summary>
+		/// <param name="path"> the relative path of the resource </param>
+		/// <param name="objectClass"> the resource object class </param>
+		/// <exception cref="SmartsheetException"> the SmartsheetClient exception </exception>
 		protected internal virtual void DeleteResource<T>(string path, Type objectClass)
 		{
 			Utils.ThrowIfNull(path, objectClass);
