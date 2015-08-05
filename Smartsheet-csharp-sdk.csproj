@@ -78,6 +78,8 @@
     <Compile Include="main\Smartsheet\Api\DiscussionCommentResources.cs" />
     <Compile Include="main\Smartsheet\Api\DiscussionResources.cs" />
     <Compile Include="main\Smartsheet\Api\FavoriteResources.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\TokenResourcesImpl.cs" />
+    <Compile Include="main\Smartsheet\Api\TokenResources.cs" />
     <Compile Include="main\Smartsheet\Api\FolderResources.cs" />
     <Compile Include="main\Smartsheet\Api\GroupResources.cs" />
     <Compile Include="main\Smartsheet\Api\HomeFolderResources.cs" />
