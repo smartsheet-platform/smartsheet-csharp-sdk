@@ -133,26 +133,32 @@ namespace Smartsheet.Api.Internal
 					path.Append("&ignoreRowsNotFound=false");
 				}
 			}
-			return CopyOrMoveRowsToAnotherSheet(directive, path.ToString());
+			return this.CreateResource<CopyOrMoveRowResult, CopyOrMoveRowDirective>(path.ToString(), directive);
 		}
 
 
 		/// <summary>
-		/// <para>Deletes the Row specified in the URL.</para>
-		/// <para>It mirrors To the following Smartsheet REST API method: DELETE /sheets/{sheetId}/rows/{rowId}</para>
-		/// <remarks>This operation will delete ALL child Rows of the specified Row.</remarks>
+		/// <para>Deletes one or more row(s) from the Sheet</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: DELETE /sheets/{sheetId}/rows?ids={rowId1},{rowId2},{rowId3}...</para>
+		/// <remarks>This operation will delete ALL child Rows of the specified Row(s).</remarks>
 		/// </summary>
-		/// <param name="sheetId"> the sheetId </param>
-		/// <param name="rowId"> the rowId </param>
+		/// <param name="sheetId"> The sheet ID </param>
+		/// <param name="ids"> The list of row IDs </param>
+		/// <param name="ignoreRowsNotFound"> If set to false and any of the specified Row IDs are not found, no rows will be deleted, and the “not found” error will be returned.</param>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public void DeleteRow(long sheetId, long rowId)
+		public virtual IList<long> DeleteRows(long sheetId, IEnumerable<long> ids, bool? ignoreRowsNotFound)
 		{
-			this.DeleteResource<Row>("sheets/" + sheetId + "/rows/" + rowId, typeof(Row));
+			StringBuilder path = new StringBuilder("sheets/" + sheetId + "/rows/" + QueryUtil.GenerateCommaSeparatedList(ids));
+			if (ignoreRowsNotFound.HasValue)
+			{
+				path.Append("&ignoreRowsNotFound=" + ignoreRowsNotFound.Value.ToString());
+			}
+			return this.DeleteResource<IList<long>>(path.ToString());
 		}
 
 		/// <summary>
@@ -189,7 +195,7 @@ namespace Smartsheet.Api.Internal
 					path.Append("&ignoreRowsNotFound=false");
 				}
 			}
-			return CopyOrMoveRowsToAnotherSheet(directive, path.ToString());
+			return this.CreateResource<CopyOrMoveRowResult, CopyOrMoveRowDirective>(path.ToString(), directive);
 		}
 
 
@@ -197,19 +203,30 @@ namespace Smartsheet.Api.Internal
 		/// <para>Sends a Row via email.</para>
 		/// <para>It mirrors To the following Smartsheet REST API method: POST /sheets/{sheetId}/rows/{rowId}/emails</para>
 		/// </summary>
-		/// <param name="sheetId"> the sheetId </param>
-		/// <param name="rowId"> the rowId </param>
-		/// <param name="email"> the email </param>
-		/// <returns> the row object </returns>
+		/// <param name="sheetId"> The sheet Id </param>
+		/// <param name="rowId"> The row Id </param>
+		/// <param name="email"> The email. The columns included for each row in the email will be populated according to the following rules: 
+		/// <list type="bullets">
+		/// <item>
+		/// If the columnIds attribute of the MultiRowEmail object is specified as an array of column IDs, those specific columns will be included.
+		/// </item>
+		/// <item>
+		/// If the columnIds attribute of the MultiRowEmail object is omitted, all columns except hidden columns shall be included.		/// </item>
+		/// <item>
+		/// If the columnIds attribute of the MultiRowEmail object is specified as empty, no columns shall be included.
+		/// (Note: In this case, either includeAttachments:true or includeDiscussions:true must be specified.)
+		/// </item>
+		/// </list>
+		/// </param>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual void SendRow(long sheetId, long rowId, RowEmail email)
+		public virtual void SendRows(long sheetId, long rowId, MultiRowEmail email)
 		{
-			this.CreateResource<RowEmail>("sheets/" + sheetId + "/rows/" + rowId + "/emails", typeof(RowEmail), email);
+			this.CreateResource<MultiRowEmail>("sheets/" + sheetId + "/rows/emails", typeof(MultiRowEmail), email);
 		}
 
 		/// <summary>
@@ -259,37 +276,37 @@ namespace Smartsheet.Api.Internal
 		}
 
 
-		private CopyOrMoveRowResult CopyOrMoveRowsToAnotherSheet(CopyOrMoveRowDirective directive, string path)
-		{
-			HttpRequest request = null;
-			try
-			{
-				request = CreateHttpRequest(new Uri(this.Smartsheet.BaseURI, path), HttpMethod.POST);
-			}
-			catch (Exception e)
-			{
-				throw new SmartsheetException(e);
-			}
+		//private CopyOrMoveRowResult CopyOrMoveRowsToAnotherSheet(CopyOrMoveRowDirective directive, string path)
+		//{
+		//	HttpRequest request = null;
+		//	try
+		//	{
+		//		request = CreateHttpRequest(new Uri(this.Smartsheet.BaseURI, path), HttpMethod.POST);
+		//	}
+		//	catch (Exception e)
+		//	{
+		//		throw new SmartsheetException(e);
+		//	}
 
-			request.Entity = serializeToEntity<CopyOrMoveRowDirective>(directive);
+		//	request.Entity = serializeToEntity<CopyOrMoveRowDirective>(directive);
 
-			HttpResponse response = this.Smartsheet.HttpClient.Request(request);
+		//	HttpResponse response = this.Smartsheet.HttpClient.Request(request);
 
-			CopyOrMoveRowResult result = null;
-			switch (response.StatusCode)
-			{
-				case HttpStatusCode.OK:
-					result = this.Smartsheet.JsonSerializer.DeserializeRowResult(
-						response.Entity.GetContent());
-					break;
-				default:
-					HandleError(response);
-					break;
-			}
+		//	CopyOrMoveRowResult result = null;
+		//	switch (response.StatusCode)
+		//	{
+		//		case HttpStatusCode.OK:
+		//			result = this.Smartsheet.JsonSerializer.DeserializeRowResult(
+		//				response.Entity.GetContent());
+		//			break;
+		//		default:
+		//			HandleError(response);
+		//			break;
+		//	}
 
-			this.Smartsheet.HttpClient.ReleaseConnection();
+		//	this.Smartsheet.HttpClient.ReleaseConnection();
 
-			return result;
-		}
+		//	return result;
+		//}
 	}
 }
