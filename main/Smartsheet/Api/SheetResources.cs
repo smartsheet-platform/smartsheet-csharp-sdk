@@ -274,6 +274,21 @@ namespace Smartsheet.Api
 		void SendSheet(long sheetId, SheetEmail email);
 
 		/// <summary>
+		/// <para>Creates an Update Request for the specified Row(s) within the Sheet. An email notification
+		/// (containing a link to the update request) will be asynchronously sent to the specified recipient(s).</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: POST /sheets/{sheetId}/updaterequests</para>
+		/// </summary>
+		/// <param name="sheetId"> the sheetId </param>
+		/// <param name="email"> the Email </param>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		UpdateRequest SendUpdateRequest(long sheetId, MultiRowEmail email);
+
+		/// <summary>
 		/// <para>Get the Status of the Publish settings of the sheet, including the URLs of any enabled publishings.</para>
 		/// 
 		/// <para>It mirrors To the following Smartsheet REST API method: GET /sheets/{sheetId}/publish</para>
