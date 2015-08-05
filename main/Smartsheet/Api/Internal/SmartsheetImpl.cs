@@ -201,6 +201,15 @@ namespace Smartsheet.Api.Internal
 		/// </summary>
 		private FavoriteResources favorites;
 
+		/// <summary>
+		/// Represents the AtomicReference To TokenResources.
+		/// 
+		/// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
+		/// as null, and will be initialized To non-null at the first time it is accessed via corresponding getter, therefore
+		/// effectively the underlying Value is lazily created in a thread safe manner.
+		/// </summary>
+		private TokenResources tokens;
+
 
 		/// <summary>
 		/// Represents the AtomicReference for assumed user Email.
@@ -510,6 +519,19 @@ namespace Smartsheet.Api.Internal
 			{
 				Interlocked.CompareExchange<FavoriteResources>(ref favorites, new FavoriteResourcesImpl(this), null);
 				return favorites;
+			}
+		}
+
+		/// <summary>
+		/// Returns the TokenResources instance that provides access To token resources.
+		/// </summary>
+		/// <returns> the token resources </returns>
+		public TokenResources TokenResources
+		{
+			get
+			{
+				Interlocked.CompareExchange<TokenResources>(ref tokens, new TokenResourcesImpl(this), null);
+				return tokens;
 			}
 		}
 	}
