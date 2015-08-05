@@ -35,7 +35,7 @@ namespace IntegrationTestSDK
 		private static void DeleteRowAndGetRow(SmartsheetClient smartsheet, long sheetId, long rowId)
 		{
 
-			smartsheet.SheetResources.RowResources.DeleteRow(sheetId, rowId);
+			smartsheet.SheetResources.RowResources.DeleteRows(sheetId, new long[] { rowId }, false);
 			try
 			{
 				smartsheet.SheetResources.RowResources.GetRow(sheetId, rowId, new RowInclusion[] { RowInclusion.COLUMNS }, null);
