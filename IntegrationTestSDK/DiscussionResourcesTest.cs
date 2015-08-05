@@ -22,6 +22,8 @@ namespace IntegrationTestSDK
 			long createdDiscussionId = createdDiscussion.Id.Value;
 			string path = "../../../IntegrationTestSDK/TestFile.txt";
 			Discussion createdDiscussionWithFile = smartsheet.SheetResources.DiscussionResources.CreateDiscussionWithAttachment(sheetId, discussionToCreate, path, null);
+			Assert.IsTrue(createdDiscussionWithFile.Comments[0].Attachments[0].Name == "TestFile.txt");
+
 
 			PaginatedResult<Discussion> discussions = smartsheet.SheetResources.DiscussionResources.ListDiscussions(sheetId, new DiscussionInclusion[] { DiscussionInclusion.COMMENTS, DiscussionInclusion.ATTACHMENTS }, null);
 			Assert.IsTrue(discussions.TotalCount == 2);
