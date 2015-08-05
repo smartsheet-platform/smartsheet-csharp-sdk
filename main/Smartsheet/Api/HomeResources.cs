@@ -33,8 +33,7 @@ namespace Smartsheet.Api
 	{
 		/// <summary>
 		/// <para>
-		/// Get a nested list of all Home objects, including Sheets, Workspaces and Folders, and optionally reports and/or
-		/// Templates, as shown on the Home tab..
+		/// Gets a nested list of all Home objects, including Sheets, Workspaces, Folders, Reports, and Templates, as shown on the Home tab.
 		/// </para>
 		/// <para>
 		/// It mirrors To the following Smartsheet REST API method: GET /home
