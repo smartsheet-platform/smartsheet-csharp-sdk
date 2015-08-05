@@ -30,11 +30,9 @@ namespace Smartsheet.Api.Internal
 	using System;
 
 	/// <summary>
-	/// This is the implementation of the AssociatedAttachmentResources for Comments.
-	/// 
-	/// It extends AssociatedAttachmentResourcesImpl and overrides listAttachments method by throwing
-	/// UnsupportedOperationException (since it's not supported for Comments).
-	/// 
+	/// <para>
+	/// This is the implementation of the CommentAttachmentResources.
+	/// </para>
 	/// Thread Safety: This class is thread safe because it is immutable and its base class is thread safe.
 	/// </summary>
 	public class CommentAttachmentResourcesImpl : AbstractResources, CommentAttachmentResources
