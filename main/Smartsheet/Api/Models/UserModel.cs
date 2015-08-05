@@ -35,6 +35,100 @@ namespace Smartsheet.Api.Models
 		private string lastName;
 
 		/// <summary>
+		/// Represents the Admin flag which allows managing Users and accounts.
+		/// </summary>
+		private bool? admin;
+
+		/// <summary>
+		/// Represents the licensed sheet creator flag which allows creating and owning Sheets.
+		/// </summary>
+		private bool? licensedSheetCreator;
+
+		/// <summary>
+		/// Represents the user Status (active, pending, declined).
+		/// </summary>
+		private UserStatus? status;
+
+		/// <summary>
+		/// Flag indicating whether the user is a resource viewer (can access resource views)
+		/// </summary>
+		private bool? resourceViewer;
+
+		/// <summary>
+		/// Flag indicating whether the user is a group admin (can create and edit groups)
+		/// </summary>
+		private bool groupAdmin;
+
+
+		/// <summary>
+		/// Gets the Admin flag which allows managing Users and accounts.
+		/// </summary>
+		/// <returns> the Admin </returns>
+		public virtual bool? Admin
+		{
+			get
+			{
+				return admin;
+			}
+			set
+			{
+				this.admin = value;
+			}
+		}
+
+
+		/// <summary>
+		/// Gets the licensed sheet creator flag that allows creating and owning Sheets.
+		/// </summary>
+		/// <returns> the licensed sheet creator </returns>
+		public virtual bool? LicensedSheetCreator
+		{
+			get
+			{
+				return licensedSheetCreator;
+			}
+			set
+			{
+				this.licensedSheetCreator = value;
+			}
+		}
+
+
+		/// <summary>
+		/// Gets the Status of the user (active, pending, declined).
+		/// </summary>
+		/// <returns> the Status </returns>
+		public virtual UserStatus? Status
+		{
+			get
+			{
+				return status;
+			}
+			set
+			{
+				this.status = value;
+			}
+		}
+
+		/// <summary>
+		/// Flag indicating whether the user is a resource viewer (can access resource views)
+		/// </summary>
+		public virtual bool? ResourceViewer
+		{
+			get { return resourceViewer; }
+			set { resourceViewer = value; }
+		}
+
+		/// <summary>
+		/// Flag indicating whether the user is a group admin (can create and edit groups)
+		/// </summary>
+		public bool GroupAdmin
+		{
+			get { return groupAdmin; }
+			set { groupAdmin = value; }
+		}
+
+		/// <summary>
 		/// Current user’s email address
 		/// </summary>
 		public string Email
