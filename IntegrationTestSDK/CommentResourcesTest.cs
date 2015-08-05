@@ -9,7 +9,7 @@ namespace IntegrationTestSDK
 	[TestClass]
 	public class CommentResourcesTest
 	{
-		string path = "../../../IntegrationTestSDK/TestFile.txt";
+		private static string path = "../../../IntegrationTestSDK/TestFile.txt";
 
 
 		[TestMethod]
@@ -82,6 +82,10 @@ namespace IntegrationTestSDK
 		{
 			Comment commentToAdd = new Comment.AddCommentBuilder("this is a comment").Build();
 			Discussion discussion = smartsheet.SheetResources.DiscussionResources.CreateDiscussion(sheetId, new Discussion.CreateDiscussionBuilder("a discussion", commentToAdd).Build());
+
+			Discussion discussion2 = smartsheet.SheetResources.DiscussionResources.CreateDiscussionWithAttachment(sheetId, new Discussion.CreateDiscussionBuilder("a discussion", commentToAdd).Build(), path, null);
+			Assert.IsTrue(discussion2.Comments[0].Attachments[0].Name == "TestFile.txt");
+			
 			long discussionId = discussion.Id.Value;
 			return discussionId;
 		}
