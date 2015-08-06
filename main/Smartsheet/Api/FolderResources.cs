@@ -116,8 +116,8 @@ namespace Smartsheet.Api
 		/// <param name="include"> the elements to copy. Note: Cell history will not be copied, regardless of which include parameter values are specified.</param>
 		/// <param name="skipRemap"> the references to NOT re-map for the newly created folder
 		/// <para>
-		/// If “cellLinks” is specified in the skipRemap parameter value, the cell links within the newly created folder will continue to point to the original source sheets.
-		/// If “reports” is specified in the skipRemap parameter value, the reports within the newly created folder will continue to point to the original source sheets.
+		/// If "cellLinks" is specified in the skipRemap parameter value, the cell links within the newly created folder will continue to point to the original source sheets.
+		/// If "reports" is specified in the skipRemap parameter value, the reports within the newly created folder will continue to point to the original source sheets.
 		/// </para>
 		/// </param>
 		/// <returns> the created folder </returns>
