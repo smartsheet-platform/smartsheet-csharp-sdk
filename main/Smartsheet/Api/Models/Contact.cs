@@ -27,6 +27,8 @@ namespace Smartsheet.Api.Models
 	/// </summary>
 	public class Contact : NamedModel
 	{
+		private string id;
+		
 		private string email;
 
 		/// <summary>
@@ -36,6 +38,16 @@ namespace Smartsheet.Api.Models
 		{
 			get { return email; }
 			set { email = value; }
+		}
+
+		/// <summary>
+		/// Contact ID, unlike other Smartsheet object ids, this id is an alphanumeric string.
+		/// </summary>
+		public virtual string Id
+		{
+			// This should hide inherited member "Id".
+			get { return id; }
+			set { id = value; }
 		}
 	}
 }
