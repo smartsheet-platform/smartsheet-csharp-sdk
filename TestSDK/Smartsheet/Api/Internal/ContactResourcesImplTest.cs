@@ -20,7 +20,7 @@ namespace Smartsheet.Api.Internal
 		{
 			server.setResponseBody("../../../TestSDK/resources/getContact.json");
 
-			Contact contact = contactResources.GetContact(123);
+			Contact contact = contactResources.GetContact("123");
 
 			Assert.AreEqual(contact.Email, "dd@example.com");
 			Assert.AreEqual(contact.Name, "David Davidson");
