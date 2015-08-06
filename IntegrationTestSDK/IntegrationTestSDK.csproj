@@ -54,10 +54,18 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="ContactResourcesTest.cs" />
     <Compile Include="CellResourcesTest.cs" />
     <Compile Include="ColumnResourcesTest.cs" />
     <Compile Include="AttachmentResourcesTest.cs" />
     <Compile Include="CommentResourcesTest.cs" />
+    <Compile Include="RowResourcesDeleteSendTest.cs" />
+    <Compile Include="SheetResourcesUpdateRequestTest.cs" />
+    <Compile Include="WorkspaceResourcesCopyTest.cs" />
+    <Compile Include="SheetResourcesMoveTest.cs" />
+    <Compile Include="SheetResourcesCopyTest.cs" />
+    <Compile Include="FolderResourcesMoveTest.cs" />
+    <Compile Include="FolderResourcesCopyTest.cs" />
     <Compile Include="TokenResourcesTest.cs" />
     <Compile Include="ServerInformationResourcesTest.cs" />
     <Compile Include="ShareResourcesTest.cs" />
@@ -84,7 +92,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
