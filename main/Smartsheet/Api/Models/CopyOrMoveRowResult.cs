@@ -7,7 +7,7 @@ namespace Smartsheet.Api.Models
 {
 	public class CopyOrMoveRowResult
 	{
-		private long destinationSheetId;
+		private long? destinationSheetId;
 
 		private IList<RowMapping> rowMappings;
 
@@ -17,7 +17,7 @@ namespace Smartsheet.Api.Models
 			set { rowMappings = value; }
 		}
 
-		public long DestinationSheetId
+		public long? DestinationSheetId
 		{
 			get { return destinationSheetId; }
 			set { destinationSheetId = value; }
