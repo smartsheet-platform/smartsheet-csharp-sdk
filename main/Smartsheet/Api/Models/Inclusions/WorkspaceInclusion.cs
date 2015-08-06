@@ -33,16 +33,6 @@ namespace Smartsheet.Api.Models
 		OWNER_INFO,
 
 		/// <summary>
-		/// <para>
-		/// Includes a URL that can be used to provision a Sheet or a Folder that exists in a distribution-enabled Workspace.
-		/// </para>
-		/// <para>
-		/// It enables a user to create their own copy of the Sheet or Folder without having access to the Sheet or Folder being copied.
-		/// </para>
-		/// </summary>
-		DISTRIBUTION_LINK,
-
-		/// <summary>
 		/// Includes the source for any sheet that was created from another sheet or template.
 		/// </summary>
 		SOURCE

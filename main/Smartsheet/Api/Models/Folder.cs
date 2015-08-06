@@ -64,23 +64,6 @@ namespace Smartsheet.Api.Models
 		/// </summary>
 		private IList<Template> templates;
 
-		private string distributionLink;
-
-		/// <summary>
-		/// <para>
-		/// A URL that can be used to provision the Folder.
-		/// It enables a user to create their own copy of this Folder without having access to the Workspace that contains the Folder.
-		/// </para>
-		/// <para>
-		/// This attribute is only present if the Folder exists in a distribution-enabled
-		/// Workspace and the API requester has either owner or admin access to the containing Workspace.
-		/// </para>
-		/// </summary>
-		public string DistributionLink
-		{
-			get { return distributionLink; }
-			set { distributionLink = value; }
-		}
 
 		/// <summary>
 		/// Gets and Sets the whether this Folder is favorited.
