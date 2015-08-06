@@ -465,7 +465,7 @@ namespace Smartsheet.Api.Internal
 			{
 				parameters.Add("include", QueryUtil.GenerateCommaSeparatedList(include));
 			}
-			return this.CreateResource<Sheet, ContainerDestination>(QueryUtil.GenerateUrl("sheetId/" + sheetId + "/copy", parameters), destination);
+			return this.CreateResource<RequestResult<Sheet>, ContainerDestination>(QueryUtil.GenerateUrl("sheets/" + sheetId + "/copy", parameters), destination).Result;
 		}
 
 		/// <summary>
@@ -484,7 +484,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual Sheet MoveSheet(long sheetId, ContainerDestination destination)
 		{
-			return this.CreateResource<Sheet, ContainerDestination>("sheets/" + sheetId + "/move", destination);
+			return this.CreateResource<RequestResult<Sheet>, ContainerDestination>("sheets/" + sheetId + "/move", destination).Result;
 		}
 
 		/// <summary>
