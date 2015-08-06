@@ -186,8 +186,8 @@ namespace Smartsheet.Api.Internal
 		/// <param name="include"> the elements to copy. Note: Cell history will not be copied, regardless of which include parameter values are specified.</param>
 		/// <param name="skipRemap"> the references to NOT re-map for the newly created folder
 		/// <para>
-		/// If “cellLinks” is specified in the skipRemap parameter value, the cell links within the newly created folder will continue to point to the original source sheets.
-		/// If “reports” is specified in the skipRemap parameter value, the reports within the newly created folder will continue to point to the original source sheets.
+		/// If "cellLinks" is specified in the skipRemap parameter value, the cell links within the newly created folder will continue to point to the original source sheets.
+		/// If "reports" is specified in the skipRemap parameter value, the reports within the newly created folder will continue to point to the original source sheets.
 		/// </para>
 		/// </param>
 		/// <returns> the created workspace </returns>
@@ -197,7 +197,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual Folder CopyFolder(long workspaceId, ContainerDestination destination, IEnumerable<WorkspaceCopyInclusion> include, IEnumerable<WorkspaceRemapExclusion> skipRemap)
+		public virtual Workspace CopyWorkspace(long workspaceId, ContainerDestination destination, IEnumerable<WorkspaceCopyInclusion> include, IEnumerable<WorkspaceRemapExclusion> skipRemap)
 		{
 			IDictionary<string, string> parameters = new Dictionary<string, string>();
 			if (include != null)
@@ -208,7 +208,7 @@ namespace Smartsheet.Api.Internal
 			{
 				parameters.Add("skipRemap", QueryUtil.GenerateCommaSeparatedList(skipRemap));
 			}
-			return this.CreateResource<Folder, ContainerDestination>(QueryUtil.GenerateUrl("workspaces/" + workspaceId + "/copy", parameters), destination);
+			return this.CreateResource<RequestResult<Workspace>, ContainerDestination>(QueryUtil.GenerateUrl("workspaces/" + workspaceId + "/copy", parameters), destination).Result;
 		}
 
 		/// <summary>
@@ -249,5 +249,4 @@ namespace Smartsheet.Api.Internal
 			}
 		}
 	}
-
 }
