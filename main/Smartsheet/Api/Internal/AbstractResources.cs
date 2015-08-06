@@ -278,7 +278,7 @@ namespace Smartsheet.Api.Internal
 			switch (response.StatusCode)
 			{
 				case HttpStatusCode.OK:
-					obj = this.smartsheet.JsonSerializer.deserialize<T>(
+					obj = this.smartsheet.JsonSerializer.deserialize<S>(
 						response.Entity.GetContent());
 					break;
 				default:
