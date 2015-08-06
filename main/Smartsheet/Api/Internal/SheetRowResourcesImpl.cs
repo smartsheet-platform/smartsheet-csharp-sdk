@@ -145,6 +145,7 @@ namespace Smartsheet.Api.Internal
 		/// <param name="sheetId"> The sheet ID </param>
 		/// <param name="ids"> The list of row IDs </param>
 		/// <param name="ignoreRowsNotFound"> If set to false and any of the specified Row IDs are not found, no rows will be deleted, and the “not found” error will be returned.</param>
+		/// <returns>Row IDs corresponding to all rows that were successfully deleted (including any child rows of rows specified in the URL).</returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
@@ -153,12 +154,14 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual IList<long> DeleteRows(long sheetId, IEnumerable<long> ids, bool? ignoreRowsNotFound)
 		{
-			StringBuilder path = new StringBuilder("sheets/" + sheetId + "/rows/" + QueryUtil.GenerateCommaSeparatedList(ids));
+			Utility.Utility.ThrowIfNull(ids);
+			IDictionary<string, string> parameters = new Dictionary<string, string>();
+			parameters.Add("ids", QueryUtil.GenerateCommaSeparatedList(ids));
 			if (ignoreRowsNotFound.HasValue)
 			{
-				path.Append("&ignoreRowsNotFound=" + ignoreRowsNotFound.Value.ToString());
+				parameters.Add("ignoreRowsNotFound", ignoreRowsNotFound.Value.ToString());
 			}
-			return this.DeleteResource<IList<long>>(path.ToString());
+			return this.DeleteResource<IList<long>>(QueryUtil.GenerateUrl("sheets/" + sheetId + "/rows", parameters));
 		}
 
 		/// <summary>
@@ -204,7 +207,6 @@ namespace Smartsheet.Api.Internal
 		/// <para>It mirrors To the following Smartsheet REST API method: POST /sheets/{sheetId}/rows/{rowId}/emails</para>
 		/// </summary>
 		/// <param name="sheetId"> The sheet Id </param>
-		/// <param name="rowId"> The row Id </param>
 		/// <param name="email"> The email. The columns included for each row in the email will be populated according to the following rules: 
 		/// <list type="bullets">
 		/// <item>
@@ -224,7 +226,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual void SendRows(long sheetId, long rowId, MultiRowEmail email)
+		public virtual void SendRows(long sheetId, MultiRowEmail email)
 		{
 			this.CreateResource<MultiRowEmail>("sheets/" + sheetId + "/rows/emails", typeof(MultiRowEmail), email);
 		}

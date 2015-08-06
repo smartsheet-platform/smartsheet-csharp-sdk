@@ -93,6 +93,7 @@ namespace Smartsheet.Api
 		/// </summary>
 		/// <param name="sheetId"> the sheetId </param>
 		/// <param name="rowId"> the rowId </param>
+		/// <returns>Row IDs corresponding to all rows that were successfully deleted (including any child rows of rows specified in the URL).</returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
@@ -128,7 +129,6 @@ namespace Smartsheet.Api
 		/// <para>It mirrors To the following Smartsheet REST API method: POST /sheets/{sheetId}/rows/{rowId}/emails</para>
 		/// </summary>
 		/// <param name="sheetId"> The sheet Id </param>
-		/// <param name="rowId"> The row Id </param>
 		/// <param name="email"> The email. The columns included for each row in the email will be populated according to the following rules: 
 		/// <list type="bullets">
 		/// <item>
@@ -148,7 +148,7 @@ namespace Smartsheet.Api
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		void SendRows(long sheetId, long rowId, MultiRowEmail email);
+		void SendRows(long sheetId, MultiRowEmail email);
 
 		/// <summary>
 		/// <para>Updates cell values in the specified row(s), expands/collapses the specified row(s), 
