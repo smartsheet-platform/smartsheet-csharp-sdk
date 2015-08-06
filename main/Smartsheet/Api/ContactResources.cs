@@ -37,7 +37,7 @@ namespace Smartsheet.Api
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		Contact GetContact(long contactId, Contact contact);
+		Contact GetContact(long contactId);
 
 		/// <summary>
 		/// <para>Gets a list of the user’s Smartsheet Contacts.</para>
