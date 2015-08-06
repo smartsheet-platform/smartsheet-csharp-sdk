@@ -59,7 +59,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual Contact GetContact(long contactId)
+		public virtual Contact GetContact(string contactId)
 		{
 			return GetResource<Contact>("contacts/" + contactId, typeof(Contact));
 		}
