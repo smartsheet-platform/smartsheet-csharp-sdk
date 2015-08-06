@@ -1,7 +1,7 @@
 namespace Smartsheet.Api.Internal.OAuth
 {
 	using NUnit.Framework;
-	 using System;
+	using System;
 
 
 	using DefaultHttpClient = Smartsheet.Api.Internal.Http.DefaultHttpClient;
@@ -16,8 +16,8 @@ namespace Smartsheet.Api.Internal.OAuth
 	using OAuthTokenException = Smartsheet.Api.OAuth.OAuthTokenException;
 	using Token = Smartsheet.Api.OAuth.Token;
 	using UnsupportedResponseTypeException = Smartsheet.Api.OAuth.UnsupportedResponseTypeException;
-	 using Smartsheet.Api.Internal.Json;
-	 using System.Collections.Generic;
+	using Smartsheet.Api.Internal.Json;
+	using System.Collections.Generic;
 
 	public class OAuthFlowImplTest
 	{
@@ -42,7 +42,7 @@ namespace Smartsheet.Api.Internal.OAuth
 		[SetUp]
 		public virtual void SetUp()
 		{
-			oauth = new OAuthFlowImpl(clientId,clientSecret,redirectURL,authorizationURL,tokenURL, httpClient, json);
+			oauth = new OAuthFlowImpl(clientId, clientSecret, redirectURL, authorizationURL, tokenURL, httpClient, json);
 
 			// Setup test server
 			server = new HttpTestServer();
@@ -56,7 +56,7 @@ namespace Smartsheet.Api.Internal.OAuth
 		[Test]
 		public virtual void TestOAuthFlowImpl()
 		{
-			Assert.AreEqual(clientId,oauth.ClientId);
+			Assert.AreEqual(clientId, oauth.ClientId);
 			Assert.AreEqual(clientSecret, oauth.ClientSecret);
 			Assert.AreEqual(redirectURL, oauth.RedirectURL);
 			Assert.AreEqual(authorizationURL, oauth.AuthorizationURL);
@@ -82,9 +82,9 @@ namespace Smartsheet.Api.Internal.OAuth
 			string authURL = oauth.NewAuthorizationURL(new List<AccessScope>((AccessScope[])Enum.GetValues(
 				typeof(AccessScope))), "state");
 
-			Assert.AreEqual("authorizationURL?response_type=code&client_id=clientID&redirect_uri=redirectURL&"+
-				"state=state&scope=READ_SHEETS%2CWRITE_SHEETS%2CSHARE_SHEETS%2CDELETE_SHEETS%2CCREATE_SHEETS%2"+
-				"CADMIN_SHEETS%2CADMIN_WORKSPACES", authURL);
+			Assert.AreEqual("authorizationURL?response_type=code&client_id=clientID&redirect_uri=redirectURL&state=state&scope=" +
+							"READ_SHEETS%20WRITE_SHEETS%20SHARE_SHEETS%20DELETE_SHEETS%20CREATE_SHEETS%20READ_USERS%20READ_CONTACTS%20" +
+							"ADMIN_USERS%20ADMIN_SHEETS%20ADMIN_WORKSPACES", authURL);
 		}
 
 		[Test]
