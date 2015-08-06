@@ -181,7 +181,7 @@ namespace Smartsheet.Api.Internal
 			{
 				parameters.Add("skipRemap", QueryUtil.GenerateCommaSeparatedList(skipRemap));
 			}
-			return this.CreateResource<Folder, ContainerDestination>(QueryUtil.GenerateUrl("folders/" + folderId + "/copy", parameters), destination);
+			return this.CreateResource<RequestResult<Folder>, ContainerDestination>(QueryUtil.GenerateUrl("folders/" + folderId + "/copy", parameters), destination).Result;
 		}
 
 		/// <summary>
@@ -200,7 +200,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual Folder MoveFolder(long folderId, ContainerDestination destination)
 		{
-			return this.CreateResource<Folder, ContainerDestination>("folders/" + folderId + "/move", destination);
+			return this.CreateResource<RequestResult<Folder>, ContainerDestination>("folders/" + folderId + "/move", destination).Result;
 		}
 
 		/// <summary>
