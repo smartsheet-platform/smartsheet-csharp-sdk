@@ -17,7 +17,8 @@ namespace IntegrationTestSDK
 
 			SmartsheetClient smartsheet = new SmartsheetBuilder().SetAccessToken(accessToken).Build();
 
-			long sheetId = CreateSheetFromTemplate(smartsheet, 8537185717643140);
+			long templateId = smartsheet.TemplateResources.ListPublicTemplates(null).Data[0].Id.Value;
+			long sheetId = CreateSheetFromTemplate(smartsheet, templateId);
 
 			PaginatedResult<Column> columnsResult = smartsheet.SheetResources.ColumnResources.ListColumns(sheetId, null, null);
 			long columnId = columnsResult.Data[0].Id.Value;
