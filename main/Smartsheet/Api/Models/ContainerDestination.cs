@@ -34,7 +34,7 @@ namespace Smartsheet.Api.Models
 		private string newName;
 
 		/// <summary>
-		/// 
+		/// Type of the destination container (when copying or moving a Sheet or a Folder). 
 		/// </summary>
 		public DestinationType? DestinationType
 		{
@@ -47,7 +47,7 @@ namespace Smartsheet.Api.Models
 		/// ID of the destination container (when copying or moving a Sheet or a Folder).
 		/// </para>
 		/// <para>
-		/// Required if destinationType is “folder” or “workspace” If destinationType is “home”, this value must be null.
+		/// Required if destinationType is "folder" or "workspace" If destinationType is "home", this value must be null.
 		/// </para>
 		/// </summary>
 		public long? DestinationId
@@ -61,7 +61,7 @@ namespace Smartsheet.Api.Models
 		/// Name of the newly created object (when creating a copy of a Sheet, Folder, or Workspace).
 		/// </para>
 		/// <para>
-		/// This attribute is not supported for “move” operations (i.e., a moved Sheet, Folder or Workspace retains its original name).
+		/// This attribute is not supported for "move" operations (i.e., a moved Sheet, Folder or Workspace retains its original name).
 		/// </para>
 		/// </summary>
 		public string NewName
