@@ -79,7 +79,7 @@ namespace Smartsheet.Api.Internal
 			server.setResponseBody("../../../TestSDK/resources/copyOrMoveRowResult.json");
 
 			CopyOrMoveRowDirective directive = new CopyOrMoveRowDirective() { RowIds = new List<long> { 147258369, 963852741 }, To = new CopyOrMoveRowDestination() { SheetId = 123 } };
-			CopyOrMoveRowResult row = sheetRowResource.CopyRowsToAnotherSheet(123, directive, null, true);
+			CopyOrMoveRowResult row = sheetRowResource.MoveRowsToAnotherSheet(123, directive, null, true); 
 			Assert.NotNull(row);
 			Assert.AreEqual(row.RowMappings[1].To, 2256565987239812);
 		}
