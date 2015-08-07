@@ -15,6 +15,8 @@
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
 //    %[license]
+using System;
+using System.ComponentModel;
 namespace Smartsheet.Api
 {
 	///<summary>
@@ -128,5 +130,51 @@ namespace Smartsheet.Api
 		/// </summary>
 		/// <returns> the token resources instance </returns>
 		TokenResources TokenResources { get; }
+
+
+		[Obsolete("use Smartsheet.Api.SmartsheetClient.HomeResources", true)]
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		HomeResources Home();
+
+		[Obsolete("use Smartsheet.Api.SmartsheetClient.SheetResources", true)]
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		SheetResources Sheets();
+
+		[Obsolete("use Smartsheet.Api.SmartsheetClient.ReportResources", true)]
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		ReportResources Reports();
+
+		
+		[Obsolete("use Smartsheet.Api.SmartsheetClient.SheetResources.AttachmentResources to get sheet level attachment resources", true)]
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		AttachmentResources Attachments();
+
+		[Obsolete("use Smartsheet.Api.SmartsheetClient.SheetResources.RowResources", true)]
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		RowResources Rows();
+
+		[Obsolete("use Smartsheet.Api.SmartsheetClient.SheetResources.CommentResources to get sheet level comment resources", true)]
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		CommentResources Comments();
+
+		[Obsolete("use Smartsheet.Api.SmartsheetClient.UserResources", true)]
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		UserResources Users();
+
+		[Obsolete("use Smartsheet.Api.SmartsheetClient.SearchResources", true)]
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		SearchResources Search();
+
+		[Obsolete("use Smartsheet.Api.SmartsheetClient.TemplateResources", true)]
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		TemplateResources Templates();
+
+		[Obsolete("use Smartsheet.Api.SmartsheetClient.FolderResources", true)]
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		FolderResources Folders();
+
+		[Obsolete("use Smartsheet.Api.SmartsheetClient.WorkspaceResources", true)]
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		WorkspaceResources Workspaces();
 	}
 }

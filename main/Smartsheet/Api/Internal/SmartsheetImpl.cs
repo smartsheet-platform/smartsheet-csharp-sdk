@@ -19,6 +19,7 @@ namespace Smartsheet.Api.Internal
 {
 
 	using System;
+	using System.ComponentModel;
 	using System.Threading;
 	using DefaultHttpClient = Api.Internal.Http.DefaultHttpClient;
 	using HttpClient = Api.Internal.Http.HttpClient;
@@ -513,7 +514,7 @@ namespace Smartsheet.Api.Internal
 		/// Returns the FavoriteResources instance that provides access To favorite resources.
 		/// </summary>
 		/// <returns> the favorite resources </returns>
-		public FavoriteResources FavoriteResources
+		public virtual FavoriteResources FavoriteResources
 		{
 			get
 			{
@@ -526,13 +527,91 @@ namespace Smartsheet.Api.Internal
 		/// Returns the TokenResources instance that provides access To token resources.
 		/// </summary>
 		/// <returns> the token resources </returns>
-		public TokenResources TokenResources
+		public virtual TokenResources TokenResources
 		{
 			get
 			{
 				Interlocked.CompareExchange<TokenResources>(ref tokens, new TokenResourcesImpl(this), null);
 				return tokens;
 			}
+		}
+
+		[System.Obsolete("use HomeResources", true)]
+		[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
+		public virtual HomeResources Home()
+		{
+			throw new NotImplementedException();
+		}
+
+		[Obsolete("use Smartsheet.Api.SmartsheetClient.SheetResources", true)]
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		public virtual SheetResources Sheets()
+		{
+			throw new NotImplementedException();
+		}
+
+		[Obsolete("use Smartsheet.Api.SmartsheetClient.ReportResources", true)]
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		public virtual ReportResources Reports()
+		{
+			throw new NotImplementedException();
+		}
+
+		[Obsolete("use Smartsheet.Api.SmartsheetClient.SheetResources.AttachmentResources to get sheet level attachment resources", true)]
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		public virtual AttachmentResources Attachments()
+		{
+			throw new NotImplementedException();
+		}
+
+		[Obsolete("use Smartsheet.Api.SmartsheetClient.SheetResources.RowResources", true)]
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		public virtual RowResources Rows()
+		{
+			throw new NotImplementedException();
+		}
+
+		[Obsolete("use Smartsheet.Api.SmartsheetClient.SheetResources.CommentResources to get sheet level comment resources", true)]
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		public virtual CommentResources Comments()
+		{
+			throw new NotImplementedException();
+		}
+
+
+		[Obsolete("use Smartsheet.Api.SmartsheetClient.UserResources", true)]
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		public virtual UserResources Users()
+		{
+			throw new NotImplementedException();
+		}
+
+		[Obsolete("use Smartsheet.Api.SmartsheetClient.SearchResources", true)]
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		public virtual SearchResources Search()
+		{
+			throw new NotImplementedException();
+		}
+
+		[Obsolete("use Smartsheet.Api.SmartsheetClient.TemplateResources", true)]
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		public virtual TemplateResources Templates()
+		{
+			throw new NotImplementedException();
+		}
+
+		[Obsolete("use Smartsheet.Api.SmartsheetClient.FolderResources", true)]
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		public virtual FolderResources Folders()
+		{
+			throw new NotImplementedException();
+		}
+
+		[Obsolete("use Smartsheet.Api.SmartsheetClient.WorkspaceResources", true)]
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		public virtual WorkspaceResources Workspaces()
+		{
+			throw new NotImplementedException();
 		}
 	}
 }
