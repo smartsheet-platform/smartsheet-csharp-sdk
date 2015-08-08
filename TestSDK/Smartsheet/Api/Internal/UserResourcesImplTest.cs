@@ -90,8 +90,8 @@ namespace Smartsheet.Api.Internal
 		{
 			server.setResponseBody("../../../TestSDK/resources/updateUser.json");
 
-			User user = new User.UpdateUserBuilder(true, true).Build();
-			User updatedUser = userResources.UpdateUser(123L, user);
+			User user = new User.UpdateUserBuilder(123L, true, true).Build();
+			User updatedUser = userResources.UpdateUser(user);
 			Assert.AreEqual(true, updatedUser.Admin);
 			Assert.AreEqual(true, updatedUser.LicensedSheetCreator);
 		}

@@ -86,7 +86,6 @@ namespace Smartsheet.Api
 		/// <para>Update a workspace.</para>
 		/// <para>It mirrors To the following Smartsheet REST API method: PUT /workspaces/{workspaceId}</para>
 		/// </summary>
-		/// <param name="workspaceId">the workspace ID</param>
 		/// <param name="workspace"> the workspace To update </param>
 		/// <returns> the updated workspace (note that if there is no such resource, this method will throw
 		/// ResourceNotFoundException rather than returning null) </returns>
@@ -96,7 +95,7 @@ namespace Smartsheet.Api
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		Workspace UpdateWorkspace(long workspaceId, Workspace workspace);
+		Workspace UpdateWorkspace(Workspace workspace);
 
 		/// <summary>
 		/// <para>Deletes the specified Workspace (and its contents).</para>

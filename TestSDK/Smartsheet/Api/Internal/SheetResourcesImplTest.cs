@@ -245,8 +245,8 @@ namespace Smartsheet.Api.Internal
 		{
 			server.setResponseBody("../../../TestSDK/resources/updateSheet.json");
 
-			Sheet sheet = new Sheet.UpdateSheetBuilder().SetName("new name").Build();
-			Sheet newSheet = sheetResource.UpdateSheet(123, sheet);
+			Sheet sheet = new Sheet.UpdateSheetBuilder(123).SetName("new name").Build();
+			Sheet newSheet = sheetResource.UpdateSheet(sheet);
 
 			Assert.AreEqual("new name", newSheet.Name, "Sheet update (rename) failed.");
 		}

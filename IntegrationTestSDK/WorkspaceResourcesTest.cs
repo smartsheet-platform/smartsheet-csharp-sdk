@@ -64,9 +64,9 @@ namespace IntegrationTestSDK
 
 		private static void UpdateWorkspace(SmartsheetClient smartsheet, long workspaceId)
 		{
-			Workspace workspace = new Workspace.UpdateWorkspaceBuilder("updated workspace").Build();
+			Workspace workspace = new Workspace.UpdateWorkspaceBuilder(workspaceId, "updated workspace").Build();
 
-			Workspace updatedWorkspace = smartsheet.WorkspaceResources.UpdateWorkspace(workspaceId, workspace);
+			Workspace updatedWorkspace = smartsheet.WorkspaceResources.UpdateWorkspace(workspace);
 
 			Assert.IsTrue(updatedWorkspace.Name == "updated workspace");
 		}

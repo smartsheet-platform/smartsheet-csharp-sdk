@@ -85,11 +85,11 @@ namespace Smartsheet.Api.Internal
 			server.setResponseBody("../../../TestSDK/resources/updateColumn.json");
 			IList<string> options = new List<string> { "First", "Second", "Third" };
 
-			Column col1 = new Column.UpdateColumnBuilder("First Column", 0)
+			Column col1 = new Column.UpdateColumnBuilder(123, "First Column", 0)
 			.SetType(ColumnType.PICKLIST).SetOptions(options).Build();
 
 
-			Column newCol = sheetColumnResourcesImpl.UpdateColumn(1234L, 132, col1);
+			Column newCol = sheetColumnResourcesImpl.UpdateColumn(132, col1);
 			Assert.IsTrue(newCol.Type == ColumnType.PICKLIST);
 			Assert.IsTrue(newCol.Index == 0);
 			Assert.IsTrue(newCol.Id == 5005385858869124);

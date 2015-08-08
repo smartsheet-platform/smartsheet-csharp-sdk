@@ -56,7 +56,7 @@ namespace IntegrationTestSDK
 
 		private static void UpdateSheet(SmartsheetClient smartsheet, long sheetId)
 		{
-			Sheet updatedSheet = smartsheet.SheetResources.UpdateSheet(sheetId, new Sheet.UpdateSheetBuilder().SetName("updated sheet").Build());
+			Sheet updatedSheet = smartsheet.SheetResources.UpdateSheet(new Sheet.UpdateSheetBuilder(sheetId).SetName("updated sheet").Build());
 			Assert.IsTrue(updatedSheet.Name == "updated sheet");
 		}
 

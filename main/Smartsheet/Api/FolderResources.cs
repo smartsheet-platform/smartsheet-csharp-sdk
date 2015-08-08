@@ -49,7 +49,6 @@ namespace Smartsheet.Api
 		/// <para>Updates a folder.</para>
 		/// <para>It mirrors To the following Smartsheet REST API method: PUT /folders/{folderId}</para>
 		/// </summary>
-		/// <param name="folderId"> the folder Id </param>
 		/// <param name="folder"> the folder To update </param>
 		/// <returns> the updated folder (note that if there is no such folder, this method will throw Resource Not Found 
 		/// Exception rather than returning null). </returns>
@@ -59,7 +58,7 @@ namespace Smartsheet.Api
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		Folder UpdateFolder(long folderId, Folder folder);
+		Folder UpdateFolder(Folder folder);
 
 		/// <summary>
 		/// <para>Deletes a folder.</para>

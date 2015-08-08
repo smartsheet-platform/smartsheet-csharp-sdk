@@ -756,6 +756,7 @@ namespace Smartsheet.Api.Models
 		/// </summary>
 		public class UpdateColumnBuilder
 		{
+			private long? id;
 
 			/// <summary>
 			/// The position of the column. </summary>
@@ -801,10 +802,12 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Sets the required properties for updating a column.
 			/// </summary>
+			/// <param name="id"> the id of the Column </param>
 			/// <param name="title"> the new Column title </param>
 			/// <param name="index"> the new Column index (zero-based) </param>
-			public UpdateColumnBuilder(string title, int index)
+			public UpdateColumnBuilder(long id, string title, int index)
 			{
+				this.id = id;
 				this.title = title;
 				this.index = index;
 			}
@@ -1036,6 +1039,7 @@ namespace Smartsheet.Api.Models
 				//}
 
 				Column column = new Column();
+				column.Id = id;
 				column.index = index;
 				column.title = title;
 				//column.sheetId = sheetId;

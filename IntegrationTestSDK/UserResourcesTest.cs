@@ -62,7 +62,7 @@ namespace IntegrationTestSDK
 
 		private static void UpdateUser(SmartsheetClient smartsheet, long userId)
 		{
-			smartsheet.UserResources.UpdateUser(userId, new User.UpdateUserBuilder(false, false).Build());
+			smartsheet.UserResources.UpdateUser(new User.UpdateUserBuilder(userId, false, false).Build());
 		}
 
 		private static void GetMe(SmartsheetClient smartsheet)

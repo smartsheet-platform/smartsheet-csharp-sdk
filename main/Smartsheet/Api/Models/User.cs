@@ -295,6 +295,7 @@ namespace Smartsheet.Api.Models
 		/// </summary>
 		public class UpdateUserBuilder
 		{
+			private long? id;
 			private bool? admin;
 			private bool? licensedSheetCreator;
 			private string firstName;
@@ -304,10 +305,12 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// User object containing the required attributes:
 			/// </summary>
+			/// <param name="id">the user id</param>
 			/// <param name="admin">admin (required)</param>
 			/// <param name="licensedSheetCreator">licensedSheetCreator (required)</param>
-			public UpdateUserBuilder(bool? admin, bool? licensedSheetCreator)
+			public UpdateUserBuilder(long? id, bool? admin, bool? licensedSheetCreator)
 			{
+				this.id = id;
 				this.admin = admin;
 				this.licensedSheetCreator = licensedSheetCreator;
 			}
@@ -421,6 +424,7 @@ namespace Smartsheet.Api.Models
 			public virtual User Build()
 			{
 				User user = new User();
+				user.Id = id;
 				user.admin = admin;
 				user.licensedSheetCreator = licensedSheetCreator;
 				user.FirstName = firstName;

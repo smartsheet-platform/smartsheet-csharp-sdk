@@ -53,14 +53,17 @@ namespace Smartsheet.Api.Models
 		/// </summary>
 		public class UpdateWorkspaceBuilder
 		{
+			private long? id;
 			private string workspaceName;
 
 			/// <summary>
 			/// Build workspace with required parameter name.
 			/// </summary>
+			/// <param name="id">the id of the workspace</param>
 			/// <param name="name">the name of the workspace</param>
-			public UpdateWorkspaceBuilder(string name)
+			public UpdateWorkspaceBuilder(long? id, string name)
 			{
+				this.id = id;
 				this.workspaceName = name;
 			}
 
@@ -99,6 +102,7 @@ namespace Smartsheet.Api.Models
 				//}
 
 				Workspace workspace = new Workspace();
+				workspace.Id = id;
 				workspace.Name = workspaceName;
 				return workspace;
 			}

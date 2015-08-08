@@ -231,7 +231,6 @@ namespace Smartsheet.Api
 		/// (i.e. the user has viewer permissions, or the sheet is read-only).</para>
 		/// <para>It mirrors To the following Smartsheet REST API method: PUT /sheets/{sheetId}</para>
 		/// </summary>
-		/// <param name="sheetId"> the sheetId </param>
 		/// <param name="sheet"> the sheet To update </param>
 		/// <returns> the updated sheet </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
@@ -240,7 +239,7 @@ namespace Smartsheet.Api
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		Sheet UpdateSheet(long sheetId, Sheet sheet);
+		Sheet UpdateSheet(Sheet sheet);
 
 		/// <summary>
 		/// <para>Gets the Sheet version without loading the entire Sheet.</para>

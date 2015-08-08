@@ -77,7 +77,6 @@ namespace Smartsheet.Api
 		/// <para>It mirrors To the following Smartsheet REST API method: PUT /groups/{groupId}</para>
 		/// <remarks>This operation is only available to group administrators and system administrators.</remarks>
 		/// </summary>
-		/// <param name="groupId"> the groupId </param>
 		/// <param name="group"> the group To update </param>
 		/// <returns> the updated user </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
@@ -86,7 +85,7 @@ namespace Smartsheet.Api
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		Group UpdateGroup(long groupId, Group group);
+		Group UpdateGroup(Group group);
 
 		/// <summary>
 		/// <para>Deletes the Group specified in the URL.</para>

@@ -109,7 +109,6 @@ namespace Smartsheet.Api
 		/// <para>It mirrors To the following Smartsheet REST API method: GET /sheets/{sheetId}/columns/{columnId}</para>
 		/// </summary>
 		/// <param name="sheetId"> the sheet Id </param>
-		/// <param name="columnId"> the columnId </param>
 		/// <param name="column"> column object to update </param>
 		/// <returns> the updated column </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
@@ -118,7 +117,7 @@ namespace Smartsheet.Api
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		Column UpdateColumn(long sheetId, long columnId, Column column);
+		Column UpdateColumn(long sheetId, Column column);
 	}
 
 }

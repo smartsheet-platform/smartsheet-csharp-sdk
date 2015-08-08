@@ -165,9 +165,19 @@ namespace Smartsheet.Api.Models
 		/// </summary>
 		public class UpdateGroupBuilder
 		{
+			private long? id;
 			private string name;
 			private string description;
 			private long? ownerId;
+
+			/// <summary>
+			/// Sets the required properties for updating a group.
+			/// </summary>
+			/// <param name="id"> the group id </param>
+			public UpdateGroupBuilder(long? id)
+			{
+				this.id = id;
+			}
 
 			public UpdateGroupBuilder SetName(string name)
 			{
@@ -206,6 +216,7 @@ namespace Smartsheet.Api.Models
 			{
 				Group group = new Group
 				{
+					Id = this.id,
 					Name = this.name,
 					Description = this.description,
 					OwnerId = this.ownerId

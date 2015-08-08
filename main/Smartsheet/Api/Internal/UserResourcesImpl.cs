@@ -150,7 +150,6 @@ namespace Smartsheet.Api.Internal
 		/// <para>Update a user.</para>
 		/// <para>It mirrors To the following Smartsheet REST API method: PUT /users/{userId}</para>
 		/// </summary>
-		/// <param name="userId"> the userId </param>
 		/// <param name="user"> the user To update </param>
 		/// <returns> the updated user </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
@@ -159,9 +158,9 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual User UpdateUser(long userId, User user)
+		public virtual User UpdateUser(User user)
 		{
-			return this.UpdateResource<User>("users/" + userId, typeof(User), user);
+			return this.UpdateResource<User>("users/" + user.Id, typeof(User), user);
 		}
 
 		/// <summary>

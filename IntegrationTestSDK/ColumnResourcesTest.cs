@@ -48,7 +48,7 @@ namespace IntegrationTestSDK
 
 		private static void UpdateColumn(SmartsheetClient smartsheet, long sheetId, long columnId)
 		{
-			Column updatedColumn = smartsheet.SheetResources.ColumnResources.UpdateColumn(sheetId, columnId, new Column.UpdateColumnBuilder("col 4 updated", 2).Build());
+			Column updatedColumn = smartsheet.SheetResources.ColumnResources.UpdateColumn(sheetId, new Column.UpdateColumnBuilder(columnId, "col 4 updated", 2).Build());
 			Assert.IsTrue(updatedColumn.Title == "col 4 updated");
 		}
 

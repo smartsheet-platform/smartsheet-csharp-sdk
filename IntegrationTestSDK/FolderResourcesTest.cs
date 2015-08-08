@@ -96,7 +96,7 @@ namespace IntegrationTestSDK
 
 		private static void UpdateFolderInFolder(SmartsheetClient smartsheet, long createdFolderInFolderId)
 		{
-			Folder updatedFolderInFolder = smartsheet.FolderResources.UpdateFolder(createdFolderInFolderId, new Folder.UpdateFolderBuilder(updatedFolderInFolderName).Build());
+			Folder updatedFolderInFolder = smartsheet.FolderResources.UpdateFolder(new Folder.UpdateFolderBuilder(createdFolderInFolderId, updatedFolderInFolderName).Build());
 			Assert.IsTrue(updatedFolderInFolder.Name == updatedFolderInFolderName);
 		}
 

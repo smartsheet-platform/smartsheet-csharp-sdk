@@ -91,7 +91,6 @@ namespace Smartsheet.Api
 		/// <para>Update a user.</para>
 		/// <para>It mirrors To the following Smartsheet REST API method: PUT /users/{userId}</para>
 		/// </summary>
-		/// <param name="userId"> the userId </param>
 		/// <param name="user"> the user To update </param>
 		/// <returns> the updated user </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
@@ -100,7 +99,7 @@ namespace Smartsheet.Api
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		User UpdateUser(long userId, User user);
+		User UpdateUser(User user);
 
 		/// <summary>
 		/// <para>Removes a User from an organization. User is transitioned to a free collaborator with read-only access to owned sheets (unless those are optionally transferred to another user).</para>

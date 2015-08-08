@@ -155,36 +155,37 @@ namespace Smartsheet.Api.Models
 		public class UpdateFolderBuilder
 		{
 			private string folderName;
-			//internal long? id;
+			private long? id;
 
 			/// <summary>
 			/// Sets the required the fields for updating a Folder.
 			/// </summary>
 			/// <param name="name"> the name of the folder, need not be unique </param>
-			public UpdateFolderBuilder(string name)
+			public UpdateFolderBuilder(long? id, string name)
 			{
+				this.id = id;
 				this.folderName = name;
 			}
 
-			/// <summary>
-			/// Set the Name of the Folder.
-			/// </summary>
-			/// <param name="name"> the Name </param>
-			/// <returns> the update folder builder </returns>
-			public virtual UpdateFolderBuilder SetName(string name)
-			{
-				this.folderName = name;
-				return this;
-			}
+			///// <summary>
+			///// Set the Name of the Folder.
+			///// </summary>
+			///// <param name="name"> the Name </param>
+			///// <returns> the update folder builder </returns>
+			//public virtual UpdateFolderBuilder SetName(string name)
+			//{
+			//	this.folderName = name;
+			//	return this;
+			//}
 
-			/// <summary>
-			/// Gets the Name.
-			/// </summary>
-			/// <returns> the Name </returns>
-			public virtual string GetName()
-			{
-				return folderName;
-			}
+			///// <summary>
+			///// Gets the Name.
+			///// </summary>
+			///// <returns> the Name </returns>
+			//public virtual string GetName()
+			//{
+			//	return folderName;
+			//}
 
 			///// <summary>
 			///// Gets the folder Id.
@@ -221,7 +222,7 @@ namespace Smartsheet.Api.Models
 				//}
 
 				Folder folder = new Folder();
-				//folder.ID = id;
+				folder.Id = id;
 				folder.Name = folderName;
 				return folder;
 			}

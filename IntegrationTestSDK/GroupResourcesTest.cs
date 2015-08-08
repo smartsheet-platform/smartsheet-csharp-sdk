@@ -67,7 +67,7 @@ namespace IntegrationTestSDK
 
 		private static void UpdateGroup(SmartsheetClient smartsheet, long groupId)
 		{
-			Group group = smartsheet.GroupResources.UpdateGroup(groupId, new Group.UpdateGroupBuilder().SetDescription("updated desc").Build());
+			Group group = smartsheet.GroupResources.UpdateGroup(new Group.UpdateGroupBuilder(groupId).SetDescription("updated desc").Build());
 
 			Assert.IsTrue(group.Name == "a group");
 			Assert.IsTrue(group.Description == "updated desc");

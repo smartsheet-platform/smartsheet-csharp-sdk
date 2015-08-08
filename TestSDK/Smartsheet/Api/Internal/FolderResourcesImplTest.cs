@@ -47,9 +47,9 @@ namespace Smartsheet.Api.Internal
 		{
 			server.setResponseBody("../../../TestSDK/resources/updateFolder.json");
 
-			Folder newFolder = new Folder.UpdateFolderBuilder("New name for folder").Build();
+			Folder newFolder = new Folder.UpdateFolderBuilder(1486948649985924, "New name for folder").Build();
 
-			Folder resultFolder = folderResource.UpdateFolder(1486948649985924, newFolder);
+			Folder resultFolder = folderResource.UpdateFolder(newFolder);
 
 			Assert.AreEqual(resultFolder.Name, newFolder.Name);
 		}

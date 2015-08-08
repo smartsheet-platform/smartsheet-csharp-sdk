@@ -215,8 +215,18 @@ namespace Smartsheet.Api.Models
 		/// </summary>
 		public class UpdateSheetBuilder
 		{
+			private long? id;
 			private string sheetName;
 			private SheetUserSettings userSettings;
+
+			/// <summary>
+			/// Sets the required properties for updating a sheet.
+			/// </summary>
+			/// <param name="id">the sheet id</param>
+			public UpdateSheetBuilder(long? id)
+			{
+				this.id = id;
+			}
 
 			/// <summary>
 			/// Sets the Sheet Name.
@@ -270,6 +280,7 @@ namespace Smartsheet.Api.Models
 				//}
 
 				Sheet sheet = new Sheet();
+				sheet.Id = this.id;
 				sheet.Name = this.sheetName;
 				sheet.UserSettings = this.userSettings;
 				//sheet.ID = id;

@@ -73,8 +73,8 @@ namespace Smartsheet.Api.Internal
 		{
 			server.setResponseBody("../../../TestSDK/resources/updateWorkspace.json");
 
-			Workspace workspace = new Workspace.UpdateWorkspaceBuilder("Updated workspace").Build();
-			Workspace newWorkspace = workspaceResources.UpdateWorkspace(32434534, workspace);
+			Workspace workspace = new Workspace.UpdateWorkspaceBuilder(32434534, "Updated workspace").Build();
+			Workspace newWorkspace = workspaceResources.UpdateWorkspace(workspace);
 			Assert.AreEqual(7960873114331012, (long)newWorkspace.Id);
 			Assert.AreEqual("Updated workspace", newWorkspace.Name);
 			Assert.AreEqual(AccessLevel.OWNER, newWorkspace.AccessLevel);

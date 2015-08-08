@@ -38,9 +38,9 @@ namespace Smartsheet.Api.Internal
 		{
 			server.setResponseBody("../../../TestSDK/resources/updateGroup.json");
 
-			Group groupToUpdate = new Group.UpdateGroupBuilder().SetName("Renamed Group").SetDescription("Some new description").Build();
+			Group groupToUpdate = new Group.UpdateGroupBuilder(56464654).SetName("Renamed Group").SetDescription("Some new description").Build();
 
-			Group updatedGroup = groupResources.UpdateGroup(56464654, groupToUpdate);
+			Group updatedGroup = groupResources.UpdateGroup(groupToUpdate);
 
 			Assert.AreEqual(groupToUpdate.Name, updatedGroup.Name);
 			Assert.AreEqual(groupToUpdate.Description, updatedGroup.Description);
