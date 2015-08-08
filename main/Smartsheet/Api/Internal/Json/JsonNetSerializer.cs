@@ -61,7 +61,6 @@ namespace Smartsheet.Api.Internal.Json
 			serializer.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
 
 			// Excludes "Id" field from being serialized To JSON for any IdentifiableModel class
-			// The above statement is deprecated in SDK 2.0. Now includes "Id". "Id" SHOULD be serialized!
 			serializer.ContractResolver = new ContractResolver();
 
 			// Handles enum serialization
