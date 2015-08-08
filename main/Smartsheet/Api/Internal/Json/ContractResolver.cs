@@ -18,6 +18,7 @@
 
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using Smartsheet.Api.Models;
 using System;
 using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -32,20 +33,24 @@ namespace Smartsheet.Api.Internal.Json
 
 		protected override JsonProperty CreateProperty(MemberInfo member, MemberSerialization memberSerialization)
 		{
-				JsonProperty property = base.CreateProperty(member, memberSerialization);
-				//This below will not serialize the property "id" unless commented out.
-				//if (property.PropertyName.ToLower().Equals("id"))
-				//{
-				//	 property.ShouldSerialize = (object instance) => false;
-				//}
-				return property;
+			JsonProperty property = base.CreateProperty(member, memberSerialization);
+			// For the meantime, will serailize ID if object type is Row. Id needs to be serialized 
+			// because Update Row needs id in the json object. However this a hacky way 
+			// of doing it because Add Row cannot contain id in the json object. So In SheetRowResources.AddRows, 
+			// we loop over every row and make them null before serializing them.
+			if (property.PropertyName.ToLower().Equals("id") && property.DeclaringType != typeof(Row))
+			{
+				property.ShouldSerialize = (object instance) => false;
+			}
+			return property;
 		}
+
 
 		protected override string ResolvePropertyName(string propertyName)
 		{
 			string str;
-			str = ((string.IsNullOrEmpty(propertyName) || char.IsLower(propertyName, 0) ? false : 
-				propertyName.Length >= 2) ? string.Concat(propertyName.Substring(0, 1).ToLower(), 
+			str = ((string.IsNullOrEmpty(propertyName) || char.IsLower(propertyName, 0) ? false :
+				propertyName.Length >= 2) ? string.Concat(propertyName.Substring(0, 1).ToLower(),
 				propertyName.Substring(1)) : propertyName);
 			return str;
 		}

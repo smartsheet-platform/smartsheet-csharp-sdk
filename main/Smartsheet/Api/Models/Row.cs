@@ -25,6 +25,20 @@ namespace Smartsheet.Api.Models
 {
 	public class Row : AbstractRow<Column, Cell>
 	{
+		// Override Id property so that JSON.NET knows to make an exception of not serialization row Id.
+		// So Row Id will be serialized.
+		public override long? Id
+		{
+			get
+			{
+				return base.Id;
+			}
+			set
+			{
+				base.Id = value;
+			}
+		}
+
 		/// <summary>
 		/// A convenience class for creating a Row with the necessary fields for inserting into a list of Rows.
 		/// </summary>

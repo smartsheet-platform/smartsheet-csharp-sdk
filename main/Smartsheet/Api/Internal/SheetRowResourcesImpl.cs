@@ -75,6 +75,10 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual IList<Row> AddRows(long sheetId, IEnumerable<Row> rows)
 		{
+			foreach (Row row in rows)
+			{
+				row.Id = null;
+			}
 			return this.PostAndReceiveList<IEnumerable<Row>, Row>("sheets/" + sheetId + "/rows", rows, typeof(Row));
 		}
 
