@@ -3,14 +3,9 @@ using System.Collections.Generic;
 namespace Smartsheet.Api.Internal
 {
 	using NUnit.Framework;
-
 	using DefaultHttpClient = Smartsheet.Api.Internal.Http.DefaultHttpClient;
-	using Cell = Smartsheet.Api.Models.Cell;
-	using Column = Smartsheet.Api.Models.Column;
-	using Link = Smartsheet.Api.Models.Link;
-	using LinkType = Smartsheet.Api.Models.LinkType;
-	using Row = Smartsheet.Api.Models.Row;
-	using RowWrapper = Smartsheet.Api.Models.RowWrapper;
+	using Api.Models;
+	using System;
 
 	public class SheetRowResourcesImplTest : ResourcesImplBase
 	{
@@ -27,43 +22,32 @@ namespace Smartsheet.Api.Internal
 		public virtual void TestSheetRowResourcesImpl()
 		{
 		}
+
 		[Test]
-		public virtual void TestInsertRows()
+		public virtual void TestAddRows()
 		{
-			server.setResponseBody("../../../TestSDK/resources/insertRows.json");
+			server.setResponseBody("../../../TestSDK/resources/addRows.json");
 
 			// Create a set of cells
 			IList<Cell> cells = new List<Cell>();
-			Cell cell = new Cell();
-			cell.DisplayValue = "Testing";
-			cell.ColumnId = 8764071660021636L;
-			cell.RowId = 1234L;
-			Link link = new Link();
-			link.Url = "http://google.com";
-			link.Type = LinkType.URL;
-			link.SheetId = 1234L;
-			link.ColumnId = 1234L;
-			link.RowId = 1234L;
-			cell.Link = link;
-			cell.Formula = "=1+1";
+			Cell cell = new Cell.AddCellBuilder(123, "lala").SetStrict(true).Build();
+			cells.Add(cell);
 
 			// Create a row and add the cells to it.
-			IList<Row> rows = new List<Row>();
-			Row row = new Row();
-			row.Cells = cells;
-			rows.Add(row);
+			IList<Row> rows = new List<Row>
+			{
+				new Row.AddRowBuilder(true, null, null, null, null).SetCells(cells).Build(),
+				new Row.AddRowBuilder(null, null, 123, null, null).SetFormat("A").Build()
+			};
 
-			// Create a rowWrapper to hold the rows for inserting.
-			RowWrapper rowWrapper = new RowWrapper();
-			rowWrapper.ToBottom = true;
-			rowWrapper.Rows = rows;
-
-			IList<Row> newRows = sheetRowResource.InsertRows(1234L, rowWrapper);
+			IList<Row> newRows = sheetRowResource.AddRows(2331373580117892L, rows);
 
 			Assert.NotNull(newRows);
-				Assert.AreEqual(rows.Count, newRows.Count, "The number of rows created & inserted is not correct.");
+			Assert.AreEqual(2, newRows.Count, "The number of rows created & inserted is not correct.");
+			Assert.AreEqual(2331373580117892, newRows[1].SheetId);
+
 			Column col = new Column();
-			col.ID = 8764071660021636L;
+			col.Id = 8764071660021636L;
 			Assert.Null(rows[0].GetColumnByIndex(0));
 			Assert.Null(rows[0].GetColumnById(8764071660021636L));
 		}
@@ -73,12 +57,54 @@ namespace Smartsheet.Api.Internal
 		{
 			server.setResponseBody("../../../TestSDK/resources/getRow.json");
 
-			Row row = sheetRowResource.GetRow(1234L, 1);
-
+			Row row = sheetRowResource.GetRow(1, 1, null, null);
+			Assert.AreEqual(row.Expanded, true);
 			Assert.NotNull(row);
-				Assert.True(1 == row.RowNumber, "Wrong row retrieved.");
+			Assert.True(1 == row.RowNumber, "Wrong row retrieved.");
 		}
 
-	}
+		public virtual void TestCopyRowsToAnotherSheet()
+		{
+			server.setResponseBody("../../../TestSDK/resources/copyOrMoveRowResult.json");
 
+			CopyOrMoveRowDirective directive = new CopyOrMoveRowDirective() { RowIds = new List<long> { 147258369, 963852741 }, To = new CopyOrMoveRowDestination() { SheetId = 123 } };
+			CopyOrMoveRowResult row = sheetRowResource.CopyRowsToAnotherSheet(123, directive, null, true);
+			Assert.NotNull(row);
+			Assert.AreEqual(row.RowMappings[0].From, 145417762563972);
+		}
+
+		[Test]
+		public virtual void TestMoveRowsToAnotherSheet()
+		{
+			server.setResponseBody("../../../TestSDK/resources/copyOrMoveRowResult.json");
+
+			CopyOrMoveRowDirective directive = new CopyOrMoveRowDirective() { RowIds = new List<long> { 147258369, 963852741 }, To = new CopyOrMoveRowDestination() { SheetId = 123 } };
+			CopyOrMoveRowResult row = sheetRowResource.MoveRowsToAnotherSheet(123, directive, null, true);
+			Assert.NotNull(row);
+			Assert.AreEqual(row.RowMappings[1].To, 2256565987239812);
+		}
+
+
+		[Test]
+		public virtual void TestUpdateRows()
+		{
+			server.setResponseBody("../../../TestSDK/resources/updateRows.json");
+
+			Cell cell1 = new Cell.UpdateCellBuilder(117, true).Build();
+			Cell cell2 = new Cell.UpdateCellBuilder(343, 99999999).Build();
+			IList<Cell> cells = new List<Cell> { cell1, cell2 };
+
+			Row row = new Row.UpdateRowBuilder(65654654).SetLocked(true).SetExpanded(true).SetCells(cells).Build();
+			Row row2 = new Row.UpdateRowBuilder(4554684).SetToBottom(true).SetExpanded(false).Build();
+
+			IList<Row> rows = sheetRowResource.UpdateRows(123, new List<Row> { row, row2 });
+
+			Assert.AreEqual(rows[1].ParentRowNumber, 1);
+			Assert.AreEqual(rows[1].ParentId, 4624744004773764);
+			Assert.AreEqual(rows[1].Expanded, true);
+			Assert.AreEqual(rows[1].CreatedAt.Value.ToString(), DateTime.Parse("2015-01-09T11:41:55-08:00").ToString());
+			Assert.AreEqual(rows[1].Cells[1].ColumnType, ColumnType.PICKLIST);
+			Assert.AreEqual(rows[1].Cells[1].Value, rows[1].Cells[1].DisplayValue);
+		}
+	}
 }

@@ -48,6 +48,10 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// Evernote
 		/// </summary>
-		EVERNOTE
+		EVERNOTE,
+		/// <summary>
+		/// Egnyte
+		/// </summary>
+		EGNYTE,
 	}
 }

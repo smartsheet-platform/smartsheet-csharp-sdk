@@ -33,10 +33,11 @@ namespace Smartsheet.Api.Internal.Json
 		protected override JsonProperty CreateProperty(MemberInfo member, MemberSerialization memberSerialization)
 		{
 				JsonProperty property = base.CreateProperty(member, memberSerialization);
-				if (property.PropertyName.ToLower().Equals("id"))
-				{
-					 property.ShouldSerialize = (object instance) => false;
-				}
+				//This below will not serialize the property "id" unless commented out.
+				//if (property.PropertyName.ToLower().Equals("id"))
+				//{
+				//	 property.ShouldSerialize = (object instance) => false;
+				//}
 				return property;
 		}
 

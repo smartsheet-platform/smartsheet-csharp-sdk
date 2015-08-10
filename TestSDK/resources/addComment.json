@@ -1,0 +1,14 @@
+{
+    "message": "SUCCESS",
+    "result": {
+        "createdAt": "2013-02-28T22:58:30-08:00",
+        "createdBy": {
+            "email": "john.doe@smartsheet.com",
+            "name": "John Doe"
+        },
+        "id": 6834973207488388,
+        "modifiedAt": "2013-02-28T22:58:30-08:00",
+        "text": "This is a new comment."
+    },
+    "resultCode": 0
+}

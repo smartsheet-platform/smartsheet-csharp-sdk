@@ -18,78 +18,42 @@
 
 namespace Smartsheet.Api.Models
 {
-
-
 	/// <summary>
-	/// A profile object that contains the basic fields that most profiles will contain.
+	/// A user profile object.
 	/// </summary>
-	public class UserProfile : NamedModel
+	public class UserProfile : UserModel
 	{
-		/// <summary>
-		/// Represents the Email address.
-		/// </summary>
-		private string email;
+		private string timeZone;
+
+		private string locale;
+
+		private Account account;
 
 		/// <summary>
-		/// Represents the first Name.
+		/// Current user’s time zone ID
 		/// </summary>
-		private string firstName;
-
-		/// <summary>
-		/// Represents the last Name.
-		/// </summary>
-		private string lastName;
-
-		/// <summary>
-		/// Gets the Email address.
-		/// </summary>
-		/// <returns> the Email address </returns>
-		public virtual string Email
+		public string TimeZone
 		{
-			get
-			{
-				return email;
-			}
-			set
-			{
-				this.email = value;
-			}
+			get { return timeZone; }
+			set { timeZone = value; }
 		}
 
-
 		/// <summary>
-		/// Gets the first Name.
+		/// Current user’s locale (see Server Information)
 		/// </summary>
-		/// <returns> the first Name </returns>
-		public virtual string FirstName
+		public string Locale
 		{
-			get
-			{
-				return firstName;
-			}
-			set
-			{
-				this.firstName = value;
-			}
+			get { return locale; }
+			set { locale = value; }
 		}
 
-
 		/// <summary>
-		/// Gets the last Name.
+		/// Account object representing the current user’s customer account
 		/// </summary>
-		/// <returns> the last Name </returns>
-		public virtual string LastName
+		public Account Account
 		{
-			get
-			{
-				return lastName;
-			}
-			set
-			{
-				this.lastName = value;
-			}
+			get { return account; }
+			set { account = value; }
 		}
-
 	}
-
 }

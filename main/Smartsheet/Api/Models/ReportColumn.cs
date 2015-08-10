@@ -32,12 +32,12 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// The virtual ID of this report column
 		/// </summary>
-		public long VirtualId { get; set; }
+		public long? VirtualId { get; set; }
 
 		/// <summary>
 		/// Only included for the special "Sheet Name" report column
 		/// </summary>
-		public bool SheetNameColumn { get; set; }
+		public bool? SheetNameColumn { get; set; }
 
 	}
 }

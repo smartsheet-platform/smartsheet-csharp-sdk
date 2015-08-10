@@ -61,6 +61,7 @@ namespace Smartsheet.Api.Internal.Json
 			serializer.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
 
 			// Excludes "Id" field from being serialized To JSON for any IdentifiableModel class
+			// The above statement is deprecated in SDK 2.0. Now includes "Id". "Id" SHOULD be serialized!
 			serializer.ContractResolver = new ContractResolver();
 
 			// Handles enum serialization
@@ -114,20 +115,20 @@ namespace Smartsheet.Api.Internal.Json
 			Utils.ThrowIfNull(@object, outputStream);
 			try
 			{
-				 serializer.Serialize(new Newtonsoft.Json.JsonTextWriter(outputStream), @object);
-				 outputStream.Flush();
+				serializer.Serialize(new Newtonsoft.Json.JsonTextWriter(outputStream), @object);
+				outputStream.Flush();
 			}
 			catch (Newtonsoft.Json.JsonException ex)
 			{
-				 throw new JsonSerializationException(ex);
+				throw new JsonSerializationException(ex);
 			}
 			catch (IOException ex)
 			{
-				 throw new JsonSerializationException(ex);
+				throw new JsonSerializationException(ex);
 			}
 			catch (ObjectDisposedException ex)
 			{
-				 throw new JsonSerializationException(ex);
+				throw new JsonSerializationException(ex);
 			}
 		}
 
@@ -151,12 +152,12 @@ namespace Smartsheet.Api.Internal.Json
 			}
 			catch (Newtonsoft.Json.JsonException ex)
 			{
-				 throw new JsonSerializationException(ex);
+				throw new JsonSerializationException(ex);
 			}
 			catch (IOException ex)
 			{
-				 
-				 throw new JsonSerializationException(ex);
+
+				throw new JsonSerializationException(ex);
 			}
 		}
 
@@ -179,19 +180,49 @@ namespace Smartsheet.Api.Internal.Json
 
 			try
 			{
-				 // Read the Json input stream into a List.
-				 list = serializer.Deserialize<IList<T>>(new Newtonsoft.Json.JsonTextReader(inputStream));
+				// Read the Json input stream into a List.
+				list = serializer.Deserialize<IList<T>>(new Newtonsoft.Json.JsonTextReader(inputStream));
 			}
 			catch (Newtonsoft.Json.JsonException ex)
 			{
-				 throw new JsonSerializationException(ex);
+				throw new JsonSerializationException(ex);
 			}
 			catch (IOException ex)
 			{
-				 throw new JsonSerializationException(ex);
+				throw new JsonSerializationException(ex);
 			}
 
 			return list;
+		}
+
+		/// <summary>
+		/// De-serialize to a DataWrapper (holds pagination info) from JSON
+		/// </summary>
+		/// <returns>DataWrapper containing data and pagination info</returns>
+		/// <param name="inputStream"> the input stream from which the JSON will be read </param>
+		/// <exception cref="IllegalArgumentException"> if any argument is null </exception>
+		/// <exception cref="JSONSerializationException">if there is any other error occurred during the operation </exception>
+		public PaginatedResult<T> DeserializeDataWrapper<T>(StreamReader inputStream)
+		{
+			Utils.ThrowIfNull(inputStream);
+
+			PaginatedResult<T> rw = null;
+
+			try
+			{
+				// Read the Json input stream into a List.
+				rw = serializer.Deserialize<PaginatedResult<T>>(new Newtonsoft.Json.JsonTextReader(inputStream));
+			}
+			catch (Newtonsoft.Json.JsonException ex)
+			{
+				throw new JsonSerializationException(ex);
+			}
+			catch (IOException ex)
+			{
+				throw new JsonSerializationException(ex);
+			}
+
+			return rw;
 		}
 
 		/// <summary>
@@ -209,15 +240,15 @@ namespace Smartsheet.Api.Internal.Json
 
 			try
 			{
-				 map = serializer.Deserialize<IDictionary<string,object>>(new Newtonsoft.Json.JsonTextReader(inputStream));
+				map = serializer.Deserialize<IDictionary<string, object>>(new Newtonsoft.Json.JsonTextReader(inputStream));
 			}
 			catch (Newtonsoft.Json.JsonException ex)
 			{
-				 throw new JsonSerializationException(ex);
+				throw new JsonSerializationException(ex);
 			}
 			catch (IOException ex)
 			{
-				 throw new JsonSerializationException(ex);
+				throw new JsonSerializationException(ex);
 			}
 
 			return map;
@@ -242,19 +273,19 @@ namespace Smartsheet.Api.Internal.Json
 
 			try
 			{
-				 result = serializer.Deserialize<RequestResult<T>>(new Newtonsoft.Json.JsonTextReader(inputStream));
+				result = serializer.Deserialize<RequestResult<T>>(new Newtonsoft.Json.JsonTextReader(inputStream));
 			}
 			catch (Newtonsoft.Json.JsonException ex)
 			{
-				 throw new JsonSerializationException(ex);
+				throw new JsonSerializationException(ex);
 			}
 			catch (IOException ex)
 			{
-				 throw new JsonSerializationException(ex);
+				throw new JsonSerializationException(ex);
 			}
 			catch (ObjectDisposedException ex)
 			{
-				 throw new JsonSerializationException(ex);
+				throw new JsonSerializationException(ex);
 			}
 
 			return result;
@@ -282,19 +313,42 @@ namespace Smartsheet.Api.Internal.Json
 
 			try
 			{
-				 result = serializer.Deserialize<RequestResult<IList<T>>>(new Newtonsoft.Json.JsonTextReader(inputStream));
+				result = serializer.Deserialize<RequestResult<IList<T>>>(new Newtonsoft.Json.JsonTextReader(inputStream));
 			}
 			catch (Newtonsoft.Json.JsonException ex)
 			{
-				 throw new JsonSerializationException(ex);
+				throw new JsonSerializationException(ex);
 			}
 			catch (IOException ex)
 			{
-				 throw new JsonSerializationException(ex);
+				throw new JsonSerializationException(ex);
 			}
 
 			return result;
 		}
+
+		public virtual CopyOrMoveRowResult DeserializeRowResult(StreamReader inputStream)
+		{
+			Utils.ThrowIfNull(inputStream);
+
+			CopyOrMoveRowResult result = null;
+
+			try
+			{
+				result = serializer.Deserialize<CopyOrMoveRowResult>(new Newtonsoft.Json.JsonTextReader(inputStream));
+			}
+			catch (Newtonsoft.Json.JsonException ex)
+			{
+				throw new JsonSerializationException(ex);
+			}
+			catch (IOException ex)
+			{
+				throw new JsonSerializationException(ex);
+			}
+
+			return result;
+		}
+
 	}
 
 }

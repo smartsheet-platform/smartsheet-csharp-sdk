@@ -27,31 +27,51 @@ namespace Smartsheet.Api.OAuth
 	public enum AccessScope
 	{
 		/// <summary>
-		/// The read sheets
+		/// Read all sheet data, including comments, attachments and cell data
 		/// </summary>
 		READ_SHEETS,
+
 		/// <summary>
-		/// The write sheets
+		/// Insert and modify sheet data, including comments, attachments and cell data
 		/// </summary>
 		WRITE_SHEETS,
+
 		/// <summary>
-		/// The share sheets
+		/// Share sheets, including sending sheets as attachments
 		/// </summary>
 		SHARE_SHEETS,
+
 		/// <summary>
-		/// The delete sheets
+		/// Delete sheets
 		/// </summary>
 		DELETE_SHEETS,
+
 		/// <summary>
-		/// The create sheets
+		/// Create new sheets
 		/// </summary>
 		CREATE_SHEETS,
 		/// <summary>
-		/// The admin sheets
+		/// Retrieve users and groups for your Smartsheet organization
+		/// </summary>
+		READ_USERS,
+
+		/// <summary>
+		/// Retrieve contacts
+		/// </summary>
+		READ_CONTACTS,
+
+		/// <summary>
+		/// Add and remove users from your Smartsheet organization; create groups and manage membership
+		/// </summary>
+		ADMIN_USERS,
+
+		/// <summary>
+		/// Modify sheet structure, including column definition, publish state, etc.
 		/// </summary>
 		ADMIN_SHEETS,
+
 		/// <summary>
-		/// The admin workspaces
+		/// Create and manage workspaces and folders, including sharing
 		/// </summary>
 		ADMIN_WORKSPACES
 	}

@@ -30,7 +30,7 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// Represents the column Type.
 		/// </summary>
-		private ColumnType? type;
+		private ColumnType? columnType;
 
 		/// <summary>
 		/// Represents the Value.
@@ -53,9 +53,9 @@ namespace Smartsheet.Api.Models
 		private long? rowId;
 
 		/// <summary>
-		/// Represents the optional Link that a cell might have.
+		/// Represents a hyperlink to a URL, sheet, or report.
 		/// </summary>
-		private Link link;
+		private Link hyperlink;
 
 		/// <summary>
 		/// The Formula for the cell.
@@ -67,19 +67,48 @@ namespace Smartsheet.Api.Models
 		/// </summary>
 		private bool? strict;
 
+		private CellLink linkInFromCell;
+
+		private IList<CellLink> linksOutToCells;
+
+		private string format;
+
+		private string conditionalFormat;
+
+		private IList<CellLink> LinksOutToCells
+		{
+			get { return linksOutToCells; }
+			set { linksOutToCells = value; }
+		}
+		public CellLink LinkInFromCell
+		{
+			get { return linkInFromCell; }
+			set { linkInFromCell = value; }
+		}
+		public string Format
+		{
+			get { return format; }
+			set { format = value; }
+		}
+		public string ConditionalFormat
+		{
+			get { return conditionalFormat; }
+			set { conditionalFormat = value; }
+		}
+
 		/// <summary>
 		/// Gets the column Type.
 		/// </summary>
 		/// <returns> the Type </returns>
-		public virtual ColumnType? Type
+		public virtual ColumnType? ColumnType
 		{
 			get
 			{
-				return type;
+				return columnType;
 			}
 			set
 			{
-				this.type = value;
+				this.columnType = value;
 			}
 		}
 
@@ -153,18 +182,18 @@ namespace Smartsheet.Api.Models
 
 
 		/// <summary>
-		/// Gets the Link for this cell.
+		/// A hyperlink to a URL, sheet, or report
 		/// </summary>
 		/// <returns> the Link </returns>
-		public virtual Link Link
+		public virtual Link Hyperlink
 		{
 			get
 			{
-				return link;
+				return hyperlink;
 			}
 			set
 			{
-				this.link = value;
+				this.hyperlink = value;
 			}
 		}
 
@@ -204,68 +233,338 @@ namespace Smartsheet.Api.Models
 		}
 
 
+		///// <summary>
+		///// A convenience class for quickly creating a List of Cells To update.
+		///// </summary>
+		//public class UpdateRowCellsBuilder
+		//{
+
+		//	/// <summary>
+		//	/// The Cells. </summary>
+		//	internal IList<Cell> cells = new List<Cell>();
+
+		//	/// <summary>
+		//	/// Adds the cell.
+		//	/// </summary>
+		//	/// <param name="columnId"> the column Id </param>
+		//	/// <param name="value"> the Value </param>
+		//	/// <param name="strict"> the Strict </param>
+		//	/// <returns> the update row Cells builder </returns>
+		//	public virtual UpdateRowCellsBuilder AddCell(long? columnId, object value, bool? strict)
+		//	{
+		//		Cell cell = new Cell();
+		//		cell.columnId = columnId;
+		//		cell.value = value;
+		//		cell.strict = strict;
+		//		cells.Add(cell);
+		//		return this;
+		//	}
+
+		//	/// <summary>
+		//	/// Gets the cells.
+		//	/// </summary>
+		//	/// <value>
+		//	/// The cells.
+		//	/// </value>
+		//	public virtual IList<Cell> Cells
+		//	{
+		//		get
+		//		{
+		//			return cells;
+		//		}
+		//	}
+
+		//	/// <summary>
+		//	/// Adds the cell.
+		//	/// </summary>
+		//	/// <param name="columnId"> the column Id </param>
+		//	/// <param name="value"> the Value </param>
+		//	/// <returns> the update row Cells builder </returns>
+		//	public virtual UpdateRowCellsBuilder AddCell(long? columnId, object value)
+		//	{
+		//		AddCell(columnId, value, true);
+		//		return this;
+		//	}
+
+		//	/// <summary>
+		//	/// Returns the list of Cells.
+		//	/// </summary>
+		//	/// <returns> the list </returns>
+		//	public virtual IList<Cell> Build()
+		//	{
+		//		return cells;
+		//	}
+		//}
+
 		/// <summary>
-		/// A convenience class for quickly creating a List of Cells To update.
+		/// A convenience class for adding a Cell with the necessary fields for inserting into a list of Cells.
 		/// </summary>
-		public class UpdateRowCellsBuilder
+		public class AddCellBuilder
 		{
+			private long? columnId;
+
+			private object value;
+
+			private bool? strict;
+
+			private string format;
+
+			private Link hyperlink;
 
 			/// <summary>
-			/// The Cells. </summary>
-			internal IList<Cell> cells = new List<Cell>();
-
-			/// <summary>
-			/// Adds the cell.
+			/// Set required properties.
 			/// </summary>
-			/// <param name="columnId"> the column Id </param>
-			/// <param name="value"> the Value </param>
-			/// <param name="strict"> the Strict </param>
-			/// <returns> the update row Cells builder </returns>
-			public virtual UpdateRowCellsBuilder AddCell(long? columnId, object value, bool? strict)
+			/// <param name="columnId">required</param>
+			/// <param name="value">required</param>
+			public AddCellBuilder(long? columnId, object value)
+			{
+				this.columnId = columnId;
+				this.value = value;
+			}
+
+			/// <summary>
+			/// </summary>
+			/// <param name="columnId">(required)</param>
+			/// <returns>this AddCellBuilder</returns>
+			public virtual AddCellBuilder SetColumnId(long? columnId)
+			{
+				this.columnId = columnId;
+				return this;
+			}
+
+
+			/// <summary>
+			/// </summary>
+			/// <param name="value">(required)</param>
+			/// <returns>this AddCellBuilder</returns>
+			public virtual AddCellBuilder SetValue(object value)
+			{
+				this.value = value;
+				return this;
+			}
+
+
+			/// <summary>
+			/// </summary>
+			/// <param name="strict">(optional)</param>
+			/// <returns>this AddCellBuilder</returns>
+			public virtual AddCellBuilder SetStrict(bool? strict)
+			{
+				this.strict = strict;
+				return this;
+			}
+
+
+			/// <summary>
+			/// </summary>
+			/// <param name="format">(optional)</param>
+			/// <returns>this AddCellBuilder</returns>
+			public virtual AddCellBuilder SetFormat(string format)
+			{
+				this.format = format;
+				return this;
+			}
+
+
+			/// <summary>
+			/// </summary>
+			/// <param name="hyperlink"> (optional) </param>
+			/// <returns> this AddCellBuilder </returns>
+			public virtual AddCellBuilder SetHyperlink(Link hyperlink)
+			{
+				this.hyperlink = hyperlink;
+				return this;
+			}
+
+
+			public virtual long? GetColumnId()
+			{
+				return columnId;
+			}
+
+			public virtual object GetValue()
+			{
+				return value;
+			}
+
+			public virtual bool? GetStrict()
+			{
+				return strict;
+			}
+
+			public virtual string GetFormat()
+			{
+				return format;
+			}
+
+			public virtual Link GetHyperlink()
+			{
+				return hyperlink;
+			}
+
+			/// <summary>
+			/// Builds and returns the Cell object.
+			/// </summary>
+			/// <returns>Cell object</returns>
+			public virtual Cell Build()
 			{
 				Cell cell = new Cell();
-				cell.columnId = columnId;
-				cell.value = value;
-				cell.strict = strict;
-				cells.Add(cell);
-				return this;
+				cell.ColumnId = columnId;
+				cell.Value = value;
+				cell.Strict = strict;
+				cell.Format = format;
+				cell.Hyperlink = hyperlink;
+				return cell;
 			}
+		}
 
-				/// <summary>
-				/// Gets the cells.
-				/// </summary>
-				/// <value>
-				/// The cells.
-				/// </value>
-			public virtual IList<Cell> Cells
+		/// <summary>
+		/// A convenience class for updating a Cell with the necessary fields for inserting into a list of Cells.
+		/// </summary>
+		public class UpdateCellBuilder
+		{
+			private long? columnId;
+
+			private object value;
+
+			private bool? strict;
+
+			private string format;
+
+			private Link hyperlink;
+
+			private CellLink linkInFromCell;
+
+			/// <summary>
+			/// Set required properties.
+			/// </summary>
+			/// <param name="columnId">required</param>
+			/// <param name="value">required</param>
+			public UpdateCellBuilder(long? columnId, object value)
 			{
-				get
-				{
-					return cells;
-				}
+				this.columnId = columnId;
+				this.value = value;
 			}
 
 			/// <summary>
-			/// Adds the cell.
+			/// (required)
 			/// </summary>
-			/// <param name="columnId"> the column Id </param>
-			/// <param name="value"> the Value </param>
-			/// <returns> the update row Cells builder </returns>
-			public virtual UpdateRowCellsBuilder AddCell(long? columnId, object value)
+			/// <param name="columnId">columnId</param>
+			/// <returns>this UpdateCellBuilder</returns>
+			public virtual UpdateCellBuilder SetColumnId(long? columnId)
 			{
-				AddCell(columnId, value, true);
+				this.columnId = columnId;
 				return this;
 			}
 
 			/// <summary>
-			/// Returns the list of Cells.
 			/// </summary>
-			/// <returns> the list </returns>
-			public virtual IList<Cell> Build()
+			/// <param name="value">(required)</param>
+			/// <returns>this UpdateCellBuilder</returns>
+			public virtual UpdateCellBuilder SetValue(object value)
 			{
-				return cells;
+				this.value = value;
+				return this;
+			}
+
+			/// <summary>
+			/// </summary>
+			/// <param name="strict">(optional)</param>
+			/// <returns>this UpdateCellBuilder</returns>
+			public virtual UpdateCellBuilder SetStrict(bool? strict)
+			{
+				this.strict = strict;
+				return this;
+			}
+
+			/// <summary>
+			/// </summary>
+			/// <param name="format">(optional)</param>
+			/// <returns>this UpdateCellBuilder</returns>
+			public virtual UpdateCellBuilder SetFormat(string format)
+			{
+				this.format = format;
+				return this;
+			}
+
+			/// <summary>
+			/// (optional) with exactly one of the following attributes set:
+			/// <list type="bullet">
+			/// <item>url</item>
+			/// <item>sheetId</item>
+			/// <item>reportId</item>
+			/// </list>
+			/// </summary>
+			/// <param name="hyperlink"> Link object </param>
+			/// <returns> this UpdateCellBuilder </returns>
+			public virtual UpdateCellBuilder SetHyperlink(Link hyperlink)
+			{
+				this.hyperlink = hyperlink;
+				return this;
+			}
+
+			/// <summary>
+			/// (optional) with all of the following attributes set:
+			/// <list type="bullet">
+			/// <item>sheetId</item>
+			/// <item>rowId</item>
+			/// <item>columnId</item>
+			/// </list>
+			/// </summary>
+			/// <param name="linkInFromCell"> CellLink object </param>
+			/// <returns> this UpdateCellBuilder </returns>
+			public virtual UpdateCellBuilder SetLinkInFromCell(CellLink linkInFromCell)
+			{
+				this.linkInFromCell = linkInFromCell;
+				return this;
+			}
+
+
+			public virtual long? GetColumnId()
+			{
+				return columnId;
+			}
+
+			public virtual object GetValue()
+			{
+				return value;
+			}
+
+			public virtual bool? GetStrict()
+			{
+				return strict;
+			}
+
+			public virtual string GetFormat()
+			{
+				return format;
+			}
+
+			public virtual Link GetHyperlink()
+			{
+				return hyperlink;
+			}
+
+			public virtual CellLink GetLinkInFromCell()
+			{
+				return linkInFromCell;
+			}
+
+			/// <summary>
+			/// Builds and returns the Cell object.
+			/// </summary>
+			/// <returns>Cell object</returns>
+			public virtual Cell Build()
+			{
+				Cell cell = new Cell();
+				cell.ColumnId = columnId;
+				cell.Value = value;
+				cell.Strict = strict;
+				cell.Format = format;
+				cell.Hyperlink = hyperlink;
+				cell.LinkInFromCell = linkInFromCell;
+				return cell;
 			}
 		}
 	}
-
 }

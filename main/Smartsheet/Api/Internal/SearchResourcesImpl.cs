@@ -19,9 +19,9 @@
 namespace Smartsheet.Api.Internal
 {
 
-	 using System;
+	using System;
 
-	 using SearchResult = Api.Models.SearchResult;
+	using SearchResult = Api.Models.SearchResult;
 
 	/// <summary>
 	/// This is the implementation of the SearchResources.
@@ -37,56 +37,44 @@ namespace Smartsheet.Api.Internal
 		/// Exceptions: - IllegalArgumentException : if any argument is null
 		/// </summary>
 		/// <param name="smartsheet"> the Smartsheet </param>
-		public SearchResourcesImpl(SmartsheetImpl smartsheet) : base(smartsheet)
+		public SearchResourcesImpl(SmartsheetImpl smartsheet)
+			: base(smartsheet)
 		{
 		}
 
 		/// <summary>
-		/// Performs a search across all Sheets To which user has access.
-		/// 
-		/// It mirrors To the following Smartsheet REST API method: GET /search
-		/// 
-		/// Exceptions:
-		///   IllegalArgumentException : if query is null/empty string
-		///   InvalidRequestException : if there is any problem with the REST API request
-		///   AuthorizationException : if there is any problem with the REST API authorization(access token)
-		///   ServiceUnavailableException : if the REST API service is not available (possibly due To rate limiting)
-		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
-		///   SmartsheetException : if there is any other error occurred during the operation
+		/// <para>Searches all Sheets that the User can access, for the specified text.</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: GET /search</para>
 		/// </summary>
-		/// <param name="query"> the query Text </param>
-		/// <returns> the search RequestResult (note that if there is no such resource, this method will throw
-		/// ResourceNotFoundException rather than returning null). </returns>
-		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
+		/// <param name="query"> (required): Text with which to perform the search. </param>
+		/// <returns> SearchResult object that contains a maximum of 100 SearchResultems </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual SearchResult Search(string query)
 		{
 			return this.GetResource<SearchResult>("search?query=" + Uri.EscapeDataString(query), typeof(SearchResult));
 		}
 
 		/// <summary>
-		/// Performs a search within a sheet.
-		/// 
-		/// It mirrors To the following Smartsheet REST API method: GET /search/sheet/{SheetId}
-		/// 
-		/// Exceptions:
-		///   IllegalArgumentException : if query is null/empty string
-		///   InvalidRequestException : if there is any problem with the REST API request
-		///   AuthorizationException : if there is any problem with the REST API authorization(access token)
-		///   ResourceNotFoundException : if the resource can not be found
-		///   ServiceUnavailableException : if the REST API service is not available (possibly due To rate limiting)
-		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
-		///   SmartsheetException : if there is any other error occurred during the operation
+		/// <para>Searches a Sheet for the specified text.</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: GET /search/sheets/{sheetId}</para>
 		/// </summary>
 		/// <param name="sheetId"> the sheet Id </param>
-		/// <param name="query"> the query </param>
-		/// <returns> the search RequestResult (note that if there is no such resource, this method will throw
-		/// ResourceNotFoundException rather than returning null). </returns>
-		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
+		/// <param name="query"> the query Text </param>
+		/// <returns> SearchResult object that contains a maximum of 100 SearchResultems </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual SearchResult SearchSheet(long sheetId, string query)
 		{
-			return this.GetResource<SearchResult>("search/sheet/" + sheetId + "?query=" + Uri.EscapeDataString(query),
-					typeof(SearchResult));
+			return this.GetResource<SearchResult>("search/sheets/" + sheetId + "?query=" + Uri.EscapeDataString(query), typeof(SearchResult));
 		}
 	}
-
 }

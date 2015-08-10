@@ -47,7 +47,7 @@ namespace Smartsheet.Api.Internal
 			server.setResponseBody(@"..\..\..\TestSDK\resources\attachFile.json");
 				string file = @"..\..\..\TestSDK\resources\large_sheet.pdf";
 			Attachment attachment = associatedAttachment.AttachFile(1234L, file, "application/pdf");
-			Assert.True(attachment.ID == 7265404226692996L);
+			Assert.True(attachment.Id == 7265404226692996L);
 			Assert.AreEqual("Testing.PDF", attachment.Name);
 			Assert.AreEqual(AttachmentType.FILE, attachment.AttachmentType);
 			Assert.AreEqual("application/pdf", attachment.MimeType);

@@ -28,6 +28,15 @@ namespace Smartsheet.Api.Models
 	/// </summary>
 	public class Folder : NamedModel
 	{
+		/// <summary>
+		/// Represents whether Folder is marked as favorite in Home folder
+		/// </summary>
+		private bool? favorite;
+
+		/// <summary>
+		/// Direct URL to Folder
+		/// </summary>
+		private string permalink;
 
 		/// <summary>
 		/// Represents the Sheets contained in the folder.
@@ -54,6 +63,27 @@ namespace Smartsheet.Api.Models
 		/// Represents the Templates contained in the folder.
 		/// </summary>
 		private IList<Template> templates;
+
+
+		/// <summary>
+		/// Gets and Sets the whether this Folder is favorited.
+		/// </summary>
+		/// <returns> the Sheets </returns>
+		public bool? Favorite
+		{
+			get { return favorite; }
+			set { favorite = value; }
+		}
+
+		/// <summary>
+		/// Gets and Sets the permalink of this folder.
+		/// </summary>
+		/// <returns> the Sheets </returns>
+		public string Permalink
+		{
+			get { return permalink; }
+			set { permalink = value; }
+		}
 
 		/// <summary>
 		/// Gets the Sheets in the folder.
@@ -125,11 +155,20 @@ namespace Smartsheet.Api.Models
 		/// </summary>
 		public class UpdateFolderBuilder
 		{
-			internal string folderName;
-			internal long? id;
+			private string folderName;
+			//internal long? id;
 
 			/// <summary>
-			/// Name.
+			/// Sets the required the fields for updating a Folder.
+			/// </summary>
+			/// <param name="name"> the name of the folder, need not be unique </param>
+			public UpdateFolderBuilder(string name)
+			{
+				this.folderName = name;
+			}
+
+			/// <summary>
+			/// Set the Name of the Folder.
 			/// </summary>
 			/// <param name="name"> the Name </param>
 			/// <returns> the update folder builder </returns>
@@ -143,35 +182,86 @@ namespace Smartsheet.Api.Models
 			/// Gets the Name.
 			/// </summary>
 			/// <returns> the Name </returns>
-			public virtual string name
+			public virtual string GetName()
 			{
-				get
-				{
-					return folderName;
-				}
+				return folderName;
+			}
+
+			///// <summary>
+			///// Gets the folder Id.
+			///// </summary>
+			///// <returns> the folder Id. </returns>
+			//public virtual long? Id
+			//{
+			//	get
+			//	{
+			//		return id;
+			//	}
+			//}
+
+			//	/// <summary>
+			//	/// Sets the folder Id.
+			//	/// </summary>
+			//	/// <param name="id">the Id of the folder.</param>
+			//	/// <returns></returns>
+			//public virtual UpdateFolderBuilder SetID(long? id)
+			//{
+			//	this.id = id;
+			//	return this;
+			//}
+
+			/// <summary>
+			/// Builds the folder.
+			/// </summary>
+			/// <returns> the folder </returns>
+			public virtual Folder Build()
+			{
+				//if (folderName == null)
+				//{
+				//	throw new MemberAccessException("A folder name is required.");
+				//}
+
+				Folder folder = new Folder();
+				//folder.ID = id;
+				folder.Name = folderName;
+				return folder;
+			}
+		}
+
+		/// <summary>
+		/// A convenience class for setting up a folder with the appropriate fields for creation.
+		/// </summary>
+		public class CreateFolderBuilder
+		{
+			private string folderName;
+
+			/// <summary>
+			/// Sets the required the fields for creating a Folder.
+			/// </summary>
+			/// <param name="name"> the name of the folder, need not be unique </param>
+			public CreateFolderBuilder(string name)
+			{
+				this.folderName = name;
 			}
 
 			/// <summary>
-			/// Gets the folder Id.
+			/// Set the Name of the Folder.
 			/// </summary>
-			/// <returns> the folder Id. </returns>
-			public virtual long? Id
+			/// <param name="name"> the Name </param>
+			/// <returns> the update folder builder </returns>
+			public virtual CreateFolderBuilder SetName(string name)
 			{
-				get
-				{
-					return id;
-				}
+				this.folderName = name;
+				return this;
 			}
 
-				/// <summary>
-				/// Sets the folder Id.
-				/// </summary>
-				/// <param name="id">the Id of the folder.</param>
-				/// <returns></returns>
-			public virtual UpdateFolderBuilder SetID(long? id)
+			/// <summary>
+			/// Gets the Name.
+			/// </summary>
+			/// <returns> the Name </returns>
+			public virtual string GetName()
 			{
-				this.id = id;
-				return this;
+				return folderName;
 			}
 
 			/// <summary>
@@ -180,18 +270,10 @@ namespace Smartsheet.Api.Models
 			/// <returns> the folder </returns>
 			public virtual Folder Build()
 			{
-				if (folderName == null)
-				{
-					throw new MemberAccessException("A folder name is required.");
-				}
-
 				Folder folder = new Folder();
-				folder.ID = id;
 				folder.Name = folderName;
 				return folder;
 			}
 		}
-
 	}
-
 }

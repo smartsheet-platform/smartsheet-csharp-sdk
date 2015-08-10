@@ -3,15 +3,12 @@ using System.Collections.Generic;
 namespace Smartsheet.Api.Internal
 {
 	using NUnit.Framework;
-
-
-
+	using Smartsheet.Api.Models;
 	using DefaultHttpClient = Smartsheet.Api.Internal.Http.DefaultHttpClient;
-	using Folder = Smartsheet.Api.Models.Folder;
 
 	public class FolderResourcesImplTest : ResourcesImplBase
 	{
-		FolderResourcesImpl folderResource; 
+		FolderResourcesImpl folderResource;
 
 		[SetUp]
 		public virtual void SetUp()
@@ -29,26 +26,20 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestGetFolder()
 		{
-
+			// Test will fail unless Sheet is implemented to API2.0 because of Sheet.Source
 			// Set a fake response
 			server.setResponseBody("../../../TestSDK/resources/getFolder.json");
 
-			//server.getClass().getClassLoader().getResourceAsStream(
-			//		"com/smartsheet/api/internal/getFolder.json"
-
-			// Send the request for a folder
-
-			//folderResource.getSmartsheet().getHttpClient().close();
-
-			Folder folder = folderResource.GetFolder(123L);
-	//		folder.setTemplates(new ArrayList<Template>());
-	//		folder.setWorkspaces(new ArrayList<Workspace>());
-			folderResource.GetFolder(123L);
+			// User can get Folder by specifying a list of FolderInclude enum values or specifying null.
+			Folder folder = folderResource.GetFolder(123L, new List<FolderInclusion> { FolderInclusion.SOURCE });
 
 			// Verify results
-			Assert.AreEqual("Personal", folder.Name);
-			Assert.AreEqual(2, folder.Sheets.Count);
-			Assert.AreEqual(0, folder.Folders.Count);
+			Assert.AreEqual("Projects", folder.Name);
+			Assert.AreEqual(9, folder.Sheets.Count);
+			Assert.AreEqual(1, folder.Folders.Count);
+			//Uncomment below once Sheet is implemented with Source object to test whether Source test validates.
+			//Assert.AreEqual(6075276170946436, folder.Sheets[0].Source.ID);
+
 		}
 
 		[Test]
@@ -56,11 +47,9 @@ namespace Smartsheet.Api.Internal
 		{
 			server.setResponseBody("../../../TestSDK/resources/updateFolder.json");
 
-			Folder newFolder = new Folder();
-			newFolder.Name = "New Name";
-			newFolder.ID = 1138268709382020L;
+			Folder newFolder = new Folder.UpdateFolderBuilder("New name for folder").Build();
 
-			Folder resultFolder = folderResource.UpdateFolder(newFolder);
+			Folder resultFolder = folderResource.UpdateFolder(1486948649985924, newFolder);
 
 			Assert.AreEqual(resultFolder.Name, newFolder.Name);
 		}
@@ -80,8 +69,8 @@ namespace Smartsheet.Api.Internal
 
 			server.setResponseBody("../../../TestSDK/resources/listFolders.json");
 
-			IList<Folder> folders = folderResource.ListFolders(12345L);
-			Assert.AreEqual(2, folders.Count);
+			PaginatedResult<Folder> result = folderResource.ListFolders(12345L, new PaginationParameters(false, null, null));
+			Assert.AreEqual(2, result.Data.Count);
 		}
 
 		[Test]
@@ -89,8 +78,7 @@ namespace Smartsheet.Api.Internal
 		{
 			server.setResponseBody("../../../TestSDK/resources/createFolder.json");
 
-			Folder newFolder = new Folder();
-			newFolder.Name = "new folder by brett";
+			Folder newFolder = new Folder.CreateFolderBuilder("New folder").Build();
 			Folder createdFolder = folderResource.CreateFolder(123L, newFolder);
 
 			Assert.AreEqual(createdFolder.Name, newFolder.Name);

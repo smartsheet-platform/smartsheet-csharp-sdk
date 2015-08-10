@@ -109,50 +109,52 @@ namespace Smartsheet.Api.Internal
 		/// </summary>
 		private SheetResources sheets;
 
-		/// <summary>
-		/// Represents the AtomicReference To ColumnResources.
-		/// 
-		/// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
-		/// as null, and will be initialized To non-null at the first time it is accessed via corresponding getter, therefore
-		/// effectively the underlying Value is lazily created in a thread safe manner.
-		/// </summary>
-		private ColumnResources columns;
+		///// <summary>
+		///// Represents the AtomicReference To ColumnResources.
+		///// 
+		///// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
+		///// as null, and will be initialized To non-null at the first time it is accessed via corresponding getter, therefore
+		///// effectively the underlying Value is lazily created in a thread safe manner.
+		///// </summary>
+		//private ColumnResources columns;
 
-		/// <summary>
-		/// Represents the AtomicReference To RowResources.
-		/// 
-		/// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
-		/// as null, and will be initialized To non-null at the first time it is accessed via corresponding getter, therefore
-		/// effectively the underlying Value is lazily created in a thread safe manner.
-		/// </summary>
-		private RowResources rows;
+		///// <summary>
+		///// Represents the AtomicReference To RowResources.
+		///// 
+		///// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
+		///// as null, and will be initialized To non-null at the first time it is accessed via corresponding getter, therefore
+		///// effectively the underlying Value is lazily created in a thread safe manner.
+		///// </summary>
+		//private RowResources rows;
 
-		/// <summary>
-		/// Represents the AtomicReference To AttachmentResources.
-		/// 
-		/// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
-		/// as null, and will be initialized To non-null at the first time it is accessed via corresponding getter, therefore
-		/// effectively the underlying Value is lazily created in a thread safe manner.
-		/// </summary>
-		private AttachmentResources attachments;
+		///// <summary>
+		///// Represents the AtomicReference To AttachmentResources.
+		///// 
+		///// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
+		///// as null, and will be initialized To non-null at the first time it is accessed via corresponding getter, therefore
+		///// effectively the underlying Value is lazily created in a thread safe manner.
+		///// </summary>
+		//private AttachmentResources attachments;
 
-		/// <summary>
-		/// Represents the AtomicReference To DiscussionResources.
-		/// 
-		/// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
-		/// as null, and will be initialized To non-null at the first time it is accessed via corresponding getter, therefore
-		/// effectively the underlying Value is lazily created in a thread safe manner.
-		/// </summary>
-		private DiscussionResources discussions;
+		///// <summary>
+		///// Represents the AtomicReference To DiscussionResources.
+		///// 
+		///// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
+		///// as null, and will be initialized To non-null at the first time it is accessed via corresponding getter, therefore
+		///// effectively the underlying Value is lazily created in a thread safe manner.
+		///// </summary>
+		//private DiscussionResources discussions;
 
-		/// <summary>
-		/// Represents the AtomicReference To CommentResources.
-		/// 
-		/// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
-		/// as null, and will be initialized To non-null at the first time it is accessed via corresponding getter, therefore
-		/// effectively the underlying Value is lazily created in a thread safe manner.
-		/// </summary>
-		private CommentResources comments;
+		///// <summary>
+		///// Represents the AtomicReference To CommentResources.
+		///// 
+		///// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
+		///// as null, and will be initialized To non-null at the first time it is accessed via corresponding getter, therefore
+		///// effectively the underlying Value is lazily created in a thread safe manner.
+		///// </summary>
+		//private CommentResources comments;
+
+
 
 		/// <summary>
 		/// Represents the AtomicReference To UserResources.
@@ -171,6 +173,52 @@ namespace Smartsheet.Api.Internal
 		/// effectively the underlying Value is lazily created in a thread safe manner.
 		/// </summary>
 		private SearchResources search;
+
+		/// <summary>
+		/// Represents the AtomicReference To ServerInfoResources.
+		/// 
+		/// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
+		/// as null, and will be initialized To non-null at the first time it is accessed via corresponding getter, therefore
+		/// effectively the underlying Value is lazily created in a thread safe manner.
+		/// </summary>
+		private ServerInfoResources serverInfo;
+
+		/// <summary>
+		/// Represents the AtomicReference To GroupResources.
+		/// 
+		/// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
+		/// as null, and will be initialized To non-null at the first time it is accessed via corresponding getter, therefore
+		/// effectively the underlying Value is lazily created in a thread safe manner.
+		/// </summary>
+		private GroupResources groups;
+
+		/// <summary>
+		/// Represents the AtomicReference To FavoriteResources.
+		/// 
+		/// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
+		/// as null, and will be initialized To non-null at the first time it is accessed via corresponding getter, therefore
+		/// effectively the underlying Value is lazily created in a thread safe manner.
+		/// </summary>
+		private FavoriteResources favorites;
+
+		/// <summary>
+		/// Represents the AtomicReference To TokenResources.
+		/// 
+		/// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
+		/// as null, and will be initialized To non-null at the first time it is accessed via corresponding getter, therefore
+		/// effectively the underlying Value is lazily created in a thread safe manner.
+		/// </summary>
+		private TokenResources tokens;
+
+		/// <summary>
+		/// Represents the AtomicReference To ContactResources.
+		/// 
+		/// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
+		/// as null, and will be initialized To non-null at the first time it is accessed via corresponding getter, therefore
+		/// effectively the underlying Value is lazily created in a thread safe manner.
+		/// </summary>
+		private ContactResources contacts;
+
 
 		/// <summary>
 		/// Represents the AtomicReference for assumed user Email.
@@ -293,40 +341,52 @@ namespace Smartsheet.Api.Internal
 		/// Returns the HomeResources instance that provides access To Home resources.
 		/// </summary>
 		/// <returns> the home resources </returns>
-		public virtual HomeResources Home()
+		public virtual HomeResources HomeResources
 		{
-			Interlocked.CompareExchange<HomeResources>(ref home, new HomeResourcesImpl(this), null);
-			return home;
+			get
+			{
+				Interlocked.CompareExchange<HomeResources>(ref home, new HomeResourcesImpl(this), null);
+				return home;
+			}
 		}
 
 		/// <summary>
 		/// Returns the WorkspaceResources instance that provides access To Workspace resources.
 		/// </summary>
 		/// <returns> the workspace resources </returns>
-		public virtual WorkspaceResources Workspaces()
+		public virtual WorkspaceResources WorkspaceResources
 		{
-			Interlocked.CompareExchange<WorkspaceResources>(ref workspaces, new WorkspaceResourcesImpl(this), null);
-			return workspaces;
+			get
+			{
+				Interlocked.CompareExchange<WorkspaceResources>(ref workspaces, new WorkspaceResourcesImpl(this), null);
+				return workspaces;
+			}
 		}
 
 		/// <summary>
 		/// Returns the FolderResources instance that provides access To Folder resources.
 		/// </summary>
 		/// <returns> the folder resources </returns>
-		public virtual FolderResources Folders()
+		public virtual FolderResources FolderResources
 		{
-			Interlocked.CompareExchange<FolderResources>(ref folders, new FolderResourcesImpl(this), null);
-			return folders;
+			get
+			{
+				Interlocked.CompareExchange<FolderResources>(ref folders, new FolderResourcesImpl(this), null);
+				return folders;
+			}
 		}
 
 		/// <summary>
 		/// Returns the TemplateResources instance that provides access To Template resources.
 		/// </summary>
 		/// <returns> the template resources </returns>
-		public virtual TemplateResources Templates()
+		public virtual TemplateResources TemplateResources
 		{
-			Interlocked.CompareExchange<TemplateResources>(ref templates, new TemplateResourcesImpl(this), null);
-			return templates;
+			get
+			{
+				Interlocked.CompareExchange<TemplateResources>(ref templates, new TemplateResourcesImpl(this), null);
+				return templates;
+			}
 		}
 
 
@@ -334,91 +394,167 @@ namespace Smartsheet.Api.Internal
 		/// Returns the TemplateResources instance that provides access To Template resources.
 		/// </summary>
 		/// <returns> the template resources </returns>
-		public virtual ReportResources Reports()
+		public virtual ReportResources ReportResources
 		{
-			Interlocked.CompareExchange<ReportResources>(ref reports, new ReportResourcesImpl(this), null);
-			return reports;
+			get
+			{
+				Interlocked.CompareExchange<ReportResources>(ref reports, new ReportResourcesImpl(this), null);
+				return reports;
+			}
 		}
 
 		/// <summary>
 		/// Returns the SheetResources instance that provides access To Sheet resources.
 		/// </summary>
 		/// <returns> the sheet resources </returns>
-		public virtual SheetResources Sheets()
+		public virtual SheetResources SheetResources
 		{
-			Interlocked.CompareExchange<SheetResources>(ref sheets, new SheetResourcesImpl(this), null);
-			return sheets;
+			get
+			{
+				Interlocked.CompareExchange<SheetResources>(ref sheets, new SheetResourcesImpl(this), null);
+				return sheets;
+			}
 		}
 
-		/// <summary>
-		/// Returns the ColumnResources instance that provides access To Column resources.
-		/// </summary>
-		/// <returns> the column resources </returns>
-		public virtual ColumnResources Columns()
-		{
-			Interlocked.CompareExchange<ColumnResources>(ref columns, new ColumnResourcesImpl(this), null);
-			return columns;
-		}
+		///// <summary>
+		///// Returns the ColumnResources instance that provides access To Column resources.
+		///// </summary>
+		///// <returns> the column resources </returns>
+		//public virtual ColumnResources Columns()
+		//{
+		//	Interlocked.CompareExchange<ColumnResources>(ref columns, new ColumnResourcesImpl(this), null);
+		//	return columns;
+		//}
 
-		/// <summary>
-		/// Returns the RowResources instance that provides access To Row resources.
-		/// </summary>
-		/// <returns> the row resources </returns>
-		public virtual RowResources Rows()
-		{
-				Interlocked.CompareExchange<RowResources>(ref rows, new RowResourcesImpl(this), null);
-				return rows;
-		}
+		///// <summary>
+		///// Returns the RowResources instance that provides access To Row resources.
+		///// </summary>
+		///// <returns> the row resources </returns>
+		//public virtual RowResources Rows()
+		//{
+		//		Interlocked.CompareExchange<RowResources>(ref rows, new RowResourcesImpl(this), null);
+		//		return rows;
+		//}
 
-		/// <summary>
-		/// Returns the AttachmentResources instance that provides access To Attachment resources.
-		/// </summary>
-		/// <returns> the attachment resources </returns>
-		public virtual AttachmentResources Attachments()
-		{
-			Interlocked.CompareExchange<AttachmentResources>(ref attachments, new AttachmentResourcesImpl(this), null);
-			return attachments;
-		}
+		///// <summary>
+		///// Returns the AttachmentResources instance that provides access To Attachment resources.
+		///// </summary>
+		///// <returns> the attachment resources </returns>
+		//public virtual AttachmentResources Attachments()
+		//{
+		//	Interlocked.CompareExchange<AttachmentResources>(ref attachments, new AttachmentResourcesImpl(this), null);
+		//	return attachments;
+		//}
 
-		/// <summary>
-		/// Returns the DiscussionResources instance that provides access To Discussion resources.
-		/// </summary>
-		/// <returns> the discussion resources </returns>
-		public virtual DiscussionResources Discussions()
-		{
-			Interlocked.CompareExchange<DiscussionResources>(ref discussions, new DiscussionResourcesImpl(this), null);
-			return discussions;
-		}
+		///// <summary>
+		///// Returns the DiscussionResources instance that provides access To Discussion resources.
+		///// </summary>
+		///// <returns> the discussion resources </returns>
+		//public virtual DiscussionResources Discussions()
+		//{
+		//	Interlocked.CompareExchange<DiscussionResources>(ref discussions, new DiscussionResourcesImpl(this), null);
+		//	return discussions;
+		//}
 
-		/// <summary>
-		/// Returns the CommentResources instance that provides access To Comment resources.
-		/// </summary>
-		/// <returns> the Comment resources </returns>
-		public virtual CommentResources Comments()
-		{
-			Interlocked.CompareExchange<CommentResources>(ref comments, new CommentResourcesImpl(this), null);
-			return comments;
-		}
+		///// <summary>
+		///// Returns the CommentResources instance that provides access To Comment resources.
+		///// </summary>
+		///// <returns> the Comment resources </returns>
+		//public virtual CommentResources Comments()
+		//{
+		//	Interlocked.CompareExchange<CommentResources>(ref comments, new CommentResourcesImpl(this), null);
+		//	return comments;
+		//}
 
 		/// <summary>
 		/// Returns the UserResources instance that provides access To User resources.
 		/// </summary>
 		/// <returns> the user resources </returns>
-		public virtual UserResources Users()
+		public virtual UserResources UserResources
 		{
-			Interlocked.CompareExchange<UserResources>(ref users, new UserResourcesImpl(this), null);
-			return users;
+			get
+			{
+				Interlocked.CompareExchange<UserResources>(ref users, new UserResourcesImpl(this), null);
+				return users;
+			}
 		}
 
 		/// <summary>
 		/// Returns the SearchResources instance that provides access To searching resources.
 		/// </summary>
 		/// <returns> the search resources </returns>
-		public virtual SearchResources Search()
+		public virtual SearchResources SearchResources
 		{
-			Interlocked.CompareExchange<SearchResources>(ref search, new SearchResourcesImpl(this), null);
-			return search;
+			get
+			{
+				Interlocked.CompareExchange<SearchResources>(ref search, new SearchResourcesImpl(this), null);
+				return search;
+			}
+		}
+
+		/// <summary>
+		/// Returns the ServerInfoResources instance that provides access To server information resources.
+		/// </summary>
+		/// <returns> the server information resources </returns>
+		public virtual ServerInfoResources ServerInfoResources
+		{
+			get
+			{
+				Interlocked.CompareExchange<ServerInfoResources>(ref serverInfo, new ServerInfoResourcesImpl(this), null);
+				return serverInfo;
+			}
+		}
+
+		/// <summary>
+		/// Returns the GroupResources instance that provides access To group resources.
+		/// </summary>
+		/// <returns> the group resources </returns>
+		public virtual GroupResources GroupResources
+		{
+			get
+			{
+				Interlocked.CompareExchange<GroupResources>(ref groups, new GroupResourcesImpl(this), null);
+				return groups;
+			}
+		}
+
+		/// <summary>
+		/// Returns the FavoriteResources instance that provides access To favorite resources.
+		/// </summary>
+		/// <returns> the favorite resources </returns>
+		public FavoriteResources FavoriteResources
+		{
+			get
+			{
+				Interlocked.CompareExchange<FavoriteResources>(ref favorites, new FavoriteResourcesImpl(this), null);
+				return favorites;
+			}
+		}
+
+		/// <summary>
+		/// Returns the TokenResources instance that provides access To token resources.
+		/// </summary>
+		/// <returns> the token resources </returns>
+		public TokenResources TokenResources
+		{
+			get
+			{
+				Interlocked.CompareExchange<TokenResources>(ref tokens, new TokenResourcesImpl(this), null);
+				return tokens;
+			}
+		}
+
+		/// <summary>
+		/// Returns the ContactResources instance that provides access To contacts resources.
+		/// </summary>
+		/// <returns> the contacts resources </returns>
+		public ContactResources ContactResources
+		{
+			get
+			{
+				Interlocked.CompareExchange<ContactResources>(ref contacts, new ContactResourcesImpl(this), null);
+				return contacts;
+			}
 		}
 	}
-
 }

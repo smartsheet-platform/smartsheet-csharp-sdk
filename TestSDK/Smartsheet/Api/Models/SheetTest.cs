@@ -27,7 +27,7 @@ namespace Smartsheet.Api.models
 			IList<Row> rows = new List<Row>();
 			Row row = new Row();
 			row.RowNumber = 5;
-			row.ID = 1234L;
+			row.Id = 1234L;
 			rows.Add(row);
 			sheet.Rows = rows;
 

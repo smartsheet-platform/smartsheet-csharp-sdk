@@ -80,28 +80,39 @@
     <Compile Include="Smartsheet\Api\Internal\ColumnResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\CommentAttachmentResourcesTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\CommentResourcesImplTest.cs" />
+    <Compile Include="Smartsheet\Api\Internal\ContactResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\DiscussionAttachmentResourcesTest.cs" />
+    <Compile Include="Smartsheet\Api\Internal\DiscussionCommentResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\DiscussionResourcesImplTest.cs" />
+    <Compile Include="Smartsheet\Api\Internal\FavoriteResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\FolderResourcesImplTest.cs" />
+    <Compile Include="Smartsheet\Api\Internal\GroupResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\HomeFolderResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\HomeResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\Http\DefaultHttpClientTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\Json\JacksonJsonSerializerTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\Json\JSONSerializerExceptionTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\OAuth\OAuthFlowImplTest.cs" />
+    <Compile Include="Smartsheet\Api\Internal\ReportResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\ResourcesImplBase.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Smartsheet\Api\Internal\RowColumnResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\RowResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\SearchResourcesImplTest.cs" />
+    <Compile Include="Smartsheet\Api\Internal\ServerInfoResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\ShareResourcesImplTest.cs" />
+    <Compile Include="Smartsheet\Api\Internal\SheetAttachmentResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\SheetColumnResourcesImplTest.cs" />
+    <Compile Include="Smartsheet\Api\Internal\SheetDiscussionResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\SheetResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\SheetRowResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\SmartsheetImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\TemplateResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\UserResourcesImplTest.cs" />
+    <Compile Include="Smartsheet\Api\Internal\UserSheetResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\Util\QueryStringBuilderTest.cs" />
+    <Compile Include="Smartsheet\Api\Internal\Util\QueryUtilTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\WorkspaceFolderResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\WorkspaceResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Models\AccessLevelTest.cs" />
@@ -114,6 +125,7 @@
     <Compile Include="Smartsheet\Api\Models\IdentifiableModelTest.cs" />
     <Compile Include="Smartsheet\Api\Models\LinkTypeTest.cs" />
     <Compile Include="Smartsheet\Api\Models\ObjectInclusionTest.cs" />
+    <Compile Include="Smartsheet\Api\Models\PaginationParametersTest.cs" />
     <Compile Include="Smartsheet\Api\Models\PaperSizeTest.cs" />
     <Compile Include="Smartsheet\Api\Models\RowTest.cs" />
     <Compile Include="Smartsheet\Api\Models\SheetEmailFormatTest.cs" />

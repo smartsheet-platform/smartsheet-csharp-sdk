@@ -30,7 +30,7 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// Represents the Email recipient(s).
 		/// </summary>
-		private IList<string> to;
+		private IList<Recipient> sendTo;
 
 		/// <summary>
 		/// Represents the Subject.
@@ -48,18 +48,18 @@ namespace Smartsheet.Api.Models
 		private bool? ccMe;
 
 		/// <summary>
-		/// Gets the To.
+		/// Gets the list of Recipients
 		/// </summary>
-		/// <returns> the To </returns>
-		public virtual IList<string> To
+		/// <returns> the list of Recipients </returns>
+		public virtual IList<Recipient> SendTo
 		{
 			get
 			{
-				return to;
+				return sendTo;
 			}
 			set
 			{
-				this.to = value;
+				this.sendTo = value;
 			}
 		}
 
@@ -102,7 +102,7 @@ namespace Smartsheet.Api.Models
 		/// Gets the carbon copy me flag.
 		/// </summary>
 		/// <returns> the cc me </returns>
-		public virtual bool? CCMe
+		public virtual bool? CcMe
 		{
 			get
 			{

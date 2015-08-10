@@ -1,1 +1,12 @@
-{"resultCode":1,"result":{"email":"bbatie@gmail.com","accessLevel":"ADMIN","id":8166691168380804},"message":"NO_CHANGE"}
+{
+	"resultCode": 0,
+	"result": {
+		"id": "AAAFeF82FOeE",
+		"type": "USER",
+		"userId": 1539725208119172,
+		"email": "jane.doe@smartsheet.com",
+		"name": "Jane Doe",
+		"accessLevel": "VIEWER"
+	},
+	"message": "SUCCESS"
+}

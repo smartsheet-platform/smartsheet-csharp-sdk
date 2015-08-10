@@ -1,4 +1,4 @@
-//    #[license]
+﻿//    #[license]
 //    SmartsheetClient SDK for C#
 //    %%
 //    Copyright (C) 2014 SmartsheetClient
@@ -16,47 +16,33 @@
 //    limitations under the License.
 //    %[license]
 
+using Smartsheet.Api.Models;
 using System.Collections.Generic;
 
 namespace Smartsheet.Api.Internal
 {
-
-	using Attachment = Api.Models.Attachment;
-
-
 	/// <summary>
-	/// This is the implementation of the AssociatedAttachmentResources for Comments.
-	/// 
-	/// It extends AssociatedAttachmentResourcesImpl and overrides listAttachments method by throwing
-	/// UnsupportedOperationException (since it's not supported for Comments).
+	/// This is the implementation of the ServerInfoResources.
 	/// 
 	/// Thread Safety: This class is thread safe because it is immutable and its base class is thread safe.
 	/// </summary>
-	public class CommentAttachmentResources : AssociatedAttachmentResourcesImpl, AssociatedAttachmentResources
+	public class ServerInfoResourcesImpl : AbstractResources, ServerInfoResources
 	{
 
 		/// <summary>
 		/// Constructor.
 		/// 
-		/// Parameters: - Smartsheet : the SmartsheetImpl
-		/// 
-		/// Exceptions:
-		///   IllegalArgumentException : if any argument is null or empty string
+		/// Exceptions: - IllegalArgumentException : if any argument is null or empty string
 		/// </summary>
 		/// <param name="smartsheet"> the Smartsheet </param>
-		public CommentAttachmentResources(SmartsheetImpl smartsheet) : base(smartsheet, "comment")
+		public ServerInfoResourcesImpl(SmartsheetImpl smartsheet)
+			: base(smartsheet)
 		{
 		}
 
-		/// <summary>
-		/// 
-		/// </summary>
-		/// <param name="objectId"></param>
-		/// <returns></returns>
-		public override IList<Attachment> ListAttachments(long objectId)
+		public ServerInfo GetServerInfo()
 		{
-			throw new System.NotSupportedException();
+			return this.GetResource<ServerInfo>("serverinfo", typeof(ServerInfo));
 		}
 	}
-
 }
