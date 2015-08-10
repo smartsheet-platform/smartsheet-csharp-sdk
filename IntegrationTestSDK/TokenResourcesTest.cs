@@ -61,10 +61,10 @@ namespace IntegrationTestSDK
 			// Get the token from the authorization result
 			Token token = oauth.ObtainNewToken(authResult);
 
-			Assert.IsTrue(token.AccessToken == "yn8kl1kvruh31uj");
+			Assert.IsTrue(token.AccessToken == "ACCESS_TOKEN");
 
 			Token tokenRefreshed = oauth.RefreshToken(token);
-			Assert.IsTrue(token.AccessToken != "yn8kl1kvruh31uj");
+			Assert.IsTrue(token.AccessToken != "ACCESS_TOKEN");
 
 			oauth.RevokeToken(token);
 			SmartsheetClient smartsheet = new SmartsheetBuilder().SetAccessToken(token.AccessToken).Build();
