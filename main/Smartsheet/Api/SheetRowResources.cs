@@ -93,13 +93,14 @@ namespace Smartsheet.Api
 		/// </summary>
 		/// <param name="sheetId"> the sheetId </param>
 		/// <param name="rowId"> the rowId </param>
+		/// <returns>Row IDs corresponding to all rows that were successfully deleted (including any child rows of rows specified in the URL).</returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		void DeleteRow(long sheetId, long rowId);
+		IList<long> DeleteRows(long sheetId, IEnumerable<long> ids, bool? ignoreRowsNotFound);
 
 		/// <summary>
 		/// <para>Moves Row(s) from the Sheet specified in the URL to (the bottom of) another sheet.</para>
@@ -127,17 +128,27 @@ namespace Smartsheet.Api
 		/// <para>Sends a Row via email.</para>
 		/// <para>It mirrors To the following Smartsheet REST API method: POST /sheets/{sheetId}/rows/{rowId}/emails</para>
 		/// </summary>
-		/// <param name="sheetId"> the sheetId </param>
-		/// <param name="rowId"> the rowId </param>
-		/// <param name="email"> the email </param>
-		/// <returns> the row object </returns>
+		/// <param name="sheetId"> The sheet Id </param>
+		/// <param name="email"> The email. The columns included for each row in the email will be populated according to the following rules: 
+		/// <list type="bullets">
+		/// <item>
+		/// If the columnIds attribute of the MultiRowEmail object is specified as an array of column IDs, those specific columns will be included.
+		/// </item>
+		/// <item>
+		/// If the columnIds attribute of the MultiRowEmail object is omitted, all columns except hidden columns shall be included.		/// </item>
+		/// <item>
+		/// If the columnIds attribute of the MultiRowEmail object is specified as empty, no columns shall be included.
+		/// (Note: In this case, either includeAttachments:true or includeDiscussions:true must be specified.)
+		/// </item>
+		/// </list>
+		/// </param>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		void SendRow(long sheetId, long rowId, RowEmail email);
+		void SendRows(long sheetId, MultiRowEmail email);
 
 		/// <summary>
 		/// <para>Updates cell values in the specified row(s), expands/collapses the specified row(s), 
