@@ -87,6 +87,10 @@ namespace Smartsheet.Api.Models
 
 		private Filter filter;
 
+		private bool? locked;
+
+		private bool? lockedForUser;
+
 
 		/// <summary>
 		/// Gets or Sets the position of the column (zero-based).
@@ -273,23 +277,57 @@ namespace Smartsheet.Api.Models
 			}
 		}
 
-
+		/// <summary>
+		/// Display width of the column in pixels
+		/// </summary>
 		public long? Width
 		{
 			get { return width; }
 			set { width = value; }
 		}
 
+		/// <summary>
+		/// <para>The format descriptor.</para>
+		/// Only returned if the include query string parameter contains format and this
+		/// column has a non-default format applied to it.
+		/// </summary>
 		public string Format
 		{
 			get { return format; }
 			set { format = value; }
 		}
+
+		/// <summary>
+		/// <para>The filter applied to the column.</para>
+		/// Only returned if the include query string parameter contains filters
+		/// and this column has a filter applied to it.
+		/// </summary>
 		public Filter Filter
 		{
 			get { return filter; }
 			set { filter = value; }
 		}
+
+		/// <summary>
+		/// Flag indicating whether the column is locked. In a response,
+		/// a value of true indicates that the column has been locked by the sheet owner or the admin.
+		/// </summary>
+		public bool? Locked
+		{
+			get { return locked; }
+			set { locked = value; }
+		}
+
+		/// <summary>
+		/// Flag indicating whether the column is locked for the requesting user.
+		/// This attribute may be present in a response, but cannot be specified in a request.
+		/// </summary>
+		public bool? LockedForUser
+		{
+			get { return lockedForUser; }
+			set { lockedForUser = value; }
+		}
+
 
 
 		/// <summary>
@@ -339,6 +377,8 @@ namespace Smartsheet.Api.Models
 			private AutoNumberFormat autoNumberFormat;
 
 			private long? width;
+
+			private bool? locked;
 
 
 			/// <summary>
@@ -415,6 +455,17 @@ namespace Smartsheet.Api.Models
 			public virtual AddColumnBuilder SetAutoNumberFormat(AutoNumberFormat autoNumberFormat)
 			{
 				this.autoNumberFormat = autoNumberFormat;
+				return this;
+			}
+
+			/// <summary>
+			/// Sets whether the column is locked.
+			/// </summary>
+			/// <param name="locked"> the flag </param>
+			/// <returns> the add column builder </returns>
+			public virtual AddColumnBuilder SetLocked(bool locked)
+			{
+				this.locked = locked;
 				return this;
 			}
 
@@ -499,6 +550,14 @@ namespace Smartsheet.Api.Models
 			}
 
 			/// <summary>
+			/// Gets the flag whether column is locked or not. </summary>
+			/// <returns> the locked flag </returns>
+			public virtual bool? GetLocked()
+			{
+				return locked;
+			}
+
+			/// <summary>
 			/// Builds the column.
 			/// </summary>
 			/// <returns> the column </returns>
@@ -518,6 +577,7 @@ namespace Smartsheet.Api.Models
 				column.width = width;
 				column.systemColumnType = systemColumnType;
 				column.autoNumberFormat = autoNumberFormat;
+				column.locked = locked;
 				return column;
 			}
 		}
@@ -799,6 +859,8 @@ namespace Smartsheet.Api.Models
 			///// <summary> The Column Id</summary>
 			//internal long? columnId;
 
+			private bool? locked;
+
 			/// <summary>
 			/// Sets the required properties for updating a column.
 			/// </summary>
@@ -935,6 +997,17 @@ namespace Smartsheet.Api.Models
 			}
 
 			/// <summary>
+			/// Sets whether the column is locked.
+			/// </summary>
+			/// <param name="locked"> the flag </param>
+			/// <returns> the modify column builder </returns>
+			public virtual UpdateColumnBuilder SetLocked(bool locked)
+			{
+				this.locked = locked;
+				return this;
+			}
+
+			/// <summary>
 			/// Gets the Format.
 			/// </summary>
 			/// <returns> the Index </returns>
@@ -1050,6 +1123,7 @@ namespace Smartsheet.Api.Models
 				column.autoNumberFormat = autoNumberFormat;
 				column.width = width;
 				column.format = format;
+				column.locked = locked;
 				//column.ID = columnId;
 				return column;
 			}
