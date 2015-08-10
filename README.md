@@ -49,10 +49,12 @@ The SDK API documentation can be viewed online at [http://smartsheet-platform.gi
 public static void OAuthExample()
 {
 	// Setup the information that is necessary to request an authorization code
-	OAuthFlow oauth = new OAuthFlowBuilder().SetClientId("cxggphqv52axrylaux").SetClientSecret("1lllvnekmjafoad0si").SetRedirectURL("https://batie.com/").Build();
+	OAuthFlow oauth = new OAuthFlowBuilder().SetClientId("cxggphqv52axrylaux")
+		.SetClientSecret("1lllvnekmjafoad0si").SetRedirectURL("https://batie.com/").Build();
 
 	// Create the URL that the user will go to grant authorization to the application
-	string url = oauth.NewAuthorizationURL(new Smartsheet.Api.OAuth.AccessScope[] { Smartsheet.Api.OAuth.AccessScope.CREATE_SHEETS, Smartsheet.Api.OAuth.AccessScope.WRITE_SHEETS }, "key=YOUR_VALUE");
+	string url = oauth.NewAuthorizationURL(new Smartsheet.Api.OAuth.AccessScope[] { 
+		Smartsheet.Api.OAuth.AccessScope.CREATE_SHEETS, Smartsheet.Api.OAuth.AccessScope.WRITE_SHEETS }, "key=YOUR_VALUE");
 
 	// Take the user to the following URL
 	Console.WriteLine(url);
