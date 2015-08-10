@@ -59,6 +59,11 @@ namespace Smartsheet.Api.Models
 		/// Includes a columns list that specifies all of the columns for the sheet. 
 		/// <para>May be used in conjunction with filters to include the user’s column filters with the columns.</para>
 		/// </summary>
-		COLUMNS
+		COLUMNS,
+
+		/// <summary>
+		/// Includes a permalink attribute for each Row. A Row permalink represents a direct link to the Row in the Smartsheet application.
+		/// </summary>
+		ROW_PERMALINK
 	}
 }

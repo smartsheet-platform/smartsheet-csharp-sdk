@@ -48,13 +48,18 @@ namespace Smartsheet.Api.Models
 		FILTERS,
 
 		/// <summary>
-		/// Includes the cells' column types.
+		/// Includes the owner’s email address and user ID for each sheet.
 		/// </summary>
-		COLUMN_TYPE,	//columnType
+		OWNER_INFO,
 
 		/// <summary>
 		/// Includes the source object indicating which sheet or template the sheet was created from, if any.
 		/// </summary>
-		SOURCE
+		SOURCE,
+
+		/// <summary>
+		/// Includes a permalink attribute for each Row. A Row permalink represents a direct link to the Row in the Smartsheet application.
+		/// </summary>
+		ROW_PERMALINK
 	}
 }

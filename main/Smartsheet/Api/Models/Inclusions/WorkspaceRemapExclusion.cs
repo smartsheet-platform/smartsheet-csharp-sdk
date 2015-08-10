@@ -16,26 +16,21 @@
 //    limitations under the License.
 //    %[license]
 
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using System.Runtime.Serialization;
-
 namespace Smartsheet.Api.Models
 {
 	/// <summary>
-	/// Represents specific elements to include in a response.
+	/// Represents specific references to NOT re-map for the newly created object
 	/// </summary>
-	public enum HomeInclusion
+	public enum WorkspaceRemapExclusion
 	{
 		/// <summary>
-		/// Includes the owner’s email address and user ID for each sheet.
+		/// Excludes re-mapping of the cell links.
 		/// </summary>
-		OWNER_INFO,
-
+		CELL_LINKS,
 
 		/// <summary>
-		/// Includes the source for any sheet that was created from another sheet or template.
+		/// Excludes re-mapping of the reports.
 		/// </summary>
-		SOURCE
+		REPORTS
 	}
 }

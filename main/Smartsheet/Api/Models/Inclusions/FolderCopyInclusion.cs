@@ -16,7 +16,7 @@
 //    limitations under the License.
 //    %[license]
 
-using Newtonsoft.Json;
+using System.Collections.Generic;
 using Newtonsoft.Json.Converters;
 using System.Runtime.Serialization;
 
@@ -25,17 +25,36 @@ namespace Smartsheet.Api.Models
 	/// <summary>
 	/// Represents specific elements to include in a response.
 	/// </summary>
-	public enum HomeInclusion
+	public enum FolderCopyInclusion
 	{
 		/// <summary>
-		/// Includes the owner’s email address and user ID for each sheet.
+		/// Includes the data.
 		/// </summary>
-		OWNER_INFO,
-
+		DATA,
 
 		/// <summary>
-		/// Includes the source for any sheet that was created from another sheet or template.
+		/// Includes the attachments.
 		/// </summary>
-		SOURCE
+		ATTACHMENTS,
+
+		/// <summary>
+		/// Includes the discussions.
+		/// </summary>
+		DISCUSSIONS,
+
+		/// <summary>
+		/// Includes cell links.
+		/// </summary>
+		CELL_LINKS,
+
+		/// <summary>
+		/// Includes the forms.
+		/// </summary>
+		FORMS,
+
+		/// <summary>
+		/// includeS everything (data, attachments, discussions, cellLinks, and forms).
+		/// </summary>
+		ALL,
 	}
 }
