@@ -39,63 +39,82 @@ cd smartsheet-csharp-sdk
 ```
 
 ## Documentation
-The SDK API documentation can be viewed online at [http://smartsheet-platform.github.io/smartsheet-csharp-sdk](http://smartsheet-platform.github.io/smartsheet-csharp-sdk/).
+The SDK API documentation can be viewed online at [http://smartsheet-platform.github.io/api-docs/#c#-sample-code](http://smartsheet-platform.github.io/api-docs/#c#-sample-code).
 
 
 ##Example Usage
 
 <!-- note: java has better syntax highlighting on github -->
-```java
-// Set the Access Token
-Token token = new Token();
-token.AccessToken = "INSERT_YOUR_TOKEN_HERE";
+```csharp
+public static void OAuthExample()
+{
+	// Setup the information that is necessary to request an authorization code
+	OAuthFlow oauth = new OAuthFlowBuilder().SetClientId("cxggphqv52axrylaux").SetClientSecret("1lllvnekmjafoad0si").SetRedirectURL("https://batie.com/").Build();
 
-// Use the Smartsheet Builder to create a Smartsheet
-SmartsheetClient smartsheet = new SmartsheetBuilder().SetAccessToken(
-    token.AccessToken).Build();
+	// Create the URL that the user will go to grant authorization to the application
+	string url = oauth.NewAuthorizationURL(new Smartsheet.Api.OAuth.AccessScope[] { Smartsheet.Api.OAuth.AccessScope.CREATE_SHEETS, Smartsheet.Api.OAuth.AccessScope.WRITE_SHEETS }, "key=YOUR_VALUE");
 
-// Get home
-Home home = smartsheet.Home().GetHome(new ObjectInclusion[]{
-    ObjectInclusion.TEMPLATES});
+	// Take the user to the following URL
+	Console.WriteLine(url);
 
-// List home folders
-IList<Folder> homeFolders = home.Folders;
-foreach(Folder tmpFolder in homeFolders) {
-    Console.WriteLine("folder:"+tmpFolder.Name);
+	// After the user accepts or declines the authorization they are taken to the redirect URL. The URL of the page
+	// the user is taken to can be used to generate an AuthorizationResult object.
+	string authorizationResponseURL = "https://batie.com/?code=dxe7eykuh912rhs&expires_in=239824&state=key%3DYOUR_VALUE";
+
+	// On this page pass in the full URL of the page to create an authorizationResult object  
+	AuthorizationResult authResult = oauth.ExtractAuthorizationResult(authorizationResponseURL);
+
+	// Get the token from the authorization result
+	Token token = oauth.ObtainNewToken(authResult);
+
+	// Save the token or use it.
 }
 
-// List Sheets
-IList<Sheet> homeSheets = smartsheet.Sheets().ListSheets();
-foreach(Sheet tmpSheet in homeSheets) {
-    Console.WriteLine("sheet:"+tmpSheet.Name);
+public static void SampleCode()
+{
+	// Set the Access Token
+	Token token = new Token();
+	token.AccessToken = "YOUR_TOKEN";
+
+	// Use the Smartsheet Builder to create a Smartsheet
+	SmartsheetClient smartsheet = new SmartsheetBuilder().SetAccessToken(token.AccessToken).Build();
+
+	// List all contents (specify 'include' parameter with value of "source").
+	Home home = smartsheet.HomeResources.GetHome(new HomeInclusion[] { HomeInclusion.SOURCE });
+
+	// List folders in "Sheets" folder (specify 'includeAll' parameter with value of "true").
+	IList<Folder> homeFolders = home.Folders;
+	foreach (Folder tmpFolder in homeFolders)
+	{
+		Console.WriteLine("folder:" + tmpFolder.Name);
+	}
+
+	// List sheets (omit 'include' parameter and pagination parameters).
+	PaginatedResult<Sheet> homeSheetsResult = smartsheet.SheetResources.ListSheets(null, null);
+	foreach (Sheet tmpSheet in homeSheetsResult.Data)
+	{
+		Console.WriteLine("sheet:" + tmpSheet.Name);
+	}
+
+	// Create folder in home
+	Folder folder = new Folder.CreateFolderBuilder("New Folder").Build();
+	folder = smartsheet.HomeResources.FolderResources.CreateFolder(folder);
+	Console.WriteLine("Folder ID:" + folder.Id + ", Folder Name:" + folder.Name);
+
+	// Setup checkbox Column Object
+	Column checkboxColumn = new Column.CreateSheetColumnBuilder("Finished", true, ColumnType.CHECKBOX).Build();
+	// Setup text Column Object
+	Column textColumn = new Column.CreateSheetColumnBuilder("To Do List", false, ColumnType.TEXT_NUMBER).Build();
+
+	// Add the 2 Columns (flag & text) to a new Sheet Object
+	Sheet sheet = new Sheet.CreateSheetBuilder("New Sheet", new Column[] { checkboxColumn, textColumn }).Build();
+	// Send the request to create the sheet @ Smartsheet
+	sheet = smartsheet.SheetResources.CreateSheet(sheet);
 }
-
-// Create folder in home
-Folder folder = new Folder();
-folder.Name = "New Folder";
-folder = smartsheet.Home().Folders().CreateFolder(folder);
-Console.WriteLine("Folder ID:"+folder.ID+", Folder Name:"+folder.Name);
-
-
-// Setup checkbox Column Object
-Column checkboxColumn = new Column.AddColumnToSheetBuilder().SetType(
-    ColumnType.CHECKBOX).
-    SetTitle("Finished").Build();
-
-// Setup text Column Object
-Column textColumn = new Column.AddColumnToSheetBuilder().SetPrimary(true).
-    SetTitle("To Do List").SetType(ColumnType.TEXT_NUMBER).Build();
-
-
-// Add the 2 Columns (flag & text) to a new Sheet Object
-Sheet sheet = new Sheet.CreateSheetBuilder().SetName("New Sheet").SetColumns(
-    new Column[]{checkboxColumn, textColumn}).Build();
-// Send the request to create the sheet @ Smartsheet
-sheet = smartsheet.Sheets().CreateSheet(sheet);
 ```
-
+<!--
 More examples are available [here](https://github.com/smartsheet-platform/smartsheet-csharp-sdk/blob/master/Sample/Program.cs).
-
+-->
 ## Contributing
 If you would like to contribute a change to the SDK, please fork a branch and then submit a pull request. More info [here](https://help.github.com/articles/using-pull-requests).
 
@@ -114,6 +133,9 @@ Each specific release is available for download via [Github](https://github.com/
 * Added support for code on Azure.
 
 -->
+**2.0.0 (Aug 10, 2015)**
+* Upgraded the Smartsheet C# SDK to the brand new version of API 2.0.
+
 **1.0.7 (Dec 9, 2014)**
 * Added ability to retrieve Reports
 
