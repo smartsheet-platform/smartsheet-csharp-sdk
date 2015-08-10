@@ -27,15 +27,13 @@ namespace sdk_csharp_sample
 				SetRedirectURL("https://batie.com/").Build();
 
 			// Create the URL that the user will go to grant authorization to the application
-			String url = oauth.NewAuthorizationURL(new Smartsheet.Api.OAuth.AccessScope[]{
-				Smartsheet.Api.OAuth.AccessScope.CREATE_SHEETS, Smartsheet.Api.OAuth.AccessScope.WRITE_SHEETS},
-				"key=YOUR_VALUE");
+			String url = oauth.NewAuthorizationURL(new Smartsheet.Api.OAuth.AccessScope[] { Smartsheet.Api.OAuth.AccessScope.CREATE_SHEETS, Smartsheet.Api.OAuth.AccessScope.WRITE_SHEETS }, "key=YOUR_VALUE");
 
 			// Take the user to the following URL
 			Console.WriteLine(url);
 
 			// After the user accepts or declines the authorization they are taken to the redirect URL. The URL of the page
-			// the user is taken to can be used to generate an authorization RequestResult object.
+			// the user is taken to can be used to generate an AuthorizationResult object.
 			String authorizationResponseURL = "https://batie.com/?code=dxe7eykuh912rhs&expires_in=239824&state=key%3DYOUR_VALUE";
 
 			// On this page pass in the full URL of the page to create an authorizationResult object  
@@ -82,10 +80,10 @@ namespace sdk_csharp_sample
 
 
 			// Setup checkbox Column Object
-			Column checkboxColumn = new Column.AddColumnBuilder("Finished", 0, ColumnType.CHECKBOX).Build();
+			Column checkboxColumn = new Column.CreateSheetColumnBuilder("Finished", true, ColumnType.CHECKBOX).Build();
 
 			// Setup text Column Object
-			Column textColumn = new Column.AddColumnBuilder("To Do List", 0, ColumnType.TEXT_NUMBER).Build();
+			Column textColumn = new Column.CreateSheetColumnBuilder("To Do List", false, ColumnType.TEXT_NUMBER).Build();
 
 
 			// Add the 2 Columns (flag & text) to a new Sheet Object
