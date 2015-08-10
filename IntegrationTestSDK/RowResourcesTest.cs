@@ -13,11 +13,12 @@ namespace IntegrationTestSDK
 		[TestMethod]
 		public void TestRowResources()
 		{
-			string accessToken = ConfigurationManager.AppSettings["accessToken"];
+			string accessToken = ConfigurationManager.AppSettings["testAccessToken"];
 
-			SmartsheetClient smartsheet = new SmartsheetBuilder().SetAccessToken(accessToken).Build();
+			SmartsheetClient smartsheet = new SmartsheetBuilder().SetAccessToken(accessToken).SetBaseURI("https://api.test.smartsheet.com/2.0/").Build();
 
-			long sheetId = CreateSheetFromTemplate(smartsheet, 8537185717643140);
+			long templateId = smartsheet.TemplateResources.ListPublicTemplates(null).Data[0].Id.Value;
+			long sheetId = CreateSheetFromTemplate(smartsheet, templateId);
 
 			PaginatedResult<Column> columnsResult = smartsheet.SheetResources.ColumnResources.ListColumns(sheetId, null, null);
 			long columnId = columnsResult.Data[0].Id.Value;
@@ -35,7 +36,7 @@ namespace IntegrationTestSDK
 		private static void DeleteRowAndGetRow(SmartsheetClient smartsheet, long sheetId, long rowId)
 		{
 
-			smartsheet.SheetResources.RowResources.DeleteRow(sheetId, rowId);
+			smartsheet.SheetResources.RowResources.DeleteRows(sheetId, new long[] { rowId }, false);
 			try
 			{
 				smartsheet.SheetResources.RowResources.GetRow(sheetId, rowId, new RowInclusion[] { RowInclusion.COLUMNS }, null);
