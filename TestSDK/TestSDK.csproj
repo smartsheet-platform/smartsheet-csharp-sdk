@@ -80,6 +80,7 @@
     <Compile Include="Smartsheet\Api\Internal\ColumnResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\CommentAttachmentResourcesTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\CommentResourcesImplTest.cs" />
+    <Compile Include="Smartsheet\Api\Internal\ContactResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\DiscussionAttachmentResourcesTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\DiscussionCommentResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\DiscussionResourcesImplTest.cs" />
