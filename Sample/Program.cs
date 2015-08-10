@@ -21,22 +21,20 @@ namespace sdk_csharp_sample
 
 		public static void OAuthExample()
 		{
-			
+
 			// Setup the information that is necessary to request an authorization code
 			OAuthFlow oauth = new OAuthFlowBuilder().SetClientId("cxggphqv52axrylaux").SetClientSecret("1lllvnekmjafoad0si").
 				SetRedirectURL("https://batie.com/").Build();
 
 			// Create the URL that the user will go to grant authorization to the application
-			String url = oauth.NewAuthorizationURL(new Smartsheet.Api.OAuth.AccessScope[]{
-				Smartsheet.Api.OAuth.AccessScope.CREATE_SHEETS, Smartsheet.Api.OAuth.AccessScope.WRITE_SHEETS},
-				"key=YOUR_VALUE");
+			string url = oauth.NewAuthorizationURL(new Smartsheet.Api.OAuth.AccessScope[] { Smartsheet.Api.OAuth.AccessScope.CREATE_SHEETS, Smartsheet.Api.OAuth.AccessScope.WRITE_SHEETS }, "key=YOUR_VALUE");
 
 			// Take the user to the following URL
 			Console.WriteLine(url);
 
 			// After the user accepts or declines the authorization they are taken to the redirect URL. The URL of the page
-			// the user is taken to can be used to generate an authorization RequestResult object.
-			String authorizationResponseURL = "https://batie.com/?code=dxe7eykuh912rhs&expires_in=239824&state=key%3DYOUR_VALUE";
+			// the user is taken to can be used to generate an AuthorizationResult object.
+			string authorizationResponseURL = "https://batie.com/?code=dxe7eykuh912rhs&expires_in=239824&state=key%3DYOUR_VALUE";
 
 			// On this page pass in the full URL of the page to create an authorizationResult object  
 			AuthorizationResult authResult = oauth.ExtractAuthorizationResult(authorizationResponseURL);
@@ -56,47 +54,43 @@ namespace sdk_csharp_sample
 			// Use the Smartsheet Builder to create a Smartsheet
 			SmartsheetClient smartsheet = new SmartsheetBuilder().SetAccessToken(token.AccessToken).Build();
 
-			// Get home
+			// List all contents (specify 'include' parameter with value of "source").
 			Home home = smartsheet.HomeResources.GetHome(new HomeInclusion[] { HomeInclusion.SOURCE });
 
-			// List home folders
+			// List folders in "Sheets" folder (specify 'includeAll' parameter with value of "true").
 			IList<Folder> homeFolders = home.Folders;
 			foreach (Folder tmpFolder in homeFolders)
 			{
 				Console.WriteLine("folder:" + tmpFolder.Name);
 			}
 
-			//// List Sheets
-			//IList<Sheet> homeSheets = smartsheet.Sheets().ListSheets();
-			//foreach (Sheet tmpSheet in homeSheets)
-			//{
-			//	Console.WriteLine("sheet:" + tmpSheet.Name);
-			//}
+			// List sheets (omit 'include' parameter and pagination parameters).
+			PaginatedResult<Sheet> homeSheetsResult = smartsheet.SheetResources.ListSheets(null, null);
+			foreach (Sheet tmpSheet in homeSheetsResult.Data)
+			{
+				Console.WriteLine("sheet:" + tmpSheet.Name);
+			}
 
 
-			//// Create folder in home
-			//Folder folder = new Folder();
-			//folder.Name = "New Folder";
-			//folder = smartsheet.Home().Folders().CreateFolder(folder);
-			//Console.WriteLine("Folder ID:"+folder.ID+", Folder Name:"+folder.Name);
-			////=========================================
+			// Create folder in home
+			Folder folder = new Folder.CreateFolderBuilder("New Folder").Build();
+			folder = smartsheet.HomeResources.FolderResources.CreateFolder(folder);
+			Console.WriteLine("Folder ID:" + folder.Id + ", Folder Name:" + folder.Name);
+			//=========================================
 
 
-			//// Setup checkbox Column Object
-			//Column checkboxColumn = new Column.AddColumnToSheetBuilder().SetType(ColumnType.CHECKBOX).
-			//	SetTitle("Finished").Build();
+			// Setup checkbox Column Object
+			Column checkboxColumn = new Column.CreateSheetColumnBuilder("Finished", true, ColumnType.CHECKBOX).Build();
 
-			//// Setup text Column Object
-			//Column textColumn = new Column.AddColumnToSheetBuilder().SetPrimary(true).SetTitle("To Do List").
-			//	SetType(ColumnType.TEXT_NUMBER).Build();
+			// Setup text Column Object
+			Column textColumn = new Column.CreateSheetColumnBuilder("To Do List", false, ColumnType.TEXT_NUMBER).Build();
 
 
-			//// Add the 2 Columns (flag & text) to a new Sheet Object
-			//Sheet sheet = new Sheet.CreateSheetBuilder().SetName("New Sheet").SetColumns(
-			//	new Column[] { checkboxColumn, textColumn }).Build();
-			//// Send the request to create the sheet @ Smartsheet
-			//sheet = smartsheet.Sheets().CreateSheet(sheet);
-			////=========================================
+			// Add the 2 Columns (flag & text) to a new Sheet Object
+			Sheet sheet = new Sheet.CreateSheetBuilder("New Sheet", new Column[] { checkboxColumn, textColumn }).Build();
+			// Send the request to create the sheet @ Smartsheet
+			sheet = smartsheet.SheetResources.CreateSheet(sheet);
+			//=========================================
 
 			//// Update two cells on a row
 			//IList<Cell> cells = new Cell.UpdateRowCellsBuilder().AddCell(5111621270955908L, "test11", false).
@@ -218,7 +212,7 @@ namespace sdk_csharp_sample
 			//// Setup the specified sheet with the new publishing status
 			//smartsheet.Sheets().UpdatePublishStatus(7370846613333892L, publish);
 			////=========================================
-			
+
 
 			//// Setup a user with an email address and full permission
 			//User user3 = new User.AddUserBuilder().SetEmail("newUser@batie.com").SetAdmin(true).
@@ -226,7 +220,7 @@ namespace sdk_csharp_sample
 			//// Create the user account
 			//smartsheet.Users().AddUser(user3);
 			////=========================================
-		
+
 
 			//// Setup a user with new privileges
 			//User user4 = new User.UpdateUserBuilder().SetAdmin(false).SetLicensedSheetCreator(false).
