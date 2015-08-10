@@ -131,6 +131,12 @@ namespace Smartsheet.Api
 		/// <returns> the token resources instance </returns>
 		TokenResources TokenResources { get; }
 
+		/// <summary>
+		/// <para>Returns the ContactResources instance that provides access to contact resources.</para>
+		/// </summary>
+		/// <returns> the contact resources instance </returns>
+		ContactResources ContactResources { get; }
+
 
 		[Obsolete("use Smartsheet.Api.SmartsheetClient.HomeResources", true)]
 		[EditorBrowsable(EditorBrowsableState.Never)]
