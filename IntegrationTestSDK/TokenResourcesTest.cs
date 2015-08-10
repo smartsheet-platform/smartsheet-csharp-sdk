@@ -17,7 +17,7 @@ namespace IntegrationTestSDK
 		public void TestTokenResources()
 		{
 
-			UseOAuthFlow();
+			//UseOAuthFlow();
 			//UseTokenResources();
 
 		}
@@ -81,9 +81,7 @@ namespace IntegrationTestSDK
 
 		private static void UseTokenResources()
 		{
-			//string accessToken = ConfigurationManager.AppSettings["accessToken"];
-
-			string accessToken = "11momlzfdjmu7zws";
+			string accessToken = ConfigurationManager.AppSettings["accessToken"];
 
 			SmartsheetClient smartsheet = new SmartsheetBuilder().SetAccessToken(accessToken).Build();
 			try
