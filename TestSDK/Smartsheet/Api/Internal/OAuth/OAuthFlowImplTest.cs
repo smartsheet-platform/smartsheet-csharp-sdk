@@ -83,7 +83,7 @@ namespace Smartsheet.Api.Internal.OAuth
 				typeof(AccessScope))), "state");
 
 			Assert.AreEqual("authorizationURL?response_type=code&client_id=clientID&redirect_uri=redirectURL&state=state&scope=READ_SHEETS" +
-			"%20WRITE_SHEETS%20SHARE_SHEETS%20DELETE_SHEETS%20CREATE_SHEETS%20READ_USERS%20ADMIN_USERS%20ADMIN_SHEETS%20ADMIN_WORKSPACES", authURL);
+			"%20WRITE_SHEETS%20SHARE_SHEETS%20DELETE_SHEETS%20CREATE_SHEETS%20READ_USERS%20READ_CONTACTS%20ADMIN_USERS%20ADMIN_SHEETS%20ADMIN_WORKSPACES", authURL);
 		}
 
 		[Test]
