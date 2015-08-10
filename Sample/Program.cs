@@ -27,14 +27,14 @@ namespace sdk_csharp_sample
 				SetRedirectURL("https://batie.com/").Build();
 
 			// Create the URL that the user will go to grant authorization to the application
-			String url = oauth.NewAuthorizationURL(new Smartsheet.Api.OAuth.AccessScope[] { Smartsheet.Api.OAuth.AccessScope.CREATE_SHEETS, Smartsheet.Api.OAuth.AccessScope.WRITE_SHEETS }, "key=YOUR_VALUE");
+			string url = oauth.NewAuthorizationURL(new Smartsheet.Api.OAuth.AccessScope[] { Smartsheet.Api.OAuth.AccessScope.CREATE_SHEETS, Smartsheet.Api.OAuth.AccessScope.WRITE_SHEETS }, "key=YOUR_VALUE");
 
 			// Take the user to the following URL
 			Console.WriteLine(url);
 
 			// After the user accepts or declines the authorization they are taken to the redirect URL. The URL of the page
 			// the user is taken to can be used to generate an AuthorizationResult object.
-			String authorizationResponseURL = "https://batie.com/?code=dxe7eykuh912rhs&expires_in=239824&state=key%3DYOUR_VALUE";
+			string authorizationResponseURL = "https://batie.com/?code=dxe7eykuh912rhs&expires_in=239824&state=key%3DYOUR_VALUE";
 
 			// On this page pass in the full URL of the page to create an authorizationResult object  
 			AuthorizationResult authResult = oauth.ExtractAuthorizationResult(authorizationResponseURL);
