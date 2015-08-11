@@ -44,19 +44,27 @@ namespace Smartsheet.Api.Models
 		/// </summary>
 		private object value2;
 
-		[DataMember(Name = "operator")]
+		/// <summary>
+		/// The Criteria Operator
+		/// </summary>
 		public CriteriaOperator? Operator
 		{
 			get { return operatorCriteria; }
 			set { operatorCriteria = value; }
 		}
 
+		/// <summary>
+		/// Present if a custom filter criteria’s operator has one or more arguments.
+		/// </summary>
 		public object Value1
 		{
 			get { return value1; }
 			set { value1 = value; }
 		}
 
+		/// <summary>
+		/// Present if a custom filter criteria’s operator has two arguments.
+		/// </summary>
 		public object Value2
 		{
 			get { return value2; }
