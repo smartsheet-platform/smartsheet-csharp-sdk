@@ -39,8 +39,7 @@ cd smartsheet-csharp-sdk
 ```
 
 ## Documentation
-The SDK API documentation can be viewed online at [http://smartsheet-platform.github.io/api-docs/#c#-sample-code](http://smartsheet-platform.github.io/api-docs/#c#-sample-code).
-
+The SDK API documentation can be viewed online at [http://smartsheet-platform.github.io/smartsheet-csharp-sdk/](http://smartsheet-platform.github.io/smartsheet-csharp-sdk/).
 
 ##Example Usage
 
@@ -121,9 +120,9 @@ public static void SampleCode()
 	sheet = smartsheet.SheetResources.CreateSheet(sheet);
 }
 ```
-<!--
-More examples are available [here](https://github.com/smartsheet-platform/smartsheet-csharp-sdk/blob/master/Sample/Program.cs).
--->
+
+More examples are available [here](http://smartsheet-platform.github.io/api-docs/#c#-sample-code).
+
 ## Contributing
 If you would like to contribute a change to the SDK, please fork a branch and then submit a pull request. More info [here](https://help.github.com/articles/using-pull-requests).
 
@@ -142,7 +141,7 @@ Each specific release is available for download via [Github](https://github.com/
 * Added support for code on Azure.
 
 -->
-**2.0.0 (Aug 10, 2015)**
+**2.0.0 (Aug 11, 2015)**
 * Upgraded the Smartsheet C# SDK to the brand new version of API 2.0.
 
 **1.0.7 (Dec 9, 2014)**
