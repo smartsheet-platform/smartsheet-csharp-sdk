@@ -160,6 +160,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Sets the required the fields for updating a Folder.
 			/// </summary>
+			/// <param name="id">the id of the folder to update</param>
 			/// <param name="name"> the name of the folder, need not be unique </param>
 			public UpdateFolderBuilder(long? id, string name)
 			{
