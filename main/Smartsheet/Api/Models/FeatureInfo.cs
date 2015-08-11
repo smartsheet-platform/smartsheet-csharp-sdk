@@ -20,10 +20,16 @@ using System.Collections.Generic;
 
 namespace Smartsheet.Api.Models
 {
+	/// <summary>
+	/// Information on server information.
+	/// </summary>
 	public class FeatureInfo
 	{
 		private int symbolsVersion;
 
+		/// <summary>
+		/// The Symbols version
+		/// </summary>
 		public int SymbolsVersion
 		{
 			get { return symbolsVersion; }
