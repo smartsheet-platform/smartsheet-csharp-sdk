@@ -20,7 +20,7 @@ namespace TestSDK.Smartsheet.Api.Internal.Util
 			Assert.AreEqual("123456789,987654321", commaSeparatedStringList);
 
 			// EnumSet
-			string commaSeparatedStringEnumSet = QueryUtil.GenerateCommaSeparatedList(new List<ObjectInclusion> { ObjectInclusion.DISCUSSIONS, ObjectInclusion.ATTACHMENTS });
+			string commaSeparatedStringEnumSet = QueryUtil.GenerateCommaSeparatedList(new List<RowInclusion> { RowInclusion.DISCUSSIONS, RowInclusion.ATTACHMENTS });
 			Assert.AreEqual("discussions,attachments", commaSeparatedStringEnumSet);
 
 			Assert.AreEqual("", QueryUtil.GenerateCommaSeparatedList<object>(null));
