@@ -130,7 +130,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Sets the message of the SheetEmail.
 			/// </summary>
-			/// <param name="subject">the message</param>
+			/// <param name="message">the message</param>
 			/// <returns>this CreateSheetEmail object</returns>
 			public CreateSheetEmail SetMessage(string message)
 			{
@@ -141,7 +141,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Sets whether to ccMe.
 			/// </summary>
-			/// <param name="subject">the ccMe option</param>
+			/// <param name="ccMe">the ccMe option</param>
 			/// <returns>this CreateSheetEmail object</returns>
 			public CreateSheetEmail SetCcMe(bool? ccMe)
 			{
@@ -152,7 +152,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Sets the format details of the SheetEmail.
 			/// </summary>
-			/// <param name="subject">the format details</param>
+			/// <param name="formatDetails">the format details</param>
 			/// <returns>this CreateSheetEmail object</returns>
 			public CreateSheetEmail SetFormatDetails(FormatDetails formatDetails)
 			{
