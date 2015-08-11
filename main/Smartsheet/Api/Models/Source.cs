@@ -27,9 +27,9 @@ namespace Smartsheet.Api.Models
 		private string type;
 
 		/// <summary>
-		/// Type of this source. “sheet” or “template”
+		/// Type of this source. "sheet" or "template"
 		/// </summary>
-		/// <returns> “sheet” or “template” </returns>
+		/// <returns> "sheet" or "template" </returns>
 		public string Type
 		{
 			get { return type; }
