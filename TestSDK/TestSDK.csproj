@@ -77,17 +77,9 @@
     <Compile Include="Smartsheet\Api\HttpTestServer.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Smartsheet\Api\Internal\AssociatedAttachmentResourcesImplTest.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Smartsheet\Api\Internal\AssociatedDiscussionResourcesImplTest.cs" />
-    <Compile Include="Smartsheet\Api\Internal\AttachmentResourcesImplTest.cs" />
-    <Compile Include="Smartsheet\Api\Internal\ColumnResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\CommentAttachmentResourcesTest.cs" />
-    <Compile Include="Smartsheet\Api\Internal\CommentResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\DiscussionAttachmentResourcesTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\DiscussionCommentResourcesImplTest.cs" />
-    <Compile Include="Smartsheet\Api\Internal\DiscussionResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\FavoriteResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\FolderResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\GroupResourcesImplTest.cs" />
@@ -102,7 +94,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Smartsheet\Api\Internal\RowColumnResourcesImplTest.cs" />
-    <Compile Include="Smartsheet\Api\Internal\RowResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\SearchResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\ServerInfoResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\ShareResourcesImplTest.cs" />
@@ -128,7 +119,6 @@
     <Compile Include="Smartsheet\Api\Models\ColumnTypeTest.cs" />
     <Compile Include="Smartsheet\Api\Models\IdentifiableModelTest.cs" />
     <Compile Include="Smartsheet\Api\Models\LinkTypeTest.cs" />
-    <Compile Include="Smartsheet\Api\Models\ObjectInclusionTest.cs" />
     <Compile Include="Smartsheet\Api\Models\PaginationParametersTest.cs" />
     <Compile Include="Smartsheet\Api\Models\PaperSizeTest.cs" />
     <Compile Include="Smartsheet\Api\Models\RowTest.cs" />
