@@ -328,9 +328,9 @@ namespace Smartsheet.Api.Models
 			//}
 
 			/// <summary>
-			/// Sets the RowResources.
+			/// Sets the list of cells.
 			/// </summary>
-			/// <param name="rows"> the RowResources </param>
+			/// <param name="cells"> the list of cells </param>
 			/// <returns> the update row builder </returns>
 			public virtual UpdateRowBuilder SetCells(IList<Cell> cells)
 			{
