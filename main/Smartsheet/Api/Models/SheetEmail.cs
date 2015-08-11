@@ -70,6 +70,9 @@ namespace Smartsheet.Api.Models
 			}
 		}
 
+		/// <summary>
+		/// A convenience class for creating a SheetEmail object with the necessary fields.
+		/// </summary>
 		public class CreateSheetEmail
 		{
 			/// <summary>
@@ -102,37 +105,65 @@ namespace Smartsheet.Api.Models
 			/// </summary>
 			private bool? ccMe;
 
+			/// <summary>
+			/// Sets the required properties for creating a SheetEmail.
+			/// </summary>
+			/// <param name="sendTo"></param>
+			/// <param name="format"></param>
 			public CreateSheetEmail(IList<Recipient> sendTo, SheetEmailFormat? format)
 			{
 				this.sendTo = sendTo;
 				this.format = format;
 			}
 
+			/// <summary>
+			/// Sets the subject of the SheetEmail.
+			/// </summary>
+			/// <param name="subject">the subject</param>
+			/// <returns>this CreateSheetEmail object</returns>
 			public CreateSheetEmail SetSubject(string subject)
 			{
 				this.subject = subject;
 				return this;
 			}
 
+			/// <summary>
+			/// Sets the message of the SheetEmail.
+			/// </summary>
+			/// <param name="subject">the message</param>
+			/// <returns>this CreateSheetEmail object</returns>
 			public CreateSheetEmail SetMessage(string message)
 			{
 				this.message = message;
 				return this;
 			}
 
+			/// <summary>
+			/// Sets whether to ccMe.
+			/// </summary>
+			/// <param name="subject">the ccMe option</param>
+			/// <returns>this CreateSheetEmail object</returns>
 			public CreateSheetEmail SetCcMe(bool? ccMe)
 			{
 				this.ccMe = ccMe;
 				return this;
 			}
 
+			/// <summary>
+			/// Sets the format details of the SheetEmail.
+			/// </summary>
+			/// <param name="subject">the format details</param>
+			/// <returns>this CreateSheetEmail object</returns>
 			public CreateSheetEmail SetFormatDetails(FormatDetails formatDetails)
 			{
 				this.formatDetails = formatDetails;
 				return this;
 			}
 
-
+			/// <summary>
+			/// Creates and returns the SheetEmail object.
+			/// </summary>
+			/// <returns>the SheetEmail object</returns>
 			public SheetEmail Build()
 			{
 				return new SheetEmail 
