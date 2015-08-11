@@ -21,6 +21,8 @@ using System.Collections.Generic;
 namespace Smartsheet.Api
 {
 	using Api.Models;
+	using System;
+	using System.ComponentModel;
 
 	/// <summary>
 	/// This interface provides methods To access row resources that are associated To a sheet object.
@@ -185,5 +187,13 @@ namespace Smartsheet.Api
 		/// </summary>
 		/// <returns> the RowColumnResources </returns>
 		RowColumnResources CellResources { get; }
+
+		[Obsolete("use DeleteRows intead", true)]
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		void DeleteRow(long sheetId, long rowId);
+
+		[Obsolete("use SendRows intead", true)]
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		void SendRow(long sheetId, long rowId, RowEmail email);
 	}
 }
