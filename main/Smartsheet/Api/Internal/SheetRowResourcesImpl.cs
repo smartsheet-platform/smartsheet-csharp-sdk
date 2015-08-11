@@ -122,7 +122,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public CopyOrMoveRowResult CopyRowsToAnotherSheet(long sheetId, CopyOrMoveRowDirective directive, IEnumerable<CopyRowInclusion> include, bool? ignoreRowsNotFound)
+		public virtual CopyOrMoveRowResult CopyRowsToAnotherSheet(long sheetId, CopyOrMoveRowDirective directive, IEnumerable<CopyRowInclusion> include, bool? ignoreRowsNotFound)
 		{
 			Utility.Utility.ThrowIfNull(directive);
 			StringBuilder path = new StringBuilder("sheets/" + sheetId + "/rows/copy?" + QueryUtil.GenerateCommaSeparatedList(include));
@@ -187,7 +187,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public CopyOrMoveRowResult MoveRowsToAnotherSheet(long sheetId, CopyOrMoveRowDirective directive, IEnumerable<MoveRowInclusion> include, bool? ignoreRowsNotFound)
+		public virtual CopyOrMoveRowResult MoveRowsToAnotherSheet(long sheetId, CopyOrMoveRowDirective directive, IEnumerable<MoveRowInclusion> include, bool? ignoreRowsNotFound)
 		{
 			Utility.Utility.ThrowIfNull(directive);
 			StringBuilder path = new StringBuilder("sheets/" + sheetId + "/rows/move?" + QueryUtil.GenerateCommaSeparatedList(include));
@@ -251,12 +251,12 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public IList<Row> UpdateRows(long sheetId, IEnumerable<Row> rows)
+		public virtual IList<Row> UpdateRows(long sheetId, IEnumerable<Row> rows)
 		{
 			return this.PutAndReceiveList<IEnumerable<Row>, Row>("sheets/" + sheetId + "/rows", rows, typeof(Row));
 		}
 
-		public RowAttachmentResources AttachmentResources
+		public virtual RowAttachmentResources AttachmentResources
 		{
 			get
 			{
@@ -264,7 +264,7 @@ namespace Smartsheet.Api.Internal
 			}
 		}
 
-		public RowDiscussionResources DiscussionResources
+		public virtual RowDiscussionResources DiscussionResources
 		{
 			get
 			{
@@ -273,7 +273,7 @@ namespace Smartsheet.Api.Internal
 		}
 
 
-		public RowColumnResources CellResources
+		public virtual RowColumnResources CellResources
 		{
 			get
 			{
@@ -314,5 +314,17 @@ namespace Smartsheet.Api.Internal
 
 		//	return result;
 		//}
+
+		//Deprecated
+		public virtual void DeleteRow(long sheetId, long rowId)
+		{
+			throw new NotSupportedException();
+		}
+
+		//Deprecated
+		public virtual void SendRow(long sheetId, long rowId, RowEmail email)
+		{
+			throw new NotSupportedException();
+		}
 	}
 }
