@@ -26,6 +26,10 @@ namespace Smartsheet.Api.Models
 	{
 		private IList<Sheet> _sourceSheet;
 
+		/// <summary>
+		/// Array of Sheet objects (without rows), representing the sheets that rows in the report originated from.
+		/// Only included in the Get Report response if the include parameter specifies “sourceSheets”.
+		/// </summary>
 		public IList<Sheet> SourceSheet
 		{
 			get { return _sourceSheet; }

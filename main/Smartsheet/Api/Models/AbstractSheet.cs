@@ -95,6 +95,46 @@ namespace Smartsheet.Api.Models
 		private long? fromId;
 
 		/// <summary>
+		/// Represents the ID of the sheet/template from which the sheet was created.
+		/// </summary>
+		private long? totalRowCount;
+
+		private IList<AttachmentType> effectiveAttachmentOptions;
+
+		private bool? resourceManagementEnabled;
+
+		private bool? favorite;
+
+		private bool? showParentRowsForFilters;
+
+		private SheetUserSettings userSettings;
+
+		private Source source;
+
+		private string owner;
+
+		private long? ownerId;
+
+		/// <summary>
+		/// Represents the email of the owner
+		/// </summary>
+		public string Owner
+		{
+			get { return owner; }
+			set { owner = value; }
+		}
+
+		/// <summary>
+		/// Represents the Id of the Owner
+		/// </summary>
+		public long? OwnerId
+		{
+			get { return ownerId; }
+			set { ownerId = value; }
+		}
+
+
+		/// <summary>
 		/// Gets the dependencies enabled flag.
 		/// </summary>
 		/// <returns> the dependencies enabled </returns>
@@ -360,6 +400,83 @@ namespace Smartsheet.Api.Models
 			{
 				this.fromId = value;
 			}
+		}
+
+
+		/// <summary>
+		/// The total number of rows in the Sheet.
+		/// </summary>
+		/// <returns> The total number of rows in the Sheet </returns>
+		public virtual long? TotalRowCount
+		{
+			get { return totalRowCount; }
+			set { totalRowCount = value; }
+		}
+
+
+		/// <summary>
+		/// Array of enum strings (see Attachment.attachmentType) indicating the allowable attachment options for the current User and Sheet
+		/// </summary>
+		/// <returns> list tof attachment types </returns>
+		public virtual IList<AttachmentType> EffectiveAttachmentOptions
+		{
+			get { return effectiveAttachmentOptions; }
+			set { effectiveAttachmentOptions = value; }
+		}
+
+
+		/// <summary>
+		/// Flag to indicate that resource management is enabled.
+		/// </summary>
+		/// <returns> true if enabled, false otherwise </returns>
+		public virtual bool? ResourceManagementEnabled
+		{
+			get { return resourceManagementEnabled; }
+			set { resourceManagementEnabled = value; }
+		}
+
+
+		/// <summary>
+		/// Returned only if the User has marked this sheet as a favorite in their Home tab (value = “true”).
+		/// </summary>
+		/// <returns> true if marked as favorite, false otherwise </returns>
+		public virtual bool? Favorite
+		{
+			get { return favorite; }
+			set { favorite = value; }
+		}
+
+
+		/// <summary>
+		/// Returned only if there are column filters on the Sheet. Value = “true” if “show parent rows” is enabled for the filters.
+		/// </summary>
+		/// <returns> “true” if “show parent rows” is enabled for the filters </returns>
+		public virtual bool? ShowParentRowsForFilters
+		{
+			get { return showParentRowsForFilters; }
+			set { showParentRowsForFilters = value; }
+		}
+
+
+		/// <summary>
+		/// A SheetUserSettings object containing the current user’s sheet-specific settings..
+		/// </summary>
+		/// <returns> SheetUserSettings object </returns>
+		public virtual SheetUserSettings UserSettings
+		{
+			get { return userSettings; }
+			set { userSettings = value; }
+		}
+
+
+		/// <summary>
+		/// A Source object indicating the Sheet or Template from which this sheet was created.
+		/// </summary>
+		/// <returns> source of sheet </returns>
+		public virtual Source Source
+		{
+			get { return source; }
+			set { source = value; }
 		}
 	}
 }

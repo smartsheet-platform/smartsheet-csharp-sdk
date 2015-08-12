@@ -76,6 +76,99 @@ namespace Smartsheet.Api.Internal.Http
 		}
 
 		/// <summary>
+		/// Make a multipart HTTP request and return the response.
+		/// </summary>
+		/// <param name="smartsheetRequest"> the Smartsheet request </param>
+		/// <returns> the HTTP response </returns>
+		/// <exception cref="HttpClientException"> the HTTP client exception </exception>
+		public virtual HttpResponse Request(HttpRequest smartsheetRequest, string objectType, string file, string fileType)
+		{
+			Util.ThrowIfNull(smartsheetRequest);
+			if (smartsheetRequest.Uri == null)
+			{
+				throw new System.ArgumentException("A Request URI is required.");
+			}
+
+			HttpResponse smartsheetResponse = new HttpResponse();
+
+			// Create HTTP request based on the smartsheetRequest request Type
+			if (HttpMethod.GET == smartsheetRequest.Method)
+			{
+				restRequest = new RestRequest(smartsheetRequest.Uri, Method.GET);
+			}
+			else if (HttpMethod.POST == smartsheetRequest.Method)
+			{
+				restRequest = new RestRequest(smartsheetRequest.Uri, Method.POST);
+			}
+			else if (HttpMethod.PUT == smartsheetRequest.Method)
+			{
+				restRequest = new RestRequest(smartsheetRequest.Uri, Method.PUT);
+			}
+			else if (HttpMethod.DELETE == smartsheetRequest.Method)
+			{
+				restRequest = new RestRequest(smartsheetRequest.Uri, Method.DELETE);
+			}
+			else
+			{
+				throw new System.NotSupportedException("Request method " + smartsheetRequest.Method + " is not supported!");
+			}
+
+			// Set HTTP Headers
+			if (smartsheetRequest.Headers != null)
+			{
+				foreach (KeyValuePair<string, string> header in smartsheetRequest.Headers)
+				{
+					restRequest.AddHeader(header.Key, header.Value);
+				}
+			}
+
+			restRequest.AddFile("file", File.ReadAllBytes(file), new FileInfo(file).Name, fileType);
+			if (smartsheetRequest.Entity != null && smartsheetRequest.Entity.GetContent() != null)
+			{
+				//Once Restsharp updates their nuget package to properly support multipart upload request, should use the line code
+				// below and comment out the other line. The line of code below should look similar to the new imlpementation in
+				//the new version of Restsharp as I sent a pull request.
+				//restRequest.AddParameter(objectType, System.Text.Encoding.Default.GetString(smartsheetRequest.Entity.Content), "application/json",
+				//	ParameterType.RequestBody);
+				restRequest.AddParameter(objectType, System.Text.Encoding.Default.GetString(smartsheetRequest.Entity.Content), ParameterType.RequestBody);
+			}
+
+			restRequest.AlwaysMultipartFormData = true;
+
+			// Set the client base Url.
+			httpClient.BaseUrl = new Uri(smartsheetRequest.Uri.GetLeftPart(UriPartial.Authority));
+
+			// Make the HTTP request
+			restResponse = httpClient.Execute(restRequest);
+
+			if (restResponse.ResponseStatus == ResponseStatus.Error)
+			{
+				throw new HttpClientException("There was an issue connecting.");
+			}
+
+			// Set returned Headers
+			smartsheetResponse.Headers = new Dictionary<string, string>();
+			foreach (var header in restResponse.Headers)
+			{
+				smartsheetResponse.Headers[header.Name] = (String)header.Value;
+			}
+			smartsheetResponse.StatusCode = restResponse.StatusCode;
+
+			// Set returned entities
+			if (restResponse.Content != null)
+			{
+				HttpEntity entity = new HttpEntity();
+				entity.ContentType = restResponse.ContentType;
+				entity.ContentLength = restResponse.ContentLength;
+
+				entity.Content = restResponse.RawBytes;
+				smartsheetResponse.Entity = entity;
+			}
+
+			return smartsheetResponse;
+		}
+
+		/// <summary>
 		/// Make an HTTP request and return the response.
 		/// </summary>
 		/// <param name="smartsheetRequest"> the Smartsheet request </param>
@@ -86,7 +179,7 @@ namespace Smartsheet.Api.Internal.Http
 			Util.ThrowIfNull(smartsheetRequest);
 			if (smartsheetRequest.Uri == null)
 			{
-				 throw new System.ArgumentException("A Request URI is required.");
+				throw new System.ArgumentException("A Request URI is required.");
 			}
 
 			HttpResponse smartsheetResponse = new HttpResponse();
@@ -94,19 +187,19 @@ namespace Smartsheet.Api.Internal.Http
 			// Create HTTP request based on the smartsheetRequest request Type
 			if (HttpMethod.GET == smartsheetRequest.Method)
 			{
-				 restRequest = new RestRequest(smartsheetRequest.Uri, Method.GET);
+				restRequest = new RestRequest(smartsheetRequest.Uri, Method.GET);
 			}
 			else if (HttpMethod.POST == smartsheetRequest.Method)
 			{
-				 restRequest = new RestRequest(smartsheetRequest.Uri, Method.POST);
+				restRequest = new RestRequest(smartsheetRequest.Uri, Method.POST);
 			}
 			else if (HttpMethod.PUT == smartsheetRequest.Method)
 			{
-				 restRequest = new RestRequest(smartsheetRequest.Uri, Method.PUT);
+				restRequest = new RestRequest(smartsheetRequest.Uri, Method.PUT);
 			}
 			else if (HttpMethod.DELETE == smartsheetRequest.Method)
 			{
-				 restRequest = new RestRequest(smartsheetRequest.Uri, Method.DELETE);
+				restRequest = new RestRequest(smartsheetRequest.Uri, Method.DELETE);
 			}
 			else
 			{
@@ -129,7 +222,7 @@ namespace Smartsheet.Api.Internal.Http
 			}
 
 			// Set the client base Url.
-			httpClient.BaseUrl = smartsheetRequest.Uri.GetLeftPart(UriPartial.Authority);
+			httpClient.BaseUrl = new Uri(smartsheetRequest.Uri.GetLeftPart(UriPartial.Authority));
 
 			// Make the HTTP request
 			restResponse = httpClient.Execute(restRequest);
@@ -188,7 +281,7 @@ namespace Smartsheet.Api.Internal.Http
 				thisVersion = assembly.GetName().Version.ToString();
 				title = assembly.GetName().Name;
 			}
-			return "smartsheet-csharp-sdk("+title + ")/" + thisVersion + " " + Util.GetOSFriendlyName();
+			return "smartsheet-csharp-sdk(" + title + ")/" + thisVersion + " " + Util.GetOSFriendlyName();
 		}
 	}
 

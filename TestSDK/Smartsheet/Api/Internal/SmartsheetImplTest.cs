@@ -61,73 +61,73 @@
 		[Test]
 		public virtual void TestHome()
 		{
-			Assert.NotNull(smartsheet.Home());
+			Assert.NotNull(smartsheet.HomeResources);
 		}
 
 		[Test]
 		public virtual void TestWorkspaces()
 		{
-			Assert.NotNull(smartsheet.Workspaces());
+			Assert.NotNull(smartsheet.WorkspaceResources);
 		}
 
 		[Test]
 		public virtual void TestFolders()
 		{
-			Assert.NotNull(smartsheet.Folders());
+			Assert.NotNull(smartsheet.FolderResources);
 		}
 
 		[Test]
 		public virtual void TestTemplates()
 		{
-			Assert.NotNull(smartsheet.Templates());
+			Assert.NotNull(smartsheet.TemplateResources);
 		}
 
 		[Test]
 		public virtual void TestSheets()
 		{
-			Assert.NotNull(smartsheet.Sheets());
+			Assert.NotNull(smartsheet.SheetResources);
 		}
 
-		[Test]
-		public virtual void TestColumns()
-		{
-			Assert.NotNull(smartsheet.Columns());
-		}
+		//[Test]
+		//public virtual void TestColumns()
+		//{
+		//	Assert.NotNull(smartsheet());
+		//}
 
-		[Test]
-		public virtual void TestRows()
-		{
-			Assert.NotNull(smartsheet.Rows());
-		}
+		//[Test]
+		//public virtual void TestRows()
+		//{
+		//	Assert.NotNull(smartsheet.Rows());
+		//}
 
-		[Test]
-		public virtual void TestAttachments()
-		{
-			Assert.NotNull(smartsheet.Attachments());
-		}
+		//[Test]
+		//public virtual void TestAttachments()
+		//{
+		//	Assert.NotNull(smartsheet.Attachments());
+		//}
 
-		[Test]
-		public virtual void TestDiscussions()
-		{
-			Assert.NotNull(smartsheet.Discussions());
-		}
+		//[Test]
+		//public virtual void TestDiscussions()
+		//{
+		//	Assert.NotNull(smartsheet());
+		//}
 
-		[Test]
-		public virtual void TestComments()
-		{
-			Assert.NotNull(smartsheet.Comments());
-		}
+		//[Test]
+		//public virtual void TestComments()
+		//{
+		//	Assert.NotNull(smartsheet.Comments());
+		//}
 
 		[Test]
 		public virtual void TestUsers()
 		{
-			Assert.NotNull(smartsheet.Users());
+			Assert.NotNull(smartsheet.UserResources);
 		}
 
 		[Test]
 		public virtual void TestSearch()
 		{
-			Assert.NotNull(smartsheet.Search());
+			Assert.NotNull(smartsheet.SearchResources);
 		}
 
 		[Test]

@@ -18,9 +18,9 @@ namespace Smartsheet.Api.models
 			Row row = new Row();
 			// Same Object
 			Assert.AreEqual(row,row);
-			row.ID = 1234L;
+			row.Id = 1234L;
 			Row row1 = new Row();
-			row1.ID = 1234L;
+			row1.Id = 1234L;
 			row.Equals(row);
 			// Same id in two different objects
 			Assert.AreEqual(row,row1);

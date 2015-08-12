@@ -20,9 +20,8 @@ using System.Collections.Generic;
 
 namespace Smartsheet.Api.Internal
 {
-
-
-	using Folder = Api.Models.Folder;
+	using Api.Models;
+	using System.Text;
 
 	/// <summary>
 	/// This is the implementation of the HomeFolderResources.
@@ -31,57 +30,56 @@ namespace Smartsheet.Api.Internal
 	/// </summary>
 	public class HomeFolderResourcesImpl : AbstractResources, HomeFolderResources
 	{
-
 		/// <summary>
 		/// Constructor.
-		/// 
-		/// Exceptions: - IllegalArgumentException : if any argument is null
 		/// </summary>
 		/// <param name="smartsheet"> the Smartsheet </param>
-		public HomeFolderResourcesImpl(SmartsheetImpl smartsheet) : base(smartsheet)
+		/// <exception cref="IllegalArgumentException">if any argument is null</exception>
+		public HomeFolderResourcesImpl(SmartsheetImpl smartsheet)
+			: base(smartsheet)
 		{
 		}
 
 		/// <summary>
-		/// List Folders under home.
+		/// <para>List Folders under home.</para>
 		/// 
-		/// It mirrors To the following Smartsheet REST API method: GET /home/Folders
-		/// 
-		/// Exceptions:
-		///   InvalidRequestException : if there is any problem with the REST API request
-		///   AuthorizationException : if there is any problem with the REST API authorization(access token)
-		///   ResourceNotFoundException : if the resource can not be found
-		///   ServiceUnavailableException : if the REST API service is not available (possibly due To rate limiting)
-		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
-		///   SmartsheetException : if there is any other error occurred during the operation
+		/// <para>It mirrors To the following Smartsheet REST API method:<br />
+		/// GET /home/Folders</para>
 		/// </summary>
-		/// <returns> the Folders (note that empty list will be returned if there is none) </returns>
-		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
-		public virtual IList<Folder> ListFolders()
+		/// <returns> the list of Folders (note that an empty list will be returned if there is none) </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public virtual PaginatedResult<Folder> ListFolders(PaginationParameters paging)
 		{
-			return this.ListResources<Folder>("home/folders", typeof(Folder));
+			StringBuilder path = new StringBuilder("home/folders");
+			if (paging != null)
+			{
+				path.Append(paging.ToQueryString());
+			}
+			return ListResourcesWithWrapper<Folder>(path.ToString());
 		}
 
 		/// <summary>
-		/// Create a folder in home.
+		/// <para>Create a folder in home.</para>
 		/// 
-		/// It mirrors To the following Smartsheet REST API method: POST /home/Folders
-		/// 
-		/// Exceptions:
-		///   IllegalArgumentException : if folder is null
-		///   InvalidRequestException : if there is any problem with the REST API request
-		///   AuthorizationException : if there is any problem with the REST API authorization(access token)
-		///   ServiceUnavailableException : if the REST API service is not available (possibly due To rate limiting)
-		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
-		///   SmartsheetException : if there is any other error occurred during the operation
+		/// <para>It mirrors To the following Smartsheet REST API method:<br />
+		/// POST /home/Folders</para>
 		/// </summary>
 		/// <param name="folder"> the folder To create </param>
-		/// <returns> the created folder </returns>
-		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
+		/// <returns> the folder </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual Folder CreateFolder(Folder folder)
 		{
 			return this.CreateResource<Folder>("home/folders", typeof(Folder), folder);
 		}
 	}
-
 }

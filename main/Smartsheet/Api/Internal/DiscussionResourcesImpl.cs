@@ -18,8 +18,8 @@
 
 namespace Smartsheet.Api.Internal
 {
-
-
+	using System;
+	using System.ComponentModel;
 	using Comment = Api.Models.Comment;
 	using Discussion = Api.Models.Discussion;
 
@@ -28,6 +28,8 @@ namespace Smartsheet.Api.Internal
 	/// 
 	/// Thread Safety: This class is thread safe because it is immutable and its base class is thread safe.
 	/// </summary>
+	[Obsolete("Deprecated", true)]
+	[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 	public class DiscussionResourcesImpl : AbstractResources, DiscussionResources
 	{
 		/// <summary>
@@ -35,7 +37,7 @@ namespace Smartsheet.Api.Internal
 		/// 
 		/// It will be initialized in constructor and will not change afterwards.
 		/// </summary>
-		private AssociatedAttachmentResources attachments;
+		//private AssociatedAttachmentResources attachments;
 
 		/// <summary>
 		/// Constructor.
@@ -43,66 +45,33 @@ namespace Smartsheet.Api.Internal
 		/// Exceptions: - IllegalArgumentException : if any argument is null
 		/// </summary>
 		/// <param name="smartsheet"> the Smartsheet </param>
-		public DiscussionResourcesImpl(SmartsheetImpl smartsheet) : base(smartsheet)
+		[Obsolete("Deprecated", true)]
+		[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
+		public DiscussionResourcesImpl(SmartsheetImpl smartsheet)
+			: base(smartsheet)
 		{
 		}
 
-		/// <summary>
-		/// Get a discussion.
-		/// 
-		/// It mirrors To the following Smartsheet REST API method: GET /discussion/{Id}
-		/// 
-		/// Parameters: - Id : the ID
-		/// 
-		/// Returns: the resource (note that if there is no such resource, this method will throw ResourceNotFoundException
-		/// rather than returning null).
-		/// 
-		/// Exceptions:
-		///   InvalidRequestException : if there is any problem with the REST API request
-		///   AuthorizationException : if there is any problem with the REST API authorization(access token)
-		///   ResourceNotFoundException : if the resource can not be found
-		///   ServiceUnavailableException : if the REST API service is not available (possibly due To rate limiting)
-		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
-		///   SmartsheetException : if there is any other error occurred during the operation
-		/// </summary>
-		/// <param name="id"> the Id </param>
-		/// <returns> the discussion </returns>
-		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
+		[Obsolete("Deprecated", true)]
+		[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		public virtual Discussion GetDiscussion(long id)
 		{
-			return this.GetResource<Discussion>("discussion/" + id, typeof(Discussion));
+			throw new NotSupportedException();
 		}
 
-		/// <summary>
-		/// Add a Comment To a discussion.
-		/// 
-		/// It mirrors To the following Smartsheet REST API method: POST /discussion/{DiscussionId}/Comments
-		/// 
-		/// Exceptions:
-		///   IllegalArgumentException : if any argument is null
-		///   InvalidRequestException : if there is any problem with the REST API request
-		///   AuthorizationException : if there is any problem with the REST API authorization(access token)
-		///   ServiceUnavailableException : if the REST API service is not available (possibly due To rate limiting)
-		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
-		///   SmartsheetException : if there is any other error occurred during the operation
-		/// </summary>
-		/// <param name="id"> the discussion ID </param>
-		/// <param name="comment"> the Comment To add, limited To the following required attributes: Text </param>
-		/// <returns> the created Comment </returns>
-		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
+		[Obsolete("Deprecated", true)]
+		[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		public virtual Comment AddDiscussionComment(long id, Comment comment)
 		{
-			return this.CreateResource("discussion/" + id + "/comments", typeof(Comment), comment);
+			throw new NotSupportedException();
 		}
 
-		/// <summary>
-		/// Return the AssociatedAttachmentResources object that provides access To attachment resources associated with
-		/// Discussion resources.
-		/// </summary>
-		/// <returns> the associated attachment resources </returns>
+		[Obsolete("Deprecated", true)]
+		[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		public virtual AssociatedAttachmentResources Attachments()
 		{
-			return this.attachments;
+			//return this.attachments;
+			throw new NotSupportedException();
 		}
 	}
 

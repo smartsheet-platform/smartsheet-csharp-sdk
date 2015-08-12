@@ -20,22 +20,19 @@ using System.Collections.Generic;
 
 namespace Smartsheet.Api
 {
-
-
-	using Folder = Api.Models.Folder;
+	using Api.Models;
 
 	/// <summary>
-	/// T<para>his interface provides methods To access Folder resources that are associated To a workspace object.</para>
+	/// <para>This interface provides methods To access Folder resources that are associated To a workspace object.</para>
 	/// 
 	/// <para>Thread Safety: Implementation of this interface must be thread safe.</para>
 	/// </summary>
 	public interface WorkspaceFolderResources
 	{
-
 		/// <summary>
 		/// <para>List Folders of a given workspace.</para>
 		/// 
-		/// <para>It mirrors To the following Smartsheet REST API method: GET /workspace/{Id}/Folders</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: GET /workspaces/{workspaceId}/Folders</para>
 		/// </summary>
 		/// <param name="workspaceId"> the workspace Id </param>
 		/// <returns> the list of Folders (note that an empty list will be returned if there are none) </returns>
@@ -45,12 +42,12 @@ namespace Smartsheet.Api
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		IList<Folder> ListFolders(long workspaceId);
+		PaginatedResult<Folder> ListFolders(long workspaceId, PaginationParameters paging);
 
 		/// <summary>
 		/// <para>Create a folder in the workspace.</para>
 		/// 
-		/// <para>It mirrors To the following Smartsheet REST API method: POST /workspace/{Id}/Folders</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: POST /workspaces/{workspaceId}/Folders</para>
 		/// </summary>
 		/// <param name="workspaceId"> the workspace Id </param>
 		/// <param name="folder"> the folder To create </param>
@@ -63,5 +60,4 @@ namespace Smartsheet.Api
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		Folder CreateFolder(long workspaceId, Folder folder);
 	}
-
 }
