@@ -35,24 +35,33 @@
     <RootNamespace>Smartsheet_csharp_sdk</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>packages\Newtonsoft.Json.6.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <HintPath>packages\Newtonsoft.Json.7.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="nunit.core">
-      <HintPath>packages\NUnitTestAdapter.1.2\lib\nunit.core.dll</HintPath>
+    <Reference Include="nunit.core, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\NUnitTestAdapter.2.0.0\lib\nunit.core.dll</HintPath>
+      <Private>False</Private>
     </Reference>
-    <Reference Include="nunit.core.interfaces">
-      <HintPath>packages\NUnitTestAdapter.1.2\lib\nunit.core.interfaces.dll</HintPath>
+    <Reference Include="nunit.core.interfaces, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\NUnitTestAdapter.2.0.0\lib\nunit.core.interfaces.dll</HintPath>
+      <Private>False</Private>
     </Reference>
-    <Reference Include="nunit.util">
-      <HintPath>packages\NUnitTestAdapter.1.2\lib\nunit.util.dll</HintPath>
+    <Reference Include="nunit.util, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\NUnitTestAdapter.2.0.0\lib\nunit.util.dll</HintPath>
+      <Private>False</Private>
     </Reference>
-    <Reference Include="NUnit.VisualStudio.TestAdapter">
-      <HintPath>packages\NUnitTestAdapter.1.2\lib\NUnit.VisualStudio.TestAdapter.dll</HintPath>
+    <Reference Include="NUnit.VisualStudio.TestAdapter, Version=2.0.0.0, Culture=neutral, PublicKeyToken=4cb40d35494691ac, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\NUnitTestAdapter.2.0.0\lib\NUnit.VisualStudio.TestAdapter.dll</HintPath>
+      <Private>False</Private>
     </Reference>
-    <Reference Include="RestSharp">
-      <HintPath>packages\RestSharp.104.4.0\lib\net4\RestSharp.dll</HintPath>
+    <Reference Include="RestSharp, Version=105.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\GitHub\RestSharp\RestSharp\bin\Debug\RestSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -68,11 +77,31 @@
     <Compile Include="main\Smartsheet\Api\AssociatedAttachmentResources.cs" />
     <Compile Include="main\Smartsheet\Api\AssociatedDiscussionResources.cs" />
     <Compile Include="main\Smartsheet\Api\AttachmentResources.cs" />
+    <Compile Include="main\Smartsheet\Api\AttachmentVersioningResources.cs" />
     <Compile Include="main\Smartsheet\Api\AuthorizationException.cs" />
     <Compile Include="main\Smartsheet\Api\ColumnResources.cs" />
+    <Compile Include="main\Smartsheet\Api\CommentAttachmentResources.cs" />
     <Compile Include="main\Smartsheet\Api\CommentResources.cs" />
+    <Compile Include="main\Smartsheet\Api\ContactResources.cs" />
+    <Compile Include="main\Smartsheet\Api\DiscussionAttachmentResources.cs" />
+    <Compile Include="main\Smartsheet\Api\DiscussionCommentResources.cs" />
     <Compile Include="main\Smartsheet\Api\DiscussionResources.cs" />
+    <Compile Include="main\Smartsheet\Api\FavoriteResources.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\ContactResourcesImpl.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\TokenResourcesImpl.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Contact.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\ContainerDestination.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\DestinationType.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Inclusions\FolderCopyInclusion.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Inclusions\FolderRemapExclusion.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Inclusions\SheetCopyInclusion.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Inclusions\WorkspaceCopyInclusion.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Inclusions\WorkspaceRemapExclusion.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\MultiRowEmail.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\UpdateRequest.cs" />
+    <Compile Include="main\Smartsheet\Api\TokenResources.cs" />
     <Compile Include="main\Smartsheet\Api\FolderResources.cs" />
+    <Compile Include="main\Smartsheet\Api\GroupResources.cs" />
     <Compile Include="main\Smartsheet\Api\HomeFolderResources.cs" />
     <Compile Include="main\Smartsheet\Api\HomeResources.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\AbstractAssociatedResources.cs" />
@@ -80,12 +109,16 @@
     <Compile Include="main\Smartsheet\Api\Internal\AssociatedAttachmentResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\AssociatedDiscussionResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\AttachmentResourcesImpl.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\AttachmentVersioningResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\ColumnResourcesImpl.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\CommentAttachmentResources.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\CommentAttachmentResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\CommentResourcesImpl.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\DiscussionAttachmentResources.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\DiscussionAttachmentResourcesImpl.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\DiscussionCommentResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\DiscussionResourcesImpl.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\FavoriteResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\FolderResourcesImpl.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\GroupResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\HomeFolderResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\HomeResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\Http\DefaultHttpClient.cs" />
@@ -104,24 +137,52 @@
     <Compile Include="main\Smartsheet\Api\Internal\Json\LowerCaseContractResolver.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\OAuth\OAuthFlowImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\ReportResourcesImpl.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\RowAttachmentResourcesImpl.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\RowColumnResourcesImpl.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\RowDiscussionResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\RowResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\SearchResourcesImpl.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\ServerInfoResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\ShareResourcesImpl.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\SheetAttachmentResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\SheetColumnResourcesImpl.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\SheetCommentResourcesImpl.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\SheetDiscussionResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\SheetResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\SheetRowResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\SmartsheetImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\TemplateResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\UserResourcesImpl.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\UserSheetResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\Util\QueryStringBuilder.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\Util\QueryUtil.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\Util\Util.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\WorkspaceFolderResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\WorkspaceResourcesImpl.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\FolderSheetResourcesImpl.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\WorkspaceSheetResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\InvalidRequestException.cs" />
     <Compile Include="main\Smartsheet\Api\Models\AbstractRow.cs" />
     <Compile Include="main\Smartsheet\Api\Models\AbstractSheet.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Inclusions\CopyRowInclusion.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Group.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\GroupMember.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Inclusions\MoveRowInclusion.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Inclusions\SheetLevelExclusion.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Inclusions\RowExclusion.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\SearchObjectType.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Recipient.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Inclusions\ReportInclusion.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Inclusions\CellInclusion.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Inclusions\ColumnInclusion.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Inclusions\FolderInclusion.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Inclusions\HomeInclusion.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Inclusions\WorkspaceInclusion.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Inclusions\SheetInclusion.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\UserModel.cs" />
     <Compile Include="main\Smartsheet\Api\Models\AccessLevel.cs" />
     <Compile Include="main\Smartsheet\Api\Models\AccessScope.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Account.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Attachment.cs" />
     <Compile Include="main\Smartsheet\Api\Models\AttachmentParentType.cs" />
     <Compile Include="main\Smartsheet\Api\Models\AttachmentSubType.cs" />
@@ -129,15 +190,30 @@
     <Compile Include="main\Smartsheet\Api\Models\AutoNumberFormat.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Cell.cs" />
     <Compile Include="main\Smartsheet\Api\Models\CellHistory.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\CellLink.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Column.cs" />
     <Compile Include="main\Smartsheet\Api\Models\ColumnTag.cs" />
     <Compile Include="main\Smartsheet\Api\Models\ColumnType.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Comment.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\CopyOrMoveRowDestination.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\CopyOrMoveRowDirective.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\CopyOrMoveRowResult.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Criteria.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Currency.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\PaginatedResult.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Discussion.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Inclusions\DiscussionInclusion.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\DiscussionParentType.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Email.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Error.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Filter.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\FilterType.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Favorite.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\FeatureInfo.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Folder.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\FontFamily.cs" />
     <Compile Include="main\Smartsheet\Api\Models\FormatDetails.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\FormatTables.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Home.cs" />
     <Compile Include="main\Smartsheet\Api\Models\IdentifiableModel.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Link.cs" />
@@ -145,6 +221,9 @@
     <Compile Include="main\Smartsheet\Api\Models\MultiShare.cs" />
     <Compile Include="main\Smartsheet\Api\Models\NamedModel.cs" />
     <Compile Include="main\Smartsheet\Api\Models\ObjectInclusion.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\CriteriaOperator.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\ObjectType.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\PaginationParameters.cs" />
     <Compile Include="main\Smartsheet\Api\Models\PaperSize.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Report.cs" />
     <Compile Include="main\Smartsheet\Api\Models\ReportCell.cs" />
@@ -153,18 +232,27 @@
     <Compile Include="main\Smartsheet\Api\Models\RequestResult.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Row.cs" />
     <Compile Include="main\Smartsheet\Api\Models\RowEmail.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Inclusions\RowInclusion.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\RowMapping.cs" />
     <Compile Include="main\Smartsheet\Api\Models\RowWrapper.cs" />
     <Compile Include="main\Smartsheet\Api\Models\SearchResult.cs" />
     <Compile Include="main\Smartsheet\Api\Models\SearchResultItem.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\ServerInfo.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Share.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\ShareType.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Sheet.cs" />
     <Compile Include="main\Smartsheet\Api\Models\SheetEmail.cs" />
     <Compile Include="main\Smartsheet\Api\Models\SheetEmailFormat.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Inclusions\SheetLevelInclusion.cs" />
     <Compile Include="main\Smartsheet\Api\Models\SheetPublish.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\SheetUserSettings.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Source.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Symbol.cs" />
     <Compile Include="main\Smartsheet\Api\Models\SystemColumnType.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Template.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Inclusions\TemplateInclusion.cs" />
     <Compile Include="main\Smartsheet\Api\Models\User.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\UserModelWithName.cs" />
     <Compile Include="main\Smartsheet\Api\Models\UserProfile.cs" />
     <Compile Include="main\Smartsheet\Api\Models\UserStatus.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Workspace.cs" />
@@ -184,11 +272,18 @@
     <Compile Include="main\Smartsheet\Api\OAuth\UnsupportedResponseTypeException.cs" />
     <Compile Include="main\Smartsheet\Api\ReportResources.cs" />
     <Compile Include="main\Smartsheet\Api\ResourceNotFoundException.cs" />
+    <Compile Include="main\Smartsheet\Api\RowAttachmentResources.cs" />
+    <Compile Include="main\Smartsheet\Api\RowColumnResources.cs" />
+    <Compile Include="main\Smartsheet\Api\RowDiscussionResources.cs" />
     <Compile Include="main\Smartsheet\Api\RowResources.cs" />
     <Compile Include="main\Smartsheet\Api\SearchResources.cs" />
+    <Compile Include="main\Smartsheet\Api\ServerInfoResources.cs" />
     <Compile Include="main\Smartsheet\Api\ServiceUnavailableException.cs" />
     <Compile Include="main\Smartsheet\Api\ShareResources.cs" />
+    <Compile Include="main\Smartsheet\Api\SheetAttachmentResources.cs" />
     <Compile Include="main\Smartsheet\Api\SheetColumnResources.cs" />
+    <Compile Include="main\Smartsheet\Api\SheetCommentResources.cs" />
+    <Compile Include="main\Smartsheet\Api\SheetDiscussionResources.cs" />
     <Compile Include="main\Smartsheet\Api\SheetResources.cs" />
     <Compile Include="main\Smartsheet\Api\SheetRowResources.cs" />
     <Compile Include="main\Smartsheet\Api\SmartsheetClient.cs" />
@@ -197,8 +292,11 @@
     <Compile Include="main\Smartsheet\Api\SmartsheetRestException.cs" />
     <Compile Include="main\Smartsheet\Api\TemplateResources.cs" />
     <Compile Include="main\Smartsheet\Api\UserResources.cs" />
+    <Compile Include="main\Smartsheet\Api\UserSheetResources.cs" />
     <Compile Include="main\Smartsheet\Api\WorkspaceFolderResources.cs" />
     <Compile Include="main\Smartsheet\Api\WorkspaceResources.cs" />
+    <Compile Include="main\Smartsheet\Api\FolderSheetResources.cs" />
+    <Compile Include="main\Smartsheet\Api\WorkspaceSheetResources.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

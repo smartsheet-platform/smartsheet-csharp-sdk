@@ -1,1 +1,23 @@
-[{"name":"Brett Batie","email":"email@email.com","accessLevel":"ADMIN","id":8166691168380804},{"name":"Brett Batie","email":"someone@somewhere.com","accessLevel":"OWNER","id":5830233254324100}]
+{
+	"pageNumber": 1,
+	"pageSize": 100,
+	"totalPages": 1,
+	"totalCount": 2,
+	"data": [
+		{
+			"id": "AAAQSF82FOeE",
+			"type": "USER",
+			"userId": 4583173393803140,
+			"email": "john.doe@smartsheet.com",
+			"name": "John Doe",
+			"accessLevel": "OWNER"
+		},
+		{
+			"id": "AQAISF82FOeE",
+			"type": "GROUP",
+			"groupId": 2331373580117892,
+			"name": "Group 1",
+			"accessLevel": "ADMIN"
+		}
+	]
+}

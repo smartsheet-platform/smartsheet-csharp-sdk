@@ -1,11 +1,11 @@
 {
-   "resultCode":0,
-   "result":{
-      "id":8764071660021636,
-      "index":0,
-      "title":"something new",
-      "type":"TEXT_NUMBER",
-      "primary":true
-   },
-   "message":"SUCCESS"
+    "message": "SUCCESS",
+    "result": {
+        "id": 5005385858869124,
+        "index": 0,
+        "options" : ["One", "Two"],
+        "title": "First Column",
+        "type": "PICKLIST"
+    },
+    "resultCode": 0
 }

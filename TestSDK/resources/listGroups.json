@@ -1,0 +1,17 @@
+{
+    "pageNumber": 1,
+    "pageSize": 100,
+    "totalPages": 1,
+    "totalCount": 1,
+    "data": [
+        {
+            "id": 4583173393803140,
+            "name": "Group 1",
+            "description": "My group",
+            "owner": "john.doe@smartsheet.com",
+            "ownerId": 2331373580117892,
+            "createdAt": "2014-05-29T14:41:35-07:00",
+            "modifiedAt": "2014-05-29T14:41:35-07:00"
+        }
+    ]
+}

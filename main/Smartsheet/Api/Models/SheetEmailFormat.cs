@@ -31,6 +31,11 @@ namespace Smartsheet.Api.Models
 		PDF,
 
 		/// <summary>
+		/// Represents PDF GANTT Format.
+		/// </summary>
+		PDF_GANTT,
+
+		/// <summary>
 		/// Represents EXCEL Format.
 		/// </summary>
 		EXCEL

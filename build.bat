@@ -5,7 +5,7 @@ if not "%errorlevel%"=="0" goto buildFailure
 
 
 :: Run unit tests
-"C:\Program Files (x86)\NUnit 2.6.3\bin\nunit-console.exe" TestSDK/bin/Release/TestSDK.dll /stoponerror 
+"C:\Program Files (x86)\NUnit 2.6.4\bin\nunit-console.exe" TestSDK/bin/Release/TestSDK.dll /stoponerror 
 if not "%errorlevel%"=="0" goto nunitFailure
 
 :: package for nuget
@@ -13,7 +13,7 @@ nuget pack Smartsheet-csharp-sdk.csproj -sym -IncludeReferencedProjects -Prop Co
 if not "%errorlevel%"=="0" goto nugetFailure
 
 :: Copy documentation to the git directory
-xcopy documentation\Website\* documentation\git-docs /E /Y
+xcopy documentation\Website\* documentation\git-docs\ /E /Y
 cd documentation\git-docs\
 :: Push the docs to github.io
 git add *

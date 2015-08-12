@@ -26,31 +26,254 @@ namespace Smartsheet.Api.Models
 	public enum Symbol
 	{
 		/// <summary>
+		/// <para>
 		/// Represents the FLAG Symbol.
+		/// </para>
+		/// <para>
+		/// Applicable for CHECKBOX column type
+		/// </para>
 		/// </summary>
 		FLAG,
 
 		/// <summary>
+		/// <para>
 		/// Represents the STAR Symbol.
+		/// </para>
+		/// <para>
+		/// Applicable for CHECKBOX column type
+		/// </para>
 		/// </summary>
 		STAR,
 
 		/// <summary>
+		/// <para>
 		/// Represents the HARVEY_BALLS Symbol.
+		/// </para>
+		/// <para>
+		/// Applicable for PICKLIST column type
+		/// </para>
 		/// </summary>
 		HARVEY_BALLS,
 
 		/// <summary>
+		/// <para>
+		/// Represents the PRIORITY Symbol.
+		/// </para>
+		/// <para>
+		/// Applicable for PICKLIST column type
+		/// </para>
+		/// </summary>
+		PRIORITY,
+
+		/// <summary>
+		/// <para>
 		/// Represents the RYG Symbol.
+		/// </para>
+		/// <para>
+		/// Applicable for PICKLIST column type
+		/// </para>
 		/// </summary>
 		RYG,
 
 		/// <summary>
-		/// Represents the PRIORITY Symbol.
+		/// <para>
+		/// Represents the PRIORITY_HML Symbol.
+		/// </para>
+		/// <para>
+		/// Applicable for PICKLIST column type
+		/// </para>
 		/// </summary>
-		PRIORITY
+		PRIORITY_HML,
 
+		/// <summary>
+		/// <para>
+		/// Represents the DECISION_SYMBOLS Symbol.
+		/// </para>
+		/// <para>
+		/// Applicable for PICKLIST column type
+		/// </para>
+		/// </summary>
+		DECISION_SYMBOLS,
 
+		/// <summary>
+		/// <para>
+		/// Represents the DECISION_SHAPES Symbol.
+		/// </para>
+		/// <para>
+		/// Applicable for PICKLIST column type
+		/// </para>
+		/// </summary>
+		DECISION_SHAPES,
+
+		/// <summary>
+		/// <para>
+		/// Represents the VCR Symbol.
+		/// </para>
+		/// <para>
+		/// Applicable for PICKLIST column type
+		/// </para>
+		/// </summary>
+		VCR,
+
+		/// <summary>
+		/// <para>
+		/// Represents the RYGB Symbol.
+		/// </para>
+		/// <para>
+		/// Applicable for PICKLIST column type
+		/// </para>
+		/// </summary>
+		RYGB,
+
+		/// <summary>
+		/// <para>
+		/// Represents the RYGG Symbol.
+		/// </para>
+		/// <para>
+		/// Applicable for PICKLIST column type
+		/// </para>
+		/// </summary>
+		RYGG,
+
+		/// <summary>
+		/// <para>
+		/// Represents the WEATHER Symbol.
+		/// </para>
+		/// <para>
+		/// Applicable for PICKLIST column type
+		/// </para>
+		/// </summary>
+		WEATHER,
+
+		/// <summary>
+		/// <para>
+		/// Represents the PROGRESS Symbol.
+		/// </para>
+		/// <para>
+		/// Applicable for PICKLIST column type
+		/// </para>
+		/// </summary>
+		PROGRESS,
+
+		/// <summary>
+		/// <para>
+		/// Represents the ARROWS_3_WAY Symbol.
+		/// </para>
+		/// <para>
+		/// Applicable for PICKLIST column type
+		/// </para>
+		/// </summary>
+		ARROWS_3_WAY,
+
+		/// <summary>
+		/// <para>
+		/// Represents the ARROWS_4_WAY Symbol.
+		/// </para>
+		/// <para>
+		/// Applicable for PICKLIST column type
+		/// </para>
+		/// </summary>
+		ARROWS_4_WAY,
+
+		/// <summary>
+		/// <para>
+		/// Represents the ARROWS_5_WAY Symbol.
+		/// </para>
+		/// <para>
+		/// Applicable for PICKLIST column type
+		/// </para>
+		/// </summary>
+		ARROWS_5_WAY,
+
+		/// <summary>
+		/// <para>
+		/// Represents the DIRECTIONS_3_WAY Symbol.
+		/// </para>
+		/// <para>
+		/// Applicable for PICKLIST column type
+		/// </para>
+		/// </summary>
+		DIRECTIONS_3_WAY,
+
+		/// <summary>
+		/// <para>
+		/// Represents the DIRECTIONS_4_WAY Symbol.
+		/// </para>
+		/// <para>
+		/// Applicable for PICKLIST column type
+		/// </para>
+		/// </summary>
+		DIRECTIONS_4_WAY,
+
+		/// <summary>
+		/// <para>
+		/// Represents the SKI Symbol.
+		/// </para>
+		/// <para>
+		/// Applicable for PICKLIST column type
+		/// </para>
+		/// </summary>
+		SKI,
+
+		/// <summary>
+		/// <para>
+		/// Represents the SIGNAL Symbol.
+		/// </para>
+		/// <para>
+		/// Applicable for PICKLIST column type
+		/// </para>
+		/// </summary>
+		SIGNAL,
+
+		/// <summary>
+		/// <para>
+		/// Represents the STAR_RATING Symbol.
+		/// </para>
+		/// <para>
+		/// Applicable for PICKLIST column type
+		/// </para>
+		/// </summary>
+		STAR_RATING,
+
+		/// <summary>
+		/// <para>
+		/// Represents the HEARTS Symbol.
+		/// </para>
+		/// <para>
+		/// Applicable for PICKLIST column type
+		/// </para>
+		/// </summary>
+		HEARTS,
+
+		/// <summary>
+		/// <para>
+		/// Represents the MONEY Symbol.
+		/// </para>
+		/// <para>
+		/// Applicable for PICKLIST column type
+		/// </para>
+		/// </summary>
+		MONEY,
+
+		/// <summary>
+		/// <para>
+		/// Represents the EFFORT Symbol.
+		/// </para>
+		/// <para>
+		/// Applicable for PICKLIST column type
+		/// </para>
+		/// </summary>
+		EFFORT,
+
+		/// <summary>
+		/// <para>
+		/// Represents the PAIN Symbol.
+		/// </para>
+		/// <para>
+		/// Applicable for PICKLIST column type
+		/// </para>
+		/// </summary>
+		PAIN
 	}
 
 }

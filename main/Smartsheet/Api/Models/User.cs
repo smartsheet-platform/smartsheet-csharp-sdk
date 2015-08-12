@@ -24,72 +24,8 @@ namespace Smartsheet.Api.Models
 	/// <seealso href="http://help.Smartsheet.com/customer/portal/articles/795920-managing-Users-team-enterprise-only-">Help
 	/// Managing Users</seealso>
 	/// <seealso href="http://help.Smartsheet.com/customer/portal/articles/520100-user-types">User Types Help</seealso>
-	public class User : UserProfile
+	public class User : UserModelWithName
 	{
-		/// <summary>
-		/// Represents the Admin flag which allows managing Users and accounts.
-		/// </summary>
-		private bool? admin;
-
-		/// <summary>
-		/// Represents the licensed sheet creator flag which allows creating and owning Sheets.
-		/// </summary>
-		private bool? licensedSheetCreator;
-
-		/// <summary>
-		/// Represents the user Status (active, pending, declined).
-		/// </summary>
-		private UserStatus? status;
-
-		/// <summary>
-		/// Gets the Admin flag which allows managing Users and accounts.
-		/// </summary>
-		/// <returns> the Admin </returns>
-		public virtual bool? Admin
-		{
-			get
-			{
-				return admin;
-			}
-			set
-			{
-				this.admin = value;
-			}
-		}
-
-
-		/// <summary>
-		/// Gets the licensed sheet creator flag that allows creating and owning Sheets.
-		/// </summary>
-		/// <returns> the licensed sheet creator </returns>
-		public virtual bool? LicensedSheetCreator
-		{
-			get
-			{
-				return licensedSheetCreator;
-			}
-			set
-			{
-				this.licensedSheetCreator = value;
-			}
-		}
-
-
-		/// <summary>
-		/// Gets the Status of the user (active, pending, declined).
-		/// </summary>
-		/// <returns> the Status </returns>
-		public virtual UserStatus? Status
-		{
-			get
-			{
-				return status;
-			}
-			set
-			{
-				this.status = value;
-			}
-		}
 
 
 		/// <summary>
@@ -97,9 +33,25 @@ namespace Smartsheet.Api.Models
 		/// </summary>
 		public class AddUserBuilder
 		{
-			internal bool? admin;
-			internal string emailAddress;
-			internal bool? licensedSheetCreator;
+			private bool? admin;
+			private string emailAddress;
+			private bool? licensedSheetCreator;
+			private string firstName;
+			private string lastName;
+			private bool? resourceViewer;
+
+			/// <summary>
+			/// User object with required attributes
+			/// </summary>
+			/// <param name="email">email (required)</param>
+			/// <param name="admin">admin (required)</param>
+			/// <param name="licensedSheetCreator">licensedSheetCreator (required)</param>
+			public AddUserBuilder(string email, bool? admin, bool? licensedSheetCreator)
+			{
+				this.emailAddress = email;
+				this.admin = admin;
+				this.licensedSheetCreator = licensedSheetCreator;
+			}
 
 			/// <summary>
 			/// Sets the Admin flag which allows managing Users and accounts.
@@ -135,39 +87,92 @@ namespace Smartsheet.Api.Models
 			}
 
 			/// <summary>
+			/// Sets the user's first name.
+			/// </summary>
+			/// <param name="firstName"> the firstName </param>
+			/// <returns> the adds the user builder </returns>
+			public virtual AddUserBuilder SetFirstName(string firstName)
+			{
+				this.firstName = firstName;
+				return this;
+			}
+
+			/// <summary>
+			/// Sets the user's last name.
+			/// </summary>
+			/// <param name="lastName"> the lastName </param>
+			/// <returns> the adds the user builder </returns>
+			public virtual AddUserBuilder SetLastName(string lastName)
+			{
+				this.lastName = lastName;
+				return this;
+			}
+
+			/// <summary>
+			/// Sets the Flag indicating whether the user is a resource viewer (can access resource views)
+			/// </summary>
+			/// <param name="resourceViewer"> the resourceViewer </param>
+			/// <returns> the adds the user builder </returns>
+			public virtual AddUserBuilder SetResourceViewer(bool? resourceViewer)
+			{
+				this.resourceViewer = resourceViewer;
+				return this;
+			}
+
+			/// <summary>
 			/// Gets the Admin.
 			/// </summary>
 			/// <returns> the Admin </returns>
-			public virtual bool? Admin
+			public virtual bool? GetAdmin()
 			{
-				get
-				{
-					return admin;
-				}
+				return admin;
 			}
+
 
 			/// <summary>
 			/// Gets the Email address.
 			/// </summary>
 			/// <returns> the Email address </returns>
-			public virtual string EmailAddress
+			public virtual string GetEmailAddress()
 			{
-				get
-				{
-					return emailAddress;
-				}
+				return emailAddress;
 			}
 
 			/// <summary>
 			/// Gets the licensed sheet creator.
 			/// </summary>
 			/// <returns> the licensed sheet creator </returns>
-			public virtual bool? LicensedSheetCreator
+			public virtual bool? GetLicensedSheetCreator()
 			{
-				get
-				{
-					return licensedSheetCreator;
-				}
+				return licensedSheetCreator;
+			}
+
+
+			/// <summary>
+			/// Gets the user's first name.
+			/// </summary>
+			/// <returns> the firstName </returns>
+			public virtual string GetFirstName()
+			{
+				return firstName;
+			}
+
+			/// <summary>
+			/// Gets the user's last name.
+			/// </summary>
+			/// <returns> the lastName </returns>
+			public virtual string GetLastName()
+			{
+				return lastName;
+			}
+
+			/// <summary>
+			/// Gets the Flag indicating whether the user is a resource viewer (can access resource views).
+			/// </summary>
+			/// <returns> the resourceViewer </returns>
+			public virtual bool? GetResourceViewer()
+			{
+				return resourceViewer;
 			}
 
 			/// <summary>
@@ -176,15 +181,18 @@ namespace Smartsheet.Api.Models
 			/// <returns> the user </returns>
 			public virtual User Build()
 			{
-				if (admin == null || emailAddress == null || licensedSheetCreator == null)
-				{
-					throw new InvalidOperationException();
-				}
+				//if (admin == null || emailAddress == null || licensedSheetCreator == null)
+				//{
+				//	throw new InvalidOperationException();
+				//}
 
 				User user = new User();
-				user.admin = admin;
-				user.licensedSheetCreator = licensedSheetCreator;
+				user.Admin = admin;
+				user.LicensedSheetCreator = licensedSheetCreator;
 				user.Email = emailAddress;
+				user.FirstName = firstName;
+				user.LastName = lastName;
+				user.ResourceViewer = resourceViewer;
 				return user;
 			}
 		}
@@ -194,38 +202,31 @@ namespace Smartsheet.Api.Models
 		/// </summary>
 		public class UpdateUserBuilder
 		{
-			internal bool? admin;
-			internal bool? licensedSheetCreator;
-			internal long? id;
+			private long? id;
+			private bool? admin;
+			private bool? licensedSheetCreator;
+			private string firstName;
+			private string lastName;
+			private bool? resourceViewer;
 
 			/// <summary>
-			/// Get the Id of the user
-			/// @return
+			/// User object containing the required attributes:
 			/// </summary>
-			public virtual long? ID
-			{
-				get
-				{
-					return id;
-				}
-			}
-
-			/// <summary>
-			/// Set the Id of the user
-			/// </summary>
-			/// <param name="id">The identifier.</param>
-			/// <returns>the update user builder</returns>
-			public virtual UpdateUserBuilder SetID(long? id)
+			/// <param name="id">the user id</param>
+			/// <param name="admin">admin (required)</param>
+			/// <param name="licensedSheetCreator">licensedSheetCreator (required)</param>
+			public UpdateUserBuilder(long? id, bool? admin, bool? licensedSheetCreator)
 			{
 				this.id = id;
-				return this;
+				this.admin = admin;
+				this.licensedSheetCreator = licensedSheetCreator;
 			}
 
 			/// <summary>
 			/// Sets the Admin flag which allows managing Users and accounts.
 			/// </summary>
 			/// <param name="admin"> the Admin </param>
-			/// <returns> the update user builder </returns>
+			/// <returns> the UpdateUserBuilder </returns>
 			public virtual UpdateUserBuilder SetAdmin(bool? admin)
 			{
 				this.admin = admin;
@@ -233,10 +234,10 @@ namespace Smartsheet.Api.Models
 			}
 
 			/// <summary>
-			/// Licensed sheet creator.
+			/// Sets the licensed sheet creator flag that allows creating and owning Sheets.
 			/// </summary>
 			/// <param name="licensedSheetCreator"> the licensed sheet creator </param>
-			/// <returns> the update user builder </returns>
+			/// <returns> the UpdateUserBuilder </returns>
 			public virtual UpdateUserBuilder SetLicensedSheetCreator(bool? licensedSheetCreator)
 			{
 				this.licensedSheetCreator = licensedSheetCreator;
@@ -244,44 +245,98 @@ namespace Smartsheet.Api.Models
 			}
 
 			/// <summary>
+			/// Sets the user's first name.
+			/// </summary>
+			/// <param name="firstName"> the firstName </param>
+			/// <returns> the UpdateUserBuilder </returns>
+			public virtual UpdateUserBuilder SetFirstName(string firstName)
+			{
+				this.firstName = firstName;
+				return this;
+			}
+
+			/// <summary>
+			/// Sets the user's last name.
+			/// </summary>
+			/// <param name="lastName"> the lastName </param>
+			/// <returns> the UpdateUserBuilder </returns>
+			public virtual UpdateUserBuilder SetLastName(string lastName)
+			{
+				this.lastName = lastName;
+				return this;
+			}
+
+			/// <summary>
+			/// Sets the Flag indicating whether the user is a resource viewer (can access resource views)
+			/// </summary>
+			/// <param name="resourceViewer"> the resourceViewer </param>
+			/// <returns> the UpdateUserBuilder </returns>
+			public virtual UpdateUserBuilder SetResourceViewer(bool? resourceViewer)
+			{
+				this.resourceViewer = resourceViewer;
+				return this;
+			}
+
+			/// <summary>
 			/// Gets the Admin.
 			/// </summary>
 			/// <returns> the Admin </returns>
-			public virtual bool? Admin
+			public virtual bool? GetAdmin()
 			{
-				get
-				{
-					return admin;
-				}
+				return admin;
 			}
+
 
 			/// <summary>
 			/// Gets the licensed sheet creator.
 			/// </summary>
 			/// <returns> the licensed sheet creator </returns>
-			public virtual bool? LicensedSheetCreator
+			public virtual bool? GetLicensedSheetCreator()
 			{
-				get
-				{
-					return licensedSheetCreator;
-				}
+				return licensedSheetCreator;
+			}
+
+
+			/// <summary>
+			/// Gets the user's first name.
+			/// </summary>
+			/// <returns> the firstName </returns>
+			public virtual string GetFirstName()
+			{
+				return firstName;
 			}
 
 			/// <summary>
-			/// Builds the.
+			/// Gets the user's last name.
+			/// </summary>
+			/// <returns> the lastName </returns>
+			public virtual string GetLastName()
+			{
+				return lastName;
+			}
+
+			/// <summary>
+			/// Gets the Flag indicating whether the user is a resource viewer (can access resource views).
+			/// </summary>
+			/// <returns> the resourceViewer </returns>
+			public virtual bool? GetResourceViewer()
+			{
+				return resourceViewer;
+			}
+
+			/// <summary>
+			/// Builds the <seealso cref="User"/> object using the required fields.
 			/// </summary>
 			/// <returns> the user </returns>
 			public virtual User Build()
 			{
-				if (admin == null || licensedSheetCreator == null)
-				{
-					throw new InvalidOperationException("An admin and licensed sheet creator must be set");
-				}
-
 				User user = new User();
-				user.admin = admin;
-				user.ID = id;
-				user.licensedSheetCreator = licensedSheetCreator;
+				user.Id = id;
+				user.Admin = admin;
+				user.LicensedSheetCreator = licensedSheetCreator;
+				user.FirstName = firstName;
+				user.LastName = lastName;
+				user.ResourceViewer = resourceViewer;
 				return user;
 			}
 		}

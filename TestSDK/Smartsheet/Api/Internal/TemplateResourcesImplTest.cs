@@ -4,11 +4,8 @@ namespace Smartsheet.Api.Internal
 {
 	using NUnit.Framework;
 
-
-
 	using DefaultHttpClient = Smartsheet.Api.Internal.Http.DefaultHttpClient;
-	using AccessLevel = Smartsheet.Api.Models.AccessLevel;
-	using Template = Smartsheet.Api.Models.Template;
+	using Smartsheet.Api.Models;
 
 	public class TemplateResourcesImplTest : ResourcesImplBase
 	{
@@ -27,17 +24,33 @@ namespace Smartsheet.Api.Internal
 		{
 		}
 		[Test]
-		public virtual void TestListTemplates()
+		public virtual void TestListPublicTemplates()
 		{
 			server.setResponseBody("../../../TestSDK/resources/listTemplates.json");
 
-			IList<Template> templates = templateResources.ListTemplates();
-			Assert.NotNull(templates);
-			Assert.AreEqual(11,templates.Count);
-			Assert.AreEqual(AccessLevel.ADMIN, templates[0].AccessLevel);
-			Assert.AreEqual(4705477956265860L, (long)templates[0].ID);
-			Assert.AreEqual("testing1234", templates[0].Description);
-			Assert.AreEqual("<feature> -  Issues Template", templates[0].Name);
+			PaginatedResult<Template> result = templateResources.ListPublicTemplates(new PaginationParameters(false, null, null));
+			Assert.NotNull(result);
+			Assert.AreEqual(2,result.Data.Count);
+			Assert.AreEqual(AccessLevel.OWNER,result.Data[0].AccessLevel);
+			Assert.AreEqual(3457273486960516, result.Data[0].Id);
+			Assert.AreEqual("This is template 1", result.Data[0].Description);
+			Assert.AreEqual("This is template 2", result.Data[1].Description);
+			Assert.AreEqual(AccessLevel.VIEWER, result.Data[1].AccessLevel);
+		}
+
+		[Test]
+		public virtual void TestListUserCreatedTemplates()
+		{
+			server.setResponseBody("../../../TestSDK/resources/listTemplates.json");
+
+			PaginatedResult<Template> result = templateResources.ListUserCreatedTemplates(new PaginationParameters(false, null, null));
+			Assert.NotNull(result);
+			Assert.AreEqual(2, result.Data.Count);
+			Assert.AreEqual(AccessLevel.OWNER, result.Data[0].AccessLevel);
+			Assert.AreEqual(3457273486960516, result.Data[0].Id);
+			Assert.AreEqual("This is template 1", result.Data[0].Description);
+			Assert.AreEqual("This is template 2", result.Data[1].Description);
+			Assert.AreEqual(AccessLevel.VIEWER, result.Data[1].AccessLevel);
 		}
 	}
 

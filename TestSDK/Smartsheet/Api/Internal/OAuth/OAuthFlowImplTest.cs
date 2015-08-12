@@ -82,9 +82,8 @@ namespace Smartsheet.Api.Internal.OAuth
 			string authURL = oauth.NewAuthorizationURL(new List<AccessScope>((AccessScope[])Enum.GetValues(
 				typeof(AccessScope))), "state");
 
-			Assert.AreEqual("authorizationURL?response_type=code&client_id=clientID&redirect_uri=redirectURL&"+
-				"state=state&scope=READ_SHEETS%2CWRITE_SHEETS%2CSHARE_SHEETS%2CDELETE_SHEETS%2CCREATE_SHEETS%2"+
-				"CADMIN_SHEETS%2CADMIN_WORKSPACES", authURL);
+			Assert.AreEqual("authorizationURL?response_type=code&client_id=clientID&redirect_uri=redirectURL&state=state&scope=READ_SHEETS" +
+			"%20WRITE_SHEETS%20SHARE_SHEETS%20DELETE_SHEETS%20CREATE_SHEETS%20READ_USERS%20READ_CONTACTS%20ADMIN_USERS%20ADMIN_SHEETS%20ADMIN_WORKSPACES", authURL);
 		}
 
 		[Test]
@@ -198,7 +197,7 @@ namespace Smartsheet.Api.Internal.OAuth
 		[Test]
 		public virtual void TestRefreshToken()
 		{
-			oauth.TokenURL = "https://api.smartsheet.com/1.1/token";
+			oauth.TokenURL = "https://api.smartsheet.com/2.0/token";
 
 			Token token = new Token();
 			token.AccessToken = "AccessToken";

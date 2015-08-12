@@ -40,7 +40,7 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// Represents the object Type (row, discussion, attach) for this specific search RequestResult.
 		/// </summary>
-		private string objectType;
+		private SearchObjectType? objectType;
 
 		/// <summary>
 		/// Represents the parent object ID for this specific search RequestResult.
@@ -50,7 +50,7 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// Represents the parent object Type for this specific search RequestResult.
 		/// </summary>
-		private string parentObjectType;
+		private ObjectType? parentObjectType;
 
 		/// <summary>
 		/// Represents the parent object Name for this specific search RequestResult.
@@ -100,7 +100,7 @@ namespace Smartsheet.Api.Models
 		/// Gets the object Type for this specific search RequestResult.
 		/// </summary>
 		/// <returns> the object Type </returns>
-		public virtual string ObjectType
+		public virtual SearchObjectType? ObjectType
 		{
 			get
 			{
@@ -134,7 +134,7 @@ namespace Smartsheet.Api.Models
 		/// Gets the parent object Type for this specific search RequestResult.
 		/// </summary>
 		/// <returns> the parent object Type </returns>
-		public virtual string ParentObjectType
+		public virtual ObjectType? ParentObjectType
 		{
 			get
 			{

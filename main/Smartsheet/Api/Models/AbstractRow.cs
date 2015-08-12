@@ -26,7 +26,9 @@ namespace Smartsheet.Api.Models
 	/// <summary>
 	/// Represents the Row object.
 	/// </summary>
-	public abstract class AbstractRow<TColumn, TCell> : IdentifiableModel where TColumn:Column where TCell:Cell
+	public abstract class AbstractRow<TColumn, TCell> : IdentifiableModel
+		where TColumn : Column
+		where TCell : Cell
 	{
 		/// <summary>
 		/// Represents the Sheet ID. </summary>
@@ -39,6 +41,32 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// Represents the parent row number. </summary>
 		private int? parentRowNumber;
+
+		/// <summary>
+		/// Represents the parent row number. </summary>
+		private long? parentId;
+
+		/// <summary>
+		/// Represents the parent row number. </summary>
+		private long? siblingId;
+
+		private bool? filteredOut;
+
+		private bool? inCriticalPath;
+
+		private bool? locked;
+
+		private bool? lockedForUser;
+
+		private string format;
+
+		private string conditionalFormat;
+
+		private bool? toTop;
+
+		private bool? toBottom;
+
+		private bool? above;
 
 		/// <summary>
 		/// Represents the Cells for this row. </summary>
@@ -75,6 +103,9 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// The user's permissions on the sheet. </summary>
 		private AccessLevel? accessLevel;
+
+		private string permalink;
+
 
 		/// <summary>
 		/// Gets the user's permissions on the sheet.
@@ -167,7 +198,7 @@ namespace Smartsheet.Api.Models
 			TColumn result = null;
 			foreach (TColumn column in columns)
 			{
-				if (column.ID == columnId)
+				if (column.Id == columnId)
 				{
 					result = column;
 					break;
@@ -225,6 +256,26 @@ namespace Smartsheet.Api.Models
 			{
 				this.parentRowNumber = value;
 			}
+		}
+
+		/// <summary>
+		/// If this is a child row, the ID of the parent row, else omitted from response
+		/// </summary>
+		/// <returns> the ParentId </returns>
+		public long? ParentId
+		{
+			get { return parentId; }
+			set { parentId = value; }
+		}
+
+		/// <summary>
+		/// The ID of the previous sibling row at the same hierarchical level of this row, if any, else omitted from response
+		/// </summary>
+		/// <returns> the SiblingId </returns>
+		public long? SiblingId
+		{
+			get { return siblingId; }
+			set { siblingId = value; }
 		}
 
 
@@ -314,7 +365,7 @@ namespace Smartsheet.Api.Models
 
 
 		/// <summary>
-		/// Gets the date and time a row was modified.
+		/// Gets and Sets the date and time a row was last modified.
 		/// </summary>
 		/// <returns> the modified at </returns>
 		public virtual DateTime? ModifiedAt
@@ -329,5 +380,121 @@ namespace Smartsheet.Api.Models
 			}
 		}
 
+		/// <summary>
+		/// true if this row is filtered out by a column filter (and thus is not displayed in the Smartsheet app), 
+		/// false if the row is not filtered out.
+		/// Only returned if the include query string parameter contains filters.
+		/// </summary>
+		/// <returns> true if row is filtered out </returns>
+		public bool? FilteredOut
+		{
+			get { return filteredOut; }
+			set { filteredOut = value; }
+		}
+
+		/// <summary>
+		/// true if the row is locked by the sheet owner or the admin. 
+		/// Returned if the row is locked.
+		/// </summary>
+		/// <returns> true if row is locked </returns>
+		public bool? Locked
+		{
+			get { return locked; }
+			set { locked = value; }
+		}
+
+		/// <summary>
+		/// True if the row is locked for the requesting user. 
+		/// Returned if the row is locked.
+		/// </summary>
+		/// <returns> true if row is locked for user </returns>
+		public bool? LockedForUser
+		{
+			get { return lockedForUser; }
+			set { lockedForUser = value; }
+		}
+
+		/// <summary>
+		/// Only returned if the include query string parameter contains format and 
+		/// this row has a non-default format applied.
+		/// </summary>
+		/// <returns> the format </returns>
+		public string Format
+		{
+			get { return format; }
+			set { format = value; }
+		}
+
+		/// <summary>
+		/// Format descriptor describing this row’s conditional format (see Formatting)
+		///	Only returned if the include query string parameter contains format and this 
+		///	row has a conditional format applied.
+		/// </summary>
+		/// <returns> the conditional format </returns>
+		public string ConditionalFormat
+		{
+			get { return conditionalFormat; }
+			set { conditionalFormat = value; }
+		}
+
+		/// <summary>
+		/// Flag used to specify the location at which to create or move a row. 
+		/// Indicates that the row should be added to the top of the sheet. 
+		/// This attribute can be specified in a request, but will never be present in a response.
+		/// </summary>
+		/// <returns> true if row should be added to top </returns>
+		public bool? ToTop
+		{
+			get { return toTop; }
+			set { toTop = value; }
+		}
+
+		/// <summary>
+		/// Flag used to specify the location at which to create or move a row. 
+		/// Indicates that the row should be added to the bottom of the sheet, 
+		/// or, if used in conjunction with parentId, added as the last child of the parent. 
+		/// This attribute can be specified in a request, but will never be present in a response.
+		/// </summary>
+		/// <returns> true if row should be added to bottom </returns>
+		public bool? ToBottom
+		{
+			get { return toBottom; }
+			set { toBottom = value; }
+		}
+
+		/// <summary>
+		/// Flag used to specify the location at which to create or move a row. 
+		/// Optionally used in conjunction with siblingId with a value of true to 
+		/// indicate that the row should be added above the specified sibling row. 
+		/// This attribute can be specified in a request, but will never be present in a response.
+		/// </summary>
+		/// <returns> true if to be added above sibling row </returns>
+		public bool? Above
+		{
+			get { return above; }
+			set { above = value; }
+		}
+
+		/// <summary>
+		/// Only returned, with a value of true, 
+		/// if the sheet is a project sheet with dependencies enabled 
+		/// and this row is in the critical path.
+		/// </summary>
+		/// <returns> true if is in critical path </returns>
+		public bool? InCriticalPath
+		{
+			get { return inCriticalPath; }
+			set { inCriticalPath = value; }
+		}
+
+		/// <summary>
+		/// URL that represents a direct link to the Row in Smartsheet 
+		/// Only returned if the include query string parameter contains rowPermalink.
+		/// </summary>
+		public string Permalink
+		{
+			get { return permalink; }
+			set { permalink = value; }
+		}
 	}
 }

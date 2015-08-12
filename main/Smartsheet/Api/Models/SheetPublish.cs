@@ -206,10 +206,25 @@ namespace Smartsheet.Api.Models
 		/// </summary>
 		public class PublishStatusBuilder
 		{
-			internal bool? readOnlyLiteEnabled;
-			internal bool? readOnlyFullEnabled;
-			internal bool? readWriteEnabled;
-			internal bool? icalEnabled;
+			private bool? readOnlyLiteEnabled;
+			private bool? readOnlyFullEnabled;
+			private bool? readWriteEnabled;
+			private bool? icalEnabled;
+
+			/// <summary>
+			/// Sets the required properties to publish a Sheet
+			/// </summary>
+			/// <param name="readOnlyLiteEnabled"> Status of Read-Only HTML </param>
+			/// <param name="readOnlyFullEnabled"> Status of Read-Only Full </param>
+			/// <param name="readWriteEnabled"> Status of Edit by Anyone </param>
+			/// <param name="icalEnabled"> Status of iCal </param>
+			public PublishStatusBuilder(bool? readOnlyLiteEnabled, bool? readOnlyFullEnabled, bool? readWriteEnabled, bool? icalEnabled)
+			{
+				this.readOnlyLiteEnabled = readOnlyLiteEnabled;
+				this.readOnlyFullEnabled = readOnlyFullEnabled;
+				this.readWriteEnabled = readWriteEnabled;
+				this.icalEnabled = icalEnabled;
+			}
 
 			/// <summary>
 			/// Read only lite enabled.

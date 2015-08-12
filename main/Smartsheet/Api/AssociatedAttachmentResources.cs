@@ -21,6 +21,8 @@ using System.Collections.Generic;
 namespace Smartsheet.Api
 {
 
+	using System;
+	using System.ComponentModel;
 	using System.IO;
 	using Attachment = Api.Models.Attachment;
 
@@ -30,67 +32,21 @@ namespace Smartsheet.Api
 	/// <para>Various Smartsheet resources support Attachments. Currently Attachments can be added or retrieved
 	/// from Sheets, Rows and Comments.</para>
 	/// </summary>
+	[Obsolete("Deprecated", true)]
+	[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 	public interface AssociatedAttachmentResources
 	{
 
-		/// <summary>
-		/// <para>List Attachments of a given object.</para>
-		/// 
-		/// <para>It mirrors To the following Smartsheet REST API method:<br />
-		///   GET /sheet/{Id}/Attachments<br />
-		///   GET /row/{Id}/Attachments GET/Comment/{Id}/Attachments</para>
-		/// </summary>
-		/// <param name="objectId"> the ID of the object To which the Attachments are associated </param>
-		/// <returns> the Attachments (note that empty list will be returned if there is none) </returns>
-		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
-		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
-		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
-		/// <exception cref="SmartsheetException"> if there is any other error during the operation
-		///  </exception>
+		[Obsolete("Deprecated", true)]
+		[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		IList<Attachment> ListAttachments(long objectId);
 
-		/// <summary>
-		/// <para>Attach a file To the object.</para>
-		/// 
-		/// <para>It mirrors To the following Smartsheet REST API method:<br /> 
-		///   POST /sheet/{Id}/Attachments POST /row/{Id}/Attachments<br />
-		///   POST /Comment/{idd}/Attachments</para>
-		/// </summary>
-		/// <param name="objectId"> the Id of the object </param>
-		/// <param name="file"> the file To attach </param>
-		/// <param name="contentType"> the content Type of the file </param>
-		/// <returns> the created attachment </returns>
-		/// <exception cref="FileNotFoundException"> the file not found exception </exception>
-		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
-		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
-		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
-		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		[Obsolete("Deprecated", true)]
+		[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		Attachment AttachFile(long objectId, string file, string contentType);
 
-		/// <summary>
-		/// <para>Attach a URL To the object.</para>
-		/// 
-		/// <para>The URL can be a normal URL (AttachmentType "URL"), a Google Drive URL (AttachmentType "GOOGLE_DRIVE") or a
-		/// Box.brettrocksandwillfixthis URL (AttachmentType "BOX_COM").</para>
-		/// 
-		/// <para>It mirrors To the following Smartsheet REST API method:<br /> 
-		///   POST /sheet/{Id}/Attachments POST /row/{Id}/Attachments<br />
-		///   POST /Comment/{idd}/Attachments</para>
-		/// </summary>
-		/// <param name="objectId"> the object Id </param>
-		/// <param name="attachment"> the attachment object </param>
-		/// <returns> the created attachment </returns>
-		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
-		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
-		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
-		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		[Obsolete("Deprecated", true)]
+		[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		Attachment AttachURL(long objectId, Attachment attachment);
 	}
-
 }

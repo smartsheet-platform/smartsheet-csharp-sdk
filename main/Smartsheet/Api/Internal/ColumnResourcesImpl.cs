@@ -16,25 +16,18 @@
 //    limitations under the License.
 //    %[license]
 
+using Smartsheet.Api.Models;
+using System;
+using System.ComponentModel;
 namespace Smartsheet.Api.Internal
 {
-
-
-
-	using HttpEntity = Api.Internal.Http.HttpEntity;
-	using HttpMethod = Api.Internal.Http.HttpMethod;
-	using HttpRequest = Api.Internal.Http.HttpRequest;
-	using HttpResponse = Api.Internal.Http.HttpResponse;
-	using Utils = Api.Internal.Utility.Utility;
-	using Column = Api.Models.Column;
-	using System.Net;
-	using System;
-
 	/// <summary>
 	/// This is the implementation of the ColumnResources.
 	/// 
 	/// Thread Safety: This class is thread safe because it is immutable and its base class is thread safe.
 	/// </summary>
+	[Obsolete("Deprecated", true)]
+	[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 	public class ColumnResourcesImpl : AbstractResources, ColumnResources
 	{
 
@@ -45,77 +38,25 @@ namespace Smartsheet.Api.Internal
 		///   IllegalArgumentException : if any argument is null
 		/// </summary>
 		/// <param name="smartsheet"> the Smartsheet </param>
-		public ColumnResourcesImpl(SmartsheetImpl smartsheet) : base(smartsheet)
+		[Obsolete("Deprecated", true)]
+		[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
+		public ColumnResourcesImpl(SmartsheetImpl smartsheet)
+			: base(smartsheet)
 		{
 		}
 
-		/// <summary>
-		/// Update a column.
-		/// 
-		/// It mirrors To the following Smartsheet REST API method: PUT /column/{Id}
-		/// 
-		/// Exceptions:
-		///   IllegalArgumentException : if any argument is null
-		///   InvalidRequestException : if there is any problem with the REST API request
-		///   AuthorizationException : if there is any problem with the REST API authorization(access token)
-		///   ResourceNotFoundException : if the resource can not be found
-		///   ServiceUnavailableException : if the REST API service is not available (possibly due To rate limiting)
-		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
-		///   SmartsheetException : if there is any other error occurred during the operation
-		/// </summary>
-		/// <param name="column"> the column To update limited To the following attributes: Index (column's new Index in the sheet), 
-		/// Title, SheetId, Type, Options (optional), Symbol (optional), SystemColumnType (optional), 
-		/// AutoNumberFormat (optional) </param>
-		/// <returns> the updated sheet (note that if there is no such resource, this method will throw 
-		/// ResourceNotFoundException rather than returning null). </returns>
-		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
+		[Obsolete("Deprecated", true)]
+		[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		public virtual Column UpdateColumn(Column column)
 		{
-			Utils.ThrowIfNull(column);
-
-			return this.UpdateResource("column/" + column.ID, typeof(Column), column);
+			throw new NotSupportedException();
 		}
 
-		/// <summary>
-		/// Delete a column.
-		/// 
-		/// It mirrors To the following Smartsheet REST API method: DELETE /column/{Id}
-		/// 
-		/// Exceptions:
-		///   InvalidRequestException : if there is any problem with the REST API request
-		///   AuthorizationException : if there is any problem with the REST API authorization(access token)
-		///   ResourceNotFoundException : if the resource can not be found
-		///   ServiceUnavailableException : if the REST API service is not available (possibly due To rate limiting)
-		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
-		///   SmartsheetException : if there is any other error occurred during the operation
-		/// </summary>
-		/// <param name="id"> the ID of the column </param>
-		/// <param name="sheetId"> the ID of the sheet </param>
-		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
+		[Obsolete("Deprecated", true)]
+		[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		public virtual void DeleteColumn(long id, long sheetId)
 		{
-			HttpRequest request = null;
-				request = CreateHttpRequest(new Uri(Smartsheet.BaseURI, "column/"+id), HttpMethod.DELETE);
-
-			Column column = new Column();
-			column.SheetId = sheetId;
-
-				request.Entity = serializeToEntity<Column>(column);
-
-			HttpResponse response = Smartsheet.HttpClient.Request(request);
-
-			switch (response.StatusCode)
-			{
-				case HttpStatusCode.OK:
-					this.Smartsheet.JsonSerializer.deserializeResult<object>(response.Entity.GetContent());
-					break;
-				default:
-					HandleError(response);
-				break;
-			}
-
-			this.Smartsheet.HttpClient.ReleaseConnection();
-
+			throw new NotSupportedException();
 		}
 	}
 

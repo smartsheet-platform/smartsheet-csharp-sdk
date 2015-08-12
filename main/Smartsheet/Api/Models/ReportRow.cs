@@ -25,9 +25,5 @@ namespace Smartsheet.Api.Models
 {
 	public class ReportRow : AbstractRow<ReportColumn, ReportCell>
 	{
-		/// <summary>
-		/// The ID of the sheet that this row originates from.
-		/// </summary>
-		public long SheetId { get; set; }
 	}
 }

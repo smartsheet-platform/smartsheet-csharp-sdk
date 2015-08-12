@@ -1,44 +1,20 @@
-[
-   {
-      "id":995897522841476,
-      "name":"Bootcamp Company",
-      "accessLevel":"OWNER",
-      "permalink":"https://app.smartsheet.com/b/home?lx=asdsa"
-   },
-   {
-      "id":2281644301281156,
-      "name":"Bootcamp Master",
-      "accessLevel":"VIEWER",
-      "permalink":"https://app.smartsheet.com/b/home?lx=asdfasdf"
-   },
-   {
-      "id":1044148259186564,
-      "name":"Company Resources",
-      "accessLevel":"VIEWER",
-      "permalink":"https://app.smartsheet.com/b/home?lx=asdfasd"
-   },
-   {
-      "id":176955707418500,
-      "name":"Dev Projects",
-      "accessLevel":"ADMIN",
-      "permalink":"https://app.smartsheet.com/b/home?lx=-asfasdf"
-   },
-   {
-      "id":168833924261764,
-      "name":"Marketing",
-      "accessLevel":"EDITOR",
-      "permalink":"https://app.smartsheet.com/b/home?lx=asdfasdfasdf"
-   },
-   {
-      "id":3823729760331652,
-      "name":"Platform",
-      "accessLevel":"ADMIN",
-      "permalink":"https://app.smartsheet.com/b/home?lx=asdfasdfasdf"
-   },
-   {
-      "id":5776143509940100,
-      "name":"Product Mgt",
-      "accessLevel":"VIEWER",
-      "permalink":"https://app.smartsheet.com/b/home?lx=asdfasdf"
-   }
-]
+{
+    "pageNumber": 1,
+    "pageSize": 100,
+    "totalPages": 1,
+    "totalCount": 2,
+    "data": [
+        {
+            "accessLevel": "OWNER",
+            "id": 3457273486960516,
+            "name": "workspace 1",
+            "permalink": "https://app.smartsheet.com/b/home?lx=JNL0bgXtXc0pzni9tzAc4g"
+        },
+        {
+            "accessLevel": "OWNER",
+            "id": 7960873114331012,
+            "name": "workspace 2",
+            "permalink": "https://app.smartsheet.com/b/home?lx=JLiJbgXtXc0pzni9tzAKiR"
+        }
+    ]
+}
