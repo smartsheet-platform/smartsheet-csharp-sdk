@@ -20,9 +20,7 @@ using System.Collections.Generic;
 
 namespace Smartsheet.Api
 {
-
-
-	using Folder = Api.Models.Folder;
+	using Api.Models;
 
 	/// <summary>
 	/// <para>This interface provides methods To access Folder resources under home.</para>
@@ -31,7 +29,6 @@ namespace Smartsheet.Api
 	/// </summary>
 	public interface HomeFolderResources
 	{
-
 		/// <summary>
 		/// <para>List Folders under home.</para>
 		/// 
@@ -45,7 +42,7 @@ namespace Smartsheet.Api
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		IList<Folder> ListFolders();
+		PaginatedResult<Folder> ListFolders(PaginationParameters paging);
 
 		/// <summary>
 		/// <para>Create a folder in home.</para>

@@ -22,6 +22,7 @@ namespace Smartsheet.Api
 {
 
 
+	using Smartsheet.Api.Models;
 	using Workspace = Api.Models.Workspace;
 
 	/// <summary>
@@ -34,8 +35,8 @@ namespace Smartsheet.Api
 
 		/// <summary>
 		/// <para>List all Workspaces.</para>
-		/// 
 		/// <para>It mirrors To the following Smartsheet REST API method: GET /Workspaces</para>
+		/// <remarks>This operation supports pagination of results. For more information, see Paging.</remarks>
 		/// </summary>
 		/// <returns> the list of Workspaces (note that an empty list will be returned if there are none) </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
@@ -44,14 +45,19 @@ namespace Smartsheet.Api
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		IList<Workspace> ListWorkspaces();
+		PaginatedResult<Workspace> ListWorkspaces(PaginationParameters paging);
 
 		/// <summary>
-		/// <para>Get a workspace.</para>
-		/// 
-		/// <para>It mirrors To the following Smartsheet REST API method: GET /workspace/{Id}</para>
+		/// <para>Gets the specified Workspace (and lists its contents).</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: GET /workspaces/{workspaceid}</para>
+		/// <remarks><para>By default, this operation only returns the top-level items in the Workspace. To load all of the contents, 
+		/// including nested Folders, include the loadAll query string parameter with a value of true.</para>
+		/// <para>If no Folders, Sheets, Reports, or Templates are present in the Workspace, the corresponding attribute 
+		/// (e.g., "folders", "sheets") will not be present in the response object.</para></remarks>
 		/// </summary>
-		/// <param name="id"> the Id </param>
+		/// <param name="workspaceid">the workspace id</param>
+		/// <param name="loadAll"> Defaults to false. If true, loads all of the contents, including nested Folders. </param>
+		/// <param name="include"> When specified with a value of "source", response will include the source for any sheet that was created from another sheet or template</param>
 		/// <returns> the workspace (note that if there is no such resource, this method will throw ResourceNotFoundException
 		/// rather than returning null) </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
@@ -60,13 +66,11 @@ namespace Smartsheet.Api
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		Workspace GetWorkspace(long id);
+		Workspace GetWorkspace(long workspaceid, bool? loadAll, IEnumerable<WorkspaceInclusion> include);
 
 		/// <summary>
 		/// <para>Create a workspace.</para>
-		/// 
 		/// <para>It mirrors To the following Smartsheet REST API method: POST /Workspaces</para>
-		/// 
 		/// </summary>
 		/// <param name="workspace"> the workspace To create </param>
 		/// <returns> the created workspace </returns>
@@ -80,8 +84,7 @@ namespace Smartsheet.Api
 
 		/// <summary>
 		/// <para>Update a workspace.</para>
-		/// 
-		/// <para>It mirrors To the following Smartsheet REST API method: PUT /workspace/{Id}</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: PUT /workspaces/{workspaceId}</para>
 		/// </summary>
 		/// <param name="workspace"> the workspace To update </param>
 		/// <returns> the updated workspace (note that if there is no such resource, this method will throw
@@ -95,32 +98,38 @@ namespace Smartsheet.Api
 		Workspace UpdateWorkspace(Workspace workspace);
 
 		/// <summary>
-		/// <para>Delete a workspace.</para>
-		/// 
-		/// <para>It mirrors To the following Smartsheet REST API method: DELETE /workspace{Id}</para>
+		/// <para>Deletes the specified Workspace (and its contents).</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: DELETE /workspaces{workspaceId}</para>
 		/// </summary>
-		/// <param name="id"> the Id of the workspace </param>
+		/// <param name="workspaceId"> the Id of the workspace </param>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		void DeleteWorkspace(long id);
+		void DeleteWorkspace(long workspaceId);
 
 		/// <summary>
 		/// <para>Return the WorkspaceFolderResources object that provides access To Folder resources associated with Workspace
 		/// resources.</para>
 		/// </summary>
 		/// <returns> the workspace folder resources </returns>
-		WorkspaceFolderResources Folders();
+		WorkspaceFolderResources FolderResources { get; }
+
+		/// <summary>
+		/// <para>Return the WorkspaceFolderResources object that provides access To Folder resources associated with Workspace
+		/// resources.</para>
+		/// </summary>
+		/// <returns> the workspace folder resources </returns>
+		WorkspaceSheetResources SheetResources { get; }
 
 		/// <summary>
 		/// <para>Return the ShareResources object that provides access To Share resources associated with Workspace 
 		/// resources.</para>
 		/// </summary>
 		/// <returns> the share resources object </returns>
-		ShareResources Shares();
+		ShareResources ShareResources { get; }
 	}
 
 }

@@ -27,6 +27,8 @@ namespace Smartsheet.Api.Models
 	/// <summary>
 	/// Represents specific objects that can be included in some responses.
 	/// </summary>
+	[System.Obsolete("Deprecated", true)]
+	[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 	public enum ObjectInclusion
 	{
 		/// <summary>

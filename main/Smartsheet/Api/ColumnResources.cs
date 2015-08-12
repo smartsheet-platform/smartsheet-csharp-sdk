@@ -20,6 +20,8 @@ namespace Smartsheet.Api
 {
 
 
+	using System;
+	using System.ComponentModel;
 	using Column = Api.Models.Column;
 
 	/// <summary>
@@ -27,40 +29,16 @@ namespace Smartsheet.Api
 	/// 
 	/// <para>Thread Safety: Implementation of this interface must be thread safe.</para>
 	/// </summary>
+	[System.Obsolete("Deprecated", true)]
+	[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 	public interface ColumnResources
 	{
-
-		/// <summary>
-		/// <para>Update a column.</para>
-		/// 
-		/// <para>It mirrors To the following Smartsheet REST API method:<br />
-		/// PUT /column/{Id}</para>
-		/// </summary>
-		/// <param name="column"> the column To update </param>
-		/// <returns> the updated Column (note that if there is no such resource, this method will throw 
-		/// ResourceNotFoundException rather than returning null). </returns>
-		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
-		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
-		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
-		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		[Obsolete("Deprecated", true)]
+		[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		Column UpdateColumn(Column column);
 
-		/// <summary>
-		/// <para>Delete a column.</para>
-		/// 
-		/// <para>It mirrors To the following Smartsheet REST API method:<br />
-		/// DELETE /coluimn{Id}</para>
-		/// </summary>
-		/// <param name="id"> Id of the column </param>
-		/// <param name="sheetId"> the sheet Id </param>
-		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
-		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
-		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
-		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		[Obsolete("Deprecated", true)]
+		[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		void DeleteColumn(long id, long sheetId);
 	}
 

@@ -42,16 +42,8 @@ namespace Smartsheet.Api.Models
 		GANTT_END_DATE,
 
 		/// <summary>
-		/// Represents GANT_PERCENT_COMPLETE tag. </summary>
-		GANT_PERCENT_COMPLETE,
-
-		/// <summary>
 		/// Represents GANTT_PERCENT_COMPLETE tag. </summary>
 		GANTT_PERCENT_COMPLETE,
-
-		/// <summary>
-		/// Represents GANT_DISPLAY_LEVEL tag. </summary>
-		GANT_DISPLAY_LEVEL,
 
 		/// <summary>
 		/// Represents GANTT_DISPLAY_LABEL tag. </summary>
@@ -67,11 +59,7 @@ namespace Smartsheet.Api.Models
 
 		/// <summary>
 		/// Represents GANTT_ASSIGNED_RESOURCE. </summary>
-		GANTT_ASSIGNED_RESOURCE,
-		
-		/// <summary>
-		/// Represents GANTT_ALLOCATION. </summary>
-		GANTT_ALLOCATION
+		GANTT_ASSIGNED_RESOURCE
 	}
 
 }

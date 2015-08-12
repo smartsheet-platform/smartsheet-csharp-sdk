@@ -1,1 +1,1 @@
-{"id":263016097834884,"rowNumber":1,"version":4,"cells":[{"columnId":8764071660021636,"type":"TEXT_NUMBER","value":"New Data","displayValue":"New Data"}],"expanded":true,"accessLevel":"OWNER","createdAt":"2014-01-28T14:23:34-08:00","modifiedAt":"2014-01-28T14:23:34-08:00"}
+{ "id": 263016097834884, "rowNumber": 1, "version": 4, "cells": [ { "columnId": 8764071660021636, "columnType": "TEXT_NUMBER", "value": "New Data", "displayValue": "New Data" } ], "expanded": true, "accessLevel": "OWNER", "createdAt": "2014-01-28T14:23:34-08:00", "modifiedAt": "2014-01-28T14:23:34-08:00" }

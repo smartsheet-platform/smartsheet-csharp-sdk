@@ -19,7 +19,7 @@ namespace Smartsheet.Api.models
 		{
 			Row row = new Row();
 			Column col = new Column();
-			col.ID = 1234L;
+			col.Id = 1234L;
 			col.Index = 2;
 			IList<Column> columns = new List<Column>();
 			columns.Add(col);

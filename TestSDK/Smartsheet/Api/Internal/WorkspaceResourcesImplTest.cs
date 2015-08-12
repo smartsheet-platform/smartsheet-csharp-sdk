@@ -10,6 +10,7 @@ namespace Smartsheet.Api.Internal
 	using DefaultHttpClient = Smartsheet.Api.Internal.Http.DefaultHttpClient;
 	using AccessLevel = Smartsheet.Api.Models.AccessLevel;
 	using Workspace = Smartsheet.Api.Models.Workspace;
+	using Smartsheet.Api.Models;
 
 	public class WorkspaceResourcesImplTest : ResourcesImplBase
 	{
@@ -32,12 +33,12 @@ namespace Smartsheet.Api.Internal
 		{
 			server.setResponseBody("../../../TestSDK/resources/listWorkspaces.json");
 
-			IList<Workspace> workspace = workspaceResources.ListWorkspaces();
-			Assert.AreEqual(7, workspace.Count);
-			Assert.AreEqual(995897522841476L, (long)workspace[0].ID);
-			Assert.AreEqual("Bootcamp Company", workspace[0].Name);
-			Assert.AreEqual(AccessLevel.OWNER, workspace[0].AccessLevel);
-			Assert.AreEqual("https://app.smartsheet.com/b/home?lx=asdsa", workspace[0].Permalink);
+			PaginatedResult<Workspace> result = workspaceResources.ListWorkspaces(null);
+			Assert.AreEqual(2, result.TotalCount);
+			Assert.AreEqual(3457273486960516, (long)result.Data[0].Id);
+			Assert.AreEqual("workspace 1", result.Data[0].Name);
+			Assert.AreEqual(AccessLevel.OWNER, result.Data[0].AccessLevel);
+			Assert.AreEqual("https://app.smartsheet.com/b/home?lx=JLiJbgXtXc0pzni9tzAKiR", result.Data[1].Permalink);
 		}
 
 		[Test]
@@ -45,13 +46,13 @@ namespace Smartsheet.Api.Internal
 		{
 			server.setResponseBody("../../../TestSDK/resources/getWorkspace.json");
 
-			Workspace workspace = workspaceResources.GetWorkspace(1234L);
-			Assert.AreEqual(995897522841476L, (long)workspace.ID);
-			Assert.AreEqual("Bootcamp Company", workspace.Name);
-			Assert.AreEqual(0, workspace.Sheets.Count);
-			Assert.AreEqual(2, workspace.Folders.Count);
+			Workspace workspace = workspaceResources.GetWorkspace(1234L, false, null);
+			Assert.AreEqual(7116448184199044, (long)workspace.Id);
+			Assert.AreEqual("New workspace", workspace.Name);
+			Assert.AreEqual(1, workspace.Sheets.Count);
+			Assert.AreEqual(null, workspace.Folders);
 			Assert.AreEqual(AccessLevel.OWNER, workspace.AccessLevel);
-			Assert.AreEqual("https://app.smartsheet.com/b/home?asdf", workspace.Permalink);
+			Assert.AreEqual("https://app.smartsheet.com/b/home?lx=8Z0XuFUEAkxmHCSsMw4Zgg", workspace.Permalink);
 		}
 
 		[Test]
@@ -59,13 +60,12 @@ namespace Smartsheet.Api.Internal
 		{
 			server.setResponseBody("../../../TestSDK/resources/createWorkspace.json");
 
-			Workspace workspace = new Workspace();
-			workspace.Name = "New Workspace";
+			Workspace workspace = new Workspace.CreateWorkspaceBuilder("New workspace").Build();
 			Workspace newWorkspace = workspaceResources.CreateWorkspace(workspace);
-			Assert.AreEqual(2349499415848836L, (long)newWorkspace.ID);
-			Assert.AreEqual("New Workspace", newWorkspace.Name);
+			Assert.AreEqual(7960873114331012, (long)newWorkspace.Id);
+			Assert.AreEqual("New workspace", newWorkspace.Name);
 			Assert.AreEqual(AccessLevel.OWNER, newWorkspace.AccessLevel);
-			Assert.AreEqual("https://app.smartsheet.com/b/home?lx=Jasdfa", newWorkspace.Permalink);
+			Assert.AreEqual("https://app.smartsheet.com/b/home?lx=rBU8QqUVPCJ3geRgl7L8yQ", newWorkspace.Permalink);
 		}
 
 		[Test]
@@ -73,13 +73,12 @@ namespace Smartsheet.Api.Internal
 		{
 			server.setResponseBody("../../../TestSDK/resources/updateWorkspace.json");
 
-			Workspace workspace = new Workspace();
-			workspace.Name = "New Workspace";
+			Workspace workspace = new Workspace.UpdateWorkspaceBuilder(32434534, "Updated workspace").Build();
 			Workspace newWorkspace = workspaceResources.UpdateWorkspace(workspace);
-			Assert.AreEqual(2349499415848836L, (long)newWorkspace.ID);
-			Assert.AreEqual("New Workspace1", newWorkspace.Name);
+			Assert.AreEqual(7960873114331012, (long)newWorkspace.Id);
+			Assert.AreEqual("Updated workspace", newWorkspace.Name);
 			Assert.AreEqual(AccessLevel.OWNER, newWorkspace.AccessLevel);
-			Assert.AreEqual("https://app.smartsheet.com/b/home?lx=asdf", newWorkspace.Permalink);
+			Assert.AreEqual("https://app.smartsheet.com/b/home?lx=rBU8QqUVPCJ3geRgl7L8yQ", newWorkspace.Permalink);
 		}
 
 		[Test]
@@ -92,13 +91,13 @@ namespace Smartsheet.Api.Internal
 		[Test]
 		public virtual void TestFolders()
 		{
-			Assert.NotNull(workspaceResources.Folders());
+			Assert.NotNull(workspaceResources.FolderResources);
 		}
 
 		[Test]
 		public virtual void TestShares()
 		{
-			Assert.NotNull(workspaceResources.Shares());
+			Assert.NotNull(workspaceResources.ShareResources);
 		}
 
 	}

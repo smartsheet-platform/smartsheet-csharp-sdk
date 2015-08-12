@@ -21,6 +21,9 @@ using System.Collections.Generic;
 namespace Smartsheet.Api.Internal
 {
 
+	using Smartsheet.Api.Internal.Util;
+	using Smartsheet.Api.Models;
+	using System.Text;
 	using Workspace = Api.Models.Workspace;
 
 	/// <summary>
@@ -38,6 +41,13 @@ namespace Smartsheet.Api.Internal
 		private WorkspaceFolderResources folders;
 
 		/// <summary>
+		/// Represents the WorkspaceSheetResources.
+		/// 
+		/// It will be initialized in constructor and will not change afterwards.
+		/// </summary>
+		private WorkspaceSheetResources sheets;
+
+		/// <summary>
 		/// Represents the ShareResources.
 		/// 
 		/// It will be initialized in constructor and will not change afterwards.
@@ -51,139 +61,131 @@ namespace Smartsheet.Api.Internal
 		///   - IllegalArgumentException : if any argument is
 		/// </summary>
 		/// <param name="smartsheet"> the Smartsheet </param>
-		public WorkspaceResourcesImpl(SmartsheetImpl smartsheet) : base(smartsheet)
+		public WorkspaceResourcesImpl(SmartsheetImpl smartsheet)
+			: base(smartsheet)
 		{
 			this.folders = new WorkspaceFolderResourcesImpl(smartsheet);
-			this.shares = new ShareResourcesImpl(smartsheet, "workspace");
+			this.sheets = new WorkspaceSheetResourcesImpl(smartsheet);
+			this.shares = new ShareResourcesImpl(smartsheet, "workspaces");
 		}
 
 		/// <summary>
-		/// List all Workspaces.
-		/// 
-		/// It mirrors To the following Smartsheet REST API method: GET /Workspaces
-		/// 
-		/// Exceptions: 
-		///   
-		///   - InvalidRequestException : if there is any problem with the REST API request 
-		///   
-		///   - AuthorizationException : if there is any problem with the REST API authorization(access token) 
-		///   
-		///   - ServiceUnavailableException : if the REST API service is not available (possibly due To rate limiting) 
-		///   
-		///   - SmartsheetRestException : if there is any other REST API related error occurred during the operation 
-		///   
-		///   - SmartsheetException : if there is any other error occurred during the operation
+		/// <para>List all Workspaces.</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: GET /Workspaces</para>
+		/// <remarks>This operation supports pagination of results. For more information, see Paging.</remarks>
 		/// </summary>
-		/// <returns> all Workspaces (note that empty list will be returned if there is none) </returns>
-		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
-		public virtual IList<Workspace> ListWorkspaces()
+		/// <returns> the list of Workspaces (note that an empty list will be returned if there are none) </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public virtual PaginatedResult<Workspace> ListWorkspaces(PaginationParameters paging)
 		{
-			return this.ListResources<Workspace>("workspaces", typeof(Workspace));
+			StringBuilder path = new StringBuilder("workspaces");
+			if (paging != null)
+			{
+				path.Append(paging.ToQueryString());
+			}
+			return this.ListResourcesWithWrapper<Workspace>(path.ToString());
 		}
 
 		/// <summary>
-		/// Get a workspace.
-		/// 
-		/// It mirrors To the following Smartsheet REST API method: GET /workspace/{Id}
-		/// 
-		/// Exceptions: 
-		///   
-		///   - InvalidRequestException : if there is any problem with the REST API request 
-		///   
-		///   - AuthorizationException : if there is any problem with the REST API authorization(access token) 
-		///   
-		///   - ResourceNotFoundException : if the resource can not be found 
-		///   
-		///   - ServiceUnavailableException : if the REST API service is not available (possibly due To rate limiting) 
-		///   
-		///   - SmartsheetRestException : if there is any other REST API related error occurred during the operation 
-		///   
-		///   - SmartsheetException : if there is any other error occurred during the operation
+		/// <para>Gets the specified Workspace (and lists its contents).</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: GET /workspaces/{workspaceid}</para>
+		/// <remarks><para>By default, this operation only returns the top-level items in the Workspace. To load all of the contents, 
+		/// including nested Folders, include the loadAll query string parameter with a value of true.</para>
+		/// <para>If no Folders, Sheets, Reports, or Templates are present in the Workspace, the corresponding attribute 
+		/// (e.g., "folders", "sheets") will not be present in the response object.</para></remarks>
 		/// </summary>
-		/// <param name="id"> the Id </param>
-		/// <returns> the resource (note that if there is no such resource, this method will throw ResourceNotFoundException
-		/// rather than returning null). </returns>
-		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
-		public virtual Workspace GetWorkspace(long id)
+		/// <param name="workspaceid">the workspace id</param>
+		/// <param name="loadAll"> Defaults to false. If true, loads all of the contents, including nested Folders. </param>
+		/// <param name="include"> When specified with a value of "source", response will include the source for any sheet that was created from another sheet or template</param>
+		/// <returns> the workspace (note that if there is no such resource, this method will throw ResourceNotFoundException
+		/// rather than returning null) </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public virtual Workspace GetWorkspace(long workspaceId, bool? loadAll, IEnumerable<WorkspaceInclusion> include)
 		{
-			return this.GetResource<Workspace>("workspace/" + id, typeof(Workspace));
+			IDictionary<string, string> parameters = new Dictionary<string, string>();
+			if (loadAll.HasValue)
+			{
+				parameters.Add("loadAll", loadAll.ToString());
+			}
+			if (include != null)
+			{
+				parameters.Add("include", QueryUtil.GenerateCommaSeparatedList(include));
+			}
+			return this.GetResource<Workspace>(QueryUtil.GenerateUrl("workspaces/" + workspaceId, parameters), typeof(Workspace));
 		}
 
 		/// <summary>
-		/// Create a workspace.
-		/// 
-		/// It mirrors To the following Smartsheet REST API method: POST /Workspaces
-		/// 
-		/// Exceptions: 
-		///   
-		///   - IllegalArgumentException : if any argument is null 
-		///   
-		///   - InvalidRequestException : if there is any problem with the REST API request 
-		///   
-		///   - AuthorizationException : if there is any problem with the REST API authorization(access token) 
-		///   
-		///   - ServiceUnavailableException : if the REST API service is not available (possibly due To rate limiting) 
-		///   
-		///   - SmartsheetRestException : if there is any other REST API related error occurred during the operation 
-		///   
-		///   - SmartsheetException : if there is any other error occurred during the operation
+		/// <para>Create a workspace.</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: POST /Workspaces</para>
 		/// </summary>
-		/// <param name="workspace"> the workspace To create, limited To the following required attributes: * Name (string) </param>
+		/// <param name="workspace"> the workspace To create </param>
 		/// <returns> the created workspace </returns>
-		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual Workspace CreateWorkspace(Workspace workspace)
 		{
 			return this.CreateResource<Workspace>("workspaces", typeof(Workspace), workspace);
 		}
 
 		/// <summary>
-		/// Update a workspace.
-		/// 
-		/// It mirrors To the following Smartsheet REST API method: PUT /workspace/{Id}
-		/// 
-		/// Exceptions: 
-		///   
-		///   - IllegalArgumentException : if any argument is null 
-		///   
-		///   - InvalidRequestException : if there is any problem with the REST API request 
-		///   
-		///   - AuthorizationException : if there is any problem with the REST API authorization(access token) 
-		///   
-		///   - ResourceNotFoundException : if the resource can not be found 
-		///   
-		///   - ServiceUnavailableException : if the REST API service is not available (possibly due To rate limiting) 
-		///   
-		///   - SmartsheetRestException : if there is any other REST API related error occurred during the operation 
-		///   
-		///   - SmartsheetException : if there is any other error occurred during the operation
+		/// <para>Update a workspace.</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: PUT /workspaces/{workspaceId}</para>
 		/// </summary>
-		/// <param name="workspace"> the workspace To update limited To the following attribute: * Name (string) </param>
+		/// <param name="workspace"> the workspace To update </param>
 		/// <returns> the updated workspace (note that if there is no such resource, this method will throw
-		/// ResourceNotFoundException rather than returning null). </returns>
-		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
+		/// ResourceNotFoundException rather than returning null) </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual Workspace UpdateWorkspace(Workspace workspace)
 		{
-			return this.UpdateResource<Workspace>("workspace/" + workspace.ID, typeof(Workspace), workspace);
+			return this.UpdateResource<Workspace>("workspaces/" + workspace.Id, typeof(Workspace), workspace);
 		}
 
 		/// <summary>
-		/// Delete a workspace.
-		/// 
-		/// It mirrors To the following Smartsheet REST API method: DELETE /workspace{Id}
-		/// 
-		/// Exceptions: 
-		///   - InvalidRequestException : if there is any problem with the REST API request 
-		///   - AuthorizationException : if there is any problem with the REST API authorization(access token) 
-		///   - ResourceNotFoundException : if the resource can not be found 
-		///   - ServiceUnavailableException : if the REST API service is not available (possibly due To rate limiting) 
-		///   - SmartsheetRestException : if there is any other REST API related error occurred during the operation 
-		///   - SmartsheetException : if there is any other error occurred during the operation
+		/// <para>Deletes the specified Workspace (and its contents).</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: DELETE /workspaces{workspaceId}</para>
 		/// </summary>
-		/// <param name="id"> the ID of the workspace </param>
-		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
+		/// <param name="workspaceId"> the Id of the workspace </param>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual void DeleteWorkspace(long id)
 		{
-				this.DeleteResource<Workspace>("workspace/" + id, typeof(Workspace));
+			this.DeleteResource<Workspace>("workspaces/" + id, typeof(Workspace));
+		}
+
+		/// <summary>
+		/// <para>Return the WorkspaceFolderResources object that provides access To Folder resources associated with Workspace
+		/// resources.</para>
+		/// </summary>
+		/// <returns> the workspace folder resources </returns>
+		public virtual WorkspaceSheetResources SheetResources
+		{
+			get
+			{
+				return this.sheets;
+			}
 		}
 
 		/// <summary>
@@ -191,18 +193,24 @@ namespace Smartsheet.Api.Internal
 		/// resources.
 		/// </summary>
 		/// <returns> the workspace folder resources </returns>
-		public virtual WorkspaceFolderResources Folders()
+		public virtual WorkspaceFolderResources FolderResources
 		{
-			return this.folders;
+			get
+			{
+				return this.folders;
+			}
 		}
 
 		/// <summary>
 		/// Return the ShareResources object that provides access To Share resources associated with Workspace resources.
 		/// </summary>
 		/// <returns> the share resources </returns>
-		public virtual ShareResources Shares()
+		public virtual ShareResources ShareResources
 		{
-			return this.shares;
+			get
+			{
+				return this.shares;
+			}
 		}
 	}
 

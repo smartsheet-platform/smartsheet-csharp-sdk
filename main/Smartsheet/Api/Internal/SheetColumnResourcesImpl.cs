@@ -20,6 +20,9 @@ using System.Collections.Generic;
 
 namespace Smartsheet.Api.Internal
 {
+	using Smartsheet.Api.Internal.Util;
+	using Smartsheet.Api.Models;
+	using System.Text;
 	using Column = Api.Models.Column;
 
 	/// <summary>
@@ -29,62 +32,132 @@ namespace Smartsheet.Api.Internal
 	/// </summary>
 	public class SheetColumnResourcesImpl : AbstractResources, SheetColumnResources
 	{
-
 		/// <summary>
 		/// Constructor.
-		/// 
-		/// Exceptions: - IllegalArgumentException : if any argument is null
 		/// </summary>
 		/// <param name="smartsheet"> the Smartsheet </param>
-		public SheetColumnResourcesImpl(SmartsheetImpl smartsheet) : base(smartsheet)
+		/// <exception cref="IllegalArgumentException">if any argument is null</exception>
+		public SheetColumnResourcesImpl(SmartsheetImpl smartsheet)
+			: base(smartsheet)
 		{
+
+		}
+
+
+		/// <summary>
+		/// <para>Gets a list of all Columns belonging to the Sheet specified in the URL.</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: GET /sheets/{sheetId}/columns</para>
+		/// <remarks>This operation supports pagination of results. For more information, see Paging.</remarks>
+		/// </summary>
+		/// <param name="sheetId"> the sheet Id </param>
+		/// <param name="include">elements to include in response</param>
+		/// <param name="paging">the paging</param>
+		/// <returns> the list of Columns (note that an empty list will be returned if there is none) </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public virtual PaginatedResult<Column> ListColumns(long sheetId, IEnumerable<ColumnInclusion> include, PaginationParameters paging)
+		{
+			StringBuilder path = new StringBuilder("sheets/" + sheetId + "/columns");
+			IDictionary<string, string> parameters = new Dictionary<string, string>();
+			if (paging != null)
+			{
+				parameters = paging.toDictionary();
+			} if (include != null)
+			{
+				parameters.Add("include", QueryUtil.GenerateCommaSeparatedList(include));
+			}
+			return this.ListResourcesWithWrapper<Column>(QueryUtil.GenerateUrl("sheets/" + sheetId + "/columns", parameters));
 		}
 
 		/// <summary>
-		/// List Columns of a given sheet.
+		/// <para>Inserts one or more columns into the Sheet specified in the URL.</para>
 		/// 
-		/// It mirrors To the following Smartsheet REST API method: GET /sheet/{Id}/Columns
-		/// 
-		/// Exceptions:
-		///   InvalidRequestException : if there is any problem with the REST API request
-		///   AuthorizationException : if there is any problem with the REST API authorization(access token)
-		///   ResourceNotFoundException : if the resource can not be found
-		///   ServiceUnavailableException : if the REST API service is not available (possibly due To rate limiting)
-		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
-		///   SmartsheetException : if there is any other error occurred during the operation
+		/// <para>It mirrors To the following Smartsheet REST API method: POST /sheets/{sheetId}/Columns</para>
 		/// </summary>
 		/// <param name="sheetId"> the sheet Id </param>
-		/// <returns> the Columns (note that empty list will be returned if there is none) </returns>
-		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
-		public virtual IList<Column> ListColumns(long sheetId)
-		{
-			return this.ListResources<Column>("sheet/" + sheetId + "/columns", typeof(Column));
-		}
-
-		/// <summary>
-		/// Add column To a sheet.
-		/// 
-		/// It mirrors To the following Smartsheet REST API method: POST /sheet/{Id}/Columns
-		/// 
-		/// Exceptions:
-		///   IllegalArgumentException : if any argument is null
-		///   InvalidRequestException : if there is any problem with the REST API request
-		///   AuthorizationException : if there is any problem with the REST API authorization(access token)
-		///   ResourceNotFoundException : if the resource can not be found
-		///   ServiceUnavailableException : if the REST API service is not available (possibly due To rate limiting)
-		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
-		///   SmartsheetException : if there is any other error occurred during the operation
-		/// </summary>
-		/// <param name="sheetId"> the sheet Id </param>
-		/// <param name="column"> the coluimn object limited To the following attributes: *
-		/// Title * Type * Symbol (optional) * Options (optional) - array of Options * Index (zero-based) * SystemColumnType
-		/// (optional) * AutoNumberFormat (optional) </param>
+		/// <param name="columns"> the column object(s) </param>
 		/// <returns> the created column </returns>
-		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
-		public virtual Column AddColumn(long sheetId, Column column)
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public virtual IList<Column> AddColumns(long sheetId, IEnumerable<Column> columns)
 		{
 
-			return this.CreateResource<Column>("sheet/" + sheetId + "/columns", typeof(Column), column);
+			return this.PostAndReceiveList<IEnumerable<Column>, Column>("sheets/" + sheetId + "/columns", columns, typeof(Column));
+		}
+
+		/// <summary>
+		/// <para>Deletes the Column specified in the URL.</para>
+		/// 
+		/// <para>It mirrors To the following Smartsheet REST API method: DELETE /sheets/{sheetId}/columns/{columnId}</para>
+		/// </summary>
+		/// <param name="sheetId"> the sheet Id </param>
+		/// <param name="columnId"> the column object </param>
+		/// <returns> the created column </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public virtual void DeleteColumn(long sheetId, long columnId)
+		{
+			this.DeleteResource<Column>("sheets/" + sheetId + "/columns/" + columnId, typeof(Column));
+		}
+
+		/// <summary>
+		/// <para>Gets the Column specified in the URL.</para>
+		/// 
+		/// <para>It mirrors To the following Smartsheet REST API method: GET /sheets/{sheetId}/columns/{columnId}</para>
+		/// </summary>
+		/// <param name="sheetId"> the sheet Id </param>
+		/// <param name="columnId"> the columnId </param>
+		/// <param name="include"> elements to include in response </param>
+		/// <returns> the created column </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public virtual Column GetColumn(long sheetId, long columnId, IEnumerable<ColumnInclusion> include)
+		{
+			StringBuilder path = new StringBuilder("sheets/" + sheetId + "/columns/" + columnId);
+			if (include != null)
+			{
+				path.Append("?include=" + QueryUtil.GenerateCommaSeparatedList(include));
+			}
+			return this.GetResource<Column>(path.ToString(), typeof(Column));
+		}
+
+		/// <summary>
+		/// <para>Updates properties of the column, moves the column, and/or renames the column.</para>
+		/// <para>You cannot change the type of a Primary column.</para>
+		/// <para>While dependencies are enabled on a sheet, you can’t change the type of any special calendar/Gantt columns.</para>		
+		/// <para>If the column type is changed, all cells in the column will be converted to the new column type.</para>
+		/// <para>Type is optional when moving or renaming, but required when changing type or dropdown values.</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: GET /sheets/{sheetId}/columns/{columnId}</para>
+		/// </summary>
+		/// <param name="sheetId"> the sheet Id </param>
+		/// <param name="columnId"> the columnId </param>
+		/// <param name="column"> column object to update </param>
+		/// <returns> the updated column </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public virtual Column UpdateColumn(long sheetId, Column column)
+		{
+			return this.UpdateResource<Column>("sheets/" + sheetId + "/columns/" + column.Id, typeof(Column), column);
 		}
 	}
 

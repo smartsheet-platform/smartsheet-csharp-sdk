@@ -28,6 +28,8 @@ namespace Smartsheet.Api.Internal
 	/// 
 	/// Thread Safety: This class is thread safe because it is immutable and its base class is thread safe.
 	/// </summary>
+	[System.Obsolete("Deprecated", true)]
+	[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 	public class AssociatedDiscussionResourcesImpl : AbstractAssociatedResources, AssociatedDiscussionResources
 	{
 
@@ -39,36 +41,18 @@ namespace Smartsheet.Api.Internal
 		/// </summary>
 		/// <param name="smartsheet"> the Smartsheet </param>
 		/// <param name="masterResourceType"> the master resource Type (e.g. "sheet", "workspace") </param>
+		[System.Obsolete("Deprecated", true)]
+		[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		public AssociatedDiscussionResourcesImpl(SmartsheetImpl smartsheet, string masterResourceType) : 
 				base(smartsheet,masterResourceType)
 		{
 		}
 
-		/// <summary>
-		/// Create a discussion.
-		/// 
-		/// It mirrors To the following Smartsheet REST API method: POST /sheet/{Id}/Discussions POST /row/{Id}/Discussions
-		/// 
-		/// Returns: the created discussion
-		/// 
-		/// Exceptions: 
-		///   IllegalArgumentException : if any argument is null
-		///   InvalidRequestException : if there is any problem with the REST API request
-		///   AuthorizationException : if there is any problem with the REST API authorization(access token)
-		///   ResourceNotFoundException : if the resource can not be found
-		///   ServiceUnavailableException : if the REST API service is not available (possibly due To rate limiting)
-		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
-		///   SmartsheetException : if there is any other error occurred during the operation
-		/// </summary>
-		/// <param name="objectId"> the ID of the object </param>
-		/// <param name="discussion"> the discussion object limited To the following attributes: Title, Comment </param>
-		/// <returns> the created discussion </returns>
-		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
+		[System.Obsolete("Deprecated", true)]
+		[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		public virtual Discussion CreateDiscussion(long objectId, Discussion discussion)
 		{
-			Utils.ThrowIfNull(objectId, discussion);
-			return this.CreateResource<Discussion>(MasterResourceType + "/" + objectId + "/discussions", 
-				typeof(Discussion), discussion);
+			throw new System.NotSupportedException();
 		}
 	}
 

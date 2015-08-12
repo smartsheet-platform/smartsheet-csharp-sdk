@@ -18,6 +18,8 @@
 
 namespace Smartsheet.Api
 {
+	using System;
+	using System.ComponentModel;
 	using Comment = Api.Models.Comment;
 
 	/// <summary>
@@ -25,46 +27,20 @@ namespace Smartsheet.Api
 	/// 
 	/// <para>Thread Safety: Implementation of this interface must be thread safe.</para>
 	/// </summary>
+	[Obsolete("Deprecated", true)]
+	[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 	public interface CommentResources
 	{
-
-		/// <summary>
-		/// <para>Get a Comment.</para>
-		/// 
-		/// <para>It mirrors To the following Smartsheet REST API method:<br />
-		/// GET /Comment/{Id}</para>
-		/// </summary>
-		/// <param name="id"> the Id </param>
-		/// <returns> the Comment (note that if there is no such resource, this method will throw ResourceNotFoundException
-		/// rather than returning null). </returns>
-		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
-		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
-		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
-		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		[Obsolete("Deprecated", true)]
+		[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		Comment GetComment(long id);
 
-		/// <summary>
-		/// <para>Delete a Comment.</para>
-		/// 
-		/// <para>It mirrors To the following Smartsheet REST API method:<br />
-		/// DELETE /Comment{Id}</para>
-		/// </summary>
-		/// <param name="id"> the Id </param>
-		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
-		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
-		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
-		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		[Obsolete("Deprecated", true)]
+		[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		void DeleteComment(long id);
 
-		/// <summary>
-		/// <para>Return the AssociatedAttachmentResources object that provides access To attachment resources associated with
-		/// Comment resources.</para>
-		/// </summary>
-		/// <returns> the associated attachment resources </returns>
+		[Obsolete("Deprecated", true)]
+		[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		AssociatedAttachmentResources Attachments();
 	}
 

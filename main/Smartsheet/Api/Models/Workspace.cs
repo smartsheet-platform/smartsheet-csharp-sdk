@@ -30,9 +30,6 @@ namespace Smartsheet.Api.Models
 		/// Represents the user's permissions on a workspace. </summary>
 		private AccessLevel? accessLevel;
 
-		/// <summary>
-		/// Represents the Link . </summary>
-		private string permalink;
 
 		/// <summary>
 		/// Gets the user's permissions on a workspace.
@@ -52,73 +49,79 @@ namespace Smartsheet.Api.Models
 
 
 		/// <summary>
-		/// Gets the Permalink To the workspace.
-		/// </summary>
-		/// <returns> the Permalink </returns>
-		public virtual string Permalink
-		{
-			get
-			{
-				return permalink;
-			}
-			set
-			{
-				this.permalink = value;
-			}
-		}
-
-
-		/// <summary>
 		/// A convenience class for creating a <seealso cref="Workspace"/> object with the appropriate fields for updating a workspace.
 		/// </summary>
 		public class UpdateWorkspaceBuilder
 		{
-			internal string workspaceName;
-			internal long? id;
+			private long? id;
+			private string workspaceName;
 
 			/// <summary>
-			/// Get the workspace Id </summary>
-			/// <returns> the workspace Id </returns>
-			public virtual long? ID
-			{
-				get
-				{
-					return id;
-				}
-			}
-
-			/// <summary>
-			/// Set the workspace Id
+			/// Build workspace with required parameter name.
 			/// </summary>
-			/// <param name="id">the workspace Id</param>
-			/// <returns>the update workspace builder</returns>
-			public virtual UpdateWorkspaceBuilder SetID(long? id)
+			/// <param name="id">the id of the workspace</param>
+			/// <param name="name">the name of the workspace</param>
+			public UpdateWorkspaceBuilder(long? id, string name)
 			{
 				this.id = id;
-				return this;
+				this.workspaceName = name;
 			}
 
+			///// <summary>
+			///// The Name of the workspace.
+			///// </summary>
+			///// <param name="name"> the Name </param>
+			///// <returns> the update workspace builder </returns>
+			//public virtual UpdateWorkspaceBuilder SetName(string name)
+			//{
+			//	this.workspaceName = name;
+			//	return this;
+			//}
+
+			///// <summary>
+			///// Gets the Name.
+			///// </summary>
+			///// <returns> the Name </returns>
+			//public virtual string Name
+			//{
+			//	get
+			//	{
+			//		return workspaceName;
+			//	}
+			//}
+
 			/// <summary>
-			/// The Name of the workspace.
+			/// Builds the <seealso cref="Workspace"/>.
 			/// </summary>
-			/// <param name="name"> the Name </param>
-			/// <returns> the update workspace builder </returns>
-			public virtual UpdateWorkspaceBuilder SetName(string name)
+			/// <returns> the workspace </returns>
+			public virtual Workspace Build()
+			{
+				//if (workspaceName == null)
+				//{
+				//	throw new InvalidOperationException("A workspace name is required.");
+				//}
+
+				Workspace workspace = new Workspace();
+				workspace.Id = id;
+				workspace.Name = workspaceName;
+				return workspace;
+			}
+		}
+
+		/// <summary>
+		/// A convenience class for creating a <seealso cref="Workspace"/> object with the appropriate fields for creating a workspace.
+		/// </summary>
+		public class CreateWorkspaceBuilder
+		{
+			private string workspaceName;
+
+			/// <summary>
+			/// Sets the required parameters to create a Workspace.
+			/// </summary>
+			/// <param name="name">the name of the workspace</param>
+			public CreateWorkspaceBuilder(string name)
 			{
 				this.workspaceName = name;
-				return this;
-			}
-
-			/// <summary>
-			/// Gets the Name.
-			/// </summary>
-			/// <returns> the Name </returns>
-			public virtual string Name
-			{
-				get
-				{
-					return workspaceName;
-				}
 			}
 
 			/// <summary>
@@ -127,14 +130,8 @@ namespace Smartsheet.Api.Models
 			/// <returns> the workspace </returns>
 			public virtual Workspace Build()
 			{
-				if (workspaceName == null)
-				{
-					throw new InvalidOperationException("A workspace name is required.");
-				}
-
 				Workspace workspace = new Workspace();
 				workspace.Name = workspaceName;
-				workspace.ID = id;
 				return workspace;
 			}
 		}

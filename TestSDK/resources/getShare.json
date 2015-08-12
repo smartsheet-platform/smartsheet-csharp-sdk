@@ -1,1 +1,7 @@
-{"email":"email@email.com","accessLevel":"ADMIN", "id":8166691168380804}
+{
+	"id": "AQAISF82FOeE",
+	"type": "GROUP",
+	"groupId": 2331373580117892,
+	"name": "Group 1",
+	"accessLevel": "ADMIN"
+}

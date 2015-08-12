@@ -18,18 +18,23 @@
 
 namespace Smartsheet.Api.Models
 {
-
-
 	/// <summary>
-	/// Represents the Link object. </summary>
-	/// <seealso href="http://help.Smartsheet.com/customer/portal/articles/518326-creating-hyperlinks-To-Sheets-websites">
-	/// Help Creating Hyperlinks To Sheets &amp; Websites</seealso>
+	/// Represents a hyperlink to a URL, a Sheet, or a Report. 
+	/// <remarks>If the Sheet or Report that is linked to was deleted, this object may be empty (i.e. all values null).</remarks>
+	/// <para>You can create and modify hyperlinks by using any API operation that creates or updates cell data.
+	/// When creating or updating a hyperlink, cell.value may be set to a string value or null.
+	/// If null, the cell’s value will be derived from the hyperlink:
+	/// <list type="bullet">
+	/// <item>If the hyperlink is a URL link, the cell’s value will be set to the URL itself.</item>
+	/// <item>If the hyperlink is a sheet or report link, the cell’s value will be set to the sheet or report’s name.</item>
+	/// </list></para>
+	/// </summary>
 	public class Link
 	{
-		/// <summary>
-		/// Represents the Link Type.
-		/// </summary>
-		private LinkType? type;
+		///// <summary>
+		///// Represents the Link Type.
+		///// </summary>
+		//private LinkType? type;
 
 		/// <summary>
 		/// Represents the URL.
@@ -41,35 +46,48 @@ namespace Smartsheet.Api.Models
 		/// </summary>
 		private long? sheetId;
 
-		/// <summary>
-		/// Represents the column ID.
-		/// </summary>
-		private long? columnId;
+		private long? reportId;
 
 		/// <summary>
-		/// Represents the row ID.
+		/// If non-null, this hyperlink is a link to the Report with this ID.
 		/// </summary>
-		private long? rowId;
-
-		/// <summary>
-		/// Gets the Type.
-		/// </summary>
-		/// <returns> the Type </returns>
-		public virtual LinkType? Type
+		public long? ReportId
 		{
-			get
-			{
-				return type;
-			}
-			set
-			{
-				this.type = value;
-			}
+			get { return reportId; }
+			set { reportId = value; }
 		}
 
+		///// <summary>
+		///// Represents the column ID.
+		///// </summary>
+		//private long? columnId;
+
+		///// <summary>
+		///// Represents the row ID.
+		///// </summary>
+		//private long? rowId;
+
+		///// <summary>
+		///// Gets the Type.
+		///// </summary>
+		///// <returns> the Type </returns>
+		//public virtual LinkType? Type
+		//{
+		//	get
+		//	{
+		//		return type;
+		//	}
+		//	set
+		//	{
+		//		this.type = value;
+		//	}
+		//}
+
 
 		/// <summary>
-		/// Gets the Url.
+		/// <para>When the hyperlink is a URL link, this property will contain the URL value.</para>
+		/// <para>When the hyperlink is a Sheet/Report link (i.e. sheetId or reportId is non-null), 
+		/// this property will contain the permalink to the Sheet or Report.</para>
 		/// </summary>
 		/// <returns> the Url </returns>
 		public virtual string Url
@@ -86,7 +104,7 @@ namespace Smartsheet.Api.Models
 
 
 		/// <summary>
-		/// Gets the sheet Id.
+		/// If non-null, this hyperlink is a link to the Sheet with this ID.
 		/// </summary>
 		/// <returns> the sheet Id </returns>
 		public virtual long? SheetId
@@ -102,41 +120,37 @@ namespace Smartsheet.Api.Models
 		}
 
 
-		/// <summary>
-		/// Gets the column Id.
-		/// </summary>
-		/// <returns> the column Id </returns>
-		public virtual long? ColumnId
-		{
-			get
-			{
-				return columnId;
-			}
-			set
-			{
-				this.columnId = value;
-			}
-		}
+		///// <summary>
+		///// Gets the column Id.
+		///// </summary>
+		///// <returns> the column Id </returns>
+		//public virtual long? ColumnId
+		//{
+		//	get
+		//	{
+		//		return columnId;
+		//	}
+		//	set
+		//	{
+		//		this.columnId = value;
+		//	}
+		//}
 
 
-		/// <summary>
-		/// Gets the row Id.
-		/// </summary>
-		/// <returns> the row Id </returns>
-		public virtual long? RowId
-		{
-			get
-			{
-				return rowId;
-			}
-			set
-			{
-				this.rowId = value;
-			}
-		}
-
-
-
+		///// <summary>
+		///// Gets the row Id.
+		///// </summary>
+		///// <returns> the row Id </returns>
+		//public virtual long? RowId
+		//{
+		//	get
+		//	{
+		//		return rowId;
+		//	}
+		//	set
+		//	{
+		//		this.rowId = value;
+		//	}
+		//}
 	}
-
 }
