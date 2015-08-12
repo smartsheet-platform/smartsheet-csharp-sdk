@@ -30,7 +30,7 @@ namespace Smartsheet.Api
 	public interface WorkspaceSheetResources
 	{
 		/// <summary>
-		/// <para>Create a sheet in given workspace.</para>
+		/// <para>Creates a sheet in the given workspace.</para>
 		/// 
 		/// <para>It mirrors To the following Smartsheet REST API method: POST /workspaces/{workspaceId}/Sheets</para>
 		/// </summary>

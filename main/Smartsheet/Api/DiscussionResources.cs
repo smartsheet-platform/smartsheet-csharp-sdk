@@ -20,6 +20,8 @@ namespace Smartsheet.Api
 {
 
 
+	using System;
+	using System.ComponentModel;
 	using Comment = Api.Models.Comment;
 	using Discussion = Api.Models.Discussion;
 
@@ -28,49 +30,20 @@ namespace Smartsheet.Api
 	/// 
 	/// <para>Thread Safety: Implementation of this interface must be thread safe.</para>
 	/// </summary>
+	[Obsolete("Deprecated", true)]
+	[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 	public interface DiscussionResources
 	{
-
-		/// <summary>
-		/// <para>Get a discussion.</para>
-		/// 
-		/// <para>It mirrors To the following Smartsheet REST API method:<br />
-		/// GET /discussion/{Id}</para>
-		/// </summary>
-		/// <param name="id"> the Id </param>
-		/// <returns> the discussion (note that if there is no such resource, this method will throw ResourceNotFoundException
-		/// rather than returning null). </returns>
-		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
-		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
-		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
-		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		[Obsolete("Deprecated", true)]
+		[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		Discussion GetDiscussion(long id);
 
-		/// <summary>
-		/// <para>Add a Comment To a discussion.</para>
-		/// 
-		/// <para>It mirrors To the following Smartsheet REST API method:<br />
-		/// POST /discussion/{DiscussionId}/Comments</para>
-		/// </summary>
-		/// <param name="id"> the discussion Id </param>
-		/// <param name="comment"> the Comment To add </param>
-		/// <returns> the created Comment </returns>
-		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
-		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
-		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
-		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		[Obsolete("Deprecated", true)]
+		[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		Comment AddDiscussionComment(long id, Comment comment);
 
-		/// <summary>
-		/// <para>Return the AssociatedAttachmentResources object that provides access To attachment resources associated with
-		/// Discussion resources.</para>
-		/// </summary>
-		/// <returns> the associated attachment resources </returns>
+		[Obsolete("Deprecated", true)]
+		[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		AssociatedAttachmentResources Attachments();
 	}
-
 }

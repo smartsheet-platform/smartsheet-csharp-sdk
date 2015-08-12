@@ -57,7 +57,6 @@ namespace Smartsheet.Api.Models
 			private bool? above;
 			private string format;
 			private bool? expanded;
-			private bool? locked;
 			private IList<Cell> cells;
 
 			/// <summary>
@@ -172,17 +171,6 @@ namespace Smartsheet.Api.Models
 				return this;
 			}
 
-			/// <summary>
-			/// Sets the flag indicating whether the row is locked.
-			/// </summary>
-			/// <param name="toTop"> the locked flag </param>
-			/// <returns> the add row builder </returns>
-			public virtual AddRowBuilder SetLocked(bool? locked)
-			{
-				this.locked = locked;
-				return this;
-			}
-
 
 			/// <summary>
 			/// Gets the To top.
@@ -243,11 +231,6 @@ namespace Smartsheet.Api.Models
 				return expanded;
 			}
 
-			public virtual bool? GetLocked()
-			{
-				return locked;
-			}
-
 			/// <summary>
 			/// Builds the Row.
 			/// </summary>
@@ -263,13 +246,11 @@ namespace Smartsheet.Api.Models
 					Above = above,
 					Format = format,
 					Expanded = expanded,
-					Locked = locked,
 					Cells = cells
 				};
 				return row;
 			}
 		}
-
 		/// <summary>
 		/// A convenience class for updating a Row with the necessary fields for inserting into a list of Rows.
 		/// </summary>
@@ -347,9 +328,9 @@ namespace Smartsheet.Api.Models
 			//}
 
 			/// <summary>
-			/// Sets the RowResources.
+			/// Sets the list of cells.
 			/// </summary>
-			/// <param name="rows"> the RowResources </param>
+			/// <param name="cells"> the list of cells </param>
 			/// <returns> the update row builder </returns>
 			public virtual UpdateRowBuilder SetCells(IList<Cell> cells)
 			{

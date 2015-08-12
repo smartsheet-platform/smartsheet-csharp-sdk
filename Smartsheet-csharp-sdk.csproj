@@ -59,7 +59,8 @@
       <HintPath>packages\NUnitTestAdapter.2.0.0\lib\NUnit.VisualStudio.TestAdapter.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="RestSharp">
+    <Reference Include="RestSharp, Version=105.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\GitHub\RestSharp\RestSharp\bin\Debug\RestSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />

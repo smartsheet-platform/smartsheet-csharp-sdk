@@ -18,8 +18,8 @@
 
 namespace Smartsheet.Api.Internal
 {
-
-
+	using System;
+	using System.ComponentModel;
 	using Attachment = Api.Models.Attachment;
 
 	/// <summary>
@@ -27,62 +27,30 @@ namespace Smartsheet.Api.Internal
 	/// 
 	/// Thread Safety: This class is thread safe because it is immutable and its base class is thread safe.
 	/// </summary>
+	[Obsolete("Deprecated", true)]
+	[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 	public class AttachmentResourcesImpl : AbstractResources, AttachmentResources
 	{
 
-		/// <summary>
-		/// Constructor.
-		/// 
-		/// Exceptions: - IllegalArgumentException : if any argument is null
-		/// </summary>
-		/// <param name="smartsheet"> the Smartsheet </param>
-		public AttachmentResourcesImpl(SmartsheetImpl smartsheet) : base(smartsheet)
+		[Obsolete("Deprecated", true)]
+		[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
+		public AttachmentResourcesImpl(SmartsheetImpl smartsheet)
+			: base(smartsheet)
 		{
 		}
 
-		/// <summary>
-		/// Get an attachment.
-		/// 
-		/// It mirrors To the following Smartsheet REST API method: GET /attachment/{Id}
-		/// 
-		/// Returns: the resource (note that if there is no such resource, this method will throw ResourceNotFoundException
-		/// rather than returning null).
-		/// 
-		/// Exceptions:
-		///   InvalidRequestException : if there is any problem with the REST API request
-		///   AuthorizationException : if there is any problem with the REST API authorization(access token)
-		///   ResourceNotFoundException : if the resource can not be found
-		///   ServiceUnavailableException : if the REST API service is not available (possibly due To rate limiting)
-		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
-		///   SmartsheetException : if there is any other error occurred during the operation
-		/// </summary>
-		/// <param name="id"> the Id </param>
-		/// <returns> the resource (note that if there is no such resource, this method will throw ResourceNotFoundException 
-		/// rather than returning null). </returns>
-		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
+		[Obsolete("Deprecated", true)]
+		[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		public virtual Attachment GetAttachment(long id)
 		{
-			return this.GetResource<Attachment>("attachment/" + id, typeof(Attachment));
+			throw new NotSupportedException();
 		}
 
-		/// <summary>
-		/// Delete an attachment.
-		/// 
-		/// It mirrors To the following Smartsheet REST API method: DELETE /attachment{Id}
-		/// 
-		/// Exceptions:
-		///   InvalidRequestException : if there is any problem with the REST API request
-		///   AuthorizationException : if there is any problem with the REST API authorization(access token)
-		///   ResourceNotFoundException : if the resource can not be found
-		///   ServiceUnavailableException : if the REST API service is not available (possibly due To rate limiting)
-		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
-		///   SmartsheetException : if there is any other error occurred during the operation
-		/// </summary>
-		/// <param name="id"> the ID of the attachment </param>
-		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
+		[Obsolete("Deprecated", true)]
+		[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		public virtual void DeleteAttachment(long id)
 		{
-			this.DeleteResource<Attachment>("attachment/" + id, typeof(Attachment));
+			throw new NotSupportedException();
 		}
 	}
 
