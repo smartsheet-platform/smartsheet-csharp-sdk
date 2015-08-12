@@ -51,6 +51,7 @@ namespace Smartsheet.Api
 		/// </summary>
 		/// <param name="user"> the user </param>
 		/// <param name="sendEmail"> flag indicating whether or not to send a welcome email. Defaults to false. </param>
+		/// <param name="allowInviteAccountAdmin">if user is an admin in another organization, setting to true will invite their entire organization.</param>
 		/// <returns> the created user </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -58,7 +59,7 @@ namespace Smartsheet.Api
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		User AddUser(User user, bool? sendEmail);
+		User AddUser(User user, bool? sendEmail, bool? allowInviteAccountAdmin);
 
 		/// <summary>
 		/// <para>Get the current user.</para>
