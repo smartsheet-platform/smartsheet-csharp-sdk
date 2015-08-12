@@ -59,9 +59,8 @@
       <HintPath>packages\NUnitTestAdapter.2.0.0\lib\NUnit.VisualStudio.TestAdapter.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="RestSharp, Version=105.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>localReferences\RestSharp.dll</HintPath>
+    <Reference Include="RestSharp">
+      <HintPath>packages\RestSharp.105.1.0\lib\net4\RestSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -296,9 +295,7 @@
   <ItemGroup>
     <Content Include="icons\logo.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="localReferences\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
   <ProjectExtensions>
     <VisualStudio AllowExistingFolder="true" />
