@@ -31,7 +31,10 @@ namespace Smartsheet.Api.Internal
 	[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 	public class AttachmentResourcesImpl : AbstractResources, AttachmentResources
 	{
-
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="smartsheet"></param>
 		[Obsolete("Deprecated", true)]
 		[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		public AttachmentResourcesImpl(SmartsheetImpl smartsheet)
@@ -39,6 +42,11 @@ namespace Smartsheet.Api.Internal
 		{
 		}
 
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="id"></param>
+		/// <returns></returns>
 		[Obsolete("Deprecated", true)]
 		[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		public virtual Attachment GetAttachment(long id)
@@ -46,6 +54,10 @@ namespace Smartsheet.Api.Internal
 			throw new NotSupportedException();
 		}
 
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="id"></param>
 		[Obsolete("Deprecated", true)]
 		[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		public virtual void DeleteAttachment(long id)

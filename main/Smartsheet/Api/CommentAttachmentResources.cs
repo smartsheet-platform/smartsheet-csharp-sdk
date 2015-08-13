@@ -22,6 +22,11 @@ namespace Smartsheet.Api
 {
 	using Attachment = Api.Models.Attachment;
 
+	/// <summary>
+	/// <para>This interface provides methods To access Attachment resources that are associated To Comment resources.</para>
+	/// 
+	/// <para>Thread Safety: Implementation of this interface must be thread safe.</para>
+	/// </summary>
 	public interface CommentAttachmentResources
 	{
 		/// <summary>

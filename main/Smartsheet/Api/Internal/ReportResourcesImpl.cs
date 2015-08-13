@@ -176,6 +176,10 @@ namespace Smartsheet.Api.Internal
 			this.CreateResource<SheetEmail>("reports/" + reportId + "/emails", typeof(SheetEmail), email);
 		}
 
+		/// <summary>
+		/// <para>Return the ShareResources object that provides access To Share resources associated with Report resources.</para>
+		/// </summary>
+		/// <returns> the ShareResources object </returns>
 		public virtual ShareResources ShareResources
 		{
 			get
@@ -190,8 +194,7 @@ namespace Smartsheet.Api.Internal
 		/// <para>It mirrors To the following Smartsheet REST API method:<br />
 		/// GET /reports/{reportId} with "application/pdf", "application/vnd.ms-excel", or "text/csv" as Accept HTTP header</para>
 		/// </summary>
-		/// <param name="reportId"> the Id of the report </param>
-		/// <param name="paperSize"> the size of the PDF file </param>
+		/// <param name="path">the path of the file</param>
 		/// <param name="outputStream"> the output stream To which the CSV file will be written. </param>
 		/// <param name="contentType"> the Accept header </param>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>

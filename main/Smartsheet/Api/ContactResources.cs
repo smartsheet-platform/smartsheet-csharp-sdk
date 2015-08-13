@@ -22,6 +22,11 @@ namespace Smartsheet.Api
 {
 	using Smartsheet.Api.Models;
 
+	/// <summary>
+	/// <para>This interface provides methods To access Contact resources.</para>
+	/// 
+	/// <para>Thread Safety: Implementation of this interface must be thread safe.</para>
+	/// </summary>
 	public interface ContactResources
 	{
 		/// <summary>
@@ -29,7 +34,7 @@ namespace Smartsheet.Api
 		/// <para>It mirrors To the following Smartsheet REST API method:
 		/// POST GET /contacts/{contactId}</para>
 		/// </summary>
-		/// <param name="sheetId"> the contactId </param>
+		/// <param name="contactId"> the contactId </param>
 		/// <returns> the Contact object </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>

@@ -39,13 +39,27 @@ namespace Smartsheet.Api.Internal
 		/// Constructor.
 		/// </summary>
 		/// <param name="smartsheet"> the Smartsheet </param>
-		/// <exception cref="IllegalArgumentException">if any argument is null</exception>
 		public SheetAttachmentResourcesImpl(SmartsheetImpl smartsheet)
 			: base(smartsheet)
 		{
 			this.versioning = new AttachmentVersioningResourcesImpl(smartsheet);
 		}
 
+		/// <summary>
+		/// <para>Attaches a file to the Sheet.</para>
+		/// <para>It mirrors To the following Smartsheet REST API method:<br />
+		/// POST /sheets/{sheetId}/attachments</para>
+		/// </summary>
+		/// <param name="file">the file path</param>
+		/// <param name="fileType">the file type</param>
+		/// <param name="sheetId">the sheet Id</param>
+		/// <returns> the Attachment object </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual Attachment AttachFile(long sheetId, string file, string fileType)
 		{
 			return AttachFile("sheets/" + sheetId + "/attachments", file, fileType);

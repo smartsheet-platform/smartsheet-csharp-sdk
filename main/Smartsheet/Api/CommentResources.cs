@@ -30,14 +30,27 @@ namespace Smartsheet.Api
 	[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 	public interface CommentResources
 	{
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="id"></param>
+		/// <returns></returns>
 		[Obsolete("Deprecated", true)]
 		[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		Comment GetComment(long id);
 
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="id"></param>
 		[Obsolete("Deprecated", true)]
 		[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		void DeleteComment(long id);
 
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <returns></returns>
 		[Obsolete("Deprecated", true)]
 		[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		AssociatedAttachmentResources Attachments();

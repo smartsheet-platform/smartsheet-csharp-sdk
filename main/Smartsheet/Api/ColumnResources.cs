@@ -31,10 +31,20 @@ namespace Smartsheet.Api
 	[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 	public interface ColumnResources
 	{
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="column"></param>
+		/// <returns></returns>
 		[Obsolete("Deprecated", true)]
 		[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		Column UpdateColumn(Column column);
 
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="id"></param>
+		/// <param name="sheetId"></param>
 		[Obsolete("Deprecated", true)]
 		[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		void DeleteColumn(long id, long sheetId);

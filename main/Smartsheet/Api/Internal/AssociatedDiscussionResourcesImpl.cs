@@ -22,14 +22,16 @@ namespace Smartsheet.Api.Internal
 
 	using Utils = Api.Internal.Utility.Utility;
 	using Discussion = Api.Models.Discussion;
+	using System.ComponentModel;
+	using System;
 
 	/// <summary>
 	/// This is the implementation of the AssociatedDiscussionResources.
 	/// 
 	/// Thread Safety: This class is thread safe because it is immutable and its base class is thread safe.
 	/// </summary>
-	[System.Obsolete("Deprecated", true)]
-	[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
+	[Obsolete("Deprecated", true)]
+	[EditorBrowsable(EditorBrowsableState.Never)]
 	public class AssociatedDiscussionResourcesImpl : AbstractAssociatedResources, AssociatedDiscussionResources
 	{
 
@@ -41,15 +43,21 @@ namespace Smartsheet.Api.Internal
 		/// </summary>
 		/// <param name="smartsheet"> the Smartsheet </param>
 		/// <param name="masterResourceType"> the master resource Type (e.g. "sheet", "workspace") </param>
-		[System.Obsolete("Deprecated", true)]
-		[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
+		[Obsolete("Deprecated", true)]
+		[EditorBrowsable(EditorBrowsableState.Never)]
 		public AssociatedDiscussionResourcesImpl(SmartsheetImpl smartsheet, string masterResourceType) :
 			base(smartsheet, masterResourceType)
 		{
 		}
 
-		[System.Obsolete("Deprecated", true)]
-		[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="objectId"></param>
+		/// <param name="discussion"></param>
+		/// <returns></returns>
+		[Obsolete("Deprecated", true)]
+		[EditorBrowsable(EditorBrowsableState.Never)]
 		public virtual Discussion CreateDiscussion(long objectId, Discussion discussion)
 		{
 			throw new System.NotSupportedException();

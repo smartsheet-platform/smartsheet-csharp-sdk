@@ -30,6 +30,11 @@ namespace Smartsheet.Api.Internal
 	[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 	public class AssociatedAttachmentResourcesImpl : AbstractAssociatedResources, AssociatedAttachmentResources
 	{
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="smartsheet"></param>
+		/// <param name="masterResourceType"></param>
 		[System.Obsolete("Deprecated", true)]
 		[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		public AssociatedAttachmentResourcesImpl(SmartsheetImpl smartsheet, string masterResourceType)
@@ -37,6 +42,11 @@ namespace Smartsheet.Api.Internal
 		{
 		}
 
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="objectId"></param>
+		/// <returns></returns>
 		[System.Obsolete("Deprecated", true)]
 		[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		public virtual IList<Attachment> ListAttachments(long objectId)
@@ -44,6 +54,13 @@ namespace Smartsheet.Api.Internal
 			throw new System.NotImplementedException();
 		}
 
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="objectId"></param>
+		/// <param name="file"></param>
+		/// <param name="contentType"></param>
+		/// <returns></returns>
 		[System.Obsolete("Deprecated", true)]
 		[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		public virtual Attachment AttachFile(long objectId, string file, string contentType)
@@ -51,6 +68,14 @@ namespace Smartsheet.Api.Internal
 			throw new System.NotImplementedException();
 		}
 
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="objectId"></param>
+		/// <param name="file"></param>
+		/// <param name="contentType"></param>
+		/// <param name="contentLength"></param>
+		/// <returns></returns>
 		[System.Obsolete("Deprecated", true)]
 		[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		public virtual Attachment AttachFile(long objectId, string file, string contentType, long contentLength)
@@ -58,6 +83,12 @@ namespace Smartsheet.Api.Internal
 			throw new System.NotImplementedException();
 		}
 
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="objectId"></param>
+		/// <param name="attachment"></param>
+		/// <returns></returns>
 		[System.Obsolete("Deprecated", true)]
 		[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		public virtual Attachment AttachURL(long objectId, Attachment attachment)
