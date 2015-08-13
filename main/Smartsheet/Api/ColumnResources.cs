@@ -25,9 +25,7 @@ namespace Smartsheet.Api
 	using Column = Api.Models.Column;
 
 	/// <summary>
-	/// <para>This interface provides methods To access Column resources.</para>
-	/// 
-	/// <para>Thread Safety: Implementation of this interface must be thread safe.</para>
+	/// <para>Use SheetColumnResources instead.</para>
 	/// </summary>
 	[System.Obsolete("Deprecated", true)]
 	[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
