@@ -23,9 +23,8 @@ namespace Smartsheet.Api
 	using Comment = Api.Models.Comment;
 
 	/// <summary>
-	/// <para>This interface provides methods To access Comment resources.</para>
-	/// 
-	/// <para>Thread Safety: Implementation of this interface must be thread safe.</para>
+	/// <para>Use SheetCommentResources instead to access sheet level comments.</para>
+	/// <para>Use DiscussionCommentResources instead to access discussion level comments.</para>
 	/// </summary>
 	[Obsolete("Deprecated", true)]
 	[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
