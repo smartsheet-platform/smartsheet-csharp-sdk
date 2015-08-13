@@ -24,9 +24,7 @@ using System.ComponentModel;
 namespace Smartsheet.Api
 {
 	/// <summary>
-	/// <para>This interface provides methods To access Row resources.</para>
-	/// 
-	/// <para>Thread Safety: Implementation of this interface must be thread safe.</para>
+	/// <para>Use SheetRowResources instead.</para>
 	/// </summary>
 	[Obsolete("Deprecated", true)]
 	[EditorBrowsable(EditorBrowsableState.Never)]
