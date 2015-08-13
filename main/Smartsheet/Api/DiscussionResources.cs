@@ -26,9 +26,7 @@ namespace Smartsheet.Api
 	using Discussion = Api.Models.Discussion;
 
 	/// <summary>
-	/// <para>This interface provides methods To access Discussion resources.</para>
-	/// 
-	/// <para>Thread Safety: Implementation of this interface must be thread safe.</para>
+	/// <para>Use SheetDiscussionResources instead.</para>
 	/// </summary>
 	[Obsolete("Deprecated", true)]
 	[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
