@@ -23,9 +23,10 @@ namespace Smartsheet.Api
 	using Attachment = Api.Models.Attachment;
 
 	/// <summary>
-	/// <para>This interface provides methods To access Attachment resources by their Id.</para>
-	/// 
-	/// <para>Thread Safety: Implementation of this interface must be thread safe.</para>
+	/// <para>Use CommentAttachmentResources instead to access comment level attachments.</para>
+	/// <para>Use DiscussionAttachmentResources instead to access discussion level attachments.</para>
+	/// <para>Use RowAttachmentResources instead to access row level attachments.</para>
+	/// <para>Use SheetAttachmentResources instead to access sheet level attachments.</para>
 	/// </summary>
 	[System.Obsolete("Deprecated", true)]
 	[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
