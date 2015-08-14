@@ -180,6 +180,7 @@ namespace Smartsheet.Api.Internal
 		/// <param name="sheetId"> the sheet Id </param>
 		/// <param name="ignoreRowsNotFound"> ignoreRowsNotFound </param>
 		/// <param name="directive"> directive </param>
+		/// <param name="include">the elements to include.</param>
 		/// <returns> CopyOrMoveRowResult object </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -212,16 +213,17 @@ namespace Smartsheet.Api.Internal
 		/// </summary>
 		/// <param name="sheetId"> The sheet Id </param>
 		/// <param name="email"> The email. The columns included for each row in the email will be populated according to the following rules: 
-		/// <list type="bullets">
-		/// <item>
+		/// <list type="bullet">
+		/// <item><description>
 		/// If the columnIds attribute of the MultiRowEmail object is specified as an array of column IDs, those specific columns will be included.
-		/// </item>
-		/// <item>
+		/// </item></description>
+		/// <item><description>
 		/// If the columnIds attribute of the MultiRowEmail object is omitted, all columns except hidden columns shall be included.		/// </item>
-		/// <item>
+		/// </item></description>
+		/// <item><description>
 		/// If the columnIds attribute of the MultiRowEmail object is specified as empty, no columns shall be included.
 		/// (Note: In this case, either includeAttachments:true or includeDiscussions:true must be specified.)
-		/// </item>
+		/// </item></description>
 		/// </list>
 		/// </param>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
@@ -242,8 +244,7 @@ namespace Smartsheet.Api.Internal
 		/// <remarks>If a row’s position is updated, all child rows are moved with the row.</remarks>
 		/// </summary>
 		/// <param name="sheetId"> the sheetId </param>
-		/// <param name="rowId"> the rowId </param>
-		/// <param name="email"> the email </param>
+		/// <param name="rows"> the list of rows to update </param>
 		/// <returns> the row object </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -256,6 +257,10 @@ namespace Smartsheet.Api.Internal
 			return this.PutAndReceiveList<IEnumerable<Row>, Row>("sheets/" + sheetId + "/rows", rows, typeof(Row));
 		}
 
+		/// <summary>
+		/// Gets the RowAttachmentResources object that provides access To Attachment resources associated with
+		/// Row resources.
+		/// </summary>
 		public virtual RowAttachmentResources AttachmentResources
 		{
 			get
@@ -264,6 +269,10 @@ namespace Smartsheet.Api.Internal
 			}
 		}
 
+		/// <summary>
+		/// Gets the RowDiscussionResources object that provides access To Discussion resources associated with
+		/// Row resources.
+		/// </summary>
 		public virtual RowDiscussionResources DiscussionResources
 		{
 			get
@@ -272,7 +281,10 @@ namespace Smartsheet.Api.Internal
 			}
 		}
 
-
+		/// <summary>
+		/// Gets the RowColumnResources object that provides access To Cell resources associated with
+		/// Row resources.
+		/// </summary>
 		public virtual RowColumnResources CellResources
 		{
 			get
@@ -281,47 +293,13 @@ namespace Smartsheet.Api.Internal
 			}
 		}
 
-
-		//private CopyOrMoveRowResult CopyOrMoveRowsToAnotherSheet(CopyOrMoveRowDirective directive, string path)
-		//{
-		//	HttpRequest request = null;
-		//	try
-		//	{
-		//		request = CreateHttpRequest(new Uri(this.Smartsheet.BaseURI, path), HttpMethod.POST);
-		//	}
-		//	catch (Exception e)
-		//	{
-		//		throw new SmartsheetException(e);
-		//	}
-
-		//	request.Entity = serializeToEntity<CopyOrMoveRowDirective>(directive);
-
-		//	HttpResponse response = this.Smartsheet.HttpClient.Request(request);
-
-		//	CopyOrMoveRowResult result = null;
-		//	switch (response.StatusCode)
-		//	{
-		//		case HttpStatusCode.OK:
-		//			result = this.Smartsheet.JsonSerializer.DeserializeRowResult(
-		//				response.Entity.GetContent());
-		//			break;
-		//		default:
-		//			HandleError(response);
-		//			break;
-		//	}
-
-		//	this.Smartsheet.HttpClient.ReleaseConnection();
-
-		//	return result;
-		//}
-
-		//Deprecated
+		[Obsolete("Use DeleteRows instead", true)]
 		public virtual void DeleteRow(long sheetId, long rowId)
 		{
 			throw new NotSupportedException();
 		}
 
-		//Deprecated
+		[Obsolete("Use SendRows instead", true)]
 		public virtual void SendRow(long sheetId, long rowId, RowEmail email)
 		{
 			throw new NotSupportedException();

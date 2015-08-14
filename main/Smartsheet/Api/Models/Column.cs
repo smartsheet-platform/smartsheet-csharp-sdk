@@ -395,7 +395,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Sets the Primary flag for the column.
 			/// </summary>
-			/// <param name="primary"> the new Primary flag </param>
+			/// <param name="width"> the width </param>
 			/// <returns> the add column builder </returns>
 			public virtual AddColumnBuilder SetWidth(long? width)
 			{
@@ -642,7 +642,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Sets the Primary flag for the column.
 			/// </summary>
-			/// <param name="primary"> the new Primary flag </param>
+			/// <param name="width"> the width </param>
 			/// <returns> the CreateSheetColumnBuilder </returns>
 			public virtual CreateSheetColumnBuilder SetWidth(long? width)
 			{
@@ -988,8 +988,8 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Sets the display width.
 			/// </summary>
-			/// <param name="sheetId">The column Id </param>
-			/// <returns> the modify column builder </returns>
+			/// <param name="width">the width</param>
+			/// <returns>the updated column builder</returns>
 			public virtual UpdateColumnBuilder SetWidth(long width)
 			{
 				this.width = width;

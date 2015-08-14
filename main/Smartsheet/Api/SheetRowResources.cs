@@ -94,7 +94,9 @@ namespace Smartsheet.Api
 		/// <remarks>This operation will delete ALL child Rows of the specified Row.</remarks>
 		/// </summary>
 		/// <param name="sheetId"> the sheetId </param>
-		/// <param name="rowId"> the rowId </param>
+		/// <param name="ids"> the row IDs </param>
+		/// <param name="ignoreRowsNotFound">If set to true, specifying row Ids that do not exist within the source sheet will not cause an error response.
+		/// If omitted or set to false, specifying row Ids that do not exist within the source sheet will cause an error response (and no rows will be copied).</param>
 		/// <returns>Row IDs corresponding to all rows that were successfully deleted (including any child rows of rows specified in the URL).</returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -117,6 +119,7 @@ namespace Smartsheet.Api
 		/// <param name="ignoreRowsNotFound"> default is false. If set to true, specifying row Ids that do not exist within the source sheet will not cause an error response.
 		/// If omitted or set to false, specifying row Ids that do not exist within the source sheet will cause an error response (and no rows will be copied). </param>
 		/// <param name="directive"> directive </param>
+		/// <param name="include">the elements to include</param>
 		/// <returns> CopyOrMoveRowResult object </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -132,16 +135,17 @@ namespace Smartsheet.Api
 		/// </summary>
 		/// <param name="sheetId"> The sheet Id </param>
 		/// <param name="email"> The email. The columns included for each row in the email will be populated according to the following rules: 
-		/// <list type="bullets">
-		/// <item>
+		/// <list type="bullet">
+		/// <item><description>
 		/// If the columnIds attribute of the MultiRowEmail object is specified as an array of column IDs, those specific columns will be included.
-		/// </item>
-		/// <item>
+		/// </description></item>
+		/// <item><description>
 		/// If the columnIds attribute of the MultiRowEmail object is omitted, all columns except hidden columns shall be included.		/// </item>
-		/// <item>
+		/// </description></item>
+		/// <item><description>
 		/// If the columnIds attribute of the MultiRowEmail object is specified as empty, no columns shall be included.
 		/// (Note: In this case, either includeAttachments:true or includeDiscussions:true must be specified.)
-		/// </item>
+		/// </item></description>
 		/// </list>
 		/// </param>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
@@ -158,9 +162,8 @@ namespace Smartsheet.Api
 		/// <para>It mirrors To the following Smartsheet REST API method: PUT /sheets/{sheetId}/rows</para>
 		/// <remarks>If a row’s position is updated, all child rows are moved with the row.</remarks>
 		/// </summary>
-		/// <param name="sheetId"> the sheetId </param>
-		/// <param name="rowId"> the rowId </param>
-		/// <param name="email"> the email </param>
+		/// <param name="sheetId">the sheetId</param>
+		/// <param name="rows">the list of rows to update</param>
 		/// <returns> the row object </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>

@@ -251,7 +251,6 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
 		/// <param name="path"> the relative path of the resource collections </param>
-		/// <param name="objectClass"> the resource object class </param>
 		/// <param name="object"> the object To create </param>
 		/// <returns> the created resource </returns>
 		/// <exception cref="SmartsheetException"> the SmartsheetClient exception </exception>
@@ -453,7 +452,6 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
 		/// <param name="path"> the relative path of the resource collections </param>
-		/// <param name="objectClass"> the resource object class </param>
 		/// <returns> the resources </returns>
 		/// <exception cref="SmartsheetException"> if an error occurred during the operation </exception>
 		protected internal virtual PaginatedResult<T> ListResourcesWithWrapper<T>(string path)
@@ -552,7 +550,6 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
 		/// <param name="path"> the relative path of the resource </param>
-		/// <param name="objectClass"> the resource object class </param>
 		/// <exception cref="SmartsheetException"> the SmartsheetClient exception </exception>
 		protected internal virtual T DeleteResource<T>(string path)
 		{

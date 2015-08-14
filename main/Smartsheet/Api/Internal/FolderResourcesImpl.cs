@@ -108,10 +108,8 @@ namespace Smartsheet.Api.Internal
 		/// <remarks>This operation supports pagination of results. For more information, see Paging.</remarks>
 		/// <para>It mirrors To the following Smartsheet REST API method:<br /> GET /folders/{folderId}/folders</para>
 		/// </summary>
-		/// <param name="folderId"> the folderId </param>
-		/// <param name="includeAll"> If true, include all results (i.e. do not paginate). </param>
-		/// <param name="pageSize"> The maximum number of items to return per page. Defaults to 100 if null.</param>
-		/// <param name="page"> Which page to return. Defaults to 1 if null. </param>
+		/// <param name="folderId">the folderId</param>
+		/// <param name="paging">the pagination info</param>
 		/// <returns> the child Folders (note that an empty list will be returned if no child folder is found). </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>

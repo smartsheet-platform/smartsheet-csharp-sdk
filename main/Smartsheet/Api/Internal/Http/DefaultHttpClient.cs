@@ -79,6 +79,9 @@ namespace Smartsheet.Api.Internal.Http
 		/// Make a multipart HTTP request and return the response.
 		/// </summary>
 		/// <param name="smartsheetRequest"> the Smartsheet request </param>
+		/// <param name="file">the full file path</param>
+		/// <param name="fileType">the file type, or also called the conent type of the file</param>
+		/// <param name="objectType">the object name, for example 'comment', or 'discussion'</param>
 		/// <returns> the HTTP response </returns>
 		/// <exception cref="HttpClientException"> the HTTP client exception </exception>
 		public virtual HttpResponse Request(HttpRequest smartsheetRequest, string objectType, string file, string fileType)
@@ -125,7 +128,7 @@ namespace Smartsheet.Api.Internal.Http
 			restRequest.AddFile("file", File.ReadAllBytes(file), new FileInfo(file).Name, fileType);
 			if (smartsheetRequest.Entity != null && smartsheetRequest.Entity.GetContent() != null)
 			{
-				restRequest.AddParameter(objectType, System.Text.Encoding.Default.GetString(smartsheetRequest.Entity.Content), "application/json",
+				restRequest.AddParameter(objectType.ToLower(), System.Text.Encoding.Default.GetString(smartsheetRequest.Entity.Content), "application/json",
 					ParameterType.RequestBody);
 			}
 

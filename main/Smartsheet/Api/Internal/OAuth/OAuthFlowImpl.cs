@@ -20,9 +20,6 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-/// <summary>
-/// 
-/// </summary>
 namespace Smartsheet.Api.Internal.OAuth
 {
 

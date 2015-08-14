@@ -78,11 +78,11 @@ namespace IntegrationTestSDK
 
 		private static void UpdateObjectShares(SmartsheetClient smartsheet, long sheetId, long workspaceId, string sheetShareId, string workspaceShareId)
 		{
-			Share updatedShare = smartsheet.SheetResources.ShareResources.UpdateShare(sheetId, sheetShareId, new Share.UpdateShareBuilder(AccessLevel.VIEWER).Build());
+			Share updatedShare = smartsheet.SheetResources.ShareResources.UpdateShare(sheetId, new Share.UpdateShareBuilder(sheetShareId, AccessLevel.VIEWER).Build());
 			Assert.IsTrue(updatedShare.AccessLevel == AccessLevel.VIEWER);
 			//updatedShare = smartsheet.ReportResources.ShareResources.UpdateShare(reportId, reportShareId, new Share.UpdateShareBuilder(AccessLevel.VIEWER).Build());
 			//Assert.IsTrue(updatedShare.AccessLevel == AccessLevel.VIEWER);
-			updatedShare = smartsheet.WorkspaceResources.ShareResources.UpdateShare(workspaceId, workspaceShareId, new Share.UpdateShareBuilder(AccessLevel.VIEWER).Build());
+			updatedShare = smartsheet.WorkspaceResources.ShareResources.UpdateShare(workspaceId, new Share.UpdateShareBuilder(workspaceShareId, AccessLevel.VIEWER).Build());
 			Assert.IsTrue(updatedShare.AccessLevel == AccessLevel.VIEWER);
 		}
 

@@ -38,7 +38,19 @@ namespace Smartsheet.Api
 		/// </summary>
 		/// <param name="includes">elements to include in response</param>
 		/// <param name="paging">the pagination</param>
-		/// <returns> A list of all Sheets (note that an empty list will be returned if there are none). </returns>
+		/// <returns> A list of all Sheets (note that an empty list will be returned if there are none) limited to the following attributes:
+		/// <list type="bullet">
+		/// <item><description>id</description></item>
+		/// <item><description>name</description></item>
+		/// <item><description>accessLevel</description></item>
+		/// <item><description>permalink</description></item>
+		/// <item><description>source (included only if "source" is specified with the include parameter)</description></item>
+		/// <item><description>owner (included only if "ownerInfo" is specified with the include parameter)</description></item>
+		/// <item><description>ownerId (included only if "ownerInfo" is specified with the include parameter)</description></item>
+		/// <item><description>createdAt</description></item>
+		/// <item><description>modifiedAt</description></item>
+		/// </list>
+		/// </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
@@ -115,7 +127,7 @@ namespace Smartsheet.Api
 		/// <para>It mirrors To the following Smartsheet REST API method:<br />
 		/// GET /sheets/{sheetId} with "application/pdf" Accept HTTP header</para>
 		/// </summary>
-		/// <param name="id"> the Id of the sheet </param>
+		/// <param name="sheetId"> the Id of the sheet </param>
 		/// <param name="outputStream"> the output stream To which the PDF file will be written. </param>
 		/// <param name="paperSize"> the paper size </param>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
@@ -132,9 +144,8 @@ namespace Smartsheet.Api
 		/// <para>It mirrors To the following Smartsheet REST API method:<br />
 		/// GET /sheets/{sheetId} with "text/csv" Accept HTTP header</para>
 		/// </summary>
-		/// <param name="id"> the Id of the sheet </param>
+		/// <param name="sheetId"> the Id of the sheet </param>
 		/// <param name="outputStream"> the output stream To which the PDF file will be written. </param>
-		/// <param name="paperSize"> the paper size </param>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
@@ -165,7 +176,7 @@ namespace Smartsheet.Api
 		/// <para>It mirrors To the following Smartsheet REST API method: POST /Sheets</para>
 		/// </summary>
 		/// <param name="sheet"> the sheet To create </param>
-		/// <param name="includes"> used To specify the optional objects To include. </param>
+		/// <param name="include"> used To specify the optional objects To include. </param>
 		/// <returns> the created sheet </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -307,7 +318,7 @@ namespace Smartsheet.Api
 		/// 
 		/// <para>It mirrors To the following Smartsheet REST API method: PUT /sheets/{sheetId}/publish</para>
 		/// </summary>
-		/// <param name="id"> the sheetId </param>
+		/// <param name="sheetId"> the sheetId </param>
 		/// <param name="publish"> the SheetPublish object limited. </param>
 		/// <returns> the update SheetPublish object (note that if there is no such resource, this method will throw a 
 		/// ResourceNotFoundException rather than returning null). </returns>

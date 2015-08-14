@@ -77,9 +77,7 @@
     <Compile Include="Smartsheet\Api\HttpTestServer.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Smartsheet\Api\Internal\CommentAttachmentResourcesTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\ContactResourcesImplTest.cs" />
-    <Compile Include="Smartsheet\Api\Internal\DiscussionAttachmentResourcesTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\DiscussionCommentResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\FavoriteResourcesImplTest.cs" />
     <Compile Include="Smartsheet\Api\Internal\FolderResourcesImplTest.cs" />

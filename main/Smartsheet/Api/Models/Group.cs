@@ -212,6 +212,10 @@ namespace Smartsheet.Api.Models
 				return this.ownerId;
 			}
 
+			/// <summary>
+			/// Builds and returns the Group object.
+			/// </summary>
+			/// <returns>the Group object</returns>
 			public Group Build()
 			{
 				Group group = new Group

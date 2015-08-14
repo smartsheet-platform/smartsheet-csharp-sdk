@@ -23,6 +23,9 @@ using System.Text;
 
 namespace Smartsheet.Api.Models
 {
+	/// <summary>
+	/// A Row is a component of a Sheet or Report. Each Row is composed of a collection of Cells, and may optionally contain Discussions and/or Attachments.
+	/// </summary>
 	public class Row : AbstractRow<Column, Cell>
 	{
 		// Override Id property so that JSON.NET knows to make an exception of not serialization row Id.
@@ -128,9 +131,10 @@ namespace Smartsheet.Api.Models
 			}
 
 			/// <summary>
-			/// Sets the To top flag that puts the row at the top of the sheet.
+			/// Sets the flag which which is used in conjunction with siblingId with a value of true to
+			/// indicate that the row should be added above the specified sibling row.
 			/// </summary>
-			/// <param name="toTop"> the To top flag </param>
+			/// <param name="above"> the above flag </param>
 			/// <returns> the add row builder </returns>
 			public virtual AddRowBuilder SetAbove(bool? above)
 			{
@@ -139,9 +143,9 @@ namespace Smartsheet.Api.Models
 			}
 
 			/// <summary>
-			/// Sets the RowResources.
+			/// Sets the cells of the row.
 			/// </summary>
-			/// <param name="rows"> the RowResources </param>
+			/// <param name="cells"> the cells </param>
 			/// <returns> the add row builder </returns>
 			public virtual AddRowBuilder SetCells(IList<Cell> cells)
 			{
@@ -267,6 +271,10 @@ namespace Smartsheet.Api.Models
 			private bool? locked;
 			private long? id;
 
+			/// <summary>
+			/// Sets the required parameters to updating a row.
+			/// </summary>
+			/// <param name="rowId">the row ID</param>
 			public UpdateRowBuilder(long? rowId)
 			{
 				this.id = rowId;

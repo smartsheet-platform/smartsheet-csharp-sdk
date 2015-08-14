@@ -96,14 +96,13 @@ namespace Smartsheet.Api.Internal
 		/// <para>Gets the list of all Reports that the User has access to, in alphabetical order, by name.</para>
 		/// <para>It mirrors To the following Smartsheet REST API method: GET /reports</para>
 		/// </summary>
-		/// <param name="includes">elements to include in response</param>
 		/// <param name="paging">the pagination</param>
 		/// <returns>A list of Report objects limited to the following attributes:
-		/// <list type="bullets">
-		/// <item>id</item>
-		/// <item>name</item>
-		/// <item>accessLevel</item>
-		/// <item>permalink</item>
+		/// <list type="bullet">
+		/// <item><description>id</description></item>
+		/// <item><description>name</description></item>
+		/// <item><description>accessLevel</description></item>
+		/// <item><description>permalink</description></item>
 		/// </list></returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>

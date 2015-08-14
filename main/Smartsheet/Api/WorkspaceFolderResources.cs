@@ -34,7 +34,8 @@ namespace Smartsheet.Api
 		/// 
 		/// <para>It mirrors To the following Smartsheet REST API method: GET /workspaces/{workspaceId}/Folders</para>
 		/// </summary>
-		/// <param name="workspaceId"> the workspace Id </param>
+		/// <param name="workspaceId">the workspace Id</param>
+		/// <param name="paging">the pagination information</param>
 		/// <returns> the list of Folders (note that an empty list will be returned if there are none) </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>

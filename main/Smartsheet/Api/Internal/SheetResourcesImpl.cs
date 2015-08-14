@@ -221,9 +221,9 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual void GetSheetAsExcel(long id, BinaryWriter outputStream)
+		public virtual void GetSheetAsExcel(long sheetId, BinaryWriter outputStream)
 		{
-			GetSheetAsFile(id, null, outputStream, "application/vnd.ms-excel");
+			GetSheetAsFile(sheetId, null, outputStream, "application/vnd.ms-excel");
 		}
 
 		/// <summary>
@@ -232,9 +232,9 @@ namespace Smartsheet.Api.Internal
 		/// <para>It mirrors To the following Smartsheet REST API method:<br />
 		/// GET /sheets/{sheetId} with "application/pdf" Accept HTTP header</para>
 		/// </summary>
-		/// <param name="id"> the Id of the sheet </param>
-		/// <param name="outputStream"> the output stream To which the PDF file will be written. </param>
-		/// <param name="paperSize"> the paper size </param>
+		/// <param name="sheetId">the Id of the sheet</param>
+		/// <param name="outputStream">the output stream To which the PDF file will be written.</param>
+		/// <param name="paperSize">the paper size</param>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
@@ -252,7 +252,7 @@ namespace Smartsheet.Api.Internal
 		/// <para>It mirrors To the following Smartsheet REST API method:<br />
 		/// GET /sheets/{sheetId} with "text/csv" Accept HTTP header</para>
 		/// </summary>
-		/// <param name="id"> the Id of the sheet </param>
+		/// <param name="sheetId">the Id of the sheet</param>
 		/// <param name="outputStream"> the output stream To which the CSV file will be written. </param>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
