@@ -165,13 +165,23 @@ namespace Smartsheet.Api.Models
 			private string message;
 			private bool? ccMe;
 
-
+			/// <summary>
+			/// Sets the required properties for sharing to a User.
+			/// </summary>
+			/// <param name="email">the email of the User</param>
+			/// <param name="accessLevel">the Access Level</param>
 			public CreateShareBuilder(string email, AccessLevel? accessLevel)
 			{
 				this.email = email;
 				this.accessLevel = accessLevel;
 			}
 
+
+			/// <summary>
+			/// Sets the required properties for sharing to a Group.
+			/// </summary>
+			/// <param name="groupId">the group ID</param>
+			/// <param name="accessLevel">the Access Level</param>
 			public CreateShareBuilder(long? groupId, AccessLevel? accessLevel)
 			{
 				this.groupId = groupId;
@@ -328,10 +338,17 @@ namespace Smartsheet.Api.Models
 		/// </summary>
 		public class UpdateShareBuilder
 		{
-			internal AccessLevel? accessLevel;
+			private string shareId;
+			private AccessLevel? accessLevel;
 
-			public UpdateShareBuilder(AccessLevel? accessLevel)
+			/// <summary>
+			/// Sets the required properties for updating a share object.
+			/// </summary>
+			/// <param name="shareId">the share Id</param>
+			/// <param name="accessLevel">the Access Level</param>
+			public UpdateShareBuilder(string shareId, AccessLevel? accessLevel)
 			{
+				this.shareId = shareId;
 				this.accessLevel = accessLevel;
 			}
 
@@ -367,6 +384,7 @@ namespace Smartsheet.Api.Models
 				//}
 
 				Share share = new Share();
+				share.id = shareId;
 				share.accessLevel = accessLevel;
 				return share;
 			}
