@@ -221,15 +221,28 @@ namespace Smartsheet.Api.Models
 				return cells;
 			}
 
+			/// <summary>
+			/// Gets the above flag.
+			/// </summary>
+			/// <returns>the above flag</returns>
 			public virtual bool? GetAbove()
 			{
 				return above;
 			}
+
+			/// <summary>
+			/// Gets the format
+			/// </summary>
+			/// <returns>the format</returns>
 			public virtual string GetFormat()
 			{
 				return format;
 			}
 
+			/// <summary>
+			/// Gets the expanded flag.
+			/// </summary>
+			/// <returns>the expanded flag</returns>
 			public virtual bool? GetExpanded()
 			{
 				return expanded;
@@ -238,7 +251,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Builds the Row.
 			/// </summary>
-			/// <returns> the row </returns>
+			/// <returns>the row</returns>
 			public virtual Row Build()
 			{
 				Row row = new Row
@@ -429,11 +442,19 @@ namespace Smartsheet.Api.Models
 			//	get { return above; }
 			//}
 
+			/// <summary>
+			/// Gets the format.
+			/// </summary>
+			/// <returns>the format</returns>
 			public virtual string GetFormat()
 			{
 				return format;
 			}
 
+			/// <summary>
+			/// Gets the expanded flag.
+			/// </summary>
+			/// <returns>the expanded flag</returns>
 			public virtual bool? GetExpanded()
 			{
 				return expanded;
@@ -458,7 +479,7 @@ namespace Smartsheet.Api.Models
 			}
 
 			/// <summary>
-			/// Builds the Row.
+			/// Builds anad returns the Row.
 			/// </summary>
 			/// <returns> the row </returns>
 			public virtual Row Build()

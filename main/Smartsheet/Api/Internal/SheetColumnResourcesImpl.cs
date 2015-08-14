@@ -146,7 +146,6 @@ namespace Smartsheet.Api.Internal
 		/// <para>It mirrors To the following Smartsheet REST API method: GET /sheets/{sheetId}/columns/{columnId}</para>
 		/// </summary>
 		/// <param name="sheetId"> the sheet Id </param>
-		/// <param name="columnId"> the columnId </param>
 		/// <param name="column"> column object to update </param>
 		/// <returns> the updated column </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>

@@ -134,18 +134,18 @@ namespace Smartsheet.Api
 		/// <para>It mirrors To the following Smartsheet REST API method: POST /sheets/{sheetId}/rows/{rowId}/emails</para>
 		/// </summary>
 		/// <param name="sheetId"> The sheet Id </param>
-		/// <param name="email"> The email. The columns included for each row in the email will be populated according to the following rules: 
+		/// <param name="email"> The email. The columns included for each row in the email will be populated according to the following rules:
 		/// <list type="bullet">
 		/// <item><description>
 		/// If the columnIds attribute of the MultiRowEmail object is specified as an array of column IDs, those specific columns will be included.
 		/// </description></item>
 		/// <item><description>
-		/// If the columnIds attribute of the MultiRowEmail object is omitted, all columns except hidden columns shall be included.		/// </item>
+		/// If the columnIds attribute of the MultiRowEmail object is omitted, all columns except hidden columns shall be included.
 		/// </description></item>
 		/// <item><description>
 		/// If the columnIds attribute of the MultiRowEmail object is specified as empty, no columns shall be included.
 		/// (Note: In this case, either includeAttachments:true or includeDiscussions:true must be specified.)
-		/// </item></description>
+		/// </description></item>
 		/// </list>
 		/// </param>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>

@@ -82,7 +82,11 @@ namespace Smartsheet.Api
 		/// <param name="folderId"> the folderId</param>
 		/// <param name="paging">the pagination information</param>
 		/// <returns>the child Folders (note that an empty list will be returned if no child folder is found), limited to the following attributes:
-		/// <list type="bullet"
+		/// <list type="bullet">
+		/// <item><description>id</description></item>
+		/// <item><description>name</description></item>
+		/// <item><description>permalink</description></item>
+		/// </list>
 		/// </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>

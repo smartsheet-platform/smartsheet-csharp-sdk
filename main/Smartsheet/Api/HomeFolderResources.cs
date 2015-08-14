@@ -35,7 +35,13 @@ namespace Smartsheet.Api
 		/// <para>It mirrors To the following Smartsheet REST API method:<br />
 		/// GET /home/Folders</para>
 		/// </summary>
-		/// <returns> the list of Folders (note that an empty list will be returned if there is none) </returns>
+		/// <returns>the list of Folders (note that an empty list will be returned if no child folder is found), limited to the following attributes:
+		/// <list type="bullet">
+		/// <item><description>id</description></item>
+		/// <item><description>name</description></item>
+		/// <item><description>permalink</description></item>
+		/// </list>
+		/// </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>

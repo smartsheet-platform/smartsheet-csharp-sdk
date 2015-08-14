@@ -216,14 +216,14 @@ namespace Smartsheet.Api.Internal
 		/// <list type="bullet">
 		/// <item><description>
 		/// If the columnIds attribute of the MultiRowEmail object is specified as an array of column IDs, those specific columns will be included.
-		/// </item></description>
+		/// </description></item>
 		/// <item><description>
-		/// If the columnIds attribute of the MultiRowEmail object is omitted, all columns except hidden columns shall be included.		/// </item>
-		/// </item></description>
+		/// If the columnIds attribute of the MultiRowEmail object is omitted, all columns except hidden columns shall be included.
+		/// </description></item>
 		/// <item><description>
 		/// If the columnIds attribute of the MultiRowEmail object is specified as empty, no columns shall be included.
 		/// (Note: In this case, either includeAttachments:true or includeDiscussions:true must be specified.)
-		/// </item></description>
+		/// </description></item>
 		/// </list>
 		/// </param>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>

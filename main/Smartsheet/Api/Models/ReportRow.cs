@@ -23,6 +23,9 @@ using System.Text;
 
 namespace Smartsheet.Api.Models
 {
+	/// <summary>
+	/// The <seealso cref="Row"/> of a Report.
+	/// </summary>
 	public class ReportRow : AbstractRow<ReportColumn, ReportCell>
 	{
 	}

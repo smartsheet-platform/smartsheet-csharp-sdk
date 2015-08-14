@@ -487,7 +487,7 @@ namespace Smartsheet.Api.Internal
 		}
 
 		/// <summary>
-		/// Return the ShareResources object that provides access To Share resources associated with Sheet resources.
+		/// Returns the ShareResources object that provides access To Share resources associated with Sheet resources.
 		/// </summary>
 		/// <returns> the ShareResources object </returns>
 		public virtual ShareResources ShareResources
@@ -499,7 +499,7 @@ namespace Smartsheet.Api.Internal
 		}
 
 		/// <summary>
-		/// Return the SheetRowResources object that provides access To Row resources associated with Sheet resources.
+		/// Returns the SheetRowResources object that provides access To Row resources associated with Sheet resources.
 		/// </summary>
 		/// <returns> the sheet row resources </returns>
 		public virtual SheetRowResources RowResources
@@ -511,7 +511,7 @@ namespace Smartsheet.Api.Internal
 		}
 
 		/// <summary>
-		/// Return the SheetColumnResources object that provides access To Column resources associated with Sheet resources.
+		/// Returns the SheetColumnResources object that provides access To Column resources associated with Sheet resources.
 		/// </summary>
 		/// <returns> the sheet column resources </returns>
 		public virtual SheetColumnResources ColumnResources
@@ -523,7 +523,7 @@ namespace Smartsheet.Api.Internal
 		}
 
 		/// <summary>
-		/// Return the SheetAttachmentResources object that provides access To attachment resources associated with
+		/// Returns the SheetAttachmentResources object that provides access To attachment resources associated with
 		/// Sheet resources.
 		/// </summary>
 		/// <returns> the associated attachment resources </returns>
@@ -536,7 +536,7 @@ namespace Smartsheet.Api.Internal
 		}
 
 		/// <summary>
-		/// Return the SheetDiscussionResources object that provides access To discussion resources associated with
+		/// Returns the SheetDiscussionResources object that provides access To discussion resources associated with
 		/// Sheet resources.
 		/// </summary>
 		/// <returns> the associated discussion resources </returns>
@@ -549,7 +549,7 @@ namespace Smartsheet.Api.Internal
 		}
 
 		/// <summary>
-		/// Return the SheetCommentResources object that provides access To discussion resources associated with
+		/// Returns the SheetCommentResources object that provides access To discussion resources associated with
 		/// Sheet resources.
 		/// </summary>
 		/// <returns> the associated discussion resources </returns>
@@ -572,10 +572,10 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To
-		public virtual SheetPublish GetPublishStatus(long id)
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public virtual SheetPublish GetPublishStatus(long sheetId)
 		{
-			return this.GetResource<SheetPublish>("sheets/" + id + "/publish", typeof(SheetPublish));
+			return this.GetResource<SheetPublish>("sheets/" + sheetId + "/publish", typeof(SheetPublish));
 		}
 
 		/// <summary>
