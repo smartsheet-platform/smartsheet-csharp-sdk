@@ -128,7 +128,7 @@ namespace Smartsheet.Api.Internal.Http
 			restRequest.AddFile("file", File.ReadAllBytes(file), new FileInfo(file).Name, fileType);
 			if (smartsheetRequest.Entity != null && smartsheetRequest.Entity.GetContent() != null)
 			{
-				restRequest.AddParameter(objectType.ToLower(), System.Text.Encoding.Default.GetString(smartsheetRequest.Entity.Content), "application/json",
+				restRequest.AddParameter(objectType.ToLower(), System.Text.Encoding.Default.GetString(smartsheetRequest.Entity.Content),
 					ParameterType.RequestBody);
 			}
 
