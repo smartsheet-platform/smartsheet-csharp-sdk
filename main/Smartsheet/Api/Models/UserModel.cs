@@ -57,7 +57,7 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// Flag indicating whether the user is a group admin (can create and edit groups)
 		/// </summary>
-		private bool groupAdmin;
+		private bool? groupAdmin;
 
 
 		/// <summary>
@@ -122,7 +122,7 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// Flag indicating whether the user is a group admin (can create and edit groups)
 		/// </summary>
-		public bool GroupAdmin
+		public bool? GroupAdmin
 		{
 			get { return groupAdmin; }
 			set { groupAdmin = value; }

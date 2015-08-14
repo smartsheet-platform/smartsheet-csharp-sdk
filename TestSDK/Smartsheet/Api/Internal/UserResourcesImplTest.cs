@@ -44,7 +44,7 @@ namespace Smartsheet.Api.Internal
 			server.setResponseBody("../../../TestSDK/resources/addUser.json");
 
 			User user = new User.AddUserBuilder("NEW_USER_EMAIL", false, true).SetFirstName("John").SetLastName("Doe").Build();
-			User newUser = userResources.AddUser(user, false);
+			User newUser = userResources.AddUser(user, false, true);
 
 			Assert.AreEqual("NEW_USER_EMAIL", newUser.Email);
 			Assert.AreEqual("John Doe", newUser.Name);

@@ -91,11 +91,12 @@ namespace Smartsheet.Api.Internal
 		//}
 
 		/// <summary>
-		/// <para>Add a user To the organization, without sending Email.</para>
+		/// <para>Add a user To the organization</para>
 		/// <para>It mirrors To the following Smartsheet REST API method: POST /Users</para>
 		/// </summary>
 		/// <param name="user"> the user </param>
 		/// <param name="sendEmail"> flag indicating whether or not to send a welcome email. Defaults to false. </param>
+		/// <param name="allowInviteAccountAdmin">if user is an admin in another organization, setting to true will invite their entire organization.</param>
 		/// <returns> the created user </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -103,14 +104,19 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual User AddUser(User user, bool? sendEmail)
+		public virtual User AddUser(User user, bool? sendEmail, bool? allowInviteAccountAdmin)
 		{
 			StringBuilder path = new StringBuilder("users");
+			IDictionary<string, string> parameters = new Dictionary<string, string>();
 			if (sendEmail.HasValue)
 			{
-				path.Append("?sendEmail=" + sendEmail);
+				parameters.Add("sendEmail", sendEmail.Value.ToString());
 			}
-			return this.CreateResource<User>(path.ToString(), typeof(User), user);
+			if (allowInviteAccountAdmin.HasValue)
+			{
+				parameters.Add("allowInviteAccountAdmin", allowInviteAccountAdmin.Value.ToString());
+			}
+			return this.CreateResource<User>(QueryUtil.GenerateUrl("users", parameters), typeof(User), user);
 		}
 
 		/// <summary>

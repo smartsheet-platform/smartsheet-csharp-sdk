@@ -74,7 +74,7 @@ namespace IntegrationTestSDK
 
 		private static long AddUser(SmartsheetClient smartsheet)
 		{
-			User user = smartsheet.UserResources.AddUser(new User.AddUserBuilder(otherEmail, true, true).Build(), true);
+			User user = smartsheet.UserResources.AddUser(new User.AddUserBuilder(otherEmail, true, true).Build(), true, true);
 			long userId = user.Id.Value;
 			Assert.IsTrue(user.Admin.Value);
 			Assert.IsTrue(user.LicensedSheetCreator.Value);
