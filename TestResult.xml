@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="C:\Users\eyang\Documents\NewGitHub\smartsheet-csharp-sdk\TestSDK\bin\Release\TestSDK.dll" total="162" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2015-08-14" time="13:06:18">
+  <environment nunit-version="2.6.4.14350" clr-version="2.0.50727.5485" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="C:\Users\eyang\Documents\NewGitHub\smartsheet-csharp-sdk" machine-name="BELL-LPT-EYANG" user="eyan" user-domain="APOLLO" />
+  <culture-info current-culture="en-US" current-uiculture="en-US" />
+  <test-suite type="Assembly" name="C:\Users\eyang\Documents\NewGitHub\smartsheet-csharp-sdk\TestSDK\bin\Release\TestSDK.dll" executed="True" result="Success" success="True" time="6.669" asserts="0">
+    <results>
+      <test-suite type="Namespace" name="com" executed="True" result="Success" success="True" time="0.072" asserts="0">
+        <results>
+          <test-suite type="Namespace" name="smartsheet" executed="True" result="Success" success="True" time="0.071" asserts="0">
+            <results>
+              <test-suite type="Namespace" name="api" executed="True" result="Success" success="True" time="0.071" asserts="0">
+                <results>
+                  <test-suite type="Namespace" name="models" executed="True" result="Success" success="True" time="0.071" asserts="0">
+                    <results>
+                      <test-suite type="TestFixture" name="AccessScopeTest" executed="True" result="Success" success="True" time="0.068" asserts="0">
+                        <results>
+                          <test-case name="com.smartsheet.api.models.AccessScopeTest.TestAccessScope" executed="True" result="Success" success="True" time="0.057" asserts="9" />
+                        </results>
+                      </test-suite>
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+      <test-suite type="Namespace" name="Smartsheet" executed="True" result="Success" success="True" time="6.501" asserts="0">
+        <results>
+          <test-suite type="Namespace" name="Api" executed="True" result="Success" success="True" time="6.500" asserts="0">
+            <results>
+              <test-suite type="TestFixture" name="AccessTokenExpiredExceptionTest" executed="True" result="Success" success="True" time="0.003" asserts="0">
+                <results>
+                  <test-case name="Smartsheet.Api.AccessTokenExpiredExceptionTest.TestAccessTokenExpiredException" executed="True" result="Success" success="True" time="0.002" asserts="2" />
+                </results>
+              </test-suite>
+              <test-suite type="Namespace" name="Internal" executed="True" result="Success" success="True" time="6.388" asserts="0">
+                <results>
+                  <test-suite type="TestFixture" name="DiscussionCommentResourcesImplTest" executed="True" result="Success" success="True" time="1.226" asserts="0">
+                    <results>
+                      <test-case name="Smartsheet.Api.Internal.DiscussionCommentResourcesImplTest.TestAddComment" executed="True" result="Success" success="True" time="1.149" asserts="3" />
+                      <test-case name="Smartsheet.Api.Internal.DiscussionCommentResourcesImplTest.TestAddCommentWithAttachment" executed="True" result="Success" success="True" time="0.076" asserts="6" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="FavoriteResourcesImplTest" executed="True" result="Success" success="True" time="0.187" asserts="0">
+                    <results>
+                      <test-case name="Smartsheet.Api.Internal.FavoriteResourcesImplTest.TestAddFavorites" executed="True" result="Success" success="True" time="0.048" asserts="2" />
+                      <test-case name="Smartsheet.Api.Internal.FavoriteResourcesImplTest.TestListFavorites" executed="True" result="Success" success="True" time="0.020" asserts="4" />
+                      <test-case name="Smartsheet.Api.Internal.FavoriteResourcesImplTest.TestRemoveFavorites" executed="True" result="Success" success="True" time="0.117" asserts="0" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="FolderResourcesImplTest" executed="True" result="Success" success="True" time="0.106" asserts="0">
+                    <results>
+                      <test-case name="Smartsheet.Api.Internal.FolderResourcesImplTest.TestCreateFolder" executed="True" result="Success" success="True" time="0.022" asserts="1" />
+                      <test-case name="Smartsheet.Api.Internal.FolderResourcesImplTest.TestDeleteFolder" executed="True" result="Success" success="True" time="0.011" asserts="0" />
+                      <test-case name="Smartsheet.Api.Internal.FolderResourcesImplTest.TestFolderResourcesImpl" executed="True" result="Success" success="True" time="0.008" asserts="0" />
+                      <test-case name="Smartsheet.Api.Internal.FolderResourcesImplTest.TestGetFolder" executed="True" result="Success" success="True" time="0.031" asserts="3" />
+                      <test-case name="Smartsheet.Api.Internal.FolderResourcesImplTest.TestListFolders" executed="True" result="Success" success="True" time="0.017" asserts="1" />
+                      <test-case name="Smartsheet.Api.Internal.FolderResourcesImplTest.TestUpdateFolder" executed="True" result="Success" success="True" time="0.012" asserts="1" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="GroupResourcesImplTest" executed="True" result="Success" success="True" time="0.068" asserts="0">
+                    <results>
+                      <test-case name="Smartsheet.Api.Internal.GroupResourcesImplTest.TestCreateGroup" executed="True" result="Success" success="True" time="0.025" asserts="4" />
+                      <test-case name="Smartsheet.Api.Internal.GroupResourcesImplTest.TestGetGroup" executed="True" result="Success" success="True" time="0.010" asserts="3" />
+                      <test-case name="Smartsheet.Api.Internal.GroupResourcesImplTest.TestListGroups" executed="True" result="Success" success="True" time="0.015" asserts="5" />
+                      <test-case name="Smartsheet.Api.Internal.GroupResourcesImplTest.TestUpdateGroup" executed="True" result="Success" success="True" time="0.016" asserts="3" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="HomeFolderResourcesImplTest" executed="True" result="Success" success="True" time="0.029" asserts="0">
+                    <results>
+                      <test-case name="Smartsheet.Api.Internal.HomeFolderResourcesImplTest.TestCreateFolder" executed="True" result="Success" success="True" time="0.011" asserts="2" />
+                      <test-case name="Smartsheet.Api.Internal.HomeFolderResourcesImplTest.TestHomeFolderResourcesImpl" executed="True" result="Success" success="True" time="0.006" asserts="0" />
+                      <test-case name="Smartsheet.Api.Internal.HomeFolderResourcesImplTest.TestListFolders" executed="True" result="Success" success="True" time="0.010" asserts="4" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="HomeResourcesImplTest" executed="True" result="Success" success="True" time="0.043" asserts="0">
+                    <results>
+                      <test-case name="Smartsheet.Api.Internal.HomeResourcesImplTest.TestGetHome" executed="True" result="Success" success="True" time="0.035" asserts="14" />
+                      <test-case name="Smartsheet.Api.Internal.HomeResourcesImplTest.TestHomeResourcesImpl" executed="True" result="Success" success="True" time="0.007" asserts="0" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="Namespace" name="Http" executed="True" result="Success" success="True" time="2.755" asserts="0">
+                    <results>
+                      <test-suite type="TestFixture" name="DefaultHttpClientTest" executed="True" result="Success" success="True" time="2.755" asserts="0">
+                        <results>
+                          <test-case name="Smartsheet.Api.Internal.Http.DefaultHttpClientTest.TestDefaultHttpClient" executed="True" result="Success" success="True" time="0.006" asserts="0" />
+                          <test-case name="Smartsheet.Api.Internal.Http.DefaultHttpClientTest.TestDefaultHttpClientCloseableHttpClient" executed="True" result="Success" success="True" time="0.006" asserts="0" />
+                          <test-case name="Smartsheet.Api.Internal.Http.DefaultHttpClientTest.TestRequest" executed="True" result="Success" success="True" time="2.740" asserts="0" />
+                        </results>
+                      </test-suite>
+                    </results>
+                  </test-suite>
+                  <test-suite type="Namespace" name="Json" executed="True" result="Success" success="True" time="0.093" asserts="0">
+                    <results>
+                      <test-suite type="TestFixture" name="JacksonJsonSerializerTest" executed="True" result="Success" success="True" time="0.078" asserts="0">
+                        <results>
+                          <test-case name="Smartsheet.Api.Internal.Json.JacksonJsonSerializerTest.TestDeserialize" executed="True" result="Success" success="True" time="0.011" asserts="1" />
+                          <test-case name="Smartsheet.Api.Internal.Json.JacksonJsonSerializerTest.TestDeserializeList" executed="True" result="Success" success="True" time="0.030" asserts="1" />
+                          <test-case name="Smartsheet.Api.Internal.Json.JacksonJsonSerializerTest.TestDeserializeMap" executed="True" result="Success" success="True" time="0.018" asserts="0" />
+                          <test-case name="Smartsheet.Api.Internal.Json.JacksonJsonSerializerTest.TestDeserializeResult" executed="True" result="Success" success="True" time="0.008" asserts="0" />
+                          <test-case name="Smartsheet.Api.Internal.Json.JacksonJsonSerializerTest.TestInit" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                          <test-case name="Smartsheet.Api.Internal.Json.JacksonJsonSerializerTest.TestJacksonJsonSerializer" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                          <test-case name="Smartsheet.Api.Internal.Json.JacksonJsonSerializerTest.TestSerialize" executed="True" result="Success" success="True" time="0.004" asserts="0" />
+                        </results>
+                      </test-suite>
+                      <test-suite type="TestFixture" name="JSONSerializerExceptionTest" executed="True" result="Success" success="True" time="0.013" asserts="0">
+                        <results>
+                          <test-case name="Smartsheet.Api.Internal.Json.JSONSerializerExceptionTest.TestJSONSerializerExceptionException" executed="True" result="Success" success="True" time="0.002" asserts="3" />
+                          <test-case name="Smartsheet.Api.Internal.Json.JSONSerializerExceptionTest.TestJSONSerializerExceptionString" executed="True" result="Success" success="True" time="0.008" asserts="1" />
+                          <test-case name="Smartsheet.Api.Internal.Json.JSONSerializerExceptionTest.TestJSONSerializerExceptionStringThrowable" executed="True" result="Success" success="True" time="0.001" asserts="4" />
+                        </results>
+                      </test-suite>
+                    </results>
+                  </test-suite>
+                  <test-suite type="Namespace" name="OAuth" executed="True" result="Success" success="True" time="0.653" asserts="0">
+                    <results>
+                      <test-suite type="TestFixture" name="OAuthFlowImplTest" executed="True" result="Success" success="True" time="0.652" asserts="0">
+                        <results>
+                          <test-case name="Smartsheet.Api.Internal.OAuth.OAuthFlowImplTest.TestExtractAuthorizationResult" executed="True" result="Success" success="True" time="0.008" asserts="0" />
+                          <test-case name="Smartsheet.Api.Internal.OAuth.OAuthFlowImplTest.TestNewAuthorizationURL" executed="True" result="Success" success="True" time="0.014" asserts="1" />
+                          <test-case name="Smartsheet.Api.Internal.OAuth.OAuthFlowImplTest.TestOAuthFlowImpl" executed="True" result="Success" success="True" time="0.002" asserts="7" />
+                          <test-case name="Smartsheet.Api.Internal.OAuth.OAuthFlowImplTest.TestObtainNewToken" executed="True" result="Success" success="True" time="0.011" asserts="0" />
+                          <test-case name="Smartsheet.Api.Internal.OAuth.OAuthFlowImplTest.TestRefreshToken" executed="True" result="Success" success="True" time="0.605" asserts="4" />
+                        </results>
+                      </test-suite>
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="ReportResourcesImplTest" executed="True" result="Success" success="True" time="0.077" asserts="0">
+                    <results>
+                      <test-case name="Smartsheet.Api.Internal.ReportResourcesImplTest.TestGetReport" executed="True" result="Success" success="True" time="0.044" asserts="3" />
+                      <test-case name="Smartsheet.Api.Internal.ReportResourcesImplTest.TestGetReportAsExcel" executed="True" result="Success" success="True" time="0.015" asserts="3" />
+                      <test-case name="Smartsheet.Api.Internal.ReportResourcesImplTest.TestListReports" executed="True" result="Success" success="True" time="0.014" asserts="2" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="RowColumnResourcesImplTest" executed="True" result="Success" success="True" time="0.022" asserts="0">
+                    <results>
+                      <test-case name="Smartsheet.Api.Internal.RowColumnResourcesImplTest.TestGetCellHistory" executed="True" result="Success" success="True" time="0.021" asserts="5" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="SearchResourcesImplTest" executed="True" result="Success" success="True" time="0.050" asserts="0">
+                    <results>
+                      <test-case name="Smartsheet.Api.Internal.SearchResourcesImplTest.TestSearch" executed="True" result="Success" success="True" time="0.024" asserts="8" />
+                      <test-case name="Smartsheet.Api.Internal.SearchResourcesImplTest.TestSearchResourcesImpl" executed="True" result="Success" success="True" time="0.007" asserts="0" />
+                      <test-case name="Smartsheet.Api.Internal.SearchResourcesImplTest.TestSearchSheet" executed="True" result="Success" success="True" time="0.014" asserts="10" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="ServerInfoResourcesImplTest" executed="True" result="Success" success="True" time="0.028" asserts="0">
+                    <results>
+                      <test-case name="Smartsheet.Api.Internal.ServerInfoResourcesImplTest.TestGetServerInfo" executed="True" result="Success" success="True" time="0.027" asserts="2" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="ShareResourcesImplTest" executed="True" result="Success" success="True" time="0.084" asserts="0">
+                    <results>
+                      <test-case name="Smartsheet.Api.Internal.ShareResourcesImplTest.TestDeleteShare" executed="True" result="Success" success="True" time="0.012" asserts="0" />
+                      <test-case name="Smartsheet.Api.Internal.ShareResourcesImplTest.TestGetShare" executed="True" result="Success" success="True" time="0.017" asserts="5" />
+                      <test-case name="Smartsheet.Api.Internal.ShareResourcesImplTest.TestListShares" executed="True" result="Success" success="True" time="0.016" asserts="9" />
+                      <test-case name="Smartsheet.Api.Internal.ShareResourcesImplTest.TestShareResourcesImpl" executed="True" result="Success" success="True" time="0.007" asserts="0" />
+                      <test-case name="Smartsheet.Api.Internal.ShareResourcesImplTest.TestShareTo" executed="True" result="Success" success="True" time="0.016" asserts="5" />
+                      <test-case name="Smartsheet.Api.Internal.ShareResourcesImplTest.TestUpdateShare" executed="True" result="Success" success="True" time="0.011" asserts="2" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="SheetAttachmentResourcesImplTest" executed="True" result="Success" success="True" time="0.076" asserts="0">
+                    <results>
+                      <test-case name="Smartsheet.Api.Internal.SheetAttachmentResourcesImplTest.TestAttachFile" executed="True" result="Success" success="True" time="0.032" asserts="5" />
+                      <test-case name="Smartsheet.Api.Internal.SheetAttachmentResourcesImplTest.TestAttachUrl" executed="True" result="Success" success="True" time="0.015" asserts="6" />
+                      <test-case name="Smartsheet.Api.Internal.SheetAttachmentResourcesImplTest.TestGetAttachment" executed="True" result="Success" success="True" time="0.011" asserts="7" />
+                      <test-case name="Smartsheet.Api.Internal.SheetAttachmentResourcesImplTest.TestListAttachments" executed="True" result="Success" success="True" time="0.015" asserts="12" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="SheetColumnResourcesImplTest" executed="True" result="Success" success="True" time="0.093" asserts="0">
+                    <results>
+                      <test-case name="Smartsheet.Api.Internal.SheetColumnResourcesImplTest.TestAddColumn" executed="True" result="Success" success="True" time="0.029" asserts="6" />
+                      <test-case name="Smartsheet.Api.Internal.SheetColumnResourcesImplTest.TestGetColumn" executed="True" result="Success" success="True" time="0.011" asserts="4" />
+                      <test-case name="Smartsheet.Api.Internal.SheetColumnResourcesImplTest.TestListColumns" executed="True" result="Success" success="True" time="0.030" asserts="8" />
+                      <test-case name="Smartsheet.Api.Internal.SheetColumnResourcesImplTest.TestSheetColumnResourcesImpl" executed="True" result="Success" success="True" time="0.007" asserts="0" />
+                      <test-case name="Smartsheet.Api.Internal.SheetColumnResourcesImplTest.TestUpdateColumn" executed="True" result="Success" success="True" time="0.014" asserts="6" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="SheetDiscussionResourcesImplTest" executed="True" result="Success" success="True" time="0.070" asserts="0">
+                    <results>
+                      <test-case name="Smartsheet.Api.Internal.SheetDiscussionResourcesImplTest.TestCreateDiscussion" executed="True" result="Success" success="True" time="0.022" asserts="2" />
+                      <test-case name="Smartsheet.Api.Internal.SheetDiscussionResourcesImplTest.TestCreateDiscussionWithAttachment" executed="True" result="Success" success="True" time="0.012" asserts="3" />
+                      <test-case name="Smartsheet.Api.Internal.SheetDiscussionResourcesImplTest.TestGetDiscussion" executed="True" result="Success" success="True" time="0.010" asserts="3" />
+                      <test-case name="Smartsheet.Api.Internal.SheetDiscussionResourcesImplTest.TestListDiscussions" executed="True" result="Success" success="True" time="0.022" asserts="10" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="SheetResourcesImplTest" executed="True" result="Success" success="True" time="0.223" asserts="0">
+                    <results>
+                      <test-case name="Smartsheet.Api.Internal.SheetResourcesImplTest.TestAttachments" executed="True" result="Success" success="True" time="0.009" asserts="1" />
+                      <test-case name="Smartsheet.Api.Internal.SheetResourcesImplTest.TestColumns" executed="True" result="Success" success="True" time="0.007" asserts="1" />
+                      <test-case name="Smartsheet.Api.Internal.SheetResourcesImplTest.TestCreateSheet" executed="True" result="Success" success="True" time="0.021" asserts="0" />
+                      <test-case name="Smartsheet.Api.Internal.SheetResourcesImplTest.TestCreateSheetFromExisting" executed="True" result="Success" success="True" time="0.012" asserts="6" />
+                      <test-case name="Smartsheet.Api.Internal.SheetResourcesImplTest.TestDeleteSheet" executed="True" result="Success" success="True" time="0.009" asserts="0" />
+                      <test-case name="Smartsheet.Api.Internal.SheetResourcesImplTest.TestDiscussions" executed="True" result="Success" success="True" time="0.006" asserts="1" />
+                      <test-case name="Smartsheet.Api.Internal.SheetResourcesImplTest.TestGetSheet" executed="True" result="Success" success="True" time="0.016" asserts="2" />
+                      <test-case name="Smartsheet.Api.Internal.SheetResourcesImplTest.TestGetSheetAsExcel" executed="True" result="Success" success="True" time="0.012" asserts="3" />
+                      <test-case name="Smartsheet.Api.Internal.SheetResourcesImplTest.TestGetSheetAsPDF" executed="True" result="Success" success="True" time="0.078" asserts="6" />
+                      <test-case name="Smartsheet.Api.Internal.SheetResourcesImplTest.TestListSheets" executed="True" result="Success" success="True" time="0.015" asserts="1" />
+                      <test-case name="Smartsheet.Api.Internal.SheetResourcesImplTest.TestRows" executed="True" result="Success" success="True" time="0.008" asserts="1" />
+                      <test-case name="Smartsheet.Api.Internal.SheetResourcesImplTest.TestShares" executed="True" result="Success" success="True" time="0.007" asserts="1" />
+                      <test-case name="Smartsheet.Api.Internal.SheetResourcesImplTest.TestUpdateSheet" executed="True" result="Success" success="True" time="0.012" asserts="1" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="SheetRowResourcesImplTest" executed="True" result="Success" success="True" time="0.100" asserts="0">
+                    <results>
+                      <test-case name="Smartsheet.Api.Internal.SheetRowResourcesImplTest.TestAddRows" executed="True" result="Success" success="True" time="0.037" asserts="5" />
+                      <test-case name="Smartsheet.Api.Internal.SheetRowResourcesImplTest.TestGetRow" executed="True" result="Success" success="True" time="0.012" asserts="3" />
+                      <test-case name="Smartsheet.Api.Internal.SheetRowResourcesImplTest.TestMoveRowsToAnotherSheet" executed="True" result="Success" success="True" time="0.023" asserts="2" />
+                      <test-case name="Smartsheet.Api.Internal.SheetRowResourcesImplTest.TestSheetRowResourcesImpl" executed="True" result="Success" success="True" time="0.007" asserts="0" />
+                      <test-case name="Smartsheet.Api.Internal.SheetRowResourcesImplTest.TestUpdateRows" executed="True" result="Success" success="True" time="0.017" asserts="6" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="SmartsheetImplTest" executed="True" result="Success" success="True" time="0.120" asserts="0">
+                    <results>
+                      <test-case name="Smartsheet.Api.Internal.SmartsheetImplTest.TestFinalize" executed="True" result="Success" success="True" time="0.008" asserts="0" />
+                      <test-case name="Smartsheet.Api.Internal.SmartsheetImplTest.TestFolders" executed="True" result="Success" success="True" time="0.007" asserts="1" />
+                      <test-case name="Smartsheet.Api.Internal.SmartsheetImplTest.TestGetAccessToken" executed="True" result="Success" success="True" time="0.007" asserts="0" />
+                      <test-case name="Smartsheet.Api.Internal.SmartsheetImplTest.TestGetAssumedUser" executed="True" result="Success" success="True" time="0.006" asserts="0" />
+                      <test-case name="Smartsheet.Api.Internal.SmartsheetImplTest.TestGetBaseURI" executed="True" result="Success" success="True" time="0.007" asserts="0" />
+                      <test-case name="Smartsheet.Api.Internal.SmartsheetImplTest.TestGetHttpClient" executed="True" result="Success" success="True" time="0.006" asserts="0" />
+                      <test-case name="Smartsheet.Api.Internal.SmartsheetImplTest.TestGetJsonSerializer" executed="True" result="Success" success="True" time="0.006" asserts="0" />
+                      <test-case name="Smartsheet.Api.Internal.SmartsheetImplTest.TestHome" executed="True" result="Success" success="True" time="0.007" asserts="1" />
+                      <test-case name="Smartsheet.Api.Internal.SmartsheetImplTest.TestSearch" executed="True" result="Success" success="True" time="0.007" asserts="1" />
+                      <test-case name="Smartsheet.Api.Internal.SmartsheetImplTest.TestSetAccessToken" executed="True" result="Success" success="True" time="0.006" asserts="0" />
+                      <test-case name="Smartsheet.Api.Internal.SmartsheetImplTest.TestSetAssumedUser" executed="True" result="Success" success="True" time="0.006" asserts="0" />
+                      <test-case name="Smartsheet.Api.Internal.SmartsheetImplTest.TestSheets" executed="True" result="Success" success="True" time="0.007" asserts="1" />
+                      <test-case name="Smartsheet.Api.Internal.SmartsheetImplTest.TestSmartsheetImpl" executed="True" result="Success" success="True" time="0.007" asserts="0" />
+                      <test-case name="Smartsheet.Api.Internal.SmartsheetImplTest.TestTemplates" executed="True" result="Success" success="True" time="0.007" asserts="1" />
+                      <test-case name="Smartsheet.Api.Internal.SmartsheetImplTest.TestUsers" executed="True" result="Success" success="True" time="0.007" asserts="1" />
+                      <test-case name="Smartsheet.Api.Internal.SmartsheetImplTest.TestWorkspaces" executed="True" result="Success" success="True" time="0.007" asserts="1" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="TemplateResourcesImplTest" executed="True" result="Success" success="True" time="0.040" asserts="0">
+                    <results>
+                      <test-case name="Smartsheet.Api.Internal.TemplateResourcesImplTest.TestListPublicTemplates" executed="True" result="Success" success="True" time="0.019" asserts="7" />
+                      <test-case name="Smartsheet.Api.Internal.TemplateResourcesImplTest.TestListUserCreatedTemplates" executed="True" result="Success" success="True" time="0.011" asserts="7" />
+                      <test-case name="Smartsheet.Api.Internal.TemplateResourcesImplTest.TestTemplateResourcesImpl" executed="True" result="Success" success="True" time="0.007" asserts="0" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="UserResourcesImplTest" executed="True" result="Success" success="True" time="0.077" asserts="0">
+                    <results>
+                      <test-case name="Smartsheet.Api.Internal.UserResourcesImplTest.TestAddUser" executed="True" result="Success" success="True" time="0.016" asserts="5" />
+                      <test-case name="Smartsheet.Api.Internal.UserResourcesImplTest.TestDeleteUser" executed="True" result="Success" success="True" time="0.010" asserts="0" />
+                      <test-case name="Smartsheet.Api.Internal.UserResourcesImplTest.TestGetCurrentUser" executed="True" result="Success" success="True" time="0.012" asserts="4" />
+                      <test-case name="Smartsheet.Api.Internal.UserResourcesImplTest.TestListUsers" executed="True" result="Success" success="True" time="0.015" asserts="8" />
+                      <test-case name="Smartsheet.Api.Internal.UserResourcesImplTest.TestUpdateUser" executed="True" result="Success" success="True" time="0.011" asserts="2" />
+                      <test-case name="Smartsheet.Api.Internal.UserResourcesImplTest.TestUserResourcesImpl" executed="True" result="Success" success="True" time="0.007" asserts="0" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="UserSheetResourcesImplTest" executed="True" result="Success" success="True" time="0.013" asserts="0">
+                    <results>
+                      <test-case name="Smartsheet.Api.Internal.UserSheetResourcesImplTest.TestListAllOrgSheets" executed="True" result="Success" success="True" time="0.012" asserts="4" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="WorkspaceFolderResourcesImplTest" executed="True" result="Success" success="True" time="0.030" asserts="0">
+                    <results>
+                      <test-case name="Smartsheet.Api.Internal.WorkspaceFolderResourcesImplTest.TestCreateFolder" executed="True" result="Success" success="True" time="0.011" asserts="2" />
+                      <test-case name="Smartsheet.Api.Internal.WorkspaceFolderResourcesImplTest.TestListFolders" executed="True" result="Success" success="True" time="0.011" asserts="3" />
+                      <test-case name="Smartsheet.Api.Internal.WorkspaceFolderResourcesImplTest.TestWorkspaceFolderResourcesImpl" executed="True" result="Success" success="True" time="0.006" asserts="0" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="WorkspaceResourcesImplTest" executed="True" result="Success" success="True" time="0.095" asserts="0">
+                    <results>
+                      <test-case name="Smartsheet.Api.Internal.WorkspaceResourcesImplTest.TestCreateWorkspace" executed="True" result="Success" success="True" time="0.016" asserts="4" />
+                      <test-case name="Smartsheet.Api.Internal.WorkspaceResourcesImplTest.TestDeleteWorkspace" executed="True" result="Success" success="True" time="0.010" asserts="0" />
+                      <test-case name="Smartsheet.Api.Internal.WorkspaceResourcesImplTest.TestFolders" executed="True" result="Success" success="True" time="0.008" asserts="1" />
+                      <test-case name="Smartsheet.Api.Internal.WorkspaceResourcesImplTest.TestGetWorkspace" executed="True" result="Success" success="True" time="0.012" asserts="6" />
+                      <test-case name="Smartsheet.Api.Internal.WorkspaceResourcesImplTest.TestListWorkspaces" executed="True" result="Success" success="True" time="0.015" asserts="5" />
+                      <test-case name="Smartsheet.Api.Internal.WorkspaceResourcesImplTest.TestShares" executed="True" result="Success" success="True" time="0.008" asserts="1" />
+                      <test-case name="Smartsheet.Api.Internal.WorkspaceResourcesImplTest.TestUpdateWorkspace" executed="True" result="Success" success="True" time="0.012" asserts="4" />
+                      <test-case name="Smartsheet.Api.Internal.WorkspaceResourcesImplTest.TestWorkspaceResourcesImpl" executed="True" result="Success" success="True" time="0.008" asserts="0" />
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+              <test-suite type="Namespace" name="models" executed="True" result="Success" success="True" time="0.053" asserts="0">
+                <results>
+                  <test-suite type="TestFixture" name="AttachmentParentTypeTest" executed="True" result="Success" success="True" time="0.001" asserts="0">
+                    <results>
+                      <test-case name="Smartsheet.Api.models.AttachmentParentTypeTest.TestAttachmentParentType" executed="True" result="Success" success="True" time="0.001" asserts="4" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="AttachmentSubTypeTest" executed="True" result="Success" success="True" time="0.002" asserts="0">
+                    <results>
+                      <test-case name="Smartsheet.Api.models.AttachmentSubTypeTest.TestAttachmentSubType" executed="True" result="Success" success="True" time="0.001" asserts="6" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="AttachmentTypeTest" executed="True" result="Success" success="True" time="0.002" asserts="0">
+                    <results>
+                      <test-case name="Smartsheet.Api.models.AttachmentTypeTest.TestAttachmentType" executed="True" result="Success" success="True" time="0.001" asserts="7" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="ColumnTagTest" executed="True" result="Success" success="True" time="0.001" asserts="0">
+                    <results>
+                      <test-case name="Smartsheet.Api.models.ColumnTagTest.TestColumnTag" executed="True" result="Success" success="True" time="0.001" asserts="9" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="ColumnTypeTest" executed="True" result="Success" success="True" time="0.002" asserts="0">
+                    <results>
+                      <test-case name="Smartsheet.Api.models.ColumnTypeTest.TestColumnType" executed="True" result="Success" success="True" time="0.001" asserts="7" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="IdentifiableModelTest" executed="True" result="Success" success="True" time="0.004" asserts="0">
+                    <results>
+                      <test-case name="Smartsheet.Api.models.IdentifiableModelTest.TestEqualsObject" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                      <test-case name="Smartsheet.Api.models.IdentifiableModelTest.TestHashCode" executed="True" result="Success" success="True" time="0.002" asserts="3" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="LinkTypeTest" executed="True" result="Success" success="True" time="0.002" asserts="0">
+                    <results>
+                      <test-case name="Smartsheet.Api.models.LinkTypeTest.TestLinkType" executed="True" result="Success" success="True" time="0.001" asserts="4" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="PaginationParametersTest" executed="True" result="Success" success="True" time="0.007" asserts="0">
+                    <results>
+                      <test-case name="Smartsheet.Api.models.PaginationParametersTest.testPaginationParameters" executed="True" result="Success" success="True" time="0.001" asserts="3" />
+                      <test-case name="Smartsheet.Api.models.PaginationParametersTest.testToHashMap" executed="True" result="Success" success="True" time="0.002" asserts="14" />
+                      <test-case name="Smartsheet.Api.models.PaginationParametersTest.testToQueryString" executed="True" result="Success" success="True" time="0.001" asserts="3" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="PaperSizeTest" executed="True" result="Success" success="True" time="0.002" asserts="0">
+                    <results>
+                      <test-case name="Smartsheet.Api.models.PaperSizeTest.TestPaperSize" executed="True" result="Success" success="True" time="0.001" asserts="10" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="RowTest" executed="True" result="Success" success="True" time="0.003" asserts="0">
+                    <results>
+                      <test-case name="Smartsheet.Api.models.RowTest.TestGetColumnByIndex" executed="True" result="Success" success="True" time="0.002" asserts="8" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="SheetEmailFormatTest" executed="True" result="Success" success="True" time="0.002" asserts="0">
+                    <results>
+                      <test-case name="Smartsheet.Api.models.SheetEmailFormatTest.TestSheetEmail" executed="True" result="Success" success="True" time="0.001" asserts="3" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="SheetTest" executed="True" result="Success" success="True" time="0.004" asserts="0">
+                    <results>
+                      <test-case name="Smartsheet.Api.models.SheetTest.TestGetRowByRowNumber" executed="True" result="Success" success="True" time="0.003" asserts="3" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="SymbolTest" executed="True" result="Success" success="True" time="0.001" asserts="0">
+                    <results>
+                      <test-case name="Smartsheet.Api.models.SymbolTest.TestSymbol" executed="True" result="Success" success="True" time="0.001" asserts="5" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="SystemColumnTypeTest" executed="True" result="Success" success="True" time="0.002" asserts="0">
+                    <results>
+                      <test-case name="Smartsheet.Api.models.SystemColumnTypeTest.TestSystemColumnType" executed="True" result="Success" success="True" time="0.001" asserts="6" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="UserStatusTest" executed="True" result="Success" success="True" time="0.002" asserts="0">
+                    <results>
+                      <test-case name="Smartsheet.Api.models.UserStatusTest.TestUserStatus" executed="True" result="Success" success="True" time="0.001" asserts="4" />
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+              <test-suite type="Namespace" name="Models" executed="True" result="Success" success="True" time="0.002" asserts="0">
+                <results>
+                  <test-suite type="TestFixture" name="AccessLevelTest" executed="True" result="Success" success="True" time="0.001" asserts="0">
+                    <results>
+                      <test-case name="Smartsheet.Api.Models.AccessLevelTest.TestAccessLevel" executed="True" result="Success" success="True" time="0.001" asserts="6" />
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+              <test-suite type="Namespace" name="OAuth" executed="True" result="Success" success="True" time="0.003" asserts="0">
+                <results>
+                  <test-suite type="TestFixture" name="OAuthTokenExceptionTest" executed="True" result="Success" success="True" time="0.003" asserts="0">
+                    <results>
+                      <test-case name="Smartsheet.Api.OAuth.OAuthTokenExceptionTest.TestOAuthTokenExceptionString" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                      <test-case name="Smartsheet.Api.OAuth.OAuthTokenExceptionTest.TestOAuthTokenExceptionStringThrowable" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+              <test-suite type="TestFixture" name="ResourceNotFoundExceptionTest" executed="True" result="Success" success="True" time="0.002" asserts="0">
+                <results>
+                  <test-case name="Smartsheet.Api.ResourceNotFoundExceptionTest.TestResourceNotFoundException" executed="True" result="Success" success="True" time="0.001" asserts="2" />
+                </results>
+              </test-suite>
+              <test-suite type="TestFixture" name="ServiceUnavailableExceptionTest" executed="True" result="Success" success="True" time="0.002" asserts="0">
+                <results>
+                  <test-case name="Smartsheet.Api.ServiceUnavailableExceptionTest.TestServiceUnavailableException" executed="True" result="Success" success="True" time="0.001" asserts="2" />
+                </results>
+              </test-suite>
+              <test-suite type="TestFixture" name="SmartsheetBuilderTest" executed="True" result="Success" success="True" time="0.017" asserts="0">
+                <results>
+                  <test-case name="Smartsheet.Api.SmartsheetBuilderTest.TestBuild" executed="True" result="Success" success="True" time="0.015" asserts="1" />
+                  <test-case name="Smartsheet.Api.SmartsheetBuilderTest.TestSetHttpClient" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="Smartsheet.Api.SmartsheetBuilderTest.TestSmartsheetBuilder" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                </results>
+              </test-suite>
+              <test-suite type="TestFixture" name="SmartsheetExceptionTest" executed="True" result="Success" success="True" time="0.005" asserts="0">
+                <results>
+                  <test-case name="Smartsheet.Api.SmartsheetExceptionTest.TestSmartsheetExceptionException" executed="True" result="Success" success="True" time="0.001" asserts="2" />
+                  <test-case name="Smartsheet.Api.SmartsheetExceptionTest.TestSmartsheetExceptionString" executed="True" result="Success" success="True" time="0.001" asserts="2" />
+                  <test-case name="Smartsheet.Api.SmartsheetExceptionTest.TestSmartsheetExceptionStringThrowable" executed="True" result="Success" success="True" time="0.001" asserts="3" />
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+      <test-suite type="Namespace" name="TestSDK" executed="True" result="Success" success="True" time="0.038" asserts="0">
+        <results>
+          <test-suite type="Namespace" name="Smartsheet" executed="True" result="Success" success="True" time="0.037" asserts="0">
+            <results>
+              <test-suite type="Namespace" name="Api" executed="True" result="Success" success="True" time="0.037" asserts="0">
+                <results>
+                  <test-suite type="Namespace" name="Internal" executed="True" result="Success" success="True" time="0.037" asserts="0">
+                    <results>
+                      <test-suite type="Namespace" name="Util" executed="True" result="Success" success="True" time="0.037" asserts="0">
+                        <results>
+                          <test-suite type="TestFixture" name="QueryStringBuilderTest" executed="True" result="Success" success="True" time="0.014" asserts="0">
+                            <results>
+                              <test-case name="TestSDK.Smartsheet.Api.Internal.Util.QueryStringBuilderTest.AddParamenter_NotEmptyValueParameterAdded_CharacterBeforeValueIsEquals" executed="True" result="Success" success="True" time="0.002" asserts="1" />
+                              <test-case name="TestSDK.Smartsheet.Api.Internal.Util.QueryStringBuilderTest.AddParamenter_NotEmptyValueParameterAdded_ValueIsAtEndOfQueryString" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="TestSDK.Smartsheet.Api.Internal.Util.QueryStringBuilderTest.AddParamenter_OneEmptyValueParameter_ParameterNameIsAfterQuestionMark" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="TestSDK.Smartsheet.Api.Internal.Util.QueryStringBuilderTest.AddParamenter_OneEmptyValueParameterAdded_LastCharacterIsEquals" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="TestSDK.Smartsheet.Api.Internal.Util.QueryStringBuilderTest.AddParamenter_WhenNoParametersWereAdded_QueryStringFirstCharacterIsquestionMark" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="TestSDK.Smartsheet.Api.Internal.Util.QueryStringBuilderTest.AddParamenter_WhenNoParametersWereAdded_QueryStringValueIsUrlEncoded" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="TestSDK.Smartsheet.Api.Internal.Util.QueryStringBuilderTest.AddParameter_FirstParameterNotEmptySecondParameterEmptyValue_CharacterBeforeEndParameterIsAmpersand" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="TestSDK.Smartsheet.Api.Internal.Util.QueryStringBuilderTest.AddParameter_FirstParameterNotEmptySecondParameterEmptyValue_EndsWidtEqul" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="TestSDK.Smartsheet.Api.Internal.Util.QueryStringBuilderTest.WhenNoParametersAreAdded_QueryStringIsEmpty" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="QueryUtilTest" executed="True" result="Success" success="True" time="0.020" asserts="0">
+                            <results>
+                              <test-case name="TestSDK.Smartsheet.Api.Internal.Util.QueryUtilTest.TestGenerateCommaSeparatedList" executed="True" result="Success" success="True" time="0.017" asserts="3" />
+                              <test-case name="TestSDK.Smartsheet.Api.Internal.Util.QueryUtilTest.TestGenerateUrl" executed="True" result="Success" success="True" time="0.001" asserts="4" />
+                            </results>
+                          </test-suite>
+                        </results>
+                      </test-suite>
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>
