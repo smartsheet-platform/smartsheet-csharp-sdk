@@ -12,9 +12,9 @@ namespace IntegrationTestSDK
 		[TestMethod]
 		public void TestSheetCopyResources()
 		{
-			string accessToken = ConfigurationManager.AppSettings["testAccessToken"];
+			string accessToken = ConfigurationManager.AppSettings["accessToken"];
 
-			SmartsheetClient smartsheet = new SmartsheetBuilder().SetAccessToken(accessToken).SetBaseURI("https://api.test.smartsheet.com/2.0/").Build();
+			SmartsheetClient smartsheet = new SmartsheetBuilder().SetAccessToken(accessToken).Build();
 			// Before
 			// Sheet
 			// Folder

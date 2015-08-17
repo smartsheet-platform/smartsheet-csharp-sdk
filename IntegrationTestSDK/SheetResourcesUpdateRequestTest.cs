@@ -15,9 +15,9 @@ namespace IntegrationTestSDK
 		[TestMethod]
 		public void TestSheetUpdateRequestResources()
 		{
-			string accessToken = ConfigurationManager.AppSettings["testAccessToken"];
+			string accessToken = ConfigurationManager.AppSettings["accessToken"];
 
-			SmartsheetClient smartsheet = new SmartsheetBuilder().SetAccessToken(accessToken).SetBaseURI("https://api.test.smartsheet.com/2.0/").Build();
+			SmartsheetClient smartsheet = new SmartsheetBuilder().SetAccessToken(accessToken).Build();
 
 			long sheetId = CreateSheet(smartsheet);
 
@@ -33,6 +33,7 @@ namespace IntegrationTestSDK
 				RowIds = rowIds,
 				IncludeAttachments = true,
 				IncludeDiscussions = true,
+				CcMe = true,
 				SendTo = new Recipient[]
 				{
 					new Recipient

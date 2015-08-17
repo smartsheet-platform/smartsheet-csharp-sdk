@@ -13,9 +13,9 @@ namespace IntegrationTestSDK
 		[TestMethod]
 		public void TestRowResources()
 		{
-			string accessToken = ConfigurationManager.AppSettings["testAccessToken"];
+			string accessToken = ConfigurationManager.AppSettings["accessToken"];
 
-			SmartsheetClient smartsheet = new SmartsheetBuilder().SetAccessToken(accessToken).SetBaseURI("https://api.test.smartsheet.com/2.0/").Build();
+			SmartsheetClient smartsheet = new SmartsheetBuilder().SetAccessToken(accessToken).Build();
 
 			long templateId = smartsheet.TemplateResources.ListPublicTemplates(null).Data[0].Id.Value;
 			long sheetId = CreateSheetFromTemplate(smartsheet, templateId);
@@ -28,6 +28,20 @@ namespace IntegrationTestSDK
 			long rowId = AddRows(smartsheet, sheetId, columnId, cellsToAdd);
 
 			CopyRowToCreatedSheet(smartsheet, sheetId, rowId);
+
+			MultiRowEmail multiRowEmail = new MultiRowEmail
+			{
+				SendTo = new Recipient[] { new Recipient { Email = "ericyan99@outlook.com" } },
+				Subject = "some subject",
+				Message = "some message",
+				CcMe = false,
+				RowIds = new long[] { rowId },
+				ColumnIds = new long[] { columnId },
+				IncludeAttachments = false,
+				IncludeDiscussions = false
+			};
+
+			smartsheet.SheetResources.RowResources.SendRows(sheetId, multiRowEmail);
 
 			DeleteRowAndGetRow(smartsheet, sheetId, rowId);
 

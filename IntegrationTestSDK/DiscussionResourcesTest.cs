@@ -45,7 +45,7 @@ namespace IntegrationTestSDK
 			long rowId = rows[0].Id.Value;
 			Comment comment = new Comment.AddCommentBuilder("a comment!").Build();
 			Discussion discussionToCreateOnRow = new Discussion.CreateDiscussionBuilder("discussion on row", comment).Build();
-			Discussion discussionCreatedOnRow = smartsheet.SheetResources.RowResources.DiscussionResources.CreateDiscussion(sheetId, rowId, discussionToCreateOnRow);
+			Discussion discussionCreatedOnRow = smartsheet.SheetResources.RowResources.DiscussionResources.CreateDiscussionWithAttachment(sheetId, rowId, discussionToCreateOnRow, path, null);
 			PaginatedResult<Discussion> discussionsOnRow = smartsheet.SheetResources.RowResources.DiscussionResources
 			.ListDiscussions(sheetId, rowId, new DiscussionInclusion[] { DiscussionInclusion.COMMENTS }, null);
 			Assert.IsTrue(discussionsOnRow.Data.Count == 1);

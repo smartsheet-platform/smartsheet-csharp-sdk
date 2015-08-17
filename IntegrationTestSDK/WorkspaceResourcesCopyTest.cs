@@ -13,9 +13,9 @@ namespace IntegrationTestSDK
 		[TestMethod]
 		public void TestWorkspaceCopyResources()
 		{
-			string accessToken = ConfigurationManager.AppSettings["testAccessToken"];
+			string accessToken = ConfigurationManager.AppSettings["accessToken"];
 
-			SmartsheetClient smartsheet = new SmartsheetBuilder().SetAccessToken(accessToken).SetBaseURI("https://api.test.smartsheet.com/2.0/").Build();
+			SmartsheetClient smartsheet = new SmartsheetBuilder().SetAccessToken(accessToken).Build();
 			// Before
 			// Workspace1
 			// Folder2
@@ -35,7 +35,7 @@ namespace IntegrationTestSDK
 				//DestinationType = DestinationType.FOLDER,
 				NewName = "Workspace1Copy"
 			};
-			Folder newCopiedWorkspace = smartsheet.WorkspaceResources.CopyWorkspace(workspaceId, destination, new WorkspaceCopyInclusion[] { WorkspaceCopyInclusion.ALL }, null);
+			Folder newCopiedWorkspace = smartsheet.WorkspaceResources.CopyWorkspace(workspaceId, destination, new WorkspaceCopyInclusion[] { WorkspaceCopyInclusion.ALL }, new WorkspaceRemapExclusion[] { WorkspaceRemapExclusion.CELL_LINKS });
 
 			Assert.IsTrue(newCopiedWorkspace.Name == "Workspace1Copy");
 

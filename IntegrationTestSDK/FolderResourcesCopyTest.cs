@@ -12,9 +12,9 @@ namespace IntegrationTestSDK
 		[TestMethod]
 		public void TestFolderCopyResources()
 		{
-			string accessToken = ConfigurationManager.AppSettings["testAccessToken"];
+			string accessToken = ConfigurationManager.AppSettings["accessToken"];
 
-			SmartsheetClient smartsheet = new SmartsheetBuilder().SetAccessToken(accessToken).SetBaseURI("https://api.test.smartsheet.com/2.0/").Build();
+			SmartsheetClient smartsheet = new SmartsheetBuilder().SetAccessToken(accessToken).Build();
 			// Before
 			// Folder1-----SubFolder1
 			// Folder2
@@ -33,7 +33,7 @@ namespace IntegrationTestSDK
 				DestinationType = DestinationType.FOLDER,
 				NewName = "SubFolder1Copy"
 			};
-			Folder newCopiedFolder = smartsheet.FolderResources.CopyFolder(createdFolderInFolderId, destination, new FolderCopyInclusion[] { FolderCopyInclusion.ALL }, null);
+			Folder newCopiedFolder = smartsheet.FolderResources.CopyFolder(createdFolderInFolderId, destination, new FolderCopyInclusion[] { FolderCopyInclusion.ALL }, new FolderRemapExclusion[] { FolderRemapExclusion.CELL_LINKS });
 
 			Assert.IsTrue(newCopiedFolder.Name == "SubFolder1Copy");
 

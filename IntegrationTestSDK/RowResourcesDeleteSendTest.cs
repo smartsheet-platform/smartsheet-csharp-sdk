@@ -13,9 +13,9 @@ namespace IntegrationTestSDK
 		[TestMethod]
 		public void TestRowDeleteSendResources()
 		{
-			string accessToken = ConfigurationManager.AppSettings["testAccessToken"];
+			string accessToken = ConfigurationManager.AppSettings["accessToken"];
 
-			SmartsheetClient smartsheet = new SmartsheetBuilder().SetAccessToken(accessToken).SetBaseURI("https://api.test.smartsheet.com/2.0/").Build();
+			SmartsheetClient smartsheet = new SmartsheetBuilder().SetAccessToken(accessToken).Build();
 
 			long templateId = smartsheet.TemplateResources.ListPublicTemplates(null).Data[0].Id.Value;
 

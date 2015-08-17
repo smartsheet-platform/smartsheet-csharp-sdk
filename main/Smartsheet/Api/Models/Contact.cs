@@ -22,7 +22,8 @@ namespace Smartsheet.Api.Models
 {
 
 	/// <summary>
-	/// Represents a user’s personal contact in Smartsheet
+	/// Represents a user’s personal 
+	/// in Smartsheet
 	/// <seealso href="http://help.smartsheet.com/customer/portal/articles/796143-managing-contacts">Managing contacts</seealso>
 	/// </summary>
 	public class Contact : NamedModel
