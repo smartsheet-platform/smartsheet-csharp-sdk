@@ -208,11 +208,11 @@ namespace Smartsheet.Api.Internal
 
 
 		/// <summary>
-		/// <para>Sends a Row via email.</para>
-		/// <para>It mirrors To the following Smartsheet REST API method: POST /sheets/{sheetId}/rows/{rowId}/emails</para>
+		/// <para>Sends one or more Rows via email.</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: POST /sheets/{sheetId}/rows/emails</para>
 		/// </summary>
 		/// <param name="sheetId"> The sheet Id </param>
-		/// <param name="email"> The email. The columns included for each row in the email will be populated according to the following rules: 
+		/// <param name="email"> The email. The columns included for each row in the email will be populated according to the following rules:
 		/// <list type="bullet">
 		/// <item><description>
 		/// If the columnIds attribute of the MultiRowEmail object is specified as an array of column IDs, those specific columns will be included.
