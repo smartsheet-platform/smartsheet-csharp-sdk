@@ -29,6 +29,14 @@ namespace IntegrationTestSDK
 
 			CopyRowToCreatedSheet(smartsheet, sheetId, rowId);
 
+			SendRows(smartsheet, sheetId, columnId, rowId);
+
+			DeleteRowAndGetRow(smartsheet, sheetId, rowId);
+
+		}
+
+		private static void SendRows(SmartsheetClient smartsheet, long sheetId, long columnId, long rowId)
+		{
 			MultiRowEmail multiRowEmail = new MultiRowEmail
 			{
 				SendTo = new Recipient[] { new Recipient { Email = "ericyan99@outlook.com" } },
@@ -42,9 +50,6 @@ namespace IntegrationTestSDK
 			};
 
 			smartsheet.SheetResources.RowResources.SendRows(sheetId, multiRowEmail);
-
-			DeleteRowAndGetRow(smartsheet, sheetId, rowId);
-
 		}
 
 		private static void DeleteRowAndGetRow(SmartsheetClient smartsheet, long sheetId, long rowId)
