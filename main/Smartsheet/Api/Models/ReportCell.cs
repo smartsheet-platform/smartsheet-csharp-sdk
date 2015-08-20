@@ -23,6 +23,9 @@ using System.Text;
 
 namespace Smartsheet.Api.Models
 {
+	/// <summary>
+	/// The Cell object of a Report.
+	/// </summary>
 	public class ReportCell : Cell
 	{
 		/// <summary>

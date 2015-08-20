@@ -31,7 +31,7 @@ namespace Smartsheet.Api.Models
 
 		/// <summary>
 		/// Represents the Text for the Comment. </summary>
-		[DataMember(Name="operator")]
+		[DataMember(Name = "operator")]
 		private CriteriaOperator? operatorCriteria;
 
 		/// <summary>

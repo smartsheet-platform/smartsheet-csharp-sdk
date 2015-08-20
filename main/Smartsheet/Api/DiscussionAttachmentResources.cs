@@ -22,6 +22,11 @@ namespace Smartsheet.Api
 {
 	using Smartsheet.Api.Models;
 
+	/// <summary>
+	/// <para>This interface provides methods To access Attachment resources that are associated to Discussion resources.</para>
+	/// 
+	/// <para>Thread Safety: Implementation of this interface must be thread safe.</para>
+	/// </summary>
 	public interface DiscussionAttachmentResources
 	{
 		/// <summary>

@@ -251,6 +251,57 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
 		/// <param name="path"> the relative path of the resource collections </param>
+		/// <param name="object"> the object To create </param>
+		/// <returns> the created resource </returns>
+		/// <exception cref="SmartsheetException"> the SmartsheetClient exception </exception>
+		protected internal virtual S CreateResource<S, T>(string path, T @object)
+		{
+			Utils.ThrowIfNull(path, @object);
+			Utils.ThrowIfEmpty(path);
+
+			HttpRequest request = null;
+			try
+			{
+				request = CreateHttpRequest(new Uri(smartsheet.BaseURI, path), HttpMethod.POST);
+			}
+			catch (Exception e)
+			{
+				throw new SmartsheetException(e);
+			}
+
+			request.Entity = serializeToEntity<T>(@object);
+
+			HttpResponse response = this.smartsheet.HttpClient.Request(request);
+
+			Object obj = null;
+			switch (response.StatusCode)
+			{
+				case HttpStatusCode.OK:
+					obj = this.smartsheet.JsonSerializer.deserialize<S>(
+						response.Entity.GetContent());
+					break;
+				default:
+					HandleError(response);
+					break;
+			}
+
+			smartsheet.HttpClient.ReleaseConnection();
+
+			return (S)obj;
+		}
+
+		/// <summary>
+		/// Create a resource using SmartsheetClient REST API.
+		/// 
+		/// Exceptions: 
+		///   IllegalArgumentException : if any argument is null, or path is empty string
+		///   InvalidRequestException : if there is any problem with the REST API request
+		///   AuthorizationException : if there is any problem with the REST API authorization(access token)
+		///   ServiceUnavailableException : if the REST API service is not available (possibly due To rate limiting)
+		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
+		///   SmartsheetException : if there is any other error occurred during the operation
+		/// </summary>
+		/// <param name="path"> the relative path of the resource collections </param>
 		/// <param name="objectClass"> the resource object class </param>
 		/// <param name="object"> the object To create </param>
 		/// <returns> the created resource </returns>
@@ -401,7 +452,6 @@ namespace Smartsheet.Api.Internal
 		///   SmartsheetException : if there is any other error occurred during the operation
 		/// </summary>
 		/// <param name="path"> the relative path of the resource collections </param>
-		/// <param name="objectClass"> the resource object class </param>
 		/// <returns> the resources </returns>
 		/// <exception cref="SmartsheetException"> if an error occurred during the operation </exception>
 		protected internal virtual PaginatedResult<T> ListResourcesWithWrapper<T>(string path)
@@ -485,6 +535,51 @@ namespace Smartsheet.Api.Internal
 			smartsheet.HttpClient.ReleaseConnection();
 
 			return obj;
+		}
+
+		/// <summary>
+		/// Delete a resource from SmartsheetClient REST API.
+		/// 
+		/// Exceptions:
+		///   IllegalArgumentException : if any argument is null, or path is empty string
+		///   InvalidRequestException : if there is any problem with the REST API request
+		///   AuthorizationException : if there is any problem with the REST API authorization(access token)
+		///   ResourceNotFoundException : if the resource can not be found
+		///   ServiceUnavailableException : if the REST API service is not available (possibly due To rate limiting)
+		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
+		///   SmartsheetException : if there is any other error occurred during the operation
+		/// </summary>
+		/// <param name="path"> the relative path of the resource </param>
+		/// <exception cref="SmartsheetException"> the SmartsheetClient exception </exception>
+		protected internal virtual T DeleteResource<T>(string path)
+		{
+			Utils.ThrowIfNull(path);
+			Utils.ThrowIfEmpty(path);
+
+			HttpRequest request = null;
+			try
+			{
+				request = CreateHttpRequest(new Uri(smartsheet.BaseURI, path), HttpMethod.DELETE);
+			}
+			catch (Exception e)
+			{
+				throw new SmartsheetException(e);
+			}
+			HttpResponse response = this.smartsheet.HttpClient.Request(request);
+			Object obj = null;
+			switch (response.StatusCode)
+			{
+				case HttpStatusCode.OK:
+					obj = this.smartsheet.JsonSerializer.deserializeResult<T>(response.Entity.GetContent()).Result;
+					break;
+				default:
+					HandleError(response);
+					break;
+			}
+
+			smartsheet.HttpClient.ReleaseConnection();
+
+			return (T)obj;
 		}
 
 		/// <summary>

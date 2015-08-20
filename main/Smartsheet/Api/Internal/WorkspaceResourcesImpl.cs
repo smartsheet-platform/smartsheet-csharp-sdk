@@ -99,7 +99,7 @@ namespace Smartsheet.Api.Internal
 		/// <para>If no Folders, Sheets, Reports, or Templates are present in the Workspace, the corresponding attribute 
 		/// (e.g., "folders", "sheets") will not be present in the response object.</para></remarks>
 		/// </summary>
-		/// <param name="workspaceid">the workspace id</param>
+		/// <param name="workspaceId">the workspace id</param>
 		/// <param name="loadAll"> Defaults to false. If true, loads all of the contents, including nested Folders. </param>
 		/// <param name="include"> When specified with a value of "source", response will include the source for any sheet that was created from another sheet or template</param>
 		/// <returns> the workspace (note that if there is no such resource, this method will throw ResourceNotFoundException
@@ -170,9 +170,44 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual void DeleteWorkspace(long id)
+		public virtual void DeleteWorkspace(long workspaceId)
 		{
-			this.DeleteResource<Workspace>("workspaces/" + id, typeof(Workspace));
+			this.DeleteResource<Workspace>("workspaces/" + workspaceId, typeof(Workspace));
+		}
+
+		/// <summary>
+		/// <para>Creates a copy of the specified Workspace.</para>
+		/// <para>It mirrors To the following Smartsheet REST API method:<br />
+		/// POST /workspaces/{workspaceId}/copy</para>
+		/// </summary>
+		/// <param name="workspaceId"> the workspace Id </param>
+		/// <param name="destination"> the destination to copy to </param>
+		/// <param name="include"> the elements to copy. Note: Cell history will not be copied, regardless of which include parameter values are specified.</param>
+		/// <param name="skipRemap"> the references to NOT re-map for the newly created folder
+		/// <para>
+		/// If "cellLinks" is specified in the skipRemap parameter value, the cell links within the newly created folder will continue to point to the original source sheets.
+		/// If "reports" is specified in the skipRemap parameter value, the reports within the newly created folder will continue to point to the original source sheets.
+		/// </para>
+		/// </param>
+		/// <returns> the created workspace </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public virtual Workspace CopyWorkspace(long workspaceId, ContainerDestination destination, IEnumerable<WorkspaceCopyInclusion> include, IEnumerable<WorkspaceRemapExclusion> skipRemap)
+		{
+			IDictionary<string, string> parameters = new Dictionary<string, string>();
+			if (include != null)
+			{
+				parameters.Add("include", QueryUtil.GenerateCommaSeparatedList(include));
+			}
+			if (skipRemap != null)
+			{
+				parameters.Add("skipRemap", QueryUtil.GenerateCommaSeparatedList(skipRemap));
+			}
+			return this.CreateResource<RequestResult<Workspace>, ContainerDestination>(QueryUtil.GenerateUrl("workspaces/" + workspaceId + "/copy", parameters), destination).Result;
 		}
 
 		/// <summary>
@@ -213,5 +248,4 @@ namespace Smartsheet.Api.Internal
 			}
 		}
 	}
-
 }

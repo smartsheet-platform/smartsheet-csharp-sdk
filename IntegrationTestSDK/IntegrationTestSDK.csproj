@@ -57,7 +57,14 @@
     <Compile Include="CellResourcesTest.cs" />
     <Compile Include="ColumnResourcesTest.cs" />
     <Compile Include="AttachmentResourcesTest.cs" />
+    <Compile Include="ContactResourcesTest.cs" />
     <Compile Include="CommentResourcesTest.cs" />
+    <Compile Include="RowResourcesDeleteSendTest.cs" />
+    <Compile Include="SheetResourcesCopyTest.cs" />
+    <Compile Include="SheetResourcesMoveTest.cs" />
+    <Compile Include="SheetResourcesUpdateRequestTest.cs" />
+    <Compile Include="FolderResourcesCopyTest.cs" />
+    <Compile Include="FolderResourcesMoveTest.cs" />
     <Compile Include="TokenResourcesTest.cs" />
     <Compile Include="ServerInformationResourcesTest.cs" />
     <Compile Include="ShareResourcesTest.cs" />
@@ -72,6 +79,7 @@
     <Compile Include="FolderResourcesTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SheetResourcesTest.cs" />
+    <Compile Include="WorkspaceResourcesCopyTest.cs" />
     <Compile Include="WorkspaceResourcesTest.cs" />
   </ItemGroup>
   <ItemGroup>

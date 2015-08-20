@@ -211,6 +211,14 @@ namespace Smartsheet.Api.Internal
 		/// </summary>
 		private TokenResources tokens;
 
+		/// <summary>
+		/// Represents the AtomicReference To ContactResources.
+		/// 
+		/// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
+		/// as null, and will be initialized To non-null at the first time it is accessed via corresponding getter, therefore
+		/// effectively the underlying Value is lazily created in a thread safe manner.
+		/// </summary>
+		private ContactResources contacts;
 
 		/// <summary>
 		/// Represents the AtomicReference for assumed user Email.
@@ -533,6 +541,19 @@ namespace Smartsheet.Api.Internal
 			{
 				Interlocked.CompareExchange<TokenResources>(ref tokens, new TokenResourcesImpl(this), null);
 				return tokens;
+			}
+		}
+
+		/// <summary>
+		/// Returns the ContactResources instance that provides access To contacts resources.
+		/// </summary>
+		/// <returns> the contacts resources </returns>
+		public ContactResources ContactResources
+		{
+			get
+			{
+				Interlocked.CompareExchange<ContactResources>(ref contacts, new ContactResourcesImpl(this), null);
+				return contacts;
 			}
 		}
 

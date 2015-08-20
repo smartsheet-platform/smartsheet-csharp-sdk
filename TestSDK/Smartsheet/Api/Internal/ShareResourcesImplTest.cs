@@ -142,8 +142,8 @@ namespace Smartsheet.Api.Internal
 		public virtual void TestUpdateShare()
 		{
 			server.setResponseBody("../../../TestSDK/resources/updateShare.json");
-			Share share = new Share.UpdateShareBuilder(AccessLevel.VIEWER).Build();
-			Share newShare = shareResourcesImpl.UpdateShare(1234L, "12dfgfg34sdf54L", share);
+			Share share = new Share.UpdateShareBuilder("12dfgfg34sdf54L", AccessLevel.VIEWER).Build();
+			Share newShare = shareResourcesImpl.UpdateShare(1234L, share);
 			Assert.AreEqual(share.AccessLevel, newShare.AccessLevel);
 			Assert.AreEqual(newShare.UserId, 1539725208119172);
 		}

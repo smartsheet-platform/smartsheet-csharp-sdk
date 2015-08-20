@@ -22,7 +22,7 @@ namespace Smartsheet.Api.Models
 	/// <summary>
 	/// Represents the Report object.
 	/// </summary>
-	public class Report:AbstractSheet<ReportRow, ReportColumn, ReportCell>
+	public class Report : AbstractSheet<ReportRow, ReportColumn, ReportCell>
 	{
 		private IList<Sheet> _sourceSheet;
 

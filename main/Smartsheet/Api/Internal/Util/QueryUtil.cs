@@ -7,10 +7,24 @@ using System.Text.RegularExpressions;
 
 namespace Smartsheet.Api.Internal.Util
 {
-	public class QueryUtil
+	/// <summary>
+	/// Generates string queries.
+	/// </summary>
+	public static class QueryUtil
 	{
-		public QueryUtil() { }
+		//public QueryUtil() { }
 
+		/// <summary>
+		/// <para>
+		/// Generates a string of camelCase words each separated by a comma.
+		/// </para>
+		/// <para>
+		/// For example, an input array of {DISCUSSIONS, COLUMN_TYPE} would output a string of "discussions,columnType".
+		/// </para>
+		/// </summary>
+		/// <typeparam name="T">The Type of the list</typeparam>
+		/// <param name="include">the list of object</param>
+		/// <returns>the comma separated list of words</returns>
 		public static string GenerateCommaSeparatedList<T>(IEnumerable<T> include)
 		{
 			if (include == null)
@@ -43,6 +57,12 @@ namespace Smartsheet.Api.Internal.Util
 			return string.Join(",", includesList);
 		}
 
+		/// <summary>
+		/// Generates a url based on the baseUrl and parameters.
+		/// </summary>
+		/// <param name="baseUrl">the baseUrl</param>
+		/// <param name="parameters">the parameters</param>
+		/// <returns>the generated url</returns>
 		public static string GenerateUrl(string baseUrl, IDictionary<string, string> parameters)
 		{
 			if (baseUrl == null)
@@ -56,14 +76,13 @@ namespace Smartsheet.Api.Internal.Util
 
 			return result.ToString();
 		}
-
-		/**
-		 * Returns a query string.
-		 *
-		 * @param parameters the map of query string keys and values
-		 * @return the query string
-		 */
-		protected static string GenerateQueryString(IDictionary<string, string> parameters)
+		
+		/// <summary>
+		/// Generates a query string.
+		/// </summary>
+		/// <param name="parameters">the map of query string keys and values</param>
+		/// <returns>the qery string</returns>
+		public static string GenerateQueryString(IDictionary<string, string> parameters)
 		{
 			StringBuilder result = new StringBuilder();
 

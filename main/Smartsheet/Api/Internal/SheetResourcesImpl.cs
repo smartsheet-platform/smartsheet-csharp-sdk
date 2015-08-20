@@ -221,9 +221,9 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual void GetSheetAsExcel(long id, BinaryWriter outputStream)
+		public virtual void GetSheetAsExcel(long sheetId, BinaryWriter outputStream)
 		{
-			GetSheetAsFile(id, null, outputStream, "application/vnd.ms-excel");
+			GetSheetAsFile(sheetId, null, outputStream, "application/vnd.ms-excel");
 		}
 
 		/// <summary>
@@ -232,9 +232,9 @@ namespace Smartsheet.Api.Internal
 		/// <para>It mirrors To the following Smartsheet REST API method:<br />
 		/// GET /sheets/{sheetId} with "application/pdf" Accept HTTP header</para>
 		/// </summary>
-		/// <param name="id"> the Id of the sheet </param>
-		/// <param name="outputStream"> the output stream To which the PDF file will be written. </param>
-		/// <param name="paperSize"> the paper size </param>
+		/// <param name="sheetId">the Id of the sheet</param>
+		/// <param name="outputStream">the output stream To which the PDF file will be written.</param>
+		/// <param name="paperSize">the paper size</param>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
@@ -252,7 +252,7 @@ namespace Smartsheet.Api.Internal
 		/// <para>It mirrors To the following Smartsheet REST API method:<br />
 		/// GET /sheets/{sheetId} with "text/csv" Accept HTTP header</para>
 		/// </summary>
-		/// <param name="id"> the Id of the sheet </param>
+		/// <param name="sheetId">the Id of the sheet</param>
 		/// <param name="outputStream"> the output stream To which the CSV file will be written. </param>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -425,7 +425,69 @@ namespace Smartsheet.Api.Internal
 		}
 
 		/// <summary>
-		/// Return the ShareResources object that provides access To Share resources associated with Sheet resources.
+		/// <para>Creates an Update Request for the specified Row(s) within the Sheet. An email notification
+		/// (containing a link to the update request) will be asynchronously sent to the specified recipient(s).</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: POST /sheets/{sheetId}/updaterequests</para>
+		/// </summary>
+		/// <param name="sheetId"> the sheetId </param>
+		/// <param name="email"> the Email </param>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public virtual UpdateRequest SendUpdateRequest(long sheetId, MultiRowEmail email)
+		{
+			return this.CreateResource<RequestResult<UpdateRequest>, MultiRowEmail>("sheets/" + sheetId + "/updaterequests", email).Result;
+		}
+
+		/// <summary>
+		/// <para>Creates a copy of the specified Sheet.</para>
+		/// <para>It mirrors To the following Smartsheet REST API method:<br />
+		/// POST /sheets/{sheetId}/copy</para>
+		/// </summary>
+		/// <param name="sheetId"> the sheet Id </param>
+		/// <param name="destination"> the destination to copy to </param>
+		/// <param name="include"> the elements to copy. Note: Cell history will not be copied, regardless of which include parameter values are specified.</param>
+		/// <returns> the created folder </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public virtual Sheet CopySheet(long sheetId, ContainerDestination destination, IEnumerable<SheetCopyInclusion> include)
+		{
+			IDictionary<string, string> parameters = new Dictionary<string, string>();
+			if (include != null)
+			{
+				parameters.Add("include", QueryUtil.GenerateCommaSeparatedList(include));
+			}
+			return this.CreateResource<RequestResult<Sheet>, ContainerDestination>(QueryUtil.GenerateUrl("sheets/" + sheetId + "/copy", parameters), destination).Result;
+		}
+
+		/// <summary>
+		/// <para>Moves the specified sheet to a new location.</para>
+		/// <para>It mirrors To the following Smartsheet REST API method:<br />
+		/// POST /sheets/{sheetId}/move</para>
+		/// </summary>
+		/// <param name="sheetId"> the sheet Id </param>
+		/// <param name="destination"> the destination to copy to </param>
+		/// <returns> the moved sheet </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public virtual Sheet MoveSheet(long sheetId, ContainerDestination destination)
+		{
+			return this.CreateResource<RequestResult<Sheet>, ContainerDestination>("sheets/" + sheetId + "/move", destination).Result;
+		}
+
+		/// <summary>
+		/// Returns the ShareResources object that provides access To Share resources associated with Sheet resources.
 		/// </summary>
 		/// <returns> the ShareResources object </returns>
 		public virtual ShareResources ShareResources
@@ -437,7 +499,7 @@ namespace Smartsheet.Api.Internal
 		}
 
 		/// <summary>
-		/// Return the SheetRowResources object that provides access To Row resources associated with Sheet resources.
+		/// Returns the SheetRowResources object that provides access To Row resources associated with Sheet resources.
 		/// </summary>
 		/// <returns> the sheet row resources </returns>
 		public virtual SheetRowResources RowResources
@@ -449,7 +511,7 @@ namespace Smartsheet.Api.Internal
 		}
 
 		/// <summary>
-		/// Return the SheetColumnResources object that provides access To Column resources associated with Sheet resources.
+		/// Returns the SheetColumnResources object that provides access To Column resources associated with Sheet resources.
 		/// </summary>
 		/// <returns> the sheet column resources </returns>
 		public virtual SheetColumnResources ColumnResources
@@ -461,7 +523,7 @@ namespace Smartsheet.Api.Internal
 		}
 
 		/// <summary>
-		/// Return the SheetAttachmentResources object that provides access To attachment resources associated with
+		/// Returns the SheetAttachmentResources object that provides access To attachment resources associated with
 		/// Sheet resources.
 		/// </summary>
 		/// <returns> the associated attachment resources </returns>
@@ -474,7 +536,7 @@ namespace Smartsheet.Api.Internal
 		}
 
 		/// <summary>
-		/// Return the SheetDiscussionResources object that provides access To discussion resources associated with
+		/// Returns the SheetDiscussionResources object that provides access To discussion resources associated with
 		/// Sheet resources.
 		/// </summary>
 		/// <returns> the associated discussion resources </returns>
@@ -487,7 +549,7 @@ namespace Smartsheet.Api.Internal
 		}
 
 		/// <summary>
-		/// Return the SheetCommentResources object that provides access To discussion resources associated with
+		/// Returns the SheetCommentResources object that provides access To discussion resources associated with
 		/// Sheet resources.
 		/// </summary>
 		/// <returns> the associated discussion resources </returns>
@@ -510,10 +572,10 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To
-		public virtual SheetPublish GetPublishStatus(long id)
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public virtual SheetPublish GetPublishStatus(long sheetId)
 		{
-			return this.GetResource<SheetPublish>("sheets/" + id + "/publish", typeof(SheetPublish));
+			return this.GetResource<SheetPublish>("sheets/" + sheetId + "/publish", typeof(SheetPublish));
 		}
 
 		/// <summary>

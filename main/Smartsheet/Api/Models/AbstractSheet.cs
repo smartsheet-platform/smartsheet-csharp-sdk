@@ -26,7 +26,10 @@ namespace Smartsheet.Api.Models
 	/// <summary>
 	/// Represents the Sheet object.
 	/// </summary>
-	public abstract class AbstractSheet<TRow, TColumn, TCell> : NamedModel where TRow : AbstractRow<TColumn, TCell> where TColumn : Column where TCell : Cell
+	public abstract class AbstractSheet<TRow, TColumn, TCell> : NamedModel
+		where TRow : AbstractRow<TColumn, TCell>
+		where TColumn : Column
+		where TCell : Cell
 	{
 		/// <summary>
 		/// Represents the Columns for the sheet.
@@ -114,6 +117,7 @@ namespace Smartsheet.Api.Models
 		private string owner;
 
 		private long? ownerId;
+
 
 		/// <summary>
 		/// Represents the email of the owner

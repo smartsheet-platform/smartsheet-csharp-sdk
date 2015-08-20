@@ -16,7 +16,9 @@ namespace IntegrationTestSDK
 		{
 			string accessToken = ConfigurationManager.AppSettings["accessToken"];
 
-			SmartsheetClient smartsheet = new SmartsheetBuilder().SetAccessToken(accessToken).Build(); long groupId = CreateGroup(smartsheet);
+			SmartsheetClient smartsheet = new SmartsheetBuilder().SetAccessToken(accessToken).Build();
+			
+			long groupId = CreateGroup(smartsheet);
 
 			UpdateGroup(smartsheet, groupId);
 

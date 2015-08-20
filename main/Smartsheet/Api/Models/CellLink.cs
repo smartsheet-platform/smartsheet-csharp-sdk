@@ -47,10 +47,10 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// One of the following values:
 		/// <list type="bullet">
-		/// <item>OK: <description>the link is in a good state</description></item>
-		/// <item>BROKEN: <description>the row or sheet linked to was deleted</description></item>
-		/// <item>INACCESSIBLE: <description>the sheet linked to cannot be viewed by this user</description></item>
-		/// <item>Several other values indicating unusual error conditions: <description>
+		/// <item><term>OK:</term><description>the link is in a good state</description></item>
+		/// <item><term>BROKEN:</term><description>the row or sheet linked to was deleted</description></item>
+		/// <item><term>INACCESSIBLE:</term><description>the sheet linked to cannot be viewed by this user</description></item>
+		/// <item><description>Several other values indicating unusual error conditions: 
 		/// NOT_SHARED, BLOCKED, CIRCULAR, INVALID, and DISABLED.</description></item>
 		/// </list>
 		/// </summary>

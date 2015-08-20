@@ -251,7 +251,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Sets the Sheet's user settings.
 			/// </summary>
-			/// <param name="name"> the Name </param>
+			/// <param name="userSettings"> the userSettings </param>
 			/// <returns> the update sheet builder </returns>
 			public virtual UpdateSheetBuilder SetUserSettings(SheetUserSettings userSettings)
 			{

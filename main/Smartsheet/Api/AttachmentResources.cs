@@ -32,10 +32,19 @@ namespace Smartsheet.Api
 	[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 	public interface AttachmentResources
 	{
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="id"></param>
+		/// <returns></returns>
 		[Obsolete("Deprecated", true)]
 		[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		Attachment GetAttachment(long id);
 
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="id"></param>
 		[Obsolete("Deprecated", true)]
 		[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		void DeleteAttachment(long id);

@@ -111,34 +111,61 @@ namespace Smartsheet.Api.Models
 				this.description = description;
 			}
 
+			/// <summary>
+			/// Sets the name of the Group.
+			/// </summary>
+			/// <param name="name">the name of the group</param>
+			/// <returns>the create group builder</returns>
 			public CreateGroupBuilder SetName(string name)
 			{
 				this.name = name;
 				return this;
 			}
 
+			/// <summary>
+			/// Sets the description of the Group.
+			/// </summary>
+			/// <param name="description">the description of the group</param>
+			/// <returns>the create group builder</returns>
 			public CreateGroupBuilder SetDescription(string description)
 			{
 				this.description = description;
 				return this;
 			}
 
+			/// <summary>
+			/// Sets the members of the Group.
+			/// </summary>
+			/// <param name="members">the members of the group</param>
+			/// <returns>the create group builder</returns>
 			public CreateGroupBuilder SetMembers(IList<GroupMember> members)
 			{
 				this.members = members;
 				return this;
 			}
 
-			public string getName()
+			/// <summary>
+			/// Gets the name of the Group.
+			/// </summary>
+			/// <returns>the name</returns>
+			public string GetName()
 			{
 				return this.name;
 			}
 
+			/// <summary>
+			/// Gets the description of the Group.
+			/// </summary>
+			/// <returns>the description</returns>
 			public string getDescription()
 			{
 				return this.description;
 			}
 
+			/// <summary>
+			/// Gets the members of the Group.
+			/// </summary>
+			/// <returns>the members</returns>
 			public IList<GroupMember> getMembers()
 			{
 				return this.members;
@@ -179,39 +206,70 @@ namespace Smartsheet.Api.Models
 				this.id = id;
 			}
 
+			/// <summary>
+			/// Sets the Name of the Group.
+			/// </summary>
+			/// <param name="name">the name of the Group</param>
+			/// <returns>the update group builder</returns>
 			public UpdateGroupBuilder SetName(string name)
 			{
 				this.name = name;
 				return this;
 			}
 
+			/// <summary>
+			/// Sets the Description of the Group.
+			/// </summary>
+			/// <param name="description">the description of the Group</param>
+			/// <returns>the update group builder</returns>
 			public UpdateGroupBuilder SetDescription(string description)
 			{
 				this.description = description;
 				return this;
 			}
 
+			/// <summary>
+			/// Sets the Owener ID of the Group.
+			/// </summary>
+			/// <param name="ownerId">the owner ID of the Group</param>
+			/// <returns>the update group builder</returns>
 			public UpdateGroupBuilder SetOwnerId(long? ownerId)
 			{
 				this.ownerId = ownerId;
 				return this;
 			}
 
-			public string getName()
+			/// <summary>
+			/// Gets the name of the Group.
+			/// </summary>
+			/// <returns>the name</returns>
+			public string GetName()
 			{
 				return this.name;
 			}
 
-			public string getDescription()
+			/// <summary>
+			/// Gets the description of the Group.
+			/// </summary>
+			/// <returns>the description</returns>
+			public string GetDescription()
 			{
 				return this.description;
 			}
 
+			/// <summary>
+			/// Gets the Owner ID of the Group.
+			/// </summary>
+			/// <returns>the owner ID</returns>
 			public long? GetOwnerId()
 			{
 				return this.ownerId;
 			}
 
+			/// <summary>
+			/// Builds and returns the Group object.
+			/// </summary>
+			/// <returns>the Group object</returns>
 			public Group Build()
 			{
 				Group group = new Group

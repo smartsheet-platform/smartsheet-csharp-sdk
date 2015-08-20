@@ -20,10 +20,10 @@ using System.ComponentModel;
 namespace Smartsheet.Api
 {
 	///<summary>
-	///<para>
-	///This interface is the entry point of the Smartsheet SDK, it provides convenient methods to get XXXResources instances for accessing different types of resources.
-	///</para>
-	///<para>Thread Safety: Implementation of this interface must be thread safe.</para>
+	///<p>This interface is the entry point of the Smartsheet SDK, it provides convenient methods to get XXXResources instances
+	///for accessing different types of resources.</p>
+	///
+	///<p>Thread Safety: Implementation of this interface must be thread safe.</p>
 	///</summary>
 	public interface SmartsheetClient
 	{
@@ -100,6 +100,13 @@ namespace Smartsheet.Api
 		/// </summary>
 		/// <returns> the token resources instance </returns>
 		TokenResources TokenResources { get; }
+
+		/// <summary>
+		/// <para>Returns the ContactResources instance that provides access to contact resources.</para>
+		/// </summary>
+		/// <returns> the contact resources instance </returns>
+		ContactResources ContactResources { get; }
+
 
 		/// <summary>
 		/// Use Smartsheet.Api.SmartsheetClient.HomeResources instead.

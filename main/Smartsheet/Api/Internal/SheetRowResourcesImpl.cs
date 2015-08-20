@@ -122,7 +122,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public CopyOrMoveRowResult CopyRowsToAnotherSheet(long sheetId, CopyOrMoveRowDirective directive, IEnumerable<CopyRowInclusion> include, bool? ignoreRowsNotFound)
+		public virtual CopyOrMoveRowResult CopyRowsToAnotherSheet(long sheetId, CopyOrMoveRowDirective directive, IEnumerable<CopyRowInclusion> include, bool? ignoreRowsNotFound)
 		{
 			Utility.Utility.ThrowIfNull(directive);
 			StringBuilder path = new StringBuilder("sheets/" + sheetId + "/rows/copy?" + QueryUtil.GenerateCommaSeparatedList(include));
@@ -137,26 +137,35 @@ namespace Smartsheet.Api.Internal
 					path.Append("&ignoreRowsNotFound=false");
 				}
 			}
-			return CopyOrMoveRowsToAnotherSheet(directive, path.ToString());
+			return this.CreateResource<CopyOrMoveRowResult, CopyOrMoveRowDirective>(path.ToString(), directive);
 		}
 
 
 		/// <summary>
-		/// <para>Deletes the Row specified in the URL.</para>
-		/// <para>It mirrors To the following Smartsheet REST API method: DELETE /sheets/{sheetId}/rows/{rowId}</para>
-		/// <remarks>This operation will delete ALL child Rows of the specified Row.</remarks>
+		/// <para>Deletes one or more row(s) from the Sheet</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: DELETE /sheets/{sheetId}/rows?ids={rowId1},{rowId2},{rowId3}...</para>
+		/// <remarks>This operation will delete ALL child Rows of the specified Row(s).</remarks>
 		/// </summary>
-		/// <param name="sheetId"> the sheetId </param>
-		/// <param name="rowId"> the rowId </param>
+		/// <param name="sheetId"> The sheet ID </param>
+		/// <param name="ids"> The list of row IDs </param>
+		/// <param name="ignoreRowsNotFound"> If set to false and any of the specified Row IDs are not found, no rows will be deleted, and the “not found” error will be returned.</param>
+		/// <returns>Row IDs corresponding to all rows that were successfully deleted (including any child rows of rows specified in the URL).</returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public void DeleteRow(long sheetId, long rowId)
+		public virtual IList<long> DeleteRows(long sheetId, IEnumerable<long> ids, bool? ignoreRowsNotFound)
 		{
-			this.DeleteResource<Row>("sheets/" + sheetId + "/rows/" + rowId, typeof(Row));
+			Utility.Utility.ThrowIfNull(ids);
+			IDictionary<string, string> parameters = new Dictionary<string, string>();
+			parameters.Add("ids", QueryUtil.GenerateCommaSeparatedList(ids));
+			if (ignoreRowsNotFound.HasValue)
+			{
+				parameters.Add("ignoreRowsNotFound", ignoreRowsNotFound.Value.ToString());
+			}
+			return this.DeleteResource<IList<long>>(QueryUtil.GenerateUrl("sheets/" + sheetId + "/rows", parameters));
 		}
 
 		/// <summary>
@@ -171,6 +180,7 @@ namespace Smartsheet.Api.Internal
 		/// <param name="sheetId"> the sheet Id </param>
 		/// <param name="ignoreRowsNotFound"> ignoreRowsNotFound </param>
 		/// <param name="directive"> directive </param>
+		/// <param name="include">the elements to include.</param>
 		/// <returns> CopyOrMoveRowResult object </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -178,7 +188,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public CopyOrMoveRowResult MoveRowsToAnotherSheet(long sheetId, CopyOrMoveRowDirective directive, IEnumerable<MoveRowInclusion> include, bool? ignoreRowsNotFound)
+		public virtual CopyOrMoveRowResult MoveRowsToAnotherSheet(long sheetId, CopyOrMoveRowDirective directive, IEnumerable<MoveRowInclusion> include, bool? ignoreRowsNotFound)
 		{
 			Utility.Utility.ThrowIfNull(directive);
 			StringBuilder path = new StringBuilder("sheets/" + sheetId + "/rows/move?" + QueryUtil.GenerateCommaSeparatedList(include));
@@ -193,27 +203,38 @@ namespace Smartsheet.Api.Internal
 					path.Append("&ignoreRowsNotFound=false");
 				}
 			}
-			return CopyOrMoveRowsToAnotherSheet(directive, path.ToString());
+			return this.CreateResource<CopyOrMoveRowResult, CopyOrMoveRowDirective>(path.ToString(), directive);
 		}
 
 
 		/// <summary>
-		/// <para>Sends a Row via email.</para>
-		/// <para>It mirrors To the following Smartsheet REST API method: POST /sheets/{sheetId}/rows/{rowId}/emails</para>
+		/// <para>Sends one or more Rows via email.</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: POST /sheets/{sheetId}/rows/emails</para>
 		/// </summary>
-		/// <param name="sheetId"> the sheetId </param>
-		/// <param name="rowId"> the rowId </param>
-		/// <param name="email"> the email </param>
-		/// <returns> the row object </returns>
+		/// <param name="sheetId"> The sheet Id </param>
+		/// <param name="email"> The email. The columns included for each row in the email will be populated according to the following rules:
+		/// <list type="bullet">
+		/// <item><description>
+		/// If the columnIds attribute of the MultiRowEmail object is specified as an array of column IDs, those specific columns will be included.
+		/// </description></item>
+		/// <item><description>
+		/// If the columnIds attribute of the MultiRowEmail object is omitted, all columns except hidden columns shall be included.
+		/// </description></item>
+		/// <item><description>
+		/// If the columnIds attribute of the MultiRowEmail object is specified as empty, no columns shall be included.
+		/// (Note: In this case, either includeAttachments:true or includeDiscussions:true must be specified.)
+		/// </description></item>
+		/// </list>
+		/// </param>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual void SendRow(long sheetId, long rowId, RowEmail email)
+		public virtual void SendRows(long sheetId, MultiRowEmail email)
 		{
-			this.CreateResource<RowEmail>("sheets/" + sheetId + "/rows/" + rowId + "/emails", typeof(RowEmail), email);
+			this.CreateResource<MultiRowEmail>("sheets/" + sheetId + "/rows/emails", typeof(MultiRowEmail), email);
 		}
 
 		/// <summary>
@@ -223,8 +244,7 @@ namespace Smartsheet.Api.Internal
 		/// <remarks>If a row’s position is updated, all child rows are moved with the row.</remarks>
 		/// </summary>
 		/// <param name="sheetId"> the sheetId </param>
-		/// <param name="rowId"> the rowId </param>
-		/// <param name="email"> the email </param>
+		/// <param name="rows"> the list of rows to update </param>
 		/// <returns> the row object </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -232,12 +252,16 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public IList<Row> UpdateRows(long sheetId, IEnumerable<Row> rows)
+		public virtual IList<Row> UpdateRows(long sheetId, IEnumerable<Row> rows)
 		{
 			return this.PutAndReceiveList<IEnumerable<Row>, Row>("sheets/" + sheetId + "/rows", rows, typeof(Row));
 		}
 
-		public RowAttachmentResources AttachmentResources
+		/// <summary>
+		/// Gets the RowAttachmentResources object that provides access To Attachment resources associated with
+		/// Row resources.
+		/// </summary>
+		public virtual RowAttachmentResources AttachmentResources
 		{
 			get
 			{
@@ -245,7 +269,11 @@ namespace Smartsheet.Api.Internal
 			}
 		}
 
-		public RowDiscussionResources DiscussionResources
+		/// <summary>
+		/// Gets the RowDiscussionResources object that provides access To Discussion resources associated with
+		/// Row resources.
+		/// </summary>
+		public virtual RowDiscussionResources DiscussionResources
 		{
 			get
 			{
@@ -253,8 +281,11 @@ namespace Smartsheet.Api.Internal
 			}
 		}
 
-
-		public RowColumnResources CellResources
+		/// <summary>
+		/// Gets the RowColumnResources object that provides access To Cell resources associated with
+		/// Row resources.
+		/// </summary>
+		public virtual RowColumnResources CellResources
 		{
 			get
 			{
@@ -262,38 +293,16 @@ namespace Smartsheet.Api.Internal
 			}
 		}
 
-
-		private CopyOrMoveRowResult CopyOrMoveRowsToAnotherSheet(CopyOrMoveRowDirective directive, string path)
+		[Obsolete("Use DeleteRows instead", true)]
+		public virtual void DeleteRow(long sheetId, long rowId)
 		{
-			HttpRequest request = null;
-			try
-			{
-				request = CreateHttpRequest(new Uri(this.Smartsheet.BaseURI, path), HttpMethod.POST);
-			}
-			catch (Exception e)
-			{
-				throw new SmartsheetException(e);
-			}
+			throw new NotSupportedException();
+		}
 
-			request.Entity = serializeToEntity<CopyOrMoveRowDirective>(directive);
-
-			HttpResponse response = this.Smartsheet.HttpClient.Request(request);
-
-			CopyOrMoveRowResult result = null;
-			switch (response.StatusCode)
-			{
-				case HttpStatusCode.OK:
-					result = this.Smartsheet.JsonSerializer.DeserializeRowResult(
-						response.Entity.GetContent());
-					break;
-				default:
-					HandleError(response);
-					break;
-			}
-
-			this.Smartsheet.HttpClient.ReleaseConnection();
-
-			return result;
+		[Obsolete("Use SendRows instead", true)]
+		public virtual void SendRow(long sheetId, long rowId, RowEmail email)
+		{
+			throw new NotSupportedException();
 		}
 	}
 }

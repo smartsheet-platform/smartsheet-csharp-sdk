@@ -21,6 +21,8 @@ using System.Collections.Generic;
 namespace Smartsheet.Api
 {
 	using Api.Models;
+	using System;
+	using System.ComponentModel;
 
 	/// <summary>
 	/// This interface provides methods To access row resources that are associated To a sheet object.
@@ -92,14 +94,17 @@ namespace Smartsheet.Api
 		/// <remarks>This operation will delete ALL child Rows of the specified Row.</remarks>
 		/// </summary>
 		/// <param name="sheetId"> the sheetId </param>
-		/// <param name="rowId"> the rowId </param>
+		/// <param name="ids"> the row IDs </param>
+		/// <param name="ignoreRowsNotFound">If set to true, specifying row Ids that do not exist within the source sheet will not cause an error response.
+		/// If omitted or set to false, specifying row Ids that do not exist within the source sheet will cause an error response (and no rows will be copied).</param>
+		/// <returns>Row IDs corresponding to all rows that were successfully deleted (including any child rows of rows specified in the URL).</returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		void DeleteRow(long sheetId, long rowId);
+		IList<long> DeleteRows(long sheetId, IEnumerable<long> ids, bool? ignoreRowsNotFound);
 
 		/// <summary>
 		/// <para>Moves Row(s) from the Sheet specified in the URL to (the bottom of) another sheet.</para>
@@ -114,6 +119,7 @@ namespace Smartsheet.Api
 		/// <param name="ignoreRowsNotFound"> default is false. If set to true, specifying row Ids that do not exist within the source sheet will not cause an error response.
 		/// If omitted or set to false, specifying row Ids that do not exist within the source sheet will cause an error response (and no rows will be copied). </param>
 		/// <param name="directive"> directive </param>
+		/// <param name="include">the elements to include</param>
 		/// <returns> CopyOrMoveRowResult object </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -124,20 +130,31 @@ namespace Smartsheet.Api
 		CopyOrMoveRowResult MoveRowsToAnotherSheet(long sheetId, CopyOrMoveRowDirective directive, IEnumerable<MoveRowInclusion> include, bool? ignoreRowsNotFound);
 
 		/// <summary>
-		/// <para>Sends a Row via email.</para>
-		/// <para>It mirrors To the following Smartsheet REST API method: POST /sheets/{sheetId}/rows/{rowId}/emails</para>
+		/// <para>Sends one or more Rows via email.</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: POST /sheets/{sheetId}/rows/emails</para>
 		/// </summary>
-		/// <param name="sheetId"> the sheetId </param>
-		/// <param name="rowId"> the rowId </param>
-		/// <param name="email"> the email </param>
-		/// <returns> the row object </returns>
+		/// <param name="sheetId"> The sheet Id </param>
+		/// <param name="email"> The email. The columns included for each row in the email will be populated according to the following rules:
+		/// <list type="bullet">
+		/// <item><description>
+		/// If the columnIds attribute of the MultiRowEmail object is specified as an array of column IDs, those specific columns will be included.
+		/// </description></item>
+		/// <item><description>
+		/// If the columnIds attribute of the MultiRowEmail object is omitted, all columns except hidden columns shall be included.
+		/// </description></item>
+		/// <item><description>
+		/// If the columnIds attribute of the MultiRowEmail object is specified as empty, no columns shall be included.
+		/// (Note: In this case, either includeAttachments:true or includeDiscussions:true must be specified.)
+		/// </description></item>
+		/// </list>
+		/// </param>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		void SendRow(long sheetId, long rowId, RowEmail email);
+		void SendRows(long sheetId, MultiRowEmail email);
 
 		/// <summary>
 		/// <para>Updates cell values in the specified row(s), expands/collapses the specified row(s), 
@@ -145,9 +162,8 @@ namespace Smartsheet.Api
 		/// <para>It mirrors To the following Smartsheet REST API method: PUT /sheets/{sheetId}/rows</para>
 		/// <remarks>If a row’s position is updated, all child rows are moved with the row.</remarks>
 		/// </summary>
-		/// <param name="sheetId"> the sheetId </param>
-		/// <param name="rowId"> the rowId </param>
-		/// <param name="email"> the email </param>
+		/// <param name="sheetId">the sheetId</param>
+		/// <param name="rows">the list of rows to update</param>
 		/// <returns> the row object </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -174,5 +190,13 @@ namespace Smartsheet.Api
 		/// </summary>
 		/// <returns> the RowColumnResources </returns>
 		RowColumnResources CellResources { get; }
+
+		[Obsolete("use DeleteRows intead", true)]
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		void DeleteRow(long sheetId, long rowId);
+
+		[Obsolete("use SendRows intead", true)]
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		void SendRow(long sheetId, long rowId, RowEmail email);
 	}
 }

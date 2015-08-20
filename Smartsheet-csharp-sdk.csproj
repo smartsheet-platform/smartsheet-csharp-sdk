@@ -59,7 +59,8 @@
       <HintPath>packages\NUnitTestAdapter.2.0.0\lib\NUnit.VisualStudio.TestAdapter.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="RestSharp">
+    <Reference Include="RestSharp, Version=105.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>packages\RestSharp.105.1.0\lib\net4\RestSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -81,11 +82,23 @@
     <Compile Include="main\Smartsheet\Api\ColumnResources.cs" />
     <Compile Include="main\Smartsheet\Api\CommentAttachmentResources.cs" />
     <Compile Include="main\Smartsheet\Api\CommentResources.cs" />
+    <Compile Include="main\Smartsheet\Api\ContactResources.cs" />
     <Compile Include="main\Smartsheet\Api\DiscussionAttachmentResources.cs" />
     <Compile Include="main\Smartsheet\Api\DiscussionCommentResources.cs" />
     <Compile Include="main\Smartsheet\Api\DiscussionResources.cs" />
     <Compile Include="main\Smartsheet\Api\FavoriteResources.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\ContactResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\TokenResourcesImpl.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Contact.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\ContainerDestination.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\DestinationType.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Inclusions\FolderCopyInclusion.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Inclusions\FolderRemapExclusion.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Inclusions\SheetCopyInclusion.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Inclusions\WorkspaceCopyInclusion.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Inclusions\WorkspaceRemapExclusion.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\MultiRowEmail.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\UpdateRequest.cs" />
     <Compile Include="main\Smartsheet\Api\TokenResources.cs" />
     <Compile Include="main\Smartsheet\Api\FolderResources.cs" />
     <Compile Include="main\Smartsheet\Api\GroupResources.cs" />
@@ -287,15 +300,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="packages.config" />
     <None Include="smartsheet-csharp-sdk.licenseheader" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="icons\logo.png" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
   <ProjectExtensions>
     <VisualStudio AllowExistingFolder="true" />

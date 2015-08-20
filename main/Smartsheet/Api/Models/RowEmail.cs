@@ -16,6 +16,7 @@
 //    limitations under the License.
 //    %[license]
 
+using System.Collections.Generic;
 namespace Smartsheet.Api.Models
 {
 	/// <summary>
@@ -25,6 +26,11 @@ namespace Smartsheet.Api.Models
 	public class RowEmail : Email
 	{
 		/// <summary>
+		/// IDs of the columns to be included.
+		/// </summary>
+		private IList<long> columnIds;
+
+		/// <summary>
 		/// A flag To indicate if Attachments should be included in the Email.
 		/// </summary>
 		private bool? includeAttachments;
@@ -33,6 +39,15 @@ namespace Smartsheet.Api.Models
 		/// A flag To indicate if Discussions should be included in the Email.
 		/// </summary>
 		private bool? includeDiscussions;
+
+		/// <summary>
+		/// IDs of the columns to be included.
+		/// </summary>
+		public virtual IList<long> ColumnIds
+		{
+			get { return columnIds; }
+			set { columnIds = value; }
+		}
 
 		/// <summary>
 		/// Gets the flag that indicates if Attachments should be included in the Email.

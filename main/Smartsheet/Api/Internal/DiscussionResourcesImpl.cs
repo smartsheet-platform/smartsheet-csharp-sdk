@@ -32,11 +32,11 @@ namespace Smartsheet.Api.Internal
 	[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 	public class DiscussionResourcesImpl : AbstractResources, DiscussionResources
 	{
-		/// <summary>
-		/// Represents the AssociatedAttachmentResources.
-		/// 
-		/// It will be initialized in constructor and will not change afterwards.
-		/// </summary>
+		///// <summary>
+		///// Represents the AssociatedAttachmentResources.
+		///// 
+		///// It will be initialized in constructor and will not change afterwards.
+		///// </summary>
 		//private AssociatedAttachmentResources attachments;
 
 		/// <summary>

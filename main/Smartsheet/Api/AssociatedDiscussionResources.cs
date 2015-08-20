@@ -31,6 +31,12 @@ namespace Smartsheet.Api
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public interface AssociatedDiscussionResources
 	{
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="objectId"></param>
+		/// <param name="discussion"></param>
+		/// <returns></returns>
 		[Obsolete("Deprecated", true)]
 		[EditorBrowsable(EditorBrowsableState.Never)]
 		Discussion CreateDiscussion(long objectId, Discussion discussion);

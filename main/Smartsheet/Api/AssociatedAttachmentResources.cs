@@ -36,15 +36,32 @@ namespace Smartsheet.Api
 	[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 	public interface AssociatedAttachmentResources
 	{
-
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="objectId"></param>
+		/// <returns></returns>
 		[Obsolete("Deprecated", true)]
 		[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		IList<Attachment> ListAttachments(long objectId);
 
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="objectId"></param>
+		/// <param name="file"></param>
+		/// <param name="contentType"></param>
+		/// <returns></returns>
 		[Obsolete("Deprecated", true)]
 		[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		Attachment AttachFile(long objectId, string file, string contentType);
 
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="objectId"></param>
+		/// <param name="attachment"></param>
+		/// <returns></returns>
 		[Obsolete("Deprecated", true)]
 		[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		Attachment AttachURL(long objectId, Attachment attachment);
