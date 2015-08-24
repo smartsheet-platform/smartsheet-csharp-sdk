@@ -125,19 +125,16 @@ namespace Smartsheet.Api.Internal
 		public virtual CopyOrMoveRowResult CopyRowsToAnotherSheet(long sheetId, CopyOrMoveRowDirective directive, IEnumerable<CopyRowInclusion> include, bool? ignoreRowsNotFound)
 		{
 			Utility.Utility.ThrowIfNull(directive);
-			StringBuilder path = new StringBuilder("sheets/" + sheetId + "/rows/copy?" + QueryUtil.GenerateCommaSeparatedList(include));
+			IDictionary<string, string> parameters = new Dictionary<string, string>();
+			if (include != null)
+			{
+				parameters.Add("include", QueryUtil.GenerateCommaSeparatedList(include));
+			}
 			if (ignoreRowsNotFound.HasValue)
 			{
-				if (ignoreRowsNotFound.Value)
-				{
-					path.Append("&ignoreRowsNotFound=true");
-				}
-				else
-				{
-					path.Append("&ignoreRowsNotFound=false");
-				}
+				parameters.Add("ignoreRowsNotFound", ignoreRowsNotFound.ToString().ToLower());
 			}
-			return this.CreateResource<CopyOrMoveRowResult, CopyOrMoveRowDirective>(path.ToString(), directive);
+			return this.CreateResource<CopyOrMoveRowResult, CopyOrMoveRowDirective>(QueryUtil.GenerateUrl("sheets/" + sheetId + "/rows/copy", parameters), directive);
 		}
 
 
@@ -191,19 +188,16 @@ namespace Smartsheet.Api.Internal
 		public virtual CopyOrMoveRowResult MoveRowsToAnotherSheet(long sheetId, CopyOrMoveRowDirective directive, IEnumerable<MoveRowInclusion> include, bool? ignoreRowsNotFound)
 		{
 			Utility.Utility.ThrowIfNull(directive);
-			StringBuilder path = new StringBuilder("sheets/" + sheetId + "/rows/move?" + QueryUtil.GenerateCommaSeparatedList(include));
+			IDictionary<string, string> parameters = new Dictionary<string, string>();
+			if (include != null)
+			{
+				parameters.Add("include", QueryUtil.GenerateCommaSeparatedList(include));
+			}
 			if (ignoreRowsNotFound.HasValue)
 			{
-				if (ignoreRowsNotFound.Value)
-				{
-					path.Append("&ignoreRowsNotFound=true");
-				}
-				else
-				{
-					path.Append("&ignoreRowsNotFound=false");
-				}
+				parameters.Add("ignoreRowsNotFound", ignoreRowsNotFound.ToString().ToLower());
 			}
-			return this.CreateResource<CopyOrMoveRowResult, CopyOrMoveRowDirective>(path.ToString(), directive);
+			return this.CreateResource<CopyOrMoveRowResult, CopyOrMoveRowDirective>(QueryUtil.GenerateUrl("sheets/" + sheetId + "/rows/move", parameters), directive);
 		}
 
 
