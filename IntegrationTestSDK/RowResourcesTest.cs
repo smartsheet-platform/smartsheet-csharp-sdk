@@ -17,7 +17,8 @@ namespace IntegrationTestSDK
 
 			SmartsheetClient smartsheet = new SmartsheetBuilder().SetAccessToken(accessToken).Build();
 
-			long sheetId = CreateSheetFromTemplate(smartsheet, 8537185717643140);
+			long templateId = smartsheet.TemplateResources.ListPublicTemplates(null).Data[0].Id.Value;
+			long sheetId = CreateSheetFromTemplate(smartsheet, templateId);
 
 			PaginatedResult<Column> columnsResult = smartsheet.SheetResources.ColumnResources.ListColumns(sheetId, null, null);
 			long columnId = columnsResult.Data[0].Id.Value;
@@ -28,14 +29,33 @@ namespace IntegrationTestSDK
 
 			CopyRowToCreatedSheet(smartsheet, sheetId, rowId);
 
+			SendRows(smartsheet, sheetId, columnId, rowId);
+
 			DeleteRowAndGetRow(smartsheet, sheetId, rowId);
 
+		}
+
+		private static void SendRows(SmartsheetClient smartsheet, long sheetId, long columnId, long rowId)
+		{
+			MultiRowEmail multiRowEmail = new MultiRowEmail
+			{
+				SendTo = new Recipient[] { new Recipient { Email = "ericyan99@outlook.com" } },
+				Subject = "some subject",
+				Message = "some message",
+				CcMe = false,
+				RowIds = new long[] { rowId },
+				ColumnIds = new long[] { columnId },
+				IncludeAttachments = false,
+				IncludeDiscussions = false
+			};
+
+			smartsheet.SheetResources.RowResources.SendRows(sheetId, multiRowEmail);
 		}
 
 		private static void DeleteRowAndGetRow(SmartsheetClient smartsheet, long sheetId, long rowId)
 		{
 
-			smartsheet.SheetResources.RowResources.DeleteRow(sheetId, rowId);
+			smartsheet.SheetResources.RowResources.DeleteRows(sheetId, new long[] { rowId }, false);
 			try
 			{
 				smartsheet.SheetResources.RowResources.GetRow(sheetId, rowId, new RowInclusion[] { RowInclusion.COLUMNS }, null);

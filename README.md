@@ -141,6 +141,10 @@ Each specific release is available for download via [Github](https://github.com/
 * Added support for code on Azure.
 
 -->
+**2.0.2 (August 24, 2015)**
+* Upgraded the Smartsheet C# SDK to API 2.0.2.
+* Fixed issue where CopyRowsToAnotherSheet and MoveRowsToAnotherSheet did not handle parameters correctly.
+
 **2.0.0 (Aug 11, 2015)**
 * Upgraded the Smartsheet C# SDK to the brand new version of API 2.0.
 

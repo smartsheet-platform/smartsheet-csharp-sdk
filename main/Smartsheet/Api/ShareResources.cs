@@ -159,7 +159,6 @@ namespace Smartsheet.Api
 		/// PUT /reports/{reportId}/shares/{shareId}</para>
 		/// </summary>
 		/// <param name="objectId"> the ID of the object To share, (report, sheet, or workspace)  </param>
-		/// <param name="shareId"> the Id of the share instance </param>
 		/// <param name="share"> the share </param>
 		/// <returns> the updated share (note that if there is no such resource, this method will throw
 		///  ResourceNotFoundException rather than returning null). </returns>
@@ -169,7 +168,7 @@ namespace Smartsheet.Api
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		Share UpdateShare(long objectId, string shareId, Share share);
+		Share UpdateShare(long objectId, Share share);
 
 		/// <summary>
 		/// <para>Delete a share.</para>

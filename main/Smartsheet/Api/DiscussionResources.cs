@@ -32,14 +32,29 @@ namespace Smartsheet.Api
 	[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 	public interface DiscussionResources
 	{
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="id"></param>
+		/// <returns></returns>
 		[Obsolete("Deprecated", true)]
 		[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		Discussion GetDiscussion(long id);
 
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="id"></param>
+		/// <param name="comment"></param>
+		/// <returns></returns>
 		[Obsolete("Deprecated", true)]
 		[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		Comment AddDiscussionComment(long id, Comment comment);
 
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <returns></returns>
 		[Obsolete("Deprecated", true)]
 		[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		AssociatedAttachmentResources Attachments();

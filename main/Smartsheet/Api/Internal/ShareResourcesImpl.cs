@@ -128,7 +128,6 @@ namespace Smartsheet.Api.Internal
 		/// PUT /reports/{reportId}/shares/{shareId}</para>
 		/// </summary>
 		/// <param name="objectId"> the ID of the object To share </param>
-		/// <param name="shareId"> the Id of the share instance </param>
 		/// <param name="share"> the share </param>
 		/// <returns> the updated share (note that if there is no such resource, this method will throw
 		///  ResourceNotFoundException rather than returning null). </returns>
@@ -138,9 +137,9 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual Share UpdateShare(long objectId, string shareId, Share share)
+		public virtual Share UpdateShare(long objectId, Share share)
 		{
-			return this.UpdateResource<Share>(MasterResourceType + "/" + objectId + "/shares/" + shareId, typeof(Share), share);
+			return this.UpdateResource<Share>(MasterResourceType + "/" + objectId + "/shares/" + share.Id, typeof(Share), share);
 		}
 
 		/// <summary>

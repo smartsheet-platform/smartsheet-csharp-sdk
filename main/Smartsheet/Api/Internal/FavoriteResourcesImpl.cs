@@ -96,12 +96,12 @@ namespace Smartsheet.Api.Internal
 		/// <para>Removes one or multiple objects from the user’s list of Favorite items.</para>
 		/// <para>objectIds must not be null or empty.</para>
 		/// <para>It mirrors To the following Smartsheet REST API methods: 
-		/// <list type="bullets">
-		/// <item>DELETE /favorites/folder</item>
-		/// <item>DELETE /favorites/report</item>
-		/// <item>DELETE /favorites/sheet</item>
-		/// <item>DELETE /favorites/template</item>
-		/// <item>DELETE /favorites/workspace</item>
+		/// <list type="bullet">
+		/// <item><description>DELETE /favorites/folder</description></item>
+		/// <item><description>DELETE /favorites/report</description></item>
+		/// <item><description>DELETE /favorites/sheet</description></item>
+		/// <item><description>DELETE /favorites/template</description></item>
+		/// <item><description>DELETE /favorites/workspace</description></item>
 		/// </list>
 		/// </para>
 		/// </summary>

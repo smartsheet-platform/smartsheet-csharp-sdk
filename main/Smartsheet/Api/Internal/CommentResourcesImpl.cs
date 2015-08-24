@@ -37,6 +37,10 @@ namespace Smartsheet.Api.Internal
 		///// </summary>
 		//private AssociatedAttachmentResources attachments;
 
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="smartsheet"></param>
 		[Obsolete("Deprecated", true)]
 		[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		public CommentResourcesImpl(SmartsheetImpl smartsheet)
@@ -44,6 +48,11 @@ namespace Smartsheet.Api.Internal
 		{
 		}
 
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="id"></param>
+		/// <returns></returns>
 		[Obsolete("Deprecated", true)]
 		[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		public virtual Comment GetComment(long id)
@@ -51,6 +60,10 @@ namespace Smartsheet.Api.Internal
 			throw new NotSupportedException();
 		}
 
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="id"></param>
 		[Obsolete("Deprecated", true)]
 		[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		public virtual void DeleteComment(long id)
@@ -58,6 +71,10 @@ namespace Smartsheet.Api.Internal
 			throw new NotSupportedException();
 		}
 
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <returns></returns>
 		[Obsolete("Deprecated", true)]
 		[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		public virtual AssociatedAttachmentResources Attachments()

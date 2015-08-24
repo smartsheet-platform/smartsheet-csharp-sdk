@@ -53,7 +53,8 @@ namespace Smartsheet.Api.Internal
 		/// <param name="smartsheet"> the Smartsheet </param>
 		[Obsolete("Deprecated", true)]
 		[EditorBrowsable(EditorBrowsableState.Never)]
-		public RowResourcesImpl(SmartsheetImpl smartsheet) : base(smartsheet)
+		public RowResourcesImpl(SmartsheetImpl smartsheet)
+			: base(smartsheet)
 		{
 			this.attachments = new AssociatedAttachmentResourcesImpl(smartsheet, "row");
 			this.discussions = new AssociatedDiscussionResourcesImpl(smartsheet, "row");
@@ -114,6 +115,6 @@ namespace Smartsheet.Api.Internal
 		{
 			throw new NotSupportedException();
 		}
-	 }
+	}
 
 }

@@ -96,14 +96,13 @@ namespace Smartsheet.Api.Internal
 		/// <para>Gets the list of all Reports that the User has access to, in alphabetical order, by name.</para>
 		/// <para>It mirrors To the following Smartsheet REST API method: GET /reports</para>
 		/// </summary>
-		/// <param name="includes">elements to include in response</param>
 		/// <param name="paging">the pagination</param>
 		/// <returns>A list of Report objects limited to the following attributes:
-		/// <list type="bullets">
-		/// <item>id</item>
-		/// <item>name</item>
-		/// <item>accessLevel</item>
-		/// <item>permalink</item>
+		/// <list type="bullet">
+		/// <item><description>id</description></item>
+		/// <item><description>name</description></item>
+		/// <item><description>accessLevel</description></item>
+		/// <item><description>permalink</description></item>
 		/// </list></returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -176,6 +175,10 @@ namespace Smartsheet.Api.Internal
 			this.CreateResource<SheetEmail>("reports/" + reportId + "/emails", typeof(SheetEmail), email);
 		}
 
+		/// <summary>
+		/// <para>Return the ShareResources object that provides access To Share resources associated with Report resources.</para>
+		/// </summary>
+		/// <returns> the ShareResources object </returns>
 		public virtual ShareResources ShareResources
 		{
 			get
@@ -190,8 +193,7 @@ namespace Smartsheet.Api.Internal
 		/// <para>It mirrors To the following Smartsheet REST API method:<br />
 		/// GET /reports/{reportId} with "application/pdf", "application/vnd.ms-excel", or "text/csv" as Accept HTTP header</para>
 		/// </summary>
-		/// <param name="reportId"> the Id of the report </param>
-		/// <param name="paperSize"> the size of the PDF file </param>
+		/// <param name="path">the path of the file</param>
 		/// <param name="outputStream"> the output stream To which the CSV file will be written. </param>
 		/// <param name="contentType"> the Accept header </param>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>

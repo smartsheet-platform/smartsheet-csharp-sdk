@@ -40,7 +40,8 @@ namespace Smartsheet.Api.Internal
 		/// <param name="smartsheet"> the Smartsheet </param>
 		[Obsolete("Deprecated", true)]
 		[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
-		public ColumnResourcesImpl(SmartsheetImpl smartsheet) : base(smartsheet)
+		public ColumnResourcesImpl(SmartsheetImpl smartsheet)
+			: base(smartsheet)
 		{
 		}
 

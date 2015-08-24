@@ -23,24 +23,100 @@ namespace Smartsheet.Api.Models
 	/// </summary>
 	public enum CriteriaOperator
 	{
+		/// <summary>
+		/// EQUAL
+		/// </summary>
 		EQUAL,
+
+		/// <summary>
+		/// NOT_EQUAL
+		/// </summary>
 		NOT_EQUAL,
+
+		/// <summary>
+		/// GREATER_THAN
+		/// </summary>
 		GREATER_THAN,
+
+		/// <summary>
+		/// 
+		/// </summary>
 		LESS_THAN,
+
+		/// <summary>
+		/// CONTAINS
+		/// </summary>
 		CONTAINS,
+
+		/// <summary>
+		/// BETWEEN
+		/// </summary>
 		BETWEEN,
+
+		/// <summary>
+		/// TODAY
+		/// </summary>
 		TODAY,
+
+		/// <summary>
+		/// PAST
+		/// </summary>
 		PAST,
+
+		/// <summary>
+		/// FUTURE
+		/// </summary>
 		FUTURE,
+
+		/// <summary>
+		/// LAST_N_DAYS
+		/// </summary>
 		LAST_N_DAYS,
+
+		/// <summary>
+		/// NEXT_N_DAYS
+		/// </summary>
 		NEXT_N_DAYS,
+
+		/// <summary>
+		/// IS_BLANK
+		/// </summary>
 		IS_BLANK,
+
+		/// <summary>
+		/// IS_NOT_BLANK
+		/// </summary>
 		IS_NOT_BLANK,
+
+		/// <summary>
+		/// IS_NUMBER
+		/// </summary>
 		IS_NUMBER,
+
+		/// <summary>
+		/// IS_NOT_NUMBER
+		/// </summary>
 		IS_NOT_NUMBER,
+
+		/// <summary>
+		/// IS_DATE
+		/// </summary>
 		IS_DATE,
+
+		/// <summary>
+		/// IS_NOT_DATE
+		/// </summary>
 		IS_NOT_DATE,
+
+		/// <summary>
+		/// IS_CHECKED
+		/// </summary>
 		IS_CHECKED,
+
+
+		/// <summary>
+		/// IS_NOT_CHECKED
+		/// </summary>
 		IS_NOT_CHECKED
 	}
 

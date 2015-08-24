@@ -17,7 +17,9 @@ namespace Smartsheet.Api.models
 		{
 			Assert.NotNull(SheetEmailFormat.PDF);
 			Assert.NotNull(SheetEmailFormat.EXCEL);
-			Assert.AreEqual(2,Enum.GetValues(typeof(SheetEmailFormat)).Length);
+			Assert.NotNull(SheetEmailFormat.PDF_GANTT);
+
+			Assert.AreEqual(3, Enum.GetValues(typeof(SheetEmailFormat)).Length);
 		}
 
 	}

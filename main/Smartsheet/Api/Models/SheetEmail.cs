@@ -166,7 +166,7 @@ namespace Smartsheet.Api.Models
 			/// <returns>the SheetEmail object</returns>
 			public SheetEmail Build()
 			{
-				return new SheetEmail 
+				return new SheetEmail
 				{
 					SendTo = sendTo,
 					Format = format,

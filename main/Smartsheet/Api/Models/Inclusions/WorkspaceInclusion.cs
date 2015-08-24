@@ -28,6 +28,11 @@ namespace Smartsheet.Api.Models
 	public enum WorkspaceInclusion
 	{
 		/// <summary>
+		/// Includes the owner’s email address and user ID for each sheet.
+		/// </summary>
+		OWNER_INFO,
+
+		/// <summary>
 		/// Includes the source for any sheet that was created from another sheet or template.
 		/// </summary>
 		SOURCE
