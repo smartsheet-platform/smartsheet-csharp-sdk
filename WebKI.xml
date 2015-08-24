@@ -202,16 +202,16 @@
   <HelpKINode Title="ADMIN enumeration member" Url="html/T_Smartsheet_Api_Models_AccessLevel.htm" />
   <HelpKINode Title="Admin property" Url="html/P_Smartsheet_Api_Models_UserModel_Admin.htm" />
   <HelpKINode Title="ADMIN_SHEETS enumeration member">
-    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_Models_AccessScope.htm" />
     <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_OAuth_AccessScope.htm" />
+    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_Models_AccessScope.htm" />
   </HelpKINode>
   <HelpKINode Title="ADMIN_USERS enumeration member">
-    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_Models_AccessScope.htm" />
     <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_OAuth_AccessScope.htm" />
+    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_Models_AccessScope.htm" />
   </HelpKINode>
   <HelpKINode Title="ADMIN_WORKSPACES enumeration member">
-    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_Models_AccessScope.htm" />
     <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_OAuth_AccessScope.htm" />
+    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_Models_AccessScope.htm" />
   </HelpKINode>
   <HelpKINode Title="ALL enumeration member">
     <HelpKINode Title="FolderCopyInclusion Enumeration" Url="html/T_Smartsheet_Api_Models_FolderCopyInclusion.htm" />
@@ -325,9 +325,9 @@
   <HelpKINode Title="AttachmentVersioningResources.ListVersions method" Url="html/M_Smartsheet_Api_AttachmentVersioningResources_ListVersions.htm" />
   <HelpKINode Title="AttachNewVersion method" Url="html/M_Smartsheet_Api_AttachmentVersioningResources_AttachNewVersion.htm" />
   <HelpKINode Title="AttachUrl method">
-    <HelpKINode Title="CommentAttachmentResources.AttachUrl Method " Url="html/M_Smartsheet_Api_CommentAttachmentResources_AttachUrl.htm" />
-    <HelpKINode Title="SheetAttachmentResources.AttachUrl Method " Url="html/M_Smartsheet_Api_SheetAttachmentResources_AttachUrl.htm" />
     <HelpKINode Title="RowAttachmentResources.AttachUrl Method " Url="html/M_Smartsheet_Api_RowAttachmentResources_AttachUrl.htm" />
+    <HelpKINode Title="SheetAttachmentResources.AttachUrl Method " Url="html/M_Smartsheet_Api_SheetAttachmentResources_AttachUrl.htm" />
+    <HelpKINode Title="CommentAttachmentResources.AttachUrl Method " Url="html/M_Smartsheet_Api_CommentAttachmentResources_AttachUrl.htm" />
   </HelpKINode>
   <HelpKINode Title="AttachURL method" Url="html/M_Smartsheet_Api_AssociatedAttachmentResources_AttachURL.htm" />
   <HelpKINode Title="AuthorizationException class">
@@ -404,8 +404,8 @@
   <HelpKINode Title="CALENDAR_END_DATE enumeration member" Url="html/T_Smartsheet_Api_Models_ColumnTag.htm" />
   <HelpKINode Title="CALENDAR_START_DATE enumeration member" Url="html/T_Smartsheet_Api_Models_ColumnTag.htm" />
   <HelpKINode Title="CcMe property">
-    <HelpKINode Title="Email.CcMe Property " Url="html/P_Smartsheet_Api_Models_Email_CcMe.htm" />
     <HelpKINode Title="Share.CcMe Property " Url="html/P_Smartsheet_Api_Models_Share_CcMe.htm" />
+    <HelpKINode Title="Email.CcMe Property " Url="html/P_Smartsheet_Api_Models_Email_CcMe.htm" />
   </HelpKINode>
   <HelpKINode Title="CCMe property">
     <HelpKINode Title="MultiShare.CCMe Property " Url="html/P_Smartsheet_Api_Models_MultiShare_CCMe.htm" />
@@ -888,8 +888,8 @@
   <HelpKINode Title="DeleteSheet method" Url="html/M_Smartsheet_Api_SheetResources_DeleteSheet.htm" />
   <HelpKINode Title="DeleteWorkspace method" Url="html/M_Smartsheet_Api_WorkspaceResources_DeleteWorkspace.htm" />
   <HelpKINode Title="DELETE_SHEETS enumeration member">
-    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_OAuth_AccessScope.htm" />
     <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_Models_AccessScope.htm" />
+    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_OAuth_AccessScope.htm" />
   </HelpKINode>
   <HelpKINode Title="DependenciesEnabled property" Url="html/P_Smartsheet_Api_Models_AbstractSheet_3_DependenciesEnabled.htm" />
   <HelpKINode Title="Description property">
@@ -2581,8 +2581,8 @@
   </HelpKINode>
   <HelpKINode Title="ShareType enumeration" Url="html/T_Smartsheet_Api_Models_ShareType.htm" />
   <HelpKINode Title="SHARE_SHEETS enumeration member">
-    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_Models_AccessScope.htm" />
     <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_OAuth_AccessScope.htm" />
+    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_Models_AccessScope.htm" />
   </HelpKINode>
   <HelpKINode Title="Sheet class">
     <HelpKINode Title="Sheet Class" Url="html/T_Smartsheet_Api_Models_Sheet.htm" />
@@ -3477,7 +3477,7 @@
   <HelpKINode Title="WorkspaceSheetResources.CreateSheet method" Url="html/M_Smartsheet_Api_WorkspaceSheetResources_CreateSheet.htm" />
   <HelpKINode Title="WorkspaceSheetResources.CreateSheetFromTemplate method" Url="html/M_Smartsheet_Api_WorkspaceSheetResources_CreateSheetFromTemplate.htm" />
   <HelpKINode Title="WRITE_SHEETS enumeration member">
-    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_OAuth_AccessScope.htm" />
     <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_Models_AccessScope.htm" />
+    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_OAuth_AccessScope.htm" />
   </HelpKINode>
 </HelpKI>
