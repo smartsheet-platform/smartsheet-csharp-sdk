@@ -141,8 +141,14 @@ Each specific release is available for download via [Github](https://github.com/
 * Added support for code on Azure.
 
 -->
-**2.0.2 (August 24, 2015)**
-* Upgraded the Smartsheet C# SDK to API 2.0.2.
+**2.0.1 (August 24, 2015)**
+* Added ability to retrieve Contacts.
+* Added ability to copy folder/sheet/workspace.
+* Added ability to move folder/sheet.
+* Added ability to delete multiple rows at once.
+* Added ability to send multiple rows at once.
+* Added abilty to create update request.
+* Added ability to create discussion on row and include file attachment (in a single request).
 * Fixed issue where CopyRowsToAnotherSheet and MoveRowsToAnotherSheet did not handle parameters correctly.
 
 **2.0.0 (Aug 11, 2015)**
