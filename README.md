@@ -42,13 +42,17 @@ cd smartsheet-csharp-sdk
 The SDK API documentation can be viewed online at [http://smartsheet-platform.github.io/smartsheet-csharp-sdk/](http://smartsheet-platform.github.io/smartsheet-csharp-sdk/).
 
 ##Example Usage
+To use the C# SDK, you'll need to include the appropriate **using** directives in your code. 
+For example, the code examples in this section require the following **using** directives:
 
-<!-- note: java has better syntax highlighting on github -->
 ```csharp
 using Smartsheet.Api;
 using Smartsheet.Api.Models;
 using Smartsheet.Api.OAuth;
+```
 
+<!-- note: java has better syntax highlighting on github -->
+```csharp
 public static void OAuthExample()
 {
 	// Setup the information that is necessary to request an authorization code
