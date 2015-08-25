@@ -45,6 +45,10 @@ The SDK API documentation can be viewed online at [http://smartsheet-platform.gi
 
 <!-- note: java has better syntax highlighting on github -->
 ```csharp
+using Smartsheet.Api;
+using Smartsheet.Api.Models;
+using Smartsheet.Api.OAuth;
+
 public static void OAuthExample()
 {
 	// Setup the information that is necessary to request an authorization code
