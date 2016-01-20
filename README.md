@@ -149,6 +149,12 @@ Each specific release is available for download via [Github](https://github.com/
 * Added support for code on Azure.
 
 -->
+**2.0.2 (January 19, 2016)**
+* Added ability to fetch specific users by email address
+* Converted Integration tests to use NUnit
+* Fixed failing integration tests
+
+
 **2.0.1 (August 24, 2015)**
 * Added ability to retrieve Contacts.
 * Added ability to copy folder/sheet/workspace.
