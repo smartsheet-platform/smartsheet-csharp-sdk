@@ -161,7 +161,7 @@ Each specific release is available for download via [Github](https://github.com/
 * Added ability to move folder/sheet.
 * Added ability to delete multiple rows at once.
 * Added ability to send multiple rows at once.
-* Added abilty to create update request.
+* Added ability to create update request.
 * Added ability to create discussion on row and include file attachment (in a single request).
 * Fixed issue where CopyRowsToAnotherSheet and MoveRowsToAnotherSheet did not handle parameters correctly.
 
