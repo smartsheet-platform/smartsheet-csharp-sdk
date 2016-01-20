@@ -6,10 +6,11 @@ using System.Configuration;
 
 namespace IntegrationTestSDK
 {
-	[TestClass]
+	using NUnit.Framework;
+
 	public class WorkspaceResourcesTest
 	{
-		[TestMethod]
+		[Test]
 		public void TestWorkspaceResources()
 		{
 			string accessToken = ConfigurationManager.AppSettings["accessToken"];

@@ -6,10 +6,11 @@ using System.Configuration;
 
 namespace IntegrationTestSDK
 {
-	[TestClass]
+	using NUnit.Framework;
+
 	public class FolderResourcesMoveTest
 	{
-		[TestMethod]
+		[Test]
 		public void TestFolderMoveResources()
 		{
 			string accessToken = ConfigurationManager.AppSettings["accessToken"];

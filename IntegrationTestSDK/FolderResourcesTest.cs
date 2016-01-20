@@ -6,7 +6,8 @@ using System.Configuration;
 
 namespace IntegrationTestSDK
 {
-	[TestClass]
+	using NUnit.Framework;
+
 	public class FolderResourcesTest
 	{
 		/// <summary>
@@ -44,7 +45,7 @@ namespace IntegrationTestSDK
 		private static string folderInFolderName = "new folder in folder";
 		private static string updatedFolderInFolderName = "updated folder in folder";
 
-		[TestMethod]
+		[Test]
 		public void TestFolderResources()
 		{
 			string accessToken = ConfigurationManager.AppSettings["accessToken"];

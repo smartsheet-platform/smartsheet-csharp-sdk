@@ -7,11 +7,12 @@ using System.Configuration;
 
 namespace IntegrationTestSDK
 {
-	[TestClass]
+	using NUnit.Framework;
+
 	public class SheetResourcesTest
 	{
 
-		[TestMethod]
+		[Test]
 		public void TestSheetResources()
 		{
 			string accessToken = ConfigurationManager.AppSettings["accessToken"];

@@ -1,16 +1,22 @@
 {
-    "pageNumber": 1,
-    "pageSize": 100,
-    "totalPages": 1,
-    "totalCount": 1,
     "data": [
         {
-            "id": 94094820842,
-            "admin": true,
             "email": "john.doe@smartsheet.com",
-            "name": "John Doe",
-            "licensedSheetCreator": true,
-            "status": "ACTIVE"
+            "firstName": "Aaron",
+            "id": 2421657013905284,
+            "lastName": "Doe",
+            "name": "John Doe"
+        },
+        {
+            "email": "bob.brown@smartsheet.com",
+            "firstName": "Aaron",
+            "id": 7652452586547076,
+            "lastName": "Brown",
+            "name": "Bob Brown"
         }
-    ]
+    ],
+    "pageNumber": 1,
+    "pageSize": 100,
+    "totalCount": 2,
+    "totalPages": 1
 }

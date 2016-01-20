@@ -46,26 +46,26 @@
       <DocumentationSource sourceFile="..\bin\Release\smartsheet-csharp-sdk.xml" />
     </DocumentationSources>
     <ApiFilter>
-      <Filter entryType="Namespace" fullName="Newtonsoft.Json" isExposed="False" />
-      <Filter entryType="Namespace" fullName="Newtonsoft.Json.Bson" isExposed="False" />
-      <Filter entryType="Namespace" fullName="Newtonsoft.Json.Converters" isExposed="False" />
-      <Filter entryType="Namespace" fullName="Newtonsoft.Json.Linq" isExposed="False" />
-      <Filter entryType="Namespace" fullName="Newtonsoft.Json.Schema" isExposed="False" />
-      <Filter entryType="Namespace" fullName="Newtonsoft.Json.Serialization" isExposed="False" />
-      <Filter entryType="Namespace" fullName="RestSharp" isExposed="False" />
-      <Filter entryType="Namespace" fullName="RestSharp.Authenticators" isExposed="False" />
-      <Filter entryType="Namespace" fullName="RestSharp.Authenticators.OAuth" isExposed="False" />
-      <Filter entryType="Namespace" fullName="RestSharp.Contrib" isExposed="False" />
-      <Filter entryType="Namespace" fullName="RestSharp.Deserializers" isExposed="False" />
-      <Filter entryType="Namespace" fullName="RestSharp.Extensions" isExposed="False" />
-      <Filter entryType="Namespace" fullName="RestSharp.Serializers" isExposed="False" />
-      <Filter entryType="Namespace" fullName="RestSharp.Validation" isExposed="False" />
-      <Filter entryType="Namespace" fullName="Smartsheet.Api.Internal" isExposed="False" />
-      <Filter entryType="Namespace" fullName="Smartsheet.Api.Internal.Http" isExposed="False" />
-      <Filter entryType="Namespace" fullName="Smartsheet.Api.Internal.Json" isExposed="False" />
-      <Filter entryType="Namespace" fullName="Smartsheet.Api.Internal.OAuth" isExposed="False" />
-      <Filter entryType="Namespace" fullName="Smartsheet.Api.Internal.Utility" isExposed="False" />
-    </ApiFilter>
+      <Filter entryType="Namespace" fullName="System.ObsoleteAttribute" isExposed="True" />
+<Filter entryType="Namespace" fullName="Newtonsoft.Json" isExposed="False" />
+<Filter entryType="Namespace" fullName="Newtonsoft.Json.Bson" isExposed="False" />
+<Filter entryType="Namespace" fullName="Newtonsoft.Json.Converters" isExposed="False" />
+<Filter entryType="Namespace" fullName="Newtonsoft.Json.Linq" isExposed="False" />
+<Filter entryType="Namespace" fullName="Newtonsoft.Json.Schema" isExposed="False" />
+<Filter entryType="Namespace" fullName="Newtonsoft.Json.Serialization" isExposed="False" />
+<Filter entryType="Namespace" fullName="RestSharp" isExposed="False" />
+<Filter entryType="Namespace" fullName="RestSharp.Authenticators" isExposed="False" />
+<Filter entryType="Namespace" fullName="RestSharp.Authenticators.OAuth" isExposed="False" />
+<Filter entryType="Namespace" fullName="RestSharp.Contrib" isExposed="False" />
+<Filter entryType="Namespace" fullName="RestSharp.Deserializers" isExposed="False" />
+<Filter entryType="Namespace" fullName="RestSharp.Extensions" isExposed="False" />
+<Filter entryType="Namespace" fullName="RestSharp.Serializers" isExposed="False" />
+<Filter entryType="Namespace" fullName="RestSharp.Validation" isExposed="False" />
+<Filter entryType="Namespace" fullName="Smartsheet.Api.Internal" isExposed="False" />
+<Filter entryType="Namespace" fullName="Smartsheet.Api.Internal.Http" isExposed="False" />
+<Filter entryType="Namespace" fullName="Smartsheet.Api.Internal.Json" isExposed="False" />
+<Filter entryType="Namespace" fullName="Smartsheet.Api.Internal.OAuth" isExposed="False" />
+<Filter entryType="Namespace" fullName="Smartsheet.Api.Internal.Utility" isExposed="False" /></ApiFilter>
     <VisibleItems>None</VisibleItems>
     <CatalogName>VisualStudio11</CatalogName>
     <TocParentId>-1</TocParentId>

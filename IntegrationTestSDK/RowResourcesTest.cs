@@ -7,10 +7,11 @@ using System.Configuration;
 
 namespace IntegrationTestSDK
 {
-	[TestClass]
+	using NUnit.Framework;
+
 	public class RowResourcesTest
 	{
-		[TestMethod]
+		[Test]
 		public void TestRowResources()
 		{
 			string accessToken = ConfigurationManager.AppSettings["accessToken"];

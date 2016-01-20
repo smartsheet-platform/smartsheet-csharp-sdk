@@ -26,16 +26,22 @@ namespace Smartsheet.Api.Internal
 		{
 			server.setResponseBody("../../../TestSDK/resources/listUsers.json");
 
-			PaginatedResult<User> result = userResources.ListUsers(new string[] { "john.doe@smartsheet.com" }, new PaginationParameters(false, 123, 117));
+			// Test that only one result is returned
+			PaginatedResult<User> result = userResources.ListUsers(new string[] { "john.doe@smartsheet.com" }, new PaginationParameters(true, null, null));
 			Assert.NotNull(result);
 			IList<User> users = result.Data;
-			Assert.AreEqual(1, users.Count);
-			Assert.AreEqual(94094820842L, (long)users[0].Id);
-			Assert.AreEqual(true, users[0].Admin);
+			Assert.AreEqual(2, users.Count);
+			Assert.AreEqual(2421657013905284L, (long)users[0].Id);
 			Assert.AreEqual("john.doe@smartsheet.com", users[0].Email);
 			Assert.AreEqual("John Doe", users[0].Name);
-			Assert.AreEqual(true, users[0].LicensedSheetCreator);
-			Assert.AreEqual(UserStatus.ACTIVE, users[0].Status);
+
+			// Test that all are returned
+
+			// Test that two are returned
+
+			// Test tha none are returned
+
+
 		}
 
 		[Test]

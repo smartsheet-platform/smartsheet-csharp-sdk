@@ -6,12 +6,13 @@ using System.Configuration;
 
 namespace IntegrationTestSDK
 {
-	[TestClass]
+	using NUnit.Framework;
+	
 	public class AttachmentResourcesTest
 	{
 		string path = "../../../IntegrationTestSDK/TestFile.txt";
 
-		[TestMethod]
+		[Test]
 		public void TestAttachmentResources()
 		{
 			string accessToken = ConfigurationManager.AppSettings["accessToken"];

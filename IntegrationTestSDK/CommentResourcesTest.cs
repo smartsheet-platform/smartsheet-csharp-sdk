@@ -6,13 +6,14 @@ using System.Configuration;
 
 namespace IntegrationTestSDK
 {
-	[TestClass]
+	using NUnit.Framework;
+
 	public class CommentResourcesTest
 	{
 		private static string path = "../../../IntegrationTestSDK/TestFile.txt";
 
 
-		[TestMethod]
+		[Test]
 		public void TestCommentResources()
 		{
 			string accessToken = ConfigurationManager.AppSettings["accessToken"];

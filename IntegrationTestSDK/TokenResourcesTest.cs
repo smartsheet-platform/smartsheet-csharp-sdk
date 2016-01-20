@@ -9,11 +9,12 @@ using System.Diagnostics;
 
 namespace IntegrationTestSDK
 {
-	[TestClass]
+	using NUnit.Framework;
+
 	public class TokenResourcesTest
 	{
 
-		[TestMethod]
+		[Test]
 		public void TestTokenResources()
 		{
 

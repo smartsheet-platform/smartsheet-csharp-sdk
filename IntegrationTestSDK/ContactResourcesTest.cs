@@ -6,11 +6,12 @@ using System.Configuration;
 
 namespace IntegrationTestSDK
 {
-	[TestClass]
+	using NUnit.Framework;
+
 	public class ContactResourcesTest
 	{
 
-		[TestMethod]
+		[Test]
 		public void TestContactResources()
 		{
 			string accessToken = ConfigurationManager.AppSettings["accessToken"];
@@ -18,18 +19,7 @@ namespace IntegrationTestSDK
 			SmartsheetClient smartsheet = new SmartsheetBuilder().SetAccessToken(accessToken).Build();
 			
 			PaginatedResult<Contact> contactResults = smartsheet.ContactResources.ListContacts(null);
-			bool foundContact = false;
-			foreach (Contact contact in contactResults.Data)
-			{
-				if (contact.Email == "eric.yan@smartsheet.com")
-				{
-					foundContact = true;
-					string contactId = contact.Id;
-					Contact getContact = smartsheet.ContactResources.GetContact(contactId);
-					Assert.IsTrue(getContact.Email == "eric.yan@smartsheet.com");
-				}
-			}
-			Assert.IsTrue(foundContact);
+			Assert.IsTrue(contactResults.TotalCount >= 0);
 		}
 	}
 }

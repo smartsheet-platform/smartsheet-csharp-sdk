@@ -6,10 +6,11 @@ using System.Configuration;
 
 namespace IntegrationTestSDK
 {
-	[TestClass]
+	using NUnit.Framework;
+
 	public class SearchingResourcesTest
 	{
-		[TestMethod]
+		[Test]
 		public void TestSearchingResources()
 		{
 			string accessToken = ConfigurationManager.AppSettings["accessToken"];
@@ -21,7 +22,7 @@ namespace IntegrationTestSDK
 
 			long sheetId = CreateSheet(smartsheet);
 			AddValuesToSheet(smartsheet, sheetId, query);
-
+			System.Threading.Thread.Sleep(5000);
 			SearchEverywhere(smartsheet, query, sheetId);
 
 			SearchSheet(smartsheet, query, sheetId);

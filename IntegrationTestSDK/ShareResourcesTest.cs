@@ -7,11 +7,12 @@ using System.Configuration;
 
 namespace IntegrationTestSDK
 {
-	[TestClass]
+	using NUnit.Framework;
+
 	public class ShareResourcesTest
 	{
 
-		[TestMethod]
+		[Test]
 		public void TestShareResources()
 		{
 			string accessToken = ConfigurationManager.AppSettings["accessToken"];

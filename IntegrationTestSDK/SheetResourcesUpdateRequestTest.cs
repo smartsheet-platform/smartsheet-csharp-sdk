@@ -8,11 +8,12 @@ using System.Collections.Generic;
 
 namespace IntegrationTestSDK
 {
-	[TestClass]
+	using NUnit.Framework;
+
 	public class SheetResourcesUpdateRequestTest
 	{
 
-		[TestMethod]
+		[Test]
 		public void TestSheetUpdateRequestResources()
 		{
 			string accessToken = ConfigurationManager.AppSettings["accessToken"];

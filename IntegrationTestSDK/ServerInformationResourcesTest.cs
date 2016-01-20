@@ -7,11 +7,12 @@ using System.Configuration;
 
 namespace IntegrationTestSDK
 {
-	[TestClass]
+	using NUnit.Framework;
+
 	public class ServerInformationResourcesTest
 	{
 
-		[TestMethod]
+		[Test]
 		public void TestServerInfoResources()
 		{
 			string accessToken = ConfigurationManager.AppSettings["accessToken"];

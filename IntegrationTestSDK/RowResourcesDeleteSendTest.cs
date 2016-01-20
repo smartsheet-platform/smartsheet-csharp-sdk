@@ -7,10 +7,11 @@ using System.Configuration;
 
 namespace IntegrationTestSDK
 {
-	[TestClass]
+	using NUnit.Framework;
+
 	public class RowResourcesDeleteSendTest
 	{
-		[TestMethod]
+		[Test]
 		public void TestRowDeleteSendResources()
 		{
 			string accessToken = ConfigurationManager.AppSettings["accessToken"];

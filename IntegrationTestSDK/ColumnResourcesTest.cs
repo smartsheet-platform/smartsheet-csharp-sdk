@@ -7,10 +7,10 @@ using System.Configuration;
 
 namespace IntegrationTestSDK
 {
-	[TestClass]
+	using NUnit.Framework;
 	public class ColumnResourcesTest
 	{
-		[TestMethod]
+		[Test]
 		public void TestColumnResources()
 		{
 			string accessToken = ConfigurationManager.AppSettings["accessToken"];

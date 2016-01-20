@@ -7,11 +7,12 @@ using System.Configuration;
 
 namespace IntegrationTestSDK
 {
-	[TestClass]
+	using NUnit.Framework;
+	
 	public class FavoriteResourcesTest
 	{
 
-		[TestMethod]
+		[Test]
 		public void TestFavoriteResources()
 		{
 			string accessToken = ConfigurationManager.AppSettings["accessToken"];

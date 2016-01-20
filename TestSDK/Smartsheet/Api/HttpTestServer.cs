@@ -63,8 +63,8 @@ namespace Smartsheet.Api
 					st.Write(responseBody, 0, responseBody.Length);
 
 					context.Response.Close();
+					receive();
 				}
-				receive();
 		}
 		public void Stop()
 		{

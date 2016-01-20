@@ -6,10 +6,11 @@ using System.Configuration;
 
 namespace IntegrationTestSDK
 {
-	[TestClass]
+	using NUnit.Framework;
+
 	public class SheetResourcesCopyTest
 	{
-		[TestMethod]
+		[Test]
 		public void TestSheetCopyResources()
 		{
 			string accessToken = ConfigurationManager.AppSettings["accessToken"];
