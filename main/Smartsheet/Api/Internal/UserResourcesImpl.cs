@@ -61,10 +61,20 @@ namespace Smartsheet.Api.Internal
 		public virtual PaginatedResult<User> ListUsers(IEnumerable<string> emails, PaginationParameters paging)
 		{
 			StringBuilder path = new StringBuilder("users");
+
+			IDictionary<string, string> parameters = new Dictionary<string,string>();
+
 			if (paging != null)
 			{
-				path.Append(paging.ToQueryString());
+				parameters = paging.toDictionary();
 			}
+			if (emails != null)
+			{
+				parameters.Add("email", string.Join(",", emails));
+			}
+
+			path.Append(QueryUtil.GenerateUrl(null, parameters));
+			
 			return this.ListResourcesWithWrapper<User>(path.ToString());
 		}
 
