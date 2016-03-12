@@ -60,6 +60,11 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// Includes a permalink attribute for each Row. A Row permalink represents a direct link to the Row in the Smartsheet application.
 		/// </summary>
-		ROW_PERMALINK
-	}
+		ROW_PERMALINK,
+
+        /// <summary>
+        /// Includes columnType attribute in the row’s cells indicating the type of the column the cell resides in.
+        /// </summary>
+        COLUMN_TYPE
+    }
 }
