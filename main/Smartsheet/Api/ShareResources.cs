@@ -51,25 +51,44 @@ namespace Smartsheet.Api
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		PaginatedResult<Share> ListShares(long objectId, PaginationParameters paging);
 
-		/// <summary>
-		/// <para>Get a Share.</para>
-		/// 
-		/// <para>It mirrors To the following Smartsheet REST API method:<br />
-		/// GET /workspaces/{workspaceId}/shares/{shareId}<br />
-		/// GET /sheets/{sheetId}/shares/{shareId}<br />
-		/// GET /reports/{reportId}/shares/{shareId}</para>
-		/// </summary>
-		/// <param name="objectId"> the ID of the object To share </param>
-		/// <param name="shareId"> the ID of the share instance </param>
-		/// <returns> the share (note that if there is no such resource, this method will throw ResourceNotFoundException
-		/// rather than returning null). </returns>
-		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
-		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
-		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
-		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		Share GetShare(long objectId, string shareId);
+        /// <summary>
+        /// <para>List shares of a given object.</para>
+        /// <para>It mirrors To the following Smartsheet REST API method:<br />
+        /// GET /workspaces/{workspaceId}/shares <br />
+        /// GET /sheets/{sheetId}/shares <br />
+        /// GET /reports/{reportId}/shares</para>
+        /// </summary>
+        /// <param name="objectId"> the object Id </param>
+        /// <param name="paging"> the pagination request </param>
+        /// <param name="shareScope"> when specified with a value of <see cref="ShareScope.Worksapce"/>, the response will contain both item-level shares (scope=‘ITEM’) and workspace-level shares (scope='WORKSPACE’). </param>
+        /// <returns> the list of Share objects (note that an empty list will be returned if there is none). </returns>
+        /// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+        /// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+        /// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+        /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+        /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+        /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+        PaginatedResult<Share> ListShares(long objectId, PaginationParameters paging, ShareScope shareScope);
+
+        /// <summary>
+        /// <para>Get a Share.</para>
+        /// 
+        /// <para>It mirrors To the following Smartsheet REST API method:<br />
+        /// GET /workspaces/{workspaceId}/shares/{shareId}<br />
+        /// GET /sheets/{sheetId}/shares/{shareId}<br />
+        /// GET /reports/{reportId}/shares/{shareId}</para>
+        /// </summary>
+        /// <param name="objectId"> the ID of the object To share </param>
+        /// <param name="shareId"> the ID of the share instance </param>
+        /// <returns> the share (note that if there is no such resource, this method will throw ResourceNotFoundException
+        /// rather than returning null). </returns>
+        /// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+        /// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+        /// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+        /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+        /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+        /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+        Share GetShare(long objectId, string shareId);
 
 		/// <summary>
 		/// <para>Shares a Sheet with the specified Users and Groups.</para>
