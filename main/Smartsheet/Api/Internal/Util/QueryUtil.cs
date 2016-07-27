@@ -1,4 +1,4 @@
-﻿using RestSharp.Contrib;
+﻿using RestSharp.Extensions.MonoHttp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
