@@ -89,6 +89,7 @@
     <Compile Include="main\Smartsheet\Api\FavoriteResources.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\ContactResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\TokenResourcesImpl.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\AlternateEmail.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Contact.cs" />
     <Compile Include="main\Smartsheet\Api\Models\ContainerDestination.cs" />
     <Compile Include="main\Smartsheet\Api\Models\DestinationType.cs" />
