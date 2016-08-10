@@ -130,8 +130,7 @@ namespace Smartsheet.Api.Internal
 
 		/// <summary>
 		/// <para>List all Sheets in the organization.</para>
-		/// 
-		/// <para>It mirrors To the following Smartsheet REST API method: GET /Users/Sheets</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: GET /users/sheets</para>
 		/// </summary>
 		/// <returns> the list of all Sheets (note that an empty list will be returned if there are none) </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
@@ -140,6 +139,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		[Obsolete]
 		public virtual PaginatedResult<Sheet> ListOrganizationSheets(PaginationParameters paging)
 		{
 			StringBuilder path = new StringBuilder("users/sheets");

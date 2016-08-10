@@ -62,7 +62,7 @@ namespace Smartsheet.Api
 		/// <summary>
 		/// <para>List all Sheets in the organization.</para>
 		/// 
-		/// <para>It mirrors To the following Smartsheet REST API method: GET /Users/Sheets</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: GET /users/sheets</para>
 		/// </summary>
 		/// <param name="paging">the pagination</param>
 		/// <returns> the list of all Sheets (note that an empty list will be returned if there are none) </returns>

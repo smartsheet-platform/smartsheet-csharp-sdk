@@ -24,8 +24,8 @@ namespace Smartsheet.Api.Internal
 		public virtual void TestListAllOrgSheets()
 		{
 			server.setResponseBody("../../../TestSDK/resources/listOrgSheets.json");
-
-			PaginatedResult<Sheet> result = sheetResource.ListSheets();
+			PaginationParameters pagination = new PaginationParameters(true, 1, 1);
+			PaginatedResult<Sheet> result = sheetResource.ListOrgSheets(pagination);
 			Assert.AreEqual(result.Data[0].Id, 2894323533539204);
 			Assert.AreEqual(result.Data[0].Name, "New Sheet");
 			Assert.AreEqual(result.Data[0].Owner, "john.doe@smartsheet.com");
