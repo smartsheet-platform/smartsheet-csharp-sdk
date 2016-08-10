@@ -30,10 +30,6 @@ namespace Smartsheet.Api.Models
 		TEXT_NUMBER,
 
 		/// <summary>
-		/// Represents the PICKLIST column Type. </summary>
-		PICKLIST,
-
-		/// <summary>
 		/// Represents the DATE column Type. </summary>
 		DATE,
 
@@ -47,7 +43,32 @@ namespace Smartsheet.Api.Models
 
 		/// <summary>
 		/// Represents the CHECKBOX column Type. </summary>
-		CHECKBOX
+		CHECKBOX,
+
+		/// <summary>
+		/// Represents the PICKLIST column Type. </summary>
+		PICKLIST,
+
+		/// <summary>
+		/// Only for dependency-enabled project sheets
+		/// The API does not support setting a Column to this type. (This can only be done through the Smartsheet web application when configuring a project sheet.)
+		/// </summary>
+		DURATION,
+
+		/// <summary>
+		/// Only for dependency-enabled project sheets
+		/// The API does not support setting a Column to this type, or updating data in a column of this type. 
+		/// (This can only be done through the Smartsheet web application when configuring a project sheet.)</summary>
+		PREDECESSOR,
+
+		/// <summary>
+		/// Represents a project sheet’s Start and End dates.
+		/// Only for dependency-enabled project sheets
+		/// The API does not support setting a Column to this type. (This can only be done through the Smartsheet 
+		/// web application when configuring a project sheet.) Additionally, the API does not support updating data 
+		/// in the End Date column under any circumstance, and does not support updating data in the Start Date column
+		/// if Predecessor is set for that row. </summary>
+		ABSTRACT_DATETIME
 	}
 
 }

@@ -208,5 +208,11 @@ namespace Smartsheet.Api
 		[Obsolete("use Smartsheet.Api.SmartsheetClient.WorkspaceResources", true)]
 		[EditorBrowsable(EditorBrowsableState.Never)]
 		WorkspaceResources Workspaces();
+
+		/// <summary>
+		/// <para>Returns the ImageUrlResources instance that provides access to image Url resources.</para>
+		/// </summary>
+		/// <returns> the image Url resources instance </returns>
+		ImageUrlsResources ImageUrlResources { get; }
 	}
 }

@@ -239,6 +239,15 @@ namespace Smartsheet.Api.Internal
 		private string accessToken;
 
 		/// <summary>
+		/// Represents the AtomicReference for image Urls.
+		/// 
+		/// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
+		/// as null, and can be set via corresponding setter, therefore effectively the assumed user can be updated in the
+		/// SmartsheetImpl in thread safe manner.
+		/// </summary>
+		private ImageUrlsResources imageUrls;
+
+		/// <summary>
 		/// Create an instance with given server URI, HttpClient (optional) and JsonSerializer (optional)
 		/// 
 		/// Exceptions: - IllegalArgumentException : if serverURI/Version/AccessToken is null/empty
@@ -633,6 +642,15 @@ namespace Smartsheet.Api.Internal
 		public virtual WorkspaceResources Workspaces()
 		{
 			throw new NotSupportedException();
+		}
+
+		public virtual ImageUrlsResources ImageUrlResources
+		{
+			get
+			{
+				Interlocked.CompareExchange<ImageUrlsResources>(ref imageUrls, new ImageUrlsResourcesImpl(this), null);
+				return imageUrls;
+			}
 		}
 	}
 }
