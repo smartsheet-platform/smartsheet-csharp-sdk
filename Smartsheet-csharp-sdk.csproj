@@ -98,6 +98,7 @@
     <Compile Include="main\Smartsheet\Api\Models\Inclusions\WorkspaceCopyInclusion.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Inclusions\WorkspaceRemapExclusion.cs" />
     <Compile Include="main\Smartsheet\Api\Models\MultiRowEmail.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\ReportPublish.cs" />
     <Compile Include="main\Smartsheet\Api\Models\UpdateRequest.cs" />
     <Compile Include="main\Smartsheet\Api\TokenResources.cs" />
     <Compile Include="main\Smartsheet\Api\FolderResources.cs" />

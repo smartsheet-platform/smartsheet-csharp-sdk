@@ -117,6 +117,45 @@ namespace Smartsheet.Api
 		void SendReport(long reportId, SheetEmail email);
 
 		/// <summary>
+		/// <para>Get the publish status of a report.</para>
+		/// 
+		/// <para>It mirrors to the following Smartsheet REST API method: GET /reports/{id}/publish</para>
+		/// </summary>
+		/// <param name="reportId"> the reportId </param>
+		/// <returns>
+		/// The report publish status (note that if there is no such resource, this method will 
+		/// throw ResourceNotFoundException rather than returning null).
+		/// </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		ReportPublish GetPublishStatus(long reportId);
+
+		/// <summary>
+		/// <para>
+		/// Sets the publish status of a report and returns the new status, including the URLs of any enabled publishing.
+		/// </para>
+		/// 
+		/// <para>It mirrors to the following Smartsheet REST API method: PUT /reports/{id}/publish</para>
+		/// </summary>
+		/// <param name="reportId"> the reportId </param>
+		/// <param name="reportPublish"> the ReportPublish object</param>
+		/// <returns>
+		/// The report publish status (note that if there is no such resource, this method will 
+		/// throw ResourceNotFoundException rather than returning null).
+		/// </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		ReportPublish UpdatePublishStatus(long reportId, ReportPublish reportPublish);
+
+		/// <summary>
 		/// <para>Return the ShareResources object that provides access To Share resources associated with Report resources.</para>
 		/// </summary>
 		/// <returns> the share resources object </returns>
