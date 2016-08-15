@@ -59,6 +59,11 @@ namespace Smartsheet.Api.Models
 		private IList<Workspace> workspaces;
 
 		/// <summary>
+		/// Represents the Sights in the home location
+		/// </summary>
+		private IList<Sight> sights;
+
+		/// <summary>
 		/// Gets the Sheets in the home location.
 		/// </summary>
 		/// <returns> the Sheets </returns>
@@ -140,6 +145,21 @@ namespace Smartsheet.Api.Models
 			}
 		}
 
+		/// <summary>
+		/// Gets the Sight in the home location.
+		/// </summary>
+		/// <returns> the Sight </returns>
+		public virtual IList<Sight> Sights
+		{
+			get
+			{
+				return sights;
+			}
+			set
+			{
+				this.sights = value;
+			}
+		}
 	}
 
 }

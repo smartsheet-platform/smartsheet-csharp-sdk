@@ -15,32 +15,51 @@
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
 //    %[license]
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
 namespace Smartsheet.Api.Models
 {
 	/// <summary>
-	/// Represents specific references to NOT re-map for the newly created object
-	/// </summary>
-	public enum WorkspaceRemapExclusion
+	/// Represents the contents of the widget. </summary>
+	/// <seealso href="http://smartsheet-platform.github.io/api-docs/#widgetcontent-object">Widget Content Help</seealso>
+	public enum WidgetType
 	{
 		/// <summary>
-		/// Excludes re-mapping of the cell links.
+		/// CellLinkWidgetContent object
 		/// </summary>
-		CELL_LINKS,
+		CELLLINK,
 
 		/// <summary>
-		/// Excludes re-mapping of the reports.
+		/// CellLinkWidgetContent object
 		/// </summary>
-		REPORTS,
+		SHEETSUMMARY,
 
 		/// <summary>
-		/// Excludes re-mapping of hyperlinks.
+		/// RichTextWidgetContent object
 		/// </summary>
-		SHEET_HYPERLINKS,
+		RICHTEXT,
 
 		/// <summary>
-		/// Excludes re-mapping of Sights.
+		/// ShortcutWidgetContent object
 		/// </summary>
-		SIGHTS
+		SHORTCUTICON,
+
+		/// <summary>
+		/// ShortcutWidgetContent object
+		/// </summary>
+		SHORTCUTLIST,
+
+		/// <summary>
+		/// ReportWidgetContent object
+		/// </summary>
+		GRIDGANTT,
+
+		/// <summary>
+		/// ImageWidgetContent object
+		/// </summary>
+		IMAGE
 	}
 }

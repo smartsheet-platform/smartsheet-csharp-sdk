@@ -49,6 +49,23 @@ namespace Smartsheet.Api.Models
 		private AccessLevel? accessLevel;
 
 		/// <summary>
+		/// The scope of this share. One of the following values:
+		///		ITEM: an item-level share (i.e., the specific object to which the Share applies is shared with the user or group)
+		///		WORKSPACE: a workspace-level share (i.e., the workspace that contains the object to which the Share applies is shared with the user or group)
+		/// </summary>
+		private ShareScope? scope;
+
+		/// <summary>
+		/// Time that the share was created.
+		/// </summary>
+		private DateTime? createdAt;
+
+		/// <summary>
+		/// Time that the share was modified.
+		/// </summary>
+		private DateTime? modifiedAt;
+
+		/// <summary>
 		/// Represents the Email for this specific share.
 		/// </summary>
 		private string email;
@@ -68,7 +85,6 @@ namespace Smartsheet.Api.Models
 				this.accessLevel = value;
 			}
 		}
-
 
 		/// <summary>
 		/// Gets the Email for this specific share.
@@ -151,6 +167,47 @@ namespace Smartsheet.Api.Models
 		{
 			get { return ccMe; }
 			set { ccMe = value; }
+		}
+
+		/// <summary>
+		/// The scop of this share. One of ITEM or WORKSPACE.
+		/// </summary>
+		public ShareScope? Scope
+		{
+			get { return scope; }
+			set { scope = value; }
+		}
+
+		/// <summary>
+		/// Gets the Time that the share was created.
+		/// </summary>
+		/// <returns> the DateTime </returns>
+		public virtual DateTime? CreatedAt
+		{
+			get
+			{
+				return createdAt;
+			}
+			set
+			{
+				this.createdAt = value;
+			}
+		}
+
+		/// <summary>
+		/// Gets the time that the share was modified.
+		/// </summary>
+		/// <returns> the DateTime </returns>
+		public virtual DateTime? ModifiedAt
+		{
+			get
+			{
+				return modifiedAt;
+			}
+			set
+			{
+				this.modifiedAt = value;
+			}
 		}
 
 		/// <summary>

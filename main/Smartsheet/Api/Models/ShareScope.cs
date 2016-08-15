@@ -19,28 +19,12 @@
 namespace Smartsheet.Api.Models
 {
 	/// <summary>
-	/// Represents specific references to NOT re-map for the newly created object
+	/// The scope of this share. 
 	/// </summary>
-	public enum WorkspaceRemapExclusion
+	public enum ShareScope
 	{
-		/// <summary>
-		/// Excludes re-mapping of the cell links.
-		/// </summary>
-		CELL_LINKS,
-
-		/// <summary>
-		/// Excludes re-mapping of the reports.
-		/// </summary>
-		REPORTS,
-
-		/// <summary>
-		/// Excludes re-mapping of hyperlinks.
-		/// </summary>
-		SHEET_HYPERLINKS,
-
-		/// <summary>
-		/// Excludes re-mapping of Sights.
-		/// </summary>
-		SIGHTS
+		ITEM,
+		WORKSPACE
 	}
+
 }

@@ -100,6 +100,7 @@ namespace Smartsheet.Api.Internal
 		/// <item><description>DELETE /favorites/folder</description></item>
 		/// <item><description>DELETE /favorites/report</description></item>
 		/// <item><description>DELETE /favorites/sheet</description></item>
+		/// <item><description>DELETE /favorites/sight</description></item>
 		/// <item><description>DELETE /favorites/template</description></item>
 		/// <item><description>DELETE /favorites/workspace</description></item>
 		/// </list>

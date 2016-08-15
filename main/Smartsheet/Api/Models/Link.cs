@@ -46,7 +46,15 @@ namespace Smartsheet.Api.Models
 		/// </summary>
 		private long? sheetId;
 
+		/// <summary>
+		/// If non-null, this hyperlink is a link to the Report with this ID.
+		/// </summary>
 		private long? reportId;
+
+		/// <summary>
+		/// If non-null, this hyperlink is a link to the Sight with this ID.
+		/// </summary>
+		private long? sightId;
 
 		/// <summary>
 		/// If non-null, this hyperlink is a link to the Report with this ID.
@@ -55,6 +63,15 @@ namespace Smartsheet.Api.Models
 		{
 			get { return reportId; }
 			set { reportId = value; }
+		}
+
+		/// <summary>
+		/// If non-null, this hyperlink is a link to the Sight with this ID.
+		/// </summary>
+		public long? SightId
+		{
+			get { return sightId; }
+			set { sightId = value; }
 		}
 
 		///// <summary>

@@ -21,163 +21,157 @@ using System.Collections.Generic;
 namespace Smartsheet.Api.Internal
 {
 	using Smartsheet.Api.Models;
-	using System.Text;
-	using MultiShare = Api.Models.MultiShare;
-	using Share = Api.Models.Share;
 	using Smartsheet.Api.Internal.Util;
 
-	/// <summary>
-	/// This is the implementation of the ShareResources.
-	/// 
-	/// Thread Safety: This class is thread safe because it is immutable and its base class is thread safe.
-	/// </summary>
-	public class ShareResourcesImpl : AbstractAssociatedResources, ShareResources
+	public class SightResourcesImpl : AbstractResources, SightResources
 	{
+		/// <summary>
+		/// Represents the ShareResources.
+		/// 
+		/// It will be initialized in constructor and will not change afterwards.
+		/// </summary>
+		private ShareResources shares;
 
 		/// <summary>
 		/// Constructor.
 		/// 
-		/// Exceptions: - IllegalArgumentException : if any argument is null or empty string
+		/// Exceptions: - IllegalArgumentException : if any argument is null
 		/// </summary>
 		/// <param name="smartsheet"> the Smartsheet </param>
-		/// <param name="masterResourceType"> the master resource Type (e.g. "sheets", "workspaces", "reports") </param>
-		public ShareResourcesImpl(SmartsheetImpl smartsheet, string masterResourceType)
-			: base(smartsheet, masterResourceType)
+		public SightResourcesImpl(SmartsheetImpl smartsheet)
+			: base(smartsheet)
 		{
+			this.shares = new ShareResourcesImpl(smartsheet, "sights");
 		}
 
 		/// <summary>
-		/// <para>List shares of a given object.</para>
-		/// <para>It mirrors To the following Smartsheet REST API method:<br />
-		/// GET /workspaces/{workspaceId}/shares <br />
-		/// GET /sheets/{sheetId}/shares <br />
-		/// GET /sights/{sightId}/shares <br />
-		/// GET /reports/{reportId}/shares</para>
+		/// <para>Gets the list of all Sights that the User has access to.</para>
+		/// 
+		/// <para>It mirrors To the following Smartsheet REST API method: GET /sights</para>
 		/// </summary>
-		/// <param name="objectId"> the object Id </param>
-		/// <param name="paging"> the pagination request </param>
-		/// <param name="includeWorkspaceShares">include Workspace shares in enumeration</param>
-		/// <returns> the list of Share objects (note that an empty list will be returned if there is none). </returns>
+		/// <returns>IndexResult object containing an array of Sight objects limited to the following attributes:
+		///		id, name, accessLevel, permalink, createdAt, modifiedAt 
+		/// </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual PaginatedResult<Share> ListShares(long objectId, PaginationParameters paging, bool includeWorkspaceShares=false)
+		public virtual PaginatedResult<Sight> ListSights(PaginationParameters paging)
 		{
 			IDictionary<string, string> parameters = new Dictionary<string, string>();
 			if (paging != null)
 			{
 				parameters = paging.toDictionary();
 			}
-			if (includeWorkspaceShares == true)
-			{
-				parameters.Add("include", "workspaceShares");
-			}
 
-			return this.ListResourcesWithWrapper<Share>(MasterResourceType + "/" + objectId + "/shares" + QueryUtil.GenerateUrl(null, parameters));
+			return this.ListResourcesWithWrapper<Sight>("sights" + QueryUtil.GenerateUrl(null, parameters));
 		}
 
-
 		/// <summary>
-		/// <para>Get a Share.</para>
-		/// <para>It mirrors To the following Smartsheet REST API method:<br />
-		/// GET /workspaces/{workspaceId}/shares/{shareId}<br />
-		/// GET /sheets/{sheetId}/shares/{shareId}<br />
-		/// GET /sights/{sightId}/shares/{shareId}<br />
-		/// GET /reports/{reportId}/shares/{shareId}</para>
-		/// </summary>
-		/// <param name="objectId"> the ID of the object To share </param>
-		/// <param name="shareId"> the ID of the share instance </param>
-		/// <returns> the share (note that if there is no such resource, this method will throw ResourceNotFoundException
-		/// rather than returning null). </returns>
-		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
-		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
-		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
-		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual Share GetShare(long objectId, string shareId)
-		{
-			return this.GetResource<Share>(MasterResourceType + "/" + objectId + "/shares/" + shareId, typeof(Share));
-		}
-
-
-		/// <summary>
-		/// <para>Shares a Sheet with the specified Users and Groups.</para>
+		/// <para>Get a specified Sight.</para>
 		/// 
-		/// <para>It mirrors To the following Smartsheet REST API method:<br />
-		/// POST /workspaces/{workspaceId}/shares<br />
-		/// POST /sheets/{sheetId}/shares<br />
-		/// POST /sights/{sightsId}/shares<br />
-		/// POST /reports/{reportId}/shares</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: GET /sights/{sightId}</para>
 		/// </summary>
-		/// <param name="objectId"> the Id of the object </param>
-		/// <param name="shares"> the share objects </param>
-		/// <param name="sendEmail">(optional): Either true or false to indicate whether or not
-		/// to notify the user by email. Default is false.</param>
-		/// <returns> the created share </returns>
+		/// <param name="sightId"> the Id of the sight </param>
+		/// <returns> the sight resource (note that if there is no such resource, this method will throw 
+		/// ResourceNotFoundException rather than returning null). </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual IList<Share> ShareTo(long objectId, IEnumerable<Share> shares, bool? sendEmail)
+		public virtual Sight GetSight(long sightId)
 		{
-			StringBuilder path = new StringBuilder(MasterResourceType + "/" + objectId + "/shares");
-			if (sendEmail != null)
+			return this.GetResource<Sight>("sights/" + sightId, typeof(Sight));
+		}
+
+		/// <summary>
+		/// <para>Updates (renames) the specified Sight.</para>
+		/// The request body is limited to the name attribute.</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: PUT /sights/{sightId}</para>
+		/// </summary>
+		/// <param name="sight"> the sight To update </param>
+		/// <returns> the updated sight </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public virtual Sight UpdateSight(Sight sight)
+		{
+			return this.UpdateResource("sights/" + sight.Id, typeof(Sight), sight);
+		}
+
+		/// <summary>
+		/// <para>Delete a sight.</para>
+		/// 
+		/// <para>It mirrors To the following Smartsheet REST API method: DELETE /sights/{sightId}</para>
+		/// </summary>
+		/// <param name="sightId"> the sightId </param>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public virtual void DeleteSight(long sightId)
+		{
+			this.DeleteResource<Sight>("sights/" + sightId, typeof(Sight));
+		}
+
+		/// <summary>
+		/// <para>Creates a copy of the specified Sight.</para>
+		/// <para>It mirrors To the following Smartsheet REST API method:<br />
+		/// POST /sights/{sightId}/copy</para>
+		/// </summary>
+		/// <param name="sightId"> the sightId </param>
+		/// <param name="destination"> the destination to copy to </param>
+		/// <returns>Result object containing a Sight for the newly created Sight, limited to the following attributes:
+		///		id, name, accessLevel, permalink.</returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public virtual Sight CopySight(long sightId, ContainerDestination destination)
+		{
+			return this.CreateResource<RequestResult<Sight>, ContainerDestination>("sights/" + sightId + "/copy", destination).Result;
+		}
+
+		/// <summary>
+		/// <para>Moves the specified Sight to a new location.</para>
+		/// <para>It mirrors To the following Smartsheet REST API method:<br />
+		/// POST /sights/{sightId}/move</para>
+		/// </summary>
+		/// <param name="sightId"> the sightId </param>
+		/// <param name="destination"> the destination to copy to </param>
+		/// <returns> the moved sight </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public virtual Sight MoveSight(long sightId, ContainerDestination destination)
+		{
+			return this.CreateResource<RequestResult<Sight>, ContainerDestination>("sights/" + sightId + "/move", destination).Result;
+		}
+
+		/// <summary>
+		/// Returns the ShareResources object that provides access To Share resources associated with Sight resources.
+		/// </summary>
+		/// <returns> the ShareResources object </returns>
+		public virtual ShareResources ShareResources
+		{
+			get
 			{
-				path.Append("?sendEmail=" + sendEmail.ToString().ToLower());
+				return this.shares;
 			}
-			return this.PostAndReceiveList<IEnumerable<Share>, Share>(path.ToString(), shares, typeof(Share));
-		}
-
-
-		/// <summary>
-		/// <para>Updates the access level of a User or Group for the specified Object.</para>
-		/// <para>It mirrors To the following Smartsheet REST API method:<br />
-		/// PUT /workspaces/{workspaceId}/shares/{shareId}<br />
-		/// PUT /sheets/{sheetId}/shares/{shareId}<br />
-		/// PUT /sights/{sightId}/shares/{shareId}<br />
-		/// PUT /reports/{reportId}/shares/{shareId}</para>
-		/// </summary>
-		/// <param name="objectId"> the ID of the object To share </param>
-		/// <param name="share"> the share </param>
-		/// <returns> the updated share (note that if there is no such resource, this method will throw
-		///  ResourceNotFoundException rather than returning null). </returns>
-		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
-		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
-		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
-		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual Share UpdateShare(long objectId, Share share)
-		{
-			return this.UpdateResource<Share>(MasterResourceType + "/" + objectId + "/shares/" + share.Id, typeof(Share), share);
-		}
-
-		/// <summary>
-		/// <para>Delete a share.</para>
-		/// <para>It mirrors To the following Smartsheet REST API method:<br />
-		/// DELETE /workspaces/{workspaceId}/shares/{shareId}<br />
-		/// DELETE /sheets/{sheetId}/shares/{shareId}<br />
-		/// DELETE /sight/{sightId}/shares/{shareId}<br />
-		/// DELETE /reports/{reportId}/shares/{shareId}</para>
-		/// </summary>
-		/// <param name="objectId"> the ID of the object To share </param>
-		/// <param name="shareId"> the ID of the user To whome the object is shared </param>
-		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
-		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
-		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
-		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual void DeleteShare(long objectId, string shareId)
-		{
-			this.DeleteResource<Share>(MasterResourceType + "/" + objectId + "/shares/" + shareId, typeof(Share));
 		}
 	}
-
 }

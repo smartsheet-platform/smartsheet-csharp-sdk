@@ -64,6 +64,12 @@ namespace Smartsheet.Api
 		SheetResources SheetResources { get; }
 
 		/// <summary>
+		/// <para>Returns the SightResources instance that provides access to Sight resources.</para>
+		/// </summary>
+		/// <returns> the sight resources instance </returns>
+		SightResources SightResources { get; }
+
+		/// <summary>
 		/// <para>Returns the UserResources instance that provides access to User resources.</para>
 		/// </summary>
 		/// <returns> the user resources instance </returns>

@@ -90,10 +90,12 @@
     <Compile Include="main\Smartsheet\Api\ImageUrlsResources.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\ContactResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\ImageUrlsResourcesImpl.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\SightResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\TokenResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Models\AlternateEmail.cs" />
     <Compile Include="main\Smartsheet\Api\Models\BulkItemFailure.cs" />
     <Compile Include="main\Smartsheet\Api\Models\BulkItemRowResult.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\CellDataItem.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Contact.cs" />
     <Compile Include="main\Smartsheet\Api\Models\ContainerDestination.cs" />
     <Compile Include="main\Smartsheet\Api\Models\DestinationType.cs" />
@@ -108,7 +110,14 @@
     <Compile Include="main\Smartsheet\Api\Models\Inclusions\WorkspaceRemapExclusion.cs" />
     <Compile Include="main\Smartsheet\Api\Models\MultiRowEmail.cs" />
     <Compile Include="main\Smartsheet\Api\Models\ReportPublish.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\ShareScope.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\ShortcutDataItem.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Sight.cs" />
     <Compile Include="main\Smartsheet\Api\Models\UpdateRequest.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Widget.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\WidgetContent.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\WidgetType.cs" />
+    <Compile Include="main\Smartsheet\Api\SightResources.cs" />
     <Compile Include="main\Smartsheet\Api\TokenResources.cs" />
     <Compile Include="main\Smartsheet\Api\FolderResources.cs" />
     <Compile Include="main\Smartsheet\Api\GroupResources.cs" />

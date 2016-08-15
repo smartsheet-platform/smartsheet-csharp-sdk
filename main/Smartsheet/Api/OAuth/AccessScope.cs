@@ -50,6 +50,27 @@ namespace Smartsheet.Api.OAuth
 		/// Create new sheets
 		/// </summary>
 		CREATE_SHEETS,
+
+		/// <summary>
+		/// Create new sights
+		/// </summary>
+		CREATE_SIGHTS,
+
+		/// <summary>
+		/// Read all sight data
+		/// </summary>
+		READ_SIGHTS,
+
+		/// <summary>
+		/// Delete sight
+		/// </summary>
+		DELETE_SIGHTS,
+
+		/// <summary>
+		/// Share sight
+		/// </summary>
+		SHARE_SIGHTS,
+
 		/// <summary>
 		/// Retrieve users and groups for your Smartsheet organization
 		/// </summary>

@@ -36,6 +36,11 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// Excludes re-mapping of hyperlinks.
 		/// </summary>
-		SHEET_HYPERLINKS
+		SHEET_HYPERLINKS,
+
+		/// <summary>
+		/// Excludes re-mapping of Sights.
+		/// </summary>
+		SIGHTS
 	}
 }

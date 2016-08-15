@@ -31,7 +31,7 @@ namespace Smartsheet.Api.Models
 		private long? objectId;
 
 		/// <summary>
-		/// One of: workspace, folder, sheet, report, template
+		/// One of: workspace, folder, sheet, report, template, sight
 		/// </summary>
 		public ObjectType? Type
 		{

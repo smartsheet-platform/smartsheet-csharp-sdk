@@ -52,6 +52,10 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// Egnyte
 		/// </summary>
-		EGNYTE
+		EGNYTE,
+		/// <summary>
+		/// OneDrive 
+		/// </summary>
+		ONEDRIVE
 	}
 }
