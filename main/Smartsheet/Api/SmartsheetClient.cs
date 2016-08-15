@@ -88,6 +88,12 @@ namespace Smartsheet.Api
 		ServerInfoResources ServerInfoResources { get; }
 
 		/// <summary>
+		/// <para>Returns the WebhookResources instance that provides access to webhook resources.</para>
+		/// </summary>
+		/// <returns> the webhook resources instance </returns>
+		WebhookResources WebhookResources { get; }
+
+		/// <summary>
 		/// <para>Returns the GroupResources instance that provides access to group resources.</para>
 		/// </summary>
 		/// <returns> the group resources instance </returns>

@@ -117,7 +117,15 @@ namespace Smartsheet.Api.Internal
 		/// as null, and will be initialized To non-null at the first time it is accessed via corresponding getter, therefore
 		/// effectively the underlying Value is lazily created in a thread safe manner.
 		/// </summary>
-		private SightResources sights;		
+		private SightResources sights;
+		/// <summary>
+		/// Represents the AtomicReference To WebhookResources.
+		/// 
+		/// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
+		/// as null, and will be initialized To non-null at the first time it is accessed via corresponding getter, therefore
+		/// effectively the underlying Value is lazily created in a thread safe manner.
+		/// </summary>
+		private WebhookResources webhooks;
 
 		///// <summary>
 		///// Represents the AtomicReference To ColumnResources.
@@ -446,6 +454,20 @@ namespace Smartsheet.Api.Internal
 				return sights;
 			}
 		}
+
+		/// <summary>
+		/// Returns the SightResources instance that provides access To Sight resources.
+		/// </summary>
+		/// <returns> the sight resources </returns>
+		public virtual WebhookResources WebhookResources
+		{
+			get
+			{
+				Interlocked.CompareExchange<WebhookResources>(ref webhooks, new WebhookResourcesImpl(this), null);
+				return webhooks;
+			}
+		}
+
 
 		///// <summary>
 		///// Returns the ColumnResources instance that provides access To Column resources.

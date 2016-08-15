@@ -92,10 +92,13 @@
     <Compile Include="main\Smartsheet\Api\Internal\ImageUrlsResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\SightResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\TokenResourcesImpl.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\WebhookResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Models\AlternateEmail.cs" />
     <Compile Include="main\Smartsheet\Api\Models\BulkItemFailure.cs" />
     <Compile Include="main\Smartsheet\Api\Models\BulkItemRowResult.cs" />
     <Compile Include="main\Smartsheet\Api\Models\CellDataItem.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\WebhookSharedSecret.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\WebhookStatus.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Contact.cs" />
     <Compile Include="main\Smartsheet\Api\Models\ContainerDestination.cs" />
     <Compile Include="main\Smartsheet\Api\Models\DestinationType.cs" />
@@ -114,6 +117,8 @@
     <Compile Include="main\Smartsheet\Api\Models\ShortcutDataItem.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Sight.cs" />
     <Compile Include="main\Smartsheet\Api\Models\UpdateRequest.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Webhook.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\WebhookStats.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Widget.cs" />
     <Compile Include="main\Smartsheet\Api\Models\WidgetContent.cs" />
     <Compile Include="main\Smartsheet\Api\Models\WidgetType.cs" />
@@ -312,6 +317,7 @@
     <Compile Include="main\Smartsheet\Api\TemplateResources.cs" />
     <Compile Include="main\Smartsheet\Api\UserResources.cs" />
     <Compile Include="main\Smartsheet\Api\UserSheetResources.cs" />
+    <Compile Include="main\Smartsheet\Api\WebhookResources.cs" />
     <Compile Include="main\Smartsheet\Api\WorkspaceFolderResources.cs" />
     <Compile Include="main\Smartsheet\Api\WorkspaceResources.cs" />
     <Compile Include="main\Smartsheet\Api\FolderSheetResources.cs" />
