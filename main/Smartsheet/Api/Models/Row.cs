@@ -277,7 +277,7 @@ namespace Smartsheet.Api.Models
 			private bool? toBottom;
 			private long? parentId;
 			private long? siblingId;
-			//internal bool? above;
+			private bool? above;
 			private string format;
 			private bool? expanded;
 			private IList<Cell> cells;
@@ -337,16 +337,16 @@ namespace Smartsheet.Api.Models
 				return this;
 			}
 
-			///// <summary>
-			///// Sets the To top flag that puts the row at the top of the sheet.
-			///// </summary>
-			///// <param name="toTop"> the To top flag </param>
-			///// <returns> the update row builder </returns>
-			//public virtual UpdateRowBuilder SetAbove(bool? above)
-			//{
-			//	this.above = above;
-			//	return this;
-			//}
+            /// <summary>
+            /// Sets the above flag two move the Row directly above the specified sibling Row (at the same hierarchical level).
+            /// </summary>
+            /// <param name="above"> the above flag </param>
+            /// <returns> the update row builder </returns>
+            public virtual UpdateRowBuilder SetAbove(bool? above)
+			{
+				this.above = above;
+				return this;
+			}
 
 			/// <summary>
 			/// Sets the list of cells.
@@ -437,11 +437,6 @@ namespace Smartsheet.Api.Models
 				return cells;
 			}
 
-			//public virtual bool? Above
-			//{
-			//	get { return above; }
-			//}
-
 			/// <summary>
 			/// Gets the format.
 			/// </summary>
@@ -490,6 +485,7 @@ namespace Smartsheet.Api.Models
 					ToBottom = toBottom,
 					ParentId = parentId,
 					SiblingId = siblingId,
+                    Above = above,
 					Locked = locked,
 					Format = format,
 					Expanded = expanded,
@@ -498,6 +494,6 @@ namespace Smartsheet.Api.Models
 				};
 				return row;
 			}
-		}
+        }
 	}
 }
