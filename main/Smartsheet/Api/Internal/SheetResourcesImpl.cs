@@ -84,6 +84,12 @@ namespace Smartsheet.Api.Internal
 		/// It will be initialized in constructor and will not change afterwards.
 		/// </summary>
 		private SheetCommentResources comments;
+		/// <summary>
+		/// Represents the associated SheetUpdateRequestResources.
+		/// 
+		/// It will be initialized in constructor and will not change afterwards.
+		/// </summary>
+		private SheetUpdateRequestResources updateRequests;
 
 		/// <summary>
 		/// Constructor.
@@ -100,6 +106,7 @@ namespace Smartsheet.Api.Internal
 			this.attachments = new SheetAttachmentResourcesImpl(smartsheet);
 			this.discussions = new SheetDiscussionResourcesImpl(smartsheet);
 			this.comments = new SheetCommentResourcesImpl(smartsheet);
+			this.updateRequests = new SheetUpdateRequestResourcesImpl(smartsheet);
 		}
 
 		/// <summary>
@@ -114,7 +121,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual PaginatedResult<Sheet> ListSheets(IEnumerable<SheetInclusion> includes, PaginationParameters paging)
+		public virtual PaginatedResult<Sheet> ListSheets(IEnumerable<SheetInclusion> includes, PaginationParameters paging, DateTime? modifiedSince)
 		{
 			IDictionary<string, string> parameters = new Dictionary<string, string>();
 			if (paging != null)
@@ -125,6 +132,11 @@ namespace Smartsheet.Api.Internal
 			{
 				parameters.Add("include", QueryUtil.GenerateCommaSeparatedList(includes));
 			}
+			if (modifiedSince != null)
+			{
+				parameters.Add("modifiedSince", ((DateTime)modifiedSince).ToUniversalTime().ToString("o"));
+			}
+
 			return this.ListResourcesWithWrapper<Sheet>("sheets" + QueryUtil.GenerateUrl(null, parameters));
 		}
 
@@ -139,7 +151,6 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		[Obsolete]
 		public virtual PaginatedResult<Sheet> ListOrganizationSheets(PaginationParameters paging)
 		{
 			StringBuilder path = new StringBuilder("users/sheets");
@@ -552,12 +563,25 @@ namespace Smartsheet.Api.Internal
 		/// Returns the SheetCommentResources object that provides access To discussion resources associated with
 		/// Sheet resources.
 		/// </summary>
-		/// <returns> the associated discussion resources </returns>
+		/// <returns> the associated comment resources </returns>
 		public SheetCommentResources CommentResources
 		{
 			get
 			{
 				return this.comments;
+			}
+		}
+
+		/// <summary>
+		/// Returns the UpdateRequestResources object that provides access to update request resources associated with
+		/// Sheet resources.
+		/// </summary>
+		/// <returns> the associated update request resources </returns>
+		public SheetUpdateRequestResources UpdateRequestResources
+		{
+			get
+			{
+				return this.updateRequests;
 			}
 		}
 

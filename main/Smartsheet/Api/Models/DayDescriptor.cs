@@ -16,60 +16,61 @@
 //    limitations under the License.
 //    %[license]
 
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using System.Runtime.Serialization;
-
 namespace Smartsheet.Api.Models
 {
 	/// <summary>
-	/// Represents specific elements to include in a response.
+	/// Represents the Link types.
 	/// </summary>
-	public enum SheetLevelInclusion
+	public enum DayDescriptor
 	{
 		/// <summary>
-		/// Includes sheet-level and row-level discussions.
+		/// Represents DAY descriptor type.
 		/// </summary>
-		DISCUSSIONS,
+		DAY,
 
 		/// <summary>
-		/// Includes sheet-level and row-level attachments.
+		/// Represents WEEKDAY descriptor type.
 		/// </summary>
-		ATTACHMENTS,
+		WEEKDAY,
 
 		/// <summary>
-		/// Includes column, row, and cell formatting.
+		/// Represents WEEKEND descriptor type.
 		/// </summary>
-		FORMAT,
+		WEEKEND,
 
 		/// <summary>
-		/// Includes column filters, and row.filteredOut attribute.
+		/// Represents SUNDAY descriptor type.
 		/// </summary>
-		FILTERS,
+		SUNDAY,
 
 		/// <summary>
-		/// Includes the owner’s email address and user ID for each sheet.
+		/// Represents MONDAY descriptor type.
 		/// </summary>
-		OWNER_INFO,
+		MONDAY,
 
 		/// <summary>
-		/// Includes the source object indicating which sheet or template the sheet was created from, if any.
+		/// Represents TUESDAY descriptor type.
 		/// </summary>
-		SOURCE,
+		TUESDAY,
 
 		/// <summary>
-		/// Includes a permalink attribute for each Row. A Row permalink represents a direct link to the Row in the Smartsheet application.
+		/// Represents WEDNESDAY descriptor type.
 		/// </summary>
-		ROW_PERMALINK,
+		WEDNESDAY,
 
 		/// <summary>
-		/// Includes createdBy and modifiedBy attributes on the row, indicating the row’s creator, and last modifier.
+		/// Represents THURSDAY descriptor type.
 		/// </summary>
-		ROW_WRITER_INFO,
+		THURSDAY,
 
 		/// <summary>
-		/// object representation of cell value
+		/// Represents FRIDAY descriptor type.
 		/// </summary>
-		OBJECT_VALUE
+		FRIDAY,
+
+		/// <summary>
+		/// Represents SATURDAY descriptor type.
+		/// </summary>
+		SATURDAY
 	}
 }

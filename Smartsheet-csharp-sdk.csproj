@@ -90,6 +90,8 @@
     <Compile Include="main\Smartsheet\Api\ImageUrlsResources.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\ContactResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\ImageUrlsResourcesImpl.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\Json\ObjectValueTypeConverter.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\SheetUpdateRequestResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\SightResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\TokenResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\WebhookResourcesImpl.cs" />
@@ -97,6 +99,16 @@
     <Compile Include="main\Smartsheet\Api\Models\BulkItemFailure.cs" />
     <Compile Include="main\Smartsheet\Api\Models\BulkItemRowResult.cs" />
     <Compile Include="main\Smartsheet\Api\Models\CellDataItem.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\DayDescriptor.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\DayOrdinal.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Duration.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\ObjectValue.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\ObjectValueType.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Predecessor.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Schedule.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\ScheduleType.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\SentUpdateRequest.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\UpdateRequestStatus.cs" />
     <Compile Include="main\Smartsheet\Api\Models\WebhookSharedSecret.cs" />
     <Compile Include="main\Smartsheet\Api\Models\WebhookStatus.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Contact.cs" />
@@ -122,6 +134,7 @@
     <Compile Include="main\Smartsheet\Api\Models\Widget.cs" />
     <Compile Include="main\Smartsheet\Api\Models\WidgetContent.cs" />
     <Compile Include="main\Smartsheet\Api\Models\WidgetType.cs" />
+    <Compile Include="main\Smartsheet\Api\SheetUpdateRequestResources.cs" />
     <Compile Include="main\Smartsheet\Api\SightResources.cs" />
     <Compile Include="main\Smartsheet\Api\TokenResources.cs" />
     <Compile Include="main\Smartsheet\Api\FolderResources.cs" />

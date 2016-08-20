@@ -15,33 +15,35 @@
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
 //    %[license]
-using System.Collections.Generic;
+
 using Smartsheet.Api.Models;
-using System.IO;
-using System;
 
 namespace Smartsheet.Api
 {
-	/// <summary>
-	/// <para>This interface provides methods To access Report resources.</para>
-	/// 
-	/// <para>Thread Safety: Implementation of this interface must be thread safe.</para>
-	/// </summary>
-	public interface ReportResources
+	public interface SheetUpdateRequestResources
 	{
+		/// <summary>
+		/// <para>Gets a list of all Update Requests that have future schedules associated with the specified Sheet.</para>
+		/// 
+		/// <para>It mirrors To the following Smartsheet REST API method: GET /sheets/{sheetId}/updaterequests</para>
+		/// </summary>
+		/// <returns> A list of all UpdateRequests (note that an empty list will be returned if there are none). </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		PaginatedResult<UpdateRequest> ListUpdateRequests(long sheetId, PaginationParameters paging);
 
 		/// <summary>
-		/// <para>Gets the Report, including one page of Rows, and optionally populated with Discussions, Attachments, and source Sheets.</para>
-		/// <para>It mirrors To the following Smartsheet REST API method: GET /reports/{reportId}</para>
+		/// <para>Gets the specified Update Request for the Sheet that has a future schedule.</para>
+		/// 
+		/// <para>It mirrors To the following Smartsheet REST API method: GET /sheets/{sheetId}/updaterequests/{updateRequestId}</para>
 		/// </summary>
-		/// <remarks>This method returns the top 100 rows. To get more or less rows please use the other overloaded versions of this method</remarks>
-		/// <param name="reportId"> the Id of the report </param>
-		/// <param name="include"> used To specify the optional objects To include. </param>
-		/// <param name="pageSize">(optional): Number of rows per page. If not specified, the default value is 100.
-		/// This operation can return a maximum of 500 rows per page.</param>
-		/// <param name="page">(optional): Which page number (1-based) to return. 
-		/// If not specified, the default value is 1. If a page number is specified that is greater than the number of total pages, the last page will be returned.</param>
-		/// <returns> the report resource (note that if there is no such resource, this method will throw 
+		/// <param name="sheetId"> the Id of the sheet </param>
+		/// <param name="updateRequestId"> the update request Id </param>
+		/// <returns> the update request resource (note that if there is no such resource, this method will throw 
 		/// ResourceNotFoundException rather than returning null). </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -49,117 +51,99 @@ namespace Smartsheet.Api
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		Report GetReport(long reportId, IEnumerable<ReportInclusion> include, int? pageSize, int? page);
+		UpdateRequest GetUpdateRequest(long sheetId, long updateRequestId);
 
 		/// <summary>
-		/// <para>Gets the list of all Reports that the User has access to, in alphabetical order, by name.</para>
-		/// <para>It mirrors To the following Smartsheet REST API method: GET /reports</para>
+		/// <para>Creates an Update Request for the specified Row(s) within the Sheet. An email notification
+		/// (containing a link to the update request) will be asynchronously sent to the specified recipient(s).</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: POST /sheets/{sheetId}/updaterequests</para>
 		/// </summary>
-		/// <param name="paging">the pagination</param>
-		/// <returns>A list of Report objects limited to the following attributes:
-		/// <list type="bullet">
-		/// <item><description>id</description></item>
-		/// <item><description>name</description></item>
-		/// <item><description>accessLevel</description></item>
-		/// <item><description>permalink</description></item>
-		/// </list></returns>
+		/// <param name="sheetId"> the sheetId </param>
+		/// <param name="updateRequest"> the UpdateRequest object </param>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		PaginatedResult<Report> ListReports(PaginationParameters paging, DateTime? modifiedSince = null);
+		UpdateRequest CreateUpdateRequest(long sheetId, UpdateRequest updateRequest);
 
 		/// <summary>
-		/// <para>Gets the Report in the format specified, based on the Report ID.</para>
-		/// <para>It mirrors To the following Smartsheet REST API method:<br />
-		/// GET /reports/{reportId} with "application/vnd.ms-excel" Accept HTTP header</para>
-		/// </summary>
-		/// <param name="reportId"> the Id of the report </param>
-		/// <param name="outputStream"> the output stream To which the Excel file will be written. </param>
-		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
-		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
-		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
-		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		void GetReportAsExcel(long reportId, BinaryWriter outputStream);
-
-		/// <summary>
-		/// <para>Get a report as a CSV file.</para>
+		/// <para>Terminates the future scheduled delivery of the Update Request specified in the URL.</para>
 		/// 
-		/// <para>It mirrors To the following Smartsheet REST API method:<br />
-		/// GET /reports/{reportId} with "text/csv" Accept HTTP header</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: DELETE /sheets/{sheetId}/updaterequests/{updateRequestId}</para>
 		/// </summary>
-		/// <param name="reportId"> the Id of the report </param>
-		/// <param name="outputStream"> the output stream To which the Excel file will be written. </param>
+		/// <param name="sheetId"> the sheetId </param>
+		/// <param name="updateRequestId"> the updateRequestId </param>,
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		void GetReportAsCSV(long reportId, BinaryWriter outputStream);
+		void DeleteUpdateRequest(long sheetId, long updateRequestId);
 
 		/// <summary>
-		/// <para>Send a report as a PDF attachment via Email To the designated recipients.</para>
+		/// <para>Changes the specified Update Request for the Sheet.</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: PUT /sheets/{sheetId}/updaterequests/{updateRequestId}</para>
+		/// </summary>
+		/// <param name="sheetId"> the sheet Id </param>
+		/// <param name="updateRequest"> the UpdateRequest to update</param>
+		/// <returns> the updated updateRequest </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		UpdateRequest UpdateUpdateRequest(long sheetId, UpdateRequest updateRequest);
+
+		/// <summary>
+		/// <para>Gets a list of all Sent Update Requests that have future schedules associated with the specified Sheet.</para>
 		/// 
-		/// <para>It mirrors To the following Smartsheet REST API method: POST /reports/{reportId}/emails</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: GET /sheets/{sheetId}/sentupdaterequests</para>
 		/// </summary>
-		/// <param name="reportId"> the reportId </param>
-		/// <param name="email"> the Email </param>
+		/// <param name="sheetId"> the Id of the sheet </param>
+		/// <param name="paging">paging parameters for the list</param>
+		/// <returns> A list of all SentUpdateRequests (note that an empty list will be returned if there are none). </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		void SendReport(long reportId, SheetEmail email);
+		PaginatedResult<SentUpdateRequest> ListSentUpdateRequests(long sheetId, PaginationParameters paging);
 
 		/// <summary>
-		/// <para>Get the publish status of a report.</para>
+		/// <para>Gets the specified sent update request on the Sheet.</para>
 		/// 
-		/// <para>It mirrors to the following Smartsheet REST API method: GET /reports/{id}/publish</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: GET /sheets/{sheetId}/sentupdaterequests/{updateRequestId}</para>
 		/// </summary>
-		/// <param name="reportId"> the reportId </param>
-		/// <returns>
-		/// The report publish status (note that if there is no such resource, this method will 
-		/// throw ResourceNotFoundException rather than returning null).
-		/// </returns>
+		/// <param name="sheetId"> the Id of the sheet </param>
+		/// <param name="sentUpdateRequestId"> the sent update request Id </param>
+		/// <returns> the sent update request resource (note that if there is no such resource, this method will throw 
+		/// ResourceNotFoundException rather than returning null). </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		ReportPublish GetPublishStatus(long reportId);
+		SentUpdateRequest GetSentUpdateRequest(long sheetId, long sentUpdateRequestId);
 
 		/// <summary>
-		/// <para>
-		/// Sets the publish status of a report and returns the new status, including the URLs of any enabled publishing.
-		/// </para>
+		/// <para>Deletes the specified sent update request.</para>
 		/// 
-		/// <para>It mirrors to the following Smartsheet REST API method: PUT /reports/{id}/publish</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: DELETE /sheets/{sheetId}/sentupdaterequests/{sentUpdateRequestId}</para>
 		/// </summary>
-		/// <param name="reportId"> the reportId </param>
-		/// <param name="reportPublish"> the ReportPublish object</param>
-		/// <returns>
-		/// The report publish status (note that if there is no such resource, this method will 
-		/// throw ResourceNotFoundException rather than returning null).
-		/// </returns>
+		/// <param name="sheetId"> the Id of the sheet </param>
+		/// <param name="sentUpdateRequestId"> the sent update request Id </param>,
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		ReportPublish UpdatePublishStatus(long reportId, ReportPublish reportPublish);
-
-		/// <summary>
-		/// <para>Return the ShareResources object that provides access To Share resources associated with Report resources.</para>
-		/// </summary>
-		/// <returns> the share resources object </returns>
-		ShareResources ShareResources { get; }
+		void DeleteSentUpdateRequest(long sheetId, long sentUupdateRequestId);
 	}
 }

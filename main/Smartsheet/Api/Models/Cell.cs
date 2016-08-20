@@ -38,6 +38,11 @@ namespace Smartsheet.Api.Models
 		private object value;
 
 		/// <summary>
+		/// is an object representation of a cell's value and is currently used for adding or updating predecessor cell values
+		/// </summary>
+		ObjectValue objectValue;
+
+		/// <summary>
 		/// Represents the display Value.
 		/// </summary>
 		private string displayValue;
@@ -142,6 +147,21 @@ namespace Smartsheet.Api.Models
 			}
 		}
 
+		/// <summary>
+		/// is an object representation of a cell's value and is currently used for adding or updating predecessor cell values.
+		/// </summary>
+		/// <returns> the ObjectValue </returns>
+		public virtual ObjectValue ObjectValue
+		{
+			get
+			{
+				return objectValue;
+			}
+			set
+			{
+				this.objectValue = value;
+			}
+		}
 
 		/// <summary>
 		/// Gets the Value.

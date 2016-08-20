@@ -69,6 +69,11 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// Includes createdBy and modifiedBy attributes on the row, indicating the row’s creator, and last modifier.
 		/// </summary>
-		ROW_WRITER_INFO
+		ROW_WRITER_INFO,
+
+		/// <summary>
+		/// Includes objectValue attribute on cells containing values.
+		/// </summary>
+		OBJECT_VALUE
 	}
 }

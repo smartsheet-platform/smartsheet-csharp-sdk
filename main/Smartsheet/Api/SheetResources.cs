@@ -16,11 +16,12 @@
 //    limitations under the License.
 //    %[license]
 
+using System;
+using System.ComponentModel;
 using System.Collections.Generic;
 
 namespace Smartsheet.Api
 {
-
 	using System.IO;
 	using Api.Models;
 
@@ -57,7 +58,7 @@ namespace Smartsheet.Api
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		PaginatedResult<Sheet> ListSheets(IEnumerable<SheetInclusion> includes, PaginationParameters paging);
+		PaginatedResult<Sheet> ListSheets(IEnumerable<SheetInclusion> includes, PaginationParameters paging, DateTime? modifiedSince = null);
 
 		/// <summary>
 		/// <para>List all Sheets in the organization.</para>
@@ -72,6 +73,8 @@ namespace Smartsheet.Api
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		[Obsolete("use Smartsheet.UserResources.SheetResources.ListOrgSheets", true)]
+		[EditorBrowsable(EditorBrowsableState.Never)]
 		PaginatedResult<Sheet> ListOrganizationSheets(PaginationParameters paging);
 
 		/// <summary>
@@ -296,6 +299,8 @@ namespace Smartsheet.Api
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		[Obsolete("use Smartsheet.SheetResources.UpdateRequestResources.CreateUpdateRequest", true)]
+		[EditorBrowsable(EditorBrowsableState.Never)]
 		UpdateRequest SendUpdateRequest(long sheetId, MultiRowEmail email);
 
 		/// <summary>
@@ -401,6 +406,13 @@ namespace Smartsheet.Api
 		/// </summary>
 		/// <returns> the associated discussion resources </returns>
 		SheetCommentResources CommentResources { get; }
+
+		/// <summary>
+		/// <para>Returns the SheetUpdateRequestResources object that provides access to update request resources associated with
+		/// Sheet resources.</para>
+		/// </summary>
+		/// <returns> the associated discussion resources </returns>
+		SheetUpdateRequestResources UpdateRequestResources { get; }
 	}
 
 }

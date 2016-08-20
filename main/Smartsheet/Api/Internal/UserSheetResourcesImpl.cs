@@ -21,6 +21,8 @@ using System.Collections.Generic;
 namespace Smartsheet.Api.Internal
 {
 	using Api.Models;
+	using Smartsheet.Api.Internal.Util;
+	using System;
 	using System.Text;
 
 	/// <summary>
@@ -52,14 +54,18 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual PaginatedResult<Sheet> ListOrgSheets(PaginationParameters paging)
+		public virtual PaginatedResult<Sheet> ListOrgSheets(PaginationParameters paging, DateTime? modifiedSince)
 		{
-			StringBuilder path = new StringBuilder("users/sheets");
+			IDictionary<string, string> parameters = new Dictionary<string, string>();
 			if (paging != null)
 			{
-				path.Append(paging.ToQueryString());
+				parameters = paging.toDictionary();
 			}
-			return this.ListResourcesWithWrapper<Sheet>(path.ToString());
+			if (modifiedSince != null)
+			{
+				parameters.Add("modifiedSince", ((DateTime)modifiedSince).ToUniversalTime().ToString("o"));
+			}
+			return this.ListResourcesWithWrapper<Sheet>("users/sheets" + QueryUtil.GenerateUrl(null, parameters));
 		}
 	}
 }
