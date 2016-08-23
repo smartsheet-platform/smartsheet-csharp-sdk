@@ -41,6 +41,56 @@ namespace Smartsheet.Api.models
 
 		}
 
-	}
+        [Test]
+        public void UpdateRowBuilderEmpty()
+        {
+            Row row = new Row.UpdateRowBuilder(1)
+                .Build();
+            Assert.AreEqual(1, row.Id);
+            Assert.IsNull(row.SiblingId);
+            Assert.IsNull(row.ParentId);
+            Assert.IsNull(row.Expanded);
+            Assert.IsNull(row.Above);
+        }
+
+        [Test]
+        public void UpdateRowBuilderExpand()
+        {
+            Row row = new Row.UpdateRowBuilder(1)
+                .SetExpanded(true)
+                .Build();
+            Assert.AreEqual(1, row.Id);
+            Assert.IsTrue(row.Expanded.Value);
+        }
+
+        [Test]
+        public void UpdateRowBuilderParentSibling()
+        {
+            Row row = new Row.UpdateRowBuilder(1)
+                .SetParentId(100)
+                .Build();
+            Assert.AreEqual(1, row.Id);
+            Assert.AreEqual(100, row.ParentId);
+
+            row = new Row.UpdateRowBuilder(1)
+                .SetSiblingId(100)
+                .Build();
+            Assert.AreEqual(1, row.Id);
+            Assert.AreEqual(100, row.SiblingId);
+        }
+
+        [Test]
+        public void UpdateRowBuilderAbove()
+        {
+            Row row = new Row.UpdateRowBuilder(1)
+                .SetSiblingId(100)
+                .SetAbove(true)
+                .Build();
+            Assert.AreEqual(1, row.Id);
+            Assert.AreEqual(100, row.SiblingId);
+            Assert.IsTrue(row.Above.Value);
+        }
+
+    }
 
 }
