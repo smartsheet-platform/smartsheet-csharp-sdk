@@ -40,21 +40,21 @@ namespace IntegrationTestSDK
 
 		private static void ListSheetShares(SmartsheetClient smartsheet, long sheetId)
 		{
-			PaginatedResult<Share> shares = smartsheet.SheetResources.ShareResources.ListShares(sheetId, null);
+			PaginatedResult<Share> shares = smartsheet.SheetResources.ShareResources.ListShares(sheetId, null, ShareScope.Workspace);
 			Assert.IsTrue(shares.Data.Count == 2);
 			Assert.IsTrue(shares.Data[0].Email == "aditi.nioding@smartsheet.com" || shares.Data[1].Email == "aditi.nioding@smartsheet.com");
 		}
 
 		private static void ListWorkspaceShares(SmartsheetClient smartsheet, long workspaceId)
 		{
-			PaginatedResult<Share> shares = smartsheet.WorkspaceResources.ShareResources.ListShares(workspaceId, null);
+			PaginatedResult<Share> shares = smartsheet.WorkspaceResources.ShareResources.ListShares(workspaceId, null, ShareScope.Workspace);
 			Assert.IsTrue(shares.Data.Count == 2);
 			Assert.IsTrue(shares.Data[0].Email == "aditi.nioding@smartsheet.com" || shares.Data[1].Email == "aditi.nioding@smartsheet.com");
 		}
 
 		private static void ListReportShares(SmartsheetClient smartsheet, long reportId)
 		{
-			PaginatedResult<Share> shares = smartsheet.ReportResources.ShareResources.ListShares(reportId, null);
+			PaginatedResult<Share> shares = smartsheet.ReportResources.ShareResources.ListShares(reportId, null, ShareScope.Workspace);
 			Assert.IsTrue(shares.Data.Count == 2);
 			Assert.IsTrue(shares.Data[0].Email == "aditi.nioding@smartsheet.com" || shares.Data[1].Email == "aditi.nioding@smartsheet.com");
 		}
