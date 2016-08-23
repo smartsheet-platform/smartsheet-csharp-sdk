@@ -56,7 +56,7 @@ namespace Smartsheet.Api.Internal
 		/// </summary>
 		/// <param name="objectId"> the object Id </param>
 		/// <param name="paging"> the pagination request </param>
-		/// <param name="includeWorkspaceShares">include Workspace shares in enumeration</param>
+		/// <param name="shareScope"> when specified with a value of <see cref="ShareScope.Worksapce"/>, the response will contain both item-level shares (scope=‘ITEM’) and workspace-level shares (scope='WORKSPACE’). </param>
 		/// <returns> the list of Share objects (note that an empty list will be returned if there is none). </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -64,14 +64,14 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual PaginatedResult<Share> ListShares(long objectId, PaginationParameters paging, bool includeWorkspaceShares=false)
+		public virtual PaginatedResult<Share> ListShares(long objectId, PaginationParameters paging, ShareScope shareScope)
 		{
 			IDictionary<string, string> parameters = new Dictionary<string, string>();
 			if (paging != null)
 			{
 				parameters = paging.toDictionary();
 			}
-			if (includeWorkspaceShares == true)
+			if (ShareScope.Workspace.Equals(shareScope))
 			{
 				parameters.Add("include", "workspaceShares");
 			}

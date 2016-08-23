@@ -54,44 +54,69 @@ namespace sdk_csharp_sample
 			// Use the Smartsheet Builder to create a Smartsheet
 			SmartsheetClient smartsheet = new SmartsheetBuilder().SetAccessToken(token.AccessToken).Build();
 
-			// List all contents (specify 'include' parameter with value of "source").
-			Home home = smartsheet.HomeResources.GetHome(new HomeInclusion[] { HomeInclusion.SOURCE });
-
-			// List folders in "Sheets" folder (specify 'includeAll' parameter with value of "true").
-			IList<Folder> homeFolders = home.Folders;
-			foreach (Folder tmpFolder in homeFolders)
+			if (false)
 			{
-				Console.WriteLine("folder:" + tmpFolder.Name);
+				// List all contents (specify 'include' parameter with value of "source").
+				Home home = smartsheet.HomeResources.GetHome(new HomeInclusion[] { HomeInclusion.SOURCE });
+
+				// List folders in "Sheets" folder (specify 'includeAll' parameter with value of "true").
+				IList<Folder> homeFolders = home.Folders;
+				foreach (Folder tmpFolder in homeFolders)
+				{
+					Console.WriteLine("folder:" + tmpFolder.Name);
+				}
+
+				// List sheets (omit 'include' parameter and pagination parameters).
+				PaginatedResult<Sheet> homeSheetsResult = smartsheet.SheetResources.ListSheets(null, null);
+				foreach (Sheet tmpSheet in homeSheetsResult.Data)
+				{
+					Console.WriteLine("sheet:" + tmpSheet.Name);
+				}
+
+
+				// Create folder in home
+				Folder folder = new Folder.CreateFolderBuilder("New Folder").Build();
+				folder = smartsheet.HomeResources.FolderResources.CreateFolder(folder);
+				Console.WriteLine("Folder ID:" + folder.Id + ", Folder Name:" + folder.Name);
+				//=========================================
 			}
-
-			// List sheets (omit 'include' parameter and pagination parameters).
-			PaginatedResult<Sheet> homeSheetsResult = smartsheet.SheetResources.ListSheets(null, null);
-			foreach (Sheet tmpSheet in homeSheetsResult.Data)
-			{
-				Console.WriteLine("sheet:" + tmpSheet.Name);
-			}
-
-
-			// Create folder in home
-			Folder folder = new Folder.CreateFolderBuilder("New Folder").Build();
-			folder = smartsheet.HomeResources.FolderResources.CreateFolder(folder);
-			Console.WriteLine("Folder ID:" + folder.Id + ", Folder Name:" + folder.Name);
-			//=========================================
-
-
-			// Setup checkbox Column Object
-			Column checkboxColumn = new Column.CreateSheetColumnBuilder("Finished", true, ColumnType.CHECKBOX).Build();
 
 			// Setup text Column Object
-			Column textColumn = new Column.CreateSheetColumnBuilder("To Do List", false, ColumnType.TEXT_NUMBER).Build();
+			Column textColumn = new Column.CreateSheetColumnBuilder("To Do List", true, ColumnType.TEXT_NUMBER).Build();
 
+			// Setup checkbox Column Object
+			Column checkboxColumn = new Column.CreateSheetColumnBuilder("Finished", false, ColumnType.CHECKBOX).Build();
 
 			// Add the 2 Columns (flag & text) to a new Sheet Object
-			Sheet sheet = new Sheet.CreateSheetBuilder("New Sheet", new Column[] { checkboxColumn, textColumn }).Build();
+			Sheet sheet = new Sheet.CreateSheetBuilder("New Sheet", new Column[] { textColumn, checkboxColumn }).Build();
 			// Send the request to create the sheet @ Smartsheet
 			sheet = smartsheet.SheetResources.CreateSheet(sheet);
 			//=========================================
+			// Example: Add two rows
+			Func<string, Row> addRowHelper = primaryColVal =>
+			{
+				var cells = new Cell[] { new Cell.AddCellBuilder(sheet.GetColumnByIndex(0).Id, primaryColVal).Build() };
+				var rows = new Row[] { new Row.AddRowBuilder(true, null, null, null, null).SetCells(cells).Build() };
+				return smartsheet.SheetResources.RowResources.AddRows(sheet.Id.Value, rows)[0];
+			};
 
+			var rowA = addRowHelper("a");
+			var rowB = addRowHelper("b");
+
+			// Example: Move rowB above rowA
+			var updateRowRequest = new Row.UpdateRowBuilder(rowB.Id)
+					.SetSiblingId(rowA.Id)
+					.SetAbove(true)
+					.Build();
+			var updateRowResponse = smartsheet.SheetResources.RowResources.UpdateRows(sheet.Id.Value, new Row[] { updateRowRequest });
+
+			//Indent rowA under rowB
+			updateRowRequest = new Row.UpdateRowBuilder(rowA.Id)
+					.SetParentId(rowB.Id)
+					.Build();
+			updateRowResponse = smartsheet.SheetResources.RowResources.UpdateRows(sheet.Id.Value, new Row[] { updateRowRequest });
+
+			//=========================================
 			//// Update two cells on a row
 			//IList<Cell> cells = new Cell.UpdateRowCellsBuilder().AddCell(5111621270955908L, "test11", false).
 			//		AddCell(2859821457270660L, "test22").Build();

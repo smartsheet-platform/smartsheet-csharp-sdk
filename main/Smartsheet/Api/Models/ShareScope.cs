@@ -19,12 +19,44 @@
 namespace Smartsheet.Api.Models
 {
 	/// <summary>
-	/// The scope of this share. 
+	/// Represents the scope of a share. For use with the <see cref="ShareResources.ListShares(long, PaginationParameters, ShareScope)"/>.
 	/// </summary>
-	public enum ShareScope
+	/// <remarks>
+	/// See http://smartsheet-platform.github.io/api-docs/#share-object and http://smartsheet-platform.github.io/api-docs/#list-sheet-shares for more information.
+	/// </remarks>
+	public struct ShareScope
 	{
-		ITEM,
-		WORKSPACE
-	}
+		public static readonly ShareScope Empty = new ShareScope();
 
+		public static readonly ShareScope Item = new ShareScope("ITEM");
+		public static readonly ShareScope Workspace = new ShareScope("WORKSPACE");
+
+		private readonly string _value;
+
+		public ShareScope(string value)
+		{
+			_value = value;
+		}
+
+		public bool Equals(ShareScope obj)
+		{
+			return 0 == string.CompareOrdinal(_value, obj._value);
+		}
+
+		public override bool Equals(object obj)
+		{
+			return obj is ShareScope ? this.Equals((ShareScope)obj) : false;
+		}
+
+		public override int GetHashCode()
+		{
+			return _value != null ? _value.GetHashCode() : base.GetHashCode();
+		}
+
+		public override string ToString()
+		{
+			return _value != null ? _value : base.ToString();
+		}
+	}
 }
+
