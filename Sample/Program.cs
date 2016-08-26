@@ -117,6 +117,102 @@ namespace sdk_csharp_sample
 			updateRowResponse = smartsheet.SheetResources.RowResources.UpdateRows(sheet.Id.Value, new Row[] { updateRowRequest });
 
 			//=========================================
+			// Example: Add two rows
+			PaginatedResult<Sheet> sheetsSince = smartsheet.SheetResources.ListSheets(null, null, DateTime.UtcNow.AddDays(-5));
+
+			PaginatedResult<Sheet> orgSheetsSince = smartsheet.UserResources.SheetResources.ListOrgSheets(null, DateTime.UtcNow.AddDays(-10));
+
+			PaginatedResult<Report> reportsSince = smartsheet.ReportResources.ListReports(null, DateTime.UtcNow.AddDays(-5));
+
+			PaginatedResult<Sight> sightsSince = smartsheet.SightResources.ListSights(null, DateTime.Now.AddDays(-5));
+
+			//=========================================
+			// Example: setup a webhook
+			Webhook webhook = new Webhook();
+			webhook.Name = "Test webhook";
+			webhook.CallbackUrl = "https://someurl.com";
+			webhook.Scope = "sheet";
+			webhook.ScopeObjectId = 6810644029695876L;
+			IList<string> events = new List<string>();
+			events.Add("*.*");
+			webhook.Events = events;
+			webhook.Version = 1;
+			webhook = smartsheet.WebhookResources.CreateWebhook(webhook);
+
+			PaginatedResult<Webhook> webhooks = smartsheet.WebhookResources.ListWebhooks(null);
+
+			//// Update the shared secret 
+			webhook = smartsheet.WebhookResources.GetWebhook(webhooks.Data[0].Id.Value);
+
+			Webhook update_webhook = new Webhook();
+			update_webhook.Enabled = true;
+			update_webhook.Id = webhooks.Data[0].Id;
+			update_webhook = smartsheet.WebhookResources.UpdateWebhook(update_webhook);
+
+			WebhookSharedSecret shared = smartsheet.WebhookResources.ResetSharedSecret(update_webhook.Id.Value);
+
+			smartsheet.WebhookResources.DeleteWebhook(update_webhook.Id.Value);
+
+			//=========================================
+			// Example: sights example
+			PaginatedResult<Sight> sights = smartsheet.SightResources.ListSights(null);
+
+			if (sights.TotalCount > 0)
+			{
+				Sight sight = smartsheet.SightResources.GetSight(sights.Data[0].Id.Value);
+
+				ContainerDestination dest = new ContainerDestination();
+				dest.DestinationType = DestinationType.FOLDER;
+				dest.DestinationId = 3167806247200644L;
+				dest.NewName = "My New Sight";
+
+				sight = smartsheet.SightResources.CopySight(sights.Data[0].Id.Value, dest);
+
+				Sight newsight = new Sight();
+				newsight.Id = sight.Id;
+				newsight.Name = "My New New Sight";
+				smartsheet.SightResources.UpdateSight(newsight);
+
+				ContainerDestination destToo = new ContainerDestination();
+				destToo.DestinationType = DestinationType.FOLDER;
+				destToo.DestinationId = 3110683182163844L;
+				sight = smartsheet.SightResources.MoveSight(sight.Id.Value, destToo);
+
+				smartsheet.SightResources.DeleteSight(sight.Id.Value);
+
+				PaginatedResult<Share> sightShares = smartsheet.SightResources.ShareResources.ListShares(sights.Data[0].Id.Value, null, ShareScope.Workspace);
+			}
+
+			//=========================================
+			// Example: cell images and partial success
+			Sheet imageSheet = smartsheet.SheetResources.GetSheet(6810644029695876L, null, null, null, null, null, null, null);
+
+			Cell[] cellsA = new Cell[] { new Cell.AddCellBuilder(imageSheet.Columns[0].Id.Value, true).Build(), new Cell.AddCellBuilder(imageSheet.Columns[1].Id.Value, "Foobar").Build() };
+			rowA = new Row.AddRowBuilder(true, null, null, null, null).SetCells(cellsA).Build();
+
+			Cell[] cellsB = new Cell[] { new Cell.AddCellBuilder(imageSheet.Columns[1].Id.Value, true).Build(), new Cell.AddCellBuilder(imageSheet.Columns[1].Id.Value, "Barfoo").Build() };
+			rowB = new Row.AddRowBuilder(true, null, null, null, null).SetCells(cellsB).Build();
+
+			BulkItemRowResult bulkAddResult = smartsheet.SheetResources.RowResources.AddRowsWithPartialSuccess(6810644029695876L, new Row[] { rowA, rowB });
+
+			Cell[] cellsC = new Cell[] { new Cell.AddCellBuilder(imageSheet.Columns[0].Id.Value, true).Build(), new Cell.AddCellBuilder(imageSheet.Columns[1].Id.Value, "FoobarII").Build() };
+			Row rowC = new Row.UpdateRowBuilder(imageSheet.Rows[2].Id.Value).SetCells(cellsC).Build();
+
+			Cell[] cellsD = new Cell[] { new Cell.AddCellBuilder(imageSheet.Columns[1].Id.Value, true).Build(), new Cell.AddCellBuilder(imageSheet.Columns[1].Id.Value, "BarfooII").Build() };
+			Row rowD = new Row.UpdateRowBuilder(imageSheet.Rows[1].Id.Value).SetCells(cellsD).Build();
+
+			BulkItemRowResult bulkUpdateResult = smartsheet.SheetResources.RowResources.UpdateRowsWithPartialSuccess(6810644029695876L, new Row[] { rowC, rowD });
+
+			ImageUrl imageUrl = new ImageUrl.ImageUrlBuilder("aVbWbXMsD5KsOu2 - CWtwSA").Build();
+			IList<ImageUrl> imageUrls = new List<ImageUrl>();
+			imageUrls.Add(imageUrl);
+
+			ImageUrlMap imageUrlMap = smartsheet.ImageUrlResources.GetImageUrls(imageUrls);
+
+			smartsheet.SheetResources.RowResources.CellResources.AddImageToCell(6810644029695876L, imageSheet.Rows[0].Id.Value, imageSheet.Columns[1].Id.Value,
+				"d:\\Smartsheet\\vHepGiJaeL6GPOX3wAx8yaxD75ym5eAbk0GB-MSz0gc.png", "image/png");
+
+			//=========================================
 			//// Update two cells on a row
 			//IList<Cell> cells = new Cell.UpdateRowCellsBuilder().AddCell(5111621270955908L, "test11", false).
 			//		AddCell(2859821457270660L, "test22").Build();
