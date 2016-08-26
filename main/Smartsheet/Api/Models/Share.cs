@@ -53,7 +53,7 @@ namespace Smartsheet.Api.Models
 		///		ITEM: an item-level share (i.e., the specific object to which the Share applies is shared with the user or group)
 		///		WORKSPACE: a workspace-level share (i.e., the workspace that contains the object to which the Share applies is shared with the user or group)
 		/// </summary>
-		private ShareScope? scope;
+		private string scope;
 
 		/// <summary>
 		/// Time that the share was created.
@@ -172,7 +172,7 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// The scop of this share. One of ITEM or WORKSPACE.
 		/// </summary>
-		public ShareScope? Scope
+		public string Scope
 		{
 			get { return scope; }
 			set { scope = value; }
