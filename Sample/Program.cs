@@ -193,7 +193,7 @@ namespace sdk_csharp_sample
 			Cell[] cellsB = new Cell[] { new Cell.AddCellBuilder(imageSheet.Columns[1].Id.Value, true).Build(), new Cell.AddCellBuilder(imageSheet.Columns[1].Id.Value, "Barfoo").Build() };
 			rowB = new Row.AddRowBuilder(true, null, null, null, null).SetCells(cellsB).Build();
 
-			BulkItemRowResult bulkAddResult = smartsheet.SheetResources.RowResources.AddRowsWithPartialSuccess(6810644029695876L, new Row[] { rowA, rowB });
+			BulkItemRowResult bulkAddResult = smartsheet.SheetResources.RowResources.AddRowsAllowPartialSuccess(6810644029695876L, new Row[] { rowA, rowB });
 
 			Cell[] cellsC = new Cell[] { new Cell.AddCellBuilder(imageSheet.Columns[0].Id.Value, true).Build(), new Cell.AddCellBuilder(imageSheet.Columns[1].Id.Value, "FoobarII").Build() };
 			Row rowC = new Row.UpdateRowBuilder(imageSheet.Rows[2].Id.Value).SetCells(cellsC).Build();
@@ -201,7 +201,7 @@ namespace sdk_csharp_sample
 			Cell[] cellsD = new Cell[] { new Cell.AddCellBuilder(imageSheet.Columns[1].Id.Value, true).Build(), new Cell.AddCellBuilder(imageSheet.Columns[1].Id.Value, "BarfooII").Build() };
 			Row rowD = new Row.UpdateRowBuilder(imageSheet.Rows[1].Id.Value).SetCells(cellsD).Build();
 
-			BulkItemRowResult bulkUpdateResult = smartsheet.SheetResources.RowResources.UpdateRowsWithPartialSuccess(6810644029695876L, new Row[] { rowC, rowD });
+			BulkItemRowResult bulkUpdateResult = smartsheet.SheetResources.RowResources.UpdateRowsAllowPartialSuccess(6810644029695876L, new Row[] { rowC, rowD });
 
 			ImageUrl imageUrl = new ImageUrl.ImageUrlBuilder("aVbWbXMsD5KsOu2 - CWtwSA").Build();
 			IList<ImageUrl> imageUrls = new List<ImageUrl>();

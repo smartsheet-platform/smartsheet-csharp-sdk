@@ -31,7 +31,7 @@ namespace Smartsheet.Api.Internal
 			{
 				parameters = paging.toDictionary();
 			}
-			return this.ListResourcesWithWrapper<UpdateRequest>("sheets" + sheetId + "/updaterequests" + QueryUtil.GenerateUrl(null, parameters));
+			return this.ListResourcesWithWrapper<UpdateRequest>("sheets/" + sheetId + "/updaterequests" + QueryUtil.GenerateUrl(null, parameters));
 		}
 
 		/// <summary>
@@ -129,7 +129,7 @@ namespace Smartsheet.Api.Internal
 			{
 				parameters = paging.toDictionary();
 			}
-			return this.ListResourcesWithWrapper<SentUpdateRequest>("sheets" + sheetId + "/sentupdaterequests" + QueryUtil.GenerateUrl(null, parameters));
+			return this.ListResourcesWithWrapper<SentUpdateRequest>("sheets/" + sheetId + "/sentupdaterequests" + QueryUtil.GenerateUrl(null, parameters));
 		}
 
 		/// <summary>

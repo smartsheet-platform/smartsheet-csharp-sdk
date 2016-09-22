@@ -63,7 +63,7 @@ namespace Smartsheet.Api
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		BulkItemRowResult AddRowsWithPartialSuccess(long sheetId, IEnumerable<Row> rows);
+		BulkItemRowResult AddRowsAllowPartialSuccess(long sheetId, IEnumerable<Row> rows);
 
 		/// <summary>
 		/// <para>Gets the Row specified in the URL.</para>
@@ -205,7 +205,7 @@ namespace Smartsheet.Api
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		BulkItemRowResult UpdateRowsWithPartialSuccess(long sheetId, IEnumerable<Row> rows);
+		BulkItemRowResult UpdateRowsAllowPartialSuccess(long sheetId, IEnumerable<Row> rows);
 
 		/// <summary>
 		/// Returns the RowAttachmentResources object that provides access To attachment resources associated with Row Resources.

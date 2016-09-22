@@ -95,7 +95,7 @@ namespace Smartsheet.Api
 		/// 
 		/// <para>It mirrors To the following Smartsheet REST API method: DELETE /webhooks/{webhookId}</para>
 		/// </summary>
-		/// <param name="webhookId"> the sightId </param>
+		/// <param name="webhookId"> the webhook Id </param>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
@@ -109,7 +109,8 @@ namespace Smartsheet.Api
 		/// <para>The request body should be empty</para>
 		/// <para>It mirrors To the following Smartsheet REST API method: POST /webhooks/{webhookId}/resetsharedsecret</para>
 		/// </summary>
-		/// <param name="webhookId"> the sightId </param>
+		/// <param name="webhookId"> the webhook Id </param>
+		/// <returns> the Webhook shared secret </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>

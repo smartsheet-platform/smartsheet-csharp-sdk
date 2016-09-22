@@ -251,9 +251,10 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// Widget version number.
+		/// Get the data that specifies the contents of the widget. 
+		/// See description of contents variable for valid objects.
 		/// </summary>
-		/// <returns> the Version </returns>
+		/// <returns> the contents </returns>
 		public virtual WidgetContent Contents
 		{
 			get
