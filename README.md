@@ -195,5 +195,3 @@ Each specific release is available for download via [Github](https://github.com/
 
 **1.0.0 (Feb 18, 2014)**
 * Initial Release of the Smartsheet C# SDK
-
-[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/9200efe449798ebbc03d9ec9f0a11ff1 "githalytics.com")](http://githalytics.com/smartsheet-platform/smartsheet-csharp-sdk)
