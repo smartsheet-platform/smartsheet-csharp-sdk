@@ -40,7 +40,7 @@ namespace IntegrationTestSDK
 
 		private static void ListSheetShares(SmartsheetClient smartsheet, long sheetId)
 		{
-			PaginatedResult<Share> shares = smartsheet.SheetResources.ShareResources.ListShares(sheetId, null, ShareScope.Workspace);
+			PaginatedResult<Share> shares = smartsheet.SheetResources.ShareResources.ListShares(sheetId, null, ShareScope.Item);
 			Assert.IsTrue(shares.Data.Count == 2);
 			Assert.IsTrue(shares.Data[0].Email == "aditi.nioding@smartsheet.com" || shares.Data[1].Email == "aditi.nioding@smartsheet.com");
 		}

@@ -51,7 +51,7 @@ namespace IntegrationTestSDK
 
 			Sheet a = smartsheet.SheetResources.GetSheet(sheetId, new SheetLevelInclusion[] { SheetLevelInclusion.ROW_PERMALINK }, null, null, null, null, null, null);
 
-			//smartsheet.SheetResources.DeleteSheet(sheetId);
+			smartsheet.SheetResources.DeleteSheet(sheetId);
 
 		}
 
