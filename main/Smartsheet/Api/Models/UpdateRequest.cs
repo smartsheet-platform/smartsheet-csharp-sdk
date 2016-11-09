@@ -43,12 +43,12 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// The date and time for when this request was originally created. Read-only.
 		/// </summary>
-		private DateTime createdAt;
+		private DateTime? createdAt;
 
 		/// <summary>
 		/// The date and time for when the last change was made to this request. Read-only.
 		/// </summary>
-		private DateTime modifiedAt;
+		private DateTime? modifiedAt;
 
 		/// <summary>
 		/// ID of the update request.
@@ -101,7 +101,7 @@ namespace Smartsheet.Api.Models
 		/// Gets the date and time for when this request was originally created. Read-only
 		/// </summary>
 		/// <returns> the timestamp </returns>
-		public virtual DateTime CreatedAt
+		public virtual DateTime? CreatedAt
 		{
 			get
 			{
@@ -117,7 +117,7 @@ namespace Smartsheet.Api.Models
 		/// Gets the date and time for when the last change was made to this request. Read-only.
 		/// </summary>
 		/// <returns> the timestamp </returns>
-		public virtual DateTime ModifiedAt
+		public virtual DateTime? ModifiedAt
 		{
 			get
 			{
