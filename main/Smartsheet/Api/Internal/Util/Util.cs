@@ -45,7 +45,7 @@ namespace Smartsheet.Api.Internal.Utility
 					result = ((ManagementObject)enumerator.Current)["Caption"].ToString();
 				}
             }
-            catch (UnauthorizedAccessException ex)
+            catch (UnauthorizedAccessException)
             {
                 // Hosted solution - Many not allow access to WMI
                 return "Hosted";

@@ -44,7 +44,7 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// Contact ID, unlike other Smartsheet object ids, this id is an alphanumeric string.
 		/// </summary>
-		public virtual string Id
+		public virtual new string Id
 		{
 			// This should hide inherited member "Id".
 			get { return id; }
