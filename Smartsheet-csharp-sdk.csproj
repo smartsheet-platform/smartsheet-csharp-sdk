@@ -30,6 +30,7 @@
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Release\smartsheet-csharp-sdk.XML</DocumentationFile>
     <LangVersion>4</LangVersion>
+    <NoWarn>1591</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
     <RootNamespace>Smartsheet_csharp_sdk</RootNamespace>

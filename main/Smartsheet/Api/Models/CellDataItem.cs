@@ -21,12 +21,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+
+namespace Smartsheet.Api.Models
+{
 /// <summary>
 /// Represents the widget object. </summary>
 /// <seealso href="http://smartsheet-platform.github.io/api-docs/#celldataitem-object">CellDataItem Object Help</seealso>
-namespace Smartsheet.Api.Models
-{
-	public class CellDataItem
+    public class CellDataItem
 	{
 		/// <summary>
 		/// Label for the data point. This will be either the column name or a user-provided string

@@ -3,11 +3,6 @@
 %WINDIR%\Microsoft.NET\Framework\v4.0.30319\msbuild smartsheet-csharp-sdk.sln /property:Configuration=release /t:rebuild
 if not "%errorlevel%"=="0" goto buildFailure
 
-
-:: Run unit tests
-"C:\Program Files (x86)\NUnit 2.6.3\bin\nunit-console.exe" TestSDK/bin/Release/TestSDK.dll /stoponerror 
-if not "%errorlevel%"=="0" goto nunitFailure
-
 :: package for nuget
 nuget pack Smartsheet-csharp-sdk.csproj -sym -IncludeReferencedProjects -Prop Configuration=Release
 if not "%errorlevel%"=="0" goto nugetFailure
@@ -16,6 +11,7 @@ if not "%errorlevel%"=="0" goto nugetFailure
 xcopy documentation\Website\* documentation\git-docs\ /E /Y
 cd documentation\git-docs\
 :: Push the docs to github.io
+git checkout gh-pages
 git add *
 git commit -m "Updating Docs"
 git push
@@ -35,9 +31,6 @@ exit /b 0
 :: Failure Cases
 :buildFailure
 echo "There was an issue building the solution"
-exit /b 1
-:nunitFailure
-echo "There was an issue running the unit tests"
 exit /b 1
 :nugetFailure
 echo "There was an issue packaging for nuget"
