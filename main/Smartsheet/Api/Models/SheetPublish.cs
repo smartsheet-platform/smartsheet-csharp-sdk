@@ -46,6 +46,20 @@ namespace Smartsheet.Api.Models
 		private bool? icalEnabled;
 
 		/// <summary>
+		/// Flag to indicate who can access the 'Read-Only Full’ view of the published sheet:
+		///		If “ALL”, it is available to anyone who has the link.
+		///		If “ORG”, it is available only to members of the sheet owner’s Smartsheet organization.
+		/// </summary>
+		private string readOnlyFullAccessibleBy;
+
+		/// <summary>
+		/// Flag to indicate who can access the 'Edit by Anyone’ view of the published sheet:
+		///		If “ALL”, it is available to anyone who has the link.
+		///		If “ORG”, it is available only to members of the sheet owner’s Smartsheet organization.
+		/// </summary>
+		private string readWriteAccessibleBy;
+
+		/// <summary>
 		/// Represents the read-only lite (static HTML UI) URL.
 		/// </summary>
 		private string readOnlyLiteUrl;
@@ -132,6 +146,39 @@ namespace Smartsheet.Api.Models
 			}
 		}
 
+
+		/// <summary>
+		/// Flag to indicate who can access the 'Read-Only Full’ view of the published sheet.
+		/// </summary>
+		/// <returns> the access flag </returns>
+		public virtual string ReadOnlyFullAccessibleBy
+		{
+			get
+			{
+				return readOnlyFullAccessibleBy;
+			}
+			set
+			{
+				this.readOnlyFullAccessibleBy = value;
+			}
+		}
+
+
+		/// <summary>
+		/// Flag to indicate who can access the 'Edit by Anyone’ view of the published sheet.
+		/// </summary>
+		/// <returns> the access flag </returns>
+		public virtual string ReadWriteAccessibleBy
+		{
+			get
+			{
+				return readWriteAccessibleBy;
+			}
+			set
+			{
+				this.readWriteAccessibleBy = value;
+			}
+		}
 
 		/// <summary>
 		/// Gets the read only lite Url flag.

@@ -16,10 +16,10 @@
 //    limitations under the License.
 //    %[license]
 
+using System.Collections.Generic;
+
 namespace Smartsheet.Api.Models
 {
-
-
 	/// <summary>
 	/// A template object that is a default layout for future Sheets. </summary>
 	/// <seealso href="http://help.Smartsheet.com/customer/portal/articles/522123-using-Templates">Using Templates Help</seealso>
@@ -35,6 +35,45 @@ namespace Smartsheet.Api.Models
 		/// </summary>
 		private AccessLevel? accessLevel;
 
+		/// <summary>
+		/// URL to the small preview image for this template.
+		/// </summary>
+		private string image;
+
+		/// <summary>
+		/// URL to the large preview image for this template
+		/// </summary>
+		private string largeImage;
+
+		/// <summary>
+		/// Locale of the template
+		/// </summary>
+		private string locale;
+
+		/// <summary>
+		/// Type of the template. One of “sheet” or “report”
+		/// </summary>
+		private string type;
+
+		/// <summary>
+		/// List of search tags for this template
+		/// </summary>
+		private IList<string> tags;
+
+		/// <summary>
+		/// List of categories this template belongs to
+		/// </summary>
+		private IList<string> categories;
+
+		/// <summary>
+		/// Flag indicating whether the template is blank
+		/// </summary>
+		private bool? blank;
+
+		/// <summary>
+		/// Type of global template. One of: “BLANK_SHEET”, “TASK_LIST”, or “PROJECT_SHEET”
+		/// </summary>
+		private GlobalTemplate? globalTemplate;
 
 		/// <summary>
 		/// Gets the Description of the template.
@@ -52,7 +91,6 @@ namespace Smartsheet.Api.Models
 			}
 		}
 
-
 		/// <summary>
 		/// Gets the access level of the template.
 		/// </summary>
@@ -69,6 +107,132 @@ namespace Smartsheet.Api.Models
 			}
 		}
 
-	}
+		/// <summary>
+		/// Gets the URL to the small preview image for this template.
+		/// </summary>
+		/// <returns> the URL </returns>
+		public virtual string Image
+		{
+			get
+			{
+				return image;
+			}
+			set
+			{
+				this.image = value;
+			}
+		}
 
+		/// <summary>
+		/// Gets the URL to the large preview image for this template.
+		/// </summary>
+		/// <returns> the URL </returns>
+		public virtual string LargeImage
+		{
+			get
+			{
+				return largeImage;
+			}
+			set
+			{
+				this.largeImage = value;
+			}
+		}
+
+		/// <summary>
+		/// Gets the locale of the template.
+		/// </summary>
+		/// <returns> the locale </returns>
+		public virtual string Locale
+		{
+			get
+			{
+				return locale;
+			}
+			set
+			{
+				this.locale = value;
+			}
+		}
+
+		/// <summary>
+		/// Gets the type of the template. One of “sheet” or “report”.
+		/// </summary>
+		/// <returns> "sheet" or "report" </returns>
+		public virtual string Type
+		{
+			get
+			{
+				return type;
+			}
+			set
+			{
+				this.type = value;
+			}
+		}
+
+		/// <summary>
+		/// Gets the list of search tags for this template.
+		/// </summary>
+		/// <returns> list of tags </returns>
+		public virtual IList<string> Tags
+		{
+			get
+			{
+				return tags;
+			}
+			set
+			{
+				this.tags = value;
+			}
+		}
+
+		/// <summary>
+		/// Gets the list of categories this template belongs to.
+		/// </summary>
+		/// <returns> list of categories </returns>
+		public virtual IList<string> Categories
+		{
+			get
+			{
+				return categories;
+			}
+			set
+			{
+				this.categories = value;
+			}
+		}
+
+		/// <summary>
+		/// Gets the flag indicating whether the template is blank.
+		/// </summary>
+		/// <returns> blank flag </returns>
+		public virtual bool? Blank
+		{
+			get
+			{
+				return blank;
+			}
+			set
+			{
+				this.blank = value;
+			}
+		}
+
+		/// <summary>
+		/// Gets the type of global template.
+		/// </summary>
+		/// <returns> template type </returns>
+		public virtual GlobalTemplate? GlobalTemplate
+		{
+			get
+			{
+				return globalTemplate;
+			}
+			set
+			{
+				this.globalTemplate = value;
+			}
+		}
+	}
 }

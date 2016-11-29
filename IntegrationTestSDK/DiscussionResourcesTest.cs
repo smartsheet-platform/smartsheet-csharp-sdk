@@ -51,7 +51,7 @@ namespace IntegrationTestSDK
 			.ListDiscussions(sheetId, rowId, new DiscussionInclusion[] { DiscussionInclusion.COMMENTS }, null);
 			Assert.IsTrue(discussionsOnRow.Data.Count == 1);
 			Assert.IsTrue(discussionsOnRow.Data[0].Title == "discussion on row");
-			Assert.IsTrue(discussionsOnRow.Data[0].Comments[0].Text == "a comment!");
+			Assert.IsTrue(discussionsOnRow.Data[0].Comments[0].Text == "discussion on row\n\na comment!");
 		}
 
 		private static long CreateSheet(SmartsheetClient smartsheet)

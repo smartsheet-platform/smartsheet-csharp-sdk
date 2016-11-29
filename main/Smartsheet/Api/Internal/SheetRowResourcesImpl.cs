@@ -82,6 +82,61 @@ namespace Smartsheet.Api.Internal
 			return this.PostAndReceiveList<IEnumerable<Row>, Row>("sheets/" + sheetId + "/rows", rows, typeof(Row));
 		}
 
+		/// <summary>
+		/// <para>Inserts one or more rows into the Sheet specified in the URL with allowPartialSuccess.</para>
+		/// 
+		/// <para>It mirrors To the following Smartsheet REST API method: POST /sheets/{sheetId}/rows?allowPartialSuccess=true</para>
+		/// <remarks>If multiple rows are specified in the request, all rows must be inserted at the same location 
+		/// (i.e. the toTop, toBottom, parentId, siblingId, and above attributes must be the same for all rows in the request).</remarks>
+		/// </summary>
+		/// <param name="sheetId"> the sheet Id </param>
+		/// <param name="rows"> one or more rows </param>
+		/// <returns> the list of created Rows </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public virtual BulkItemRowResult AddRowsAllowPartialSuccess(long sheetId, IEnumerable<Row> rows)
+		{
+			IDictionary<string, string> parameters = new Dictionary<string, string>();
+			parameters.Add("allowPartialSuccess", "true");
+
+			foreach (Row row in rows)
+			{
+				row.Id = null;
+			}
+
+			HttpRequest request = null;
+			try
+			{
+				request = CreateHttpRequest(new Uri(this.Smartsheet.BaseURI, QueryUtil.GenerateUrl("sheets/" + sheetId + "/rows", parameters)), HttpMethod.POST);
+			}
+			catch (Exception e)
+			{
+				throw new SmartsheetException(e);
+			}
+
+			request.Entity = serializeToEntity<IEnumerable<Row>>(rows);
+
+			HttpResponse response = this.Smartsheet.HttpClient.Request(request);
+
+			BulkItemRowResult bulkItemResult = null;
+			switch (response.StatusCode)
+			{
+				case HttpStatusCode.OK:
+					bulkItemResult = this.Smartsheet.JsonSerializer.deserialize<BulkItemRowResult>(response.Entity.GetContent());
+					break;
+				default:
+					HandleError(response);
+					break;
+			}
+
+			Smartsheet.HttpClient.ReleaseConnection();
+
+			return bulkItemResult;
+		}
 
 		/// <summary>
 		/// <para>Gets the Row specified in the URL.</para>
@@ -251,6 +306,56 @@ namespace Smartsheet.Api.Internal
 			return this.PutAndReceiveList<IEnumerable<Row>, Row>("sheets/" + sheetId + "/rows", rows, typeof(Row));
 		}
 
+		/// <summary>
+		/// <para>Updates cell values in the specified row(s), expands/collapses the specified row(s), 
+		/// and/or modifies the position of specified rows (including indenting/outdenting).</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: PUT /sheets/{sheetId}/rows?allowPartialSuccess=true</para>
+		/// <remarks>If a row’s position is updated, all child rows are moved with the row.</remarks>
+		/// </summary>
+		/// <param name="sheetId">the sheetId</param>
+		/// <param name="rows">the list of rows to update</param>
+		/// <returns> the row object </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public BulkItemRowResult UpdateRowsAllowPartialSuccess(long sheetId, IEnumerable<Row> rows)
+		{
+			IDictionary<string, string> parameters = new Dictionary<string, string>();
+			parameters.Add("allowPartialSuccess", "true");
+
+			HttpRequest request = null;
+			try
+			{
+				request = CreateHttpRequest(new Uri(this.Smartsheet.BaseURI, QueryUtil.GenerateUrl("sheets/" + sheetId + "/rows", parameters)), HttpMethod.PUT);
+			}
+			catch (Exception e)
+			{
+				throw new SmartsheetException(e);
+			}
+
+			request.Entity = serializeToEntity<IEnumerable<Row>>(rows);
+
+			HttpResponse response = this.Smartsheet.HttpClient.Request(request);
+
+			BulkItemRowResult bulkItemResult = null;
+			switch (response.StatusCode)
+			{
+				case HttpStatusCode.OK:
+					bulkItemResult = this.Smartsheet.JsonSerializer.deserialize<BulkItemRowResult>(response.Entity.GetContent());
+					break;
+				default:
+					HandleError(response);
+					break;
+			}
+
+			Smartsheet.HttpClient.ReleaseConnection();
+
+			return bulkItemResult;
+		}
+		
 		/// <summary>
 		/// Gets the RowAttachmentResources object that provides access To Attachment resources associated with
 		/// Row resources.

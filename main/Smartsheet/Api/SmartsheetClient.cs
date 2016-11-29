@@ -64,6 +64,12 @@ namespace Smartsheet.Api
 		SheetResources SheetResources { get; }
 
 		/// <summary>
+		/// <para>Returns the SightResources instance that provides access to Sight resources.</para>
+		/// </summary>
+		/// <returns> the sight resources instance </returns>
+		SightResources SightResources { get; }
+
+		/// <summary>
 		/// <para>Returns the UserResources instance that provides access to User resources.</para>
 		/// </summary>
 		/// <returns> the user resources instance </returns>
@@ -80,6 +86,12 @@ namespace Smartsheet.Api
 		/// </summary>
 		/// <returns> the server info resources instance </returns>
 		ServerInfoResources ServerInfoResources { get; }
+
+		/// <summary>
+		/// <para>Returns the WebhookResources instance that provides access to webhook resources.</para>
+		/// </summary>
+		/// <returns> the webhook resources instance </returns>
+		WebhookResources WebhookResources { get; }
 
 		/// <summary>
 		/// <para>Returns the GroupResources instance that provides access to group resources.</para>
@@ -208,5 +220,11 @@ namespace Smartsheet.Api
 		[Obsolete("use Smartsheet.Api.SmartsheetClient.WorkspaceResources", true)]
 		[EditorBrowsable(EditorBrowsableState.Never)]
 		WorkspaceResources Workspaces();
+
+		/// <summary>
+		/// <para>Returns the ImageUrlResources instance that provides access to image Url resources.</para>
+		/// </summary>
+		/// <returns> the image Url resources instance </returns>
+		ImageUrlsResources ImageUrlResources { get; }
 	}
 }

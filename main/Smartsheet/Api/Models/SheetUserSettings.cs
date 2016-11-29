@@ -25,7 +25,15 @@ namespace Smartsheet.Api.Models
 
 	public class SheetUserSettings
 	{
+		/// <summary>
+		/// Does this user have “Show Critical Path” turned on for this sheet? Note this setting only has an effect on project sheets with dependencies enabled.
+		/// </summary>
 		private bool? criticalPathEnabled;
+
+		/// <summary>
+		/// Does this user have “Display Summary Tasks” turned on for this sheet? Applies only to sheets where Calendar View has been configured.
+		/// </summary>
+		private bool? displaySummaryTasks;
 
 		/// <summary>
 		/// Does this user have “Show Critical Path” turned on for this sheet? 
@@ -36,6 +44,17 @@ namespace Smartsheet.Api.Models
 		{
 			get { return criticalPathEnabled; }
 			set { criticalPathEnabled = value; }
+		}
+
+		/// <summary>
+		/// Does this user have “Display Summary Tasks” turned on for this sheet? 
+		/// Applies only to sheets where Calendar View has been configured.
+		/// </summary>
+		/// <returns> true if this user has “Display Summary Tasks” turned on, false otherwise </returns>
+		public bool? DisplaySummaryTasks
+		{
+			get { return displaySummaryTasks; }
+			set { displaySummaryTasks = value; }
 		}
 	}
 

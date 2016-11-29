@@ -29,7 +29,7 @@ namespace IntegrationTestSDK
 
 			IList<long> rowIds = AddRows(smartsheet, sheetId, columnId, cellsToAdd);
 
-			MultiRowEmail multiEmail = new MultiRowEmail
+			UpdateRequest updateReq = new UpdateRequest
 			{
 				RowIds = rowIds,
 				IncludeAttachments = true,
@@ -45,13 +45,13 @@ namespace IntegrationTestSDK
 				Subject = "hello",
 				Message = "tada"
 			};
-			UpdateRequest updateRequest = smartsheet.SheetResources.SendUpdateRequest(sheetId, multiEmail);
+			UpdateRequest updateRequest = smartsheet.SheetResources.UpdateRequestResources.CreateUpdateRequest(sheetId, updateReq);
 
 			Assert.IsNotNull(updateRequest.Id);
 
 			Sheet a = smartsheet.SheetResources.GetSheet(sheetId, new SheetLevelInclusion[] { SheetLevelInclusion.ROW_PERMALINK }, null, null, null, null, null, null);
 
-			//smartsheet.SheetResources.DeleteSheet(sheetId);
+			smartsheet.SheetResources.DeleteSheet(sheetId);
 
 		}
 

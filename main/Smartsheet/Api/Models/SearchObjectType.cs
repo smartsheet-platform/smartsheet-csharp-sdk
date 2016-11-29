@@ -58,7 +58,12 @@ namespace Smartsheet.Api.Models
 		/// Attachment.
 		/// </summary>
 		[EnumMember(Value = "attachment")]
-		ATTACHMENT
+		ATTACHMENT,
+		/// <summary>
+		/// Sight.
+		/// </summary>
+		[EnumMember(Value = "sight")]
+		SIGHT
 	}
 
 }

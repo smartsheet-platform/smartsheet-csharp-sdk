@@ -337,12 +337,12 @@ namespace Smartsheet.Api.Models
 				return this;
 			}
 
-            /// <summary>
-            /// Sets the above flag two move the Row directly above the specified sibling Row (at the same hierarchical level).
-            /// </summary>
-            /// <param name="above"> the above flag </param>
-            /// <returns> the update row builder </returns>
-            public virtual UpdateRowBuilder SetAbove(bool? above)
+			/// <summary>
+			/// Sets the above flag two move the Row directly above the specified sibling Row (at the same hierarchical level).
+			/// </summary>
+			/// <param name="above"> the above flag </param>
+			/// <returns> the update row builder </returns>
+			public virtual UpdateRowBuilder SetAbove(bool? above)
 			{
 				this.above = above;
 				return this;
@@ -485,7 +485,7 @@ namespace Smartsheet.Api.Models
 					ToBottom = toBottom,
 					ParentId = parentId,
 					SiblingId = siblingId,
-                    Above = above,
+					Above = above,
 					Locked = locked,
 					Format = format,
 					Expanded = expanded,
@@ -494,6 +494,6 @@ namespace Smartsheet.Api.Models
 				};
 				return row;
 			}
-        }
+		}
 	}
 }

@@ -64,6 +64,16 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// Includes a permalink attribute for each Row. A Row permalink represents a direct link to the Row in the Smartsheet application.
 		/// </summary>
-		ROW_PERMALINK
+		ROW_PERMALINK,
+
+		/// <summary>
+		/// Includes createdBy and modifiedBy attributes on the row, indicating the row’s creator, and last modifier.
+		/// </summary>
+		ROW_WRITER_INFO,
+
+		/// <summary>
+		/// Includes objectValue attribute on cells containing values.
+		/// </summary>
+		OBJECT_VALUE
 	}
 }

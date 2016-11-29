@@ -21,6 +21,8 @@ using System.Collections.Generic;
 namespace Smartsheet.Api.Internal
 {
 	using Api.Models;
+	using Smartsheet.Api.Internal.Util;
+	using System;
 	using System.Text;
 
 	/// <summary>
@@ -43,7 +45,7 @@ namespace Smartsheet.Api.Internal
 
 		/// <summary>
 		/// <para>List of all Sheets owned by the members of the account (organization).</para>
-		/// <para>It mirrors To the following Smartsheet REST API method: GET /Users/sheets</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: GET /users/sheets</para>
 		/// </summary>
 		/// <returns> the list of all Sheets owned by the members of the account (organization). </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
@@ -52,9 +54,18 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual PaginatedResult<Sheet> ListSheets()
+		public virtual PaginatedResult<Sheet> ListOrgSheets(PaginationParameters paging, DateTime? modifiedSince)
 		{
-			return this.ListResourcesWithWrapper<Sheet>("users/sheets");
+			IDictionary<string, string> parameters = new Dictionary<string, string>();
+			if (paging != null)
+			{
+				parameters = paging.toDictionary();
+			}
+			if (modifiedSince != null)
+			{
+				parameters.Add("modifiedSince", ((DateTime)modifiedSince).ToUniversalTime().ToString("o"));
+			}
+			return this.ListResourcesWithWrapper<Sheet>("users/sheets" + QueryUtil.GenerateUrl(null, parameters));
 		}
 	}
 }

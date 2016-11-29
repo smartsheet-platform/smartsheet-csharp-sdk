@@ -69,6 +69,14 @@ namespace Smartsheet.Api.Models
 		private bool? above;
 
 		/// <summary>
+		/// User object containing the name and email of the creator of this row.</summary>
+		private User createdBy;
+
+		/// <summary>
+		/// User object containing the name and email of the last user to modify this row.</summary>
+		private User modifiedBy;
+
+		/// <summary>
 		/// Represents the Cells for this row. </summary>
 		private IList<TCell> cells;
 
@@ -475,6 +483,26 @@ namespace Smartsheet.Api.Models
 			set { above = value; }
 		}
 
+		/// <summary>
+		/// User object containing name and email of the creator of this row
+		/// </summary>
+		/// <returns>User object</returns>
+		public User CreatedBy
+		{
+			get { return createdBy; }
+			set { createdBy = value; }
+		}
+
+		/// <summary>
+		/// User object containing name and email of the last person to modify this row
+		/// </summary>
+		/// <returns>User object</returns>
+		public User ModifiedBy
+		{
+			get { return modifiedBy; }
+			set { modifiedBy = value; }
+		}
+		
 		/// <summary>
 		/// Only returned, with a value of true, 
 		/// if the sheet is a project sheet with dependencies enabled 

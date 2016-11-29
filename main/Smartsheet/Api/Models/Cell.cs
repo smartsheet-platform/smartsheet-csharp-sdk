@@ -38,6 +38,11 @@ namespace Smartsheet.Api.Models
 		private object value;
 
 		/// <summary>
+		/// is an object representation of a cell's value and is currently used for adding or updating predecessor cell values
+		/// </summary>
+		ObjectValue objectValue;
+
+		/// <summary>
 		/// Represents the display Value.
 		/// </summary>
 		private string displayValue;
@@ -74,6 +79,11 @@ namespace Smartsheet.Api.Models
 		private string format;
 
 		private string conditionalFormat;
+
+		/// <summary>
+		/// The image that the cell contains. Only returned if the cell contains an image
+		/// </summary>
+		private Image image;
 
 		/// <summary>
 		/// An array of CellLink objects. Zero or more outbound links from this cell to cells in other sheets whose values mirror this cell's value.
@@ -137,6 +147,21 @@ namespace Smartsheet.Api.Models
 			}
 		}
 
+		/// <summary>
+		/// is an object representation of a cell's value and is currently used for adding or updating predecessor cell values.
+		/// </summary>
+		/// <returns> the ObjectValue </returns>
+		public virtual ObjectValue ObjectValue
+		{
+			get
+			{
+				return objectValue;
+			}
+			set
+			{
+				this.objectValue = value;
+			}
+		}
 
 		/// <summary>
 		/// Gets the Value.
@@ -257,6 +282,22 @@ namespace Smartsheet.Api.Models
 			}
 		}
 
+		/// <summary>
+		/// Gets the Strict Value for this cell.
+		/// </summary>
+		/// <seealso href="http://www.Smartsheet.com/developers/Api-documentation#h.lay2yj3x1pp8">Column Types</seealso>
+		/// <returns> the Strict </returns>
+		public virtual Image Image
+		{
+			get
+			{
+				return image;
+			}
+			set
+			{
+				this.image = value;
+			}
+		}
 
 		///// <summary>
 		///// A convenience class for quickly creating a List of Cells To update.

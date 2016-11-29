@@ -62,9 +62,19 @@ namespace Smartsheet.Api.Models
 		/// </summary>
 		ROW_PERMALINK,
 
-        /// <summary>
-        /// Includes columnType attribute in the row’s cells indicating the type of the column the cell resides in.
-        /// </summary>
-        COLUMN_TYPE
-    }
+		/// <summary>
+		/// Includes columnType attribute in the row’s cells indicating the type of the column the cell resides in.
+		/// </summary>
+		COLUMN_TYPE,
+
+		/// <summary>
+		/// Includes createdBy and modifiedBy attributes on the row, indicating the row’s creator, and last modifier.
+		/// </summary>
+		ROW_WRITER_INFO,
+
+		/// <summary>
+		/// object representation of cell value
+		/// </summary>
+		OBJECT_VALUE
+	}
 }

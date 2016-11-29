@@ -110,6 +110,23 @@ namespace Smartsheet.Api.Internal
 		/// </summary>
 		private SheetResources sheets;
 
+		/// <summary>
+		/// Represents the AtomicReference To SightResources.
+		/// 
+		/// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
+		/// as null, and will be initialized To non-null at the first time it is accessed via corresponding getter, therefore
+		/// effectively the underlying Value is lazily created in a thread safe manner.
+		/// </summary>
+		private SightResources sights;
+		/// <summary>
+		/// Represents the AtomicReference To WebhookResources.
+		/// 
+		/// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
+		/// as null, and will be initialized To non-null at the first time it is accessed via corresponding getter, therefore
+		/// effectively the underlying Value is lazily created in a thread safe manner.
+		/// </summary>
+		private WebhookResources webhooks;
+
 		///// <summary>
 		///// Represents the AtomicReference To ColumnResources.
 		///// 
@@ -237,6 +254,15 @@ namespace Smartsheet.Api.Internal
 		/// SmartsheetImpl in thread safe manner.
 		/// </summary>
 		private string accessToken;
+
+		/// <summary>
+		/// Represents the AtomicReference for image Urls.
+		/// 
+		/// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
+		/// as null, and can be set via corresponding setter, therefore effectively the assumed user can be updated in the
+		/// SmartsheetImpl in thread safe manner.
+		/// </summary>
+		private ImageUrlsResources imageUrls;
 
 		/// <summary>
 		/// Create an instance with given server URI, HttpClient (optional) and JsonSerializer (optional)
@@ -415,6 +441,33 @@ namespace Smartsheet.Api.Internal
 				return sheets;
 			}
 		}
+
+		/// <summary>
+		/// Returns the SightResources instance that provides access To Sight resources.
+		/// </summary>
+		/// <returns> the sight resources </returns>
+		public virtual SightResources SightResources
+		{
+			get
+			{
+				Interlocked.CompareExchange<SightResources>(ref sights, new SightResourcesImpl(this), null);
+				return sights;
+			}
+		}
+
+		/// <summary>
+		/// Returns the SightResources instance that provides access To Sight resources.
+		/// </summary>
+		/// <returns> the sight resources </returns>
+		public virtual WebhookResources WebhookResources
+		{
+			get
+			{
+				Interlocked.CompareExchange<WebhookResources>(ref webhooks, new WebhookResourcesImpl(this), null);
+				return webhooks;
+			}
+		}
+
 
 		///// <summary>
 		///// Returns the ColumnResources instance that provides access To Column resources.
@@ -633,6 +686,15 @@ namespace Smartsheet.Api.Internal
 		public virtual WorkspaceResources Workspaces()
 		{
 			throw new NotSupportedException();
+		}
+
+		public virtual ImageUrlsResources ImageUrlResources
+		{
+			get
+			{
+				Interlocked.CompareExchange<ImageUrlsResources>(ref imageUrls, new ImageUrlsResourcesImpl(this), null);
+				return imageUrls;
+			}
 		}
 	}
 }

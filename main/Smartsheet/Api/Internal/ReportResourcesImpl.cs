@@ -110,14 +110,19 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual PaginatedResult<Report> ListReports(PaginationParameters paging)
+		public virtual PaginatedResult<Report> ListReports(PaginationParameters paging, DateTime? modifiedSince)
 		{
-			StringBuilder path = new StringBuilder("reports");
+			IDictionary<string, string> parameters = new Dictionary<string, string>();
 			if (paging != null)
 			{
-				path.Append(paging.ToQueryString());
+				parameters = paging.toDictionary();
 			}
-			return this.ListResourcesWithWrapper<Report>(path.ToString());
+			if (modifiedSince != null)
+			{
+				parameters.Add("modifiedSince", ((DateTime)modifiedSince).ToUniversalTime().ToString("o"));
+			}
+
+			return this.ListResourcesWithWrapper<Report>("reports" + QueryUtil.GenerateUrl(null, parameters));
 		}
 
 		/// <summary>
@@ -173,6 +178,51 @@ namespace Smartsheet.Api.Internal
 		public virtual void SendReport(long reportId, SheetEmail email)
 		{
 			this.CreateResource<SheetEmail>("reports/" + reportId + "/emails", typeof(SheetEmail), email);
+		}
+
+		/// <summary>
+		/// <para>Get the publish status of a report.</para>
+		/// 
+		/// <para>It mirrors to the following Smartsheet REST API method: GET /reports/{id}/publish</para>
+		/// </summary>
+		/// <param name="reportId"> the reportId </param>
+		/// <returns>
+		/// The report publish status (note that if there is no such resource, this method will 
+		/// throw ResourceNotFoundException rather than returning null).
+		/// </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public ReportPublish GetPublishStatus(long reportId)
+		{
+			return this.GetResource<ReportPublish>("reports/" + reportId + "/publish", typeof(ReportPublish));
+		}
+
+		/// <summary>
+		/// <para>
+		/// Sets the publish status of a report and returns the new status, including the URLs of any enabled publishing.
+		/// </para>
+		/// 
+		/// <para>It mirrors to the following Smartsheet REST API method: PUT /reports/{id}/publish</para>
+		/// </summary>
+		/// <param name="reportId"> the reportId </param>
+		/// <param name="reportPublish"> the ReportPublish object</param>
+		/// <returns>
+		/// The report publish status (note that if there is no such resource, this method will 
+		/// throw ResourceNotFoundException rather than returning null).
+		/// </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public ReportPublish UpdatePublishStatus(long reportId, ReportPublish reportPublish)
+		{
+			return this.UpdateResource<ReportPublish>("reports/" + reportId + "/publish", typeof(ReportPublish), reportPublish);
 		}
 
 		/// <summary>

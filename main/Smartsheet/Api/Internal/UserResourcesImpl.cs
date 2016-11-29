@@ -214,6 +214,95 @@ namespace Smartsheet.Api.Internal
 			this.DeleteResource<User>("users/" + userId + QueryUtil.GenerateUrl(null, parameters), typeof(User));
 		}
 
+		/// <summary>
+		/// <para>List all user alternate email(s).</para>
+		/// <para>It mirrors to the following Smartsheet REST API method: GET /users/{userId}/alternateemails</para>
+		/// </summary>
+		/// <param name="userId"> the Id of the user </param>
+		/// <param name="pagination"> the pagination</param>
+		/// <returns> the list of all AlternateEmails </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public PaginatedResult<AlternateEmail> ListAlternateEmails(long userId, PaginationParameters pagination)
+		{
+			StringBuilder path = new StringBuilder("users/" + userId + "/alternateemails");
+
+			IDictionary<string, string> parameters = new Dictionary<string,string>();
+
+			if (pagination != null)
+			{
+				parameters = pagination.toDictionary();
+			}
+			path.Append(QueryUtil.GenerateUrl(null, parameters));
+
+			return this.ListResourcesWithWrapper<AlternateEmail>(path.ToString());
+		}
+
+		/// <summary>
+		/// <para>Get alternate email.</para>
+		/// <para>It mirrors to the following Smartsheet REST API method: GET /users/{userId}/alternateemails/{alternateEmailId}</para>
+		/// </summary>
+		/// <param name="userId"> the Id of the user </param>
+		/// <param name="altEmailId"> the alternate email Id</param>
+		/// <returns>
+		/// Return the AlternateEmail (note that if there is no such resource, this method will throw 
+		/// ResourceNotFoundException rather than returning null) 
+		/// </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public AlternateEmail GetAlternateEmail(long userId, long altEmailId)
+		{
+			return this.GetResource<AlternateEmail>("users/" + userId + "/alternateemails/" + altEmailId, typeof(AlternateEmail));
+		}
+
+		/// <summary>
+		/// <para>Add alternate email(s).</para>
+		/// <para>It mirrors to the following Smartsheet REST API method: POST /users/{userId}/alternateemails</para>
+		/// </summary>
+		/// <param name="userId"> the Id of the user </param>
+		/// <param name="altEmails"> list of AlternateEmail(s)</param>
+		/// <returns>
+		/// Return the list of AlternateEmails (note that if there is no such resource, this method will throw 
+		/// ResourceNotFoundException rather than returning null) 
+		/// </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public IList<AlternateEmail> AddAlternateEmail(long userId, IEnumerable<AlternateEmail> altEmails)
+		{
+			Utility.Utility.ThrowIfNull(altEmails);
+
+			return this.PostAndReceiveList<IEnumerable<AlternateEmail>,AlternateEmail>("users/" + userId + "/alternateemails", altEmails, typeof(AlternateEmail));
+		}
+
+		/// <summary>
+		/// <para>Delete alternate email.</para>
+		/// <para>It mirrors to the following Smartsheet REST API method: DELETE /users/{userId}/alternateemails/{alternateEmailId}</para>
+		/// </summary>
+		/// <param name="userId"> the Id of the user </param>
+		/// <param name="altEmailId"> the alternate email Id</param>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public void DeleteAlternateEmail(long userId, long altEmailId)
+		{
+			this.DeleteResource<AlternateEmail>("users/" + userId + "/alternateemails/" + altEmailId, typeof(AlternateEmail));
+		}
+
 		public virtual UserSheetResources SheetResources
 		{
 			get

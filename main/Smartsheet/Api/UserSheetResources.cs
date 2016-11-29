@@ -21,6 +21,7 @@ using System.Collections.Generic;
 namespace Smartsheet.Api
 {
 	using Api.Models;
+	using System;
 
 	/// <summary>
 	/// <para>This interface provides methods To access Sheet resources of User.</para>
@@ -31,8 +32,9 @@ namespace Smartsheet.Api
 	{
 		/// <summary>
 		/// <para>List of all Sheets owned by the members of the account (organization).</para>
-		/// <para>It mirrors To the following Smartsheet REST API method: GET /Users/sheets</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: GET /users/sheets</para>
 		/// </summary>
+		/// <param name="paging">the pagination</param>
 		/// <returns> the list of all Sheets owned by the members of the account (organization). </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -40,6 +42,6 @@ namespace Smartsheet.Api
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		PaginatedResult<Sheet> ListSheets();
+		PaginatedResult<Sheet> ListOrgSheets(PaginationParameters paging, DateTime? modifiedSince = null);
 	}
 }
