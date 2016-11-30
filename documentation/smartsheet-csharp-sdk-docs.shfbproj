@@ -28,11 +28,11 @@
     <NamespaceGrouping>False</NamespaceGrouping>
     <SyntaxFilters>Standard</SyntaxFilters>
     <SdkLinkTarget>Blank</SdkLinkTarget>
-    <RootNamespaceContainer>False</RootNamespaceContainer>
+    <RootNamespaceContainer>True</RootNamespaceContainer>
     <PresentationStyle>VS2013</PresentationStyle>
     <Preliminary>False</Preliminary>
     <NamingMethod>MemberName</NamingMethod>
-    <HelpTitle>Smartsheet C# SDK Documentation</HelpTitle>
+    <HelpTitle>Smartsheet C# SDK Documentation v2.1.0</HelpTitle>
     <FeedbackEMailAddress>api%40smartsheet.com</FeedbackEMailAddress>
     <CopyrightText>&amp;#169%3b 2014. All Rights Reserved Smartsheet.com</CopyrightText>
     <CopyrightHref>Smartsheet</CopyrightHref>
@@ -91,6 +91,8 @@
       <Argument Key="maxVersionParts" Value="" />
       <Argument Key="defaultLanguage" Value="cs" />
     </TransformComponentArguments>
+    <HelpFileVersion>1.0.0.0</HelpFileVersion>
+    <RootNamespaceTitle>Smartsheet C# SDK Help Topics</RootNamespaceTitle>
   </PropertyGroup>
   <!-- There are no properties for these groups.  AnyCPU needs to appear in order for Visual Studio to perform
 			 the build.  The others are optional common platform types that may appear. -->

@@ -8,14 +8,9 @@ nuget pack Smartsheet-csharp-sdk.csproj -sym -IncludeReferencedProjects -Prop Co
 if not "%errorlevel%"=="0" goto nugetFailure
 
 :: Copy documentation to the git directory
-xcopy documentation\Website\* documentation\git-docs\ /E /Y
-cd documentation\git-docs\
-:: Push the docs to github.io
-git checkout gh-pages
-git add *
-git commit -m "Updating Docs"
-git push
-cd ..\..\
+rmdir /s /q docs
+xcopy documentation\Website\* docs\ /E /Y
+
 
 echo "==================================================="
 echo "Now make it live on nuget with a command such as: "
