@@ -1,0 +1,3 @@
+<script>
+window.dataLayer = window.dataLayer || [];window.dataLayer.push({'event': 'datalayer-initialized','language': 'en', 'pageSite': 'java-sdk-2.10'});
+</script>
