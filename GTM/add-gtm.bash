@@ -8,7 +8,7 @@ DOCS_DIR="../docs"
 
 fixup_file() {
     FILE=$1
-    # Get <head> on it's own line
+    # Get <head> on its own line
     sed -E $'s/<head>/\\\n<head>\\\n/' "$FILE" > "$FILE.tmp" && mv "$FILE.tmp" "$FILE"
 
     sed -E '/^<head>$/r gtm-header.txt' "$FILE" > "$FILE.tmp" && mv "$FILE.tmp" "$FILE"
@@ -20,7 +20,8 @@ fixup_file() {
 }
 
 # fixup_file "$DOCS_DIR/html/R_Project_smartsheet-csharp-sdk-docs.htm"
-for filename in "$DOCS_DIR/html/*.htm; do
+for filename in $DOCS_DIR/html/*.htm
+do
         fixup_file $filename
 done
 
