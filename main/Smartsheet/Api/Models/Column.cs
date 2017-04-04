@@ -487,19 +487,19 @@ namespace Smartsheet.Api.Models
 			}
 
 
-			/// <summary>
-			/// Gets the Type for the column. </summary>
-			/// <returns> the Type </returns>
-			public virtual ColumnType? GetType()
-			{
-				return type;
-			}
+            /// <summary>
+            /// Gets the Type for the column. </summary>
+            /// <returns> the Type </returns>
+            public virtual new ColumnType? GetType()
+            {
+                return type;
+            }
 
 
-			/// <summary>
-			/// Gets the option for the column. </summary>
-			/// <returns> the option </returns>
-			public virtual IList<string> GetOptions()
+            /// <summary>
+            /// Gets the option for the column. </summary>
+            /// <returns> the option </returns>
+            public virtual IList<string> GetOptions()
 			{
 				return options;
 			}
@@ -727,7 +727,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Gets the Type for the column. </summary>
 			/// <returns> the Type </returns>
-			public virtual ColumnType? GetType()
+			public virtual new ColumnType? GetType()
 			{
 				return type;
 			}
@@ -1034,20 +1034,20 @@ namespace Smartsheet.Api.Models
 				return title;
 			}
 
-			/// <summary>
-			/// Gets the Type.
-			/// </summary>
-			/// <returns> the Type </returns>
-			public virtual ColumnType? GetType()
-			{
-				return type;
-			}
+            /// <summary>
+            /// Gets the Type.
+            /// </summary>
+            /// <returns> the Type </returns>
+            public virtual new ColumnType? GetType()
+            {
+                return type;
+            }
 
-			/// <summary>
-			/// Gets the Options.
-			/// </summary>
-			/// <returns> the Options </returns>
-			public virtual IList<string> GetOptions()
+            /// <summary>
+            /// Gets the Options.
+            /// </summary>
+            /// <returns> the Options </returns>
+            public virtual IList<string> GetOptions()
 			{
 				return options;
 			}

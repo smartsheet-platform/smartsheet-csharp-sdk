@@ -1,3 +1,8 @@
+[![nuget][nuget-badge]][nuget-url]
+[nuget-badge]: https://img.shields.io/nuget/v/smartsheet-csharp-sdk.svg
+[nuget-url]: https://www.nuget.org/packages/smartsheet-csharp-sdk/
+
+
 #Smartsheet C# SDK
 
 This is a C# SDK to simplify connecting to the [Smartsheet API](http://www.smartsheet.com/developers/api-documentation) from applications.
@@ -10,11 +15,7 @@ If unfamiliar with NuGet, please take a look at the [NuGet documentation](http:/
 
 To install the SDK in Visual Studio, right click the **References** for the project and select **Manage NuGet Packages**.
 
-![Manage NuGet Packages](https://googledrive.com/host/0B0ESt9lII6BWZUcyZmlsalBDdlE/nuget1.png "Manage NuGet Packages")
-
-Next a dialog will open like the one below. Check the left sidebar to confirm that you are viewing the **Online** section. Then type in **smartsheet** in the search box. Lastly, click **Install** on the Smartsheet C# SDK.
-
-![Search for and Install Smartsheet C# SDK](https://googledrive.com/host/0B0ESt9lII6BWZUcyZmlsalBDdlE/nuget2.png "Install Smartsheet C# SDK")
+Select the **Browse** or **Online** tab (depending upon the version of VS) then type **smartsheet** in the search box. Select **smartsheet-csharp-sdk** in the search results and click the **Install** button.
 
 After clicking **Install**, you will be asked to accept the License (Apache). Then it will install the Smartsheet SDK and the dependencies (RestSharp & Newtonsoft.Json) by adding these libraries to the **References** section of the project.
 
@@ -39,9 +40,13 @@ cd smartsheet-csharp-sdk
 ```
 
 ## Documentation
-The SDK API documentation can be viewed online at [http://smartsheet-platform.github.io/smartsheet-csharp-sdk/](http://smartsheet-platform.github.io/smartsheet-csharp-sdk/).
+The API documentation is here: http://smartsheet-platform.github.io/api-docs/?csharp#.
+
+The SDK class documentation is here: [http://smartsheet-platform.github.io/smartsheet-csharp-sdk/](http://smartsheet-platform.github.io/smartsheet-csharp-sdk/).
 
 ##Example Usage
+A simple, but complete sample application project is here: https://github.com/smartsheet-samples/csharp-read-write-sheet
+
 To use the C# SDK, you'll need to include the appropriate **using** directives in your code. 
 For example, the code examples in this section require the following **using** directives:
 
@@ -129,71 +134,16 @@ public static void SampleCode()
 }
 ```
 
-More examples are available [here](http://smartsheet-platform.github.io/api-docs/?csharp#c#-sample-code).
+More examples are available here: https://github.com/smartsheet-samples.
 
 ## Contributing
 If you would like to contribute a change to the SDK, please fork a branch and then submit a pull request. More info [here](https://help.github.com/articles/using-pull-requests).
 
-##Support
+## Support
 If you have any questions or issues with this SDK please post on [StackOverflow using the tag "smartsheet-api"](http://stackoverflow.com/questions/tagged/smartsheet-api) or contact us directly at api@smartsheet.com.
 
-##Release Notes
+## Releases
 
-Each specific release is available for download via [Github](https://github.com/smartsheet-platform/smartsheet-csharp-sdk/tags) or the [NuGet repository](https://www.nuget.org/packages/smartsheet-csharp-sdk/).
+All releases are available for download via [Github](https://github.com/smartsheet-platform/smartsheet-csharp-sdk/tags) or the [NuGet repository](https://www.nuget.org/packages/smartsheet-csharp-sdk/).
 
-<!--
-**1.0.
-* Updated web documentation to use Visual Studio 2013 format and include searching.
-* 
-* Updated to the latest version of Newtonsoft.Json
-* Added support for code on Azure.
-
--->
-**2.0.2 (January 19, 2016)**
-* Added ability to fetch specific users by email address
-* Converted Integration tests to use NUnit
-* Fixed failing integration tests
-
-
-**2.0.1 (August 24, 2015)**
-* Added ability to retrieve Contacts.
-* Added ability to copy folder/sheet/workspace.
-* Added ability to move folder/sheet.
-* Added ability to delete multiple rows at once.
-* Added ability to send multiple rows at once.
-* Added ability to create update request.
-* Added ability to create discussion on row and include file attachment (in a single request).
-* Fixed issue where CopyRowsToAnotherSheet and MoveRowsToAnotherSheet did not handle parameters correctly.
-
-**2.0.0 (Aug 11, 2015)**
-* Upgraded the Smartsheet C# SDK to the brand new version of API 2.0.
-
-**1.0.7 (Dec 9, 2014)**
-* Added ability to retrieve Reports
-
-**1.0.6 (Oct 29, 2014)**
-* Added Dropbox and Evernote as attachment types
-* Added setColumnId to ModifyColumnBuilder
-
-**1.0.5 (Oct 22, 2014)**
-* Fixed an issue where WorkspaceResourcesImpl was not working correctly with folders and shares.
-
-**1.0.4 (Jun 16, 2014)**
-* Made enum serialization more flexible
-
-**1.0.3 (Jun 16, 2014)**
-* Upgraded json.net library to latest version
-* Added support for GANTT_ALLOCATION ColumnTag
-
-**1.0.2 (Apr 17, 2014)**
-* Fixed issue with post requests where content body was not handled correctly.
-* Added index to the ColumnToSheetBuilder class.
-* Added filename when uploading an attachment.
-
-**1.0.1 (Mar 19, 2014)**
-* Fixed issue when refreshing an existing OAuth token.
-
-**1.0.0 (Feb 18, 2014)**
-* Initial Release of the Smartsheet C# SDK
-
-[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/9200efe449798ebbc03d9ec9f0a11ff1 "githalytics.com")](http://githalytics.com/smartsheet-platform/smartsheet-csharp-sdk)
+[Release notes](https://github.com/smartsheet-platform/smartsheet-csharp-sdk/releases)

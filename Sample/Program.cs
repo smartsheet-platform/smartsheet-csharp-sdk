@@ -54,7 +54,8 @@ namespace sdk_csharp_sample
 			// Use the Smartsheet Builder to create a Smartsheet
 			SmartsheetClient smartsheet = new SmartsheetBuilder().SetAccessToken(token.AccessToken).Build();
 
-			if (false)
+#pragma warning disable 0162
+            if (false)
 			{
 				// List all contents (specify 'include' parameter with value of "source").
 				Home home = smartsheet.HomeResources.GetHome(new HomeInclusion[] { HomeInclusion.SOURCE });
