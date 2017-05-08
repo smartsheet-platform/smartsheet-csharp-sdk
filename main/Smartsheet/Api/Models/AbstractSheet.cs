@@ -118,6 +118,10 @@ namespace Smartsheet.Api.Models
 
 		private long? ownerId;
 
+		/// <summary>
+		/// Sheet’s project settings containing the working days, non-working days, and length of day for a project sheet.
+		/// </summary>
+		private ProjectSettings projectSettings;
 
 		/// <summary>
 		/// Represents the email of the owner
@@ -481,6 +485,15 @@ namespace Smartsheet.Api.Models
 		{
 			get { return source; }
 			set { source = value; }
+		}
+
+		/// <summary>
+		/// Get Sheet’s project settings containing the working days, non-working days, and length of day for a project sheet
+		/// </summary>
+		public virtual ProjectSettings ProjectSettings
+		{
+			get { return projectSettings; }
+			set { projectSettings = value; }
 		}
 	}
 }

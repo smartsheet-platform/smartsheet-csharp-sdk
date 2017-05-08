@@ -106,6 +106,7 @@
     <Compile Include="main\Smartsheet\Api\Models\ObjectValue.cs" />
     <Compile Include="main\Smartsheet\Api\Models\ObjectValueType.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Predecessor.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\ProjectSettings.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Schedule.cs" />
     <Compile Include="main\Smartsheet\Api\Models\ScheduleType.cs" />
     <Compile Include="main\Smartsheet\Api\Models\SentUpdateRequest.cs" />
