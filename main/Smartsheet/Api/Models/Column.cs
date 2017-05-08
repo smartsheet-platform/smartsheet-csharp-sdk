@@ -72,6 +72,11 @@ namespace Smartsheet.Api.Models
 		private AutoNumberFormat autoNumberFormat;
 
 		/// <summary>
+		/// List containing contact options
+		/// </summary>
+		private IList<Contact> contactOptions;
+
+		/// <summary>
 		/// Represents the Tags To indicate a special Type of column.
 		/// </summary>
 		private IList<ColumnTag> tags;
@@ -243,6 +248,17 @@ namespace Smartsheet.Api.Models
 			}
 		}
 
+		public virtual IList<Contact> ContactOptions
+		{
+			get
+			{
+				return contactOptions;
+			}
+			set
+			{
+				this.contactOptions = value;
+			}
+		}
 
 		/// <summary>
 		/// Gets the Tags that indicate a special Type of column.
