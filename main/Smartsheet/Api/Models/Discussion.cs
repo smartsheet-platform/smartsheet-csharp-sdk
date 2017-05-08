@@ -41,6 +41,11 @@ namespace Smartsheet.Api.Models
 		private IList<Attachment> commentAttachments;
 
 		/// <summary>
+		/// The number of comments in the discussion
+		/// </summary>
+		private int? commentCount;
+
+		/// <summary>
 		/// Represents the date a Comment was last added To a discussion. </summary>
 		private DateTime? lastCommentedAt;
 
@@ -129,6 +134,20 @@ namespace Smartsheet.Api.Models
 			}
 		}
 
+		/// <summary>
+		/// Get the number of comments in the discussion
+		/// </summary>
+		public virtual int? CommentCount
+		{
+			get
+			{
+				return commentCount;
+			}
+			set
+			{
+				this.commentCount = value;
+			}
+		}
 
 		/// <summary>
 		/// Time of most recent comment

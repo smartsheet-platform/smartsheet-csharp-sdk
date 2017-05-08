@@ -16,6 +16,7 @@
 //    limitations under the License.
 //    %[license]
 
+using System;
 using System.Collections.Generic;
 
 namespace Smartsheet.Api.Internal
@@ -23,6 +24,10 @@ namespace Smartsheet.Api.Internal
 	using Api.Models;
 	using Smartsheet.Api.Internal.Util;
 	using System.Text;
+	using System.Net;
+	using HttpMethod = Api.Internal.Http.HttpMethod;
+	using HttpRequest = Api.Internal.Http.HttpRequest;
+	using HttpResponse = Api.Internal.Http.HttpResponse;
 
 	/// <summary>
 	/// This is the implementation of the UserResources.
@@ -31,6 +36,13 @@ namespace Smartsheet.Api.Internal
 	/// </summary>
 	public class UserResourcesImpl : AbstractResources, UserResources
 	{
+		/// <summary>
+		/// Represents the SmartsheetImpl.
+		/// 
+		/// It will be initialized in constructor and will not change afterwards.
+		/// </summary>
+		private SmartsheetImpl smartsheet;
+
 		private UserSheetResources sheets;
 
 		/// <summary>
@@ -42,6 +54,7 @@ namespace Smartsheet.Api.Internal
 		public UserResourcesImpl(SmartsheetImpl smartsheet)
 			: base(smartsheet)
 		{
+			this.smartsheet = smartsheet;
 			this.sheets = new UserSheetResourcesImpl(smartsheet);
 		}
 
@@ -301,6 +314,49 @@ namespace Smartsheet.Api.Internal
 		public void DeleteAlternateEmail(long userId, long altEmailId)
 		{
 			this.DeleteResource<AlternateEmail>("users/" + userId + "/alternateemails/" + altEmailId, typeof(AlternateEmail));
+		}
+
+		/// <summary>
+		/// <para>Promote an alternate email to primary.</para>
+		/// <para>It mirrors to the following Smartsheet REST API method: POST /users/{userId}/alternateemails/{alternateEmailId}/makeprimary</para>
+		/// </summary>
+		/// <param name="userId"> the Id of the user </param>
+		/// <param name="altEmailId"> the alternate email Id</param>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public virtual AlternateEmail PromoteAlternateEmail(long userId, long altEmailId)
+		{
+			HttpRequest request = null;
+			try
+			{
+				request = CreateHttpRequest(new Uri(this.smartsheet.BaseURI, "users/" + userId + "/alternateemails/" + altEmailId + "/makeprimary"), HttpMethod.POST);
+			}
+			catch (Exception e)
+			{
+				throw new SmartsheetException(e);
+			}
+
+			HttpResponse response = this.smartsheet.HttpClient.Request(request);
+
+			Object obj = null;
+			switch (response.StatusCode)
+			{
+				case HttpStatusCode.OK:
+					obj = this.smartsheet.JsonSerializer.deserializeResult<AlternateEmail>(
+						response.Entity.GetContent()).Result;
+					break;
+				default:
+					HandleError(response);
+					break;
+			}
+
+			smartsheet.HttpClient.ReleaseConnection();
+
+			return (AlternateEmail)obj;
 		}
 
 		public virtual UserSheetResources SheetResources
