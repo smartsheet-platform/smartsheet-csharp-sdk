@@ -60,5 +60,20 @@ namespace Smartsheet.Api
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		Comment AddCommentWithAttachment(long sheetId, long discussionId, Comment comment, string file, string fileType);
+
+		/// <summary>
+		/// <para>Update the specified comment.</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: PUT /sheets/{sheetId}/comments/{commentId}</para>
+		/// </summary>
+		/// <param name="sheetId"> the id of the sheet </param>
+		/// <param name="comment"> Comment object </param>
+		/// <returns> the updated comment </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		Comment UpdateComment(long sheetId, Comment comment);
 	}
 }
