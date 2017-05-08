@@ -43,11 +43,11 @@ namespace Smartsheet.Api.Models
 		private int? parentRowNumber;
 
 		/// <summary>
-		/// Represents the parent row number. </summary>
+		/// Represents the parent row ID. </summary>
 		private long? parentId;
 
 		/// <summary>
-		/// Represents the parent row number. </summary>
+		/// Represents the sibling row ID. </summary>
 		private long? siblingId;
 
 		private bool? filteredOut;
@@ -67,6 +67,10 @@ namespace Smartsheet.Api.Models
 		private bool? toBottom;
 
 		private bool? above;
+
+		private int? indent;
+
+		private int? outdent;
 
 		/// <summary>
 		/// User object containing the name and email of the creator of this row.</summary>
@@ -113,7 +117,6 @@ namespace Smartsheet.Api.Models
 		private AccessLevel? accessLevel;
 
 		private string permalink;
-
 
 		/// <summary>
 		/// Gets the user's permissions on the sheet.
@@ -481,6 +484,28 @@ namespace Smartsheet.Api.Models
 		{
 			get { return above; }
 			set { above = value; }
+		}
+
+		/// <summary>
+		/// integer value specifying the number of levels to indent this row. 
+		/// This attribute can be specified in a request, but will never be present in a response.
+		/// </summary>
+		/// <returns> the number of levels to indent this row </returns>
+		public int? Indent
+		{
+			get { return indent; }
+			set { indent = value; }
+		}
+
+		/// <summary>
+		/// integer value specifying the number of levels to outdent this row. 
+		/// This attribute can be specified in a request, but will never be present in a response.
+		/// </summary>
+		/// <returns> the number of levels to outdent this row </returns>
+		public int? Outdent
+		{
+			get { return outdent; }
+			set { outdent = value; }
 		}
 
 		/// <summary>

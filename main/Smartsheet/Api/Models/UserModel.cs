@@ -59,6 +59,25 @@ namespace Smartsheet.Api.Models
 		/// </summary>
 		private bool? groupAdmin;
 
+		/// <summary>
+		/// An array of AlternateEmail objects representing the alternate email addresses associated with the User account
+		/// </summary>
+		private IList<AlternateEmail> alternateEmails;
+
+		/// <summary>
+		/// The number of sheets owned by the current user within the organization
+		/// </summary>
+		private int? sheetCount;
+
+		/// <summary>
+		/// Last login time of the current user
+		/// </summary>
+		private DateTime? lastLogin;
+
+		/// <summary>
+		/// Timestamp of viewing an Enterprise Custom Welcome Screen by the current user
+		/// </summary>
+		private DateTime? customWelcomeScreenViewed;
 
 		/// <summary>
 		/// Gets the Admin flag which allows managing Users and accounts.
@@ -153,6 +172,42 @@ namespace Smartsheet.Api.Models
 		{
 			get { return lastName; }
 			set { lastName = value; }
+		}
+
+		/// <summary>
+		/// Get list of alternate email addresses associted with this User account
+		/// </summary>
+		public IList<AlternateEmail> AlternateEmails
+		{
+			get { return alternateEmails; }
+			set { alternateEmails = value;  }
+		}
+
+		/// <summary>
+		/// Get the number of sheets owned by the current user within the organization
+		/// </summary>
+		public int? SheetCount
+		{
+			get { return sheetCount; }
+			set { sheetCount = value; }
+		}
+
+		/// <summary>
+		/// Get the last login time of the current user
+		/// </summary>
+		public DateTime? LastLogin
+		{
+			get { return lastLogin; }
+			set { lastLogin = value; }
+		}
+
+		/// <summary>
+		/// Get the timestamp of the viewing of an Enterprise Custom Welcome Screen by the current user
+		/// </summary>
+		public DateTime? CustomWelcomeScreenViewed
+		{
+			get { return customWelcomeScreenViewed; }
+			set { customWelcomeScreenViewed = value; }
 		}
 	}
 }

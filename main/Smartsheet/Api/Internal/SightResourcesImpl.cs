@@ -164,6 +164,51 @@ namespace Smartsheet.Api.Internal
 		}
 
 		/// <summary>
+		/// <para>Get the publish status of a sight.</para>
+		/// 
+		/// <para>It mirrors to the following Smartsheet REST API method: GET /sights/{id}/publish</para>
+		/// </summary>
+		/// <param name="sightId"> the sightId </param>
+		/// <returns>
+		/// The sights publish status (note that if there is no such resource, this method will 
+		/// throw ResourceNotFoundException rather than returning null).
+		/// </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public SightPublish GetPublishStatus(long sightId)
+		{
+			return this.GetResource<SightPublish>("sights/" + sightId + "/publish", typeof(SightPublish));
+		}
+
+		/// <summary>
+		/// <para>
+		/// Sets the publish status of a sight and returns the new status, including the URLs of any enabled publishing.
+		/// </para>
+		/// 
+		/// <para>It mirrors to the following Smartsheet REST API method: PUT /sights/{id}/publish</para>
+		/// </summary>
+		/// <param name="sightId"> the sightId </param>
+		/// <param name="sightPublish"> the SightPublish object</param>
+		/// <returns>
+		/// The sight publish status (note that if there is no such resource, this method will 
+		/// throw ResourceNotFoundException rather than returning null).
+		/// </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public SightPublish UpdatePublishStatus(long sightId, SightPublish sightPublish)
+		{
+			return this.UpdateResource<SightPublish>("sights/" + sightId + "/publish", typeof(SightPublish), sightPublish);
+		}
+
+		/// <summary>
 		/// Returns the ShareResources object that provides access To Share resources associated with Sight resources.
 		/// </summary>
 		/// <returns> the ShareResources object </returns>

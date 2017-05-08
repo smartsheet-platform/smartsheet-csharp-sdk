@@ -109,6 +109,7 @@
     <Compile Include="main\Smartsheet\Api\Models\Schedule.cs" />
     <Compile Include="main\Smartsheet\Api\Models\ScheduleType.cs" />
     <Compile Include="main\Smartsheet\Api\Models\SentUpdateRequest.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\SightPublish.cs" />
     <Compile Include="main\Smartsheet\Api\Models\UpdateRequestStatus.cs" />
     <Compile Include="main\Smartsheet\Api\Models\WebhookSharedSecret.cs" />
     <Compile Include="main\Smartsheet\Api\Models\WebhookStatus.cs" />

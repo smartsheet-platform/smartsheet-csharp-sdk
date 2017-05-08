@@ -278,6 +278,8 @@ namespace Smartsheet.Api.Models
 			private long? parentId;
 			private long? siblingId;
 			private bool? above;
+			private int? indent;
+			private int? outdent;
 			private string format;
 			private bool? expanded;
 			private IList<Cell> cells;
@@ -345,6 +347,18 @@ namespace Smartsheet.Api.Models
 			public virtual UpdateRowBuilder SetAbove(bool? above)
 			{
 				this.above = above;
+				return this;
+			}
+
+			public virtual UpdateRowBuilder SetIndent(int? indent)
+			{
+				this.indent = indent;
+				return this;
+			}
+
+			public virtual UpdateRowBuilder SetOutdent(int? outdent)
+			{
+				this.outdent = outdent;
 				return this;
 			}
 
@@ -486,6 +500,8 @@ namespace Smartsheet.Api.Models
 					ParentId = parentId,
 					SiblingId = siblingId,
 					Above = above,
+					Indent = indent,
+					Outdent = outdent,
 					Locked = locked,
 					Format = format,
 					Expanded = expanded,
