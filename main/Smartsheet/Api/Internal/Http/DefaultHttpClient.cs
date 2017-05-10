@@ -22,9 +22,13 @@ namespace Smartsheet.Api.Internal.Http
 {
 	using Util = Api.Internal.Utility.Utility;
 	using RestSharp;
-	using System.Reflection;
 	using System;
 	using System.IO;
+	using System.Linq;
+	using System.Reflection;
+	using System.Diagnostics;
+	using System.Text;
+	using NLog;
 
 	/// <summary>
 	/// This is the RestSharp based HttpClient implementation.
@@ -49,6 +53,11 @@ namespace Smartsheet.Api.Internal.Http
 		/// <summary>
 		/// The http response. </summary>
 		private IRestResponse restResponse;
+
+		/// <summary>
+		/// static logger 
+		/// </summary>
+		private static Logger logger = LogManager.GetCurrentClassLogger();
 
 		/// <summary>
 		/// Constructor.
@@ -224,7 +233,11 @@ namespace Smartsheet.Api.Internal.Http
 			httpClient.BaseUrl = new Uri(smartsheetRequest.Uri.GetLeftPart(UriPartial.Authority));
 
 			// Make the HTTP request
+			var timer = new Stopwatch();
+			timer.Start();
 			restResponse = httpClient.Execute(restRequest);
+			timer.Stop();
+			LogRequest(restRequest, restResponse, timer.ElapsedMilliseconds);
 
 			if (restResponse.ResponseStatus == ResponseStatus.Error)
 			{
@@ -258,7 +271,7 @@ namespace Smartsheet.Api.Internal.Http
 		/// </summary>
 		public virtual void Close()
 		{
-			// Not necessary with restsharp
+			LogManager.Flush();
 		}
 
 		/// <summary>
@@ -282,6 +295,42 @@ namespace Smartsheet.Api.Internal.Http
 			}
 			return "smartsheet-csharp-sdk("+title + ")/" + thisVersion + " " + Util.GetOSFriendlyName();
 		}
-	}
 
+        private void LogRequest(IRestRequest request, IRestResponse response, long durationMs)
+        {
+			logger.Info(() =>
+			{
+				return string.Format("{0} {1}, Response Code:{2}, Request completed in {3} ms", 
+					request.Method.ToString(), httpClient.BuildUri(request), response.StatusCode, durationMs);
+			});
+            logger.Debug(() =>
+            {
+				var headers_list = request.Parameters.Where(parameter => parameter.Type == ParameterType.HttpHeader).ToList();
+				StringBuilder builder = new StringBuilder();
+				foreach(RestSharp.Parameter header in headers_list)
+				{
+					if(header.Name == "Authorization")
+					{
+						builder.Append("\"" + header.Name + "\"").Append(":").Append("\"[Redacted]\" ");
+					}
+					else
+						builder.Append("\"" + header.Name + "\"").Append(":").Append("\"" + header.Value + "\" ");
+				}
+				string body = "N/A";
+				var body_element = request.Parameters.Where(parameter => parameter.Type == ParameterType.RequestBody).ToList();
+				if(body_element.Count() > 0)
+					body = System.Text.Encoding.UTF8.GetString((byte[])body_element[0].Value);
+				return string.Format("Request Headers {0}Request Body: {1}", builder.ToString(), body);
+			});
+			logger.Debug(() =>
+			{
+				StringBuilder builder = new StringBuilder();
+				foreach(RestSharp.Parameter header in response.Headers)
+				{
+					builder.Append("\"" + header.Name + "\"").Append(":").Append("\"" + header.Value + "\" ");
+				}
+                return string.Format("Response Headers: {0}Response Body: {1}", builder.ToString(), response.Content.ToString());
+            });
+        }
+    }
 }

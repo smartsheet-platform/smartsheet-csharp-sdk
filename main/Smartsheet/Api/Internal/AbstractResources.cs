@@ -843,11 +843,7 @@ namespace Smartsheet.Api.Internal
 
 				using (BinaryReader reader = new BinaryReader(writer.BaseStream))
 				{
-
 					byte[] serializedData = Utils.ReadAllBytes(reader);
-#if DEBUG
-					Console.WriteLine("Serialized Data: " + System.Text.Encoding.Default.GetString(serializedData));
-#endif
 					entity.Content = serializedData;
 					entity.ContentLength = reader.BaseStream.Length;
 				}
