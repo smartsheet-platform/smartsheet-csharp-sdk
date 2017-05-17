@@ -3,14 +3,14 @@
 [nuget-url]: https://www.nuget.org/packages/smartsheet-csharp-sdk/
 
 
-#Smartsheet C# SDK
+## Smartsheet C# SDK
 
 This is a C# SDK to simplify connecting to the [Smartsheet API](http://www.smartsheet.com/developers/api-documentation) from applications.
 
-##Installation
+## Installation
 The SDK can be installed by using NuGet or by compiling from source. These two steps are outlined below.
 
-###Install with NuGet
+### Install with NuGet
 If unfamiliar with NuGet, please take a look at the [NuGet documentation](http://docs.nuget.org/). 
 
 To install the SDK in Visual Studio, right click the **References** for the project and select **Manage NuGet Packages**.
@@ -25,7 +25,7 @@ The SDK can also be installed with the following command in the **[Package Manag
 Install-Package smartsheet-csharp-sdk
 ```
 
-###Compile from source
+### Compile from source
 The source code for the SDK can be downloaded from Github and then compiled. This can be accomplished using [git](http://git-scm.com/) to fetch it and then using Visual Studio or a program such as [MSBuild](http://msdn.microsoft.com/en-us/library/wea2sca5(v=vs.90).aspx) to built it.
 
 In Visual Studio you can open the entire solution with the file **Smartsheet-csharp-sdk.sln**, or open the specific project **Smartsheet-csharp-sdk.csproj**. Once the project is open in Visual Studio, you can hit **F6** to build the solution.
@@ -44,7 +44,7 @@ The API documentation is here: http://smartsheet-platform.github.io/api-docs/?cs
 
 The SDK class documentation is here: [http://smartsheet-platform.github.io/smartsheet-csharp-sdk/](http://smartsheet-platform.github.io/smartsheet-csharp-sdk/).
 
-##Example Usage
+## Example Usage
 A simple, but complete sample application project is here: https://github.com/smartsheet-samples/csharp-read-write-sheet
 
 To use the C# SDK, you'll need to include the appropriate **using** directives in your code. 
