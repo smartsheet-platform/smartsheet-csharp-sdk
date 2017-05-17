@@ -18,14 +18,77 @@
 
 namespace Smartsheet.Api
 {
-
-
-
+	using NLog;
+	using System;
 	using SmartsheetImpl = Api.Internal.SmartsheetImpl;
 	using DefaultHttpClient = Api.Internal.Http.DefaultHttpClient;
 	using HttpClient = Api.Internal.Http.HttpClient;
 	using JsonNetSerializer = Api.Internal.Json.JsonNetSerializer;
 	using JsonSerializer = Api.Internal.Json.JsonSerializer;
+
+	/// <summary>
+	/// Declare a prototype for user provided calcBackoff callbacks.
+	/// </summary>
+	/// <param name="previousAttempts"></param>
+	/// <param name="totalElapsedTime"></param>
+	/// <param name="error"></param>
+	/// <returns></returns>
+	public delegate long CalcBackoffCallback(int previousAttempts, long totalElapsedTime, Api.Models.Error error);
+
+	/// <summary>
+	/// An interface for userCalcBackoff class inheritence.
+	/// </summary>
+	public interface IUserCalcBackoff
+	{
+		CalcBackoffCallback CalcBackoffCallback { get; } 
+	}
+
+	/// <summary>
+	/// Default calcBackoff, uses partial exponential backoff to calculate wait times.
+	/// </summary>
+	public class DefaultCalcBackoff : IUserCalcBackoff
+	{
+		private long maxRetryTime;
+
+		/// <summary>
+		/// static logger 
+		/// </summary>
+		private static Logger logger = LogManager.GetCurrentClassLogger();
+
+		/// <summary>
+		/// Maximum retry time may be specified by the caller
+		/// </summary>
+		/// <param name="maxRetryTime"></param>
+		public DefaultCalcBackoff(long maxRetryTime)
+		{
+			this.maxRetryTime = maxRetryTime;
+		}
+
+		/// <summary>
+		/// use partial exponential backoff to determine wait time.
+		/// </summary>
+		/// <param name="previousAttempts"></param>
+		/// <param name="totalElapsedTime"></param>
+		/// <param name="error"></param>
+		/// <returns></returns>
+		public long CalcBackoff(int previousAttempts, long totalElapsedTime, Api.Models.Error error)
+		{
+			if (totalElapsedTime > maxRetryTime)
+			{
+				logger.Info("Total elapsed timeout exceeded, exiting retry loop");
+				return -1;
+			}
+			return (long)((Math.Pow(2, previousAttempts) * 1000) + new Random().Next(0, 1000));
+		}
+
+		public CalcBackoffCallback CalcBackoffCallback
+		{
+			get
+			{
+				return CalcBackoff;
+			}
+		}
+	}
 
 	/// <summary>
 	/// <para>A convenience class To help create a <seealso cref="SmartsheetClient"/> instance with the appropriate fields.</para>
@@ -69,6 +132,8 @@ namespace Smartsheet.Api
 		/// <para>It can be set using corresponding setter.</para>
 		/// </summary>
 		private string assumedUser;
+
+		private IUserCalcBackoff calcBackoff = new DefaultCalcBackoff(15000);
 
 		/// <summary>
 		/// <para>Represents the default base URI of the SmartsheetClient REST API.</para>
@@ -136,6 +201,29 @@ namespace Smartsheet.Api
 		public virtual SmartsheetBuilder SetAssumedUser(string assumedUser)
 		{
 			this.assumedUser = assumedUser;
+			return this;
+		}
+
+		/// <summary>
+		/// Create a DefaultCalcBackoff with a max elapsed timeout specified by the user. This interface 
+		/// is only valid when the DefaultHttpClient is used.
+		/// </summary>
+		/// <param name="maxRetryTimeout"></param>
+		/// <returns></returns>
+		public virtual SmartsheetBuilder SetMaxRetryTimeout(long maxRetryTimeout)
+		{
+			this.calcBackoff = new DefaultCalcBackoff(maxRetryTimeout);
+			return this;
+		}
+
+		/// <summary>
+		/// Store a user provided IUserCalcBackoff. This interface is only valid when the DefaultHttpClient is used.
+		/// </summary>
+		/// <param name="calcBackoff"></param>
+		/// <returns></returns>
+		public virtual SmartsheetBuilder SetUserCalcBackoff(IUserCalcBackoff calcBackoff)
+		{
+			this.calcBackoff = calcBackoff;
 			return this;
 		}
 
@@ -217,16 +305,6 @@ namespace Smartsheet.Api
 		/// <returns> the SmartsheetClient instance </returns>
 		public virtual SmartsheetClient Build()
 		{
-			if (httpClient == null)
-			{
-				httpClient = new DefaultHttpClient();
-			}
-
-			if (jsonSerializer == null)
-			{
-				jsonSerializer = new JsonNetSerializer();
-			}
-
 			if (baseURI == null)
 			{
 				baseURI = DEFAULT_BASE_URI;
@@ -238,6 +316,8 @@ namespace Smartsheet.Api
 			{
 				smartsheet.AssumedUser = assumedUser;
 			}
+
+			smartsheet.CalcBackoff = calcBackoff;
 
 			return smartsheet;
 		}
