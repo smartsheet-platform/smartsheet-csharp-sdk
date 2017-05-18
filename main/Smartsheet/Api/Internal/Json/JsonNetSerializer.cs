@@ -65,11 +65,15 @@ namespace Smartsheet.Api.Internal.Json
 
 			// Handles enum serialization
 			serializer.Converters.Add(new JsonEnumTypeConverter());
+
 			// Convert all enums To a string representation for serialization
 			serializer.Converters.Add(new Newtonsoft.Json.Converters.StringEnumConverter());
 
-			// Handles enum serialization
+			// Handles objectValue serialization
 			serializer.Converters.Add(new ObjectValueTypeConverter());
+
+			// Handles linkInFromCell serialization
+			serializer.Converters.Add(new CellObjectTypeConverter());
 		}
 
 		/// <summary>

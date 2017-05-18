@@ -94,6 +94,7 @@
     <Compile Include="main\Smartsheet\Api\ImageUrlsResources.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\ContactResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\ImageUrlsResourcesImpl.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\Json\CellObjectTypeConverter.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\Json\ObjectValueTypeConverter.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\SheetUpdateRequestResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\SightResourcesImpl.cs" />

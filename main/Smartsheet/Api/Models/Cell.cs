@@ -53,11 +53,6 @@ namespace Smartsheet.Api.Models
 		private long? columnId;
 
 		/// <summary>
-		/// Represents the row ID for this cell.
-		/// </summary>
-		private long? rowId;
-
-		/// <summary>
 		/// Represents a hyperlink to a URL, sheet, or report.
 		/// </summary>
 		private Link hyperlink;
@@ -210,23 +205,6 @@ namespace Smartsheet.Api.Models
 			set
 			{
 				this.columnId = value;
-			}
-		}
-
-
-		/// <summary>
-		/// Gets the row Id for this cell.
-		/// </summary>
-		/// <returns> the row Id </returns>
-		public virtual long? RowId
-		{
-			get
-			{
-				return rowId;
-			}
-			set
-			{
-				this.rowId = value;
 			}
 		}
 
