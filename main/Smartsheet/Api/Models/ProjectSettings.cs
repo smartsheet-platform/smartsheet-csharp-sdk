@@ -40,7 +40,7 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// Length of a workday for a project sheet. Valid value must be above or equal to 1 hour, and less than or equal to 24 hours.
 		/// </summary>
-		private int? lengthOfDay;
+		private float? lengthOfDay;
 
 		/// <summary>
 		/// Get a list of working days in the week.
@@ -63,7 +63,7 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// Get the length of the workday for a project seheet.
 		/// </summary>
-		public virtual int? LengthOfDay
+		public virtual float? LengthOfDay
 		{
 			get { return lengthOfDay; }
 			set { lengthOfDay = value; }
