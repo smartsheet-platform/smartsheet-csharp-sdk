@@ -47,12 +47,10 @@ namespace sdk_csharp_sample
 
 		public static void SampleCode()
 		{
-			// Set the Access Token
-			Token token = new Token();
-			token.AccessToken = "YOUR_TOKEN";
-
 			// Use the Smartsheet Builder to create a Smartsheet
-			SmartsheetClient smartsheet = new SmartsheetBuilder().SetAccessToken(token.AccessToken).Build();
+			// SmartsheetBuilder will use the value of SMARTSHEET_ACCESS_TOKEN from the environment if 
+			// the access token was not specified using the SetAccessToken method prior to the Build.
+			SmartsheetClient smartsheet = new SmartsheetBuilder().SetMaxRetryTimeout(60000).Build();
 
 #pragma warning disable 0162
             if (false)

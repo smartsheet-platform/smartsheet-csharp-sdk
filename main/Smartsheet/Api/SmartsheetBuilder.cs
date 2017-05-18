@@ -310,6 +310,11 @@ namespace Smartsheet.Api
 				baseURI = DEFAULT_BASE_URI;
 			}
 
+			if (accessToken == null)
+			{
+				accessToken = Environment.GetEnvironmentVariable("SMARTSHEET_ACCESS_TOKEN");
+			}
+
 			SmartsheetImpl smartsheet = new SmartsheetImpl(baseURI, accessToken, httpClient, jsonSerializer);
 
 			if (assumedUser != null)
