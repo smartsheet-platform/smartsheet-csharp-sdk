@@ -1,6 +1,4 @@
-[![nuget][nuget-badge]][nuget-url]
-[nuget-badge]: https://img.shields.io/nuget/v/smartsheet-csharp-sdk.svg
-[nuget-url]: https://www.nuget.org/packages/smartsheet-csharp-sdk/
+[![NuGet](https://img.shields.io/nuget/v/smartsheet-csharp-sdk.svg)](https://www.nuget.org/packages/smartsheet-csharp-sdk/)
 
 
 ## Smartsheet C# SDK
