@@ -218,6 +218,7 @@ namespace Smartsheet.Api.Models
 			private long? id;
 			private string sheetName;
 			private SheetUserSettings userSettings;
+			private ProjectSettings projectSettings;
 
 			/// <summary>
 			/// Sets the required properties for updating a sheet.
@@ -262,10 +263,30 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Gets the sheet's user settings.
 			/// </summary>
-			/// <returns> the sheet Name </returns>
+			/// <returns> the sheet's user settings </returns>
 			public virtual SheetUserSettings GetUserSettings()
 			{
 				return userSettings;
+			}
+
+			/// <summary>
+			/// Sets the Sheet's project settings
+			/// </summary>
+			/// <param name="projectSettings"></param>
+			/// <returns>the update sheet builder</returns>
+			public virtual UpdateSheetBuilder SetProjectSettings(ProjectSettings projectSettings)
+			{
+				this.projectSettings = projectSettings;
+				return this;
+			}
+
+			/// <summary>
+			/// Gets the sheet's project settings.
+			/// </summary>
+			/// <returns> the sheet's project settings</returns>
+			public virtual ProjectSettings GetProjectSettings()
+			{
+				return projectSettings;
 			}
 
 			/// <summary>
@@ -283,6 +304,7 @@ namespace Smartsheet.Api.Models
 				sheet.Id = this.id;
 				sheet.Name = this.sheetName;
 				sheet.UserSettings = this.userSettings;
+				sheet.ProjectSettings = this.projectSettings;
 				//sheet.ID = id;
 				return sheet;
 			}

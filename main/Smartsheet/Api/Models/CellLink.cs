@@ -42,7 +42,7 @@ namespace Smartsheet.Api.Models
 
 		private long? columnId;
 
-		private string sheetname;
+		private string sheetName;
 
 		/// <summary>
 		/// One of the following values:
@@ -90,10 +90,10 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// Sheet name of the linked cell
 		/// </summary>
-		public string Sheetname
+		public string SheetName
 		{
-			get { return sheetname; }
-			set { sheetname = value; }
+			get { return sheetName; }
+			set { sheetName = value; }
 		}
 	}
 }

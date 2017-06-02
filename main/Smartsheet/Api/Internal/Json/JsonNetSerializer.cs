@@ -16,6 +16,7 @@
 //    limitations under the License.
 //    %[license]
 
+using Newtonsoft.Json;
 using Smartsheet.Api.Internal.Utility;
 using Smartsheet.Api.Models;
 using System;
@@ -65,11 +66,15 @@ namespace Smartsheet.Api.Internal.Json
 
 			// Handles enum serialization
 			serializer.Converters.Add(new JsonEnumTypeConverter());
+
 			// Convert all enums To a string representation for serialization
 			serializer.Converters.Add(new Newtonsoft.Json.Converters.StringEnumConverter());
 
-			// Handles enum serialization
+			// Handles objectValue serialization
 			serializer.Converters.Add(new ObjectValueTypeConverter());
+
+			// Handles linkInFromCell serialization
+			serializer.Converters.Add(new CellObjectTypeConverter());
 		}
 
 		/// <summary>
@@ -202,8 +207,8 @@ namespace Smartsheet.Api.Internal.Json
 		/// </summary>
 		/// <returns>DataWrapper containing data and pagination info</returns>
 		/// <param name="inputStream"> the input stream from which the JSON will be read </param>
-		/// <exception cref="IllegalArgumentException"> if any argument is null </exception>
-		/// <exception cref="JSONSerializationException">if there is any other error occurred during the operation </exception>
+		/// <exception cref="ArgumentException"> if any argument is null </exception>
+		/// <exception cref="JsonSerializationException">if there is any other error occurred during the operation </exception>
 		public PaginatedResult<T> DeserializeDataWrapper<T>(StreamReader inputStream)
 		{
 			Utils.ThrowIfNull(inputStream);

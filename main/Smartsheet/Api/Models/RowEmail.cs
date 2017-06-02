@@ -41,6 +41,11 @@ namespace Smartsheet.Api.Models
 		private bool? includeDiscussions;
 
 		/// <summary>
+		/// One of the following values: HORIZONTAL, VERTICAL.
+		/// </summary>
+		private string layout;
+
+		/// <summary>
 		/// IDs of the columns to be included.
 		/// </summary>
 		public virtual IList<long> ColumnIds
@@ -82,6 +87,22 @@ namespace Smartsheet.Api.Models
 			}
 		}
 
+
+		/// <summary>
+		/// Gets the layout value: HORIZONTAL, VERTICAL.
+		/// </summary>
+		/// <returns> the layout </returns>
+		public virtual string Layout
+		{
+			get
+			{
+				return layout;
+			}
+			set
+			{
+				this.layout = value;
+			}
+		}
 	}
 
 }

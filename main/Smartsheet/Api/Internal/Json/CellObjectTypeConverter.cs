@@ -1,7 +1,7 @@
 ﻿//    #[ license]
 //    SmartsheetClient SDK for C#
 //    %%
-//    Copyright (C) 2014 SmartsheetClient
+//    Copyright (C) 2017 SmartsheetClient
 //    %%
 //    Licensed under the Apache License, Version 2.0 (the "License");
 //    you may not use this file except in compliance with the License.
@@ -17,25 +17,28 @@
 //    %[license]
 
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using Newtonsoft.Json;
 using Smartsheet.Api.Models;
 
 namespace Smartsheet.Api.Internal.Json
 {
-	class ObjectValueTypeConverter : JsonConverter
+	class CellObjectTypeConverter : JsonConverter
 	{
 		public override bool CanConvert(Type objectType)
 		{
-			return typeof(ObjectValue).IsAssignableFrom(objectType);
+			return typeof(Cell).IsAssignableFrom(objectType);
 		}
 
 		public override object ReadJson(JsonReader reader, Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer)
 		{
 			if (reader.TokenType == JsonToken.StartObject)
 			{
-				ObjectValue objectValue = new ObjectValue();
-				serializer.Populate(reader, objectValue);
-				return objectValue;
+				Cell cell = new Cell();
+				serializer.Populate(reader, cell);
+				return cell;
 			}
 			return null;
 		}
@@ -48,8 +51,30 @@ namespace Smartsheet.Api.Internal.Json
 			serializerHelper.DateFormatHandling = Newtonsoft.Json.DateFormatHandling.IsoDateFormat;
 			serializerHelper.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
 			serializerHelper.ContractResolver = new ContractResolver();
-			serializerHelper.Serialize(writer, value);
+
+			Cell cell = (Cell)value;
+			if (cell.LinkInFromCell != null)
+			{
+				// Only serialize the columnId and linkInFromCell objects
+				writer.WriteStartObject();
+
+				writer.WritePropertyName("columnId");
+				writer.WriteValue(cell.ColumnId);
+
+				writer.WritePropertyName("linkInFromCell");
+				serializerHelper.Serialize(writer, cell.LinkInFromCell);
+
+				// When creating a cell link, cell.value must be null (the data will be pulled from the linked cell).
+				writer.WritePropertyName("value");
+				writer.WriteNull();
+
+				writer.WriteEndObject();
+			}
+			else
+			{
+				// if there is no linkInFromCell, pass the entire cell object along to the default serializer
+				serializerHelper.Serialize(writer, value);
+			}
 		}
 	}
 }
-

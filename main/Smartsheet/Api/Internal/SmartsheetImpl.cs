@@ -17,15 +17,26 @@
 //    %[license]
 namespace Smartsheet.Api.Internal
 {
-
 	using System;
+	using System.IO;
 	using System.ComponentModel;
 	using System.Threading;
+	using NLog;
+	using RestSharp;
+	using Api.Internal.Json;
 	using DefaultHttpClient = Api.Internal.Http.DefaultHttpClient;
 	using HttpClient = Api.Internal.Http.HttpClient;
-	using JsonNetSerializer = Api.Internal.Json.JsonNetSerializer;
-	using JsonSerializer = Api.Internal.Json.JsonSerializer;
+	using HttpResponse = Api.Internal.Http.HttpResponse;
 	using Utils = Api.Internal.Utility.Utility;
+
+	/// <summary>
+	/// Declare a delegate to be used by DefaultHttpClient to determine if a request can be retried.
+	/// </summary>
+	/// <param name="previousAttempts"></param>
+	/// <param name="totalElapsedTime"></param>
+	/// <param name="response"></param>
+	/// <returns></returns>
+	public delegate bool ShouldRetryCallback(int previousAttempts, long totalElapsedTime, HttpResponse response);
 
 	/// <summary>
 	/// This is the implementation of Smartsheet interface.
@@ -172,8 +183,6 @@ namespace Smartsheet.Api.Internal
 		///// </summary>
 		//private CommentResources comments;
 
-
-
 		/// <summary>
 		/// Represents the AtomicReference To UserResources.
 		/// 
@@ -265,6 +274,76 @@ namespace Smartsheet.Api.Internal
 		private ImageUrlsResources imageUrls;
 
 		/// <summary>
+		/// static logger 
+		/// </summary>
+		private static Logger logger = LogManager.GetCurrentClassLogger();
+
+		/// <summary>
+		/// user provided method to calculate backoff time in between retries
+		/// </summary>
+		private IUserCalcBackoff calcBackoff = null;
+
+		/// <summary>
+		/// calcBackoff setter
+		/// </summary>
+		public IUserCalcBackoff CalcBackoff
+		{
+			set
+			{
+				this.calcBackoff = value;
+			}
+		}
+
+		/// <summary>
+		/// Called by DefaultHttpClient when a request fails to determine if we can retry the request. Calls
+		/// calcBackoff to determine time in between retries.
+		/// </summary>
+		/// <param name="previousAttempts"></param>
+		/// <param name="totalElapsedTime"></param>
+		/// <param name="response"></param>
+		/// <returns>true if this error code can be retried</returns>
+		public bool SmartsheetShouldRetry(int previousAttempts, long totalElapsedTime, HttpResponse response)
+		{
+			Api.Models.Error error;
+			try
+			{
+				error = jsonSerializer.deserialize<Api.Models.Error>(
+					response.Entity.GetContent());
+			}
+			catch (JsonSerializationException ex)
+			{
+				throw new SmartsheetException(ex);
+			}
+			catch (Newtonsoft.Json.JsonException ex)
+			{
+				throw new SmartsheetException(ex);
+			}
+			catch (IOException ex)
+			{
+				throw new SmartsheetException(ex);
+			}
+
+			switch (error.ErrorCode)
+			{
+				case 4001:
+				case 4002:
+				case 4003:
+				case 4004:
+					break;
+				default:
+					return false;
+			}
+
+			long backoff = calcBackoff.CalcBackoffCallback(previousAttempts, totalElapsedTime, error);
+			if (backoff < 0)
+				return false;
+
+			logger.Info(string.Format("HttpError StatusCode={0}: Retrying in {1} milliseconds", response.StatusCode, backoff));
+			Thread.Sleep(TimeSpan.FromMilliseconds(backoff));
+			return true;
+		}
+
+		/// <summary>
 		/// Create an instance with given server URI, HttpClient (optional) and JsonSerializer (optional)
 		/// 
 		/// Exceptions: - IllegalArgumentException : if serverURI/Version/AccessToken is null/empty
@@ -279,7 +358,7 @@ namespace Smartsheet.Api.Internal
 			Utils.ThrowIfEmpty(baseURI);
 
 			this.baseURI = new Uri(baseURI);
-			this.httpClient = httpClient == null ? new DefaultHttpClient() : httpClient;
+			this.httpClient = httpClient == null ? new DefaultHttpClient(new RestClient(), SmartsheetShouldRetry) : httpClient;
 			this.jsonSerializer = jsonSerializer == null ? new JsonNetSerializer() : jsonSerializer;
 			this.accessToken = accessToken;
 		}
