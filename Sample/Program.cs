@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 
 // Add nuget reference to smartsheet-csharp-sdk (https://www.nuget.org/packages/smartsheet-csharp-sdk/)
@@ -15,7 +15,7 @@ namespace csharp_sdk_sample
         {
             // Initialize client
             SmartsheetClient ss = new SmartsheetBuilder()
-                // .SetAccessToken("feo3t736fc2lpansdevs4a1as")       // TODO: Set your API access token here if not set in environment variable SMARTSHEET_ACCESS_TOKEN
+                // .SetAccessToken("feo3t736fc2lpansdevs4a1as")       // TODO: Set your API access in environment variable SMARTSHEET_ACCESS_TOKEN or else here
                 .Build();
 
 
