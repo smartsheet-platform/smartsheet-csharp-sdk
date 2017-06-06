@@ -32,9 +32,9 @@
     <PresentationStyle>VS2013</PresentationStyle>
     <Preliminary>False</Preliminary>
     <NamingMethod>MemberName</NamingMethod>
-    <HelpTitle>Smartsheet C# SDK Documentation v2.1.0</HelpTitle>
+    <HelpTitle>Smartsheet C# SDK Documentation v2.2.0</HelpTitle>
     <FeedbackEMailAddress>api%40smartsheet.com</FeedbackEMailAddress>
-    <CopyrightText>&amp;#169%3b 2014. All Rights Reserved Smartsheet.com</CopyrightText>
+    <CopyrightText>&amp;#169%3b 2014-2017. All Rights Reserved Smartsheet.com</CopyrightText>
     <CopyrightHref>Smartsheet</CopyrightHref>
     <ContentPlacement>BelowNamespaces</ContentPlacement>
     <DocumentationSources>
