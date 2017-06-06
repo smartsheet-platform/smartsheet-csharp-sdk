@@ -50,6 +50,10 @@ namespace Smartsheet.Api.Internal.Utility
                 // Hosted solution - Many not allow access to WMI
                 return "Hosted";
             }
+			catch (System.NotImplementedException)
+			{
+				return ".Net Core-" + System.Environment.OSVersion.VersionString;
+			}
 			finally
 			{
 				if (enumerator != null)
