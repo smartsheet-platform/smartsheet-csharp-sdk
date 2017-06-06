@@ -91,7 +91,7 @@ namespace Smartsheet.Api.Internal
 
 		/// <summary>
 		/// <para>Updates (renames) the specified Sight.</para>
-		/// The request body is limited to the name attribute.</para>
+		/// <para>The request body is limited to the name attribute.</para>
 		/// <para>It mirrors To the following Smartsheet REST API method: PUT /sights/{sightId}</para>
 		/// </summary>
 		/// <param name="sight"> the sight To update </param>

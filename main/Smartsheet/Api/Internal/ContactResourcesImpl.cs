@@ -36,12 +36,12 @@ namespace Smartsheet.Api.Internal
 	/// </summary>
 	public class ContactResourcesImpl : AbstractResources, ContactResources
 	{
-		/// <summary>
-		/// Constructor.
-		/// </summary>
-		/// <param name="smartsheet"> the Smartsheet </param>
-		/// <exception cref="IllegalArgumentException">if any argument is null</exception>
-		public ContactResourcesImpl(SmartsheetImpl smartsheet)
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="smartsheet"> the Smartsheet </param>
+        /// <exception cref="InvalidOperationException">if any argument is null</exception>
+        public ContactResourcesImpl(SmartsheetImpl smartsheet)
 			: base(smartsheet)
 		{
 		}

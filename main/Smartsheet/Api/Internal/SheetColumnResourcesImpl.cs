@@ -22,7 +22,8 @@ namespace Smartsheet.Api.Internal
 {
 	using Smartsheet.Api.Internal.Util;
 	using Smartsheet.Api.Models;
-	using System.Text;
+    using System;
+    using System.Text;
 	using Column = Api.Models.Column;
 
 	/// <summary>
@@ -32,12 +33,12 @@ namespace Smartsheet.Api.Internal
 	/// </summary>
 	public class SheetColumnResourcesImpl : AbstractResources, SheetColumnResources
 	{
-		/// <summary>
-		/// Constructor.
-		/// </summary>
-		/// <param name="smartsheet"> the Smartsheet </param>
-		/// <exception cref="IllegalArgumentException">if any argument is null</exception>
-		public SheetColumnResourcesImpl(SmartsheetImpl smartsheet)
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="smartsheet"> the Smartsheet </param>
+        /// <exception cref="InvalidOperationException">if any argument is null</exception>
+        public SheetColumnResourcesImpl(SmartsheetImpl smartsheet)
 			: base(smartsheet)
 		{
 

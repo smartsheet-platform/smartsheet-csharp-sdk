@@ -42,7 +42,7 @@ namespace Smartsheet.Api
 		/// </summary>
 		/// <param name="objectId"> the object Id </param>
 		/// <param name="paging"> the pagination request </param>
-		/// <param name="shareScope"> when specified with a value of <see cref="ShareScope.Worksapce"/>, the response will contain both item-level shares (scope=‘ITEM’) and workspace-level shares (scope='WORKSPACE’). </param>
+		/// <param name="shareScope"> when specified with a value of <see cref="ShareScope.Workspace"/>, the response will contain both item-level shares (scope=‘ITEM’) and workspace-level shares (scope='WORKSPACE’). </param>
 		/// <returns> the list of Share objects (note that an empty list will be returned if there is none). </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>

@@ -135,11 +135,13 @@ namespace Smartsheet.Api.Models
 				this.imageId = imageId;
 			}
 
-			/// <summary>
-			/// Sets the required properties for creating an ImageUrl.
-			/// </summary>
-			/// <param name="imageId"> the ImageUrl imageId</param>
-			public ImageUrlBuilder(string imageId, long? width, long? height)
+            /// <summary>
+            /// Sets the required properties for creating an ImageUrl.
+            /// </summary>
+            /// <param name="imageId"> the ImageUrl imageId</param>
+            /// <param name="width">Desired image width</param>
+            /// <param name="height">Desired image height</param>
+            public ImageUrlBuilder(string imageId, long? width, long? height)
 			{
 				this.imageId = imageId;
 				this.width = width;

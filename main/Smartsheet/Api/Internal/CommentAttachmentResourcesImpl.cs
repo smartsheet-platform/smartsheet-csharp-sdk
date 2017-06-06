@@ -37,12 +37,12 @@ namespace Smartsheet.Api.Internal
 	/// </summary>
 	public class CommentAttachmentResourcesImpl : AbstractResources, CommentAttachmentResources
 	{
-		/// <summary>
-		/// Constructor.
-		/// </summary>
-		/// <param name="smartsheet"> the Smartsheet </param>
-		/// <exception cref="IllegalArgumentException">if any argument is null</exception>
-		public CommentAttachmentResourcesImpl(SmartsheetImpl smartsheet)
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="smartsheet"> the Smartsheet </param>
+        /// <exception cref="InvalidOperationException">if any argument is null</exception>
+        public CommentAttachmentResourcesImpl(SmartsheetImpl smartsheet)
 			: base(smartsheet)
 		{
 		}

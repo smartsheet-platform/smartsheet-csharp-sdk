@@ -25,7 +25,7 @@ namespace Smartsheet.Api.Models
 {
 	/// <summary>
 	/// Represents the user Status. </summary>
-	/// <seealso cref="http://smartsheet-platform.github.io/api-docs/#webhook-status"/>
+	/// <seealso href="http://smartsheet-platform.github.io/api-docs/#webhook-status">WebhookStatus Documentation</seealso>/>
 	public enum WebhookStatus
 	{
 		/// <summary>

@@ -17,17 +17,18 @@
 //    %[license]
 
 using Smartsheet.Api.Models;
+using System;
 
 namespace Smartsheet.Api.Internal
 {
 	public class DiscussionCommentResourcesImpl : AbstractResources, DiscussionCommentResources
 	{
-		/// <summary>
-		/// Constructor.
-		/// </summary>
-		/// <param name="smartsheet"> the Smartsheet </param>
-		/// <exception cref="IllegalArgumentException">if any argument is null</exception>
-		public DiscussionCommentResourcesImpl(SmartsheetImpl smartsheet)
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="smartsheet"> the Smartsheet </param>
+        /// <exception cref="InvalidOperationException">if any argument is null</exception>
+        public DiscussionCommentResourcesImpl(SmartsheetImpl smartsheet)
 			: base(smartsheet)
 		{
 		}

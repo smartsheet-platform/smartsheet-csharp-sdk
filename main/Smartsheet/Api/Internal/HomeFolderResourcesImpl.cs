@@ -21,7 +21,8 @@ using System.Collections.Generic;
 namespace Smartsheet.Api.Internal
 {
 	using Api.Models;
-	using System.Text;
+    using System;
+    using System.Text;
 
 	/// <summary>
 	/// This is the implementation of the HomeFolderResources.
@@ -30,12 +31,12 @@ namespace Smartsheet.Api.Internal
 	/// </summary>
 	public class HomeFolderResourcesImpl : AbstractResources, HomeFolderResources
 	{
-		/// <summary>
-		/// Constructor.
-		/// </summary>
-		/// <param name="smartsheet"> the Smartsheet </param>
-		/// <exception cref="IllegalArgumentException">if any argument is null</exception>
-		public HomeFolderResourcesImpl(SmartsheetImpl smartsheet)
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="smartsheet"> the Smartsheet </param>
+        /// <exception cref="InvalidOperationException">if any argument is null</exception>
+        public HomeFolderResourcesImpl(SmartsheetImpl smartsheet)
 			: base(smartsheet)
 		{
 		}

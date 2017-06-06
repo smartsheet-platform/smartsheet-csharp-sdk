@@ -18,6 +18,7 @@
 
 using Smartsheet.Api.Internal.Util;
 using Smartsheet.Api.Models;
+using System;
 using System.Collections.Generic;
 
 namespace Smartsheet.Api.Internal
@@ -33,12 +34,12 @@ namespace Smartsheet.Api.Internal
 
 		private DiscussionCommentResources comments;
 
-		/// <summary>
-		/// Constructor.
-		/// </summary>
-		/// <param name="smartsheet"> the Smartsheet </param>
-		/// <exception cref="IllegalArgumentException">if any argument is null</exception>
-		public SheetDiscussionResourcesImpl(SmartsheetImpl smartsheet)
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="smartsheet"> the Smartsheet </param>
+        /// <exception cref="InvalidOperationException">if any argument is null</exception>
+        public SheetDiscussionResourcesImpl(SmartsheetImpl smartsheet)
 			: base(smartsheet)
 		{
 			this.attachments = new DiscussionAttachmentResourcesImpl(smartsheet);
