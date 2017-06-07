@@ -43,7 +43,7 @@ The full Smartsheet API documentation is here: http://smartsheet-platform.github
 The generated SDK class documentation is here: [http://smartsheet-platform.github.io/smartsheet-csharp-sdk/](http://smartsheet-platform.github.io/smartsheet-csharp-sdk/).
 
 ## Example Usage
-The call the API, you will need an *access token* which can be obtained in the web UI from the menu Account/Personal Settings/API Access.
+The call the API, you will need an *access token* which can be obtained in the web UI from the menu: Account/Personal Settings/API Access.
 
 Here is a brief sample showing how to 
 - Initialize the client
@@ -56,25 +56,25 @@ using Smartsheet.Api.Models;
 
 static void Sample()
 {
-	// Initialize client
-	SmartsheetClient ss = new SmartsheetBuilder()
-		// TODO: Set your API access in environment variable SMARTSHEET_ACCESS_TOKEN or else here
-		// .SetAccessToken("feo3t736fc2lpansdevs4a1as")
-		.Build();
+    // Initialize client
+    SmartsheetClient ss = new SmartsheetBuilder()
+        // TODO: Set your API access in environment variable SMARTSHEET_ACCESS_TOKEN or else here
+        // .SetAccessToken("feo3t736fc2lpansdevs4a1as")
+        .Build();
 
-	// List all sheets
-	PaginatedResult<Sheet> sheets = ss.SheetResources.ListSheets(null, null, null);
-	Console.WriteLine("Found " + sheets.TotalCount + " sheets");
+    // List all sheets
+    PaginatedResult<Sheet> sheets = ss.SheetResources.ListSheets(null, null, null);
+    Console.WriteLine("Found " + sheets.TotalCount + " sheets");
 
-	long sheetId = (long) sheets.Data[0].Id;                // Default to first sheet
+    long sheetId = (long) sheets.Data[0].Id;                // Default to first sheet
 
-	// sheetId = 5670346721388420L;                         // TODO: Uncomment if you wish to read a specific sheet
+    // sheetId = 5670346721388420L;                         // TODO: Uncomment if you wish to read a specific sheet
 
-	Console.WriteLine("Loading sheet id: " + sheetId);
+    Console.WriteLine("Loading sheet id: " + sheetId);
 
-	// Load the entire sheet
-	var sheet = ss.SheetResources.GetSheet(sheetId, null, null, null, null, null, null, null);
-	Console.WriteLine("Loaded " + sheet.Rows.Count + " rows from sheet: " + sheet.Name);
+    // Load the entire sheet
+    var sheet = ss.SheetResources.GetSheet(sheetId, null, null, null, null, null, null, null);
+    Console.WriteLine("Loaded " + sheet.Rows.Count + " rows from sheet: " + sheet.Name);
 }
 ```
 A simple, but complete sample application project is here: https://github.com/smartsheet-samples/csharp-read-write-sheet
