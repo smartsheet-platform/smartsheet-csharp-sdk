@@ -32,33 +32,34 @@ namespace Smartsheet.Api
 	/// </summary>
 	public interface SheetResources
 	{
-		/// <summary>
-		/// <para>Gets the list of all Sheets that the User has access to, in alphabetical order, by name.</para>
-		/// 
-		/// <para>It mirrors To the following Smartsheet REST API method: GET /Sheets</para>
-		/// </summary>
-		/// <param name="includes">elements to include in response</param>
-		/// <param name="paging">the pagination</param>
-		/// <returns> A list of all Sheets (note that an empty list will be returned if there are none) limited to the following attributes:
-		/// <list type="bullet">
-		/// <item><description>id</description></item>
-		/// <item><description>name</description></item>
-		/// <item><description>accessLevel</description></item>
-		/// <item><description>permalink</description></item>
-		/// <item><description>source (included only if "source" is specified with the include parameter)</description></item>
-		/// <item><description>owner (included only if "ownerInfo" is specified with the include parameter)</description></item>
-		/// <item><description>ownerId (included only if "ownerInfo" is specified with the include parameter)</description></item>
-		/// <item><description>createdAt</description></item>
-		/// <item><description>modifiedAt</description></item>
-		/// </list>
-		/// </returns>
-		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
-		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
-		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
-		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		PaginatedResult<Sheet> ListSheets(IEnumerable<SheetInclusion> includes, PaginationParameters paging, DateTime? modifiedSince = null);
+        /// <summary>
+        /// <para>Gets the list of all Sheets that the User has access to, in alphabetical order, by name.</para>
+        /// 
+        /// <para>It mirrors To the following Smartsheet REST API method: GET /Sheets</para>
+        /// </summary>
+        /// <param name="includes">elements to include in response</param>
+        /// <param name="paging">the pagination</param>
+        /// <param name="modifiedSince">only return sheets modified on or after the specified date</param>
+        /// <returns> A list of all Sheets (note that an empty list will be returned if there are none) limited to the following attributes:
+        /// <list type="bullet">
+        /// <item><description>id</description></item>
+        /// <item><description>name</description></item>
+        /// <item><description>accessLevel</description></item>
+        /// <item><description>permalink</description></item>
+        /// <item><description>source (included only if "source" is specified with the include parameter)</description></item>
+        /// <item><description>owner (included only if "ownerInfo" is specified with the include parameter)</description></item>
+        /// <item><description>ownerId (included only if "ownerInfo" is specified with the include parameter)</description></item>
+        /// <item><description>createdAt</description></item>
+        /// <item><description>modifiedAt</description></item>
+        /// </list>
+        /// </returns>
+        /// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+        /// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+        /// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+        /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+        /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+        /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+        PaginatedResult<Sheet> ListSheets(IEnumerable<SheetInclusion> includes, PaginationParameters paging, DateTime? modifiedSince = null);
 
 		/// <summary>
 		/// <para>List all Sheets in the organization.</para>

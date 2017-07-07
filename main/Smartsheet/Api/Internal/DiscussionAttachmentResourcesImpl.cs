@@ -19,7 +19,8 @@
 namespace Smartsheet.Api.Internal
 {
 	using Smartsheet.Api.Models;
-	using System.Text;
+    using System;
+    using System.Text;
 
 	/// <summary>
 	/// This is the implementation of the AssociatedAttachmentResources for Discussions.
@@ -31,12 +32,12 @@ namespace Smartsheet.Api.Internal
 	/// </summary>
 	public class DiscussionAttachmentResourcesImpl : AbstractResources, DiscussionAttachmentResources
 	{
-		/// <summary>
-		/// Constructor.
-		/// </summary>
-		/// <param name="smartsheet"> the Smartsheet </param>
-		/// <exception cref="IllegalArgumentException">if any argument is null</exception>
-		public DiscussionAttachmentResourcesImpl(SmartsheetImpl smartsheet)
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="smartsheet"> the Smartsheet </param>
+        /// <exception cref="InvalidOperationException">if any argument is null</exception>
+        public DiscussionAttachmentResourcesImpl(SmartsheetImpl smartsheet)
 			: base(smartsheet)
 		{
 		}

@@ -77,7 +77,7 @@ namespace Smartsheet.Api
 	
 		/// <summary>
 		/// <para>Updates the Webhook specified in the URL.</para>
-		/// The request body is limited to the name, events, callbackUrl, enabled and version attributes.</para>
+		/// <para>The request body is limited to the name, events, callbackUrl, enabled and version attributes.</para>
 		/// <para>It mirrors To the following Smartsheet REST API method: PUT /webhooks/{webhookId}</para>
 		/// </summary>
 		/// <param name="webhook"> the webhook To update </param>

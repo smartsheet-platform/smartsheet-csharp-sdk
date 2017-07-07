@@ -88,15 +88,16 @@ namespace Smartsheet.Api.Internal.Http
 		{
 		}
 
-		/// <summary>
-		/// Constructor.
-		/// 
-		/// Parameters: - HttpClient : the http client to use
-		/// 
-		/// Exceptions: - IllegalArgumentException : if any argument is null
-		/// </summary>
-		/// <param name="httpClient"> the http client </param>
-		public DefaultHttpClient(RestClient httpClient, ShouldRetryCallback shouldRetryCallback)
+        /// <summary>
+        /// Constructor.
+        /// 
+        /// Parameters: - HttpClient : the http client to use
+        /// 
+        /// Exceptions: - IllegalArgumentException : if any argument is null
+        /// </summary>
+        /// <param name="httpClient"> the http client </param>
+        /// <param name="shouldRetryCallback">User-supplied retry implementation</param>
+        public DefaultHttpClient(RestClient httpClient, ShouldRetryCallback shouldRetryCallback)
 		{
 			Util.ThrowIfNull(httpClient);
 

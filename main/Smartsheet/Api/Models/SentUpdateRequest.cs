@@ -23,7 +23,7 @@ namespace Smartsheet.Api.Models
 {
 	/// <summary>
 	/// Represents the SentUpdateRequest object./// </summary>
-	/// <seealso cref="http://smartsheet-platform.github.io/api-docs/#sentupdaterequest-object"/>
+	/// <seealso href="http://smartsheet-platform.github.io/api-docs/#sentupdaterequest-object">SentUpdateRequest Documentation</seealso>
 	public class SentUpdateRequest : IdentifiableModel
 	{
 		/// <summary>

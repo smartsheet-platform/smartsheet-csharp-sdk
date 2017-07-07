@@ -342,17 +342,17 @@ namespace Smartsheet.Api.Internal
 			return (T)obj;
 		}
 
-		/// <summary>
-		/// Create a resource with an attachment.
-		/// </summary>
-		/// <param name="path"> the relative path of the resource collections </param>
-		/// <param name="object">the object to create </param>
-		/// <param name="file"> the file path </param>
-		/// <param name="fileType"> the file type, can be null </param>
-		/// <param name="objectType"> the object type to return as </param>
-		/// <returns> the created resource </returns>
-		/// <exception cref="IllegalArgumentException"> if any argument is null, or path is empty string </exception>
-		protected internal virtual T CreateResourceWithAttachment<T>(string path, T @object, string objectType, string file, string fileType)
+        /// <summary>
+        /// Create a resource with an attachment.
+        /// </summary>
+        /// <param name="path"> the relative path of the resource collections </param>
+        /// <param name="object">the object to create </param>
+        /// <param name="file"> the file path </param>
+        /// <param name="fileType"> the file type, can be null </param>
+        /// <param name="objectType"> the object type to return as </param>
+        /// <returns> the created resource </returns>
+        /// <exception cref="InvalidOperationException"> if any argument is null, or path is empty string </exception>
+        protected internal virtual T CreateResourceWithAttachment<T>(string path, T @object, string objectType, string file, string fileType)
 		{
 			Utils.ThrowIfNull(path, @object);
 			Utils.ThrowIfEmpty(path);

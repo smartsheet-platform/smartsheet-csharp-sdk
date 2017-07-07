@@ -11,6 +11,7 @@ documentation/git-docs
 *.suo
 *.user
 *.sln.docstates
+*.userprefs
 
 # Build results
 [Dd]ebug/
@@ -193,4 +194,4 @@ Desktop.ini
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
 
-.vs/config/applicationhost.config
+.vs/*

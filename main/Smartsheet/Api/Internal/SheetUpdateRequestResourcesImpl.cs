@@ -53,21 +53,21 @@ namespace Smartsheet.Api.Internal
 		{
 			return this.GetResource<UpdateRequest>("sheets/" + sheetId + "/updaterequests/" + updateRequestId, typeof(UpdateRequest));
 		}
-	
-		/// <summary>
-		/// <para>Creates an Update Request for the specified Row(s) within the Sheet. An email notification
-		/// (containing a link to the update request) will be asynchronously sent to the specified recipient(s).</para>
-		/// <para>It mirrors To the following Smartsheet REST API method: POST /sheets/{sheetId}/updaterequests</para>
-		/// </summary>
-		/// <param name="sheetId"> the sheetId </param>
-		/// <param name="email"> the Email </param>
-		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
-		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
-		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
-		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual UpdateRequest CreateUpdateRequest(long sheetId, UpdateRequest updateRequest)
+
+        /// <summary>
+        /// <para>Creates an Update Request for the specified Row(s) within the Sheet. An email notification
+        /// (containing a link to the update request) will be asynchronously sent to the specified recipient(s).</para>
+        /// <para>It mirrors To the following Smartsheet REST API method: POST /sheets/{sheetId}/updaterequests</para>
+        /// </summary>
+        /// <param name="sheetId"> the sheetId </param>
+        /// <param name="updateRequest"></param>
+        /// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+        /// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+        /// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+        /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+        /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+        /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+        public virtual UpdateRequest CreateUpdateRequest(long sheetId, UpdateRequest updateRequest)
 		{
 			return this.CreateResource<RequestResult<UpdateRequest>, UpdateRequest>("sheets/" + sheetId + "/updaterequests", updateRequest).Result;
 		}
@@ -165,9 +165,9 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual void DeleteSentUpdateRequest(long sheetId, long sentUupdateRequestId)
+		public virtual void DeleteSentUpdateRequest(long sheetId, long sentUpdateRequestId)
 		{
-			this.DeleteResource<SentUpdateRequest>("sheets/" + sheetId + "/sentupdaterequests/" + sentUupdateRequestId, typeof(SentUpdateRequest));
+			this.DeleteResource<SentUpdateRequest>("sheets/" + sheetId + "/sentupdaterequests/" + sentUpdateRequestId, typeof(SentUpdateRequest));
 		}
 	}
 }

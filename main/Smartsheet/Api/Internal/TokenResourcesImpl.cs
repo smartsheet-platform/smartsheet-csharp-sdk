@@ -23,7 +23,8 @@ namespace Smartsheet.Api.Internal
 	using Api.Models;
 	using Smartsheet.Api.Internal.Util;
 	using Smartsheet.Api.OAuth;
-	using System.Text;
+    using System;
+    using System.Text;
 
 	/// <summary>
 	/// This is the implementation of TokenResources.
@@ -32,12 +33,12 @@ namespace Smartsheet.Api.Internal
 	/// </summary>
 	public class TokenResourcesImpl : AbstractResources, TokenResources
 	{
-		/// <summary>
-		/// Constructor.
-		/// </summary>
-		/// <param name="smartsheet"> the SmartsheetImpl </param>
-		/// <exception cref="IllegalArgumentException">if any argument is null</exception>
-		public TokenResourcesImpl(SmartsheetImpl smartsheet)
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="smartsheet"> the SmartsheetImpl </param>
+        /// <exception cref="InvalidOperationException">if any argument is null</exception>
+        public TokenResourcesImpl(SmartsheetImpl smartsheet)
 			: base(smartsheet)
 		{
 		}

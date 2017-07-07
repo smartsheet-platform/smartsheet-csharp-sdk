@@ -51,25 +51,26 @@ namespace Smartsheet.Api
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		Report GetReport(long reportId, IEnumerable<ReportInclusion> include, int? pageSize, int? page);
 
-		/// <summary>
-		/// <para>Gets the list of all Reports that the User has access to, in alphabetical order, by name.</para>
-		/// <para>It mirrors To the following Smartsheet REST API method: GET /reports</para>
-		/// </summary>
-		/// <param name="paging">the pagination</param>
-		/// <returns>A list of Report objects limited to the following attributes:
-		/// <list type="bullet">
-		/// <item><description>id</description></item>
-		/// <item><description>name</description></item>
-		/// <item><description>accessLevel</description></item>
-		/// <item><description>permalink</description></item>
-		/// </list></returns>
-		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
-		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
-		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
-		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		PaginatedResult<Report> ListReports(PaginationParameters paging, DateTime? modifiedSince = null);
+        /// <summary>
+        /// <para>Gets the list of all Reports that the User has access to, in alphabetical order, by name.</para>
+        /// <para>It mirrors To the following Smartsheet REST API method: GET /reports</para>
+        /// </summary>
+        /// <param name="paging">the pagination</param>
+        /// <param name="modifiedSince">restrict results to reports modified on or after the specified date</param>
+        /// <returns>A list of Report objects limited to the following attributes:
+        /// <list type="bullet">
+        /// <item><description>id</description></item>
+        /// <item><description>name</description></item>
+        /// <item><description>accessLevel</description></item>
+        /// <item><description>permalink</description></item>
+        /// </list></returns>
+        /// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+        /// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+        /// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+        /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+        /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+        /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+        PaginatedResult<Report> ListReports(PaginationParameters paging, DateTime? modifiedSince = null);
 
 		/// <summary>
 		/// <para>Gets the Report in the format specified, based on the Report ID.</para>
