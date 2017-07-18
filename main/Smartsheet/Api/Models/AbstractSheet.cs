@@ -34,11 +34,13 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// Represents the Columns for the sheet.
 		/// </summary>
+        [CLSCompliant(false)]
 		protected IList<TColumn> columns;
 
 		/// <summary>
 		/// Represents the Rows for the sheet.
 		/// </summary>
+        [CLSCompliant(false)]
 		protected IList<TRow> rows;
 
 		/// <summary>
