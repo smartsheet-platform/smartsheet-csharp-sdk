@@ -7,7 +7,7 @@ This is a C# SDK to simplify connecting to the [Smartsheet API](http://www.smart
 
 ## System Requirements
 
-The SDK supports C# version 4.0 or later running on .NET platform version 4.0 or later.
+The SDK supports any .NET language running on .NET version 4.0 or later.
 
 ## Installation
 The SDK can be installed by using NuGet or by compiling from source. These two alternatives are outlined below.
@@ -47,7 +47,7 @@ The full Smartsheet API documentation is here: http://smartsheet-platform.github
 The generated SDK class documentation is here: [http://smartsheet-platform.github.io/smartsheet-csharp-sdk/](http://smartsheet-platform.github.io/smartsheet-csharp-sdk/).
 
 ## Example Usage
-The call the API, you will need an *access token*, which looks something like this example: ll352u9jujauoqz4gstvsae05. You can find the access token in the UI at Account > Personal Settings > API Access.
+To call the API, you will need an *access token*, which looks something like this example: ll352u9jujauoqz4gstvsae05. You can find the access token in the UI at Account > Personal Settings > API Access.
 
 The following is a brief sample that shows you how to:
 
