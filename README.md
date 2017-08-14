@@ -7,7 +7,7 @@ This is a C# SDK to simplify connecting to the [Smartsheet API](http://www.smart
 
 ## System Requirements
 
-The SDK supports C# version 4.0 or later running on .NET platform version 4.0 or later.
+The SDK supports C# version 4.0 or later running on .NET platform version 4.0 or later. In addition, we support any .NET language compatible with that platform version.
 
 ## Installation
 The SDK can be installed by using NuGet or by compiling from source. These two alternatives are outlined below.
@@ -47,7 +47,7 @@ The full Smartsheet API documentation is here: http://smartsheet-platform.github
 The generated SDK class documentation is here: [http://smartsheet-platform.github.io/smartsheet-csharp-sdk/](http://smartsheet-platform.github.io/smartsheet-csharp-sdk/).
 
 ## Example Usage
-The call the API, you will need an *access token*, which looks something like this example: ll352u9jujauoqz4gstvsae05. You can find the access token in the UI at Account > Personal Settings > API Access.
+To call the API, you will need an *access token*, which looks something like this example: ll352u9jujauoqz4gstvsae05. You can find the access token in the UI at Account > Personal Settings > API Access.
 
 The following is a brief sample that shows you how to:
 
@@ -68,17 +68,30 @@ static void Sample()
         .Build();
 
     // List all sheets
-    PaginatedResult<Sheet> sheets = ss.SheetResources.ListSheets(null, null, null);
+    PaginatedResult<Sheet> sheets = ss.SheetResources.ListSheets(
+        null,               // IEnumerable<SheetInclusion> includes
+        null,               // PaginationParameters
+        null                // Nullable<DateTime> modifiedSince = null
+    );
     Console.WriteLine("Found " + sheets.TotalCount + " sheets");
 
     long sheetId = (long) sheets.Data[0].Id;                // Default to first sheet
 
-    // sheetId = 5670346721388420L;                         // TODO: Uncomment if you wish to read a specific sheet
+    // sheetId = 567034672138842;                         // TODO: Uncomment if you wish to read a specific sheet
 
     Console.WriteLine("Loading sheet id: " + sheetId);
 
     // Load the entire sheet
-    var sheet = ss.SheetResources.GetSheet(sheetId, null, null, null, null, null, null, null);
+    var sheet = ss.SheetResources.GetSheet(
+        5670346721388420,           // long sheetId
+        null,                       // IEnumerable<SheetLevelInclusion> includes
+        null,                       // IEnumerable<SheetLevelExclusion> excludes
+        null,                       // IEnumerable<long> rowIds
+        null,                       // IEnumerable<int> rowNumbers
+        null,                       // IEnumerable<long> columnIds
+        null,                       // Nullable<long> pageSize
+        null                        // Nullable<long> page
+    );
     Console.WriteLine("Loaded " + sheet.Rows.Count + " rows from sheet: " + sheet.Name);
 }
 ```
