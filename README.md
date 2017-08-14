@@ -1,9 +1,13 @@
 [![NuGet](https://img.shields.io/nuget/v/smartsheet-csharp-sdk.svg)](https://www.nuget.org/packages/smartsheet-csharp-sdk/)
 
 
-## Smartsheet C# SDK
+## Smartsheet SDK for C#
 
-This is a C# SDK to simplify connecting to the [Smartsheet API](http://www.smartsheet.com/developers/api-documentation) from .net applications.
+This is a C# SDK to simplify connecting to the [Smartsheet API](http://www.smartsheet.com/developers/api-documentation) from .NET applications.
+
+## System Requirements
+
+The SDK supports C# version 4.0 or later running on .NET platform version 4.0 or later.
 
 ## Installation
 The SDK can be installed by using NuGet or by compiling from source. These two alternatives are outlined below.
@@ -13,23 +17,23 @@ If unfamiliar with NuGet, please take a look at the [NuGet documentation](http:/
 
 To install the SDK in Visual Studio, right click the **References** for the project and select **Manage NuGet Packages**.
 
-Select the **Browse** or **Online** tab (depending upon the version of VS) then type **smartsheet** in the search box. Select **smartsheet-csharp-sdk** in the search results and click the **Install** button.
+Select the **Browse** or **Online** tab (depending upon the version of Visual Studio) then type **smartsheet** in the search box. Select **smartsheet-csharp-sdk** in the search results and click the **Install** button.
 
 After clicking **Install**, you will be asked to accept the License (Apache). Then it will install the Smartsheet SDK and the dependencies (RestSharp, Newtonsoft.Json, and NLog) by adding these libraries to the **References** section of the project.
 
-The SDK can also be installed with the following command in the **[Package Manager Console](http://docs.nuget.org/docs/start-here/using-the-package-manager-console)**:
+You can also use the following command in the **[Package Manager Console](http://docs.nuget.org/docs/start-here/using-the-package-manager-console)** to install the SDK:
 
 ```dos
 Install-Package smartsheet-csharp-sdk
 ```
 
-### Compile from source
-The source code for the SDK can be downloaded from Github and then compiled. This can be accomplished using [git](http://git-scm.com/) to fetch it and then using Visual Studio or a program such as [MSBuild](http://msdn.microsoft.com/en-us/library/wea2sca5(v=vs.90).aspx) to built it.
+### Compile From Source
+You can download and compile the source code for the SDK from Github. Use [git](http://git-scm.com/) to fetch it and use Visual Studio or a program such as [MSBuild](http://msdn.microsoft.com/en-us/library/wea2sca5(v=vs.90).aspx) to build it.
 
 In Visual Studio you can open the entire solution with the file **Smartsheet-csharp-sdk.sln**, or open the specific project **Smartsheet-csharp-sdk.csproj**.
 
-This can also be accomplished via the command line with the following three commands.
-Note: The path to **msbuild** may very.
+You can also do this via the command line with the following three commands.
+Note: The path to **msbuild** may vary.
 
 ```dos
 git clone https://github.com/smartsheet-platform/smartsheet-csharp-sdk.git
@@ -43,12 +47,13 @@ The full Smartsheet API documentation is here: http://smartsheet-platform.github
 The generated SDK class documentation is here: [http://smartsheet-platform.github.io/smartsheet-csharp-sdk/](http://smartsheet-platform.github.io/smartsheet-csharp-sdk/).
 
 ## Example Usage
-The call the API, you will need an *access token* which can be obtained in the web UI from the menu: Account/Personal Settings/API Access.
+The call the API, you will need an *access token*, which looks something like this example: ll352u9jujauoqz4gstvsae05. You can find the access token in the UI at Account > Personal Settings > API Access.
 
-Here is a brief sample showing how to 
-- Initialize the client
-- List all sheets
-- Load one sheet
+The following is a brief sample that shows you how to:
+
+* Initialize the client
+* List all sheets
+* Load one sheet
 
 ```csharp
 using Smartsheet.Api;
@@ -59,7 +64,7 @@ static void Sample()
     // Initialize client
     SmartsheetClient ss = new SmartsheetBuilder()
         // TODO: Set your API access in environment variable SMARTSHEET_ACCESS_TOKEN or else here
-        // .SetAccessToken("feo3t736fc2lpansdevs4a1as")
+        // .SetAccessToken("ll352u9jujauoqz4gstvsae05")
         .Build();
 
     // List all sheets
@@ -79,6 +84,9 @@ static void Sample()
 ```
 A simple, but complete sample application project is here: https://github.com/smartsheet-samples/csharp-read-write-sheet
 
+## Contributing
+If you would like to contribute a change to the SDK, please fork a branch and then submit a pull request. [More info here.](https://help.github.com/articles/using-pull-requests)
+
 ## Support
 If you have any questions or issues with this SDK please post on [StackOverflow using the tag "smartsheet-api"](http://stackoverflow.com/questions/tagged/smartsheet-api) or contact us directly at api@smartsheet.com.
 
@@ -86,5 +94,3 @@ If you have any questions or issues with this SDK please post on [StackOverflow 
 
 All releases and release notes are available on [Github](https://github.com/smartsheet-platform/smartsheet-csharp-sdk/releases) or the [NuGet repository](https://www.nuget.org/packages/smartsheet-csharp-sdk/).
 
-## Contributing
-If you would like to contribute a change to the SDK, please fork a branch and then submit a pull request. More info [here](https://help.github.com/articles/using-pull-requests).
