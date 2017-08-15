@@ -68,7 +68,11 @@ static void Sample()
         .Build();
 
     // List all sheets
-    PaginatedResult<Sheet> sheets = ss.SheetResources.ListSheets(null, null, null);
+    PaginatedResult<Sheet> sheets = ss.SheetResources.ListSheets(
+        null,               // IEnumerable<SheetInclusion> includes
+        null,               // PaginationParameters
+        null                // Nullable<DateTime> modifiedSince = null
+    );
     Console.WriteLine("Found " + sheets.TotalCount + " sheets");
 
     long sheetId = (long) sheets.Data[0].Id;                // Default to first sheet
@@ -78,7 +82,16 @@ static void Sample()
     Console.WriteLine("Loading sheet id: " + sheetId);
 
     // Load the entire sheet
-    var sheet = ss.SheetResources.GetSheet(sheetId, null, null, null, null, null, null, null);
+    var sheet = ss.SheetResources.GetSheet(
+        5670346721388420L,          // long sheetId
+        null,                       // IEnumerable<SheetLevelInclusion> includes
+        null,                       // IEnumerable<SheetLevelExclusion> excludes
+        null,                       // IEnumerable<long> rowIds
+        null,                       // IEnumerable<int> rowNumbers
+        null,                       // IEnumerable<long> columnIds
+        null,                       // Nullable<long> pageSize
+        null                        // Nullable<long> page
+    );
     Console.WriteLine("Loaded " + sheet.Rows.Count + " rows from sheet: " + sheet.Name);
 }
 ```
