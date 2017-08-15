@@ -77,13 +77,13 @@ static void Sample()
 
     long sheetId = (long) sheets.Data[0].Id;                // Default to first sheet
 
-    // sheetId = 5670346721388420L;                         // TODO: Uncomment if you wish to read a specific sheet
+    // sheetId = 567034672138842;                         // TODO: Uncomment if you wish to read a specific sheet
 
     Console.WriteLine("Loading sheet id: " + sheetId);
 
     // Load the entire sheet
     var sheet = ss.SheetResources.GetSheet(
-        5670346721388420L,          // long sheetId
+        5670346721388420,           // long sheetId
         null,                       // IEnumerable<SheetLevelInclusion> includes
         null,                       // IEnumerable<SheetLevelExclusion> excludes
         null,                       // IEnumerable<long> rowIds
