@@ -36,9 +36,9 @@ namespace Smartsheet.Api.Internal.Json
 		{
 			if (reader.TokenType == JsonToken.StartObject)
 			{
-				Cell cell = new Cell();
-				serializer.Populate(reader, cell);
-				return cell;
+				object objectToDeserialize = Activator.CreateInstance(objectType);
+				serializer.Populate(reader, objectToDeserialize);
+				return objectToDeserialize;
 			}
 			return null;
 		}
