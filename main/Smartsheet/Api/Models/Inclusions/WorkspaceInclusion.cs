@@ -35,6 +35,11 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// Includes the source for any sheet that was created from another sheet or template.
 		/// </summary>
-		SOURCE
+		SOURCE,
+
+		/// <summary>
+		/// Includes the sheet version for any sheet returned in this Workspace.
+		/// </summary>
+		SHEET_VERSION
 	}
 }

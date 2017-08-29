@@ -32,10 +32,14 @@ namespace Smartsheet.Api.Models
 		/// </summary>
 		OWNER_INFO,
 
-
 		/// <summary>
 		/// Includes the source for any sheet that was created from another sheet or template.
 		/// </summary>
-		SOURCE
+		SOURCE,
+
+		/// <summary>
+		/// Includes the sheet version for any sheet returned in this folder.
+		/// </summary>
+		SHEET_VERSION
 	}
 }
