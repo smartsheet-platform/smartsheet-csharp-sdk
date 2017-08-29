@@ -32,18 +32,15 @@
     <PresentationStyle>VS2013</PresentationStyle>
     <Preliminary>False</Preliminary>
     <NamingMethod>MemberName</NamingMethod>
-    <HelpTitle>Smartsheet C# SDK Documentation v2.2.0</HelpTitle>
+    <HelpTitle>Smartsheet C# SDK Documentation v2.2.1</HelpTitle>
     <FeedbackEMailAddress>api%40smartsheet.com</FeedbackEMailAddress>
     <CopyrightText>&amp;#169%3b 2014-2017. All Rights Reserved Smartsheet.com</CopyrightText>
     <CopyrightHref>Smartsheet</CopyrightHref>
     <ContentPlacement>BelowNamespaces</ContentPlacement>
     <DocumentationSources>
-      <DocumentationSource sourceFile="..\bin\Release\Newtonsoft.Json.dll" />
-      <DocumentationSource sourceFile="..\bin\Release\Newtonsoft.Json.xml" />
-      <DocumentationSource sourceFile="..\bin\Release\RestSharp.dll" />
-      <DocumentationSource sourceFile="..\bin\Release\RestSharp.xml" />
       <DocumentationSource sourceFile="..\bin\Release\smartsheet-csharp-sdk.dll" />
       <DocumentationSource sourceFile="..\bin\Release\smartsheet-csharp-sdk.xml" />
+      <DocumentationSource sourceFile="..\Smartsheet-csharp-sdk.csproj" />
     </DocumentationSources>
     <ApiFilter>
       <Filter entryType="Namespace" fullName="System.ObsoleteAttribute" isExposed="True" />
