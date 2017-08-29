@@ -45,6 +45,11 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// Includes the source.
 		/// </summary>
-		SOURCE_SHEETS
+		SOURCE_SHEETS,
+
+		/// <summary>
+		/// Includes the sheet version for any source sheet returned by Report.
+		/// </summary>
+		SHEET_VERSION
 	}
 }
