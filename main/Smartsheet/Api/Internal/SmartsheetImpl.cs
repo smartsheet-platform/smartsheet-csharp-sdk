@@ -264,6 +264,15 @@ namespace Smartsheet.Api.Internal
 		/// </summary>
 		private string accessToken;
 
+        /// <summary>
+        /// Represents the Name of the SDK Test Scenario
+        /// 
+        /// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
+        /// as null, and can be set via corresponding setter, therefore effectively the test scenario can be updated in the
+        /// SmartsheetImpl in thread safe manner.
+        /// </summary>
+        private string testScenario;
+
 		/// <summary>
 		/// Represents the AtomicReference for image Urls.
 		/// 
@@ -441,6 +450,22 @@ namespace Smartsheet.Api.Internal
 				this.accessToken = value;
 			}
 		}
+
+        /// <summary>
+        /// Return the SDK test scenario.
+        /// </summary>
+        /// <returns> the SDK test scenario </returns>
+        public string TestScenario
+        {
+            get
+            {
+                return testScenario;
+            }
+            set
+            {
+                this.testScenario = value;
+            }
+        }
 
 		/// <summary>
 		/// Returns the HomeResources instance that provides access To Home resources.

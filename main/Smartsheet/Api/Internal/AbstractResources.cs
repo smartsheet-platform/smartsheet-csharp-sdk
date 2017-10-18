@@ -758,6 +758,12 @@ namespace Smartsheet.Api.Internal
 				request.Headers["Assume-User"] = Uri.EscapeDataString(smartsheet.AssumedUser);
 			}
 
+            // Set SDK Test Scenario
+            if (smartsheet.TestScenario != null)
+            {
+                request.Headers["SDK-Test-Scenario"] = smartsheet.TestScenario;
+            }
+
 			return request;
 		}
 
