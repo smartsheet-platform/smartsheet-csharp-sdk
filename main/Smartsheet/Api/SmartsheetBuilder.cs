@@ -134,11 +134,11 @@ namespace Smartsheet.Api
 		private string assumedUser;
 
         /// <summary>
-        /// <para>Represents the SDK test scenario.</para>
+        /// <para>Represents the SDK API test scenario.</para>
         /// 
         /// <para>It can be set using corresponding setter.</para>
         /// </summary>
-        private string testScenario;
+        private string apiScenario;
 
 		private IUserCalcBackoff calcBackoff = new DefaultCalcBackoff(15000);
 
@@ -212,13 +212,13 @@ namespace Smartsheet.Api
 		}
 
         /// <summary>
-        /// <para>Set the SDK test scenario.</para>
+        /// <para>Set the SDK API test scenario.</para>
         /// </summary>
-        /// <param name="sdkTestScenario"> the sdk test scenari </param>
+        /// <param name="sdkTestScenario"> the sdk api test scenari </param>
         /// <returns> the SmartsheetClient builder </returns>
-        public virtual SmartsheetBuilder SetSDKTestScenario(string testScenario)
+        public virtual SmartsheetBuilder SetSDKAPITestScenario(string apiScenario)
         {
-            this.testScenario = testScenario;
+            this.apiScenario = apiScenario;
             return this;
         }
 
@@ -340,9 +340,9 @@ namespace Smartsheet.Api
 				smartsheet.AssumedUser = assumedUser;
 			}
 
-            if (testScenario != null)
+            if (apiScenario != null)
             {
-                smartsheet.TestScenario = testScenario;
+                smartsheet.APIScenario = apiScenario;
             }
 
 			smartsheet.CalcBackoff = calcBackoff;

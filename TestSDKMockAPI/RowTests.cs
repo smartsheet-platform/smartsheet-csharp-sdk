@@ -13,55 +13,106 @@ namespace TestSDKMockAPI
     public class RowTests
     {
         [TestMethod]
-        public void UpdateRows()
+        public void UpdateRows_AssignValues()
         {
-            SmartsheetClient ss = SetupClient("Update Rows");
-            // Specify updated cell values for first row
-            Cell[] cellsA = new Cell[] {
-                new Cell.UpdateCellBuilder(
-                    8888888888888888,                               // long columnId
-                    "Red Fruit")                                    // value
-                .Build(),
-                new Cell.UpdateCellBuilder(9999999999999999, "Apple")       // long columnId, value
-                .Build()
+            SmartsheetClient ss = HelperFunctions.SetupClient("Update Rows - Assign Values");
+          
+            Row rowA = new Row{
+                Id = 10,
+                Cells = new List<Cell>
+                {
+                    new Cell{
+                        ColumnId = 101,
+                        Value = "Apple"
+                    },
+                    new Cell{
+                        ColumnId = 102,
+                        Value = "Red Fruit"
+                    }
+                }
             };
-
-            // Specify updated contents of first row
-            Row rowA = new Row.UpdateRowBuilder(2222222222222222)       // long rowId
-                .SetCells(cellsA)
-                .Build();
-
-            // Specify updated cell values for second row
-            Cell[] cellsB = new Cell[] {
-                new Cell.UpdateCellBuilder(8888888888888888, "Yellow Fruit")
-                    .Build(),
-                new Cell.UpdateCellBuilder(9999999999999999, "Banana")
-                    .Build()
+               
+            Row rowB = new Row{
+                Id = 11,
+                Cells = new List<Cell>
+                {
+                    new Cell{
+                        ColumnId = 101,
+                        Value = "Banana"
+                    },
+                    new Cell{
+                        ColumnId = 102,
+                        Value = "Yellow Fruit"
+                    }
+                }
             };
-
-            // Specify updated contents of second row
-            Row rowB = new Row.UpdateRowBuilder(3333333333333333)       // long rowId
-                .SetCells(cellsB)
-                .Build();
 
             // Update rows in sheet
-            IList<Row> updatedRows = ss.SheetResources.RowResources.UpdateRows(
-                1111111111111111,                                       // long sheetId
-                new Row[] { rowA, rowB }                                // IEnumerable<Row> rowsToUpdate
-            );
-            Assert.AreEqual(updatedRows.Count, 2);
-            Assert.IsNotNull(updatedRows[1].Cells[1].DisplayValue);
+            IList<Row> updatedRows = ss.SheetResources.RowResources.UpdateRows(1,new Row[] { rowA, rowB });
+
+            Row row = updatedRows.Where(r => r.Id == 10).FirstOrDefault();
+            Cell cell = row.Cells.Where(c => c.Value.Equals("Apple")).FirstOrDefault();
+
+            Assert.AreEqual(cell.ColumnId, 101);
         }
 
-        public SmartsheetClient SetupClient(string testScenario)
-        {
-            SmartsheetClient ss = new SmartsheetBuilder()
-            .SetBaseURI("http://localhost:8080/")
-            .SetAccessToken("aaaaaaaaaaaaaaaaaaaaaaaaaa")
-            .SetSDKTestScenario(testScenario)
-            .Build();
 
-            return ss;
+        [TestMethod]
+        public void UpdateRows_AssignFormulae()
+        {
+            SmartsheetClient ss =  HelperFunctions.SetupClient("Update Rows - Assign Formulae");
+
+            Row rowA = new Row
+            {
+                Id = 11,
+                Cells = new List<Cell>
+                {
+                    new Cell{
+                        ColumnId = 101,
+                        Formula = "=SUM([Column2]3, [Column2]4)*2"
+                    },
+                    new Cell{
+                        ColumnId = 102,
+                        Formula = "=SUM([Column2]3, [Column2]3, [Column2]4)"
+                    }
+                }
+            };
+
+            IList<Row> updatedRows = ss.SheetResources.RowResources.UpdateRows(1, new Row[] { rowA });
+
+            Cell cell = updatedRows[0].Cells.Where(c => c.Formula.Equals("=SUM([Column2]3, [Column2]3, [Column2]4)")).FirstOrDefault();
+
+            Assert.AreEqual(cell.ColumnId, 102);
+        }
+
+
+        [TestMethod]
+        [ExpectedException(typeof(SmartsheetException), 
+            "If cell.formula is specified, then value, objectValue, image, hyperlink, and linkInFromCell must not be specified.")]
+        public void UpdateRows_Invalid_AssignValueAndFormulae()
+        {
+            SmartsheetClient ss =  HelperFunctions.SetupClient("Update Rows - Invalid - Assign Value and Formulae");
+
+            Row rowA = new Row
+            {
+                Id = 10,
+                Cells = new List<Cell>
+                {
+                    new Cell{
+                        ColumnId = 101,
+                        Formula = "=SUM([Column2]3, [Column2]4)*2",
+                        Value = "20"
+
+                    },
+                    new Cell{
+                        ColumnId = 102,
+                        Formula = "=SUM([Column2]3, [Column2]3, [Column2]4)"
+                    }
+                }
+            };
+
+            ss.SheetResources.RowResources.UpdateRows(1, new Row[] { rowA });
+            //No assert defined as the exception expected is what is being tested.
         }
     }
 }
