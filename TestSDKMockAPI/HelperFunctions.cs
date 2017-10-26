@@ -14,7 +14,7 @@ namespace TestSDKMockAPI
         public static SmartsheetClient SetupClient(string apiScenario)
         {
             SmartsheetClient ss = new SmartsheetBuilder()
-            .SetBaseURI("http://localhost:8080/")
+            .SetBaseURI("http://localhost:8082/")
             .SetAccessToken("aaaaaaaaaaaaaaaaaaaaaaaaaa")
             .SetSDKAPITestScenario(apiScenario)
             .Build();
@@ -36,14 +36,17 @@ namespace TestSDKMockAPI
                 action();
                 Assert.Fail("Call suceeded. Expected exception of type: {0} with message: {1}", (typeof(TException).Name), expectedMessage);
             }
+            catch (TException ex)
+            {
+                Assert.AreEqual(expectedMessage, ex.Message, "Expected message: {0}", expectedMessage);
+            }
+            catch (AssertFailedException ex)
+            {
+                throw ex;
+            }
             catch (Exception ex)
             {
-                if (ex is AssertFailedException)
-                    throw ex;
- 
-                var exception = ex as TException;
-                Assert.IsNotNull(exception, "Expected exception of type: {0}, actual type: {1}", (typeof(TException).Name), ex.GetType().Name);
-                Assert.AreEqual(expectedMessage, exception.Message, "Expected message: {0}", expectedMessage);
+                Assert.Fail("Expected exception of type: {0}, actual type: {1}", (typeof(TException).Name), ex.GetType().Name);
             }
         }
     }
