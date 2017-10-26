@@ -33,17 +33,15 @@ namespace TestSDKMockAPI
         }
 
         [TestMethod]
-        [ExpectedException(typeof(SmartsheetException))]
         public void CreateSheet_NoColumns()
         {
-            SmartsheetClient ss =  HelperFunctions.SetupClient("Create Sheet - No Columns");
+            SmartsheetClient ss = HelperFunctions.SetupClient("Create Sheet - Invalid - No Columns");
 
             Sheet sheetA = new Sheet
             {
                 Name = "New Sheet",
                 Columns = new List<Column>()
             };
-
 
             HelperFunctions.AssertRaisesException<SmartsheetException>(() => 
                 ss.SheetResources.CreateSheet(sheetA),
