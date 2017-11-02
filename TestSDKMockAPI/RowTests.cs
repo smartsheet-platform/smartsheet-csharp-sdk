@@ -117,37 +117,6 @@ namespace TestSDKMockAPI
             Assert.AreEqual(row.RowNumber, 100);
             Assert.AreEqual(cell.ColumnId, 101);
         }
-
-        [TestMethod]
-        public void AddRows_Location_Indent()
-        {
-            SmartsheetClient ss = HelperFunctions.SetupClient("Add Rows - Location - Indent");
-
-            Row rowA = new Row
-            {
-                Indent = 3,
-                Cells = new List<Cell>
-                {
-                    new Cell{
-                        ColumnId = 101,
-                        Value = "Apple"
-                    },
-                    new Cell{
-                        ColumnId = 102,
-                        Value = "Red Fruit"
-                    }
-                }
-            };
-
-            // Update rows in sheet
-            IList<Row> addedRows = ss.SheetResources.RowResources.AddRows(1, new Row[] { rowA });
-
-            Row row = addedRows.Where(r => r.Id == 10).FirstOrDefault();
-            Cell cell = row.Cells.Where(c => c.Value.Equals("Apple")).FirstOrDefault();
-
-            Assert.AreEqual(row.RowNumber, 100);
-            Assert.AreEqual(cell.ColumnId, 101);
-        }
       
         [TestMethod]
         public void AddRows_AssignValues_Int()
@@ -293,7 +262,7 @@ namespace TestSDKMockAPI
                 {
                     new Cell{
                         ColumnId = 101,
-                        Formula = "=SUM([Column2]6, [Column2]4)*2"
+                        Formula = "=SUM([Column2]3, [Column2]4)*2"
                     },
                     new Cell{
                         ColumnId = 102,
@@ -622,7 +591,7 @@ namespace TestSDKMockAPI
                 {
                     new Cell{
                         ColumnId = 101,
-                        Formula = "=SUM([Column2], [Column2]4)*2"
+                        Formula = "=SUM([Column2]3, [Column2]4)*2"
                     },
                     new Cell{
                         ColumnId = 102,
