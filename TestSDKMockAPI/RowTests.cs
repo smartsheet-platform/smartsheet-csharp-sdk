@@ -444,6 +444,48 @@ namespace TestSDKMockAPI
         }
 
         [TestMethod]
+        public void AddRows_AssignObjectValue_PredecessorList()
+        {
+            SmartsheetClient ss = HelperFunctions.SetupClient("Add Rows - Assign Object Value - Predecessor List");
+
+            Row rowA = new Row
+            {
+                Cells = new List<Cell>
+                {
+                    new Cell
+                    {
+                        ColumnId = 101,
+                        ObjectValue = new ObjectValue
+                        {
+                            ObjectType = ObjectValueType.PREDECESSOR_LIST,
+                            Predecessors = new List<Predecessor>
+                            {
+                                new Predecessor
+                                {
+                                    RowId = 10,
+                                    Type = "FS",
+                                    Lag = new Duration
+                                    {
+                                        ObjectType = "DURATION",
+                                        Days = 2,
+                                        Hours = 4
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+
+            IList<Row> addedRows = ss.SheetResources.RowResources.AddRows(1, new Row[] { rowA });
+
+            Cell predecessorCell = addedRows[0].Cells.Single(c => c.ColumnId == 101);
+            Assert.AreEqual(predecessorCell.Value, "2FS +2d 4h");
+        }
+
+        
+
+        [TestMethod]
         public void UpdateRows_AssignValues_String()
         {
             SmartsheetClient ss = HelperFunctions.SetupClient("Update Rows - Assign Values - String");
@@ -774,6 +816,173 @@ namespace TestSDKMockAPI
             HelperFunctions.AssertRaisesException<SmartsheetException>(() =>
                 ss.SheetResources.RowResources.UpdateRows(1, new Row[] { rowA }),
                 "If cell.formula is specified, then value, objectValue, image, hyperlink, and linkInFromCell must not be specified.");
+        }
+
+        [TestMethod]
+        public void UpdateRows_ClearValue_TextNumber()
+        {
+            SmartsheetClient ss = HelperFunctions.SetupClient("Update Rows - Clear Value - Text Number");
+
+            Row rowA = new Row
+            {
+                Id = 10,
+                Cells = new List<Cell>
+                {
+                    new Cell
+                    {
+                        ColumnId = 101,
+                        Value = ""
+                    }
+                }
+            };
+
+            IList<Row> updatedRows = ss.SheetResources.RowResources.UpdateRows(1, new Row[] { rowA });
+
+            Cell updatedCell = updatedRows[0].Cells.Single(c => c.ColumnId == 101);
+            Assert.AreEqual(updatedCell.Value, null);
+        }
+
+        [TestMethod]
+        public void UpdateRows_ClearValue_Checkbox()
+        {
+            SmartsheetClient ss = HelperFunctions.SetupClient("Update Rows - Clear Value - Checkbox");
+
+            Row rowA = new Row
+            {
+                Id = 10,
+                Cells = new List<Cell>
+                {
+                    new Cell
+                    {
+                        ColumnId = 101,
+                        Value = ""
+                    }
+                }
+            };
+
+            IList<Row> updatedRows = ss.SheetResources.RowResources.UpdateRows(1, new Row[] { rowA });
+
+            Cell updatedCell = updatedRows[0].Cells.Single(c => c.ColumnId == 101);
+            Assert.AreEqual(updatedCell.Value, false);
+        }
+
+        [TestMethod]
+        public void UpdateRows_ClearValue_Hyperlink()
+        {
+            SmartsheetClient ss = HelperFunctions.SetupClient("Update Rows - Clear Value - Hyperlink");
+
+            Row rowA = new Row
+            {
+                Id = 10,
+                Cells = new List<Cell>
+                {
+                    new Cell
+                    {
+                        ColumnId = 101,
+                        Value = "",
+                        Hyperlink = null
+                    }
+                }
+            };
+
+            IList<Row> updatedRows = ss.SheetResources.RowResources.UpdateRows(1, new Row[] { rowA });
+
+            Cell updatedCell = updatedRows[0].Cells.Single(c => c.ColumnId == 101);
+            Assert.AreEqual(updatedCell.Hyperlink, null);
+            Assert.AreEqual(updatedCell.Value, null);
+        }
+
+        [TestMethod]
+        public void UpdateRows_ClearValue_CellLink()
+        {
+            SmartsheetClient ss = HelperFunctions.SetupClient("Update Rows - Clear Value - Cell Link");
+
+            Row rowA = new Row
+            {
+                Id = 10,
+                Cells = new List<Cell>
+                {
+                    new Cell
+                    {
+                        ColumnId = 101,
+                        Value = "",
+                        LinkInFromCell = null
+                    }
+                }
+            };
+
+            IList<Row> updatedRows = ss.SheetResources.RowResources.UpdateRows(1, new Row[] { rowA });
+
+            Cell updatedCell = updatedRows[0].Cells.Single(c => c.ColumnId == 101);
+            Assert.AreEqual(updatedCell.LinkInFromCell, null);
+            Assert.AreEqual(updatedCell.Value, null);
+        }
+
+        [TestMethod]
+        public void UpdateRows_Invalid_AssignHyperlinkAndCellLink()
+        {
+            SmartsheetClient ss = HelperFunctions.SetupClient("Update Rows - Invalid - Assign Hyperlink and Cell Link");
+
+            Row rowA = new Row
+            {
+                Id = 10,
+                Cells = new List<Cell>
+                {
+                    new Cell
+                    {
+                        ColumnId = 101,
+                        Value = "",
+                        LinkInFromCell = new CellLink
+                        {
+                            ColumnId = 201,
+                            RowId = 20,
+                            SheetId = 2
+                        },
+                        Hyperlink = new Link
+                        {
+                            Url = "www.google.com"
+                        }
+                    }
+                }
+            };
+
+            HelperFunctions.AssertRaisesException<SmartsheetException>(() =>
+                    ss.SheetResources.RowResources.UpdateRows(1, new Row[] { rowA }),
+                "Only one of cell.hyperlink or cell.linkInFromCell may be non-null.");
+        }
+
+        [TestMethod]
+        public void UpdateRows_Location_Top()
+        {
+            SmartsheetClient ss = HelperFunctions.SetupClient("Update Rows - Location - Top");
+
+            Row rowA = new Row
+            {
+                Id = 10,
+                ToTop = true
+            };
+
+            IList<Row> updatedRows = ss.SheetResources.RowResources.UpdateRows(1, new Row[] { rowA });
+
+            Row updateRow = updatedRows.Single(r => r.Id == 10);
+            Assert.AreEqual(updateRow.RowNumber, 1);
+        }
+
+        [TestMethod]
+        public void UpdateRows_Location_Bottom()
+        {
+            SmartsheetClient ss = HelperFunctions.SetupClient("Update Rows - Location - Bottom");
+
+            Row rowA = new Row
+            {
+                Id = 10,
+                ToBottom = true
+            };
+
+            IList<Row> updatedRows = ss.SheetResources.RowResources.UpdateRows(1, new Row[] { rowA });
+
+            Row updateRow = updatedRows.Single(r => r.Id == 10);
+            Assert.AreEqual(updateRow.RowNumber, 100);
         }
     }
 }
