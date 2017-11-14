@@ -53,7 +53,7 @@ namespace TestSDKMockAPI
             Row row = addedRows.Where(r => r.Id == 10).FirstOrDefault();
             Cell cell = row.Cells.Where(c => c.Value.Equals("Apple")).FirstOrDefault();
 
-            Assert.AreEqual(cell.ColumnId, 101);
+            Assert.AreEqual(101, cell.ColumnId);
         }
 
         [TestMethod]
@@ -83,8 +83,8 @@ namespace TestSDKMockAPI
             Row row = addedRows.Where(r => r.Id == 10).FirstOrDefault();
             Cell cell = row.Cells.Where(c => c.Value.Equals("Apple")).FirstOrDefault();
             
-            Assert.AreEqual(row.RowNumber, 1);
-            Assert.AreEqual(cell.ColumnId, 101);
+            Assert.AreEqual(1, row.RowNumber);
+            Assert.AreEqual(101, cell.ColumnId);
         }
 
         [TestMethod]
@@ -114,8 +114,8 @@ namespace TestSDKMockAPI
             Row row = addedRows.Where(r => r.Id == 10).FirstOrDefault();
             Cell cell = row.Cells.Where(c => c.Value.Equals("Apple")).FirstOrDefault();
 
-            Assert.AreEqual(row.RowNumber, 100);
-            Assert.AreEqual(cell.ColumnId, 101);
+            Assert.AreEqual(100, row.RowNumber);
+            Assert.AreEqual(101, cell.ColumnId);
         }
       
         [TestMethod]
@@ -159,7 +159,7 @@ namespace TestSDKMockAPI
             Row row = addedRows.Where(r => r.Id == 10).FirstOrDefault();
             Cell cell = row.Cells.Where(c => Convert.ToInt32(c.Value) == 100).FirstOrDefault();
 
-            Assert.AreEqual(cell.ColumnId, 101);
+            Assert.AreEqual(101, cell.ColumnId);
         }
 
         [TestMethod]
@@ -203,53 +203,9 @@ namespace TestSDKMockAPI
             Row row = addedRows.Where(r => r.Id == 10).FirstOrDefault();
             Cell cell = row.Cells.Where(c => c.Value.Equals(true)).FirstOrDefault();
 
-            Assert.AreEqual(cell.ColumnId, 101);
+            Assert.AreEqual(101, cell.ColumnId);
         }
 
-        //[TestMethod]
-        //public void AddRows_AssignValues_Date()
-        //{
-        //    SmartsheetClient ss = HelperFunctions.SetupClient("Add Rows - Assign Values - Date");
-
-        //    Row rowA = new Row
-        //    {
-        //        Cells = new List<Cell>
-        //        {
-        //            new Cell{
-        //                ColumnId = 101,
-        //                ObjectValue = new ObjectType()
-        //                }
-        //            },
-        //            new Cell{
-        //                ColumnId = 102,
-        //                Value = "This is True"
-        //            }
-        //        }
-        //    };
-
-        //    Row rowB = new Row
-        //    {
-        //        Cells = new List<Cell>
-        //        {
-        //            new Cell{
-        //                ColumnId = 101,
-        //                Value = false
-        //            },
-        //            new Cell{
-        //                ColumnId = 102,
-        //                Value = "This is False"
-        //            }
-        //        }
-        //    };
-
-        //    // Update rows in sheet
-        //    IList<Row> addedRows = ss.SheetResources.RowResources.AddRows(1, new Row[] { rowA, rowB });
-
-        //    Row row = addedRows.Where(r => r.Id == 10).FirstOrDefault();
-        //    Cell cell = row.Cells.Where(c => c.Value.Equals(true)).FirstOrDefault();
-
-        //    Assert.AreEqual(cell.ColumnId, 101);
-        //}
 
         [TestMethod]
         public void AddRows_AssignFormulae()
@@ -275,7 +231,7 @@ namespace TestSDKMockAPI
 
             Cell cell = addedRows[0].Cells.Where(c => c.Formula.Equals("=SUM([Column2]3, [Column2]3, [Column2]4)")).FirstOrDefault();
 
-            Assert.AreEqual(cell.ColumnId, 102);
+            Assert.AreEqual(102, cell.ColumnId);
         }
 
         [TestMethod]
@@ -309,8 +265,8 @@ namespace TestSDKMockAPI
             Cell cell = addedRows[0].Cells.Where(c => c.Value.Equals("Google")).FirstOrDefault();
             Link link = cell.Hyperlink;
 
-            Assert.AreEqual(cell.ColumnId, 101);
-            Assert.AreEqual(link.Url, "http://google.com");
+            Assert.AreEqual(101, cell.ColumnId);
+            Assert.AreEqual("http://google.com", link.Url);
         }
 
         [TestMethod]
@@ -344,8 +300,8 @@ namespace TestSDKMockAPI
             Cell cell = addedRows[0].Cells.Where(c => c.Value.Equals("Sheet3")).FirstOrDefault();
             Link link = cell.Hyperlink;
 
-            Assert.AreEqual(cell.ColumnId, 102);
-            Assert.AreEqual(link.SheetId, 3);
+            Assert.AreEqual(102, cell.ColumnId);
+            Assert.AreEqual(3, link.SheetId);
         }
 
         [TestMethod]
@@ -379,8 +335,8 @@ namespace TestSDKMockAPI
             Cell cell = addedRows[0].Cells.Where(c => c.Value.Equals("Report8")).FirstOrDefault();
             Link link = cell.Hyperlink;
 
-            Assert.AreEqual(cell.ColumnId, 102);
-            Assert.AreEqual(link.ReportId, 8);
+            Assert.AreEqual(102, cell.ColumnId);
+            Assert.AreEqual(8, link.ReportId);
         }
 
         [TestMethod]
@@ -480,7 +436,7 @@ namespace TestSDKMockAPI
             IList<Row> addedRows = ss.SheetResources.RowResources.AddRows(1, new Row[] { rowA });
 
             Cell predecessorCell = addedRows[0].Cells.Single(c => c.ColumnId == 101);
-            Assert.AreEqual(predecessorCell.Value, "2FS +2d 4h");
+            Assert.AreEqual("2FS +2d 4h", predecessorCell.Value);
         }
 
         
@@ -526,7 +482,7 @@ namespace TestSDKMockAPI
             Row row = updatedRows.Where(r => r.Id == 10).FirstOrDefault();
             Cell cell = row.Cells.Where(c => c.Value.Equals("Apple")).FirstOrDefault();
 
-            Assert.AreEqual(cell.ColumnId, 101);
+            Assert.AreEqual(101, cell.ColumnId);
         }
 
         [TestMethod]
@@ -572,7 +528,7 @@ namespace TestSDKMockAPI
             Row row = updatedRows.Where(r => r.Id == 10).FirstOrDefault();
             Cell cell = row.Cells.Where(c => Convert.ToInt32(c.Value) == 100).FirstOrDefault();
 
-            Assert.AreEqual(cell.ColumnId, 101);
+            Assert.AreEqual(101, cell.ColumnId);
         }
 
         [TestMethod]
@@ -618,7 +574,7 @@ namespace TestSDKMockAPI
             Row row = updatedRows.Where(r => r.Id == 10).FirstOrDefault();
             Cell cell = row.Cells.Where(c => c.Value.Equals(true)).FirstOrDefault();
 
-            Assert.AreEqual(cell.ColumnId, 101);
+            Assert.AreEqual(101, cell.ColumnId);
         }
 
         [TestMethod]
@@ -646,7 +602,7 @@ namespace TestSDKMockAPI
 
             Cell cell = updatedRows[0].Cells.Where(c => c.Formula.Equals("=SUM([Column2]3, [Column2]3, [Column2]4)")).FirstOrDefault();
 
-            Assert.AreEqual(cell.ColumnId, 102);
+            Assert.AreEqual(102, cell.ColumnId);
         }
 
         [TestMethod]
@@ -681,8 +637,8 @@ namespace TestSDKMockAPI
             Cell cell = updatedRows[0].Cells.Where(c => c.Value.Equals("Google")).FirstOrDefault();
             Link link = cell.Hyperlink;
 
-            Assert.AreEqual(cell.ColumnId, 101);
-            Assert.AreEqual(link.Url, "http://google.com");
+            Assert.AreEqual(101, cell.ColumnId);
+            Assert.AreEqual("http://google.com", link.Url);
         }
 
         [TestMethod]
@@ -717,8 +673,8 @@ namespace TestSDKMockAPI
             Cell cell = updatedRows[0].Cells.Where(c => c.Value.Equals("Sheet3")).FirstOrDefault();
             Link link = cell.Hyperlink;
 
-            Assert.AreEqual(cell.ColumnId, 102);
-            Assert.AreEqual(link.SheetId, 3);
+            Assert.AreEqual(102, cell.ColumnId);
+            Assert.AreEqual(3, link.SheetId);
         }
 
         [TestMethod]
@@ -753,8 +709,8 @@ namespace TestSDKMockAPI
             Cell cell = updatedRows[0].Cells.Where(c => c.Value.Equals("Report8")).FirstOrDefault();
             Link link = cell.Hyperlink;
 
-            Assert.AreEqual(cell.ColumnId, 102);
-            Assert.AreEqual(link.ReportId, 8);
+            Assert.AreEqual(102, cell.ColumnId);
+            Assert.AreEqual(8, link.ReportId);
         }
 
         [TestMethod]
@@ -839,7 +795,7 @@ namespace TestSDKMockAPI
             IList<Row> updatedRows = ss.SheetResources.RowResources.UpdateRows(1, new Row[] { rowA });
 
             Cell updatedCell = updatedRows[0].Cells.Single(c => c.ColumnId == 101);
-            Assert.AreEqual(updatedCell.Value, null);
+            Assert.AreEqual(null, updatedCell.Value);
         }
 
         [TestMethod]
@@ -863,7 +819,7 @@ namespace TestSDKMockAPI
             IList<Row> updatedRows = ss.SheetResources.RowResources.UpdateRows(1, new Row[] { rowA });
 
             Cell updatedCell = updatedRows[0].Cells.Single(c => c.ColumnId == 101);
-            Assert.AreEqual(updatedCell.Value, false);
+            Assert.AreEqual(false, updatedCell.Value);
         }
 
         [TestMethod]
@@ -888,8 +844,8 @@ namespace TestSDKMockAPI
             IList<Row> updatedRows = ss.SheetResources.RowResources.UpdateRows(1, new Row[] { rowA });
 
             Cell updatedCell = updatedRows[0].Cells.Single(c => c.ColumnId == 101);
-            Assert.AreEqual(updatedCell.Hyperlink, null);
-            Assert.AreEqual(updatedCell.Value, null);
+            Assert.AreEqual(null, updatedCell.Hyperlink);
+            Assert.AreEqual(null, updatedCell.Value);
         }
 
         [TestMethod]
@@ -914,8 +870,8 @@ namespace TestSDKMockAPI
             IList<Row> updatedRows = ss.SheetResources.RowResources.UpdateRows(1, new Row[] { rowA });
 
             Cell updatedCell = updatedRows[0].Cells.Single(c => c.ColumnId == 101);
-            Assert.AreEqual(updatedCell.LinkInFromCell, null);
-            Assert.AreEqual(updatedCell.Value, null);
+            Assert.AreEqual(null, updatedCell.LinkInFromCell);
+            Assert.AreEqual(null, updatedCell.Value);
         }
 
         [TestMethod]
@@ -965,7 +921,7 @@ namespace TestSDKMockAPI
             IList<Row> updatedRows = ss.SheetResources.RowResources.UpdateRows(1, new Row[] { rowA });
 
             Row updateRow = updatedRows.Single(r => r.Id == 10);
-            Assert.AreEqual(updateRow.RowNumber, 1);
+            Assert.AreEqual(1, updateRow.RowNumber);
         }
 
         [TestMethod]
@@ -982,7 +938,7 @@ namespace TestSDKMockAPI
             IList<Row> updatedRows = ss.SheetResources.RowResources.UpdateRows(1, new Row[] { rowA });
 
             Row updateRow = updatedRows.Single(r => r.Id == 10);
-            Assert.AreEqual(updateRow.RowNumber, 100);
+            Assert.AreEqual(100, updateRow.RowNumber);
         }
     }
 }
