@@ -133,6 +133,13 @@ namespace Smartsheet.Api
 		/// </summary>
 		private string assumedUser;
 
+        /// <summary>
+        /// <para>Represents the SDK API test scenario.</para>
+        /// 
+        /// <para>It can be set using corresponding setter.</para>
+        /// </summary>
+        private string apiScenario;
+
 		private IUserCalcBackoff calcBackoff = new DefaultCalcBackoff(15000);
 
 		/// <summary>
@@ -203,6 +210,17 @@ namespace Smartsheet.Api
 			this.assumedUser = assumedUser;
 			return this;
 		}
+
+        /// <summary>
+        /// <para>Set the SDK API test scenario.</para>
+        /// </summary>
+        /// <param name="sdkTestScenario"> the sdk api test scenari </param>
+        /// <returns> the SmartsheetClient builder </returns>
+        public virtual SmartsheetBuilder SetSDKAPITestScenario(string apiScenario)
+        {
+            this.apiScenario = apiScenario;
+            return this;
+        }
 
 		/// <summary>
 		/// Create a DefaultCalcBackoff with a max elapsed timeout specified by the user. This interface 
@@ -321,6 +339,11 @@ namespace Smartsheet.Api
 			{
 				smartsheet.AssumedUser = assumedUser;
 			}
+
+            if (apiScenario != null)
+            {
+                smartsheet.APIScenario = apiScenario;
+            }
 
 			smartsheet.CalcBackoff = calcBackoff;
 
