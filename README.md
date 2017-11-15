@@ -100,6 +100,15 @@ A simple, but complete sample application project is here: https://github.com/sm
 ## Contributing
 If you would like to contribute a change to the SDK, please fork a branch and then submit a pull request. [More info here.](https://help.github.com/articles/using-pull-requests)
 
+#### Running the tests
+Integration tests:
+1. Set up an api access token in the `IntegrationTestSDK` project's `App.config` file.
+2. Run the tests within the from within Visual Studio.
+
+Mock API tests:
+1. Clone the [Smartsheet sdk tests](https://github.com/smartsheet-platform/smartsheet-sdk-tests) repo and follow the instructions from the readme to start the mock server.
+3. Run the tests within the `TestSDKMockAPI` project from within Visual Studio.
+
 ## Support
 If you have any questions or issues with this SDK please post on [StackOverflow using the tag "smartsheet-api"](http://stackoverflow.com/questions/tagged/smartsheet-api) or contact us directly at api@smartsheet.com.
 
