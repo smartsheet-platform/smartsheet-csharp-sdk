@@ -107,7 +107,7 @@ Integration tests:
 
 Mock API tests:
 1. Clone the [Smartsheet sdk tests](https://github.com/smartsheet-platform/smartsheet-sdk-tests) repo and follow the instructions from the readme to start the mock server.
-3. Run the tests within the `TestSDKMockAPI` project from within Visual Studio.
+2. Run the tests within the `TestSDKMockAPI` project from within Visual Studio.
 
 ## Support
 If you have any questions or issues with this SDK please post on [StackOverflow using the tag "smartsheet-api"](http://stackoverflow.com/questions/tagged/smartsheet-api) or contact us directly at api@smartsheet.com.
