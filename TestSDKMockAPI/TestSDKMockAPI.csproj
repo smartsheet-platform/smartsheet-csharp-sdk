@@ -43,6 +43,7 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ColumnTests.cs" />
     <Compile Include="HelperFunctions.cs" />
     <Compile Include="SheetTests.cs" />
     <Compile Include="RowTests.cs" />
