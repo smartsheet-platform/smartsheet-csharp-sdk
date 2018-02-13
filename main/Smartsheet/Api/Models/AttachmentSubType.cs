@@ -44,7 +44,11 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// The drawing
 		/// </summary>
-		DRAWING
+		DRAWING,
+		/// <summary>
+		/// Folder if AttachmentType is EGNYTE
+		/// </summary>
+		FOLDER
 	}
 
 }

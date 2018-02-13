@@ -56,6 +56,10 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// OneDrive 
 		/// </summary>
-		ONEDRIVE
+		ONEDRIVE,
+		/// <summary>
+		/// Smartsheet
+		/// </summary>
+		SMARTSHEET
 	}
 }

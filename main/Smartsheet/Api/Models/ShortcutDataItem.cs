@@ -21,9 +21,9 @@ namespace Smartsheet.Api.Models
 		private string labelFormat;
 
 		/// <summary>
-		/// Attachment type (one of FILE, GOOGLE_DRIVE, LINK, BOX_COM, DROPBOX, EVERNOTE, or EGNYTE)
+		/// Attachment type (one of FILE, GOOGLE_DRIVE, LINK, BOX_COM, DROPBOX, EVERNOTE, EGNYTE, ONEDRIVE, SMARTSHEET)
 		/// </summary>
-		private string mimeType;
+		private AttachmentType? attachmentType;
 
 		/// <summary>
 		/// Hyperlink  object
@@ -34,6 +34,11 @@ namespace Smartsheet.Api.Models
 		/// The display order for the ShortcutWidgetItem
 		/// </summary>
 		private int? order;
+
+		/// <summary>
+		/// Certain attachment types will also include a mimeType
+		/// </summary>
+		private string mimeType;
 
 		/// <summary>
 		/// Label for the data point. 
@@ -68,18 +73,18 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// Attachment type (one of FILE, GOOGLE_DRIVE, LINK, BOX_COM, DROPBOX, EVERNOTE, or EGNYTE).
+		/// Attachment type (one of FILE, GOOGLE_DRIVE, LINK, BOX_COM, DROPBOX, EVERNOTE, EGNYTE, ONEDRIVE, SMARTSHEET).
 		/// </summary>
-		/// <returns> the MIME type </returns>
-		public virtual string MimeType
+		/// <returns> the attachment type </returns>
+		public virtual AttachmentType? AttachmentType
 		{
 			get
 			{
-				return mimeType;
+				return attachmentType;
 			}
 			set
 			{
-				this.mimeType = value;
+				this.attachmentType = value;
 			}
 		}
 
@@ -114,5 +119,22 @@ namespace Smartsheet.Api.Models
 				this.order = value;
 			}
 		}
+
+		/// <summary>
+		/// Certain attachment types will also include a mimeType.
+		/// </summary>
+		/// <returns> the MIME type </returns>
+		public virtual string MimeType
+		{
+			get
+			{
+				return mimeType;
+			}
+			set
+			{
+				this.mimeType = value;
+			}
+		}
+
 	}
 }
