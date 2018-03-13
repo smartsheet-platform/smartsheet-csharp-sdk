@@ -30,7 +30,7 @@ namespace Smartsheet.Api.Models
 		/// <seealso href="http://smartsheet-platform.github.io/api-docs/#celllinkwidgetcontent-object">CellLinkWidge Object Help</seealso>		
 		private Link hyperlink;
 		private IList<CellDataItem> cellData;
-		private IList<Column> column;
+		private IList<Column> columns;
 
 		/// <summary>
 		/// Represents the RichTextWidgetContent object.</summary>
@@ -92,15 +92,15 @@ namespace Smartsheet.Api.Models
 		/// Array of Column objects.
 		/// </summary>
 		/// <returns> the array </returns>
-		public virtual IList<Column> Column
+		public virtual IList<Column> Columns
 		{
 			get
 			{
-				return column;
+				return columns;
 			}
 			set
 			{
-				this.column = value;
+				this.columns = value;
 			}
 		}
 
