@@ -40,7 +40,7 @@ namespace IntegrationTestSDK
 			User user = smartsheet.UserResources.AddUser(new User.AddUserBuilder(email, true, true).Build(), true, true);
 			// Validate user is an admin
 			UserProfile userProfile = smartsheet.UserResources.GetUser((long)user.Id);
-			Assert.AreEqual(userProfile.Admin, false);
+			Assert.AreEqual(userProfile.Admin, true);
 
 			// Change to non-admin
 			smartsheet.UserResources.UpdateUser(new User.UpdateUserBuilder(user.Id, false, false).Build());
@@ -62,8 +62,6 @@ namespace IntegrationTestSDK
 		[Test]
 		public void AddRemoveUser()
 		{
-			
-
 			PaginatedResult<User> users = smartsheet.UserResources.ListUsers(null,new PaginationParameters(true,null,null));
 			
 			// Remove user if it exists from a previous run.

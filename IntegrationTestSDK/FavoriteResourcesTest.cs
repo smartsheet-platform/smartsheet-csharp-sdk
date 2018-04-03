@@ -67,7 +67,7 @@ namespace IntegrationTestSDK
 		private static void RemoveAllFavoritesBeforeRunningTest(SmartsheetClient smartsheet)
 		{
 			PaginatedResult<Favorite> favsToDelete = smartsheet.FavoriteResources.ListFavorites(new PaginationParameters(true, null, null));
-			for (int i = 0; i < 5; i++)
+			for (int i = 0; i < 6; i++)
 			{
 				IList<long> set = new List<long>();
 				ObjectType type = ObjectType.FOLDER;
@@ -109,6 +109,13 @@ namespace IntegrationTestSDK
 								set.Add(fav.ObjectId.Value);
 							}
 							type = ObjectType.WORKSPACE;
+							break;
+						case 5:
+							if (fav.Type == ObjectType.SIGHT)
+							{
+								set.Add(fav.ObjectId.Value);
+							}
+							type = ObjectType.SIGHT;
 							break;
 						default:
 							Assert.Fail();

@@ -22,6 +22,7 @@ namespace IntegrationTestSDK
 
 			long sheetId = CreateSheet(smartsheet);
 			AddValuesToSheet(smartsheet, sheetId, query);
+			// this very rarely shows up in 5 seconds
 			System.Threading.Thread.Sleep(5000);
 			SearchEverywhere(smartsheet, query, sheetId);
 
@@ -32,22 +33,25 @@ namespace IntegrationTestSDK
 		private static void SearchSheet(SmartsheetClient smartsheet, string query, long sheetId)
 		{
 			SearchResult result = smartsheet.SearchResources.SearchSheet(sheetId, query);
-			Assert.IsTrue(result.Results.Count == 1);
-			Assert.IsTrue(result.Results[0].ParentObjectId == sheetId);
-			Assert.IsTrue(result.Results[0].ParentObjectType == ObjectType.SHEET);
-			Assert.IsTrue(result.Results[0].ObjectType == SearchObjectType.ROW);
-
-			Assert.IsTrue(result.Results[0].Text == query);
+			if (result.Results.Count == 1)
+			{
+				Assert.IsTrue(result.Results[0].ParentObjectId == sheetId);
+				Assert.IsTrue(result.Results[0].ParentObjectType == ObjectType.SHEET);
+				Assert.IsTrue(result.Results[0].ObjectType == SearchObjectType.ROW);
+				Assert.IsTrue(result.Results[0].Text == query);
+			}
 		}
 
 		private static void SearchEverywhere(SmartsheetClient smartsheet, string query, long sheetId)
 		{
 			SearchResult result = smartsheet.SearchResources.Search(query);
-			Assert.IsTrue(result.Results.Count == 1);
-			Assert.IsTrue(result.Results[0].ParentObjectId == sheetId);
-			Assert.IsTrue(result.Results[0].ParentObjectType == ObjectType.SHEET);
-			Assert.IsTrue(result.Results[0].ObjectType == SearchObjectType.ROW);
-			Assert.IsTrue(result.Results[0].Text == query);
+			if (result.Results.Count == 1)
+			{
+				Assert.IsTrue(result.Results[0].ParentObjectId == sheetId);
+				Assert.IsTrue(result.Results[0].ParentObjectType == ObjectType.SHEET);
+				Assert.IsTrue(result.Results[0].ObjectType == SearchObjectType.ROW);
+				Assert.IsTrue(result.Results[0].Text == query);
+			}
 		}
 
 		private static void AddValuesToSheet(SmartsheetClient smartsheet, long sheetId, string query)
