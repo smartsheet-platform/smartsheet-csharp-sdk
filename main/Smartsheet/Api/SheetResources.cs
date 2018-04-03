@@ -110,6 +110,39 @@ namespace Smartsheet.Api
 					long? page);
 
 		/// <summary>
+		/// <para>Get a sheet.</para>
+		/// 
+		/// <para>It mirrors To the following Smartsheet REST API method: GET /sheets/{sheetId}</para>
+		/// </summary>
+		/// <param name="sheetId"> the Id of the sheet </param>
+		/// <param name="includes"> used To specify the optional objects To include. </param>
+		/// <param name="excludes"> used To specify the optional objects To include. </param>
+		/// <param name="rowIds"> used To specify the optional objects To include. </param>
+		/// <param name="rowNumbers"> used To specify the optional objects To include. </param>
+		/// <param name="columnIds"> used To specify the optional objects To include. </param>
+		/// <param name="pageSize"> used To specify the optional objects To include. </param>
+		/// <param name="page"> used To specify the optional objects To include. </param>
+		/// <param name="ifVersionAfter"> only fetch Sheet if more recent version available </param>
+		/// <returns> the sheet resource (note that if there is no such resource, this method will throw 
+		/// ResourceNotFoundException rather than returning null). </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		Sheet GetSheet(
+					long sheetId,
+					IEnumerable<SheetLevelInclusion> includes,
+					IEnumerable<SheetLevelExclusion> excludes,
+					IEnumerable<long> rowIds,
+					IEnumerable<int> rowNumbers,
+					IEnumerable<long> columnIds,
+					long? pageSize,
+					long? page,
+					long? ifVersionAfter);
+
+		/// <summary>
 		/// <para>Get a sheet as an Excel file.</para>
 		/// 
 		/// <para>It mirrors To the following Smartsheet REST API method:<br />
