@@ -2,7 +2,7 @@
 set -e
 # set -x
 set -o errexit
-DOCS_SRC="../documentation/WebSite"
+DOCS_SRC="../documentation/Website"
 DOCS_DIR="../docs"
 
 fixup_file() {
