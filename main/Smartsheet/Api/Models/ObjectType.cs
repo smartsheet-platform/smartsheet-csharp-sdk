@@ -38,7 +38,9 @@ namespace Smartsheet.Api.Models
 		[EnumMember(Value = "report")]
 		REPORT,
 		[EnumMember(Value = "template")]
-		TEMPLATE
+		TEMPLATE,
+		[EnumMember(Value = "sight")]
+		SIGHT
 	}
 
 }
