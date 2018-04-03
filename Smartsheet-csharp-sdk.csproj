@@ -74,6 +74,7 @@
     <Compile Include="main\Smartsheet\Api\Internal\ContactResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\ImageUrlsResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\Json\CellObjectTypeConverter.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\Json\ErrorTypeConverter.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\Json\ObjectValueTypeConverter.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\SheetUpdateRequestResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\SightResourcesImpl.cs" />
@@ -86,6 +87,7 @@
     <Compile Include="main\Smartsheet\Api\Models\DayDescriptor.cs" />
     <Compile Include="main\Smartsheet\Api\Models\DayOrdinal.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Duration.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\ErrorDetail.cs" />
     <Compile Include="main\Smartsheet\Api\Models\ObjectValue.cs" />
     <Compile Include="main\Smartsheet\Api\Models\ObjectValueType.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Predecessor.cs" />

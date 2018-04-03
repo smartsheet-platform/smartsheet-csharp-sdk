@@ -18,8 +18,6 @@
 
 namespace Smartsheet.Api
 {
-
-
 	using Error = Api.Models.Error;
 
 	/// <summary>
@@ -29,8 +27,6 @@ namespace Smartsheet.Api
 	/// </summary>
 	public class SmartsheetRestException : SmartsheetException
 	{
-
-
 		/// <summary>
 		/// <para>Represents the error Code.</para>
 		/// 
@@ -39,15 +35,29 @@ namespace Smartsheet.Api
 		private readonly int? errorCode;
 
 		/// <summary>
+		/// <para>Represents the reference ID.</para>
+		/// 
+		/// <para>It will be initialized in constructor and will not change afterwards.</para>
+		/// </summary>
+		private readonly string refId;
+
+		/// <summary>
+		/// <para>Represents any error detail provided by the API</para>
+		/// 
+		/// <para>It will be initialized in constructor and will not change afterwards.</para>
+		/// </summary>
+		private readonly object detail;
+
+		/// <summary>
 		/// <para>Constructor.</para>
 		/// </summary>
 		/// <param name="error"> the Error object from Smartsheet REST API </param>
 		public SmartsheetRestException(Error error) : base(error.Message)
 		{
-				errorCode = error.ErrorCode;
+			errorCode = error.ErrorCode;
+			refId = error.RefId;
+			detail = error.Detail;
 		}
-
-
 
 		/// <summary>
 		/// <para>Returns the error Code.</para>
@@ -58,6 +68,30 @@ namespace Smartsheet.Api
 			get
 			{
 				return this.errorCode;
+			}
+		}
+
+		/// <summary>
+		/// <para>Returns the refId.</para>
+		/// </summary>
+		/// <returns> the refId </returns>
+		public virtual string RefId
+		{
+			get
+			{
+				return this.refId;
+			}
+		}
+
+		/// <summary>
+		/// <para>Returns the error detail</para>
+		/// </summary>
+		/// <returns> the error detail </returns>
+		public virtual object Detail
+		{
+			get
+			{
+				return this.detail;
 			}
 		}
 	}

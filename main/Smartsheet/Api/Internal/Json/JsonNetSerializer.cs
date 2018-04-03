@@ -75,6 +75,9 @@ namespace Smartsheet.Api.Internal.Json
 
 			// Handles linkInFromCell serialization
 			serializer.Converters.Add(new CellObjectTypeConverter());
+
+			// Handles ErrorDetails 
+			serializer.Converters.Add(new ErrorTypeConverter());
 		}
 
 		/// <summary>

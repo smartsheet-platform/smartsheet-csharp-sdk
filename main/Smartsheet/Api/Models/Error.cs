@@ -18,8 +18,6 @@
 
 namespace Smartsheet.Api.Models
 {
-
-
 	/// <summary>
 	/// Represents Error object.
 	/// </summary>
@@ -36,21 +34,14 @@ namespace Smartsheet.Api.Models
 		private string message;
 
 		/// <summary>
-		/// Gets the Message.
+		/// Reference Id of the specific error occurrence. 
 		/// </summary>
-		/// <returns> the Message </returns>
-		public virtual string Message
-		{
-			get
-			{
-				return message;
-			}
-			set
-			{
-				this.message = value;
-			}
-		}
+		private string refId;
 
+		/// <summary>
+		/// Additional error detail if it is available
+		/// </summary>
+		private object detail;
 
 		/// <summary>
 		/// Gets the error Code.
@@ -68,6 +59,52 @@ namespace Smartsheet.Api.Models
 			}
 		}
 
-	}
+		/// <summary>
+		/// Gets the Message.
+		/// </summary>
+		/// <returns> the Message </returns>
+		public virtual string Message
+		{
+			get
+			{
+				return message;
+			}
+			set
+			{
+				this.message = value;
+			}
+		}
 
+		/// <summary>
+		/// Gets the refId
+		/// </summary>
+		/// <returns> the refId </returns>
+		public virtual string RefId
+		{
+			get
+			{
+				return refId;
+			}
+			set
+			{
+				this.refId = value;
+			}
+		}
+
+		/// <summary>
+		/// Gets additional error detail if available
+		/// </summary>
+		/// <returns> error detail </returns>
+		public virtual object Detail
+		{
+			get
+			{
+				return detail;
+			}
+			set
+			{
+				this.detail = value;
+			}
+		}
+	}
 }
