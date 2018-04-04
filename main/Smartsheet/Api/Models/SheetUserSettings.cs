@@ -26,6 +26,11 @@ namespace Smartsheet.Api.Models
 	public class SheetUserSettings
 	{
 		/// <summary>
+		/// The ID of the filter currently applied to the sheet
+		/// </summary>
+		private long? appliedSheetFilterId;
+
+		/// <summary>
 		/// Does this user have “Show Critical Path” turned on for this sheet? Note this setting only has an effect on project sheets with dependencies enabled.
 		/// </summary>
 		private bool? criticalPathEnabled;
@@ -34,6 +39,16 @@ namespace Smartsheet.Api.Models
 		/// Does this user have “Display Summary Tasks” turned on for this sheet? Applies only to sheets where Calendar View has been configured.
 		/// </summary>
 		private bool? displaySummaryTasks;
+
+		/// <summary>
+		/// Get the ID of the sheet filter currently applied to this sheet
+		/// </summary>
+		/// <returns> the sheet filter ID </returns>
+		public long? AppliedSheetFilterId
+		{
+			get { return appliedSheetFilterId; }
+			set { appliedSheetFilterId = value; }
+		}
 
 		/// <summary>
 		/// Does this user have “Show Critical Path” turned on for this sheet? 

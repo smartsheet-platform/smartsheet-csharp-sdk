@@ -30,8 +30,7 @@ namespace Smartsheet.Api
 	{
 		/// <summary>
 		/// <para>Creates a new Discussion on a Sheet.</para>
-		/// <para>It mirrors To the following Smartsheet REST API method:<br />
-		/// POST /sheets/{sheetId}/discussions</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: POST /sheets/{sheetId}/discussions</para>
 		/// </summary>
 		/// <param name="sheetId"> the id of the sheet </param>
 		/// <param name="discussion"> the discussion to add </param>
@@ -46,8 +45,7 @@ namespace Smartsheet.Api
 
 		/// <summary>
 		/// <para>Creates a new Discussion attached with an Attachment on a Sheet.</para>
-		/// <para>It mirrors To the following Smartsheet REST API method:<br />
-		/// POST /sheets/{sheetId}/discussions</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: POST /sheets/{sheetId}/discussions</para>
 		/// </summary>
 		/// <param name="sheetId"> the id of the sheet </param>
 		/// <param name="discussion"> the discussion to add </param>

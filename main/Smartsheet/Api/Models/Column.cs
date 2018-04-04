@@ -90,8 +90,6 @@ namespace Smartsheet.Api.Models
 
 		private string format;
 
-		private Filter filter;
-
 		private bool? locked;
 
 		private bool? lockedForUser;
@@ -311,17 +309,6 @@ namespace Smartsheet.Api.Models
 		{
 			get { return format; }
 			set { format = value; }
-		}
-
-		/// <summary>
-		/// <para>The filter applied to the column.</para>
-		/// Only returned if the include query string parameter contains filters
-		/// and this column has a filter applied to it.
-		/// </summary>
-		public Filter Filter
-		{
-			get { return filter; }
-			set { filter = value; }
 		}
 
 		/// <summary>

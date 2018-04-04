@@ -447,6 +447,12 @@ namespace Smartsheet.Api
 		/// </summary>
 		/// <returns> the associated discussion resources </returns>
 		SheetUpdateRequestResources UpdateRequestResources { get; }
+
+		/// <summary>
+		/// Returns the FilterResources object that provides access to filter resources associated with Sheet resources.
+		/// </summary>
+		/// <returns> the associated filter resources </returns>
+		SheetFilterResources FilterResources { get; }
 	}
 
 }

@@ -1,7 +1,7 @@
 ﻿//    #[license]
 //    SmartsheetClient SDK for C#
 //    %%
-//    Copyright (C) 2014 SmartsheetClient
+//    Copyright (C) 2018 SmartsheetClient
 //    %%
 //    Licensed under the Apache License, Version 2.0 (the "License");
 //    you may not use this file except in compliance with the License.
@@ -16,50 +16,18 @@
 //    limitations under the License.
 //    %[license]
 
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
 namespace Smartsheet.Api.Models
 {
 	/// <summary>
-	/// Represents operator.
+	/// The target for the filter query
 	/// </summary>
-	public enum CriteriaOperator
+	public enum CriteriaTarget
 	{
-		EQUAL,
-		NOT_EQUAL,
-		GREATER_THAN,
-		GREATER_THAN_OR_EQUAL,
-		LESS_THAN,
-		LESS_THAN_OR_EQUAL,
-		CONTAINS,
-		DOES_NOT_CONTAIN,
-		BETWEEN,
-		NOT_BETWEEN,
-		TODAY,
-		NOT_TODAY,
-		PAST,
-		NOT_PAST,
-		FUTURE,
-		NOT_FUTURE,
-		LAST_N_DAYS,
-		NOT_LAST_N_DAYS,
-		NEXT_N_DAYS,
-		NOT_NEXT_N_DAYS,
-		IS_BLANK,
-		IS_NOT_BLANK,
-		IS_NUMBER,
-		IS_NOT_NUMBER,
-		IS_DATE,
-		IS_NOT_DATE,
-		IS_CHECKED,
-		IS_NOT_CHECKED,
-		IS_ONE_OF,
-		IS_NOT_ONE_OF,
-		IS_CURRENT_USER,
-		IS_NOT_CURRENT_USER,
-		ON_CRITICAL_PATH,
-		NOT_ON_CRITICAL_PATH,
-		HAS_ATTACHMENTS,
-		NO_ATTACHMENTS,
-		HAS_COMMENTS,
-		NO_COMMENTS
+		ROW
 	}
 }

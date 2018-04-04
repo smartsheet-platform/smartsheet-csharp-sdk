@@ -48,6 +48,11 @@ namespace Smartsheet.Api.Models
 		FILTERS,
 
 		/// <summary>
+		/// Includes column filter definitions
+		/// </summary>
+		FILTER_DEFINITIONS,
+
+		/// <summary>
 		/// Includes the owner’s email address and user ID for each sheet.
 		/// </summary>
 		OWNER_INFO,

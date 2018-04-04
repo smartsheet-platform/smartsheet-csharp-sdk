@@ -104,20 +104,49 @@ namespace Smartsheet.Api.Models
 		/// </summary>
 		private long? totalRowCount;
 
+		/// <summary>
+		/// Represents the effective attachment options
+		/// </summary>
 		private IList<AttachmentType> effectiveAttachmentOptions;
 
+		/// <summary>
+		/// A flag that indicates if resource management is enabled for a sheet
+		/// </summary>
 		private bool? resourceManagementEnabled;
 
+		/// <summary>
+		/// Identified if the sheet is marked as favorite
+		/// </summary>
 		private bool? favorite;
 
+		/// <summary>
+		/// Identifies if it is enabled to show parent rows for filters.
+		/// </summary>
 		private bool? showParentRowsForFilters;
 
+		/// <summary>
+		/// List of sheet filters
+		/// </summary>
+		private IList<SheetFilter> filters;
+		
+		/// <summary>
+		/// Represents the user settings
+		/// </summary>
 		private SheetUserSettings userSettings;
 
+		/// <summary>
+		/// Represents the source of the sheet
+		/// </summary>
 		private Source source;
 
+		/// <summary>
+		/// Represents the owner of the sheet
+		/// </summary>
 		private string owner;
 
+		/// <summary>
+		/// Represents the owner id of the owner
+		/// </summary>
 		private long? ownerId;
 
 		/// <summary>
@@ -465,6 +494,17 @@ namespace Smartsheet.Api.Models
 		{
 			get { return showParentRowsForFilters; }
 			set { showParentRowsForFilters = value; }
+		}
+
+
+		/// <summary>
+		/// Get the list of sheet filters for this sheet.
+		/// </summary>
+		/// <returns> the list of sheet filters </returns>
+		public virtual IList<SheetFilter> Filters
+		{
+			get { return filters; }
+			set { filters = value; }
 		}
 
 

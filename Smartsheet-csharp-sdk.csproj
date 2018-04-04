@@ -76,6 +76,7 @@
     <Compile Include="main\Smartsheet\Api\Internal\Json\CellObjectTypeConverter.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\Json\ErrorTypeConverter.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\Json\ObjectValueTypeConverter.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\SheetFilterResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\SheetUpdateRequestResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\SightResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\TokenResourcesImpl.cs" />
@@ -84,6 +85,7 @@
     <Compile Include="main\Smartsheet\Api\Models\BulkItemFailure.cs" />
     <Compile Include="main\Smartsheet\Api\Models\BulkItemRowResult.cs" />
     <Compile Include="main\Smartsheet\Api\Models\CellDataItem.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\CriteriaTarget.cs" />
     <Compile Include="main\Smartsheet\Api\Models\DayDescriptor.cs" />
     <Compile Include="main\Smartsheet\Api\Models\DayOrdinal.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Duration.cs" />
@@ -95,6 +97,10 @@
     <Compile Include="main\Smartsheet\Api\Models\Schedule.cs" />
     <Compile Include="main\Smartsheet\Api\Models\ScheduleType.cs" />
     <Compile Include="main\Smartsheet\Api\Models\SentUpdateRequest.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\SheetFilter.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\SheetFilterDetails.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\SheetFilterOperator.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\SheetFilterType.cs" />
     <Compile Include="main\Smartsheet\Api\Models\SightPublish.cs" />
     <Compile Include="main\Smartsheet\Api\Models\UpdateRequestStatus.cs" />
     <Compile Include="main\Smartsheet\Api\Models\WebhookSharedSecret.cs" />
@@ -122,6 +128,7 @@
     <Compile Include="main\Smartsheet\Api\Models\Widget.cs" />
     <Compile Include="main\Smartsheet\Api\Models\WidgetContent.cs" />
     <Compile Include="main\Smartsheet\Api\Models\WidgetType.cs" />
+    <Compile Include="main\Smartsheet\Api\SheetFilterResources.cs" />
     <Compile Include="main\Smartsheet\Api\SheetUpdateRequestResources.cs" />
     <Compile Include="main\Smartsheet\Api\SightResources.cs" />
     <Compile Include="main\Smartsheet\Api\TokenResources.cs" />
@@ -231,7 +238,6 @@
     <Compile Include="main\Smartsheet\Api\Models\DiscussionParentType.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Email.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Error.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\Filter.cs" />
     <Compile Include="main\Smartsheet\Api\Models\FilterType.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Favorite.cs" />
     <Compile Include="main\Smartsheet\Api\Models\FeatureInfo.cs" />

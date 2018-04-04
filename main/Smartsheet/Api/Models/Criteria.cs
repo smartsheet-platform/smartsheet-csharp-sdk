@@ -1,7 +1,7 @@
 ﻿//    #[license]
 //    SmartsheetClient SDK for C#
 //    %%
-//    Copyright (C) 2014 SmartsheetClient
+//    Copyright (C) 2014-2018 SmartsheetClient
 //    %%
 //    Licensed under the Apache License, Version 2.0 (the "License");
 //    you may not use this file except in compliance with the License.
@@ -28,6 +28,10 @@ namespace Smartsheet.Api.Models
 	/// </summary>
 	public class Criteria
 	{
+		/// <summary>
+		/// column ID
+		/// </summary>
+		private long? columnId;
 
 		/// <summary>
 		/// Represents the Text for the Comment. </summary>
@@ -35,14 +39,23 @@ namespace Smartsheet.Api.Models
 		private CriteriaOperator? operatorCriteria;
 
 		/// <summary>
-		/// Optional. Present if a custom filter criteria’s operator has two arguments.
+		/// The target for the filter query (currently only ROW for row filters)
 		/// </summary>
-		private object value1;
+		private CriteriaTarget? target;
 
 		/// <summary>
-		/// Optional. Present if a custom filter criteria’s operator has two arguments.
+		/// Present if a custom filter criteria's operator has one or more arguments
 		/// </summary>
-		private object value2;
+		private IList<object> values;
+
+		/// <summary>
+		/// Gets the column ID
+		/// </summary>
+		public long? ColumnId
+		{
+			get { return columnId;  }
+			set { columnId = value; }
+		}
 
 		/// <summary>
 		/// The Criteria Operator
@@ -54,21 +67,21 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// Present if a custom filter criteria’s operator has one or more arguments.
+		/// Gets the criteria target
 		/// </summary>
-		public object Value1
+		public CriteriaTarget? Target
 		{
-			get { return value1; }
-			set { value1 = value; }
+			get { return target; }
+			set { target = value; }
 		}
 
 		/// <summary>
-		/// Present if a custom filter criteria’s operator has two arguments.
+		/// Gets the values if this criteria's operator has arguments
 		/// </summary>
-		public object Value2
+		public IList<object> Values
 		{
-			get { return value2; }
-			set { value2 = value; }
+			get { return values; }
+			set { values = value; }
 		}
 	}
 }

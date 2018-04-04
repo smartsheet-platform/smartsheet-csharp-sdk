@@ -90,6 +90,12 @@ namespace Smartsheet.Api.Internal
 		/// It will be initialized in constructor and will not change afterwards.
 		/// </summary>
 		private SheetUpdateRequestResources updateRequests;
+		/// <summary>
+		/// Represents the associated SheetFilterResources.
+		/// 
+		/// It will be initialized in constructor and will not change afterwards.
+		/// </summary>
+		private SheetFilterResources filters;
 
 		/// <summary>
 		/// Constructor.
@@ -107,6 +113,7 @@ namespace Smartsheet.Api.Internal
 			this.discussions = new SheetDiscussionResourcesImpl(smartsheet);
 			this.comments = new SheetCommentResourcesImpl(smartsheet);
 			this.updateRequests = new SheetUpdateRequestResourcesImpl(smartsheet);
+			this.filters = new SheetFilterResourcesImpl(smartsheet);
 		}
 
 		/// <summary>
@@ -615,6 +622,18 @@ namespace Smartsheet.Api.Internal
 			get
 			{
 				return this.updateRequests;
+			}
+		}
+
+		/// <summary>
+		/// Returns the FilterResources object that provides access to filter resources associated with Sheet resources.
+		/// </summary>
+		/// <returns> the associated filter resources </returns>
+		public SheetFilterResources FilterResources
+		{
+			get
+			{
+				return this.filters;
 			}
 		}
 
