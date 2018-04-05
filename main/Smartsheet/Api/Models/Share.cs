@@ -31,16 +31,34 @@ namespace Smartsheet.Api.Models
 		//For now, we are overiding ID.
 		private string id;
 
+		/// <summary>
+		/// Indicates what type of share this is
+		/// </summary>
 		private ShareType? type;
 
+		/// <summary>
+		/// Represents the userId if the share is of type USER
+		/// </summary>
 		private long? userId;
 
+		/// <summary>
+		/// Represents the groupId if the share is of type GROUP
+		/// </summary>
 		private long? groupId;
 
+		/// <summary>
+		/// Represents the subject of the email that will optionally be sent to notify the recipient
+		/// </summary>
 		private string subject;
 
+		/// <summary>
+		/// Represents the message to be included in the body of the email
+		/// </summary>
 		private string message;
 
+		/// <summary>
+		/// Represents the flag to indicate whether or not to send a copy of the email to the sharer
+		/// </summary>
 		private bool? ccMe;
 
 		/// <summary>
@@ -76,14 +94,8 @@ namespace Smartsheet.Api.Models
 		/// <returns> the access level </returns>
 		public virtual AccessLevel? AccessLevel
 		{
-			get
-			{
-				return accessLevel;
-			}
-			set
-			{
-				this.accessLevel = value;
-			}
+			get { return accessLevel; }
+			set	{ this.accessLevel = value;	}
 		}
 
 		/// <summary>
@@ -92,14 +104,8 @@ namespace Smartsheet.Api.Models
 		/// <returns> the Email </returns>
 		public virtual string Email
 		{
-			get
-			{
-				return email;
-			}
-			set
-			{
-				this.email = value;
-			}
+			get { return email; }
+			set	{ this.email = value; }
 		}
 
 		/// <summary>
@@ -184,14 +190,8 @@ namespace Smartsheet.Api.Models
 		/// <returns> the DateTime </returns>
 		public virtual DateTime? CreatedAt
 		{
-			get
-			{
-				return createdAt;
-			}
-			set
-			{
-				this.createdAt = value;
-			}
+			get	{ return createdAt;	}
+			set	{ this.createdAt = value; }
 		}
 
 		/// <summary>
@@ -200,14 +200,8 @@ namespace Smartsheet.Api.Models
 		/// <returns> the DateTime </returns>
 		public virtual DateTime? ModifiedAt
 		{
-			get
-			{
-				return modifiedAt;
-			}
-			set
-			{
-				this.modifiedAt = value;
-			}
+			get	{ return modifiedAt; }
+			set	{ this.modifiedAt = value; }
 		}
 
 		/// <summary>
@@ -447,5 +441,4 @@ namespace Smartsheet.Api.Models
 			}
 		}
 	}
-
 }
