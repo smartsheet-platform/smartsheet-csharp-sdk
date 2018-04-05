@@ -34,6 +34,9 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// Represents the Comments for the discussion. </summary>
 		private IList<Comment> comments;
+
+		/// <summary>
+		/// Represents the comment for the discussion (outbound only - singular "comment") </summary>
 		private Comment comment;
 
 		/// <summary>
@@ -53,14 +56,24 @@ namespace Smartsheet.Api.Models
 		/// Represents the last user that left a Comment in the discussion. </summary>
 		private User lastCommentedUser;
 
+		/// <summary>
+		/// Users permission on the Discussion </summary>
 		private AccessLevel? accessLevel;
 
+		/// <summary>
+		/// Represents the ID of the directly associated row or sheet </summary>
 		private long? parentId;
 
+		/// <summary>
+		/// Represents the "SHEET" or "ROW": present only when the direct association is not clear </summary>
 		private DiscussionParentType? parentType;
 
+		/// <summary>
+		/// Represents the User object containing name and email of the creator of the Discussion </summary>
 		private User createdBy;
 
+		/// <summary>
+		/// Represents the read only status of the Discussion </summary>
 		private bool? readOnly;
 
 
@@ -109,11 +122,6 @@ namespace Smartsheet.Api.Models
 			}
 			set
 			{
-				// To keep the Comments variable in sync
-				IList<Comment> comments = new List<Comment>();
-				comments.Add(value);
-				this.comments = comments;
-
 				this.comment = value;
 			}
 		}
@@ -302,11 +310,6 @@ namespace Smartsheet.Api.Models
 			/// <returns> the discussion </returns>
 			public virtual Discussion Build()
 			{
-				//if (title == null || comment == null)
-				//{
-				//	throw new MemberAccessException("A title and comment is required.");
-				//}
-
 				Discussion discussion = new Discussion();
 				discussion.title = title;
 				discussion.comment = comment;
@@ -314,5 +317,4 @@ namespace Smartsheet.Api.Models
 			}
 		}
 	}
-
 }
