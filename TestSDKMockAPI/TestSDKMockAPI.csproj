@@ -49,6 +49,7 @@
     <Compile Include="SheetTests.cs" />
     <Compile Include="RowTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SightsTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Smartsheet-csharp-sdk.csproj">

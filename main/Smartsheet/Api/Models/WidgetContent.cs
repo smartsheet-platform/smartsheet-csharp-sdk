@@ -57,6 +57,11 @@ namespace Smartsheet.Api.Models
 		private string format;
 
 		/// <summary>
+		/// Represents the TitleWidgetContent object
+		/// </summary>
+		private string backgroundColor;
+
+		/// <summary>
 		/// The widget has when clicked attribute set to that hyperlink (if present and non-null).
 		/// </summary>
 		/// <returns> the Link </returns>
@@ -230,6 +235,22 @@ namespace Smartsheet.Api.Models
 			{
 				this.format = value;
 			}
-		}	
+		}
+
+		/// <summary>
+		/// Gets the background color of a title widget
+		/// </summary>
+		/// <returns> the background color </returns>
+		public string BackgroundColor
+		{
+			get
+			{
+				return backgroundColor;
+			}
+			set
+			{
+				this.backgroundColor = value;
+			}
+		}
 	}
 }
