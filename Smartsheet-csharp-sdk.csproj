@@ -102,6 +102,9 @@
     <Compile Include="main\Smartsheet\Api\Models\SheetFilterOperator.cs" />
     <Compile Include="main\Smartsheet\Api\Models\SheetFilterType.cs" />
     <Compile Include="main\Smartsheet\Api\Models\SightPublish.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\SortCriterion.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\SortDirection.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\SortSpecifier.cs" />
     <Compile Include="main\Smartsheet\Api\Models\UpdateRequestStatus.cs" />
     <Compile Include="main\Smartsheet\Api\Models\WebhookSharedSecret.cs" />
     <Compile Include="main\Smartsheet\Api\Models\WebhookStatus.cs" />

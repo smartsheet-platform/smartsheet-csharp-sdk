@@ -23,6 +23,7 @@ namespace IntegrationTestSDK
 			UpdateSheet(smartsheet, sheetId);
 			UpdatePublishSheetStatus(smartsheet, sheetId);
 			GetSheetAsPDF(smartsheet, sheetId);
+			SortSheet(smartsheet, sheetId);
 			DeleteSheet(smartsheet, sheetId);
 		}
 
@@ -77,7 +78,28 @@ namespace IntegrationTestSDK
 			Sheet createdSheet = smartsheet.SheetResources.CreateSheet(new Sheet.CreateSheetBuilder("new sheet", columnsToCreate).Build());
 			Assert.IsTrue(createdSheet.Columns.Count == 3);
 			Assert.IsTrue(createdSheet.Columns[1].Title == "col 2");
+
+			Cell cellA = new Cell.AddCellBuilder((long)createdSheet.Columns[0].Id, true).SetValue("A").SetStrict(false).Build();
+			Cell cellB = new Cell.AddCellBuilder((long)createdSheet.Columns[0].Id, true).SetValue("B").SetStrict(false).Build();
+			Cell cellC = new Cell.AddCellBuilder((long)createdSheet.Columns[0].Id, true).SetValue("C").SetStrict(false).Build();
+			Row rowA = new Row.AddRowBuilder(true, null, null, null, null).SetCells(new Cell[] { cellA }).Build();
+			Row rowB = new Row.AddRowBuilder(true, null, null, null, null).SetCells(new Cell[] { cellB }).Build();
+			Row rowC = new Row.AddRowBuilder(true, null, null, null, null).SetCells(new Cell[] { cellC }).Build();
+			smartsheet.SheetResources.RowResources.AddRows((long)createdSheet.Id, new Row[] { rowA, rowB, rowC });
+		
 			return createdSheet.Id.Value;
+		}
+
+		private static void SortSheet(SmartsheetClient smartsheet, long sheetId)
+		{
+			Sheet sheet = smartsheet.SheetResources.GetSheet(sheetId, null, null, null, null, null, null, null);
+			SortSpecifier specifier = new SortSpecifier();
+			SortCriterion criterion = new SortCriterion();
+			criterion.ColumnId = (long)sheet.Columns[0].Id;
+			criterion.Direction = SortDirection.DESCENDING;
+			specifier.SortCriteria = new SortCriterion[] { criterion };
+			sheet = smartsheet.SheetResources.SortSheet(sheetId, specifier);
+			Assert.AreEqual(sheet.Rows[0].Cells[0].DisplayValue, "C");
 		}
 	}
 }

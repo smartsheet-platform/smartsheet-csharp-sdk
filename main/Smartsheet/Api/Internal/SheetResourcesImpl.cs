@@ -35,6 +35,7 @@ namespace Smartsheet.Api.Internal
 	using Smartsheet.Api.Models;
 	using Smartsheet.Api.Internal.Util;
 	using System.Text;
+	using Smartsheet.Api.Internal.Http;
 
 	/// <summary>
 	/// This is the implementation of the SheetResources.
@@ -538,6 +539,90 @@ namespace Smartsheet.Api.Internal
 		}
 
 		/// <summary>
+		/// <para>Get the Status of the Publish settings of the sheet, including the URLs of any enabled publishings.</para>
+		/// 
+		/// <para>It mirrors To the following Smartsheet REST API method: GET /sheets/{sheetId}/publish</para>
+		/// </summary>
+		/// <param name="sheetId"> the sheetId </param>
+		/// <returns> the publish Status (note that if there is no such resource, this method will throw ResourceNotFoundException rather than returning null) </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public virtual SheetPublish GetPublishStatus(long sheetId)
+		{
+			return this.GetResource<SheetPublish>("sheets/" + sheetId + "/publish", typeof(SheetPublish));
+		}
+
+		/// <summary>
+		/// <para>Sets the publish Status of a sheet and returns the new Status, including the URLs of any enabled publishings.</para>
+		/// 
+		/// <para>It mirrors To the following Smartsheet REST API method: PUT /sheets/{sheetId}/publish</para>
+		/// </summary>
+		/// <param name="id"> the sheetId </param>
+		/// <param name="publish"> the SheetPublish object limited. </param>
+		/// <returns> the update SheetPublish object (note that if there is no such resource, this method will throw a 
+		/// ResourceNotFoundException rather than returning null). </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public virtual SheetPublish UpdatePublishStatus(long id, SheetPublish publish)
+		{
+			return this.UpdateResource("sheets/" + id + "/publish", typeof(SheetPublish), publish);
+		}
+
+		/// <summary>
+		/// <para>Sort a sheet according to the sort criteria.</para>
+		/// 
+		/// <para>It mirrors to the following Smartsheet REST API method: POST /sheets/{sheetId}/sort</para>
+		/// </summary>
+		/// <param name="id"> the sheetId </param>
+		/// <param name="sortSpecifier"> the sort criteria </param>
+		/// <returns> the Sheet (note that if there is no such resource, this method will throw a ResourceNotFoundException rather than returning null). </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public virtual Sheet SortSheet(long id, SortSpecifier sortSpecifier)
+		{
+			HttpRequest request = null;
+			try
+			{
+				request = CreateHttpRequest(new Uri(this.Smartsheet.BaseURI, "sheets/" + id + "/sort"), HttpMethod.POST);
+			}
+			catch (Exception e)
+			{
+				throw new SmartsheetException(e);
+			}
+
+			request.Entity = serializeToEntity<SortSpecifier>(sortSpecifier);
+
+			HttpResponse response = this.Smartsheet.HttpClient.Request(request);
+
+			Object obj = null;
+			switch (response.StatusCode)
+			{
+				case HttpStatusCode.OK:
+					obj = this.Smartsheet.JsonSerializer.deserialize<Sheet>(
+						response.Entity.GetContent());
+					break;
+				default:
+					HandleError(response);
+					break;
+			}
+
+			this.Smartsheet.HttpClient.ReleaseConnection();
+
+			return (Sheet)obj;
+		}
+
+		/// <summary>
 		/// Returns the ShareResources object that provides access To Share resources associated with Sheet resources.
 		/// </summary>
 		/// <returns> the ShareResources object </returns>
@@ -635,43 +720,6 @@ namespace Smartsheet.Api.Internal
 			{
 				return this.filters;
 			}
-		}
-
-		/// <summary>
-		/// <para>Get the Status of the Publish settings of the sheet, including the URLs of any enabled publishings.</para>
-		/// 
-		/// <para>It mirrors To the following Smartsheet REST API method: GET /sheets/{sheetId}/publish</para>
-		/// </summary>
-		/// <param name="sheetId"> the sheetId </param>
-		/// <returns> the publish Status (note that if there is no such resource, this method will throw ResourceNotFoundException rather than returning null) </returns>
-		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
-		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
-		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual SheetPublish GetPublishStatus(long sheetId)
-		{
-			return this.GetResource<SheetPublish>("sheets/" + sheetId + "/publish", typeof(SheetPublish));
-		}
-
-		/// <summary>
-		/// <para>Sets the publish Status of a sheet and returns the new Status, including the URLs of any enabled publishings.</para>
-		/// 
-		/// <para>It mirrors To the following Smartsheet REST API method: PUT /sheets/{sheetId}/publish</para>
-		/// </summary>
-		/// <param name="id"> the sheetId </param>
-		/// <param name="publish"> the SheetPublish object limited. </param>
-		/// <returns> the update SheetPublish object (note that if there is no such resource, this method will throw a 
-		/// ResourceNotFoundException rather than returning null). </returns>
-		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
-		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
-		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
-		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual SheetPublish UpdatePublishStatus(long id, SheetPublish publish)
-		{
-			return this.UpdateResource("sheets/" + id + "/publish", typeof(SheetPublish), publish);
 		}
 
 		/// <summary>

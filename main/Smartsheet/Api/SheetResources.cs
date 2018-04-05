@@ -403,6 +403,22 @@ namespace Smartsheet.Api
 		Sheet MoveSheet(long sheetId, ContainerDestination destination);
 
 		/// <summary>
+		/// <para>Sort a sheet according to the sort criteria.</para>
+		/// 
+		/// <para>It mirrors to the following Smartsheet REST API method: POST /sheets/{sheetId}/sort</para>
+		/// </summary>
+		/// <param name="id"> the sheetId </param>
+		/// <param name="sortSpecifier"> the sort criteria </param>
+		/// <returns> the Sheet (note that if there is no such resource, this method will throw a ResourceNotFoundException rather than returning null). </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		Sheet SortSheet(long sheetId, SortSpecifier sortSpecifier);
+
+		/// <summary>
 		/// <para>Returns the ShareResources object that provides access To Share resources associated with Sheet resources.</para>
 		/// </summary>
 		/// <returns> the share resources object </returns>
