@@ -465,10 +465,17 @@ namespace Smartsheet.Api
 		SheetUpdateRequestResources UpdateRequestResources { get; }
 
 		/// <summary>
-		/// Returns the FilterResources object that provides access to filter resources associated with Sheet resources.
+		/// <para>Returns the FilterResources object that provides access to filter resources associated with Sheet resources.</para>
 		/// </summary>
 		/// <returns> the associated filter resources </returns>
 		SheetFilterResources FilterResources { get; }
+
+		/// <summary>
+		/// <para>Returns the AutomationRuleResources object that provides access to automation rules resources associated with 
+		/// Sheet resources.</para>
+		/// </summary>
+		/// <returns> the associated filter resources </returns>
+		SheetAutomationRuleResources AutomationRuleResources { get; }
 	}
 
 }

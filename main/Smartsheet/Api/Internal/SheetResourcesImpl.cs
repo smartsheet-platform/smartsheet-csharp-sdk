@@ -97,6 +97,12 @@ namespace Smartsheet.Api.Internal
 		/// It will be initialized in constructor and will not change afterwards.
 		/// </summary>
 		private SheetFilterResources filters;
+		/// <summary>
+		/// Represents the associated SheetAutomationRulesResources.
+		/// 
+		/// It will be initialized in constructor and will not change afterwards.
+		/// </summary>
+		private SheetAutomationRuleResources automationRules;
 
 		/// <summary>
 		/// Constructor.
@@ -115,6 +121,7 @@ namespace Smartsheet.Api.Internal
 			this.comments = new SheetCommentResourcesImpl(smartsheet);
 			this.updateRequests = new SheetUpdateRequestResourcesImpl(smartsheet);
 			this.filters = new SheetFilterResourcesImpl(smartsheet);
+			this.automationRules = new SheetAutomationRuleResourcesImpl(smartsheet);
 		}
 
 		/// <summary>
@@ -719,6 +726,18 @@ namespace Smartsheet.Api.Internal
 			get
 			{
 				return this.filters;
+			}
+		}
+
+		/// <summary>
+		/// Returns the AutomationRuleResources object that provides access to automation rule resources associated with Sheet resources.
+		/// </summary>
+		/// <returns> the associated filter resources </returns>
+		public SheetAutomationRuleResources AutomationRuleResources
+		{
+			get
+			{
+				return this.automationRules;
 			}
 		}
 

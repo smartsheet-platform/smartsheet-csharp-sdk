@@ -76,12 +76,18 @@
     <Compile Include="main\Smartsheet\Api\Internal\Json\CellObjectTypeConverter.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\Json\ErrorTypeConverter.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\Json\ObjectValueTypeConverter.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\SheetAutomationRuleResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\SheetFilterResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\SheetUpdateRequestResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\SightResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\TokenResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\WebhookResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Models\AlternateEmail.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\AutomationAction.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\AutomationActionFrequency.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\AutomationActionType.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\AutomationRule.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\AutomationRuleDisabledReason.cs" />
     <Compile Include="main\Smartsheet\Api\Models\BulkItemFailure.cs" />
     <Compile Include="main\Smartsheet\Api\Models\BulkItemRowResult.cs" />
     <Compile Include="main\Smartsheet\Api\Models\CellDataItem.cs" />
@@ -131,6 +137,7 @@
     <Compile Include="main\Smartsheet\Api\Models\Widget.cs" />
     <Compile Include="main\Smartsheet\Api\Models\WidgetContent.cs" />
     <Compile Include="main\Smartsheet\Api\Models\WidgetType.cs" />
+    <Compile Include="main\Smartsheet\Api\SheetAutomationRuleResources.cs" />
     <Compile Include="main\Smartsheet\Api\SheetFilterResources.cs" />
     <Compile Include="main\Smartsheet\Api\SheetUpdateRequestResources.cs" />
     <Compile Include="main\Smartsheet\Api\SightResources.cs" />
