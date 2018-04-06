@@ -50,6 +50,8 @@ namespace Smartsheet.Api.Internal.Json
 			serializerHelper.MissingMemberHandling = Newtonsoft.Json.MissingMemberHandling.Ignore;
 			serializerHelper.DateFormatHandling = Newtonsoft.Json.DateFormatHandling.IsoDateFormat;
 			serializerHelper.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
+			serializerHelper.Converters.Add(new ObjectValueTypeConverter());
+			serializerHelper.Converters.Add(new JsonEnumTypeConverter());
 			serializerHelper.ContractResolver = new ContractResolver();
 
 			Cell cell = (Cell)value;

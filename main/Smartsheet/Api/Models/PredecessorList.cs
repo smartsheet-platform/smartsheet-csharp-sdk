@@ -20,12 +20,36 @@ using System.Collections.Generic;
 
 namespace Smartsheet.Api.Models
 {
-	public interface ObjectValue
+	public class PredecessorList : ObjectValue
 	{
+		private IList<Predecessor> predecessors;
+
+		public PredecessorList() { }
+		public PredecessorList(IList<Predecessor> predecessors)
+		{
+			this.predecessors = predecessors;
+		}
+
 		/// <summary>
-		/// Gets the objectValue Type.
+		/// Gets the array of Predecessor objects.
 		/// </summary>
-		/// <returns> the Type </returns>
-		ObjectValueType ObjectType { get; }
+		/// <returns> the array </returns>
+		public virtual IList<Predecessor> Predecessors
+		{
+			get
+			{
+				return predecessors;
+			}
+			set
+			{
+				this.predecessors = value;
+			}
+		}
+
+		public virtual ObjectValueType ObjectType
+		{
+			get { return ObjectValueType.PREDECESSOR_LIST; }
+		}
 	}
 }
+

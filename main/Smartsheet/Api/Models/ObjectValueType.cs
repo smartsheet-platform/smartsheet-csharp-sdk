@@ -20,34 +20,14 @@ namespace Smartsheet.Api.Models
 {
 	public enum ObjectValueType
 	{
-		/// <summary>
-		/// DATE
-		/// </summary>
 		DATE,
-		
-		/// <summary>
-		/// DATETIME
-		/// </summary>
 		DATETIME,
-		
-		/// <summary>
-		/// ABSTRACT_DATETIME
-		/// </summary>
 		ABSTRACT_DATETIME,
-		
-		/// <summary>
-		/// CONTACT
-		/// </summary>
 		CONTACT,
-		
-		/// <summary>
-		/// DURATION
-		/// </summary>
 		DURATION,
-		
-		/// <summary>
-		/// PREDECESSOR_LIST
-		/// </summary>
-		PREDECESSOR_LIST
+		PREDECESSOR_LIST,
+		NUMBER,
+		BOOLEAN,
+		STRING
 	}
 }

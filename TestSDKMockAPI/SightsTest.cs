@@ -21,7 +21,7 @@ namespace TestSDKMockAPI
 		}
 
 		[TestMethod]
-		public void GetAutomationRule()
+		public void GetSight()
 		{
 			SmartsheetClient ss = HelperFunctions.SetupClient("Get Sight");
 			Sight sight = ss.SightResources.GetSight(52);

@@ -1,7 +1,7 @@
 ﻿//    #[license]
 //    SmartsheetClient SDK for C#
 //    %%
-//    Copyright (C) 2014 SmartsheetClient
+//    Copyright (C) 2018 SmartsheetClient
 //    %%
 //    Licensed under the Apache License, Version 2.0 (the "License");
 //    you may not use this file except in compliance with the License.
@@ -16,16 +16,31 @@
 //    limitations under the License.
 //    %[license]
 
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
 namespace Smartsheet.Api.Models
 {
-	public interface ObjectValue
+	class NumberObjectValue : PrimitiveObjectValue<double>
 	{
-		/// <summary>
-		/// Gets the objectValue Type.
-		/// </summary>
-		/// <returns> the Type </returns>
-		ObjectValueType ObjectType { get; }
+		private double value;
+
+		public NumberObjectValue(double value)
+		{
+			this.value = value;
+		}
+
+		public virtual double Value
+		{
+			get { return this.value; }
+			set { this.value = value; }
+		}
+
+		public virtual ObjectValueType ObjectType
+		{
+			get { return ObjectValueType.NUMBER; }
+		}
 	}
 }

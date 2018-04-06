@@ -402,7 +402,7 @@ namespace TestSDKMockAPI
         [TestMethod]
         public void AddRows_AssignObjectValue_PredecessorList()
         {
-            SmartsheetClient ss = HelperFunctions.SetupClient("Add Rows - Assign Object Value - Predecessor List");
+            SmartsheetClient ss = HelperFunctions.SetupClient("Add Rows - Assign Object Value - Predecessor List (using floats)");
 
             Row rowA = new Row
             {
@@ -411,9 +411,8 @@ namespace TestSDKMockAPI
                     new Cell
                     {
                         ColumnId = 101,
-                        ObjectValue = new ObjectValue
+                        ObjectValue = new PredecessorList
                         {
-                            ObjectType = ObjectValueType.PREDECESSOR_LIST,
                             Predecessors = new List<Predecessor>
                             {
                                 new Predecessor
@@ -422,9 +421,7 @@ namespace TestSDKMockAPI
                                     Type = "FS",
                                     Lag = new Duration
                                     {
-                                        ObjectType = "DURATION",
-                                        Days = 2,
-                                        Hours = 4
+                                        Days = 2.5
                                     }
                                 }
                             }
@@ -436,7 +433,7 @@ namespace TestSDKMockAPI
             IList<Row> addedRows = ss.SheetResources.RowResources.AddRows(1, new Row[] { rowA });
 
             Cell predecessorCell = addedRows[0].Cells.Single(c => c.ColumnId == 101);
-            Assert.AreEqual("2FS +2d 4h", predecessorCell.Value);
+            Assert.AreEqual("2FS +2.5d", predecessorCell.Value);
         }
 
         

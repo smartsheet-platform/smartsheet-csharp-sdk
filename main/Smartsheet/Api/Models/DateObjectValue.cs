@@ -1,7 +1,7 @@
 ﻿//    #[license]
 //    SmartsheetClient SDK for C#
 //    %%
-//    Copyright (C) 2014 SmartsheetClient
+//    Copyright (C) 2018 SmartsheetClient
 //    %%
 //    Licensed under the Apache License, Version 2.0 (the "License");
 //    you may not use this file except in compliance with the License.
@@ -16,16 +16,38 @@
 //    limitations under the License.
 //    %[license]
 
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
 namespace Smartsheet.Api.Models
 {
-	public interface ObjectValue
+	class DateObjectValue : ObjectValue
 	{
-		/// <summary>
-		/// Gets the objectValue Type.
-		/// </summary>
-		/// <returns> the Type </returns>
-		ObjectValueType ObjectType { get; }
+		private string value;
+		private ObjectValueType objectType;
+
+		public DateObjectValue(ObjectValueType objectType, string value)
+		{
+			this.objectType = objectType;
+			this.value = value;
+		}
+
+		public string Value
+		{
+			get { return this.value; }
+			set { this.value = value; }
+		}
+
+		public DateTime ToDate()
+		{
+			return DateTime.Parse(this.value);
+		}
+
+		public virtual ObjectValueType ObjectType
+		{
+			get { return objectType; }
+		}
 	}
 }
