@@ -59,6 +59,11 @@ namespace Smartsheet.Api.Models
 		private IList<Template> templates;
 
 		/// <summary>
+		/// Represents the Sights contained in the folder.
+		/// </summary>
+		private IList<Sight> sights;
+
+		/// <summary>
 		/// Gets and Sets the whether this Folder is favorited.
 		/// </summary>
 		/// <returns> the Sheets </returns>
@@ -142,6 +147,22 @@ namespace Smartsheet.Api.Models
 			}
 		}
 
+		/// <summary>
+		/// Gets the Sights contained in this folder.
+		/// </summary>
+		/// <returns> the Sights </returns>
+		public virtual IList<Sight> Sights
+		{
+			get
+			{
+				return sights;
+			}
+			set
+			{
+				this.sights = value;
+			}
+		}
+		
 		/// <summary>
 		/// A convenience class for setting up a folder with the appropriate fields for updating the folder.
 		/// </summary>
