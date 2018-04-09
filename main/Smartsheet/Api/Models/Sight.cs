@@ -69,6 +69,11 @@ namespace Smartsheet.Api.Models
 		private Workspace workspace;
 
 		/// <summary>
+		/// The background color of the Sight
+		/// </summary>
+		private string backgroundColor;
+
+		/// <summary>
 		/// Get the number of Columns that the Sight contains.
 		/// </summary>
 		/// <returns> the columnCount </returns>
@@ -196,6 +201,22 @@ namespace Smartsheet.Api.Models
 			set
 			{
 				this.workspace = value;
+			}
+		}
+
+		/// <summary>
+		/// Get the background color of the Sight
+		/// </summary>
+		/// <returns> the background color </returns>
+		public virtual string BackgroundColor
+		{
+			get 
+			{ 
+				return backgroundColor; 
+			}
+			set
+			{
+				this.backgroundColor = value;
 			}
 		}
 	}
