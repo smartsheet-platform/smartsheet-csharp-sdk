@@ -29,6 +29,11 @@ namespace Smartsheet.Api.Models
 		PENDING,
 
 		/// <summary>
+		/// The request was canceled.
+		/// </summary>
+		CANCELED,
+
+		/// <summary>
 		/// Represents COMPLETE Status.
 		/// </summary>
 		COMPLETE
