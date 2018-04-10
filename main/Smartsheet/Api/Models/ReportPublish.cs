@@ -42,9 +42,17 @@ namespace Smartsheet.Api.Models
 		private string readOnlyFullUrl;
 
 		/// <summary>
-		/// <para>
+		/// Flag to show or hide the left nav toolbar for the read only report
+		/// </summary>
+		private bool? readOnlyFullShowToolbar;
+
+		/// <summary>
+		/// Default view for published reort (GRID, CARDS, CALENDAR)
+		/// </summary>
+		private string readOnlyFullDefaultView;
+
+		/// <summary>
 		/// If true, a rich version of the report is published with the ability to download row attachments and discussions
-		/// </para>
 		/// </summary>
 		public bool? ReadOnlyFullEnabled
 		{
@@ -53,13 +61,9 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// <para>
 		/// if "ALL", it is available to anyone who has the link.
 		/// if "ORG", it is available only to members of the report owner’s Smartsheet organization.
-		/// </para>
-		/// <para>
 		/// Only returned in a response if readOnlyFullEnabled = true.
-		/// </para>
 		/// </summary>
 		public string ReadOnlyFullAccessibleBy
 		{
@@ -68,17 +72,30 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// <para>
-		/// URL for 'Read-Only Full’ view of the published report
-		/// </para>
-		/// <para>
-		/// Only returned in a response if readOnlyFullEnabled = true.
-		/// </para>
+		/// URL for 'Read-Only Full’ view of the published report. Only returned in a response if readOnlyFullEnabled = true.
 		/// </summary>
 		public string ReadOnlyFullUrl
 		{
 			get { return readOnlyFullUrl; }
 			set { readOnlyFullUrl = value; }
-		}	
+		}
+
+		/// <summary>
+		/// The read only full show toolbar flag
+		/// </summary>
+		public bool? ReadOnlyFullShowToolbar
+		{
+			get { return readOnlyFullShowToolbar; }
+			set { readOnlyFullShowToolbar = value; }
+		}
+
+		/// <summary>
+		/// The read only full default view
+		/// </summary>
+		public string ReadOnlyFullDefaultView
+		{
+			get { return readOnlyFullDefaultView; }
+			set { readOnlyFullDefaultView = value; }
+		}
 	}
 }

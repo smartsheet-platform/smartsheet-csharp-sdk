@@ -80,19 +80,33 @@ namespace Smartsheet.Api.Models
 		private string icalUrl;
 
 		/// <summary>
+		/// Flag to show or hide the left nav toolbar for the read only sheet.
+		/// </summary>
+		private bool? readOnlyFullShowToolbar;
+
+		/// <summary>
+		/// Flag to show or hide the left nav toolbar for the read/write sheet.
+		/// </summary>
+		private bool? readWriteShowToolbar;
+
+		/// <summary>
+		/// Default view for read only published sheet. (GRID, CARDS, CALENDAR)
+		/// </summary>
+		private string readOnlyFullDefaultView;
+
+		/// <summary>
+		/// Default view for read write published sheet. (GRID, CARDS, CALENDAR)
+		/// </summary>
+		private string readWriteDefaultView;
+
+		/// <summary>
 		/// Gets the read only lite enabled flag.
 		/// </summary>
 		/// <returns> the read only lite enabled flag </returns>
 		public virtual bool? ReadOnlyLiteEnabled
 		{
-			get
-			{
-				return readOnlyLiteEnabled;
-			}
-			set
-			{
-				this.readOnlyLiteEnabled = value;
-			}
+			get	{ return readOnlyLiteEnabled; }
+			set	{ this.readOnlyLiteEnabled = value;	}
 		}
 
 
@@ -102,14 +116,8 @@ namespace Smartsheet.Api.Models
 		/// <returns> the read only full enabled flag </returns>
 		public virtual bool? ReadOnlyFullEnabled
 		{
-			get
-			{
-				return readOnlyFullEnabled;
-			}
-			set
-			{
-				this.readOnlyFullEnabled = value;
-			}
+			get	{ return readOnlyFullEnabled; }
+			set { this.readOnlyFullEnabled = value; }
 		}
 
 
@@ -119,14 +127,8 @@ namespace Smartsheet.Api.Models
 		/// <returns> the read write enabled flag </returns>
 		public virtual bool? ReadWriteEnabled
 		{
-			get
-			{
-				return readWriteEnabled;
-			}
-			set
-			{
-				this.readWriteEnabled = value;
-			}
+			get { return readWriteEnabled; }
+			set { this.readWriteEnabled = value; }
 		}
 
 
@@ -136,14 +138,8 @@ namespace Smartsheet.Api.Models
 		/// <returns> the ical enabled flag </returns>
 		public virtual bool? IcalEnabled
 		{
-			get
-			{
-				return icalEnabled;
-			}
-			set
-			{
-				this.icalEnabled = value;
-			}
+			get { return icalEnabled; }
+			set { this.icalEnabled = value; }
 		}
 
 
@@ -153,14 +149,8 @@ namespace Smartsheet.Api.Models
 		/// <returns> the access flag </returns>
 		public virtual string ReadOnlyFullAccessibleBy
 		{
-			get
-			{
-				return readOnlyFullAccessibleBy;
-			}
-			set
-			{
-				this.readOnlyFullAccessibleBy = value;
-			}
+			get { return readOnlyFullAccessibleBy; }
+			set { this.readOnlyFullAccessibleBy = value; }
 		}
 
 
@@ -170,14 +160,8 @@ namespace Smartsheet.Api.Models
 		/// <returns> the access flag </returns>
 		public virtual string ReadWriteAccessibleBy
 		{
-			get
-			{
-				return readWriteAccessibleBy;
-			}
-			set
-			{
-				this.readWriteAccessibleBy = value;
-			}
+			get { return readWriteAccessibleBy; }
+			set { this.readWriteAccessibleBy = value; }
 		}
 
 		/// <summary>
@@ -186,14 +170,8 @@ namespace Smartsheet.Api.Models
 		/// <returns> the read only lite Url flag </returns>
 		public virtual string ReadOnlyLiteUrl
 		{
-			get
-			{
-				return readOnlyLiteUrl;
-			}
-			set
-			{
-				this.readOnlyLiteUrl = value;
-			}
+			get { return readOnlyLiteUrl; }
+			set { this.readOnlyLiteUrl = value; }
 		}
 
 
@@ -203,14 +181,8 @@ namespace Smartsheet.Api.Models
 		/// <returns> the read only full Url </returns>
 		public virtual string ReadOnlyFullUrl
 		{
-			get
-			{
-				return readOnlyFullUrl;
-			}
-			set
-			{
-				this.readOnlyFullUrl = value;
-			}
+			get { return readOnlyFullUrl; }
+			set { this.readOnlyFullUrl = value;	}
 		}
 
 
@@ -220,14 +192,8 @@ namespace Smartsheet.Api.Models
 		/// <returns> the read write Url </returns>
 		public virtual string ReadWriteUrl
 		{
-			get
-			{
-				return readWriteUrl;
-			}
-			set
-			{
-				this.readWriteUrl = value;
-			}
+			get { return readWriteUrl; }
+			set { this.readWriteUrl = value; }
 		}
 
 
@@ -237,14 +203,51 @@ namespace Smartsheet.Api.Models
 		/// <returns> the ical Url </returns>
 		public virtual string IcalUrl
 		{
-			get
-			{
-				return icalUrl;
-			}
-			set
-			{
-				this.icalUrl = value;
-			}
+			get	{ return icalUrl; }
+			set	{ this.icalUrl = value;	}
+		}
+
+
+		/// <summary>
+		/// Get the read only full show toolbar flag
+		/// </summary>
+		/// <returns> the flag </returns>
+		public virtual bool? ReadOnlyFullShowToolbar
+		{
+			get { return readOnlyFullShowToolbar; }
+			set	{ readOnlyFullShowToolbar = value; }
+		}
+
+		
+		/// <summary>
+		/// Get the read/write show toolbar flag
+		/// </summary>
+		public virtual bool? ReadWriteShowToolbar
+		{
+			get	{ return readWriteShowToolbar; }
+			set	{ readWriteShowToolbar = value; }
+		}
+
+		
+		/// <summary>
+		/// Get the read only full default view
+		/// </summary>
+		/// <returns> Valid options are "GRID", "CARDS", "CALENDAR" </returns>
+		public virtual string ReadOnlyFullDefaultView
+		{
+			get { return readOnlyFullDefaultView; }
+			set { readOnlyFullDefaultView = value; }
+		}
+
+
+		/// <summary>
+		/// Get the read write default view
+		/// </summary>
+		/// <returns> Valid options are "GRID", "CARDS", "CALENDAR" </returns>
+		public virtual string ReadWriteDefaultView
+		{
+			get { return readWriteDefaultView; }
+			set { readWriteDefaultView = value; }
 		}
 
 
@@ -323,10 +326,7 @@ namespace Smartsheet.Api.Models
 			/// <returns> the read only lite enabled </returns>
 			public virtual bool? ReadOnlyLiteEnabled
 			{
-				get
-				{
-					return readOnlyLiteEnabled;
-				}
+				get { return readOnlyLiteEnabled; }
 			}
 
 			/// <summary>
@@ -335,10 +335,7 @@ namespace Smartsheet.Api.Models
 			/// <returns> the read only full enabled </returns>
 			public virtual bool? ReadOnlyFullEnabled
 			{
-				get
-				{
-					return readOnlyFullEnabled;
-				}
+				get { return readOnlyFullEnabled; }
 			}
 
 			/// <summary>
@@ -347,10 +344,7 @@ namespace Smartsheet.Api.Models
 			/// <returns> the read write enabled </returns>
 			public virtual bool? ReadWriteEnabled
 			{
-				get
-				{
-					return readWriteEnabled;
-				}
+				get { return readWriteEnabled; }
 			}
 
 			/// <summary>
@@ -359,10 +353,7 @@ namespace Smartsheet.Api.Models
 			/// <returns> the ical enabled </returns>
 			public virtual bool? IcalEnabled
 			{
-				get
-				{
-					return icalEnabled;
-				}
+				get	{ return icalEnabled; }
 			}
 
 			/// <summary>
