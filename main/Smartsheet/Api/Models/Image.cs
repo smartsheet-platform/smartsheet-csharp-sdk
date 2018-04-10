@@ -48,14 +48,8 @@ namespace Smartsheet.Api.Models
 		/// <returns> the Id </returns>
 		public virtual string Id
 		{
-			get
-			{
-				return id;
-			}
-			set
-			{
-				this.id = value;
-			}
+			get { return id; }
+			set	{ this.id = value; }
 		}
 
 		/// <summary>
@@ -82,14 +76,8 @@ namespace Smartsheet.Api.Models
 		/// <returns> the altText </returns>
 		public virtual string AltText
 		{
-			get
-			{
-				return altText;
-			}
-			set
-			{
-				this.altText = value;
-			}
+			get { return altText; }
+			set	{ this.altText = value;	}
 		}
 	}
 }

@@ -28,10 +28,19 @@ namespace Smartsheet.Api.Models
 	/// </summary>
 	public abstract class UserModel : IdentifiableModel
 	{
+		/// <summary>
+		/// Represents the email address.
+		/// </summary>
 		private string email;
 
+		/// <summary>
+		/// Represents the user's first name.
+		/// </summary>
 		private string firstName;
 
+		/// <summary>
+		/// Represents the user's last name.
+		/// </summary>
 		private string lastName;
 
 		/// <summary>
@@ -45,11 +54,6 @@ namespace Smartsheet.Api.Models
 		private bool? licensedSheetCreator;
 
 		/// <summary>
-		/// Represents the user Status (active, pending, declined).
-		/// </summary>
-		private UserStatus? status;
-
-		/// <summary>
 		/// Flag indicating whether the user is a resource viewer (can access resource views)
 		/// </summary>
 		private bool? resourceViewer;
@@ -58,6 +62,11 @@ namespace Smartsheet.Api.Models
 		/// Flag indicating whether the user is a group admin (can create and edit groups)
 		/// </summary>
 		private bool? groupAdmin;
+
+		/// <summary>
+		/// Represents the user Status (active, pending, declined).
+		/// </summary>
+		private UserStatus? status;
 
 		/// <summary>
 		/// An array of AlternateEmail objects representing the alternate email addresses associated with the User account
@@ -80,72 +89,39 @@ namespace Smartsheet.Api.Models
 		private DateTime? customWelcomeScreenViewed;
 
 		/// <summary>
-		/// Gets the Admin flag which allows managing Users and accounts.
+		/// Company name from the user's profile
 		/// </summary>
-		/// <returns> the Admin </returns>
-		public virtual bool? Admin
-		{
-			get
-			{
-				return admin;
-			}
-			set
-			{
-				this.admin = value;
-			}
-		}
-
+		private string company;
 
 		/// <summary>
-		/// Gets the licensed sheet creator flag that allows creating and owning Sheets.
+		/// Department name from the user's profile
 		/// </summary>
-		/// <returns> the licensed sheet creator </returns>
-		public virtual bool? LicensedSheetCreator
-		{
-			get
-			{
-				return licensedSheetCreator;
-			}
-			set
-			{
-				this.licensedSheetCreator = value;
-			}
-		}
-
+		private string department;
 
 		/// <summary>
-		/// Gets the Status of the user (active, pending, declined).
+		/// User's mobil phone number from the profile
 		/// </summary>
-		/// <returns> the Status </returns>
-		public virtual UserStatus? Status
-		{
-			get
-			{
-				return status;
-			}
-			set
-			{
-				this.status = value;
-			}
-		}
+		private string mobilePhone;
 
 		/// <summary>
-		/// Flag indicating whether the user is a resource viewer (can access resource views)
+		/// Link to the user's profile image
 		/// </summary>
-		public virtual bool? ResourceViewer
-		{
-			get { return resourceViewer; }
-			set { resourceViewer = value; }
-		}
+		private Image profileImage;
 
 		/// <summary>
-		/// Flag indicating whether the user is a group admin (can create and edit groups)
+		/// User's role
 		/// </summary>
-		public bool? GroupAdmin
-		{
-			get { return groupAdmin; }
-			set { groupAdmin = value; }
-		}
+		private string role;
+
+		/// <summary>
+		/// User's title
+		/// </summary>
+		private string title;
+
+		/// <summary>
+		/// Work phone number for the user's profile
+		/// </summary>
+		private string workPhone;
 
 		/// <summary>
 		/// Current user’s email address
@@ -174,6 +150,54 @@ namespace Smartsheet.Api.Models
 			set { lastName = value; }
 		}
 
+		/// <summary>
+		/// Gets the Admin flag which allows managing Users and accounts.
+		/// </summary>
+		/// <returns> the Admin </returns>
+		public virtual bool? Admin
+		{
+			get	{ return admin;	}
+			set	{ this.admin = value; }
+		}
+
+		/// <summary>
+		/// Gets the licensed sheet creator flag that allows creating and owning Sheets.
+		/// </summary>
+		/// <returns> the licensed sheet creator </returns>
+		public virtual bool? LicensedSheetCreator
+		{
+			get	{ return licensedSheetCreator; }
+			set	{ this.licensedSheetCreator = value; }
+		}
+
+		/// <summary>
+		/// Flag indicating whether the user is a resource viewer (can access resource views)
+		/// </summary>
+		public virtual bool? ResourceViewer
+		{
+			get { return resourceViewer; }
+			set { resourceViewer = value; }
+		}
+
+		/// <summary>
+		/// Flag indicating whether the user is a group admin (can create and edit groups)
+		/// </summary>
+		public bool? GroupAdmin
+		{
+			get { return groupAdmin; }
+			set { groupAdmin = value; }
+		}
+
+		/// <summary>
+		/// Gets the Status of the user (active, pending, declined).
+		/// </summary>
+		/// <returns> the Status </returns>
+		public virtual UserStatus? Status
+		{
+			get	{ return status; }
+			set	{ this.status = value; }
+		}
+		
 		/// <summary>
 		/// Get list of alternate email addresses associted with this User account
 		/// </summary>
@@ -208,6 +232,69 @@ namespace Smartsheet.Api.Models
 		{
 			get { return customWelcomeScreenViewed; }
 			set { customWelcomeScreenViewed = value; }
+		}
+
+		/// <summary>
+		/// Gets the user's company name
+		/// </summary>
+		public string Company
+		{
+			get { return company; }
+			set { this.company = value;  }
+		}
+
+		/// <summary>
+		/// Gets the user's department
+		/// </summary>
+		public string Department
+		{
+			get { return department; }
+			set { this.department = value; }
+		}
+
+		/// <summary>
+		/// Gets the user's mobile phone number
+		/// </summary>
+		public string MobilePhone
+		{
+			get { return mobilePhone; }
+			set { this.mobilePhone = value; }
+		}
+
+		/// <summary>
+		/// Gets a link to the user's profile image
+		/// </summary>
+		public Image ProfileImage
+		{
+			get { return profileImage; }
+			set { this.profileImage = value; }
+		}
+
+		/// <summary>
+		/// Gets the user's role
+		/// </summary>
+		public string Role
+		{
+			get { return role; }
+			set { this.role = value; }
+		}
+
+		/// <summary>
+		/// Get the user's title
+		/// </summary>
+		public string Title
+		{
+			get { return title; }
+			set { this.title = value; }
+		}
+
+		/// <summary>
+		/// Gets the user's work phone
+		/// </summary>
+		public string WorkPhone
+		{
+			get { return workPhone; }
+			set { this.workPhone = value; }
 		}
 	}
 }

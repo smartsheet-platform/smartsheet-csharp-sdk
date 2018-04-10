@@ -25,6 +25,8 @@ namespace Smartsheet.Api.Internal
 	using Smartsheet.Api.Internal.Util;
 	using System.Text;
 	using System.Net;
+	using System.IO;
+	using Smartsheet.Api.Internal.Http;
 	using HttpMethod = Api.Internal.Http.HttpMethod;
 	using HttpRequest = Api.Internal.Http.HttpRequest;
 	using HttpResponse = Api.Internal.Http.HttpResponse;
@@ -359,6 +361,76 @@ namespace Smartsheet.Api.Internal
 			return (AlternateEmail)obj;
 		}
 
+		/// <summary>
+		/// <para>Uploads a profile image for the specified user.</para>
+		/// </summary>
+		/// <param name="userId"> the Id of the user </param>
+		/// <param name="file"> path to the image file</param>
+		/// <param name="fileType">fileType content type of the image file</param>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public virtual User AddProfileImage(long userId, string file, string fileType)
+		{
+			return AttachProfileImage("users/" + userId + "/profileimage", file, fileType);
+		}
+
+		/// <summary>
+		/// Attach file.
+		/// </summary>
+		/// <param name="path"> the url path </param>
+		/// <param name="file"> the file </param>
+		/// <param name="contentType"> the content Type </param>
+		/// <returns> the attachment </returns>
+		/// <exception cref="FileNotFoundException"> the file not found exception </exception>
+		/// <exception cref="SmartsheetException"> the Smartsheet exception </exception>
+		private User AttachProfileImage(string path, string file, string contentType)
+		{
+			Utility.Utility.ThrowIfNull(file);
+
+			if (contentType == null)
+			{
+				contentType = "application/octet-stream";
+			}
+
+			FileInfo fi = new FileInfo(file);
+			HttpRequest request = CreateHttpRequest(new Uri(this.Smartsheet.BaseURI, path), HttpMethod.POST);
+
+			request.Headers["Content-Disposition"] = "attachment; filename=\"" + fi.Name + "\"";
+
+			HttpEntity entity = new HttpEntity();
+			entity.ContentType = contentType;
+
+			entity.Content = File.ReadAllBytes(file);
+			entity.ContentLength = fi.Length;
+			request.Entity = entity;
+
+			User obj = null;
+			HttpResponse response = this.Smartsheet.HttpClient.Request(request);
+
+			switch (response.StatusCode)
+			{
+				case HttpStatusCode.OK:
+					obj = this.smartsheet.JsonSerializer.deserializeResult<User>(
+						response.Entity.GetContent()).Result;
+					break;
+				default:
+					HandleError(response);
+					break;
+			}
+
+			this.Smartsheet.HttpClient.ReleaseConnection();
+			return obj;
+		}
+
+		/// <summary>
+		/// <para>Return the UserSheetResources object that provides access To sheets resources associated with
+		/// User resources.</para>
+		/// </summary>
+		/// <returns> the associated discussion resources </returns>
 		public virtual UserSheetResources SheetResources
 		{
 			get
