@@ -155,9 +155,14 @@ namespace Smartsheet.Api.Models
 		private ProjectSettings projectSettings;
 
 		/// <summary>
+		/// Get a list of cross sheet references used by this sheet
+		/// </summary>
+		private IList<CrossSheetReference> crossSheetReferences;
+
+		/// <summary>
 		/// Represents the email of the owner
 		/// </summary>
-		public string Owner
+		public virtual string Owner
 		{
 			get { return owner; }
 			set { owner = value; }
@@ -166,7 +171,7 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// Represents the Id of the Owner
 		/// </summary>
-		public long? OwnerId
+		public virtual long? OwnerId
 		{
 			get { return ownerId; }
 			set { ownerId = value; }
@@ -179,14 +184,8 @@ namespace Smartsheet.Api.Models
 		/// <returns> the dependencies enabled </returns>
 		public virtual bool? DependenciesEnabled
 		{
-			get
-			{
-				return dependenciesEnabled;
-			}
-			set
-			{
-				this.dependenciesEnabled = value;
-			}
+			get	{ return dependenciesEnabled; }
+			set	{ dependenciesEnabled = value;	}
 		}
 
 
@@ -244,14 +243,8 @@ namespace Smartsheet.Api.Models
 		/// <returns> the Columns </returns>
 		public virtual IList<TColumn> Columns
 		{
-			get
-			{
-				return columns;
-			}
-			set
-			{
-				this.columns = value;
-			}
+			get	{ return columns; }
+			set	{ columns = value;	}
 		}
 
 
@@ -261,14 +254,8 @@ namespace Smartsheet.Api.Models
 		/// <returns> the Rows </returns>
 		public virtual IList<TRow> Rows
 		{
-			get
-			{
-				return rows;
-			}
-			set
-			{
-				this.rows = value;
-			}
+			get	{ return rows; }
+			set	{ rows = value;	}
 		}
 
 
@@ -278,14 +265,8 @@ namespace Smartsheet.Api.Models
 		/// <returns> the access level </returns>
 		public virtual AccessLevel? AccessLevel
 		{
-			get
-			{
-				return accessLevel;
-			}
-			set
-			{
-				this.accessLevel = value;
-			}
+			get	{ return accessLevel; }
+			set	{ accessLevel = value;	}
 		}
 
 
@@ -295,14 +276,8 @@ namespace Smartsheet.Api.Models
 		/// <returns> the Discussions </returns>
 		public virtual IList<Discussion> Discussions
 		{
-			get
-			{
-				return discussions;
-			}
-			set
-			{
-				this.discussions = value;
-			}
+			get { return discussions; }
+			set	{ discussions = value;	}
 		}
 
 
@@ -312,14 +287,8 @@ namespace Smartsheet.Api.Models
 		/// <returns> the Attachments </returns>
 		public virtual IList<Attachment> Attachments
 		{
-			get
-			{
-				return attachments;
-			}
-			set
-			{
-				this.attachments = value;
-			}
+			get	{ return attachments; }
+			set	{ attachments = value;	}
 		}
 
 
@@ -329,14 +298,8 @@ namespace Smartsheet.Api.Models
 		/// <returns> the read only </returns>
 		public virtual bool? ReadOnly
 		{
-			get
-			{
-				return readOnly;
-			}
-			set
-			{
-				this.readOnly = value;
-			}
+			get	{ return readOnly; }
+			set	{ readOnly = value; }
 		}
 
 
@@ -346,14 +309,8 @@ namespace Smartsheet.Api.Models
 		/// <returns> the created at </returns>
 		public virtual DateTime? CreatedAt
 		{
-			get
-			{
-				return createdAt;
-			}
-			set
-			{
-				this.createdAt = value;
-			}
+			get	{ return createdAt;	}
+			set	{ createdAt = value; }
 		}
 
 
@@ -363,14 +320,8 @@ namespace Smartsheet.Api.Models
 		/// <returns> the modified at </returns>
 		public virtual DateTime? ModifiedAt
 		{
-			get
-			{
-				return modifiedAt;
-			}
-			set
-			{
-				this.modifiedAt = value;
-			}
+			get	{ return modifiedAt; }
+			set	{ modifiedAt = value; }
 		}
 
 
@@ -380,14 +331,8 @@ namespace Smartsheet.Api.Models
 		/// <returns> the Permalink </returns>
 		public virtual string Permalink
 		{
-			get
-			{
-				return permalink;
-			}
-			set
-			{
-				this.permalink = value;
-			}
+			get	{ return permalink;	}
+			set	{ permalink = value; }
 		}
 
 
@@ -397,14 +342,8 @@ namespace Smartsheet.Api.Models
 		/// <returns> the gantt enabled flag </returns>
 		public virtual bool? GanttEnabled
 		{
-			get
-			{
-				return ganttEnabled;
-			}
-			set
-			{
-				this.ganttEnabled = value;
-			}
+			get	{ return ganttEnabled; }
+			set { ganttEnabled = value; }
 		}
 
 
@@ -414,14 +353,8 @@ namespace Smartsheet.Api.Models
 		/// <returns> the Version </returns>
 		public virtual int? Version
 		{
-			get
-			{
-				return version;
-			}
-			set
-			{
-				this.version = value;
-			}
+			get	{ return version; }
+			set	{ version = value; }
 		}
 
 
@@ -431,14 +364,8 @@ namespace Smartsheet.Api.Models
 		/// <returns> the from Id </returns>
 		public virtual long? FromId
 		{
-			get
-			{
-				return fromId;
-			}
-			set
-			{
-				this.fromId = value;
-			}
+			get { return fromId; }
+			set	{ fromId = value; }
 		}
 
 
@@ -529,6 +456,7 @@ namespace Smartsheet.Api.Models
 			set { source = value; }
 		}
 
+
 		/// <summary>
 		/// Get Sheet’s project settings containing the working days, non-working days, and length of day for a project sheet
 		/// </summary>
@@ -536,6 +464,16 @@ namespace Smartsheet.Api.Models
 		{
 			get { return projectSettings; }
 			set { projectSettings = value; }
+		}
+
+		
+		/// <summary>
+		/// Get the list of cross sheet references used by this sheet
+		/// </summary>
+		public virtual IList<CrossSheetReference> CrossSheetReferences
+		{
+			get { return crossSheetReferences; }
+			set { crossSheetReferences = value; }
 		}
 	}
 }

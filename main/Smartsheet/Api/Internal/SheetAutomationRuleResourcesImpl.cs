@@ -60,7 +60,7 @@ namespace Smartsheet.Api.Internal
 
 		/// <summary>
 		/// <para>Get an automation rule for this Sheet.</para>
-		/// <para>It mirrors To the following Smartsheet REST API method: POST /sheets/{sheetId}/automationrules/{automationRuleId}</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: GET /sheets/{sheetId}/automationrules/{automationRuleId}</para>
 		/// </summary>
 		/// <param name="sheetId"> the id of the sheet </param>
 		/// <param name="automationRuleId"> the automation rule id </param>

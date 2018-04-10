@@ -474,8 +474,14 @@ namespace Smartsheet.Api
 		/// <para>Returns the AutomationRuleResources object that provides access to automation rules resources associated with 
 		/// Sheet resources.</para>
 		/// </summary>
-		/// <returns> the associated filter resources </returns>
+		/// <returns> the associated automation rule resources </returns>
 		SheetAutomationRuleResources AutomationRuleResources { get; }
-	}
 
+		/// <summary>
+		/// Returns the CrossSheetReferenceResources object that provides access to cross sheet reference resources associated 
+		/// with Sheet resources.
+		/// </summary>
+		/// <returns> the associated cross sheet reference resources </returns>
+		SheetCrossSheetReferenceResources CrossSheetReferenceResources { get; }
+	}
 }

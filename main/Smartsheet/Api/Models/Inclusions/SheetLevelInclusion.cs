@@ -80,6 +80,11 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// object representation of cell value
 		/// </summary>
-		OBJECT_VALUE
+		OBJECT_VALUE,
+
+		/// <summary>
+		/// cross sheet references
+		/// </summary>
+		CROSS_SHEET_REFERENCES
 	}
 }

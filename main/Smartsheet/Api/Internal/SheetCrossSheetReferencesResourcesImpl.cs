@@ -20,74 +20,80 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Smartsheet.Api.Models;
 
-namespace Smartsheet.Api
+namespace Smartsheet.Api.Internal
 {
-	/// <summary>
-	/// <para>This interface provides methods To access AutomationRule resources that are associated To a sheet object.</para>
-	/// 
-	/// <para>Thread Safety: Implementation of this interface must be thread safe.</para>
-	/// </summary>
-	public interface SheetAutomationRuleResources
+	using Smartsheet.Api.Models;
+	using Smartsheet.Api.Internal.Util;
+
+	public class SheetCrossSheetReferencesResourcesImpl : AbstractResources, SheetCrossSheetReferenceResources
 	{
+		public SheetCrossSheetReferencesResourcesImpl(SmartsheetImpl smartsheet): base(smartsheet)
+		{
+		}
+
 		/// <summary>
-		/// <para>Get all automation rules for this Sheet.</para>
-		/// <para>It mirrors To the following Smartsheet REST API method: POST /sheets/{sheetId}/automationrules</para>
+		/// <para>Get all cross sheet references for this Sheet.</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: POST /sheets/{sheetId}/crosssheetreferences</para>
 		/// </summary>
 		/// <param name="sheetId"> the id of the sheet </param>
 		/// <param name="pagination"> the pagination parameters </param>
-		/// <returns> a list of automation rules </returns>
+		/// <returns> a list of cross sheet references </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		PaginatedResult<AutomationRule> ListAutomationRules(long sheetId, PaginationParameters paging);
+		public PaginatedResult<CrossSheetReference> ListCrossSheetReferences(long sheetId, PaginationParameters paging)
+		{
+			IDictionary<string, string> parameters = new Dictionary<string, string>();
+			if (paging != null)
+			{
+				parameters = paging.toDictionary();
+			}
+
+			return this.ListResourcesWithWrapper<CrossSheetReference>("sheets/" + sheetId + "/crosssheetreferences" +
+				QueryUtil.GenerateUrl(null, parameters));
+		}
 
 		/// <summary>
-		/// <para>Get an automation rule for this Sheet.</para>
-		/// <para>It mirrors To the following Smartsheet REST API method: GET /sheets/{sheetId}/automationrules/{automationRuleId}</para>
+		/// <para>Get an cross sheet reference for this Sheet.</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: 
+		/// GET /sheets/{sheetId}/crosssheetreferences/{crosssheetreferenceId}</para>
 		/// </summary>
 		/// <param name="sheetId"> the id of the sheet </param>
-		/// <param name="automationRuleId"> the automation rule id </param>
-		/// <returns> the automation rule </returns>
+		/// <param name="crossSheetReferenceId"> the cross sheet reference id </param>
+		/// <returns> the cross sheet reference </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		AutomationRule GetAutomationRule(long sheetId, long automationRuleId);
+		public CrossSheetReference GetCrossSheetReference(long sheetId, long crossSheetReferenceId)
+		{
+			return this.GetResource<CrossSheetReference>("sheets/" + sheetId + "/crosssheetreferences/" + crossSheetReferenceId, 
+				typeof(CrossSheetReference));
+		}
 
 		/// <summary>
-		/// <para>Updates an automation rule for this Sheet.</para>
-		/// <para>It mirrors To the following Smartsheet REST API method: PUT /sheets/{sheetId}/automationrules/{automationRuleId}</para>
+		/// <para>Create a cross sheet reference in the given Sheet.</para>
+		/// <para>It mirrors To the following Smartsheet REST API method: POST /sheets/{sheetId}/crosssheetreferences</para>
 		/// </summary>
 		/// <param name="sheetId"> the id of the sheet </param>
-		/// <param name="automationRule"> the automation rule </param>
-		/// <returns> the automation rule </returns>
+		/// <param name="crossSheetReference"> the cross sheet reference </param>
+		/// <returns> the cross sheet reference </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
 		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		AutomationRule UpdateAutomationRule(long sheetId, AutomationRule automationRule);
-
-		/// <summary>
-		/// <para>Delete an automation rule for this Sheet.</para>
-		/// <para>It mirrors To the following Smartsheet REST API method: DELETE /sheets/{sheetId}/automationrules/{automationRuleId}</para>
-		/// </summary>
-		/// <param name="sheetId"> the id of the sheet </param>
-		/// <param name="automationRuleId"> the automation rule id </param>
-		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
-		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
-		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
-		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		void DeleteAutomationRule(long sheetId, long automationRuleId);
+		public CrossSheetReference CreateCrossSheetReference(long sheetId, CrossSheetReference crossSheetReference)
+		{
+			return this.CreateResource<CrossSheetReference>("sheets/" + sheetId + "/crosssheetreferences", typeof(CrossSheetReference),
+				crossSheetReference);
+		}
 	}
 }

@@ -77,6 +77,7 @@
     <Compile Include="main\Smartsheet\Api\Internal\Json\ErrorTypeConverter.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\Json\ObjectValueTypeConverter.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\SheetAutomationRuleResourcesImpl.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\SheetCrossSheetReferencesResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\SheetFilterResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\SheetUpdateRequestResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\SightResourcesImpl.cs" />
@@ -94,6 +95,8 @@
     <Compile Include="main\Smartsheet\Api\Models\CellDataItem.cs" />
     <Compile Include="main\Smartsheet\Api\Models\ContactObjectValue.cs" />
     <Compile Include="main\Smartsheet\Api\Models\CriteriaTarget.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\CrossSheetReference.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\CrossSheetReferenceStatus.cs" />
     <Compile Include="main\Smartsheet\Api\Models\DateObjectValue.cs" />
     <Compile Include="main\Smartsheet\Api\Models\DayDescriptor.cs" />
     <Compile Include="main\Smartsheet\Api\Models\DayOrdinal.cs" />
@@ -148,6 +151,7 @@
     <Compile Include="main\Smartsheet\Api\Models\WidgetContent.cs" />
     <Compile Include="main\Smartsheet\Api\Models\WidgetType.cs" />
     <Compile Include="main\Smartsheet\Api\SheetAutomationRuleResources.cs" />
+    <Compile Include="main\Smartsheet\Api\SheetCrossSheetReferenceResources.cs" />
     <Compile Include="main\Smartsheet\Api\SheetFilterResources.cs" />
     <Compile Include="main\Smartsheet\Api\SheetUpdateRequestResources.cs" />
     <Compile Include="main\Smartsheet\Api\SightResources.cs" />
