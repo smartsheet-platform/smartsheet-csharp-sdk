@@ -82,18 +82,32 @@ namespace Smartsheet.Api.Models
 		private IList<ColumnTag> tags;
 
 		/// <summary>
-		/// Represents the sheet ID.
+		/// Display width of the column in pixels
 		/// </summary>
-		private long? sheetId;
-
 		private long? width;
 
+		/// <summary>
+		/// The format descriptor. Only returned if the include query string parameter contains format and this column 
+		/// has a non-default format applied to it.
+		/// </summary>
 		private string format;
 
+		/// <summary>
+		/// Indicates whether the column is locked. In a response, a value of true indicates that the column has 
+		/// been locked by the sheet owner or the admin.
+		/// </summary>
 		private bool? locked;
 
+		/// <summary>
+		/// Indicates whether the column is locked for the requesting user. This attribute may be present in a 
+		/// response, but cannot be specified in a request.
+		/// </summary>
 		private bool? lockedForUser;
 
+		/// <summary>
+		/// Indicates whether validation has been enabled for the column (value = true)
+		/// </summary>
+		private bool? validation;
 
 		/// <summary>
 		/// Gets or Sets the position of the column (zero-based).
@@ -101,14 +115,8 @@ namespace Smartsheet.Api.Models
 		/// <returns> the Index </returns>
 		public virtual int? Index
 		{
-			get
-			{
-				return index;
-			}
-			set
-			{
-				this.index = value;
-			}
+			get	{ return index;	}
+			set	{ this.index = value; }
 		}
 
 		/// <summary>
@@ -117,14 +125,8 @@ namespace Smartsheet.Api.Models
 		/// <returns> the Title </returns>
 		public virtual string Title
 		{
-			get
-			{
-				return title;
-			}
-			set
-			{
-				this.title = value;
-			}
+			get	{ return title;	}
+			set	{ this.title = value; }
 		}
 
 
@@ -134,14 +136,8 @@ namespace Smartsheet.Api.Models
 		/// <returns> the Primary flag </returns>
 		public virtual bool? Primary
 		{
-			get
-			{
-				return primary;
-			}
-			set
-			{
-				this.primary = value;
-			}
+			get	{ return primary; }
+			set	{ this.primary = value;	}
 		}
 
 
@@ -151,14 +147,8 @@ namespace Smartsheet.Api.Models
 		/// <returns> the Type </returns>
 		public virtual ColumnType? Type
 		{
-			get
-			{
-				return type;
-			}
-			set
-			{
-				this.type = value;
-			}
+			get	{ return type; }
+			set	{ this.type = value; }
 		}
 
 
@@ -168,14 +158,8 @@ namespace Smartsheet.Api.Models
 		/// <returns> the Options </returns>
 		public virtual IList<string> Options
 		{
-			get
-			{
-				return options;
-			}
-			set
-			{
-				this.options = value;
-			}
+			get	{ return options; }
+			set	{ this.options = value;	}
 		}
 
 
@@ -185,14 +169,8 @@ namespace Smartsheet.Api.Models
 		/// <returns> the Hidden flag </returns>
 		public virtual bool? Hidden
 		{
-			get
-			{
-				return hidden;
-			}
-			set
-			{
-				this.hidden = value;
-			}
+			get	{ return hidden; }
+			set { this.hidden = value; }
 		}
 
 
@@ -202,14 +180,8 @@ namespace Smartsheet.Api.Models
 		/// <returns> the Symbol </returns>
 		public virtual Symbol? Symbol
 		{
-			get
-			{
-				return symbol;
-			}
-			set
-			{
-				this.symbol = value;
-			}
+			get	{ return symbol; }
+			set	{ this.symbol = value; }
 		}
 
 
@@ -219,14 +191,8 @@ namespace Smartsheet.Api.Models
 		/// <returns> the system column Type </returns>
 		public virtual SystemColumnType? SystemColumnType
 		{
-			get
-			{
-				return systemColumnType;
-			}
-			set
-			{
-				this.systemColumnType = value;
-			}
+			get	{return systemColumnType; }
+			set	{ this.systemColumnType = value; }
 		}
 
 
@@ -236,26 +202,19 @@ namespace Smartsheet.Api.Models
 		/// <returns> the auto number Format </returns>
 		public virtual AutoNumberFormat AutoNumberFormat
 		{
-			get
-			{
-				return autoNumberFormat;
-			}
-			set
-			{
-				this.autoNumberFormat = value;
-			}
+			get	{ return autoNumberFormat; }
+			set	{ this.autoNumberFormat = value; }
 		}
 
+		/// <summary>
+		/// Gets Array of ContactOption objects to specify a pre-defined list of values for the column. 
+		/// Column type must be CONTACT_LIST
+		/// </summary>
+		/// <returns> the contact options list </returns>
 		public virtual IList<Contact> ContactOptions
 		{
-			get
-			{
-				return contactOptions;
-			}
-			set
-			{
-				this.contactOptions = value;
-			}
+			get	{ return contactOptions; }
+			set	{ this.contactOptions = value; }
 		}
 
 		/// <summary>
@@ -264,31 +223,8 @@ namespace Smartsheet.Api.Models
 		/// <returns> the Tags </returns>
 		public virtual IList<ColumnTag> Tags
 		{
-			get
-			{
-				return tags;
-			}
-			set
-			{
-				this.tags = value;
-			}
-		}
-
-
-		/// <summary>
-		/// Gets the sheet Id.
-		/// </summary>
-		/// <returns> the sheet Id </returns>
-		public virtual long? SheetId
-		{
-			get
-			{
-				return sheetId;
-			}
-			set
-			{
-				this.sheetId = value;
-			}
+			get	{ return tags;	}
+			set	{ this.tags = value; }
 		}
 
 		/// <summary>
@@ -329,6 +265,15 @@ namespace Smartsheet.Api.Models
 		{
 			get { return lockedForUser; }
 			set { lockedForUser = value; }
+		}
+
+		/// <summary>
+		/// Indicates whether validation has been enabled for the column (value = true)
+		/// </summary>
+		public bool? Validation
+		{
+			get { return validation; }
+			set { validation = value; }
 		}
 
 
@@ -379,8 +324,15 @@ namespace Smartsheet.Api.Models
 			/// The auto number Format. </summary>
 			private AutoNumberFormat autoNumberFormat;
 
+			/// <summary>
+			/// Display width of the column in pixels
+			/// </summary>
 			private long? width;
 
+			/// <summary>
+			/// Indicates whether the column is locked. In a response, a value of true indicates that the column has been locked 
+			/// by the sheet owner or the admin.
+			/// </summary>
 			private bool? locked;
 
 
@@ -552,6 +504,7 @@ namespace Smartsheet.Api.Models
 				return width;
 			}
 
+
 			/// <summary>
 			/// Gets the flag whether column is locked or not. </summary>
 			/// <returns> the locked flag </returns>
@@ -627,8 +580,14 @@ namespace Smartsheet.Api.Models
 			/// The auto number Format. </summary>
 			private AutoNumberFormat autoNumberFormat;
 
+			/// <summary>
+			/// Display width of the column in pixels
+			/// </summary>
 			private long? width;
 
+			/// <summary>
+			/// Returned only if the column is the Primary Column (value = true)
+			/// </summary>
 			private bool? primary;
 
 			/// <summary>
@@ -815,7 +774,7 @@ namespace Smartsheet.Api.Models
 
 		/// <summary>
 		/// The convenience Class UpdateColumnBuilder to build a Column object to be updated, moved, and/or renamed.
-		/// The Column's index, title, and sheetId properties must be set.
+		/// The Column's index, title properties must be set.
 		/// </summary>
 		public class UpdateColumnBuilder
 		{
@@ -849,19 +808,20 @@ namespace Smartsheet.Api.Models
 			/// The Format for an auto number column. </summary>
 			private AutoNumberFormat autoNumberFormat;
 
-			///// <summary>
-			///// The sheet Id. </summary>
-			//private long? sheetId;
-
 			/// <summary>
 			/// The Display width of the column in pixels. </summary>
 			private long? width;
 
+			/// <summary>
+			/// The format descriptor. Only returned if the include query string parameter contains format and this column 
+			/// has a non-default format applied to it.
+			/// </summary>
 			private string format;
 
-			///// <summary> The Column Id</summary>
-			//internal long? columnId;
-
+			/// <summary>
+			/// Indicates whether the column is locked. In a response, a value of true indicates that the column has been locked 
+			/// by the sheet owner or the admin.
+			/// </summary>
 			private bool? locked;
 
 			/// <summary>
@@ -965,29 +925,6 @@ namespace Smartsheet.Api.Models
 				return this;
 			}
 
-			///// <summary>
-			///// Sets the sheet Id.
-			///// </summary>
-			///// <param name="sheetId"> the sheet Id </param>
-			///// <returns> the modify column builder </returns>
-			//public virtual UpdateColumnBuilder SetSheetId(long sheetId)
-			//{
-			//	this.sheetId = sheetId;
-			//	return this;
-			//}
-
-
-			///// <summary>
-			///// Sets the column Id.
-			///// </summary>
-			///// <param name="sheetId">The column Id </param>
-			///// <returns> the modify column builder </returns>
-			//public virtual UpdateColumnBuilder SetColumnId(long? columnId)
-			//{
-			//	this.columnId = columnId;
-			//	return this;
-			//}
-
 			/// <summary>
 			/// Sets the display width.
 			/// </summary>
@@ -1082,43 +1019,16 @@ namespace Smartsheet.Api.Models
 				return autoNumberFormat;
 			}
 
-			///// <summary>
-			///// Gets the sheet Id.
-			///// </summary>
-			///// <returns> the sheet Id </returns>
-			//public virtual long? GetSheetId()
-			//{
-			//	return sheetId;
-			//}
-
-			///// <summary>
-			///// Gets the column Id.
-			///// </summary>
-			///// <returns> the sheet Id </returns>
-			//public virtual long? ColumnId
-			//{
-			//	get
-			//	{
-			//		return columnId;
-			//	}
-			//}
-
 			/// <summary>
 			/// Builds the column.
 			/// </summary>
 			/// <returns> the column </returns>
 			public virtual Column Build()
 			{
-				//if (title == null || sheetId == null || index == null)
-				//{
-				//	throw new MemberAccessException("A title, sheetId, and index are required");
-				//}
-
 				Column column = new Column();
 				column.Id = id;
 				column.index = index;
 				column.title = title;
-				//column.sheetId = sheetId;
 				column.type = type;
 				column.options = options;
 				column.symbol = symbol;
@@ -1127,7 +1037,6 @@ namespace Smartsheet.Api.Models
 				column.width = width;
 				column.format = format;
 				column.locked = locked;
-				//column.ID = columnId;
 				return column;
 			}
 		}

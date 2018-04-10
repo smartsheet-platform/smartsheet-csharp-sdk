@@ -67,12 +67,27 @@ namespace Smartsheet.Api.Models
 		/// </summary>
 		private bool? strict;
 
+		/// <summary>
+		/// An inbound link from a cell in another sheet. This cell's value mirrors the linked cell's value
+		/// </summary>
 		private CellLink linkInFromCell;
 
+		/// <summary>
+		/// An array of CellLink objects. Zero or more outbound links from this cell to cells in other sheets 
+		/// whose values mirror this cell's value
+		/// </summary>
 		private IList<CellLink> linksOutToCells;
 
+		/// <summary>
+		/// The format descriptor. Only returned if the include query string parameter contains format and this cell 
+		/// has a non-default format applied.
+		/// </summary>
 		private string format;
 
+		/// <summary>
+		/// The format descriptor describing this cell's conditional format. Only returned if the include query 
+		/// string parameter contains format and this cell has a conditional format applied.
+		/// </summary>
 		private string conditionalFormat;
 
 		/// <summary>
@@ -81,7 +96,15 @@ namespace Smartsheet.Api.Models
 		private Image image;
 
 		/// <summary>
-		/// An array of CellLink objects. Zero or more outbound links from this cell to cells in other sheets whose values mirror this cell's value.
+		/// (Admin only) Indicates whether the cell value can contain a value outside of the validation limits (value = true). 
+		/// When using this parameter, you must also set strict to false to bypass value type checking. This property is honored 
+		/// for POST or PUT actions that update rows.
+		/// </summary>
+		private bool? overrideValidation;
+
+		/// <summary>
+		/// An array of CellLink objects. Zero or more outbound links from this cell to cells in other sheets 
+		/// whose values mirror this cell's value.
 		/// </summary>
 		private IList<CellLink> LinksOutToCells
 		{
@@ -99,12 +122,8 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// <para>
-		/// The format descriptor
-		/// </para>
-		/// <para>
-		/// Only returned if the include query string parameter contains format and this cell has a non-default format applied.
-		/// </para>
+		/// The format descriptor. Only returned if the include query string parameter contains format and this cell 
+		/// has a non-default format applied.
 		/// </summary>
 		public string Format
 		{
@@ -113,12 +132,8 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// <para>
-		/// The format descriptor describing this cell's conditional format
-		/// </para>
-		/// <para>
-		/// Only returned if the include query string parameter contains format and this cell has a conditional format applied.
-		/// </para>
+		/// The format descriptor describing this cell's conditional format. Only returned if the include query string 
+		/// parameter contains format and this cell has a conditional format applied.
 		/// </summary>
 		public string ConditionalFormat
 		{
@@ -132,14 +147,8 @@ namespace Smartsheet.Api.Models
 		/// <returns> the Type </returns>
 		public virtual ColumnType? ColumnType
 		{
-			get
-			{
-				return columnType;
-			}
-			set
-			{
-				this.columnType = value;
-			}
+			get	{ return columnType; }
+			set	{ this.columnType = value; }
 		}
 
 		/// <summary>
@@ -148,14 +157,8 @@ namespace Smartsheet.Api.Models
 		/// <returns> the ObjectValue </returns>
 		public virtual ObjectValue ObjectValue
 		{
-			get
-			{
-				return objectValue;
-			}
-			set
-			{
-				this.objectValue = value;
-			}
+			get	{ return objectValue; }
+			set	{ this.objectValue = value;	}
 		}
 
 		/// <summary>
@@ -164,14 +167,8 @@ namespace Smartsheet.Api.Models
 		/// <returns> the Value </returns>
 		public virtual object Value
 		{
-			get
-			{
-				return value;
-			}
-			set
-			{
-				this.value = value;
-			}
+			get	{ return value; }
+			set	{ this.value = value; }
 		}
 
 
@@ -181,14 +178,8 @@ namespace Smartsheet.Api.Models
 		/// <returns> the display Value </returns>
 		public virtual string DisplayValue
 		{
-			get
-			{
-				return displayValue;
-			}
-			set
-			{
-				this.displayValue = value;
-			}
+			get	{ return displayValue; }
+			set	{ this.displayValue = value; }
 		}
 
 
@@ -198,14 +189,8 @@ namespace Smartsheet.Api.Models
 		/// <returns> the column Id </returns>
 		public virtual long? ColumnId
 		{
-			get
-			{
-				return columnId;
-			}
-			set
-			{
-				this.columnId = value;
-			}
+			get	{ return columnId; }
+			set	{ this.columnId = value; }
 		}
 
 
@@ -215,14 +200,8 @@ namespace Smartsheet.Api.Models
 		/// <returns> the Link </returns>
 		public virtual Link Hyperlink
 		{
-			get
-			{
-				return hyperlink;
-			}
-			set
-			{
-				this.hyperlink = value;
-			}
+			get { return hyperlink; }
+			set { this.hyperlink = value; }
 		}
 
 
@@ -232,14 +211,8 @@ namespace Smartsheet.Api.Models
 		/// <returns> the Formula </returns>
 		public virtual string Formula
 		{
-			get
-			{
-				return formula;
-			}
-			set
-			{
-				this.formula = value;
-			}
+			get { return formula; }
+			set { this.formula = value; }
 		}
 
 
@@ -250,14 +223,8 @@ namespace Smartsheet.Api.Models
 		/// <returns> the Strict </returns>
 		public virtual bool? Strict
 		{
-			get
-			{
-				return strict;
-			}
-			set
-			{
-				this.strict = value;
-			}
+			get { return strict; }
+			set { this.strict = value; }
 		}
 
 		/// <summary>
@@ -267,78 +234,21 @@ namespace Smartsheet.Api.Models
 		/// <returns> the Strict </returns>
 		public virtual Image Image
 		{
-			get
-			{
-				return image;
-			}
-			set
-			{
-				this.image = value;
-			}
+			get	{ return image; }
+			set { this.image = value; }
 		}
 
-		///// <summary>
-		///// A convenience class for quickly creating a List of Cells To update.
-		///// </summary>
-		//public class UpdateRowCellsBuilder
-		//{
-
-		//	/// <summary>
-		//	/// The Cells. </summary>
-		//	internal IList<Cell> cells = new List<Cell>();
-
-		//	/// <summary>
-		//	/// Adds the cell.
-		//	/// </summary>
-		//	/// <param name="columnId"> the column Id </param>
-		//	/// <param name="value"> the Value </param>
-		//	/// <param name="strict"> the Strict </param>
-		//	/// <returns> the update row Cells builder </returns>
-		//	public virtual UpdateRowCellsBuilder AddCell(long? columnId, object value, bool? strict)
-		//	{
-		//		Cell cell = new Cell();
-		//		cell.columnId = columnId;
-		//		cell.value = value;
-		//		cell.strict = strict;
-		//		cells.Add(cell);
-		//		return this;
-		//	}
-
-		//	/// <summary>
-		//	/// Gets the cells.
-		//	/// </summary>
-		//	/// <value>
-		//	/// The cells.
-		//	/// </value>
-		//	public virtual IList<Cell> Cells
-		//	{
-		//		get
-		//		{
-		//			return cells;
-		//		}
-		//	}
-
-		//	/// <summary>
-		//	/// Adds the cell.
-		//	/// </summary>
-		//	/// <param name="columnId"> the column Id </param>
-		//	/// <param name="value"> the Value </param>
-		//	/// <returns> the update row Cells builder </returns>
-		//	public virtual UpdateRowCellsBuilder AddCell(long? columnId, object value)
-		//	{
-		//		AddCell(columnId, value, true);
-		//		return this;
-		//	}
-
-		//	/// <summary>
-		//	/// Returns the list of Cells.
-		//	/// </summary>
-		//	/// <returns> the list </returns>
-		//	public virtual IList<Cell> Build()
-		//	{
-		//		return cells;
-		//	}
-		//}
+		/// <summary>
+		/// (Admin only) Indicates whether the cell value can contain a value outside of the validation limits (value = true). 
+		/// When using this parameter, you must also set strict to false to bypass value type checking. This property is 
+		/// honored for POST or PUT actions that update rows.
+		/// </summary>
+		/// <returns> the override validation flag </returns>
+		public virtual bool? OverrideValidation 
+		{
+			get { return overrideValidation; }
+			set { this.overrideValidation = value;}
+		}
 
 		/// <summary>
 		/// A convenience class for adding a Cell with the necessary fields for inserting into a list of Cells.
