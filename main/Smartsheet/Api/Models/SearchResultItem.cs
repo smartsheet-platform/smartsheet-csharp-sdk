@@ -63,6 +63,26 @@ namespace Smartsheet.Api.Models
 		private IList<string> contextData;
 
 		/// <summary>
+		/// Represents the attachment type if the search result item is an attachment
+		/// </summary>
+		private AttachmentType? attachmentType;
+
+		/// <summary>
+		/// Represents the MIME type
+		/// </summary>
+		private string mimeType;
+
+		/// <summary>
+		/// If the search result item is a favorite
+		/// </summary>
+		private bool? favorite;
+
+		/// <summary>
+		/// If the parent object of the search item is a favorite
+		/// </summary>
+		private bool? parentObjectFavorite;
+
+		/// <summary>
 		/// Gets the Text for this specific search RequestResult.
 		/// </summary>
 		/// <returns> the Text </returns>
@@ -180,6 +200,68 @@ namespace Smartsheet.Api.Models
 			}
 		}
 
+		/// <summary>
+		/// Get the attachment type if the search result item is an attachment
+		/// </summary>
+		/// <returns> the attachment type </returns>
+		public virtual AttachmentType? AttachmentType
+		{
+			get
+			{
+				return attachmentType;
+			}
+			set
+			{
+				this.attachmentType = value;
+			}
+		}
+
+		/// <summary>
+		/// Gets the mime type
+		/// </summary>
+		/// <returns> the MIME type </returns>
+		public virtual string MimeType
+		{
+			get
+			{
+				return mimeType;
+			}
+			set
+			{
+				this.mimeType = value;
+			}
+		}
+
+		/// <summary>
+		/// Get a flag indicating if the search result item is a favorite
+		/// </summary>
+		/// <returns> the favorite flag </returns>
+		public virtual bool? Favorite
+		{
+			get
+			{
+				return favorite;
+			}
+			set
+			{
+				this.favorite = value;
+			}
+		}
+
+		/// <summary>
+		/// Get a flag indicating if the search result item parent is a favorite
+		/// </summary>
+		public virtual bool? ParentObjectFavorite
+		{
+			get
+			{
+				return parentObjectFavorite;
+			}
+			set
+			{
+				this.parentObjectFavorite = value;
+			}
+		}
 	}
 
 }

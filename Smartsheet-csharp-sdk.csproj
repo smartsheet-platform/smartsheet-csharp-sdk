@@ -99,6 +99,7 @@
     <Compile Include="main\Smartsheet\Api\Models\DayOrdinal.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Duration.cs" />
     <Compile Include="main\Smartsheet\Api\Models\ErrorDetail.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Inclusions\SearchInclusion.cs" />
     <Compile Include="main\Smartsheet\Api\Models\NumberObjectValue.cs" />
     <Compile Include="main\Smartsheet\Api\Models\ObjectValue.cs" />
     <Compile Include="main\Smartsheet\Api\Models\ObjectValueType.cs" />
@@ -108,6 +109,8 @@
     <Compile Include="main\Smartsheet\Api\Models\ProjectSettings.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Schedule.cs" />
     <Compile Include="main\Smartsheet\Api\Models\ScheduleType.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\SearchLocation.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\SearchScope.cs" />
     <Compile Include="main\Smartsheet\Api\Models\SentUpdateRequest.cs" />
     <Compile Include="main\Smartsheet\Api\Models\SheetFilter.cs" />
     <Compile Include="main\Smartsheet\Api\Models\SheetFilterDetails.cs" />

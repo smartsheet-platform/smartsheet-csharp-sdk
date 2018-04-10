@@ -63,7 +63,16 @@ namespace Smartsheet.Api.Models
 		/// Sight.
 		/// </summary>
 		[EnumMember(Value = "sight")]
-		SIGHT
+		SIGHT,
+		/// <summary>
+		/// Folder
+		/// </summary>
+		[EnumMember(Value = "folder")]
+		FOLDER,
+		/// <summary>
+		/// Workspace
+		/// </summary>
+		[EnumMember(Value = "workspace")]
+		WORKSPACE
 	}
-
 }

@@ -19,30 +19,30 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.Runtime.Serialization;
+
 namespace Smartsheet.Api.Models
 {
-	/// <summary>
-	/// Represents the list of row elements to copy in addition to the cell data.
-	/// </summary>
-	[JsonConverter(typeof(StringEnumConverter))]
-	public enum CopyRowInclusion
+	public enum SearchScope
 	{
-		/// <summary>
-		/// The attachments.
-		/// </summary>
 		[EnumMember(Value = "attachments")]
 		ATTACHMENTS,
-		/// <summary>
-		/// The discussions.
-		/// </summary>
-		[EnumMember(Value = "discussions")]
-		DISCUSSIONS,
-		/// <summary>
-		/// Any child rows of the rows specified in the request will also be copied to the destination sheet,
-		/// and parent-child relationships amongst rows will be preserved within the destination sheet;
-		/// if not specified, only the rows specified in the request will be copied.
-		/// </summary>
-		[EnumMember(Value = "children")]
-		CHILDREN
+		[EnumMember(Value = "cellData")]
+		CELL_DATA,
+		[EnumMember(Value = "comments")]
+		COMMENTS,
+		[EnumMember(Value = "folderNames")]
+		FOLDER_NAMES,
+		[EnumMember(Value = "profileFields")]
+		PROFILE_FIELDS,
+		[EnumMember(Value = "reportNames")]
+		REPORT_NAMES,
+		[EnumMember(Value = "sheetNames")]
+		SHEET_NAMES,
+		[EnumMember(Value = "sightNames")]
+		SIGHT_NAMES,
+		[EnumMember(Value = "templateNames")]
+		TEMPLATE_NAMES,
+		[EnumMember(Value = "workspaceNames")]
+		WORKSPACE_NAMES
 	}
 }
