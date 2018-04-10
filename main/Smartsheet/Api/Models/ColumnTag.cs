@@ -59,7 +59,11 @@ namespace Smartsheet.Api.Models
 
 		/// <summary>
 		/// Represents GANTT_ASSIGNED_RESOURCE. </summary>
-		GANTT_ASSIGNED_RESOURCE
+		GANTT_ASSIGNED_RESOURCE,
+
+		/// <summary>
+		/// Represents GANTT_ALLOCATION. </summary>
+		GANTT_ALLOCATION
 	}
 
 }
