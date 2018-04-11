@@ -263,7 +263,7 @@ namespace Smartsheet.Api.Internal.Http
 
 				if (smartsheetRequest.Entity != null && smartsheetRequest.Entity.GetContent() != null)
 				{
-					restRequest.AddParameter("Request-Body", Util.ReadAllBytes(smartsheetRequest.Entity.GetBinaryContent()), 
+					restRequest.AddParameter("application/json", Util.ReadAllBytes(smartsheetRequest.Entity.GetBinaryContent()), 
 						smartsheetRequest.Entity.ContentType, ParameterType.RequestBody);
 				}
 
