@@ -103,6 +103,7 @@
     <Compile Include="main\Smartsheet\Api\Models\Duration.cs" />
     <Compile Include="main\Smartsheet\Api\Models\ErrorDetail.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Inclusions\SearchInclusion.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Inclusions\HomeExclusion.cs" />
     <Compile Include="main\Smartsheet\Api\Models\NumberObjectValue.cs" />
     <Compile Include="main\Smartsheet\Api\Models\ObjectValue.cs" />
     <Compile Include="main\Smartsheet\Api\Models\ObjectValueType.cs" />
