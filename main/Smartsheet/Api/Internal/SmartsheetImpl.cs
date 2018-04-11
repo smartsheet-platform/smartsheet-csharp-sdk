@@ -313,6 +313,13 @@ namespace Smartsheet.Api.Internal
 		/// <returns>true if this error code can be retried</returns>
 		public bool SmartsheetShouldRetry(int previousAttempts, long totalElapsedTime, HttpResponse response)
 		{
+			string contentType = response.Entity.ContentType;
+			if (contentType != null && !contentType.StartsWith("application/json"))
+			{
+				// it's not JSON; don't try to parse it
+				return false;
+			}
+
 			Api.Models.Error error;
 			try
 			{

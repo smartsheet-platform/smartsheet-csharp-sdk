@@ -162,7 +162,7 @@ namespace Smartsheet.Api.Internal.Http
 			if (smartsheetRequest.Entity != null && smartsheetRequest.Entity.GetContent() != null)
 			{
 				restRequest.AddParameter(objectType.ToLower(), System.Text.Encoding.Default.GetString(smartsheetRequest.Entity.Content),
-					ParameterType.RequestBody);
+					smartsheetRequest.Entity.ContentType, ParameterType.RequestBody);
 			}
 
 			restRequest.AlwaysMultipartFormData = true;
@@ -170,8 +170,14 @@ namespace Smartsheet.Api.Internal.Http
 			// Set the client base Url.
 			httpClient.BaseUrl = new Uri(smartsheetRequest.Uri.GetLeftPart(UriPartial.Authority));
 
+			Stopwatch timer = new Stopwatch();
+
 			// Make the HTTP request
+			timer.Start();
 			restResponse = httpClient.Execute(restRequest);
+			timer.Stop();
+
+			LogRequest(restRequest, restResponse, timer.ElapsedMilliseconds);
 
 			if (restResponse.ResponseStatus == ResponseStatus.Error)
 			{
@@ -257,8 +263,8 @@ namespace Smartsheet.Api.Internal.Http
 
 				if (smartsheetRequest.Entity != null && smartsheetRequest.Entity.GetContent() != null)
 				{
-					restRequest.AddParameter("application/json", Util.ReadAllBytes(smartsheetRequest.Entity.GetBinaryContent()),
-						ParameterType.RequestBody);
+					restRequest.AddParameter("Request-Body", Util.ReadAllBytes(smartsheetRequest.Entity.GetBinaryContent()), 
+						smartsheetRequest.Entity.ContentType, ParameterType.RequestBody);
 				}
 
 				// Set the client base Url.
@@ -368,8 +374,24 @@ namespace Smartsheet.Api.Internal.Http
 				}
 				string body = "N/A";
 				var body_element = request.Parameters.Where(parameter => parameter.Type == ParameterType.RequestBody).ToList();
-				if(body_element.Count() > 0)
-					body = System.Text.Encoding.UTF8.GetString((byte[])body_element[0].Value);
+				if (body_element.Count() > 0)
+				{
+					if (body_element[0].ContentType != null && body_element[0].ContentType.Contains("application/json"))
+					{
+						if(body_element[0].Value.GetType() == typeof(string)) 
+						{
+							body = (string)body_element[0].Value;
+						}
+						else 
+						{
+							body = System.Text.Encoding.UTF8.GetString((byte[])body_element[0].Value);
+						}
+					}
+					else
+					{
+						body = string.Format("<< {0} content type suppressed >>", body_element[0].ContentType);
+					}
+				}
 				return string.Format("Request Headers {0}Request Body: {1}", builder.ToString(), body);
 			});
 			logger.Debug(() =>
@@ -379,7 +401,16 @@ namespace Smartsheet.Api.Internal.Http
 				{
 					builder.Append("\"" + header.Name + "\"").Append(":").Append("\"" + header.Value + "\" ");
 				}
-                return string.Format("Response Headers: {0}Response Body: {1}", builder.ToString(), response.Content.ToString());
+				string body = "N/A";
+				if (response.ContentType != null && response.ContentType.Contains("application/json"))
+				{
+					body = response.Content.ToString();
+				}
+				else
+				{
+					body = string.Format("<< {0} content type suppressed >>", response.ContentType);
+				}
+                return string.Format("Response Headers: {0}Response Body: {1}", builder.ToString(), body);
             });
         }
     }
