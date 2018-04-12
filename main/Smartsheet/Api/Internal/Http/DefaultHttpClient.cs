@@ -19,6 +19,7 @@
 using System.Collections.Generic;
 using Smartsheet.Api.Internal;
 using Smartsheet.Api.Internal.Http;
+using Smartsheet.Api.Internal.Json;
 
 namespace Smartsheet.Api.Internal.Http
 {
@@ -28,7 +29,6 @@ namespace Smartsheet.Api.Internal.Http
 	using System.IO;
 	using System.Net;
 	using System.Linq;
-	using System.Reflection;
 	using System.Diagnostics;
 	using System.Text;
 	using System.Threading;
@@ -64,9 +64,11 @@ namespace Smartsheet.Api.Internal.Http
 		private static Logger logger = LogManager.GetCurrentClassLogger();
 
 		/// <summary>
-		/// Callback to determine if this request can be retried.
+		/// The JSON serializer (used to deserialize errors for ShouldRetry
 		/// </summary>
-		private ShouldRetryCallback shouldRetryCallback;
+		private JsonSerializer jsonSerializer;
+
+		private long maxRetryTimeout = 15000;
 
 		/// <summary>
 		/// 
@@ -84,7 +86,7 @@ namespace Smartsheet.Api.Internal.Http
 		/// Constructor.
 		/// </summary>
 		public DefaultHttpClient()
-			: this(new RestClient(), DefaultShouldRetry)
+			: this(new RestClient(), new JsonNetSerializer())
 		{
 		}
 
@@ -97,15 +99,13 @@ namespace Smartsheet.Api.Internal.Http
         /// </summary>
         /// <param name="httpClient"> the http client </param>
         /// <param name="shouldRetryCallback">User-supplied retry implementation</param>
-        public DefaultHttpClient(RestClient httpClient, ShouldRetryCallback shouldRetryCallback)
+        public DefaultHttpClient(RestClient httpClient, JsonSerializer jsonSerializer)
 		{
 			Util.ThrowIfNull(httpClient);
 
 			this.httpClient = httpClient;
 			this.httpClient.FollowRedirects = true;
-			this.httpClient.UserAgent = buildUserAgent();
-
-			this.shouldRetryCallback = shouldRetryCallback;
+			this.jsonSerializer = jsonSerializer;
 		}
 
 		/// <summary>
@@ -127,27 +127,7 @@ namespace Smartsheet.Api.Internal.Http
 
 			HttpResponse smartsheetResponse = new HttpResponse();
 
-			// Create HTTP request based on the smartsheetRequest request Type
-			if (HttpMethod.GET == smartsheetRequest.Method)
-			{
-				restRequest = new RestRequest(smartsheetRequest.Uri, Method.GET);
-			}
-			else if (HttpMethod.POST == smartsheetRequest.Method)
-			{
-				restRequest = new RestRequest(smartsheetRequest.Uri, Method.POST);
-			}
-			else if (HttpMethod.PUT == smartsheetRequest.Method)
-			{
-				restRequest = new RestRequest(smartsheetRequest.Uri, Method.PUT);
-			}
-			else if (HttpMethod.DELETE == smartsheetRequest.Method)
-			{
-				restRequest = new RestRequest(smartsheetRequest.Uri, Method.DELETE);
-			}
-			else
-			{
-				throw new System.NotSupportedException("Request method " + smartsheetRequest.Method + " is not supported!");
-			}
+			restRequest = CreateRestRequest(smartsheetRequest);
 
 			// Set HTTP Headers
 			if (smartsheetRequest.Headers != null)
@@ -230,27 +210,7 @@ namespace Smartsheet.Api.Internal.Http
 			{
 				smartsheetResponse = new HttpResponse();
 
-				// Create HTTP request based on the smartsheetRequest request Type
-				if (HttpMethod.GET == smartsheetRequest.Method)
-				{
-					restRequest = new RestRequest(smartsheetRequest.Uri, Method.GET);
-				}
-				else if (HttpMethod.POST == smartsheetRequest.Method)
-				{
-					restRequest = new RestRequest(smartsheetRequest.Uri, Method.POST);
-				}
-				else if (HttpMethod.PUT == smartsheetRequest.Method)
-				{
-					restRequest = new RestRequest(smartsheetRequest.Uri, Method.PUT);
-				}
-				else if (HttpMethod.DELETE == smartsheetRequest.Method)
-				{
-					restRequest = new RestRequest(smartsheetRequest.Uri, Method.DELETE);
-				}
-				else
-				{
-					throw new System.NotSupportedException("Request method " + smartsheetRequest.Method + " is not supported!");
-				}
+				restRequest = CreateRestRequest(smartsheetRequest);
 
 				// Set HTTP Headers
 				if (smartsheetRequest.Headers != null)
@@ -308,12 +268,140 @@ namespace Smartsheet.Api.Internal.Http
 					break;
 				}
 
-				if (!shouldRetryCallback(++attempt, totalElapsed.ElapsedMilliseconds, smartsheetResponse))
+				if (!ShouldRetry(++attempt, totalElapsed.ElapsedMilliseconds, smartsheetResponse))
 				{
 					break;
 				}
 			}
 			return smartsheetResponse;
+		}
+
+		/// <summary>
+		/// Create the RestSharp request. Override this function to inject additional
+		/// headers in the request or use a proxy.
+		/// </summary>
+		/// <param name="smartsheetRequest"></param>
+		/// <returns> the RestSharp request </returns>
+		public virtual RestRequest CreateRestRequest(HttpRequest smartsheetRequest)
+		{
+			RestRequest restRequest;
+
+			// Create HTTP request based on the smartsheetRequest request Type
+			if (HttpMethod.GET == smartsheetRequest.Method)
+			{
+				restRequest = new RestRequest(smartsheetRequest.Uri, Method.GET);
+			}
+			else if (HttpMethod.POST == smartsheetRequest.Method)
+			{
+				restRequest = new RestRequest(smartsheetRequest.Uri, Method.POST);
+			}
+			else if (HttpMethod.PUT == smartsheetRequest.Method)
+			{
+				restRequest = new RestRequest(smartsheetRequest.Uri, Method.PUT);
+			}
+			else if (HttpMethod.DELETE == smartsheetRequest.Method)
+			{
+				restRequest = new RestRequest(smartsheetRequest.Uri, Method.DELETE);
+			}
+			else
+			{
+				throw new System.NotSupportedException("Request method " + smartsheetRequest.Method + " is not supported!");
+			}
+			return restRequest;
+		}
+
+		/// <summary>
+		/// Sets the max retry timeout from the Smartsheet client
+		/// </summary>
+		/// <param name="maxRetryTimeout"> the retry timeout </param>
+		public void SetMaxRetryTimeout(long maxRetryTimeout)
+		{
+			this.maxRetryTimeout = maxRetryTimeout;
+		}
+
+		/// <summary>
+		/// The default CalcBackoff implementation. Uses exponential backoff. If the maximum elapsed time
+		/// has expired, this calculation returns -1 causing the caller to fall out of the retry loop.
+		/// </summary>
+		/// <param name="previousAttempts"></param>
+		/// <param name="totalElapsedTime"></param>
+		/// <param name="error"></param>
+		/// <returns></returns>
+		public virtual long CalcBackoff(int previousAttempts, long totalElapsedTime, Api.Models.Error error)
+		{
+			long backoffMillis = (long)((Math.Pow(2, previousAttempts) * 1000) + new Random().Next(0, 1000));
+
+			if (totalElapsedTime + backoffMillis > this.maxRetryTimeout)
+			{
+				logger.Info("Total elapsed timeout exceeded, exiting retry loop");
+				return -1;
+			}
+			return backoffMillis;
+		}
+
+		/// <summary>
+		/// Called by DefaultHttpClient when a request fails to determine if we can retry the request. Calls
+		/// calcBackoff to determine time in between retries.
+		/// </summary>
+		/// <param name="previousAttempts"></param>
+		/// <param name="totalElapsedTime"></param>
+		/// <param name="response"></param>
+		/// <returns>true if this error code can be retried</returns>
+		public virtual bool ShouldRetry(int previousAttempts, long totalElapsedTime, HttpResponse response)
+		{
+			string contentType = response.Entity.ContentType;
+			if (contentType != null && !contentType.StartsWith("application/json"))
+			{
+				// it's not JSON; don't try to parse it
+				return false;
+			}
+
+			Api.Models.Error error;
+			try
+			{
+				error = jsonSerializer.deserialize<Api.Models.Error>(
+					response.Entity.GetContent());
+			}
+			catch (JsonSerializationException ex)
+			{
+				throw new SmartsheetException(ex);
+			}
+			catch (Newtonsoft.Json.JsonException ex)
+			{
+				throw new SmartsheetException(ex);
+			}
+			catch (IOException ex)
+			{
+				throw new SmartsheetException(ex);
+			}
+
+			switch (error.ErrorCode)
+			{
+				case 4001:
+				case 4002:
+				case 4003:
+				case 4004:
+					break;
+				default:
+					return false;
+			}
+
+			long backoff = CalcBackoff(previousAttempts, totalElapsedTime, error);
+			if (backoff < 0)
+				return false;
+
+			logger.Info(string.Format("HttpError StatusCode={0}: Retrying in {1} milliseconds", response.StatusCode, backoff));
+			Thread.Sleep(TimeSpan.FromMilliseconds(backoff));
+			return true;
+		}
+
+		/// <summary>
+		/// Set the User-Agent in the RestClient since RestSharp won't pick it up at request time
+		/// </summary>
+		/// <param name="userAgent"></param>
+		public void SetUserAgent(string userAgent)
+		{
+			this.httpClient.UserAgent = userAgent;
 		}
 
 		/// <summary>
@@ -330,20 +418,6 @@ namespace Smartsheet.Api.Internal.Http
 		public virtual void ReleaseConnection()
 		{
 			// Not necessary with restsharp
-		}
-
-		private string buildUserAgent()
-		{
-			// Set User Agent
-			string thisVersion = "";
-			string title = "";
-			Assembly assembly = Assembly.GetEntryAssembly();
-			if (assembly != null)
-			{
-				thisVersion = assembly.GetName().Version.ToString();
-				title = assembly.GetName().Name;
-			}
-			return "smartsheet-csharp-sdk("+title + ")/" + thisVersion + " " + Util.GetOSFriendlyName();
 		}
 
 		/// <summary>

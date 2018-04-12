@@ -27,70 +27,6 @@ namespace Smartsheet.Api
 	using JsonSerializer = Api.Internal.Json.JsonSerializer;
 
 	/// <summary>
-	/// Declare a prototype for user provided calcBackoff callbacks.
-	/// </summary>
-	/// <param name="previousAttempts"></param>
-	/// <param name="totalElapsedTime"></param>
-	/// <param name="error"></param>
-	/// <returns></returns>
-	public delegate long CalcBackoffCallback(int previousAttempts, long totalElapsedTime, Api.Models.Error error);
-
-	/// <summary>
-	/// An interface for userCalcBackoff class inheritence.
-	/// </summary>
-	public interface IUserCalcBackoff
-	{
-		CalcBackoffCallback CalcBackoffCallback { get; } 
-	}
-
-	/// <summary>
-	/// Default calcBackoff, uses partial exponential backoff to calculate wait times.
-	/// </summary>
-	public class DefaultCalcBackoff : IUserCalcBackoff
-	{
-		private long maxRetryTime;
-
-		/// <summary>
-		/// static logger 
-		/// </summary>
-		private static Logger logger = LogManager.GetCurrentClassLogger();
-
-		/// <summary>
-		/// Maximum retry time may be specified by the caller
-		/// </summary>
-		/// <param name="maxRetryTime"></param>
-		public DefaultCalcBackoff(long maxRetryTime)
-		{
-			this.maxRetryTime = maxRetryTime;
-		}
-
-		/// <summary>
-		/// use partial exponential backoff to determine wait time.
-		/// </summary>
-		/// <param name="previousAttempts"></param>
-		/// <param name="totalElapsedTime"></param>
-		/// <param name="error"></param>
-		/// <returns></returns>
-		public long CalcBackoff(int previousAttempts, long totalElapsedTime, Api.Models.Error error)
-		{
-			if (totalElapsedTime > maxRetryTime)
-			{
-				logger.Info("Total elapsed timeout exceeded, exiting retry loop");
-				return -1;
-			}
-			return (long)((Math.Pow(2, previousAttempts) * 1000) + new Random().Next(0, 1000));
-		}
-
-		public CalcBackoffCallback CalcBackoffCallback
-		{
-			get
-			{
-				return CalcBackoff;
-			}
-		}
-	}
-
-	/// <summary>
 	/// <para>A convenience class To help create a <seealso cref="SmartsheetClient"/> instance with the appropriate fields.</para>
 	/// 
 	/// <para>Thread Safety: This class is not thread safe since it's mutable, one builder instance is NOT expected To be used in
@@ -127,20 +63,25 @@ namespace Smartsheet.Api
 		private string accessToken;
 
 		/// <summary>
+		/// <para>Represents the max retry timeout period.</para>
+		/// 
+		/// <para>It can be set using corresponding setter.</para>
+		/// </summary>
+		private long? maxRetryTimeout;
+
+		/// <summary>
 		/// <para>Represents the assumed user.</para>
 		/// 
 		/// <para>It can be set using corresponding setter.</para>
 		/// </summary>
 		private string assumedUser;
 
-        /// <summary>
-        /// <para>Represents the SDK API test scenario.</para>
-        /// 
-        /// <para>It can be set using corresponding setter.</para>
-        /// </summary>
-        private string apiScenario;
-
-		private IUserCalcBackoff calcBackoff = new DefaultCalcBackoff(15000);
+		/// <summary>
+		/// <para>Represents the Smartsheet change agent.</para>
+		/// 
+		/// <para>It can be set using corresponding setter.</para>
+		/// </summary>
+		private string changeAgent;
 
 		/// <summary>
 		/// <para>Represents the default base URI of the SmartsheetClient REST API.</para>
@@ -212,13 +153,13 @@ namespace Smartsheet.Api
 		}
 
         /// <summary>
-        /// <para>Set the SDK API test scenario.</para>
+        /// <para>Set the Smartsheet change agent.</para>
         /// </summary>
-        /// <param name="sdkTestScenario"> the sdk api test scenari </param>
+        /// <param name="changeAgent"> the change agent </param>
         /// <returns> the SmartsheetClient builder </returns>
-        public virtual SmartsheetBuilder SetSDKAPITestScenario(string apiScenario)
+        public virtual SmartsheetBuilder SetChangeAgent(string changeAgent)
         {
-            this.apiScenario = apiScenario;
+            this.changeAgent = changeAgent;
             return this;
         }
 
@@ -230,18 +171,7 @@ namespace Smartsheet.Api
 		/// <returns></returns>
 		public virtual SmartsheetBuilder SetMaxRetryTimeout(long maxRetryTimeout)
 		{
-			this.calcBackoff = new DefaultCalcBackoff(maxRetryTimeout);
-			return this;
-		}
-
-		/// <summary>
-		/// Store a user provided IUserCalcBackoff. This interface is only valid when the DefaultHttpClient is used.
-		/// </summary>
-		/// <param name="calcBackoff"></param>
-		/// <returns></returns>
-		public virtual SmartsheetBuilder SetUserCalcBackoff(IUserCalcBackoff calcBackoff)
-		{
-			this.calcBackoff = calcBackoff;
+			this.maxRetryTimeout = maxRetryTimeout;
 			return this;
 		}
 
@@ -335,17 +265,20 @@ namespace Smartsheet.Api
 
 			SmartsheetImpl smartsheet = new SmartsheetImpl(baseURI, accessToken, httpClient, jsonSerializer);
 
+			if (changeAgent != null)
+			{
+				smartsheet.ChangeAgent = changeAgent;
+			}
+
 			if (assumedUser != null)
 			{
 				smartsheet.AssumedUser = assumedUser;
 			}
 
-            if (apiScenario != null)
-            {
-                smartsheet.APIScenario = apiScenario;
-            }
-
-			smartsheet.CalcBackoff = calcBackoff;
+			if (maxRetryTimeout != null)
+			{
+				smartsheet.MaxRetryTimeout = maxRetryTimeout.Value;
+			}
 
 			return smartsheet;
 		}

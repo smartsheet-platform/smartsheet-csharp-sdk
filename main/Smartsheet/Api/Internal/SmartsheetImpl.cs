@@ -21,22 +21,16 @@ namespace Smartsheet.Api.Internal
 	using System.IO;
 	using System.ComponentModel;
 	using System.Threading;
+	using System.Reflection;
+	using System.Diagnostics;
 	using NLog;
 	using RestSharp;
 	using Api.Internal.Json;
+	using Api.Internal.Util;
 	using DefaultHttpClient = Api.Internal.Http.DefaultHttpClient;
 	using HttpClient = Api.Internal.Http.HttpClient;
 	using HttpResponse = Api.Internal.Http.HttpResponse;
 	using Utils = Api.Internal.Utility.Utility;
-
-	/// <summary>
-	/// Declare a delegate to be used by DefaultHttpClient to determine if a request can be retried.
-	/// </summary>
-	/// <param name="previousAttempts"></param>
-	/// <param name="totalElapsedTime"></param>
-	/// <param name="response"></param>
-	/// <returns></returns>
-	public delegate bool ShouldRetryCallback(int previousAttempts, long totalElapsedTime, HttpResponse response);
 
 	/// <summary>
 	/// This is the implementation of Smartsheet interface.
@@ -66,6 +60,33 @@ namespace Smartsheet.Api.Internal
 		/// It will be initialized in constructor and will not change afterwards.
 		/// </summary>
 		private System.Uri baseURI;
+
+		/// <summary>
+		/// Represents the AtomicReference for access token.
+		/// 
+		/// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
+		/// as null, and can be set via corresponding setter, therefore effectively the access token can be updated in the
+		/// SmartsheetImpl in thread safe manner.
+		/// </summary>
+		private string accessToken;
+
+		/// <summary>
+		/// Represents the AtomicReference for assumed user Email.
+		/// 
+		/// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
+		/// as null, and can be set via corresponding setter, therefore effectively the assumed user can be updated in the
+		/// SmartsheetImpl in thread safe manner.
+		/// </summary>
+		private string assumedUser;
+
+		/// <summary>
+		/// Represents the AtomicReference for change agent.
+		/// 
+		/// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
+		/// as null, and can be set via corresponding setter, therefore effectively the assumed user can be updated in the
+		/// SmartsheetImpl in thread safe manner.
+		/// </summary>
+		private string changeAgent;
 
 		/// <summary>
 		/// Represents the AtomicReference To HomeResources.
@@ -138,51 +159,6 @@ namespace Smartsheet.Api.Internal
 		/// </summary>
 		private WebhookResources webhooks;
 
-		///// <summary>
-		///// Represents the AtomicReference To ColumnResources.
-		///// 
-		///// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
-		///// as null, and will be initialized To non-null at the first time it is accessed via corresponding getter, therefore
-		///// effectively the underlying Value is lazily created in a thread safe manner.
-		///// </summary>
-		//private ColumnResources columns;
-
-		///// <summary>
-		///// Represents the AtomicReference To RowResources.
-		///// 
-		///// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
-		///// as null, and will be initialized To non-null at the first time it is accessed via corresponding getter, therefore
-		///// effectively the underlying Value is lazily created in a thread safe manner.
-		///// </summary>
-		//private RowResources rows;
-
-		///// <summary>
-		///// Represents the AtomicReference To AttachmentResources.
-		///// 
-		///// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
-		///// as null, and will be initialized To non-null at the first time it is accessed via corresponding getter, therefore
-		///// effectively the underlying Value is lazily created in a thread safe manner.
-		///// </summary>
-		//private AttachmentResources attachments;
-
-		///// <summary>
-		///// Represents the AtomicReference To DiscussionResources.
-		///// 
-		///// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
-		///// as null, and will be initialized To non-null at the first time it is accessed via corresponding getter, therefore
-		///// effectively the underlying Value is lazily created in a thread safe manner.
-		///// </summary>
-		//private DiscussionResources discussions;
-
-		///// <summary>
-		///// Represents the AtomicReference To CommentResources.
-		///// 
-		///// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
-		///// as null, and will be initialized To non-null at the first time it is accessed via corresponding getter, therefore
-		///// effectively the underlying Value is lazily created in a thread safe manner.
-		///// </summary>
-		//private CommentResources comments;
-
 		/// <summary>
 		/// Represents the AtomicReference To UserResources.
 		/// 
@@ -247,33 +223,6 @@ namespace Smartsheet.Api.Internal
 		private ContactResources contacts;
 
 		/// <summary>
-		/// Represents the AtomicReference for assumed user Email.
-		/// 
-		/// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
-		/// as null, and can be set via corresponding setter, therefore effectively the assumed user can be updated in the
-		/// SmartsheetImpl in thread safe manner.
-		/// </summary>
-		private string assumedUser;
-
-		/// <summary>
-		/// Represents the AtomicReference for access token.
-		/// 
-		/// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
-		/// as null, and can be set via corresponding setter, therefore effectively the access token can be updated in the
-		/// SmartsheetImpl in thread safe manner.
-		/// </summary>
-		private string accessToken;
-
-        /// <summary>
-        /// Represents the Name of the SDK API Test Scenario
-        /// 
-        /// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
-        /// as null, and can be set via corresponding setter, therefore effectively the test scenario can be updated in the
-        /// SmartsheetImpl in thread safe manner.
-        /// </summary>
-        private string apiScenario;
-
-		/// <summary>
 		/// Represents the AtomicReference for image Urls.
 		/// 
 		/// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
@@ -286,78 +235,6 @@ namespace Smartsheet.Api.Internal
 		/// static logger 
 		/// </summary>
 		private static Logger logger = LogManager.GetCurrentClassLogger();
-
-		/// <summary>
-		/// user provided method to calculate backoff time in between retries
-		/// </summary>
-		private IUserCalcBackoff calcBackoff = null;
-
-		/// <summary>
-		/// calcBackoff setter
-		/// </summary>
-		public IUserCalcBackoff CalcBackoff
-		{
-			set
-			{
-				this.calcBackoff = value;
-			}
-		}
-
-		/// <summary>
-		/// Called by DefaultHttpClient when a request fails to determine if we can retry the request. Calls
-		/// calcBackoff to determine time in between retries.
-		/// </summary>
-		/// <param name="previousAttempts"></param>
-		/// <param name="totalElapsedTime"></param>
-		/// <param name="response"></param>
-		/// <returns>true if this error code can be retried</returns>
-		public bool SmartsheetShouldRetry(int previousAttempts, long totalElapsedTime, HttpResponse response)
-		{
-			string contentType = response.Entity.ContentType;
-			if (contentType != null && !contentType.StartsWith("application/json"))
-			{
-				// it's not JSON; don't try to parse it
-				return false;
-			}
-
-			Api.Models.Error error;
-			try
-			{
-				error = jsonSerializer.deserialize<Api.Models.Error>(
-					response.Entity.GetContent());
-			}
-			catch (JsonSerializationException ex)
-			{
-				throw new SmartsheetException(ex);
-			}
-			catch (Newtonsoft.Json.JsonException ex)
-			{
-				throw new SmartsheetException(ex);
-			}
-			catch (IOException ex)
-			{
-				throw new SmartsheetException(ex);
-			}
-
-			switch (error.ErrorCode)
-			{
-				case 4001:
-				case 4002:
-				case 4003:
-				case 4004:
-					break;
-				default:
-					return false;
-			}
-
-			long backoff = calcBackoff.CalcBackoffCallback(previousAttempts, totalElapsedTime, error);
-			if (backoff < 0)
-				return false;
-
-			logger.Info(string.Format("HttpError StatusCode={0}: Retrying in {1} milliseconds", response.StatusCode, backoff));
-			Thread.Sleep(TimeSpan.FromMilliseconds(backoff));
-			return true;
-		}
 
 		/// <summary>
 		/// Create an instance with given server URI, HttpClient (optional) and JsonSerializer (optional)
@@ -374,9 +251,10 @@ namespace Smartsheet.Api.Internal
 			Utils.ThrowIfEmpty(baseURI);
 
 			this.baseURI = new Uri(baseURI);
-			this.httpClient = httpClient == null ? new DefaultHttpClient(new RestClient(), SmartsheetShouldRetry) : httpClient;
-			this.jsonSerializer = jsonSerializer == null ? new JsonNetSerializer() : jsonSerializer;
 			this.accessToken = accessToken;
+			this.jsonSerializer = jsonSerializer == null ? new JsonNetSerializer() : jsonSerializer;
+			this.httpClient = httpClient == null ? new DefaultHttpClient(new RestClient(), this.jsonSerializer) : httpClient;
+			this.UserAgent = null;
 		}
 
 		/// <summary>
@@ -394,10 +272,7 @@ namespace Smartsheet.Api.Internal
 		/// <returns> corresponding field. </returns>
 		public virtual HttpClient HttpClient
 		{
-			get
-			{
-				return httpClient;
-			}
+			get	{ return httpClient; }
 		}
 
 		/// <summary>
@@ -406,10 +281,7 @@ namespace Smartsheet.Api.Internal
 		/// <returns> corresponding field </returns>
 		public virtual JsonSerializer JsonSerializer
 		{
-			get
-			{
-				return jsonSerializer;
-			}
+			get	{ return jsonSerializer; }
 		}
 
 		/// <summary>
@@ -420,26 +292,7 @@ namespace Smartsheet.Api.Internal
 		/// <returns> the base uri </returns>
 		public Uri BaseURI
 		{
-			get
-			{
-				return baseURI;
-			}
-		}
-
-		/// <summary>
-		/// Return the assumed user.
-		/// </summary>
-		/// <returns> the assumed user </returns>
-		public string AssumedUser
-		{
-			get
-			{
-				return assumedUser;
-			}
-			set
-			{
-				this.assumedUser = value;
-			}
+			get	{ return baseURI; }
 		}
 
 		/// <summary>
@@ -448,31 +301,52 @@ namespace Smartsheet.Api.Internal
 		/// <returns> the access token </returns>
 		public string AccessToken
 		{
-			get
-			{
-				return accessToken;
-			}
-			set
-			{
-				this.accessToken = value;
+			get	{ return accessToken; }
+			set	{ this.accessToken = value;	}
+		}
+
+		/// <summary>
+		/// Return the assumed user.
+		/// </summary>
+		/// <returns> the assumed user </returns>
+		public string AssumedUser
+		{
+			get	{ return assumedUser; }
+			set	{ this.assumedUser = value; }
+		}
+
+		/// <summary>
+		/// Return the change agent
+		/// </summary>
+		/// <returns> the change agent </returns>
+		public string ChangeAgent
+		{
+			get	{ return changeAgent; }
+			set	{ this.changeAgent = value; }
+		}
+
+		/// <summary>
+		/// Set the RestSharp default user agent
+		/// </summary>
+		public string UserAgent
+		{
+			set { 
+				if(this.httpClient is DefaultHttpClient)
+					((DefaultHttpClient)this.httpClient).SetUserAgent(GenerateUserAgent(value));
 			}
 		}
 
-        /// <summary>
-        /// Return the SDK API test scenario.
-        /// </summary>
-        /// <returns> the SDK API test scenario </returns>
-        public string APIScenario
-        {
-            get
-            {
-                return apiScenario;
-            }
-            set
-            {
-                this.apiScenario = value;
-            }
-        }
+		/// <summary>
+		/// Set the maximum retry timeout
+		/// </summary>
+		public long MaxRetryTimeout
+		{
+			set
+			{
+				if (this.httpClient is DefaultHttpClient)
+					((DefaultHttpClient)this.httpClient).SetMaxRetryTimeout(value);
+			}
+		}
 
 		/// <summary>
 		/// Returns the HomeResources instance that provides access To Home resources.
@@ -526,7 +400,6 @@ namespace Smartsheet.Api.Internal
 			}
 		}
 
-
 		/// <summary>
 		/// Returns the TemplateResources instance that provides access To Template resources.
 		/// </summary>
@@ -578,57 +451,6 @@ namespace Smartsheet.Api.Internal
 				return webhooks;
 			}
 		}
-
-
-		///// <summary>
-		///// Returns the ColumnResources instance that provides access To Column resources.
-		///// </summary>
-		///// <returns> the column resources </returns>
-		//public virtual ColumnResources Columns()
-		//{
-		//	Interlocked.CompareExchange<ColumnResources>(ref columns, new ColumnResourcesImpl(this), null);
-		//	return columns;
-		//}
-
-		///// <summary>
-		///// Returns the RowResources instance that provides access To Row resources.
-		///// </summary>
-		///// <returns> the row resources </returns>
-		//public virtual RowResources Rows()
-		//{
-		//		Interlocked.CompareExchange<RowResources>(ref rows, new RowResourcesImpl(this), null);
-		//		return rows;
-		//}
-
-		///// <summary>
-		///// Returns the AttachmentResources instance that provides access To Attachment resources.
-		///// </summary>
-		///// <returns> the attachment resources </returns>
-		//public virtual AttachmentResources Attachments()
-		//{
-		//	Interlocked.CompareExchange<AttachmentResources>(ref attachments, new AttachmentResourcesImpl(this), null);
-		//	return attachments;
-		//}
-
-		///// <summary>
-		///// Returns the DiscussionResources instance that provides access To Discussion resources.
-		///// </summary>
-		///// <returns> the discussion resources </returns>
-		//public virtual DiscussionResources Discussions()
-		//{
-		//	Interlocked.CompareExchange<DiscussionResources>(ref discussions, new DiscussionResourcesImpl(this), null);
-		//	return discussions;
-		//}
-
-		///// <summary>
-		///// Returns the CommentResources instance that provides access To Comment resources.
-		///// </summary>
-		///// <returns> the Comment resources </returns>
-		//public virtual CommentResources Comments()
-		//{
-		//	Interlocked.CompareExchange<CommentResources>(ref comments, new CommentResourcesImpl(this), null);
-		//	return comments;
-		//}
 
 		/// <summary>
 		/// Returns the UserResources instance that provides access To User resources.
@@ -709,10 +531,10 @@ namespace Smartsheet.Api.Internal
 		}
 
 		/// <summary>
-		/// Returns the ContactResources instance that provides access To contacts resources.
+		/// Returns the ContactResources instance that provides access to contacts resources.
 		/// </summary>
 		/// <returns> the contacts resources </returns>
-		public ContactResources ContactResources
+		public virtual ContactResources ContactResources
 		{
 			get
 			{
@@ -721,84 +543,10 @@ namespace Smartsheet.Api.Internal
 			}
 		}
 
-		[Obsolete("use Smartsheet.Api.SmartsheetClient.HomeResources", true)]
-		[EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
-		public virtual HomeResources Home()
-		{
-			throw new NotSupportedException();
-		}
-
-		[Obsolete("use Smartsheet.Api.SmartsheetClient.SheetResources", true)]
-		[EditorBrowsable(EditorBrowsableState.Never)]
-		public virtual SheetResources Sheets()
-		{
-			throw new NotSupportedException();
-		}
-
-		[Obsolete("use Smartsheet.Api.SmartsheetClient.ReportResources", true)]
-		[EditorBrowsable(EditorBrowsableState.Never)]
-		public virtual ReportResources Reports()
-		{
-			throw new NotSupportedException();
-		}
-
-		[Obsolete("use Smartsheet.Api.SmartsheetClient.SheetResources.AttachmentResources to get sheet level attachment resources", true)]
-		[EditorBrowsable(EditorBrowsableState.Never)]
-		public virtual AttachmentResources Attachments()
-		{
-			throw new NotSupportedException();
-		}
-
-		[Obsolete("use Smartsheet.Api.SmartsheetClient.SheetResources.RowResources", true)]
-		[EditorBrowsable(EditorBrowsableState.Never)]
-		public virtual RowResources Rows()
-		{
-			throw new NotSupportedException();
-		}
-
-		[Obsolete("use Smartsheet.Api.SmartsheetClient.SheetResources.CommentResources to get sheet level comment resources", true)]
-		[EditorBrowsable(EditorBrowsableState.Never)]
-		public virtual CommentResources Comments()
-		{
-			throw new NotSupportedException();
-		}
-
-
-		[Obsolete("use Smartsheet.Api.SmartsheetClient.UserResources", true)]
-		[EditorBrowsable(EditorBrowsableState.Never)]
-		public virtual UserResources Users()
-		{
-			throw new NotSupportedException();
-		}
-
-		[Obsolete("use Smartsheet.Api.SmartsheetClient.SearchResources", true)]
-		[EditorBrowsable(EditorBrowsableState.Never)]
-		public virtual SearchResources Search()
-		{
-			throw new NotSupportedException();
-		}
-
-		[Obsolete("use Smartsheet.Api.SmartsheetClient.TemplateResources", true)]
-		[EditorBrowsable(EditorBrowsableState.Never)]
-		public virtual TemplateResources Templates()
-		{
-			throw new NotSupportedException();
-		}
-
-		[Obsolete("use Smartsheet.Api.SmartsheetClient.FolderResources", true)]
-		[EditorBrowsable(EditorBrowsableState.Never)]
-		public virtual FolderResources Folders()
-		{
-			throw new NotSupportedException();
-		}
-
-		[Obsolete("use Smartsheet.Api.SmartsheetClient.WorkspaceResources", true)]
-		[EditorBrowsable(EditorBrowsableState.Never)]
-		public virtual WorkspaceResources Workspaces()
-		{
-			throw new NotSupportedException();
-		}
-
+		/// <summary>
+		/// Returns the ImageUrlResources instance that provides access to image URL resources.
+		/// </summary>
+		/// <returns> the image URL resources </returns>
 		public virtual ImageUrlsResources ImageUrlResources
 		{
 			get
@@ -806,6 +554,35 @@ namespace Smartsheet.Api.Internal
 				Interlocked.CompareExchange<ImageUrlsResources>(ref imageUrls, new ImageUrlsResourcesImpl(this), null);
 				return imageUrls;
 			}
+		}
+
+		/// <summary>
+		/// Compose a User-Agent string that represents this version of the SDK (along with platform info)
+		/// </summary>
+		/// <param name="userAgent"></param>
+		/// <returns> a User-Agent string </returns>
+		private string GenerateUserAgent(string userAgent)
+		{
+			// Set User Agent
+			string thisVersion = "";
+			string title = "";
+			Assembly assembly = Assembly.GetCallingAssembly();
+			if (assembly != null)
+			{
+				thisVersion = assembly.GetName().Version.ToString();
+				title = assembly.GetName().Name;
+			}
+			if (userAgent == null)
+			{
+				assembly = Assembly.GetEntryAssembly();
+				if (assembly != null)
+				{
+					string[] strings = assembly.GetName().ToString().Split(',');
+					if (strings.Length > 0)
+						userAgent = strings[0];
+				}
+			}
+			return title + "/" + thisVersion + "/" + userAgent + "/" + Utils.GetOSFriendlyName();
 		}
 	}
 }

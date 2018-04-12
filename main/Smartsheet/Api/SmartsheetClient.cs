@@ -28,6 +28,31 @@ namespace Smartsheet.Api
 	public interface SmartsheetClient
 	{
 		/// <summary>
+		/// Set the access token to use.
+		/// </summary>
+		string AccessToken { set; }
+
+		/// <summary>
+		/// Set the email of the user to assume
+		/// </summary>
+		string AssumedUser { set; }
+
+		/// <summary>
+		/// Set the change agent identifier
+		/// </summary>
+		string ChangeAgent { set; }
+
+		/// <summary>
+		/// Set the user agent header string
+		/// </summary>
+		string UserAgent { set; }
+
+		/// <summary>
+		/// Sets the max retyr time if the HtppClient is an instance of DefaultHttpClient
+		/// </summary>
+		long MaxRetryTimeout { set; }
+
+		/// <summary>
 		/// <para>Returns the HomeResources instance that provides access to Home resources.</para>
 		/// </summary>
 		/// <returns> the home resources instance </returns>
@@ -99,13 +124,11 @@ namespace Smartsheet.Api
 		/// <returns> the group resources instance </returns>
 		GroupResources GroupResources { get; }
 
-
 		/// <summary>
 		/// <para>Returns the FavoriteResources instance that provides access to favorite resources.</para>
 		/// </summary>
 		/// <returns> the favorite resources instance </returns>
 		FavoriteResources FavoriteResources { get; }
-
 
 		/// <summary>
 		/// <para>Returns the TokenResources instance that provides access to token resources.</para>
@@ -118,108 +141,6 @@ namespace Smartsheet.Api
 		/// </summary>
 		/// <returns> the contact resources instance </returns>
 		ContactResources ContactResources { get; }
-
-
-		/// <summary>
-		/// Use Smartsheet.Api.SmartsheetClient.HomeResources instead.
-		/// </summary>
-		/// <returns>The HomeResources.</returns>
-		[Obsolete("use Smartsheet.Api.SmartsheetClient.HomeResources", true)]
-		[EditorBrowsable(EditorBrowsableState.Never)]
-		HomeResources Home();
-
-		/// <summary>
-		/// Use Smartsheet.Api.SmartsheetClient.FolderResources instead.
-		/// </summary>
-		/// <returns>The FolderResources.</returns>
-		[Obsolete("use Smartsheet.Api.SmartsheetClient.SheetResources", true)]
-		[EditorBrowsable(EditorBrowsableState.Never)]
-		SheetResources Sheets();
-
-		/// <summary>
-		/// Use Smartsheet.Api.SmartsheetClient.ReportResources instead.
-		/// </summary>
-		/// <returns>The ReportResources.</returns>
-		[Obsolete("use Smartsheet.Api.SmartsheetClient.ReportResources", true)]
-		[EditorBrowsable(EditorBrowsableState.Never)]
-		ReportResources Reports();
-
-		/// <summary>
-		/// <para>
-		/// Use Smartsheet.Api.SmartsheetClient.SheetResources.AttachmentResources instead to get sheet level attachment resources.
-		/// </para>
-		/// <para>
-		/// Use Smartsheet.Api.SmartsheetClient.SheetResources.DiscussionResources.AttachmentResources instead to get discussion level attachment resources.
-		/// </para>
-		/// <para>
-		/// Use Smartsheet.Api.SmartsheetClient.SheetResources.CommentResources.AttachmentResources instead to get comment level attachment resources.
-		/// </para>
-		/// </summary>
-		/// <returns>The AttachmentResources.</returns>
-		[Obsolete("use Smartsheet.Api.SmartsheetClient.SheetResources.AttachmentResources to get sheet level attachment resources", true)]
-		[EditorBrowsable(EditorBrowsableState.Never)]
-		AttachmentResources Attachments();
-
-		/// <summary>
-		/// Use Smartsheet.Api.SmartsheetClient.SheetResources.RowResources instead.
-		/// </summary>
-		/// <returns>The RowResources.</returns>
-		[Obsolete("use Smartsheet.Api.SmartsheetClient.SheetResources.RowResources", true)]
-		[EditorBrowsable(EditorBrowsableState.Never)]
-		RowResources Rows();
-
-		/// <summary>
-		/// <para>
-		/// Use Smartsheet.Api.SmartsheetClient.SheetResources.CommentResources instead to get sheet level comment resources.
-		/// </para>
-		/// <para>
-		/// Use Smartsheet.Api.SmartsheetClient.SheetResources.DiscussionResources.CommentResources instead to get discussion level comment resources.
-		/// </para>
-		/// </summary>
-		/// <returns>The CommentResources.</returns>
-		[Obsolete("use Smartsheet.Api.SmartsheetClient.SheetResources.CommentResources to get sheet level comment resources", true)]
-		[EditorBrowsable(EditorBrowsableState.Never)]
-		CommentResources Comments();
-
-		/// <summary>
-		/// Use Smartsheet.Api.SmartsheetClient.UserResources instead.
-		/// </summary>
-		/// <returns>The UserResources.</returns>
-		[Obsolete("use Smartsheet.Api.SmartsheetClient.UserResources", true)]
-		[EditorBrowsable(EditorBrowsableState.Never)]
-		UserResources Users();
-
-		/// <summary>
-		/// Use Smartsheet.Api.SmartsheetClient.SearchResources instead.
-		/// </summary>
-		/// <returns>The SearchResources.</returns>
-		[Obsolete("use Smartsheet.Api.SmartsheetClient.SearchResources", true)]
-		[EditorBrowsable(EditorBrowsableState.Never)]
-		SearchResources Search();
-
-		/// <summary>
-		/// Use Smartsheet.Api.SmartsheetClient.TemplateResources instead.
-		/// </summary>
-		/// <returns>The TemplateResources.</returns>
-		[Obsolete("use Smartsheet.Api.SmartsheetClient.TemplateResources", true)]
-		[EditorBrowsable(EditorBrowsableState.Never)]
-		TemplateResources Templates();
-
-		/// <summary>
-		/// Use Smartsheet.Api.SmartsheetClient.FolderResources instead.
-		/// </summary>
-		/// <returns>The FolderResources.</returns>
-		[Obsolete("use Smartsheet.Api.SmartsheetClient.FolderResources", true)]
-		[EditorBrowsable(EditorBrowsableState.Never)]
-		FolderResources Folders();
-
-		/// <summary>
-		/// Use Smartsheet.Api.SmartsheetClient.WorkspaceResources instead.
-		/// </summary>
-		/// <returns>The WorkspaceResources.</returns>
-		[Obsolete("use Smartsheet.Api.SmartsheetClient.WorkspaceResources", true)]
-		[EditorBrowsable(EditorBrowsableState.Never)]
-		WorkspaceResources Workspaces();
 
 		/// <summary>
 		/// <para>Returns the ImageUrlResources instance that provides access to image Url resources.</para>
