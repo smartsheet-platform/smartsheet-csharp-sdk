@@ -232,6 +232,15 @@ namespace Smartsheet.Api.Internal
 		private ImageUrlsResources imageUrls;
 
 		/// <summary>
+		/// Represents the AtomicReference for passthrough resources.
+		/// 
+		/// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
+		/// as null, and can be set via corresponding setter, therefore effectively the assumed user can be updated in the
+		/// SmartsheetImpl in thread safe manner.
+		/// </summary>
+		private PassthroughResources passthrough;
+
+		/// <summary>
 		/// static logger 
 		/// </summary>
 		private static Logger logger = LogManager.GetCurrentClassLogger();
@@ -553,6 +562,19 @@ namespace Smartsheet.Api.Internal
 			{
 				Interlocked.CompareExchange<ImageUrlsResources>(ref imageUrls, new ImageUrlsResourcesImpl(this), null);
 				return imageUrls;
+			}
+		}
+
+		/// <summary>
+		/// Returns the PassthroughResources instance that provides access to passthrough resources.
+		/// </summary>
+		/// <returns> the passthrough resources </returns>
+		public virtual PassthroughResources PassthroughResources
+		{
+			get
+			{
+				Interlocked.CompareExchange<PassthroughResources>(ref passthrough, new PassthroughResourcesImpl(this), null);
+				return passthrough;
 			}
 		}
 

@@ -147,5 +147,11 @@ namespace Smartsheet.Api
 		/// </summary>
 		/// <returns> the image Url resources instance </returns>
 		ImageUrlsResources ImageUrlResources { get; }
+
+		/// <summary>
+		/// <para>Returns the PassthroughResources instance that provides access to passthrough resources.</para>
+		/// </summary>
+		/// <returns> the passthrough resources instance </returns>
+		PassthroughResources PassthroughResources { get; }
 	}
 }

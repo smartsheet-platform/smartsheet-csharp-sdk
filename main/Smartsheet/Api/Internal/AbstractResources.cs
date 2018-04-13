@@ -150,7 +150,7 @@ namespace Smartsheet.Api.Internal
 		/// 
 		/// It will be initialized in constructor and will not change afterwards.
 		/// </summary>
-		private SmartsheetImpl smartsheet;
+		protected SmartsheetImpl smartsheet;
 
 		/// <summary>
 		/// Constructor.
