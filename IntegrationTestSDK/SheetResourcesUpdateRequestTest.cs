@@ -16,9 +16,7 @@ namespace IntegrationTestSDK
 		[Test]
 		public void TestSheetUpdateRequestResources()
 		{
-			string accessToken = ConfigurationManager.AppSettings["accessToken"];
-
-			SmartsheetClient smartsheet = new SmartsheetBuilder().SetAccessToken(accessToken).Build();
+			SmartsheetClient smartsheet = new SmartsheetBuilder().SetMaxRetryTimeout(30000).Build();
 
 			long sheetId = CreateSheet(smartsheet);
 

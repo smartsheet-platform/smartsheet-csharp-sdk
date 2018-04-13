@@ -14,9 +14,9 @@ namespace IntegrationTestSDK
 		[Test]
 		public void TestDiscussionResources()
 		{
-			string accessToken = ConfigurationManager.AppSettings["accessToken"];
-
-			SmartsheetClient smartsheet = new SmartsheetBuilder().SetAccessToken(accessToken).Build(); long sheetId = CreateSheet(smartsheet);
+			SmartsheetClient smartsheet = new SmartsheetBuilder().SetMaxRetryTimeout(30000).Build(); 
+			
+			long sheetId = CreateSheet(smartsheet);
 
 			Discussion discussionToCreate = new Discussion.CreateDiscussionBuilder("A discussion", new Comment.AddCommentBuilder("a comment").Build()).Build();
 			Discussion createdDiscussion = smartsheet.SheetResources.DiscussionResources.CreateDiscussion(sheetId, discussionToCreate);

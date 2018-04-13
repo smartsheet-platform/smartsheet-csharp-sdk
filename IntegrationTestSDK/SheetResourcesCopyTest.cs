@@ -13,9 +13,7 @@ namespace IntegrationTestSDK
 		[Test]
 		public void TestSheetCopyResources()
 		{
-			string accessToken = ConfigurationManager.AppSettings["accessToken"];
-
-			SmartsheetClient smartsheet = new SmartsheetBuilder().SetAccessToken(accessToken).Build();
+			SmartsheetClient smartsheet = new SmartsheetBuilder().SetMaxRetryTimeout(30000).Build();
 			// Before
 			// Sheet
 			// Folder

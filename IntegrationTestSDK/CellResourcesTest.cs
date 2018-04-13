@@ -15,9 +15,9 @@ namespace IntegrationTestSDK
 		[Test]
 		public void TestCellResources()
 		{
-			string accessToken = ConfigurationManager.AppSettings["accessToken"];
-
-			SmartsheetClient smartsheet = new SmartsheetBuilder().SetAccessToken(accessToken).Build(); long sheetId = CreateSheet(smartsheet);
+			SmartsheetClient smartsheet = new SmartsheetBuilder().SetMaxRetryTimeout(30000).Build(); 
+			
+			long sheetId = CreateSheet(smartsheet);
 
 			PaginatedResult<Column> columnsResult = smartsheet.SheetResources.ColumnResources.ListColumns(sheetId, null, null);
 			long columnId = columnsResult.Data[0].Id.Value;

@@ -82,9 +82,7 @@ namespace IntegrationTestSDK
 
 		private static void UseTokenResources()
 		{
-			string accessToken = ConfigurationManager.AppSettings["accessToken"];
-
-			SmartsheetClient smartsheet = new SmartsheetBuilder().SetAccessToken(accessToken).Build();
+			SmartsheetClient smartsheet = new SmartsheetBuilder().SetMaxRetryTimeout(30000).Build();
 			try
 			{
 				smartsheet.TokenResources.GetAccessToken();

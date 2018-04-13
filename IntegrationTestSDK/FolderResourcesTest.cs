@@ -48,9 +48,7 @@ namespace IntegrationTestSDK
 		[Test]
 		public void TestFolderResources()
 		{
-			string accessToken = ConfigurationManager.AppSettings["accessToken"];
-
-			SmartsheetClient smartsheet = new SmartsheetBuilder().SetAccessToken(accessToken).Build();
+			SmartsheetClient smartsheet = new SmartsheetBuilder().SetMaxRetryTimeout(30000).Build();
 
 			long createdFolderInHomeId = CreateFolderInHome(smartsheet);
 			long createdFolderInFolderId = CreateFolderInFolder(smartsheet, createdFolderInHomeId);

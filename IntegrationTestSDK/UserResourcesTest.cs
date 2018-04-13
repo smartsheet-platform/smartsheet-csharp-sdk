@@ -11,13 +11,11 @@ namespace IntegrationTestSDK
 	{
 		private static string email = "test+email@invalidsmartsheet.com";
 		private SmartsheetClient smartsheet;
-		private string accessToken;
 
 		[SetUp]
 		public void SetUp()
 		{
-			accessToken = ConfigurationManager.AppSettings["accessToken"];
-			smartsheet = new SmartsheetBuilder().SetAccessToken(accessToken).Build();
+			smartsheet = new SmartsheetBuilder().SetMaxRetryTimeout(30000).Build();
 		}
 
 		[Test]
