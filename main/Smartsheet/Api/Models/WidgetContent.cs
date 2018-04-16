@@ -28,7 +28,7 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// Represents the CellLinkWidgetContent object.</summary>
 		/// <seealso href="http://smartsheet-platform.github.io/api-docs/#celllinkwidgetcontent-object">CellLinkWidge Object Help</seealso>		
-		private Link hyperlink;
+		private Hyperlink hyperlink;
 		private IList<CellDataItem> cellData;
 		private IList<Column> columns;
 
@@ -65,7 +65,7 @@ namespace Smartsheet.Api.Models
 		/// The widget has when clicked attribute set to that hyperlink (if present and non-null).
 		/// </summary>
 		/// <returns> the Link </returns>
-		public virtual Link Hyperlink
+		public virtual Hyperlink Hyperlink
 		{
 			get
 			{

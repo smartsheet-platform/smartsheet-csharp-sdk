@@ -17,6 +17,7 @@
 //    %[license]
 
 using System;
+using Newtonsoft.Json;
 
 namespace Smartsheet.Api.Models
 {
@@ -34,15 +35,39 @@ namespace Smartsheet.Api.Models
 	/// </summary>
 	public class CellLink
 	{
+		/// <summary>
+		/// One of the following values:
+		/// OK: the link is in a good state
+		/// BROKEN: the row or sheet linked to was deleted
+		/// INACCESSIBLE: the sheet linked to cannot be viewed by this user
+		/// Several other values indicating unusual error conditions: NOT_SHARED, BLOCKED, CIRCULAR, INVALID, and DISABLED . */
+		/// </summary>
 		private string status;
 
+		/// <summary>
+		/// The sheet ID of the sheet that the linked cell belongs to
+		/// </summary>
 		private long? sheetId;
 
+		/// <summary>
+		/// The rwo ID of the linked cell
+		/// </summary>
 		private long? rowId;
 
+		/// <summary>
+		/// The column ID of the linked cell
+		/// </summary>
 		private long? columnId;
 
+		/// <summary>
+		/// The sheet name of the linked cell
+		/// </summary>
 		private string sheetName;
+
+		/// <summary>
+		/// If true, update will serialize a null to reset the linkInFromCell
+		/// </summary>
+		private bool isNull = true;
 
 		/// <summary>
 		/// One of the following values:
@@ -66,7 +91,10 @@ namespace Smartsheet.Api.Models
 		public long? SheetId
 		{
 			get { return sheetId; }
-			set { sheetId = value; }
+			set {
+				isNull = false;
+				sheetId = value; 
+			}
 		}
 
 		/// <summary>
@@ -75,7 +103,10 @@ namespace Smartsheet.Api.Models
 		public long? RowId
 		{
 			get { return rowId; }
-			set { rowId = value; }
+			set {
+				isNull = false;
+				rowId = value; 
+			}
 		}
 
 		/// <summary>
@@ -84,7 +115,10 @@ namespace Smartsheet.Api.Models
 		public long? ColumnId
 		{
 			get { return columnId; }
-			set { columnId = value; }
+			set {
+				isNull = false;
+				columnId = value; 
+			}
 		}
 
 		/// <summary>
@@ -94,6 +128,12 @@ namespace Smartsheet.Api.Models
 		{
 			get { return sheetName; }
 			set { sheetName = value; }
+		}
+
+		[JsonIgnore]
+		public virtual bool IsNull
+		{
+			get { return isNull; }
 		}
 	}
 }

@@ -16,6 +16,8 @@
 //    limitations under the License.
 //    %[license]
 
+using Newtonsoft.Json;
+
 namespace Smartsheet.Api.Models
 {
 	/// <summary>
@@ -29,13 +31,8 @@ namespace Smartsheet.Api.Models
 	/// <item>If the hyperlink is a sheet or report link, the cell’s value will be set to the sheet or report’s name.</item>
 	/// </list></para>
 	/// </summary>
-	public class Link
+	public class Hyperlink
 	{
-		///// <summary>
-		///// Represents the Link Type.
-		///// </summary>
-		//private LinkType? type;
-
 		/// <summary>
 		/// Represents the URL.
 		/// </summary>
@@ -57,12 +54,20 @@ namespace Smartsheet.Api.Models
 		private long? sightId;
 
 		/// <summary>
+		/// If true, update will serialize a null to reset the hyperlink
+		/// </summary>
+		private bool isNull = true;
+
+		/// <summary>
 		/// If non-null, this hyperlink is a link to the Report with this ID.
 		/// </summary>
 		public long? ReportId
 		{
 			get { return reportId; }
-			set { reportId = value; }
+			set {
+				isNull = false;
+				reportId = value;
+			}
 		}
 
 		/// <summary>
@@ -71,35 +76,11 @@ namespace Smartsheet.Api.Models
 		public long? SightId
 		{
 			get { return sightId; }
-			set { sightId = value; }
+			set {
+				isNull = false;
+				sightId = value;
+			}
 		}
-
-		///// <summary>
-		///// Represents the column ID.
-		///// </summary>
-		//private long? columnId;
-
-		///// <summary>
-		///// Represents the row ID.
-		///// </summary>
-		//private long? rowId;
-
-		///// <summary>
-		///// Gets the Type.
-		///// </summary>
-		///// <returns> the Type </returns>
-		//public virtual LinkType? Type
-		//{
-		//	get
-		//	{
-		//		return type;
-		//	}
-		//	set
-		//	{
-		//		this.type = value;
-		//	}
-		//}
-
 
 		/// <summary>
 		/// <para>When the hyperlink is a URL link, this property will contain the URL value.</para>
@@ -109,13 +90,10 @@ namespace Smartsheet.Api.Models
 		/// <returns> the Url </returns>
 		public virtual string Url
 		{
-			get
-			{
-				return url;
-			}
-			set
-			{
-				this.url = value;
+			get	{ return url; }
+			set	{
+				isNull = false;
+				url = value;
 			}
 		}
 
@@ -126,48 +104,22 @@ namespace Smartsheet.Api.Models
 		/// <returns> the sheet Id </returns>
 		public virtual long? SheetId
 		{
-			get
-			{
-				return sheetId;
-			}
-			set
-			{
-				this.sheetId = value;
+			get	{ return sheetId; }
+			set	{
+				isNull = false;
+				sheetId = value; 
 			}
 		}
 
-
-		///// <summary>
-		///// Gets the column Id.
-		///// </summary>
-		///// <returns> the column Id </returns>
-		//public virtual long? ColumnId
-		//{
-		//	get
-		//	{
-		//		return columnId;
-		//	}
-		//	set
-		//	{
-		//		this.columnId = value;
-		//	}
-		//}
-
-
-		///// <summary>
-		///// Gets the row Id.
-		///// </summary>
-		///// <returns> the row Id </returns>
-		//public virtual long? RowId
-		//{
-		//	get
-		//	{
-		//		return rowId;
-		//	}
-		//	set
-		//	{
-		//		this.rowId = value;
-		//	}
-		//}
+		/// <summary>
+		/// Get the value of the isNull flag
+		/// </summary>
+		/// <returns> value of the isNull flag </returns>
+		[JsonIgnore]
+		public virtual bool IsNull
+		{
+			get { return isNull; }
+		}
+	
 	}
 }

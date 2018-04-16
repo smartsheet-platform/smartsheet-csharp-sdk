@@ -28,6 +28,7 @@ namespace Smartsheet.Api.Models
 		PREDECESSOR_LIST,
 		NUMBER,
 		BOOLEAN,
-		STRING
+		STRING,
+		NULL
 	}
 }

@@ -55,7 +55,7 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// Represents a hyperlink to a URL, sheet, or report.
 		/// </summary>
-		private Link hyperlink;
+		private Hyperlink hyperlink;
 
 		/// <summary>
 		/// The Formula for the cell.
@@ -198,7 +198,7 @@ namespace Smartsheet.Api.Models
 		/// A hyperlink to a URL, sheet, or report
 		/// </summary>
 		/// <returns> the Link </returns>
-		public virtual Link Hyperlink
+		public virtual Hyperlink Hyperlink
 		{
 			get { return hyperlink; }
 			set { this.hyperlink = value; }
@@ -263,7 +263,7 @@ namespace Smartsheet.Api.Models
 
 			private string format;
 
-			private Link hyperlink;
+			private Hyperlink hyperlink;
 
 			/// <summary>
 			/// Set required properties.
@@ -329,7 +329,7 @@ namespace Smartsheet.Api.Models
 			/// </summary>
 			/// <param name="hyperlink">the hyperlink</param>
 			/// <returns> this AddCellBuilder </returns>
-			public virtual AddCellBuilder SetHyperlink(Link hyperlink)
+			public virtual AddCellBuilder SetHyperlink(Hyperlink hyperlink)
 			{
 				this.hyperlink = hyperlink;
 				return this;
@@ -376,7 +376,7 @@ namespace Smartsheet.Api.Models
 			/// Gets the Hyperlink.
 			/// </summary>
 			/// <returns>the hyperlink</returns>
-			public virtual Link GetHyperlink()
+			public virtual Hyperlink GetHyperlink()
 			{
 				return hyperlink;
 			}
@@ -410,7 +410,7 @@ namespace Smartsheet.Api.Models
 
 			private string format;
 
-			private Link hyperlink;
+			private Hyperlink hyperlink;
 
 			private CellLink linkInFromCell;
 
@@ -479,7 +479,7 @@ namespace Smartsheet.Api.Models
 			/// </summary>
 			/// <param name="hyperlink"> Link object </param>
 			/// <returns> this UpdateCellBuilder </returns>
-			public virtual UpdateCellBuilder SetHyperlink(Link hyperlink)
+			public virtual UpdateCellBuilder SetHyperlink(Hyperlink hyperlink)
 			{
 				this.hyperlink = hyperlink;
 				return this;
@@ -543,7 +543,7 @@ namespace Smartsheet.Api.Models
 			/// Gets the HyperLink
 			/// </summary>
 			/// <returns>the hyperlink</returns>
-			public virtual Link GetHyperlink()
+			public virtual Hyperlink GetHyperlink()
 			{
 				return hyperlink;
 			}

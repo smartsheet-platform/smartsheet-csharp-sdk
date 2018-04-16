@@ -28,7 +28,7 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// Hyperlink  object
 		/// </summary>
-		private Link hyperlink;
+		private Hyperlink hyperlink;
 
 		/// <summary>
 		/// The display order for the ShortcutWidgetItem
@@ -92,7 +92,7 @@ namespace Smartsheet.Api.Models
 		/// Hyperlink object.
 		/// </summary>
 		/// <returns> the Link </returns>
-		public virtual Link Hyperlink
+		public virtual Hyperlink Hyperlink
 		{
 			get
 			{

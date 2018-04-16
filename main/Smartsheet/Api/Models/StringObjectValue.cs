@@ -20,10 +20,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Newtonsoft.Json;
 
 namespace Smartsheet.Api.Models
 {
-	class StringObjectValue : PrimitiveObjectValue<string>
+	class StringObjectValue : IPrimitiveObjectValue<string>
 	{
 		private string value;
 
@@ -42,5 +43,11 @@ namespace Smartsheet.Api.Models
 		{
 			get { return ObjectValueType.STRING; }
 		}
+
+		public virtual void Serialize(JsonWriter writer)
+		{
+			writer.WriteValue(value);
+		}
+
 	}
 }

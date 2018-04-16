@@ -20,11 +20,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Newtonsoft.Json;
 
 namespace Smartsheet.Api.Models
 {
-	public interface PrimitiveObjectValue<T> : ObjectValue
+	public interface IPrimitiveObjectValue<T> : ObjectValue
 	{
 		T Value {get; set;}
+
+		void Serialize(JsonWriter writer);
 	}
 }

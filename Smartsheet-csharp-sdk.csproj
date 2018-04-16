@@ -74,9 +74,12 @@
     <Compile Include="main\Smartsheet\Api\ImageUrlsResources.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\ContactResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\ImageUrlsResourcesImpl.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\Json\CellObjectTypeConverter.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\Json\CellLinkTypeConverter.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\Json\CellTypeConverter.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\Json\ErrorTypeConverter.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\Json\HyperlinkConverter.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\Json\ObjectValueTypeConverter.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\Json\PrimitiveObjectValueConverter.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\PassthroughResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\SheetAutomationRuleResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\SheetCrossSheetReferencesResourcesImpl.cs" />
@@ -104,6 +107,7 @@
     <Compile Include="main\Smartsheet\Api\Models\DayOrdinal.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Duration.cs" />
     <Compile Include="main\Smartsheet\Api\Models\ErrorDetail.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\ExplicitNull.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Inclusions\SearchInclusion.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Inclusions\HomeExclusion.cs" />
     <Compile Include="main\Smartsheet\Api\Models\NumberObjectValue.cs" />
@@ -111,7 +115,7 @@
     <Compile Include="main\Smartsheet\Api\Models\ObjectValueType.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Predecessor.cs" />
     <Compile Include="main\Smartsheet\Api\Models\PredecessorList.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\PrimitiveObjectValue.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\IPrimitiveObjectValue.cs" />
     <Compile Include="main\Smartsheet\Api\Models\ProjectSettings.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Schedule.cs" />
     <Compile Include="main\Smartsheet\Api\Models\ScheduleType.cs" />
@@ -275,8 +279,7 @@
     <Compile Include="main\Smartsheet\Api\Models\FormatTables.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Home.cs" />
     <Compile Include="main\Smartsheet\Api\Models\IdentifiableModel.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\Link.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\LinkType.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Hyperlink.cs" />
     <Compile Include="main\Smartsheet\Api\Models\MultiShare.cs" />
     <Compile Include="main\Smartsheet\Api\Models\NamedModel.cs" />
     <Compile Include="main\Smartsheet\Api\Models\ObjectInclusion.cs" />

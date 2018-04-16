@@ -1,7 +1,7 @@
 ﻿//    #[license]
 //    SmartsheetClient SDK for C#
 //    %%
-//    Copyright (C) 2014 SmartsheetClient
+//    Copyright (C) 2018 SmartsheetClient
 //    %%
 //    Licensed under the Apache License, Version 2.0 (the "License");
 //    you may not use this file except in compliance with the License.
@@ -16,29 +16,30 @@
 //    limitations under the License.
 //    %[license]
 
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Newtonsoft.Json;
+
 namespace Smartsheet.Api.Models
 {
-
-
-	/// <summary>
-	/// Represents the Link types.
-	/// </summary>
-	public enum LinkType
+	class ExplicitNull : IPrimitiveObjectValue<object>
 	{
-		/// <summary>
-		/// Represents URL Type.
-		/// </summary>
-		URL,
+		public virtual object Value
+		{
+			get { return null; }
+			set { }
+		}
 
-		/// <summary>
-		/// Represents SHEETLINK Type.
-		/// </summary>
-		SHEETLINK,
+		public virtual ObjectValueType ObjectType
+		{
+			get { return ObjectValueType.NULL; }
+		}
 
-		/// <summary>
-		/// Represents CELLLINK Type.
-		/// </summary>
-		CELLLINK
+		public virtual void Serialize(JsonWriter writer)
+		{
+			writer.WriteNull();
+		}
 	}
-
 }

@@ -25,7 +25,7 @@ using Smartsheet.Api.Models;
 
 namespace Smartsheet.Api.Internal.Json
 {
-	class CellObjectTypeConverter : JsonConverter
+	class CellTypeConverter : JsonConverter
 	{
 		public override bool CanConvert(Type objectType)
 		{
@@ -50,33 +50,20 @@ namespace Smartsheet.Api.Internal.Json
 			serializerHelper.MissingMemberHandling = Newtonsoft.Json.MissingMemberHandling.Ignore;
 			serializerHelper.DateFormatHandling = Newtonsoft.Json.DateFormatHandling.IsoDateFormat;
 			serializerHelper.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
-			serializerHelper.Converters.Add(new ObjectValueTypeConverter());
-			serializerHelper.Converters.Add(new JsonEnumTypeConverter());
 			serializerHelper.ContractResolver = new ContractResolver();
+			serializerHelper.Converters.Add(new JsonEnumTypeConverter());
+			serializerHelper.Converters.Add(new ObjectValueTypeConverter());
+			serializerHelper.Converters.Add(new PrimitiveObjectValueConverter());
+			serializerHelper.Converters.Add(new HyperlinkConverter());
+			serializerHelper.Converters.Add(new CellLinkTypeConverter());
 
 			Cell cell = (Cell)value;
-			if (cell.LinkInFromCell != null)
+			if (cell.LinkInFromCell != null && cell.Value == null)
 			{
-				// Only serialize the columnId and linkInFromCell objects
-				writer.WriteStartObject();
-
-				writer.WritePropertyName("columnId");
-				writer.WriteValue(cell.ColumnId);
-
-				writer.WritePropertyName("linkInFromCell");
-				serializerHelper.Serialize(writer, cell.LinkInFromCell);
-
-				// When creating a cell link, cell.value must be null (the data will be pulled from the linked cell).
-				writer.WritePropertyName("value");
-				writer.WriteNull();
-
-				writer.WriteEndObject();
+				// setting value to ExplicitNull here will force serialization of a null
+				cell.Value = new ExplicitNull();
 			}
-			else
-			{
-				// if there is no linkInFromCell, pass the entire cell object along to the default serializer
-				serializerHelper.Serialize(writer, value);
-			}
+			serializerHelper.Serialize(writer, value);
 		}
 	}
 }

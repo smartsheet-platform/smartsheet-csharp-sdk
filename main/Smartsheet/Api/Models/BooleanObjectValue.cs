@@ -20,10 +20,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Newtonsoft.Json;
 
 namespace Smartsheet.Api.Models
 {
-	class BooleanObjectValue : PrimitiveObjectValue<bool>
+	class BooleanObjectValue : IPrimitiveObjectValue<bool>
 	{
 		private bool value;
 
@@ -41,6 +42,11 @@ namespace Smartsheet.Api.Models
 		public virtual ObjectValueType ObjectType
 		{
 			get { return ObjectValueType.BOOLEAN; }
+		}
+
+		public virtual void Serialize(JsonWriter writer)
+		{
+			writer.WriteValue(value);
 		}
 	}
 }
