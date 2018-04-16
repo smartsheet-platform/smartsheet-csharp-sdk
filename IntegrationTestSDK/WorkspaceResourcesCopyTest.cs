@@ -26,15 +26,11 @@ namespace IntegrationTestSDK
 			Workspace workspace = smartsheet.WorkspaceResources.CreateWorkspace(new Workspace.CreateWorkspaceBuilder("Workspace1").Build());
 			long workspaceId = workspace.Id.Value;
 
-			long createdFolderInHomeId2 = CreateFolderInHome(smartsheet, "Folder2");
-
 			ContainerDestination destination = new ContainerDestination
 			{
-				//DestinationId = createdFolderInHomeId2,
-				//DestinationType = DestinationType.FOLDER,
 				NewName = "Workspace1Copy"
 			};
-			Folder newCopiedWorkspace = smartsheet.WorkspaceResources.CopyWorkspace(workspaceId, destination, new WorkspaceCopyInclusion[] { WorkspaceCopyInclusion.ALL }, new WorkspaceRemapExclusion[] { WorkspaceRemapExclusion.CELL_LINKS });
+			Workspace newCopiedWorkspace = smartsheet.WorkspaceResources.CopyWorkspace(workspaceId, destination, new WorkspaceCopyInclusion[] { WorkspaceCopyInclusion.ALL }, new WorkspaceRemapExclusion[] { WorkspaceRemapExclusion.CELL_LINKS });
 
 			Assert.IsTrue(newCopiedWorkspace.Name == "Workspace1Copy");
 
@@ -43,10 +39,9 @@ namespace IntegrationTestSDK
 			Workspace copiedWorkspace = smartsheet.WorkspaceResources.GetWorkspace(copiedWorkspaceId, null, null);
 			Assert.IsTrue(copiedWorkspace.Name == "Workspace1Copy");
 
-			DeleteFolders(smartsheet, createdFolderInHomeId2);
 			smartsheet.WorkspaceResources.DeleteWorkspace(workspaceId);
+			smartsheet.WorkspaceResources.DeleteWorkspace(copiedWorkspaceId);
 		}
-
 
 		private static void DeleteFolders(SmartsheetClient smartsheet, long folder1)
 		{

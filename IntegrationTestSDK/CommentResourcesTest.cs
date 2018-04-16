@@ -22,10 +22,8 @@ namespace IntegrationTestSDK
 
 			long discussionId = CreateDiscussion(smartsheet, sheetId);
 
-
 			AddCommentWithoutAttachment(smartsheet, sheetId, discussionId);
-
-
+			
 			long commentId = AddCommentWithAttachment(smartsheet, sheetId, discussionId);
 
 			GetComment(smartsheet, sheetId, commentId);

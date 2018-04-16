@@ -26,6 +26,7 @@ namespace IntegrationTestSDK
 
 			SearchSheet(smartsheet, query, sheetId);
 
+			smartsheet.SheetResources.DeleteSheet(sheetId);
 		}
 
 		private static void SearchSheet(SmartsheetClient smartsheet, string query, long sheetId)

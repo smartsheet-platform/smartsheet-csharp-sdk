@@ -52,6 +52,8 @@ namespace IntegrationTestSDK
 			Assert.IsTrue(discussionsOnRow.Data.Count == 1);
 			Assert.IsTrue(discussionsOnRow.Data[0].Title == "discussion on row");
 			Assert.IsTrue(discussionsOnRow.Data[0].Comments[0].Text == "discussion on row\n\na comment!");
+
+			smartsheet.SheetResources.DeleteSheet(sheetId);
 		}
 
 		private static long CreateSheet(SmartsheetClient smartsheet)

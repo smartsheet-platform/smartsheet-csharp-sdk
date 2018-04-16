@@ -34,7 +34,6 @@ namespace IntegrationTestSDK
 
 			ListAttachmentVersions(smartsheet, sheetId, attachmentId);
 
-
 			DeleteAttachment(smartsheet, sheetId, attachmentId);
 
 			smartsheet.SheetResources.DeleteSheet(sheetId);

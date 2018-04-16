@@ -30,6 +30,8 @@ namespace IntegrationTestSDK
 			Assert.IsTrue(histories.Data[0].ColumnType == ColumnType.TEXT_NUMBER);
 			Assert.IsTrue(histories.Data.Count == 1);
 			Assert.IsTrue(histories.Data[0].ColumnId == columnId);
+
+			smartsheet.SheetResources.DeleteSheet(sheetId);
 		}
 
 		private static long AddRows(SmartsheetClient smartsheet, long sheetId, long columnId, Cell[] cellsToAdd)

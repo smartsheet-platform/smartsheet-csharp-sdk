@@ -21,13 +21,15 @@ namespace IntegrationTestSDK
 
 			long sheetId;
 			long folderId;
-			//long reportId;
-			//long templateId;
 			long workspaceId;
 
 			AddFavorites(smartsheet, out sheetId, out folderId, out workspaceId);
 
 			RemoveAndListFavorites(smartsheet, sheetId, folderId, workspaceId);
+
+			smartsheet.SheetResources.DeleteSheet(sheetId);
+			smartsheet.FolderResources.DeleteFolder(folderId);
+			smartsheet.WorkspaceResources.DeleteWorkspace(workspaceId);
 		}
 
 		private static void RemoveAndListFavorites(SmartsheetClient smartsheet, long sheetId, long folderId, long workspaceId)
@@ -46,15 +48,11 @@ namespace IntegrationTestSDK
 		{
 			sheetId = CreateSheet(smartsheet);
 			folderId = CreateFolder(smartsheet);
-			//reportId = CreateReport(smartsheet);
-			//templateId = CreateTemplate(smartsheet);
 			workspaceId = CreateWorkspace(smartsheet);
 
 			Favorite[] favs = new Favorite[] { 
 			new Favorite.AddFavoriteBuilder(ObjectType.SHEET, sheetId).Build(),
 			new Favorite.AddFavoriteBuilder(ObjectType.FOLDER, folderId).Build(),
-			//new Favorite.AddFavoriteBuilder(ObjectType.REPORT, reportId).Build(),
-			//new Favorite.AddFavoriteBuilder(ObjectType.TEMPLATE, templateId).Build(),
 			new Favorite.AddFavoriteBuilder(ObjectType.WORKSPACE, workspaceId).Build()
 			};
 
@@ -133,23 +131,6 @@ namespace IntegrationTestSDK
 			long workspaceId = ws.Id.Value;
 			return workspaceId;
 		}
-
-		// only private sheet-type template ID is allowed.
-		//private static long CreateTemplate(SmartsheetClient smartsheet)
-		//{
-		//	PaginatedResult<Template> templateResult = smartsheet.TemplateResources.ListUserCreatedTemplates(null);
-		//	Assert.IsTrue(templateResult.Data.Count > 0);
-		//	long templateId = templateResult.Data[0].Id.Value;
-		//	return templateId;
-		//}
-
-		//private static long CreateReport(SmartsheetClient smartsheet)
-		//{
-		//	PaginatedResult<Report> reportResult = smartsheet.ReportResources.ListReports(null);
-		//	Assert.IsTrue(reportResult.Data.Count > 0);
-		//	long reportId = reportResult.Data[0].Id.Value;
-		//	return reportId;
-		//}
 
 		private static long CreateFolder(SmartsheetClient smartsheet)
 		{

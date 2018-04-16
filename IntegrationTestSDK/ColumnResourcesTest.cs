@@ -20,6 +20,8 @@ namespace IntegrationTestSDK
 			long columnId = ListColumns(smartsheet, sheetId);
 			UpdateColumn(smartsheet, sheetId, columnId);
 			DeleteAndGetColumn(smartsheet, sheetId, columnId);
+
+			smartsheet.SheetResources.DeleteSheet(sheetId);
 		}
 
 		private static void DeleteAndGetColumn(SmartsheetClient smartsheet, long sheetId, long columnId)

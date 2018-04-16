@@ -32,6 +32,7 @@ namespace IntegrationTestSDK
 
 			DeleteRowAndGetRow(smartsheet, sheetId, rowId);
 
+			smartsheet.SheetResources.DeleteSheet(sheetId);
 		}
 
 		private static void SendRows(SmartsheetClient smartsheet, long sheetId, long columnId, long rowId)
@@ -72,6 +73,7 @@ namespace IntegrationTestSDK
 			CopyOrMoveRowDestination destination = new CopyOrMoveRowDestination { SheetId = tempSheetId };
 			CopyOrMoveRowDirective directive = new CopyOrMoveRowDirective { RowIds = new long[] { rowId }, To = destination };
 			CopyOrMoveRowResult result = smartsheet.SheetResources.RowResources.CopyRowsToAnotherSheet(sheetId, directive, new CopyRowInclusion[] { CopyRowInclusion.CHILDREN }, false);
+			smartsheet.SheetResources.DeleteSheet(tempSheetId);
 		}
 
 		private static long AddRows(SmartsheetClient smartsheet, long sheetId, long columnId, Cell[] cellsToAdd)
