@@ -52,8 +52,8 @@ namespace Smartsheet.Api.Internal.Json
 			serializerHelper.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
 			serializerHelper.ContractResolver = new ContractResolver();
 			serializerHelper.Converters.Add(new JsonEnumTypeConverter());
-			serializerHelper.Converters.Add(new ObjectValueTypeConverter());
 			serializerHelper.Converters.Add(new PrimitiveObjectValueConverter());
+			serializerHelper.Converters.Add(new ObjectValueTypeConverter());
 			serializerHelper.Converters.Add(new HyperlinkConverter());
 			serializerHelper.Converters.Add(new CellLinkTypeConverter());
 
