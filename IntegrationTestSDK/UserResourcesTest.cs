@@ -2,23 +2,23 @@
 using Smartsheet.Api;
 using Smartsheet.Api.Models;
 using System.Configuration;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace IntegrationTestSDK
 {
-	using NUnit.Framework;
-
+	[TestClass]
 	public class UserResourcesTest
 	{
 		private static string email = "test+email@invalidsmartsheet.com";
 		private SmartsheetClient smartsheet;
 
-		[SetUp]
+		[TestInitialize]
 		public void SetUp()
 		{
 			smartsheet = new SmartsheetBuilder().SetMaxRetryTimeout(30000).Build();
 		}
 
-		[Test]
+		[TestMethod]
 		public void ListOneUser()
 		{
 			User user1 = smartsheet.UserResources.AddUser(new User.AddUserBuilder("test+email3@invalidsmartsheet.com", false, false).Build(), true, true);
@@ -31,7 +31,7 @@ namespace IntegrationTestSDK
 			smartsheet.UserResources.RemoveUser((long)user2.Id, null, null, true);
 		}
 
-		[Test]
+		[TestMethod]
 		public void UpdateUser()
 		{
 			// Create user as admin
@@ -50,14 +50,14 @@ namespace IntegrationTestSDK
 			smartsheet.UserResources.RemoveUser((long)user.Id, null, null, true);
 		}
 
-		[Test]
+		[TestMethod]
 		public void GetMe()
 		{
 			UserProfile userMe = smartsheet.UserResources.GetCurrentUser();
 			Assert.IsTrue(userMe.Email != null);
 		}
 
-		[Test]
+		[TestMethod]
 		public void AddRemoveUser()
 		{
 			PaginatedResult<User> users = smartsheet.UserResources.ListUsers(null,new PaginationParameters(true,null,null));

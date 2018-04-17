@@ -6,12 +6,10 @@ using System.Configuration;
 
 namespace IntegrationTestSDK
 {
-	using NUnit.Framework;
-
+	[TestClass]
 	public class ContactResourcesTest
 	{
-
-		[Test]
+		[TestMethod]
 		public void TestContactResources()
 		{
 			SmartsheetClient smartsheet = new SmartsheetBuilder().SetMaxRetryTimeout(30000).Build();

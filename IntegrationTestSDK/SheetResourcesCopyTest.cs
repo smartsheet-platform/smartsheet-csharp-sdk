@@ -6,11 +6,10 @@ using System.Configuration;
 
 namespace IntegrationTestSDK
 {
-	using NUnit.Framework;
-
+	[TestClass]
 	public class SheetResourcesCopyTest
 	{
-		[Test]
+		[TestMethod]
 		public void TestSheetCopyResources()
 		{
 			SmartsheetClient smartsheet = new SmartsheetBuilder().SetMaxRetryTimeout(30000).Build();

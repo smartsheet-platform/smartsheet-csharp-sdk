@@ -6,14 +6,12 @@ using System.Configuration;
 
 namespace IntegrationTestSDK
 {
-	using NUnit.Framework;
-
+	[TestClass]
 	public class CommentResourcesTest
 	{
 		private static string path = "../../../IntegrationTestSDK/TestFile.txt";
 
-
-		[Test]
+		[TestMethod]
 		public void TestCommentResources()
 		{
 			SmartsheetClient smartsheet = new SmartsheetBuilder().SetMaxRetryTimeout(30000).Build();

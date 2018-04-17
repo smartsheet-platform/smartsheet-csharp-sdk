@@ -6,8 +6,7 @@ using System.Configuration;
 
 namespace IntegrationTestSDK
 {
-	using NUnit.Framework;
-
+	[TestClass]
 	public class FolderResourcesTest
 	{
 		/// <summary>
@@ -39,13 +38,11 @@ namespace IntegrationTestSDK
 		/// smartsheet.FolderResources.UpdateFolder(123, new Folder.UpdateFolderBuilder("New name for folder").Build());
 		/// </summary>
 
-
-
 		private static string folderInHomeName = "new folder in home";
 		private static string folderInFolderName = "new folder in folder";
 		private static string updatedFolderInFolderName = "updated folder in folder";
 
-		[Test]
+		[TestMethod]
 		public void TestFolderResources()
 		{
 			SmartsheetClient smartsheet = new SmartsheetBuilder().SetMaxRetryTimeout(30000).Build();

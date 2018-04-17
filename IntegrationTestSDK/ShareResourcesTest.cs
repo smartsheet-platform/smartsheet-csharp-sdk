@@ -7,12 +7,10 @@ using System.Configuration;
 
 namespace IntegrationTestSDK
 {
-	using NUnit.Framework;
-
+	[TestClass]
 	public class ShareResourcesTest
 	{
-
-		[Test]
+		[TestMethod]
 		public void TestShareResources()
 		{
 			SmartsheetClient smartsheet = new SmartsheetBuilder().SetMaxRetryTimeout(30000).Build();
@@ -68,12 +66,6 @@ namespace IntegrationTestSDK
 			string sheetShareId = smartsheet.SheetResources.ShareResources.ShareTo(sheetId, new Share[] { share }, true)[0].Id;
 			return sheetShareId;
 		}
-
-		//private static string ShareReport(SmartsheetClient smartsheet, long reportId, Share share)
-		//{
-		//	IList<Share> shares = smartsheet.ReportResources.ShareResources.ShareTo(reportId, new Share[] { share }, true);
-		//	return shares[0].Id;
-		//}
 
 		private static void UpdateObjectShares(SmartsheetClient smartsheet, long sheetId, long workspaceId, string sheetShareId, string workspaceShareId)
 		{

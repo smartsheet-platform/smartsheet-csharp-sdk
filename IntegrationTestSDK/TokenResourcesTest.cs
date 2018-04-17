@@ -9,18 +9,15 @@ using System.Diagnostics;
 
 namespace IntegrationTestSDK
 {
-	using NUnit.Framework;
-
+	[TestClass]
 	public class TokenResourcesTest
 	{
-
-		[Test]
+		[Ignore]
+		[TestMethod]
 		public void TestTokenResources()
 		{
-
-			//UseOAuthFlow();
-			//UseTokenResources();
-
+			UseOAuthFlow();
+			UseTokenResources();
 		}
 
 		private static void UseOAuthFlow()
@@ -47,7 +44,6 @@ namespace IntegrationTestSDK
 				},
 				"key=Test"
 			);
-
 
 			// Take the user to the following URL
 			Debug.WriteLine(url);

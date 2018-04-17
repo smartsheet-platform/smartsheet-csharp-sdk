@@ -8,12 +8,10 @@ using System.Collections.Generic;
 
 namespace IntegrationTestSDK
 {
-	using NUnit.Framework;
-
+	[TestClass]
 	public class SheetResourcesUpdateRequestTest
 	{
-
-		[Test]
+		[TestMethod]
 		public void TestSheetUpdateRequestResources()
 		{
 			SmartsheetClient smartsheet = new SmartsheetBuilder().SetMaxRetryTimeout(30000).Build();

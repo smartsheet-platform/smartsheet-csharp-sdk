@@ -7,11 +7,10 @@ using System.Configuration;
 
 namespace IntegrationTestSDK
 {
-	using NUnit.Framework;
-
+	[TestClass]
 	public class RowResourcesDeleteSendTest
 	{
-		[Test]
+		[TestMethod]
 		public void TestRowDeleteSendResources()
 		{
 			SmartsheetClient smartsheet = new SmartsheetBuilder().SetMaxRetryTimeout(30000).Build();

@@ -7,10 +7,10 @@ using System.Configuration;
 
 namespace IntegrationTestSDK
 {
-	using NUnit.Framework;
+	[TestClass]
 	public class ColumnResourcesTest
 	{
-		[Test]
+		[TestMethod]
 		public void TestColumnResources()
 		{
 			SmartsheetClient smartsheet = new SmartsheetBuilder().SetMaxRetryTimeout(30000).Build();

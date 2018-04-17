@@ -9,11 +9,10 @@ using Newtonsoft.Json;
 
 namespace IntegrationTestSDK
 {
-	using NUnit.Framework;
-
+	[TestClass]
 	public class PassthroughResourcesTest
 	{
-		[Test]
+		[TestMethod]
 		public void TestPassthroughMethods()
 		{
 			SmartsheetClient smartsheet = new SmartsheetBuilder().SetMaxRetryTimeout(30000).Build();
