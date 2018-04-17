@@ -1,5 +1,12 @@
 # Advanced Topics for the Smartsheet SDK for C#
 
+## Logging
+The Smartsheet C# SDK references the [NLog project](http://nlog-project.org) for SDK logging. NLog is highly configurable for console
+and file logging. The root folder contains an `NLog.config` file which specifies the logging configuration of the SDK. Targets for File and ColorConsole logging are provided.
+
+Using NLog, the Smartsheet C# SDK logs all API queries including HTTP method, URI, HTTP status and response time 
+to `INFO`. API Request and Response details are logged to `DEBUG`. 
+
 ## Passthrough Option
 
 If there is an API feature that is not yet supported by the C# SDK, there is a passthrough option that allows you to 
