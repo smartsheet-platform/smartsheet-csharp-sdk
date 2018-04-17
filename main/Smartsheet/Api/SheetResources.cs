@@ -419,6 +419,74 @@ namespace Smartsheet.Api
 		Sheet SortSheet(long sheetId, SortSpecifier sortSpecifier);
 
 		/// <summary>
+		/// <para>Imports a Sheet (from CSV). </para>
+		/// <para>It mirrors To the following Smartsheet REST API method: POST /sheets/import</para>
+		/// </summary>
+		/// <param name="file"> path to the image file</param>
+		/// <param name="sheetName"></param>
+		/// <param name="headerRowIndex"></param>
+		/// <param name="primaryColumnIndex"></param>
+		/// <returns> the created sheet </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		Sheet ImportCsvSheet(string file, string sheetName, int? headerRowIndex, int? primaryColumnIndex);
+
+		/// <summary>
+		/// <para>Imports a Sheet (from XLSX). </para>
+		/// <para>It mirrors To the following Smartsheet REST API method: POST /sheets/import</para>
+		/// </summary>
+		/// <param name="file"> path to the image file</param>
+		/// <param name="sheetName"></param>
+		/// <param name="headerRowIndex"></param>
+		/// <param name="primaryColumnIndex"></param>
+		/// <returns> the created sheet </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		Sheet ImportXlsSheet(string file, string sheetName, int? headerRowIndex, int? primaryColumnIndex);
+
+		/// <summary>
+		/// <para>Import and replace contents of Sheet (from CSV). </para>
+		/// <para>It mirrors To the following Smartsheet REST API method: POST /sheets/{sheetId}/import</para>
+		/// </summary>
+		/// <param name="sheetId">sheet to be replaced</param>
+		/// <param name="file"> path to the image file</param>
+		/// <param name="headerRowIndex"></param>
+		/// <param name="primaryColumnIndex"></param>
+		/// <returns> the created sheet </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		Sheet ImportCsvAndReplaceSheet(long sheetId, string file, int? headerRowIndex, int? primaryColumnIndex);
+
+		/// <summary>
+		/// <para>Import and replace contents of Sheet (from XLSX). </para>
+		/// <para>It mirrors To the following Smartsheet REST API method: POST /sheets/{sheetId}/import</para>
+		/// </summary>
+		/// <param name="sheetId">sheet to be replaced</param>
+		/// <param name="file"> path to the image file</param>
+		/// <param name="headerRowIndex"></param>
+		/// <param name="primaryColumnIndex"></param>
+		/// <returns> the created sheet </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		Sheet ImportXlsAndReplaceSheet(long sheetId, string file, int? headerRowIndex, int? primaryColumnIndex);
+
+		/// <summary>
 		/// <para>Returns the ShareResources object that provides access To Share resources associated with Sheet resources.</para>
 		/// </summary>
 		/// <returns> the share resources object </returns>

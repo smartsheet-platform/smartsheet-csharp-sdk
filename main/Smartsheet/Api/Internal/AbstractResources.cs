@@ -206,7 +206,6 @@ namespace Smartsheet.Api.Internal
 
 			HttpResponse response = this.smartsheet.HttpClient.Request(request);
 
-
 			Object obj = null;
 
 			switch (response.StatusCode)
@@ -732,6 +731,66 @@ namespace Smartsheet.Api.Internal
 			smartsheet.HttpClient.ReleaseConnection();
 
 			return obj;
+		}
+
+		/// <summary>
+		/// Post a file to an import endpoint
+		/// 
+		/// Exceptions:
+		///   IllegalArgumentException : if any argument is null, or path is empty string
+		///   InvalidRequestException : if there is any problem with the REST API request
+		///   AuthorizationException : if there is any problem with the REST API authorization(access token)
+		///   ServiceUnavailableException : if the REST API service is not available (possibly due To rate limiting)
+		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
+		///   SmartsheetException : if there is any other error occurred during the operation
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="path">endpoint path</param>
+		/// <param name="file">file</param>
+		/// <param name="contentType">Content-Type of the file</param>
+		/// <returns>the object</returns>
+		public virtual T ImportFile<T>(string path, string file, string contentType)
+		{
+			Utils.ThrowIfNull(path, file, contentType);
+			Utils.ThrowIfEmpty(path, file, contentType);
+
+			HttpRequest request = null;
+			try
+			{
+				request = CreateHttpRequest(new Uri(smartsheet.BaseURI, path), HttpMethod.POST);
+			}
+			catch (Exception e)
+			{
+				throw new SmartsheetException(e);
+			}
+
+			request.Headers["Content-Disposition"] = "attachment";
+			request.Headers["Content-Type"] = contentType;
+
+			HttpEntity entity = new HttpEntity();
+			entity.ContentType = contentType;
+			FileInfo fi = new FileInfo(file);
+			entity.Content = File.ReadAllBytes(file);
+			entity.ContentLength = fi.Length;
+			request.Entity = entity;
+
+			HttpResponse response = smartsheet.HttpClient.Request(request);
+
+			Object obj = null;
+			switch (response.StatusCode)
+			{
+				case HttpStatusCode.OK:
+					obj = smartsheet.JsonSerializer.deserializeResult<T>(
+						response.Entity.GetContent()).Result;
+					break;
+				default:
+					HandleError(response);
+					break;
+			}
+
+			smartsheet.HttpClient.ReleaseConnection();
+
+			return (T)obj;
 		}
 
 		/// <summary>

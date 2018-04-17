@@ -23,9 +23,10 @@ namespace Smartsheet.Api.Internal
 	using Api.Models;
 	using Smartsheet.Api.Internal.Util;
 	using System.Text;
+	using System.IO;
 
 	/// <summary>
-	/// This is the implementation of the WorkspaceSheetResources.
+	/// This is the implementation of the FolderSheetResources.
 	/// 
 	/// Thread Safety: This class is thread safe because it is immutable and its base class is thread safe.
 	/// </summary>
@@ -83,7 +84,87 @@ namespace Smartsheet.Api.Internal
 				path.Append("?include=" + QueryUtil.GenerateCommaSeparatedList(includes));
 			}
 			return this.CreateResource(path.ToString(), typeof(Sheet), sheet);
+		}
 
+		/// <summary>
+		/// <para>Imports a Sheet in the specified Folder (from CSV). </para>
+		/// <para>It mirrors To the following Smartsheet REST API method: POST /folders/{folderId}/sheets/import</para>
+		/// </summary>
+		/// <param name="folderId"> the folder Id </param>
+		/// <param name="file"> path to the image file</param>
+		/// <param name="sheetName"></param>
+		/// <param name="headerRowIndex"></param>
+		/// <param name="primaryColumnIndex"></param>
+		/// <returns> the created sheet </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public virtual Sheet ImportCsvSheet(long folderId, string file, string sheetName, int? headerRowIndex, int? primaryColumnIndex)
+		{
+			return ImportSheet(folderId, file, sheetName, headerRowIndex, primaryColumnIndex, "text/csv");
+		}
+
+		/// <summary>
+		/// <para>Imports a Sheet in the specified Folder (from XLSX). </para>
+		/// <para>It mirrors To the following Smartsheet REST API method: POST /folders/{folderId}/sheets/import</para>
+		/// </summary>
+		/// <param name="folderId"> the folder Id </param>
+		/// <param name="file"> path to the image file</param>
+		/// <param name="sheetName"></param>
+		/// <param name="headerRowIndex"></param>
+		/// <param name="primaryColumnIndex"></param>
+		/// <returns> the created sheet </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public virtual Sheet ImportXlsSheet(long folderId, string file, string sheetName, int? headerRowIndex, int? primaryColumnIndex)
+		{
+			return ImportSheet(folderId, file, sheetName, headerRowIndex, primaryColumnIndex,
+				"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
+		}
+
+		/// <summary>
+		/// Private routine to import a Sheet of contentType into a Folder
+		/// </summary>
+		/// <param name="folderId"></param>
+		/// <param name="file"></param>
+		/// <param name="sheetName"></param>
+		/// <param name="headerRowIndex"></param>
+		/// <param name="primaryColumnIndex"></param>
+		/// <param name="contentType"></param>
+		/// <returns> the created sheet </returns>
+		private Sheet ImportSheet(long folderId, string file, string sheetName, int? headerRowIndex, int? primaryColumnIndex, string contentType)
+		{
+			Utility.Utility.ThrowIfNull(file);
+
+			IDictionary<string, string> parameters = new Dictionary<string, string>();
+
+			if (sheetName == null)
+			{
+				FileInfo fi = new FileInfo(file);
+				parameters.Add("sheetName", fi.Name);
+			}
+			else
+			{
+				parameters.Add("sheetName", sheetName);
+			}
+			if (headerRowIndex != null)
+			{
+				parameters.Add("headerRowIndex", headerRowIndex.ToString());
+			}
+			if (primaryColumnIndex != null)
+			{
+				parameters.Add("primaryColumnIndex", primaryColumnIndex.ToString());
+			}
+			string path = "folders/" + folderId + "/sheets/import" + QueryUtil.GenerateUrl(null, parameters);
+
+			return this.ImportFile<Sheet>(path, file, contentType);
 		}
 	}
 }

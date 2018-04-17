@@ -637,6 +637,98 @@ namespace Smartsheet.Api.Internal
 		}
 
 		/// <summary>
+		/// <para>Imports a Sheet (from CSV). </para>
+		/// <para>It mirrors To the following Smartsheet REST API method: POST /sheets/import</para>
+		/// </summary>
+		/// <param name="file"> path to the image file</param>
+		/// <param name="sheetName"></param>
+		/// <param name="headerRowIndex"></param>
+		/// <param name="primaryColumnIndex"></param>
+		/// <returns> the created sheet </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public virtual Sheet ImportCsvSheet(string file, string sheetName, int? headerRowIndex, int? primaryColumnIndex)
+		{
+			if (sheetName == null)
+			{
+				FileInfo fi = new FileInfo(file);
+				sheetName = fi.Name;
+			}
+			return ImportSheet("sheets/import", file, sheetName, headerRowIndex, primaryColumnIndex, "text/csv");
+		}
+
+		/// <summary>
+		/// <para>Imports a Sheet (from XLSX). </para>
+		/// <para>It mirrors To the following Smartsheet REST API method: POST /sheets/import</para>
+		/// </summary>
+		/// <param name="file"> path to the image file</param>
+		/// <param name="sheetName"></param>
+		/// <param name="headerRowIndex"></param>
+		/// <param name="primaryColumnIndex"></param>
+		/// <returns> the created sheet </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public virtual Sheet ImportXlsSheet(string file, string sheetName, int? headerRowIndex, int? primaryColumnIndex)
+		{
+			if(sheetName == null)
+			{
+				FileInfo fi = new FileInfo(file);
+				sheetName = fi.Name;
+			}
+			return ImportSheet("sheets/import", file, sheetName, headerRowIndex, primaryColumnIndex, 
+				"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
+		}
+
+		/// <summary>
+		/// <para>Import and replace contents of Sheet (from CSV). </para>
+		/// <para>It mirrors To the following Smartsheet REST API method: POST /sheets/{sheetId}/import</para>
+		/// </summary>
+		/// <param name="sheetId">sheet to be replaced</param>
+		/// <param name="file"> path to the image file</param>
+		/// <param name="headerRowIndex"></param>
+		/// <param name="primaryColumnIndex"></param>
+		/// <returns> the created sheet </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public virtual Sheet ImportCsvAndReplaceSheet(long sheetId, string file, int? headerRowIndex, int? primaryColumnIndex)
+		{
+			return ImportSheet("sheets/" + sheetId + "/import", file, null, headerRowIndex, primaryColumnIndex, "text/csv");
+		}
+
+		/// <summary>
+		/// <para>Import and replace contents of Sheet (from XLSX). </para>
+		/// <para>It mirrors To the following Smartsheet REST API method: POST /sheets/{sheetId}/import</para>
+		/// </summary>
+		/// <param name="sheetId">sheet to be replaced</param>
+		/// <param name="file"> path to the image file</param>
+		/// <param name="headerRowIndex"></param>
+		/// <param name="primaryColumnIndex"></param>
+		/// <returns> the created sheet </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+		public virtual Sheet ImportXlsAndReplaceSheet(long sheetId, string file, int? headerRowIndex, int? primaryColumnIndex)
+		{
+			return ImportSheet("sheets/" + sheetId + "/import", file, null, headerRowIndex, primaryColumnIndex,	
+				"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
+		}
+
+		/// <summary>
 		/// Returns the ShareResources object that provides access To Share resources associated with Sheet resources.
 		/// </summary>
 		/// <returns> the ShareResources object </returns>
@@ -813,6 +905,39 @@ namespace Smartsheet.Api.Internal
 			}
 
 			Smartsheet.HttpClient.ReleaseConnection();
+		}
+
+		/// <summary>
+		/// Private routine to import a Sheet of contentType
+		/// </summary>
+		/// <param name="path"></param>
+		/// <param name="file"></param>
+		/// <param name="sheetName"></param>
+		/// <param name="headerRowIndex"></param>
+		/// <param name="primaryColumnIndex"></param>
+		/// <param name="contentType"></param>
+		/// <returns> the created sheet </returns>
+		private Sheet ImportSheet(string path, string file, string sheetName, int? headerRowIndex, int? primaryColumnIndex, string contentType)
+		{
+			Utility.Utility.ThrowIfNull(file);
+
+			IDictionary<string, string> parameters = new Dictionary<string, string>();
+
+			if (sheetName != null)
+			{
+				parameters.Add("sheetName", sheetName);
+			}
+			if (headerRowIndex != null)
+			{
+				parameters.Add("headerRowIndex", headerRowIndex.ToString());
+			}
+			if (primaryColumnIndex != null)
+			{
+				parameters.Add("primaryColumnIndex", primaryColumnIndex.ToString());
+			}
+			path += QueryUtil.GenerateUrl(null, parameters);
+
+			return this.ImportFile<Sheet>(path, file, contentType);
 		}
 
 		/*
