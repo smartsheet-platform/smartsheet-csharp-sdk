@@ -4,7 +4,7 @@ This is a C# SDK to simplify connecting to the [Smartsheet API](http://www.smart
 
 ## System Requirements
 
-The SDK supports C# version 4.0 or later running on .NET platform version 4.0 or later. In addition, we support any .NET language compatible with that platform version.
+The SDK supports C# version 4.0 or later running on .NET platform version 4.5.2 or later. In addition, we support any .NET language compatible with that platform version.
 
 ## Installation
 The SDK can be installed by using NuGet or by compiling from source. These two alternatives are outlined below.
