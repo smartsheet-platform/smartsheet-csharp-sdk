@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -37,7 +37,7 @@ namespace Smartsheet.Api.Models
 		private long? endRowId;
 
 		/// <summary>
-		/// the source sheed ID for the reference block
+		/// the source sheet Id for the reference block
 		/// </summary>
 		private long? sourceSheetId;
 
@@ -52,12 +52,12 @@ namespace Smartsheet.Api.Models
 		private long? startRowId;
 
 		/// <summary>
-		/// the status of the cross sheet reference
+		/// the status of the cross-sheet reference
 		/// </summary>
 		private CrossSheetReferenceStatus? status;
 
 		/// <summary>
-		/// Get the last column ID in the cross sheet reference block
+		/// Get the last column Id in the cross-sheet reference block
 		/// </summary>
 		public long? EndColumnId
 		{
@@ -66,7 +66,7 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// Get the last row ID in the cross sheet reference block
+		/// Get the last row Id in the cross-sheet reference block
 		/// </summary>
 		public long? EndRowId
 		{
@@ -75,7 +75,7 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// Get the source sheet ID in the cross sheet reference block
+		/// Get the source sheet Id in the cross-sheet reference block
 		/// </summary>
 		public long? SourceSheetId
 		{
@@ -84,7 +84,7 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// Get the first column ID in the cross sheet reference block
+		/// Get the first column Id in the cross-sheet reference block
 		/// </summary>
 		public long? StartColumnId
 		{
@@ -93,7 +93,7 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// Get the first row ID in the cross sheet reference block
+		/// Get the first row Id in the cross-sheet reference block
 		/// </summary>
 		public long? StartRowId
 		{
@@ -102,7 +102,7 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// Get the status of the cross sheet reference block
+		/// Get the status of the cross-sheet reference block
 		/// </summary>
 		public CrossSheetReferenceStatus? Status
 		{
