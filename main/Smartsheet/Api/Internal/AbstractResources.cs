@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -75,10 +75,10 @@ namespace Smartsheet.Api.Internal
 			public static readonly ErrorCode SERVICE_UNAVAILABLE = new ErrorCode(HttpStatusCode.ServiceUnavailable, typeof(Api.ServiceUnavailableException));
 
 			/// <summary>
-			/// Gets an IEnumerable to iterate through the Error Codes.
+			/// Gets an IEnumerable to iterate through the error codes.
 			/// </summary>
 			/// <value>
-			/// The IEnumerable to iterate through the Error Codes
+			/// The IEnumerable to iterate through the error codes
 			/// </value>
 			public static IEnumerable<ErrorCode> Values
 			{
@@ -104,10 +104,10 @@ namespace Smartsheet.Api.Internal
 			}
 
 			/// <summary>
-			/// Gets the error Code.
+			/// Gets the error code.
 			/// </summary>
 			/// <param name="errorNumber"> the error number </param>
-			/// <returns> the error Code </returns>
+			/// <returns> the error code </returns>
 			public static ErrorCode getErrorCode(HttpStatusCode errorNumber)
 			{
 				foreach (ErrorCode code in ErrorCode.Values)
@@ -148,7 +148,7 @@ namespace Smartsheet.Api.Internal
 		/// <summary>
 		/// Represents the SmartsheetImpl.
 		/// 
-		/// It will be initialized in constructor and will not change afterwards.
+		/// It will be initialized in the constructor and will not change afterwards.
 		/// </summary>
 		protected SmartsheetImpl smartsheet;
 
@@ -173,11 +173,11 @@ namespace Smartsheet.Api.Internal
 		/// 
 		/// Exceptions: -
 		///   InvalidRequestException : if there is any problem with the REST API request
-		///   AuthorizationException : if there is any problem with the REST API authorization(access token)
-		///   ResourceNotFoundException : if the resource can not be found
-		///   ServiceUnavailableException : if the REST API service is not available (possibly due To rate limiting)
-		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
-		///   SmartsheetException : if there is any other error occurred during the operation
+		///   AuthorizationException : if there is any problem with the REST API authorization (access token)
+		///   ResourceNotFoundException : if the resource cannot be found
+		///   ServiceUnavailableException : if the REST API service is not available (possibly due to rate limiting)
+		///   SmartsheetRestException : if any other REST API related error occurred during the operation
+		///   SmartsheetException : if any other error occurred during the operation
 		/// </summary>
 		/// <param name="path"> the relative path of the resource. </param>
 		/// <param name="objectClass"> the object class </param>
@@ -242,15 +242,15 @@ namespace Smartsheet.Api.Internal
 		/// Create a resource using SmartsheetClient REST API.
 		/// 
 		/// Exceptions: 
-		///   IllegalArgumentException : if any argument is null, or path is empty string
+		///   IllegalArgumentException : if any argument is null, or path is an empty string
 		///   InvalidRequestException : if there is any problem with the REST API request
-		///   AuthorizationException : if there is any problem with the REST API authorization(access token)
-		///   ServiceUnavailableException : if the REST API service is not available (possibly due To rate limiting)
-		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
-		///   SmartsheetException : if there is any other error occurred during the operation
+		///   AuthorizationException : if there is any problem with the REST API authorization (access token)
+		///   ServiceUnavailableException : if the REST API service is not available (possibly due to rate limiting)
+		///   SmartsheetRestException : if any other REST API related error occurred during the operation
+		///   SmartsheetException : if any other error occurred during the operation
 		/// </summary>
 		/// <param name="path"> the relative path of the resource collections </param>
-		/// <param name="object"> the object To create </param>
+		/// <param name="object"> the object to create </param>
 		/// <returns> the created resource </returns>
 		/// <exception cref="SmartsheetException"> the SmartsheetClient exception </exception>
 		protected internal virtual S CreateResource<S, T>(string path, T @object)
@@ -293,16 +293,16 @@ namespace Smartsheet.Api.Internal
 		/// Create a resource using SmartsheetClient REST API.
 		/// 
 		/// Exceptions: 
-		///   IllegalArgumentException : if any argument is null, or path is empty string
+		///   IllegalArgumentException : if any argument is null, or path is an empty string
 		///   InvalidRequestException : if there is any problem with the REST API request
-		///   AuthorizationException : if there is any problem with the REST API authorization(access token)
-		///   ServiceUnavailableException : if the REST API service is not available (possibly due To rate limiting)
-		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
-		///   SmartsheetException : if there is any other error occurred during the operation
+		///   AuthorizationException : if there is any problem with the REST API authorization (access token)
+		///   ServiceUnavailableException : if the REST API service is not available (possibly due to rate limiting)
+		///   SmartsheetRestException : if any other REST API related error occurred during the operation
+		///   SmartsheetException : if any other error occurred during the operation
 		/// </summary>
 		/// <param name="path"> the relative path of the resource collections </param>
 		/// <param name="objectClass"> the resource object class </param>
-		/// <param name="object"> the object To create </param>
+		/// <param name="object"> the object to create </param>
 		/// <returns> the created resource </returns>
 		/// <exception cref="SmartsheetException"> the SmartsheetClient exception </exception>
 		protected internal virtual T CreateResource<T>(string path, Type objectClass, T @object)
@@ -350,7 +350,7 @@ namespace Smartsheet.Api.Internal
         /// <param name="fileType"> the file type, can be null </param>
         /// <param name="objectType"> the object type to return as </param>
         /// <returns> the created resource </returns>
-        /// <exception cref="InvalidOperationException"> if any argument is null, or path is empty string </exception>
+        /// <exception cref="InvalidOperationException"> if any argument is null, or path is an empty string </exception>
         protected internal virtual T CreateResourceWithAttachment<T>(string path, T @object, string objectType, string file, string fileType)
 		{
 			Utils.ThrowIfNull(path, @object);
@@ -390,17 +390,17 @@ namespace Smartsheet.Api.Internal
 		/// Update a resource using SmartsheetClient REST API.
 		/// 
 		/// Exceptions:
-		///   IllegalArgumentException : if any argument is null, or path is empty string
+		///   IllegalArgumentException : if any argument is null, or path is an empty string
 		///   InvalidRequestException : if there is any problem with the REST API request
-		///   AuthorizationException : if there is any problem with the REST API authorization(access token)
-		///   ResourceNotFoundException : if the resource can not be found
-		///   ServiceUnavailableException : if the REST API service is not available (possibly due To rate limiting)
-		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
-		///   SmartsheetException : if there is any other error occurred during the operation
+		///   AuthorizationException : if there is any problem with the REST API authorization (access token)
+		///   ResourceNotFoundException : if the resource cannot be found
+		///   ServiceUnavailableException : if the REST API service is not available (possibly due to rate limiting)
+		///   SmartsheetRestException : if any other REST API related error occurred during the operation
+		///   SmartsheetException : if any other error occurred during the operation
 		/// </summary>
 		/// <param name="path"> the relative path of the resource </param>
 		/// <param name="objectClass"> the resource object class </param>
-		/// <param name="object"> the object To create </param>
+		/// <param name="object"> the object to create </param>
 		/// <returns> the updated resource </returns>
 		/// <exception cref="SmartsheetException"> the SmartsheetClient exception </exception>
 		protected internal virtual T UpdateResource<T>(string path, Type objectClass, T @object)
@@ -443,12 +443,12 @@ namespace Smartsheet.Api.Internal
 		/// List resources using SmartsheetClient REST API.
 		/// 
 		/// Exceptions:
-		///   IllegalArgumentException : if any argument is null, or path is empty string
+		///   IllegalArgumentException : if any argument is null, or path is an empty string
 		///   InvalidRequestException : if there is any problem with the REST API request
-		///   AuthorizationException : if there is any problem with the REST API authorization(access token)
-		///   ServiceUnavailableException : if the REST API service is not available (possibly due To rate limiting)
-		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
-		///   SmartsheetException : if there is any other error occurred during the operation
+		///   AuthorizationException : if there is any problem with the REST API authorization (access token)
+		///   ServiceUnavailableException : if the REST API service is not available (possibly due to rate limiting)
+		///   SmartsheetRestException : if any other REST API related error occurred during the operation
+		///   SmartsheetException : if any other error occurred during the operation
 		/// </summary>
 		/// <param name="path"> the relative path of the resource collections </param>
 		/// <returns> the resources </returns>
@@ -491,12 +491,12 @@ namespace Smartsheet.Api.Internal
 		/// List resources using SmartsheetClient REST API.
 		/// 
 		/// Exceptions:
-		///   IllegalArgumentException : if any argument is null, or path is empty string
+		///   IllegalArgumentException : if any argument is null, or path is an empty string
 		///   InvalidRequestException : if there is any problem with the REST API request
-		///   AuthorizationException : if there is any problem with the REST API authorization(access token)
-		///   ServiceUnavailableException : if the REST API service is not available (possibly due To rate limiting)
-		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
-		///   SmartsheetException : if there is any other error occurred during the operation
+		///   AuthorizationException : if there is any problem with the REST API authorization (access token)
+		///   ServiceUnavailableException : if the REST API service is not available (possibly due to rate limiting)
+		///   SmartsheetRestException : if any other REST API related error occurred during the operation
+		///   SmartsheetException : if any other error occurred during the operation
 		/// </summary>
 		/// <param name="path"> the relative path of the resource collections </param>
 		/// <param name="objectClass"> the resource object class </param>
@@ -540,13 +540,13 @@ namespace Smartsheet.Api.Internal
 		/// Delete a resource from SmartsheetClient REST API.
 		/// 
 		/// Exceptions:
-		///   IllegalArgumentException : if any argument is null, or path is empty string
+		///   IllegalArgumentException : if any argument is null, or path is an empty string
 		///   InvalidRequestException : if there is any problem with the REST API request
-		///   AuthorizationException : if there is any problem with the REST API authorization(access token)
-		///   ResourceNotFoundException : if the resource can not be found
-		///   ServiceUnavailableException : if the REST API service is not available (possibly due To rate limiting)
-		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
-		///   SmartsheetException : if there is any other error occurred during the operation
+		///   AuthorizationException : if there is any problem with the REST API authorization (access token)
+		///   ResourceNotFoundException : if the resource cannot be found
+		///   ServiceUnavailableException : if the REST API service is not available (possibly due to rate limiting)
+		///   SmartsheetRestException : if any other REST API related error occurred during the operation
+		///   SmartsheetException : if any other error occurred during the operation
 		/// </summary>
 		/// <param name="path"> the relative path of the resource </param>
 		/// <exception cref="SmartsheetException"> the SmartsheetClient exception </exception>
@@ -585,13 +585,13 @@ namespace Smartsheet.Api.Internal
 		/// Delete a resource from SmartsheetClient REST API.
 		/// 
 		/// Exceptions:
-		///   IllegalArgumentException : if any argument is null, or path is empty string
+		///   IllegalArgumentException : if any argument is null, or path is an empty string
 		///   InvalidRequestException : if there is any problem with the REST API request
-		///   AuthorizationException : if there is any problem with the REST API authorization(access token)
-		///   ResourceNotFoundException : if the resource can not be found
-		///   ServiceUnavailableException : if the REST API service is not available (possibly due To rate limiting)
-		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
-		///   SmartsheetException : if there is any other error occurred during the operation
+		///   AuthorizationException : if there is any problem with the REST API authorization (access token)
+		///   ResourceNotFoundException : if the resource cannot be found
+		///   ServiceUnavailableException : if the REST API service is not available (possibly due to rate limiting)
+		///   SmartsheetRestException : if any other REST API related error occurred during the operation
+		///   SmartsheetException : if any other error occurred during the operation
 		/// </summary>
 		/// <param name="path"> the relative path of the resource </param>
 		/// <param name="objectClass"> the resource object class </param>
@@ -626,24 +626,24 @@ namespace Smartsheet.Api.Internal
 		}
 
 		/// <summary>
-		/// Post an object To SmartsheetClient REST API and receive a list of objects from response.
+		/// Post an object to SmartsheetClient REST API and receive a list of objects from response.
 		/// 
-		/// Parameters: - path : the relative path of the resource collections - objectToPost : the object To post -
-		/// objectClassToReceive : the resource object class To receive
+		/// Parameters: - path : the relative path of the resource collections - objectToPost : the object to post -
+		/// objectClassToReceive : the resource object class to receive
 		/// 
 		/// Returns: the object list
 		/// 
 		/// Exceptions:
-		///   IllegalArgumentException : if any argument is null, or path is empty string
+		///   IllegalArgumentException : if any argument is null, or path is an empty string
 		///   InvalidRequestException : if there is any problem with the REST API request
-		///   AuthorizationException : if there is any problem with the REST API authorization(access token)
-		///   ServiceUnavailableException : if the REST API service is not available (possibly due To rate limiting)
-		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
-		///   SmartsheetException : if there is any other error occurred during the operation
+		///   AuthorizationException : if there is any problem with the REST API authorization (access token)
+		///   ServiceUnavailableException : if the REST API service is not available (possibly due to rate limiting)
+		///   SmartsheetRestException : if any other REST API related error occurred during the operation
+		///   SmartsheetException : if any other error occurred during the operation
 		/// </summary>
 		/// <param name="path"> the path </param>
-		/// <param name="objectToPost"> the object To post </param>
-		/// <param name="objectClassToReceive"> the object class To receive </param>
+		/// <param name="objectToPost"> the object to post </param>
+		/// <param name="objectClassToReceive"> the object class to receive </param>
 		/// <returns> the list </returns>
 		/// <exception cref="SmartsheetException"> the SmartsheetClient exception </exception>
 		protected internal virtual IList<S> PostAndReceiveList<T, S>(string path, T objectToPost, Type objectClassToReceive)
@@ -682,19 +682,19 @@ namespace Smartsheet.Api.Internal
 		}
 
 		/// <summary>
-		/// Put an object To SmartsheetClient REST API and receive a list of objects from response.
+		/// Put an object to SmartsheetClient REST API and receive a list of objects from response.
 		/// 
 		/// Exceptions:
-		///   IllegalArgumentException : if any argument is null, or path is empty string
+		///   IllegalArgumentException : if any argument is null, or path is an empty string
 		///   InvalidRequestException : if there is any problem with the REST API request
-		///   AuthorizationException : if there is any problem with the REST API authorization(access token)
-		///   ServiceUnavailableException : if the REST API service is not available (possibly due To rate limiting)
-		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
-		///   SmartsheetException : if there is any other error occurred during the operation
+		///   AuthorizationException : if there is any problem with the REST API authorization (access token)
+		///   ServiceUnavailableException : if the REST API service is not available (possibly due to rate limiting)
+		///   SmartsheetRestException : if any other REST API related error occurred during the operation
+		///   SmartsheetException : if any other error occurred during the operation
 		/// </summary>
 		/// <param name="path"> the relative path of the resource collections </param>
-		/// <param name="objectToPut"> the object To put </param>
-		/// <param name="objectClassToReceive"> the resource object class To receive </param>
+		/// <param name="objectToPut"> the object to put </param>
+		/// <param name="objectClassToReceive"> the resource object class to receive </param>
 		/// <returns> the object list </returns>
 		/// <exception cref="SmartsheetException"> the SmartsheetClient exception </exception>
 		protected internal virtual IList<S> PutAndReceiveList<T, S>(string path, T objectToPut, Type objectClassToReceive)
@@ -737,12 +737,12 @@ namespace Smartsheet.Api.Internal
 		/// Post a file to an import endpoint
 		/// 
 		/// Exceptions:
-		///   IllegalArgumentException : if any argument is null, or path is empty string
+		///   IllegalArgumentException : if any argument is null, or path is an empty string
 		///   InvalidRequestException : if there is any problem with the REST API request
-		///   AuthorizationException : if there is any problem with the REST API authorization(access token)
-		///   ServiceUnavailableException : if the REST API service is not available (possibly due To rate limiting)
-		///   SmartsheetRestException : if there is any other REST API related error occurred during the operation
-		///   SmartsheetException : if there is any other error occurred during the operation
+		///   AuthorizationException : if there is any problem with the REST API authorization (access token)
+		///   ServiceUnavailableException : if the REST API service is not available (possibly due to rate limiting)
+		///   SmartsheetRestException : if any other REST API related error occurred during the operation
+		///   SmartsheetException : if any other error occurred during the operation
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
 		/// <param name="path">endpoint path</param>
@@ -800,7 +800,7 @@ namespace Smartsheet.Api.Internal
 		/// </summary>
 		/// <param name="uri"> the URI </param>
 		/// <param name="method"> the HttpMethod </param>
-		/// <returns> the http request </returns>
+		/// <returns> the HTTP request </returns>
 		protected internal virtual HttpRequest CreateHttpRequest(Uri uri, HttpMethod method)
 		{
 			HttpRequest request = new HttpRequest();
@@ -830,7 +830,7 @@ namespace Smartsheet.Api.Internal
 		/// Handles an error HttpResponse (non-200) returned by SmartsheetClient REST API.
 		/// 
 		/// Exceptions: 
-		///   SmartsheetRestException : the exception corresponding To the error
+		///   SmartsheetRestException : the exception corresponding to the error
 		/// </summary>
 		/// <param name="response"> the HttpResponse </param>
 		/// <exception cref="SmartsheetException"> the SmartsheetClient exception </exception>

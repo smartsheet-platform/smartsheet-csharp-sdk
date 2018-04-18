@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -48,16 +48,16 @@ namespace Smartsheet.Api.Internal
 		}
 
 		/// <summary>
-		/// <para>Searches all Sheets that the User can access, for the specified text.</para>
-		/// <para>It mirrors To the following Smartsheet REST API method: GET /search</para>
+		/// <para>Searches all sheets that the user can access, for the specified text.</para>
+		/// <para>Mirrors to the following Smartsheet REST API method: GET /search</para>
 		/// </summary>
 		/// <param name="query"> (required): Text with which to perform the search. </param>
 		/// <returns> SearchResult object that contains a maximum of 100 SearchResultems </returns>
-		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or an empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual SearchResult Search(string query)
 		{
@@ -65,21 +65,21 @@ namespace Smartsheet.Api.Internal
 		}
 
 		/// <summary>
-		/// <para>Searches all Sheets that the User can access, for the specified text.</para>
-		/// <para>It mirrors To the following Smartsheet REST API method: GET /search</para>
+		/// <para>Searches all sheets that the user can access for the specified text.</para>
+		/// <para>Mirrors to the following Smartsheet REST API method: GET /search</para>
 		/// </summary>
 		/// <param name="query"> (required): Text with which to perform the search. </param>
 		/// <param name="includes">includes enum set of inclusions</param>
 		/// <param name="location">location when specified with a value of "personalWorkspace limits response to only those
-		/// items in the user's Workspace</param>
+		/// items in the user's workspace</param>
 		/// <param name="modifiedSince">only return items modified since this date</param>
 		/// <param name="scopes">scopes enum set of search filters</param>
 		/// <returns> SearchResult object that contains a maximum of 100 SearchResultems </returns>
-		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or an empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual SearchResult Search(string query, IEnumerable<SearchInclusion> includes, SearchLocation? location,
 			DateTime? modifiedSince, IEnumerable<SearchScope> scopes)
@@ -124,17 +124,17 @@ namespace Smartsheet.Api.Internal
 		}
 
 		/// <summary>
-		/// <para>Searches a Sheet for the specified text.</para>
-		/// <para>It mirrors To the following Smartsheet REST API method: GET /search/sheets/{sheetId}</para>
+		/// <para>Searches a sheet for the specified text.</para>
+		/// <para>Mirrors to the following Smartsheet REST API method: GET /search/sheets/{sheetId}</para>
 		/// </summary>
 		/// <param name="sheetId"> the sheet Id </param>
-		/// <param name="query"> the query Text </param>
+		/// <param name="query"> the query text </param>
 		/// <returns> SearchResult object that contains a maximum of 100 SearchResultems </returns>
-		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or an empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual SearchResult SearchSheet(long sheetId, string query)
 		{
