@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -28,32 +28,32 @@ namespace Smartsheet.Api.Models
 	public class SearchResultItem
 	{
 		/// <summary>
-		/// Represents the Text for this specific search RequestResult.
+		/// Represents the text for this specific search RequestResult.
 		/// </summary>
 		private string text;
 
 		/// <summary>
-		/// Represents the object ID for this specific search RequestResult.
+		/// Represents the object Id for this specific search RequestResult.
 		/// </summary>
 		private long? objectId;
 
 		/// <summary>
-		/// Represents the object Type (row, discussion, attach) for this specific search RequestResult.
+		/// Represents the object type (row, discussion, attach) for this specific search RequestResult.
 		/// </summary>
 		private SearchObjectType? objectType;
 
 		/// <summary>
-		/// Represents the parent object ID for this specific search RequestResult.
+		/// Represents the parent object Id for this specific search RequestResult.
 		/// </summary>
 		private long? parentObjectId;
 
 		/// <summary>
-		/// Represents the parent object Type for this specific search RequestResult.
+		/// Represents the parent object type for this specific search RequestResult.
 		/// </summary>
 		private ObjectType? parentObjectType;
 
 		/// <summary>
-		/// Represents the parent object Name for this specific search RequestResult.
+		/// Represents the parent object name for this specific search RequestResult.
 		/// </summary>
 		private string parentObjectName;
 
@@ -83,9 +83,9 @@ namespace Smartsheet.Api.Models
 		private bool? parentObjectFavorite;
 
 		/// <summary>
-		/// Gets the Text for this specific search RequestResult.
+		/// Gets the text for this specific search RequestResult.
 		/// </summary>
-		/// <returns> the Text </returns>
+		/// <returns> the text </returns>
 		public virtual string Text
 		{
 			get
@@ -117,9 +117,9 @@ namespace Smartsheet.Api.Models
 
 
 		/// <summary>
-		/// Gets the object Type for this specific search RequestResult.
+		/// Gets the object type for this specific search RequestResult.
 		/// </summary>
-		/// <returns> the object Type </returns>
+		/// <returns> the object type </returns>
 		public virtual SearchObjectType? ObjectType
 		{
 			get
@@ -151,9 +151,9 @@ namespace Smartsheet.Api.Models
 
 
 		/// <summary>
-		/// Gets the parent object Type for this specific search RequestResult.
+		/// Gets the parent object type for this specific search RequestResult.
 		/// </summary>
-		/// <returns> the parent object Type </returns>
+		/// <returns> the parent object type </returns>
 		public virtual ObjectType? ParentObjectType
 		{
 			get
@@ -168,9 +168,9 @@ namespace Smartsheet.Api.Models
 
 
 		/// <summary>
-		/// Gets the parent object Name for this specific search RequestResult.
+		/// Gets the parent object name for this specific search RequestResult.
 		/// </summary>
-		/// <returns> the parent object Name </returns>
+		/// <returns> the parent object name </returns>
 		public virtual string ParentObjectName
 		{
 			get
@@ -201,7 +201,7 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// Get the attachment type if the search result item is an attachment
+		/// Gets the attachment type if the search result item is an attachment
 		/// </summary>
 		/// <returns> the attachment type </returns>
 		public virtual AttachmentType? AttachmentType
@@ -217,7 +217,7 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// Gets the mime type
+		/// Gets the MIME type
 		/// </summary>
 		/// <returns> the MIME type </returns>
 		public virtual string MimeType
@@ -233,7 +233,7 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// Get a flag indicating if the search result item is a favorite
+		/// Indicates whether the search result item is a favorite
 		/// </summary>
 		/// <returns> the favorite flag </returns>
 		public virtual bool? Favorite
@@ -249,7 +249,7 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// Get a flag indicating if the search result item parent is a favorite
+		/// Indicates whether the search result item parent is a favorite
 		/// </summary>
 		public virtual bool? ParentObjectFavorite
 		{
