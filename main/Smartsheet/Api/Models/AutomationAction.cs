@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -61,12 +61,12 @@ namespace Smartsheet.Api.Models
 		private bool? notifyAllSharedUsers;
 
 		/// <summary>
-		/// List of column ids from which to collect email recipients
+		/// List of column Ids from which to collect email recipients
 		/// </summary>
 		private IList<long> recipientColumnIds;
 
 		/// <summary>
-		/// List of Recipients
+		/// List of recipients
 		/// </summary>
 		private IList<Recipient> recipients;
 
@@ -161,9 +161,9 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// Gets the list of Recipients
+		/// Gets the list of recipients
 		/// </summary>
-		/// <returns> the list of Recipients </returns>
+		/// <returns> the list of recipients </returns>
 		public IList<Recipient> Recipients
 		{
 			get { return recipients; }
