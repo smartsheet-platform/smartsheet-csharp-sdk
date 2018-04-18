@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -24,12 +24,12 @@ namespace Smartsheet.Api.Models
 	public class Error
 	{
 		/// <summary>
-		/// Represents the error Code.
+		/// Represents the error code.
 		/// </summary>
 		private int? errorCode;
 
 		/// <summary>
-		/// Represents the Message.
+		/// Represents the message.
 		/// </summary>
 		private string message;
 
@@ -44,9 +44,9 @@ namespace Smartsheet.Api.Models
 		private object detail;
 
 		/// <summary>
-		/// Gets the error Code.
+		/// Gets the error code.
 		/// </summary>
-		/// <returns> the error Code </returns>
+		/// <returns> the error code </returns>
 		public virtual int? ErrorCode
 		{
 			get
@@ -60,9 +60,9 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// Gets the Message.
+		/// Gets the message.
 		/// </summary>
-		/// <returns> the Message </returns>
+		/// <returns> the message </returns>
 		public virtual string Message
 		{
 			get
