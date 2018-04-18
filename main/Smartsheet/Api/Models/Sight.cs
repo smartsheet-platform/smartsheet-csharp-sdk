@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -24,12 +24,12 @@ using System.Text;
 namespace Smartsheet.Api.Models
 {
 	/// <summary>
-	/// Represents the sight object. </summary>
+	/// Represents the Sight object. </summary>
 	/// <seealso href="http://smartsheet-platform.github.io/api-docs/#sight-object">Sight Object Help</seealso>
 	public class Sight : NamedModel
 	{
 		/// <summary>
-		/// Number of Columns that the Sight contains
+		/// Number of columns that the Sight contains
 		/// </summary>
 		private int? columnCount;
 
@@ -39,7 +39,7 @@ namespace Smartsheet.Api.Models
 		private IList<Widget> widgets;
 
 		/// <summary>
-		/// Indicates whether the User has marked the Sight as a favorite
+		/// Indicates whether the user has marked the Sight as a favorite
 		/// </summary>
 		private bool? favorite;
 
@@ -74,7 +74,7 @@ namespace Smartsheet.Api.Models
 		private string backgroundColor;
 
 		/// <summary>
-		/// Get the number of Columns that the Sight contains.
+		/// Get the number of columns that the Sight contains.
 		/// </summary>
 		/// <returns> the columnCount </returns>
 		public virtual int? ColumnCount
@@ -92,7 +92,7 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// Array of Widget objects.
 		/// </summary>
-		/// <returns> the List </returns>
+		/// <returns> the list </returns>
 		public virtual IList<Widget> Widgets
 		{
 			get
@@ -106,9 +106,9 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// Indicates whether the User has marked the Sight as a favorite.
+		/// Indicates whether the user has marked the Sight as a favorite.
 		/// </summary>
-		/// <returns> the favority flag </returns>
+		/// <returns> the favorite flag </returns>
 		public virtual Boolean? Favorite
 		{
 			get
@@ -122,7 +122,7 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// User’s permissions on the Sight. Valid values:
+		/// User’s permissions on the Sight. valid values:
 		///		OWNER, ADMIN, VIEWER
 		/// </summary>
 		/// <returns> the AccessLevel </returns>
@@ -189,9 +189,9 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// A Workspace object, limited to only 2 attributes:
 		///		id, name
-		///	Note: this attribute is only present if the Sight resides within a Workspace.
+		///	Note: this attribute is only present if the Sight resides within a workspace.
 		/// </summary>
-		/// <returns> the Workspace </returns>
+		/// <returns> the workspace </returns>
 		public virtual Workspace Workspace
 		{
 			get
