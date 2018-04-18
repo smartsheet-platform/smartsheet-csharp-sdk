@@ -16,9 +16,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Sheet filter implementation
 - Row sort feature
 - User profile properties (including profileImage) to UserModel
-- Scope, location and favoriteFlag inclusion to search
+- Scope, location, and favoriteFlag inclusion to search
 - getSheet() ifVersionAfter parameter 
-- Expose Change-Agent, Assumed-User and User-Agent on Smartsheet client
+- Expose Change-Agent, Assumed-User, and User-Agent on Smartsheet client
 - Bulk access to sheet version through sheetVersion inclusion
 - Missing report and sheet publish flags
 - Missing title widget for Sights
@@ -32,7 +32,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 DefaultHttpClient (a proxy sample is provided in the Advanced Topics section of the README)
 - Removed outdated Link model and replaced all references with current Hyperlink model
 - Removed ShouldRetry and CalcBackoff interfaces and replaced with HttpClient interface methods. You can now customize 
-shouldRetry or calcBackoff using the same method as proxy or request header injection (i.e. extend DefaultHttpClient).
+shouldRetry or calcBackoff using the same method as proxy or request header injection (i.e., extend DefaultHttpClient).
 
 ### Fixed
 - Several deserialization issues with Sights
