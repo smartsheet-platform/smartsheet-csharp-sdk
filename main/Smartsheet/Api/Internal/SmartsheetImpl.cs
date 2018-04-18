@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -35,7 +35,7 @@ namespace Smartsheet.Api.Internal
 	/// <summary>
 	/// This is the implementation of Smartsheet interface.
 	/// 
-	/// Thread Safety: This class is thread safe because all its mutable fields are safe-guarded using AtomicReference To
+	/// Thread Safety: This class is thread safe because all its mutable fields are safe-guarded using AtomicReference to
 	/// ensure atomic modifications, and also the underlying HttpClient and JsonSerializer interfaces are thread safe.
 	/// </summary>
 	public class SmartsheetImpl : SmartsheetClient
@@ -43,189 +43,189 @@ namespace Smartsheet.Api.Internal
 		/// <summary>
 		/// Represents the HttpClient.
 		/// 
-		/// It will be initialized in constructor and will not change afterwards.
+		/// It will be initialized in the constructor and will not change afterwards.
 		/// </summary>
 		private readonly HttpClient httpClient;
 
 		/// <summary>
 		/// Represents the JsonSerializer.
 		/// 
-		/// It will be initialized in constructor and will not change afterwards.
+		/// It will be initialized in the constructor and will not change afterwards.
 		/// </summary>
 		private JsonSerializer jsonSerializer;
 
 		/// <summary>
 		/// Represents the base URI of the Smartsheet REST API.
 		/// 
-		/// It will be initialized in constructor and will not change afterwards.
+		/// It will be initialized in the constructor and will not change afterwards.
 		/// </summary>
 		private System.Uri baseURI;
 
 		/// <summary>
-		/// Represents the AtomicReference for access token.
+		/// Represents the AtomicReference for the access token.
 		/// 
-		/// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
+		/// It will be initialized in the constructor and will not change afterwards. The underlying value will be initially set
 		/// as null, and can be set via corresponding setter, therefore effectively the access token can be updated in the
 		/// SmartsheetImpl in thread safe manner.
 		/// </summary>
 		private string accessToken;
 
 		/// <summary>
-		/// Represents the AtomicReference for assumed user Email.
+		/// Represents the AtomicReference for assumed user email.
 		/// 
-		/// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
+		/// It will be initialized in the constructor and will not change afterwards. The underlying value will be initially set
 		/// as null, and can be set via corresponding setter, therefore effectively the assumed user can be updated in the
 		/// SmartsheetImpl in thread safe manner.
 		/// </summary>
 		private string assumedUser;
 
 		/// <summary>
-		/// Represents the AtomicReference for change agent.
+		/// Represents the AtomicReference for the change agent.
 		/// 
-		/// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
+		/// It will be initialized in the constructor and will not change afterwards. The underlying value will be initially set
 		/// as null, and can be set via corresponding setter, therefore effectively the assumed user can be updated in the
 		/// SmartsheetImpl in thread safe manner.
 		/// </summary>
 		private string changeAgent;
 
 		/// <summary>
-		/// Represents the AtomicReference To HomeResources.
+		/// Represents the AtomicReference to HomeResources.
 		/// 
-		/// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
-		/// as null, and will be initialized To non-null at the first time it is accessed via corresponding getter, therefore
-		/// effectively the underlying Value is lazily created in a thread safe manner.
+		/// It will be initialized in the constructor and will not change afterwards. The underlying value will be initially set
+		/// as null, and will be initialized to non-null the first time it is accessed via corresponding getter, therefore
+		/// effectively the underlying value is lazily created in a thread safe manner.
 		/// </summary>
 		private HomeResources home;
 
 		/// <summary>
-		/// Represents the AtomicReference To WorkspaceResources.
+		/// Represents the AtomicReference to WorkspaceResources.
 		/// 
-		/// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
-		/// as null, and will be initialized To non-null at the first time it is accessed via corresponding getter, therefore
-		/// effectively the underlying Value is lazily created in a thread safe manner.
+		/// It will be initialized in the constructor and will not change afterwards. The underlying value will be initially set
+		/// as null, and will be initialized to non-null the first time it is accessed via corresponding getter, therefore
+		/// effectively the underlying value is lazily created in a thread safe manner.
 		/// </summary>
 		private WorkspaceResources workspaces;
 
 		/// <summary>
-		/// Represents the AtomicReference To FolderResources.
+		/// Represents the AtomicReference to FolderResources.
 		/// 
-		/// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
-		/// as null, and will be initialized To non-null at the first time it is accessed via corresponding getter, therefore
-		/// effectively the underlying Value is lazily created in a thread safe manner.
+		/// It will be initialized in the constructor and will not change afterwards. The underlying value will be initially set
+		/// as null, and will be initialized to non-null at the first time it is accessed via corresponding getter, therefore
+		/// effectively the underlying value is lazily created in a thread safe manner.
 		/// </summary>
 		private FolderResources folders;
 
 		/// <summary>
-		/// Represents the AtomicReference To TemplateResources.
+		/// Represents the AtomicReference to TemplateResources.
 		/// 
-		/// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
-		/// as null, and will be initialized To non-null at the first time it is accessed via corresponding getter, therefore
-		/// effectively the underlying Value is lazily created in a thread safe manner.
+		/// It will be initialized in the constructor and will not change afterwards. The underlying value will be initially set
+		/// as null, and will be initialized to non-null at the first time it is accessed via corresponding getter, therefore
+		/// effectively the underlying value is lazily created in a thread safe manner.
 		/// </summary>
 		private TemplateResources templates;
 
 		/// <summary>
-		/// Represents the AtomicReference To ReportResources.
+		/// Represents the AtomicReference to ReportResources.
 		/// 
-		/// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
-		/// as null, and will be initialized To non-null at the first time it is accessed via corresponding getter, therefore
-		/// effectively the underlying Value is lazily created in a thread safe manner.
+		/// It will be initialized in constructor and will not change afterwards. The underlying value will be initially set
+		/// as null, and will be initialized to non-null the first time it is accessed via corresponding getter, therefore
+		/// effectively the underlying value is lazily created in a thread safe manner.
 		/// </summary>
 		private ReportResources reports;
 
 		/// <summary>
-		/// Represents the AtomicReference To SheetResources.
+		/// Represents the AtomicReference to SheetResources.
 		/// 
-		/// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
-		/// as null, and will be initialized To non-null at the first time it is accessed via corresponding getter, therefore
-		/// effectively the underlying Value is lazily created in a thread safe manner.
+		/// It will be initialized in the constructor and will not change afterwards. The underlying value will be initially set
+		/// as null, and will be initialized to non-null the first time it is accessed via corresponding getter, therefore
+		/// effectively the underlying value is lazily created in a thread safe manner.
 		/// </summary>
 		private SheetResources sheets;
 
 		/// <summary>
-		/// Represents the AtomicReference To SightResources.
+		/// Represents the AtomicReference to SightResources.
 		/// 
-		/// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
-		/// as null, and will be initialized To non-null at the first time it is accessed via corresponding getter, therefore
-		/// effectively the underlying Value is lazily created in a thread safe manner.
+		/// It will be initialized in the constructor and will not change afterwards. The underlying value will be initially set
+		/// as null, and will be initialized to non-null the first time it is accessed via corresponding getter, therefore
+		/// effectively the underlying value is lazily created in a thread safe manner.
 		/// </summary>
 		private SightResources sights;
 		/// <summary>
-		/// Represents the AtomicReference To WebhookResources.
+		/// Represents the AtomicReference to WebhookResources.
 		/// 
-		/// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
-		/// as null, and will be initialized To non-null at the first time it is accessed via corresponding getter, therefore
-		/// effectively the underlying Value is lazily created in a thread safe manner.
+		/// It will be initialized in the constructor and will not change afterwards. The underlying value will be initially set
+		/// as null, and will be initialized to non-null the first time it is accessed via corresponding getter, therefore
+		/// effectively the underlying value is lazily created in a thread safe manner.
 		/// </summary>
 		private WebhookResources webhooks;
 
 		/// <summary>
-		/// Represents the AtomicReference To UserResources.
+		/// Represents the AtomicReference to UserResources.
 		/// 
-		/// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
-		/// as null, and will be initialized To non-null at the first time it is accessed via corresponding getter, therefore
-		/// effectively the underlying Value is lazily created in a thread safe manner.
+		/// It will be initialized in the constructor and will not change afterwards. The underlying value will be initially set
+		/// as null, and will be initialized to non-null the first time it is accessed via corresponding getter, therefore
+		/// effectively the underlying value is lazily created in a thread safe manner.
 		/// </summary>
 		private UserResources users;
 
 		/// <summary>
-		/// Represents the AtomicReference To SearchResources.
+		/// Represents the AtomicReference to SearchResources.
 		/// 
-		/// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
-		/// as null, and will be initialized To non-null at the first time it is accessed via corresponding getter, therefore
-		/// effectively the underlying Value is lazily created in a thread safe manner.
+		/// It will be initialized in the constructor and will not change afterwards. The underlying value will be initially set
+		/// as null, and will be initialized to non-null the first time it is accessed via corresponding getter, therefore
+		/// effectively the underlying value is lazily created in a thread safe manner.
 		/// </summary>
 		private SearchResources search;
 
 		/// <summary>
-		/// Represents the AtomicReference To ServerInfoResources.
+		/// Represents the AtomicReference to ServerInfoResources.
 		/// 
-		/// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
-		/// as null, and will be initialized To non-null at the first time it is accessed via corresponding getter, therefore
-		/// effectively the underlying Value is lazily created in a thread safe manner.
+		/// It will be initialized in the constructor and will not change afterwards. The underlying value will be initially set
+		/// as null, and will be initialized to non-null the first time it is accessed via corresponding getter, therefore
+		/// effectively the underlying value is lazily created in a thread safe manner.
 		/// </summary>
 		private ServerInfoResources serverInfo;
 
 		/// <summary>
-		/// Represents the AtomicReference To GroupResources.
+		/// Represents the AtomicReference to GroupResources.
 		/// 
-		/// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
-		/// as null, and will be initialized To non-null at the first time it is accessed via corresponding getter, therefore
-		/// effectively the underlying Value is lazily created in a thread safe manner.
+		/// It will be initialized in the constructor and will not change afterwards. The underlying value will be initially set
+		/// as null, and will be initialized to non-null the first time it is accessed via corresponding getter, therefore
+		/// effectively the underlying value is lazily created in a thread safe manner.
 		/// </summary>
 		private GroupResources groups;
 
 		/// <summary>
-		/// Represents the AtomicReference To FavoriteResources.
+		/// Represents the AtomicReference to FavoriteResources.
 		/// 
-		/// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
-		/// as null, and will be initialized To non-null at the first time it is accessed via corresponding getter, therefore
-		/// effectively the underlying Value is lazily created in a thread safe manner.
+		/// It will be initialized in the constructor and will not change afterwards. The underlying value will be initially set
+		/// as null, and will be initialized to non-null the first time it is accessed via corresponding getter, therefore
+		/// effectively the underlying value is lazily created in a thread safe manner.
 		/// </summary>
 		private FavoriteResources favorites;
 
 		/// <summary>
-		/// Represents the AtomicReference To TokenResources.
+		/// Represents the AtomicReference to TokenResources.
 		/// 
-		/// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
-		/// as null, and will be initialized To non-null at the first time it is accessed via corresponding getter, therefore
-		/// effectively the underlying Value is lazily created in a thread safe manner.
+		/// It will be initialized in the constructor and will not change afterwards. The underlying value will be initially set
+		/// as null, and will be initialized to non-null the first time it is accessed via corresponding getter, therefore
+		/// effectively the underlying value is lazily created in a thread safe manner.
 		/// </summary>
 		private TokenResources tokens;
 
 		/// <summary>
-		/// Represents the AtomicReference To ContactResources.
+		/// Represents the AtomicReference to ContactResources.
 		/// 
-		/// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
-		/// as null, and will be initialized To non-null at the first time it is accessed via corresponding getter, therefore
-		/// effectively the underlying Value is lazily created in a thread safe manner.
+		/// It will be initialized in the constructor and will not change afterwards. The underlying value will be initially set
+		/// as null, and will be initialized to non-null the first time it is accessed via corresponding getter, therefore
+		/// effectively the underlying value is lazily created in a thread safe manner.
 		/// </summary>
 		private ContactResources contacts;
 
 		/// <summary>
 		/// Represents the AtomicReference for image Urls.
 		/// 
-		/// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
+		/// It will be initialized in the constructor and will not change afterwards. The underlying value will be initially set
 		/// as null, and can be set via corresponding setter, therefore effectively the assumed user can be updated in the
 		/// SmartsheetImpl in thread safe manner.
 		/// </summary>
@@ -234,7 +234,7 @@ namespace Smartsheet.Api.Internal
 		/// <summary>
 		/// Represents the AtomicReference for passthrough resources.
 		/// 
-		/// It will be initialized in constructor and will not change afterwards. The underlying Value will be initially set
+		/// It will be initialized in the constructor and will not change afterwards. The underlying value will be initially set
 		/// as null, and can be set via corresponding setter, therefore effectively the assumed user can be updated in the
 		/// SmartsheetImpl in thread safe manner.
 		/// </summary>
@@ -246,14 +246,14 @@ namespace Smartsheet.Api.Internal
 		private static Logger logger = LogManager.GetCurrentClassLogger();
 
 		/// <summary>
-		/// Create an instance with given server URI, HttpClient (optional) and JsonSerializer (optional)
+		/// Creates an instance with given server URI, HttpClient (optional), and JsonSerializer (optional)
 		/// 
 		/// Exceptions: - IllegalArgumentException : if serverURI/Version/AccessToken is null/empty
 		/// </summary>
 		/// <param name="baseURI"> the server uri </param>
 		/// <param name="accessToken"> the access token </param>
-		/// <param name="httpClient"> the http client (optional) </param>
-		/// <param name="jsonSerializer"> the Json serializer (optional) </param>
+		/// <param name="httpClient"> the HTTP client (optional) </param>
+		/// <param name="jsonSerializer"> the JSON serializer (optional) </param>
 		public SmartsheetImpl(string baseURI, string accessToken, HttpClient httpClient, JsonSerializer jsonSerializer)
 		{
 			Utils.ThrowIfNull(baseURI);
@@ -267,7 +267,7 @@ namespace Smartsheet.Api.Internal
 		}
 
 		/// <summary>
-		/// Finalize the object, this method is overridden To close the HttpClient.
+		/// Finalizes the object, this method is overridden to close the HttpClient.
 		/// </summary>
 		/// <exception cref="System.IO.IOException"> Signals that an I/O exception has occurred. </exception>
 		~SmartsheetImpl()
@@ -358,7 +358,7 @@ namespace Smartsheet.Api.Internal
 		}
 
 		/// <summary>
-		/// Returns the HomeResources instance that provides access To Home resources.
+		/// Returns the HomeResources instance that provides access to home resources.
 		/// </summary>
 		/// <returns> the home resources </returns>
 		public virtual HomeResources HomeResources
@@ -371,7 +371,7 @@ namespace Smartsheet.Api.Internal
 		}
 
 		/// <summary>
-		/// Returns the WorkspaceResources instance that provides access To Workspace resources.
+		/// Returns the WorkspaceResources instance that provides access to workspace resources.
 		/// </summary>
 		/// <returns> the workspace resources </returns>
 		public virtual WorkspaceResources WorkspaceResources
@@ -384,7 +384,7 @@ namespace Smartsheet.Api.Internal
 		}
 
 		/// <summary>
-		/// Returns the FolderResources instance that provides access To Folder resources.
+		/// Returns the FolderResources instance that provides access to folder resources.
 		/// </summary>
 		/// <returns> the folder resources </returns>
 		public virtual FolderResources FolderResources
@@ -397,7 +397,7 @@ namespace Smartsheet.Api.Internal
 		}
 
 		/// <summary>
-		/// Returns the TemplateResources instance that provides access To Template resources.
+		/// Returns the TemplateResources instance that provides access to template resources.
 		/// </summary>
 		/// <returns> the template resources </returns>
 		public virtual TemplateResources TemplateResources
@@ -410,9 +410,9 @@ namespace Smartsheet.Api.Internal
 		}
 
 		/// <summary>
-		/// Returns the TemplateResources instance that provides access To Template resources.
+		/// Returns the ReportResources instance that provides access to report resources.
 		/// </summary>
-		/// <returns> the template resources </returns>
+		/// <returns> the report resources </returns>
 		public virtual ReportResources ReportResources
 		{
 			get
@@ -423,7 +423,7 @@ namespace Smartsheet.Api.Internal
 		}
 
 		/// <summary>
-		/// Returns the SheetResources instance that provides access To Sheet resources.
+		/// Returns the SheetResources instance that provides access to sheet resources.
 		/// </summary>
 		/// <returns> the sheet resources </returns>
 		public virtual SheetResources SheetResources
@@ -436,9 +436,9 @@ namespace Smartsheet.Api.Internal
 		}
 
 		/// <summary>
-		/// Returns the SightResources instance that provides access To Sight resources.
+		/// Returns the SightResources instance that provides access to Sight resources.
 		/// </summary>
-		/// <returns> the sight resources </returns>
+		/// <returns> the Sight resources </returns>
 		public virtual SightResources SightResources
 		{
 			get
@@ -449,9 +449,9 @@ namespace Smartsheet.Api.Internal
 		}
 
 		/// <summary>
-		/// Returns the SightResources instance that provides access To Sight resources.
+		/// Returns the WebhookResources instance that provides access to webhook resources.
 		/// </summary>
-		/// <returns> the sight resources </returns>
+		/// <returns> the webhook resources </returns>
 		public virtual WebhookResources WebhookResources
 		{
 			get
@@ -462,7 +462,7 @@ namespace Smartsheet.Api.Internal
 		}
 
 		/// <summary>
-		/// Returns the UserResources instance that provides access To User resources.
+		/// Returns the UserResources instance that provides access to user resources.
 		/// </summary>
 		/// <returns> the user resources </returns>
 		public virtual UserResources UserResources
@@ -475,7 +475,7 @@ namespace Smartsheet.Api.Internal
 		}
 
 		/// <summary>
-		/// Returns the SearchResources instance that provides access To searching resources.
+		/// Returns the SearchResources instance that provides access to searching resources.
 		/// </summary>
 		/// <returns> the search resources </returns>
 		public virtual SearchResources SearchResources
@@ -488,7 +488,7 @@ namespace Smartsheet.Api.Internal
 		}
 
 		/// <summary>
-		/// Returns the ServerInfoResources instance that provides access To server information resources.
+		/// Returns the ServerInfoResources instance that provides access to server information resources.
 		/// </summary>
 		/// <returns> the server information resources </returns>
 		public virtual ServerInfoResources ServerInfoResources
@@ -501,7 +501,7 @@ namespace Smartsheet.Api.Internal
 		}
 
 		/// <summary>
-		/// Returns the GroupResources instance that provides access To group resources.
+		/// Returns the GroupResources instance that provides access to group resources.
 		/// </summary>
 		/// <returns> the group resources </returns>
 		public virtual GroupResources GroupResources
@@ -514,7 +514,7 @@ namespace Smartsheet.Api.Internal
 		}
 
 		/// <summary>
-		/// Returns the FavoriteResources instance that provides access To favorite resources.
+		/// Returns the FavoriteResources instance that provides access to favorite resources.
 		/// </summary>
 		/// <returns> the favorite resources </returns>
 		public virtual FavoriteResources FavoriteResources
@@ -527,7 +527,7 @@ namespace Smartsheet.Api.Internal
 		}
 
 		/// <summary>
-		/// Returns the TokenResources instance that provides access To token resources.
+		/// Returns the TokenResources instance that provides access to token resources.
 		/// </summary>
 		/// <returns> the token resources </returns>
 		public virtual TokenResources TokenResources
