@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -29,32 +29,32 @@ namespace Smartsheet.Api.Models
 	public class Folder : NamedModel
 	{
 		/// <summary>
-		/// Represents whether Folder is marked as favorite in Home folder
+		/// Represents whether a folder is marked as a favorite in the Home folder
 		/// </summary>
 		private bool? favorite;
 
 		/// <summary>
-		/// Direct URL to Folder
+		/// Direct URL to folder
 		/// </summary>
 		private string permalink;
 
 		/// <summary>
-		/// Represents the Sheets contained in the folder.
+		/// Represents the sheets contained in the folder.
 		/// </summary>
 		private IList<Sheet> sheets;
 
 		/// <summary>
-		/// Represents the Reports contained in the folder.
+		/// Represents the reports contained in the folder.
 		/// </summary>
 		private IList<Report> reports;
 
 		/// <summary>
-		/// Represents the child Folders contained in the folder.
+		/// Represents the child folders contained in the folder.
 		/// </summary>
 		private IList<Folder> folders;
 
 		/// <summary>
-		/// Represents the Templates contained in the folder.
+		/// Represents the templates contained in the folder.
 		/// </summary>
 		private IList<Template> templates;
 
@@ -64,9 +64,9 @@ namespace Smartsheet.Api.Models
 		private IList<Sight> sights;
 
 		/// <summary>
-		/// Gets and Sets the whether this Folder is favorited.
+		/// Gets and sets whether this folder is favorited.
 		/// </summary>
-		/// <returns> the Sheets </returns>
+		/// <returns> the sheets </returns>
 		public bool? Favorite
 		{
 			get { return favorite; }
@@ -74,9 +74,9 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// Gets and Sets the permalink of this folder.
+		/// Gets and sets the permalink of this folder.
 		/// </summary>
-		/// <returns> the Sheets </returns>
+		/// <returns> the sheets </returns>
 		public string Permalink
 		{
 			get { return permalink; }
@@ -84,9 +84,9 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// Gets the Sheets in the folder.
+		/// Gets the sheets in the folder.
 		/// </summary>
-		/// <returns> the Sheets </returns>
+		/// <returns> the sheets </returns>
 		public virtual IList<Sheet> Sheets
 		{
 			get
@@ -100,9 +100,9 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// Gets the Reports in the folder.
+		/// Gets the reports in the folder.
 		/// </summary>
-		/// <returns> the Sheets </returns>
+		/// <returns> the sheets </returns>
 		public virtual IList<Report> Reports
 		{
 			get
@@ -115,9 +115,9 @@ namespace Smartsheet.Api.Models
 			}
 		}
 		/// <summary>
-		/// Gets the Folders contained in this folder.
+		/// Gets the folders contained in this folder.
 		/// </summary>
-		/// <returns> the Folders </returns>
+		/// <returns> the folders </returns>
 		public virtual IList<Folder> Folders
 		{
 			get
@@ -132,9 +132,9 @@ namespace Smartsheet.Api.Models
 
 
 		/// <summary>
-		/// Gets the Templates contained in this folder.
+		/// Gets the templates contained in this folder.
 		/// </summary>
-		/// <returns> the Templates </returns>
+		/// <returns> the templates </returns>
 		public virtual IList<Template> Templates
 		{
 			get
@@ -172,9 +172,9 @@ namespace Smartsheet.Api.Models
 			private long? id;
 
 			/// <summary>
-			/// Sets the required the fields for updating a Folder.
+			/// Sets the required fields for updating a folder.
 			/// </summary>
-			/// <param name="id">the id of the folder to update</param>
+			/// <param name="id">the Id of the folder to update</param>
 			/// <param name="name"> the name of the folder, need not be unique </param>
 			public UpdateFolderBuilder(long? id, string name)
 			{
@@ -183,9 +183,9 @@ namespace Smartsheet.Api.Models
 			}
 
 			///// <summary>
-			///// Set the Name of the Folder.
+			///// Set the name of the folder.
 			///// </summary>
-			///// <param name="name"> the Name </param>
+			///// <param name="name"> the name </param>
 			///// <returns> the update folder builder </returns>
 			//public virtual UpdateFolderBuilder SetName(string name)
 			//{
@@ -194,9 +194,9 @@ namespace Smartsheet.Api.Models
 			//}
 
 			///// <summary>
-			///// Gets the Name.
+			///// Gets the name.
 			///// </summary>
-			///// <returns> the Name </returns>
+			///// <returns> the name </returns>
 			//public virtual string GetName()
 			//{
 			//	return folderName;
@@ -251,7 +251,7 @@ namespace Smartsheet.Api.Models
 			private string folderName;
 
 			/// <summary>
-			/// Sets the required the fields for creating a Folder.
+			/// Sets the required the fields for creating a folder.
 			/// </summary>
 			/// <param name="name"> the name of the folder, need not be unique </param>
 			public CreateFolderBuilder(string name)
@@ -260,9 +260,9 @@ namespace Smartsheet.Api.Models
 			}
 
 			/// <summary>
-			/// Set the Name of the Folder.
+			/// Sets the name of the folder.
 			/// </summary>
-			/// <param name="name"> the Name </param>
+			/// <param name="name"> the name </param>
 			/// <returns> the update folder builder </returns>
 			public virtual CreateFolderBuilder SetName(string name)
 			{
@@ -271,9 +271,9 @@ namespace Smartsheet.Api.Models
 			}
 
 			/// <summary>
-			/// Gets the Name.
+			/// Gets the name.
 			/// </summary>
-			/// <returns> the Name </returns>
+			/// <returns> the name </returns>
 			public virtual string GetName()
 			{
 				return folderName;
