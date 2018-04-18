@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -43,7 +43,7 @@ namespace Smartsheet.Api.Models
 		FORMAT,
 
 		/// <summary>
-		/// Includes column filters, and row.filteredOut attribute.
+		/// Includes column filters and row.filteredOut attribute.
 		/// </summary>
 		FILTERS,
 
@@ -53,7 +53,7 @@ namespace Smartsheet.Api.Models
 		FILTER_DEFINITIONS,
 
 		/// <summary>
-		/// Includes the owner’s email address and user ID for each sheet.
+		/// Includes the owner’s email address and user Id for each sheet.
 		/// </summary>
 		OWNER_INFO,
 
@@ -63,7 +63,7 @@ namespace Smartsheet.Api.Models
 		SOURCE,
 
 		/// <summary>
-		/// Includes a permalink attribute for each Row. A Row permalink represents a direct link to the Row in the Smartsheet application.
+		/// Includes a permalink attribute for each row. A row permalink represents a direct link to the row in the Smartsheet application.
 		/// </summary>
 		ROW_PERMALINK,
 
@@ -73,7 +73,7 @@ namespace Smartsheet.Api.Models
 		COLUMN_TYPE,
 
 		/// <summary>
-		/// Includes createdBy and modifiedBy attributes on the row, indicating the row’s creator, and last modifier.
+		/// Includes createdBy and modifiedBy attributes on the row, indicating the row’s creator and last modifier.
 		/// </summary>
 		ROW_WRITER_INFO,
 
