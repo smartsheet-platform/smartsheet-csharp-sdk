@@ -4,23 +4,23 @@ using System.Collections.Generic;
 // Add nuget reference to smartsheet-csharp-sdk (https://www.nuget.org/packages/smartsheet-csharp-sdk/)
 using Smartsheet.Api;
 using Smartsheet.Api.Models;
+using Smartsheet.Api.Models.Inclusions;
 using System.Linq;
 
-namespace csharp_sdk_sample
+namespace sdk_csharp_sample
 {
     class Program
     {
-
         static void Main(string[] args)
         {
             // Initialize client
             SmartsheetClient ss = new SmartsheetBuilder()
                 // .SetAccessToken("feo3t736fc2lpansdevs4a1as")       // TODO: Set your API access in environment variable SMARTSHEET_ACCESS_TOKEN or else here
+                .SetHttpClient(new RetryHttpClient())
                 .Build();
 
-
             // List all sheets
-            PaginatedResult<Sheet> sheets = ss.SheetResources.ListSheets(null, null, null);
+            PaginatedResult<Sheet> sheets = ss.SheetResources.ListSheets(new List<SheetInclusion>{SheetInclusion.SHEET_VERSION}, null, null);
             Console.WriteLine("Found " + sheets.TotalCount + " sheets");
 
             if (sheets.TotalCount > 0)
