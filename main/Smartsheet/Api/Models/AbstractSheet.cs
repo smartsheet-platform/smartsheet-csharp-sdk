@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -32,13 +32,13 @@ namespace Smartsheet.Api.Models
 		where TCell : Cell
 	{
 		/// <summary>
-		/// Represents the Columns for the sheet.
+		/// Represents the columns for the sheet.
 		/// </summary>
         [CLSCompliant(false)]
 		protected IList<TColumn> columns;
 
 		/// <summary>
-		/// Represents the Rows for the sheet.
+		/// Represents the rows for the sheet.
 		/// </summary>
         [CLSCompliant(false)]
 		protected IList<TRow> rows;
@@ -49,12 +49,12 @@ namespace Smartsheet.Api.Models
 		private AccessLevel? accessLevel;
 
 		/// <summary>
-		/// Represents the Discussions for the sheet.
+		/// Represents the discussions for the sheet.
 		/// </summary>
 		private IList<Discussion> discussions;
 
 		/// <summary>
-		/// Represents the Attachments for the sheet.
+		/// Represents the attachments for the sheet.
 		/// </summary>
 		private IList<Attachment> attachments;
 
@@ -74,7 +74,7 @@ namespace Smartsheet.Api.Models
 		private DateTime? modifiedAt;
 
 		/// <summary>
-		/// Represents the direct URL To the sheet.
+		/// Represents the direct URL to the sheet.
 		/// </summary>
 		private string permalink;
 
@@ -90,7 +90,7 @@ namespace Smartsheet.Api.Models
 		private bool? dependenciesEnabled;
 
 		/// <summary>
-		/// Represents the Version for the sheet
+		/// Represents the version for the sheet
 		/// </summary>
 		private int? version;
 
@@ -110,17 +110,17 @@ namespace Smartsheet.Api.Models
 		private IList<AttachmentType> effectiveAttachmentOptions;
 
 		/// <summary>
-		/// A flag that indicates if resource management is enabled for a sheet
+		/// Indicates whether resource management is enabled for a sheet
 		/// </summary>
 		private bool? resourceManagementEnabled;
 
 		/// <summary>
-		/// Identified if the sheet is marked as favorite
+		/// Identifies whether the sheet is marked as a favorite
 		/// </summary>
 		private bool? favorite;
 
 		/// <summary>
-		/// Identifies if it is enabled to show parent rows for filters.
+		/// Identifies whether it is enabled to show parent rows for filters.
 		/// </summary>
 		private bool? showParentRowsForFilters;
 
@@ -145,7 +145,7 @@ namespace Smartsheet.Api.Models
 		private string owner;
 
 		/// <summary>
-		/// Represents the owner id of the owner
+		/// Represents the owner Id of the owner
 		/// </summary>
 		private long? ownerId;
 
@@ -155,7 +155,7 @@ namespace Smartsheet.Api.Models
 		private ProjectSettings projectSettings;
 
 		/// <summary>
-		/// Get a list of cross sheet references used by this sheet
+		/// Get a list of cross-sheet references used by this sheet
 		/// </summary>
 		private IList<CrossSheetReference> crossSheetReferences;
 
@@ -169,7 +169,7 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// Represents the Id of the Owner
+		/// Represents the Id of the owner
 		/// </summary>
 		public virtual long? OwnerId
 		{
@@ -190,10 +190,10 @@ namespace Smartsheet.Api.Models
 
 
 		/// <summary>
-		/// Get a column by Index.
+		/// Gets a column by index.
 		/// </summary>
-		/// <param name="index"> the column Index </param>
-		/// <returns> the column by Index </returns>
+		/// <param name="index"> the column index </param>
+		/// <returns> the column by index </returns>
 		public virtual TColumn GetColumnByIndex(int index)
 		{
 			if (columns == null)
@@ -238,9 +238,9 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// Gets the Columns for the sheet.
+		/// Gets the columns for the sheet.
 		/// </summary>
-		/// <returns> the Columns </returns>
+		/// <returns> the columns </returns>
 		public virtual IList<TColumn> Columns
 		{
 			get	{ return columns; }
@@ -249,9 +249,9 @@ namespace Smartsheet.Api.Models
 
 
 		/// <summary>
-		/// Gets the Rows for the sheet.
+		/// Gets the rows for the sheet.
 		/// </summary>
-		/// <returns> the Rows </returns>
+		/// <returns> the rows </returns>
 		public virtual IList<TRow> Rows
 		{
 			get	{ return rows; }
@@ -271,9 +271,9 @@ namespace Smartsheet.Api.Models
 
 
 		/// <summary>
-		/// Gets the Discussions for the sheet.
+		/// Gets the discussions for the sheet.
 		/// </summary>
-		/// <returns> the Discussions </returns>
+		/// <returns> the discussions </returns>
 		public virtual IList<Discussion> Discussions
 		{
 			get { return discussions; }
@@ -282,9 +282,9 @@ namespace Smartsheet.Api.Models
 
 
 		/// <summary>
-		/// Gets the Attachments for the sheet.
+		/// Gets the attachments for the sheet.
 		/// </summary>
-		/// <returns> the Attachments </returns>
+		/// <returns> the attachments </returns>
 		public virtual IList<Attachment> Attachments
 		{
 			get	{ return attachments; }
@@ -337,9 +337,9 @@ namespace Smartsheet.Api.Models
 
 
 		/// <summary>
-		/// Gets the gantt enabled flag.
+		/// Gets the Gantt enabled flag.
 		/// </summary>
-		/// <returns> the gantt enabled flag </returns>
+		/// <returns> the Gantt enabled flag </returns>
 		public virtual bool? GanttEnabled
 		{
 			get	{ return ganttEnabled; }
@@ -348,9 +348,9 @@ namespace Smartsheet.Api.Models
 
 
 		/// <summary>
-		/// Gets the Version for the sheet.
+		/// Gets the version for the sheet.
 		/// </summary>
-		/// <returns> the Version </returns>
+		/// <returns> the version </returns>
 		public virtual int? Version
 		{
 			get	{ return version; }
@@ -359,7 +359,7 @@ namespace Smartsheet.Api.Models
 
 
 		/// <summary>
-		/// Gets the ID of the sheet/template from which the sheet was created.
+		/// Gets the Id of the sheet/template from which the sheet was created.
 		/// </summary>
 		/// <returns> the from Id </returns>
 		public virtual long? FromId
@@ -370,9 +370,9 @@ namespace Smartsheet.Api.Models
 
 
 		/// <summary>
-		/// The total number of rows in the Sheet.
+		/// The total number of rows in the sheet.
 		/// </summary>
-		/// <returns> The total number of rows in the Sheet </returns>
+		/// <returns> The total number of rows in the sheet </returns>
 		public virtual long? TotalRowCount
 		{
 			get { return totalRowCount; }
@@ -381,9 +381,9 @@ namespace Smartsheet.Api.Models
 
 
 		/// <summary>
-		/// Array of enum strings (see Attachment.attachmentType) indicating the allowable attachment options for the current User and Sheet
+		/// Array of enum strings (see Attachment.attachmentType) indicating the allowable attachment options for the current user and sheet
 		/// </summary>
-		/// <returns> list tof attachment types </returns>
+		/// <returns> list of attachment types </returns>
 		public virtual IList<AttachmentType> EffectiveAttachmentOptions
 		{
 			get { return effectiveAttachmentOptions; }
@@ -392,7 +392,7 @@ namespace Smartsheet.Api.Models
 
 
 		/// <summary>
-		/// Flag to indicate that resource management is enabled.
+		/// Indicates whether resource management is enabled.
 		/// </summary>
 		/// <returns> true if enabled, false otherwise </returns>
 		public virtual bool? ResourceManagementEnabled
@@ -403,7 +403,7 @@ namespace Smartsheet.Api.Models
 
 
 		/// <summary>
-		/// Returned only if the User has marked this sheet as a favorite in their Home tab (value = “true”).
+		/// Returned only if the user has marked this sheet as a favorite in their Home tab (value = “true”).
 		/// </summary>
 		/// <returns> true if marked as favorite, false otherwise </returns>
 		public virtual bool? Favorite
@@ -414,7 +414,7 @@ namespace Smartsheet.Api.Models
 
 
 		/// <summary>
-		/// Returned only if there are column filters on the Sheet. Value = “true” if “show parent rows” is enabled for the filters.
+		/// Returned only if there are column filters on the sheet. Value = “true” if “show parent rows” is enabled for the filters.
 		/// </summary>
 		/// <returns> “true” if “show parent rows” is enabled for the filters </returns>
 		public virtual bool? ShowParentRowsForFilters
@@ -425,7 +425,7 @@ namespace Smartsheet.Api.Models
 
 
 		/// <summary>
-		/// Get the list of sheet filters for this sheet.
+		/// Gets the list of sheet filters for this sheet.
 		/// </summary>
 		/// <returns> the list of sheet filters </returns>
 		public virtual IList<SheetFilter> Filters
@@ -447,7 +447,7 @@ namespace Smartsheet.Api.Models
 
 
 		/// <summary>
-		/// A Source object indicating the Sheet or Template from which this sheet was created.
+		/// A Source object indicating the sheet or template from which this sheet was created.
 		/// </summary>
 		/// <returns> source of sheet </returns>
 		public virtual Source Source
@@ -458,7 +458,7 @@ namespace Smartsheet.Api.Models
 
 
 		/// <summary>
-		/// Get Sheet’s project settings containing the working days, non-working days, and length of day for a project sheet
+		/// Gets sheet’s project settings containing the working days, non-working days, and length of day for a project sheet
 		/// </summary>
 		public virtual ProjectSettings ProjectSettings
 		{
@@ -468,7 +468,7 @@ namespace Smartsheet.Api.Models
 
 		
 		/// <summary>
-		/// Get the list of cross sheet references used by this sheet
+		/// Gets the list of cross-sheet references used by this sheet
 		/// </summary>
 		public virtual IList<CrossSheetReference> CrossSheetReferences
 		{
