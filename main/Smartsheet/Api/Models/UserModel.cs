@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -44,12 +44,12 @@ namespace Smartsheet.Api.Models
 		private string lastName;
 
 		/// <summary>
-		/// Represents the Admin flag which allows managing Users and accounts.
+		/// Represents the Admin flag which allows managing users and accounts.
 		/// </summary>
 		private bool? admin;
 
 		/// <summary>
-		/// Represents the licensed sheet creator flag which allows creating and owning Sheets.
+		/// Represents the licensed sheet creator flag which allows creating and owning sheets.
 		/// </summary>
 		private bool? licensedSheetCreator;
 
@@ -64,12 +64,12 @@ namespace Smartsheet.Api.Models
 		private bool? groupAdmin;
 
 		/// <summary>
-		/// Represents the user Status (active, pending, declined).
+		/// Represents the user status (active, pending, declined).
 		/// </summary>
 		private UserStatus? status;
 
 		/// <summary>
-		/// An array of AlternateEmail objects representing the alternate email addresses associated with the User account
+		/// An array of AlternateEmail objects representing the alternate email addresses associated with the user account
 		/// </summary>
 		private IList<AlternateEmail> alternateEmails;
 
@@ -99,7 +99,7 @@ namespace Smartsheet.Api.Models
 		private string department;
 
 		/// <summary>
-		/// User's mobil phone number from the profile
+		/// User's mobile phone number from the profile
 		/// </summary>
 		private string mobilePhone;
 
@@ -151,9 +151,9 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// Gets the Admin flag which allows managing Users and accounts.
+		/// Gets the Admin flag which allows managing users and accounts.
 		/// </summary>
-		/// <returns> the Admin </returns>
+		/// <returns> the admin </returns>
 		public virtual bool? Admin
 		{
 			get	{ return admin;	}
@@ -161,7 +161,7 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// Gets the licensed sheet creator flag that allows creating and owning Sheets.
+		/// Gets the licensed sheet creator flag that allows creating and owning sheets.
 		/// </summary>
 		/// <returns> the licensed sheet creator </returns>
 		public virtual bool? LicensedSheetCreator
@@ -189,7 +189,7 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// Gets the Status of the user (active, pending, declined).
+		/// Gets the status of the user (active, pending, declined).
 		/// </summary>
 		/// <returns> the Status </returns>
 		public virtual UserStatus? Status
@@ -199,7 +199,7 @@ namespace Smartsheet.Api.Models
 		}
 		
 		/// <summary>
-		/// Get list of alternate email addresses associted with this User account
+		/// Get list of alternate email addresses associated with this user account
 		/// </summary>
 		public IList<AlternateEmail> AlternateEmails
 		{
