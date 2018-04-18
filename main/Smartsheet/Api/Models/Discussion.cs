@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -28,11 +28,11 @@ namespace Smartsheet.Api.Models
 	public class Discussion : IdentifiableModel
 	{
 		/// <summary>
-		/// Represents the Title for the discussion. </summary>
+		/// Represents the title for the discussion. </summary>
 		private string title;
 
 		/// <summary>
-		/// Represents the Comments for the discussion. </summary>
+		/// Represents the comments for the discussion. </summary>
 		private IList<Comment> comments;
 
 		/// <summary>
@@ -40,7 +40,7 @@ namespace Smartsheet.Api.Models
 		private Comment comment;
 
 		/// <summary>
-		/// Represents the Comment Attachments. </summary>
+		/// Represents the comment attachments. </summary>
 		private IList<Attachment> commentAttachments;
 
 		/// <summary>
@@ -49,19 +49,19 @@ namespace Smartsheet.Api.Models
 		private int? commentCount;
 
 		/// <summary>
-		/// Represents the date a Comment was last added To a discussion. </summary>
+		/// Represents the date a comment was last added to a discussion. </summary>
 		private DateTime? lastCommentedAt;
 
 		/// <summary>
-		/// Represents the last user that left a Comment in the discussion. </summary>
+		/// Represents the last user that left a comment in the discussion. </summary>
 		private User lastCommentedUser;
 
 		/// <summary>
-		/// Users permission on the Discussion </summary>
+		/// Users permission on the discussion </summary>
 		private AccessLevel? accessLevel;
 
 		/// <summary>
-		/// Represents the ID of the directly associated row or sheet </summary>
+		/// Represents the Id of the directly associated row or sheet </summary>
 		private long? parentId;
 
 		/// <summary>
@@ -69,18 +69,18 @@ namespace Smartsheet.Api.Models
 		private DiscussionParentType? parentType;
 
 		/// <summary>
-		/// Represents the User object containing name and email of the creator of the Discussion </summary>
+		/// Represents the User object containing name and email of the creator of the discussion </summary>
 		private User createdBy;
 
 		/// <summary>
-		/// Represents the read only status of the Discussion </summary>
+		/// Represents the read only status of the discussion </summary>
 		private bool? readOnly;
 
 
 		/// <summary>
-		/// the Title for the discussion.
+		/// the title for the discussion.
 		/// </summary>
-		/// <returns> the Title </returns>
+		/// <returns> the title </returns>
 		public virtual string Title
 		{
 			get
@@ -95,9 +95,9 @@ namespace Smartsheet.Api.Models
 
 
 		/// <summary>
-		/// The Comments for the discussion.
+		/// The comments for the discussion.
 		/// </summary>
-		/// <returns> the Comments </returns>
+		/// <returns> the comments </returns>
 		public virtual IList<Comment> Comments
 		{
 			get
@@ -111,9 +111,9 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// The Comment for the discussion.
+		/// The comment for the discussion.
 		/// </summary>
-		/// <returns> the Comment </returns>
+		/// <returns> the comment </returns>
 		public virtual Comment Comment
 		{
 			get
@@ -127,9 +127,9 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// The Comment Attachments.
+		/// The comment attachments.
 		/// </summary>
-		/// <returns> the Comment Attachments </returns>
+		/// <returns> the comment attachments </returns>
 		public virtual IList<Attachment> CommentAttachments
 		{
 			get
@@ -175,7 +175,7 @@ namespace Smartsheet.Api.Models
 
 
 		/// <summary>
-		/// User object containing name and email of the author of the most recent Comment
+		/// User object containing name and email of the author of the most recent comment
 		/// </summary>
 		/// <returns> the last commented user </returns>
 		public virtual User LastCommentedUser
@@ -192,7 +192,7 @@ namespace Smartsheet.Api.Models
 
 
 		/// <summary>
-		/// User's permissions on the Discussion
+		/// User's permissions on the discussion
 		/// </summary>
 		/// <returns> the access level </returns>
 		public virtual AccessLevel? AccessLevel
@@ -208,7 +208,7 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// ID of the directly associated row or sheet: present only when the direct association is not clear (see Get All Discussions)
+		/// Id of the directly associated row or sheet: present only when the direct association is not clear (see Get All Discussions)
 		/// </summary>
 		public long? ParentId
 		{
@@ -226,7 +226,7 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// User object containing name and email of the creator of the Discussion
+		/// User object containing name and email of the creator of the discussion
 		/// </summary>
 		public virtual User CreatedBy
 		{
@@ -235,7 +235,7 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// Flag to indicate if the User can modify the Discussion
+		/// Indicates whether the user can modify the discussion
 		/// </summary>
 		public bool? ReadOnly
 		{
@@ -245,7 +245,7 @@ namespace Smartsheet.Api.Models
 
 
 		/// <summary>
-		/// A convenience class To help generate discussion object with the appropriate fields for adding a discussion To 
+		/// A convenience class to help generate discussion object with the appropriate fields for adding a discussion to 
 		/// a sheet or row.
 		/// </summary>
 		public class CreateDiscussionBuilder
@@ -254,10 +254,10 @@ namespace Smartsheet.Api.Models
 			private Comment comment;
 
 			/// <summary>
-			/// Sets the required properties for creating a Discussion.
+			/// Sets the required properties for creating a discussion.
 			/// </summary>
-			/// <param name="title"> the Discussion title </param>
-			/// <param name="comment"> the Comment of the Discussion </param>
+			/// <param name="title"> the discussion title </param>
+			/// <param name="comment"> the comment of the discussion </param>
 			public CreateDiscussionBuilder(string title, Comment comment)
 			{
 				this.title = title;
@@ -265,9 +265,9 @@ namespace Smartsheet.Api.Models
 			}
 
 			/// <summary>
-			/// Sets the Title for the discussion.
+			/// Sets the title for the discussion.
 			/// </summary>
-			/// <param name="title"> the Title </param>
+			/// <param name="title"> the title </param>
 			/// <returns> the creates the discussion builder </returns>
 			public virtual CreateDiscussionBuilder SetTitle(string title)
 			{
@@ -276,9 +276,9 @@ namespace Smartsheet.Api.Models
 			}
 
 			/// <summary>
-			/// Sets the Comments for the discussion.
+			/// Sets the comments for the discussion.
 			/// </summary>
-			/// <param name="comment"> the Comments </param>
+			/// <param name="comment"> the comments </param>
 			/// <returns> the creates the discussion builder </returns>
 			public virtual CreateDiscussionBuilder SetComment(Comment comment)
 			{
@@ -287,18 +287,18 @@ namespace Smartsheet.Api.Models
 			}
 
 			/// <summary>
-			/// Gets the Title.
+			/// Gets the title.
 			/// </summary>
-			/// <returns> the Title </returns>
+			/// <returns> the title </returns>
 			public virtual string GetTitle()
 			{
 				return title;
 			}
 
 			/// <summary>
-			/// Gets the Comments.
+			/// Gets the comments.
 			/// </summary>
-			/// <returns> the Comments </returns>
+			/// <returns> the comments </returns>
 			public virtual Comment GetComment()
 			{
 				return comment;
