@@ -75,10 +75,10 @@ namespace Smartsheet.Api.Internal
 			public static readonly ErrorCode SERVICE_UNAVAILABLE = new ErrorCode(HttpStatusCode.ServiceUnavailable, typeof(Api.ServiceUnavailableException));
 
 			/// <summary>
-			/// Gets an IEnumerable to iterate through the Error codes.
+			/// Gets an IEnumerable to iterate through the error codes.
 			/// </summary>
 			/// <value>
-			/// The IEnumerable to iterate through the Error codes
+			/// The IEnumerable to iterate through the error codes
 			/// </value>
 			public static IEnumerable<ErrorCode> Values
 			{
