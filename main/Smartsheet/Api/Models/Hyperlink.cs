@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -21,8 +21,8 @@ using Newtonsoft.Json;
 namespace Smartsheet.Api.Models
 {
 	/// <summary>
-	/// Represents a hyperlink to a URL, a Sheet, or a Report. 
-	/// <remarks>If the Sheet or Report that is linked to was deleted, this object may be empty (i.e. all values null).</remarks>
+	/// Represents a hyperlink to a URL, a sheet, or a report. 
+	/// <remarks>If the sheet or report that is linked to was deleted, this object may be empty (i.e., all values null).</remarks>
 	/// <para>You can create and modify hyperlinks by using any API operation that creates or updates cell data.
 	/// When creating or updating a hyperlink, cell.value may be set to a string value or null.
 	/// If null, the cell’s value will be derived from the hyperlink:
@@ -39,17 +39,17 @@ namespace Smartsheet.Api.Models
 		private string url;
 
 		/// <summary>
-		/// Represents the sheet ID.
+		/// Represents the sheet Id.
 		/// </summary>
 		private long? sheetId;
 
 		/// <summary>
-		/// If non-null, this hyperlink is a link to the Report with this ID.
+		/// If non-null, this hyperlink is a link to the report with this Id.
 		/// </summary>
 		private long? reportId;
 
 		/// <summary>
-		/// If non-null, this hyperlink is a link to the Sight with this ID.
+		/// If non-null, this hyperlink is a link to the Sight with this Id.
 		/// </summary>
 		private long? sightId;
 
@@ -59,7 +59,7 @@ namespace Smartsheet.Api.Models
 		private bool isNull = true;
 
 		/// <summary>
-		/// If non-null, this hyperlink is a link to the Report with this ID.
+		/// If non-null, this hyperlink is a link to the report with this Id.
 		/// </summary>
 		public long? ReportId
 		{
@@ -71,7 +71,7 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// If non-null, this hyperlink is a link to the Sight with this ID.
+		/// If non-null, this hyperlink is a link to the Sight with this Id.
 		/// </summary>
 		public long? SightId
 		{
@@ -84,8 +84,8 @@ namespace Smartsheet.Api.Models
 
 		/// <summary>
 		/// <para>When the hyperlink is a URL link, this property will contain the URL value.</para>
-		/// <para>When the hyperlink is a Sheet/Report link (i.e. sheetId or reportId is non-null), 
-		/// this property will contain the permalink to the Sheet or Report.</para>
+		/// <para>When the hyperlink is a sheet/report link (i.e., sheetId or reportId is non-null), 
+		/// this property will contain the permalink to the sheet or report.</para>
 		/// </summary>
 		/// <returns> the Url </returns>
 		public virtual string Url
@@ -99,7 +99,7 @@ namespace Smartsheet.Api.Models
 
 
 		/// <summary>
-		/// If non-null, this hyperlink is a link to the Sheet with this ID.
+		/// If non-null, this hyperlink is a link to the sheet with this Id.
 		/// </summary>
 		/// <returns> the sheet Id </returns>
 		public virtual long? SheetId
