@@ -83,7 +83,7 @@ namespace Smartsheet.Api.Internal
 		/// <param name="sheetId"> the Id of the sheet </param>
 		/// <param name="automationRule"> the automation rule </param>
 		/// <returns> the automation rule </returns>
-		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or an empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
@@ -101,7 +101,7 @@ namespace Smartsheet.Api.Internal
 		/// </summary>
 		/// <param name="sheetId"> the Id of the sheet </param>
 		/// <param name="automationRuleId"> the automation rule Id </param>
-		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or an empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
