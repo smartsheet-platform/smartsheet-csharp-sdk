@@ -4,7 +4,7 @@
 The Smartsheet C# SDK references the [NLog project](http://nlog-project.org) for SDK logging. NLog is highly configurable for console
 and file logging. The root folder contains an `NLog.config` file which specifies the logging configuration of the SDK. Targets for File and ColorConsole logging are used by the SDK.
 
-Using NLog, the Smartsheet C# SDK logs all API queries including HTTP method, URI, HTTP status and response time 
+Using NLog, the Smartsheet C# SDK logs all API queries including HTTP method, URI, HTTP status, and response time 
 to `INFO`. API Request and Response details are logged to `DEBUG`. 
 
 ## Passthrough Option
@@ -96,7 +96,7 @@ Common customizations may include:
 - overriding default timeout or retry behavior
  
 ### Sample ProxyHttpClient
-The following example shows how to enable a proxy by providing the SmartsheetBuilder with an HttpClient which extends 
+The following example shows how to enable a proxy by providing the SmartsheetBuilder with an HttpClient that extends 
 DefaultHttpClient.  
 
 Invoke the SmartsheetBuilder with a custom HttpClient:
