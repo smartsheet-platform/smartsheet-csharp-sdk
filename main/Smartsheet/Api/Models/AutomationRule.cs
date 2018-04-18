@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -51,7 +51,7 @@ namespace Smartsheet.Api.Models
 		private string disabledReasonText;
 
 		/// <summary>
-		/// Indicates if the rule is active
+		/// Indicates whether the rule is active
 		/// </summary>
 		private bool? enabled;
 
@@ -121,7 +121,7 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// Gets flag indicating if rule is active
+		/// Gets flag indicating whether rule is active
 		/// </summary>
 		/// <returns> the flag </returns>
 		public bool? Enabled
@@ -141,9 +141,9 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// Gets the User who last modification to this rule
+		/// Gets the user who made the last modification to this rule
 		/// </summary>
-		/// <returns> the User </returns>
+		/// <returns> the user </returns>
 		public User ModifiedBy
 		{
 			get { return modifiedBy; }
@@ -151,7 +151,7 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// Gets a flag indicating if the current user can modify this rule
+		/// Gets a flag indicating whether the current user can modify this rule
 		/// </summary>
 		/// <returns> the flag </returns>
 		public bool? UserCanModify
