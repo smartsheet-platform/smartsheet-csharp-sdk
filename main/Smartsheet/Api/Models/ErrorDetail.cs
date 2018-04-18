@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -56,7 +56,7 @@ namespace Smartsheet.Api.Models
 		private long? topContainerId;
 
 		/// <summary>
-		/// The destination type of the top level folder or workspace that was partially copied.
+		/// The destination type of the top-level folder or workspace that was partially copied.
 		/// </summary>
 		private DestinationType? topContainerType;
 
@@ -125,9 +125,9 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// Gets the row ID of the row that caused the error.
+		/// Gets the row Id of the row that caused the error.
 		/// </summary>
-		/// <returns> the row ID </returns>
+		/// <returns> the row Id </returns>
 		public virtual long? RowId
 		{
 			get
@@ -141,9 +141,9 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// Gets the ID of the container that was partially copied.
+		/// Gets the Id of the container that was partially copied.
 		/// </summary>
-		/// <returns> the container ID </returns>
+		/// <returns> the container Id </returns>
 		public virtual long? TopContainerId
 		{
 			get
