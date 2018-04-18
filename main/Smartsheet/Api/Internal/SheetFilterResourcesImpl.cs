@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -39,16 +39,16 @@ namespace Smartsheet.Api.Internal
 		/// <summary>
 		/// <para>Gets the list of all sheet filters.</para>
 		/// 
-		/// <para>It mirrors To the following Smartsheet REST API method: GET /sheets/{sheetId}/filters</para>
+		/// <para>Mirrors to the following Smartsheet REST API method: GET /sheets/{sheetId}/filters</para>
 		/// </summary>
-		/// <param name="sheetId">the sheet ID</param>
+		/// <param name="sheetId">the sheet Id</param>
 		/// <param name="paging">the pagination</param>
-		/// <returns> A list of all Sheets Filters (note that an empty list will be returned if there are none) </returns>
-		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <returns> A list of all sheets filters (note that an empty list will be returned if there are none) </returns>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or an empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual PaginatedResult<SheetFilter> ListFilters(long sheetId, PaginationParameters paging)
 		{
@@ -62,19 +62,19 @@ namespace Smartsheet.Api.Internal
 		}
 
 		/// <summary>
-		/// <para>Get a filter.</para>
+		/// <para>Gets a filter.</para>
 		/// 
-		/// <para>It mirrors To the following Smartsheet REST API method: GET /sheets/{sheetId}/filters/{filterId}</para>
+		/// <para>Mirrors to the following Smartsheet REST API method: GET /sheets/{sheetId}/filters/{filterId}</para>
 		/// </summary>
-		/// <param name="sheetId"> the sheet ID </param>
-		/// <param name="filterId"> the filter ID </param>
+		/// <param name="sheetId"> the sheet Id </param>
+		/// <param name="filterId"> the filter Id </param>
 		/// <returns> the sheet filter (note that if there is no such resource, this method will throw 
 		/// ResourceNotFoundException rather than returning null). </returns>
-		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or an empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual SheetFilter GetFilter(long sheetId, long filterId)
 		{
@@ -84,15 +84,15 @@ namespace Smartsheet.Api.Internal
 		/// <summary>
 		/// <para>Deletes a filter.</para>
 		/// 
-		/// <para>It mirrors To the following Smartsheet REST API method: DELETE /sheets/{sheetId}/filters/{filterId}</para>
+		/// <para>Mirrors to the following Smartsheet REST API method: DELETE /sheets/{sheetId}/filters/{filterId}</para>
 		/// </summary>
-		/// <param name="sheetId"> the sheet ID </param>
-		/// <param name="filterId"> the filter ID </param>
-		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+		/// <param name="sheetId"> the sheet Id </param>
+		/// <param name="filterId"> the filter Id </param>
+		/// <exception cref="System.InvalidOperationException"> if any argument is null or an empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+		/// <exception cref="AuthorizationException"> if there is any problem with the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual void DeleteFilter(long sheetId, long filterId)
 		{
