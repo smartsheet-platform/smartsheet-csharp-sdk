@@ -48,7 +48,22 @@ namespace Smartsheet.Api.Internal.Http
 		/// 
 		/// It will be initialized in constructor and will not change afterwards.
 		/// </summary>
-		private readonly RestClient httpClient;
+		protected readonly RestClient httpClient;
+
+		/// <summary>
+		/// static logger 
+		/// </summary>
+		protected static Logger logger = LogManager.GetCurrentClassLogger();
+
+		/// <summary>
+		/// The JSON serializer (used to deserialize errors for ShouldRetry
+		/// </summary>
+		protected JsonSerializer jsonSerializer;
+
+		/// <summary>
+		/// maximum retry timeout used by ShouldRetry
+		/// </summary>
+		protected long maxRetryTimeout = 15000;
 
 		/// <summary>
 		/// The http request. </summary>
@@ -57,18 +72,6 @@ namespace Smartsheet.Api.Internal.Http
 		/// <summary>
 		/// The http response. </summary>
 		private IRestResponse restResponse;
-
-		/// <summary>
-		/// static logger 
-		/// </summary>
-		private static Logger logger = LogManager.GetCurrentClassLogger();
-
-		/// <summary>
-		/// The JSON serializer (used to deserialize errors for ShouldRetry
-		/// </summary>
-		private JsonSerializer jsonSerializer;
-
-		private long maxRetryTimeout = 15000;
 
 		/// <summary>
 		/// 
@@ -426,7 +429,7 @@ namespace Smartsheet.Api.Internal.Http
 		/// <param name="request"></param>
 		/// <param name="response"></param>
 		/// <param name="durationMs"></param>
-        private void LogRequest(IRestRequest request, IRestResponse response, long durationMs)
+        public virtual void LogRequest(IRestRequest request, IRestResponse response, long durationMs)
         {
 			logger.Info(() =>
 			{
