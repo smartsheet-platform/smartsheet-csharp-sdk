@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -33,7 +33,7 @@ namespace Smartsheet.Api.Models
 		private ColumnType? columnType;
 
 		/// <summary>
-		/// Represents the Value.
+		/// Represents the value.
 		/// </summary>
 		private object value;
 
@@ -43,12 +43,12 @@ namespace Smartsheet.Api.Models
 		ObjectValue objectValue;
 
 		/// <summary>
-		/// Represents the display Value.
+		/// Represents the display value.
 		/// </summary>
 		private string displayValue;
 
 		/// <summary>
-		/// Represents the column ID for this cell.
+		/// Represents the column Id for this cell.
 		/// </summary>
 		private long? columnId;
 
@@ -58,7 +58,7 @@ namespace Smartsheet.Api.Models
 		private Hyperlink hyperlink;
 
 		/// <summary>
-		/// The Formula for the cell.
+		/// The formula for the cell.
 		/// </summary>
 		private string formula;
 
@@ -152,7 +152,7 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// is an object representation of a cell's value and is currently used for adding or updating predecessor cell values.
+		/// An object representation of a cell's value that is currently used for adding or updating predecessor cell values.
 		/// </summary>
 		/// <returns> the ObjectValue </returns>
 		public virtual ObjectValue ObjectValue
@@ -162,9 +162,9 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// Gets the Value.
+		/// Gets the value.
 		/// </summary>
-		/// <returns> the Value </returns>
+		/// <returns> the value </returns>
 		public virtual object Value
 		{
 			get	{ return value; }
@@ -173,9 +173,9 @@ namespace Smartsheet.Api.Models
 
 
 		/// <summary>
-		/// Gets the display Value used on special Columns such as "Contact List".
+		/// Gets the display value used on special columns such as "Contact List".
 		/// </summary>
-		/// <returns> the display Value </returns>
+		/// <returns> the display value </returns>
 		public virtual string DisplayValue
 		{
 			get	{ return displayValue; }
@@ -197,7 +197,7 @@ namespace Smartsheet.Api.Models
 		/// <summary>
 		/// A hyperlink to a URL, sheet, or report
 		/// </summary>
-		/// <returns> the Link </returns>
+		/// <returns> the link </returns>
 		public virtual Hyperlink Hyperlink
 		{
 			get { return hyperlink; }
@@ -206,9 +206,9 @@ namespace Smartsheet.Api.Models
 
 
 		/// <summary>
-		/// Gets the Formula for this cell.
+		/// Gets the formula for this cell.
 		/// </summary>
-		/// <returns> the Formula </returns>
+		/// <returns> the formula </returns>
 		public virtual string Formula
 		{
 			get { return formula; }
@@ -217,7 +217,7 @@ namespace Smartsheet.Api.Models
 
 
 		/// <summary>
-		/// Gets the Strict Value for this cell.
+		/// Gets the Strict value for this cell.
 		/// </summary>
 		/// <seealso href="http://www.Smartsheet.com/developers/Api-documentation#h.lay2yj3x1pp8">Column Types</seealso>
 		/// <returns> the Strict </returns>
@@ -228,7 +228,7 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// Gets the Strict Value for this cell.
+		/// Gets the Strict value for this cell.
 		/// </summary>
 		/// <seealso href="http://www.Smartsheet.com/developers/Api-documentation#h.lay2yj3x1pp8">Column Types</seealso>
 		/// <returns> the Strict </returns>
@@ -251,7 +251,7 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// A convenience class for adding a Cell with the necessary fields for inserting into a list of Cells.
+		/// A convenience class for adding a cell with the necessary fields for inserting into a list of cells.
 		/// </summary>
 		public class AddCellBuilder
 		{
@@ -277,7 +277,7 @@ namespace Smartsheet.Api.Models
 			}
 
 			/// <summary>
-			/// Sets the Column Id
+			/// Sets the column Id
 			/// </summary>
 			/// <param name="columnId">the column Id</param>
 			/// <returns>this AddCellBuilder</returns>
@@ -301,9 +301,9 @@ namespace Smartsheet.Api.Models
 
 
 			/// <summary>
-			/// Sets whether cells is strict or not.
+			/// Sets whether cells is Strict or not.
 			/// </summary>
-			/// <param name="strict">the strict option</param>
+			/// <param name="strict">the Strict option</param>
 			/// <returns>this AddCellBuilder</returns>
 			public virtual AddCellBuilder SetStrict(bool? strict)
 			{
@@ -338,14 +338,14 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Gets the column Id.
 			/// </summary>
-			/// <returns>the column id</returns>
+			/// <returns>the column Id</returns>
 			public virtual long? GetColumnId()
 			{
 				return columnId;
 			}
 
 			/// <summary>
-			/// Gets the Value.
+			/// Gets the value.
 			/// </summary>
 			/// <returns>the value</returns>
 			public virtual object GetValue()
@@ -356,14 +356,14 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Gets the Strict option.
 			/// </summary>
-			/// <returns>the strict option</returns>
+			/// <returns>the Strict option</returns>
 			public virtual bool? GetStrict()
 			{
 				return strict;
 			}
 
 			/// <summary>
-			/// Gets the Format.
+			/// Gets the format.
 			/// </summary>
 			/// <returns>the format</returns>
 			public virtual string GetFormat()
@@ -373,7 +373,7 @@ namespace Smartsheet.Api.Models
 
 
 			/// <summary>
-			/// Gets the Hyperlink.
+			/// Gets the hyperlink.
 			/// </summary>
 			/// <returns>the hyperlink</returns>
 			public virtual Hyperlink GetHyperlink()
@@ -398,7 +398,7 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// A convenience class for updating a Cell with the necessary fields for inserting into a list of Cells.
+		/// A convenience class for updating a cell with the necessary fields for inserting into a list of cells.
 		/// </summary>
 		public class UpdateCellBuilder
 		{
@@ -426,7 +426,7 @@ namespace Smartsheet.Api.Models
 			}
 
 			/// <summary>
-			/// Sets the Column Id
+			/// Sets the column Id
 			/// </summary>
 			/// <param name="columnId">columnId</param>
 			/// <returns>this UpdateCellBuilder</returns>
@@ -502,7 +502,7 @@ namespace Smartsheet.Api.Models
 			}
 
 			/// <summary>
-			/// Gets the Column Id.
+			/// Gets the column Id.
 			/// </summary>
 			/// <returns>the column Id.</returns>
 			public virtual long? GetColumnId()
@@ -531,7 +531,7 @@ namespace Smartsheet.Api.Models
 			}
 
 			/// <summary>
-			/// Gets the Format.
+			/// Gets the format.
 			/// </summary>
 			/// <returns>the format</returns>
 			public virtual string GetFormat()
@@ -540,7 +540,7 @@ namespace Smartsheet.Api.Models
 			}
 
 			/// <summary>
-			/// Gets the HyperLink
+			/// Gets the hyperLink
 			/// </summary>
 			/// <returns>the hyperlink</returns>
 			public virtual Hyperlink GetHyperlink()
@@ -549,7 +549,7 @@ namespace Smartsheet.Api.Models
 			}
 
 			/// <summary>
-			/// Gets Link In From Cell.
+			/// Gets link in from cell.
 			/// </summary>
 			/// <returns>the link in from cell</returns>
 			public virtual CellLink GetLinkInFromCell()
