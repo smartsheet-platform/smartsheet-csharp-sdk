@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -22,8 +22,8 @@ using Newtonsoft.Json;
 namespace Smartsheet.Api.Models
 {
 	/// <summary>
-	/// Represents a link to a Cell in a different Sheet.
-	/// <remarks>If status is not “OK” (i.e. there is a problem with the link),
+	/// Represents a link to a cell in a different sheet.
+	/// <remarks>If status is not “OK” (i.e., there is a problem with the link),
 	/// any or all of the following attributes may be null: sheetId, rowId, columnId</remarks>
 	/// <para>You can create and modify cell links by using any API operation that creates or updates cell data.
 	/// Creating or updating cell links via the cell.linkInFromCell attribute is a special operation.
@@ -40,22 +40,22 @@ namespace Smartsheet.Api.Models
 		/// OK: the link is in a good state
 		/// BROKEN: the row or sheet linked to was deleted
 		/// INACCESSIBLE: the sheet linked to cannot be viewed by this user
-		/// Several other values indicating unusual error conditions: NOT_SHARED, BLOCKED, CIRCULAR, INVALID, and DISABLED . */
+		/// Several other values indicating unusual error conditions: BLOCKED, CIRCULAR, DISABLED, INVALID, and NOT_SHARED. */
 		/// </summary>
 		private string status;
 
 		/// <summary>
-		/// The sheet ID of the sheet that the linked cell belongs to
+		/// The sheet Id of the sheet that the linked cell belongs to
 		/// </summary>
 		private long? sheetId;
 
 		/// <summary>
-		/// The rwo ID of the linked cell
+		/// The row Id of the linked cell
 		/// </summary>
 		private long? rowId;
 
 		/// <summary>
-		/// The column ID of the linked cell
+		/// The column Id of the linked cell
 		/// </summary>
 		private long? columnId;
 
@@ -76,7 +76,7 @@ namespace Smartsheet.Api.Models
 		/// <item><term>BROKEN:</term><description>the row or sheet linked to was deleted</description></item>
 		/// <item><term>INACCESSIBLE:</term><description>the sheet linked to cannot be viewed by this user</description></item>
 		/// <item><description>Several other values indicating unusual error conditions: 
-		/// NOT_SHARED, BLOCKED, CIRCULAR, INVALID, and DISABLED.</description></item>
+		/// BLOCKED, CIRCULAR, DISABLED, INVALID, and NOT_SHARED.</description></item>
 		/// </list>
 		/// </summary>
 		public string Status
@@ -86,7 +86,7 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// Sheet ID of the sheet that the linked cell belongs to
+		/// Sheet Id of the sheet that the linked cell belongs to
 		/// </summary>
 		public long? SheetId
 		{
@@ -98,7 +98,7 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// Row ID of the linked cell
+		/// Row Id of the linked cell
 		/// </summary>
 		public long? RowId
 		{
@@ -110,7 +110,7 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// Column ID of the linked cell
+		/// Column Id of the linked cell
 		/// </summary>
 		public long? ColumnId
 		{
