@@ -86,23 +86,23 @@ namespace Smartsheet.Api.Internal
 			return this.CreateResource(path.ToString(), typeof(Sheet), sheet);
 		}
 
-		/// <summary>
-		/// <para>Imports a sheet in the specified folder (from CSV). </para>
-		/// <para>Mirrors to the following Smartsheet REST API method: POST /folders/{folderId}/sheets/import</para>
-		/// </summary>
-		/// <param name="folderId"> the folder Id </param>
-		/// <param name="file"> path to the image file</param>
-		/// <param name="sheetName"></param>
-		/// <param name="headerRowIndex"></param>
-		/// <param name="primaryColumnIndex"></param>
-		/// <returns> the created sheet </returns>
-		/// <exception cref="System.InvalidOperationException"> if any argument is null or an empty string </exception>
-		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		/// <exception cref="AuthorizationException"> if there is any problem with the REST API authorization (access token) </exception>
-		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
-		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual Sheet ImportCsvSheet(long folderId, string file, string sheetName, int? headerRowIndex, int? primaryColumnIndex)
+        /// <summary>
+        /// <para>Imports a sheet in the specified folder (from CSV). </para>
+        /// <para>Mirrors to the following Smartsheet REST API method: POST /folders/{folderId}/sheets/import</para>
+        /// </summary>
+        /// <param name="folderId"> the folder Id </param>
+        /// <param name="file"> path to the CSV file</param>
+        /// <param name="sheetName"> destination sheet name </param>
+        /// <param name="headerRowIndex"> index (0 based) of row to be used for column names </param>
+        /// <param name="primaryColumnIndex"> index (0 based) of primary column </param>
+        /// <returns> the created sheet </returns>
+        /// <exception cref="System.InvalidOperationException"> if any argument is null or an empty string </exception>
+        /// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+        /// <exception cref="AuthorizationException"> if there is any problem with the REST API authorization (access token) </exception>
+        /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+        /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
+        /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+        public virtual Sheet ImportCsvSheet(long folderId, string file, string sheetName, int? headerRowIndex, int? primaryColumnIndex)
 		{
 			return ImportSheet(folderId, file, sheetName, headerRowIndex, primaryColumnIndex, "text/csv");
 		}
@@ -112,11 +112,11 @@ namespace Smartsheet.Api.Internal
 		/// <para>Mirrors to the following Smartsheet REST API method: POST /folders/{folderId}/sheets/import</para>
 		/// </summary>
 		/// <param name="folderId"> the folder Id </param>
-		/// <param name="file"> path to the image file</param>
-		/// <param name="sheetName"></param>
-		/// <param name="headerRowIndex"></param>
-		/// <param name="primaryColumnIndex"></param>
-		/// <returns> the created sheet </returns>
+		/// <param name="file"> path to the XLSX file</param>
+        /// <param name="sheetName"> destination sheet name </param>
+        /// <param name="headerRowIndex"> index (0 based) of row to be used for column names </param>
+        /// <param name="primaryColumnIndex"> index (0 based) of primary column </param>
+        /// <returns> the created sheet </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with the REST API authorization (access token) </exception>

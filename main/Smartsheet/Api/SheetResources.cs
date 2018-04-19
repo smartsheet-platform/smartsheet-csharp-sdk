@@ -422,11 +422,11 @@ namespace Smartsheet.Api
 		/// <para>Imports a sheet (from CSV). </para>
 		/// <para>Mirrors to the following Smartsheet REST API method: POST /sheets/import</para>
 		/// </summary>
-		/// <param name="file"> path to the image file</param>
-		/// <param name="sheetName"></param>
-		/// <param name="headerRowIndex"></param>
-		/// <param name="primaryColumnIndex"></param>
-		/// <returns> the created sheet </returns>
+		/// <param name="file"> path to the CSV file</param>
+        /// <param name="sheetName"> destination sheet name </param>
+        /// <param name="headerRowIndex"> index (0 based) of row to be used for column names </param>
+        /// <param name="primaryColumnIndex"> index (0 based) of primary column </param>
+        /// <returns> the created sheet </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or an empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with the REST API authorization (access token) </exception>
@@ -439,11 +439,11 @@ namespace Smartsheet.Api
 		/// <para>Imports a sheet (from XLSX). </para>
 		/// <para>Mirrors to the following Smartsheet REST API method: POST /sheets/import</para>
 		/// </summary>
-		/// <param name="file"> path to the image file</param>
-		/// <param name="sheetName"></param>
-		/// <param name="headerRowIndex"></param>
-		/// <param name="primaryColumnIndex"></param>
-		/// <returns> the created sheet </returns>
+		/// <param name="file"> path to the XLSX file</param>
+        /// <param name="sheetName"> destination sheet name </param>
+        /// <param name="headerRowIndex"> index (0 based) of row to be used for column names </param>
+        /// <param name="primaryColumnIndex"> index (0 based) of primary column </param>
+        /// <returns> the created sheet </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or an empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with the REST API authorization (access token) </exception>
