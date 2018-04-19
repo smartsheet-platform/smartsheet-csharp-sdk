@@ -32,7 +32,28 @@ namespace Smartsheet.Api.Models
 		private IList<CellDataItem> cellData;
 		private IList<Column> columns;
 
-		/// <summary>
+        /// <summary>
+        /// Represents the ChartWidgetContent object. </summary>
+        /// <seealso href="http://smartsheet-platform.github.io/api-docs/#chartwidgetcontent-object">RichTextWidget Object Help</seealso>		
+        private Object axes;
+        private Object legend;
+        private Object series;
+
+        /// <summary>
+        /// Represents the ImageWidgetContent object.</summary>
+        /// <seealso href="http://smartsheet-platform.github.io/api-docs/#imagewidgetcontent-object">ImageWidgetContent  Object Help</seealso>	
+        private string privateId;
+        private int? height;
+        private int? width;
+        private string fileName;
+        private string format;
+
+        /// <summary>
+        /// Represents the ReportWidgetContent object.</summary>
+        /// <seealso href="http://smartsheet-platform.github.io/api-docs/#reportwidgetcontent-object">ReportWidgetContent Object Help</seealso>	
+        private string htmlContent;
+
+        /// <summary>
 		/// Represents the RichTextWidgetContent object.</summary>
 		/// <seealso href="http://smartsheet-platform.github.io/api-docs/#richtextwidgetcontent-object">RichTextWidget Object Help</seealso>		
 		private string html;
@@ -41,20 +62,6 @@ namespace Smartsheet.Api.Models
 		/// Represents the ShortcutWidgetContent object.</summary>
 		/// <seealso href="http://smartsheet-platform.github.io/api-docs/#shortcutwidgetcontent-object">ShortcutWidgetContent Object Help</seealso>		
 		private IList<ShortcutDataItem> shortcutData;
-
-		/// <summary>
-		/// Represents the ReportWidgetContent object.</summary>
-		/// <seealso href="http://smartsheet-platform.github.io/api-docs/#reportwidgetcontent-object">ReportWidgetContent Object Help</seealso>	
-		private string htmlContent;
-
-		/// <summary>
-		/// Represents the ImageWidgetContent object.</summary>
-		/// <seealso href="http://smartsheet-platform.github.io/api-docs/#imagewidgetcontent-object">ImageWidgetContent  Object Help</seealso>	
-		private string privateId;
-		private int? height;
-		private int? width;
-		private string fileName;
-		private string format;
 
 		/// <summary>
 		/// Represents the TitleWidgetContent object
@@ -252,5 +259,53 @@ namespace Smartsheet.Api.Models
 				this.backgroundColor = value;
 			}
 		}
+
+        /// <summary>
+        /// Gets the axes for a chart widget
+        /// </summary>
+        /// <returns> the axes </returns>
+        public Object Axes
+        {
+            get
+            {
+                return axes;
+            }
+            set
+            {
+                this.axes = value;
+            }
+        }
+
+        /// <summary>
+        /// Get the lengend for a chart widget
+        /// </summary>
+        /// <returns> chart lengend </returns>
+        public Object Legend
+        {
+            get
+            {
+                return legend;
+            }
+            set
+            {
+                this.legend = value;
+            }
+        }
+
+        /// <summary>
+        /// Get the series data for a chart widget
+        /// </summary>
+        /// <returns> the series data </returns>
+        public Object Series
+        {
+            get
+            {
+                return series;
+            }
+            set
+            {
+                this.series = value;
+            }
+        }
 	}
 }

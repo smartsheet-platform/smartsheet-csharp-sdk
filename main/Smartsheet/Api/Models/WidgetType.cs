@@ -27,17 +27,32 @@ namespace Smartsheet.Api.Models
 	/// <seealso href="http://smartsheet-platform.github.io/api-docs/#widgetcontent-object">Widget Content Help</seealso>
 	public enum WidgetType
 	{
+        /// <summary>
+        /// CellLinkWidgetContent object
+        /// </summary>
+        CELLLINK,
+
+        /// <summary>
+        /// ChartWidgetContent object
+        /// </summary>
+        CHART,
+
 		/// <summary>
-		/// CellLinkWidgetContent object
+		/// ImageWidgetContent object
 		/// </summary>
-		CELLLINK,
+		IMAGE,
 
 		/// <summary>
 		/// CellLinkWidgetContent object
 		/// </summary>
 		SHEETSUMMARY,
 
-		/// <summary>
+        /// <summary>
+        /// ReportWidgetContent object
+        /// </summary>
+        GRIDGANTT,
+        
+        /// <summary>
 		/// RichTextWidgetContent object
 		/// </summary>
 		RICHTEXT,
@@ -52,14 +67,9 @@ namespace Smartsheet.Api.Models
 		/// </summary>
 		SHORTCUTLIST,
 
-		/// <summary>
-		/// ReportWidgetContent object
-		/// </summary>
-		GRIDGANTT,
-
-		/// <summary>
-		/// ImageWidgetContent object
-		/// </summary>
-		IMAGE
+        /// <summary>
+        /// TitleWidgetContent object
+        /// </summary>
+        TITLE
 	}
 }
