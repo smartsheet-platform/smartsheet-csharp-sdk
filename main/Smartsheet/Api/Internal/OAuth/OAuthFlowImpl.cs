@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -138,7 +138,7 @@ namespace Smartsheet.Api.Internal.OAuth
 		/// Exceptions: - IllegalArgumentException : if scopes is null/empty
 		/// </summary>
 		/// <param name="scopes"> the scopes </param>
-		/// <param name="state"> an arbitrary string that will be returned To your app; intended To be used by you To ensure that 
+		/// <param name="state"> an arbitrary string that will be returned to your app; intended to be used by you to ensure that 
 		/// this redirect is indeed from an OAuth flow that you initiated </param>
 		/// <returns> the authorization URL </returns>
 		public virtual string NewAuthorizationURL(IEnumerable<AccessScope> scopes, string state)
@@ -304,7 +304,7 @@ namespace Smartsheet.Api.Internal.OAuth
 		///   - UnsupportedOAuthGrantTypeException : if the grant Type is invalid
 		///   - OAuthTokenException : if any other error occurred during the operation
 		/// </summary>
-		/// <param name="token"> the token To refresh </param>
+		/// <param name="token"> the token to refresh </param>
 		/// <returns> the refreshed token </returns>
 		/// <exception cref="OAuthTokenException"> the o auth token exception </exception>
 		/// <exception cref="JSONSerializationException"> the JSON serializer exception </exception>
@@ -345,7 +345,7 @@ namespace Smartsheet.Api.Internal.OAuth
 		private Token RequestToken(string url)
 		{
 
-			// Create the request and send it To get the response/token.
+			// Create the request and send it to get the response/token.
 			HttpRequest request = new HttpRequest();
 			request.Uri = new Uri(url);
 			request.Method = HttpMethod.POST;
@@ -425,7 +425,7 @@ namespace Smartsheet.Api.Internal.OAuth
 		/// <exception cref="System.InvalidOperationException"> if any other error occurred during the operation </exception>
 		public virtual void RevokeToken(Token token)
 		{
-			// Create the request and send it To get the response/token.
+			// Create the request and send it to get the response/token.
 			HttpRequest request = new HttpRequest();
 			request.Uri = new Uri(tokenURL);
 			request.Method = HttpMethod.DELETE;
@@ -441,11 +441,11 @@ namespace Smartsheet.Api.Internal.OAuth
 		}
 
 		/// <summary>
-		/// Helper function To generate a URL using the base URL and the given parameters. It will encode each of the 
+		/// Helper function to generate a URL using the base URL and the given parameters. It will encode each of the 
 		/// parameters as well.
 		/// </summary>
-		/// <param name="baseURL"> The base URL that the parameters will be appended To. </param>
-		/// <param name="parameters"> The parameters that will be appended To the base URL. Each parameter will be URL encoded. </param>
+		/// <param name="baseURL"> The base URL that the parameters will be appended to. </param>
+		/// <param name="parameters"> The parameters that will be appended to the base URL. Each parameter will be URL encoded. </param>
 		/// <returns> A string representing the full URL. </returns>
 		protected internal virtual string GenerateURL(string baseURL, IDictionary<string, string> parameters)
 		{
@@ -455,20 +455,20 @@ namespace Smartsheet.Api.Internal.OAuth
 				baseURL = "";
 			}
 
-			// Add a question mark To the URL if there isn't one already.
+			// Add a question mark to the URL if there isn't one already.
 			if (!baseURL.Contains("?"))
 			{
 				baseURL += "?";
 			}
 
-			// Test To see if a & should be the next character in the URL
+			// Test to see if a & should be the next character in the URL
 			bool needsAmpersand = true;
 			if (baseURL.EndsWith("?") || baseURL.EndsWith("&"))
 			{
 				needsAmpersand = false;
 			}
 
-			// Add the parameters To the URL
+			// Add the parameters to the URL
 			StringBuilder sb = new StringBuilder(baseURL);
 			if (parameters != null)
 			{

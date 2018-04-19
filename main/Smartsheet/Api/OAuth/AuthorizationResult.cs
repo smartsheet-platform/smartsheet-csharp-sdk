@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -28,7 +28,7 @@ namespace Smartsheet.Api.OAuth
 	public class AuthorizationResult
 	{
 		/// <summary>
-		/// Represents the authorization Code which is required To obtain an access token. </summary>
+		/// Represents the authorization Code which is required to obtain an access token. </summary>
 		private string code;
 
 		/// <summary>
@@ -36,11 +36,11 @@ namespace Smartsheet.Api.OAuth
 		private long? expiresInSeconds;
 
 		/// <summary>
-		/// Represents the State string which is returned To the redirect URL for a registered application. </summary>
+		/// Represents the State string which is returned to the redirect URL for a registered application. </summary>
 		private string state;
 
 		/// <summary>
-		/// Gets the authorization Code which is required To obtain an access token.
+		/// Gets the authorization Code which is required to obtain an access token.
 		/// </summary>
 		/// <returns> the authorization Code </returns>
 		public virtual string Code
@@ -74,7 +74,7 @@ namespace Smartsheet.Api.OAuth
 
 
 		/// <summary>
-		/// Gets the State string which is returned To the redirect URL for a registered application
+		/// Gets the State string which is returned to the redirect URL for a registered application
 		/// </summary>
 		/// <returns> the State </returns>
 		public virtual string State

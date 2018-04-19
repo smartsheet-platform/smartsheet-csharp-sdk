@@ -149,7 +149,7 @@ namespace Smartsheet.Api
 		/// GET /sheets/{sheetId} with "application/vnd.ms-excel" Accept HTTP header</para>
 		/// </summary>
 		/// <param name="sheetId"> the Id of the sheet </param>
-		/// <param name="outputStream"> the output stream To which the Excel file will be written. </param>
+		/// <param name="outputStream"> the output stream to which the Excel file will be written. </param>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or an empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with the REST API authorization (access token) </exception>

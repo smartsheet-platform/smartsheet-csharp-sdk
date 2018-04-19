@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -24,7 +24,7 @@ namespace Smartsheet.Api.OAuth
 	using JSONSerializationException = Api.Internal.Json.JsonSerializationException;
 
 	/// <summary>
-	/// <para>OAuthFlow interface provides methods To do the OAuth2 authorization.</para>
+	/// <para>OAuthFlow interface provides methods to do the OAuth2 authorization.</para>
 	/// 
 	/// <para>Thread Safety: Implementation of this interface must be thread safe.</para>
 	/// </summary>
@@ -35,7 +35,7 @@ namespace Smartsheet.Api.OAuth
 		/// <para>Generate a new authorization URL.</para>
 		/// </summary>
 		/// <param name="scopes"> the requested scopes </param>
-		/// <param name="state"> an arbitrary string that will be returned To your app; intended To be used by you To ensure that 
+		/// <param name="state"> an arbitrary string that will be returned to your app; intended to be used by you to ensure that 
 		/// this redirect is indeed from an OAuth flow that you initiated. </param>
 		/// <returns> the authorization URL </returns>
 		/// <exception cref="System.InvalidOperationException"> if scopes is null or empty </exception>
@@ -70,7 +70,7 @@ namespace Smartsheet.Api.OAuth
 		/// <summary>
 		/// Refresh token.
 		/// </summary>
-		/// <param name="token"> the token To refresh </param>
+		/// <param name="token"> the token to refresh </param>
 		/// <returns> the refreshed token </returns>
 		/// <exception cref="OAuthTokenException"> the o auth token exception </exception>
 		/// <exception cref="JSONSerializationException"> the JSON serializer exception </exception>

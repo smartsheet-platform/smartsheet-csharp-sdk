@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -60,7 +60,7 @@ namespace Smartsheet.Api.Internal
 		/// <summary>
 		/// <para>Inserts one or more rows into the Sheet specified in the URL.</para>
 		/// 
-		/// <para>It mirrors To the following Smartsheet REST API method: POST /sheets/{sheetId}/rows</para>
+		/// <para>It mirrors to the following Smartsheet REST API method: POST /sheets/{sheetId}/rows</para>
 		/// <remarks>If multiple rows are specified in the request, all rows must be inserted at the same location 
 		/// (i.e. the toTop, toBottom, parentId, siblingId, and above attributes must be the same for all rows in the request).</remarks>
 		/// </summary>
@@ -71,7 +71,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual IList<Row> AddRows(long sheetId, IEnumerable<Row> rows)
 		{
@@ -85,7 +85,7 @@ namespace Smartsheet.Api.Internal
 		/// <summary>
 		/// <para>Inserts one or more rows into the Sheet specified in the URL with allowPartialSuccess.</para>
 		/// 
-		/// <para>It mirrors To the following Smartsheet REST API method: POST /sheets/{sheetId}/rows?allowPartialSuccess=true</para>
+		/// <para>It mirrors to the following Smartsheet REST API method: POST /sheets/{sheetId}/rows?allowPartialSuccess=true</para>
 		/// <remarks>If multiple rows are specified in the request, all rows must be inserted at the same location 
 		/// (i.e. the toTop, toBottom, parentId, siblingId, and above attributes must be the same for all rows in the request).</remarks>
 		/// </summary>
@@ -96,7 +96,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual BulkItemRowResult AddRowsAllowPartialSuccess(long sheetId, IEnumerable<Row> rows)
 		{
@@ -140,7 +140,7 @@ namespace Smartsheet.Api.Internal
 
 		/// <summary>
 		/// <para>Gets the Row specified in the URL.</para>
-		/// <para>It mirrors To the following Smartsheet REST API method: GET /sheets/{sheetId}/rows/{rowId}</para>
+		/// <para>It mirrors to the following Smartsheet REST API method: GET /sheets/{sheetId}/rows/{rowId}</para>
 		/// </summary>
 		/// <param name="include"> comma-separated list of elements to include in the response. </param>
 		/// <param name="exclude"> a comma-separated list of optional objects to exclude in the response. </param>
@@ -151,7 +151,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual Row GetRow(long sheetId, long rowId, IEnumerable<RowInclusion> include, IEnumerable<RowExclusion> exclude)
 		{
@@ -161,7 +161,7 @@ namespace Smartsheet.Api.Internal
 		/// <summary>
 		/// <para>Copies Row(s) from the Sheet specified in the URL to (the bottom of) another sheet.</para>
 		/// 
-		/// <para>It mirrors To the following Smartsheet REST API method: POST /sheets/{sheetId}/rows/copy</para>
+		/// <para>It mirrors to the following Smartsheet REST API method: POST /sheets/{sheetId}/rows/copy</para>
 		/// <remarks>Up to 5,000 row IDs can be specified in the request, 
 		/// but if the total number of rows in the destination sheet after the copy exceeds the Smartsheet row limit, 
 		/// an error response will be returned.</remarks>
@@ -175,7 +175,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual CopyOrMoveRowResult CopyRowsToAnotherSheet(long sheetId, CopyOrMoveRowDirective directive, IEnumerable<CopyRowInclusion> include, bool? ignoreRowsNotFound)
 		{
@@ -195,7 +195,7 @@ namespace Smartsheet.Api.Internal
 
 		/// <summary>
 		/// <para>Deletes one or more row(s) from the Sheet</para>
-		/// <para>It mirrors To the following Smartsheet REST API method: DELETE /sheets/{sheetId}/rows?ids={rowId1},{rowId2},{rowId3}...</para>
+		/// <para>It mirrors to the following Smartsheet REST API method: DELETE /sheets/{sheetId}/rows?ids={rowId1},{rowId2},{rowId3}...</para>
 		/// <remarks>This operation will delete ALL child Rows of the specified Row(s).</remarks>
 		/// </summary>
 		/// <param name="sheetId"> The sheet ID </param>
@@ -206,7 +206,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual IList<long> DeleteRows(long sheetId, IEnumerable<long> ids, bool? ignoreRowsNotFound)
 		{
@@ -222,7 +222,7 @@ namespace Smartsheet.Api.Internal
 
 		/// <summary>
 		/// <para>Moves Row(s) from the Sheet specified in the URL to (the bottom of) another sheet.</para>
-		/// <para>It mirrors To the following Smartsheet REST API method: POST /sheets/{sheetId}/rows/copy</para>
+		/// <para>It mirrors to the following Smartsheet REST API method: POST /sheets/{sheetId}/rows/copy</para>
 		/// <remarks><para>Up to 5,000 row IDs can be specified in the request, 
 		/// but if the total number of rows in the destination sheet after the copy exceeds the Smartsheet row limit, 
 		/// an error response will be returned.</para>
@@ -238,7 +238,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual CopyOrMoveRowResult MoveRowsToAnotherSheet(long sheetId, CopyOrMoveRowDirective directive, IEnumerable<MoveRowInclusion> include, bool? ignoreRowsNotFound)
 		{
@@ -258,7 +258,7 @@ namespace Smartsheet.Api.Internal
 
 		/// <summary>
 		/// <para>Sends one or more Rows via email.</para>
-		/// <para>It mirrors To the following Smartsheet REST API method: POST /sheets/{sheetId}/rows/emails</para>
+		/// <para>It mirrors to the following Smartsheet REST API method: POST /sheets/{sheetId}/rows/emails</para>
 		/// </summary>
 		/// <param name="sheetId"> The sheet Id </param>
 		/// <param name="email"> The email. The columns included for each row in the email will be populated according to the following rules:
@@ -279,7 +279,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual void SendRows(long sheetId, MultiRowEmail email)
 		{
@@ -289,7 +289,7 @@ namespace Smartsheet.Api.Internal
 		/// <summary>
 		/// <para>Updates cell values in the specified row(s), expands/collapses the specified row(s), 
 		/// and/or modifies the position of specified rows (including indenting/outdenting).</para>
-		/// <para>It mirrors To the following Smartsheet REST API method: PUT /sheets/{sheetId}/rows</para>
+		/// <para>It mirrors to the following Smartsheet REST API method: PUT /sheets/{sheetId}/rows</para>
 		/// <remarks>If a row’s position is updated, all child rows are moved with the row.</remarks>
 		/// </summary>
 		/// <param name="sheetId"> the sheetId </param>
@@ -299,7 +299,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual IList<Row> UpdateRows(long sheetId, IEnumerable<Row> rows)
 		{
@@ -309,7 +309,7 @@ namespace Smartsheet.Api.Internal
 		/// <summary>
 		/// <para>Updates cell values in the specified row(s), expands/collapses the specified row(s), 
 		/// and/or modifies the position of specified rows (including indenting/outdenting).</para>
-		/// <para>It mirrors To the following Smartsheet REST API method: PUT /sheets/{sheetId}/rows?allowPartialSuccess=true</para>
+		/// <para>It mirrors to the following Smartsheet REST API method: PUT /sheets/{sheetId}/rows?allowPartialSuccess=true</para>
 		/// <remarks>If a row’s position is updated, all child rows are moved with the row.</remarks>
 		/// </summary>
 		/// <param name="sheetId">the sheetId</param>
@@ -319,7 +319,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public BulkItemRowResult UpdateRowsAllowPartialSuccess(long sheetId, IEnumerable<Row> rows)
 		{
@@ -357,7 +357,7 @@ namespace Smartsheet.Api.Internal
 		}
 		
 		/// <summary>
-		/// Gets the RowAttachmentResources object that provides access To Attachment resources associated with
+		/// Gets the RowAttachmentResources object that provides access to Attachment resources associated with
 		/// Row resources.
 		/// </summary>
 		public virtual RowAttachmentResources AttachmentResources
@@ -369,7 +369,7 @@ namespace Smartsheet.Api.Internal
 		}
 
 		/// <summary>
-		/// Gets the RowDiscussionResources object that provides access To Discussion resources associated with
+		/// Gets the RowDiscussionResources object that provides access to Discussion resources associated with
 		/// Row resources.
 		/// </summary>
 		public virtual RowDiscussionResources DiscussionResources
@@ -381,7 +381,7 @@ namespace Smartsheet.Api.Internal
 		}
 
 		/// <summary>
-		/// Gets the RowColumnResources object that provides access To Cell resources associated with
+		/// Gets the RowColumnResources object that provides access to Cell resources associated with
 		/// Row resources.
 		/// </summary>
 		public virtual RowColumnResources CellResources

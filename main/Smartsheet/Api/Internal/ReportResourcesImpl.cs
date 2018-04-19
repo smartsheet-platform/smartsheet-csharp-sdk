@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -56,11 +56,11 @@ namespace Smartsheet.Api.Internal
 
 		/// <summary>
 		/// <para>Gets the Report, including one page of Rows, and optionally populated with Discussions, Attachments, and source Sheets.</para>
-		/// <para>It mirrors To the following Smartsheet REST API method: GET /reports/{reportId}</para>
+		/// <para>It mirrors to the following Smartsheet REST API method: GET /reports/{reportId}</para>
 		/// </summary>
 		/// <remarks>This method returns the top 100 rows. To get more or less rows please use the other overloaded versions of this method</remarks>
 		/// <param name="reportId"> the Id of the report </param>
-		/// <param name="includes"> used To specify the optional objects To include. </param>
+		/// <param name="includes"> used to specify the optional objects to include. </param>
 		/// <param name="pageSize">(optional): Number of rows per page. If not specified, the default value is 100.
 		/// This operation can return a maximum of 500 rows per page.</param>
 		/// <param name="page">(optional): Which page number (1-based) to return. 
@@ -71,7 +71,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual Report GetReport(long reportId, IEnumerable<ReportInclusion> includes, int? pageSize, int? page)
 		{
@@ -94,7 +94,7 @@ namespace Smartsheet.Api.Internal
 
         /// <summary>
         /// <para>Gets the list of all Reports that the User has access to, in alphabetical order, by name.</para>
-        /// <para>It mirrors To the following Smartsheet REST API method: GET /reports</para>
+        /// <para>It mirrors to the following Smartsheet REST API method: GET /reports</para>
         /// </summary>
         /// <param name="paging">the pagination</param>
         /// <param name="modifiedSince">restrict results to reports modified on or after the specified date</param>
@@ -109,7 +109,7 @@ namespace Smartsheet.Api.Internal
         /// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
         /// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-        /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+        /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
         public virtual PaginatedResult<Report> ListReports(PaginationParameters paging, DateTime? modifiedSince)
 		{
@@ -128,16 +128,16 @@ namespace Smartsheet.Api.Internal
 
 		/// <summary>
 		/// <para>Gets the Report in the format specified, based on the Report ID.</para>
-		/// <para>It mirrors To the following Smartsheet REST API method:<br />
+		/// <para>It mirrors to the following Smartsheet REST API method:<br />
 		/// GET /reports/{reportId} with "application/vnd.ms-excel" Accept HTTP header</para>
 		/// </summary>
 		/// <param name="reportId"> the Id of the report </param>
-		/// <param name="outputStream"> the output stream To which the Excel file will be written. </param>
+		/// <param name="outputStream"> the output stream to which the Excel file will be written. </param>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual void GetReportAsExcel(long reportId, BinaryWriter outputStream)
 		{
@@ -147,16 +147,16 @@ namespace Smartsheet.Api.Internal
 		/// <summary>
 		/// <para>Get a report as a CSV file.</para>
 		/// 
-		/// <para>It mirrors To the following Smartsheet REST API method:<br />
+		/// <para>It mirrors to the following Smartsheet REST API method:<br />
 		/// GET /reports/{reportId} with "text/csv" Accept HTTP header</para>
 		/// </summary>
 		/// <param name="reportId"> the Id of the report </param>
-		/// <param name="outputStream"> the output stream To which the Excel file will be written. </param>
+		/// <param name="outputStream"> the output stream to which the Excel file will be written. </param>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual void GetReportAsCSV(long reportId, BinaryWriter outputStream)
 		{
@@ -164,9 +164,9 @@ namespace Smartsheet.Api.Internal
 		}
 
 		/// <summary>
-		/// <para>Send a report as a PDF attachment via Email To the designated recipients.</para>
+		/// <para>Send a report as a PDF attachment via Email to the designated recipients.</para>
 		/// 
-		/// <para>It mirrors To the following Smartsheet REST API method: POST /reports/{reportId}/emails</para>
+		/// <para>It mirrors to the following Smartsheet REST API method: POST /reports/{reportId}/emails</para>
 		/// </summary>
 		/// <param name="reportId"> the reportId </param>
 		/// <param name="email"> the Email </param>
@@ -174,7 +174,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual void SendReport(long reportId, SheetEmail email)
 		{
@@ -195,7 +195,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public ReportPublish GetPublishStatus(long reportId)
 		{
@@ -219,7 +219,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public ReportPublish UpdatePublishStatus(long reportId, ReportPublish reportPublish)
 		{
@@ -227,7 +227,7 @@ namespace Smartsheet.Api.Internal
 		}
 
 		/// <summary>
-		/// <para>Return the ShareResources object that provides access To Share resources associated with Report resources.</para>
+		/// <para>Return the ShareResources object that provides access to Share resources associated with Report resources.</para>
 		/// </summary>
 		/// <returns> the ShareResources object </returns>
 		public virtual ShareResources ShareResources
@@ -241,17 +241,17 @@ namespace Smartsheet.Api.Internal
 		/// <summary>
 		/// <para>Get a sheet as a file.</para>
 		/// 
-		/// <para>It mirrors To the following Smartsheet REST API method:<br />
+		/// <para>It mirrors to the following Smartsheet REST API method:<br />
 		/// GET /reports/{reportId} with "application/pdf", "application/vnd.ms-excel", or "text/csv" as Accept HTTP header</para>
 		/// </summary>
 		/// <param name="path">the path of the file</param>
-		/// <param name="outputStream"> the output stream To which the CSV file will be written. </param>
+		/// <param name="outputStream"> the output stream to which the CSV file will be written. </param>
 		/// <param name="contentType"> the Accept header </param>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		private void GetReportAsFile(string path, BinaryWriter outputStream, string contentType)
 		{

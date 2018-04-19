@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -35,15 +35,15 @@ namespace Smartsheet.Api.Models
 		private AccessLevel? accessLevel;
 
 		/// <summary>
-		/// The Subject of the Email that sent To notify the Users. </summary>
+		/// The Subject of the Email that sent to notify the Users. </summary>
 		private string subject;
 
 		/// <summary>
-		/// The Message To be included in the body of the Email that will be sent To the user. </summary>
+		/// The Message to be included in the body of the Email that will be sent to the user. </summary>
 		private string message;
 
 		/// <summary>
-		/// A flag To indicate whether or not To carbon copy the user sharing the sheet. </summary>
+		/// A flag to indicate whether or not to carbon copy the user sharing the sheet. </summary>
 		private bool? ccMe;
 
 		/// <summary>
@@ -81,7 +81,7 @@ namespace Smartsheet.Api.Models
 
 
 		/// <summary>
-		/// Gets the Subject of the Email that sent To notify the Users.
+		/// Gets the Subject of the Email that sent to notify the Users.
 		/// </summary>
 		/// <returns> the Subject </returns>
 		public virtual string Subject
@@ -98,7 +98,7 @@ namespace Smartsheet.Api.Models
 
 
 		/// <summary>
-		/// Gets the Message To be included in the body of the Email that will be sent To the use.
+		/// Gets the Message to be included in the body of the Email that will be sent to the use.
 		/// </summary>
 		/// <returns> the Message </returns>
 		public virtual string Message
@@ -115,7 +115,7 @@ namespace Smartsheet.Api.Models
 
 
 		/// <summary>
-		/// Gets the flag To indicate whether or not To carbon copy the user sharing the sheet.
+		/// Gets the flag to indicate whether or not to carbon copy the user sharing the sheet.
 		/// </summary>
 		/// <returns> the carbon copy me flag </returns>
 		public virtual bool? CCMe
@@ -147,7 +147,7 @@ namespace Smartsheet.Api.Models
 			/// Sets the Users that will be shared with. The Email address must be defined for each user.
 			/// </summary>
 			/// <param name="users"> the Users </param>
-			/// <returns> the share To many builder </returns>
+			/// <returns> the share to many builder </returns>
 			public virtual ShareToManyBuilder SetUsers(IList<User> users)
 			{
 				this.users = users;
@@ -158,7 +158,7 @@ namespace Smartsheet.Api.Models
 			/// Sets the access level.
 			/// </summary>
 			/// <param name="accessLevel"> the access level </param>
-			/// <returns> the share To many builder </returns>
+			/// <returns> the share to many builder </returns>
 			public virtual ShareToManyBuilder SetAccessLevel(AccessLevel? accessLevel)
 			{
 				this.accessLevel = accessLevel;
@@ -166,10 +166,10 @@ namespace Smartsheet.Api.Models
 			}
 
 			/// <summary>
-			/// Sets the Subject of the Email that sent To notify the Users.
+			/// Sets the Subject of the Email that sent to notify the Users.
 			/// </summary>
 			/// <param name="subject"> the Subject </param>
-			/// <returns> the share To many builder </returns>
+			/// <returns> the share to many builder </returns>
 			public virtual ShareToManyBuilder SetSubject(string subject)
 			{
 				this.subject = subject;
@@ -177,10 +177,10 @@ namespace Smartsheet.Api.Models
 			}
 
 			/// <summary>
-			/// Sets the Message To be included in the body of the Email that will be sent To the use.
+			/// Sets the Message to be included in the body of the Email that will be sent to the use.
 			/// </summary>
 			/// <param name="message"> the Message </param>
-			/// <returns> the share To many builder </returns>
+			/// <returns> the share to many builder </returns>
 			public virtual ShareToManyBuilder SetMessage(string message)
 			{
 				this.message = message;
@@ -191,7 +191,7 @@ namespace Smartsheet.Api.Models
 			/// Set the carbon copy me flag.
 			/// </summary>
 			/// <param name="ccMe"> the carbon copy me flag. </param>
-			/// <returns> the share To many builder </returns>
+			/// <returns> the share to many builder </returns>
 			public virtual ShareToManyBuilder SetCCMe(bool? ccMe)
 			{
 				this.ccMe = ccMe;

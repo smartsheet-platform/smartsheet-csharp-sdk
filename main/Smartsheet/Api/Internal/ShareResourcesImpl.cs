@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -48,7 +48,7 @@ namespace Smartsheet.Api.Internal
 
 		/// <summary>
 		/// <para>List shares of a given object.</para>
-		/// <para>It mirrors To the following Smartsheet REST API method:<br />
+		/// <para>It mirrors to the following Smartsheet REST API method:<br />
 		/// GET /workspaces/{workspaceId}/shares <br />
 		/// GET /sheets/{sheetId}/shares <br />
 		/// GET /sights/{sightId}/shares <br />
@@ -62,7 +62,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual PaginatedResult<Share> ListShares(long objectId, PaginationParameters paging, ShareScope shareScope)
 		{
@@ -82,13 +82,13 @@ namespace Smartsheet.Api.Internal
 
 		/// <summary>
 		/// <para>Get a Share.</para>
-		/// <para>It mirrors To the following Smartsheet REST API method:<br />
+		/// <para>It mirrors to the following Smartsheet REST API method:<br />
 		/// GET /workspaces/{workspaceId}/shares/{shareId}<br />
 		/// GET /sheets/{sheetId}/shares/{shareId}<br />
 		/// GET /sights/{sightId}/shares/{shareId}<br />
 		/// GET /reports/{reportId}/shares/{shareId}</para>
 		/// </summary>
-		/// <param name="objectId"> the ID of the object To share </param>
+		/// <param name="objectId"> the ID of the object to share </param>
 		/// <param name="shareId"> the ID of the share instance </param>
 		/// <returns> the share (note that if there is no such resource, this method will throw ResourceNotFoundException
 		/// rather than returning null). </returns>
@@ -96,7 +96,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual Share GetShare(long objectId, string shareId)
 		{
@@ -107,7 +107,7 @@ namespace Smartsheet.Api.Internal
 		/// <summary>
 		/// <para>Shares a Sheet with the specified Users and Groups.</para>
 		/// 
-		/// <para>It mirrors To the following Smartsheet REST API method:<br />
+		/// <para>It mirrors to the following Smartsheet REST API method:<br />
 		/// POST /workspaces/{workspaceId}/shares<br />
 		/// POST /sheets/{sheetId}/shares<br />
 		/// POST /sights/{sightsId}/shares<br />
@@ -122,7 +122,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual IList<Share> ShareTo(long objectId, IEnumerable<Share> shares, bool? sendEmail)
 		{
@@ -137,13 +137,13 @@ namespace Smartsheet.Api.Internal
 
 		/// <summary>
 		/// <para>Updates the access level of a User or Group for the specified Object.</para>
-		/// <para>It mirrors To the following Smartsheet REST API method:<br />
+		/// <para>It mirrors to the following Smartsheet REST API method:<br />
 		/// PUT /workspaces/{workspaceId}/shares/{shareId}<br />
 		/// PUT /sheets/{sheetId}/shares/{shareId}<br />
 		/// PUT /sights/{sightId}/shares/{shareId}<br />
 		/// PUT /reports/{reportId}/shares/{shareId}</para>
 		/// </summary>
-		/// <param name="objectId"> the ID of the object To share </param>
+		/// <param name="objectId"> the ID of the object to share </param>
 		/// <param name="share"> the share </param>
 		/// <returns> the updated share (note that if there is no such resource, this method will throw
 		///  ResourceNotFoundException rather than returning null). </returns>
@@ -151,7 +151,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual Share UpdateShare(long objectId, Share share)
 		{
@@ -160,19 +160,19 @@ namespace Smartsheet.Api.Internal
 
 		/// <summary>
 		/// <para>Delete a share.</para>
-		/// <para>It mirrors To the following Smartsheet REST API method:<br />
+		/// <para>It mirrors to the following Smartsheet REST API method:<br />
 		/// DELETE /workspaces/{workspaceId}/shares/{shareId}<br />
 		/// DELETE /sheets/{sheetId}/shares/{shareId}<br />
 		/// DELETE /sight/{sightId}/shares/{shareId}<br />
 		/// DELETE /reports/{reportId}/shares/{shareId}</para>
 		/// </summary>
-		/// <param name="objectId"> the ID of the object To share </param>
-		/// <param name="shareId"> the ID of the user To whome the object is shared </param>
+		/// <param name="objectId"> the ID of the object to share </param>
+		/// <param name="shareId"> the ID of the user to whom the object is shared </param>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual void DeleteShare(long objectId, string shareId)
 		{

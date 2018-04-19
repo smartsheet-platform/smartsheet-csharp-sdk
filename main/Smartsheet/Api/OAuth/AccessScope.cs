@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -21,7 +21,7 @@ namespace Smartsheet.Api.OAuth
 
 
 	/// <summary>
-	/// Represents the access scope. These are the scopes that are required To access an end user's Smartsheet data and 
+	/// Represents the access scope. These are the scopes that are required to access an end user's Smartsheet data and 
 	/// specifies the Type of operations that are permitted.
 	/// </summary>
 	public enum AccessScope

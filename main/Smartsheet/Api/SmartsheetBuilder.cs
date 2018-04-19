@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -27,9 +27,9 @@ namespace Smartsheet.Api
 	using JsonSerializer = Api.Internal.Json.JsonSerializer;
 
 	/// <summary>
-	/// <para>A convenience class To help create a <seealso cref="SmartsheetClient"/> instance with the appropriate fields.</para>
+	/// <para>A convenience class to help create a <seealso cref="SmartsheetClient"/> instance with the appropriate fields.</para>
 	/// 
-	/// <para>Thread Safety: This class is not thread safe since it's mutable, one builder instance is NOT expected To be used in
+	/// <para>Thread Safety: This class is not thread safe since it's mutable, one builder instance is NOT expected to be used in
 	/// multiple threads.</para>
 	/// </summary>
 	public class SmartsheetBuilder

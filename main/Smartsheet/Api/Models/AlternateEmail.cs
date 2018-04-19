@@ -41,7 +41,7 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// A convenience class To help generate AlternateEmail object with the appropriate fields.
+		/// A convenience class to help generate AlternateEmail object with the appropriate fields.
 		/// </summary>
 		public class AlternateEmailBuilder
 		{

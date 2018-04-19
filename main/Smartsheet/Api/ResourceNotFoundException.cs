@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -23,7 +23,7 @@ namespace Smartsheet.Api
 	using Error = Api.Models.Error;
 
 	/// <summary>
-	/// This is the exception To indicate a resource can not be found.
+	/// This is the exception to indicate a resource can not be found.
 	/// 
 	/// Basically this exception will be thrown when the Smartsheet REST API responds with "404 NOT FOUND".
 	/// 

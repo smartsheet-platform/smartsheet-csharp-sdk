@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -22,7 +22,7 @@ using System.Collections.Generic;
 namespace Smartsheet.Api
 {
 	/// <summary>
-	/// <para>This interface provides methods To access Attachment resources that are associated To a sheet object.</para>
+	/// <para>This interface provides methods to access Attachment resources that are associated to a sheet object.</para>
 	/// 
 	/// <para>Thread Safety: Implementation of this interface must be thread safe.</para>
 	/// </summary>
@@ -32,7 +32,7 @@ namespace Smartsheet.Api
 		/// <para>Attaches a file to the Sheet.</para>
 		/// <para>This operation will always create a new attachment.
 		/// To upload a new version of the same attachment, use the Attach New Version operation.</para>
-		/// <para>It mirrors To the following Smartsheet REST API method:
+		/// <para>It mirrors to the following Smartsheet REST API method:
 		/// POST /sheets/{sheetId}/attachments</para>
 		/// </summary>
 		/// <param name="sheetId"> the sheetId </param>
@@ -43,13 +43,13 @@ namespace Smartsheet.Api
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		Attachment AttachFile(long sheetId, string file, string fileType);
 
 		/// <summary>
 		/// <para>Attaches a URL to the Sheet.</para>
-		/// <para>It mirrors To the following Smartsheet REST API method:
+		/// <para>It mirrors to the following Smartsheet REST API method:
 		/// POST /sheets/{sheetId}/attachments</para>
 		/// <remarks><para>attachmentSubType is valid only for GOOGLE_DRIVE attachments which are Google Docs.
 		/// It can optionally be included to indicate the type of a file.
@@ -65,7 +65,7 @@ namespace Smartsheet.Api
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		Attachment AttachUrl(long sheetId, Attachment attachment);
 
@@ -73,7 +73,7 @@ namespace Smartsheet.Api
 		/// <para>Deletes the Attachment.</para>
 		/// <remarks>If the Attachment has multiple versions this deletes only
 		/// the specific version specified by the attachmentId (each version has a different attachment ID).</remarks>
-		/// <para>It mirrors To the following Smartsheet REST API method: DELETE /sheets/{sheetId}/attachments/{attachmentId}</para>
+		/// <para>It mirrors to the following Smartsheet REST API method: DELETE /sheets/{sheetId}/attachments/{attachmentId}</para>
 		/// </summary>
 		/// <param name="sheetId"> the sheetId </param>
 		/// <param name="attachmentId"> the attachmentId </param>
@@ -82,13 +82,13 @@ namespace Smartsheet.Api
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		void DeleteAttachment(long sheetId, long attachmentId);
 
 		/// <summary>
 		/// <para>Fetches the Attachment.</para>
-		/// <para>It mirrors To the following Smartsheet REST API method: GET /sheets/{sheetId}/attachments/{attachmentId}</para>
+		/// <para>It mirrors to the following Smartsheet REST API method: GET /sheets/{sheetId}/attachments/{attachmentId}</para>
 		/// </summary>
 		/// <param name="sheetId"> the sheetId </param>
 		/// <param name="attachmentId"> the attachmentId </param>
@@ -98,7 +98,7 @@ namespace Smartsheet.Api
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		Attachment GetAttachment(long sheetId, long attachmentId);
 
@@ -113,12 +113,12 @@ namespace Smartsheet.Api
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		PaginatedResult<Attachment> ListAttachments(long sheetId, PaginationParameters paging);
 
 		/// <summary>
-		/// Return the AttachmentVersioningResources object that provides access To Versioning resources associated with Attachment resources.
+		/// Return the AttachmentVersioningResources object that provides access to Versioning resources associated with Attachment resources.
 		/// </summary>
 		/// <returns> the attachment versioning resources </returns>
 		AttachmentVersioningResources VersioningResources { get; }

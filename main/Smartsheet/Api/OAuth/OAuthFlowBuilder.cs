@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -29,9 +29,9 @@ namespace Smartsheet.Api.OAuth
 	using Util = Api.Internal.Utility.Utility;
 
 	/// <summary>
-	/// <para>This is the builder that is used To build <seealso cref="OAuthFlow"/> instances.</para>
+	/// <para>This is the builder that is used to build <seealso cref="OAuthFlow"/> instances.</para>
 	/// 
-	/// <para>Thread Safety: This class is not thread safe since it's mutable, one builder instance is NOT expected To be used in
+	/// <para>Thread Safety: This class is not thread safe since it's mutable, one builder instance is NOT expected to be used in
 	/// multiple threads.</para>
 	/// </summary>
 	public class OAuthFlowBuilder
@@ -137,7 +137,7 @@ namespace Smartsheet.Api.OAuth
 		/// <summary>
 		/// Set the client ID
 		/// </summary>
-		/// <param name="clientId"> the Value To set </param>
+		/// <param name="clientId"> the Value to set </param>
 		/// <returns> the OAuthFlowBuilder </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null/empty string </exception>
 		public virtual OAuthFlowBuilder SetClientId(string clientId)

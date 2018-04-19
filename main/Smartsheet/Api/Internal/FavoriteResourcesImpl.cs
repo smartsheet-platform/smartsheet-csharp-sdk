@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -51,7 +51,7 @@ namespace Smartsheet.Api.Internal
 
 		/// <summary>
 		/// <para>Adds one or more items to the user’s list of Favorite items.</para>
-		/// <para>It mirrors To the following Smartsheet REST API method: POST /favorites</para>
+		/// <para>It mirrors to the following Smartsheet REST API method: POST /favorites</para>
 		/// <para>If called with a single Favorite object, and that favorite already exists, error code 1129 will be returned. 
 		/// If called with an array of Favorite objects, any objects specified in the array that are already marked as favorites 
 		/// will be ignored and omitted from the response.</para>
@@ -62,7 +62,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual IList<Favorite> AddFavorites(IEnumerable<Favorite> favorites)
 		{
@@ -71,7 +71,7 @@ namespace Smartsheet.Api.Internal
 
 		/// <summary>
 		/// <para>Gets a list of all of the user’s Favorite items.</para>
-		/// <para>It mirrors To the following Smartsheet REST API method: GET /favorites</para>
+		/// <para>It mirrors to the following Smartsheet REST API method: GET /favorites</para>
 		/// <remarks>This operation supports pagination of results. For more information, see Paging.</remarks>
 		/// </summary>
 		/// <param name="paging">the pagination</param>
@@ -80,7 +80,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual PaginatedResult<Favorite> ListFavorites(PaginationParameters paging)
 		{
@@ -95,7 +95,7 @@ namespace Smartsheet.Api.Internal
 		/// <summary>
 		/// <para>Removes one or multiple objects from the user’s list of Favorite items.</para>
 		/// <para>objectIds must not be null or empty.</para>
-		/// <para>It mirrors To the following Smartsheet REST API methods: 
+		/// <para>It mirrors to the following Smartsheet REST API methods: 
 		/// <list type="bullet">
 		/// <item><description>DELETE /favorites/folder</description></item>
 		/// <item><description>DELETE /favorites/report</description></item>
@@ -112,7 +112,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual void RemoveFavorites(ObjectType type, IList<long> objectIds)
 		{

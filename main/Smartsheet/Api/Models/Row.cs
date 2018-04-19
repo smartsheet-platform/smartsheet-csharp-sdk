@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -87,9 +87,9 @@ namespace Smartsheet.Api.Models
 
 
 			/// <summary>
-			/// Sets the To top flag that puts the row at the top of the sheet.
+			/// Sets the to top flag that puts the row at the top of the sheet.
 			/// </summary>
-			/// <param name="toTop"> the To top flag </param>
+			/// <param name="toTop"> the to top flag </param>
 			/// <returns> the add row builder </returns>
 			public virtual AddRowBuilder SetToTop(bool? toTop)
 			{
@@ -98,9 +98,9 @@ namespace Smartsheet.Api.Models
 			}
 
 			/// <summary>
-			/// Sets the To bottom flag that puts the row at the bottom of the sheet.
+			/// Sets the to bottom flag that puts the row at the bottom of the sheet.
 			/// </summary>
-			/// <param name="toBottom"> the To bottom </param>
+			/// <param name="toBottom"> the to bottom </param>
 			/// <returns> the add row builder </returns>
 			public virtual AddRowBuilder SetToBottom(bool? toBottom)
 			{
@@ -177,18 +177,18 @@ namespace Smartsheet.Api.Models
 
 
 			/// <summary>
-			/// Gets the To top.
+			/// Gets the to top.
 			/// </summary>
-			/// <returns> the To top </returns>
+			/// <returns> the to top </returns>
 			public virtual bool? GetToTop()
 			{
 				return toTop;
 			}
 
 			/// <summary>
-			/// Gets the To bottom.
+			/// Gets the to bottom.
 			/// </summary>
-			/// <returns> the To bottom </returns>
+			/// <returns> the to bottom </returns>
 			public virtual bool? GetToBottom()
 			{
 				return toBottom;
@@ -296,9 +296,9 @@ namespace Smartsheet.Api.Models
 			}
 
 			/// <summary>
-			/// Sets the To top flag that puts the row at the top of the sheet.
+			/// Sets the to top flag that puts the row at the top of the sheet.
 			/// </summary>
-			/// <param name="toTop"> the To top flag </param>
+			/// <param name="toTop"> the to top flag </param>
 			/// <returns> the update row builder </returns>
 			public virtual UpdateRowBuilder SetToTop(bool? toTop)
 			{
@@ -307,9 +307,9 @@ namespace Smartsheet.Api.Models
 			}
 
 			/// <summary>
-			/// Sets the To bottom flag that puts the row at the bottom of the sheet.
+			/// Sets the to bottom flag that puts the row at the bottom of the sheet.
 			/// </summary>
-			/// <param name="toBottom"> the To bottom </param>
+			/// <param name="toBottom"> the to bottom </param>
 			/// <returns> the update row builder </returns>
 			public virtual UpdateRowBuilder SetToBottom(bool? toBottom)
 			{
@@ -407,18 +407,18 @@ namespace Smartsheet.Api.Models
 			}
 
 			/// <summary>
-			/// Gets the To top.
+			/// Gets the to top.
 			/// </summary>
-			/// <returns> the To top </returns>
+			/// <returns> the to top </returns>
 			public virtual bool? GetToTop()
 			{
 				return toTop;
 			}
 
 			/// <summary>
-			/// Gets the To bottom.
+			/// Gets the to bottom.
 			/// </summary>
-			/// <returns> the To bottom </returns>
+			/// <returns> the to bottom </returns>
 			public virtual bool? GetToBottom()
 			{
 				return toBottom;

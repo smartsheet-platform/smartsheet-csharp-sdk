@@ -433,7 +433,7 @@ namespace Smartsheet.Api.Internal
 
 		/// <summary>
 		/// <para>Updates a sheet.</para>
-		/// <para>To modify sheet contents, see Add Rows, Update Rows, and Update Column.</para>
+		/// <para>to modify sheet contents, see Add Rows, Update Rows, and Update Column.</para>
 		/// <para>This operation can be used to update an individual users sheet settings. 
 		/// If the request body contains only the userSettings attribute, 
 		/// this operation may be performed even if the user only has read-only access to the sheet 

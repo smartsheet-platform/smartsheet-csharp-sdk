@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -37,37 +37,37 @@ namespace Smartsheet.Api.Internal.Json
 	public class JsonNetSerializer : JsonSerializer
 	{
 		/// <summary>
-		/// Represents the ObjectMapper used To serialize/de-serialize JSON.
+		/// Represents the ObjectMapper used to serialize/de-serialize JSON.
 		/// 
 		/// It will be initialized in a static initializer and will not change afterwards.
 		/// 
 		/// Because ObjectMapper is thread-safe as long as it's not reconfigured, a static final class-level ObjectMapper is
-		/// used To achieve best performance.
+		/// used to achieve best performance.
 		/// </summary>
 		//private static readonly ObjectMapper OBJECT_MAPPER = new ObjectMapper();
 		private static readonly Newtonsoft.Json.JsonSerializer serializer = new Newtonsoft.Json.JsonSerializer();
 
 		static JsonNetSerializer()
 		{
-			// No formatting To decrease the length;
+			// No formatting to decrease the length;
 			serializer.Formatting = Newtonsoft.Json.Formatting.None;
 
 			// Allow deserialization if there are properties that can't be deserialized
 			serializer.MissingMemberHandling = Newtonsoft.Json.MissingMemberHandling.Ignore;
 
-			// Set the date Format To ISO 8601
+			// Set the date Format to ISO 8601
 			serializer.DateFormatHandling = Newtonsoft.Json.DateFormatHandling.IsoDateFormat;
 
 			// Only include non-null properties in when serializing
 			serializer.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
 
-			// Excludes "Id" field from being serialized To JSON for any IdentifiableModel class
+			// Excludes "Id" field from being serialized to JSON for any IdentifiableModel class
 			serializer.ContractResolver = new ContractResolver();
 
 			// Handles enum serialization
 			serializer.Converters.Add(new JsonEnumTypeConverter());
 
-			// Convert all enums To a string representation for serialization
+			// Convert all enums to a string representation for serialization
 			serializer.Converters.Add(new Newtonsoft.Json.Converters.StringEnumConverter());
 
 			// Handles objectValue serialization
@@ -111,11 +111,11 @@ namespace Smartsheet.Api.Internal.Json
 		}
 
 		/// <summary>
-		/// Serialize an object To JSON.
+		/// Serialize an object to JSON.
 		/// 
 		/// Parameters: 
-		///   object : the object To serialize
-		///   outputStream : the output stream To which the JSON will be written
+		///   object : the object to serialize
+		///   outputStream : the output stream to which the JSON will be written
 		/// 
 		/// Returns: None
 		/// 
@@ -242,7 +242,7 @@ namespace Smartsheet.Api.Internal.Json
 		}
 
 		/// <summary>
-		/// De-serialize To a map from JSON.
+		/// De-serialize to a map from JSON.
 		/// </summary>
 		/// <param name="inputStream">
 		/// @return </param>

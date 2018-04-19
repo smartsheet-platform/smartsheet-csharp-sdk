@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -47,14 +47,14 @@ namespace Smartsheet.Api.Internal
 		/// or the list of all Webhooks associated with the third-party app (if a third-party app made the request). Items 
 		/// in the response are ordered by API Client name, then Webhook name, then creation date.</para>
 		/// 
-		/// <para>It mirrors To the following Smartsheet REST API method: GET /webhooks</para>
+		/// <para>It mirrors to the following Smartsheet REST API method: GET /webhooks</para>
 		/// </summary>
 		/// <returns>IndexResult object containing an array of Webhook objects</returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual PaginatedResult<Webhook> ListWebhooks(PaginationParameters paging)
 		{
@@ -70,7 +70,7 @@ namespace Smartsheet.Api.Internal
 		/// <summary>
 		/// <para>Gets the Webhook specified in the URL.</para>
 		/// 
-		/// <para>It mirrors To the following Smartsheet REST API method: GET /webhook/{webhookId}</para>
+		/// <para>It mirrors to the following Smartsheet REST API method: GET /webhook/{webhookId}</para>
 		/// </summary>
 		/// <param name="webhookId"> the Id of the webhook </param>
 		/// <returns> the webhook resource (note that if there is no such resource, this method will throw 
@@ -79,7 +79,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual Webhook GetWebhook(long webhookId)
 		{
@@ -90,7 +90,7 @@ namespace Smartsheet.Api.Internal
 		/// <para>Creates a new Webhook.</para>
 		/// <para>The request body is limited to name(required), callbackUrl (required), scope (required)
 		/// scopeObjectId (required), events(required), version(required)</para>
-		/// <para>It mirrors To the following Smartsheet REST API method:POST /webhooks</para>
+		/// <para>It mirrors to the following Smartsheet REST API method:POST /webhooks</para>
 		/// </summary>
 		/// <param name="webhook"> the webhook to be created </param>
 		/// <returns> the created webhook </returns>
@@ -98,7 +98,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual Webhook CreateWebhook(Webhook webhook)
 		{
@@ -108,15 +108,15 @@ namespace Smartsheet.Api.Internal
 		/// <summary>
 		/// <para>Updates the Webhook specified in the URL.</para>
 		/// <para>The request body is limited to the name, events, callbackUrl, enabled and version attributes.</para>
-		/// <para>It mirrors To the following Smartsheet REST API method: PUT /webhooks/{webhookId}</para>
+		/// <para>It mirrors to the following Smartsheet REST API method: PUT /webhooks/{webhookId}</para>
 		/// </summary>
-		/// <param name="webhook"> the webhook To update </param>
+		/// <param name="webhook"> the webhook to update </param>
 		/// <returns> the updated webhook </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual Webhook UpdateWebhook(Webhook webhook)
 		{
@@ -126,14 +126,14 @@ namespace Smartsheet.Api.Internal
 		/// <summary>
 		/// <para>Delete a webhook.</para>
 		/// 
-		/// <para>It mirrors To the following Smartsheet REST API method: DELETE /webhooks/{webhookId}</para>
+		/// <para>It mirrors to the following Smartsheet REST API method: DELETE /webhooks/{webhookId}</para>
 		/// </summary>
 		/// <param name="webhookId"> the sightId </param>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual void DeleteWebhook(long webhookId)
 		{
@@ -143,14 +143,14 @@ namespace Smartsheet.Api.Internal
 		/// <summary>
 		/// <para>Resets the shared secret for the specified Webhook. For more information about how a shared secret is used, see Authenticating Callbacks.</para>
 		/// <para>The request body should be empty</para>
-		/// <para>It mirrors To the following Smartsheet REST API method: POST /webhooks/{webhookId}/resetsharedsecret</para>
+		/// <para>It mirrors to the following Smartsheet REST API method: POST /webhooks/{webhookId}/resetsharedsecret</para>
 		/// </summary>
 		/// <param name="webhookId"> the sightId </param>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual WebhookSharedSecret ResetSharedSecret(long webhookId)
 		{

@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -46,10 +46,10 @@ namespace Smartsheet.Api.Models
 
 
 		/// <summary>
-		/// Check if the given object equals To this object.
+		/// Check if the given object equals to this object.
 		/// </summary>
-		/// <param name="object"> the object To compare </param>
-		/// <returns> true if given object equals To this object, false otherwise </returns>
+		/// <param name="object"> the object to compare </param>
+		/// <returns> true if given object equals to this object, false otherwise </returns>
 		public override bool Equals(object @object)
 		{
 			bool result = false;

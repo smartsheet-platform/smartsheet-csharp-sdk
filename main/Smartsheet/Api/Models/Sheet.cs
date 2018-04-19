@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -48,8 +48,8 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// A convenience class To make a <seealso cref="Sheet"/> object with the necessary fields To create the sheet by posting it 
-		/// To Smartsheet.
+		/// A convenience class to make a <seealso cref="Sheet"/> object with the necessary fields to create the sheet by posting it 
+		/// to Smartsheet.
 		/// </summary>
 		public class CreateSheetBuilder
 		{
@@ -70,7 +70,7 @@ namespace Smartsheet.Api.Models
 			/// <summary>
 			/// Sets the Columns for the sheet being created.
 			/// </summary>
-			/// <param name="columns"> The Columns To create with this sheet. </param>
+			/// <param name="columns"> The Columns to create with this sheet. </param>
 			/// <returns> the creates the builder </returns>
 			public virtual CreateSheetBuilder SetColumns(IList<Column> columns)
 			{
@@ -132,7 +132,7 @@ namespace Smartsheet.Api.Models
 
 
 		/// <summary>
-		/// A class To simplify the creation of a Sheet from another Sheet or another Template.
+		/// A class to simplify the creation of a Sheet from another Sheet or another Template.
 		/// </summary>
 		public class CreateSheetFromTemplateBuilder
 		{

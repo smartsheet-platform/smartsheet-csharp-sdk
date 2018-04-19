@@ -15,14 +15,14 @@ namespace Smartsheet.Api.Internal
 		/// <summary>
 		/// <para>Gets a list of all Update Requests that have future schedules associated with the specified Sheet.</para>
 		/// 
-		/// <para>It mirrors To the following Smartsheet REST API method: GET /sheets/{sheetId}/updaterequests</para>
+		/// <para>It mirrors to the following Smartsheet REST API method: GET /sheets/{sheetId}/updaterequests</para>
 		/// </summary>
 		/// <returns> A list of all UpdateRequests (note that an empty list will be returned if there are none). </returns>
 		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual PaginatedResult<UpdateRequest> ListUpdateRequests(long sheetId, PaginationParameters paging)
 		{
@@ -37,7 +37,7 @@ namespace Smartsheet.Api.Internal
 		/// <summary>
 		/// <para>Gets the specified Update Request for the Sheet that has a future schedule.</para>
 		/// 
-		/// <para>It mirrors To the following Smartsheet REST API method: GET /sheets/{sheetId}/updaterequests/{updateRequestId}</para>
+		/// <para>It mirrors to the following Smartsheet REST API method: GET /sheets/{sheetId}/updaterequests/{updateRequestId}</para>
 		/// </summary>
 		/// <param name="sheetId"> the Id of the sheet </param>
 		/// <param name="updateRequestId"> the update request Id </param>
@@ -47,7 +47,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual UpdateRequest GetUpdateRequest(long sheetId, long updateRequestId)
 		{
@@ -57,7 +57,7 @@ namespace Smartsheet.Api.Internal
         /// <summary>
         /// <para>Creates an Update Request for the specified Row(s) within the Sheet. An email notification
         /// (containing a link to the update request) will be asynchronously sent to the specified recipient(s).</para>
-        /// <para>It mirrors To the following Smartsheet REST API method: POST /sheets/{sheetId}/updaterequests</para>
+        /// <para>It mirrors to the following Smartsheet REST API method: POST /sheets/{sheetId}/updaterequests</para>
         /// </summary>
         /// <param name="sheetId"> the sheetId </param>
         /// <param name="updateRequest"></param>
@@ -65,7 +65,7 @@ namespace Smartsheet.Api.Internal
         /// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
         /// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-        /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+        /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
         public virtual UpdateRequest CreateUpdateRequest(long sheetId, UpdateRequest updateRequest)
 		{
@@ -75,7 +75,7 @@ namespace Smartsheet.Api.Internal
 		/// <summary>
 		/// <para>Terminates the future scheduled delivery of the Update Request specified in the URL.</para>
 		/// 
-		/// <para>It mirrors To the following Smartsheet REST API method: DELETE /sheets/{sheetId}/updaterequests/{updateRequestId}</para>
+		/// <para>It mirrors to the following Smartsheet REST API method: DELETE /sheets/{sheetId}/updaterequests/{updateRequestId}</para>
 		/// </summary>
 		/// <param name="sheetId"> the sheetId </param>
 		/// <param name="updateRequestId"> the updateRequestId </param>,
@@ -83,7 +83,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual void DeleteUpdateRequest(long sheetId, long updateRequestId)
 		{
@@ -92,7 +92,7 @@ namespace Smartsheet.Api.Internal
 
 		/// <summary>
 		/// <para>Changes the specified Update Request for the Sheet.</para>
-		/// <para>It mirrors To the following Smartsheet REST API method: PUT /sheets/{sheetId}/updaterequests/{updateRequestId}</para>
+		/// <para>It mirrors to the following Smartsheet REST API method: PUT /sheets/{sheetId}/updaterequests/{updateRequestId}</para>
 		/// </summary>
 		/// <param name="sheetId"> the sheet Id </param>
 		/// <param name="updateRequest"> the UpdateRequest to update</param>
@@ -101,7 +101,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual UpdateRequest UpdateUpdateRequest(long sheetId, UpdateRequest updateRequest)
 		{
@@ -111,7 +111,7 @@ namespace Smartsheet.Api.Internal
 		/// <summary>
 		/// <para>Gets a list of all Sent Update Requests that have future schedules associated with the specified Sheet.</para>
 		/// 
-		/// <para>It mirrors To the following Smartsheet REST API method: GET /sheets/{sheetId}/sentupdaterequests</para>
+		/// <para>It mirrors to the following Smartsheet REST API method: GET /sheets/{sheetId}/sentupdaterequests</para>
 		/// </summary>
 		/// <param name="sheetId"> the Id of the sheet </param>
 		/// <param name="paging">paging parameters for the list</param>
@@ -120,7 +120,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual PaginatedResult<SentUpdateRequest> ListSentUpdateRequests(long sheetId, PaginationParameters paging)
 		{
@@ -135,7 +135,7 @@ namespace Smartsheet.Api.Internal
 		/// <summary>
 		/// <para>Gets the specified sent update request on the Sheet.</para>
 		/// 
-		/// <para>It mirrors To the following Smartsheet REST API method: GET /sheets/{sheetId}/sentupdaterequests/{updateRequestId}</para>
+		/// <para>It mirrors to the following Smartsheet REST API method: GET /sheets/{sheetId}/sentupdaterequests/{updateRequestId}</para>
 		/// </summary>
 		/// <param name="sheetId"> the Id of the sheet </param>
 		/// <param name="sentUpdateRequestId"> the sent update request Id </param>
@@ -145,7 +145,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual SentUpdateRequest GetSentUpdateRequest(long sheetId, long sentUpdateRequestId)
 		{
@@ -155,7 +155,7 @@ namespace Smartsheet.Api.Internal
 		/// <summary>
 		/// <para>Deletes the specified sent update request.</para>
 		/// 
-		/// <para>It mirrors To the following Smartsheet REST API method: DELETE /sheets/{sheetId}/sentupdaterequests/{sentUpdateRequestId}</para>
+		/// <para>It mirrors to the following Smartsheet REST API method: DELETE /sheets/{sheetId}/sentupdaterequests/{sentUpdateRequestId}</para>
 		/// </summary>
 		/// <param name="sheetId"> the Id of the sheet </param>
 		/// <param name="sentUpdateRequestId"> the sent update request Id </param>,
@@ -163,7 +163,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual void DeleteSentUpdateRequest(long sheetId, long sentUpdateRequestId)
 		{

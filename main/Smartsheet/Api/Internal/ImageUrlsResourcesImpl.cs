@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -48,7 +48,7 @@ namespace Smartsheet.Api.Internal
 
 		/// <summary>
 		/// <para>Gets URLs that can be used to retrieve the specified cell images.</para>
-		/// <para>It mirrors To the following Smartsheet REST API method: POST /imageurls</para>
+		/// <para>It mirrors to the following Smartsheet REST API method: POST /imageurls</para>
 		/// </summary>
 		/// <param name="requestUrls"> array of requested Images and sizes </param>
 		/// <returns> the ImageUrlMap object </returns>
@@ -56,7 +56,7 @@ namespace Smartsheet.Api.Internal
 		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
 		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
 		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due To rate limiting) </exception>
+		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
 		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
 		public virtual ImageUrlMap GetImageUrls(IEnumerable<ImageUrl> requestUrls)
 		{

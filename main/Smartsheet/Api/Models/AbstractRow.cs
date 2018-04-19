@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -105,7 +105,7 @@ namespace Smartsheet.Api.Models
 		private DateTime? modifiedAt;
 
 		/// <summary>
-		/// A read-only flag To indicate if the row is Expanded or collapsed. </summary>
+		/// A read-only flag to indicate if the row is Expanded or collapsed. </summary>
 		private bool? expanded;
 
 		/// <summary>

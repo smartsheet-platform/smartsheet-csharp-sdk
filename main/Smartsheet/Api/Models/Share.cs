@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -205,7 +205,7 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// A convenience class for creating a <seealso cref="Share"/> with the necessary fields for sharing the sheet To one user.
+		/// A convenience class for creating a <seealso cref="Share"/> with the necessary fields for sharing the sheet to one user.
 		/// </summary>
 		public class CreateShareBuilder
 		{
@@ -243,7 +243,7 @@ namespace Smartsheet.Api.Models
 			/// (required) Access level for this specific share.
 			/// </summary>
 			/// <param name="accessLevel"> the access level </param>
-			/// <returns> the share To one builder </returns>
+			/// <returns> the share to one builder </returns>
 			public virtual CreateShareBuilder SetAccessLevel(AccessLevel? accessLevel)
 			{
 				this.accessLevel = accessLevel;
@@ -255,7 +255,7 @@ namespace Smartsheet.Api.Models
 			///  NOTE: One of email or groupId must be specified, but not both.
 			/// </summary>
 			/// <param name="email"> the Email </param>
-			/// <returns> the share To one builder </returns>
+			/// <returns> the share to one builder </returns>
 			public virtual CreateShareBuilder SetEmail(string email)
 			{
 				this.email = email;
@@ -267,7 +267,7 @@ namespace Smartsheet.Api.Models
 			/// NOTE: One of email or groupId must be specified, but not both.
 			/// </summary>
 			/// <param name="groupId"> the groupId </param>
-			/// <returns> the share To one builder </returns>
+			/// <returns> the share to one builder </returns>
 			public virtual CreateShareBuilder SetGroupId(long? groupId)
 			{
 				this.groupId = groupId;
@@ -278,7 +278,7 @@ namespace Smartsheet.Api.Models
 			/// (optional): The subject of the email that will optionally be sent to notify the recipient.
 			/// </summary>
 			/// <param name="subject"> the subject </param>
-			/// <returns> the share To one builder </returns>
+			/// <returns> the share to one builder </returns>
 			public virtual CreateShareBuilder SetSubject(string subject)
 			{
 				this.subject = subject;
@@ -289,7 +289,7 @@ namespace Smartsheet.Api.Models
 			/// (optional): The message to be included in the body of the email that will optionally be sent to the recipient.
 			/// </summary>
 			/// <param name="message"> the message </param>
-			/// <returns> the share To one builder </returns>
+			/// <returns> the share to one builder </returns>
 			public virtual CreateShareBuilder SetAccessLevel(string message)
 			{
 				this.message = message;
@@ -300,7 +300,7 @@ namespace Smartsheet.Api.Models
 			/// (optional): Boolean flag to indicate whether or not to CC the user sharing the sheet.
 			/// </summary>
 			/// <param name="ccMe"> the ccMe </param>
-			/// <returns> the share To one builder </returns>
+			/// <returns> the share to one builder </returns>
 			public virtual CreateShareBuilder SetCcMe(bool? ccMe)
 			{
 				this.ccMe = ccMe;
@@ -385,7 +385,7 @@ namespace Smartsheet.Api.Models
 		}
 
 		/// <summary>
-		/// A convenience class for creating a <seealso cref="Share"/> with the necessary fields To update a specific share.
+		/// A convenience class for creating a <seealso cref="Share"/> with the necessary fields to update a specific share.
 		/// </summary>
 		public class UpdateShareBuilder
 		{
