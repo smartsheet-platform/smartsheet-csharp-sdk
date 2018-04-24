@@ -20,21 +20,20 @@ using System.Collections.Generic;
 
 namespace Smartsheet.Api
 {
+    using System.IO;
+    using Api.Models;
 
-	using System.IO;
-	using Api.Models;
-
-	/// <summary>
-	/// <para>This interface provides methods to access Sheet resources.</para>
-	/// 
-	/// <para>Thread Safety: Implementation of this interface must be thread safe.</para>
-	/// </summary>
-	public interface ServerInfoResources
-	{
-		/// <summary>
-		/// Gets application constants.
-		/// </summary>
-		/// <returns>ServerInfo oject</returns>
-		ServerInfo GetServerInfo();
-	}
+    /// <summary>
+    /// <para>This interface provides methods to access Sheet resources.</para>
+    /// 
+    /// <para>Thread Safety: Implementation of this interface must be thread safe.</para>
+    /// </summary>
+    public interface ServerInfoResources
+    {
+        /// <summary>
+        /// Gets application constants.
+        /// </summary>
+        /// <returns>ServerInfo oject</returns>
+        ServerInfo GetServerInfo();
+    }
 }

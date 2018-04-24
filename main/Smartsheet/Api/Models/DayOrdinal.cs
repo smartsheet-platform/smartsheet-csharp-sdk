@@ -18,34 +18,15 @@
 
 namespace Smartsheet.Api.Models
 {
-	/// <summary>
-	/// Represents the Link types.
-	/// </summary>
-	public enum DayOrdinal
-	{
-		/// <summary>
-		/// Represents FIRST ordinal type.
-		/// </summary>
-		FIRST,
-
-		/// <summary>
-		/// Represents SECOND ordinal type.
-		/// </summary>
-		SECOND,
-
-		/// <summary>
-		/// Represents THIRD ordinal type.
-		/// </summary>
-		THIRD,
-
-		/// <summary>
-		/// Represents FOURTH ordinal type.
-		/// </summary>
-		FOURTH,
-
-		/// <summary>
-		/// Represents LAST ordinal type.
-		/// </summary>
-		LAST
-	}
+    /// <summary>
+    /// Represents the Link types.
+    /// </summary>
+    public enum DayOrdinal
+    {
+        FIRST,
+        SECOND,
+        THIRD,
+        FOURTH,
+        LAST
+    }
 }

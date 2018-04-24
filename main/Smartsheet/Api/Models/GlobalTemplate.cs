@@ -19,22 +19,13 @@
 namespace Smartsheet.Api.Models
 {
 
-	/// <summary>
-	/// Type of global template. </summary>
-	/// <seealso href="http://smartsheet-platform.github.io/api-docs/#template-object">Template Object Help</seealso>
-	public enum GlobalTemplate
-	{
-		/// <summary>
-		/// Blank sheet
-		/// </summary>
-		BLANK_SHEET,
-		/// <summary>
-		/// Task list
-		/// </summary>
-		TASK_LIST,
-		/// <summary>
-		/// Project sheet
-		/// </summary>
-		PROJECT_SHEET
-	}
+    /// <summary>
+    /// Type of global template. </summary>
+    /// <seealso href="http://smartsheet-platform.github.io/api-docs/#template-object">Template Object Help</seealso>
+    public enum GlobalTemplate
+    {
+        BLANK_SHEET,
+        TASK_LIST,
+        PROJECT_SHEET
+    }
 }

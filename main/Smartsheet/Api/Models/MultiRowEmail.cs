@@ -19,21 +19,21 @@
 using System.Collections.Generic;
 namespace Smartsheet.Api.Models
 {
-	/// <summary>
-	/// Represents MultiRowEmail object. </summary>
-	/// <seealso href="http://help.Smartsheet.com/customer/portal/articles/504773-sending-Sheets-Rows-via-Email">Help Sending 
-	/// Sheets &amp; Rows via Email</seealso>
-	public class MultiRowEmail : RowEmail
-	{
-		private IList<long> rowIds;
+    /// <summary>
+    /// Represents MultiRowEmail object. </summary>
+    /// <seealso href="http://help.Smartsheet.com/customer/portal/articles/504773-sending-Sheets-Rows-via-Email">Help Sending 
+    /// Sheets &amp; Rows via Email</seealso>
+    public class MultiRowEmail : RowEmail
+    {
+        private IList<long> rowIds;
 
-		/// <summary>
-		/// IDs of rows to be included.
-		/// </summary>
-		public virtual IList<long> RowIds
-		{
-			get { return rowIds; }
-			set { rowIds = value; }
-		}
-	}
+        /// <summary>
+        /// IDs of rows to be included.
+        /// </summary>
+        public virtual IList<long> RowIds
+        {
+            get { return rowIds; }
+            set { rowIds = value; }
+        }
+    }
 }

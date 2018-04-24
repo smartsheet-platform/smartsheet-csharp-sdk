@@ -25,34 +25,34 @@ using System.Runtime.CompilerServices;
 
 namespace Smartsheet.Api.Internal.Json
 {
-	internal class ContractResolver : DefaultContractResolver
-	{
-		public ContractResolver()
-		{
-		}
+    internal class ContractResolver : DefaultContractResolver
+    {
+        public ContractResolver()
+        {
+        }
 
-		protected override JsonProperty CreateProperty(MemberInfo member, MemberSerialization memberSerialization)
-		{
-			JsonProperty property = base.CreateProperty(member, memberSerialization);
-			// For the meantime, will serailize ID if object type is Row. Id needs to be serialized 
-			// because Update Row needs id in the json object. However this a hacky way 
-			// of doing it because Add Row cannot contain id in the json object. So In SheetRowResources.AddRows, 
-			// we loop over every row and make them null before serializing them.
-			if (property.PropertyName.ToLower().Equals("id") && property.DeclaringType != typeof(Row))
-			{
-				property.ShouldSerialize = (object instance) => false;
-			}
-			return property;
-		}
+        protected override JsonProperty CreateProperty(MemberInfo member, MemberSerialization memberSerialization)
+        {
+            JsonProperty property = base.CreateProperty(member, memberSerialization);
+            // For the meantime, will serailize ID if object type is Row. Id needs to be serialized 
+            // because Update Row needs id in the json object. However this a hacky way 
+            // of doing it because Add Row cannot contain id in the json object. So In SheetRowResources.AddRows, 
+            // we loop over every row and make them null before serializing them.
+            if (property.PropertyName.ToLower().Equals("id") && property.DeclaringType != typeof(Row))
+            {
+                property.ShouldSerialize = (object instance) => false;
+            }
+            return property;
+        }
 
 
-		protected override string ResolvePropertyName(string propertyName)
-		{
-			string str;
-			str = ((string.IsNullOrEmpty(propertyName) || char.IsLower(propertyName, 0) ? false :
-				propertyName.Length >= 2) ? string.Concat(propertyName.Substring(0, 1).ToLower(),
-				propertyName.Substring(1)) : propertyName);
-			return str;
-		}
-	}
+        protected override string ResolvePropertyName(string propertyName)
+        {
+            string str;
+            str = ((string.IsNullOrEmpty(propertyName) || char.IsLower(propertyName, 0) ? false :
+                propertyName.Length >= 2) ? string.Concat(propertyName.Substring(0, 1).ToLower(),
+                propertyName.Substring(1)) : propertyName);
+            return str;
+        }
+    }
 }

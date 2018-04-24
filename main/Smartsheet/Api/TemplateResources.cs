@@ -20,42 +20,42 @@ using System.Collections.Generic;
 
 namespace Smartsheet.Api
 {
-	using Api.Models;
+    using Api.Models;
 
-	/// <summary>
-	/// <para>This interface provides methods to access Template resources.</para>
-	/// 
-	/// <para>Thread Safety: Implementation of this interface must be thread safe.</para>
-	/// </summary>
-	public interface TemplateResources
-	{
-		/// <summary>
-		/// <para>Gets the list of public Templates to which the user has access.</para>
-		/// <remarks>This operation supports pagination of results. For more information, see Paging.</remarks>
-		/// <para>It mirrors to the following Smartsheet REST API method: GET /templates/public</para>
-		/// </summary>
-		/// <returns> the list of Templates (note that an empty list will be returned if there are none). </returns>
-		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
-		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
-		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
-		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		PaginatedResult<Template> ListPublicTemplates(PaginationParameters paging);
+    /// <summary>
+    /// <para>This interface provides methods to access Template resources.</para>
+    /// 
+    /// <para>Thread Safety: Implementation of this interface must be thread safe.</para>
+    /// </summary>
+    public interface TemplateResources
+    {
+        /// <summary>
+        /// <para>Gets the list of public Templates to which the user has access.</para>
+        /// <remarks>This operation supports pagination of results. For more information, see Paging.</remarks>
+        /// <para>It mirrors to the following Smartsheet REST API method: GET /templates/public</para>
+        /// </summary>
+        /// <returns> the list of Templates (note that an empty list will be returned if there are none). </returns>
+        /// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+        /// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+        /// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+        /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+        /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
+        /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+        PaginatedResult<Template> ListPublicTemplates(PaginationParameters paging);
 
-		/// <summary>
-		/// <para>Gets the list of user-created Templates to which the user has access.</para>
-		/// <remarks>This operation supports pagination of results. For more information, see Paging.</remarks>
-		/// <para>It mirrors to the following Smartsheet REST API method: GET /templates</para>
-		/// </summary>
-		/// <returns> the list of Templates (note that an empty list will be returned if there are none). </returns>
-		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
-		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
-		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
-		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		PaginatedResult<Template> ListUserCreatedTemplates(PaginationParameters paging);
-	}
+        /// <summary>
+        /// <para>Gets the list of user-created Templates to which the user has access.</para>
+        /// <remarks>This operation supports pagination of results. For more information, see Paging.</remarks>
+        /// <para>It mirrors to the following Smartsheet REST API method: GET /templates</para>
+        /// </summary>
+        /// <returns> the list of Templates (note that an empty list will be returned if there are none). </returns>
+        /// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+        /// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+        /// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+        /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+        /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
+        /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+        PaginatedResult<Template> ListUserCreatedTemplates(PaginationParameters paging);
+    }
 
 }

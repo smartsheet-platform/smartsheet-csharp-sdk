@@ -25,61 +25,61 @@ using Smartsheet.Api.Models;
 
 namespace Smartsheet.Api.Internal.Json
 {
-	class ErrorTypeConverter : JsonConverter
-	{
-		public override bool CanConvert(Type objectType)
-		{
-			return typeof(Error).IsAssignableFrom(objectType);
-		}
+    class ErrorTypeConverter : JsonConverter
+    {
+        public override bool CanConvert(Type objectType)
+        {
+            return typeof(Error).IsAssignableFrom(objectType);
+        }
 
-		public override object ReadJson(JsonReader reader, Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer)
-		{
-			if (reader.TokenType == JsonToken.StartObject)
-			{
-				Error error = (Error)Activator.CreateInstance(objectType);
-				while (reader.Read())
-				{
-					if (reader.TokenType == JsonToken.PropertyName)
-					{
-						if (reader.Value.Equals("errorCode"))
-						{
-							error.ErrorCode = reader.ReadAsInt32();
-						}
-						else if (reader.Value.Equals("message"))
-						{
-							error.Message = reader.ReadAsString();
-						}
-						else if (reader.Value.Equals("refId"))
-						{
-							error.RefId = reader.ReadAsString();
-						}
-						else if (reader.Value.Equals("detail"))
-						{
-							reader.Read();
-							if (reader.TokenType == JsonToken.StartObject)
-							{
-								ErrorDetail errorDetail = new ErrorDetail();
-								serializer.Populate(reader, errorDetail);
-								error.Detail = errorDetail;
-								reader.Read(); // JsonToken.EndObject
-							}
-							else if (reader.TokenType == JsonToken.StartArray)
-							{
-								IList<ErrorDetail> errorDetails = null;
-								errorDetails = serializer.Deserialize<IList<ErrorDetail>>(reader);
-								error.Detail = errorDetails;
-								reader.Read(); // JsonToken.EndArray
-							}
-						}
-					}
-				}
-				return error;
-			}
-			return null;
-		}
+        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer)
+        {
+            if (reader.TokenType == JsonToken.StartObject)
+            {
+                Error error = (Error)Activator.CreateInstance(objectType);
+                while (reader.Read())
+                {
+                    if (reader.TokenType == JsonToken.PropertyName)
+                    {
+                        if (reader.Value.Equals("errorCode"))
+                        {
+                            error.ErrorCode = reader.ReadAsInt32();
+                        }
+                        else if (reader.Value.Equals("message"))
+                        {
+                            error.Message = reader.ReadAsString();
+                        }
+                        else if (reader.Value.Equals("refId"))
+                        {
+                            error.RefId = reader.ReadAsString();
+                        }
+                        else if (reader.Value.Equals("detail"))
+                        {
+                            reader.Read();
+                            if (reader.TokenType == JsonToken.StartObject)
+                            {
+                                ErrorDetail errorDetail = new ErrorDetail();
+                                serializer.Populate(reader, errorDetail);
+                                error.Detail = errorDetail;
+                                reader.Read(); // JsonToken.EndObject
+                            }
+                            else if (reader.TokenType == JsonToken.StartArray)
+                            {
+                                IList<ErrorDetail> errorDetails = null;
+                                errorDetails = serializer.Deserialize<IList<ErrorDetail>>(reader);
+                                error.Detail = errorDetails;
+                                reader.Read(); // JsonToken.EndArray
+                            }
+                        }
+                    }
+                }
+                return error;
+            }
+            return null;
+        }
 
-		public override void WriteJson(JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer)
-		{
-		}
-	}
+        public override void WriteJson(JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer)
+        {
+        }
+    }
 }

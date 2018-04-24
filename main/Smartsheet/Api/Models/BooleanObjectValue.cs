@@ -24,29 +24,29 @@ using Newtonsoft.Json;
 
 namespace Smartsheet.Api.Models
 {
-	class BooleanObjectValue : IPrimitiveObjectValue<bool>
-	{
-		private bool value;
+    class BooleanObjectValue : IPrimitiveObjectValue<bool>
+    {
+        private bool value;
 
-		public BooleanObjectValue(bool value)
-		{
-			this.value = value;
-		}
+        public BooleanObjectValue(bool value)
+        {
+            this.value = value;
+        }
 
-		public virtual bool Value
-		{
-			get { return this.value; }
-			set { this.value = value; }
-		}
+        public virtual bool Value
+        {
+            get { return this.value; }
+            set { this.value = value; }
+        }
 
-		public virtual ObjectValueType ObjectType
-		{
-			get { return ObjectValueType.BOOLEAN; }
-		}
+        public virtual ObjectValueType ObjectType
+        {
+            get { return ObjectValueType.BOOLEAN; }
+        }
 
-		public virtual void Serialize(JsonWriter writer)
-		{
-			writer.WriteValue(value);
-		}
-	}
+        public virtual void Serialize(JsonWriter writer)
+        {
+            writer.WriteValue(value);
+        }
+    }
 }

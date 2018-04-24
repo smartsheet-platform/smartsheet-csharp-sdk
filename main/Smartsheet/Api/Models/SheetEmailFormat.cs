@@ -18,27 +18,14 @@
 
 namespace Smartsheet.Api.Models
 {
-
-
-	/// <summary>
-	/// Represents the Sheet Email Format.
-	/// </summary>
-	public enum SheetEmailFormat
-	{
-		/// <summary>
-		/// Represents PDF Format.
-		/// </summary>
-		PDF,
-
-		/// <summary>
-		/// Represents PDF GANTT Format.
-		/// </summary>
-		PDF_GANTT,
-
-		/// <summary>
-		/// Represents EXCEL Format.
-		/// </summary>
-		EXCEL
-	}
+    /// <summary>
+    /// Represents the Sheet Email Format.
+    /// </summary>
+    public enum SheetEmailFormat
+    {
+        PDF,
+        PDF_GANTT,
+        EXCEL
+    }
 
 }

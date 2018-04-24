@@ -21,31 +21,31 @@ using System.Collections.Generic;
 
 namespace Smartsheet.Api.Models
 {
-	/// <summary>
-	/// The Currency info
-	/// </summary>
-	public class Currency
-	{
-		private string code;
+    /// <summary>
+    /// The Currency info
+    /// </summary>
+    public class Currency
+    {
+        private string code;
 
-		private string symbol;
+        private string symbol;
 
-		/// <summary>
-		/// The ISO 4217 currency code (e.g. “EUR”)
-		/// </summary>
-		public string Code
-		{
-			get { return code; }
-			set { code = value; }
-		}
+        /// <summary>
+        /// The ISO 4217 currency code (e.g. “EUR”)
+        /// </summary>
+        public string Code
+        {
+            get { return code; }
+            set { code = value; }
+        }
 
-		/// <summary>
-		/// The currency symbol (e.g. “€”)
-		/// </summary>
-		public string Symbol
-		{
-			get { return symbol; }
-			set { symbol = value; }
-		}
-	}
+        /// <summary>
+        /// The currency symbol (e.g. “€”)
+        /// </summary>
+        public string Symbol
+        {
+            get { return symbol; }
+            set { symbol = value; }
+        }
+    }
 }

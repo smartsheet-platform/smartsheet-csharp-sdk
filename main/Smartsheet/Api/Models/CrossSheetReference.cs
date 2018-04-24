@@ -23,91 +23,91 @@ using System.Text;
 
 namespace Smartsheet.Api.Models
 {
-	public class CrossSheetReference : NamedModel
-	{
+    public class CrossSheetReference : NamedModel
+    {
 
-		/// <summary>
-		/// the final column in the reference block
-		/// </summary>
-		private long? endColumnId;
+        /// <summary>
+        /// the final column in the reference block
+        /// </summary>
+        private long? endColumnId;
 
-		/// <summary>
-		/// the last row in the reference block
-		/// </summary>
-		private long? endRowId;
+        /// <summary>
+        /// the last row in the reference block
+        /// </summary>
+        private long? endRowId;
 
-		/// <summary>
-		/// the source sheet Id for the reference block
-		/// </summary>
-		private long? sourceSheetId;
+        /// <summary>
+        /// the source sheet Id for the reference block
+        /// </summary>
+        private long? sourceSheetId;
 
-		/// <summary>
-		/// the first row of the reference block
-		/// </summary>
-		private long? startColumnId;
+        /// <summary>
+        /// the first row of the reference block
+        /// </summary>
+        private long? startColumnId;
 
-		/// <summary>
-		/// the first row of the reference block
-		/// </summary>
-		private long? startRowId;
+        /// <summary>
+        /// the first row of the reference block
+        /// </summary>
+        private long? startRowId;
 
-		/// <summary>
-		/// the status of the cross-sheet reference
-		/// </summary>
-		private CrossSheetReferenceStatus? status;
+        /// <summary>
+        /// the status of the cross-sheet reference
+        /// </summary>
+        private CrossSheetReferenceStatus? status;
 
-		/// <summary>
-		/// Get the last column Id in the cross-sheet reference block
-		/// </summary>
-		public long? EndColumnId
-		{
-			get { return endColumnId; }
-			set { endColumnId = value; }
-		}
+        /// <summary>
+        /// Get the last column Id in the cross-sheet reference block
+        /// </summary>
+        public long? EndColumnId
+        {
+            get { return endColumnId; }
+            set { endColumnId = value; }
+        }
 
-		/// <summary>
-		/// Get the last row Id in the cross-sheet reference block
-		/// </summary>
-		public long? EndRowId
-		{
-			get { return endRowId; }
-			set { endRowId = value; }
-		}
+        /// <summary>
+        /// Get the last row Id in the cross-sheet reference block
+        /// </summary>
+        public long? EndRowId
+        {
+            get { return endRowId; }
+            set { endRowId = value; }
+        }
 
-		/// <summary>
-		/// Get the source sheet Id in the cross-sheet reference block
-		/// </summary>
-		public long? SourceSheetId
-		{
-			get { return sourceSheetId; }
-			set { sourceSheetId = value; }
-		}
+        /// <summary>
+        /// Get the source sheet Id in the cross-sheet reference block
+        /// </summary>
+        public long? SourceSheetId
+        {
+            get { return sourceSheetId; }
+            set { sourceSheetId = value; }
+        }
 
-		/// <summary>
-		/// Get the first column Id in the cross-sheet reference block
-		/// </summary>
-		public long? StartColumnId
-		{
-			get { return startColumnId; }
-			set { startColumnId = value; }
-		}
+        /// <summary>
+        /// Get the first column Id in the cross-sheet reference block
+        /// </summary>
+        public long? StartColumnId
+        {
+            get { return startColumnId; }
+            set { startColumnId = value; }
+        }
 
-		/// <summary>
-		/// Get the first row Id in the cross-sheet reference block
-		/// </summary>
-		public long? StartRowId
-		{
-			get { return startRowId; }
-			set { startRowId = value; }
-		}
+        /// <summary>
+        /// Get the first row Id in the cross-sheet reference block
+        /// </summary>
+        public long? StartRowId
+        {
+            get { return startRowId; }
+            set { startRowId = value; }
+        }
 
-		/// <summary>
-		/// Get the status of the cross-sheet reference block
-		/// </summary>
-		public CrossSheetReferenceStatus? Status
-		{
-			get { return status; }
-			set { status = value; }
-		}
-	}
+        /// <summary>
+        /// Get the status of the cross-sheet reference block
+        /// </summary>
+        public CrossSheetReferenceStatus? Status
+        {
+            get { return status; }
+            set { status = value; }
+        }
+    }
 }

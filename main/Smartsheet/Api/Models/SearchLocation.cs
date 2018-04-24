@@ -22,9 +22,9 @@ using System.Runtime.Serialization;
 
 namespace Smartsheet.Api.Models
 {
-	public enum SearchLocation
-	{
-		[EnumMember(Value = "personalWorkspace")]
-		PERSONAL_WORKSPACE
-	}
+    public enum SearchLocation
+    {
+        [EnumMember(Value = "personalWorkspace")]
+        PERSONAL_WORKSPACE
+    }
 }

@@ -22,9 +22,9 @@ using System.Runtime.Serialization;
 
 namespace Smartsheet.Api.Models.Inclusions
 {
-	public enum SearchInclusion
-	{
-		[EnumMember(Value = "favoriteFlag")]
-		FAVORITE_FLAG
-	}
+    public enum SearchInclusion
+    {
+        [EnumMember(Value = "favoriteFlag")]
+        FAVORITE_FLAG
+    }
 }

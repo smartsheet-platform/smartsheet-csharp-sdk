@@ -21,64 +21,64 @@ using System.Collections.Generic;
 
 namespace Smartsheet.Api.Models
 {
-	/// <summary>
-	/// Represents a Favorite object.
-	/// </summary>
-	public class Favorite
-	{
-		private ObjectType? type;
+    /// <summary>
+    /// Represents a Favorite object.
+    /// </summary>
+    public class Favorite
+    {
+        private ObjectType? type;
 
-		private long? objectId;
+        private long? objectId;
 
-		/// <summary>
-		/// One of: workspace, folder, sheet, report, template, sight
-		/// </summary>
-		public ObjectType? Type
-		{
-			get { return type; }
-			set { type = value; }
-		}
+        /// <summary>
+        /// One of: workspace, folder, sheet, report, template, sight
+        /// </summary>
+        public ObjectType? Type
+        {
+            get { return type; }
+            set { type = value; }
+        }
 
-		/// <summary>
-		/// ID of the favorited item. If type is "template", only private sheet-type template ID is allowed.
-		/// </summary>
-		public long? ObjectId
-		{
-			get { return objectId; }
-			set { objectId = value; }
-		}
+        /// <summary>
+        /// ID of the favorited item. If type is "template", only private sheet-type template ID is allowed.
+        /// </summary>
+        public long? ObjectId
+        {
+            get { return objectId; }
+            set { objectId = value; }
+        }
 
-		/// <summary>
-		/// A convenience class for making a Favorite object with the appropriate fields for adding the user.
-		/// </summary>
-		public class AddFavoriteBuilder
-		{
-			private ObjectType? type;
-			private long? objectId;
+        /// <summary>
+        /// A convenience class for making a Favorite object with the appropriate fields for adding the user.
+        /// </summary>
+        public class AddFavoriteBuilder
+        {
+            private ObjectType? type;
+            private long? objectId;
 
-			/// <summary>
-			/// Sets the required propeties for createing a Favorite.
-			/// </summary>
-			/// <param name="type"> the object type </param>
-			/// <param name="objectId"> ID of the favorited item. If type is "template", only private sheet-type template ID is allowed.</param>
-			public AddFavoriteBuilder(ObjectType? type, long? objectId)
-			{
-				this.type = type;
-				this.objectId = objectId;
-			}
+            /// <summary>
+            /// Sets the required propeties for createing a Favorite.
+            /// </summary>
+            /// <param name="type"> the object type </param>
+            /// <param name="objectId"> ID of the favorited item. If type is "template", only private sheet-type template ID is allowed.</param>
+            public AddFavoriteBuilder(ObjectType? type, long? objectId)
+            {
+                this.type = type;
+                this.objectId = objectId;
+            }
 
-			/// <summary>
-			/// Builds and returns the Favorite object.
-			/// </summary>
-			/// <returns> the Favorite object </returns>
-			public Favorite Build()
-			{
-				return new Favorite
-				{
-					ObjectId = this.objectId,
-					Type = this.type
-				};
-			}
-		}
-	}
+            /// <summary>
+            /// Builds and returns the Favorite object.
+            /// </summary>
+            /// <returns> the Favorite object </returns>
+            public Favorite Build()
+            {
+                return new Favorite
+                {
+                    ObjectId = this.objectId,
+                    Type = this.type
+                };
+            }
+        }
+    }
 }

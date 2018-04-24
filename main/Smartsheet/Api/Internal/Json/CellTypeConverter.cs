@@ -25,45 +25,45 @@ using Smartsheet.Api.Models;
 
 namespace Smartsheet.Api.Internal.Json
 {
-	class CellTypeConverter : JsonConverter
-	{
-		public override bool CanConvert(Type objectType)
-		{
-			return typeof(Cell).IsAssignableFrom(objectType);
-		}
+    class CellTypeConverter : JsonConverter
+    {
+        public override bool CanConvert(Type objectType)
+        {
+            return typeof(Cell).IsAssignableFrom(objectType);
+        }
 
-		public override object ReadJson(JsonReader reader, Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer)
-		{
-			if (reader.TokenType == JsonToken.StartObject)
-			{
-				object objectToDeserialize = Activator.CreateInstance(objectType);
-				serializer.Populate(reader, objectToDeserialize);
-				return objectToDeserialize;
-			}
-			return null;
-		}
+        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer)
+        {
+            if (reader.TokenType == JsonToken.StartObject)
+            {
+                object objectToDeserialize = Activator.CreateInstance(objectType);
+                serializer.Populate(reader, objectToDeserialize);
+                return objectToDeserialize;
+            }
+            return null;
+        }
 
-		public override void WriteJson(JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer)
-		{
-			Newtonsoft.Json.JsonSerializer serializerHelper = new Newtonsoft.Json.JsonSerializer();
-			serializerHelper.Formatting = Newtonsoft.Json.Formatting.None;
-			serializerHelper.MissingMemberHandling = Newtonsoft.Json.MissingMemberHandling.Ignore;
-			serializerHelper.DateFormatHandling = Newtonsoft.Json.DateFormatHandling.IsoDateFormat;
-			serializerHelper.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
-			serializerHelper.ContractResolver = new ContractResolver();
-			serializerHelper.Converters.Add(new JsonEnumTypeConverter());
-			serializerHelper.Converters.Add(new PrimitiveObjectValueConverter());
-			serializerHelper.Converters.Add(new ObjectValueTypeConverter());
-			serializerHelper.Converters.Add(new HyperlinkConverter());
-			serializerHelper.Converters.Add(new CellLinkTypeConverter());
+        public override void WriteJson(JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer)
+        {
+            Newtonsoft.Json.JsonSerializer serializerHelper = new Newtonsoft.Json.JsonSerializer();
+            serializerHelper.Formatting = Newtonsoft.Json.Formatting.None;
+            serializerHelper.MissingMemberHandling = Newtonsoft.Json.MissingMemberHandling.Ignore;
+            serializerHelper.DateFormatHandling = Newtonsoft.Json.DateFormatHandling.IsoDateFormat;
+            serializerHelper.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
+            serializerHelper.ContractResolver = new ContractResolver();
+            serializerHelper.Converters.Add(new JsonEnumTypeConverter());
+            serializerHelper.Converters.Add(new PrimitiveObjectValueConverter());
+            serializerHelper.Converters.Add(new ObjectValueTypeConverter());
+            serializerHelper.Converters.Add(new HyperlinkConverter());
+            serializerHelper.Converters.Add(new CellLinkTypeConverter());
 
-			Cell cell = (Cell)value;
-			if (cell.LinkInFromCell != null && cell.Value == null)
-			{
-				// setting value to ExplicitNull here will force serialization of a null
-				cell.Value = new ExplicitNull();
-			}
-			serializerHelper.Serialize(writer, value);
-		}
-	}
+            Cell cell = (Cell)value;
+            if (cell.LinkInFromCell != null && cell.Value == null)
+            {
+                // setting value to ExplicitNull here will force serialization of a null
+                cell.Value = new ExplicitNull();
+            }
+            serializerHelper.Serialize(writer, value);
+        }
+    }
 }

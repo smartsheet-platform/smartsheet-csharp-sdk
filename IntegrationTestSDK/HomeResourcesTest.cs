@@ -6,17 +6,17 @@ using System.Configuration;
 
 namespace IntegrationTestSDK
 {
-	[TestClass]
-	public class HomeResourcesTest
-	{
-		[TestMethod]
-		public void TestHomeResources()
-		{
-			SmartsheetClient smartsheet = new SmartsheetBuilder().SetMaxRetryTimeout(30000).Build();
+    [TestClass]
+    public class HomeResourcesTest
+    {
+        [TestMethod]
+        public void TestHomeResources()
+        {
+            SmartsheetClient smartsheet = new SmartsheetBuilder().SetMaxRetryTimeout(30000).Build();
 
-			Home home = smartsheet.HomeResources.GetHome(new HomeInclusion[] { HomeInclusion.SOURCE });
+            Home home = smartsheet.HomeResources.GetHome(new HomeInclusion[] { HomeInclusion.SOURCE });
 
-			Assert.IsTrue(home != null);
-		}
-	}
+            Assert.IsTrue(home != null);
+        }
+    }
 }

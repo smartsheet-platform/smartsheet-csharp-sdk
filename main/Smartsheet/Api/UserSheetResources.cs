@@ -20,16 +20,16 @@ using System.Collections.Generic;
 
 namespace Smartsheet.Api
 {
-	using Api.Models;
-	using System;
+    using Api.Models;
+    using System;
 
-	/// <summary>
-	/// <para>This interface provides methods to access Sheet resources of User.</para>
-	/// 
-	/// <para>Thread Safety: Implementation of this interface must be thread safe.</para>
-	/// </summary>
-	public interface UserSheetResources
-	{
+    /// <summary>
+    /// <para>This interface provides methods to access Sheet resources of User.</para>
+    /// 
+    /// <para>Thread Safety: Implementation of this interface must be thread safe.</para>
+    /// </summary>
+    public interface UserSheetResources
+    {
         /// <summary>
         /// <para>List of all Sheets owned by the members of the account (organization).</para>
         /// <para>It mirrors to the following Smartsheet REST API method: GET /users/sheets</para>
@@ -44,5 +44,5 @@ namespace Smartsheet.Api
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
         PaginatedResult<Sheet> ListOrgSheets(PaginationParameters paging, DateTime? modifiedSince = null);
-	}
+    }
 }

@@ -21,36 +21,36 @@ namespace Smartsheet.Api.Internal.Http
 {
 
 
-	/// <summary>
-	/// This class represents an HTTP response.
-	/// 
-	/// Thread Safety: This class is not thread safe since it's mutable.
-	/// </summary>
-	public class HttpResponse : HttpMessage
-	{
-		/// <summary>
-		/// Represents the response Status Code.
-		/// 
-		/// It has a pair of setter/getter (not shown on class diagram for brevity).
-		/// </summary>
-		private HttpStatusCode statusCode;
+    /// <summary>
+    /// This class represents an HTTP response.
+    /// 
+    /// Thread Safety: This class is not thread safe since it's mutable.
+    /// </summary>
+    public class HttpResponse : HttpMessage
+    {
+        /// <summary>
+        /// Represents the response Status Code.
+        /// 
+        /// It has a pair of setter/getter (not shown on class diagram for brevity).
+        /// </summary>
+        private HttpStatusCode statusCode;
 
-		/// <summary>
-		/// Gets the Status Code.
-		/// </summary>
-		/// <returns> the Status Code </returns>
-		public virtual HttpStatusCode StatusCode
-		{
-			get
-			{
-				return statusCode;
-			}
-			set
-			{
-				this.statusCode = value;
-			}
-		}
+        /// <summary>
+        /// Gets the Status Code.
+        /// </summary>
+        /// <returns> the Status Code </returns>
+        public virtual HttpStatusCode StatusCode
+        {
+            get
+            {
+                return statusCode;
+            }
+            set
+            {
+                this.statusCode = value;
+            }
+        }
 
-	}
+    }
 
 }

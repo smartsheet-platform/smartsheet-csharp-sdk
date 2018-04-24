@@ -18,82 +18,82 @@
 
 namespace Smartsheet.Api
 {
-	using Error = Api.Models.Error;
+    using Error = Api.Models.Error;
 
-	/// <summary>
-	/// <para>This is the exception to indicate errors (Error objects of Smartsheet REST API) returned from Smartsheet REST API.</para>
-	/// 
-	/// <para>Thread safety: Exceptions are not thread safe.</para>
-	/// </summary>
-	public class SmartsheetRestException : SmartsheetException
-	{
-		/// <summary>
-		/// <para>Represents the error Code.</para>
-		/// 
-		/// <para>It will be initialized in constructor and will not change afterwards.</para>
-		/// </summary>
-		private readonly int? errorCode;
+    /// <summary>
+    /// <para>This is the exception to indicate errors (Error objects of Smartsheet REST API) returned from Smartsheet REST API.</para>
+    /// 
+    /// <para>Thread safety: Exceptions are not thread safe.</para>
+    /// </summary>
+    public class SmartsheetRestException : SmartsheetException
+    {
+        /// <summary>
+        /// <para>Represents the error Code.</para>
+        /// 
+        /// <para>It will be initialized in constructor and will not change afterwards.</para>
+        /// </summary>
+        private readonly int? errorCode;
 
-		/// <summary>
-		/// <para>Represents the reference ID.</para>
-		/// 
-		/// <para>It will be initialized in constructor and will not change afterwards.</para>
-		/// </summary>
-		private readonly string refId;
+        /// <summary>
+        /// <para>Represents the reference ID.</para>
+        /// 
+        /// <para>It will be initialized in constructor and will not change afterwards.</para>
+        /// </summary>
+        private readonly string refId;
 
-		/// <summary>
-		/// <para>Represents any error detail provided by the API</para>
-		/// 
-		/// <para>It will be initialized in constructor and will not change afterwards.</para>
-		/// </summary>
-		private readonly object detail;
+        /// <summary>
+        /// <para>Represents any error detail provided by the API</para>
+        /// 
+        /// <para>It will be initialized in constructor and will not change afterwards.</para>
+        /// </summary>
+        private readonly object detail;
 
-		/// <summary>
-		/// <para>Constructor.</para>
-		/// </summary>
-		/// <param name="error"> the Error object from Smartsheet REST API </param>
-		public SmartsheetRestException(Error error) : base(error.Message)
-		{
-			errorCode = error.ErrorCode;
-			refId = error.RefId;
-			detail = error.Detail;
-		}
+        /// <summary>
+        /// <para>Constructor.</para>
+        /// </summary>
+        /// <param name="error"> the Error object from Smartsheet REST API </param>
+        public SmartsheetRestException(Error error) : base(error.Message)
+        {
+            errorCode = error.ErrorCode;
+            refId = error.RefId;
+            detail = error.Detail;
+        }
 
-		/// <summary>
-		/// <para>Returns the error Code.</para>
-		/// </summary>
-		/// <returns> the error Code </returns>
-		public virtual int? ErrorCode
-		{
-			get
-			{
-				return this.errorCode;
-			}
-		}
+        /// <summary>
+        /// <para>Returns the error Code.</para>
+        /// </summary>
+        /// <returns> the error Code </returns>
+        public virtual int? ErrorCode
+        {
+            get
+            {
+                return this.errorCode;
+            }
+        }
 
-		/// <summary>
-		/// <para>Returns the refId.</para>
-		/// </summary>
-		/// <returns> the refId </returns>
-		public virtual string RefId
-		{
-			get
-			{
-				return this.refId;
-			}
-		}
+        /// <summary>
+        /// <para>Returns the refId.</para>
+        /// </summary>
+        /// <returns> the refId </returns>
+        public virtual string RefId
+        {
+            get
+            {
+                return this.refId;
+            }
+        }
 
-		/// <summary>
-		/// <para>Returns the error detail</para>
-		/// </summary>
-		/// <returns> the error detail </returns>
-		public virtual object Detail
-		{
-			get
-			{
-				return this.detail;
-			}
-		}
-	}
+        /// <summary>
+        /// <para>Returns the error detail</para>
+        /// </summary>
+        /// <returns> the error detail </returns>
+        public virtual object Detail
+        {
+            get
+            {
+                return this.detail;
+            }
+        }
+    }
 
 }

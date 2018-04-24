@@ -18,17 +18,17 @@
 
 namespace Smartsheet.Api.Models
 {
-	public enum ObjectValueType
-	{
-		DATE,
-		DATETIME,
-		ABSTRACT_DATETIME,
-		CONTACT,
-		DURATION,
-		PREDECESSOR_LIST,
-		NUMBER,
-		BOOLEAN,
-		STRING,
-		NULL
-	}
+    public enum ObjectValueType
+    {
+        DATE,
+        DATETIME,
+        ABSTRACT_DATETIME,
+        CONTACT,
+        DURATION,
+        PREDECESSOR_LIST,
+        NUMBER,
+        BOOLEAN,
+        STRING,
+        NULL
+    }
 }

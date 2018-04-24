@@ -18,29 +18,23 @@
 
 namespace Smartsheet.Api
 {
+    using Error = Api.Models.Error;
 
-
-	using Error = Api.Models.Error;
-
-	/// <summary>
-	/// <para>This is the exception to indicate invalid request error returned from Smartsheet REST API.</para>
-	/// 
-	/// <para>Basically this exception will be thrown when the Smartsheet REST API responds with "400 BAD REQUEST".</para>
-	/// 
-	/// <para>Thread safety: Exceptions are not thread safe.</para>
-	/// </summary>
-	public class InvalidRequestException : SmartsheetRestException
-	{
-
-
-
-		/// <summary>
-		/// Constructor.
-		/// </summary>
-		/// <param name="error"> the Error object from Smartsheet REST API </param>
-		public InvalidRequestException(Error error) : base(error)
-		{
-		}
-	}
-
+    /// <summary>
+    /// <para>This is the exception to indicate invalid request error returned from Smartsheet REST API.</para>
+    /// 
+    /// <para>Basically this exception will be thrown when the Smartsheet REST API responds with "400 BAD REQUEST".</para>
+    /// 
+    /// <para>Thread safety: Exceptions are not thread safe.</para>
+    /// </summary>
+    public class InvalidRequestException : SmartsheetRestException
+    {
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="error"> the Error object from Smartsheet REST API </param>
+        public InvalidRequestException(Error error) : base(error)
+        {
+        }
+    }
 }

@@ -23,20 +23,20 @@ using System.Text;
 
 namespace Smartsheet.Api.Models
 {
-	/// <summary>
-	/// Represents an UserModelWithName.
-	/// </summary>
-	public abstract class UserModelWithName : UserModel
-	{
-		private string name;
+    /// <summary>
+    /// Represents an UserModelWithName.
+    /// </summary>
+    public abstract class UserModelWithName : UserModel
+    {
+        private string name;
 
-		/// <summary>
-		/// Represents the name of the user
-		/// </summary>
-		public string Name
-		{
-			get { return name; }
-			set { name = value; }
-		}
-	}
+        /// <summary>
+        /// Represents the name of the user
+        /// </summary>
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+    }
 }

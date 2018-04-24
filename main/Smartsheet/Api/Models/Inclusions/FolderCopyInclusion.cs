@@ -22,39 +22,39 @@ using System.Runtime.Serialization;
 
 namespace Smartsheet.Api.Models
 {
-	/// <summary>
-	/// Represents specific elements to include in a response.
-	/// </summary>
-	public enum FolderCopyInclusion
-	{
-		/// <summary>
-		/// Includes the data.
-		/// </summary>
-		DATA,
+    /// <summary>
+    /// Represents specific elements to include in a response.
+    /// </summary>
+    public enum FolderCopyInclusion
+    {
+        /// <summary>
+        /// Includes the data.
+        /// </summary>
+        DATA,
 
-		/// <summary>
-		/// Includes the attachments.
-		/// </summary>
-		ATTACHMENTS,
+        /// <summary>
+        /// Includes the attachments.
+        /// </summary>
+        ATTACHMENTS,
 
-		/// <summary>
-		/// Includes the discussions.
-		/// </summary>
-		DISCUSSIONS,
+        /// <summary>
+        /// Includes the discussions.
+        /// </summary>
+        DISCUSSIONS,
 
-		/// <summary>
-		/// Includes cell links.
-		/// </summary>
-		CELL_LINKS,
+        /// <summary>
+        /// Includes cell links.
+        /// </summary>
+        CELL_LINKS,
 
-		/// <summary>
-		/// Includes the forms.
-		/// </summary>
-		FORMS,
+        /// <summary>
+        /// Includes the forms.
+        /// </summary>
+        FORMS,
 
-		/// <summary>
-		/// includeS everything (data, attachments, discussions, cellLinks, and forms).
-		/// </summary>
-		ALL,
-	}
+        /// <summary>
+        /// includeS everything (data, attachments, discussions, cellLinks, and forms).
+        /// </summary>
+        ALL,
+    }
 }

@@ -21,26 +21,26 @@ using Newtonsoft.Json.Converters;
 using System.Runtime.Serialization;
 namespace Smartsheet.Api.Models
 {
-	/// <summary>
-	/// Represents object types.
-	/// </summary>
-	[JsonConverter(typeof(StringEnumConverter))]
-	public enum ObjectType
-	{
-		// ObjectType must also be in all lower case when building the path.
-		// Below, the EnumMembers turn the enums into lowercase only during serialization into JSON object
-		[EnumMember(Value = "workspace")]
-		WORKSPACE,
-		[EnumMember(Value = "folder")]
-		FOLDER,
-		[EnumMember(Value = "sheet")]
-		SHEET,
-		[EnumMember(Value = "report")]
-		REPORT,
-		[EnumMember(Value = "template")]
-		TEMPLATE,
-		[EnumMember(Value = "sight")]
-		SIGHT
-	}
+    /// <summary>
+    /// Represents object types.
+    /// </summary>
+    [JsonConverter(typeof(StringEnumConverter))]
+    public enum ObjectType
+    {
+        // ObjectType must also be in all lower case when building the path.
+        // Below, the EnumMembers turn the enums into lowercase only during serialization into JSON object
+        [EnumMember(Value = "workspace")]
+        WORKSPACE,
+        [EnumMember(Value = "folder")]
+        FOLDER,
+        [EnumMember(Value = "sheet")]
+        SHEET,
+        [EnumMember(Value = "report")]
+        REPORT,
+        [EnumMember(Value = "template")]
+        TEMPLATE,
+        [EnumMember(Value = "sight")]
+        SIGHT
+    }
 
 }

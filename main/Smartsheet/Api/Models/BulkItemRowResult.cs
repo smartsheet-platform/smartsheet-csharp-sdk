@@ -23,87 +23,69 @@ using System.Text;
 
 namespace Smartsheet.Api.Models
 {
-	/// <summary>
-	/// Represents the BulkItemRowResult object. </summary>
-	/// <seealso href="http://smartsheet-platform.github.io/api-docs/?shell#partial-success">Partial Success</seealso>
-	public class BulkItemRowResult
-	{
-		private int? resultCode;
+    /// <summary>
+    /// Represents the BulkItemRowResult object. </summary>
+    /// <seealso href="http://smartsheet-platform.github.io/api-docs/?shell#partial-success">Partial Success</seealso>
+    public class BulkItemRowResult
+    {
+        /// <summary>
+        /// 0 if successful, 3 for partial success of a bulk operation
+        /// </summary>
+        private int? resultCode;
 
-		private string message;
+        /// <summary>
+        /// Message that indicates the outcome of the request
+        /// </summary>
+        private string message;
 
-		/// <summary>
-		/// Row object(s) created or updated
-		/// </summary>
-		private IList<Row> result;
+        /// <summary>
+        /// Row object(s) created or updated
+        /// </summary>
+        private IList<Row> result;
 
-		/// <summary>
-		/// Array of BulkItemFailure objects which represents the items that failed to be added or updated
-		/// </summary>
-		private IList<BulkItemFailure> failedItems;
+        /// <summary>
+        /// Array of BulkItemFailure objects which represents the items that failed to be added or updated
+        /// </summary>
+        private IList<BulkItemFailure> failedItems;
 
-		/// <summary>
-		/// Gets the result Code.
-		/// </summary>
-		/// <returns> the result Code </returns>
-		public virtual int? ResultCode
-		{
-			get
-			{
-				return resultCode;
-			}
-			set
-			{
-				this.resultCode = value;
-			}
-		}
+        /// <summary>
+        /// Gets the result Code.
+        /// </summary>
+        /// <returns> the result Code </returns>
+        public virtual int? ResultCode
+        {
+            get { return resultCode; }
+            set { this.resultCode = value; }
+        }
 
-		/// <summary>
-		/// Gets the Message.
-		/// </summary>
-		/// <returns> the Message </returns>
-		public virtual string Message
-		{
-			get
-			{
-				return message;
-			}
-			set
-			{
-				this.message = value;
-			}
-		}
+        /// <summary>
+        /// Gets the Message.
+        /// </summary>
+        /// <returns> the Message </returns>
+        public virtual string Message
+        {
+            get { return message; }
+            set { this.message = value; }
+        }
 
-		/// <summary>
-		/// Row results created or updated.
-		/// </summary>
-		/// <returns> Array of Row objects </returns>
-		public virtual IList<Row> Result
-		{
-			get
-			{
-				return result;
-			}
-			set
-			{
-				this.result = value;
-			}
-		}
+        /// <summary>
+        /// Row results created or updated.
+        /// </summary>
+        /// <returns> Array of Row objects </returns>
+        public virtual IList<Row> Result
+        {
+            get { return result; }
+            set { this.result = value; }
+        }
 
-		/// <summary>
-		/// Array of BulkItemFailure objects which represents the items that failed to be added or updated. 
-		/// </summary>
-		/// <returns> the Description </returns>
-		public virtual IList<BulkItemFailure> FailedItems
-		{
-			get
-			{
-				return failedItems;
-			}
-			set
-			{
-				this.failedItems = value;
-			}
-		}
-	}
+        /// <summary>
+        /// Array of BulkItemFailure objects which represents the items that failed to be added or updated. 
+        /// </summary>
+        /// <returns> the Description </returns>
+        public virtual IList<BulkItemFailure> FailedItems
+        {
+            get { return failedItems; }
+            set { this.failedItems = value; }
+        }
+    }
 }

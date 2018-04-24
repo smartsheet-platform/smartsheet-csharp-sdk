@@ -20,21 +20,21 @@ namespace Smartsheet.Api.OAuth
 {
 
 
-	/// <summary>
-	/// <para>This is the exception thrown by <seealso cref="OAuthFlow"/> To indicate an "invalid_grant" error occurred when obtaining 
-	/// OAuth tokens.</para>
-	/// 
-	/// <para>Thread safety: Exceptions are not thread safe.</para>
-	/// </summary>
-	public class InvalidOAuthGrantException : OAuthTokenException
-	{
-		/// <summary>
-		/// Constructor.
-		/// </summary>
-		/// <param name="message"> the Message </param>
-		public InvalidOAuthGrantException(string message) : base(message)
-		{
-		}
-	}
+    /// <summary>
+    /// <para>This is the exception thrown by <seealso cref="OAuthFlow"/> To indicate an "invalid_grant" error occurred when obtaining 
+    /// OAuth tokens.</para>
+    /// 
+    /// <para>Thread safety: Exceptions are not thread safe.</para>
+    /// </summary>
+    public class InvalidOAuthGrantException : OAuthTokenException
+    {
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="message"> the Message </param>
+        public InvalidOAuthGrantException(string message) : base(message)
+        {
+        }
+    }
 
 }

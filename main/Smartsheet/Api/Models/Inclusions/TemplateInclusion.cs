@@ -20,34 +20,34 @@ using System.Runtime.Serialization;
 
 namespace Smartsheet.Api.Models
 {
-	/// <summary>
-	/// Represents specific elements that can be copied from a Template or Sheet into a new Sheet.
-	/// </summary>
-	public enum TemplateInclusion
-	{
-		/// <summary>
-		/// Includes the data.
-		/// </summary>
-		DATA,
+    /// <summary>
+    /// Represents specific elements that can be copied from a Template or Sheet into a new Sheet.
+    /// </summary>
+    public enum TemplateInclusion
+    {
+        /// <summary>
+        /// Includes the data.
+        /// </summary>
+        DATA,
 
-		/// <summary>
-		/// Includes the attachments.
-		/// </summary>
-		ATTACHMENTS,
+        /// <summary>
+        /// Includes the attachments.
+        /// </summary>
+        ATTACHMENTS,
 
-		/// <summary>
-		/// Includes the discussions.
-		/// </summary>
-		DISCUSSIONS,
+        /// <summary>
+        /// Includes the discussions.
+        /// </summary>
+        DISCUSSIONS,
 
-		/// <summary>
-		/// Includes the cell links.
-		/// </summary>
-		CELL_LINKS,
+        /// <summary>
+        /// Includes the cell links.
+        /// </summary>
+        CELL_LINKS,
 
-		/// <summary>
-		/// Includes the forms.
-		/// </summary>
-		FORMS
-	}
+        /// <summary>
+        /// Includes the forms.
+        /// </summary>
+        FORMS
+    }
 }

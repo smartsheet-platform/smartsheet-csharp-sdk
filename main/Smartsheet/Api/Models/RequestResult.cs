@@ -18,110 +18,77 @@
 
 namespace Smartsheet.Api.Models
 {
+    /// <summary>
+    /// RequestResult object to contain information about a PUT or POST request.
+    /// </summary>
+    public class RequestResult<T>
+    {
+        /// <summary>
+        /// Represents the RequestResult Code from the request. </summary>
+        private int? resultCode;
 
+        /// <summary>
+        /// Represents the Message from the request. </summary>
+        private string message;
 
-	/// <summary>
-	/// RequestResult object to contain information about a PUT or POST request.
-	/// </summary>
-	public class RequestResult<T>
-	{
-		/// <summary>
-		/// Represents the RequestResult Code from the request. </summary>
-		private int? resultCode;
+        /// <summary>
+        /// Represents the object that was created or updated. </summary>
+        private T result;
 
-		/// <summary>
-		/// Represents the Message from the request. </summary>
-		private string message;
+        /// <summary>
+        /// Represents the new Version of the sheet. It is only available on some operations. </summary>
+        private int? version;
 
-		/// <summary>
-		/// Represents the object that was created or updated. </summary>
-		private T result;
+        /// <summary>
+        /// Gets the RequestResult Code from the request.
+        /// </summary>
+        /// <value>
+        /// The result code.
+        /// </value>
+        /// <returns> the RequestResult Code </returns>
+        public virtual int? ResultCode
+        {
+            get { return resultCode; }
+            set { this.resultCode = value; }
+        }
+        
+        /// <summary>
+        /// Gets the Message from the request.
+        /// </summary>
+        /// <value>
+        /// The message.
+        /// </value>
+        /// <returns> the Message </returns>
+        public virtual string Message
+        {
+            get { return message; }
+            set { this.message = value; }
+        }
+        
+        /// <summary>
+        /// Gets the RequestResult from the request.
+        /// </summary>
+        /// <value>
+        /// The result object.
+        /// </value>
+        /// <returns> the RequestResult </returns>
+        public virtual T Result
+        {
+            get { return result; }
+            set { this.result = value; }
+        }
 
-		/// <summary>
-		/// Represents the new Version of the sheet. It is only available on some operations. </summary>
-		private int? version;
-
-		/// <summary>
-		/// Gets the RequestResult Code from the request.
-		/// </summary>
-		/// <value>
-		/// The result code.
-		/// </value>
-		/// <returns> the RequestResult Code </returns>
-		public virtual int? ResultCode
-		{
-			get
-			{
-				return resultCode;
-			}
-			set
-			{
-				this.resultCode = value;
-			}
-		}
-
-
-		/// <summary>
-		/// Gets the Message from the request.
-		/// </summary>
-		/// <value>
-		/// The message.
-		/// </value>
-		/// <returns> the Message </returns>
-		public virtual string Message
-		{
-			get
-			{
-				return message;
-			}
-			set
-			{
-				this.message = value;
-			}
-		}
-
-
-		/// <summary>
-		/// Gets the RequestResult from the request.
-		/// </summary>
-		/// <value>
-		/// The result object.
-		/// </value>
-		/// <returns> the RequestResult </returns>
-		public virtual T Result
-		{
-			get
-			{
-				return result;
-			}
-			set
-			{
-				this.result = value;
-			}
-		}
-
-
-		/// <summary>
-		/// Gets the new Version of the sheet. It is only available on some operations..
-		/// </summary>
-		/// <value>
-		/// The version.
-		/// </value>
-		/// <returns> the Version </returns>
-		public virtual int? Version
-		{
-			get
-			{
-				return version;
-			}
-			set
-			{
-				this.version = value;
-			}
-		}
-
-
-
-	}
-
+        /// <summary>
+        /// Gets the new Version of the sheet. It is only available on some operations..
+        /// </summary>
+        /// <value>
+        /// The version.
+        /// </value>
+        /// <returns> the Version </returns>
+        public virtual int? Version
+        {
+            get { return version; }
+            set { this.version = value; }
+        }
+    }
 }

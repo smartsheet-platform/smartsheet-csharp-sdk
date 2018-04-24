@@ -22,20 +22,20 @@ using System.Runtime.Serialization;
 
 namespace Smartsheet.Api.Models
 {
-	/// <summary>
-	/// Represents specific elements to include in a response.
-	/// </summary>
-	public enum DiscussionInclusion
-	{
-		/// <summary>
-		/// Includes the comments of the discussion
-		/// </summary>
-		COMMENTS,
+    /// <summary>
+    /// Represents specific elements to include in a response.
+    /// </summary>
+    public enum DiscussionInclusion
+    {
+        /// <summary>
+        /// Includes the comments of the discussion
+        /// </summary>
+        COMMENTS,
 
-		/// <summary>
-		/// <para>Includes the attachments of the discussion.</para>
-		/// <para>Effective only if comments is present, otherwise ignored</para>
-		/// </summary>
-		ATTACHMENTS
-	}
+        /// <summary>
+        /// <para>Includes the attachments of the discussion.</para>
+        /// <para>Effective only if comments is present, otherwise ignored</para>
+        /// </summary>
+        ATTACHMENTS
+    }
 }

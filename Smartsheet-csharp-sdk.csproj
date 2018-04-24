@@ -72,18 +72,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="main\Smartsheet\Api\AccessTokenExpiredException.cs" />
-    <Compile Include="main\Smartsheet\Api\AssociatedAttachmentResources.cs" />
-    <Compile Include="main\Smartsheet\Api\AssociatedDiscussionResources.cs" />
-    <Compile Include="main\Smartsheet\Api\AttachmentResources.cs" />
     <Compile Include="main\Smartsheet\Api\AttachmentVersioningResources.cs" />
     <Compile Include="main\Smartsheet\Api\AuthorizationException.cs" />
-    <Compile Include="main\Smartsheet\Api\ColumnResources.cs" />
     <Compile Include="main\Smartsheet\Api\CommentAttachmentResources.cs" />
-    <Compile Include="main\Smartsheet\Api\CommentResources.cs" />
     <Compile Include="main\Smartsheet\Api\ContactResources.cs" />
     <Compile Include="main\Smartsheet\Api\DiscussionAttachmentResources.cs" />
     <Compile Include="main\Smartsheet\Api\DiscussionCommentResources.cs" />
-    <Compile Include="main\Smartsheet\Api\DiscussionResources.cs" />
     <Compile Include="main\Smartsheet\Api\FavoriteResources.cs" />
     <Compile Include="main\Smartsheet\Api\ImageUrlsResources.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\ContactResourcesImpl.cs" />
@@ -184,16 +178,10 @@
     <Compile Include="main\Smartsheet\Api\HomeResources.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\AbstractAssociatedResources.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\AbstractResources.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\AssociatedAttachmentResourcesImpl.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\AssociatedDiscussionResourcesImpl.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\AttachmentResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\AttachmentVersioningResourcesImpl.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\ColumnResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\CommentAttachmentResourcesImpl.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\CommentResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\DiscussionAttachmentResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\DiscussionCommentResourcesImpl.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\DiscussionResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\FavoriteResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\FolderResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\GroupResourcesImpl.cs" />
@@ -218,7 +206,6 @@
     <Compile Include="main\Smartsheet\Api\Internal\RowAttachmentResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\RowColumnResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\RowDiscussionResourcesImpl.cs" />
-    <Compile Include="main\Smartsheet\Api\Internal\RowResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\SearchResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\ServerInfoResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\ShareResourcesImpl.cs" />
@@ -296,7 +283,6 @@
     <Compile Include="main\Smartsheet\Api\Models\Hyperlink.cs" />
     <Compile Include="main\Smartsheet\Api\Models\MultiShare.cs" />
     <Compile Include="main\Smartsheet\Api\Models\NamedModel.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\ObjectInclusion.cs" />
     <Compile Include="main\Smartsheet\Api\Models\CriteriaOperator.cs" />
     <Compile Include="main\Smartsheet\Api\Models\ObjectType.cs" />
     <Compile Include="main\Smartsheet\Api\Models\PaginationParameters.cs" />
@@ -351,7 +337,6 @@
     <Compile Include="main\Smartsheet\Api\RowAttachmentResources.cs" />
     <Compile Include="main\Smartsheet\Api\RowColumnResources.cs" />
     <Compile Include="main\Smartsheet\Api\RowDiscussionResources.cs" />
-    <Compile Include="main\Smartsheet\Api\RowResources.cs" />
     <Compile Include="main\Smartsheet\Api\SearchResources.cs" />
     <Compile Include="main\Smartsheet\Api\ServerInfoResources.cs" />
     <Compile Include="main\Smartsheet\Api\ServiceUnavailableException.cs" />

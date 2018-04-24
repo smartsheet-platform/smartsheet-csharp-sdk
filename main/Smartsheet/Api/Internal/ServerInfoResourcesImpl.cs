@@ -21,28 +21,28 @@ using System.Collections.Generic;
 
 namespace Smartsheet.Api.Internal
 {
-	/// <summary>
-	/// This is the implementation of the ServerInfoResources.
-	/// 
-	/// Thread Safety: This class is thread safe because it is immutable and its base class is thread safe.
-	/// </summary>
-	public class ServerInfoResourcesImpl : AbstractResources, ServerInfoResources
-	{
+    /// <summary>
+    /// This is the implementation of the ServerInfoResources.
+    /// 
+    /// Thread Safety: This class is thread safe because it is immutable and its base class is thread safe.
+    /// </summary>
+    public class ServerInfoResourcesImpl : AbstractResources, ServerInfoResources
+    {
 
-		/// <summary>
-		/// Constructor.
-		/// 
-		/// Exceptions: - IllegalArgumentException : if any argument is null or empty string
-		/// </summary>
-		/// <param name="smartsheet"> the Smartsheet </param>
-		public ServerInfoResourcesImpl(SmartsheetImpl smartsheet)
-			: base(smartsheet)
-		{
-		}
+        /// <summary>
+        /// Constructor.
+        /// 
+        /// Exceptions: - IllegalArgumentException : if any argument is null or empty string
+        /// </summary>
+        /// <param name="smartsheet"> the Smartsheet </param>
+        public ServerInfoResourcesImpl(SmartsheetImpl smartsheet)
+            : base(smartsheet)
+        {
+        }
 
-		public ServerInfo GetServerInfo()
-		{
-			return this.GetResource<ServerInfo>("serverinfo", typeof(ServerInfo));
-		}
-	}
+        public ServerInfo GetServerInfo()
+        {
+            return this.GetResource<ServerInfo>("serverinfo", typeof(ServerInfo));
+        }
+    }
 }

@@ -22,29 +22,29 @@ namespace Smartsheet.Api.Internal.Http
 {
 
 
-	/// <summary>
-	/// This is the exception throw by HttpClient to indicate errors occurred during HTTP operation.
-	/// 
-	/// Thread safety: Exceptions are not thread safe.
-	/// </summary>
-	public class HttpClientException : SmartsheetException
-	{
-		/// <summary>
-		/// Constructor.
-		/// </summary>
-		/// <param name="message"> the Message </param>
-		public HttpClientException(string message) : base(message)
-		{
-		}
+    /// <summary>
+    /// This is the exception throw by HttpClient to indicate errors occurred during HTTP operation.
+    /// 
+    /// Thread safety: Exceptions are not thread safe.
+    /// </summary>
+    public class HttpClientException : SmartsheetException
+    {
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="message"> the Message </param>
+        public HttpClientException(string message) : base(message)
+        {
+        }
 
-		/// <summary>
-		/// Constructor.
-		/// </summary>
-		/// <param name="message"> the Message </param>
-		/// <param name="cause"> the cause </param>
-		public HttpClientException(string message, Exception cause) : base(message, cause)
-		{
-		}
-	}
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="message"> the Message </param>
+        /// <param name="cause"> the cause </param>
+        public HttpClientException(string message, Exception cause) : base(message, cause)
+        {
+        }
+    }
 
 }

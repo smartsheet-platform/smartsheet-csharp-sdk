@@ -20,43 +20,19 @@ namespace Smartsheet.Api.Models
 {
 
 
-	/// <summary>
-	/// Represents the Type of access that is granted on a given sheet. </summary>
-	/// <seealso href="http://www.Smartsheet.com/developers/Api-documentation#h.89hb3ivv7eum">Access Scopes Help</seealso>
-	public enum AccessScope
-	{
-		/// <summary>
-		/// The read sheets
-		/// </summary>
-		READ_SHEETS,
-		/// <summary>
-		/// The write sheets
-		/// </summary>
-		WRITE_SHEETS,
-		/// <summary>
-		/// The share sheets
-		/// </summary>
-		SHARE_SHEETS,
-		/// <summary>
-		/// The delete sheets
-		/// </summary>
-		DELETE_SHEETS,
-		/// <summary>
-		/// The create sheets
-		/// </summary>
-		CREATE_SHEETS,
-		/// <summary>
-		/// The admin users
-		/// </summary>
-		ADMIN_USERS,
-		/// <summary>
-		/// The admin sheets
-		/// </summary>
-		ADMIN_SHEETS,
-		/// <summary>
-		/// The admin workspaces
-		/// </summary>
-		ADMIN_WORKSPACES
-	}
+    /// <summary>
+    /// Represents the Type of access that is granted on a given sheet. </summary>
+    /// <seealso href="http://www.Smartsheet.com/developers/Api-documentation#h.89hb3ivv7eum">Access Scopes Help</seealso>
+    public enum AccessScope
+    {
+        READ_SHEETS,
+        WRITE_SHEETS,
+        SHARE_SHEETS,
+        DELETE_SHEETS,
+        CREATE_SHEETS,
+        ADMIN_USERS,
+        ADMIN_SHEETS,
+        ADMIN_WORKSPACES
+    }
 
 }

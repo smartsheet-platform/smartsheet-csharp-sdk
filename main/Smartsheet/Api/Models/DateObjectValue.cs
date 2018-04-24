@@ -23,31 +23,31 @@ using System.Text;
 
 namespace Smartsheet.Api.Models
 {
-	class DateObjectValue : ObjectValue
-	{
-		private string value;
-		private ObjectValueType objectType;
+    class DateObjectValue : ObjectValue
+    {
+        private string value;
+        private ObjectValueType objectType;
 
-		public DateObjectValue(ObjectValueType objectType, string value)
-		{
-			this.objectType = objectType;
-			this.value = value;
-		}
+        public DateObjectValue(ObjectValueType objectType, string value)
+        {
+            this.objectType = objectType;
+            this.value = value;
+        }
 
-		public string Value
-		{
-			get { return this.value; }
-			set { this.value = value; }
-		}
+        public string Value
+        {
+            get { return this.value; }
+            set { this.value = value; }
+        }
 
-		public DateTime ToDate()
-		{
-			return DateTime.Parse(this.value);
-		}
+        public DateTime ToDate()
+        {
+            return DateTime.Parse(this.value);
+        }
 
-		public virtual ObjectValueType ObjectType
-		{
-			get { return objectType; }
-		}
-	}
+        public virtual ObjectValueType ObjectType
+        {
+            get { return objectType; }
+        }
+    }
 }

@@ -24,10 +24,10 @@ using Newtonsoft.Json;
 
 namespace Smartsheet.Api.Models
 {
-	public interface IPrimitiveObjectValue<T> : ObjectValue
-	{
-		T Value {get; set;}
+    public interface IPrimitiveObjectValue<T> : ObjectValue
+    {
+        T Value {get; set;}
 
-		void Serialize(JsonWriter writer);
-	}
+        void Serialize(JsonWriter writer);
+    }
 }

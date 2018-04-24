@@ -21,16 +21,16 @@ using Newtonsoft.Json.Converters;
 using System.Runtime.Serialization;
 namespace Smartsheet.Api.Models
 {
-	/// <summary>
-	/// Filter Type
-	/// </summary>
-	[JsonConverter(typeof(StringEnumConverter))]
-	public enum FilterType
-	{
-		[EnumMember(Value = "list")]
-		LIST,
-		[EnumMember(Value = "custom")]
-		CUSTOM
-	}
+    /// <summary>
+    /// Filter Type
+    /// </summary>
+    [JsonConverter(typeof(StringEnumConverter))]
+    public enum FilterType
+    {
+        [EnumMember(Value = "list")]
+        LIST,
+        [EnumMember(Value = "custom")]
+        CUSTOM
+    }
 
 }

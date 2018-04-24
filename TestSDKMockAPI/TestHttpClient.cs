@@ -6,23 +6,23 @@ using System.Threading.Tasks;
 
 namespace TestSDKMockAPI
 {
-	using Smartsheet.Api.Internal.Http;
-	using RestSharp;
+    using Smartsheet.Api.Internal.Http;
+    using RestSharp;
 
-	class TestHttpClient : DefaultHttpClient
-	{
-		private string apiScenario;
+    class TestHttpClient : DefaultHttpClient
+    {
+        private string apiScenario;
 
-		public TestHttpClient(string apiScenario)
-		{
-			this.apiScenario = apiScenario;
-		}
+        public TestHttpClient(string apiScenario)
+        {
+            this.apiScenario = apiScenario;
+        }
 
-		public override RestRequest CreateRestRequest(HttpRequest smartsheetRequest)
-		{
-			RestRequest restRequest = base.CreateRestRequest(smartsheetRequest);
-			restRequest.AddHeader("Api-Scenario", this.apiScenario);
-			return restRequest;
-		}
-	}
+        public override RestRequest CreateRestRequest(HttpRequest smartsheetRequest)
+        {
+            RestRequest restRequest = base.CreateRestRequest(smartsheetRequest);
+            restRequest.AddHeader("Api-Scenario", this.apiScenario);
+            return restRequest;
+        }
+    }
 }

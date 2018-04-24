@@ -23,12 +23,12 @@ using System.Text;
 
 namespace Smartsheet.Api.Models
 {
-	/// <summary>
-	/// How to combine sheet filter criteria
-	/// </summary>
-	public enum SheetFilterOperator
-	{
-		AND,
-		OR
-	}
+    /// <summary>
+    /// How to combine sheet filter criteria
+    /// </summary>
+    public enum SheetFilterOperator
+    {
+        AND,
+        OR
+    }
 }

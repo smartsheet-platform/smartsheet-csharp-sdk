@@ -18,23 +18,23 @@
 
 namespace Smartsheet.Api.Models
 {
-	/// <summary>
-	/// Represents individual user settings for a specific sheet. 
-	/// User settings may be updated even on sheets where the current user only has read access (e.g. viewer permissions or a read-only sheet). </summary>
+    /// <summary>
+    /// Represents individual user settings for a specific sheet. 
+    /// User settings may be updated even on sheets where the current user only has read access (e.g. viewer permissions or a read-only sheet). </summary>
 
-	public class Source : IdentifiableModel
-	{
-		private string type;
+    public class Source : IdentifiableModel
+    {
+        private string type;
 
-		/// <summary>
-		/// Type of this source. "sheet" or "template"
-		/// </summary>
-		/// <returns> "sheet" or "template" </returns>
-		public string Type
-		{
-			get { return type; }
-			set { type = value; }
-		}
-	}
+        /// <summary>
+        /// Type of this source. "sheet" or "template"
+        /// </summary>
+        /// <returns> "sheet" or "template" </returns>
+        public string Type
+        {
+            get { return type; }
+            set { type = value; }
+        }
+    }
 
 }

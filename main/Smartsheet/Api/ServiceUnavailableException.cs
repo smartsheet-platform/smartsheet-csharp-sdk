@@ -18,30 +18,25 @@
 
 namespace Smartsheet.Api
 {
+    using Error = Api.Models.Error;
 
-
-	using Error = Api.Models.Error;
-
-	/// <summary>
-	/// <para>This is the exception to indicate a service unavailable error (possibly due to rate limiting) returned from the
-	/// Smartsheet REST API.</para>
-	/// 
-	/// <para>Basically this exception will be thrown when the Smartsheet REST API responds with "503 SERVICE UNAVAILABLE".</para>
-	/// 
-	/// <para>Thread safety: Exceptions are not thread safe.</para>
-	/// </summary>
-	public class ServiceUnavailableException : SmartsheetRestException
-	{
-
-
-
-		/// <summary>
-		/// Constructor.
-		/// </summary>
-		/// <param name="error"> the Error object from Smartsheet REST API </param>
-		public ServiceUnavailableException(Error error) : base(error)
-		{
-		}
-	}
+    /// <summary>
+    /// <para>This is the exception to indicate a service unavailable error (possibly due to rate limiting) returned from the
+    /// Smartsheet REST API.</para>
+    /// 
+    /// <para>Basically this exception will be thrown when the Smartsheet REST API responds with "503 SERVICE UNAVAILABLE".</para>
+    /// 
+    /// <para>Thread safety: Exceptions are not thread safe.</para>
+    /// </summary>
+    public class ServiceUnavailableException : SmartsheetRestException
+    {
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="error"> the Error object from Smartsheet REST API </param>
+        public ServiceUnavailableException(Error error) : base(error)
+        {
+        }
+    }
 
 }

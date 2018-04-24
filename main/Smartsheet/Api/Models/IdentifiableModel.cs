@@ -18,74 +18,65 @@
 
 namespace Smartsheet.Api.Models
 {
+    /// <summary>
+    /// Represents an object with an ID.
+    /// </summary>
+    public abstract class IdentifiableModel
+    {
+        /// <summary>
+        /// Represents the ID. </summary>
+        private long? id;
 
-	/// <summary>
-	/// Represents an object with an ID.
-	/// </summary>
-	public abstract class IdentifiableModel
-	{
-		/// <summary>
-		/// Represents the ID. </summary>
-		private long? id;
+        /// <summary>
+        /// Gets the Id.
+        /// </summary>
+        /// <returns> the Id </returns>
+        public virtual long? Id
+        {
+            get { return id; }
+            set { this.id = value; }
+        }
 
-		/// <summary>
-		/// Gets the Id.
-		/// </summary>
-		/// <returns> the Id </returns>
-		public virtual long? Id
-		{
-			get
-			{
-				return id;
-			}
-			set
-			{
-				this.id = value;
-			}
-		}
+        /// <summary>
+        /// Check if the given object equals to this object.
+        /// </summary>
+        /// <param name="object"> the object to compare </param>
+        /// <returns> true if given object equals to this object, false otherwise </returns>
+        public override bool Equals(object @object)
+        {
+            bool result = false;
 
+            if (@object != null && @object == this)
+            {
+                result = true;
+            }
+            else if (@object != null && @object.GetType() == this.GetType() && (((IdentifiableModel)@object).id == this.id || ((IdentifiableModel)@object).id != null && this.id != null && ((IdentifiableModel)@object).id.Equals(this.id)))
+                    // If they are both null
+                    // If they are not null but are equal objects.
+            {
+                result = true;
+            }
 
-		/// <summary>
-		/// Check if the given object equals to this object.
-		/// </summary>
-		/// <param name="object"> the object to compare </param>
-		/// <returns> true if given object equals to this object, false otherwise </returns>
-		public override bool Equals(object @object)
-		{
-			bool result = false;
+            return result;
+        }
 
-			if (@object != null && @object == this)
-			{
-				result = true;
-			}
-			else if (@object != null && @object.GetType() == this.GetType() && (((IdentifiableModel)@object).id == this.id || ((IdentifiableModel)@object).id != null && this.id != null && ((IdentifiableModel)@object).id.Equals(this.id)))
-					// If they are both null
-					// If they are not null but are equal objects.
-			{
-				result = true;
-			}
-
-			return result;
-		}
-
-		/// <summary>
-		/// Return the hash Code of this object.
-		/// </summary>
-		/// <returns> the hash Code </returns>
-		  public override int GetHashCode()
-		{
-			int result = 17;
-			if (this.id == null)
-			{
-					result = base.GetHashCode();
-			}
-			else
-			{
-				result = 31 * result + (int)((long)this.id ^ ((int)((long)(uint)this.id >> 32)));
-			}
-
-			return result;
-		}
-	}
+        /// <summary>
+        /// Return the hash Code of this object.
+        /// </summary>
+        /// <returns> the hash Code </returns>
+        public override int GetHashCode()
+        {
+            int result = 17;
+            if (this.id == null)
+            {
+                    result = base.GetHashCode();
+            }
+            else
+            {
+                result = 31 * result + (int)((long)this.id ^ ((int)((long)(uint)this.id >> 32)));
+            }
+            return result;
+        }
+    }
 
 }

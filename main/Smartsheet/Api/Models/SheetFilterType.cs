@@ -23,13 +23,13 @@ using System.Text;
 
 namespace Smartsheet.Api.Models
 {
-	/// <summary>
-	/// Represents the types of sheet filters
-	/// </summary>
-	public enum SheetFilterType
-	{
-		ADHOC,
-		PERSONAL,
-		SHARED
-	}
+    /// <summary>
+    /// Represents the types of sheet filters
+    /// </summary>
+    public enum SheetFilterType
+    {
+        ADHOC,
+        PERSONAL,
+        SHARED
+    }
 }

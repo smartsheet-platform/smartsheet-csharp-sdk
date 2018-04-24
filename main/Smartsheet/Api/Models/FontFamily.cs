@@ -20,31 +20,31 @@ using System.Collections.Generic;
 
 namespace Smartsheet.Api.Models
 {
-	/// <summary>
-	/// FontFamily object.
-	/// </summary>
-	public class FontFamily
-	{
-		private string name;
+    /// <summary>
+    /// FontFamily object.
+    /// </summary>
+    public class FontFamily
+    {
+        private string name;
 
-		private IList<string> traits;
+        private IList<string> traits;
 
-		/// <summary>
-		/// Name of the font family (e.g. “Arial”)
-		/// </summary>
-		public string Name
-		{
-			get { return name; }
-			set { name = value; }
-		}
+        /// <summary>
+        /// Name of the font family (e.g. “Arial”)
+        /// </summary>
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
 
-		/// <summary>
-		/// Platform-independent traits of the font family. One of the following values: serif, sans-serif.
-		/// </summary>
-		public IList<string> Traits
-		{
-			get { return traits; }
-			set { traits = value; }
-		}
-	}
+        /// <summary>
+        /// Platform-independent traits of the font family. One of the following values: serif, sans-serif.
+        /// </summary>
+        public IList<string> Traits
+        {
+            get { return traits; }
+            set { traits = value; }
+        }
+    }
 }

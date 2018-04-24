@@ -20,55 +20,38 @@ using System;
 
 namespace Smartsheet.Api.Models
 {
+    /// <summary>
+    /// Represents CellHistory object. </summary>
+    /// <seealso href="http://help.Smartsheet.com/customer/portal/articles/518314-viewing-cell-history">Cell History Documentation </seealso>
+    public class CellHistory : Cell
+    {
+        /// <summary>
+        /// Represents the user that modified the cell.
+        /// </summary>
+        private User modifiedBy;
 
+        /// <summary>
+        /// The date the cell was modified. </summary>
+        private DateTime? modifiedAt;
 
-	/// <summary>
-	/// Represents CellHistory object. </summary>
-	/// <seealso href="http://help.Smartsheet.com/customer/portal/articles/518314-viewing-cell-history">Cell History Documentation </seealso>
-	public class CellHistory : Cell
-	{
-		/// <summary>
-		/// Represents the user that modified the cell.
-		/// </summary>
-		private User modifiedBy;
+        /// <summary>
+        /// Gets the date the cell was modified.
+        /// </summary>
+        /// <returns> the modified at </returns>
+        public virtual DateTime? ModifiedAt
+        {
+            get { return modifiedAt; }
+            set { this.modifiedAt = value; }
+        }
 
-		/// <summary>
-		/// The date the cell was modified. </summary>
-		private DateTime? modifiedAt;
-
-		/// <summary>
-		/// Gets the date the cell was modified.
-		/// </summary>
-		/// <returns> the modified at </returns>
-		public virtual DateTime? ModifiedAt
-		{
-			get
-			{
-				return modifiedAt;
-			}
-			set
-			{
-				this.modifiedAt = value;
-			}
-		}
-
-
-		/// <summary>
-		/// Gets the user that modified the cell.
-		/// </summary>
-		/// <returns> the modified by </returns>
-		public virtual User ModifiedBy
-		{
-			get
-			{
-				return modifiedBy;
-			}
-			set
-			{
-				this.modifiedBy = value;
-			}
-		}
-
-	}
-
+        /// <summary>
+        /// Gets the user that modified the cell.
+        /// </summary>
+        /// <returns> the modified by </returns>
+        public virtual User ModifiedBy
+        {
+            get { return modifiedBy; }
+            set { this.modifiedBy = value; }
+        }
+    }
 }

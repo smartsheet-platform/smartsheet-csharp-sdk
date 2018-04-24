@@ -19,67 +19,67 @@ using System.Collections.Generic;
 
 namespace Smartsheet.Api.Models
 {
-	/// <summary>
-	/// Represents the Sight Publish object (see http://smartsheet-platform.github.io/api-docs/?shell#sightpublish-object
-	/// </summary>
-	public class SightPublish
-	{
-		/// <summary>
-		/// If true, a rich version of the sight is published with the ability to download row attachments and discussions.
-		/// </summary>
-		private bool? readOnlyFullEnabled;
+    /// <summary>
+    /// Represents the Sight Publish object (see http://smartsheet-platform.github.io/api-docs/?shell#sightpublish-object
+    /// </summary>
+    public class SightPublish
+    {
+        /// <summary>
+        /// If true, a rich version of the sight is published with the ability to download row attachments and discussions.
+        /// </summary>
+        private bool? readOnlyFullEnabled;
 
-		/// <summary>
-		/// Flag to indicate who can access the 'Read-Only Full’ view of the published sight:
-		///		if "ALL", sight is available to anyone who has the link
-		///		if "ORG", sight is available only to members of the sight owner's organization
-		/// </summary>
-		private string readOnlyFullAccessibleBy;
+        /// <summary>
+        /// Flag to indicate who can access the 'Read-Only Full’ view of the published sight:
+        ///        if "ALL", sight is available to anyone who has the link
+        ///        if "ORG", sight is available only to members of the sight owner's organization
+        /// </summary>
+        private string readOnlyFullAccessibleBy;
 
-		/// <summary>
-		/// URL for 'Read-Only Full’ view of the published sight
-		/// </summary>
-		private string readOnlyFullUrl;
+        /// <summary>
+        /// URL for 'Read-Only Full’ view of the published sight
+        /// </summary>
+        private string readOnlyFullUrl;
 
-		/// <summary>
-		/// <para>
-		/// If true, a rich version of the sight is published with the ability to download row attachments and discussions
-		/// </para>
-		/// </summary>
-		public bool? ReadOnlyFullEnabled
-		{
-			get { return readOnlyFullEnabled; }
-			set { readOnlyFullEnabled = value; }
-		}
+        /// <summary>
+        /// <para>
+        /// If true, a rich version of the sight is published with the ability to download row attachments and discussions
+        /// </para>
+        /// </summary>
+        public bool? ReadOnlyFullEnabled
+        {
+            get { return readOnlyFullEnabled; }
+            set { readOnlyFullEnabled = value; }
+        }
 
-		/// <summary>
-		/// <para>
-		/// if "ALL", it is available to anyone who has the link.
-		/// if "ORG", it is available only to members of the sight owner’s Smartsheet organization.
-		/// </para>
-		/// <para>
-		/// Only returned in a response if readOnlyFullEnabled = true.
-		/// </para>
-		/// </summary>
-		public string ReadOnlyFullAccessibleBy
-		{
-			get { return readOnlyFullAccessibleBy; }
-			set { readOnlyFullAccessibleBy = value; }
-		}
+        /// <summary>
+        /// <para>
+        /// if "ALL", it is available to anyone who has the link.
+        /// if "ORG", it is available only to members of the sight owner’s Smartsheet organization.
+        /// </para>
+        /// <para>
+        /// Only returned in a response if readOnlyFullEnabled = true.
+        /// </para>
+        /// </summary>
+        public string ReadOnlyFullAccessibleBy
+        {
+            get { return readOnlyFullAccessibleBy; }
+            set { readOnlyFullAccessibleBy = value; }
+        }
 
-		/// <summary>
-		/// <para>
-		/// URL for 'Read-Only Full’ view of the published sight
-		/// </para>
-		/// <para>
-		/// Only returned in a response if readOnlyFullEnabled = true.
-		/// </para>
-		/// </summary>
-		public string ReadOnlyFullUrl
-		{
-			get { return readOnlyFullUrl; }
-			set { readOnlyFullUrl = value; }
-		}
-	}
+        /// <summary>
+        /// <para>
+        /// URL for 'Read-Only Full’ view of the published sight
+        /// </para>
+        /// <para>
+        /// Only returned in a response if readOnlyFullEnabled = true.
+        /// </para>
+        /// </summary>
+        public string ReadOnlyFullUrl
+        {
+            get { return readOnlyFullUrl; }
+            set { readOnlyFullUrl = value; }
+        }
+    }
 }
 

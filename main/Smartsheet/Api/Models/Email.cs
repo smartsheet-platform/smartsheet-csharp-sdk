@@ -20,102 +20,69 @@ using System.Collections.Generic;
 
 namespace Smartsheet.Api.Models
 {
+    /// <summary>
+    /// Represents an Email object.
+    /// </summary>
+    public abstract class Email
+    {
+        /// <summary>
+        /// Represents the Email recipient(s).
+        /// </summary>
+        private IList<Recipient> sendTo;
 
+        /// <summary>
+        /// Represents the Subject.
+        /// </summary>
+        private string subject;
 
-	/// <summary>
-	/// Represents an Email object.
-	/// </summary>
-	public abstract class Email
-	{
-		/// <summary>
-		/// Represents the Email recipient(s).
-		/// </summary>
-		private IList<Recipient> sendTo;
+        /// <summary>
+        /// Represents the Message.
+        /// </summary>
+        private string message;
 
-		/// <summary>
-		/// Represents the Subject.
-		/// </summary>
-		private string subject;
+        /// <summary>
+        /// Represents the CC me flag.
+        /// </summary>
+        private bool? ccMe;
 
-		/// <summary>
-		/// Represents the Message.
-		/// </summary>
-		private string message;
+        /// <summary>
+        /// Gets the list of Recipients
+        /// </summary>
+        /// <returns> the list of Recipients </returns>
+        public virtual IList<Recipient> SendTo
+        {
+            get { return sendTo; }
+            set { this.sendTo = value; }
+        }
 
-		/// <summary>
-		/// Represents the CC me flag.
-		/// </summary>
-		private bool? ccMe;
+        /// <summary>
+        /// Gets the Subject.
+        /// </summary>
+        /// <returns> the Subject </returns>
+        public virtual string Subject
+        {
+            get { return subject; }
+            set { this.subject = value; }
+        }
 
-		/// <summary>
-		/// Gets the list of Recipients
-		/// </summary>
-		/// <returns> the list of Recipients </returns>
-		public virtual IList<Recipient> SendTo
-		{
-			get
-			{
-				return sendTo;
-			}
-			set
-			{
-				this.sendTo = value;
-			}
-		}
+        /// <summary>
+        /// Gets the Message.
+        /// </summary>
+        /// <returns> the Message </returns>
+        public virtual string Message
+        {
+            get { return message; }
+            set { this.message = value; }
+        }
 
-
-		/// <summary>
-		/// Gets the Subject.
-		/// </summary>
-		/// <returns> the Subject </returns>
-		public virtual string Subject
-		{
-			get
-			{
-				return subject;
-			}
-			set
-			{
-				this.subject = value;
-			}
-		}
-
-
-		/// <summary>
-		/// Gets the Message.
-		/// </summary>
-		/// <returns> the Message </returns>
-		public virtual string Message
-		{
-			get
-			{
-				return message;
-			}
-			set
-			{
-				this.message = value;
-			}
-		}
-
-
-		/// <summary>
-		/// Gets the carbon copy me flag.
-		/// </summary>
-		/// <returns> the cc me </returns>
-		public virtual bool? CcMe
-		{
-			get
-			{
-				return ccMe;
-			}
-			set
-			{
-				this.ccMe = value;
-			}
-		}
-
-
-
-	}
-
+        /// <summary>
+        /// Gets the carbon copy me flag.
+        /// </summary>
+        /// <returns> the cc me </returns>
+        public virtual bool? CcMe
+        {
+            get { return ccMe; }
+            set { this.ccMe = value; }
+        }
+    }
 }

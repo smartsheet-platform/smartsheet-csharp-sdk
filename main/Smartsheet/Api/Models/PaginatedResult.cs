@@ -21,68 +21,82 @@ using System.Collections.Generic;
 
 namespace Smartsheet.Api.Models
 {
+    /// <summary>
+    /// <para>Object returned for all GET operations against index endpoints.</para>
+    /// This object provides metadata which can be used to perform paging on potentially
+    /// large data sets.
+    /// </summary>
+    public class PaginatedResult<T>
+    {
+        /// <summary>
+        /// the current page in the full result set
+        /// </summary>
+        private int? pageNumber;
 
-	/// <summary>
-	/// <para>Object returned for all GET operations against index endpoints.</para>
-	/// This object provides metadata which can be used to perform paging on potentially
-	/// large data sets.
-	/// </summary>
-	public class PaginatedResult<T>
-	{
-		private int? pageNumber;
+        /// <summary>
+        ///  the number of elements in the current page
+        /// </summary>
+        private int? pageSize;
 
-		private int? pageSize;
+        /// <summary>
+        /// the total number of elements in the result set
+        /// </summary>
+        private int? totalCount;
 
-		private int? totalCount;
+        /// <summary>
+        /// the total number of pages in the result set
+        /// </summary>
+        private int? totalPages;
 
-		private int? totalPages;
+        /// <summary>
+        /// the result set (array)
+        /// </summary>
+        private IList<T> data;
 
-		private IList<T> data;
+        /// <summary>
+        /// The current page in the full result set that the data array represents.
+        /// </summary>
+        public int? PageNumber
+        {
+            get { return pageNumber; }
+            set { pageNumber = value; }
+        }
 
-		/// <summary>
-		/// The current page in the full result set that the data array represents.
-		/// </summary>
-		public int? PageNumber
-		{
-			get { return pageNumber; }
-			set { pageNumber = value; }
-		}
+        /// <summary>
+        /// The number of items in a page. Omitted if there is no limit to page size (and hence, all results are included).
+        /// Unless otherwise specified, this defaults to 100 for most endpoints.
+        /// </summary>
+        public int? PageSize
+        {
+            get { return pageSize; }
+            set { pageSize = value; }
+        }
 
-		/// <summary>
-		/// The number of items in a page. Omitted if there is no limit to page size (and hence, all results are included).
-		/// Unless otherwise specified, this defaults to 100 for most endpoints.
-		/// </summary>
-		public int? PageSize
-		{
-			get { return pageSize; }
-			set { pageSize = value; }
-		}
+        /// <summary>
+        /// The total number of items in the full result set.
+        /// </summary>
+        public int? TotalCount
+        {
+            get { return totalCount; }
+            set { totalCount = value; }
+        }
 
-		/// <summary>
-		/// The total number of items in the full result set.
-		/// </summary>
-		public int? TotalCount
-		{
-			get { return totalCount; }
-			set { totalCount = value; }
-		}
+        /// <summary>
+        /// The total number of pages in the full result set.
+        /// </summary>
+        public int? TotalPages
+        {
+            get { return totalPages; }
+            set { totalPages = value; }
+        }
 
-		/// <summary>
-		/// The total number of pages in the full result set.
-		/// </summary>
-		public int? TotalPages
-		{
-			get { return totalPages; }
-			set { totalPages = value; }
-		}
-
-		/// <summary>
-		/// A list of objects representing the current page of data in the result set.
-		/// </summary>
-		public IList<T> Data
-		{
-			get { return data; }
-			set { data = value; }
-		}
-	}
+        /// <summary>
+        /// A list of objects representing the current page of data in the result set.
+        /// </summary>
+        public IList<T> Data
+        {
+            get { return data; }
+            set { data = value; }
+        }
+    }
 }

@@ -18,34 +18,24 @@
 
 namespace Smartsheet.Api.Models
 {
+    /// <summary>
+    /// Represents an object with a Name and an Id.
+    /// </summary>
+    public abstract class NamedModel : IdentifiableModel
+    {
+        /// <summary>
+        /// Represents the Name.
+        /// </summary>
+        private string name;
 
-
-	/// <summary>
-	/// Represents an object with a Name and an Id.
-	/// </summary>
-	public abstract class NamedModel : IdentifiableModel
-	{
-		/// <summary>
-		/// Represents the Name.
-		/// </summary>
-		private string name;
-
-		/// <summary>
-		/// Gets the Name.
-		/// </summary>
-		/// <returns> the Name </returns>
-		public virtual string Name
-		{
-			get
-			{
-				return name;
-			}
-			set
-			{
-				this.name = value;
-			}
-		}
-
-	}
-
+        /// <summary>
+        /// Gets the Name.
+        /// </summary>
+        /// <returns> the Name </returns>
+        public virtual string Name
+        {
+            get { return name; }
+            set { this.name = value; }
+        }
+    }
 }

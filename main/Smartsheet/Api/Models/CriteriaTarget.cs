@@ -23,11 +23,11 @@ using System.Text;
 
 namespace Smartsheet.Api.Models
 {
-	/// <summary>
-	/// The target for the filter query
-	/// </summary>
-	public enum CriteriaTarget
-	{
-		ROW
-	}
+    /// <summary>
+    /// The target for the filter query
+    /// </summary>
+    public enum CriteriaTarget
+    {
+        ROW
+    }
 }

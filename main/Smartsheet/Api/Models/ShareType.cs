@@ -18,15 +18,13 @@
 
 namespace Smartsheet.Api.Models
 {
-
-
-	/// <summary>
-	/// The type of the share. 
-	/// </summary>
-	public enum ShareType
-	{
-		USER,
-		GROUP
-	}
+    /// <summary>
+    /// The type of the share. 
+    /// </summary>
+    public enum ShareType
+    {
+        USER,
+        GROUP
+    }
 
 }

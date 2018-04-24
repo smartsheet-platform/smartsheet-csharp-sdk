@@ -23,21 +23,21 @@ using System.Text;
 
 namespace Smartsheet.Api.Models
 {
-	public class SortSpecifier
-	{
-		/// <summary>
-		/// An array of sort criterion
-		/// </summary>
-		private IList<SortCriterion> sortCriteria;
+    public class SortSpecifier
+    {
+        /// <summary>
+        /// An array of sort criterion
+        /// </summary>
+        private IList<SortCriterion> sortCriteria;
 
-		/// <summary>
-		/// Get the sort criteria
-		/// </summary>
-		/// <returns> the array of sort criteria </returns>
-		public IList<SortCriterion> SortCriteria
-		{
-			get { return sortCriteria; }
-			set { sortCriteria = value; }
-		}
-	}
+        /// <summary>
+        /// Get the sort criteria
+        /// </summary>
+        /// <returns> the array of sort criteria </returns>
+        public IList<SortCriterion> SortCriteria
+        {
+            get { return sortCriteria; }
+            set { sortCriteria = value; }
+        }
+    }
 }

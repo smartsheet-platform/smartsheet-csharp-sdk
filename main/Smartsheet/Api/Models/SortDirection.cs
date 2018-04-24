@@ -23,9 +23,9 @@ using System.Text;
 
 namespace Smartsheet.Api.Models
 {
-	public enum SortDirection
-	{
-		ASCENDING,
-		DESCENDING
-	}
+    public enum SortDirection
+    {
+        ASCENDING,
+        DESCENDING
+    }
 }

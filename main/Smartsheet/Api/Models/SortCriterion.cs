@@ -23,36 +23,36 @@ using System.Text;
 
 namespace Smartsheet.Api.Models
 {
-	public class SortCriterion
-	{
-		/// <summary>
-		/// The column Id to sort on
-		/// </summary>
-		private long columnId;
+    public class SortCriterion
+    {
+        /// <summary>
+        /// The column Id to sort on
+        /// </summary>
+        private long columnId;
 
-		/// <summary>
-		/// The direction of the sort
-		/// </summary>
-		private SortDirection direction;
+        /// <summary>
+        /// The direction of the sort
+        /// </summary>
+        private SortDirection direction;
 
-		/// <summary>
-		/// Get the column Id of the column to sort on
-		/// </summary>
-		/// <returns> the column Id </returns>
-		public long ColumnId
-		{
-			get { return columnId; }
-			set { columnId = value; }
-		}
+        /// <summary>
+        /// Get the column Id of the column to sort on
+        /// </summary>
+        /// <returns> the column Id </returns>
+        public long ColumnId
+        {
+            get { return columnId; }
+            set { columnId = value; }
+        }
 
-		/// <summary>
-		/// Get the sort direction
-		/// </summary>
-		/// <returns> the sort direction </returns>
-		public SortDirection Direction
-		{
-			get { return direction; }
-			set { direction = value; }
-		}
-	}
+        /// <summary>
+        /// Get the sort direction
+        /// </summary>
+        /// <returns> the sort direction </returns>
+        public SortDirection Direction
+        {
+            get { return direction; }
+            set { direction = value; }
+        }
+    }
 }

@@ -22,14 +22,14 @@ using System.Runtime.Serialization;
 
 namespace Smartsheet.Api.Models
 {
-	/// <summary>
-	/// Represents specific elements to include in a response.
-	/// </summary>
-	public enum ColumnInclusion
-	{
-		/// <summary>
-		/// The filter that the user has applied to the column (if any)
-		/// </summary>
-		FILTERS
-	}
+    /// <summary>
+    /// Represents specific elements to include in a response.
+    /// </summary>
+    public enum ColumnInclusion
+    {
+        /// <summary>
+        /// The filter that the user has applied to the column (if any)
+        /// </summary>
+        FILTERS
+    }
 }

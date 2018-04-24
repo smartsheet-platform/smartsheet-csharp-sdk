@@ -24,22 +24,22 @@ using Newtonsoft.Json;
 
 namespace Smartsheet.Api.Models
 {
-	public class ExplicitNull : IPrimitiveObjectValue<object>
-	{
-		public virtual object Value
-		{
-			get { return null; }
-			set { }
-		}
+    public class ExplicitNull : IPrimitiveObjectValue<object>
+    {
+        public virtual object Value
+        {
+            get { return null; }
+            set { }
+        }
 
-		public virtual ObjectValueType ObjectType
-		{
-			get { return ObjectValueType.NULL; }
-		}
+        public virtual ObjectValueType ObjectType
+        {
+            get { return ObjectValueType.NULL; }
+        }
 
-		public virtual void Serialize(JsonWriter writer)
-		{
-			writer.WriteNull();
-		}
-	}
+        public virtual void Serialize(JsonWriter writer)
+        {
+            writer.WriteNull();
+        }
+    }
 }

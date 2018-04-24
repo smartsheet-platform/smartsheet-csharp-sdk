@@ -23,15 +23,15 @@ using System.Text;
 
 namespace Smartsheet.Api.Models
 {
-	public enum CrossSheetReferenceStatus
-	{
-		BLOCKED,
-		BROKEN,
-		CIRCULAR,
-		DISABLED,
-		INACCESSIBLE,
-		INVALID,
-		NOT_SHARED,
-		OK
-	}
+    public enum CrossSheetReferenceStatus
+    {
+        BLOCKED,
+        BROKEN,
+        CIRCULAR,
+        DISABLED,
+        INACCESSIBLE,
+        INVALID,
+        NOT_SHARED,
+        OK
+    }
 }

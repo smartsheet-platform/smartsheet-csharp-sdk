@@ -20,46 +20,19 @@ namespace Smartsheet.Api.Models
 {
 
 
-	/// <summary>
-	/// Represents the Type of attachment.
-	/// </summary>
-	public enum AttachmentType
-	{
-		/// <summary>
-		/// The file
-		/// </summary>
-		FILE,
-		/// <summary>
-		/// Google drive
-		/// </summary>
-		GOOGLE_DRIVE,
-		/// <summary>
-		/// The link
-		/// </summary>
-		LINK,
-		/// <summary>
-		/// BOX
-		/// </summary>
-		BOX_COM,
-		/// <summary>
-		/// Dropbox
-		/// </summary>
-		DROPBOX,
-		/// <summary>
-		/// Evernote
-		/// </summary>
-		EVERNOTE,
-		/// <summary>
-		/// Egnyte
-		/// </summary>
-		EGNYTE,
-		/// <summary>
-		/// OneDrive 
-		/// </summary>
-		ONEDRIVE,
-		/// <summary>
-		/// Smartsheet
-		/// </summary>
-		SMARTSHEET
-	}
+    /// <summary>
+    /// Represents the Type of attachment.
+    /// </summary>
+    public enum AttachmentType
+    {
+        FILE,
+        GOOGLE_DRIVE,
+        LINK,
+        BOX_COM,
+        DROPBOX,
+        EVERNOTE,
+        EGNYTE,
+        ONEDRIVE,
+        SMARTSHEET
+    }
 }

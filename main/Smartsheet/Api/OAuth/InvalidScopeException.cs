@@ -20,21 +20,21 @@ namespace Smartsheet.Api.OAuth
 {
 
 
-	/// <summary>
-	/// <para>This is the exception thrown by <seealso cref="OAuthFlow"/> To indicate an "invalid_scope" error occurred when obtaining an 
-	/// authorization Code.</para>
-	/// 
-	/// <para>Thread safety: Exceptions are not thread safe.</para>
-	/// </summary>
-	public class InvalidScopeException : OAuthAuthorizationCodeException
-	{
-		/// <summary>
-		/// Constructor.
-		/// </summary>
-		/// <param name="message"> the Message </param>
-		public InvalidScopeException(string message) : base(message)
-		{
-		}
-	}
+    /// <summary>
+    /// <para>This is the exception thrown by <seealso cref="OAuthFlow"/> To indicate an "invalid_scope" error occurred when obtaining an 
+    /// authorization Code.</para>
+    /// 
+    /// <para>Thread safety: Exceptions are not thread safe.</para>
+    /// </summary>
+    public class InvalidScopeException : OAuthAuthorizationCodeException
+    {
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="message"> the Message </param>
+        public InvalidScopeException(string message) : base(message)
+        {
+        }
+    }
 
 }

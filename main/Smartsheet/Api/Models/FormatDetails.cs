@@ -20,32 +20,24 @@ namespace Smartsheet.Api.Models
 {
 
 
-	/// <summary>
-	/// Represents the Format details when generating a digital copy (PDF/EXCEL) of a sheet.
-	/// </summary>
-	public class FormatDetails
-	{
-		/// <summary>
-		/// Represents the paper size.
-		/// </summary>
-		private PaperSize? paperSize;
+    /// <summary>
+    /// Represents the Format details when generating a digital copy (PDF/EXCEL) of a sheet.
+    /// </summary>
+    public class FormatDetails
+    {
+        /// <summary>
+        /// Represents the paper size.
+        /// </summary>
+        private PaperSize? paperSize;
 
-		/// <summary>
-		/// Gets the paper size.
-		/// </summary>
-		/// <returns> the paper size </returns>
-		public virtual PaperSize? PaperSize
-		{
-			get
-			{
-				return paperSize;
-			}
-			set
-			{
-				this.paperSize = value;
-			}
-		}
-
-	}
-
+        /// <summary>
+        /// Gets the paper size.
+        /// </summary>
+        /// <returns> the paper size </returns>
+        public virtual PaperSize? PaperSize
+        {
+            get { return paperSize; }
+            set { this.paperSize = value; }
+        }
+    }
 }

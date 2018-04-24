@@ -7,20 +7,20 @@ using System.Configuration;
 
 namespace IntegrationTestSDK
 {
-	[TestClass]
-	public class ServerInformationResourcesTest
-	{
+    [TestClass]
+    public class ServerInformationResourcesTest
+    {
 
-		[TestMethod]
-		public void TestServerInfoResources()
-		{
-			SmartsheetClient smartsheet = new SmartsheetBuilder().SetMaxRetryTimeout(30000).Build();
+        [TestMethod]
+        public void TestServerInfoResources()
+        {
+            SmartsheetClient smartsheet = new SmartsheetBuilder().SetMaxRetryTimeout(30000).Build();
 
-			ServerInfo info = smartsheet.ServerInfoResources.GetServerInfo();
-			Assert.IsTrue(info.FeatureInfo != null);
-			Assert.IsTrue(info.Formats != null);
-			Assert.IsTrue(info.SupportedLocales != null);
+            ServerInfo info = smartsheet.ServerInfoResources.GetServerInfo();
+            Assert.IsTrue(info.FeatureInfo != null);
+            Assert.IsTrue(info.Formats != null);
+            Assert.IsTrue(info.SupportedLocales != null);
 
-		}
-	}
+        }
+    }
 }

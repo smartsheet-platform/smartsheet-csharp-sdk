@@ -18,27 +18,21 @@
 
 namespace Smartsheet.Api
 {
-
-
-	using Error = Api.Models.Error;
-	/// <summary>
-	/// <para>This is the exception to indicate that an access token expired error returned from Smartsheet REST API. This 
-	/// exception will be thrown when the Smartsheet REST API generates a "1003 Your Access Token has expired" error.</para>
-	/// 
-	/// <para>Thread safety: Exceptions are not thread safe.</para>
-	/// </summary>
-	public class AccessTokenExpiredException : AuthorizationException
-	{
-
-
-
-		/// <summary>
-		/// Instantiates a new access token expired exception.
-		/// </summary>
-		/// <param name="error"> the error </param>
-		public AccessTokenExpiredException(Error error) : base(error)
-		{
-		}
-	}
-
+    using Error = Api.Models.Error;
+    /// <summary>
+    /// <para>This is the exception to indicate that an access token expired error returned from Smartsheet REST API. This 
+    /// exception will be thrown when the Smartsheet REST API generates a "1003 Your Access Token has expired" error.</para>
+    /// 
+    /// <para>Thread safety: Exceptions are not thread safe.</para>
+    /// </summary>
+    public class AccessTokenExpiredException : AuthorizationException
+    {
+        /// <summary>
+        /// Instantiates a new access token expired exception.
+        /// </summary>
+        /// <param name="error"> the error </param>
+        public AccessTokenExpiredException(Error error) : base(error)
+        {
+        }
+    }
 }

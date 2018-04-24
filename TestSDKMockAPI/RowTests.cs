@@ -277,14 +277,14 @@ namespace TestSDKMockAPI
             Assert.AreEqual(8, link.ReportId);
         }
 
-		[TestMethod]
-		public void AddRows_Invalid_AssignValueAndFormulae()
-		{
-			SmartsheetClient ss = HelperFunctions.SetupClient("Add Rows - Invalid - Assign Value and Formulae");
+        [TestMethod]
+        public void AddRows_Invalid_AssignValueAndFormulae()
+        {
+            SmartsheetClient ss = HelperFunctions.SetupClient("Add Rows - Invalid - Assign Value and Formulae");
 
-			Row rowA = new Row
-			{
-				Cells = new List<Cell>
+            Row rowA = new Row
+            {
+                Cells = new List<Cell>
                 {
                     new Cell{
                         ColumnId = 101,
@@ -297,14 +297,14 @@ namespace TestSDKMockAPI
                         Formula = "=SUM([Column2]3, [Column2]3, [Column2]4)"
                     }
                 }
-			};
+            };
 
-			HelperFunctions.AssertRaisesException<SmartsheetException>(() =>
-				ss.SheetResources.RowResources.AddRows(1, new Row[] { rowA }),
-				"If cell.formula is specified, then value, objectValue, image, hyperlink, and linkInFromCell must not be specified.");
-		}
+            HelperFunctions.AssertRaisesException<SmartsheetException>(() =>
+                ss.SheetResources.RowResources.AddRows(1, new Row[] { rowA }),
+                "If cell.formula is specified, then value, objectValue, image, hyperlink, and linkInFromCell must not be specified.");
+        }
 
-		[TestMethod]
+        [TestMethod]
         public void AddRows_Invalid_AssignHyperlinkUrlandSheetId()
         {
             SmartsheetClient ss = HelperFunctions.SetupClient("Add Rows - Invalid - Assign Hyperlink URL and SheetId");
@@ -337,14 +337,14 @@ namespace TestSDKMockAPI
                 "hyperlink.url must be null for sheet, report, or Sight hyperlinks.");
         }
 
-		[TestMethod]
-		public void AddRows_AssignObjectValue_PredecessorList()
-		{
-			SmartsheetClient ss = HelperFunctions.SetupClient("Add Rows - Assign Object Value - Predecessor List (using floats)");
+        [TestMethod]
+        public void AddRows_AssignObjectValue_PredecessorList()
+        {
+            SmartsheetClient ss = HelperFunctions.SetupClient("Add Rows - Assign Object Value - Predecessor List (using floats)");
 
-			Row rowA = new Row
-			{
-				Cells = new List<Cell>
+            Row rowA = new Row
+            {
+                Cells = new List<Cell>
                 {
                     new Cell
                     {
@@ -366,23 +366,23 @@ namespace TestSDKMockAPI
                         }
                     }
                 }
-			};
+            };
 
-			IList<Row> addedRows = ss.SheetResources.RowResources.AddRows(1, new Row[] { rowA });
+            IList<Row> addedRows = ss.SheetResources.RowResources.AddRows(1, new Row[] { rowA });
 
-			Cell predecessorCell = addedRows[0].Cells.Single(c => c.ColumnId == 101);
-			Assert.AreEqual("2FS +2.5d", predecessorCell.Value);
-		}
+            Cell predecessorCell = addedRows[0].Cells.Single(c => c.ColumnId == 101);
+            Assert.AreEqual("2FS +2.5d", predecessorCell.Value);
+        }
 
-		[TestMethod]
-		public void AddRows_Location_Top()
-		{
-			SmartsheetClient ss = HelperFunctions.SetupClient("Add Rows - Location - Top");
+        [TestMethod]
+        public void AddRows_Location_Top()
+        {
+            SmartsheetClient ss = HelperFunctions.SetupClient("Add Rows - Location - Top");
 
-			Row rowA = new Row
-			{
-				ToTop = true,
-				Cells = new List<Cell>
+            Row rowA = new Row
+            {
+                ToTop = true,
+                Cells = new List<Cell>
                 {
                     new Cell{
                         ColumnId = 101,
@@ -393,27 +393,27 @@ namespace TestSDKMockAPI
                         Value = "Red Fruit"
                     }
                 }
-			};
+            };
 
-			// Update rows in sheet
-			IList<Row> addedRows = ss.SheetResources.RowResources.AddRows(1, new Row[] { rowA });
+            // Update rows in sheet
+            IList<Row> addedRows = ss.SheetResources.RowResources.AddRows(1, new Row[] { rowA });
 
-			Row row = addedRows.Where(r => r.Id == 10).FirstOrDefault();
-			Cell cell = row.Cells.Where(c => c.Value.Equals("Apple")).FirstOrDefault();
+            Row row = addedRows.Where(r => r.Id == 10).FirstOrDefault();
+            Cell cell = row.Cells.Where(c => c.Value.Equals("Apple")).FirstOrDefault();
 
-			Assert.AreEqual(1, row.RowNumber);
-			Assert.AreEqual(101, cell.ColumnId);
-		}
+            Assert.AreEqual(1, row.RowNumber);
+            Assert.AreEqual(101, cell.ColumnId);
+        }
 
-		[TestMethod]
-		public void AddRows_Location_Bottom()
-		{
-			SmartsheetClient ss = HelperFunctions.SetupClient("Add Rows - Location - Bottom");
+        [TestMethod]
+        public void AddRows_Location_Bottom()
+        {
+            SmartsheetClient ss = HelperFunctions.SetupClient("Add Rows - Location - Bottom");
 
-			Row rowA = new Row
-			{
-				ToBottom = true,
-				Cells = new List<Cell>
+            Row rowA = new Row
+            {
+                ToBottom = true,
+                Cells = new List<Cell>
                 {
                     new Cell{
                         ColumnId = 101,
@@ -424,17 +424,17 @@ namespace TestSDKMockAPI
                         Value = "Red Fruit"
                     }
                 }
-			};
+            };
 
-			// Update rows in sheet
-			IList<Row> addedRows = ss.SheetResources.RowResources.AddRows(1, new Row[] { rowA });
+            // Update rows in sheet
+            IList<Row> addedRows = ss.SheetResources.RowResources.AddRows(1, new Row[] { rowA });
 
-			Row row = addedRows.Where(r => r.Id == 10).FirstOrDefault();
-			Cell cell = row.Cells.Where(c => c.Value.Equals("Apple")).FirstOrDefault();
+            Row row = addedRows.Where(r => r.Id == 10).FirstOrDefault();
+            Cell cell = row.Cells.Where(c => c.Value.Equals("Apple")).FirstOrDefault();
 
-			Assert.AreEqual(100, row.RowNumber);
-			Assert.AreEqual(101, cell.ColumnId);
-		}
+            Assert.AreEqual(100, row.RowNumber);
+            Assert.AreEqual(101, cell.ColumnId);
+        }
 
         [TestMethod]
         public void UpdateRows_AssignValues_String()
@@ -736,15 +736,15 @@ namespace TestSDKMockAPI
                 "If cell.formula is specified, then value, objectValue, image, hyperlink, and linkInFromCell must not be specified.");
         }
 
-		[TestMethod]
-		public void UpdateRows_Invalid_AssignHyperlinkUrlandSheetId()
-		{
-			SmartsheetClient ss = HelperFunctions.SetupClient("Update Rows - Invalid - Assign Hyperlink URL and SheetId");
+        [TestMethod]
+        public void UpdateRows_Invalid_AssignHyperlinkUrlandSheetId()
+        {
+            SmartsheetClient ss = HelperFunctions.SetupClient("Update Rows - Invalid - Assign Hyperlink URL and SheetId");
 
-			Row rowA = new Row
-			{
-				Id = 10,
-				Cells = new List<Cell>
+            Row rowA = new Row
+            {
+                Id = 10,
+                Cells = new List<Cell>
                 {
                     new Cell{
                         ColumnId = 101,
@@ -762,14 +762,14 @@ namespace TestSDKMockAPI
                         }
                     }
                 }
-			};
+            };
 
-			HelperFunctions.AssertRaisesException<SmartsheetException>(() =>
-				ss.SheetResources.RowResources.UpdateRows(1, new Row[] { rowA }),
-				"hyperlink.url must be null for sheet, report, or Sight hyperlinks.");
-		}
+            HelperFunctions.AssertRaisesException<SmartsheetException>(() =>
+                ss.SheetResources.RowResources.UpdateRows(1, new Row[] { rowA }),
+                "hyperlink.url must be null for sheet, report, or Sight hyperlinks.");
+        }
 
-		[TestMethod]
+        [TestMethod]
         public void UpdateRows_ClearValue_TextNumber()
         {
             SmartsheetClient ss = HelperFunctions.SetupClient("Update Rows - Clear Value - Text Number");
@@ -869,31 +869,31 @@ namespace TestSDKMockAPI
             Assert.AreEqual(null, updatedCell.Value);
         }
 
-		[TestMethod]
-		public void UpdateRows_ClearValue_PredecessorList()
-		{
-			SmartsheetClient ss = HelperFunctions.SetupClient("Update Rows - Clear Value - Predecessor List");
+        [TestMethod]
+        public void UpdateRows_ClearValue_PredecessorList()
+        {
+            SmartsheetClient ss = HelperFunctions.SetupClient("Update Rows - Clear Value - Predecessor List");
 
-			Row rowA = new Row
-			{
-				Id = 10,
-				Cells = new List<Cell>
-				{
-					new Cell
-					{
-						ColumnId = 123,
-						Value = new ExplicitNull()
-					}
-				}
-			};
-			IList<Row> updatedRows = ss.SheetResources.RowResources.UpdateRows(1, new Row[] { rowA });
+            Row rowA = new Row
+            {
+                Id = 10,
+                Cells = new List<Cell>
+                {
+                    new Cell
+                    {
+                        ColumnId = 123,
+                        Value = new ExplicitNull()
+                    }
+                }
+            };
+            IList<Row> updatedRows = ss.SheetResources.RowResources.UpdateRows(1, new Row[] { rowA });
             Cell updatedCell = updatedRows[0].Cells.Single(c => c.ColumnId == 123);
-			Assert.AreEqual(updatedRows[0].Id, 10);
-			Assert.AreEqual(null, updatedCell.Value);
-		}
+            Assert.AreEqual(updatedRows[0].Id, 10);
+            Assert.AreEqual(null, updatedCell.Value);
+        }
 
 
-		[TestMethod]
+        [TestMethod]
         public void UpdateRows_Invalid_AssignHyperlinkAndCellLink()
         {
             SmartsheetClient ss = HelperFunctions.SetupClient("Update Rows - Invalid - Assign Hyperlink and Cell Link");
@@ -960,47 +960,47 @@ namespace TestSDKMockAPI
             Assert.AreEqual(100, updateRow.RowNumber);
         }
 
-		[TestMethod]
-		public void MoveRow_AnotherSheet()
-		{
-			SmartsheetClient ss = HelperFunctions.SetupClient("Move row to another sheet");
+        [TestMethod]
+        public void MoveRow_AnotherSheet()
+        {
+            SmartsheetClient ss = HelperFunctions.SetupClient("Move row to another sheet");
 
-			CopyOrMoveRowResult result = ss.SheetResources.RowResources.MoveRowsToAnotherSheet(
-				1228520367122308,
-				new CopyOrMoveRowDirective 
-				{
-					RowIds = new List<long> 
-					{
-						1765250516182916
-					},
-					To = new CopyOrMoveRowDestination
-					{
-						SheetId = 799249123305348
-					}
-				},
-				null, null);
-			Assert.AreEqual(result.DestinationSheetId, 799249123305348);
-		}
+            CopyOrMoveRowResult result = ss.SheetResources.RowResources.MoveRowsToAnotherSheet(
+                1228520367122308,
+                new CopyOrMoveRowDirective 
+                {
+                    RowIds = new List<long> 
+                    {
+                        1765250516182916
+                    },
+                    To = new CopyOrMoveRowDestination
+                    {
+                        SheetId = 799249123305348
+                    }
+                },
+                null, null);
+            Assert.AreEqual(result.DestinationSheetId, 799249123305348);
+        }
 
-		[TestMethod]
-		public void CopyRow_AnotherSheet()
-		{
-			SmartsheetClient ss = HelperFunctions.SetupClient("Copy row to another sheet");
-			CopyOrMoveRowResult result = ss.SheetResources.RowResources.CopyRowsToAnotherSheet(
-				1228520367122308,
-				new CopyOrMoveRowDirective
-				{
-					RowIds = new List<long>
-					{
-						2891150423025540
-					},
-					To = new CopyOrMoveRowDestination
-					{
-						SheetId = 799249123305348
-					}
-				}, 
-				null, null);
-			Assert.AreEqual(result.DestinationSheetId, 799249123305348);
-		}
-	}
+        [TestMethod]
+        public void CopyRow_AnotherSheet()
+        {
+            SmartsheetClient ss = HelperFunctions.SetupClient("Copy row to another sheet");
+            CopyOrMoveRowResult result = ss.SheetResources.RowResources.CopyRowsToAnotherSheet(
+                1228520367122308,
+                new CopyOrMoveRowDirective
+                {
+                    RowIds = new List<long>
+                    {
+                        2891150423025540
+                    },
+                    To = new CopyOrMoveRowDestination
+                    {
+                        SheetId = 799249123305348
+                    }
+                }, 
+                null, null);
+            Assert.AreEqual(result.DestinationSheetId, 799249123305348);
+        }
+    }
 }

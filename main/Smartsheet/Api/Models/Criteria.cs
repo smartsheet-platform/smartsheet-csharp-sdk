@@ -23,65 +23,65 @@ using System.Runtime.Serialization;
 namespace Smartsheet.Api.Models
 {
 
-	/// <summary>
-	/// Represents the Criteria object.
-	/// </summary>
-	public class Criteria
-	{
-		/// <summary>
-		/// column ID
-		/// </summary>
-		private long? columnId;
+    /// <summary>
+    /// Represents the Criteria object.
+    /// </summary>
+    public class Criteria
+    {
+        /// <summary>
+        /// column ID
+        /// </summary>
+        private long? columnId;
 
-		/// <summary>
-		/// Represents the Text for the Comment. </summary>
-		[DataMember(Name = "operator")]
-		private CriteriaOperator? operatorCriteria;
+        /// <summary>
+        /// Represents the Text for the Comment. </summary>
+        [DataMember(Name = "operator")]
+        private CriteriaOperator? operatorCriteria;
 
-		/// <summary>
-		/// The target for the filter query (currently only ROW for row filters)
-		/// </summary>
-		private CriteriaTarget? target;
+        /// <summary>
+        /// The target for the filter query (currently only ROW for row filters)
+        /// </summary>
+        private CriteriaTarget? target;
 
-		/// <summary>
-		/// Present if a custom filter criteria's operator has one or more arguments
-		/// </summary>
-		private IList<object> values;
+        /// <summary>
+        /// Present if a custom filter criteria's operator has one or more arguments
+        /// </summary>
+        private IList<object> values;
 
-		/// <summary>
-		/// Gets the column ID
-		/// </summary>
-		public long? ColumnId
-		{
-			get { return columnId;  }
-			set { columnId = value; }
-		}
+        /// <summary>
+        /// Gets the column ID
+        /// </summary>
+        public long? ColumnId
+        {
+            get { return columnId;  }
+            set { columnId = value; }
+        }
 
-		/// <summary>
-		/// The Criteria Operator
-		/// </summary>
-		public CriteriaOperator? Operator
-		{
-			get { return operatorCriteria; }
-			set { operatorCriteria = value; }
-		}
+        /// <summary>
+        /// The Criteria Operator
+        /// </summary>
+        public CriteriaOperator? Operator
+        {
+            get { return operatorCriteria; }
+            set { operatorCriteria = value; }
+        }
 
-		/// <summary>
-		/// Gets the criteria target
-		/// </summary>
-		public CriteriaTarget? Target
-		{
-			get { return target; }
-			set { target = value; }
-		}
+        /// <summary>
+        /// Gets the criteria target
+        /// </summary>
+        public CriteriaTarget? Target
+        {
+            get { return target; }
+            set { target = value; }
+        }
 
-		/// <summary>
-		/// Gets the values if this criteria's operator has arguments
-		/// </summary>
-		public IList<object> Values
-		{
-			get { return values; }
-			set { values = value; }
-		}
-	}
+        /// <summary>
+        /// Gets the values if this criteria's operator has arguments
+        /// </summary>
+        public IList<object> Values
+        {
+            get { return values; }
+            set { values = value; }
+        }
+    }
 }

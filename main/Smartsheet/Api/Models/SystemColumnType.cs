@@ -20,37 +20,15 @@ namespace Smartsheet.Api.Models
 {
 
 
-	/// <summary>
-	/// Represents the system column types. </summary>
-	/// <seealso href="http://help.Smartsheet.com/customer/portal/articles/504619-column-types">Column Types Help</seealso>
-	public enum SystemColumnType
-	{
-		/// <summary>
-		/// Represents the AUTO_NUMBER system column Type.
-		/// </summary>
-		AUTO_NUMBER,
-
-		/// <summary>
-		/// Represents the MODIFIED_DATE system column Type.
-		/// </summary>
-		MODIFIED_DATE,
-
-		/// <summary>
-		/// Represents the MODIFIED_BY system column Type.
-		/// </summary>
-		MODIFIED_BY,
-
-		/// <summary>
-		/// Represents the CREATED_DATE system column Type.
-		/// </summary>
-		CREATED_DATE,
-
-		/// <summary>
-		/// Represents the CREATED_BY system column Type.
-		/// </summary>
-		CREATED_BY
-
-
-	}
-
+    /// <summary>
+    /// Represents the system column types. </summary>
+    /// <seealso href="http://help.Smartsheet.com/customer/portal/articles/504619-column-types">Column Types Help</seealso>
+    public enum SystemColumnType
+    {
+        AUTO_NUMBER,
+        MODIFIED_DATE,
+        MODIFIED_BY,
+        CREATED_DATE,
+        CREATED_BY
+    }
 }

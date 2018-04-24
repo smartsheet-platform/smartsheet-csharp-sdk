@@ -20,23 +20,14 @@ namespace Smartsheet.Api.Models
 {
 
 
-	/// <summary>
-	/// Represents the attachment parent Type.
-	/// </summary>
-	public enum AttachmentParentType
-	{
-		/// <summary>
-		/// The sheet
-		/// </summary>
-		SHEET,
-		/// <summary>
-		/// The row
-		/// </summary>
-		ROW,
-		/// <summary>
-		/// The comment
-		/// </summary>
-		COMMENT
-	}
+    /// <summary>
+    /// Represents the attachment parent Type.
+    /// </summary>
+    public enum AttachmentParentType
+    {
+        SHEET,
+        ROW,
+        COMMENT
+    }
 
 }

@@ -18,59 +18,20 @@
 
 namespace Smartsheet.Api.Models
 {
-	/// <summary>
-	/// Represents the Link types.
-	/// </summary>
-	public enum DayDescriptor
-	{
-		/// <summary>
-		/// Represents DAY descriptor type.
-		/// </summary>
-		DAY,
-
-		/// <summary>
-		/// Represents WEEKDAY descriptor type.
-		/// </summary>
-		WEEKDAY,
-
-		/// <summary>
-		/// Represents WEEKEND descriptor type.
-		/// </summary>
-		WEEKEND,
-
-		/// <summary>
-		/// Represents SUNDAY descriptor type.
-		/// </summary>
-		SUNDAY,
-
-		/// <summary>
-		/// Represents MONDAY descriptor type.
-		/// </summary>
-		MONDAY,
-
-		/// <summary>
-		/// Represents TUESDAY descriptor type.
-		/// </summary>
-		TUESDAY,
-
-		/// <summary>
-		/// Represents WEDNESDAY descriptor type.
-		/// </summary>
-		WEDNESDAY,
-
-		/// <summary>
-		/// Represents THURSDAY descriptor type.
-		/// </summary>
-		THURSDAY,
-
-		/// <summary>
-		/// Represents FRIDAY descriptor type.
-		/// </summary>
-		FRIDAY,
-
-		/// <summary>
-		/// Represents SATURDAY descriptor type.
-		/// </summary>
-		SATURDAY
-	}
+    /// <summary>
+    /// Represents the Link types.
+    /// </summary>
+    public enum DayDescriptor
+    {
+        DAY,
+        WEEKDAY,
+        WEEKEND,
+        SUNDAY,
+        MONDAY,
+        TUESDAY,
+        WEDNESDAY,
+        THURSDAY,
+        FRIDAY,
+        SATURDAY
+    }
 }

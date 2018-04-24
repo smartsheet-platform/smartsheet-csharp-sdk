@@ -5,20 +5,20 @@ using System.Text;
 
 namespace Smartsheet.Api.Models
 {
-	/// <summary>
-	/// Information on the destination of the rows that were copied or moved.
-	/// </summary>
-	public class CopyOrMoveRowDestination
-	{
-		private long sheetId;
+    /// <summary>
+    /// Information on the destination of the rows that were copied or moved.
+    /// </summary>
+    public class CopyOrMoveRowDestination
+    {
+        private long sheetId;
 
-		/// <summary>
-		/// ID of the destination sheet
-		/// </summary>
-		public virtual long SheetId
-		{
-			get { return sheetId; }
-			set { sheetId = value; }
-		}
-	}
+        /// <summary>
+        /// ID of the destination sheet
+        /// </summary>
+        public virtual long SheetId
+        {
+            get { return sheetId; }
+            set { sheetId = value; }
+        }
+    }
 }

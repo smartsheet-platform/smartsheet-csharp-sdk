@@ -21,34 +21,34 @@ using System.Collections.Generic;
 namespace Smartsheet.Api.Models
 {
 
-	/// <summary>
-	/// Represents a user’s personal 
-	/// in Smartsheet
-	/// <seealso href="http://help.smartsheet.com/customer/portal/articles/796143-managing-contacts">Managing contacts</seealso>
-	/// </summary>
-	public class Contact : NamedModel
-	{
-		private string id;
+    /// <summary>
+    /// Represents a user’s personal 
+    /// in Smartsheet
+    /// <seealso href="http://help.smartsheet.com/customer/portal/articles/796143-managing-contacts">Managing contacts</seealso>
+    /// </summary>
+    public class Contact : NamedModel
+    {
+        private string id;
 
-		private string email;
+        private string email;
 
-		/// <summary>
-		/// Contact’s email address
-		/// </summary>
-		public string Email
-		{
-			get { return email; }
-			set { email = value; }
-		}
+        /// <summary>
+        /// Contact’s email address
+        /// </summary>
+        public string Email
+        {
+            get { return email; }
+            set { email = value; }
+        }
 
-		/// <summary>
-		/// Contact ID, unlike other Smartsheet object ids, this id is an alphanumeric string.
-		/// </summary>
-		public virtual new string Id
-		{
-			// This should hide inherited member "Id".
-			get { return id; }
-			set { id = value; }
-		}
-	}
+        /// <summary>
+        /// Contact ID, unlike other Smartsheet object ids, this id is an alphanumeric string.
+        /// </summary>
+        public virtual new string Id
+        {
+            // This should hide inherited member "Id".
+            get { return id; }
+            set { id = value; }
+        }
+    }
 }

@@ -21,60 +21,60 @@ namespace Smartsheet.Api.Internal.Http
 {
 
 
-	/// <summary>
-	/// This class represents an HTTP request.
-	/// 
-	/// Thread Safety: This class is not thread safe since it's mutable.
-	/// </summary>
-	public class HttpRequest : HttpMessage
-	{
-		/// <summary>
-		/// Represents the URI.
-		/// 
-		/// It has a pair of setter/getter (not shown on class diagram for brevity).
-		/// </summary>
-		private Uri uri;
+    /// <summary>
+    /// This class represents an HTTP request.
+    /// 
+    /// Thread Safety: This class is not thread safe since it's mutable.
+    /// </summary>
+    public class HttpRequest : HttpMessage
+    {
+        /// <summary>
+        /// Represents the URI.
+        /// 
+        /// It has a pair of setter/getter (not shown on class diagram for brevity).
+        /// </summary>
+        private Uri uri;
 
-		/// <summary>
-		/// Represents the HTTP method.
-		/// 
-		/// It has a pair of setter/getter (not shown on class diagram for brevity).
-		/// </summary>
-		private HttpMethod? method;
+        /// <summary>
+        /// Represents the HTTP method.
+        /// 
+        /// It has a pair of setter/getter (not shown on class diagram for brevity).
+        /// </summary>
+        private HttpMethod? method;
 
-		/// <summary>
-		/// Gets the uri.
-		/// </summary>
-		/// <returns> the uri </returns>
-		public virtual Uri Uri
-		{
-			get
-			{
-				return uri;
-			}
-			set
-			{
-				this.uri = value;
-			}
-		}
+        /// <summary>
+        /// Gets the uri.
+        /// </summary>
+        /// <returns> the uri </returns>
+        public virtual Uri Uri
+        {
+            get
+            {
+                return uri;
+            }
+            set
+            {
+                this.uri = value;
+            }
+        }
 
 
-		/// <summary>
-		/// Gets the method.
-		/// </summary>
-		/// <returns> the method </returns>
-		public virtual HttpMethod? Method
-		{
-			get
-			{
-				return method;
-			}
-			set
-			{
-				this.method = value;
-			}
-		}
+        /// <summary>
+        /// Gets the method.
+        /// </summary>
+        /// <returns> the method </returns>
+        public virtual HttpMethod? Method
+        {
+            get
+            {
+                return method;
+            }
+            set
+            {
+                this.method = value;
+            }
+        }
 
-	}
+    }
 
 }

@@ -18,15 +18,13 @@
 
 namespace Smartsheet.Api.Models
 {
-	/// <summary>
-	/// Represents the type of the destination container (when copying or moving a Sheet or a Folder)..
-	/// </summary>
-	public enum DestinationType
-	{
-		HOME,
-
-		WORKSPACE,
-
-		FOLDER
-	}
+    /// <summary>
+    /// Represents the type of the destination container (when copying or moving a Sheet or a Folder)..
+    /// </summary>
+    public enum DestinationType
+    {
+        HOME,
+        WORKSPACE,
+        FOLDER
+    }
 }

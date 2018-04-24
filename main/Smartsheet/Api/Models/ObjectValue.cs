@@ -20,12 +20,12 @@ using System.Collections.Generic;
 
 namespace Smartsheet.Api.Models
 {
-	public interface ObjectValue
-	{
-		/// <summary>
-		/// Gets the objectValue Type.
-		/// </summary>
-		/// <returns> the Type </returns>
-		ObjectValueType ObjectType { get; }
-	}
+    public interface ObjectValue
+    {
+        /// <summary>
+        /// Gets the objectValue Type.
+        /// </summary>
+        /// <returns> the Type </returns>
+        ObjectValueType ObjectType { get; }
+    }
 }

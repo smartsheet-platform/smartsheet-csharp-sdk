@@ -18,27 +18,25 @@
 
 namespace Smartsheet.Api
 {
+    using Error = Api.Models.Error;
 
-
-	using Error = Api.Models.Error;
-
-	/// <summary>
-	/// <para>This is the exception to indicate authorization (access token) related errors returned from Smartsheet REST API.</para>
-	/// 
-	/// <para>Basically this exception will be thrown when the Smartsheet REST API responds with "401 NOT AUTHORIZED" /
-	/// "403 FORBIDDEN"</para>
-	/// 
-	/// <para>Thread safety: Exceptions are not thread safe.</para>
-	/// </summary>
-	public class AuthorizationException : SmartsheetRestException
-	{
-		/// <summary>
-		/// Constructor.
-		/// </summary>
-		/// <param name="error"> the Error object from Smartsheet REST API </param>
-		public AuthorizationException(Error error) : base(error)
-		{
-		}
-	}
+    /// <summary>
+    /// <para>This is the exception to indicate authorization (access token) related errors returned from Smartsheet REST API.</para>
+    /// 
+    /// <para>Basically this exception will be thrown when the Smartsheet REST API responds with "401 NOT AUTHORIZED" /
+    /// "403 FORBIDDEN"</para>
+    /// 
+    /// <para>Thread safety: Exceptions are not thread safe.</para>
+    /// </summary>
+    public class AuthorizationException : SmartsheetRestException
+    {
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="error"> the Error object from Smartsheet REST API </param>
+        public AuthorizationException(Error error) : base(error)
+        {
+        }
+    }
 
 }

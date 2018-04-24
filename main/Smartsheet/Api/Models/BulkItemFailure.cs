@@ -20,55 +20,49 @@ using System.Collections.Generic;
 
 namespace Smartsheet.Api.Models
 {
-	/// <summary>
-	/// Represents the BulkItemFailure object. </summary>
-	/// <seealso href="http://smartsheet-platform.github.io/api-docs/#bulkitemfailure-object">BulkItemFailure Object Help</seealso>
-	public class BulkItemFailure
-	{
-		/// <summary>
-		/// The index of the failed item in the bulk request array. </summary>
-		private long? index;
+    /// <summary>
+    /// Represents the BulkItemFailure object. </summary>
+    /// <seealso href="http://smartsheet-platform.github.io/api-docs/#bulkitemfailure-object">BulkItemFailure Object Help</seealso>
+    public class BulkItemFailure
+    {
+        /// <summary>
+        /// The index of the failed item in the bulk request array. </summary>
+        private long? index;
 
-		/// <summary>
-		/// The error caused by the failed item.</summary>
-		private Error error;
+        /// <summary>
+        /// The error caused by the failed item.</summary>
+        private Error error;
 
-		/// <summary>
-		/// The id of the Row that failed. Applicable only to bulk row operations. </summary>
-		private long? rowId;
+        /// <summary>
+        /// The id of the Row that failed. Applicable only to bulk row operations. </summary>
+        private long? rowId;
 
-		/// <summary>
-		/// The index of the failed item in the bulk request array.
-		/// </summary>
-		public long? Index
-		{
-			get { return index; }
-			set { index = value; }
-		}
+        /// <summary>
+        /// The index of the failed item in the bulk request array.
+        /// </summary>
+        public long? Index
+        {
+            get { return index; }
+            set { index = value; }
+        }
 
-		/// <summary>
-		/// Gets the error caused by the failed item.
-		/// </summary>
-		/// <returns> the Error </returns>
-		public virtual Error Error
-		{
-			get
-			{
-				return error;
-			}
-			set
-			{
-				this.error = value;
-			}
-		}
-		
-		/// <summary>
-		/// Get the id of the Row that failed.
-		/// </summary>
-		public long? RowId
-		{
-			get { return rowId; }
-			set { rowId = value; }
-		}
-	}
+        /// <summary>
+        /// Gets the error caused by the failed item.
+        /// </summary>
+        /// <returns> the Error </returns>
+        public virtual Error Error
+        {
+            get { return error; }
+            set { this.error = value; }
+        }
+        
+        /// <summary>
+        /// Get the id of the Row that failed.
+        /// </summary>
+        public long? RowId
+        {
+            get { return rowId; }
+            set { rowId = value; }
+        }
+    }
 }

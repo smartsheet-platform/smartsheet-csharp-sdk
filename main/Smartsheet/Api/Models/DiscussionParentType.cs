@@ -20,19 +20,13 @@ namespace Smartsheet.Api.Models
 {
 
 
-	/// <summary>
-	/// Represents the discussion parent Type.
-	/// </summary>
-	public enum DiscussionParentType
-	{
-		/// <summary>
-		/// The sheet
-		/// </summary>
-		SHEET,
-		/// <summary>
-		/// The row
-		/// </summary>
-		ROW
-	}
+    /// <summary>
+    /// Represents the discussion parent Type.
+    /// </summary>
+    public enum DiscussionParentType
+    {
+        SHEET,
+        ROW
+    }
 
 }

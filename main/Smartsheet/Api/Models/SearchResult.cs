@@ -20,55 +20,40 @@ using System.Collections.Generic;
 
 namespace Smartsheet.Api.Models
 {
-	/// <summary>
-	/// Represents the Results of a search. </summary>
-	/// <seealso href="http://help.Smartsheet.com/customer/portal/articles/522231-searching-in-Smartsheet">Help Searching in 
-	/// Smartsheet</seealso>
-	public class SearchResult
-	{
-		/// <summary>
-		/// Represents total count of Results.
-		/// </summary>
-		private int? totalCount;
+    /// <summary>
+    /// Represents the Results of a search. </summary>
+    /// <seealso href="http://help.Smartsheet.com/customer/portal/articles/522231-searching-in-Smartsheet">Help Searching in 
+    /// Smartsheet</seealso>
+    public class SearchResult
+    {
+        /// <summary>
+        /// Represents total count of Results.
+        /// </summary>
+        private int? totalCount;
 
-		/// <summary>
-		/// A list of items returned from the search Results.
-		/// </summary>
-		private IList<SearchResultItem> results;
+        /// <summary>
+        /// A list of items returned from the search Results.
+        /// </summary>
+        private IList<SearchResultItem> results;
 
-		/// <summary>
-		/// Gets the total count of Results.
-		/// </summary>
-		/// <returns> the total count </returns>
-		public virtual int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set
-			{
-				this.totalCount = value;
-			}
-		}
+        /// <summary>
+        /// Gets the total count of Results.
+        /// </summary>
+        /// <returns> the total count </returns>
+        public virtual int? TotalCount
+        {
+            get { return totalCount; }
+            set { this.totalCount = value; }
+        }
 
-
-		/// <summary>
-		/// Gets the list of Results from the search.
-		/// </summary>
-		/// <returns> the Results </returns>
-		public virtual IList<SearchResultItem> Results
-		{
-			get
-			{
-				return results;
-			}
-			set
-			{
-				this.results = value;
-			}
-		}
-
-	}
-
+        /// <summary>
+        /// Gets the list of Results from the search.
+        /// </summary>
+        /// <returns> the Results </returns>
+        public virtual IList<SearchResultItem> Results
+        {
+            get { return results; }
+            set { this.results = value; }
+        }
+    }
 }

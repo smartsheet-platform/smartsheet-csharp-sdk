@@ -20,51 +20,51 @@ using System.Collections.Generic;
 
 namespace Smartsheet.Api
 {
-	using Api.Models;
+    using Api.Models;
 
-	/// <summary>
-	/// <para>This interface provides methods to access Folder resources that are associated to a workspace object.</para>
-	/// 
-	/// <para>Thread Safety: Implementation of this interface must be thread safe.</para>
-	/// </summary>
-	public interface WorkspaceFolderResources
-	{
-		/// <summary>
-		/// <para>List Folders of a given workspace.</para>
-		/// 
-		/// <para>It mirrors to the following Smartsheet REST API method: GET /workspaces/{workspaceId}/Folders</para>
-		/// </summary>
-		/// <param name="workspaceId">the workspace Id</param>
-		/// <param name="paging">the pagination information</param>
-		/// <returns>the list of Folders (note that an empty list will be returned if no child folder is found), limited to the following attributes:
-		/// <list type="bullet">
-		/// <item><description>id</description></item>
-		/// <item><description>name</description></item>
-		/// <item><description>permalink</description></item>
-		/// </list>
-		/// </returns>
-		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
-		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
-		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
-		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		PaginatedResult<Folder> ListFolders(long workspaceId, PaginationParameters paging);
+    /// <summary>
+    /// <para>This interface provides methods to access Folder resources that are associated to a workspace object.</para>
+    /// 
+    /// <para>Thread Safety: Implementation of this interface must be thread safe.</para>
+    /// </summary>
+    public interface WorkspaceFolderResources
+    {
+        /// <summary>
+        /// <para>List Folders of a given workspace.</para>
+        /// 
+        /// <para>It mirrors to the following Smartsheet REST API method: GET /workspaces/{workspaceId}/Folders</para>
+        /// </summary>
+        /// <param name="workspaceId">the workspace Id</param>
+        /// <param name="paging">the pagination information</param>
+        /// <returns>the list of Folders (note that an empty list will be returned if no child folder is found), limited to the following attributes:
+        /// <list type="bullet">
+        /// <item><description>id</description></item>
+        /// <item><description>name</description></item>
+        /// <item><description>permalink</description></item>
+        /// </list>
+        /// </returns>
+        /// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+        /// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+        /// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+        /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+        /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
+        /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+        PaginatedResult<Folder> ListFolders(long workspaceId, PaginationParameters paging);
 
-		/// <summary>
-		/// <para>Create a folder in the workspace.</para>
-		/// 
-		/// <para>It mirrors to the following Smartsheet REST API method: POST /workspaces/{workspaceId}/Folders</para>
-		/// </summary>
-		/// <param name="workspaceId"> the workspace Id </param>
-		/// <param name="folder"> the folder to create </param>
-		/// <returns> the created folder </returns>
-		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
-		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		/// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
-		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
-		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		Folder CreateFolder(long workspaceId, Folder folder);
-	}
+        /// <summary>
+        /// <para>Create a folder in the workspace.</para>
+        /// 
+        /// <para>It mirrors to the following Smartsheet REST API method: POST /workspaces/{workspaceId}/Folders</para>
+        /// </summary>
+        /// <param name="workspaceId"> the workspace Id </param>
+        /// <param name="folder"> the folder to create </param>
+        /// <returns> the created folder </returns>
+        /// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+        /// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+        /// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+        /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+        /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
+        /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+        Folder CreateFolder(long workspaceId, Folder folder);
+    }
 }

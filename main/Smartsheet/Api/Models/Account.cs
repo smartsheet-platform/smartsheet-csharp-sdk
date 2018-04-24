@@ -18,10 +18,10 @@
 
 namespace Smartsheet.Api.Models
 {
-	/// <summary>
-	/// Represents the Account object.
-	/// </summary>
-	public class Account : NamedModel
-	{
-	}
+    /// <summary>
+    /// Represents the Account object.
+    /// </summary>
+    public class Account : NamedModel
+    {
+    }
 }

@@ -23,8 +23,8 @@ using System.Text;
 
 namespace Smartsheet.Api.Models.Inclusions
 {
-	public enum HomeExclusion
-	{
-		PERMALINKS
-	}
+    public enum HomeExclusion
+    {
+        PERMALINKS
+    }
 }

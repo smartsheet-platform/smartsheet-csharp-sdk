@@ -18,37 +18,16 @@
 
 namespace Smartsheet.Api.Models
 {
-
-
-	/// <summary>
-	/// Represents the attachment sub Type.
-	/// </summary>
-	public enum AttachmentSubType
-	{
-		/// <summary>
-		/// The document
-		/// </summary>
-		DOCUMENT,
-		/// <summary>
-		/// The spreadsheet
-		/// </summary>
-		SPREADSHEET,
-		/// <summary>
-		/// The presentation
-		/// </summary>
-		PRESENTATION,
-		/// <summary>
-		/// The PDF
-		/// </summary>
-		PDF,
-		/// <summary>
-		/// The drawing
-		/// </summary>
-		DRAWING,
-		/// <summary>
-		/// Folder if AttachmentType is EGNYTE
-		/// </summary>
-		FOLDER
-	}
-
+    /// <summary>
+    /// Represents the attachment sub Type.
+    /// </summary>
+    public enum AttachmentSubType
+    {
+        DOCUMENT,
+        SPREADSHEET,
+        PRESENTATION,
+        PDF,
+        DRAWING,
+        FOLDER
+    }
 }

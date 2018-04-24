@@ -24,15 +24,15 @@ using System.ComponentModel;
 
 namespace Smartsheet.Api.Models
 {
-	/// <summary>
-	/// Represents specific elements to include in a response.
-	/// </summary>
-	public enum CellInclusion
-	{
-		/// <summary>
-		/// The columnType attribute for a cell.
-		/// </summary>
-		[EnumMember(Value = "columnType")]
-		COLUMN_TYPE
-	}
+    /// <summary>
+    /// Represents specific elements to include in a response.
+    /// </summary>
+    public enum CellInclusion
+    {
+        /// <summary>
+        /// The columnType attribute for a cell.
+        /// </summary>
+        [EnumMember(Value = "columnType")]
+        COLUMN_TYPE
+    }
 }

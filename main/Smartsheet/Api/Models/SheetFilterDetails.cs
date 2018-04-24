@@ -24,70 +24,52 @@ using System.Runtime.Serialization;
 
 namespace Smartsheet.Api.Models
 {
-	public class SheetFilterDetails
-	{
-		/// <summary>
-		/// Represents the list of criteria
-		/// </summary>
-		private IList<Criteria> criteria;
+    public class SheetFilterDetails
+    {
+        /// <summary>
+        /// Represents the list of criteria
+        /// </summary>
+        private IList<Criteria> criteria;
 
-		/// <summary>
-		/// Include parent rows whose children are included in this filter
-		/// </summary>
-		private bool? includeParent;
+        /// <summary>
+        /// Include parent rows whose children are included in this filter
+        /// </summary>
+        private bool? includeParent;
 
-		/// <summary>
-		/// How to combine criteria in this filter
-		/// </summary>
-		[DataMember(Name = "operator")] 
-		private SheetFilterOperator? _operator;
+        /// <summary>
+        /// How to combine criteria in this filter
+        /// </summary>
+        [DataMember(Name = "operator")] 
+        private SheetFilterOperator? _operator;
 
-		/// <summary>
-		/// Get the list of criteria
-		/// </summary>
-		/// <returns> list of criteria </returns>
-		public IList<Criteria> Criteria
-		{
-			get
-			{
-				return criteria;
-			}
-			set
-			{
-				this.criteria = value;
-			}
-		}
+        /// <summary>
+        /// Get the list of criteria
+        /// </summary>
+        /// <returns> list of criteria </returns>
+        public IList<Criteria> Criteria
+        {
+            get { return criteria; }
+            set { this.criteria = value; }
+        }
 
-		/// <summary>
-		/// Gets flag indicating whether to include parent rows whose children are included in this filter
-		/// </summary>
-		/// <returns> flag indicating whether to include parent </returns>
-		public bool? IncludeParent
-		{
-			get
-			{
-				return includeParent;
-			}
-			set
-			{
-				this.includeParent = value;
-			}
-		}
+        /// <summary>
+        /// Gets flag indicating whether to include parent rows whose children are included in this filter
+        /// </summary>
+        /// <returns> flag indicating whether to include parent </returns>
+        public bool? IncludeParent
+        {
+            get { return includeParent; }
+            set { this.includeParent = value; }
+        }
 
-		/// <summary>
-		/// Gets how to combine criteria in this filter
-		/// </summary>
-		/// <returns> the operator </returns>
-		public SheetFilterOperator? Operator
-		{
-			get
-			{
-				return _operator;
-			}
-			set
-			{
-				this._operator = value;
-			}
-		}
-	}
+        /// <summary>
+        /// Gets how to combine criteria in this filter
+        /// </summary>
+        /// <returns> the operator </returns>
+        public SheetFilterOperator? Operator
+        {
+            get { return _operator; }
+            set { this._operator = value; }
+        }
+    }
 }

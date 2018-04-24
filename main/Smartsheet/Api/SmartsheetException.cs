@@ -20,43 +20,37 @@ using System;
 
 namespace Smartsheet.Api
 {
+    /// <summary>
+    /// <para>This is the base class for all exceptions thrown from the Smartsheet SDK.</para>
+    /// 
+    /// <para>Thread safety: Exceptions are not thread safe.</para>
+    /// </summary>
+    public class SmartsheetException : Exception
+    {
+        /// <summary>
+        /// <para>Constructor.</para>
+        /// </summary>
+        /// <param name="message"> the Message </param>
+        public SmartsheetException(string message) : base(message)
+        {
+        }
 
+        /// <summary>
+        /// <para>Constructor.</para>
+        /// </summary>
+        /// <param name="message"> the Message </param>
+        /// <param name="cause"> the cause </param>
+        public SmartsheetException(string message, Exception cause) : base(message, cause)
+        {
+        }
 
-
-	/// <summary>
-	/// <para>This is the base class for all exceptions thrown from the Smartsheet SDK.</para>
-	/// 
-	/// <para>Thread safety: Exceptions are not thread safe.</para>
-	/// </summary>
-	public class SmartsheetException : Exception
-	{
-
-
-
-		/// <summary>
-		/// <para>Constructor.</para>
-		/// </summary>
-		/// <param name="message"> the Message </param>
-		public SmartsheetException(string message) : base(message)
-		{
-		}
-
-		/// <summary>
-		/// <para>Constructor.</para>
-		/// </summary>
-		/// <param name="message"> the Message </param>
-		/// <param name="cause"> the cause </param>
-		public SmartsheetException(string message, Exception cause) : base(message, cause)
-		{
-		}
-
-		/// <summary>
-		/// <para>Instantiates a new Smartsheet exception.</para>
-		/// </summary>
-		/// <param name="e"> the exception </param>
-		public SmartsheetException(Exception e) : base(e.Message,e)
-		{
-		}
-	}
+        /// <summary>
+        /// <para>Instantiates a new Smartsheet exception.</para>
+        /// </summary>
+        /// <param name="e"> the exception </param>
+        public SmartsheetException(Exception e) : base(e.Message,e)
+        {
+        }
+    }
 
 }

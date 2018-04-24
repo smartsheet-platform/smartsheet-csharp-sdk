@@ -18,29 +18,24 @@
 
 namespace Smartsheet.Api
 {
+    using Error = Api.Models.Error;
 
-
-	using Error = Api.Models.Error;
-
-	/// <summary>
-	/// This is the exception to indicate a resource can not be found.
-	/// 
-	/// Basically this exception will be thrown when the Smartsheet REST API responds with "404 NOT FOUND".
-	/// 
-	/// Thread safety: Exceptions are not thread safe.
-	/// </summary>
-	public class ResourceNotFoundException : SmartsheetRestException
-	{
-
-
-
-		/// <summary>
-		/// Constructor.
-		/// </summary>
-		/// <param name="error"> the Error object from Smartsheet REST API </param>
-		public ResourceNotFoundException(Error error) : base(error)
-		{
-		}
-	}
+    /// <summary>
+    /// This is the exception to indicate a resource can not be found.
+    /// 
+    /// Basically this exception will be thrown when the Smartsheet REST API responds with "404 NOT FOUND".
+    /// 
+    /// Thread safety: Exceptions are not thread safe.
+    /// </summary>
+    public class ResourceNotFoundException : SmartsheetRestException
+    {
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="error"> the Error object from Smartsheet REST API </param>
+        public ResourceNotFoundException(Error error) : base(error)
+        {
+        }
+    }
 
 }

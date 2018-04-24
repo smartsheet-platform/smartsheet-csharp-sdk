@@ -20,42 +20,42 @@ using System;
 using System.Collections.Generic;
 namespace Smartsheet.Api.Models
 {
-	/// <summary>
-	/// Represents a Server Infromation Object. </summary>
-	public class ServerInfo
-	{
-		private IList<string> supportedLocales;
+    /// <summary>
+    /// Represents a Server Infromation Object. </summary>
+    public class ServerInfo
+    {
+        private IList<string> supportedLocales;
 
-		private FeatureInfo featureInfo;
+        private FeatureInfo featureInfo;
 
-		private FormatTables formats;
+        private FormatTables formats;
 
-		/// <summary>
-		/// Array of strings representing all Smartsheet-supported locales.
-		/// </summary>
-		public IList<string> SupportedLocales
-		{
-			get { return supportedLocales; }
-			set { supportedLocales = value; }
-		}
+        /// <summary>
+        /// Array of strings representing all Smartsheet-supported locales.
+        /// </summary>
+        public IList<string> SupportedLocales
+        {
+            get { return supportedLocales; }
+            set { supportedLocales = value; }
+        }
 
-		/// <summary>
-		/// Feature Information.
-		/// </summary>
-		public FeatureInfo FeatureInfo
-		{
-			get { return featureInfo; }
-			set { featureInfo = value; }
-		}
+        /// <summary>
+        /// Feature Information.
+        /// </summary>
+        public FeatureInfo FeatureInfo
+        {
+            get { return featureInfo; }
+            set { featureInfo = value; }
+        }
 
-		/// <summary>
-		/// Definition of format tables that are used in
-		/// Column, Row, and Cell format property. For more information, see Formatting.
-		/// </summary>
-		public FormatTables Formats
-		{
-			get { return formats; }
-			set { formats = value; }
-		}
-	}
+        /// <summary>
+        /// Definition of format tables that are used in
+        /// Column, Row, and Cell format property. For more information, see Formatting.
+        /// </summary>
+        public FormatTables Formats
+        {
+            get { return formats; }
+            set { formats = value; }
+        }
+    }
 }

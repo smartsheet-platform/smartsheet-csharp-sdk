@@ -23,64 +23,64 @@ using System.Text;
 
 namespace Smartsheet.Api
 {
-	public interface PassthroughResources
-	{
-		/// <summary>
-		/// <para>Issue an HTTP GET request</para>
-		/// </summary>
-		/// <param name="endpoint"> the API endpoint </param>
-		/// <param name="parameters"> optional list of resource parameters </param>
-		/// <returns> a JSON response string </returns>
-		/// <exception cref="System.InvalidOperationException"> if any argument is null or an empty string </exception>
-		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		/// <exception cref="AuthorizationException"> if there is any problem with the REST API authorization (access token) </exception>
-		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
-		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		string GetRequest(string endpoint, IDictionary<string, string> parameters);
+    public interface PassthroughResources
+    {
+        /// <summary>
+        /// <para>Issue an HTTP GET request</para>
+        /// </summary>
+        /// <param name="endpoint"> the API endpoint </param>
+        /// <param name="parameters"> optional list of resource parameters </param>
+        /// <returns> a JSON response string </returns>
+        /// <exception cref="System.InvalidOperationException"> if any argument is null or an empty string </exception>
+        /// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+        /// <exception cref="AuthorizationException"> if there is any problem with the REST API authorization (access token) </exception>
+        /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+        /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
+        /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+        string GetRequest(string endpoint, IDictionary<string, string> parameters);
 
-		/// <summary>
-		/// <para>Issue an HTTP POST request</para>
-		/// </summary>
-		/// <param name="endpoint"> the API endpoint </param>
-		/// <param name="payload"> a JSON payload string </param>
-		/// <param name="parameters"> optional list of resource parameters </param>
-		/// <returns> a JSON response string </returns>
-		/// <exception cref="System.InvalidOperationException"> if any argument is null or an empty string </exception>
-		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		/// <exception cref="AuthorizationException"> if there is any problem with the REST API authorization (access token) </exception>
-		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
-		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		string PostRequest(string endpoint, string payload, IDictionary<string, string> parameters);
-	
-		/// <summary>
-		/// <para>Issue an HTTP PUT request</para>
-		/// </summary>
-		/// <param name="endpoint"> the API endpoint </param>
-		/// <param name="payload"> a JSON payload string </param>
-		/// <param name="parameters"> optional list of resource parameters </param>
-		/// <returns> a JSON response string </returns>
-		/// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
-		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		/// <exception cref="AuthorizationException"> if there is any problem with the REST API authorization (access token) </exception>
-		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
-		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		string PutRequest(string endpoint, string payload, IDictionary<string, string> parameters);
+        /// <summary>
+        /// <para>Issue an HTTP POST request</para>
+        /// </summary>
+        /// <param name="endpoint"> the API endpoint </param>
+        /// <param name="payload"> a JSON payload string </param>
+        /// <param name="parameters"> optional list of resource parameters </param>
+        /// <returns> a JSON response string </returns>
+        /// <exception cref="System.InvalidOperationException"> if any argument is null or an empty string </exception>
+        /// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+        /// <exception cref="AuthorizationException"> if there is any problem with the REST API authorization (access token) </exception>
+        /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+        /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
+        /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+        string PostRequest(string endpoint, string payload, IDictionary<string, string> parameters);
+    
+        /// <summary>
+        /// <para>Issue an HTTP PUT request</para>
+        /// </summary>
+        /// <param name="endpoint"> the API endpoint </param>
+        /// <param name="payload"> a JSON payload string </param>
+        /// <param name="parameters"> optional list of resource parameters </param>
+        /// <returns> a JSON response string </returns>
+        /// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+        /// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+        /// <exception cref="AuthorizationException"> if there is any problem with the REST API authorization (access token) </exception>
+        /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+        /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
+        /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+        string PutRequest(string endpoint, string payload, IDictionary<string, string> parameters);
 
-		/// <summary>
-		/// <para>Issue an HTTP DELETE request</para>
-		/// </summary>
-		/// <param name="endpoint"> the API endpoint </param>
-		/// <param name="parameters"> optional list of resource parameters </param>
-		/// <returns> a JSON response string </returns>
-		/// <exception cref="System.InvalidOperationException"> if any argument is null or an empty string </exception>
-		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		/// <exception cref="AuthorizationException"> if there is any problem with the REST API authorization (access token) </exception>
-		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
-		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		string DeleteRequest(string endpoint);
-	}
+        /// <summary>
+        /// <para>Issue an HTTP DELETE request</para>
+        /// </summary>
+        /// <param name="endpoint"> the API endpoint </param>
+        /// <param name="parameters"> optional list of resource parameters </param>
+        /// <returns> a JSON response string </returns>
+        /// <exception cref="System.InvalidOperationException"> if any argument is null or an empty string </exception>
+        /// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+        /// <exception cref="AuthorizationException"> if there is any problem with the REST API authorization (access token) </exception>
+        /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+        /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
+        /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+        string DeleteRequest(string endpoint);
+    }
 }

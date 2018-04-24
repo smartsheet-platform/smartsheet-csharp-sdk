@@ -23,66 +23,48 @@ using System.Text;
 
 namespace Smartsheet.Api.Models
 {
-	public class SheetFilter : NamedModel
-	{
-		/// <summary>
-		/// Represents the filter type
-		/// </summary>
-		private SheetFilterType? filterType;
+    public class SheetFilter : NamedModel
+    {
+        /// <summary>
+        /// Represents the filter type
+        /// </summary>
+        private SheetFilterType? filterType;
 
-		/// <summary>
-		/// Represents the details that make up the filter query
-		/// </summary>
-		private SheetFilterDetails query;
+        /// <summary>
+        /// Represents the details that make up the filter query
+        /// </summary>
+        private SheetFilterDetails query;
 
-		/// <summary>
-		/// the filter version
-		/// </summary>
-		private int? version;
-		
-		/// <summary>
-		/// Gets the filter type
-		/// </summary>
-		public SheetFilterType? FilterType
-		{
-			get
-			{
-				return filterType;
-			}
-			set
-			{
-				this.filterType = value;
-			}
-		}
+        /// <summary>
+        /// the filter version
+        /// </summary>
+        private int? version;
+        
+        /// <summary>
+        /// Gets the filter type
+        /// </summary>
+        public SheetFilterType? FilterType
+        {
+            get { return filterType; }
+            set { this.filterType = value; }
+        }
 
-		/// <summary>
-		/// Gets the details that make up the filter query
-		/// </summary>
-		public SheetFilterDetails Query
-		{
-			get
-			{
-				return query;
-			}
-			set
-			{
-				this.query = value;
-			}
-		}
+        /// <summary>
+        /// Gets the details that make up the filter query
+        /// </summary>
+        public SheetFilterDetails Query
+        {
+            get { return query; }
+            set { this.query = value; }
+        }
 
-		/// <summary>
-		/// Gets the sheet filter version
-		/// </summary>
-		public int? Version
-		{
-			get
-			{
-				return version;
-			}
-			set
-			{
-				this.version = value;
-			}
-		}
-	}
+        /// <summary>
+        /// Gets the sheet filter version
+        /// </summary>
+        public int? Version
+        {
+            get { return version; }
+            set { this.version = value; }
+        }
+    }
 }

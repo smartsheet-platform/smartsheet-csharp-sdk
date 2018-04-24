@@ -22,27 +22,27 @@ using System.Runtime.Serialization;
 
 namespace Smartsheet.Api.Models
 {
-	public enum SearchScope
-	{
-		[EnumMember(Value = "attachments")]
-		ATTACHMENTS,
-		[EnumMember(Value = "cellData")]
-		CELL_DATA,
-		[EnumMember(Value = "comments")]
-		COMMENTS,
-		[EnumMember(Value = "folderNames")]
-		FOLDER_NAMES,
-		[EnumMember(Value = "profileFields")]
-		PROFILE_FIELDS,
-		[EnumMember(Value = "reportNames")]
-		REPORT_NAMES,
-		[EnumMember(Value = "sheetNames")]
-		SHEET_NAMES,
-		[EnumMember(Value = "sightNames")]
-		SIGHT_NAMES,
-		[EnumMember(Value = "templateNames")]
-		TEMPLATE_NAMES,
-		[EnumMember(Value = "workspaceNames")]
-		WORKSPACE_NAMES
-	}
+    public enum SearchScope
+    {
+        [EnumMember(Value = "attachments")]
+        ATTACHMENTS,
+        [EnumMember(Value = "cellData")]
+        CELL_DATA,
+        [EnumMember(Value = "comments")]
+        COMMENTS,
+        [EnumMember(Value = "folderNames")]
+        FOLDER_NAMES,
+        [EnumMember(Value = "profileFields")]
+        PROFILE_FIELDS,
+        [EnumMember(Value = "reportNames")]
+        REPORT_NAMES,
+        [EnumMember(Value = "sheetNames")]
+        SHEET_NAMES,
+        [EnumMember(Value = "sightNames")]
+        SIGHT_NAMES,
+        [EnumMember(Value = "templateNames")]
+        TEMPLATE_NAMES,
+        [EnumMember(Value = "workspaceNames")]
+        WORKSPACE_NAMES
+    }
 }

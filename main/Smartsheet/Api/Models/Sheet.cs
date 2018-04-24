@@ -21,293 +21,270 @@ using System.Collections.Generic;
 
 namespace Smartsheet.Api.Models
 {
-	public class Sheet : AbstractSheet<Row, Column, Cell>
-	{
-		/// <summary>
-		/// Get a <seealso cref="Column"/> by ID.
-		/// </summary>
-		/// <param name="columnId"> the column Id </param>
-		/// <returns> the column by Id </returns>
-		public virtual Column GetColumnById(long columnId)
-		{
-			if (columns == null)
-			{
-				return null;
-			}
+    public class Sheet : AbstractSheet<Row, Column, Cell>
+    {
+        /// <summary>
+        /// Get a <seealso cref="Column"/> by ID.
+        /// </summary>
+        /// <param name="columnId"> the column Id </param>
+        /// <returns> the column by Id </returns>
+        public virtual Column GetColumnById(long columnId)
+        {
+            if (columns == null)
+            {
+                return null;
+            }
 
-			Column result = null;
-			foreach (Column column in columns)
-			{
-				if (column.Id == columnId)
-				{
-					result = column;
-					break;
-				}
-			}
-			return result;
-		}
+            Column result = null;
+            foreach (Column column in columns)
+            {
+                if (column.Id == columnId)
+                {
+                    result = column;
+                    break;
+                }
+            }
+            return result;
+        }
 
-		/// <summary>
-		/// A convenience class to make a <seealso cref="Sheet"/> object with the necessary fields to create the sheet by posting it 
-		/// to Smartsheet.
-		/// </summary>
-		public class CreateSheetBuilder
-		{
-			private IList<Column> columns;
-			private string name;
+        /// <summary>
+        /// A convenience class to make a <seealso cref="Sheet"/> object with the necessary fields to create the sheet by posting it 
+        /// to Smartsheet.
+        /// </summary>
+        public class CreateSheetBuilder
+        {
+            private IList<Column> columns;
+            private string name;
 
-			/// <summary>
-			/// Sets the required properties for creating a Sheet.
-			/// </summary>
-			/// <param name="name"> the name of the Sheet, need not be unique </param>
-			/// <param name="columns"> list of columns </param>
-			public CreateSheetBuilder(string name, IList<Column> columns)
-			{
-				this.name = name;
-				this.columns = columns;
-			}
+            /// <summary>
+            /// Sets the required properties for creating a Sheet.
+            /// </summary>
+            /// <param name="name"> the name of the Sheet, need not be unique </param>
+            /// <param name="columns"> list of columns </param>
+            public CreateSheetBuilder(string name, IList<Column> columns)
+            {
+                this.name = name;
+                this.columns = columns;
+            }
 
-			/// <summary>
-			/// Sets the Columns for the sheet being created.
-			/// </summary>
-			/// <param name="columns"> The Columns to create with this sheet. </param>
-			/// <returns> the creates the builder </returns>
-			public virtual CreateSheetBuilder SetColumns(IList<Column> columns)
-			{
-				this.columns = columns;
-				return this;
-			}
+            /// <summary>
+            /// Sets the Columns for the sheet being created.
+            /// </summary>
+            /// <param name="columns"> The Columns to create with this sheet. </param>
+            /// <returns> the creates the builder </returns>
+            public virtual CreateSheetBuilder SetColumns(IList<Column> columns)
+            {
+                this.columns = columns;
+                return this;
+            }
 
-			/// <summary>
-			/// Sets the Name for the sheet being created.
-			/// </summary>
-			/// <param name="name"> The Name for the sheet being created. </param>
-			/// <returns> the creates the builder </returns>
-			public virtual CreateSheetBuilder SetName(string name)
-			{
-				this.name = name;
-				return this;
-			}
+            /// <summary>
+            /// Sets the Name for the sheet being created.
+            /// </summary>
+            /// <param name="name"> The Name for the sheet being created. </param>
+            /// <returns> the creates the builder </returns>
+            public virtual CreateSheetBuilder SetName(string name)
+            {
+                this.name = name;
+                return this;
+            }
 
-			/// <summary>
-			/// Returns the list of Columns.
-			/// </summary>
-			/// <returns> the Columns </returns>
-			public virtual IList<Column> GetColumns()
-			{
+            /// <summary>
+            /// Returns the list of Columns.
+            /// </summary>
+            /// <returns> the Columns </returns>
+            public virtual IList<Column> GetColumns()
+            {
+                return columns;
+            }
 
-				return columns;
+            /// <summary>
+            /// Returns the Name for the sheet.
+            /// </summary>
+            /// <returns> the Name </returns>
+            public virtual string GetName()
+            {
+                return name;
+            }
 
-			}
-
-			/// <summary>
-			/// Returns the Name for the sheet.
-			/// </summary>
-			/// <returns> the Name </returns>
-			public virtual string GetName()
-			{
-
-				return name;
-
-			}
-
-			/// <summary>
-			/// Creates a sheet by using the values from setters in this builder.
-			/// </summary>
-			/// <returns> the sheet </returns>
-			public virtual Sheet Build()
-			{
-				Sheet sheet = new Sheet();
-
-				//if (columns == null || name == null)
-				//{
-				//	throw new InvalidOperationException();
-				//}
-
-				sheet.columns = columns;
-				sheet.Name = name;
-				return sheet;
-			}
-		}
+            /// <summary>
+            /// Creates a sheet by using the values from setters in this builder.
+            /// </summary>
+            /// <returns> the sheet </returns>
+            public virtual Sheet Build()
+            {
+                Sheet sheet = new Sheet();
+                sheet.columns = columns;
+                sheet.Name = name;
+                return sheet;
+            }
+        }
 
 
-		/// <summary>
-		/// A class to simplify the creation of a Sheet from another Sheet or another Template.
-		/// </summary>
-		public class CreateSheetFromTemplateBuilder
-		{
-			private string name;
-			private long? fromId;
+        /// <summary>
+        /// A class to simplify the creation of a Sheet from another Sheet or another Template.
+        /// </summary>
+        public class CreateSheetFromTemplateBuilder
+        {
+            private string name;
+            private long? fromId;
 
-			/// <summary>
-			/// Sets the required propeties for creating a Sheet from a Sheet or Template.
-			/// </summary>
-			/// <param name="fromId">the ID of the Sheet or Template from which to create the Sheet</param>
-			/// <param name="name"> the name of the Sheet, need not be unique </param>
-			public CreateSheetFromTemplateBuilder(string name, long? fromId)
-			{
-				this.fromId = fromId;
-				this.name = name;
-			}
+            /// <summary>
+            /// Sets the required propeties for creating a Sheet from a Sheet or Template.
+            /// </summary>
+            /// <param name="fromId">the ID of the Sheet or Template from which to create the Sheet</param>
+            /// <param name="name"> the name of the Sheet, need not be unique </param>
+            public CreateSheetFromTemplateBuilder(string name, long? fromId)
+            {
+                this.fromId = fromId;
+                this.name = name;
+            }
 
-			/// <summary>
-			/// Sets the Name for the sheet being created.
-			/// </summary>
-			/// <param name="name"> The Name for the sheet being created. </param>
-			/// <returns> the creates the from template or sheet builder </returns>
-			public virtual CreateSheetFromTemplateBuilder SetName(string name)
-			{
-				this.name = name;
-				return this;
-			}
+            /// <summary>
+            /// Sets the Name for the sheet being created.
+            /// </summary>
+            /// <param name="name"> The Name for the sheet being created. </param>
+            /// <returns> the creates the from template or sheet builder </returns>
+            public virtual CreateSheetFromTemplateBuilder SetName(string name)
+            {
+                this.name = name;
+                return this;
+            }
 
-			/// <summary>
-			/// Returns the Name for the sheet.
-			/// </summary>
-			/// <returns> the Name </returns>
-			public virtual string GetName()
-			{
-				return name;
-			}
+            /// <summary>
+            /// Returns the Name for the sheet.
+            /// </summary>
+            /// <returns> the Name </returns>
+            public virtual string GetName()
+            {
+                return name;
+            }
 
-			/// <summary>
-			/// Set the from Id.
-			/// </summary>
-			/// <param name="id"> the Id </param>
-			/// <returns> the creates the from template or sheet builder </returns>
-			public virtual CreateSheetFromTemplateBuilder SetFromId(long? id)
-			{
-				this.fromId = id;
-				return this;
-			}
+            /// <summary>
+            /// Set the from Id.
+            /// </summary>
+            /// <param name="id"> the Id </param>
+            /// <returns> the creates the from template or sheet builder </returns>
+            public virtual CreateSheetFromTemplateBuilder SetFromId(long? id)
+            {
+                this.fromId = id;
+                return this;
+            }
 
-			/// <summary>
-			/// Gets the from Id.
-			/// </summary>
-			/// <returns> the from Id </returns>
-			public virtual long? GetFromId()
-			{
-				return fromId;
-			}
+            /// <summary>
+            /// Gets the from Id.
+            /// </summary>
+            /// <returns> the from Id </returns>
+            public virtual long? GetFromId()
+            {
+                return fromId;
+            }
 
-			/// <summary>
-			/// Creates a sheet by using the values from setters in this builder.
-			/// </summary>
-			/// <returns> the sheet </returns>
-			public virtual Sheet Build()
-			{
-				Sheet sheet = new Sheet();
+            /// <summary>
+            /// Creates a sheet by using the values from setters in this builder.
+            /// </summary>
+            /// <returns> the sheet </returns>
+            public virtual Sheet Build()
+            {
+                Sheet sheet = new Sheet();
+                sheet.FromId = fromId;
+                sheet.Name = name;
+                return sheet;
+            }
+        }
 
-				//if (fromId == null || name == null)
-				//{
-				//	throw new InvalidOperationException();
-				//}
+        /// <summary>
+        /// The Class UpdateSheetBuilder.
+        /// </summary>
+        public class UpdateSheetBuilder
+        {
+            private long? id;
+            private string sheetName;
+            private SheetUserSettings userSettings;
+            private ProjectSettings projectSettings;
 
-				sheet.FromId = fromId;
-				sheet.Name = name;
-				return sheet;
-			}
-		}
+            /// <summary>
+            /// Sets the required properties for updating a sheet.
+            /// </summary>
+            /// <param name="id">the sheet id</param>
+            public UpdateSheetBuilder(long? id)
+            {
+                this.id = id;
+            }
 
+            /// <summary>
+            /// Sets the Sheet Name.
+            /// </summary>
+            /// <param name="name"> the Name </param>
+            /// <returns> the update sheet builder </returns>
+            public virtual UpdateSheetBuilder SetName(string name)
+            {
+                this.sheetName = name;
+                return this;
+            }
 
-		/// <summary>
-		/// The Class UpdateSheetBuilder.
-		/// </summary>
-		public class UpdateSheetBuilder
-		{
-			private long? id;
-			private string sheetName;
-			private SheetUserSettings userSettings;
-			private ProjectSettings projectSettings;
+            /// <summary>
+            /// Gets the sheet Name.
+            /// </summary>
+            /// <returns> the sheet Name </returns>
+            public virtual string GetName()
+            {
+                return sheetName;
+            }
 
-			/// <summary>
-			/// Sets the required properties for updating a sheet.
-			/// </summary>
-			/// <param name="id">the sheet id</param>
-			public UpdateSheetBuilder(long? id)
-			{
-				this.id = id;
-			}
+            /// <summary>
+            /// Sets the Sheet's user settings.
+            /// </summary>
+            /// <param name="userSettings"> the userSettings </param>
+            /// <returns> the update sheet builder </returns>
+            public virtual UpdateSheetBuilder SetUserSettings(SheetUserSettings userSettings)
+            {
+                this.userSettings = userSettings;
+                return this;
+            }
 
-			/// <summary>
-			/// Sets the Sheet Name.
-			/// </summary>
-			/// <param name="name"> the Name </param>
-			/// <returns> the update sheet builder </returns>
-			public virtual UpdateSheetBuilder SetName(string name)
-			{
-				this.sheetName = name;
-				return this;
-			}
+            /// <summary>
+            /// Gets the sheet's user settings.
+            /// </summary>
+            /// <returns> the sheet's user settings </returns>
+            public virtual SheetUserSettings GetUserSettings()
+            {
+                return userSettings;
+            }
 
-			/// <summary>
-			/// Gets the sheet Name.
-			/// </summary>
-			/// <returns> the sheet Name </returns>
-			public virtual string GetName()
-			{
-				return sheetName;
-			}
+            /// <summary>
+            /// Sets the Sheet's project settings
+            /// </summary>
+            /// <param name="projectSettings"></param>
+            /// <returns>the update sheet builder</returns>
+            public virtual UpdateSheetBuilder SetProjectSettings(ProjectSettings projectSettings)
+            {
+                this.projectSettings = projectSettings;
+                return this;
+            }
 
-			/// <summary>
-			/// Sets the Sheet's user settings.
-			/// </summary>
-			/// <param name="userSettings"> the userSettings </param>
-			/// <returns> the update sheet builder </returns>
-			public virtual UpdateSheetBuilder SetUserSettings(SheetUserSettings userSettings)
-			{
-				this.userSettings = userSettings;
-				return this;
-			}
+            /// <summary>
+            /// Gets the sheet's project settings.
+            /// </summary>
+            /// <returns> the sheet's project settings</returns>
+            public virtual ProjectSettings GetProjectSettings()
+            {
+                return projectSettings;
+            }
 
-			/// <summary>
-			/// Gets the sheet's user settings.
-			/// </summary>
-			/// <returns> the sheet's user settings </returns>
-			public virtual SheetUserSettings GetUserSettings()
-			{
-				return userSettings;
-			}
-
-			/// <summary>
-			/// Sets the Sheet's project settings
-			/// </summary>
-			/// <param name="projectSettings"></param>
-			/// <returns>the update sheet builder</returns>
-			public virtual UpdateSheetBuilder SetProjectSettings(ProjectSettings projectSettings)
-			{
-				this.projectSettings = projectSettings;
-				return this;
-			}
-
-			/// <summary>
-			/// Gets the sheet's project settings.
-			/// </summary>
-			/// <returns> the sheet's project settings</returns>
-			public virtual ProjectSettings GetProjectSettings()
-			{
-				return projectSettings;
-			}
-
-			/// <summary>
-			/// Builds the Sheet.
-			/// </summary>
-			/// <returns> the sheet </returns>
-			public virtual Sheet Build()
-			{
-				//if (sheetName == null)
-				//{
-				//	throw new InvalidOperationException();
-				//}
-
-				Sheet sheet = new Sheet();
-				sheet.Id = this.id;
-				sheet.Name = this.sheetName;
-				sheet.UserSettings = this.userSettings;
-				sheet.ProjectSettings = this.projectSettings;
-				//sheet.ID = id;
-				return sheet;
-			}
-		}
-	}
+            /// <summary>
+            /// Builds the Sheet.
+            /// </summary>
+            /// <returns> the sheet </returns>
+            public virtual Sheet Build()
+            {
+                Sheet sheet = new Sheet();
+                sheet.Id = this.id;
+                sheet.Name = this.sheetName;
+                sheet.UserSettings = this.userSettings;
+                sheet.ProjectSettings = this.projectSettings;
+                return sheet;
+            }
+        }
+    }
 }

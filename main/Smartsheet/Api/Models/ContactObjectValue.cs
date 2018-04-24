@@ -23,11 +23,11 @@ using System.Text;
 
 namespace Smartsheet.Api.Models
 {
-	class ContactObjectValue : Contact, ObjectValue
-	{
-		public virtual ObjectValueType ObjectType
-		{
-			get { return ObjectValueType.CONTACT; }
-		}
-	}
+    class ContactObjectValue : Contact, ObjectValue
+    {
+        public virtual ObjectValueType ObjectType
+        {
+            get { return ObjectValueType.CONTACT; }
+        }
+    }
 }

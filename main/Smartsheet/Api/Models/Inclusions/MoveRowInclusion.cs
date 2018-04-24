@@ -21,19 +21,19 @@ using Newtonsoft.Json.Converters;
 using System.Runtime.Serialization;
 namespace Smartsheet.Api.Models
 {
-	/// <summary>
-	/// Represents the list of row elements to move in addition to the cell data.
-	/// </summary>
-	[JsonConverter(typeof(StringEnumConverter))]
-	public enum MoveRowInclusion
-	{
-		/// <summary>
-		/// The attachments.
-		/// </summary>
-		ATTACHMENTS,
-		/// <summary>
-		/// The discussions.
-		/// </summary>
-		DISCUSSIONS
-	}
+    /// <summary>
+    /// Represents the list of row elements to move in addition to the cell data.
+    /// </summary>
+    [JsonConverter(typeof(StringEnumConverter))]
+    public enum MoveRowInclusion
+    {
+        /// <summary>
+        /// The attachments.
+        /// </summary>
+        ATTACHMENTS,
+        /// <summary>
+        /// The discussions.
+        /// </summary>
+        DISCUSSIONS
+    }
 }

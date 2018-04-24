@@ -22,11 +22,11 @@ using System.Text;
 
 namespace Smartsheet.Api.Models
 {
-	/// <summary>
-	/// Represents the contents of the widget. </summary>
-	/// <seealso href="http://smartsheet-platform.github.io/api-docs/#widgetcontent-object">Widget Content Help</seealso>
-	public enum WidgetType
-	{
+    /// <summary>
+    /// Represents the contents of the widget. </summary>
+    /// <seealso href="http://smartsheet-platform.github.io/api-docs/#widgetcontent-object">Widget Content Help</seealso>
+    public enum WidgetType
+    {
         /// <summary>
         /// CellLinkWidgetContent object
         /// </summary>
@@ -37,15 +37,15 @@ namespace Smartsheet.Api.Models
         /// </summary>
         CHART,
 
-		/// <summary>
-		/// ImageWidgetContent object
-		/// </summary>
-		IMAGE,
+        /// <summary>
+        /// ImageWidgetContent object
+        /// </summary>
+        IMAGE,
 
-		/// <summary>
-		/// CellLinkWidgetContent object
-		/// </summary>
-		SHEETSUMMARY,
+        /// <summary>
+        /// CellLinkWidgetContent object
+        /// </summary>
+        SHEETSUMMARY,
 
         /// <summary>
         /// ReportWidgetContent object
@@ -53,23 +53,23 @@ namespace Smartsheet.Api.Models
         GRIDGANTT,
         
         /// <summary>
-		/// RichTextWidgetContent object
-		/// </summary>
-		RICHTEXT,
+        /// RichTextWidgetContent object
+        /// </summary>
+        RICHTEXT,
 
-		/// <summary>
-		/// ShortcutWidgetContent object
-		/// </summary>
-		SHORTCUTICON,
+        /// <summary>
+        /// ShortcutWidgetContent object
+        /// </summary>
+        SHORTCUTICON,
 
-		/// <summary>
-		/// ShortcutWidgetContent object
-		/// </summary>
-		SHORTCUTLIST,
+        /// <summary>
+        /// ShortcutWidgetContent object
+        /// </summary>
+        SHORTCUTLIST,
 
         /// <summary>
         /// TitleWidgetContent object
         /// </summary>
         TITLE
-	}
+    }
 }

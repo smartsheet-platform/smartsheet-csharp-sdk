@@ -20,80 +20,80 @@ namespace Smartsheet.Api.OAuth
 {
 
 
-	/// <summary>
-	/// Represents the access scope. These are the scopes that are required to access an end user's Smartsheet data and 
-	/// specifies the Type of operations that are permitted.
-	/// </summary>
-	public enum AccessScope
-	{
-		/// <summary>
-		/// Read all sheet data, including comments, attachments and cell data
-		/// </summary>
-		READ_SHEETS,
+    /// <summary>
+    /// Represents the access scope. These are the scopes that are required to access an end user's Smartsheet data and 
+    /// specifies the Type of operations that are permitted.
+    /// </summary>
+    public enum AccessScope
+    {
+        /// <summary>
+        /// Read all sheet data, including comments, attachments and cell data
+        /// </summary>
+        READ_SHEETS,
 
-		/// <summary>
-		/// Insert and modify sheet data, including comments, attachments and cell data
-		/// </summary>
-		WRITE_SHEETS,
+        /// <summary>
+        /// Insert and modify sheet data, including comments, attachments and cell data
+        /// </summary>
+        WRITE_SHEETS,
 
-		/// <summary>
-		/// Share sheets, including sending sheets as attachments
-		/// </summary>
-		SHARE_SHEETS,
+        /// <summary>
+        /// Share sheets, including sending sheets as attachments
+        /// </summary>
+        SHARE_SHEETS,
 
-		/// <summary>
-		/// Delete sheets
-		/// </summary>
-		DELETE_SHEETS,
+        /// <summary>
+        /// Delete sheets
+        /// </summary>
+        DELETE_SHEETS,
 
-		/// <summary>
-		/// Create new sheets
-		/// </summary>
-		CREATE_SHEETS,
+        /// <summary>
+        /// Create new sheets
+        /// </summary>
+        CREATE_SHEETS,
 
-		/// <summary>
-		/// Create new sights
-		/// </summary>
-		CREATE_SIGHTS,
+        /// <summary>
+        /// Create new sights
+        /// </summary>
+        CREATE_SIGHTS,
 
-		/// <summary>
-		/// Read all sight data
-		/// </summary>
-		READ_SIGHTS,
+        /// <summary>
+        /// Read all sight data
+        /// </summary>
+        READ_SIGHTS,
 
-		/// <summary>
-		/// Delete sight
-		/// </summary>
-		DELETE_SIGHTS,
+        /// <summary>
+        /// Delete sight
+        /// </summary>
+        DELETE_SIGHTS,
 
-		/// <summary>
-		/// Share sight
-		/// </summary>
-		SHARE_SIGHTS,
+        /// <summary>
+        /// Share sight
+        /// </summary>
+        SHARE_SIGHTS,
 
-		/// <summary>
-		/// Retrieve users and groups for your Smartsheet organization
-		/// </summary>
-		READ_USERS,
+        /// <summary>
+        /// Retrieve users and groups for your Smartsheet organization
+        /// </summary>
+        READ_USERS,
 
-		/// <summary>
-		/// Retrieve contacts
-		/// </summary>
-		READ_CONTACTS,
+        /// <summary>
+        /// Retrieve contacts
+        /// </summary>
+        READ_CONTACTS,
 
-		/// <summary>
-		/// Add and remove users from your Smartsheet organization; create groups and manage membership
-		/// </summary>
-		ADMIN_USERS,
+        /// <summary>
+        /// Add and remove users from your Smartsheet organization; create groups and manage membership
+        /// </summary>
+        ADMIN_USERS,
 
-		/// <summary>
-		/// Modify sheet structure, including column definition, publish state, etc.
-		/// </summary>
-		ADMIN_SHEETS,
+        /// <summary>
+        /// Modify sheet structure, including column definition, publish state, etc.
+        /// </summary>
+        ADMIN_SHEETS,
 
-		/// <summary>
-		/// Create and manage workspaces and folders, including sharing
-		/// </summary>
-		ADMIN_WORKSPACES
-	}
+        /// <summary>
+        /// Create and manage workspaces and folders, including sharing
+        /// </summary>
+        ADMIN_WORKSPACES
+    }
 }

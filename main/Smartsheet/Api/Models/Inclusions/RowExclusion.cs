@@ -22,14 +22,14 @@ using System.Runtime.Serialization;
 
 namespace Smartsheet.Api.Models
 {
-	/// <summary>
-	/// Represents specific elements that can be excluded in a response.
-	/// </summary>
-	public enum RowExclusion
-	{
-		/// <summary>
-		/// Excludes the nonexistent cells.
-		/// </summary>
-		NONEXISTENT_CELLS
-	}
+    /// <summary>
+    /// Represents specific elements that can be excluded in a response.
+    /// </summary>
+    public enum RowExclusion
+    {
+        /// <summary>
+        /// Excludes the nonexistent cells.
+        /// </summary>
+        NONEXISTENT_CELLS
+    }
 }

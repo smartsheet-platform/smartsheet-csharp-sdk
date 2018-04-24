@@ -20,25 +20,14 @@ namespace Smartsheet.Api.Models
 {
 
 
-	/// <summary>
-	/// Represents the user Status.
-	/// </summary>
-	public enum UserStatus
-	{
-		/// <summary>
-		/// Represents ACTIVE Status.
-		/// </summary>
-		ACTIVE,
-
-		/// <summary>
-		/// Represents PENDING Status.
-		/// </summary>
-		PENDING,
-
-		/// <summary>
-		/// Represents DECLINED Status.
-		/// </summary>
-		DECLINED
-	}
+    /// <summary>
+    /// Represents the user Status.
+    /// </summary>
+    public enum UserStatus
+    {
+        ACTIVE,
+        PENDING,
+        DECLINED
+    }
 
 }

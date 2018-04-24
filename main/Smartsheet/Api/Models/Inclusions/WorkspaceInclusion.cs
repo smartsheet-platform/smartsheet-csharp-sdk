@@ -22,24 +22,24 @@ using System.Runtime.Serialization;
 
 namespace Smartsheet.Api.Models
 {
-	/// <summary>
-	/// Represents specific elements to include in a response.
-	/// </summary>
-	public enum WorkspaceInclusion
-	{
-		/// <summary>
-		/// Includes the owner’s email address and user ID for each sheet.
-		/// </summary>
-		OWNER_INFO,
+    /// <summary>
+    /// Represents specific elements to include in a response.
+    /// </summary>
+    public enum WorkspaceInclusion
+    {
+        /// <summary>
+        /// Includes the owner’s email address and user ID for each sheet.
+        /// </summary>
+        OWNER_INFO,
 
-		/// <summary>
-		/// Includes the source for any sheet that was created from another sheet or template.
-		/// </summary>
-		SOURCE,
+        /// <summary>
+        /// Includes the source for any sheet that was created from another sheet or template.
+        /// </summary>
+        SOURCE,
 
-		/// <summary>
-		/// Includes the sheet version for any sheet returned in this Workspace.
-		/// </summary>
-		SHEET_VERSION
-	}
+        /// <summary>
+        /// Includes the sheet version for any sheet returned in this Workspace.
+        /// </summary>
+        SHEET_VERSION
+    }
 }

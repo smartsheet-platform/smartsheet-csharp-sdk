@@ -18,25 +18,14 @@
 
 namespace Smartsheet.Api.Models
 {
-	/// <summary>
-	/// Represents the update reqeust status.
-	/// </summary>
-	public enum UpdateRequestStatus
-	{
-		/// <summary>
-		/// Represents PENDING Status.
-		/// </summary>
-		PENDING,
-
-		/// <summary>
-		/// The request was canceled.
-		/// </summary>
-		CANCELED,
-
-		/// <summary>
-		/// Represents COMPLETE Status.
-		/// </summary>
-		COMPLETE
-	}
+    /// <summary>
+    /// Represents the update reqeust status.
+    /// </summary>
+    public enum UpdateRequestStatus
+    {
+        PENDING,
+        CANCELED,
+        COMPLETE
+    }
 
 }

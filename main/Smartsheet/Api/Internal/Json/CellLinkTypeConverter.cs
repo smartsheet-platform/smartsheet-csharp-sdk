@@ -25,42 +25,42 @@ using Smartsheet.Api.Models;
 
 namespace Smartsheet.Api.Internal.Json
 {
-	class CellLinkTypeConverter : JsonConverter
-	{
-		public override bool CanConvert(Type objectType)
-		{
-			return typeof(CellLink).IsAssignableFrom(objectType);
-		}
+    class CellLinkTypeConverter : JsonConverter
+    {
+        public override bool CanConvert(Type objectType)
+        {
+            return typeof(CellLink).IsAssignableFrom(objectType);
+        }
 
-		public override object ReadJson(JsonReader reader, Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer)
-		{
-			if (reader.TokenType == JsonToken.StartObject)
-			{
-				object objectToDeserialize = Activator.CreateInstance(objectType);
-				serializer.Populate(reader, objectToDeserialize);
-				return objectToDeserialize;
-			}
-			return null;
-		}
+        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer)
+        {
+            if (reader.TokenType == JsonToken.StartObject)
+            {
+                object objectToDeserialize = Activator.CreateInstance(objectType);
+                serializer.Populate(reader, objectToDeserialize);
+                return objectToDeserialize;
+            }
+            return null;
+        }
 
-		public override void WriteJson(JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer)
-		{
-			Newtonsoft.Json.JsonSerializer serializerHelper = new Newtonsoft.Json.JsonSerializer();
-			serializerHelper.Formatting = Newtonsoft.Json.Formatting.None;
-			serializerHelper.MissingMemberHandling = Newtonsoft.Json.MissingMemberHandling.Ignore;
-			serializerHelper.DateFormatHandling = Newtonsoft.Json.DateFormatHandling.IsoDateFormat;
-			serializerHelper.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
-			serializerHelper.ContractResolver = new ContractResolver();
-			serializerHelper.Converters.Add(new JsonEnumTypeConverter());
+        public override void WriteJson(JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer)
+        {
+            Newtonsoft.Json.JsonSerializer serializerHelper = new Newtonsoft.Json.JsonSerializer();
+            serializerHelper.Formatting = Newtonsoft.Json.Formatting.None;
+            serializerHelper.MissingMemberHandling = Newtonsoft.Json.MissingMemberHandling.Ignore;
+            serializerHelper.DateFormatHandling = Newtonsoft.Json.DateFormatHandling.IsoDateFormat;
+            serializerHelper.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
+            serializerHelper.ContractResolver = new ContractResolver();
+            serializerHelper.Converters.Add(new JsonEnumTypeConverter());
 
-			CellLink cellLink = (CellLink)value;
-			if (cellLink.IsNull)
-			{
-				writer.WriteNull();
-			}
-			else
-				serializerHelper.Serialize(writer, value);
-		}
-	}
+            CellLink cellLink = (CellLink)value;
+            if (cellLink.IsNull)
+            {
+                writer.WriteNull();
+            }
+            else
+                serializerHelper.Serialize(writer, value);
+        }
+    }
 }
 

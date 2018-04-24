@@ -20,50 +20,21 @@ namespace Smartsheet.Api.Models
 {
 
 
-	/// <summary>
-	/// Represents the Tags to indicate a special column.
-	/// </summary>
-	public enum ColumnTag
-	{
-		/// <summary>
-		/// Represents CALENDAR_START_DATE tag. </summary>
-		CALENDAR_START_DATE,
-
-		/// <summary>
-		/// Represents CALENDAR_END_DATE tag. </summary>
-		CALENDAR_END_DATE,
-
-		/// <summary>
-		/// Represents GANTT_START_DATE tag. </summary>
-		GANTT_START_DATE,
-
-		/// <summary>
-		/// Represents GANTT_END_DATE tag. </summary>
-		GANTT_END_DATE,
-
-		/// <summary>
-		/// Represents GANTT_PERCENT_COMPLETE tag. </summary>
-		GANTT_PERCENT_COMPLETE,
-
-		/// <summary>
-		/// Represents GANTT_DISPLAY_LABEL tag. </summary>
-		GANTT_DISPLAY_LABEL,
-
-		/// <summary>
-		/// Represents GANTT_PREDECESSOR tag. </summary>
-		GANTT_PREDECESSOR,
-
-		/// <summary>
-		/// Represents GANTT_DURATION tag. </summary>
-		GANTT_DURATION,
-
-		/// <summary>
-		/// Represents GANTT_ASSIGNED_RESOURCE. </summary>
-		GANTT_ASSIGNED_RESOURCE,
-
-		/// <summary>
-		/// Represents GANTT_ALLOCATION. </summary>
-		GANTT_ALLOCATION
-	}
+    /// <summary>
+    /// Represents the Tags to indicate a special column.
+    /// </summary>
+    public enum ColumnTag
+    {
+        CALENDAR_START_DATE,
+        CALENDAR_END_DATE,
+        GANTT_START_DATE,
+        GANTT_END_DATE,
+        GANTT_PERCENT_COMPLETE,
+        GANTT_DISPLAY_LABEL,
+        GANTT_PREDECESSOR,
+        GANTT_DURATION,
+        GANTT_ASSIGNED_RESOURCE,
+        GANTT_ALLOCATION
+    }
 
 }

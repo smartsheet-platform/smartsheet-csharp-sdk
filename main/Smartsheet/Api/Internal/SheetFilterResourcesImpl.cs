@@ -22,81 +22,81 @@ using System.Text;
 
 namespace Smartsheet.Api.Internal
 {
-	using Api.Models;
-	using Smartsheet.Api.Internal.Util;
+    using Api.Models;
+    using Smartsheet.Api.Internal.Util;
 
-	public class SheetFilterResourcesImpl : AbstractResources, SheetFilterResources
-	{
+    public class SheetFilterResourcesImpl : AbstractResources, SheetFilterResources
+    {
         /// <summary>
         /// Constructor.
         /// </summary>
         /// <param name="smartsheet"> the Smartsheet </param>
         /// <exception cref="InvalidOperationException">if any argument is null</exception>
-		public SheetFilterResourcesImpl(SmartsheetImpl smartsheet) : base(smartsheet)
-		{
-		}
+        public SheetFilterResourcesImpl(SmartsheetImpl smartsheet) : base(smartsheet)
+        {
+        }
 
-		/// <summary>
-		/// <para>Gets the list of all sheet filters.</para>
-		/// 
-		/// <para>Mirrors to the following Smartsheet REST API method: GET /sheets/{sheetId}/filters</para>
-		/// </summary>
-		/// <param name="sheetId">the sheet Id</param>
-		/// <param name="paging">the pagination</param>
-		/// <returns> A list of all sheets filters (note that an empty list will be returned if there are none) </returns>
-		/// <exception cref="System.InvalidOperationException"> if any argument is null or an empty string </exception>
-		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		/// <exception cref="AuthorizationException"> if there is any problem with the REST API authorization (access token) </exception>
-		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
-		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual PaginatedResult<SheetFilter> ListFilters(long sheetId, PaginationParameters paging)
-		{
-			IDictionary<string, string> parameters = new Dictionary<string, string>();
-			if (paging != null)
-			{
-				parameters = paging.toDictionary();
-			}
+        /// <summary>
+        /// <para>Gets the list of all sheet filters.</para>
+        /// 
+        /// <para>Mirrors to the following Smartsheet REST API method: GET /sheets/{sheetId}/filters</para>
+        /// </summary>
+        /// <param name="sheetId">the sheet Id</param>
+        /// <param name="paging">the pagination</param>
+        /// <returns> A list of all sheets filters (note that an empty list will be returned if there are none) </returns>
+        /// <exception cref="System.InvalidOperationException"> if any argument is null or an empty string </exception>
+        /// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+        /// <exception cref="AuthorizationException"> if there is any problem with the REST API authorization (access token) </exception>
+        /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+        /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
+        /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+        public virtual PaginatedResult<SheetFilter> ListFilters(long sheetId, PaginationParameters paging)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            if (paging != null)
+            {
+                parameters = paging.toDictionary();
+            }
 
-			return this.ListResourcesWithWrapper<SheetFilter>("sheets/" + sheetId + "/filters" + QueryUtil.GenerateUrl(null, parameters));
-		}
+            return this.ListResourcesWithWrapper<SheetFilter>("sheets/" + sheetId + "/filters" + QueryUtil.GenerateUrl(null, parameters));
+        }
 
-		/// <summary>
-		/// <para>Gets a filter.</para>
-		/// 
-		/// <para>Mirrors to the following Smartsheet REST API method: GET /sheets/{sheetId}/filters/{filterId}</para>
-		/// </summary>
-		/// <param name="sheetId"> the sheet Id </param>
-		/// <param name="filterId"> the filter Id </param>
-		/// <returns> the sheet filter (note that if there is no such resource, this method will throw 
-		/// ResourceNotFoundException rather than returning null). </returns>
-		/// <exception cref="System.InvalidOperationException"> if any argument is null or an empty string </exception>
-		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		/// <exception cref="AuthorizationException"> if there is any problem with the REST API authorization (access token) </exception>
-		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
-		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual SheetFilter GetFilter(long sheetId, long filterId)
-		{
-			return this.GetResource<SheetFilter>("sheets/" + sheetId + "/filters/" + filterId, typeof(SheetFilter));
-		}
+        /// <summary>
+        /// <para>Gets a filter.</para>
+        /// 
+        /// <para>Mirrors to the following Smartsheet REST API method: GET /sheets/{sheetId}/filters/{filterId}</para>
+        /// </summary>
+        /// <param name="sheetId"> the sheet Id </param>
+        /// <param name="filterId"> the filter Id </param>
+        /// <returns> the sheet filter (note that if there is no such resource, this method will throw 
+        /// ResourceNotFoundException rather than returning null). </returns>
+        /// <exception cref="System.InvalidOperationException"> if any argument is null or an empty string </exception>
+        /// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+        /// <exception cref="AuthorizationException"> if there is any problem with the REST API authorization (access token) </exception>
+        /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+        /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
+        /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+        public virtual SheetFilter GetFilter(long sheetId, long filterId)
+        {
+            return this.GetResource<SheetFilter>("sheets/" + sheetId + "/filters/" + filterId, typeof(SheetFilter));
+        }
 
-		/// <summary>
-		/// <para>Deletes a filter.</para>
-		/// 
-		/// <para>Mirrors to the following Smartsheet REST API method: DELETE /sheets/{sheetId}/filters/{filterId}</para>
-		/// </summary>
-		/// <param name="sheetId"> the sheet Id </param>
-		/// <param name="filterId"> the filter Id </param>
-		/// <exception cref="System.InvalidOperationException"> if any argument is null or an empty string </exception>
-		/// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-		/// <exception cref="AuthorizationException"> if there is any problem with the REST API authorization (access token) </exception>
-		/// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-		/// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
-		/// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-		public virtual void DeleteFilter(long sheetId, long filterId)
-		{
-			this.DeleteResource<SheetFilter>("sheets/" + sheetId + "/filters/" + filterId, typeof(SheetFilter));
-		}
-	}
+        /// <summary>
+        /// <para>Deletes a filter.</para>
+        /// 
+        /// <para>Mirrors to the following Smartsheet REST API method: DELETE /sheets/{sheetId}/filters/{filterId}</para>
+        /// </summary>
+        /// <param name="sheetId"> the sheet Id </param>
+        /// <param name="filterId"> the filter Id </param>
+        /// <exception cref="System.InvalidOperationException"> if any argument is null or an empty string </exception>
+        /// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+        /// <exception cref="AuthorizationException"> if there is any problem with the REST API authorization (access token) </exception>
+        /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+        /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
+        /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+        public virtual void DeleteFilter(long sheetId, long filterId)
+        {
+            this.DeleteResource<SheetFilter>("sheets/" + sheetId + "/filters/" + filterId, typeof(SheetFilter));
+        }
+    }
 }

@@ -20,23 +20,23 @@ namespace Smartsheet.Api.OAuth
 {
 
 
-	/// <summary>
-	/// <para>This is the exception thrown by <seealso cref="OAuthFlow"/> To indicate an "invalid_request" error occurred when obtaining OAuth 
-	/// tokens.</para>
-	/// 
-	/// <para>Thread safety: Exceptions are not thread safe.</para>
-	/// </summary>
-	public class InvalidTokenRequestException : OAuthTokenException
-	{
+    /// <summary>
+    /// <para>This is the exception thrown by <seealso cref="OAuthFlow"/> To indicate an "invalid_request" error occurred when obtaining OAuth 
+    /// tokens.</para>
+    /// 
+    /// <para>Thread safety: Exceptions are not thread safe.</para>
+    /// </summary>
+    public class InvalidTokenRequestException : OAuthTokenException
+    {
 
 
-		/// <summary>
-		/// Constructor.
-		/// </summary>
-		/// <param name="message"> the Message </param>
-		public InvalidTokenRequestException(string message) : base(message)
-		{
-		}
-	}
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="message"> the Message </param>
+        public InvalidTokenRequestException(string message) : base(message)
+        {
+        }
+    }
 
 }

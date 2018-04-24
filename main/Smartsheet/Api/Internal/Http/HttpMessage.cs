@@ -22,60 +22,60 @@ namespace Smartsheet.Api.Internal.Http
 {
 
 
-	/// <summary>
-	/// This is the base class of HTTP messages, it holds Headers and an HttpEntity.
-	/// 
-	/// Thread Safety: This class is not thread safe since it's mutable.
-	/// </summary>
-	public abstract class HttpMessage
-	{
-		/// <summary>
-		/// Represents the HTTP Headers.
-		/// 
-		/// It has a pair of setter/getter (not shown on class diagram for brevity).
-		/// </summary>
-		private IDictionary<string, string> headers;
+    /// <summary>
+    /// This is the base class of HTTP messages, it holds Headers and an HttpEntity.
+    /// 
+    /// Thread Safety: This class is not thread safe since it's mutable.
+    /// </summary>
+    public abstract class HttpMessage
+    {
+        /// <summary>
+        /// Represents the HTTP Headers.
+        /// 
+        /// It has a pair of setter/getter (not shown on class diagram for brevity).
+        /// </summary>
+        private IDictionary<string, string> headers;
 
-		/// <summary>
-		/// Represents the HTTP Entity.
-		/// 
-		/// It has a pair of setter/getter (not shown on class diagram for brevity).
-		/// </summary>
-		private HttpEntity entity;
+        /// <summary>
+        /// Represents the HTTP Entity.
+        /// 
+        /// It has a pair of setter/getter (not shown on class diagram for brevity).
+        /// </summary>
+        private HttpEntity entity;
 
-		/// <summary>
-		/// Gets the Headers.
-		/// </summary>
-		/// <returns> the Headers </returns>
-		public virtual IDictionary<string, string> Headers
-		{
-			get
-			{
-				return headers;
-			}
-			set
-			{
-				this.headers = value;
-			}
-		}
+        /// <summary>
+        /// Gets the Headers.
+        /// </summary>
+        /// <returns> the Headers </returns>
+        public virtual IDictionary<string, string> Headers
+        {
+            get
+            {
+                return headers;
+            }
+            set
+            {
+                this.headers = value;
+            }
+        }
 
 
-		/// <summary>
-		/// Gets the Entity.
-		/// </summary>
-		/// <returns> the Entity </returns>
-		public virtual HttpEntity Entity
-		{
-			get
-			{
-				return entity;
-			}
-			set
-			{
-				this.entity = value;
-			}
-		}
+        /// <summary>
+        /// Gets the Entity.
+        /// </summary>
+        /// <returns> the Entity </returns>
+        public virtual HttpEntity Entity
+        {
+            get
+            {
+                return entity;
+            }
+            set
+            {
+                this.entity = value;
+            }
+        }
 
-	}
+    }
 
 }

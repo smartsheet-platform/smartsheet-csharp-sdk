@@ -18,48 +18,48 @@
 
 namespace Smartsheet.Api.Models
 {
-	/// <summary>
-	/// Represents operator.
-	/// </summary>
-	public enum CriteriaOperator
-	{
-		EQUAL,
-		NOT_EQUAL,
-		GREATER_THAN,
-		GREATER_THAN_OR_EQUAL,
-		LESS_THAN,
-		LESS_THAN_OR_EQUAL,
-		CONTAINS,
-		DOES_NOT_CONTAIN,
-		BETWEEN,
-		NOT_BETWEEN,
-		TODAY,
-		NOT_TODAY,
-		PAST,
-		NOT_PAST,
-		FUTURE,
-		NOT_FUTURE,
-		LAST_N_DAYS,
-		NOT_LAST_N_DAYS,
-		NEXT_N_DAYS,
-		NOT_NEXT_N_DAYS,
-		IS_BLANK,
-		IS_NOT_BLANK,
-		IS_NUMBER,
-		IS_NOT_NUMBER,
-		IS_DATE,
-		IS_NOT_DATE,
-		IS_CHECKED,
-		IS_NOT_CHECKED,
-		IS_ONE_OF,
-		IS_NOT_ONE_OF,
-		IS_CURRENT_USER,
-		IS_NOT_CURRENT_USER,
-		ON_CRITICAL_PATH,
-		NOT_ON_CRITICAL_PATH,
-		HAS_ATTACHMENTS,
-		NO_ATTACHMENTS,
-		HAS_COMMENTS,
-		NO_COMMENTS
-	}
+    /// <summary>
+    /// Represents operator.
+    /// </summary>
+    public enum CriteriaOperator
+    {
+        EQUAL,
+        NOT_EQUAL,
+        GREATER_THAN,
+        GREATER_THAN_OR_EQUAL,
+        LESS_THAN,
+        LESS_THAN_OR_EQUAL,
+        CONTAINS,
+        DOES_NOT_CONTAIN,
+        BETWEEN,
+        NOT_BETWEEN,
+        TODAY,
+        NOT_TODAY,
+        PAST,
+        NOT_PAST,
+        FUTURE,
+        NOT_FUTURE,
+        LAST_N_DAYS,
+        NOT_LAST_N_DAYS,
+        NEXT_N_DAYS,
+        NOT_NEXT_N_DAYS,
+        IS_BLANK,
+        IS_NOT_BLANK,
+        IS_NUMBER,
+        IS_NOT_NUMBER,
+        IS_DATE,
+        IS_NOT_DATE,
+        IS_CHECKED,
+        IS_NOT_CHECKED,
+        IS_ONE_OF,
+        IS_NOT_ONE_OF,
+        IS_CURRENT_USER,
+        IS_NOT_CURRENT_USER,
+        ON_CRITICAL_PATH,
+        NOT_ON_CRITICAL_PATH,
+        HAS_ATTACHMENTS,
+        NO_ATTACHMENTS,
+        HAS_COMMENTS,
+        NO_COMMENTS
+    }
 }

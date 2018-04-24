@@ -22,34 +22,34 @@ using System.Runtime.Serialization;
 
 namespace Smartsheet.Api.Models
 {
-	/// <summary>
-	/// Represents specific elements to include in a response.
-	/// </summary>
-	public enum ReportInclusion
-	{
-		/// <summary>
-		/// Includes the discussions.
-		/// </summary>
-		DISCUSSIONS,
+    /// <summary>
+    /// Represents specific elements to include in a response.
+    /// </summary>
+    public enum ReportInclusion
+    {
+        /// <summary>
+        /// Includes the discussions.
+        /// </summary>
+        DISCUSSIONS,
 
-		/// <summary>
-		/// Includes the attachments.
-		/// </summary>
-		ATTACHMENTS,
+        /// <summary>
+        /// Includes the attachments.
+        /// </summary>
+        ATTACHMENTS,
 
-		/// <summary>
-		/// Includes the format.
-		/// </summary>
-		FORMAT,
+        /// <summary>
+        /// Includes the format.
+        /// </summary>
+        FORMAT,
 
-		/// <summary>
-		/// Includes the source.
-		/// </summary>
-		SOURCE_SHEETS,
+        /// <summary>
+        /// Includes the source.
+        /// </summary>
+        SOURCE_SHEETS,
 
-		/// <summary>
-		/// Includes the sheet version for any source sheet returned by Report.
-		/// </summary>
-		SHEET_VERSION
-	}
+        /// <summary>
+        /// Includes the sheet version for any source sheet returned by Report.
+        /// </summary>
+        SHEET_VERSION
+    }
 }

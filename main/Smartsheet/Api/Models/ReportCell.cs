@@ -23,15 +23,15 @@ using System.Text;
 
 namespace Smartsheet.Api.Models
 {
-	/// <summary>
-	/// The Cell object of a Report.
-	/// </summary>
-	public class ReportCell : Cell
-	{
-		/// <summary>
-		/// The virtualId of this cell's column.  virtualColumnId refers to this cell's parent column in this report, 
-		/// while columnId refers to the cell's parent column in its originating source sheet.
-		/// </summary>
-		public long? VirtualColumnId { get; set; }
-	}
+    /// <summary>
+    /// The Cell object of a Report.
+    /// </summary>
+    public class ReportCell : Cell
+    {
+        /// <summary>
+        /// The virtualId of this cell's column.  virtualColumnId refers to this cell's parent column in this report, 
+        /// while columnId refers to the cell's parent column in its originating source sheet.
+        /// </summary>
+        public long? VirtualColumnId { get; set; }
+    }
 }

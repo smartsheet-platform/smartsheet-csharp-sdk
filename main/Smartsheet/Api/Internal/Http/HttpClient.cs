@@ -18,49 +18,49 @@
 
 namespace Smartsheet.Api.Internal.Http
 {
-	/// <summary>
-	/// This interface defines methods to make an HTTP request.
-	/// 
-	/// Thread Safety: Implementation of this interface must be thread safe.
-	/// </summary>
-	public interface HttpClient
-	{
+    /// <summary>
+    /// This interface defines methods to make an HTTP request.
+    /// 
+    /// Thread Safety: Implementation of this interface must be thread safe.
+    /// </summary>
+    public interface HttpClient
+    {
 
-		/// <summary>
-		/// Make a multipart HTTP request and return the response.
-		/// </summary>
-		/// <param name="request"> the Smartsheet request </param>
-		/// <param name="file">the full file path</param>
-		/// <param name="fileType">the file type, or also called the conent type of the file</param>
-		/// <param name="objectType">the object name, for example 'comment', or 'discussion'</param>
-		/// <returns> the HTTP response </returns>
-		/// <exception cref="HttpClientException"> the HTTP client exception </exception>
-		HttpResponse Request(HttpRequest request, string objectType, string file, string fileType);
+        /// <summary>
+        /// Make a multipart HTTP request and return the response.
+        /// </summary>
+        /// <param name="request"> the Smartsheet request </param>
+        /// <param name="file">the full file path</param>
+        /// <param name="fileType">the file type, or also called the conent type of the file</param>
+        /// <param name="objectType">the object name, for example 'comment', or 'discussion'</param>
+        /// <returns> the HTTP response </returns>
+        /// <exception cref="HttpClientException"> the HTTP client exception </exception>
+        HttpResponse Request(HttpRequest request, string objectType, string file, string fileType);
 
-		/// <summary>
-		/// Make an HTTP request and return the response.
-		/// 
-		/// Parameters: - request : the HTTP request
-		/// 
-		/// Returns: the HTTP response
-		/// 
-		/// Exceptions: - IllegalArgumentException : if any argument is null - HttpClientException : if there is any other
-		/// error occurred during the operation
-		/// </summary>
-		/// <param name="request"> the request </param>
-		/// <returns> the http response </returns>
-		/// <exception cref="HttpClientException"> the http client exception </exception>
-		HttpResponse Request(HttpRequest request);
+        /// <summary>
+        /// Make an HTTP request and return the response.
+        /// 
+        /// Parameters: - request : the HTTP request
+        /// 
+        /// Returns: the HTTP response
+        /// 
+        /// Exceptions: - IllegalArgumentException : if any argument is null - HttpClientException : if there is any other
+        /// error occurred during the operation
+        /// </summary>
+        /// <param name="request"> the request </param>
+        /// <returns> the http response </returns>
+        /// <exception cref="HttpClientException"> the http client exception </exception>
+        HttpResponse Request(HttpRequest request);
 
-		/// <summary>
-		/// Release connection.
-		/// </summary>
-		void ReleaseConnection();
-		
-		/// <summary>
-		/// Closes this instance.
-		/// </summary>
-		void Close();
-	}
+        /// <summary>
+        /// Release connection.
+        /// </summary>
+        void ReleaseConnection();
+        
+        /// <summary>
+        /// Closes this instance.
+        /// </summary>
+        void Close();
+    }
 
 }

@@ -20,21 +20,21 @@ namespace Smartsheet.Api.OAuth
 {
 
 
-	/// <summary>
-	/// <para>This is the exception thrown by <seealso cref="OAuthFlow"/> To indicate "unsupported_response_type" error occurred when obtaining
-	/// an authorization Code.</para>
-	/// 
-	/// <para>Thread safety: Exceptions are not thread safe.</para>
-	/// </summary>
-	public class UnsupportedResponseTypeException : OAuthAuthorizationCodeException
-	{
-		/// <summary>
-		/// Constructor.
-		/// </summary>
-		/// <param name="message"> the Message </param>
-		public UnsupportedResponseTypeException(string message) : base(message)
-		{
-		}
-	}
+    /// <summary>
+    /// <para>This is the exception thrown by <seealso cref="OAuthFlow"/> To indicate "unsupported_response_type" error occurred when obtaining
+    /// an authorization Code.</para>
+    /// 
+    /// <para>Thread safety: Exceptions are not thread safe.</para>
+    /// </summary>
+    public class UnsupportedResponseTypeException : OAuthAuthorizationCodeException
+    {
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="message"> the Message </param>
+        public UnsupportedResponseTypeException(string message) : base(message)
+        {
+        }
+    }
 
 }
