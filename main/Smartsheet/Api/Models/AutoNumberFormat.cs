@@ -18,8 +18,6 @@
 
 namespace Smartsheet.Api.Models
 {
-
-
     /// <summary>
     /// Represents the AutoNumberFormat object. It describes how the the System Column Type of "AUTO_NUMBER" is auto-generated </summary>
     /// <seealso href="http://www.Smartsheet.com/developers/Api-documentation#h.xu85ymcuwnmq">Auto Number Format API Documentation</seealso>
@@ -46,7 +44,7 @@ namespace Smartsheet.Api.Models
         /// Gets the Prefix.
         /// </summary>
         /// <returns> the Prefix </returns>
-        public virtual string Prefix
+        public string Prefix
         {
             get { return prefix; }
             set { this.prefix = value; }
@@ -56,7 +54,7 @@ namespace Smartsheet.Api.Models
         /// Gets the Suffix.
         /// </summary>
         /// <returns> the Suffix </returns>
-        public virtual string Suffix
+        public string Suffix
         {
             get { return suffix; }
             set { this.suffix = value; }
@@ -66,7 +64,7 @@ namespace Smartsheet.Api.Models
         /// Gets the Fill.
         /// </summary>
         /// <returns> the Fill </returns>
-        public virtual string Fill
+        public string Fill
         {
             get { return fill; }
             set { this.fill = value; }
@@ -76,7 +74,7 @@ namespace Smartsheet.Api.Models
         /// Gets the starting number.
         /// </summary>
         /// <returns> the starting number </returns>
-        public virtual long? StartingNumber
+        public long? StartingNumber
         {
             get { return startingNumber; }
             set { this.startingNumber = value; }

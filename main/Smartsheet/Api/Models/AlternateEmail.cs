@@ -24,7 +24,7 @@ namespace Smartsheet.Api.Models
         /// The email address string for AlternateEmail.
         /// </summary>
         /// <returns> the Email</returns>
-        public virtual string Email
+        public string Email
         {
             get { return email; }
             set { this.email = value; }
@@ -34,7 +34,7 @@ namespace Smartsheet.Api.Models
         /// The confirmed flag for AlternateEmail.
         /// </summary>
         /// <returns> the Confirmed</returns>
-        public virtual bool? Confirmed
+        public bool? Confirmed
         {
             get { return confirmed; }
             set { this.confirmed = value; }
@@ -61,7 +61,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="email"> the Email </param>
             /// <returns> creates the alternate email builder </returns>
-            public virtual AlternateEmailBuilder SetEmail(string email)
+            public AlternateEmailBuilder SetEmail(string email)
             {
                 this.email = email;
                 return this;
@@ -71,7 +71,7 @@ namespace Smartsheet.Api.Models
             /// Gets the Email.
             /// </summary>
             /// <returns> the Email </returns>
-            public virtual string GetEmail()
+            public string GetEmail()
             {
                 return email;
             }
@@ -80,7 +80,7 @@ namespace Smartsheet.Api.Models
             /// Builds the AlternateEmail.
             /// </summary>
             /// <returns> the alternate email</returns>
-            public virtual AlternateEmail Build()
+            public AlternateEmail Build()
             {
                 if (email == null)
                 {

@@ -40,7 +40,7 @@ namespace Smartsheet.Api.Models
         /// Gets the total count of Results.
         /// </summary>
         /// <returns> the total count </returns>
-        public virtual int? TotalCount
+        public int? TotalCount
         {
             get { return totalCount; }
             set { this.totalCount = value; }
@@ -50,7 +50,7 @@ namespace Smartsheet.Api.Models
         /// Gets the list of Results from the search.
         /// </summary>
         /// <returns> the Results </returns>
-        public virtual IList<SearchResultItem> Results
+        public IList<SearchResultItem> Results
         {
             get { return results; }
             set { this.results = value; }

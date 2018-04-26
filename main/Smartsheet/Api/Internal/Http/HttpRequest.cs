@@ -46,18 +46,11 @@ namespace Smartsheet.Api.Internal.Http
         /// Gets the uri.
         /// </summary>
         /// <returns> the uri </returns>
-        public virtual Uri Uri
+        public Uri Uri
         {
-            get
-            {
-                return uri;
-            }
-            set
-            {
-                this.uri = value;
-            }
+            get { return uri; }
+            set { this.uri = value; }
         }
-
 
         /// <summary>
         /// Gets the method.
@@ -65,16 +58,8 @@ namespace Smartsheet.Api.Internal.Http
         /// <returns> the method </returns>
         public virtual HttpMethod? Method
         {
-            get
-            {
-                return method;
-            }
-            set
-            {
-                this.method = value;
-            }
+            get { return method; }
+            set { this.method = value; }
         }
-
     }
-
 }

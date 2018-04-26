@@ -34,13 +34,13 @@ namespace Smartsheet.Api.Models
         /// Gets the array of Predecessor objects.
         /// </summary>
         /// <returns> the array </returns>
-        public virtual IList<Predecessor> Predecessors
+        public IList<Predecessor> Predecessors
         {
             get { return predecessors; }
             set { this.predecessors = value; }
         }
 
-        public virtual ObjectValueType ObjectType
+        public ObjectValueType ObjectType
         {
             get { return ObjectValueType.PREDECESSOR_LIST; }
         }

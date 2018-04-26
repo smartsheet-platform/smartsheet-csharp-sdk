@@ -26,7 +26,6 @@ namespace Smartsheet.Api.Models
     /// Attachments</seealso>
     public class Attachment : NamedModel
     {
-
         /// <summary>
         /// Represents the URL.
         /// </summary>
@@ -102,7 +101,7 @@ namespace Smartsheet.Api.Models
         /// Gets the URL.
         /// </summary>
         /// <returns> The Url. </returns>
-        public virtual string Url
+        public string Url
         {
             get { return url; }
             set { this.url = value; }
@@ -112,7 +111,7 @@ namespace Smartsheet.Api.Models
         /// Gets the Url expires in millis.
         /// </summary>
         /// <returns> the Url expires in millis </returns>
-        public virtual long? UrlExpiresInMillis
+        public long? UrlExpiresInMillis
         {
             get { return urlExpiresInMillis; }
             set { this.urlExpiresInMillis = value; }
@@ -122,18 +121,17 @@ namespace Smartsheet.Api.Models
         /// Gets the attachment Type.
         /// </summary>
         /// <returns> the attachment Type </returns>
-        public virtual AttachmentType? AttachmentType
+        public AttachmentType? AttachmentType
         {
             get { return attachmentType; }
             set { this.attachmentType = value; }
         }
 
-
         /// <summary>
         /// Gets the attachment sub Type.
         /// </summary>
         /// <returns> the attachment sub Type </returns>
-        public virtual AttachmentSubType? AttachmentSubType
+        public AttachmentSubType? AttachmentSubType
         {
             get { return attachmentSubType; }
             set { this.attachmentSubType = value; }
@@ -143,7 +141,7 @@ namespace Smartsheet.Api.Models
         /// Gets the created at.
         /// </summary>
         /// <returns> the created at </returns>
-        public virtual DateTime? CreatedAt
+        public DateTime? CreatedAt
         {
             get { return createdAt; }
             set { this.createdAt = value; }
@@ -153,7 +151,7 @@ namespace Smartsheet.Api.Models
         /// Gets the mime Type.
         /// </summary>
         /// <returns> the mime Type </returns>
-        public virtual string MimeType
+        public string MimeType
         {
             get { return mimeType; }
             set { this.mimeType = value; }
@@ -163,7 +161,7 @@ namespace Smartsheet.Api.Models
         /// Gets the parent Type.
         /// </summary>
         /// <returns> the parent Type </returns>
-        public virtual AttachmentParentType? ParentType
+        public AttachmentParentType? ParentType
         {
             get { return parentType; }
             set { this.parentType = value; }
@@ -173,7 +171,7 @@ namespace Smartsheet.Api.Models
         /// Gets the parent Id.
         /// </summary>
         /// <returns> the parent Id </returns>
-        public virtual long? ParentId
+        public long? ParentId
         {
             get { return parentId; }
             set { this.parentId = value; }
@@ -183,7 +181,7 @@ namespace Smartsheet.Api.Models
         /// Gets the size in kb.
         /// </summary>
         /// <returns> the size in kb </returns>
-        public virtual long? SizeInKb
+        public long? SizeInKb
         {
             get { return sizeInKb; }
             set { this.sizeInKb = value; }

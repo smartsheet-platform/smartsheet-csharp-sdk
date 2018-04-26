@@ -18,8 +18,6 @@
 
 namespace Smartsheet.Api.Models
 {
-
-
     /// <summary>
     /// Represents the attachment parent Type.
     /// </summary>
@@ -29,5 +27,4 @@ namespace Smartsheet.Api.Models
         ROW,
         COMMENT
     }
-
 }

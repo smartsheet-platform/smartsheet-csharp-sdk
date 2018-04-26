@@ -18,8 +18,6 @@
 
 namespace Smartsheet.Api.Models
 {
-
-
     /// <summary>
     /// Represents the Type of access that is granted on a given sheet. </summary>
     /// <seealso href="http://www.Smartsheet.com/developers/Api-documentation#h.89hb3ivv7eum">Access Scopes Help</seealso>
@@ -34,5 +32,4 @@ namespace Smartsheet.Api.Models
         ADMIN_SHEETS,
         ADMIN_WORKSPACES
     }
-
 }

@@ -18,8 +18,6 @@
 
 namespace Smartsheet.Api.Models
 {
-
-
     /// <summary>
     /// Represents access levels that Users can have. </summary>
     /// <seealso href="http://www.Smartsheet.com/developers/Api-documentation#h.umfgm4xt25dq">Access Level Help</seealso>
@@ -31,5 +29,4 @@ namespace Smartsheet.Api.Models
         ADMIN,
         OWNER
     }
-
 }

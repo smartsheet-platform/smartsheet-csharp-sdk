@@ -52,7 +52,7 @@ namespace Smartsheet.Api.Models
         /// Gets the result Code.
         /// </summary>
         /// <returns> the result Code </returns>
-        public virtual int? ResultCode
+        public int? ResultCode
         {
             get { return resultCode; }
             set { this.resultCode = value; }
@@ -62,7 +62,7 @@ namespace Smartsheet.Api.Models
         /// Gets the Message.
         /// </summary>
         /// <returns> the Message </returns>
-        public virtual string Message
+        public string Message
         {
             get { return message; }
             set { this.message = value; }
@@ -72,7 +72,7 @@ namespace Smartsheet.Api.Models
         /// Row results created or updated.
         /// </summary>
         /// <returns> Array of Row objects </returns>
-        public virtual IList<Row> Result
+        public IList<Row> Result
         {
             get { return result; }
             set { this.result = value; }
@@ -82,7 +82,7 @@ namespace Smartsheet.Api.Models
         /// Array of BulkItemFailure objects which represents the items that failed to be added or updated. 
         /// </summary>
         /// <returns> the Description </returns>
-        public virtual IList<BulkItemFailure> FailedItems
+        public IList<BulkItemFailure> FailedItems
         {
             get { return failedItems; }
             set { this.failedItems = value; }

@@ -25,7 +25,7 @@ namespace Smartsheet.Api.Models
 {
     class ContactObjectValue : Contact, ObjectValue
     {
-        public virtual ObjectValueType ObjectType
+        public ObjectValueType ObjectType
         {
             get { return ObjectValueType.CONTACT; }
         }

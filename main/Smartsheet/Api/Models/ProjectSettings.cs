@@ -45,7 +45,7 @@ namespace Smartsheet.Api.Models
         /// <summary>
         /// Get a list of working days in the week.
         /// </summary>
-        public virtual IList<string> WorkingDays
+        public IList<string> WorkingDays
         {
             get { return workingDays; }
             set { workingDays = value; }
@@ -54,7 +54,7 @@ namespace Smartsheet.Api.Models
         /// <summary>
         /// Get a list of non working days in the year.
         /// </summary>
-        public virtual IList<DateTime> NonWorkingDays
+        public IList<DateTime> NonWorkingDays
         {
             get { return nonWorkingDays; }
             set { nonWorkingDays = value; }
@@ -63,7 +63,7 @@ namespace Smartsheet.Api.Models
         /// <summary>
         /// Get the length of the workday for a project seheet.
         /// </summary>
-        public virtual float? LengthOfDay
+        public float? LengthOfDay
         {
             get { return lengthOfDay; }
             set { lengthOfDay = value; }

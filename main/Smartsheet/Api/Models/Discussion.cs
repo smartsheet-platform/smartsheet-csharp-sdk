@@ -80,7 +80,7 @@ namespace Smartsheet.Api.Models
         /// the title for the discussion.
         /// </summary>
         /// <returns> the title </returns>
-        public virtual string Title
+        public string Title
         {
             get { return title; }
             set { this.title = value; }
@@ -90,7 +90,7 @@ namespace Smartsheet.Api.Models
         /// The comments for the discussion.
         /// </summary>
         /// <returns> the comments </returns>
-        public virtual IList<Comment> Comments
+        public IList<Comment> Comments
         {
             get { return comments; }
             set { this.comments = value; }
@@ -100,7 +100,7 @@ namespace Smartsheet.Api.Models
         /// The comment for the discussion.
         /// </summary>
         /// <returns> the comment </returns>
-        public virtual Comment Comment
+        public Comment Comment
         {
             get { return comment; }
             set { this.comment = value; }
@@ -110,7 +110,7 @@ namespace Smartsheet.Api.Models
         /// The comment attachments.
         /// </summary>
         /// <returns> the comment attachments </returns>
-        public virtual IList<Attachment> CommentAttachments
+        public IList<Attachment> CommentAttachments
         {
             get { return commentAttachments; }
             set { this.commentAttachments = value; }
@@ -119,7 +119,7 @@ namespace Smartsheet.Api.Models
         /// <summary>
         /// Get the number of comments in the discussion
         /// </summary>
-        public virtual int? CommentCount
+        public int? CommentCount
         {
             get { return commentCount; }
             set { this.commentCount = value; }
@@ -129,7 +129,7 @@ namespace Smartsheet.Api.Models
         /// Time of most recent comment
         /// </summary>
         /// <returns> the last commented at </returns>
-        public virtual DateTime? LastCommentedAt
+        public DateTime? LastCommentedAt
         {
             get { return lastCommentedAt; }
             set { this.lastCommentedAt = value; }
@@ -139,18 +139,17 @@ namespace Smartsheet.Api.Models
         /// User object containing name and email of the author of the most recent comment
         /// </summary>
         /// <returns> the last commented user </returns>
-        public virtual User LastCommentedUser
+        public User LastCommentedUser
         {
             get { return lastCommentedUser; }
             set { this.lastCommentedUser = value; }
         }
 
-
         /// <summary>
         /// User's permissions on the discussion
         /// </summary>
         /// <returns> the access level </returns>
-        public virtual AccessLevel? AccessLevel
+        public AccessLevel? AccessLevel
         {
             get { return accessLevel; }
             set { this.accessLevel = value; }
@@ -168,7 +167,7 @@ namespace Smartsheet.Api.Models
         /// <summary>
         /// "SHEET" or "ROW": present only when the direct association is not clear (see Get All Discussions)
         /// </summary>
-        public virtual DiscussionParentType? ParentType
+        public DiscussionParentType? ParentType
         {
             get { return parentType; }
             set { parentType = value; }
@@ -177,7 +176,7 @@ namespace Smartsheet.Api.Models
         /// <summary>
         /// User object containing name and email of the creator of the discussion
         /// </summary>
-        public virtual User CreatedBy
+        public User CreatedBy
         {
             get { return createdBy; }
             set { createdBy = value; }
@@ -217,7 +216,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="title"> the title </param>
             /// <returns> the creates the discussion builder </returns>
-            public virtual CreateDiscussionBuilder SetTitle(string title)
+            public CreateDiscussionBuilder SetTitle(string title)
             {
                 this.title = title;
                 return this;
@@ -228,7 +227,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="comment"> the comments </param>
             /// <returns> the creates the discussion builder </returns>
-            public virtual CreateDiscussionBuilder SetComment(Comment comment)
+            public CreateDiscussionBuilder SetComment(Comment comment)
             {
                 this.comment = comment;
                 return this;
@@ -238,7 +237,7 @@ namespace Smartsheet.Api.Models
             /// Gets the title.
             /// </summary>
             /// <returns> the title </returns>
-            public virtual string GetTitle()
+            public string GetTitle()
             {
                 return title;
             }
@@ -247,7 +246,7 @@ namespace Smartsheet.Api.Models
             /// Gets the comments.
             /// </summary>
             /// <returns> the comments </returns>
-            public virtual Comment GetComment()
+            public Comment GetComment()
             {
                 return comment;
             }
@@ -256,7 +255,7 @@ namespace Smartsheet.Api.Models
             /// Builds the.
             /// </summary>
             /// <returns> the discussion </returns>
-            public virtual Discussion Build()
+            public Discussion Build()
             {
                 Discussion discussion = new Discussion();
                 discussion.title = title;

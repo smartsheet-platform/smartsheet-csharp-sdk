@@ -68,7 +68,7 @@ namespace Smartsheet.Api.Models
         /// Label for the data point. This will be either the column name or a user-provided string.
         /// </summary>
         /// <returns> the label </returns>
-        public virtual string Label
+        public string Label
         {
             get { return label; }
             set { this.label = value; }
@@ -78,7 +78,7 @@ namespace Smartsheet.Api.Models
         /// formatDescriptor.
         /// </summary>
         /// <returns> the labelFormat </returns>
-        public virtual string LabelFormat
+        public string LabelFormat
         {
             get { return labelFormat; }
             set { this.labelFormat = value; }
@@ -88,7 +88,7 @@ namespace Smartsheet.Api.Models
         /// The type of data returned will depend on the cell type and the data in the cell.
         /// </summary>
         /// <returns> an object </returns>
-        public virtual object ObjectValue
+        public object ObjectValue
         {
             get { return objectValue; }
             set { this.objectValue = value; }
@@ -98,7 +98,7 @@ namespace Smartsheet.Api.Models
         /// Cell Object.
         /// </summary>
         /// <returns> the Cell Object </returns>
-        public virtual Cell Cell
+        public Cell Cell
         {
             get { return cell; }
             set { this.cell = value; }
@@ -108,7 +108,7 @@ namespace Smartsheet.Api.Models
         /// formatDescriptor.
         /// </summary>
         /// <returns> the valueFormat </returns>
-        public virtual string ValueFormat
+        public string ValueFormat
         {
             get { return valueFormat; }
             set { this.valueFormat = value; }
@@ -118,7 +118,7 @@ namespace Smartsheet.Api.Models
         /// The display order for the CellDataItem.
         /// </summary>
         /// <returns> the display order </returns>
-        public virtual int? Order
+        public int? Order
         {
             get { return order; }
             set { this.order = value; }
@@ -128,7 +128,7 @@ namespace Smartsheet.Api.Models
         /// Column ID for the cell.
         /// </summary>
         /// <returns> the column Id </returns>
-        public virtual long? ColumnId
+        public long? ColumnId
         {
             get { return columnId; }
             set { this.columnId = value; }

@@ -46,7 +46,7 @@ namespace Smartsheet.Api.Models
         /// Get Image Id.
         /// </summary>
         /// <returns> the Id </returns>
-        public virtual string Id
+        public string Id
         {
             get { return id; }
             set { this.id = value; }
@@ -74,7 +74,7 @@ namespace Smartsheet.Api.Models
         /// Alternate Text for the image.
         /// </summary>
         /// <returns> the altText </returns>
-        public virtual string AltText
+        public string AltText
         {
             get { return altText; }
             set { this.altText = value; }

@@ -131,7 +131,7 @@ namespace Smartsheet.Api.Models
         }
 
         [JsonIgnore]
-        public virtual bool IsNull
+        public bool IsNull
         {
             get { return isNull; }
         }

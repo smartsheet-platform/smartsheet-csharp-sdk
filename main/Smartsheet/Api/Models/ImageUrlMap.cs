@@ -48,7 +48,7 @@ namespace Smartsheet.Api.Models
         /// Gets the array of ImageUrl objects.
         /// </summary>
         /// <returns> the ImageUrls </returns>
-        public virtual IList<ImageUrl> ImageUrls
+        public IList<ImageUrl> ImageUrls
         {
             get { return imageUrls; }
             set { this.imageUrls = value; }

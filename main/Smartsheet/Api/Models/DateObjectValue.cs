@@ -45,7 +45,7 @@ namespace Smartsheet.Api.Models
             return DateTime.Parse(this.value);
         }
 
-        public virtual ObjectValueType ObjectType
+        public ObjectValueType ObjectType
         {
             get { return objectType; }
         }

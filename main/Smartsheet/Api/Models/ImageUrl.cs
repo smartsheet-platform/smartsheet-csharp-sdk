@@ -53,7 +53,7 @@ namespace Smartsheet.Api.Models
         /// Get Image Id.
         /// </summary>
         /// <returns> the Id </returns>
-        public virtual string ImageId
+        public string ImageId
         {
             get { return imageId; }
             set { this.imageId = value; }
@@ -81,7 +81,7 @@ namespace Smartsheet.Api.Models
         /// Temporary URL that can be used to retrieve the image.
         /// </summary>
         /// <returns> the Url </returns>
-        public virtual string Url
+        public string Url
         {
             get { return url; }
             set { this.url = value; }
@@ -91,7 +91,7 @@ namespace Smartsheet.Api.Models
         /// Get the Error object. Present in the Get Image URLs response only if an error occurred retrieving the image.
         /// </summary>
         /// <returns> the Error </returns>
-        public virtual Error Error
+        public Error Error
         {
             get { return error; }
             set { this.error = value; }
@@ -135,7 +135,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="imageId"> the imageId </param>
             /// <returns> creates the ImageUrlBuilder </returns>
-            public virtual ImageUrlBuilder SetImageId(string imageId)
+            public ImageUrlBuilder SetImageId(string imageId)
             {
                 this.imageId = imageId;
                 return this;
@@ -145,7 +145,7 @@ namespace Smartsheet.Api.Models
             /// Gets the image Id.
             /// </summary>
             /// <returns> the imageId </returns>
-            public virtual string GetImageId()
+            public string GetImageId()
             {
                 return imageId;
             }
@@ -154,7 +154,7 @@ namespace Smartsheet.Api.Models
             /// Builds the ImageUrl.
             /// </summary>
             /// <returns> the ImageUrl</returns>
-            public virtual ImageUrl Build()
+            public ImageUrl Build()
             {
                 if (imageId == null)
                 {

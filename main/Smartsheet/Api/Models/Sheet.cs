@@ -28,7 +28,7 @@ namespace Smartsheet.Api.Models
         /// </summary>
         /// <param name="columnId"> the column Id </param>
         /// <returns> the column by Id </returns>
-        public virtual Column GetColumnById(long columnId)
+        public Column GetColumnById(long columnId)
         {
             if (columns == null)
             {
@@ -72,7 +72,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="columns"> The Columns to create with this sheet. </param>
             /// <returns> the creates the builder </returns>
-            public virtual CreateSheetBuilder SetColumns(IList<Column> columns)
+            public CreateSheetBuilder SetColumns(IList<Column> columns)
             {
                 this.columns = columns;
                 return this;
@@ -83,7 +83,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="name"> The Name for the sheet being created. </param>
             /// <returns> the creates the builder </returns>
-            public virtual CreateSheetBuilder SetName(string name)
+            public CreateSheetBuilder SetName(string name)
             {
                 this.name = name;
                 return this;
@@ -93,7 +93,7 @@ namespace Smartsheet.Api.Models
             /// Returns the list of Columns.
             /// </summary>
             /// <returns> the Columns </returns>
-            public virtual IList<Column> GetColumns()
+            public IList<Column> GetColumns()
             {
                 return columns;
             }
@@ -102,7 +102,7 @@ namespace Smartsheet.Api.Models
             /// Returns the Name for the sheet.
             /// </summary>
             /// <returns> the Name </returns>
-            public virtual string GetName()
+            public string GetName()
             {
                 return name;
             }
@@ -111,7 +111,7 @@ namespace Smartsheet.Api.Models
             /// Creates a sheet by using the values from setters in this builder.
             /// </summary>
             /// <returns> the sheet </returns>
-            public virtual Sheet Build()
+            public Sheet Build()
             {
                 Sheet sheet = new Sheet();
                 sheet.columns = columns;
@@ -145,7 +145,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="name"> The Name for the sheet being created. </param>
             /// <returns> the creates the from template or sheet builder </returns>
-            public virtual CreateSheetFromTemplateBuilder SetName(string name)
+            public CreateSheetFromTemplateBuilder SetName(string name)
             {
                 this.name = name;
                 return this;
@@ -155,7 +155,7 @@ namespace Smartsheet.Api.Models
             /// Returns the Name for the sheet.
             /// </summary>
             /// <returns> the Name </returns>
-            public virtual string GetName()
+            public string GetName()
             {
                 return name;
             }
@@ -165,7 +165,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="id"> the Id </param>
             /// <returns> the creates the from template or sheet builder </returns>
-            public virtual CreateSheetFromTemplateBuilder SetFromId(long? id)
+            public CreateSheetFromTemplateBuilder SetFromId(long? id)
             {
                 this.fromId = id;
                 return this;
@@ -175,7 +175,7 @@ namespace Smartsheet.Api.Models
             /// Gets the from Id.
             /// </summary>
             /// <returns> the from Id </returns>
-            public virtual long? GetFromId()
+            public long? GetFromId()
             {
                 return fromId;
             }
@@ -184,7 +184,7 @@ namespace Smartsheet.Api.Models
             /// Creates a sheet by using the values from setters in this builder.
             /// </summary>
             /// <returns> the sheet </returns>
-            public virtual Sheet Build()
+            public Sheet Build()
             {
                 Sheet sheet = new Sheet();
                 sheet.FromId = fromId;
@@ -217,7 +217,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="name"> the Name </param>
             /// <returns> the update sheet builder </returns>
-            public virtual UpdateSheetBuilder SetName(string name)
+            public UpdateSheetBuilder SetName(string name)
             {
                 this.sheetName = name;
                 return this;
@@ -227,7 +227,7 @@ namespace Smartsheet.Api.Models
             /// Gets the sheet Name.
             /// </summary>
             /// <returns> the sheet Name </returns>
-            public virtual string GetName()
+            public string GetName()
             {
                 return sheetName;
             }
@@ -237,7 +237,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="userSettings"> the userSettings </param>
             /// <returns> the update sheet builder </returns>
-            public virtual UpdateSheetBuilder SetUserSettings(SheetUserSettings userSettings)
+            public UpdateSheetBuilder SetUserSettings(SheetUserSettings userSettings)
             {
                 this.userSettings = userSettings;
                 return this;
@@ -247,7 +247,7 @@ namespace Smartsheet.Api.Models
             /// Gets the sheet's user settings.
             /// </summary>
             /// <returns> the sheet's user settings </returns>
-            public virtual SheetUserSettings GetUserSettings()
+            public SheetUserSettings GetUserSettings()
             {
                 return userSettings;
             }
@@ -257,7 +257,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="projectSettings"></param>
             /// <returns>the update sheet builder</returns>
-            public virtual UpdateSheetBuilder SetProjectSettings(ProjectSettings projectSettings)
+            public UpdateSheetBuilder SetProjectSettings(ProjectSettings projectSettings)
             {
                 this.projectSettings = projectSettings;
                 return this;
@@ -267,7 +267,7 @@ namespace Smartsheet.Api.Models
             /// Gets the sheet's project settings.
             /// </summary>
             /// <returns> the sheet's project settings</returns>
-            public virtual ProjectSettings GetProjectSettings()
+            public ProjectSettings GetProjectSettings()
             {
                 return projectSettings;
             }
@@ -276,7 +276,7 @@ namespace Smartsheet.Api.Models
             /// Builds the Sheet.
             /// </summary>
             /// <returns> the sheet </returns>
-            public virtual Sheet Build()
+            public Sheet Build()
             {
                 Sheet sheet = new Sheet();
                 sheet.Id = this.id;

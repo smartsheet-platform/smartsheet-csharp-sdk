@@ -41,7 +41,7 @@ namespace Smartsheet.Api.Models
         /// Gets the sheet Email Format (PDF or Excel).
         /// </summary>
         /// <returns> the Format </returns>
-        public virtual SheetEmailFormat? Format
+        public SheetEmailFormat? Format
         {
             get { return format; }
             set { this.format = value; }
@@ -51,7 +51,7 @@ namespace Smartsheet.Api.Models
         /// Gets the Format details (paper dimensions).
         /// </summary>
         /// <returns> the Format details </returns>
-        public virtual FormatDetails FormatDetails
+        public FormatDetails FormatDetails
         {
             get { return formatDetails; }
             set { this.formatDetails = value; }

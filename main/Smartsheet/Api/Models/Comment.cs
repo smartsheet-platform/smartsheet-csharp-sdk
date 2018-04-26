@@ -60,7 +60,7 @@ namespace Smartsheet.Api.Models
         /// Gets the Text for the Comment.
         /// </summary>
         /// <returns> the Text </returns>
-        public virtual string Text
+        public string Text
         {
             get { return text; }
             set { this.text = value; }
@@ -70,7 +70,7 @@ namespace Smartsheet.Api.Models
         /// Gets user that created the Comment.
         /// </summary>
         /// <returns> the created by </returns>
-        public virtual User CreatedBy
+        public User CreatedBy
         {
             get { return createdBy; }
             set { this.createdBy = value; }
@@ -80,7 +80,7 @@ namespace Smartsheet.Api.Models
         /// Gets the Comment Attachments.
         /// </summary>
         /// <returns> the Attachments </returns>
-        public virtual IList<Attachment> Attachments
+        public IList<Attachment> Attachments
         {
             get { return attachments; }
             set { this.attachments = value; }
@@ -90,7 +90,7 @@ namespace Smartsheet.Api.Models
         /// Gets the discussion Id.
         /// </summary>
         /// <returns> the discussion Id </returns>
-        public virtual long? DiscussionId
+        public long? DiscussionId
         {
             get { return discussionId; }
             set { this.discussionId = value; }
@@ -100,7 +100,7 @@ namespace Smartsheet.Api.Models
         /// Gets the date the Comment was created.
         /// </summary>
         /// <returns> the created at </returns>
-        public virtual DateTime? CreatedAt
+        public DateTime? CreatedAt
         {
             get { return createdAt; }
             set { this.createdAt = value; }
@@ -110,7 +110,7 @@ namespace Smartsheet.Api.Models
         /// Gets the date the Comment was modified.
         /// </summary>
         /// <returns> the modified at </returns>
-        public virtual DateTime? ModifiedAt
+        public DateTime? ModifiedAt
         {
             get { return modifiedAt; }
             set { this.modifiedAt = value; }
@@ -135,7 +135,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="text"> the Text </param>
             /// <returns> the adds the Comment builder </returns>
-            public virtual AddCommentBuilder SetText(string text)
+            public AddCommentBuilder SetText(string text)
             {
                 this.text = text;
                 return this;
@@ -144,7 +144,7 @@ namespace Smartsheet.Api.Models
             /// <summary>
             /// Gets the Text for the Comment. </summary>
             /// <returns> the Text </returns>
-            public virtual string Text
+            public string Text
             {
                 get { return text; }
             }
@@ -153,7 +153,7 @@ namespace Smartsheet.Api.Models
             /// Builds the Comment.
             /// </summary>
             /// <returns> the Comment </returns>
-            public virtual Comment Build()
+            public Comment Build()
             {
                 if (text == null)
                 {

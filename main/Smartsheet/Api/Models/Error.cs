@@ -47,7 +47,7 @@ namespace Smartsheet.Api.Models
         /// Gets the error code.
         /// </summary>
         /// <returns> the error code </returns>
-        public virtual int? ErrorCode
+        public int? ErrorCode
         {
             get { return errorCode; }
             set { this.errorCode = value; }
@@ -57,7 +57,7 @@ namespace Smartsheet.Api.Models
         /// Gets the message.
         /// </summary>
         /// <returns> the message </returns>
-        public virtual string Message
+        public string Message
         {
             get { return message; }
             set { this.message = value; }
@@ -67,7 +67,7 @@ namespace Smartsheet.Api.Models
         /// Gets the refId
         /// </summary>
         /// <returns> the refId </returns>
-        public virtual string RefId
+        public string RefId
         {
             get { return refId; }
             set { this.refId = value; }
@@ -77,7 +77,7 @@ namespace Smartsheet.Api.Models
         /// Gets additional error detail if available
         /// </summary>
         /// <returns> error detail </returns>
-        public virtual object Detail
+        public object Detail
         {
             get { return detail; }
             set { this.detail = value; }

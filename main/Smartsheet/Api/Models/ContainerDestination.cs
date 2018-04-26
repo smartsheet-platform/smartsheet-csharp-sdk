@@ -21,7 +21,6 @@ using System.Collections.Generic;
 
 namespace Smartsheet.Api.Models
 {
-
     /// <summary>
     /// Object that describes the destination container when a Sheet or Folder is moved, or when a Sheet, Folder, or Workspace is copied.
     /// </summary>

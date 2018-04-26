@@ -26,18 +26,18 @@ namespace Smartsheet.Api.Models
 {
     public class ExplicitNull : IPrimitiveObjectValue<object>
     {
-        public virtual object Value
+        public object Value
         {
             get { return null; }
             set { }
         }
 
-        public virtual ObjectValueType ObjectType
+        public ObjectValueType ObjectType
         {
             get { return ObjectValueType.NULL; }
         }
 
-        public virtual void Serialize(JsonWriter writer)
+        public void Serialize(JsonWriter writer)
         {
             writer.WriteNull();
         }

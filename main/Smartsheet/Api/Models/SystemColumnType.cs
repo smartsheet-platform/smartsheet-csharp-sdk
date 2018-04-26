@@ -18,8 +18,6 @@
 
 namespace Smartsheet.Api.Models
 {
-
-
     /// <summary>
     /// Represents the system column types. </summary>
     /// <seealso href="http://help.Smartsheet.com/customer/portal/articles/504619-column-types">Column Types Help</seealso>

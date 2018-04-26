@@ -49,7 +49,7 @@ namespace Smartsheet.Api.Models
         /// Gets the list of Recipients
         /// </summary>
         /// <returns> the list of Recipients </returns>
-        public virtual IList<Recipient> SendTo
+        public IList<Recipient> SendTo
         {
             get { return sendTo; }
             set { this.sendTo = value; }
@@ -59,7 +59,7 @@ namespace Smartsheet.Api.Models
         /// Gets the Subject.
         /// </summary>
         /// <returns> the Subject </returns>
-        public virtual string Subject
+        public string Subject
         {
             get { return subject; }
             set { this.subject = value; }
@@ -69,7 +69,7 @@ namespace Smartsheet.Api.Models
         /// Gets the Message.
         /// </summary>
         /// <returns> the Message </returns>
-        public virtual string Message
+        public string Message
         {
             get { return message; }
             set { this.message = value; }
@@ -79,7 +79,7 @@ namespace Smartsheet.Api.Models
         /// Gets the carbon copy me flag.
         /// </summary>
         /// <returns> the cc me </returns>
-        public virtual bool? CcMe
+        public bool? CcMe
         {
             get { return ccMe; }
             set { this.ccMe = value; }

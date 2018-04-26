@@ -46,7 +46,7 @@ namespace Smartsheet.Api.Models
         /// The result code.
         /// </value>
         /// <returns> the RequestResult Code </returns>
-        public virtual int? ResultCode
+        public int? ResultCode
         {
             get { return resultCode; }
             set { this.resultCode = value; }
@@ -59,7 +59,7 @@ namespace Smartsheet.Api.Models
         /// The message.
         /// </value>
         /// <returns> the Message </returns>
-        public virtual string Message
+        public string Message
         {
             get { return message; }
             set { this.message = value; }
@@ -72,7 +72,7 @@ namespace Smartsheet.Api.Models
         /// The result object.
         /// </value>
         /// <returns> the RequestResult </returns>
-        public virtual T Result
+        public T Result
         {
             get { return result; }
             set { this.result = value; }
@@ -85,7 +85,7 @@ namespace Smartsheet.Api.Models
         /// The version.
         /// </value>
         /// <returns> the Version </returns>
-        public virtual int? Version
+        public int? Version
         {
             get { return version; }
             set { this.version = value; }

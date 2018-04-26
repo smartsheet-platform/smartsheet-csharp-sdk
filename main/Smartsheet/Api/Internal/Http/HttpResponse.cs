@@ -39,18 +39,10 @@ namespace Smartsheet.Api.Internal.Http
         /// Gets the Status Code.
         /// </summary>
         /// <returns> the Status Code </returns>
-        public virtual HttpStatusCode StatusCode
+        public HttpStatusCode StatusCode
         {
-            get
-            {
-                return statusCode;
-            }
-            set
-            {
-                this.statusCode = value;
-            }
+            get { return statusCode; }
+            set { this.statusCode = value; }
         }
-
     }
-
 }

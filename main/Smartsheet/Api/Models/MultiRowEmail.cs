@@ -30,7 +30,7 @@ namespace Smartsheet.Api.Models
         /// <summary>
         /// IDs of rows to be included.
         /// </summary>
-        public virtual IList<long> RowIds
+        public IList<long> RowIds
         {
             get { return rowIds; }
             set { rowIds = value; }

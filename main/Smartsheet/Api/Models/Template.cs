@@ -79,7 +79,7 @@ namespace Smartsheet.Api.Models
         /// Gets the Description of the template.
         /// </summary>
         /// <returns> the Description </returns>
-        public virtual string Description
+        public string Description
         {
             get { return description; }
             set { this.description = value; }
@@ -89,7 +89,7 @@ namespace Smartsheet.Api.Models
         /// Gets the access level of the template.
         /// </summary>
         /// <returns> the access level </returns>
-        public virtual AccessLevel? AccessLevel
+        public AccessLevel? AccessLevel
         {
             get { return accessLevel; }
             set { this.accessLevel = value;}
@@ -99,7 +99,7 @@ namespace Smartsheet.Api.Models
         /// Gets the URL to the small preview image for this template.
         /// </summary>
         /// <returns> the URL </returns>
-        public virtual string Image
+        public string Image
         {
             get { return image; }
             set { this.image = value; }
@@ -109,7 +109,7 @@ namespace Smartsheet.Api.Models
         /// Gets the URL to the large preview image for this template.
         /// </summary>
         /// <returns> the URL </returns>
-        public virtual string LargeImage
+        public string LargeImage
         {
             get { return largeImage; }
             set { this.largeImage = value; }
@@ -119,7 +119,7 @@ namespace Smartsheet.Api.Models
         /// Gets the locale of the template.
         /// </summary>
         /// <returns> the locale </returns>
-        public virtual string Locale
+        public string Locale
         {
             get { return locale; }
             set { this.locale = value; }
@@ -129,7 +129,7 @@ namespace Smartsheet.Api.Models
         /// Gets the type of the template. One of “sheet” or “report”.
         /// </summary>
         /// <returns> "sheet" or "report" </returns>
-        public virtual string Type
+        public string Type
         {
             get { return type; }
             set { this.type = value; }
@@ -139,7 +139,7 @@ namespace Smartsheet.Api.Models
         /// Gets the list of search tags for this template.
         /// </summary>
         /// <returns> list of tags </returns>
-        public virtual IList<string> Tags
+        public IList<string> Tags
         {
             get { return tags; }
             set { this.tags = value; }
@@ -149,7 +149,7 @@ namespace Smartsheet.Api.Models
         /// Gets the list of categories this template belongs to.
         /// </summary>
         /// <returns> list of categories </returns>
-        public virtual IList<string> Categories
+        public IList<string> Categories
         {
             get { return categories; }
             set { this.categories = value; }
@@ -159,7 +159,7 @@ namespace Smartsheet.Api.Models
         /// Gets the flag indicating whether the template is blank.
         /// </summary>
         /// <returns> blank flag </returns>
-        public virtual bool? Blank
+        public bool? Blank
         {
             get { return blank; }
             set { this.blank = value; }
@@ -169,7 +169,7 @@ namespace Smartsheet.Api.Models
         /// Gets the type of global template.
         /// </summary>
         /// <returns> template type </returns>
-        public virtual GlobalTemplate? GlobalTemplate
+        public GlobalTemplate? GlobalTemplate
         {
             get { return globalTemplate; }
             set { this.globalTemplate = value; }

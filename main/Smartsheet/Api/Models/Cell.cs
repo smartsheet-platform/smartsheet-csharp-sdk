@@ -20,13 +20,11 @@ using System.Collections.Generic;
 
 namespace Smartsheet.Api.Models
 {
-
     /// <summary>
     /// Represents the Cell object that holds data in a sheet.
     /// </summary>
     public class Cell
     {
-
         /// <summary>
         /// Represents the column Type.
         /// </summary>
@@ -145,7 +143,7 @@ namespace Smartsheet.Api.Models
         /// Gets the column Type.
         /// </summary>
         /// <returns> the Type </returns>
-        public virtual ColumnType? ColumnType
+        public ColumnType? ColumnType
         {
             get { return columnType; }
             set { this.columnType = value; }
@@ -155,7 +153,7 @@ namespace Smartsheet.Api.Models
         /// An object representation of a cell's value that is currently used for adding or updating predecessor cell values.
         /// </summary>
         /// <returns> the ObjectValue </returns>
-        public virtual ObjectValue ObjectValue
+        public ObjectValue ObjectValue
         {
             get { return objectValue; }
             set { this.objectValue = value;    }
@@ -165,51 +163,47 @@ namespace Smartsheet.Api.Models
         /// Gets the value.
         /// </summary>
         /// <returns> the value </returns>
-        public virtual object Value
+        public object Value
         {
             get { return value; }
             set { this.value = value; }
         }
 
-
         /// <summary>
         /// Gets the display value used on special columns such as "Contact List".
         /// </summary>
         /// <returns> the display value </returns>
-        public virtual string DisplayValue
+        public string DisplayValue
         {
             get { return displayValue; }
             set { this.displayValue = value; }
         }
 
-
         /// <summary>
         /// Gets the column Id for this cell.
         /// </summary>
         /// <returns> the column Id </returns>
-        public virtual long? ColumnId
+        public long? ColumnId
         {
             get { return columnId; }
             set { this.columnId = value; }
         }
 
-
         /// <summary>
         /// A hyperlink to a URL, sheet, or report
         /// </summary>
         /// <returns> the link </returns>
-        public virtual Hyperlink Hyperlink
+        public Hyperlink Hyperlink
         {
             get { return hyperlink; }
             set { this.hyperlink = value; }
         }
 
-
         /// <summary>
         /// Gets the formula for this cell.
         /// </summary>
         /// <returns> the formula </returns>
-        public virtual string Formula
+        public string Formula
         {
             get { return formula; }
             set { this.formula = value; }
@@ -221,7 +215,7 @@ namespace Smartsheet.Api.Models
         /// </summary>
         /// <seealso href="http://www.Smartsheet.com/developers/Api-documentation#h.lay2yj3x1pp8">Column Types</seealso>
         /// <returns> the Strict </returns>
-        public virtual bool? Strict
+        public bool? Strict
         {
             get { return strict; }
             set { this.strict = value; }
@@ -232,7 +226,7 @@ namespace Smartsheet.Api.Models
         /// </summary>
         /// <seealso href="http://www.Smartsheet.com/developers/Api-documentation#h.lay2yj3x1pp8">Column Types</seealso>
         /// <returns> the Strict </returns>
-        public virtual Image Image
+        public Image Image
         {
             get { return image; }
             set { this.image = value; }
@@ -244,7 +238,7 @@ namespace Smartsheet.Api.Models
         /// honored for POST or PUT actions that update rows.
         /// </summary>
         /// <returns> the override validation flag </returns>
-        public virtual bool? OverrideValidation 
+        public bool? OverrideValidation 
         {
             get { return overrideValidation; }
             set { this.overrideValidation = value;}
@@ -281,55 +275,51 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="columnId">the column Id</param>
             /// <returns>this AddCellBuilder</returns>
-            public virtual AddCellBuilder SetColumnId(long? columnId)
+            public AddCellBuilder SetColumnId(long? columnId)
             {
                 this.columnId = columnId;
                 return this;
             }
-
 
             /// <summary>
             /// Sets the cell value
             /// </summary>
             /// <param name="value">the value</param>
             /// <returns>this AddCellBuilder</returns>
-            public virtual AddCellBuilder SetValue(object value)
+            public AddCellBuilder SetValue(object value)
             {
                 this.value = value;
                 return this;
             }
-
 
             /// <summary>
             /// Sets whether cells is Strict or not.
             /// </summary>
             /// <param name="strict">the Strict option</param>
             /// <returns>this AddCellBuilder</returns>
-            public virtual AddCellBuilder SetStrict(bool? strict)
+            public AddCellBuilder SetStrict(bool? strict)
             {
                 this.strict = strict;
                 return this;
             }
-
 
             /// <summary>
             /// Sets the format.
             /// </summary>
             /// <param name="format">the format</param>
             /// <returns>this AddCellBuilder</returns>
-            public virtual AddCellBuilder SetFormat(string format)
+            public AddCellBuilder SetFormat(string format)
             {
                 this.format = format;
                 return this;
             }
-
 
             /// <summary>
             /// Sets the hyperlink.
             /// </summary>
             /// <param name="hyperlink">the hyperlink</param>
             /// <returns> this AddCellBuilder </returns>
-            public virtual AddCellBuilder SetHyperlink(Hyperlink hyperlink)
+            public AddCellBuilder SetHyperlink(Hyperlink hyperlink)
             {
                 this.hyperlink = hyperlink;
                 return this;
@@ -339,7 +329,7 @@ namespace Smartsheet.Api.Models
             /// Gets the column Id.
             /// </summary>
             /// <returns>the column Id</returns>
-            public virtual long? GetColumnId()
+            public long? GetColumnId()
             {
                 return columnId;
             }
@@ -348,7 +338,7 @@ namespace Smartsheet.Api.Models
             /// Gets the value.
             /// </summary>
             /// <returns>the value</returns>
-            public virtual object GetValue()
+            public object GetValue()
             {
                 return value;
             }
@@ -357,7 +347,7 @@ namespace Smartsheet.Api.Models
             /// Gets the Strict option.
             /// </summary>
             /// <returns>the Strict option</returns>
-            public virtual bool? GetStrict()
+            public bool? GetStrict()
             {
                 return strict;
             }
@@ -366,17 +356,16 @@ namespace Smartsheet.Api.Models
             /// Gets the format.
             /// </summary>
             /// <returns>the format</returns>
-            public virtual string GetFormat()
+            public string GetFormat()
             {
                 return format;
             }
-
 
             /// <summary>
             /// Gets the hyperlink.
             /// </summary>
             /// <returns>the hyperlink</returns>
-            public virtual Hyperlink GetHyperlink()
+            public Hyperlink GetHyperlink()
             {
                 return hyperlink;
             }
@@ -385,7 +374,7 @@ namespace Smartsheet.Api.Models
             /// Builds and returns the Cell object.
             /// </summary>
             /// <returns>Cell object</returns>
-            public virtual Cell Build()
+            public Cell Build()
             {
                 Cell cell = new Cell();
                 cell.ColumnId = columnId;
@@ -430,7 +419,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="columnId">columnId</param>
             /// <returns>this UpdateCellBuilder</returns>
-            public virtual UpdateCellBuilder SetColumnId(long? columnId)
+            public UpdateCellBuilder SetColumnId(long? columnId)
             {
                 this.columnId = columnId;
                 return this;
@@ -441,7 +430,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="value">(required)</param>
             /// <returns>this UpdateCellBuilder</returns>
-            public virtual UpdateCellBuilder SetValue(object value)
+            public UpdateCellBuilder SetValue(object value)
             {
                 this.value = value;
                 return this;
@@ -452,7 +441,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="strict">(optional)</param>
             /// <returns>this UpdateCellBuilder</returns>
-            public virtual UpdateCellBuilder SetStrict(bool? strict)
+            public UpdateCellBuilder SetStrict(bool? strict)
             {
                 this.strict = strict;
                 return this;
@@ -463,7 +452,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="format">(optional)</param>
             /// <returns>this UpdateCellBuilder</returns>
-            public virtual UpdateCellBuilder SetFormat(string format)
+            public UpdateCellBuilder SetFormat(string format)
             {
                 this.format = format;
                 return this;
@@ -479,7 +468,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="hyperlink"> Link object </param>
             /// <returns> this UpdateCellBuilder </returns>
-            public virtual UpdateCellBuilder SetHyperlink(Hyperlink hyperlink)
+            public UpdateCellBuilder SetHyperlink(Hyperlink hyperlink)
             {
                 this.hyperlink = hyperlink;
                 return this;
@@ -495,7 +484,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="linkInFromCell"> CellLink object </param>
             /// <returns> this UpdateCellBuilder </returns>
-            public virtual UpdateCellBuilder SetLinkInFromCell(CellLink linkInFromCell)
+            public UpdateCellBuilder SetLinkInFromCell(CellLink linkInFromCell)
             {
                 this.linkInFromCell = linkInFromCell;
                 return this;
@@ -505,7 +494,7 @@ namespace Smartsheet.Api.Models
             /// Gets the column Id.
             /// </summary>
             /// <returns>the column Id.</returns>
-            public virtual long? GetColumnId()
+            public long? GetColumnId()
             {
                 return columnId;
             }
@@ -514,7 +503,7 @@ namespace Smartsheet.Api.Models
             /// Gets the value.
             /// </summary>
             /// <returns>the value.</returns>
-            public virtual object GetValue()
+            public object GetValue()
             {
                 return value;
             }
@@ -525,7 +514,7 @@ namespace Smartsheet.Api.Models
             /// <returns>
             /// the strict.
             /// </returns>
-            public virtual bool? GetStrict()
+            public bool? GetStrict()
             {
                 return strict;
             }
@@ -534,7 +523,7 @@ namespace Smartsheet.Api.Models
             /// Gets the format.
             /// </summary>
             /// <returns>the format</returns>
-            public virtual string GetFormat()
+            public string GetFormat()
             {
                 return format;
             }
@@ -543,7 +532,7 @@ namespace Smartsheet.Api.Models
             /// Gets the hyperLink
             /// </summary>
             /// <returns>the hyperlink</returns>
-            public virtual Hyperlink GetHyperlink()
+            public Hyperlink GetHyperlink()
             {
                 return hyperlink;
             }
@@ -552,7 +541,7 @@ namespace Smartsheet.Api.Models
             /// Gets link in from cell.
             /// </summary>
             /// <returns>the link in from cell</returns>
-            public virtual CellLink GetLinkInFromCell()
+            public CellLink GetLinkInFromCell()
             {
                 return linkInFromCell;
             }
@@ -561,7 +550,7 @@ namespace Smartsheet.Api.Models
             /// Builds and returns the Cell object.
             /// </summary>
             /// <returns>Cell object</returns>
-            public virtual Cell Build()
+            public Cell Build()
             {
                 Cell cell = new Cell();
                 cell.ColumnId = columnId;

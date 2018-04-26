@@ -128,7 +128,7 @@ namespace Smartsheet.Api.Models
         /// List of sheet filters
         /// </summary>
         private IList<SheetFilter> filters;
-        
+
         /// <summary>
         /// Represents the user settings
         /// </summary>
@@ -162,7 +162,7 @@ namespace Smartsheet.Api.Models
         /// <summary>
         /// Represents the email of the owner
         /// </summary>
-        public virtual string Owner
+        public string Owner
         {
             get { return owner; }
             set { owner = value; }
@@ -171,30 +171,247 @@ namespace Smartsheet.Api.Models
         /// <summary>
         /// Represents the Id of the owner
         /// </summary>
-        public virtual long? OwnerId
+        public long? OwnerId
         {
             get { return ownerId; }
             set { ownerId = value; }
         }
 
-
         /// <summary>
         /// Gets the dependencies enabled flag.
         /// </summary>
         /// <returns> the dependencies enabled </returns>
-        public virtual bool? DependenciesEnabled
+        public bool? DependenciesEnabled
         {
             get { return dependenciesEnabled; }
-            set { dependenciesEnabled = value;    }
+            set { dependenciesEnabled = value; }
         }
 
+        /// <summary>
+        /// Gets the columns for the sheet.
+        /// </summary>
+        /// <returns> the columns </returns>
+        public IList<TColumn> Columns
+        {
+            get { return columns; }
+            set { columns = value; }
+        }
+
+        /// <summary>
+        /// Gets the rows for the sheet.
+        /// </summary>
+        /// <returns> the rows </returns>
+        public IList<TRow> Rows
+        {
+            get { return rows; }
+            set { rows = value; }
+        }
+
+        /// <summary>
+        /// Gets the access level for the sheet.
+        /// </summary>
+        /// <returns> the access level </returns>
+        public AccessLevel? AccessLevel
+        {
+            get { return accessLevel; }
+            set { accessLevel = value; }
+        }
+
+        /// <summary>
+        /// Gets the discussions for the sheet.
+        /// </summary>
+        /// <returns> the discussions </returns>
+        public IList<Discussion> Discussions
+        {
+            get { return discussions; }
+            set { discussions = value; }
+        }
+
+        /// <summary>
+        /// Gets the attachments for the sheet.
+        /// </summary>
+        /// <returns> the attachments </returns>
+        public IList<Attachment> Attachments
+        {
+            get { return attachments; }
+            set { attachments = value; }
+        }
+
+        /// <summary>
+        /// Gets the read only flag for the sheet.
+        /// </summary>
+        /// <returns> the read only </returns>
+        public bool? ReadOnly
+        {
+            get { return readOnly; }
+            set { readOnly = value; }
+        }
+
+        /// <summary>
+        /// Gets the date and time the sheet was created.
+        /// </summary>
+        /// <returns> the created at </returns>
+        public DateTime? CreatedAt
+        {
+            get { return createdAt; }
+            set { createdAt = value; }
+        }
+
+
+        /// <summary>
+        /// Gets the date and time the sheet was last modified.
+        /// </summary>
+        /// <returns> the modified at </returns>
+        public DateTime? ModifiedAt
+        {
+            get { return modifiedAt; }
+            set { modifiedAt = value; }
+        }
+
+        /// <summary>
+        /// Gets the Permalink for the sheet.
+        /// </summary>
+        /// <returns> the Permalink </returns>
+        public string Permalink
+        {
+            get { return permalink; }
+            set { permalink = value; }
+        }
+
+        /// <summary>
+        /// Gets the Gantt enabled flag.
+        /// </summary>
+        /// <returns> the Gantt enabled flag </returns>
+        public bool? GanttEnabled
+        {
+            get { return ganttEnabled; }
+            set { ganttEnabled = value; }
+        }
+
+        /// <summary>
+        /// Gets the version for the sheet.
+        /// </summary>
+        /// <returns> the version </returns>
+        public int? Version
+        {
+            get { return version; }
+            set { version = value; }
+        }
+
+        /// <summary>
+        /// Gets the Id of the sheet/template from which the sheet was created.
+        /// </summary>
+        /// <returns> the from Id </returns>
+        public long? FromId
+        {
+            get { return fromId; }
+            set { fromId = value; }
+        }
+
+        /// <summary>
+        /// The total number of rows in the sheet.
+        /// </summary>
+        /// <returns> The total number of rows in the sheet </returns>
+        public long? TotalRowCount
+        {
+            get { return totalRowCount; }
+            set { totalRowCount = value; }
+        }
+
+        /// <summary>
+        /// Array of enum strings (see Attachment.attachmentType) indicating the allowable attachment options for the current user and sheet
+        /// </summary>
+        /// <returns> list of attachment types </returns>
+        public IList<AttachmentType> EffectiveAttachmentOptions
+        {
+            get { return effectiveAttachmentOptions; }
+            set { effectiveAttachmentOptions = value; }
+        }
+
+        /// <summary>
+        /// Indicates whether resource management is enabled.
+        /// </summary>
+        /// <returns> true if enabled, false otherwise </returns>
+        public bool? ResourceManagementEnabled
+        {
+            get { return resourceManagementEnabled; }
+            set { resourceManagementEnabled = value; }
+        }
+
+        /// <summary>
+        /// Returned only if the user has marked this sheet as a favorite in their Home tab (value = “true”).
+        /// </summary>
+        /// <returns> true if marked as favorite, false otherwise </returns>
+        public bool? Favorite
+        {
+            get { return favorite; }
+            set { favorite = value; }
+        }
+
+        /// <summary>
+        /// Returned only if there are column filters on the sheet. Value = “true” if “show parent rows” is enabled for the filters.
+        /// </summary>
+        /// <returns> “true” if “show parent rows” is enabled for the filters </returns>
+        public bool? ShowParentRowsForFilters
+        {
+            get { return showParentRowsForFilters; }
+            set { showParentRowsForFilters = value; }
+        }
+
+        /// <summary>
+        /// Gets the list of sheet filters for this sheet.
+        /// </summary>
+        /// <returns> the list of sheet filters </returns>
+        public IList<SheetFilter> Filters
+        {
+            get { return filters; }
+            set { filters = value; }
+        }
+
+        /// <summary>
+        /// A SheetUserSettings object containing the current user’s sheet-specific settings..
+        /// </summary>
+        /// <returns> SheetUserSettings object </returns>
+        public SheetUserSettings UserSettings
+        {
+            get { return userSettings; }
+            set { userSettings = value; }
+        }
+
+        /// <summary>
+        /// A Source object indicating the sheet or template from which this sheet was created.
+        /// </summary>
+        /// <returns> source of sheet </returns>
+        public Source Source
+        {
+            get { return source; }
+            set { source = value; }
+        }
+
+        /// <summary>
+        /// Gets sheet’s project settings containing the working days, non-working days, and length of day for a project sheet
+        /// </summary>
+        public ProjectSettings ProjectSettings
+        {
+            get { return projectSettings; }
+            set { projectSettings = value; }
+        }
+
+        /// <summary>
+        /// Gets the list of cross-sheet references used by this sheet
+        /// </summary>
+        public IList<CrossSheetReference> CrossSheetReferences
+        {
+            get { return crossSheetReferences; }
+            set { crossSheetReferences = value; }
+        }
 
         /// <summary>
         /// Gets a column by index.
         /// </summary>
         /// <param name="index"> the column index </param>
         /// <returns> the column by index </returns>
-        public virtual TColumn GetColumnByIndex(int index)
+        public TColumn GetColumnByIndex(int index)
         {
             if (columns == null)
             {
@@ -218,7 +435,7 @@ namespace Smartsheet.Api.Models
         /// </summary>
         /// <param name="rowNumber"> the row number </param>
         /// <returns> the row by row number </returns>
-        public virtual TRow GetRowByRowNumber(int rowNumber)
+        public TRow GetRowByRowNumber(int rowNumber)
         {
             if (rows == null)
             {
@@ -235,245 +452,6 @@ namespace Smartsheet.Api.Models
                 }
             }
             return result;
-        }
-
-        /// <summary>
-        /// Gets the columns for the sheet.
-        /// </summary>
-        /// <returns> the columns </returns>
-        public virtual IList<TColumn> Columns
-        {
-            get { return columns; }
-            set { columns = value;    }
-        }
-
-
-        /// <summary>
-        /// Gets the rows for the sheet.
-        /// </summary>
-        /// <returns> the rows </returns>
-        public virtual IList<TRow> Rows
-        {
-            get { return rows; }
-            set { rows = value;    }
-        }
-
-
-        /// <summary>
-        /// Gets the access level for the sheet.
-        /// </summary>
-        /// <returns> the access level </returns>
-        public virtual AccessLevel? AccessLevel
-        {
-            get { return accessLevel; }
-            set { accessLevel = value;    }
-        }
-
-
-        /// <summary>
-        /// Gets the discussions for the sheet.
-        /// </summary>
-        /// <returns> the discussions </returns>
-        public virtual IList<Discussion> Discussions
-        {
-            get { return discussions; }
-            set { discussions = value;    }
-        }
-
-
-        /// <summary>
-        /// Gets the attachments for the sheet.
-        /// </summary>
-        /// <returns> the attachments </returns>
-        public virtual IList<Attachment> Attachments
-        {
-            get { return attachments; }
-            set { attachments = value;    }
-        }
-
-
-        /// <summary>
-        /// Gets the read only flag for the sheet.
-        /// </summary>
-        /// <returns> the read only </returns>
-        public virtual bool? ReadOnly
-        {
-            get { return readOnly; }
-            set { readOnly = value; }
-        }
-
-
-        /// <summary>
-        /// Gets the date and time the sheet was created.
-        /// </summary>
-        /// <returns> the created at </returns>
-        public virtual DateTime? CreatedAt
-        {
-            get { return createdAt;    }
-            set { createdAt = value; }
-        }
-
-
-        /// <summary>
-        /// Gets the date and time the sheet was last modified.
-        /// </summary>
-        /// <returns> the modified at </returns>
-        public virtual DateTime? ModifiedAt
-        {
-            get { return modifiedAt; }
-            set { modifiedAt = value; }
-        }
-
-
-        /// <summary>
-        /// Gets the Permalink for the sheet.
-        /// </summary>
-        /// <returns> the Permalink </returns>
-        public virtual string Permalink
-        {
-            get { return permalink;    }
-            set { permalink = value; }
-        }
-
-
-        /// <summary>
-        /// Gets the Gantt enabled flag.
-        /// </summary>
-        /// <returns> the Gantt enabled flag </returns>
-        public virtual bool? GanttEnabled
-        {
-            get { return ganttEnabled; }
-            set { ganttEnabled = value; }
-        }
-
-
-        /// <summary>
-        /// Gets the version for the sheet.
-        /// </summary>
-        /// <returns> the version </returns>
-        public virtual int? Version
-        {
-            get { return version; }
-            set { version = value; }
-        }
-
-
-        /// <summary>
-        /// Gets the Id of the sheet/template from which the sheet was created.
-        /// </summary>
-        /// <returns> the from Id </returns>
-        public virtual long? FromId
-        {
-            get { return fromId; }
-            set { fromId = value; }
-        }
-
-
-        /// <summary>
-        /// The total number of rows in the sheet.
-        /// </summary>
-        /// <returns> The total number of rows in the sheet </returns>
-        public virtual long? TotalRowCount
-        {
-            get { return totalRowCount; }
-            set { totalRowCount = value; }
-        }
-
-
-        /// <summary>
-        /// Array of enum strings (see Attachment.attachmentType) indicating the allowable attachment options for the current user and sheet
-        /// </summary>
-        /// <returns> list of attachment types </returns>
-        public virtual IList<AttachmentType> EffectiveAttachmentOptions
-        {
-            get { return effectiveAttachmentOptions; }
-            set { effectiveAttachmentOptions = value; }
-        }
-
-
-        /// <summary>
-        /// Indicates whether resource management is enabled.
-        /// </summary>
-        /// <returns> true if enabled, false otherwise </returns>
-        public virtual bool? ResourceManagementEnabled
-        {
-            get { return resourceManagementEnabled; }
-            set { resourceManagementEnabled = value; }
-        }
-
-
-        /// <summary>
-        /// Returned only if the user has marked this sheet as a favorite in their Home tab (value = “true”).
-        /// </summary>
-        /// <returns> true if marked as favorite, false otherwise </returns>
-        public virtual bool? Favorite
-        {
-            get { return favorite; }
-            set { favorite = value; }
-        }
-
-
-        /// <summary>
-        /// Returned only if there are column filters on the sheet. Value = “true” if “show parent rows” is enabled for the filters.
-        /// </summary>
-        /// <returns> “true” if “show parent rows” is enabled for the filters </returns>
-        public virtual bool? ShowParentRowsForFilters
-        {
-            get { return showParentRowsForFilters; }
-            set { showParentRowsForFilters = value; }
-        }
-
-
-        /// <summary>
-        /// Gets the list of sheet filters for this sheet.
-        /// </summary>
-        /// <returns> the list of sheet filters </returns>
-        public virtual IList<SheetFilter> Filters
-        {
-            get { return filters; }
-            set { filters = value; }
-        }
-
-
-        /// <summary>
-        /// A SheetUserSettings object containing the current user’s sheet-specific settings..
-        /// </summary>
-        /// <returns> SheetUserSettings object </returns>
-        public virtual SheetUserSettings UserSettings
-        {
-            get { return userSettings; }
-            set { userSettings = value; }
-        }
-
-
-        /// <summary>
-        /// A Source object indicating the sheet or template from which this sheet was created.
-        /// </summary>
-        /// <returns> source of sheet </returns>
-        public virtual Source Source
-        {
-            get { return source; }
-            set { source = value; }
-        }
-
-
-        /// <summary>
-        /// Gets sheet’s project settings containing the working days, non-working days, and length of day for a project sheet
-        /// </summary>
-        public virtual ProjectSettings ProjectSettings
-        {
-            get { return projectSettings; }
-            set { projectSettings = value; }
-        }
-
-        
-        /// <summary>
-        /// Gets the list of cross-sheet references used by this sheet
-        /// </summary>
-        public virtual IList<CrossSheetReference> CrossSheetReferences
-        {
-            get { return crossSheetReferences; }
-            set { crossSheetReferences = value; }
         }
     }
 }

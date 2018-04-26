@@ -61,7 +61,7 @@ namespace Smartsheet.Api.Models
         /// Gets the Sheets in the home location.
         /// </summary>
         /// <returns> the Sheets </returns>
-        public virtual IList<Sheet> Sheets
+        public IList<Sheet> Sheets
         {
             get { return sheets; }
             set { this.sheets = value; }
@@ -71,7 +71,7 @@ namespace Smartsheet.Api.Models
         /// Gets the Folders in the home location.
         /// </summary>
         /// <returns> the Folders </returns>
-        public virtual IList<Folder> Folders
+        public IList<Folder> Folders
         {
             get { return folders; }
             set { this.folders = value; }
@@ -81,7 +81,7 @@ namespace Smartsheet.Api.Models
         /// Gets the Templates in the home location.
         /// </summary>
         /// <returns> the Templates </returns>
-        public virtual IList<Template> Templates
+        public IList<Template> Templates
         {
             get { return templates; }
             set { this.templates = value; }
@@ -91,7 +91,7 @@ namespace Smartsheet.Api.Models
         /// Gets the Reports in the home location.
         /// </summary>
         /// <returns> the Templates </returns>
-        public virtual IList<Report> Reports
+        public IList<Report> Reports
         {
             get { return reports; }
             set { this.reports = value; }
@@ -101,7 +101,7 @@ namespace Smartsheet.Api.Models
         /// Gets the Workspaces in the home location.
         /// </summary>
         /// <returns> the Workspaces </returns>
-        public virtual IList<Workspace> Workspaces
+        public IList<Workspace> Workspaces
         {
             get { return workspaces; }
             set {  this.workspaces = value; }
@@ -111,7 +111,7 @@ namespace Smartsheet.Api.Models
         /// Gets the Sight in the home location.
         /// </summary>
         /// <returns> the Sight </returns>
-        public virtual IList<Sight> Sights
+        public IList<Sight> Sights
         {
             get { return sights; }
             set { this.sights = value; }

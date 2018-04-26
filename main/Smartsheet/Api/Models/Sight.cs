@@ -77,7 +77,7 @@ namespace Smartsheet.Api.Models
         /// Get the number of columns that the Sight contains.
         /// </summary>
         /// <returns> the columnCount </returns>
-        public virtual int? ColumnCount
+        public int? ColumnCount
         {
             get { return columnCount; }
             set { this.columnCount = value; }
@@ -87,7 +87,7 @@ namespace Smartsheet.Api.Models
         /// Array of Widget objects.
         /// </summary>
         /// <returns> the list </returns>
-        public virtual IList<Widget> Widgets
+        public IList<Widget> Widgets
         {
             get { return widgets; }
             set { this.widgets = value; }
@@ -97,7 +97,7 @@ namespace Smartsheet.Api.Models
         /// Indicates whether the user has marked the Sight as a favorite.
         /// </summary>
         /// <returns> the favorite flag </returns>
-        public virtual Boolean? Favorite
+        public Boolean? Favorite
         {
             get { return favorite; }
             set { this.favorite = value; }
@@ -108,7 +108,7 @@ namespace Smartsheet.Api.Models
         ///        OWNER, ADMIN, VIEWER
         /// </summary>
         /// <returns> the AccessLevel </returns>
-        public virtual AccessLevel? AccessLevel
+        public AccessLevel? AccessLevel
         {
             get { return accessLevel; }
             set { this.accessLevel = value; }
@@ -118,7 +118,7 @@ namespace Smartsheet.Api.Models
         /// URL that represents a direct link to the Sight in Smartsheet
         /// </summary>
         /// <returns> the permalink </returns>
-        public virtual string Permalink
+        public string Permalink
         {
             get { return permalink; }
             set { this.permalink = value; }
@@ -128,7 +128,7 @@ namespace Smartsheet.Api.Models
         /// Time of creation
         /// </summary>
         /// <returns> the DateTime </returns>
-        public virtual DateTime? CreatedAt
+        public DateTime? CreatedAt
         {
             get { return createdAt; }
             set { this.createdAt = value; }
@@ -138,7 +138,7 @@ namespace Smartsheet.Api.Models
         /// Time of last modification
         /// </summary>
         /// <returns> the DateTime </returns>
-        public virtual DateTime? ModifiedAt
+        public DateTime? ModifiedAt
         {
             get { return modifiedAt; }
             set { this.modifiedAt = value; }
@@ -150,7 +150,7 @@ namespace Smartsheet.Api.Models
         ///    Note: this attribute is only present if the Sight resides within a workspace.
         /// </summary>
         /// <returns> the workspace </returns>
-        public virtual Workspace Workspace
+        public Workspace Workspace
         {
             get { return workspace; }
             set { this.workspace = value; }
@@ -160,7 +160,7 @@ namespace Smartsheet.Api.Models
         /// Get the background color of the Sight
         /// </summary>
         /// <returns> the background color </returns>
-        public virtual string BackgroundColor
+        public string BackgroundColor
         {
             get { return backgroundColor; }
             set { this.backgroundColor = value; }

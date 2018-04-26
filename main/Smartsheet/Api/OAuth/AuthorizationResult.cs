@@ -20,8 +20,6 @@ using System.Text;
 
 namespace Smartsheet.Api.OAuth
 {
-
-
     /// <summary>
     /// Represents an OAuth authorization RequestResult.
     /// </summary>
@@ -43,53 +41,32 @@ namespace Smartsheet.Api.OAuth
         /// Gets the authorization Code which is required to obtain an access token.
         /// </summary>
         /// <returns> the authorization Code </returns>
-        public virtual string Code
+        public string Code
         {
-            get
-            {
-                return code;
-            }
-            set
-            {
-                this.code = value;
-            }
+            get { return code; }
+            set { this.code = value; }
         }
-
-
+        
         /// <summary>
         /// Gets the total number of seconds that the authorization token is valid. This is always 4 minutes.
         /// </summary>
         /// <returns> the expires in seconds </returns>
-        public virtual long? ExpiresInSeconds
+        public long? ExpiresInSeconds
         {
-            get
-            {
-                return expiresInSeconds;
-            }
-            set
-            {
-                this.expiresInSeconds = value;
-            }
+            get { return expiresInSeconds; }
+            set { this.expiresInSeconds = value; }
         }
-
 
         /// <summary>
         /// Gets the State string which is returned to the redirect URL for a registered application
         /// </summary>
         /// <returns> the State </returns>
-        public virtual string State
+        public string State
         {
-            get
-            {
-                return state;
-            }
-            set
-            {
-                this.state = value;
-            }
+            get { return state; }
+            set { this.state = value; }
         }
-
-
+        
         /// <summary>
         /// Returns a <see cref="System.String" /> that represents this instance.
         /// </summary>
@@ -109,5 +86,4 @@ namespace Smartsheet.Api.OAuth
             return builder.ToString();
         }
     }
-
 }

@@ -56,7 +56,7 @@ namespace Smartsheet.Api.Models
         /// Gets the to top flag that puts the row at the top of the sheet.
         /// </summary>
         /// <returns> the to top </returns>
-        public virtual bool? ToTop
+        public bool? ToTop
         {
             get { return toTop; }
             set { this.toTop = value; }
@@ -66,7 +66,7 @@ namespace Smartsheet.Api.Models
         /// Gets the to bottom flag that puts the row at the bottom of the sheet.
         /// </summary>
         /// <returns> the to bottom </returns>
-        public virtual bool? ToBottom
+        public bool? ToBottom
         {
             get { return toBottom; }
             set { this.toBottom = value; }
@@ -76,7 +76,7 @@ namespace Smartsheet.Api.Models
         /// Gets the parent Id that puts the row as the first child of the specified Id.
         /// </summary>
         /// <returns> the parent Id </returns>
-        public virtual long? ParentId
+        public long? ParentId
         {
             get { return parentId; }
             set { this.parentId = value; }
@@ -86,7 +86,7 @@ namespace Smartsheet.Api.Models
         /// Gets the sibling Id that puts the row as the next row at the same hierarchical level of this row.
         /// </summary>
         /// <returns> the sibling Id </returns>
-        public virtual long? SiblingId
+        public long? SiblingId
         {
             get { return siblingId; }
             set { this.siblingId = value; }
@@ -96,7 +96,7 @@ namespace Smartsheet.Api.Models
         /// Gets the Rows.
         /// </summary>
         /// <returns> the Rows </returns>
-        public virtual IList<Row> Rows
+        public IList<Row> Rows
         {
             get { return rows; }
             set { this.rows = value; }
@@ -119,7 +119,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="toTop"> the to top flag </param>
             /// <returns> the insert Rows builder </returns>
-            public virtual InsertRowsBuilder SetToTop(bool? toTop)
+            public InsertRowsBuilder SetToTop(bool? toTop)
             {
                 this.toTop = toTop;
                 return this;
@@ -130,7 +130,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="toBottom"> the to bottom </param>
             /// <returns> the insert Rows builder </returns>
-            public virtual InsertRowsBuilder SetToBottom(bool? toBottom)
+            public InsertRowsBuilder SetToBottom(bool? toBottom)
             {
                 this.toBottom = toBottom;
                 return this;
@@ -141,7 +141,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="parentId"> the parent Id </param>
             /// <returns> the insert Rows builder </returns>
-            public virtual InsertRowsBuilder SetParentId(long? parentId)
+            public InsertRowsBuilder SetParentId(long? parentId)
             {
                 this.parentId = parentId;
                 return this;
@@ -152,7 +152,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="siblingId"> the sibling Id </param>
             /// <returns> the insert Rows builder </returns>
-            public virtual InsertRowsBuilder SetSiblingId(long? siblingId)
+            public InsertRowsBuilder SetSiblingId(long? siblingId)
             {
                 this.siblingId = siblingId;
                 return this;
@@ -163,7 +163,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="rows"> the Rows </param>
             /// <returns> the insert Rows builder </returns>
-            public virtual InsertRowsBuilder SetRows(IList<Row> rows)
+            public InsertRowsBuilder SetRows(IList<Row> rows)
             {
                 this.rows = rows;
                 return this;
@@ -173,7 +173,7 @@ namespace Smartsheet.Api.Models
             /// Gets the to top.
             /// </summary>
             /// <returns> the to top </returns>
-            public virtual bool? ToTop
+            public bool? ToTop
             {
                 get { return toTop; }
             }
@@ -182,7 +182,7 @@ namespace Smartsheet.Api.Models
             /// Gets the to bottom.
             /// </summary>
             /// <returns> the to bottom </returns>
-            public virtual bool? ToBottom
+            public bool? ToBottom
             {
                 get { return toBottom; }
             }
@@ -191,7 +191,7 @@ namespace Smartsheet.Api.Models
             /// Gets the parent Id.
             /// </summary>
             /// <returns> the parent Id </returns>
-            public virtual long? ParentId
+            public long? ParentId
             {
                 get { return parentId; }
             }
@@ -200,7 +200,7 @@ namespace Smartsheet.Api.Models
             /// Gets the sibling Id.
             /// </summary>
             /// <returns> the sibling Id </returns>
-            public virtual long? SiblingId
+            public long? SiblingId
             {
                 get { return siblingId; }
             }
@@ -209,7 +209,7 @@ namespace Smartsheet.Api.Models
             /// Gets the Rows.
             /// </summary>
             /// <returns> the Rows </returns>
-            public virtual IList<Row> Rows
+            public IList<Row> Rows
             {
                 get { return rows; }
             }
@@ -218,7 +218,7 @@ namespace Smartsheet.Api.Models
             /// Builds the RowWrapper.
             /// </summary>
             /// <returns> the row wrapper </returns>
-            public virtual RowWrapper Build()
+            public RowWrapper Build()
             {
                 if (toTop == null && toBottom == null && parentId == null && siblingId == null)
                 {
@@ -251,7 +251,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="toTop"> the to top </param>
             /// <returns> the move row builder </returns>
-            public virtual MoveRowBuilder SetToTop(bool? toTop)
+            public MoveRowBuilder SetToTop(bool? toTop)
             {
                 this.toTop = toTop;
                 return this;
@@ -262,7 +262,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="toBottom"> the to bottom </param>
             /// <returns> the move row builder </returns>
-            public virtual MoveRowBuilder SetToBottom(bool? toBottom)
+            public MoveRowBuilder SetToBottom(bool? toBottom)
             {
                 this.toBottom = toBottom;
                 return this;
@@ -273,7 +273,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="parentId"> the parent Id </param>
             /// <returns> the move row builder </returns>
-            public virtual MoveRowBuilder SetParentId(long? parentId)
+            public MoveRowBuilder SetParentId(long? parentId)
             {
                 this.parentId = parentId;
                 return this;
@@ -284,7 +284,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="siblingId"> the sibling Id </param>
             /// <returns> the move row builder </returns>
-            public virtual MoveRowBuilder SetSiblingId(long? siblingId)
+            public MoveRowBuilder SetSiblingId(long? siblingId)
             {
                 this.siblingId = siblingId;
                 return this;
@@ -294,7 +294,7 @@ namespace Smartsheet.Api.Models
             /// Gets the to top.
             /// </summary>
             /// <returns> the to top </returns>
-            public virtual bool? ToTop
+            public bool? ToTop
             {
                 get { return toTop; }
             }
@@ -303,7 +303,7 @@ namespace Smartsheet.Api.Models
             /// Gets the to bottom.
             /// </summary>
             /// <returns> the to bottom </returns>
-            public virtual bool? ToBottom
+            public bool? ToBottom
             {
                 get { return toBottom; }
             }
@@ -312,7 +312,7 @@ namespace Smartsheet.Api.Models
             /// Gets the parent Id.
             /// </summary>
             /// <returns> the parent Id </returns>
-            public virtual long? ParentId
+            public long? ParentId
             {
                 get { return parentId; }
             }
@@ -321,7 +321,7 @@ namespace Smartsheet.Api.Models
             /// Gets the sibling Id.
             /// </summary>
             /// <returns> the sibling Id </returns>
-            public virtual long? SiblingId
+            public long? SiblingId
             {
                 get { return siblingId; }
             }
@@ -330,7 +330,7 @@ namespace Smartsheet.Api.Models
             /// Builds the RowWrapper.
             /// </summary>
             /// <returns> the row wrapper </returns>
-            public virtual RowWrapper Build()
+            public RowWrapper Build()
             {
                 if (toTop == null && toBottom == null && parentId == null && siblingId == null)
                 {

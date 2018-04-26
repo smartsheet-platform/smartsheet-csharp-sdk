@@ -63,36 +63,27 @@ namespace Smartsheet.Api
         /// <para>Returns the error Code.</para>
         /// </summary>
         /// <returns> the error Code </returns>
-        public virtual int? ErrorCode
+        public int? ErrorCode
         {
-            get
-            {
-                return this.errorCode;
-            }
+            get { return this.errorCode; }
         }
 
         /// <summary>
         /// <para>Returns the refId.</para>
         /// </summary>
         /// <returns> the refId </returns>
-        public virtual string RefId
+        public string RefId
         {
-            get
-            {
-                return this.refId;
-            }
+            get { return this.refId; }
         }
 
         /// <summary>
         /// <para>Returns the error detail</para>
         /// </summary>
         /// <returns> the error detail </returns>
-        public virtual object Detail
+        public object Detail
         {
-            get
-            {
-                return this.detail;
-            }
+            get { return this.detail; }
         }
     }
 

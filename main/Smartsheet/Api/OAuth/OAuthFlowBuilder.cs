@@ -112,7 +112,7 @@ namespace Smartsheet.Api.OAuth
         /// </summary>
         /// <param name="httpClient"> the HttpClient </param>
         /// <returns> the OAuthFlowBuilder </returns>
-        public virtual OAuthFlowBuilder SetHttpClient(HttpClient httpClient)
+        public OAuthFlowBuilder SetHttpClient(HttpClient httpClient)
         {
             Util.ThrowIfNull(httpClient);
 
@@ -126,7 +126,7 @@ namespace Smartsheet.Api.OAuth
         /// <param name="jsonSerializer"> the JsonSerializer </param>
         /// <returns> the oAuthFlowBuilder </returns>
         /// <exception cref="System.InvalidOperationException"> if any argument is null/empty string </exception>
-        public virtual OAuthFlowBuilder SetJsonSerializer(JsonSerializer jsonSerializer)
+        public OAuthFlowBuilder SetJsonSerializer(JsonSerializer jsonSerializer)
         {
             Util.ThrowIfNull(jsonSerializer);
 
@@ -140,7 +140,7 @@ namespace Smartsheet.Api.OAuth
         /// <param name="clientId"> the Value to set </param>
         /// <returns> the OAuthFlowBuilder </returns>
         /// <exception cref="System.InvalidOperationException"> if any argument is null/empty string </exception>
-        public virtual OAuthFlowBuilder SetClientId(string clientId)
+        public OAuthFlowBuilder SetClientId(string clientId)
         {
             Util.ThrowIfNull(clientId);
 
@@ -154,7 +154,7 @@ namespace Smartsheet.Api.OAuth
         /// <param name="clientSecret"> the client secret </param>
         /// <returns> the OAuthFlowBuilder </returns>
         /// <exception cref="System.InvalidOperationException"> if any argument is null/empty string </exception>
-        public virtual OAuthFlowBuilder SetClientSecret(string clientSecret)
+        public OAuthFlowBuilder SetClientSecret(string clientSecret)
         {
             Util.ThrowIfNull(clientSecret);
 
@@ -168,7 +168,7 @@ namespace Smartsheet.Api.OAuth
         /// <param name="redirectURL"> the redirect Url </param>
         /// <returns> the OAuthFlowBuilder </returns>
         /// <exception cref="System.InvalidOperationException"> if any argument is null/empty string </exception>
-        public virtual OAuthFlowBuilder SetRedirectURL(string redirectURL)
+        public OAuthFlowBuilder SetRedirectURL(string redirectURL)
         {
             Util.ThrowIfNull(redirectURL);
 
@@ -182,7 +182,7 @@ namespace Smartsheet.Api.OAuth
         /// <param name="authorizationURL"> the authorization URL </param>
         /// <returns> the OAuthFlowBuilder </returns>
         /// <exception cref="System.InvalidOperationException"> if any argument is null/empty string </exception>
-        public virtual OAuthFlowBuilder SetAuthorizationURL(string authorizationURL)
+        public OAuthFlowBuilder SetAuthorizationURL(string authorizationURL)
         {
             Util.ThrowIfNull(authorizationURL);
 
@@ -196,7 +196,7 @@ namespace Smartsheet.Api.OAuth
         /// <param name="tokenURL"> the token Url </param>
         /// <returns> the OAuthFlowBuilder </returns>
         /// <exception cref="System.InvalidOperationException"> if any argument is null/empty string </exception>
-        public virtual OAuthFlowBuilder SetTokenURL(string tokenURL)
+        public OAuthFlowBuilder SetTokenURL(string tokenURL)
         {
             Util.ThrowIfNull(tokenURL);
 
@@ -210,10 +210,7 @@ namespace Smartsheet.Api.OAuth
         /// <returns> the default authorization Url </returns>
         public static string DefaultAuthorizationUrl
         {
-            get
-            {
-                return DEFAULT_AUTHORIZATION_URL;
-            }
+            get { return DEFAULT_AUTHORIZATION_URL; }
         }
 
         /// <summary>
@@ -222,94 +219,70 @@ namespace Smartsheet.Api.OAuth
         /// <returns> the default token Url </returns>
         public static string DefaultTokenUrl
         {
-            get
-            {
-                return DEFAULT_TOKEN_URL;
-            }
+            get { return DEFAULT_TOKEN_URL; }
         }
 
         /// <summary>
         /// Gets the http client.
         /// </summary>
         /// <returns> the http client </returns>
-        public virtual HttpClient HttpClient
+        public HttpClient HttpClient
         {
-            get
-            {
-                return httpClient;
-            }
+            get { return httpClient; }
         }
 
         /// <summary>
         /// Gets the Json serializer.
         /// </summary>
         /// <returns> the Json serializer </returns>
-        public virtual JsonSerializer JsonSerializer
+        public JsonSerializer JsonSerializer
         {
-            get
-            {
-                return jsonSerializer;
-            }
+            get { return jsonSerializer; }
         }
 
         /// <summary>
         /// Gets the client Id.
         /// </summary>
         /// <returns> the client Id </returns>
-        public virtual string ClientId
+        public string ClientId
         {
-            get
-            {
-                return clientId;
-            }
+            get { return clientId; }
         }
 
         /// <summary>
         /// Gets the client secret.
         /// </summary>
         /// <returns> the client secret </returns>
-        public virtual string ClientSecret
+        public string ClientSecret
         {
-            get
-            {
-                return clientSecret;
-            }
+            get { return clientSecret; }
         }
 
         /// <summary>
         /// Gets the redirect Url.
         /// </summary>
         /// <returns> the redirect Url </returns>
-        public virtual string RedirectURL
+        public string RedirectURL
         {
-            get
-            {
-                return redirectURL;
-            }
+            get { return redirectURL; }
         }
 
         /// <summary>
         /// Gets the authorization Url.
         /// </summary>
         /// <returns> the authorization Url </returns>
-        public virtual string AuthorizationURL
+        public string AuthorizationURL
         {
-            get
-            {
-                return authorizationURL;
-            }
+            get { return authorizationURL; }
         }
 
         /// <summary>
         /// Gets the token Url.
         /// </summary>
         /// <returns> the token Url </returns>
-        public virtual string TokenURL
+        public string TokenURL
         {
-            get
-            {
-                return tokenURL;
-            }
+            get { return tokenURL; }
         }
 
         /// <summary>
@@ -317,7 +290,7 @@ namespace Smartsheet.Api.OAuth
         /// </summary>
         /// <returns> the OAuthFlow instance </returns>
         /// <exception cref="System.InvalidOperationException"> if ClientId, ClientSecret or RedirectURL isn't set yet. </exception>
-        public virtual OAuthFlow Build()
+        public OAuthFlow Build()
         {
             if (httpClient == null)
             {

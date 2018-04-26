@@ -63,7 +63,7 @@ namespace Smartsheet.Api.Models
         /// Gets the User object containing name and email of the sender.
         /// </summary>
         /// <returns> the User </returns>
-        public virtual User SentBy
+        public User SentBy
         {
             get { return sentBy; }
             set { this.sentBy = value; }
@@ -73,7 +73,7 @@ namespace Smartsheet.Api.Models
         /// Gets the schedule for which update requests will be sent out.
         /// </summary>
         /// <returns> the Schedule </returns>
-        public virtual Schedule Schedule
+        public Schedule Schedule
         {
             get { return schedule; }
             set { this.schedule = value; }
@@ -83,7 +83,7 @@ namespace Smartsheet.Api.Models
         /// Gets the date and time for when this request was originally created. Read-only
         /// </summary>
         /// <returns> the timestamp </returns>
-        public virtual DateTime? CreatedAt
+        public DateTime? CreatedAt
         {
             get { return createdAt; }
             set { this.createdAt = value; }
@@ -93,7 +93,7 @@ namespace Smartsheet.Api.Models
         /// Gets the date and time for when the last change was made to this request. Read-only.
         /// </summary>
         /// <returns> the timestamp </returns>
-        public virtual DateTime? ModifiedAt
+        public DateTime? ModifiedAt
         {
             get { return modifiedAt; }
             set { this.modifiedAt = value; }

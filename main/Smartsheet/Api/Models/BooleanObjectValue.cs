@@ -33,18 +33,18 @@ namespace Smartsheet.Api.Models
             this.value = value;
         }
 
-        public virtual bool Value
+        public bool Value
         {
             get { return this.value; }
             set { this.value = value; }
         }
 
-        public virtual ObjectValueType ObjectType
+        public ObjectValueType ObjectType
         {
             get { return ObjectValueType.BOOLEAN; }
         }
 
-        public virtual void Serialize(JsonWriter writer)
+        public void Serialize(JsonWriter writer)
         {
             writer.WriteValue(value);
         }

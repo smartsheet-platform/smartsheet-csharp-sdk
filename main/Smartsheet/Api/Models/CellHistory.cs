@@ -38,7 +38,7 @@ namespace Smartsheet.Api.Models
         /// Gets the date the cell was modified.
         /// </summary>
         /// <returns> the modified at </returns>
-        public virtual DateTime? ModifiedAt
+        public DateTime? ModifiedAt
         {
             get { return modifiedAt; }
             set { this.modifiedAt = value; }
@@ -48,7 +48,7 @@ namespace Smartsheet.Api.Models
         /// Gets the user that modified the cell.
         /// </summary>
         /// <returns> the modified by </returns>
-        public virtual User ModifiedBy
+        public User ModifiedBy
         {
             get { return modifiedBy; }
             set { this.modifiedBy = value; }

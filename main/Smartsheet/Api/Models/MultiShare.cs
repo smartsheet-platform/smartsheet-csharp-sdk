@@ -50,7 +50,7 @@ namespace Smartsheet.Api.Models
         /// Gets the Users.
         /// </summary>
         /// <returns> the Users </returns>
-        public virtual IList<User> Users
+        public IList<User> Users
         {
             get { return users; }
             set { this.users = value; }
@@ -60,7 +60,7 @@ namespace Smartsheet.Api.Models
         /// Gets the access level.
         /// </summary>
         /// <returns> the access level </returns>
-        public virtual AccessLevel? AccessLevel
+        public AccessLevel? AccessLevel
         {
             get { return accessLevel; }
             set { this.accessLevel = value; }
@@ -70,7 +70,7 @@ namespace Smartsheet.Api.Models
         /// Gets the Subject of the Email that sent to notify the Users.
         /// </summary>
         /// <returns> the Subject </returns>
-        public virtual string Subject
+        public string Subject
         {
             get { return subject; }
             set { this.subject = value; }
@@ -80,7 +80,7 @@ namespace Smartsheet.Api.Models
         /// Gets the Message to be included in the body of the Email that will be sent to the use.
         /// </summary>
         /// <returns> the Message </returns>
-        public virtual string Message
+        public string Message
         {
             get { return message; }
             set { this.message = value; }
@@ -90,7 +90,7 @@ namespace Smartsheet.Api.Models
         /// Gets the flag to indicate whether or not to carbon copy the user sharing the sheet.
         /// </summary>
         /// <returns> the carbon copy me flag </returns>
-        public virtual bool? CCMe
+        public bool? CCMe
         {
             get { return ccMe; }
             set { this.ccMe = value; }
@@ -113,7 +113,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="users"> the Users </param>
             /// <returns> the share to many builder </returns>
-            public virtual ShareToManyBuilder SetUsers(IList<User> users)
+            public ShareToManyBuilder SetUsers(IList<User> users)
             {
                 this.users = users;
                 return this;
@@ -124,7 +124,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="accessLevel"> the access level </param>
             /// <returns> the share to many builder </returns>
-            public virtual ShareToManyBuilder SetAccessLevel(AccessLevel? accessLevel)
+            public ShareToManyBuilder SetAccessLevel(AccessLevel? accessLevel)
             {
                 this.accessLevel = accessLevel;
                 return this;
@@ -135,7 +135,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="subject"> the Subject </param>
             /// <returns> the share to many builder </returns>
-            public virtual ShareToManyBuilder SetSubject(string subject)
+            public ShareToManyBuilder SetSubject(string subject)
             {
                 this.subject = subject;
                 return this;
@@ -146,7 +146,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="message"> the Message </param>
             /// <returns> the share to many builder </returns>
-            public virtual ShareToManyBuilder SetMessage(string message)
+            public ShareToManyBuilder SetMessage(string message)
             {
                 this.message = message;
                 return this;
@@ -157,7 +157,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="ccMe"> the carbon copy me flag. </param>
             /// <returns> the share to many builder </returns>
-            public virtual ShareToManyBuilder SetCCMe(bool? ccMe)
+            public ShareToManyBuilder SetCCMe(bool? ccMe)
             {
                 this.ccMe = ccMe;
                 return this;
@@ -167,7 +167,7 @@ namespace Smartsheet.Api.Models
             /// Gets the Users.
             /// </summary>
             /// <returns> the Users </returns>
-            public virtual IList<User> Users
+            public IList<User> Users
             {
                 get { return users; }
             }
@@ -176,7 +176,7 @@ namespace Smartsheet.Api.Models
             /// Gets the access level.
             /// </summary>
             /// <returns> the access level </returns>
-            public virtual AccessLevel? AccessLevel
+            public AccessLevel? AccessLevel
             {
                 get { return accessLevel; }
             }
@@ -185,7 +185,7 @@ namespace Smartsheet.Api.Models
             /// Gets the Subject.
             /// </summary>
             /// <returns> the Subject </returns>
-            public virtual string Subject
+            public string Subject
             {
                 get { return subject; }
             }
@@ -194,7 +194,7 @@ namespace Smartsheet.Api.Models
             /// Gets the Message.
             /// </summary>
             /// <returns> the Message </returns>
-            public virtual string Message
+            public string Message
             {
                 get { return message; }
             }
@@ -203,7 +203,7 @@ namespace Smartsheet.Api.Models
             /// Gets the cc me.
             /// </summary>
             /// <returns> the cc me </returns>
-            public virtual bool? CCMe
+            public bool? CCMe
             {
                 get { return ccMe; }
             }
@@ -212,7 +212,7 @@ namespace Smartsheet.Api.Models
             /// Builds the Multishare object with the set fields.
             /// </summary>
             /// <returns> the multi share </returns>
-            public virtual MultiShare Build()
+            public MultiShare Build()
             {
                 if (users == null || accessLevel == null)
                 {

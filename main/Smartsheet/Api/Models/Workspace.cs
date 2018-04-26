@@ -34,7 +34,7 @@ namespace Smartsheet.Api.Models
         /// Gets the user's permissions on a workspace.
         /// </summary>
         /// <returns> the access level </returns>
-        public virtual AccessLevel? AccessLevel
+        public AccessLevel? AccessLevel
         {
             get { return accessLevel; }
             set { this.accessLevel = value; }
@@ -63,7 +63,7 @@ namespace Smartsheet.Api.Models
             /// Builds the <seealso cref="Workspace"/>.
             /// </summary>
             /// <returns> the workspace </returns>
-            public virtual Workspace Build()
+            public Workspace Build()
             {
                 Workspace workspace = new Workspace();
                 workspace.Id = id;
@@ -92,7 +92,7 @@ namespace Smartsheet.Api.Models
             /// Builds the <seealso cref="Workspace"/>.
             /// </summary>
             /// <returns> the workspace </returns>
-            public virtual Workspace Build()
+            public Workspace Build()
             {
                 Workspace workspace = new Workspace();
                 workspace.Name = workspaceName;

@@ -45,7 +45,7 @@ namespace Smartsheet.Api.Internal
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        public PaginatedResult<CrossSheetReference> ListCrossSheetReferences(long sheetId, PaginationParameters paging)
+        public virtual PaginatedResult<CrossSheetReference> ListCrossSheetReferences(long sheetId, PaginationParameters paging)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
             if (paging != null)
@@ -71,7 +71,7 @@ namespace Smartsheet.Api.Internal
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        public CrossSheetReference GetCrossSheetReference(long sheetId, long crossSheetReferenceId)
+        public virtual CrossSheetReference GetCrossSheetReference(long sheetId, long crossSheetReferenceId)
         {
             return this.GetResource<CrossSheetReference>("sheets/" + sheetId + "/crosssheetreferences/" + crossSheetReferenceId, 
                 typeof(CrossSheetReference));
@@ -90,7 +90,7 @@ namespace Smartsheet.Api.Internal
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        public CrossSheetReference CreateCrossSheetReference(long sheetId, CrossSheetReference crossSheetReference)
+        public virtual CrossSheetReference CreateCrossSheetReference(long sheetId, CrossSheetReference crossSheetReference)
         {
             return this.CreateResource<CrossSheetReference>("sheets/" + sheetId + "/crosssheetreferences", typeof(CrossSheetReference),
                 crossSheetReference);

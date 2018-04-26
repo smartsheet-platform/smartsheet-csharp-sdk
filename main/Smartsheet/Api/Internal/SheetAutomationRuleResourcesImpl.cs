@@ -46,7 +46,7 @@ namespace Smartsheet.Api.Internal
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        public PaginatedResult<AutomationRule> ListAutomationRules(long sheetId, PaginationParameters paging)
+        public virtual PaginatedResult<AutomationRule> ListAutomationRules(long sheetId, PaginationParameters paging)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
             if (paging != null)
@@ -71,7 +71,7 @@ namespace Smartsheet.Api.Internal
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        public AutomationRule GetAutomationRule(long sheetId, long automationRuleId)
+        public virtual AutomationRule GetAutomationRule(long sheetId, long automationRuleId)
         {
             return this.GetResource<AutomationRule>("sheets/" + sheetId + "/automationrules/" + automationRuleId, typeof(AutomationRule));
         }
@@ -89,7 +89,7 @@ namespace Smartsheet.Api.Internal
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        public AutomationRule UpdateAutomationRule(long sheetId, AutomationRule automationRule)
+        public virtual AutomationRule UpdateAutomationRule(long sheetId, AutomationRule automationRule)
         {
             return this.UpdateResource("sheets/" + sheetId + "/automationrules/" + automationRule.Id, 
                 typeof(AutomationRule), automationRule);
@@ -107,7 +107,7 @@ namespace Smartsheet.Api.Internal
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        public void DeleteAutomationRule(long sheetId, long automationRuleId)
+        public virtual void DeleteAutomationRule(long sheetId, long automationRuleId)
         {
             this.DeleteResource<AutomationRule>("sheets/" + sheetId + "/automationrules/" + automationRuleId, typeof(AutomationRule));
         }

@@ -78,7 +78,7 @@ namespace Smartsheet.Api.Models
         /// When used as a predecessor’s lag value, indicates whether the lag is negative (if true), or positive (false).
         /// </summary>
         /// <returns> the negative flag </returns>
-        public virtual bool? Negative
+        public bool? Negative
         {
             get { return negative; }
             set { this.negative = value; }
@@ -88,7 +88,7 @@ namespace Smartsheet.Api.Models
         /// If true, indicates this duration represents elapsed time, which ignores non-working time.
         /// </summary>
         /// <returns> the elapsed flag </returns>
-        public virtual bool? Elapsed
+        public bool? Elapsed
         {
             get { return elapsed; }
             set { this.elapsed = value; }
@@ -98,7 +98,7 @@ namespace Smartsheet.Api.Models
         /// The number of weeks for this duration.
         /// </summary>
         /// <returns> the number of weeks in duration </returns>
-        public virtual double? Weeks
+        public double? Weeks
         {
             get { return weeks; }
             set { this.weeks = value; }
@@ -108,7 +108,7 @@ namespace Smartsheet.Api.Models
         /// The number of days for this duration.
         /// </summary>
         /// <returns> the number of days in duration </returns>
-        public virtual double? Days
+        public double? Days
         {
             get { return days; }
             set { this.days = value; }
@@ -118,7 +118,7 @@ namespace Smartsheet.Api.Models
         /// The number of hours for this duration.
         /// </summary>
         /// <returns> the number of hours in duration </returns>
-        public virtual double? Hours
+        public double? Hours
         {
             get { return hours; }
             set { this.hours = value; }
@@ -128,7 +128,7 @@ namespace Smartsheet.Api.Models
         /// The number of minutes for this duration.
         /// </summary>
         /// <returns> the number of minutes in duration </returns>
-        public virtual double? Minutes
+        public double? Minutes
         {
             get { return minutes; }
             set { this.minutes = value; }
@@ -138,7 +138,7 @@ namespace Smartsheet.Api.Models
         /// The number of seconds for this duration.
         /// </summary>
         /// <returns> the number of seconds in duration </returns>
-        public virtual double? Seconds
+        public double? Seconds
         {
             get { return seconds; }
             set { this.seconds = value; }
@@ -148,13 +148,13 @@ namespace Smartsheet.Api.Models
         /// The number of milliseconds for this duration.
         /// </summary>
         /// <returns> the number of milliseconds in duration </returns>
-        public virtual double? Milliseconds
+        public double? Milliseconds
         {
             get { return milliseconds; }
             set { this.milliseconds = value; }
         }
 
-        public virtual ObjectValueType ObjectType
+        public ObjectValueType ObjectType
         {
             get { return ObjectValueType.DURATION; }
         }

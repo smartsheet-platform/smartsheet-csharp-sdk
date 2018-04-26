@@ -41,7 +41,7 @@ namespace Smartsheet.Api.Models
         /// </summary>
         /// <param name="columnId"> the column Id </param>
         /// <returns> the column by Id </returns>
-        public virtual ReportColumn GetColumnById(long columnId)
+        public ReportColumn GetColumnById(long columnId)
         {
             if (columns == null)
             {

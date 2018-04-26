@@ -18,8 +18,6 @@
 
 namespace Smartsheet.Api.Models
 {
-
-
     /// <summary>
     /// Represents the column symbols. </summary>
     /// <see href="http://help.Smartsheet.com/customer/portal/articles/504619-column-types#symbols">Symbols Help</see>

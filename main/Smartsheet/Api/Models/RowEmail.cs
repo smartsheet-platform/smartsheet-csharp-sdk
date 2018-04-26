@@ -48,7 +48,7 @@ namespace Smartsheet.Api.Models
         /// <summary>
         /// IDs of the columns to be included.
         /// </summary>
-        public virtual IList<long> ColumnIds
+        public IList<long> ColumnIds
         {
             get { return columnIds; }
             set { columnIds = value; }
@@ -58,7 +58,7 @@ namespace Smartsheet.Api.Models
         /// Gets the flag that indicates if Attachments should be included in the Email.
         /// </summary>
         /// <returns> the include Attachments </returns>
-        public virtual bool? IncludeAttachments
+        public bool? IncludeAttachments
         {
             get { return includeAttachments; }
             set { this.includeAttachments = value; }
@@ -68,7 +68,7 @@ namespace Smartsheet.Api.Models
         /// Gets the flag that indicates if Discussions should be included in the Email.
         /// </summary>
         /// <returns> the include Discussions </returns>
-        public virtual bool? IncludeDiscussions
+        public bool? IncludeDiscussions
         {
             get { return includeDiscussions; }
             set { this.includeDiscussions = value; }
@@ -78,7 +78,7 @@ namespace Smartsheet.Api.Models
         /// Gets the layout value: HORIZONTAL, VERTICAL.
         /// </summary>
         /// <returns> the layout </returns>
-        public virtual string Layout
+        public string Layout
         {
             get { return layout; }
             set { this.layout = value; }

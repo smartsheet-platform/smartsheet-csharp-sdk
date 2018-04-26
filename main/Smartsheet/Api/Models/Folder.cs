@@ -85,7 +85,7 @@ namespace Smartsheet.Api.Models
         /// Gets the sheets in the folder.
         /// </summary>
         /// <returns> the sheets </returns>
-        public virtual IList<Sheet> Sheets
+        public IList<Sheet> Sheets
         {
             get { return sheets; }
             set { this.sheets = value; }
@@ -95,7 +95,7 @@ namespace Smartsheet.Api.Models
         /// Gets the reports in the folder.
         /// </summary>
         /// <returns> the sheets </returns>
-        public virtual IList<Report> Reports
+        public IList<Report> Reports
         {
             get { return reports; }
             set { this.reports = value; }
@@ -105,7 +105,7 @@ namespace Smartsheet.Api.Models
         /// Gets the folders contained in this folder.
         /// </summary>
         /// <returns> the folders </returns>
-        public virtual IList<Folder> Folders
+        public IList<Folder> Folders
         {
             get { return folders; }
             set { this.folders = value; }
@@ -115,7 +115,7 @@ namespace Smartsheet.Api.Models
         /// Gets the templates contained in this folder.
         /// </summary>
         /// <returns> the templates </returns>
-        public virtual IList<Template> Templates
+        public IList<Template> Templates
         {
             get { return templates; }
             set { this.templates = value; }
@@ -125,7 +125,7 @@ namespace Smartsheet.Api.Models
         /// Gets the Sights contained in this folder.
         /// </summary>
         /// <returns> the Sights </returns>
-        public virtual IList<Sight> Sights
+        public IList<Sight> Sights
         {
             get { return sights; }
             set { this.sights = value; }
@@ -154,7 +154,7 @@ namespace Smartsheet.Api.Models
             /// Builds the folder.
             /// </summary>
             /// <returns> the folder </returns>
-            public virtual Folder Build()
+            public Folder Build()
             {
                 Folder folder = new Folder();
                 folder.Id = id;
@@ -184,7 +184,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="name"> the name </param>
             /// <returns> the update folder builder </returns>
-            public virtual CreateFolderBuilder SetName(string name)
+            public CreateFolderBuilder SetName(string name)
             {
                 this.folderName = name;
                 return this;
@@ -194,7 +194,7 @@ namespace Smartsheet.Api.Models
             /// Gets the name.
             /// </summary>
             /// <returns> the name </returns>
-            public virtual string GetName()
+            public string GetName()
             {
                 return folderName;
             }
@@ -203,7 +203,7 @@ namespace Smartsheet.Api.Models
             /// Builds the folder.
             /// </summary>
             /// <returns> the folder </returns>
-            public virtual Folder Build()
+            public Folder Build()
             {
                 Folder folder = new Folder();
                 folder.Name = folderName;

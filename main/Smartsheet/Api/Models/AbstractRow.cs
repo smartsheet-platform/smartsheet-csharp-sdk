@@ -138,96 +138,46 @@ namespace Smartsheet.Api.Models
         /// The user's permissions on the sheet. </summary>
         private AccessLevel? accessLevel;
 
+        /// <summary>
+        /// URL that represents a direct link to the row in Smartsheet
+        /// </summary>
         private string permalink;
 
         /// <summary>
         /// Gets the user's permissions on the sheet.
         /// </summary>
         /// <returns> the access level </returns>
-        public virtual AccessLevel? AccessLevel
+        public AccessLevel? AccessLevel
         {
             get { return accessLevel; }
             set { this.accessLevel = value; }
         }
 
-
         /// <summary>
         /// Gets the Version number that is incremented every time a sheet is modified.
         /// </summary>
         /// <returns> the Version </returns>
-        public virtual int? Version
+        public int? Version
         {
             get { return version; }
             set { this.version = value; }
         }
 
-
         /// <summary>
         /// Checks if the row is Expanded.
         /// </summary>
         /// <returns> true, if is Expanded </returns>
-        public virtual bool? Expanded
+        public bool? Expanded
         {
             get { return expanded; }
             set { this.expanded = value; }
-        }
-
-
-        /// <summary>
-        /// Get a column by it's Index.
-        /// </summary>
-        /// <param name="index"> the column Index </param>
-        /// <returns> the column by Index </returns>
-        public virtual TColumn GetColumnByIndex(int index)
-        {
-            if (columns == null)
-            {
-                return null;
-            }
-
-            TColumn result = null;
-            foreach (TColumn column in columns)
-            {
-                if (column.Index == index)
-                {
-                    result = column;
-                    break;
-                }
-            }
-
-            return result;
-        }
-
-        /// <summary>
-        /// Get a column by it's ID.
-        /// </summary>
-        /// <param name="columnId"> the column Id </param>
-        /// <returns> the column by Id </returns>
-        public virtual TColumn GetColumnById(long columnId)
-        {
-            if (columns == null)
-            {
-                return null;
-            }
-
-            TColumn result = null;
-            foreach (TColumn column in columns)
-            {
-                if (column.Id == columnId)
-                {
-                    result = column;
-                    break;
-                }
-            }
-
-            return result;
         }
 
         /// <summary>
         /// Gets the Id of the sheet.
         /// </summary>
         /// <returns> the sheet Id </returns>
-        public virtual long? SheetId
+        public long? SheetId
         {
             get { return sheetId; }
             set { this.sheetId = value; }
@@ -238,7 +188,7 @@ namespace Smartsheet.Api.Models
         /// Gets the row number.
         /// </summary>
         /// <returns> the row number </returns>
-        public virtual int? RowNumber
+        public int? RowNumber
         {
             get { return rowNumber; }
             set { this.rowNumber = value; }
@@ -249,7 +199,7 @@ namespace Smartsheet.Api.Models
         /// Gets the parent row number.
         /// </summary>
         /// <returns> the parent row number </returns>
-        public virtual int? ParentRowNumber
+        public int? ParentRowNumber
         {
             get { return parentRowNumber; }
             set { this.parentRowNumber = value; }
@@ -275,67 +225,61 @@ namespace Smartsheet.Api.Models
             set { siblingId = value; }
         }
 
-
         /// <summary>
         /// Gets the Cells.
         /// </summary>
         /// <returns> the Cells </returns>
-        public virtual IList<TCell> Cells
+        public IList<TCell> Cells
         {
             get { return cells; }
             set { this.cells = value; }
         }
 
-
         /// <summary>
         /// Gets the Discussions.
         /// </summary>
         /// <returns> the Discussions </returns>
-        public virtual IList<Discussion> Discussions
+        public IList<Discussion> Discussions
         {
             get { return discussions; }
             set { this.discussions = value; }
         }
 
-
         /// <summary>
         /// Gets the Attachments.
         /// </summary>
         /// <returns> the Attachments </returns>
-        public virtual IList<Attachment> Attachments
+        public IList<Attachment> Attachments
         {
             get { return attachments; }
             set { this.attachments = value; }
         }
 
-
         /// <summary>
         /// Gets the Columns.
         /// </summary>
         /// <returns> the Columns </returns>
-        public virtual IList<TColumn> Columns
+        public IList<TColumn> Columns
         {
             get { return columns; }
             set { this.columns = value; }
         }
 
-
         /// <summary>
         /// Gets the date and time a row was created.
         /// </summary>
         /// <returns> the created at </returns>
-        public virtual DateTime? CreatedAt
+        public DateTime? CreatedAt
         {
             get { return createdAt; }
             set { this.createdAt = value; }
         }
 
-
         /// <summary>
         /// Gets and Sets the date and time a row was last modified.
         /// </summary>
         /// <returns> the modified at </returns>
-        public virtual DateTime? ModifiedAt
+        public DateTime? ModifiedAt
         {
             get { return modifiedAt; }
             set { this.modifiedAt = value; }
@@ -498,6 +442,56 @@ namespace Smartsheet.Api.Models
         {
             get { return permalink; }
             set { permalink = value; }
+        }
+
+        /// <summary>
+        /// Get a column by it's Index.
+        /// </summary>
+        /// <param name="index"> the column Index </param>
+        /// <returns> the column by Index </returns>
+        public TColumn GetColumnByIndex(int index)
+        {
+            if (columns == null)
+            {
+                return null;
+            }
+
+            TColumn result = null;
+            foreach (TColumn column in columns)
+            {
+                if (column.Index == index)
+                {
+                    result = column;
+                    break;
+                }
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Get a column by it's ID.
+        /// </summary>
+        /// <param name="columnId"> the column Id </param>
+        /// <returns> the column by Id </returns>
+        public TColumn GetColumnById(long columnId)
+        {
+            if (columns == null)
+            {
+                return null;
+            }
+
+            TColumn result = null;
+            foreach (TColumn column in columns)
+            {
+                if (column.Id == columnId)
+                {
+                    result = column;
+                    break;
+                }
+            }
+
+            return result;
         }
     }
 }

@@ -91,12 +91,9 @@ namespace Smartsheet.Api.Internal.Json
         /// </summary>
         /// <param name="value">
         ///            true if it should fail, false otherwise. </param>
-        public virtual Newtonsoft.Json.MissingMemberHandling failOnUnknownProperties
+        public Newtonsoft.Json.MissingMemberHandling failOnUnknownProperties
         {
-            set
-            {
-                serializer.MissingMemberHandling = value;
-            }
+            set { serializer.MissingMemberHandling = value; }
         }
 
         /// <summary>

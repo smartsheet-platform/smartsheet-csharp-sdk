@@ -47,7 +47,7 @@ namespace Smartsheet.Api.Models
         /// Get the number of retries the webhook had performed as of the last callback attempt.
         /// </summary>
         /// <returns> the retry count </returns>
-        public virtual int? LastCallbackAttemptRetryCount
+        public int? LastCallbackAttemptRetryCount
         {
             get { return lastCallbackAttemptRetryCount; }
             set { this.lastCallbackAttemptRetryCount = value; }
@@ -57,7 +57,7 @@ namespace Smartsheet.Api.Models
         /// Get the timestamp from last callback attempt.
         /// </summary>
         /// <returns> the attempt timestamp </returns>
-        public virtual DateTime? LastCallbackAttempt
+        public DateTime? LastCallbackAttempt
         {
             get { return lastCallbackAttempt; }
             set { this.lastCallbackAttempt = value; }
@@ -67,7 +67,7 @@ namespace Smartsheet.Api.Models
         /// Get the timestamp from the last successful callback.
         /// </summary>
         /// <returns> the successful timestamp</returns>
-        public virtual DateTime? LastSuccessfulCallback
+        public DateTime? LastSuccessfulCallback
         {
             get { return lastSuccessfulCallback; }
             set { this.lastSuccessfulCallback = value; }

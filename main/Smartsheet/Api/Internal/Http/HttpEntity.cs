@@ -54,70 +54,48 @@ namespace Smartsheet.Api.Internal.Http
         /// Gets the content Type.
         /// </summary>
         /// <returns> the content Type </returns>
-        public virtual string ContentType
+        public string ContentType
         {
-            get
-            {
-                return contentType;
-            }
-            set
-            {
-                this.contentType = value;
-            }
+            get { return contentType; }
+            set { this.contentType = value; }
         }
-
 
         /// <summary>
         /// Gets the content length.
         /// </summary>
         /// <returns> the content length </returns>
-        public virtual long ContentLength
+        public long ContentLength
         {
-            get
-            {
-                return contentLength;
-            }
-            set
-            {
-                this.contentLength = value;
-            }
+            get { return contentLength; }
+            set { this.contentLength = value; }
         }
-
 
         /// <summary>
         /// Gets the content.
         /// </summary>
         /// <returns> the content </returns>
-        public virtual byte[] Content
+        public byte[] Content
         {
-            get
-            {
-                return content;
-            }
-            set
-            {
-                this.content = value;
-            }
+            get { return content; }
+            set { this.content = value; }
         }
         
         /// <summary>
         /// Gets the content as a stream
         /// </summary>
         /// <returns></returns>
-        public virtual StreamReader GetContent()
+        public StreamReader GetContent()
         {
             if (content == null) { content = new byte[0]; }
 
             return new StreamReader(new MemoryStream(content));
         }
 
-        public virtual BinaryReader GetBinaryContent()
+        public BinaryReader GetBinaryContent()
         {
             if (content == null) { content = new byte[0]; }
 
             return new BinaryReader(new MemoryStream(content));
         }
-
     }
-
 }

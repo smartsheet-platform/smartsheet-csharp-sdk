@@ -88,7 +88,7 @@ namespace Smartsheet.Api.Models
         /// this property will contain the permalink to the sheet or report.</para>
         /// </summary>
         /// <returns> the Url </returns>
-        public virtual string Url
+        public string Url
         {
             get { return url; }
             set {
@@ -101,7 +101,7 @@ namespace Smartsheet.Api.Models
         /// If non-null, this hyperlink is a link to the sheet with this Id.
         /// </summary>
         /// <returns> the sheet Id </returns>
-        public virtual long? SheetId
+        public long? SheetId
         {
             get { return sheetId; }
             set {
@@ -115,7 +115,7 @@ namespace Smartsheet.Api.Models
         /// </summary>
         /// <returns> value of the isNull flag </returns>
         [JsonIgnore]
-        public virtual bool IsNull
+        public bool IsNull
         {
             get { return isNull; }
         }

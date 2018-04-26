@@ -47,35 +47,20 @@ namespace Smartsheet.Api.Internal.Http
         /// Gets the Headers.
         /// </summary>
         /// <returns> the Headers </returns>
-        public virtual IDictionary<string, string> Headers
+        public IDictionary<string, string> Headers
         {
-            get
-            {
-                return headers;
-            }
-            set
-            {
-                this.headers = value;
-            }
+            get { return headers; }
+            set { this.headers = value; }
         }
-
 
         /// <summary>
         /// Gets the Entity.
         /// </summary>
         /// <returns> the Entity </returns>
-        public virtual HttpEntity Entity
+        public HttpEntity Entity
         {
-            get
-            {
-                return entity;
-            }
-            set
-            {
-                this.entity = value;
-            }
+            get { return entity; }
+            set { this.entity = value; }
         }
-
     }
-
 }

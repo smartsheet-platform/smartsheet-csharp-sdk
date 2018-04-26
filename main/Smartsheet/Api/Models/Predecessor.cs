@@ -54,7 +54,7 @@ namespace Smartsheet.Api.Models
         /// The ID of the predecessor row.
         /// </summary>
         /// <returns> the rowId </returns>
-        public virtual long? RowId
+        public long? RowId
         {
             get { return rowId; }
             set { this.rowId = value; }
@@ -64,7 +64,7 @@ namespace Smartsheet.Api.Models
         /// The number of the predecessor row.
         /// </summary>
         /// <returns> the rowNumber </returns>
-        public virtual int? RowNumber
+        public int? RowNumber
         {
             get { return rowNumber; }
             set { this.rowNumber = value; }
@@ -74,7 +74,7 @@ namespace Smartsheet.Api.Models
         /// The type of the predecessor. 
         /// </summary>
         /// <returns> One of FS, FF, SS, or SF </returns>
-        public virtual string Type
+        public string Type
         {
             get { return type; }
             set { this.type = value; }
@@ -84,7 +84,7 @@ namespace Smartsheet.Api.Models
         /// The lag value of this predecessor.  
         /// </summary>
         /// <returns> the lag </returns>
-        public virtual Duration Lag
+        public Duration Lag
         {
             get { return lag; }
             set { this.lag = value; }
@@ -94,7 +94,7 @@ namespace Smartsheet.Api.Models
         /// True if the row referenced by rowId is not a valid row in this sheet, or there is a circular reference.  
         /// </summary>
         /// <returns> the value of the invalid flag </returns>
-        public virtual bool? Invalid
+        public bool? Invalid
         {
             get { return invalid; }
             set { this.invalid = value; }
@@ -104,7 +104,7 @@ namespace Smartsheet.Api.Models
         /// True if this predecessor is in the critical path.
         /// </summary>
         /// <returns> the value of the inCriticalPath flag </returns>
-        public virtual bool? InCriticalPath
+        public bool? InCriticalPath
         {
             get { return inCriticalPath; }
             set { this.inCriticalPath = value; }

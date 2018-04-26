@@ -92,7 +92,7 @@ namespace Smartsheet.Api.Models
         /// Gets the access level for this specific share.
         /// </summary>
         /// <returns> the access level </returns>
-        public virtual AccessLevel? AccessLevel
+        public AccessLevel? AccessLevel
         {
             get { return accessLevel; }
             set { this.accessLevel = value; }
@@ -102,7 +102,7 @@ namespace Smartsheet.Api.Models
         /// Gets the Email for this specific share.
         /// </summary>
         /// <returns> the Email </returns>
-        public virtual string Email
+        public string Email
         {
             get { return email; }
             set { this.email = value; }
@@ -111,7 +111,7 @@ namespace Smartsheet.Api.Models
         /// <summary>
         /// Share ID, unlike other Smartsheet object ids, this id is an alphanumeric string.
         /// </summary>
-        public virtual new string Id
+        public new string Id
         {
             // This should hide inherited member "Id".
             get { return id; }
@@ -188,7 +188,7 @@ namespace Smartsheet.Api.Models
         /// Gets the Time that the share was created.
         /// </summary>
         /// <returns> the DateTime </returns>
-        public virtual DateTime? CreatedAt
+        public DateTime? CreatedAt
         {
             get { return createdAt;    }
             set { this.createdAt = value; }
@@ -198,7 +198,7 @@ namespace Smartsheet.Api.Models
         /// Gets the time that the share was modified.
         /// </summary>
         /// <returns> the DateTime </returns>
-        public virtual DateTime? ModifiedAt
+        public DateTime? ModifiedAt
         {
             get { return modifiedAt; }
             set { this.modifiedAt = value; }
@@ -243,7 +243,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="accessLevel"> the access level </param>
             /// <returns> the share to one builder </returns>
-            public virtual CreateShareBuilder SetAccessLevel(AccessLevel? accessLevel)
+            public CreateShareBuilder SetAccessLevel(AccessLevel? accessLevel)
             {
                 this.accessLevel = accessLevel;
                 return this;
@@ -255,7 +255,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="email"> the Email </param>
             /// <returns> the share to one builder </returns>
-            public virtual CreateShareBuilder SetEmail(string email)
+            public CreateShareBuilder SetEmail(string email)
             {
                 this.email = email;
                 return this;
@@ -267,7 +267,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="groupId"> the groupId </param>
             /// <returns> the share to one builder </returns>
-            public virtual CreateShareBuilder SetGroupId(long? groupId)
+            public CreateShareBuilder SetGroupId(long? groupId)
             {
                 this.groupId = groupId;
                 return this;
@@ -278,7 +278,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="subject"> the subject </param>
             /// <returns> the share to one builder </returns>
-            public virtual CreateShareBuilder SetSubject(string subject)
+            public CreateShareBuilder SetSubject(string subject)
             {
                 this.subject = subject;
                 return this;
@@ -289,7 +289,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="message"> the message </param>
             /// <returns> the share to one builder </returns>
-            public virtual CreateShareBuilder SetAccessLevel(string message)
+            public CreateShareBuilder SetAccessLevel(string message)
             {
                 this.message = message;
                 return this;
@@ -300,7 +300,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="ccMe"> the ccMe </param>
             /// <returns> the share to one builder </returns>
-            public virtual CreateShareBuilder SetCcMe(bool? ccMe)
+            public CreateShareBuilder SetCcMe(bool? ccMe)
             {
                 this.ccMe = ccMe;
                 return this;
@@ -310,7 +310,7 @@ namespace Smartsheet.Api.Models
             /// Gets the access level.
             /// </summary>
             /// <returns> the access level </returns>
-            public virtual AccessLevel? GetAccessLevel()
+            public AccessLevel? GetAccessLevel()
             {
                 return accessLevel;
             }
@@ -319,7 +319,7 @@ namespace Smartsheet.Api.Models
             /// Gets the Email.
             /// </summary>
             /// <returns> the Email </returns>
-            public virtual string GetEmail()
+            public string GetEmail()
             {
                 return email;
             }
@@ -328,7 +328,7 @@ namespace Smartsheet.Api.Models
             /// Gets the GroupId.
             /// </summary>
             /// <returns> the GroupId </returns>
-            public virtual long? GetGroupId()
+            public long? GetGroupId()
             {
                 return groupId;
             }
@@ -337,7 +337,7 @@ namespace Smartsheet.Api.Models
             /// Gets the Subject.
             /// </summary>
             /// <returns> the Subject </returns>
-            public virtual string GetSubject()
+            public string GetSubject()
             {
                 return subject;
             }
@@ -346,7 +346,7 @@ namespace Smartsheet.Api.Models
             /// Gets the Message.
             /// </summary>
             /// <returns> the Message </returns>
-            public virtual string GetMessage()
+            public string GetMessage()
             {
                 return message;
             }
@@ -355,7 +355,7 @@ namespace Smartsheet.Api.Models
             /// Gets the CcMe.
             /// </summary>
             /// <returns> the CcMe </returns>
-            public virtual bool? GetCcMe()
+            public bool? GetCcMe()
             {
                 return ccMe;
             }
@@ -364,7 +364,7 @@ namespace Smartsheet.Api.Models
             /// Builds the <seealso cref="Share"/> object.
             /// </summary>
             /// <returns> the share </returns>
-            public virtual Share Build()
+            public Share Build()
             {
                 return new Share()
                 {
@@ -402,7 +402,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="accessLevel"> the access level </param>
             /// <returns> the update share builder </returns>
-            public virtual UpdateShareBuilder SetAccessLevel(AccessLevel? accessLevel)
+            public UpdateShareBuilder SetAccessLevel(AccessLevel? accessLevel)
             {
                 this.accessLevel = accessLevel;
                 return this;
@@ -412,7 +412,7 @@ namespace Smartsheet.Api.Models
             /// Gets the access level.
             /// </summary>
             /// <returns> the access level </returns>
-            public virtual AccessLevel? GetAccessLevel()
+            public AccessLevel? GetAccessLevel()
             {
                 return accessLevel;
             }
@@ -421,7 +421,7 @@ namespace Smartsheet.Api.Models
             /// Builds the <seealso cref="Share"/> object.
             /// </summary>
             /// <returns> the share </returns>
-            public virtual Share Build()
+            public Share Build()
             {
                 Share share = new Share();
                 share.id = shareId;

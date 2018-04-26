@@ -103,7 +103,7 @@ namespace Smartsheet.Api.Models
         /// Gets the read only lite enabled flag.
         /// </summary>
         /// <returns> the read only lite enabled flag </returns>
-        public virtual bool? ReadOnlyLiteEnabled
+        public bool? ReadOnlyLiteEnabled
         {
             get { return readOnlyLiteEnabled; }
             set { this.readOnlyLiteEnabled = value; }
@@ -113,7 +113,7 @@ namespace Smartsheet.Api.Models
         /// Gets the read only full (fancy UI) enabled flag.
         /// </summary>
         /// <returns> the read only full enabled flag </returns>
-        public virtual bool? ReadOnlyFullEnabled
+        public bool? ReadOnlyFullEnabled
         {
             get { return readOnlyFullEnabled; }
             set { this.readOnlyFullEnabled = value; }
@@ -123,7 +123,7 @@ namespace Smartsheet.Api.Models
         /// Gets the read write enabled flag.
         /// </summary>
         /// <returns> the read write enabled flag </returns>
-        public virtual bool? ReadWriteEnabled
+        public bool? ReadWriteEnabled
         {
             get { return readWriteEnabled; }
             set { this.readWriteEnabled = value; }
@@ -133,7 +133,7 @@ namespace Smartsheet.Api.Models
         /// Gets the ical enabled flag.
         /// </summary>
         /// <returns> the ical enabled flag </returns>
-        public virtual bool? IcalEnabled
+        public bool? IcalEnabled
         {
             get { return icalEnabled; }
             set { this.icalEnabled = value; }
@@ -143,7 +143,7 @@ namespace Smartsheet.Api.Models
         /// Flag to indicate who can access the 'Read-Only Full’ view of the published sheet.
         /// </summary>
         /// <returns> the access flag </returns>
-        public virtual string ReadOnlyFullAccessibleBy
+        public string ReadOnlyFullAccessibleBy
         {
             get { return readOnlyFullAccessibleBy; }
             set { this.readOnlyFullAccessibleBy = value; }
@@ -153,7 +153,7 @@ namespace Smartsheet.Api.Models
         /// Flag to indicate who can access the 'Edit by Anyone’ view of the published sheet.
         /// </summary>
         /// <returns> the access flag </returns>
-        public virtual string ReadWriteAccessibleBy
+        public string ReadWriteAccessibleBy
         {
             get { return readWriteAccessibleBy; }
             set { this.readWriteAccessibleBy = value; }
@@ -163,7 +163,7 @@ namespace Smartsheet.Api.Models
         /// Gets the read only lite Url flag.
         /// </summary>
         /// <returns> the read only lite Url flag </returns>
-        public virtual string ReadOnlyLiteUrl
+        public string ReadOnlyLiteUrl
         {
             get { return readOnlyLiteUrl; }
             set { this.readOnlyLiteUrl = value; }
@@ -173,7 +173,7 @@ namespace Smartsheet.Api.Models
         /// Gets the read only full (fancy UI) Url.
         /// </summary>
         /// <returns> the read only full Url </returns>
-        public virtual string ReadOnlyFullUrl
+        public string ReadOnlyFullUrl
         {
             get { return readOnlyFullUrl; }
             set { this.readOnlyFullUrl = value;    }
@@ -183,7 +183,7 @@ namespace Smartsheet.Api.Models
         /// Gets the read write Url.
         /// </summary>
         /// <returns> the read write Url </returns>
-        public virtual string ReadWriteUrl
+        public string ReadWriteUrl
         {
             get { return readWriteUrl; }
             set { this.readWriteUrl = value; }
@@ -193,7 +193,7 @@ namespace Smartsheet.Api.Models
         /// Gets the ical Url.
         /// </summary>
         /// <returns> the ical Url </returns>
-        public virtual string IcalUrl
+        public string IcalUrl
         {
             get { return icalUrl; }
             set { this.icalUrl = value; }
@@ -203,7 +203,7 @@ namespace Smartsheet.Api.Models
         /// Get the read only full show toolbar flag
         /// </summary>
         /// <returns> the flag </returns>
-        public virtual bool? ReadOnlyFullShowToolbar
+        public bool? ReadOnlyFullShowToolbar
         {
             get { return readOnlyFullShowToolbar; }
             set { readOnlyFullShowToolbar = value; }
@@ -212,7 +212,7 @@ namespace Smartsheet.Api.Models
         /// <summary>
         /// Get the read/write show toolbar flag
         /// </summary>
-        public virtual bool? ReadWriteShowToolbar
+        public bool? ReadWriteShowToolbar
         {
             get { return readWriteShowToolbar; }
             set { readWriteShowToolbar = value; }
@@ -222,7 +222,7 @@ namespace Smartsheet.Api.Models
         /// Get the read only full default view
         /// </summary>
         /// <returns> Valid options are "GRID", "CARDS", "CALENDAR" </returns>
-        public virtual string ReadOnlyFullDefaultView
+        public string ReadOnlyFullDefaultView
         {
             get { return readOnlyFullDefaultView; }
             set { readOnlyFullDefaultView = value; }
@@ -232,7 +232,7 @@ namespace Smartsheet.Api.Models
         /// Get the read write default view
         /// </summary>
         /// <returns> Valid options are "GRID", "CARDS", "CALENDAR" </returns>
-        public virtual string ReadWriteDefaultView
+        public string ReadWriteDefaultView
         {
             get { return readWriteDefaultView; }
             set { readWriteDefaultView = value; }
@@ -268,7 +268,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="readOnlyLiteEnabled"> the read only lite (static html UI) enabled </param>
             /// <returns> the publish Status builder </returns>
-            public virtual PublishStatusBuilder SetReadOnlyLiteEnabled(bool? readOnlyLiteEnabled)
+            public PublishStatusBuilder SetReadOnlyLiteEnabled(bool? readOnlyLiteEnabled)
             {
                 this.readOnlyLiteEnabled = readOnlyLiteEnabled;
                 return this;
@@ -279,7 +279,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="readOnlyFullEnabled"> the read only full enabled </param>
             /// <returns> the publish Status builder </returns>
-            public virtual PublishStatusBuilder SetReadOnlyFullEnabled(bool? readOnlyFullEnabled)
+            public PublishStatusBuilder SetReadOnlyFullEnabled(bool? readOnlyFullEnabled)
             {
                 this.readOnlyFullEnabled = readOnlyFullEnabled;
                 return this;
@@ -290,7 +290,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="readWriteEnabled"> the read write enabled </param>
             /// <returns> the publish Status builder </returns>
-            public virtual PublishStatusBuilder SetReadWriteEnabled(bool? readWriteEnabled)
+            public PublishStatusBuilder SetReadWriteEnabled(bool? readWriteEnabled)
             {
                 this.readWriteEnabled = readWriteEnabled;
                 return this;
@@ -301,7 +301,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="icalEnabled"> the ical enabled </param>
             /// <returns> the publish Status builder </returns>
-            public virtual PublishStatusBuilder SetIcalEnabled(bool? icalEnabled)
+            public PublishStatusBuilder SetIcalEnabled(bool? icalEnabled)
             {
                 this.icalEnabled = icalEnabled;
                 return this;
@@ -311,7 +311,7 @@ namespace Smartsheet.Api.Models
             /// Gets the read only lite enabled.
             /// </summary>
             /// <returns> the read only lite enabled </returns>
-            public virtual bool? ReadOnlyLiteEnabled
+            public bool? ReadOnlyLiteEnabled
             {
                 get { return readOnlyLiteEnabled; }
             }
@@ -320,7 +320,7 @@ namespace Smartsheet.Api.Models
             /// Gets the read only full enabled.
             /// </summary>
             /// <returns> the read only full enabled </returns>
-            public virtual bool? ReadOnlyFullEnabled
+            public bool? ReadOnlyFullEnabled
             {
                 get { return readOnlyFullEnabled; }
             }
@@ -329,7 +329,7 @@ namespace Smartsheet.Api.Models
             /// Gets the read write enabled.
             /// </summary>
             /// <returns> the read write enabled </returns>
-            public virtual bool? ReadWriteEnabled
+            public bool? ReadWriteEnabled
             {
                 get { return readWriteEnabled; }
             }
@@ -338,7 +338,7 @@ namespace Smartsheet.Api.Models
             /// Gets the ical enabled.
             /// </summary>
             /// <returns> the ical enabled </returns>
-            public virtual bool? IcalEnabled
+            public bool? IcalEnabled
             {
                 get { return icalEnabled; }
             }
@@ -347,7 +347,7 @@ namespace Smartsheet.Api.Models
             /// Builds the.
             /// </summary>
             /// <returns> the sheet publish </returns>
-            public virtual SheetPublish Build()
+            public SheetPublish Build()
             {
 
                 if (readOnlyLiteEnabled == null || readOnlyFullEnabled == null || readWriteEnabled == null)

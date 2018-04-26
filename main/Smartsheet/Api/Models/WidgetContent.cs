@@ -72,7 +72,7 @@ namespace Smartsheet.Api.Models
         /// The widget has when clicked attribute set to that hyperlink (if present and non-null).
         /// </summary>
         /// <returns> the Link </returns>
-        public virtual Hyperlink Hyperlink
+        public Hyperlink Hyperlink
         {
             get { return hyperlink; }
             set { this.hyperlink = value; }
@@ -82,7 +82,7 @@ namespace Smartsheet.Api.Models
         /// Array of cellDataItem objects.
         /// </summary>
         /// <returns> the array </returns>
-        public virtual IList<CellDataItem> CellData
+        public IList<CellDataItem> CellData
         {
             get { return cellData; }
             set { this.cellData = value; }
@@ -92,7 +92,7 @@ namespace Smartsheet.Api.Models
         /// Array of Column objects.
         /// </summary>
         /// <returns> the array </returns>
-        public virtual IList<Column> Columns
+        public IList<Column> Columns
         {
             get { return columns; }
             set { this.columns = value; }
@@ -102,7 +102,7 @@ namespace Smartsheet.Api.Models
         /// The widget content as HTML.
         /// </summary>
         /// <returns> the HTML string </returns>
-        public virtual string Html
+        public string Html
         {
             get { return html; }
             set { this.html = value; }
@@ -112,7 +112,7 @@ namespace Smartsheet.Api.Models
         /// An array of ShortcutDataItem objects.
         /// </summary>
         /// <returns> the array </returns>
-        public virtual IList<ShortcutDataItem> ShortcutData
+        public IList<ShortcutDataItem> ShortcutData
         {
             get { return shortcutData; }
             set { this.shortcutData = value; }
@@ -122,7 +122,7 @@ namespace Smartsheet.Api.Models
         /// HTML snippet to render Report.
         /// </summary>
         /// <returns> the HTML string </returns>
-        public virtual string HtmlContent
+        public string HtmlContent
         {
             get { return htmlContent; }
             set { this.htmlContent = value; }
@@ -132,7 +132,7 @@ namespace Smartsheet.Api.Models
         /// The image private ID.
         /// </summary>
         /// <returns> the ID </returns>
-        public virtual string PrivateId
+        public string PrivateId
         {
             get { return privateId; }
             set { this.privateId = value; }
@@ -142,7 +142,7 @@ namespace Smartsheet.Api.Models
         /// Original height of the image in pixels.
         /// </summary>
         /// <returns> the height </returns>
-        public virtual int? Height
+        public int? Height
         {
             get { return height; }
             set { this.height = value; }
@@ -152,7 +152,7 @@ namespace Smartsheet.Api.Models
         /// Original width of the image in pixels.
         /// </summary>
         /// <returns> the width </returns>
-        public virtual int? Width
+        public int? Width
         {
             get { return width; }
             set { this.width = value; }
@@ -162,7 +162,7 @@ namespace Smartsheet.Api.Models
         /// Name of the image file.
         /// </summary>
         /// <returns> the name </returns>
-        public virtual string FileName
+        public string FileName
         {
             get { return fileName; }
             set { this.fileName = value; }
@@ -172,7 +172,7 @@ namespace Smartsheet.Api.Models
         /// The formatDescriptor for the image file.
         /// </summary>
         /// <returns> the formatDescriptor </returns>
-        public virtual string Format
+        public string Format
         {
             get { return format; }
             set { this.format = value; }

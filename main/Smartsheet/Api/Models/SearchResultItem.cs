@@ -84,7 +84,7 @@ namespace Smartsheet.Api.Models
         /// Gets the text for this specific search RequestResult.
         /// </summary>
         /// <returns> the text </returns>
-        public virtual string Text
+        public string Text
         {
             get { return text; }
             set { this.text = value; }
@@ -94,7 +94,7 @@ namespace Smartsheet.Api.Models
         /// Gets the object Id for this specific search RequestResult.
         /// </summary>
         /// <returns> the object Id </returns>
-        public virtual long? ObjectId
+        public long? ObjectId
         {
             get { return objectId; }
             set { this.objectId = value; }
@@ -104,7 +104,7 @@ namespace Smartsheet.Api.Models
         /// Gets the object type for this specific search RequestResult.
         /// </summary>
         /// <returns> the object type </returns>
-        public virtual SearchObjectType? ObjectType
+        public SearchObjectType? ObjectType
         {
             get { return objectType; }
             set { this.objectType = value; }
@@ -114,7 +114,7 @@ namespace Smartsheet.Api.Models
         /// Gets the parent object Id for this specific search RequestResult.
         /// </summary>
         /// <returns> the parent object Id </returns>
-        public virtual long? ParentObjectId
+        public long? ParentObjectId
         {
             get { return parentObjectId; }
             set { this.parentObjectId = value; }
@@ -124,7 +124,7 @@ namespace Smartsheet.Api.Models
         /// Gets the parent object type for this specific search RequestResult.
         /// </summary>
         /// <returns> the parent object type </returns>
-        public virtual ObjectType? ParentObjectType
+        public ObjectType? ParentObjectType
         {
             get { return parentObjectType; }
             set { this.parentObjectType = value; }
@@ -134,7 +134,7 @@ namespace Smartsheet.Api.Models
         /// Gets the parent object name for this specific search RequestResult.
         /// </summary>
         /// <returns> the parent object name </returns>
-        public virtual string ParentObjectName
+        public string ParentObjectName
         {
             get { return parentObjectName; }
             set { this.parentObjectName = value; }
@@ -144,7 +144,7 @@ namespace Smartsheet.Api.Models
         /// Gets the context data for this specific search RequestResult.
         /// </summary>
         /// <returns> the context data </returns>
-        public virtual IList<string> ContextData
+        public IList<string> ContextData
         {
             get { return contextData; }
             set { this.contextData = value; }
@@ -154,7 +154,7 @@ namespace Smartsheet.Api.Models
         /// Gets the attachment type if the search result item is an attachment
         /// </summary>
         /// <returns> the attachment type </returns>
-        public virtual AttachmentType? AttachmentType
+        public AttachmentType? AttachmentType
         {
             get { return attachmentType; }
             set { this.attachmentType = value; }
@@ -164,7 +164,7 @@ namespace Smartsheet.Api.Models
         /// Gets the MIME type
         /// </summary>
         /// <returns> the MIME type </returns>
-        public virtual string MimeType
+        public string MimeType
         {
             get { return mimeType; }
             set { this.mimeType = value; }
@@ -174,7 +174,7 @@ namespace Smartsheet.Api.Models
         /// Indicates whether the search result item is a favorite
         /// </summary>
         /// <returns> the favorite flag </returns>
-        public virtual bool? Favorite
+        public bool? Favorite
         {
             get { return favorite; }
             set { this.favorite = value; }
@@ -183,7 +183,7 @@ namespace Smartsheet.Api.Models
         /// <summary>
         /// Indicates whether the search result item parent is a favorite
         /// </summary>
-        public virtual bool? ParentObjectFavorite
+        public bool? ParentObjectFavorite
         {
             get { return parentObjectFavorite; }
             set { this.parentObjectFavorite = value; }

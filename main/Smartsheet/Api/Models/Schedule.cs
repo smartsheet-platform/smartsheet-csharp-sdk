@@ -75,7 +75,7 @@ namespace Smartsheet.Api.Models
         /// Gets the scheudle type
         /// </summary>
         /// <returns> the ScheduleType </returns>
-        public virtual ScheduleType? Type
+        public ScheduleType? Type
         {
             get { return type; }
             set { this.type = value; }
@@ -85,7 +85,7 @@ namespace Smartsheet.Api.Models
         /// Gets the date, time and time zone at which the first delivery will start
         /// </summary>
         /// <returns> the timestamp </returns>
-        public virtual DateTime StartAt
+        public DateTime StartAt
         {
             get { return startAt; }
             set { this.startAt = value; }
@@ -95,7 +95,7 @@ namespace Smartsheet.Api.Models
         /// Gets the date, time and time zone at which the delivery schedule will end.
         /// </summary>
         /// <returns> the timestamp </returns>
-        public virtual DateTime EndAt
+        public DateTime EndAt
         {
             get { return endAt; }
             set { this.endAt = value; }
@@ -105,7 +105,7 @@ namespace Smartsheet.Api.Models
         /// Get the day within the month.
         /// </summary>
         /// <returns> the day </returns>
-        public virtual int? DayOfMonth
+        public int? DayOfMonth
         {
             get { return dayOfMonth; }
             set { this.dayOfMonth = value; }
@@ -115,7 +115,7 @@ namespace Smartsheet.Api.Models
         /// A string with the day ordinal.
         /// </summary>
         /// <returns> the day ordinal </returns>
-        public virtual DayOrdinal DayOrdinal
+        public DayOrdinal DayOrdinal
         {
             get { return dayOrdinal; }
             set { this.dayOrdinal = value; }
@@ -125,7 +125,7 @@ namespace Smartsheet.Api.Models
         /// A string array of day descriptors.
         /// </summary>
         /// <returns> the array of day descriptors </returns>
-        public virtual IList<DayDescriptor> DayDescriptors
+        public IList<DayDescriptor> DayDescriptors
         {
             get { return dayDescriptors; }
             set { this.dayDescriptors = value; }
@@ -135,7 +135,7 @@ namespace Smartsheet.Api.Models
         /// Gets the frequency on which the request will be delivered.
         /// </summary>
         /// <returns> the repeat frequency </returns>
-        public virtual int? RepeatEvery
+        public int? RepeatEvery
         {
             get { return repeatEvery; }
             set { this.repeatEvery = value; }
@@ -145,7 +145,7 @@ namespace Smartsheet.Api.Models
         /// Gets the The date and time for when the last request was sent. Read-only
         /// </summary>
         /// <returns> the timestamp </returns>
-        public virtual DateTime LastSentAt
+        public DateTime LastSentAt
         {
             get { return lastSentAt; }
             set { this.lastSentAt = value; }
@@ -155,7 +155,7 @@ namespace Smartsheet.Api.Models
         /// The date and time for when the next request is scheduled to send. Read-only.
         /// </summary>
         /// <returns> the timestamp </returns>
-        public virtual DateTime NextSendAt
+        public DateTime NextSendAt
         {
             get { return nextSendAt; }
             set { this.nextSendAt = value; }

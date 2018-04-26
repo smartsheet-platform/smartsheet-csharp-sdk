@@ -56,7 +56,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="admin"> the Admin </param>
             /// <returns> the adds the user builder </returns>
-            public virtual AddUserBuilder SetAdmin(bool? admin)
+            public AddUserBuilder SetAdmin(bool? admin)
             {
                 this.admin = admin;
                 return this;
@@ -67,7 +67,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="licensedSheetCreator"> the licensed sheet creator </param>
             /// <returns> the adds the user builder </returns>
-            public virtual AddUserBuilder SetLicensedSheetCreator(bool? licensedSheetCreator)
+            public AddUserBuilder SetLicensedSheetCreator(bool? licensedSheetCreator)
             {
                 this.licensedSheetCreator = licensedSheetCreator;
                 return this;
@@ -78,7 +78,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="email"> the Email </param>
             /// <returns> the adds the user builder </returns>
-            public virtual AddUserBuilder SetEmail(string email)
+            public AddUserBuilder SetEmail(string email)
             {
                 this.emailAddress = email;
                 return this;
@@ -89,7 +89,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="firstName"> the firstName </param>
             /// <returns> the adds the user builder </returns>
-            public virtual AddUserBuilder SetFirstName(string firstName)
+            public AddUserBuilder SetFirstName(string firstName)
             {
                 this.firstName = firstName;
                 return this;
@@ -100,7 +100,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="lastName"> the lastName </param>
             /// <returns> the adds the user builder </returns>
-            public virtual AddUserBuilder SetLastName(string lastName)
+            public AddUserBuilder SetLastName(string lastName)
             {
                 this.lastName = lastName;
                 return this;
@@ -111,7 +111,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="resourceViewer"> the resourceViewer </param>
             /// <returns> the adds the user builder </returns>
-            public virtual AddUserBuilder SetResourceViewer(bool? resourceViewer)
+            public AddUserBuilder SetResourceViewer(bool? resourceViewer)
             {
                 this.resourceViewer = resourceViewer;
                 return this;
@@ -121,7 +121,7 @@ namespace Smartsheet.Api.Models
             /// Gets the Admin.
             /// </summary>
             /// <returns> the Admin </returns>
-            public virtual bool? GetAdmin()
+            public bool? GetAdmin()
             {
                 return admin;
             }
@@ -130,7 +130,7 @@ namespace Smartsheet.Api.Models
             /// Gets the Email address.
             /// </summary>
             /// <returns> the Email address </returns>
-            public virtual string GetEmailAddress()
+            public string GetEmailAddress()
             {
                 return emailAddress;
             }
@@ -139,7 +139,7 @@ namespace Smartsheet.Api.Models
             /// Gets the licensed sheet creator.
             /// </summary>
             /// <returns> the licensed sheet creator </returns>
-            public virtual bool? GetLicensedSheetCreator()
+            public bool? GetLicensedSheetCreator()
             {
                 return licensedSheetCreator;
             }
@@ -148,7 +148,7 @@ namespace Smartsheet.Api.Models
             /// Gets the user's first name.
             /// </summary>
             /// <returns> the firstName </returns>
-            public virtual string GetFirstName()
+            public string GetFirstName()
             {
                 return firstName;
             }
@@ -157,7 +157,7 @@ namespace Smartsheet.Api.Models
             /// Gets the user's last name.
             /// </summary>
             /// <returns> the lastName </returns>
-            public virtual string GetLastName()
+            public string GetLastName()
             {
                 return lastName;
             }
@@ -166,7 +166,7 @@ namespace Smartsheet.Api.Models
             /// Gets the Flag indicating whether the user is a resource viewer (can access resource views).
             /// </summary>
             /// <returns> the resourceViewer </returns>
-            public virtual bool? GetResourceViewer()
+            public bool? GetResourceViewer()
             {
                 return resourceViewer;
             }
@@ -175,7 +175,7 @@ namespace Smartsheet.Api.Models
             /// Builds the <seealso cref="User"/> object using the required fields.
             /// </summary>
             /// <returns> the user </returns>
-            public virtual User Build()
+            public User Build()
             {
                 //if (admin == null || emailAddress == null || licensedSheetCreator == null)
                 //{
@@ -223,7 +223,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="admin"> the Admin </param>
             /// <returns> the UpdateUserBuilder </returns>
-            public virtual UpdateUserBuilder SetAdmin(bool? admin)
+            public UpdateUserBuilder SetAdmin(bool? admin)
             {
                 this.admin = admin;
                 return this;
@@ -234,7 +234,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="licensedSheetCreator"> the licensed sheet creator </param>
             /// <returns> the UpdateUserBuilder </returns>
-            public virtual UpdateUserBuilder SetLicensedSheetCreator(bool? licensedSheetCreator)
+            public UpdateUserBuilder SetLicensedSheetCreator(bool? licensedSheetCreator)
             {
                 this.licensedSheetCreator = licensedSheetCreator;
                 return this;
@@ -245,7 +245,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="firstName"> the firstName </param>
             /// <returns> the UpdateUserBuilder </returns>
-            public virtual UpdateUserBuilder SetFirstName(string firstName)
+            public UpdateUserBuilder SetFirstName(string firstName)
             {
                 this.firstName = firstName;
                 return this;
@@ -256,7 +256,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="lastName"> the lastName </param>
             /// <returns> the UpdateUserBuilder </returns>
-            public virtual UpdateUserBuilder SetLastName(string lastName)
+            public UpdateUserBuilder SetLastName(string lastName)
             {
                 this.lastName = lastName;
                 return this;
@@ -267,7 +267,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="resourceViewer"> the resourceViewer </param>
             /// <returns> the UpdateUserBuilder </returns>
-            public virtual UpdateUserBuilder SetResourceViewer(bool? resourceViewer)
+            public UpdateUserBuilder SetResourceViewer(bool? resourceViewer)
             {
                 this.resourceViewer = resourceViewer;
                 return this;
@@ -277,7 +277,7 @@ namespace Smartsheet.Api.Models
             /// Gets the Admin.
             /// </summary>
             /// <returns> the Admin </returns>
-            public virtual bool? GetAdmin()
+            public bool? GetAdmin()
             {
                 return admin;
             }
@@ -286,7 +286,7 @@ namespace Smartsheet.Api.Models
             /// Gets the licensed sheet creator.
             /// </summary>
             /// <returns> the licensed sheet creator </returns>
-            public virtual bool? GetLicensedSheetCreator()
+            public bool? GetLicensedSheetCreator()
             {
                 return licensedSheetCreator;
             }
@@ -295,7 +295,7 @@ namespace Smartsheet.Api.Models
             /// Gets the user's first name.
             /// </summary>
             /// <returns> the firstName </returns>
-            public virtual string GetFirstName()
+            public string GetFirstName()
             {
                 return firstName;
             }
@@ -304,7 +304,7 @@ namespace Smartsheet.Api.Models
             /// Gets the user's last name.
             /// </summary>
             /// <returns> the lastName </returns>
-            public virtual string GetLastName()
+            public string GetLastName()
             {
                 return lastName;
             }
@@ -313,7 +313,7 @@ namespace Smartsheet.Api.Models
             /// Gets the Flag indicating whether the user is a resource viewer (can access resource views).
             /// </summary>
             /// <returns> the resourceViewer </returns>
-            public virtual bool? GetResourceViewer()
+            public bool? GetResourceViewer()
             {
                 return resourceViewer;
             }
@@ -322,7 +322,7 @@ namespace Smartsheet.Api.Models
             /// Builds the <seealso cref="User"/> object using the required fields.
             /// </summary>
             /// <returns> the user </returns>
-            public virtual User Build()
+            public User Build()
             {
                 User user = new User();
                 user.Id = id;

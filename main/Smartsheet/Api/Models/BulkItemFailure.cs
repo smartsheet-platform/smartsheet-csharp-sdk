@@ -50,7 +50,7 @@ namespace Smartsheet.Api.Models
         /// Gets the error caused by the failed item.
         /// </summary>
         /// <returns> the Error </returns>
-        public virtual Error Error
+        public Error Error
         {
             get { return error; }
             set { this.error = value; }

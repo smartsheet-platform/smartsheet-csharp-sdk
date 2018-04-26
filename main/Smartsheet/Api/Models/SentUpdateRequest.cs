@@ -85,7 +85,7 @@ namespace Smartsheet.Api.Models
         /// Get the ID of the originating update request.
         /// </summary>
         /// <returns> the update request Id </returns>
-        public virtual long? UpdateRequestId
+        public long? UpdateRequestId
         {
             get { return updateRequestId; }
             set { this.updateRequestId = value; }
@@ -95,7 +95,7 @@ namespace Smartsheet.Api.Models
         /// Get the date and time for when the sent update request was sent to the recipient.
         /// </summary>
         /// <returns> the timestamp </returns>
-        public virtual DateTime SentAt
+        public DateTime SentAt
         {
             get { return sentAt; }
             set { this.sentAt = value; }
@@ -105,7 +105,7 @@ namespace Smartsheet.Api.Models
         /// Gets the User object containing name and email of the sender.
         /// </summary>
         /// <returns> the User </returns>
-        public virtual User SentBy
+        public User SentBy
         {
             get { return sentBy; }
             set { this.sentBy = value; }
@@ -115,7 +115,7 @@ namespace Smartsheet.Api.Models
         /// Gets the status of the sent update request.
         /// </summary>
         /// <returns> the UpdateRequestStatus </returns>
-        public virtual UpdateRequestStatus? Status
+        public UpdateRequestStatus? Status
         {
             get { return status; }
             set { this.status = value; }
@@ -124,7 +124,7 @@ namespace Smartsheet.Api.Models
         /// <summary>
         /// IDs of rows update is requested.
         /// </summary>
-        public virtual IList<long> RowIds
+        public IList<long> RowIds
         {
             get { return rowIds; }
             set { this.rowIds = value; }
@@ -133,7 +133,7 @@ namespace Smartsheet.Api.Models
         /// <summary>
         /// IDs of columns included in the request.
         /// </summary>
-        public virtual IList<long> ColumnIds
+        public IList<long> ColumnIds
         {
             get { return columnIds; }
             set { columnIds = value; }
@@ -143,7 +143,7 @@ namespace Smartsheet.Api.Models
         /// Gets the flag that indicates if Attachments should be included in the Email.
         /// </summary>
         /// <returns> the include Attachments </returns>
-        public virtual bool? IncludeAttachments
+        public bool? IncludeAttachments
         {
             get { return includeAttachments; }
             set { this.includeAttachments = value; }
@@ -153,7 +153,7 @@ namespace Smartsheet.Api.Models
         /// Gets the flag that indicates if Discussions should be included in the Email.
         /// </summary>
         /// <returns> the include Discussions </returns>
-        public virtual bool? IncludeDiscussions
+        public bool? IncludeDiscussions
         {
             get { return includeDiscussions; }
             set { this.includeDiscussions = value; }
@@ -163,7 +163,7 @@ namespace Smartsheet.Api.Models
         /// Gets the Recipient
         /// </summary>
         /// <returns> the Recipients </returns>
-        public virtual Recipient SentTo
+        public Recipient SentTo
         {
             get { return sentTo; }
             set { this.sentTo = value; }
@@ -173,7 +173,7 @@ namespace Smartsheet.Api.Models
         /// Gets the Subject.
         /// </summary>
         /// <returns> the Subject </returns>
-        public virtual string Subject
+        public string Subject
         {
             get { return subject; }
             set { this.subject = value; }
@@ -183,7 +183,7 @@ namespace Smartsheet.Api.Models
         /// Gets the Message.
         /// </summary>
         /// <returns> the Message </returns>
-        public virtual string Message
+        public string Message
         {
             get { return message; }
             set { this.message = value; }

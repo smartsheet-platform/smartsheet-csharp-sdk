@@ -94,7 +94,7 @@ namespace Smartsheet.Api.Models
         /// Get the Type of widget.
         /// </summary>
         /// <returns> the WidgetType </returns>
-        public virtual WidgetType Type
+        public WidgetType Type
         {
             get { return type; }
             set { this.type = value; }
@@ -104,7 +104,7 @@ namespace Smartsheet.Api.Models
         /// (Optional) Title of the widget.
         /// </summary>
         /// <returns> the Title </returns>
-        public virtual string Title
+        public string Title
         {
             get { return title; }
             set { this.title = value; }
@@ -114,7 +114,7 @@ namespace Smartsheet.Api.Models
         /// True indicates that the client should display the widget title. Note that this is independent of the “title” string which may be null or empty.
         /// </summary>
         /// <returns> the showTitle flag </returns>
-        public virtual bool? ShowTitle
+        public bool? ShowTitle
         {
             get { return showTitle; }
             set { this.showTitle = value; }
@@ -124,7 +124,7 @@ namespace Smartsheet.Api.Models
         /// True indicates that the client should display the Sheet icon in the widget title.
         /// </summary>
         /// <returns> the showTitleIcon flag </returns>
-        public virtual bool? ShowTitleIcon
+        public bool? ShowTitleIcon
         {
             get { return showTitleIcon; }
             set { this.showTitleIcon = value; }
@@ -134,7 +134,7 @@ namespace Smartsheet.Api.Models
         /// The title format FormatDescriptor string.
         /// </summary>
         /// <returns> the FormatDescriptor </returns>
-        public virtual string TitleFormat
+        public string TitleFormat
         {
             get { return titleFormat; }
             set { this.titleFormat = value; }
@@ -144,7 +144,7 @@ namespace Smartsheet.Api.Models
         /// X-coordinate of widget’s position on the Sight.
         /// </summary>
         /// <returns> the xPosition </returns>
-        public virtual int? XPosition
+        public int? XPosition
         {
             get { return xPosition; }
             set { this.xPosition = value; }
@@ -154,7 +154,7 @@ namespace Smartsheet.Api.Models
         /// Y-coordinate of widget’s position on the Sight.
         /// </summary>
         /// <returns> the yPosition </returns>
-        public virtual int? YPosition
+        public int? YPosition
         {
             get { return yPosition; }
             set { this.yPosition = value; }
@@ -164,7 +164,7 @@ namespace Smartsheet.Api.Models
         /// Number of Rows that the widget occupies on the Sight.
         /// </summary>
         /// <returns> the Height </returns>
-        public virtual int? Height
+        public int? Height
         {
             get { return height; }
             set { this.height = value; }
@@ -174,7 +174,7 @@ namespace Smartsheet.Api.Models
         /// Number of Columns that the widget occupies on the Sight.
         /// </summary>
         /// <returns> the Width </returns>
-        public virtual int? Width
+        public int? Width
         {
             get { return width; }
             set { this.width = value; }
@@ -184,7 +184,7 @@ namespace Smartsheet.Api.Models
         /// Widget version number.
         /// </summary>
         /// <returns> the Version </returns>
-        public virtual int? Version
+        public int? Version
         {
             get { return version; }
             set { this.version = value; }
@@ -195,7 +195,7 @@ namespace Smartsheet.Api.Models
         /// See description of contents variable for valid objects.
         /// </summary>
         /// <returns> the contents </returns>
-        public virtual WidgetContent Contents
+        public WidgetContent Contents
         {
             get { return contents; }
             set { this.contents = value; }

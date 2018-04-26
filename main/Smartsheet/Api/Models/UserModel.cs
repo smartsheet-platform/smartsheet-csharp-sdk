@@ -154,7 +154,7 @@ namespace Smartsheet.Api.Models
         /// Gets the Admin flag which allows managing users and accounts.
         /// </summary>
         /// <returns> the admin </returns>
-        public virtual bool? Admin
+        public bool? Admin
         {
             get { return admin; }
             set { this.admin = value; }
@@ -164,7 +164,7 @@ namespace Smartsheet.Api.Models
         /// Gets the licensed sheet creator flag that allows creating and owning sheets.
         /// </summary>
         /// <returns> the licensed sheet creator </returns>
-        public virtual bool? LicensedSheetCreator
+        public bool? LicensedSheetCreator
         {
             get { return licensedSheetCreator; }
             set { this.licensedSheetCreator = value; }
@@ -173,7 +173,7 @@ namespace Smartsheet.Api.Models
         /// <summary>
         /// Flag indicating whether the user is a resource viewer (can access resource views)
         /// </summary>
-        public virtual bool? ResourceViewer
+        public bool? ResourceViewer
         {
             get { return resourceViewer; }
             set { resourceViewer = value; }
@@ -192,7 +192,7 @@ namespace Smartsheet.Api.Models
         /// Gets the status of the user (active, pending, declined).
         /// </summary>
         /// <returns> the Status </returns>
-        public virtual UserStatus? Status
+        public UserStatus? Status
         {
             get { return status; }
             set { this.status = value; }

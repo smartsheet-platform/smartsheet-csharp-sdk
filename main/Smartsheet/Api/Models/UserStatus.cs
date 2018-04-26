@@ -18,8 +18,6 @@
 
 namespace Smartsheet.Api.Models
 {
-
-
     /// <summary>
     /// Represents the user Status.
     /// </summary>
@@ -29,5 +27,4 @@ namespace Smartsheet.Api.Models
         PENDING,
         DECLINED
     }
-
 }

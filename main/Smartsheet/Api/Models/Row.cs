@@ -84,7 +84,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="toTop"> the to top flag </param>
             /// <returns> the add row builder </returns>
-            public virtual AddRowBuilder SetToTop(bool? toTop)
+            public AddRowBuilder SetToTop(bool? toTop)
             {
                 this.toTop = toTop;
                 return this;
@@ -95,7 +95,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="toBottom"> the to bottom </param>
             /// <returns> the add row builder </returns>
-            public virtual AddRowBuilder SetToBottom(bool? toBottom)
+            public AddRowBuilder SetToBottom(bool? toBottom)
             {
                 this.toBottom = toBottom;
                 return this;
@@ -106,7 +106,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="parentId"> the parent Id </param>
             /// <returns> the add row builder </returns>
-            public virtual AddRowBuilder SetParentId(long? parentId)
+            public AddRowBuilder SetParentId(long? parentId)
             {
                 this.parentId = parentId;
                 return this;
@@ -117,7 +117,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="siblingId"> the sibling Id </param>
             /// <returns> the add row builder </returns>
-            public virtual AddRowBuilder SetSiblingId(long? siblingId)
+            public AddRowBuilder SetSiblingId(long? siblingId)
             {
                 this.siblingId = siblingId;
                 return this;
@@ -129,7 +129,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="above"> the above flag </param>
             /// <returns> the add row builder </returns>
-            public virtual AddRowBuilder SetAbove(bool? above)
+            public AddRowBuilder SetAbove(bool? above)
             {
                 this.above = above;
                 return this;
@@ -140,7 +140,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="cells"> the cells </param>
             /// <returns> the add row builder </returns>
-            public virtual AddRowBuilder SetCells(IList<Cell> cells)
+            public AddRowBuilder SetCells(IList<Cell> cells)
             {
                 this.cells = cells;
                 return this;
@@ -151,7 +151,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="format"> the format </param>
             /// <returns> the add row builder </returns>
-            public virtual AddRowBuilder SetFormat(string format)
+            public AddRowBuilder SetFormat(string format)
             {
                 this.format = format;
                 return this;
@@ -162,18 +162,17 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="expanded"> the expanded </param>
             /// <returns> the add row builder </returns>
-            public virtual AddRowBuilder SetExpanded(bool? expanded)
+            public AddRowBuilder SetExpanded(bool? expanded)
             {
                 this.expanded = expanded;
                 return this;
             }
 
-
             /// <summary>
             /// Gets the to top.
             /// </summary>
             /// <returns> the to top </returns>
-            public virtual bool? GetToTop()
+            public bool? GetToTop()
             {
                 return toTop;
             }
@@ -182,7 +181,7 @@ namespace Smartsheet.Api.Models
             /// Gets the to bottom.
             /// </summary>
             /// <returns> the to bottom </returns>
-            public virtual bool? GetToBottom()
+            public bool? GetToBottom()
             {
                 return toBottom;
             }
@@ -191,7 +190,7 @@ namespace Smartsheet.Api.Models
             /// Gets the parent Id.
             /// </summary>
             /// <returns> the parent Id </returns>
-            public virtual long? GetParentId()
+            public long? GetParentId()
             {
                 return parentId;
             }
@@ -200,7 +199,7 @@ namespace Smartsheet.Api.Models
             /// Gets the sibling Id.
             /// </summary>
             /// <returns> the sibling Id </returns>
-            public virtual long? GetSiblingId()
+            public long? GetSiblingId()
             {
                 return siblingId;
             }
@@ -209,7 +208,7 @@ namespace Smartsheet.Api.Models
             /// Gets the cells.
             /// </summary>
             /// <returns> the cells </returns>
-            public virtual IList<Cell> GetCells()
+            public IList<Cell> GetCells()
             {
                 return cells;
             }
@@ -218,7 +217,7 @@ namespace Smartsheet.Api.Models
             /// Gets the above flag.
             /// </summary>
             /// <returns>the above flag</returns>
-            public virtual bool? GetAbove()
+            public bool? GetAbove()
             {
                 return above;
             }
@@ -227,7 +226,7 @@ namespace Smartsheet.Api.Models
             /// Gets the format
             /// </summary>
             /// <returns>the format</returns>
-            public virtual string GetFormat()
+            public string GetFormat()
             {
                 return format;
             }
@@ -236,7 +235,7 @@ namespace Smartsheet.Api.Models
             /// Gets the expanded flag.
             /// </summary>
             /// <returns>the expanded flag</returns>
-            public virtual bool? GetExpanded()
+            public bool? GetExpanded()
             {
                 return expanded;
             }
@@ -245,7 +244,7 @@ namespace Smartsheet.Api.Models
             /// Builds the Row.
             /// </summary>
             /// <returns>the row</returns>
-            public virtual Row Build()
+            public Row Build()
             {
                 Row row = new Row
                 {
@@ -293,7 +292,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="toTop"> the to top flag </param>
             /// <returns> the update row builder </returns>
-            public virtual UpdateRowBuilder SetToTop(bool? toTop)
+            public UpdateRowBuilder SetToTop(bool? toTop)
             {
                 this.toTop = toTop;
                 return this;
@@ -304,7 +303,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="toBottom"> the to bottom </param>
             /// <returns> the update row builder </returns>
-            public virtual UpdateRowBuilder SetToBottom(bool? toBottom)
+            public UpdateRowBuilder SetToBottom(bool? toBottom)
             {
                 this.toBottom = toBottom;
                 return this;
@@ -315,7 +314,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="parentId"> the parent Id </param>
             /// <returns> the update row builder </returns>
-            public virtual UpdateRowBuilder SetParentId(long? parentId)
+            public UpdateRowBuilder SetParentId(long? parentId)
             {
                 this.parentId = parentId;
                 return this;
@@ -326,7 +325,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="siblingId"> the sibling Id </param>
             /// <returns> the update row builder </returns>
-            public virtual UpdateRowBuilder SetSiblingId(long? siblingId)
+            public UpdateRowBuilder SetSiblingId(long? siblingId)
             {
                 this.siblingId = siblingId;
                 return this;
@@ -337,7 +336,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="above"> the above flag </param>
             /// <returns> the update row builder </returns>
-            public virtual UpdateRowBuilder SetAbove(bool? above)
+            public UpdateRowBuilder SetAbove(bool? above)
             {
                 this.above = above;
                 return this;
@@ -348,7 +347,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="indent"></param>
             /// <returns></returns>
-            public virtual UpdateRowBuilder SetIndent(int? indent)
+            public UpdateRowBuilder SetIndent(int? indent)
             {
                 this.indent = indent;
                 return this;
@@ -359,7 +358,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="outdent"></param>
             /// <returns></returns>
-            public virtual UpdateRowBuilder SetOutdent(int? outdent)
+            public UpdateRowBuilder SetOutdent(int? outdent)
             {
                 this.outdent = outdent;
                 return this;
@@ -370,7 +369,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="cells"> the list of cells </param>
             /// <returns> the update row builder </returns>
-            public virtual UpdateRowBuilder SetCells(IList<Cell> cells)
+            public UpdateRowBuilder SetCells(IList<Cell> cells)
             {
                 this.cells = cells;
                 return this;
@@ -381,7 +380,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="format"> the format </param>
             /// <returns> the update row builder </returns>
-            public virtual UpdateRowBuilder SetFormat(string format)
+            public UpdateRowBuilder SetFormat(string format)
             {
                 this.format = format;
                 return this;
@@ -392,7 +391,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="expanded"> the expanded </param>
             /// <returns> the update row builder </returns>
-            public virtual UpdateRowBuilder SetExpanded(bool? expanded)
+            public UpdateRowBuilder SetExpanded(bool? expanded)
             {
                 this.expanded = expanded;
                 return this;
@@ -403,7 +402,7 @@ namespace Smartsheet.Api.Models
             /// </summary>
             /// <param name="locked"> row locked </param>
             /// <returns> the update row builder </returns>
-            public virtual UpdateRowBuilder SetLocked(bool? locked)
+            public UpdateRowBuilder SetLocked(bool? locked)
             {
                 this.locked = locked;
                 return this;
@@ -413,7 +412,7 @@ namespace Smartsheet.Api.Models
             /// Gets the to top.
             /// </summary>
             /// <returns> the to top </returns>
-            public virtual bool? GetToTop()
+            public bool? GetToTop()
             {
                 return toTop;
             }
@@ -422,7 +421,7 @@ namespace Smartsheet.Api.Models
             /// Gets the to bottom.
             /// </summary>
             /// <returns> the to bottom </returns>
-            public virtual bool? GetToBottom()
+            public bool? GetToBottom()
             {
                 return toBottom;
             }
@@ -431,7 +430,7 @@ namespace Smartsheet.Api.Models
             /// Gets the parent Id.
             /// </summary>
             /// <returns> the parent Id </returns>
-            public virtual long? GetParentId()
+            public long? GetParentId()
             {
                 return parentId;
             }
@@ -440,7 +439,7 @@ namespace Smartsheet.Api.Models
             /// Gets the sibling Id.
             /// </summary>
             /// <returns> the sibling Id </returns>
-            public virtual long? GetSiblingId()
+            public long? GetSiblingId()
             {
                 return siblingId;
             }
@@ -449,7 +448,7 @@ namespace Smartsheet.Api.Models
             /// Gets the cells.
             /// </summary>
             /// <returns> the cells </returns>
-            public virtual IList<Cell> GetCells()
+            public IList<Cell> GetCells()
             {
                 return cells;
             }
@@ -458,7 +457,7 @@ namespace Smartsheet.Api.Models
             /// Gets the format.
             /// </summary>
             /// <returns>the format</returns>
-            public virtual string GetFormat()
+            public string GetFormat()
             {
                 return format;
             }
@@ -467,7 +466,7 @@ namespace Smartsheet.Api.Models
             /// Gets the expanded flag.
             /// </summary>
             /// <returns>the expanded flag</returns>
-            public virtual bool? GetExpanded()
+            public bool? GetExpanded()
             {
                 return expanded;
             }
@@ -476,7 +475,7 @@ namespace Smartsheet.Api.Models
             /// Gets whether row is locked.
             /// </summary>
             /// <returns> the locked </returns>
-            public virtual bool? GetLocked()
+            public bool? GetLocked()
             {
                 return locked;
             }
@@ -485,7 +484,7 @@ namespace Smartsheet.Api.Models
             /// Gets the row id.
             /// </summary>
             /// <returns> the row id </returns>
-            public virtual long? GetId()
+            public long? GetId()
             {
                 return id;
             }
@@ -494,7 +493,7 @@ namespace Smartsheet.Api.Models
             /// Builds anad returns the Row.
             /// </summary>
             /// <returns> the row </returns>
-            public virtual Row Build()
+            public Row Build()
             {
                 Row row = new Row
                 {

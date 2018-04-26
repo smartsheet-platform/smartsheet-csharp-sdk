@@ -44,7 +44,7 @@ namespace Smartsheet.Api.Models
         /// Label for the data point. 
         /// </summary>
         /// <returns> the label </returns>
-        public virtual string Label
+        public string Label
         {
             get { return label; }
             set { this.label = value; }
@@ -54,7 +54,7 @@ namespace Smartsheet.Api.Models
         /// formatDescriptor.
         /// </summary>
         /// <returns> the labelFormat </returns>
-        public virtual string LabelFormat
+        public string LabelFormat
         {
             get { return labelFormat; }
             set { this.labelFormat = value; }
@@ -64,7 +64,7 @@ namespace Smartsheet.Api.Models
         /// Attachment type (one of FILE, GOOGLE_DRIVE, LINK, BOX_COM, DROPBOX, EVERNOTE, EGNYTE, ONEDRIVE, SMARTSHEET).
         /// </summary>
         /// <returns> the attachment type </returns>
-        public virtual AttachmentType? AttachmentType
+        public AttachmentType? AttachmentType
         {
             get { return attachmentType; }
             set { this.attachmentType = value; }
@@ -74,7 +74,7 @@ namespace Smartsheet.Api.Models
         /// Hyperlink object.
         /// </summary>
         /// <returns> the Link </returns>
-        public virtual Hyperlink Hyperlink
+        public Hyperlink Hyperlink
         {
             get { return hyperlink; }
             set { this.hyperlink = value; }
@@ -84,7 +84,7 @@ namespace Smartsheet.Api.Models
         /// The display order for the CellDataItem.
         /// </summary>
         /// <returns> the display order </returns>
-        public virtual int? Order
+        public int? Order
         {
             get { return order; }
             set { this.order = value; }
@@ -94,7 +94,7 @@ namespace Smartsheet.Api.Models
         /// Certain attachment types will also include a mimeType.
         /// </summary>
         /// <returns> the MIME type </returns>
-        public virtual string MimeType
+        public string MimeType
         {
             get { return mimeType; }
             set { this.mimeType = value; }

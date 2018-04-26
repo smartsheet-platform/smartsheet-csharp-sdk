@@ -64,7 +64,7 @@ namespace Smartsheet.Api.Models
         /// Gets the alternate email address that was specified in the request.
         /// </summary>
         /// <returns> the alternate email address </returns>
-        public virtual string AlternateEmailAddress 
+        public string AlternateEmailAddress 
         {
             get { return alternateEmailAddress; }
             set { this.alternateEmailAddress = value; }
@@ -74,7 +74,7 @@ namespace Smartsheet.Api.Models
         /// Gets the index of the row that caused the error.
         /// </summary>
         /// <returns> the index </returns>
-        public virtual int? Index
+        public int? Index
         {
             get { return index; }
             set { this.index = value; }
@@ -84,7 +84,7 @@ namespace Smartsheet.Api.Models
         /// Gets the server-side limit on the number of sheets allowed in a single copy operation.
         /// </summary>
         /// <returns> the maximum sheet count </returns>
-        public virtual int? MaxSheetCount
+        public int? MaxSheetCount
         {
             get { return maxSheetCount; }
             set { this.maxSheetCount = value; }
@@ -94,7 +94,7 @@ namespace Smartsheet.Api.Models
         /// Gets the primary email address that should be specified in the request.
         /// </summary>
         /// <returns> the primary email address </returns>
-        public virtual string PrimaryEmailAddress
+        public string PrimaryEmailAddress
         {
             get { return primaryEmailAddress; }
             set { this.primaryEmailAddress = value; }
@@ -104,7 +104,7 @@ namespace Smartsheet.Api.Models
         /// Gets the row Id of the row that caused the error.
         /// </summary>
         /// <returns> the row Id </returns>
-        public virtual long? RowId
+        public long? RowId
         {
             get { return rowId; }
             set { this.rowId = value; }
@@ -114,7 +114,7 @@ namespace Smartsheet.Api.Models
         /// Gets the Id of the container that was partially copied.
         /// </summary>
         /// <returns> the container Id </returns>
-        public virtual long? TopContainerId
+        public long? TopContainerId
         {
             get { return topContainerId; }
             set { this.topContainerId = value; }
@@ -124,7 +124,7 @@ namespace Smartsheet.Api.Models
         /// Gets the type of the container that was partially copied.
         /// </summary>
         /// <returns> the container type </returns>
-        public virtual DestinationType? TopContainerType
+        public DestinationType? TopContainerType
         {
             get { return topContainerType; }
             set { this.topContainerType = value; }

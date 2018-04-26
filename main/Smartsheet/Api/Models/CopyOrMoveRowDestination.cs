@@ -15,7 +15,7 @@ namespace Smartsheet.Api.Models
         /// <summary>
         /// ID of the destination sheet
         /// </summary>
-        public virtual long SheetId
+        public long SheetId
         {
             get { return sheetId; }
             set { sheetId = value; }
