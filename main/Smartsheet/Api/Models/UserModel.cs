@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -23,191 +23,278 @@ using System.Text;
 
 namespace Smartsheet.Api.Models
 {
-	/// <summary>
-	/// Represents an UserModel.
-	/// </summary>
-	public abstract class UserModel : IdentifiableModel
-	{
-		private string email;
+    /// <summary>
+    /// Represents an UserModel.
+    /// </summary>
+    public abstract class UserModel : IdentifiableModel
+    {
+        /// <summary>
+        /// Represents the Admin flag which allows managing users and accounts.
+        /// </summary>
+        private bool? admin;
 
-		private string firstName;
+        /// <summary>
+        /// An array of AlternateEmail objects representing the alternate email addresses associated with the user account
+        /// </summary>
+        private IList<AlternateEmail> alternateEmails;
 
-		private string lastName;
+        /// <summary>
+        /// Company name from the user's profile
+        /// </summary>
+        private string company;
 
-		/// <summary>
-		/// Represents the Admin flag which allows managing Users and accounts.
-		/// </summary>
-		private bool? admin;
+        /// <summary>
+        /// Timestamp of viewing an Enterprise Custom Welcome Screen by the current user
+        /// </summary>
+        private DateTime? customWelcomeScreenViewed;
 
-		/// <summary>
-		/// Represents the licensed sheet creator flag which allows creating and owning Sheets.
-		/// </summary>
-		private bool? licensedSheetCreator;
+        /// <summary>
+        /// Department name from the user's profile
+        /// </summary>
+        private string department;
 
-		/// <summary>
-		/// Represents the user Status (active, pending, declined).
-		/// </summary>
-		private UserStatus? status;
+        /// <summary>
+        /// Represents the email address.
+        /// </summary>
+        private string email;
 
-		/// <summary>
-		/// Flag indicating whether the user is a resource viewer (can access resource views)
-		/// </summary>
-		private bool? resourceViewer;
+        /// <summary>
+        /// Represents the user's first name.
+        /// </summary>
+        private string firstName;
 
-		/// <summary>
-		/// Flag indicating whether the user is a group admin (can create and edit groups)
-		/// </summary>
-		private bool? groupAdmin;
+        /// <summary>
+        /// Flag indicating whether the user is a group admin (can create and edit groups)
+        /// </summary>
+        private bool? groupAdmin;
 
-		/// <summary>
-		/// An array of AlternateEmail objects representing the alternate email addresses associated with the User account
-		/// </summary>
-		private IList<AlternateEmail> alternateEmails;
+        /// <summary>
+        /// Last login time of the current user
+        /// </summary>
+        private DateTime? lastLogin;
 
-		/// <summary>
-		/// The number of sheets owned by the current user within the organization
-		/// </summary>
-		private int? sheetCount;
+        /// <summary>
+        /// Represents the user's last name.
+        /// </summary>
+        private string lastName;
 
-		/// <summary>
-		/// Last login time of the current user
-		/// </summary>
-		private DateTime? lastLogin;
+        /// <summary>
+        /// Represents the licensed sheet creator flag which allows creating and owning sheets.
+        /// </summary>
+        private bool? licensedSheetCreator;
 
-		/// <summary>
-		/// Timestamp of viewing an Enterprise Custom Welcome Screen by the current user
-		/// </summary>
-		private DateTime? customWelcomeScreenViewed;
+        /// <summary>
+        /// User's mobile phone number from the profile
+        /// </summary>
+        private string mobilePhone;
 
-		/// <summary>
-		/// Gets the Admin flag which allows managing Users and accounts.
-		/// </summary>
-		/// <returns> the Admin </returns>
-		public virtual bool? Admin
-		{
-			get
-			{
-				return admin;
-			}
-			set
-			{
-				this.admin = value;
-			}
-		}
+        /// <summary>
+        /// Link to the user's profile image
+        /// </summary>
+        private Image profileImage;
 
+        /// <summary>
+        /// Flag indicating whether the user is a resource viewer (can access resource views)
+        /// </summary>
+        private bool? resourceViewer;
 
-		/// <summary>
-		/// Gets the licensed sheet creator flag that allows creating and owning Sheets.
-		/// </summary>
-		/// <returns> the licensed sheet creator </returns>
-		public virtual bool? LicensedSheetCreator
-		{
-			get
-			{
-				return licensedSheetCreator;
-			}
-			set
-			{
-				this.licensedSheetCreator = value;
-			}
-		}
+        /// <summary>
+        /// User's role
+        /// </summary>
+        private string role;
 
+        /// <summary>
+        /// The number of sheets owned by the current user within the organization
+        /// </summary>
+        private int? sheetCount;
 
-		/// <summary>
-		/// Gets the Status of the user (active, pending, declined).
-		/// </summary>
-		/// <returns> the Status </returns>
-		public virtual UserStatus? Status
-		{
-			get
-			{
-				return status;
-			}
-			set
-			{
-				this.status = value;
-			}
-		}
+        /// <summary>
+        /// Represents the user status (active, pending, declined).
+        /// </summary>
+        private UserStatus? status;
 
-		/// <summary>
-		/// Flag indicating whether the user is a resource viewer (can access resource views)
-		/// </summary>
-		public virtual bool? ResourceViewer
-		{
-			get { return resourceViewer; }
-			set { resourceViewer = value; }
-		}
+        /// <summary>
+        /// User's title
+        /// </summary>
+        private string title;
 
-		/// <summary>
-		/// Flag indicating whether the user is a group admin (can create and edit groups)
-		/// </summary>
-		public bool? GroupAdmin
-		{
-			get { return groupAdmin; }
-			set { groupAdmin = value; }
-		}
+        /// <summary>
+        /// Work phone number for the user's profile
+        /// </summary>
+        private string workPhone;
 
-		/// <summary>
-		/// Current user’s email address
-		/// </summary>
-		public string Email
-		{
-			get { return email; }
-			set { email = value; }
-		}
+        /// <summary>
+        /// Gets the Admin flag which allows managing users and accounts.
+        /// </summary>
+        /// <returns> the admin </returns>
+        public bool? Admin
+        {
+            get { return admin; }
+            set { admin = value; }
+        }
 
-		/// <summary>
-		/// Current user’s first name
-		/// </summary>
-		public string FirstName
-		{
-			get { return firstName; }
-			set { firstName = value; }
-		}
+        /// <summary>
+        /// Get list of alternate email addresses associated with this user account
+        /// </summary>
+        public IList<AlternateEmail> AlternateEmails
+        {
+            get { return alternateEmails; }
+            set { alternateEmails = value; }
+        }
 
-		/// <summary>
-		/// Current user’s last name
-		/// </summary>
-		public string LastName
-		{
-			get { return lastName; }
-			set { lastName = value; }
-		}
+        /// <summary>
+        /// Gets the user's company name
+        /// </summary>
+        public string Company
+        {
+            get { return company; }
+            set { company = value; }
+        }
 
-		/// <summary>
-		/// Get list of alternate email addresses associted with this User account
-		/// </summary>
-		public IList<AlternateEmail> AlternateEmails
-		{
-			get { return alternateEmails; }
-			set { alternateEmails = value;  }
-		}
+        /// <summary>
+        /// Get the timestamp of the viewing of an Enterprise Custom Welcome Screen by the current user
+        /// </summary>
+        public DateTime? CustomWelcomeScreenViewed
+        {
+            get { return customWelcomeScreenViewed; }
+            set { customWelcomeScreenViewed = value; }
+        }
 
-		/// <summary>
-		/// Get the number of sheets owned by the current user within the organization
-		/// </summary>
-		public int? SheetCount
-		{
-			get { return sheetCount; }
-			set { sheetCount = value; }
-		}
+        /// <summary>
+        /// Gets the user's department
+        /// </summary>
+        public string Department
+        {
+            get { return department; }
+            set { department = value; }
+        }
 
-		/// <summary>
-		/// Get the last login time of the current user
-		/// </summary>
-		public DateTime? LastLogin
-		{
-			get { return lastLogin; }
-			set { lastLogin = value; }
-		}
+        /// <summary>
+        /// Current user’s email address
+        /// </summary>
+        public string Email
+        {
+            get { return email; }
+            set { email = value; }
+        }
 
-		/// <summary>
-		/// Get the timestamp of the viewing of an Enterprise Custom Welcome Screen by the current user
-		/// </summary>
-		public DateTime? CustomWelcomeScreenViewed
-		{
-			get { return customWelcomeScreenViewed; }
-			set { customWelcomeScreenViewed = value; }
-		}
-	}
+        /// <summary>
+        /// Current user’s first name
+        /// </summary>
+        public string FirstName
+        {
+            get { return firstName; }
+            set { firstName = value; }
+        }
+
+        /// <summary>
+        /// Get the last login time of the current user
+        /// </summary>
+        public DateTime? LastLogin
+        {
+            get { return lastLogin; }
+            set { lastLogin = value; }
+        }
+
+        /// <summary>
+        /// Current user’s last name
+        /// </summary>
+        public string LastName
+        {
+            get { return lastName; }
+            set { lastName = value; }
+        }
+
+        /// <summary>
+        /// Gets the licensed sheet creator flag that allows creating and owning sheets.
+        /// </summary>
+        /// <returns> the licensed sheet creator </returns>
+        public bool? LicensedSheetCreator
+        {
+            get { return licensedSheetCreator; }
+            set { licensedSheetCreator = value; }
+        }
+
+        /// <summary>
+        /// Flag indicating whether the user is a group admin (can create and edit groups)
+        /// </summary>
+        public bool? GroupAdmin
+        {
+            get { return groupAdmin; }
+            set { groupAdmin = value; }
+        }
+
+        /// <summary>
+        /// Gets the user's mobile phone number
+        /// </summary>
+        public string MobilePhone
+        {
+            get { return mobilePhone; }
+            set { mobilePhone = value; }
+        }
+
+        /// <summary>
+        /// Gets a link to the user's profile image
+        /// </summary>
+        public Image ProfileImage
+        {
+            get { return profileImage; }
+            set { profileImage = value; }
+        }
+
+        /// <summary>
+        /// Flag indicating whether the user is a resource viewer (can access resource views)
+        /// </summary>
+        public bool? ResourceViewer
+        {
+            get { return resourceViewer; }
+            set { resourceViewer = value; }
+        }
+
+        /// <summary>
+        /// Gets the user's role
+        /// </summary>
+        public string Role
+        {
+            get { return role; }
+            set { role = value; }
+        }
+
+        /// <summary>
+        /// Get the number of sheets owned by the current user within the organization
+        /// </summary>
+        public int? SheetCount
+        {
+            get { return sheetCount; }
+            set { sheetCount = value; }
+        }
+
+        /// <summary>
+        /// Gets the status of the user (active, pending, declined).
+        /// </summary>
+        /// <returns> the Status </returns>
+        public UserStatus? Status
+        {
+            get { return status; }
+            set { status = value; }
+        }
+        
+        /// <summary>
+        /// Get the user's title
+        /// </summary>
+        public string Title
+        {
+            get { return title; }
+            set { title = value; }
+        }
+
+        /// <summary>
+        /// Gets the user's work phone
+        /// </summary>
+        public string WorkPhone
+        {
+            get { return workPhone; }
+            set { workPhone = value; }
+        }
+    }
 }

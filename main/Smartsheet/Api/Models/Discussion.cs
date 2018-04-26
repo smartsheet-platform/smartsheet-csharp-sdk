@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -22,297 +22,246 @@ using System.Collections.Generic;
 namespace Smartsheet.Api.Models
 {
 
-	/// <summary>
-	/// Represents the Discussion object. </summary>
-	/// <seealso href="http://help.Smartsheet.com/customer/portal/articles/504767-using-Discussions">Help Using Discussions</seealso>
-	public class Discussion : IdentifiableModel
-	{
-		/// <summary>
-		/// Represents the Title for the discussion. </summary>
-		private string title;
+    /// <summary>
+    /// Represents the Discussion object. </summary>
+    /// <seealso href="http://help.Smartsheet.com/customer/portal/articles/504767-using-Discussions">Help Using Discussions</seealso>
+    public class Discussion : IdentifiableModel
+    {
+        /// <summary>
+        /// Represents the Id of the directly associated row or sheet </summary>
+        private long? parentId;
 
-		/// <summary>
-		/// Represents the Comments for the discussion. </summary>
-		private IList<Comment> comments;
-		private Comment comment;
+        /// <summary>
+        /// Represents the "SHEET" or "ROW": present only when the direct association is not clear </summary>
+        private DiscussionParentType? parentType;
 
-		/// <summary>
-		/// Represents the Comment Attachments. </summary>
-		private IList<Attachment> commentAttachments;
+        /// <summary>
+        /// Users permission on the discussion </summary>
+        private AccessLevel? accessLevel;
 
-		/// <summary>
-		/// The number of comments in the discussion
-		/// </summary>
-		private int? commentCount;
+        /// <summary>
+        /// Represents the comment for the discussion (outbound only - singular "comment") </summary>
+        private Comment comment;
 
-		/// <summary>
-		/// Represents the date a Comment was last added To a discussion. </summary>
-		private DateTime? lastCommentedAt;
+        /// <summary>
+        /// Represents the comment attachments. </summary>
+        private IList<Attachment> commentAttachments;
 
-		/// <summary>
-		/// Represents the last user that left a Comment in the discussion. </summary>
-		private User lastCommentedUser;
+        /// <summary>
+        /// The number of comments in the discussion
+        /// </summary>
+        private int? commentCount;
 
-		private AccessLevel? accessLevel;
+        /// <summary>
+        /// Represents the comments for the discussion. </summary>
+        private IList<Comment> comments;
 
-		private long? parentId;
+        /// <summary>
+        /// Represents the User object containing name and email of the creator of the discussion </summary>
+        private User createdBy;
 
-		private DiscussionParentType? parentType;
+        /// <summary>
+        /// Represents the date a comment was last added to a discussion. </summary>
+        private DateTime? lastCommentedAt;
 
-		private User createdBy;
+        /// <summary>
+        /// Represents the last user that left a comment in the discussion. </summary>
+        private User lastCommentedUser;
 
-		private bool? readOnly;
+        /// <summary>
+        /// Represents the read only status of the discussion </summary>
+        private bool? readOnly;
 
+        /// <summary>
+        /// Represents the title for the discussion. </summary>
+        private string title;
 
-		/// <summary>
-		/// the Title for the discussion.
-		/// </summary>
-		/// <returns> the Title </returns>
-		public virtual string Title
-		{
-			get
-			{
-				return title;
-			}
-			set
-			{
-				this.title = value;
-			}
-		}
+        /// <summary>
+        /// Id of the directly associated row or sheet: present only when the direct association is not clear (see Get All Discussions)
+        /// </summary>
+        public long? ParentId
+        {
+            get { return parentId; }
+            set { parentId = value; }
+        }
 
+        /// <summary>
+        /// "SHEET" or "ROW": present only when the direct association is not clear (see Get All Discussions)
+        /// </summary>
+        public DiscussionParentType? ParentType
+        {
+            get { return parentType; }
+            set { parentType = value; }
+        }
 
-		/// <summary>
-		/// The Comments for the discussion.
-		/// </summary>
-		/// <returns> the Comments </returns>
-		public virtual IList<Comment> Comments
-		{
-			get
-			{
-				return comments;
-			}
-			set
-			{
-				this.comments = value;
-			}
-		}
+        /// <summary>
+        /// User's permissions on the discussion
+        /// </summary>
+        /// <returns> the access level </returns>
+        public AccessLevel? AccessLevel
+        {
+            get { return accessLevel; }
+            set { accessLevel = value; }
+        }
 
-		/// <summary>
-		/// The Comment for the discussion.
-		/// </summary>
-		/// <returns> the Comment </returns>
-		public virtual Comment Comment
-		{
-			get
-			{
-				return comment;
-			}
-			set
-			{
-				// To keep the Comments variable in sync
-				IList<Comment> comments = new List<Comment>();
-				comments.Add(value);
-				this.comments = comments;
+        /// <summary>
+        /// The comment for the discussion.
+        /// </summary>
+        /// <returns> the comment </returns>
+        public Comment Comment
+        {
+            get { return comment; }
+            set { comment = value; }
+        }
 
-				this.comment = value;
-			}
-		}
+        /// <summary>
+        /// The comment attachments.
+        /// </summary>
+        /// <returns> the comment attachments </returns>
+        public IList<Attachment> CommentAttachments
+        {
+            get { return commentAttachments; }
+            set { commentAttachments = value; }
+        }
 
-		/// <summary>
-		/// The Comment Attachments.
-		/// </summary>
-		/// <returns> the Comment Attachments </returns>
-		public virtual IList<Attachment> CommentAttachments
-		{
-			get
-			{
-				return commentAttachments;
-			}
-			set
-			{
-				this.commentAttachments = value;
-			}
-		}
+        /// <summary>
+        /// Get the number of comments in the discussion
+        /// </summary>
+        public int? CommentCount
+        {
+            get { return commentCount; }
+            set { commentCount = value; }
+        }
 
-		/// <summary>
-		/// Get the number of comments in the discussion
-		/// </summary>
-		public virtual int? CommentCount
-		{
-			get
-			{
-				return commentCount;
-			}
-			set
-			{
-				this.commentCount = value;
-			}
-		}
+        /// <summary>
+        /// The comments for the discussion.
+        /// </summary>
+        /// <returns> the comments </returns>
+        public IList<Comment> Comments
+        {
+            get { return comments; }
+            set { comments = value; }
+        }
 
-		/// <summary>
-		/// Time of most recent comment
-		/// </summary>
-		/// <returns> the last commented at </returns>
-		public virtual DateTime? LastCommentedAt
-		{
-			get
-			{
-				return lastCommentedAt;
-			}
-			set
-			{
-				this.lastCommentedAt = value;
-			}
-		}
+        /// <summary>
+        /// User object containing name and email of the creator of the discussion
+        /// </summary>
+        public User CreatedBy
+        {
+            get { return createdBy; }
+            set { createdBy = value; }
+        }
 
+        /// <summary>
+        /// Time of most recent comment
+        /// </summary>
+        /// <returns> the last commented at </returns>
+        public DateTime? LastCommentedAt
+        {
+            get { return lastCommentedAt; }
+            set { lastCommentedAt = value; }
+        }
 
-		/// <summary>
-		/// User object containing name and email of the author of the most recent Comment
-		/// </summary>
-		/// <returns> the last commented user </returns>
-		public virtual User LastCommentedUser
-		{
-			get
-			{
-				return lastCommentedUser;
-			}
-			set
-			{
-				this.lastCommentedUser = value;
-			}
-		}
+        /// <summary>
+        /// User object containing name and email of the author of the most recent comment
+        /// </summary>
+        /// <returns> the last commented user </returns>
+        public User LastCommentedUser
+        {
+            get { return lastCommentedUser; }
+            set { lastCommentedUser = value; }
+        }
 
+        /// <summary>
+        /// Indicates whether the user can modify the discussion
+        /// </summary>
+        public bool? ReadOnly
+        {
+            get { return readOnly; }
+            set { readOnly = value; }
+        }
 
-		/// <summary>
-		/// User's permissions on the Discussion
-		/// </summary>
-		/// <returns> the access level </returns>
-		public virtual AccessLevel? AccessLevel
-		{
-			get
-			{
-				return accessLevel;
-			}
-			set
-			{
-				this.accessLevel = value;
-			}
-		}
+        /// <summary>
+        /// the title for the discussion.
+        /// </summary>
+        /// <returns> the title </returns>
+        public string Title
+        {
+            get { return title; }
+            set { title = value; }
+        }
 
-		/// <summary>
-		/// ID of the directly associated row or sheet: present only when the direct association is not clear (see Get All Discussions)
-		/// </summary>
-		public long? ParentId
-		{
-			get { return parentId; }
-			set { parentId = value; }
-		}
+        /// <summary>
+        /// A convenience class to help generate discussion object with the appropriate fields for adding a discussion to 
+        /// a sheet or row.
+        /// </summary>
+        public class CreateDiscussionBuilder
+        {
+            private string title;
+            private Comment comment;
 
-		/// <summary>
-		/// "SHEET" or "ROW": present only when the direct association is not clear (see Get All Discussions)
-		/// </summary>
-		public virtual DiscussionParentType? ParentType
-		{
-			get { return parentType; }
-			set { parentType = value; }
-		}
+            /// <summary>
+            /// Sets the required properties for creating a discussion.
+            /// </summary>
+            /// <param name="title"> the discussion title </param>
+            /// <param name="comment"> the comment of the discussion </param>
+            public CreateDiscussionBuilder(string title, Comment comment)
+            {
+                this.title = title;
+                this.comment = comment;
+            }
 
-		/// <summary>
-		/// User object containing name and email of the creator of the Discussion
-		/// </summary>
-		public virtual User CreatedBy
-		{
-			get { return createdBy; }
-			set { createdBy = value; }
-		}
+            /// <summary>
+            /// Sets the title for the discussion.
+            /// </summary>
+            /// <param name="title"> the title </param>
+            /// <returns> the creates the discussion builder </returns>
+            public CreateDiscussionBuilder SetTitle(string title)
+            {
+                this.title = title;
+                return this;
+            }
 
-		/// <summary>
-		/// Flag to indicate if the User can modify the Discussion
-		/// </summary>
-		public bool? ReadOnly
-		{
-			get { return readOnly; }
-			set { readOnly = value; }
-		}
+            /// <summary>
+            /// Sets the comments for the discussion.
+            /// </summary>
+            /// <param name="comment"> the comments </param>
+            /// <returns> the creates the discussion builder </returns>
+            public CreateDiscussionBuilder SetComment(Comment comment)
+            {
+                this.comment = comment;
+                return this;
+            }
 
+            /// <summary>
+            /// Gets the title.
+            /// </summary>
+            /// <returns> the title </returns>
+            public string GetTitle()
+            {
+                return title;
+            }
 
-		/// <summary>
-		/// A convenience class To help generate discussion object with the appropriate fields for adding a discussion To 
-		/// a sheet or row.
-		/// </summary>
-		public class CreateDiscussionBuilder
-		{
-			private string title;
-			private Comment comment;
+            /// <summary>
+            /// Gets the comments.
+            /// </summary>
+            /// <returns> the comments </returns>
+            public Comment GetComment()
+            {
+                return comment;
+            }
 
-			/// <summary>
-			/// Sets the required properties for creating a Discussion.
-			/// </summary>
-			/// <param name="title"> the Discussion title </param>
-			/// <param name="comment"> the Comment of the Discussion </param>
-			public CreateDiscussionBuilder(string title, Comment comment)
-			{
-				this.title = title;
-				this.comment = comment;
-			}
-
-			/// <summary>
-			/// Sets the Title for the discussion.
-			/// </summary>
-			/// <param name="title"> the Title </param>
-			/// <returns> the creates the discussion builder </returns>
-			public virtual CreateDiscussionBuilder SetTitle(string title)
-			{
-				this.title = title;
-				return this;
-			}
-
-			/// <summary>
-			/// Sets the Comments for the discussion.
-			/// </summary>
-			/// <param name="comment"> the Comments </param>
-			/// <returns> the creates the discussion builder </returns>
-			public virtual CreateDiscussionBuilder SetComment(Comment comment)
-			{
-				this.comment = comment;
-				return this;
-			}
-
-			/// <summary>
-			/// Gets the Title.
-			/// </summary>
-			/// <returns> the Title </returns>
-			public virtual string GetTitle()
-			{
-				return title;
-			}
-
-			/// <summary>
-			/// Gets the Comments.
-			/// </summary>
-			/// <returns> the Comments </returns>
-			public virtual Comment GetComment()
-			{
-				return comment;
-			}
-
-			/// <summary>
-			/// Builds the.
-			/// </summary>
-			/// <returns> the discussion </returns>
-			public virtual Discussion Build()
-			{
-				//if (title == null || comment == null)
-				//{
-				//	throw new MemberAccessException("A title and comment is required.");
-				//}
-
-				Discussion discussion = new Discussion();
-				discussion.title = title;
-				discussion.comment = comment;
-				return discussion;
-			}
-		}
-	}
-
+            /// <summary>
+            /// Builds the.
+            /// </summary>
+            /// <returns> the discussion </returns>
+            public Discussion Build()
+            {
+                Discussion discussion = new Discussion();
+                discussion.title = title;
+                discussion.comment = comment;
+                return discussion;
+            }
+        }
+    }
 }

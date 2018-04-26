@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -22,44 +22,54 @@ using System.Text;
 
 namespace Smartsheet.Api.Models
 {
-	/// <summary>
-	/// Represents the contents of the widget. </summary>
-	/// <seealso href="http://smartsheet-platform.github.io/api-docs/#widgetcontent-object">Widget Content Help</seealso>
-	public enum WidgetType
-	{
-		/// <summary>
-		/// CellLinkWidgetContent object
-		/// </summary>
-		CELLLINK,
+    /// <summary>
+    /// Represents the contents of the widget. </summary>
+    /// <seealso href="http://smartsheet-platform.github.io/api-docs/#widgetcontent-object">Widget Content Help</seealso>
+    public enum WidgetType
+    {
+        /// <summary>
+        /// CellLinkWidgetContent object
+        /// </summary>
+        CELLLINK,
 
-		/// <summary>
-		/// CellLinkWidgetContent object
-		/// </summary>
-		SHEETSUMMARY,
+        /// <summary>
+        /// ChartWidgetContent object
+        /// </summary>
+        CHART,
 
-		/// <summary>
-		/// RichTextWidgetContent object
-		/// </summary>
-		RICHTEXT,
+        /// <summary>
+        /// ImageWidgetContent object
+        /// </summary>
+        IMAGE,
 
-		/// <summary>
-		/// ShortcutWidgetContent object
-		/// </summary>
-		SHORTCUTICON,
+        /// <summary>
+        /// CellLinkWidgetContent object
+        /// </summary>
+        SHEETSUMMARY,
 
-		/// <summary>
-		/// ShortcutWidgetContent object
-		/// </summary>
-		SHORTCUTLIST,
+        /// <summary>
+        /// ReportWidgetContent object
+        /// </summary>
+        GRIDGANTT,
+        
+        /// <summary>
+        /// RichTextWidgetContent object
+        /// </summary>
+        RICHTEXT,
 
-		/// <summary>
-		/// ReportWidgetContent object
-		/// </summary>
-		GRIDGANTT,
+        /// <summary>
+        /// ShortcutWidgetContent object
+        /// </summary>
+        SHORTCUTICON,
 
-		/// <summary>
-		/// ImageWidgetContent object
-		/// </summary>
-		IMAGE
-	}
+        /// <summary>
+        /// ShortcutWidgetContent object
+        /// </summary>
+        SHORTCUTLIST,
+
+        /// <summary>
+        /// TitleWidgetContent object
+        /// </summary>
+        TITLE
+    }
 }

@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -18,106 +18,48 @@
 
 namespace Smartsheet.Api.Models
 {
-	/// <summary>
-	/// Represents operator.
-	/// </summary>
-	public enum CriteriaOperator
-	{
-		/// <summary>
-		/// EQUAL
-		/// </summary>
-		EQUAL,
-
-		/// <summary>
-		/// NOT_EQUAL
-		/// </summary>
-		NOT_EQUAL,
-
-		/// <summary>
-		/// GREATER_THAN
-		/// </summary>
-		GREATER_THAN,
-
-		/// <summary>
-		/// 
-		/// </summary>
-		LESS_THAN,
-
-		/// <summary>
-		/// CONTAINS
-		/// </summary>
-		CONTAINS,
-
-		/// <summary>
-		/// BETWEEN
-		/// </summary>
-		BETWEEN,
-
-		/// <summary>
-		/// TODAY
-		/// </summary>
-		TODAY,
-
-		/// <summary>
-		/// PAST
-		/// </summary>
-		PAST,
-
-		/// <summary>
-		/// FUTURE
-		/// </summary>
-		FUTURE,
-
-		/// <summary>
-		/// LAST_N_DAYS
-		/// </summary>
-		LAST_N_DAYS,
-
-		/// <summary>
-		/// NEXT_N_DAYS
-		/// </summary>
-		NEXT_N_DAYS,
-
-		/// <summary>
-		/// IS_BLANK
-		/// </summary>
-		IS_BLANK,
-
-		/// <summary>
-		/// IS_NOT_BLANK
-		/// </summary>
-		IS_NOT_BLANK,
-
-		/// <summary>
-		/// IS_NUMBER
-		/// </summary>
-		IS_NUMBER,
-
-		/// <summary>
-		/// IS_NOT_NUMBER
-		/// </summary>
-		IS_NOT_NUMBER,
-
-		/// <summary>
-		/// IS_DATE
-		/// </summary>
-		IS_DATE,
-
-		/// <summary>
-		/// IS_NOT_DATE
-		/// </summary>
-		IS_NOT_DATE,
-
-		/// <summary>
-		/// IS_CHECKED
-		/// </summary>
-		IS_CHECKED,
-
-
-		/// <summary>
-		/// IS_NOT_CHECKED
-		/// </summary>
-		IS_NOT_CHECKED
-	}
-
+    /// <summary>
+    /// Represents operator.
+    /// </summary>
+    public enum CriteriaOperator
+    {
+        EQUAL,
+        NOT_EQUAL,
+        GREATER_THAN,
+        GREATER_THAN_OR_EQUAL,
+        LESS_THAN,
+        LESS_THAN_OR_EQUAL,
+        CONTAINS,
+        DOES_NOT_CONTAIN,
+        BETWEEN,
+        NOT_BETWEEN,
+        TODAY,
+        NOT_TODAY,
+        PAST,
+        NOT_PAST,
+        FUTURE,
+        NOT_FUTURE,
+        LAST_N_DAYS,
+        NOT_LAST_N_DAYS,
+        NEXT_N_DAYS,
+        NOT_NEXT_N_DAYS,
+        IS_BLANK,
+        IS_NOT_BLANK,
+        IS_NUMBER,
+        IS_NOT_NUMBER,
+        IS_DATE,
+        IS_NOT_DATE,
+        IS_CHECKED,
+        IS_NOT_CHECKED,
+        IS_ONE_OF,
+        IS_NOT_ONE_OF,
+        IS_CURRENT_USER,
+        IS_NOT_CURRENT_USER,
+        ON_CRITICAL_PATH,
+        NOT_ON_CRITICAL_PATH,
+        HAS_ATTACHMENTS,
+        NO_ATTACHMENTS,
+        HAS_COMMENTS,
+        NO_COMMENTS
+    }
 }

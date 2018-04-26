@@ -4,7 +4,7 @@ This is a C# SDK to simplify connecting to the [Smartsheet API](http://www.smart
 
 ## System Requirements
 
-The SDK supports C# version 4.0 or later running on .NET platform version 4.0 or later. In addition, we support any .NET language compatible with that platform version.
+The SDK supports C# version 4.0 or later running on .NET platform version 4.5.2 or later. In addition, we support any .NET language compatible with that platform version.
 
 ## Installation
 The SDK can be installed by using NuGet or by compiling from source. These two alternatives are outlined below.
@@ -37,11 +37,6 @@ git clone https://github.com/smartsheet-platform/smartsheet-csharp-sdk.git
 cd smartsheet-csharp-sdk
 %WINDIR%\Microsoft.NET\Framework\v4.0.30319\msbuild smartsheet-csharp-sdk.sln /property:Configuration=release /t:rebuild
 ```
-
-## Documentation
-The full Smartsheet API documentation is here: http://smartsheet-platform.github.io/api-docs/?csharp#.
-
-The generated SDK class documentation is here: [http://smartsheet-platform.github.io/smartsheet-csharp-sdk/](http://smartsheet-platform.github.io/smartsheet-csharp-sdk/).
 
 ## Example Usage
 To call the API, you will need an *access token*, which looks something like this example: ll352u9jujauoqz4gstvsae05. You can find the access token in the UI at Account > Personal Settings > API Access.
@@ -94,22 +89,21 @@ static void Sample()
 ```
 A simple, but complete sample application project is here: https://github.com/smartsheet-samples/csharp-read-write-sheet
 
+## Advanced Topics
+For details about logging, testing, how to use a passthrough option, and how to override HTTP client behavior, see [Advanced Topics](ADVANCED.md).
+
+## Documentation
+The full Smartsheet API documentation is here: http://smartsheet-platform.github.io/api-docs/?csharp#.
+
+The generated SDK class documentation is here: [http://smartsheet-platform.github.io/smartsheet-csharp-sdk/](http://smartsheet-platform.github.io/smartsheet-csharp-sdk/).
+
 ## Contributing
 If you would like to contribute a change to the SDK, please fork a branch and then submit a pull request. [More info here.](https://help.github.com/articles/using-pull-requests)
-
-#### Running the tests
-Integration tests:
-1. Set up an api access token in the `IntegrationTestSDK` project's `App.config` file.
-2. Run the tests within the from within Visual Studio.
-
-Mock API tests:
-1. Clone the [Smartsheet sdk tests](https://github.com/smartsheet-platform/smartsheet-sdk-tests) repo and follow the instructions from the readme to start the mock server.
-2. Run the tests within the `TestSDKMockAPI` project from within Visual Studio.
 
 ## Support
 If you have any questions or issues with this SDK please post on [StackOverflow using the tag "smartsheet-api"](http://stackoverflow.com/questions/tagged/smartsheet-api) or contact us directly at api@smartsheet.com.
 
-## Releases
+## Release Notes
 
 All releases and release notes are available on [Github](https://github.com/smartsheet-platform/smartsheet-csharp-sdk/releases) or the [NuGet repository](https://www.nuget.org/packages/smartsheet-csharp-sdk/).
 

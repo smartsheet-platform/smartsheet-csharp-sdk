@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -18,44 +18,19 @@
 
 namespace Smartsheet.Api.Models
 {
-
-
-	/// <summary>
-	/// Represents the Type of attachment.
-	/// </summary>
-	public enum AttachmentType
-	{
-		/// <summary>
-		/// The file
-		/// </summary>
-		FILE,
-		/// <summary>
-		/// Google drive
-		/// </summary>
-		GOOGLE_DRIVE,
-		/// <summary>
-		/// The link
-		/// </summary>
-		LINK,
-		/// <summary>
-		/// BOX
-		/// </summary>
-		BOX_COM,
-		/// <summary>
-		/// Dropbox
-		/// </summary>
-		DROPBOX,
-		/// <summary>
-		/// Evernote
-		/// </summary>
-		EVERNOTE,
-		/// <summary>
-		/// Egnyte
-		/// </summary>
-		EGNYTE,
-		/// <summary>
-		/// OneDrive 
-		/// </summary>
-		ONEDRIVE
-	}
+    /// <summary>
+    /// Represents the Type of attachment.
+    /// </summary>
+    public enum AttachmentType
+    {
+        FILE,
+        GOOGLE_DRIVE,
+        LINK,
+        BOX_COM,
+        DROPBOX,
+        EVERNOTE,
+        EGNYTE,
+        ONEDRIVE,
+        SMARTSHEET
+    }
 }

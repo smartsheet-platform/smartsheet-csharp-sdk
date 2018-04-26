@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -26,336 +26,342 @@ using System.IO;
 
 namespace Smartsheet.Api.Internal.Json
 {
-	using Utils = Api.Internal.Utility.Utility;
+    using Utils = Api.Internal.Utility.Utility;
 
-	/// <summary>
-	/// This is the Jackson based JsonSerializer implementation.
-	/// 
-	/// Thread Safety: This class is thread safe because it is immutable and the underlying JSON.NET is thread
-	/// safe as long as it is not re-configured.
-	/// </summary>
-	public class JsonNetSerializer : JsonSerializer
-	{
-		/// <summary>
-		/// Represents the ObjectMapper used To serialize/de-serialize JSON.
-		/// 
-		/// It will be initialized in a static initializer and will not change afterwards.
-		/// 
-		/// Because ObjectMapper is thread-safe as long as it's not reconfigured, a static final class-level ObjectMapper is
-		/// used To achieve best performance.
-		/// </summary>
-		//private static readonly ObjectMapper OBJECT_MAPPER = new ObjectMapper();
-		private static readonly Newtonsoft.Json.JsonSerializer serializer = new Newtonsoft.Json.JsonSerializer();
+    /// <summary>
+    /// This is the Jackson based JsonSerializer implementation.
+    /// 
+    /// Thread Safety: This class is thread safe because it is immutable and the underlying JSON.NET is thread
+    /// safe as long as it is not re-configured.
+    /// </summary>
+    public class JsonNetSerializer : JsonSerializer
+    {
+        /// <summary>
+        /// Represents the ObjectMapper used to serialize/de-serialize JSON.
+        /// 
+        /// It will be initialized in a static initializer and will not change afterwards.
+        /// 
+        /// Because ObjectMapper is thread-safe as long as it's not reconfigured, a static final class-level ObjectMapper is
+        /// used to achieve best performance.
+        /// </summary>
+        //private static readonly ObjectMapper OBJECT_MAPPER = new ObjectMapper();
+        private static readonly Newtonsoft.Json.JsonSerializer serializer = new Newtonsoft.Json.JsonSerializer();
 
-		static JsonNetSerializer()
-		{
-			// No formatting To decrease the length;
-			serializer.Formatting = Newtonsoft.Json.Formatting.None;
+        static JsonNetSerializer()
+        {
+            // No formatting to decrease the length;
+            serializer.Formatting = Newtonsoft.Json.Formatting.None;
 
-			// Allow deserialization if there are properties that can't be deserialized
-			serializer.MissingMemberHandling = Newtonsoft.Json.MissingMemberHandling.Ignore;
+            // Allow deserialization if there are properties that can't be deserialized
+            serializer.MissingMemberHandling = Newtonsoft.Json.MissingMemberHandling.Ignore;
 
-			// Set the date Format To ISO 8601
-			serializer.DateFormatHandling = Newtonsoft.Json.DateFormatHandling.IsoDateFormat;
+            // Set the date Format to ISO 8601
+            serializer.DateFormatHandling = Newtonsoft.Json.DateFormatHandling.IsoDateFormat;
 
-			// Only include non-null properties in when serializing
-			serializer.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
+            // Only include non-null properties in when serializing
+            serializer.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
 
-			// Excludes "Id" field from being serialized To JSON for any IdentifiableModel class
-			serializer.ContractResolver = new ContractResolver();
+            // Excludes "Id" field from being serialized to JSON for any IdentifiableModel class
+            serializer.ContractResolver = new ContractResolver();
 
-			// Handles enum serialization
-			serializer.Converters.Add(new JsonEnumTypeConverter());
+            // Handles enum serialization
+            serializer.Converters.Add(new JsonEnumTypeConverter());
 
-			// Convert all enums To a string representation for serialization
-			serializer.Converters.Add(new Newtonsoft.Json.Converters.StringEnumConverter());
+            // Convert all enums to a string representation for serialization
+            serializer.Converters.Add(new Newtonsoft.Json.Converters.StringEnumConverter());
 
-			// Handles objectValue serialization
-			serializer.Converters.Add(new ObjectValueTypeConverter());
+            // Handles objectValue serialization
+            serializer.Converters.Add(new ObjectValueTypeConverter());
 
-			// Handles linkInFromCell serialization
-			serializer.Converters.Add(new CellObjectTypeConverter());
-		}
+            // Handles primitive objectValue serialization
+            serializer.Converters.Add(new PrimitiveObjectValueConverter());
 
-		/// <summary>
-		/// Sets if the OBJECT MAPPER should ignore unknown properties or fail when de-serializing the JSON data.
-		/// </summary>
-		/// <param name="value">
-		///            true if it should fail, false otherwise. </param>
-		public virtual Newtonsoft.Json.MissingMemberHandling failOnUnknownProperties
-		{
-			set
-			{
-				serializer.MissingMemberHandling = value;
-			}
-		}
+            // Handles Hyperlink serialization in the case of an empty hyperlink (reset)
+            serializer.Converters.Add(new HyperlinkConverter());
 
-		/// <summary>
-		/// Constructor.
-		/// 
-		/// Parameters: None
-		/// 
-		/// Exceptions: None
-		/// </summary>
-		public JsonNetSerializer()
-		{
-		}
+            // Handles linkInFromCell serialization
+            serializer.Converters.Add(new CellTypeConverter());
 
-		/// <summary>
-		/// Serialize an object To JSON.
-		/// 
-		/// Parameters: 
-		///   object : the object To serialize
-		///   outputStream : the output stream To which the JSON will be written
-		/// 
-		/// Returns: None
-		/// 
-		/// Exceptions: - IllegalArgumentException : if any argument is null - JSONSerializationException : if there is any
-		/// other error occurred during the operation
-		/// </summary>
-		/// <param name="outputStream"> </param>
-		/// <param name="object"> </param>
-		/// <exception cref="JsonSerializationException"> </exception>
-		// @Override
-		public virtual void serialize<T>(T @object, StreamWriter outputStream)
-		{
-			Utils.ThrowIfNull(@object, outputStream);
-			try
-			{
-				serializer.Serialize(new Newtonsoft.Json.JsonTextWriter(outputStream), @object);
-				outputStream.Flush();
-			}
-			catch (Newtonsoft.Json.JsonException ex)
-			{
-				throw new JsonSerializationException(ex);
-			}
-			catch (IOException ex)
-			{
-				throw new JsonSerializationException(ex);
-			}
-			catch (ObjectDisposedException ex)
-			{
-				throw new JsonSerializationException(ex);
-			}
-		}
+            // Handles ErrorDetails 
+            serializer.Converters.Add(new ErrorTypeConverter());
+        }
 
-		/// <summary>
-		/// De-serialize an object from JSON.
-		/// 
-		/// Returns: the de-serialized object
-		/// 
-		/// Exceptions: 
-		///   - IllegalArgumentException : if any argument is null 
-		///   - JSONSerializationException : if there is any other error occurred during the operation
-		/// </summary>
-		/// <param name="inputStream"> the input stream from which the JSON will be read </param>
-		/// <exception cref="Api.Internal.Json.JsonSerializationException"> </exception>
-		public virtual T deserialize<T>(StreamReader inputStream)
-		{
-			Utils.ThrowIfNull(inputStream);
-			try
-			{
-				return serializer.Deserialize<T>(new Newtonsoft.Json.JsonTextReader(inputStream));
-			}
-			catch (Newtonsoft.Json.JsonException ex)
-			{
-				throw new JsonSerializationException(ex);
-			}
-			catch (IOException ex)
-			{
+        /// <summary>
+        /// Sets if the OBJECT MAPPER should ignore unknown properties or fail when de-serializing the JSON data.
+        /// </summary>
+        /// <param name="value">
+        ///            true if it should fail, false otherwise. </param>
+        public Newtonsoft.Json.MissingMemberHandling failOnUnknownProperties
+        {
+            set { serializer.MissingMemberHandling = value; }
+        }
 
-				throw new JsonSerializationException(ex);
-			}
-		}
+        /// <summary>
+        /// Constructor.
+        /// 
+        /// Parameters: None
+        /// 
+        /// Exceptions: None
+        /// </summary>
+        public JsonNetSerializer()
+        {
+        }
 
-		/// <summary>
-		/// De-serialize an object list from JSON. 
-		/// 
-		/// Returns: the de-serialized list
-		/// 
-		/// Exceptions: 
-		///   - IllegalArgumentException : if any argument is null 
-		///   - JSONSerializationException : if there is any other error occurred during the operation
-		/// </summary>
-		/// <param name="inputStream"> the input stream from which the JSON will be read </param>
-		/// <exception cref="JsonSerializationException"> </exception>
-		public virtual IList<T> deserializeList<T>(StreamReader inputStream)
-		{
-			Utils.ThrowIfNull(inputStream);
+        /// <summary>
+        /// Serialize an object to JSON.
+        /// 
+        /// Parameters: 
+        ///   object : the object to serialize
+        ///   outputStream : the output stream to which the JSON will be written
+        /// 
+        /// Returns: None
+        /// 
+        /// Exceptions: - IllegalArgumentException : if any argument is null - JSONSerializationException : if there is any
+        /// other error occurred during the operation
+        /// </summary>
+        /// <param name="outputStream"> </param>
+        /// <param name="object"> </param>
+        /// <exception cref="JsonSerializationException"> </exception>
+        // @Override
+        public virtual void serialize<T>(T @object, StreamWriter outputStream)
+        {
+            Utils.ThrowIfNull(@object, outputStream);
+            try
+            {
+                serializer.Serialize(new Newtonsoft.Json.JsonTextWriter(outputStream), @object);
+                outputStream.Flush();
+            }
+            catch (Newtonsoft.Json.JsonException ex)
+            {
+                throw new JsonSerializationException(ex);
+            }
+            catch (IOException ex)
+            {
+                throw new JsonSerializationException(ex);
+            }
+            catch (ObjectDisposedException ex)
+            {
+                throw new JsonSerializationException(ex);
+            }
+        }
 
-			IList<T> list = null;
+        /// <summary>
+        /// De-serialize an object from JSON.
+        /// 
+        /// Returns: the de-serialized object
+        /// 
+        /// Exceptions: 
+        ///   - IllegalArgumentException : if any argument is null 
+        ///   - JSONSerializationException : if there is any other error occurred during the operation
+        /// </summary>
+        /// <param name="inputStream"> the input stream from which the JSON will be read </param>
+        /// <exception cref="Api.Internal.Json.JsonSerializationException"> </exception>
+        public virtual T deserialize<T>(StreamReader inputStream)
+        {
+            Utils.ThrowIfNull(inputStream);
+            try
+            {
+                return serializer.Deserialize<T>(new Newtonsoft.Json.JsonTextReader(inputStream));
+            }
+            catch (Newtonsoft.Json.JsonException ex)
+            {
+                throw new JsonSerializationException(ex);
+            }
+            catch (IOException ex)
+            {
 
-			try
-			{
-				// Read the Json input stream into a List.
-				list = serializer.Deserialize<IList<T>>(new Newtonsoft.Json.JsonTextReader(inputStream));
-			}
-			catch (Newtonsoft.Json.JsonException ex)
-			{
-				throw new JsonSerializationException(ex);
-			}
-			catch (IOException ex)
-			{
-				throw new JsonSerializationException(ex);
-			}
+                throw new JsonSerializationException(ex);
+            }
+        }
 
-			return list;
-		}
+        /// <summary>
+        /// De-serialize an object list from JSON. 
+        /// 
+        /// Returns: the de-serialized list
+        /// 
+        /// Exceptions: 
+        ///   - IllegalArgumentException : if any argument is null 
+        ///   - JSONSerializationException : if there is any other error occurred during the operation
+        /// </summary>
+        /// <param name="inputStream"> the input stream from which the JSON will be read </param>
+        /// <exception cref="JsonSerializationException"> </exception>
+        public virtual IList<T> deserializeList<T>(StreamReader inputStream)
+        {
+            Utils.ThrowIfNull(inputStream);
 
-		/// <summary>
-		/// De-serialize to a DataWrapper (holds pagination info) from JSON
-		/// </summary>
-		/// <returns>DataWrapper containing data and pagination info</returns>
-		/// <param name="inputStream"> the input stream from which the JSON will be read </param>
-		/// <exception cref="ArgumentException"> if any argument is null </exception>
-		/// <exception cref="JsonSerializationException">if there is any other error occurred during the operation </exception>
-		public PaginatedResult<T> DeserializeDataWrapper<T>(StreamReader inputStream)
-		{
-			Utils.ThrowIfNull(inputStream);
+            IList<T> list = null;
 
-			PaginatedResult<T> rw = null;
+            try
+            {
+                // Read the Json input stream into a List.
+                list = serializer.Deserialize<IList<T>>(new Newtonsoft.Json.JsonTextReader(inputStream));
+            }
+            catch (Newtonsoft.Json.JsonException ex)
+            {
+                throw new JsonSerializationException(ex);
+            }
+            catch (IOException ex)
+            {
+                throw new JsonSerializationException(ex);
+            }
 
-			try
-			{
-				// Read the Json input stream into a List.
-				rw = serializer.Deserialize<PaginatedResult<T>>(new Newtonsoft.Json.JsonTextReader(inputStream));
-			}
-			catch (Newtonsoft.Json.JsonException ex)
-			{
-				throw new JsonSerializationException(ex);
-			}
-			catch (IOException ex)
-			{
-				throw new JsonSerializationException(ex);
-			}
+            return list;
+        }
 
-			return rw;
-		}
+        /// <summary>
+        /// De-serialize to a DataWrapper (holds pagination info) from JSON
+        /// </summary>
+        /// <returns>DataWrapper containing data and pagination info</returns>
+        /// <param name="inputStream"> the input stream from which the JSON will be read </param>
+        /// <exception cref="ArgumentException"> if any argument is null </exception>
+        /// <exception cref="JsonSerializationException">if there is any other error occurred during the operation </exception>
+        public PaginatedResult<T> DeserializeDataWrapper<T>(StreamReader inputStream)
+        {
+            Utils.ThrowIfNull(inputStream);
 
-		/// <summary>
-		/// De-serialize To a map from JSON.
-		/// </summary>
-		/// <param name="inputStream">
-		/// @return </param>
-		/// <exception cref="JsonSerializationException"> </exception>
-		// @Override
-		public virtual IDictionary<string, object> DeserializeMap(StreamReader inputStream)
-		{
-			Utils.ThrowIfNull(inputStream);
+            PaginatedResult<T> rw = null;
 
-			IDictionary<string, object> map = null;
+            try
+            {
+                // Read the Json input stream into a List.
+                rw = serializer.Deserialize<PaginatedResult<T>>(new Newtonsoft.Json.JsonTextReader(inputStream));
+            }
+            catch (Newtonsoft.Json.JsonException ex)
+            {
+                throw new JsonSerializationException(ex);
+            }
+            catch (IOException ex)
+            {
+                throw new JsonSerializationException(ex);
+            }
 
-			try
-			{
-				map = serializer.Deserialize<IDictionary<string, object>>(new Newtonsoft.Json.JsonTextReader(inputStream));
-			}
-			catch (Newtonsoft.Json.JsonException ex)
-			{
-				throw new JsonSerializationException(ex);
-			}
-			catch (IOException ex)
-			{
-				throw new JsonSerializationException(ex);
-			}
+            return rw;
+        }
 
-			return map;
-		}
+        /// <summary>
+        /// De-serialize to a map from JSON.
+        /// </summary>
+        /// <param name="inputStream">
+        /// @return </param>
+        /// <exception cref="JsonSerializationException"> </exception>
+        // @Override
+        public virtual IDictionary<string, object> DeserializeMap(StreamReader inputStream)
+        {
+            Utils.ThrowIfNull(inputStream);
 
-		/// <summary>
-		/// De-serialize a RequestResult&lt;T&gt; object from JSON. 
-		/// 
-		/// Exceptions: 
-		///   - IllegalArgumentException : if any argument is null 
-		///   - JSONSerializationException : if there is any other error occurred during the operation
-		/// </summary>
-		/// <param name="inputStream"> the input stream from which the JSON will be read </param>
-		/// <returns> the de-serialized RequestResult </returns>
-		/// <exception cref="JsonSerializationException"> </exception>
-		// @Override
-		public virtual RequestResult<T> deserializeResult<T>(StreamReader inputStream)
-		{
-			Utils.ThrowIfNull(inputStream);
+            IDictionary<string, object> map = null;
 
-			RequestResult<T> result = null;
+            try
+            {
+                map = serializer.Deserialize<IDictionary<string, object>>(new Newtonsoft.Json.JsonTextReader(inputStream));
+            }
+            catch (Newtonsoft.Json.JsonException ex)
+            {
+                throw new JsonSerializationException(ex);
+            }
+            catch (IOException ex)
+            {
+                throw new JsonSerializationException(ex);
+            }
 
-			try
-			{
-				result = serializer.Deserialize<RequestResult<T>>(new Newtonsoft.Json.JsonTextReader(inputStream));
-			}
-			catch (Newtonsoft.Json.JsonException ex)
-			{
-				throw new JsonSerializationException(ex);
-			}
-			catch (IOException ex)
-			{
-				throw new JsonSerializationException(ex);
-			}
-			catch (ObjectDisposedException ex)
-			{
-				throw new JsonSerializationException(ex);
-			}
+            return map;
+        }
 
-			return result;
-		}
+        /// <summary>
+        /// De-serialize a RequestResult&lt;T&gt; object from JSON. 
+        /// 
+        /// Exceptions: 
+        ///   - IllegalArgumentException : if any argument is null 
+        ///   - JSONSerializationException : if there is any other error occurred during the operation
+        /// </summary>
+        /// <param name="inputStream"> the input stream from which the JSON will be read </param>
+        /// <returns> the de-serialized RequestResult </returns>
+        /// <exception cref="JsonSerializationException"> </exception>
+        // @Override
+        public virtual RequestResult<T> deserializeResult<T>(StreamReader inputStream)
+        {
+            Utils.ThrowIfNull(inputStream);
 
-		/// <summary>
-		/// De-serialize a RequestResult&lt;List&lt;T&gt;&gt; object from JSON.
-		/// 
-		/// Parameters: - objectClass :  - inputStream : 
-		/// 
-		/// Returns: the de-serialized RequestResult
-		/// 
-		/// Exceptions: 
-		///   - IllegalArgumentException : if any argument is null 
-		///   - JSONSerializationException : if there is any other error occurred during the operation
-		/// </summary>
-		/// <param name="inputStream"> the input stream from which the JSON will be read </param>
-		/// <exception cref="JsonSerializationException"> </exception>
-		// @Override
-		public virtual RequestResult<IList<T>> deserializeListResult<T>(StreamReader inputStream)
-		{
-			Utils.ThrowIfNull(inputStream);
+            RequestResult<T> result = null;
 
-			RequestResult<IList<T>> result = null;
+            try
+            {
+                result = serializer.Deserialize<RequestResult<T>>(new Newtonsoft.Json.JsonTextReader(inputStream));
+            }
+            catch (Newtonsoft.Json.JsonException ex)
+            {
+                throw new JsonSerializationException(ex);
+            }
+            catch (IOException ex)
+            {
+                throw new JsonSerializationException(ex);
+            }
+            catch (ObjectDisposedException ex)
+            {
+                throw new JsonSerializationException(ex);
+            }
 
-			try
-			{
-				result = serializer.Deserialize<RequestResult<IList<T>>>(new Newtonsoft.Json.JsonTextReader(inputStream));
-			}
-			catch (Newtonsoft.Json.JsonException ex)
-			{
-				throw new JsonSerializationException(ex);
-			}
-			catch (IOException ex)
-			{
-				throw new JsonSerializationException(ex);
-			}
+            return result;
+        }
 
-			return result;
-		}
+        /// <summary>
+        /// De-serialize a RequestResult&lt;List&lt;T&gt;&gt; object from JSON.
+        /// 
+        /// Parameters: - objectClass :  - inputStream : 
+        /// 
+        /// Returns: the de-serialized RequestResult
+        /// 
+        /// Exceptions: 
+        ///   - IllegalArgumentException : if any argument is null 
+        ///   - JSONSerializationException : if there is any other error occurred during the operation
+        /// </summary>
+        /// <param name="inputStream"> the input stream from which the JSON will be read </param>
+        /// <exception cref="JsonSerializationException"> </exception>
+        // @Override
+        public virtual RequestResult<IList<T>> deserializeListResult<T>(StreamReader inputStream)
+        {
+            Utils.ThrowIfNull(inputStream);
 
-		public virtual CopyOrMoveRowResult DeserializeRowResult(StreamReader inputStream)
-		{
-			Utils.ThrowIfNull(inputStream);
+            RequestResult<IList<T>> result = null;
 
-			CopyOrMoveRowResult result = null;
+            try
+            {
+                result = serializer.Deserialize<RequestResult<IList<T>>>(new Newtonsoft.Json.JsonTextReader(inputStream));
+            }
+            catch (Newtonsoft.Json.JsonException ex)
+            {
+                throw new JsonSerializationException(ex);
+            }
+            catch (IOException ex)
+            {
+                throw new JsonSerializationException(ex);
+            }
 
-			try
-			{
-				result = serializer.Deserialize<CopyOrMoveRowResult>(new Newtonsoft.Json.JsonTextReader(inputStream));
-			}
-			catch (Newtonsoft.Json.JsonException ex)
-			{
-				throw new JsonSerializationException(ex);
-			}
-			catch (IOException ex)
-			{
-				throw new JsonSerializationException(ex);
-			}
+            return result;
+        }
 
-			return result;
-		}
+        public virtual CopyOrMoveRowResult DeserializeRowResult(StreamReader inputStream)
+        {
+            Utils.ThrowIfNull(inputStream);
 
-	}
+            CopyOrMoveRowResult result = null;
+
+            try
+            {
+                result = serializer.Deserialize<CopyOrMoveRowResult>(new Newtonsoft.Json.JsonTextReader(inputStream));
+            }
+            catch (Newtonsoft.Json.JsonException ex)
+            {
+                throw new JsonSerializationException(ex);
+            }
+            catch (IOException ex)
+            {
+                throw new JsonSerializationException(ex);
+            }
+
+            return result;
+        }
+
+    }
 
 }

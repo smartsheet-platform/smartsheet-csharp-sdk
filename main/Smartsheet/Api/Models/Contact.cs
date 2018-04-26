@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -20,35 +20,34 @@ using System.Collections.Generic;
 
 namespace Smartsheet.Api.Models
 {
+    /// <summary>
+    /// Represents a user’s personal 
+    /// in Smartsheet
+    /// <seealso href="http://help.smartsheet.com/customer/portal/articles/796143-managing-contacts">Managing contacts</seealso>
+    /// </summary>
+    public class Contact : NamedModel
+    {
+        private string id;
 
-	/// <summary>
-	/// Represents a user’s personal 
-	/// in Smartsheet
-	/// <seealso href="http://help.smartsheet.com/customer/portal/articles/796143-managing-contacts">Managing contacts</seealso>
-	/// </summary>
-	public class Contact : NamedModel
-	{
-		private string id;
+        private string email;
 
-		private string email;
+        /// <summary>
+        /// Contact ID, unlike other Smartsheet object ids, this id is an alphanumeric string.
+        /// </summary>
+        public new string Id
+        {
+            // This should hide inherited member "Id".
+            get { return id; }
+            set { id = value; }
+        }
 
-		/// <summary>
-		/// Contact’s email address
-		/// </summary>
-		public string Email
-		{
-			get { return email; }
-			set { email = value; }
-		}
-
-		/// <summary>
-		/// Contact ID, unlike other Smartsheet object ids, this id is an alphanumeric string.
-		/// </summary>
-		public virtual new string Id
-		{
-			// This should hide inherited member "Id".
-			get { return id; }
-			set { id = value; }
-		}
-	}
+        /// <summary>
+        /// Contact’s email address
+        /// </summary>
+        public string Email
+        {
+            get { return email; }
+            set { email = value; }
+        }
+    }
 }

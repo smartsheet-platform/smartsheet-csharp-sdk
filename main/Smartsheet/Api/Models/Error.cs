@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -18,56 +18,69 @@
 
 namespace Smartsheet.Api.Models
 {
+    /// <summary>
+    /// Represents Error object.
+    /// </summary>
+    public class Error
+    {
+        /// <summary>
+        /// Additional error detail if it is available
+        /// </summary>
+        private object detail;
 
+        /// <summary>
+        /// Represents the error code.
+        /// </summary>
+        private int? errorCode;
 
-	/// <summary>
-	/// Represents Error object.
-	/// </summary>
-	public class Error
-	{
-		/// <summary>
-		/// Represents the error Code.
-		/// </summary>
-		private int? errorCode;
+        /// <summary>
+        /// Represents the message.
+        /// </summary>
+        private string message;
 
-		/// <summary>
-		/// Represents the Message.
-		/// </summary>
-		private string message;
+        /// <summary>
+        /// Reference Id of the specific error occurrence. 
+        /// </summary>
+        private string refId;
 
-		/// <summary>
-		/// Gets the Message.
-		/// </summary>
-		/// <returns> the Message </returns>
-		public virtual string Message
-		{
-			get
-			{
-				return message;
-			}
-			set
-			{
-				this.message = value;
-			}
-		}
+        /// <summary>
+        /// Gets additional error detail if available
+        /// </summary>
+        /// <returns> error detail </returns>
+        public object Detail
+        {
+            get { return detail; }
+            set { detail = value; }
+        }
 
+        /// <summary>
+        /// Gets the error code.
+        /// </summary>
+        /// <returns> the error code </returns>
+        public int? ErrorCode
+        {
+            get { return errorCode; }
+            set { errorCode = value; }
+        }
 
-		/// <summary>
-		/// Gets the error Code.
-		/// </summary>
-		/// <returns> the error Code </returns>
-		public virtual int? ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set
-			{
-				this.errorCode = value;
-			}
-		}
+        /// <summary>
+        /// Gets the message.
+        /// </summary>
+        /// <returns> the message </returns>
+        public string Message
+        {
+            get { return message; }
+            set { message = value; }
+        }
 
-	}
-
+        /// <summary>
+        /// Gets the refId
+        /// </summary>
+        /// <returns> the refId </returns>
+        public string RefId
+        {
+            get { return refId; }
+            set { refId = value; }
+        }
+    }
 }

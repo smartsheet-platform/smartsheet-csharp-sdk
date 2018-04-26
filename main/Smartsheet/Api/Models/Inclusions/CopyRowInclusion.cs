@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -21,28 +21,28 @@ using Newtonsoft.Json.Converters;
 using System.Runtime.Serialization;
 namespace Smartsheet.Api.Models
 {
-	/// <summary>
-	/// Represents the list of row elements to copy in addition to the cell data.
-	/// </summary>
-	[JsonConverter(typeof(StringEnumConverter))]
-	public enum CopyRowInclusion
-	{
-		/// <summary>
-		/// The attachments.
-		/// </summary>
-		[EnumMember(Value = "attachments")]
-		ATTACHMENTS,
-		/// <summary>
-		/// The discussions.
-		/// </summary>
-		[EnumMember(Value = "discussions")]
-		DISCUSSIONS,
-		/// <summary>
-		/// Any child rows of the rows specified in the request will also be copied to the destination sheet,
-		/// and parent-child relationships amongst rows will be preserved within the destination sheet;
-		/// if not specified, only the rows specified in the request will be copied.
-		/// </summary>
-		[EnumMember(Value = "children ")]
-		CHILDREN
-	}
+    /// <summary>
+    /// Represents the list of row elements to copy in addition to the cell data.
+    /// </summary>
+    [JsonConverter(typeof(StringEnumConverter))]
+    public enum CopyRowInclusion
+    {
+        /// <summary>
+        /// The attachments.
+        /// </summary>
+        [EnumMember(Value = "attachments")]
+        ATTACHMENTS,
+        /// <summary>
+        /// The discussions.
+        /// </summary>
+        [EnumMember(Value = "discussions")]
+        DISCUSSIONS,
+        /// <summary>
+        /// Any child rows of the rows specified in the request will also be copied to the destination sheet,
+        /// and parent-child relationships amongst rows will be preserved within the destination sheet;
+        /// if not specified, only the rows specified in the request will be copied.
+        /// </summary>
+        [EnumMember(Value = "children")]
+        CHILDREN
+    }
 }

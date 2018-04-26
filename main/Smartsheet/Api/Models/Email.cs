@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -20,102 +20,69 @@ using System.Collections.Generic;
 
 namespace Smartsheet.Api.Models
 {
+    /// <summary>
+    /// Represents an Email object.
+    /// </summary>
+    public abstract class Email
+    {
+        /// <summary>
+        /// Represents the CC me flag.
+        /// </summary>
+        private bool? ccMe;
 
+        /// <summary>
+        /// Represents the Message.
+        /// </summary>
+        private string message;
 
-	/// <summary>
-	/// Represents an Email object.
-	/// </summary>
-	public abstract class Email
-	{
-		/// <summary>
-		/// Represents the Email recipient(s).
-		/// </summary>
-		private IList<Recipient> sendTo;
+        /// <summary>
+        /// Represents the Email recipient(s).
+        /// </summary>
+        private IList<Recipient> sendTo;
 
-		/// <summary>
-		/// Represents the Subject.
-		/// </summary>
-		private string subject;
+        /// <summary>
+        /// Represents the Subject.
+        /// </summary>
+        private string subject;
 
-		/// <summary>
-		/// Represents the Message.
-		/// </summary>
-		private string message;
+        /// <summary>
+        /// Gets the carbon copy me flag.
+        /// </summary>
+        /// <returns> the cc me </returns>
+        public bool? CcMe
+        {
+            get { return ccMe; }
+            set { ccMe = value; }
+        }
 
-		/// <summary>
-		/// Represents the CC me flag.
-		/// </summary>
-		private bool? ccMe;
+        /// <summary>
+        /// Gets the Message.
+        /// </summary>
+        /// <returns> the Message </returns>
+        public string Message
+        {
+            get { return message; }
+            set { message = value; }
+        }
 
-		/// <summary>
-		/// Gets the list of Recipients
-		/// </summary>
-		/// <returns> the list of Recipients </returns>
-		public virtual IList<Recipient> SendTo
-		{
-			get
-			{
-				return sendTo;
-			}
-			set
-			{
-				this.sendTo = value;
-			}
-		}
+        /// <summary>
+        /// Gets the list of Recipients
+        /// </summary>
+        /// <returns> the list of Recipients </returns>
+        public IList<Recipient> SendTo
+        {
+            get { return sendTo; }
+            set { sendTo = value; }
+        }
 
-
-		/// <summary>
-		/// Gets the Subject.
-		/// </summary>
-		/// <returns> the Subject </returns>
-		public virtual string Subject
-		{
-			get
-			{
-				return subject;
-			}
-			set
-			{
-				this.subject = value;
-			}
-		}
-
-
-		/// <summary>
-		/// Gets the Message.
-		/// </summary>
-		/// <returns> the Message </returns>
-		public virtual string Message
-		{
-			get
-			{
-				return message;
-			}
-			set
-			{
-				this.message = value;
-			}
-		}
-
-
-		/// <summary>
-		/// Gets the carbon copy me flag.
-		/// </summary>
-		/// <returns> the cc me </returns>
-		public virtual bool? CcMe
-		{
-			get
-			{
-				return ccMe;
-			}
-			set
-			{
-				this.ccMe = value;
-			}
-		}
-
-
-
-	}
-
+        /// <summary>
+        /// Gets the Subject.
+        /// </summary>
+        /// <returns> the Subject </returns>
+        public string Subject
+        {
+            get { return subject; }
+            set { subject = value; }
+        }
+    }
 }

@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -23,34 +23,15 @@ using System.Text;
 
 namespace Smartsheet.Api.Models
 {
-	/// <summary>
-	/// Represents the Link types.
-	/// </summary>
-	public enum ScheduleType
-	{
-		/// <summary>
-		/// Represents ONCE schedule type.
-		/// </summary>
-		ONCE,
-
-		/// <summary>
-		/// Represents DAILY schedule type.
-		/// </summary>
-		DAILY,
-
-		/// <summary>
-		/// Represents WEEKLY schedule type.
-		/// </summary>
-		WEEKLY,
-
-		/// <summary>
-		/// Represents MONTHLY schedule type.
-		/// </summary>
-		MONTHLY,
-
-		/// <summary>
-		/// Represents YEARLY schedule type.
-		/// </summary>
-		YEARLY
-	}
+    /// <summary>
+    /// Represents the Link types.
+    /// </summary>
+    public enum ScheduleType
+    {
+        ONCE,
+        DAILY,
+        WEEKLY,
+        MONTHLY,
+        YEARLY
+    }
 }

@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -20,55 +20,38 @@ using System;
 
 namespace Smartsheet.Api.Models
 {
+    /// <summary>
+    /// Represents CellHistory object. </summary>
+    /// <seealso href="http://help.Smartsheet.com/customer/portal/articles/518314-viewing-cell-history">Cell History Documentation </seealso>
+    public class CellHistory : Cell
+    {
+        /// <summary>
+        /// The date the cell was modified. </summary>
+        private DateTime? modifiedAt;
 
+        /// <summary>
+        /// Represents the user that modified the cell.
+        /// </summary>
+        private User modifiedBy;
 
-	/// <summary>
-	/// Represents CellHistory object. </summary>
-	/// <seealso href="http://help.Smartsheet.com/customer/portal/articles/518314-viewing-cell-history">Cell History Documentation </seealso>
-	public class CellHistory : Cell
-	{
-		/// <summary>
-		/// Represents the user that modified the cell.
-		/// </summary>
-		private User modifiedBy;
+        /// <summary>
+        /// Gets the date the cell was modified.
+        /// </summary>
+        /// <returns> the modified at </returns>
+        public DateTime? ModifiedAt
+        {
+            get { return modifiedAt; }
+            set { modifiedAt = value; }
+        }
 
-		/// <summary>
-		/// The date the cell was modified. </summary>
-		private DateTime? modifiedAt;
-
-		/// <summary>
-		/// Gets the date the cell was modified.
-		/// </summary>
-		/// <returns> the modified at </returns>
-		public virtual DateTime? ModifiedAt
-		{
-			get
-			{
-				return modifiedAt;
-			}
-			set
-			{
-				this.modifiedAt = value;
-			}
-		}
-
-
-		/// <summary>
-		/// Gets the user that modified the cell.
-		/// </summary>
-		/// <returns> the modified by </returns>
-		public virtual User ModifiedBy
-		{
-			get
-			{
-				return modifiedBy;
-			}
-			set
-			{
-				this.modifiedBy = value;
-			}
-		}
-
-	}
-
+        /// <summary>
+        /// Gets the user that modified the cell.
+        /// </summary>
+        /// <returns> the modified by </returns>
+        public User ModifiedBy
+        {
+            get { return modifiedBy; }
+            set { modifiedBy = value; }
+        }
+    }
 }

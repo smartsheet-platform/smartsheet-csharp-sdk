@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -23,21 +23,21 @@ using System.Text;
 
 namespace Smartsheet.Api.Models
 {
-	/// <summary>
-	/// A report column is a "virtual" column, in that it appears identical to source sheet column(s), but is in fact a different column belonging to the report.  
-	/// Cells in the report refer to this column via their virtualColumnId attribute, and their actual column from their source sheet via their columnId attribute.
-	/// </summary>
-	public class ReportColumn : Column
-	{
-		/// <summary>
-		/// The virtual ID of this report column
-		/// </summary>
-		public long? VirtualId { get; set; }
+    /// <summary>
+    /// A report column is a "virtual" column, in that it appears identical to source sheet column(s), but is in fact a different column belonging to the report.  
+    /// Cells in the report refer to this column via their virtualColumnId attribute, and their actual column from their source sheet via their columnId attribute.
+    /// </summary>
+    public class ReportColumn : Column
+    {
+        /// <summary>
+        /// The virtual ID of this report column
+        /// </summary>
+        public long? VirtualId { get; set; }
 
-		/// <summary>
-		/// Only included for the special "Sheet Name" report column
-		/// </summary>
-		public bool? SheetNameColumn { get; set; }
+        /// <summary>
+        /// Only included for the special "Sheet Name" report column
+        /// </summary>
+        public bool? SheetNameColumn { get; set; }
 
-	}
+    }
 }

@@ -6,79 +6,76 @@ using System.Configuration;
 
 namespace IntegrationTestSDK
 {
-	using NUnit.Framework;
+    [TestClass]
+    public class WorkspaceResourcesTest
+    {
+        [TestMethod]
+        public void TestWorkspaceResources()
+        {
+            SmartsheetClient smartsheet = new SmartsheetBuilder().SetMaxRetryTimeout(30000).Build();
+            
+            long workspaceId = CreateWorkspace(smartsheet);
 
-	public class WorkspaceResourcesTest
-	{
-		[Test]
-		public void TestWorkspaceResources()
-		{
-			string accessToken = ConfigurationManager.AppSettings["accessToken"];
+            UpdateWorkspace(smartsheet, workspaceId);
 
-			SmartsheetClient smartsheet = new SmartsheetBuilder().SetAccessToken(accessToken).Build();
-			
-			long workspaceId = CreateWorkspace(smartsheet);
+            GetWorkspace(smartsheet, workspaceId);
 
-			UpdateWorkspace(smartsheet, workspaceId);
+            ListWorkspaces(smartsheet, workspaceId);
 
-			GetWorkspace(smartsheet, workspaceId);
+            DeleteWorkspace(smartsheet, workspaceId);
+        }
 
-			ListWorkspaces(smartsheet, workspaceId);
+        private static void DeleteWorkspace(SmartsheetClient smartsheet, long workspaceId)
+        {
+            smartsheet.WorkspaceResources.DeleteWorkspace(workspaceId);
+            try
+            {
+                smartsheet.WorkspaceResources.GetWorkspace(workspaceId, null, null);
+                Assert.Fail("Cannot get a workspace that was deleted.");
+            }
+            catch
+            {
+                //Not found.
+            }
+        }
 
-			DeleteWorkspace(smartsheet, workspaceId);
-		}
+        private static void ListWorkspaces(SmartsheetClient smartsheet, long workspaceId)
+        {
+            PaginatedResult<Workspace> workspaceResult = smartsheet.WorkspaceResources.ListWorkspaces(null);
+            Assert.IsTrue(workspaceResult.Data.Count > 0);
+            bool contains = false;
+            foreach (Workspace ws in workspaceResult.Data)
+            {
+                if (ws.Id.Value == workspaceId)
+                {
+                    contains = true;
+                    break;    
+                }
+            }
+            Assert.IsTrue(contains);
+        }
+        private static void GetWorkspace(SmartsheetClient smartsheet, long workspaceId)
+        {
+            Workspace workspace = smartsheet.WorkspaceResources.GetWorkspace(workspaceId, true, new WorkspaceInclusion[] { WorkspaceInclusion.SOURCE });
+            Assert.IsTrue(workspace.Id.Value == workspaceId);
+        }
 
-		private static void DeleteWorkspace(SmartsheetClient smartsheet, long workspaceId)
-		{
-			smartsheet.WorkspaceResources.DeleteWorkspace(workspaceId);
-			try
-			{
-				smartsheet.WorkspaceResources.GetWorkspace(workspaceId, null, null);
-				Assert.Fail("Cannot get a workspace that was deleted.");
-			}
-			catch
-			{
-				//Not found.
-			}
-		}
+        private static void UpdateWorkspace(SmartsheetClient smartsheet, long workspaceId)
+        {
+            Workspace workspace = new Workspace.UpdateWorkspaceBuilder(workspaceId, "updated workspace").Build();
 
-		private static void ListWorkspaces(SmartsheetClient smartsheet, long workspaceId)
-		{
-			PaginatedResult<Workspace> workspaceResult = smartsheet.WorkspaceResources.ListWorkspaces(null);
-			Assert.IsTrue(workspaceResult.Data.Count > 0);
-			bool contains = false;
-			foreach (Workspace ws in workspaceResult.Data)
-			{
-				if (ws.Id.Value == workspaceId)
-				{
-					contains = true;
-					break;	
-				}
-			}
-			Assert.IsTrue(contains);
-		}
-		private static void GetWorkspace(SmartsheetClient smartsheet, long workspaceId)
-		{
-			Workspace workspace = smartsheet.WorkspaceResources.GetWorkspace(workspaceId, true, new WorkspaceInclusion[] { WorkspaceInclusion.SOURCE });
-			Assert.IsTrue(workspace.Id.Value == workspaceId);
-		}
+            Workspace updatedWorkspace = smartsheet.WorkspaceResources.UpdateWorkspace(workspace);
 
-		private static void UpdateWorkspace(SmartsheetClient smartsheet, long workspaceId)
-		{
-			Workspace workspace = new Workspace.UpdateWorkspaceBuilder(workspaceId, "updated workspace").Build();
+            Assert.IsTrue(updatedWorkspace.Name == "updated workspace");
+        }
 
-			Workspace updatedWorkspace = smartsheet.WorkspaceResources.UpdateWorkspace(workspace);
+        private static long CreateWorkspace(SmartsheetClient smartsheet)
+        {
+            Workspace workspace = new Workspace.CreateWorkspaceBuilder("workspace").Build();
 
-			Assert.IsTrue(updatedWorkspace.Name == "updated workspace");
-		}
-
-		private static long CreateWorkspace(SmartsheetClient smartsheet)
-		{
-			Workspace workspace = new Workspace.CreateWorkspaceBuilder("workspace").Build();
-
-			Workspace createdWorkspace = smartsheet.WorkspaceResources.CreateWorkspace(workspace);
-			Assert.IsTrue(createdWorkspace.Name == "workspace");
-			return createdWorkspace.Id.Value;
-		}
-	}
+            Workspace createdWorkspace = smartsheet.WorkspaceResources.CreateWorkspace(workspace);
+            Assert.IsTrue(createdWorkspace.Name == "workspace");
+            return createdWorkspace.Id.Value;
+        }
+    }
 }

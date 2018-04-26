@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -20,42 +20,42 @@ using System;
 using System.Collections.Generic;
 namespace Smartsheet.Api.Models
 {
-	/// <summary>
-	/// Represents a Server Infromation Object. </summary>
-	public class ServerInfo
-	{
-		private IList<string> supportedLocales;
+    /// <summary>
+    /// Represents a Server Infromation Object. </summary>
+    public class ServerInfo
+    {
+        private FeatureInfo featureInfo;
 
-		private FeatureInfo featureInfo;
+        private FormatTables formats;
 
-		private FormatTables formats;
+        private IList<string> supportedLocales;
 
-		/// <summary>
-		/// Array of strings representing all Smartsheet-supported locales.
-		/// </summary>
-		public IList<string> SupportedLocales
-		{
-			get { return supportedLocales; }
-			set { supportedLocales = value; }
-		}
+        /// <summary>
+        /// Feature Information.
+        /// </summary>
+        public FeatureInfo FeatureInfo
+        {
+            get { return featureInfo; }
+            set { featureInfo = value; }
+        }
 
-		/// <summary>
-		/// Feature Information.
-		/// </summary>
-		public FeatureInfo FeatureInfo
-		{
-			get { return featureInfo; }
-			set { featureInfo = value; }
-		}
+        /// <summary>
+        /// Definition of format tables that are used in
+        /// Column, Row, and Cell format property. For more information, see Formatting.
+        /// </summary>
+        public FormatTables Formats
+        {
+            get { return formats; }
+            set { formats = value; }
+        }
 
-		/// <summary>
-		/// Definition of format tables that are used in
-		/// Column, Row, and Cell format property. For more information, see Formatting.
-		/// </summary>
-		public FormatTables Formats
-		{
-			get { return formats; }
-			set { formats = value; }
-		}
-	}
+        /// <summary>
+        /// Array of strings representing all Smartsheet-supported locales.
+        /// </summary>
+        public IList<string> SupportedLocales
+        {
+            get { return supportedLocales; }
+            set { supportedLocales = value; }
+        }
+    }
 }

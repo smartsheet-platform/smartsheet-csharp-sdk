@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -22,29 +22,29 @@ namespace Smartsheet.Api.OAuth
 {
 
 
-	/// <summary>
-	/// <para>This is the exception thrown by <seealso cref="OAuthFlow"/> To indicate errors occurred when obtaining authorization Code.</para>
-	/// 
-	/// <para>Thread safety: Exceptions are not thread safe.</para>
-	/// </summary>
-	public class OAuthAuthorizationCodeException : SmartsheetException
-	{
-		/// <summary>
-		/// Constructor.
-		/// </summary>
-		/// <param name="message"> the Message </param>
-		public OAuthAuthorizationCodeException(string message) : base(message)
-		{
-		}
+    /// <summary>
+    /// <para>This is the exception thrown by <seealso cref="OAuthFlow"/> To indicate errors occurred when obtaining authorization Code.</para>
+    /// 
+    /// <para>Thread safety: Exceptions are not thread safe.</para>
+    /// </summary>
+    public class OAuthAuthorizationCodeException : SmartsheetException
+    {
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="message"> the Message </param>
+        public OAuthAuthorizationCodeException(string message) : base(message)
+        {
+        }
 
-		/// <summary>
-		/// Constructor.
-		/// </summary>
-		/// <param name="message"> the Message </param>
-		/// <param name="cause"> the cause </param>
-		public OAuthAuthorizationCodeException(string message, Exception cause) : base(message, cause)
-		{
-		}
-	}
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="message"> the Message </param>
+        /// <param name="cause"> the cause </param>
+        public OAuthAuthorizationCodeException(string message, Exception cause) : base(message, cause)
+        {
+        }
+    }
 
 }

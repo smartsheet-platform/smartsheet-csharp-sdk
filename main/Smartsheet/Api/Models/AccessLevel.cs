@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -18,33 +18,15 @@
 
 namespace Smartsheet.Api.Models
 {
-
-
-	/// <summary>
-	/// Represents access levels that Users can have. </summary>
-	/// <seealso href="http://www.Smartsheet.com/developers/Api-documentation#h.umfgm4xt25dq">Access Level Help</seealso>
-	public enum AccessLevel
-	{
-		/// <summary>
-		/// The viewer
-		/// </summary>
-		VIEWER,
-		/// <summary>
-		/// The editor
-		/// </summary>
-		EDITOR,
-		/// <summary>
-		/// The editor share
-		/// </summary>
-		EDITOR_SHARE,
-		/// <summary>
-		/// The admin
-		/// </summary>
-		ADMIN,
-		/// <summary>
-		/// The owner
-		/// </summary>
-		OWNER
-	}
-
+    /// <summary>
+    /// Represents access levels that Users can have. </summary>
+    /// <seealso href="http://www.Smartsheet.com/developers/Api-documentation#h.umfgm4xt25dq">Access Level Help</seealso>
+    public enum AccessLevel
+    {
+        VIEWER,
+        EDITOR,
+        EDITOR_SHARE,
+        ADMIN,
+        OWNER
+    }
 }

@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -22,7 +22,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values To modify the information
+// set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Smartsheet C# SDK")]
 [assembly: AssemblyDescription("Library that uses C# to connect to Smartsheet services.")]
@@ -34,12 +34,12 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCulture("")]
 [assembly: CLSCompliant(true)]
 
-// Setting ComVisible To false makes the types in this assembly not visible 
-// To COM components.  If you need To access a Type in this assembly from 
-// COM, set the ComVisible attribute To true on that Type.
+// Setting ComVisible to false makes the types in this assembly not visible 
+// to COM components.  If you need to access a Type in this assembly from 
+// COM, set the ComVisible attribute to true on that Type.
 [assembly: ComVisible(false)]
 
-// The following GUID is for the ID of the typelib if this project is exposed To COM
+// The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid("77f0da27-4da3-437b-ac15-82643cdf2fa6")]
 
 // Version information for an assembly consists of the following four values:

@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -21,43 +21,37 @@ using System.Collections.Generic;
 
 namespace Smartsheet.Api.Models
 {
-	/// <summary>
-	/// Represents the ImageUrl object. </summary>
-	/// <seealso href="https://smartsheet-platform.github.io/api-docs/#imageurlmap-object">ImageUrlMap Object Help</seealso>
-	public class ImageUrlMap
-	{
-		/// <summary>
-		/// Milliseconds before the URLs within imageUrls will expire.</summary>
-		private long? urlExpiresInMillis;
+    /// <summary>
+    /// Represents the ImageUrl object. </summary>
+    /// <seealso href="https://smartsheet-platform.github.io/api-docs/#imageurlmap-object">ImageUrlMap Object Help</seealso>
+    public class ImageUrlMap
+    {
+        /// <summary>
+        /// Milliseconds before the URLs within imageUrls will expire.</summary>
+        private long? urlExpiresInMillis;
 
-		/// <summary>
-		/// Array of ImageUrl objects
-		/// </summary>
-		private IList<ImageUrl> imageUrls;
-		
-		/// <summary>
-		/// Get Milliseconds before the URLs within imageUrls will expire.
-		/// </summary>
-		public long? UrlExpiresInMillis
-		{
-			get { return urlExpiresInMillis; }
-			set { urlExpiresInMillis = value; }
-		}
+        /// <summary>
+        /// Array of ImageUrl objects
+        /// </summary>
+        private IList<ImageUrl> imageUrls;
+        
+        /// <summary>
+        /// Get Milliseconds before the URLs within imageUrls will expire.
+        /// </summary>
+        public long? UrlExpiresInMillis
+        {
+            get { return urlExpiresInMillis; }
+            set { urlExpiresInMillis = value; }
+        }
 
-		/// <summary>
-		/// Gets the array of ImageUrl objects.
-		/// </summary>
-		/// <returns> the ImageUrls </returns>
-		public virtual IList<ImageUrl> ImageUrls
-		{
-			get
-			{
-				return imageUrls;
-			}
-			set
-			{
-				this.imageUrls = value;
-			}
-		}
-	}
+        /// <summary>
+        /// Gets the array of ImageUrl objects.
+        /// </summary>
+        /// <returns> the ImageUrls </returns>
+        public IList<ImageUrl> ImageUrls
+        {
+            get { return imageUrls; }
+            set { imageUrls = value; }
+        }
+    }
 }

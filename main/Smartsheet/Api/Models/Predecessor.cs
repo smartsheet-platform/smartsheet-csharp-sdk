@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -18,132 +18,96 @@
 
 namespace Smartsheet.Api.Models
 {
-	public class Predecessor
-	{
-		/// <summary>
-		/// The ID of the predecessor row
-		/// </summary>
-		private long? rowId;
+    public class Predecessor
+    {
+        /// <summary>
+        /// The ID of the predecessor row
+        /// </summary>
+        private long? rowId;
 
-		/// <summary>
-		/// The row number of the predecessor row.
-		/// </summary>
-		private int? rowNumber;
+        /// <summary>
+        /// The type of the predecessor. One of FS, FF, SS, or SF.
+        /// </summary>
+        private string type;
 
-		/// <summary>
-		/// The type of the predecessor. One of FS, FF, SS, or SF.
-		/// </summary>
-		private string type;
+        /// <summary>
+        /// True if this predecessor is in the critical path.
+        /// </summary>
+        private bool? inCriticalPath;
 
-		/// <summary>
-		/// The lag value of this predecessor. Omitted if there is no lag.
-		/// </summary>
-		private Duration lag;
+        /// <summary>
+        /// True if the row referenced by rowId is not a valid row in this sheet, or there is a circular reference 
+        /// </summary>
+        private bool? invalid;
 
-		/// <summary>
-		/// True if the row referenced by rowId is not a valid row in this sheet, or there is a circular reference 
-		/// </summary>
-		private bool? invalid;
+        /// <summary>
+        /// The lag value of this predecessor. Omitted if there is no lag.
+        /// </summary>
+        private Duration lag;
+        
+        /// <summary>
+        /// The row number of the predecessor row.
+        /// </summary>
+        private int? rowNumber;
 
-		/// <summary>
-		/// True if this predecessor is in the critical path.
-		/// </summary>
-		private bool? inCriticalPath;
+        /// <summary>
+        /// The ID of the predecessor row.
+        /// </summary>
+        /// <returns> the rowId </returns>
+        public long? RowId
+        {
+            get { return rowId; }
+            set { rowId = value; }
+        }
 
-		/// <summary>
-		/// The ID of the predecessor row.
-		/// </summary>
-		/// <returns> the rowId </returns>
-		public virtual long? RowId
-		{
-			get
-			{
-				return rowId;
-			}
-			set
-			{
-				this.rowId = value;
-			}
-		}
+        /// <summary>
+        /// The type of the predecessor. 
+        /// </summary>
+        /// <returns> One of FS, FF, SS, or SF </returns>
+        public string Type
+        {
+            get { return type; }
+            set { type = value; }
+        }
 
-		/// <summary>
-		/// The number of the predecessor row.
-		/// </summary>
-		/// <returns> the rowNumber </returns>
-		public virtual int? RowNumber
-		{
-			get
-			{
-				return rowNumber;
-			}
-			set
-			{
-				this.rowNumber = value;
-			}
-		}
+        /// <summary>
+        /// True if this predecessor is in the critical path.
+        /// </summary>
+        /// <returns> the value of the inCriticalPath flag </returns>
+        public bool? InCriticalPath
+        {
+            get { return inCriticalPath; }
+            set { inCriticalPath = value; }
+        }
 
-		/// <summary>
-		/// The type of the predecessor. 
-		/// </summary>
-		/// <returns> One of FS, FF, SS, or SF </returns>
-		public virtual string Type
-		{
-			get
-			{
-				return type;
-			}
-			set
-			{
-				this.type = value;
-			}
-		}
+        /// <summary>
+        /// True if the row referenced by rowId is not a valid row in this sheet, or there is a circular reference.  
+        /// </summary>
+        /// <returns> the value of the invalid flag </returns>
+        public bool? Invalid
+        {
+            get { return invalid; }
+            set { invalid = value; }
+        }
 
-		/// <summary>
-		/// The lag value of this predecessor.  
-		/// </summary>
-		/// <returns> the lag </returns>
-		public virtual Duration Lag
-		{
-			get
-			{
-				return lag;
-			}
-			set
-			{
-				this.lag = value;
-			}
-		}
+        /// <summary>
+        /// The lag value of this predecessor.  
+        /// </summary>
+        /// <returns> the lag </returns>
+        public Duration Lag
+        {
+            get { return lag; }
+            set { lag = value; }
+        }
 
-		/// <summary>
-		/// True if the row referenced by rowId is not a valid row in this sheet, or there is a circular reference.  
-		/// </summary>
-		/// <returns> the value of the invalid flag </returns>
-		public virtual bool? Invalid
-		{
-			get
-			{
-				return invalid;
-			}
-			set
-			{
-				this.invalid = value;
-			}
-		}
-
-		/// <summary>
-		/// True if this predecessor is in the critical path.
-		/// </summary>
-		/// <returns> the value of the inCriticalPath flag </returns>
-		public virtual bool? InCriticalPath
-		{
-			get
-			{
-				return inCriticalPath;
-			}
-			set
-			{
-				this.inCriticalPath = value;
-			}
-		}
-	}
+        /// <summary>
+        /// The number of the predecessor row.
+        /// </summary>
+        /// <returns> the rowNumber </returns>
+        public int? RowNumber
+        {
+            get { return rowNumber; }
+            set { rowNumber = value; }
+        }
+    }
 }

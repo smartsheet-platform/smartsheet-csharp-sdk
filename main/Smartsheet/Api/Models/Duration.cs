@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -18,195 +18,144 @@
 
 namespace Smartsheet.Api.Models
 {
-	public class Duration
-	{
-		/// <summary>
-		/// DURATION
-		/// </summary>
-		private string objectType;
+    public class Duration : ObjectValue
+    {
+        public Duration() {}
+        public Duration(bool negative, bool elapsed, double weeks, double days, double hours, double minutes, 
+            double seconds, double milliseconds)
+        {
+            this.negative = negative;
+            this.elapsed = elapsed;
+            this.weeks = weeks;
+            this.days = days;
+            this.hours = hours;
+            this.minutes = minutes;
+            this.seconds = seconds;
+            this.milliseconds = milliseconds;
+        }
 
-		/// <summary>
-		/// When used as a predecessor’s lag value, indicates whether the lag is negative (if true), or positive (false).
-		/// </summary>
-		private bool? negative;
+        /// <summary>
+        /// The number of days for this duration.
+        /// </summary>
+        private double? days;
 
-		/// <summary>
-		/// If true, indicates this duration represents elapsed time, which ignores non-working time.
-		/// </summary>
-		private bool? elapsed;
+        /// <summary>
+        /// If true, indicates this duration represents elapsed time, which ignores non-working time.
+        /// </summary>
+        private bool? elapsed;
 
-		/// <summary>
-		/// The number of weeks for this duration.
-		/// </summary>
-		private int? weeks;
+        /// <summary>
+        /// The number of hours for this duration.
+        /// </summary>
+        private double? hours;
 
-		/// <summary>
-		/// The number of days for this duration.
-		/// </summary>
-		private int? days;
+        /// <summary>
+        /// The number of milliseconds for this duration.
+        /// </summary>
+        private double? milliseconds;
 
-		/// <summary>
-		/// The number of hours for this duration.
-		/// </summary>
-		private int? hours;
+        /// <summary>
+        /// The number of minutes for this duration.
+        /// </summary>
+        private double? minutes;
 
-		/// <summary>
-		/// The number of minutes for this duration.
-		/// </summary>
-		private int? minutes;
+        /// <summary>
+        /// When used as a predecessor’s lag value, indicates whether the lag is negative (if true), or positive (false).
+        /// </summary>
+        private bool? negative;
 
-		/// <summary>
-		/// The number of seconds for this duration.
-		/// </summary>
-		private int? seconds;
+        /// <summary>
+        /// The number of seconds for this duration.
+        /// </summary>
+        private double? seconds;
 
-		/// <summary>
-		/// The number of milliseconds for this duration.
-		/// </summary>
-		private int? milliseconds;
+        /// <summary>
+        /// The number of weeks for this duration.
+        /// </summary>
+        private double? weeks;
 
-		/// <summary>
-		/// Gets the objectType.
-		/// </summary>
-		/// <returns> DURATION </returns>
-		public virtual string ObjectType
-		{
-			get
-			{
-				return objectType;
-			}
-			set
-			{
-				this.objectType = value;
-			}
-		}
+        /// <summary>
+        /// The number of days for this duration.
+        /// </summary>
+        /// <returns> the number of days in duration </returns>
+        public double? Days
+        {
+            get { return days; }
+            set { days = value; }
+        }
 
-		/// <summary>
-		/// When used as a predecessor’s lag value, indicates whether the lag is negative (if true), or positive (false).
-		/// </summary>
-		/// <returns> the negative flag </returns>
-		public virtual bool? Negative
-		{
-			get
-			{
-				return negative;
-			}
-			set
-			{
-				this.negative = value;
-			}
-		}
+        /// <summary>
+        /// If true, indicates this duration represents elapsed time, which ignores non-working time.
+        /// </summary>
+        /// <returns> the elapsed flag </returns>
+        public bool? Elapsed
+        {
+            get { return elapsed; }
+            set { elapsed = value; }
+        }
 
-		/// <summary>
-		/// If true, indicates this duration represents elapsed time, which ignores non-working time.
-		/// </summary>
-		/// <returns> the elapsed flag </returns>
-		public virtual bool? Elapsed
-		{
-			get
-			{
-				return elapsed;
-			}
-			set
-			{
-				this.elapsed = value;
-			}
-		}
+        /// <summary>
+        /// The number of hours for this duration.
+        /// </summary>
+        /// <returns> the number of hours in duration </returns>
+        public double? Hours
+        {
+            get { return hours; }
+            set { hours = value; }
+        }
 
-		/// <summary>
-		/// The number of weeks for this duration.
-		/// </summary>
-		/// <returns> the number of weeks in duration </returns>
-		public virtual int? Weeks
-		{
-			get
-			{
-				return weeks;
-			}
-			set
-			{
-				this.weeks = value;
-			}
-		}
+        /// <summary>
+        /// The number of milliseconds for this duration.
+        /// </summary>
+        /// <returns> the number of milliseconds in duration </returns>
+        public double? Milliseconds
+        {
+            get { return milliseconds; }
+            set { milliseconds = value; }
+        }
+        /// <summary>
+        /// The number of minutes for this duration.
+        /// </summary>
+        /// <returns> the number of minutes in duration </returns>
+        public double? Minutes
+        {
+            get { return minutes; }
+            set { minutes = value; }
+        }
 
-		/// <summary>
-		/// The number of days for this duration.
-		/// </summary>
-		/// <returns> the number of days in duration </returns>
-		public virtual int? Days
-		{
-			get
-			{
-				return days;
-			}
-			set
-			{
-				this.days = value;
-			}
-		}
+        /// <summary>
+        /// When used as a predecessor’s lag value, indicates whether the lag is negative (if true), or positive (false).
+        /// </summary>
+        /// <returns> the negative flag </returns>
+        public bool? Negative
+        {
+            get { return negative; }
+            set { negative = value; }
+        }
 
-		/// <summary>
-		/// The number of hours for this duration.
-		/// </summary>
-		/// <returns> the number of hours in duration </returns>
-		public virtual int? Hours
-		{
-			get
-			{
-				return hours;
-			}
-			set
-			{
-				this.hours = value;
-			}
-		}
+        /// <summary>
+        /// The number of seconds for this duration.
+        /// </summary>
+        /// <returns> the number of seconds in duration </returns>
+        public double? Seconds
+        {
+            get { return seconds; }
+            set { seconds = value; }
+        }
 
-		/// <summary>
-		/// The number of minutes for this duration.
-		/// </summary>
-		/// <returns> the number of minutes in duration </returns>
-		public virtual int? Minutes
-		{
-			get
-			{
-				return minutes;
-			}
-			set
-			{
-				this.minutes = value;
-			}
-		}
+        /// <summary>
+        /// The number of weeks for this duration.
+        /// </summary>
+        /// <returns> the number of weeks in duration </returns>
+        public double? Weeks
+        {
+            get { return weeks; }
+            set { weeks = value; }
+        }
 
-		/// <summary>
-		/// The number of seconds for this duration.
-		/// </summary>
-		/// <returns> the number of seconds in duration </returns>
-		public virtual int? Seconds
-		{
-			get
-			{
-				return seconds;
-			}
-			set
-			{
-				this.seconds = value;
-			}
-		}
-
-		/// <summary>
-		/// The number of milliseconds for this duration.
-		/// </summary>
-		/// <returns> the number of milliseconds in duration </returns>
-		public virtual int? Milliseconds
-		{
-			get
-			{
-				return milliseconds;
-			}
-			set
-			{
-				this.milliseconds = value;
-			}
-		}
-	}
+        public ObjectValueType ObjectType
+        {
+            get { return ObjectValueType.DURATION; }
+        }
+    }
 }

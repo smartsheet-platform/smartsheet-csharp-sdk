@@ -7,23 +7,20 @@ using System.Configuration;
 
 namespace IntegrationTestSDK
 {
-	using NUnit.Framework;
+    [TestClass]
+    public class ServerInformationResourcesTest
+    {
 
-	public class ServerInformationResourcesTest
-	{
+        [TestMethod]
+        public void TestServerInfoResources()
+        {
+            SmartsheetClient smartsheet = new SmartsheetBuilder().SetMaxRetryTimeout(30000).Build();
 
-		[Test]
-		public void TestServerInfoResources()
-		{
-			string accessToken = ConfigurationManager.AppSettings["accessToken"];
+            ServerInfo info = smartsheet.ServerInfoResources.GetServerInfo();
+            Assert.IsTrue(info.FeatureInfo != null);
+            Assert.IsTrue(info.Formats != null);
+            Assert.IsTrue(info.SupportedLocales != null);
 
-			SmartsheetClient smartsheet = new SmartsheetBuilder().SetAccessToken(accessToken).Build();
-
-			ServerInfo info = smartsheet.ServerInfoResources.GetServerInfo();
-			Assert.IsTrue(info.FeatureInfo != null);
-			Assert.IsTrue(info.Formats != null);
-			Assert.IsTrue(info.SupportedLocales != null);
-
-		}
-	}
+        }
+    }
 }

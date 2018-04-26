@@ -6,21 +6,17 @@ using System.Configuration;
 
 namespace IntegrationTestSDK
 {
-	using NUnit.Framework;
+    [TestClass]
+    public class HomeResourcesTest
+    {
+        [TestMethod]
+        public void TestHomeResources()
+        {
+            SmartsheetClient smartsheet = new SmartsheetBuilder().SetMaxRetryTimeout(30000).Build();
 
-	public class HomeResourcesTest
-	{
+            Home home = smartsheet.HomeResources.GetHome(new HomeInclusion[] { HomeInclusion.SOURCE });
 
-		[Test]
-		public void TestHomeResources()
-		{
-			string accessToken = ConfigurationManager.AppSettings["accessToken"];
-
-			SmartsheetClient smartsheet = new SmartsheetBuilder().SetAccessToken(accessToken).Build();
-
-			Home home = smartsheet.HomeResources.GetHome(new HomeInclusion[] { HomeInclusion.SOURCE });
-
-			Assert.IsTrue(home != null);
-		}
-	}
+            Assert.IsTrue(home != null);
+        }
+    }
 }

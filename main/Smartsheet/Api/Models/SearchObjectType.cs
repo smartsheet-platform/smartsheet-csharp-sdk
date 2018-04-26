@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -21,49 +21,31 @@ using Newtonsoft.Json.Converters;
 using System.Runtime.Serialization;
 namespace Smartsheet.Api.Models
 {
-	/// <summary>
-	/// Represents object types.
-	/// </summary>
-	[JsonConverter(typeof(StringEnumConverter))]
-	public enum SearchObjectType
-	{
-		// ObjectType must also be in all lower case when building the path.
-		// Below, the EnumMembers turn the enums into lowercase only during serialization into JSON object
-		/// <summary>
-		/// Row.
-		/// </summary>
-		[EnumMember(Value = "row")]
-		ROW,
-		/// <summary>
-		/// Sheet.
-		/// </summary>
-		[EnumMember(Value = "sheet")]
-		SHEET,
-		/// <summary>
-		/// Report.
-		/// </summary>
-		[EnumMember(Value = "report")]
-		REPORT,
-		/// <summary>
-		/// Template.
-		/// </summary>
-		[EnumMember(Value = "template")]
-		TEMPLATE,
-		/// <summary>
-		/// Discussion.
-		/// </summary>
-		[EnumMember(Value = "discussion")]
-		DISCUSSION,
-		/// <summary>
-		/// Attachment.
-		/// </summary>
-		[EnumMember(Value = "attachment")]
-		ATTACHMENT,
-		/// <summary>
-		/// Sight.
-		/// </summary>
-		[EnumMember(Value = "sight")]
-		SIGHT
-	}
-
+    /// <summary>
+    /// Represents object types.
+    /// </summary>
+    [JsonConverter(typeof(StringEnumConverter))]
+    public enum SearchObjectType
+    {
+        // ObjectType must also be in all lower case when building the path.
+        // Below, the EnumMembers turn the enums into lowercase only during serialization into JSON object
+        [EnumMember(Value = "row")]
+        ROW,
+        [EnumMember(Value = "sheet")]
+        SHEET,
+        [EnumMember(Value = "report")]
+        REPORT,
+        [EnumMember(Value = "template")]
+        TEMPLATE,
+        [EnumMember(Value = "discussion")]
+        DISCUSSION,
+        [EnumMember(Value = "attachment")]
+        ATTACHMENT,
+        [EnumMember(Value = "sight")]
+        SIGHT,
+        [EnumMember(Value = "folder")]
+        FOLDER,
+        [EnumMember(Value = "workspace")]
+        WORKSPACE
+    }
 }

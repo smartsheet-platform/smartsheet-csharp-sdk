@@ -57,68 +57,6 @@ namespace TestSDKMockAPI
         }
 
         [TestMethod]
-        public void AddRows_Location_Top()
-        {
-            SmartsheetClient ss = HelperFunctions.SetupClient("Add Rows - Location - Top");
-
-            Row rowA = new Row
-            {
-                ToTop = true,
-                Cells = new List<Cell>
-                {
-                    new Cell{
-                        ColumnId = 101,
-                        Value = "Apple"
-                    },
-                    new Cell{
-                        ColumnId = 102,
-                        Value = "Red Fruit"
-                    }
-                }
-            };
-
-            // Update rows in sheet
-            IList<Row> addedRows = ss.SheetResources.RowResources.AddRows(1, new Row[] { rowA });
-
-            Row row = addedRows.Where(r => r.Id == 10).FirstOrDefault();
-            Cell cell = row.Cells.Where(c => c.Value.Equals("Apple")).FirstOrDefault();
-            
-            Assert.AreEqual(1, row.RowNumber);
-            Assert.AreEqual(101, cell.ColumnId);
-        }
-
-        [TestMethod]
-        public void AddRows_Location_Bottom()
-        {
-            SmartsheetClient ss = HelperFunctions.SetupClient("Add Rows - Location - Bottom");
-
-            Row rowA = new Row
-            {
-                ToBottom = true,
-                Cells = new List<Cell>
-                {
-                    new Cell{
-                        ColumnId = 101,
-                        Value = "Apple"
-                    },
-                    new Cell{
-                        ColumnId = 102,
-                        Value = "Red Fruit"
-                    }
-                }
-            };
-
-            // Update rows in sheet
-            IList<Row> addedRows = ss.SheetResources.RowResources.AddRows(1, new Row[] { rowA });
-
-            Row row = addedRows.Where(r => r.Id == 10).FirstOrDefault();
-            Cell cell = row.Cells.Where(c => c.Value.Equals("Apple")).FirstOrDefault();
-
-            Assert.AreEqual(100, row.RowNumber);
-            Assert.AreEqual(101, cell.ColumnId);
-        }
-      
-        [TestMethod]
         public void AddRows_AssignValues_Int()
         {
             SmartsheetClient ss = HelperFunctions.SetupClient("Add Rows - Assign Values - Int");
@@ -246,14 +184,14 @@ namespace TestSDKMockAPI
                     new Cell{
                         ColumnId = 101,
                         Value = "Google",
-                        Hyperlink = new Link{
+                        Hyperlink = new Hyperlink{
                             Url = "http://google.com"
                         }
                     },
                     new Cell{
                         ColumnId = 102,
                         Value = "Bing",
-                        Hyperlink = new Link{
+                        Hyperlink = new Hyperlink{
                             Url = "http://bing.com"
                         }
                     }
@@ -263,7 +201,7 @@ namespace TestSDKMockAPI
             IList<Row> addedRows = ss.SheetResources.RowResources.AddRows(1, new Row[] { rowA });
 
             Cell cell = addedRows[0].Cells.Where(c => c.Value.Equals("Google")).FirstOrDefault();
-            Link link = cell.Hyperlink;
+            Hyperlink link = cell.Hyperlink;
 
             Assert.AreEqual(101, cell.ColumnId);
             Assert.AreEqual("http://google.com", link.Url);
@@ -281,14 +219,14 @@ namespace TestSDKMockAPI
                     new Cell{
                         ColumnId = 101,
                         Value = "Sheet2",
-                        Hyperlink = new Link{
+                        Hyperlink = new Hyperlink{
                             SheetId = 2
                         }
                     },
                     new Cell{
                         ColumnId = 102,
                         Value = "Sheet3",
-                        Hyperlink = new Link{
+                        Hyperlink = new Hyperlink{
                             SheetId = 3
                         }
                     }
@@ -298,7 +236,7 @@ namespace TestSDKMockAPI
             IList<Row> addedRows = ss.SheetResources.RowResources.AddRows(1, new Row[] { rowA });
 
             Cell cell = addedRows[0].Cells.Where(c => c.Value.Equals("Sheet3")).FirstOrDefault();
-            Link link = cell.Hyperlink;
+            Hyperlink link = cell.Hyperlink;
 
             Assert.AreEqual(102, cell.ColumnId);
             Assert.AreEqual(3, link.SheetId);
@@ -316,14 +254,14 @@ namespace TestSDKMockAPI
                     new Cell{
                         ColumnId = 101,
                         Value = "Report9",
-                        Hyperlink = new Link{
+                        Hyperlink = new Hyperlink{
                             ReportId = 9
                         }
                     },
                     new Cell{
                         ColumnId = 102,
                         Value = "Report8",
-                        Hyperlink = new Link{
+                        Hyperlink = new Hyperlink{
                             ReportId = 8
                         }
                     }
@@ -333,43 +271,10 @@ namespace TestSDKMockAPI
             IList<Row> addedRows = ss.SheetResources.RowResources.AddRows(1, new Row[] { rowA });
 
             Cell cell = addedRows[0].Cells.Where(c => c.Value.Equals("Report8")).FirstOrDefault();
-            Link link = cell.Hyperlink;
+            Hyperlink link = cell.Hyperlink;
 
             Assert.AreEqual(102, cell.ColumnId);
             Assert.AreEqual(8, link.ReportId);
-        }
-
-        [TestMethod]
-        public void AddRows_Invalid_AssignHyperlinkUrlandSheetId()
-        {
-            SmartsheetClient ss = HelperFunctions.SetupClient("Add Rows - Invalid - Assign Hyperlink URL and SheetId");
-
-            Row rowA = new Row
-            {
-                Cells = new List<Cell>
-                {
-                    new Cell{
-                        ColumnId = 101,
-                        Value = "Google",
-                        Hyperlink = new Link{
-                            Url = "http://google.com",
-                            SheetId = 2
-                        }
-                    },
-                    new Cell{
-                        ColumnId = 102,
-                        Value = "Bing",
-                        Hyperlink = new Link{
-                            Url = "http://bing.com"
-                        }
-                    }
-                }
-            };
-
-
-            HelperFunctions.AssertRaisesException<SmartsheetException>(() =>
-                ss.SheetResources.RowResources.AddRows(1, new Row[] { rowA }),
-                "hyperlink.url must be null for sheet, report, or Sight hyperlinks.");
         }
 
         [TestMethod]
@@ -400,9 +305,42 @@ namespace TestSDKMockAPI
         }
 
         [TestMethod]
+        public void AddRows_Invalid_AssignHyperlinkUrlandSheetId()
+        {
+            SmartsheetClient ss = HelperFunctions.SetupClient("Add Rows - Invalid - Assign Hyperlink URL and SheetId");
+
+            Row rowA = new Row
+            {
+                Cells = new List<Cell>
+                {
+                    new Cell{
+                        ColumnId = 101,
+                        Value = "Google",
+                        Hyperlink = new Hyperlink{
+                            Url = "http://google.com",
+                            SheetId = 2
+                        }
+                    },
+                    new Cell{
+                        ColumnId = 102,
+                        Value = "Bing",
+                        Hyperlink = new Hyperlink{
+                            Url = "http://bing.com"
+                        }
+                    }
+                }
+            };
+
+
+            HelperFunctions.AssertRaisesException<SmartsheetException>(() =>
+                ss.SheetResources.RowResources.AddRows(1, new Row[] { rowA }),
+                "hyperlink.url must be null for sheet, report, or Sight hyperlinks.");
+        }
+
+        [TestMethod]
         public void AddRows_AssignObjectValue_PredecessorList()
         {
-            SmartsheetClient ss = HelperFunctions.SetupClient("Add Rows - Assign Object Value - Predecessor List");
+            SmartsheetClient ss = HelperFunctions.SetupClient("Add Rows - Assign Object Value - Predecessor List (using floats)");
 
             Row rowA = new Row
             {
@@ -411,9 +349,8 @@ namespace TestSDKMockAPI
                     new Cell
                     {
                         ColumnId = 101,
-                        ObjectValue = new ObjectValue
+                        ObjectValue = new PredecessorList
                         {
-                            ObjectType = ObjectValueType.PREDECESSOR_LIST,
                             Predecessors = new List<Predecessor>
                             {
                                 new Predecessor
@@ -422,9 +359,7 @@ namespace TestSDKMockAPI
                                     Type = "FS",
                                     Lag = new Duration
                                     {
-                                        ObjectType = "DURATION",
-                                        Days = 2,
-                                        Hours = 4
+                                        Days = 2.5
                                     }
                                 }
                             }
@@ -436,10 +371,70 @@ namespace TestSDKMockAPI
             IList<Row> addedRows = ss.SheetResources.RowResources.AddRows(1, new Row[] { rowA });
 
             Cell predecessorCell = addedRows[0].Cells.Single(c => c.ColumnId == 101);
-            Assert.AreEqual("2FS +2d 4h", predecessorCell.Value);
+            Assert.AreEqual("2FS +2.5d", predecessorCell.Value);
         }
 
-        
+        [TestMethod]
+        public void AddRows_Location_Top()
+        {
+            SmartsheetClient ss = HelperFunctions.SetupClient("Add Rows - Location - Top");
+
+            Row rowA = new Row
+            {
+                ToTop = true,
+                Cells = new List<Cell>
+                {
+                    new Cell{
+                        ColumnId = 101,
+                        Value = "Apple"
+                    },
+                    new Cell{
+                        ColumnId = 102,
+                        Value = "Red Fruit"
+                    }
+                }
+            };
+
+            // Update rows in sheet
+            IList<Row> addedRows = ss.SheetResources.RowResources.AddRows(1, new Row[] { rowA });
+
+            Row row = addedRows.Where(r => r.Id == 10).FirstOrDefault();
+            Cell cell = row.Cells.Where(c => c.Value.Equals("Apple")).FirstOrDefault();
+
+            Assert.AreEqual(1, row.RowNumber);
+            Assert.AreEqual(101, cell.ColumnId);
+        }
+
+        [TestMethod]
+        public void AddRows_Location_Bottom()
+        {
+            SmartsheetClient ss = HelperFunctions.SetupClient("Add Rows - Location - Bottom");
+
+            Row rowA = new Row
+            {
+                ToBottom = true,
+                Cells = new List<Cell>
+                {
+                    new Cell{
+                        ColumnId = 101,
+                        Value = "Apple"
+                    },
+                    new Cell{
+                        ColumnId = 102,
+                        Value = "Red Fruit"
+                    }
+                }
+            };
+
+            // Update rows in sheet
+            IList<Row> addedRows = ss.SheetResources.RowResources.AddRows(1, new Row[] { rowA });
+
+            Row row = addedRows.Where(r => r.Id == 10).FirstOrDefault();
+            Cell cell = row.Cells.Where(c => c.Value.Equals("Apple")).FirstOrDefault();
+
+            Assert.AreEqual(100, row.RowNumber);
+            Assert.AreEqual(101, cell.ColumnId);
+        }
 
         [TestMethod]
         public void UpdateRows_AssignValues_String()
@@ -618,14 +613,14 @@ namespace TestSDKMockAPI
                     new Cell{
                         ColumnId = 101,
                         Value = "Google",
-                        Hyperlink = new Link{
+                        Hyperlink = new Hyperlink{
                             Url = "http://google.com"
                         }
                     },
                     new Cell{
                         ColumnId = 102,
                         Value = "Bing",
-                        Hyperlink = new Link{
+                        Hyperlink = new Hyperlink{
                             Url = "http://bing.com"
                         }
                     }
@@ -635,7 +630,7 @@ namespace TestSDKMockAPI
             IList<Row> updatedRows = ss.SheetResources.RowResources.UpdateRows(1, new Row[] { rowA });
 
             Cell cell = updatedRows[0].Cells.Where(c => c.Value.Equals("Google")).FirstOrDefault();
-            Link link = cell.Hyperlink;
+            Hyperlink link = cell.Hyperlink;
 
             Assert.AreEqual(101, cell.ColumnId);
             Assert.AreEqual("http://google.com", link.Url);
@@ -654,14 +649,14 @@ namespace TestSDKMockAPI
                     new Cell{
                         ColumnId = 101,
                         Value = "Sheet2",
-                        Hyperlink = new Link{
+                        Hyperlink = new Hyperlink{
                             SheetId = 2
                         }
                     },
                     new Cell{
                         ColumnId = 102,
                         Value = "Sheet3",
-                        Hyperlink = new Link{
+                        Hyperlink = new Hyperlink{
                             SheetId = 3
                         }
                     }
@@ -671,7 +666,7 @@ namespace TestSDKMockAPI
             IList<Row> updatedRows = ss.SheetResources.RowResources.UpdateRows(1, new Row[] { rowA });
 
             Cell cell = updatedRows[0].Cells.Where(c => c.Value.Equals("Sheet3")).FirstOrDefault();
-            Link link = cell.Hyperlink;
+            Hyperlink link = cell.Hyperlink;
 
             Assert.AreEqual(102, cell.ColumnId);
             Assert.AreEqual(3, link.SheetId);
@@ -690,14 +685,14 @@ namespace TestSDKMockAPI
                     new Cell{
                         ColumnId = 101,
                         Value = "Report9",
-                        Hyperlink = new Link{
+                        Hyperlink = new Hyperlink{
                             ReportId = 9
                         }
                     },
                     new Cell{
                         ColumnId = 102,
                         Value = "Report8",
-                        Hyperlink = new Link{
+                        Hyperlink = new Hyperlink{
                             ReportId = 8
                         }
                     }
@@ -707,43 +702,10 @@ namespace TestSDKMockAPI
             IList<Row> updatedRows = ss.SheetResources.RowResources.UpdateRows(1, new Row[] { rowA });
 
             Cell cell = updatedRows[0].Cells.Where(c => c.Value.Equals("Report8")).FirstOrDefault();
-            Link link = cell.Hyperlink;
+            Hyperlink link = cell.Hyperlink;
 
             Assert.AreEqual(102, cell.ColumnId);
             Assert.AreEqual(8, link.ReportId);
-        }
-
-        [TestMethod]
-        public void UpdateRows_Invalid_AssignHyperlinkUrlandSheetId()
-        {
-            SmartsheetClient ss = HelperFunctions.SetupClient("Update Rows - Invalid - Assign Hyperlink URL and SheetId");
-
-            Row rowA = new Row
-            {
-                Id = 10,
-                Cells = new List<Cell>
-                {
-                    new Cell{
-                        ColumnId = 101,
-                        Value = "Google",
-                        Hyperlink = new Link{
-                            Url = "http://google.com",
-                            SheetId = 2
-                        }
-                    },
-                    new Cell{
-                        ColumnId = 102,
-                        Value = "Bing",
-                        Hyperlink = new Link{
-                            Url = "http://bing.com"
-                        }
-                    }
-                }
-            };
-
-            HelperFunctions.AssertRaisesException<SmartsheetException>(() =>
-                ss.SheetResources.RowResources.UpdateRows(1, new Row[] { rowA }),
-                "hyperlink.url must be null for sheet, report, or Sight hyperlinks.");
         }
 
         [TestMethod]
@@ -772,6 +734,39 @@ namespace TestSDKMockAPI
             HelperFunctions.AssertRaisesException<SmartsheetException>(() =>
                 ss.SheetResources.RowResources.UpdateRows(1, new Row[] { rowA }),
                 "If cell.formula is specified, then value, objectValue, image, hyperlink, and linkInFromCell must not be specified.");
+        }
+
+        [TestMethod]
+        public void UpdateRows_Invalid_AssignHyperlinkUrlandSheetId()
+        {
+            SmartsheetClient ss = HelperFunctions.SetupClient("Update Rows - Invalid - Assign Hyperlink URL and SheetId");
+
+            Row rowA = new Row
+            {
+                Id = 10,
+                Cells = new List<Cell>
+                {
+                    new Cell{
+                        ColumnId = 101,
+                        Value = "Google",
+                        Hyperlink = new Hyperlink{
+                            Url = "http://google.com",
+                            SheetId = 2
+                        }
+                    },
+                    new Cell{
+                        ColumnId = 102,
+                        Value = "Bing",
+                        Hyperlink = new Hyperlink{
+                            Url = "http://bing.com"
+                        }
+                    }
+                }
+            };
+
+            HelperFunctions.AssertRaisesException<SmartsheetException>(() =>
+                ss.SheetResources.RowResources.UpdateRows(1, new Row[] { rowA }),
+                "hyperlink.url must be null for sheet, report, or Sight hyperlinks.");
         }
 
         [TestMethod]
@@ -836,7 +831,7 @@ namespace TestSDKMockAPI
                     {
                         ColumnId = 101,
                         Value = "",
-                        Hyperlink = null
+                        Hyperlink = new Hyperlink()
                     }
                 }
             };
@@ -862,7 +857,7 @@ namespace TestSDKMockAPI
                     {
                         ColumnId = 101,
                         Value = "",
-                        LinkInFromCell = null
+                        LinkInFromCell = new CellLink()
                     }
                 }
             };
@@ -873,6 +868,30 @@ namespace TestSDKMockAPI
             Assert.AreEqual(null, updatedCell.LinkInFromCell);
             Assert.AreEqual(null, updatedCell.Value);
         }
+
+        [TestMethod]
+        public void UpdateRows_ClearValue_PredecessorList()
+        {
+            SmartsheetClient ss = HelperFunctions.SetupClient("Update Rows - Clear Value - Predecessor List");
+
+            Row rowA = new Row
+            {
+                Id = 10,
+                Cells = new List<Cell>
+                {
+                    new Cell
+                    {
+                        ColumnId = 123,
+                        Value = new ExplicitNull()
+                    }
+                }
+            };
+            IList<Row> updatedRows = ss.SheetResources.RowResources.UpdateRows(1, new Row[] { rowA });
+            Cell updatedCell = updatedRows[0].Cells.Single(c => c.ColumnId == 123);
+            Assert.AreEqual(updatedRows[0].Id, 10);
+            Assert.AreEqual(null, updatedCell.Value);
+        }
+
 
         [TestMethod]
         public void UpdateRows_Invalid_AssignHyperlinkAndCellLink()
@@ -894,7 +913,7 @@ namespace TestSDKMockAPI
                             RowId = 20,
                             SheetId = 2
                         },
-                        Hyperlink = new Link
+                        Hyperlink = new Hyperlink
                         {
                             Url = "www.google.com"
                         }
@@ -939,6 +958,49 @@ namespace TestSDKMockAPI
 
             Row updateRow = updatedRows.Single(r => r.Id == 10);
             Assert.AreEqual(100, updateRow.RowNumber);
+        }
+
+        [TestMethod]
+        public void MoveRow_AnotherSheet()
+        {
+            SmartsheetClient ss = HelperFunctions.SetupClient("Move row to another sheet");
+
+            CopyOrMoveRowResult result = ss.SheetResources.RowResources.MoveRowsToAnotherSheet(
+                1228520367122308,
+                new CopyOrMoveRowDirective 
+                {
+                    RowIds = new List<long> 
+                    {
+                        1765250516182916
+                    },
+                    To = new CopyOrMoveRowDestination
+                    {
+                        SheetId = 799249123305348
+                    }
+                },
+                null, null);
+            Assert.AreEqual(result.DestinationSheetId, 799249123305348);
+        }
+
+        [TestMethod]
+        public void CopyRow_AnotherSheet()
+        {
+            SmartsheetClient ss = HelperFunctions.SetupClient("Copy row to another sheet");
+            CopyOrMoveRowResult result = ss.SheetResources.RowResources.CopyRowsToAnotherSheet(
+                1228520367122308,
+                new CopyOrMoveRowDirective
+                {
+                    RowIds = new List<long>
+                    {
+                        2891150423025540
+                    },
+                    To = new CopyOrMoveRowDestination
+                    {
+                        SheetId = 799249123305348
+                    }
+                }, 
+                null, null);
+            Assert.AreEqual(result.DestinationSheetId, 799249123305348);
         }
     }
 }

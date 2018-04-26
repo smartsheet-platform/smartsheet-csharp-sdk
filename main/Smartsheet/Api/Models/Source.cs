@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -18,23 +18,23 @@
 
 namespace Smartsheet.Api.Models
 {
-	/// <summary>
-	/// Represents individual user settings for a specific sheet. 
-	/// User settings may be updated even on sheets where the current user only has read access (e.g. viewer permissions or a read-only sheet). </summary>
+    /// <summary>
+    /// Represents individual user settings for a specific sheet. 
+    /// User settings may be updated even on sheets where the current user only has read access (e.g. viewer permissions or a read-only sheet). </summary>
 
-	public class Source : IdentifiableModel
-	{
-		private string type;
+    public class Source : IdentifiableModel
+    {
+        private string type;
 
-		/// <summary>
-		/// Type of this source. "sheet" or "template"
-		/// </summary>
-		/// <returns> "sheet" or "template" </returns>
-		public string Type
-		{
-			get { return type; }
-			set { type = value; }
-		}
-	}
+        /// <summary>
+        /// Type of this source. "sheet" or "template"
+        /// </summary>
+        /// <returns> "sheet" or "template" </returns>
+        public string Type
+        {
+            get { return type; }
+            set { type = value; }
+        }
+    }
 
 }

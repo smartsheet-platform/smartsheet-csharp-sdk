@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -21,49 +21,49 @@ using System.Collections.Generic;
 
 namespace Smartsheet.Api.Models
 {
-	/// <summary>
-	/// Represents the GroupMember object. </summary>
-	public class GroupMember : UserModelWithName
-	{
-		/// <summary>
-		/// A convenience class for creating a GroupMember object with the appropriate fields to add to a group.
-		/// </summary>
-		public class AddGroupMemberBuilder
-		{
-			private string email;
+    /// <summary>
+    /// Represents the GroupMember object. </summary>
+    public class GroupMember : UserModelWithName
+    {
+        /// <summary>
+        /// A convenience class for creating a GroupMember object with the appropriate fields to add to a group.
+        /// </summary>
+        public class AddGroupMemberBuilder
+        {
+            private string email;
 
-			/// <summary>
-			/// Sets the require properties for adding a group member.
-			/// </summary>
-			/// <param name="email"></param>
-			public AddGroupMemberBuilder(string email)
-			{
-				this.email = email;
-			}
+            /// <summary>
+            /// Sets the require properties for adding a group member.
+            /// </summary>
+            /// <param name="email"></param>
+            public AddGroupMemberBuilder(string email)
+            {
+                this.email = email;
+            }
 
-			public AddGroupMemberBuilder SetEmail(string email)
-			{
-				this.email = email;
-				return this;
-			}
+            public AddGroupMemberBuilder SetEmail(string email)
+            {
+                this.email = email;
+                return this;
+            }
 
-			public string getEmail()
-			{
-				return this.email;
-			}
+            public string getEmail()
+            {
+                return this.email;
+            }
 
-			/// <summary>
-			/// Builds and returns the GroupMember object.
-			/// </summary>
-			/// <returns>the GroupMember object</returns>
-			public GroupMember Build()
-			{
-				GroupMember groupMember = new GroupMember
-				{
-					Email = this.email
-				};
-				return groupMember;
-			}
-		}
-	}
+            /// <summary>
+            /// Builds and returns the GroupMember object.
+            /// </summary>
+            /// <returns>the GroupMember object</returns>
+            public GroupMember Build()
+            {
+                GroupMember groupMember = new GroupMember
+                {
+                    Email = this.email
+                };
+                return groupMember;
+            }
+        }
+    }
 }

@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -20,34 +20,34 @@ using System.Runtime.Serialization;
 
 namespace Smartsheet.Api.Models
 {
-	/// <summary>
-	/// Represents specific elements that can be copied from a Template or Sheet into a new Sheet.
-	/// </summary>
-	public enum TemplateInclusion
-	{
-		/// <summary>
-		/// Includes the data.
-		/// </summary>
-		DATA,
+    /// <summary>
+    /// Represents specific elements that can be copied from a Template or Sheet into a new Sheet.
+    /// </summary>
+    public enum TemplateInclusion
+    {
+        /// <summary>
+        /// Includes the data.
+        /// </summary>
+        DATA,
 
-		/// <summary>
-		/// Includes the attachments.
-		/// </summary>
-		ATTACHMENTS,
+        /// <summary>
+        /// Includes the attachments.
+        /// </summary>
+        ATTACHMENTS,
 
-		/// <summary>
-		/// Includes the discussions.
-		/// </summary>
-		DISCUSSIONS,
+        /// <summary>
+        /// Includes the discussions.
+        /// </summary>
+        DISCUSSIONS,
 
-		/// <summary>
-		/// Includes the cell links.
-		/// </summary>
-		CELL_LINKS,
+        /// <summary>
+        /// Includes the cell links.
+        /// </summary>
+        CELL_LINKS,
 
-		/// <summary>
-		/// Includes the forms.
-		/// </summary>
-		FORMS
-	}
+        /// <summary>
+        /// Includes the forms.
+        /// </summary>
+        FORMS
+    }
 }

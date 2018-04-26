@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -18,48 +18,73 @@
 
 namespace Smartsheet.Api
 {
+    using Error = Api.Models.Error;
 
+    /// <summary>
+    /// <para>This is the exception to indicate errors (Error objects of Smartsheet REST API) returned from Smartsheet REST API.</para>
+    /// 
+    /// <para>Thread safety: Exceptions are not thread safe.</para>
+    /// </summary>
+    public class SmartsheetRestException : SmartsheetException
+    {
+        /// <summary>
+        /// <para>Represents the error Code.</para>
+        /// 
+        /// <para>It will be initialized in constructor and will not change afterwards.</para>
+        /// </summary>
+        private readonly int? errorCode;
 
-	using Error = Api.Models.Error;
+        /// <summary>
+        /// <para>Represents the reference ID.</para>
+        /// 
+        /// <para>It will be initialized in constructor and will not change afterwards.</para>
+        /// </summary>
+        private readonly string refId;
 
-	/// <summary>
-	/// <para>This is the exception To indicate errors (Error objects of Smartsheet REST API) returned from Smartsheet REST API.</para>
-	/// 
-	/// <para>Thread safety: Exceptions are not thread safe.</para>
-	/// </summary>
-	public class SmartsheetRestException : SmartsheetException
-	{
+        /// <summary>
+        /// <para>Represents any error detail provided by the API</para>
+        /// 
+        /// <para>It will be initialized in constructor and will not change afterwards.</para>
+        /// </summary>
+        private readonly object detail;
 
+        /// <summary>
+        /// <para>Constructor.</para>
+        /// </summary>
+        /// <param name="error"> the Error object from Smartsheet REST API </param>
+        public SmartsheetRestException(Error error) : base(error.Message)
+        {
+            errorCode = error.ErrorCode;
+            refId = error.RefId;
+            detail = error.Detail;
+        }
 
-		/// <summary>
-		/// <para>Represents the error Code.</para>
-		/// 
-		/// <para>It will be initialized in constructor and will not change afterwards.</para>
-		/// </summary>
-		private readonly int? errorCode;
+        /// <summary>
+        /// <para>Returns the error Code.</para>
+        /// </summary>
+        /// <returns> the error Code </returns>
+        public int? ErrorCode
+        {
+            get { return this.errorCode; }
+        }
 
-		/// <summary>
-		/// <para>Constructor.</para>
-		/// </summary>
-		/// <param name="error"> the Error object from Smartsheet REST API </param>
-		public SmartsheetRestException(Error error) : base(error.Message)
-		{
-				errorCode = error.ErrorCode;
-		}
+        /// <summary>
+        /// <para>Returns the refId.</para>
+        /// </summary>
+        /// <returns> the refId </returns>
+        public string RefId
+        {
+            get { return this.refId; }
+        }
 
-
-
-		/// <summary>
-		/// <para>Returns the error Code.</para>
-		/// </summary>
-		/// <returns> the error Code </returns>
-		public virtual int? ErrorCode
-		{
-			get
-			{
-				return this.errorCode;
-			}
-		}
-	}
+        /// <summary>
+        /// <para>Returns the error detail</para>
+        /// </summary>
+        /// <returns> the error detail </returns>
+        public object Detail
+        {
+            get { return this.detail; }
+        }
+    }
 
 }

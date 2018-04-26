@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -23,248 +23,181 @@ using System.Text;
 
 namespace Smartsheet.Api.Models
 {
-	/// <summary>
-	/// Represents the widget object. </summary>
-	/// <seealso href="http://smartsheet-platform.github.io/api-docs/#widget-object">Widget Object Help</seealso>
-	public class Widget : IdentifiableModel
-	{
-		/// <summary>
-		/// Type of widget
-		/// </summary>
-		private WidgetType type;
+    /// <summary>
+    /// Represents the widget object. </summary>
+    /// <seealso href="http://smartsheet-platform.github.io/api-docs/#widget-object">Widget Object Help</seealso>
+    public class Widget : IdentifiableModel
+    {
+        /// <summary>
+        /// Type of widget
+        /// </summary>
+        private WidgetType type;
 
-		/// <summary>
-		/// (Optional) Title of the widget
-		/// </summary>
-		private string title;
+        /// <summary>
+        /// Data that specifies the contents of the widget. _Note: the type of WidgetContent object (and attributes within) will depend on the value of Widget.type:
+        /// CELLLINK - CellLinkWidgetContent
+        /// SHEETSUMMARY - CellLinkWidgetContent
+        /// RICHTEXT - RichTextWidgetContent
+        /// SHORTCUTICON - ShortcutWidgetContent
+        /// SHORTCUTLIST - ShortcutWidgetContent
+        /// GRIDGANTT - ReportWidgetContent
+        /// IMAGE - ImageWidgetContent
+        /// </summary>
+        WidgetContent contents;
 
-		/// <summary>
-		/// True indicates that the client should display the widget title. Note that this is independent of the “title” string which may be null or empty.
-		/// </summary>
-		private bool? showTitle;
+        /// <summary>
+        /// Number of Rows that the widget occupies on the Sight
+        /// </summary>
+        private int? height;
 
-		/// <summary>
-		/// True indicates that the client should display the Sheet icon in the widget title
-		/// </summary>
-		private bool? showTitleIcon;
+        /// <summary>
+        /// True indicates that the client should display the widget title. Note that this is independent of the “title” string which may be null or empty.
+        /// </summary>
+        private bool? showTitle;
 
-		/// <summary>
-		/// FormatDescriptor
-		/// </summary>
-		private string titleFormat;
+        /// <summary>
+        /// True indicates that the client should display the Sheet icon in the widget title
+        /// </summary>
+        private bool? showTitleIcon;
 
-		/// <summary>
-		/// X-coordinate of widget’s position on the Sight
-		/// </summary>
-		private int? xPosition;
+        /// <summary>
+        /// (Optional) Title of the widget
+        /// </summary>
+        private string title;
 
-		/// <summary>
-		/// Y-coordinate of widget’s position on the Sight
-		/// </summary>
-		private int? yPosition;
+        /// <summary>
+        /// FormatDescriptor
+        /// </summary>
+        private string titleFormat;
 
-		/// <summary>
-		/// Number of Rows that the widget occupies on the Sight
-		/// </summary>
-		private int? height;
+        /// <summary>
+        /// Widget version number
+        /// </summary>
+        private int? version;
 
-		/// <summary>
-		/// Number of Columns that the widget occupies on the Sight
-		/// </summary>
-		private int? width;
+        /// <summary>
+        /// Number of Columns that the widget occupies on the Sight
+        /// </summary>
+        private int? width;
 
-		/// <summary>
-		/// Widget version number
-		/// </summary>
-		private int? version;
+        /// <summary>
+        /// X-coordinate of widget’s position on the Sight
+        /// </summary>
+        private int? xPosition;
 
-		/// <summary>
-		/// Data that specifies the contents of the widget. _Note: the type of WidgetContent object (and attributes within) will depend on the value of Widget.type:
-		/// CELLLINK - CellLinkWidgetContent
-		/// SHEETSUMMARY - CellLinkWidgetContent
-		/// RICHTEXT - RichTextWidgetContent
-		/// SHORTCUTICON - ShortcutWidgetContent
-		/// SHORTCUTLIST - ShortcutWidgetContent
-		/// GRIDGANTT - ReportWidgetContent
-		/// IMAGE - ImageWidgetContent
-		/// </summary>
-		WidgetContent contents;
+        /// <summary>
+        /// Y-coordinate of widget’s position on the Sight
+        /// </summary>
+        private int? yPosition;
 
-		/// <summary>
-		/// Get the Type of widget.
-		/// </summary>
-		/// <returns> the WidgetType </returns>
-		public virtual WidgetType Type
-		{
-			get
-			{
-				return type;
-			}
-			set
-			{
-				this.type = value;
-			}
-		}
+        /// <summary>
+        /// Get the Type of widget.
+        /// </summary>
+        /// <returns> the WidgetType </returns>
+        public WidgetType Type
+        {
+            get { return type; }
+            set { type = value; }
+        }
 
-		/// <summary>
-		/// (Optional) Title of the widget.
-		/// </summary>
-		/// <returns> the Title </returns>
-		public virtual string Title
-		{
-			get
-			{
-				return title;
-			}
-			set
-			{
-				this.title = value;
-			}
-		}
+        /// <summary>
+        /// Get the data that specifies the contents of the widget. 
+        /// See description of contents variable for valid objects.
+        /// </summary>
+        /// <returns> the contents </returns>
+        public WidgetContent Contents
+        {
+            get { return contents; }
+            set { contents = value; }
+        }
 
-		/// <summary>
-		/// True indicates that the client should display the widget title. Note that this is independent of the “title” string which may be null or empty.
-		/// </summary>
-		/// <returns> the showTitle flag </returns>
-		public virtual bool? ShowTitle
-		{
-			get
-			{
-				return showTitle;
-			}
-			set
-			{
-				this.showTitle = value;
-			}
-		}
+        /// <summary>
+        /// Number of Rows that the widget occupies on the Sight.
+        /// </summary>
+        /// <returns> the Height </returns>
+        public int? Height
+        {
+            get { return height; }
+            set { height = value; }
+        }
 
-		/// <summary>
-		/// True indicates that the client should display the Sheet icon in the widget title.
-		/// </summary>
-		/// <returns> the showTitleIcon flag </returns>
-		public virtual bool? ShowTitleIcon
-		{
-			get
-			{
-				return showTitleIcon;
-			}
-			set
-			{
-				this.showTitleIcon = value;
-			}
-		}
+        /// <summary>
+        /// True indicates that the client should display the widget title. Note that this is independent of the “title” string which may be null or empty.
+        /// </summary>
+        /// <returns> the showTitle flag </returns>
+        public bool? ShowTitle
+        {
+            get { return showTitle; }
+            set { showTitle = value; }
+        }
 
-		/// <summary>
-		/// The title format FormatDescriptor string.
-		/// </summary>
-		/// <returns> the FormatDescriptor </returns>
-		public virtual string TitleFormat
-		{
-			get
-			{
-				return titleFormat;
-			}
-			set
-			{
-				this.titleFormat = value;
-			}
-		}
+        /// <summary>
+        /// True indicates that the client should display the Sheet icon in the widget title.
+        /// </summary>
+        /// <returns> the showTitleIcon flag </returns>
+        public bool? ShowTitleIcon
+        {
+            get { return showTitleIcon; }
+            set { showTitleIcon = value; }
+        }
 
-		/// <summary>
-		/// X-coordinate of widget’s position on the Sight.
-		/// </summary>
-		/// <returns> the xPosition </returns>
-		public virtual int? XPosition
-		{
-			get
-			{
-				return xPosition;
-			}
-			set
-			{
-				this.xPosition = value;
-			}
-		}
+        /// <summary>
+        /// (Optional) Title of the widget.
+        /// </summary>
+        /// <returns> the Title </returns>
+        public string Title
+        {
+            get { return title; }
+            set { title = value; }
+        }
 
-		/// <summary>
-		/// Y-coordinate of widget’s position on the Sight.
-		/// </summary>
-		/// <returns> the yPosition </returns>
-		public virtual int? YPosition
-		{
-			get
-			{
-				return yPosition;
-			}
-			set
-			{
-				this.yPosition = value;
-			}
-		}
+        /// <summary>
+        /// The title format FormatDescriptor string.
+        /// </summary>
+        /// <returns> the FormatDescriptor </returns>
+        public string TitleFormat
+        {
+            get { return titleFormat; }
+            set { titleFormat = value; }
+        }
 
-		/// <summary>
-		/// Number of Rows that the widget occupies on the Sight.
-		/// </summary>
-		/// <returns> the Height </returns>
-		public virtual int? Height
-		{
-			get
-			{
-				return height;
-			}
-			set
-			{
-				this.height = value;
-			}
-		}
+        /// <summary>
+        /// Widget version number.
+        /// </summary>
+        /// <returns> the Version </returns>
+        public int? Version
+        {
+            get { return version; }
+            set { version = value; }
+        }
+        /// <summary>
+        /// Number of Columns that the widget occupies on the Sight.
+        /// </summary>
+        /// <returns> the Width </returns>
+        public int? Width
+        {
+            get { return width; }
+            set { width = value; }
+        }
 
-		/// <summary>
-		/// Number of Columns that the widget occupies on the Sight.
-		/// </summary>
-		/// <returns> the Width </returns>
-		public virtual int? Width
-		{
-			get
-			{
-				return width;
-			}
-			set
-			{
-				this.width = value;
-			}
-		}
+        /// <summary>
+        /// X-coordinate of widget’s position on the Sight.
+        /// </summary>
+        /// <returns> the xPosition </returns>
+        public int? XPosition
+        {
+            get { return xPosition; }
+            set { xPosition = value; }
+        }
 
-		/// <summary>
-		/// Widget version number.
-		/// </summary>
-		/// <returns> the Version </returns>
-		public virtual int? Version
-		{
-			get
-			{
-				return version;
-			}
-			set
-			{
-				this.version = value;
-			}
-		}
-
-		/// <summary>
-		/// Get the data that specifies the contents of the widget. 
-		/// See description of contents variable for valid objects.
-		/// </summary>
-		/// <returns> the contents </returns>
-		public virtual WidgetContent Contents
-		{
-			get
-			{
-				return contents;
-			}
-			set
-			{
-				this.contents = value;
-			}
-		}
-	}
+        /// <summary>
+        /// Y-coordinate of widget’s position on the Sight.
+        /// </summary>
+        /// <returns> the yPosition </returns>
+        public int? YPosition
+        {
+            get { return yPosition; }
+            set { yPosition = value; }
+        }
+    }
 }

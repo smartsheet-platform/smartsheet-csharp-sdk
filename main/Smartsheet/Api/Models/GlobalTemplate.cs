@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -18,23 +18,13 @@
 
 namespace Smartsheet.Api.Models
 {
-
-	/// <summary>
-	/// Type of global template. </summary>
-	/// <seealso href="http://smartsheet-platform.github.io/api-docs/#template-object">Template Object Help</seealso>
-	public enum GlobalTemplate
-	{
-		/// <summary>
-		/// Blank sheet
-		/// </summary>
-		BLANK_SHEET,
-		/// <summary>
-		/// Task list
-		/// </summary>
-		TASK_LIST,
-		/// <summary>
-		/// Project sheet
-		/// </summary>
-		PROJECT_SHEET
-	}
+    /// <summary>
+    /// Type of global template. </summary>
+    /// <seealso href="http://smartsheet-platform.github.io/api-docs/#template-object">Template Object Help</seealso>
+    public enum GlobalTemplate
+    {
+        BLANK_SHEET,
+        TASK_LIST,
+        PROJECT_SHEET
+    }
 }

@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -18,42 +18,51 @@
 
 namespace Smartsheet.Api.Models
 {
-	/// <summary>
-	/// A user profile object.
-	/// </summary>
-	public class UserProfile : UserModel
-	{
-		private string timeZone;
+    /// <summary>
+    /// A user profile object.
+    /// </summary>
+    public class UserProfile : UserModel
+    {
+        /// <summary>
+        /// account details
+        /// </summary>
+        private Account account;
 
-		private string locale;
+        /// <summary>
+        /// the user's locale
+        /// </summary>
+        private string locale;
 
-		private Account account;
+        /// <summary>
+        /// user's current timezone id
+        /// </summary>
+        private string timeZone;
 
-		/// <summary>
-		/// Current user’s time zone ID
-		/// </summary>
-		public string TimeZone
-		{
-			get { return timeZone; }
-			set { timeZone = value; }
-		}
+        /// <summary>
+        /// Account object representing the current user’s customer account
+        /// </summary>
+        public Account Account
+        {
+            get { return account; }
+            set { account = value; }
+        }
 
-		/// <summary>
-		/// Current user’s locale (see Server Information)
-		/// </summary>
-		public string Locale
-		{
-			get { return locale; }
-			set { locale = value; }
-		}
+        /// <summary>
+        /// Current user’s locale (see Server Information)
+        /// </summary>
+        public string Locale
+        {
+            get { return locale; }
+            set { locale = value; }
+        }
 
-		/// <summary>
-		/// Account object representing the current user’s customer account
-		/// </summary>
-		public Account Account
-		{
-			get { return account; }
-			set { account = value; }
-		}
-	}
+        /// <summary>
+        /// Current user’s time zone ID
+        /// </summary>
+        public string TimeZone
+        {
+            get { return timeZone; }
+            set { timeZone = value; }
+        }
+    }
 }

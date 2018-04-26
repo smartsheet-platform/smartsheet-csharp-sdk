@@ -7,90 +7,88 @@ using System.Configuration;
 
 namespace IntegrationTestSDK
 {
-	using NUnit.Framework;
+    [TestClass]
+    public class RowResourcesDeleteSendTest
+    {
+        [TestMethod]
+        public void TestRowDeleteSendResources()
+        {
+            SmartsheetClient smartsheet = new SmartsheetBuilder().SetMaxRetryTimeout(30000).Build();
 
-	public class RowResourcesDeleteSendTest
-	{
-		[Test]
-		public void TestRowDeleteSendResources()
-		{
-			string accessToken = ConfigurationManager.AppSettings["accessToken"];
+            long templateId = smartsheet.TemplateResources.ListPublicTemplates(null).Data[0].Id.Value;
 
-			SmartsheetClient smartsheet = new SmartsheetBuilder().SetAccessToken(accessToken).Build();
+            long sheetId = CreateSheetFromTemplate(smartsheet, templateId);
 
-			long templateId = smartsheet.TemplateResources.ListPublicTemplates(null).Data[0].Id.Value;
+            PaginatedResult<Column> columnsResult = smartsheet.SheetResources.ColumnResources.ListColumns(sheetId, null, null);
+            long columnId = columnsResult.Data[0].Id.Value;
 
-			long sheetId = CreateSheetFromTemplate(smartsheet, templateId);
+            Cell[] cellsToAdd = new Cell[] { new Cell.AddCellBuilder(columnId, true).SetValue("hello").SetStrict(false).Build() };
 
-			PaginatedResult<Column> columnsResult = smartsheet.SheetResources.ColumnResources.ListColumns(sheetId, null, null);
-			long columnId = columnsResult.Data[0].Id.Value;
+            IList<long> rowIds = AddRows(smartsheet, sheetId, columnId, cellsToAdd);
 
-			Cell[] cellsToAdd = new Cell[] { new Cell.AddCellBuilder(columnId, true).SetValue("hello").SetStrict(false).Build() };
+            MultiRowEmail multiEmail = new MultiRowEmail
+            {
+                RowIds = rowIds,
+                IncludeAttachments = true,
+                IncludeDiscussions = true,
+                SendTo = new Recipient[]
+                {
+                    new Recipient
+                    {
+                        Email = "eric.yan@smartsheet.com"
+                    }
+                },
+                Subject = "hello",
+                Message = "tada"
+            };
+            smartsheet.SheetResources.RowResources.SendRows(sheetId, multiEmail);
 
-			IList<long> rowIds = AddRows(smartsheet, sheetId, columnId, cellsToAdd);
+            DeleteRows(smartsheet, sheetId, rowIds);
 
-			MultiRowEmail multiEmail = new MultiRowEmail
-			{
-				RowIds = rowIds,
-				IncludeAttachments = true,
-				IncludeDiscussions = true,
-				SendTo = new Recipient[]
-				{
-					new Recipient
-					{
-						Email = "eric.yan@smartsheet.com"
-					}
-				},
-				Subject = "hello",
-				Message = "tada"
-			};
-			smartsheet.SheetResources.RowResources.SendRows(sheetId, multiEmail);
+            smartsheet.SheetResources.DeleteSheet(sheetId);
 
-			DeleteRows(smartsheet, sheetId, rowIds);
+        }
 
-			smartsheet.SheetResources.DeleteSheet(sheetId);
+        private static void DeleteRows(SmartsheetClient smartsheet, long sheetId, IList<long> rowIds)
+        {
 
-		}
+            IList<long> rowsDeleted = smartsheet.SheetResources.RowResources.DeleteRows(sheetId, rowIds, false);
+            Assert.IsTrue(rowsDeleted.Contains(rowIds[0]));
+            Assert.IsTrue(rowsDeleted.Contains(rowIds[1]));
+            Assert.IsTrue(rowsDeleted.Contains(rowIds[2]));
 
-		private static void DeleteRows(SmartsheetClient smartsheet, long sheetId, IList<long> rowIds)
-		{
+        }
 
-			IList<long> rowsDeleted = smartsheet.SheetResources.RowResources.DeleteRows(sheetId, rowIds, false);
-			Assert.IsTrue(rowsDeleted.Contains(rowIds[0]));
-			Assert.IsTrue(rowsDeleted.Contains(rowIds[1]));
-			Assert.IsTrue(rowsDeleted.Contains(rowIds[2]));
+        private static void CopyRowToCreatedSheet(SmartsheetClient smartsheet, long sheetId, long rowId)
+        {
+            long tempSheetId = smartsheet.SheetResources.CreateSheet(new Sheet.CreateSheetBuilder("tempSheet", new Column[] { new Column.CreateSheetColumnBuilder("col1", true, ColumnType.TEXT_NUMBER).Build() }).Build()).Id.Value;
+            CopyOrMoveRowDestination destination = new CopyOrMoveRowDestination { SheetId = tempSheetId };
+            CopyOrMoveRowDirective directive = new CopyOrMoveRowDirective { RowIds = new long[] { rowId }, To = destination };
+            CopyOrMoveRowResult result = smartsheet.SheetResources.RowResources.CopyRowsToAnotherSheet(sheetId, directive, new CopyRowInclusion[] { CopyRowInclusion.CHILDREN }, false);
+            smartsheet.SheetResources.DeleteSheet(tempSheetId);
+        }
 
-		}
+        private static IList<long> AddRows(SmartsheetClient smartsheet, long sheetId, long columnId, Cell[] cellsToAdd)
+        {
+            Row row1 = new Row.AddRowBuilder(true, null, null, null, null).SetCells(cellsToAdd).Build();
+            Row row2 = new Row.AddRowBuilder(true, null, null, null, null).SetCells(cellsToAdd).Build();
+            Row row3 = new Row.AddRowBuilder(true, null, null, null, null).SetCells(cellsToAdd).Build();
 
-		private static void CopyRowToCreatedSheet(SmartsheetClient smartsheet, long sheetId, long rowId)
-		{
-			long tempSheetId = smartsheet.SheetResources.CreateSheet(new Sheet.CreateSheetBuilder("tempSheet", new Column[] { new Column.CreateSheetColumnBuilder("col1", true, ColumnType.TEXT_NUMBER).Build() }).Build()).Id.Value;
-			CopyOrMoveRowDestination destination = new CopyOrMoveRowDestination { SheetId = tempSheetId };
-			CopyOrMoveRowDirective directive = new CopyOrMoveRowDirective { RowIds = new long[] { rowId }, To = destination };
-			CopyOrMoveRowResult result = smartsheet.SheetResources.RowResources.CopyRowsToAnotherSheet(sheetId, directive, new CopyRowInclusion[] { CopyRowInclusion.CHILDREN }, false);
-		}
-
-		private static IList<long> AddRows(SmartsheetClient smartsheet, long sheetId, long columnId, Cell[] cellsToAdd)
-		{
-			Row row1 = new Row.AddRowBuilder(true, null, null, null, null).SetCells(cellsToAdd).Build();
-			Row row2 = new Row.AddRowBuilder(true, null, null, null, null).SetCells(cellsToAdd).Build();
-			Row row3 = new Row.AddRowBuilder(true, null, null, null, null).SetCells(cellsToAdd).Build();
-
-			IList<Row> rows = smartsheet.SheetResources.RowResources.AddRows(sheetId, new Row[] { row1, row2, row3 });
-			IList<long> rowIds = new List<long>();
-			foreach (Row row in rows)
-			{
-				rowIds.Add(row.Id.Value);
-			}
-			return rowIds;
-		}
+            IList<Row> rows = smartsheet.SheetResources.RowResources.AddRows(sheetId, new Row[] { row1, row2, row3 });
+            IList<long> rowIds = new List<long>();
+            foreach (Row row in rows)
+            {
+                rowIds.Add(row.Id.Value);
+            }
+            return rowIds;
+        }
 
 
-		private static long CreateSheetFromTemplate(SmartsheetClient smartsheet, long templateId)
-		{
-			// Create a new sheet off of that template.
-			Sheet newSheet = smartsheet.SheetResources.CreateSheetFromTemplate(new Sheet.CreateSheetFromTemplateBuilder("New Sheet", templateId).Build(), new TemplateInclusion[] { TemplateInclusion.DATA });
-			return newSheet.Id.Value;
-		}
-	}
+        private static long CreateSheetFromTemplate(SmartsheetClient smartsheet, long templateId)
+        {
+            // Create a new sheet off of that template.
+            Sheet newSheet = smartsheet.SheetResources.CreateSheetFromTemplate(new Sheet.CreateSheetFromTemplateBuilder("New Sheet", templateId).Build(), new TemplateInclusion[] { TemplateInclusion.DATA });
+            return newSheet.Id.Value;
+        }
+    }
 }

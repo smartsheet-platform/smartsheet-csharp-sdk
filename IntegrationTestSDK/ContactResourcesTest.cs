@@ -6,20 +6,16 @@ using System.Configuration;
 
 namespace IntegrationTestSDK
 {
-	using NUnit.Framework;
-
-	public class ContactResourcesTest
-	{
-
-		[Test]
-		public void TestContactResources()
-		{
-			string accessToken = ConfigurationManager.AppSettings["accessToken"];
-
-			SmartsheetClient smartsheet = new SmartsheetBuilder().SetAccessToken(accessToken).Build();
-			
-			PaginatedResult<Contact> contactResults = smartsheet.ContactResources.ListContacts(null);
-			Assert.IsTrue(contactResults.TotalCount >= 0);
-		}
-	}
+    [TestClass]
+    public class ContactResourcesTest
+    {
+        [TestMethod]
+        public void TestContactResources()
+        {
+            SmartsheetClient smartsheet = new SmartsheetBuilder().SetMaxRetryTimeout(30000).Build();
+            
+            PaginatedResult<Contact> contactResults = smartsheet.ContactResources.ListContacts(null);
+            Assert.IsTrue(contactResults.TotalCount >= 0);
+        }
+    }
 }

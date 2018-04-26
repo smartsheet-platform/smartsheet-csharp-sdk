@@ -9,110 +9,104 @@ using System.Diagnostics;
 
 namespace IntegrationTestSDK
 {
-	using NUnit.Framework;
+    [TestClass]
+    public class TokenResourcesTest
+    {
+        [Ignore]
+        [TestMethod]
+        public void TestTokenResources()
+        {
+            UseOAuthFlow();
+            UseTokenResources();
+        }
 
-	public class TokenResourcesTest
-	{
+        private static void UseOAuthFlow()
+        {
+            OAuthFlow oauth = new OAuthFlowBuilder()
+                     .SetClientId("1tziajulcsbqsswgy37")
+                     .SetClientSecret("sxouqll7zluvzmact3")
+                     .SetRedirectURL("https://www.google.com")
+                     .Build();
 
-		[Test]
-		public void TestTokenResources()
-		{
+            string url = oauth.NewAuthorizationURL
+            (
+                new Smartsheet.Api.OAuth.AccessScope[]
+                {
+                    Smartsheet.Api.OAuth.AccessScope.READ_SHEETS,
+                    Smartsheet.Api.OAuth.AccessScope.WRITE_SHEETS,
+                    Smartsheet.Api.OAuth.AccessScope.SHARE_SHEETS,
+                    Smartsheet.Api.OAuth.AccessScope.DELETE_SHEETS,
+                    Smartsheet.Api.OAuth.AccessScope.CREATE_SHEETS,
+                    Smartsheet.Api.OAuth.AccessScope.READ_USERS,
+                    Smartsheet.Api.OAuth.AccessScope.ADMIN_USERS,
+                    Smartsheet.Api.OAuth.AccessScope.ADMIN_SHEETS,
+                    Smartsheet.Api.OAuth.AccessScope.ADMIN_WORKSPACES,
+                },
+                "key=Test"
+            );
 
-			//UseOAuthFlow();
-			//UseTokenResources();
+            // Take the user to the following URL
+            Debug.WriteLine(url);
 
-		}
+            // After the user accepts or declines the authorization they are taken to the redirect URL. The URL of the page
+            // the user is taken to can be used to generate an authorization RequestResult object.
+            string authorizationResponseURL = "https://www.google.com/?code=yn8kl1kvruh31uj&expires_in=599957&state=key%3DTest";
 
-		private static void UseOAuthFlow()
-		{
-			OAuthFlow oauth = new OAuthFlowBuilder()
-					 .SetClientId("1tziajulcsbqsswgy37")
-					 .SetClientSecret("sxouqll7zluvzmact3")
-					 .SetRedirectURL("https://www.google.com")
-					 .Build();
+            // On this page pass in the full URL of the page to create an authorizationResult object  
+            AuthorizationResult authResult = oauth.ExtractAuthorizationResult(authorizationResponseURL);
 
-			string url = oauth.NewAuthorizationURL
-			(
-				new Smartsheet.Api.OAuth.AccessScope[]
-				{
-					Smartsheet.Api.OAuth.AccessScope.READ_SHEETS,
-					Smartsheet.Api.OAuth.AccessScope.WRITE_SHEETS,
-					Smartsheet.Api.OAuth.AccessScope.SHARE_SHEETS,
-					Smartsheet.Api.OAuth.AccessScope.DELETE_SHEETS,
-					Smartsheet.Api.OAuth.AccessScope.CREATE_SHEETS,
-					Smartsheet.Api.OAuth.AccessScope.READ_USERS,
-					Smartsheet.Api.OAuth.AccessScope.ADMIN_USERS,
-					Smartsheet.Api.OAuth.AccessScope.ADMIN_SHEETS,
-					Smartsheet.Api.OAuth.AccessScope.ADMIN_WORKSPACES,
-				},
-				"key=Test"
-			);
+            // Get the token from the authorization result
+            Token token = oauth.ObtainNewToken(authResult);
 
+            Assert.IsTrue(token.AccessToken == "ACCESS_TOKEN");
 
-			// Take the user to the following URL
-			Debug.WriteLine(url);
+            Token tokenRefreshed = oauth.RefreshToken(token);
+            Assert.IsTrue(token.AccessToken != "ACCESS_TOKEN");
 
-			// After the user accepts or declines the authorization they are taken to the redirect URL. The URL of the page
-			// the user is taken to can be used to generate an authorization RequestResult object.
-			string authorizationResponseURL = "https://www.google.com/?code=yn8kl1kvruh31uj&expires_in=599957&state=key%3DTest";
+            oauth.RevokeToken(token);
+            SmartsheetClient smartsheet = new SmartsheetBuilder().SetAccessToken(token.AccessToken).Build();
+            try
+            {
+                smartsheet.SheetResources.ListSheets(null, null);
+                Assert.Fail();
+            }
+            catch
+            {
 
-			// On this page pass in the full URL of the page to create an authorizationResult object  
-			AuthorizationResult authResult = oauth.ExtractAuthorizationResult(authorizationResponseURL);
+            }
+        }
 
-			// Get the token from the authorization result
-			Token token = oauth.ObtainNewToken(authResult);
+        private static void UseTokenResources()
+        {
+            SmartsheetClient smartsheet = new SmartsheetBuilder().SetMaxRetryTimeout(30000).Build();
+            try
+            {
+                smartsheet.TokenResources.GetAccessToken();
+                Assert.Fail();
+            }
+            catch
+            {
 
-			Assert.IsTrue(token.AccessToken == "ACCESS_TOKEN");
+            }
+            try
+            {
+                smartsheet.TokenResources.RefreshAccessToken();
+                Assert.Fail();
+            }
+            catch
+            {
 
-			Token tokenRefreshed = oauth.RefreshToken(token);
-			Assert.IsTrue(token.AccessToken != "ACCESS_TOKEN");
+            }
+            smartsheet.TokenResources.RevokeAccessToken();
+            try
+            {
+                smartsheet.SheetResources.ListSheets(null, null);
+                Assert.Fail();
+            }
+            catch
+            {
 
-			oauth.RevokeToken(token);
-			SmartsheetClient smartsheet = new SmartsheetBuilder().SetAccessToken(token.AccessToken).Build();
-			try
-			{
-				smartsheet.SheetResources.ListSheets(null, null);
-				Assert.Fail();
-			}
-			catch
-			{
-
-			}
-		}
-
-		private static void UseTokenResources()
-		{
-			string accessToken = ConfigurationManager.AppSettings["accessToken"];
-
-			SmartsheetClient smartsheet = new SmartsheetBuilder().SetAccessToken(accessToken).Build();
-			try
-			{
-				smartsheet.TokenResources.GetAccessToken();
-				Assert.Fail();
-			}
-			catch
-			{
-
-			}
-			try
-			{
-				smartsheet.TokenResources.RefreshAccessToken();
-				Assert.Fail();
-			}
-			catch
-			{
-
-			}
-			smartsheet.TokenResources.RevokeAccessToken();
-			try
-			{
-				smartsheet.SheetResources.ListSheets(null, null);
-				Assert.Fail();
-			}
-			catch
-			{
-
-			}
-		}
-	}
+            }
+        }
+    }
 }

@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -23,15 +23,15 @@ using System.Text;
 
 namespace Smartsheet.Api.Models
 {
-	/// <summary>
-	/// The Cell object of a Report.
-	/// </summary>
-	public class ReportCell : Cell
-	{
-		/// <summary>
-		/// The virtualId of this cell's column.  virtualColumnId refers to this cell's parent column in this report, 
-		/// while columnId refers to the cell's parent column in its originating source sheet.
-		/// </summary>
-		public long? VirtualColumnId { get; set; }
-	}
+    /// <summary>
+    /// The Cell object of a Report.
+    /// </summary>
+    public class ReportCell : Cell
+    {
+        /// <summary>
+        /// The virtualId of this cell's column.  virtualColumnId refers to this cell's parent column in this report, 
+        /// while columnId refers to the cell's parent column in its originating source sheet.
+        /// </summary>
+        public long? VirtualColumnId { get; set; }
+    }
 }

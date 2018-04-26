@@ -9,7 +9,7 @@
 //        
 //            http://www.apache.org/licenses/LICENSE-2.0
 //        
-//    Unless required by applicable law or agreed To in writing, software
+//    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
@@ -20,146 +20,99 @@ using System.Collections.Generic;
 
 namespace Smartsheet.Api.Models
 {
+    /// <summary>
+    /// Represents the Home object. </summary>
+    /// <seealso href="http://help.Smartsheet.com/customer/portal/articles/522237-the-home-tab">Home Tab Help</seealso>
+    public class Home
+    {
+        /// <summary>
+        /// Represents the Folders in the home location.
+        /// </summary>
+        private IList<Folder> folders;
 
+        /// <summary>
+        /// Represents the Reports in the home location.
+        /// </summary>
+        private IList<Report> reports;
 
-	/// <summary>
-	/// Represents the Home object. </summary>
-	/// <seealso href="http://help.Smartsheet.com/customer/portal/articles/522237-the-home-tab">Home Tab Help</seealso>
-	public class Home
-	{
-		/// <summary>
-		/// Represents the Sheets in the home location.
-		/// </summary>
-		private IList<Sheet> sheets;
+        /// <summary>
+        /// Represents the Sheets in the home location.
+        /// </summary>
+        private IList<Sheet> sheets;
 
-		/// <summary>
-		/// Represents the Folders in the home location.
-		/// </summary>
-		private IList<Folder> folders;
+        /// <summary>
+        /// Represents the Sights in the home location
+        /// </summary>
+        private IList<Sight> sights;
 
-		// <summary>
-		// Represents the reports in the home location.
-		// </summary>
-		//TODO: implement reports
-		// private List<Report> reports;
+        /// <summary>
+        /// Represents the Templates in the home location.
+        /// </summary>
+        private IList<Template> templates;
 
-		/// <summary>
-		/// Represents the Templates in the home location.
-		/// </summary>
-		private IList<Template> templates;
+        /// <summary>
+        /// Represents the Workspaces in the home location.
+        /// </summary>
+        private IList<Workspace> workspaces;
 
-		/// <summary>
-		/// Represents the Reports in the home location.
-		/// </summary>
-		private IList<Report> reports;
+        /// <summary>
+        /// Gets the Folders in the home location.
+        /// </summary>
+        /// <returns> the Folders </returns>
+        public IList<Folder> Folders
+        {
+            get { return folders; }
+            set { folders = value; }
+        }
 
-		/// <summary>
-		/// Represents the Workspaces in the home location.
-		/// </summary>
-		private IList<Workspace> workspaces;
+        /// <summary>
+        /// Gets the Reports in the home location.
+        /// </summary>
+        /// <returns> the Templates </returns>
+        public IList<Report> Reports
+        {
+            get { return reports; }
+            set { reports = value; }
+        }
 
-		/// <summary>
-		/// Represents the Sights in the home location
-		/// </summary>
-		private IList<Sight> sights;
+        /// <summary>
+        /// Gets the Sheets in the home location.
+        /// </summary>
+        /// <returns> the Sheets </returns>
+        public IList<Sheet> Sheets
+        {
+            get { return sheets; }
+            set { sheets = value; }
+        }
 
-		/// <summary>
-		/// Gets the Sheets in the home location.
-		/// </summary>
-		/// <returns> the Sheets </returns>
-		public virtual IList<Sheet> Sheets
-		{
-			get
-			{
-				return sheets;
-			}
-			set
-			{
-				this.sheets = value;
-			}
-		}
+        /// <summary>
+        /// Gets the Sight in the home location.
+        /// </summary>
+        /// <returns> the Sight </returns>
+        public IList<Sight> Sights
+        {
+            get { return sights; }
+            set { sights = value; }
+        }
 
+        /// <summary>
+        /// Gets the Templates in the home location.
+        /// </summary>
+        /// <returns> the Templates </returns>
+        public IList<Template> Templates
+        {
+            get { return templates; }
+            set { templates = value; }
+        }
 
-		/// <summary>
-		/// Gets the Folders in the home location.
-		/// </summary>
-		/// <returns> the Folders </returns>
-		public virtual IList<Folder> Folders
-		{
-			get
-			{
-				return folders;
-			}
-			set
-			{
-				this.folders = value;
-			}
-		}
-
-
-		/// <summary>
-		/// Gets the Templates in the home location.
-		/// </summary>
-		/// <returns> the Templates </returns>
-		public virtual IList<Template> Templates
-		{
-			get
-			{
-				return templates;
-			}
-			set
-			{
-				this.templates = value;
-			}
-		}
-
-		/// <summary>
-		/// Gets the Reports in the home location.
-		/// </summary>
-		/// <returns> the Templates </returns>
-		public virtual IList<Report> Reports
-		{
-			get
-			{
-				return reports;
-			}
-			set
-			{
-				this.reports = value;
-			}
-		}
-
-		/// <summary>
-		/// Gets the Workspaces in the home location.
-		/// </summary>
-		/// <returns> the Workspaces </returns>
-		public virtual IList<Workspace> Workspaces
-		{
-			get
-			{
-				return workspaces;
-			}
-			set
-			{
-				this.workspaces = value;
-			}
-		}
-
-		/// <summary>
-		/// Gets the Sight in the home location.
-		/// </summary>
-		/// <returns> the Sight </returns>
-		public virtual IList<Sight> Sights
-		{
-			get
-			{
-				return sights;
-			}
-			set
-			{
-				this.sights = value;
-			}
-		}
-	}
-
+        /// <summary>
+        /// Gets the Workspaces in the home location.
+        /// </summary>
+        /// <returns> the Workspaces </returns>
+        public IList<Workspace> Workspaces
+        {
+            get { return workspaces; }
+            set { workspaces = value; }
+        }
+    }
 }
