@@ -101,7 +101,7 @@ namespace Smartsheet.Api.Internal.Http
         /// Exceptions: - IllegalArgumentException : if any argument is null
         /// </summary>
         /// <param name="httpClient"> the http client </param>
-        /// <param name="shouldRetryCallback">User-supplied retry implementation</param>
+        /// <param name="jsonSerializer"> custom JSON serializer </param>
         public DefaultHttpClient(RestClient httpClient, JsonSerializer jsonSerializer)
         {
             Util.ThrowIfNull(httpClient);
