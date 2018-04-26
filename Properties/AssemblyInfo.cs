@@ -29,7 +29,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Smartsheet")]
 [assembly: AssemblyProduct("Smartsheet_csharp_sdk.Properties")]
-[assembly: AssemblyCopyright("Copyright ©  2014-2017")]
+[assembly: AssemblyCopyright("Copyright ©  2014-2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: CLSCompliant(true)]
@@ -49,5 +49,5 @@ using System.Runtime.InteropServices;
 //      Build Number
 //      Revision
 //
-[assembly: AssemblyVersion("2.2.1.0")]
+[assembly: AssemblyVersion("2.3.0.0")]
 [assembly: AssemblyFileVersion("2.2.1.0")]
