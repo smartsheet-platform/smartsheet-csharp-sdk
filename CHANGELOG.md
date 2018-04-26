@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-## [2.2.2] - 2018-04-18
+## [2.3.0] - 2018-04-18
 ### Added
 - [Automation rules](http://smartsheet-platform.github.io/api-docs/?shell#automation-rules)
 - [Cross sheet references](http://smartsheet-platform.github.io/api-docs/?shell#cross-sheet-references)
