@@ -106,7 +106,7 @@ namespace Smartsheet.Api.Models
         public bool? ReadOnlyLiteEnabled
         {
             get { return readOnlyLiteEnabled; }
-            set { this.readOnlyLiteEnabled = value; }
+            set { readOnlyLiteEnabled = value; }
         }
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace Smartsheet.Api.Models
         public bool? ReadOnlyFullEnabled
         {
             get { return readOnlyFullEnabled; }
-            set { this.readOnlyFullEnabled = value; }
+            set { readOnlyFullEnabled = value; }
         }
         
         /// <summary>
@@ -126,7 +126,7 @@ namespace Smartsheet.Api.Models
         public bool? ReadWriteEnabled
         {
             get { return readWriteEnabled; }
-            set { this.readWriteEnabled = value; }
+            set { readWriteEnabled = value; }
         }
         
         /// <summary>
@@ -136,7 +136,7 @@ namespace Smartsheet.Api.Models
         public bool? IcalEnabled
         {
             get { return icalEnabled; }
-            set { this.icalEnabled = value; }
+            set { icalEnabled = value; }
         }
         
         /// <summary>
@@ -146,7 +146,7 @@ namespace Smartsheet.Api.Models
         public string ReadOnlyFullAccessibleBy
         {
             get { return readOnlyFullAccessibleBy; }
-            set { this.readOnlyFullAccessibleBy = value; }
+            set { readOnlyFullAccessibleBy = value; }
         }
         
         /// <summary>
@@ -156,7 +156,7 @@ namespace Smartsheet.Api.Models
         public string ReadWriteAccessibleBy
         {
             get { return readWriteAccessibleBy; }
-            set { this.readWriteAccessibleBy = value; }
+            set { readWriteAccessibleBy = value; }
         }
 
         /// <summary>
@@ -166,7 +166,7 @@ namespace Smartsheet.Api.Models
         public string ReadOnlyLiteUrl
         {
             get { return readOnlyLiteUrl; }
-            set { this.readOnlyLiteUrl = value; }
+            set { readOnlyLiteUrl = value; }
         }
         
         /// <summary>
@@ -176,7 +176,7 @@ namespace Smartsheet.Api.Models
         public string ReadOnlyFullUrl
         {
             get { return readOnlyFullUrl; }
-            set { this.readOnlyFullUrl = value;    }
+            set { readOnlyFullUrl = value;    }
         }
         
         /// <summary>
@@ -186,7 +186,7 @@ namespace Smartsheet.Api.Models
         public string ReadWriteUrl
         {
             get { return readWriteUrl; }
-            set { this.readWriteUrl = value; }
+            set { readWriteUrl = value; }
         }
         
         /// <summary>
@@ -196,7 +196,7 @@ namespace Smartsheet.Api.Models
         public string IcalUrl
         {
             get { return icalUrl; }
-            set { this.icalUrl = value; }
+            set { icalUrl = value; }
         }
         
         /// <summary>

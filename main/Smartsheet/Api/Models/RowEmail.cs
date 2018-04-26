@@ -61,7 +61,7 @@ namespace Smartsheet.Api.Models
         public bool? IncludeAttachments
         {
             get { return includeAttachments; }
-            set { this.includeAttachments = value; }
+            set { includeAttachments = value; }
         }
         
         /// <summary>
@@ -71,7 +71,7 @@ namespace Smartsheet.Api.Models
         public bool? IncludeDiscussions
         {
             get { return includeDiscussions; }
-            set { this.includeDiscussions = value; }
+            set { includeDiscussions = value; }
         }
         
         /// <summary>
@@ -81,7 +81,7 @@ namespace Smartsheet.Api.Models
         public string Layout
         {
             get { return layout; }
-            set { this.layout = value; }
+            set { layout = value; }
         }
     }
 }

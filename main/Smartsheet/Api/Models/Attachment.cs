@@ -104,7 +104,7 @@ namespace Smartsheet.Api.Models
         public string Url
         {
             get { return url; }
-            set { this.url = value; }
+            set { url = value; }
         }
 
         /// <summary>
@@ -114,7 +114,7 @@ namespace Smartsheet.Api.Models
         public long? UrlExpiresInMillis
         {
             get { return urlExpiresInMillis; }
-            set { this.urlExpiresInMillis = value; }
+            set { urlExpiresInMillis = value; }
         }
 
         /// <summary>
@@ -124,7 +124,7 @@ namespace Smartsheet.Api.Models
         public AttachmentType? AttachmentType
         {
             get { return attachmentType; }
-            set { this.attachmentType = value; }
+            set { attachmentType = value; }
         }
 
         /// <summary>
@@ -134,7 +134,7 @@ namespace Smartsheet.Api.Models
         public AttachmentSubType? AttachmentSubType
         {
             get { return attachmentSubType; }
-            set { this.attachmentSubType = value; }
+            set { attachmentSubType = value; }
         }
 
         /// <summary>
@@ -144,7 +144,7 @@ namespace Smartsheet.Api.Models
         public DateTime? CreatedAt
         {
             get { return createdAt; }
-            set { this.createdAt = value; }
+            set { createdAt = value; }
         }
 
         /// <summary>
@@ -154,7 +154,7 @@ namespace Smartsheet.Api.Models
         public string MimeType
         {
             get { return mimeType; }
-            set { this.mimeType = value; }
+            set { mimeType = value; }
         }
 
         /// <summary>
@@ -164,7 +164,7 @@ namespace Smartsheet.Api.Models
         public AttachmentParentType? ParentType
         {
             get { return parentType; }
-            set { this.parentType = value; }
+            set { parentType = value; }
         }
 
         /// <summary>
@@ -174,7 +174,7 @@ namespace Smartsheet.Api.Models
         public long? ParentId
         {
             get { return parentId; }
-            set { this.parentId = value; }
+            set { parentId = value; }
         }
 
         /// <summary>
@@ -184,7 +184,7 @@ namespace Smartsheet.Api.Models
         public long? SizeInKb
         {
             get { return sizeInKb; }
-            set { this.sizeInKb = value; }
+            set { sizeInKb = value; }
         }
 
         /// <summary>

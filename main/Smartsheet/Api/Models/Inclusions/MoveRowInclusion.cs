@@ -27,13 +27,7 @@ namespace Smartsheet.Api.Models
     [JsonConverter(typeof(StringEnumConverter))]
     public enum MoveRowInclusion
     {
-        /// <summary>
-        /// The attachments.
-        /// </summary>
         ATTACHMENTS,
-        /// <summary>
-        /// The discussions.
-        /// </summary>
         DISCUSSIONS
     }
 }

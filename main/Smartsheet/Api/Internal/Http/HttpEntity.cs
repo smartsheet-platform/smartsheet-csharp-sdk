@@ -57,7 +57,7 @@ namespace Smartsheet.Api.Internal.Http
         public string ContentType
         {
             get { return contentType; }
-            set { this.contentType = value; }
+            set { contentType = value; }
         }
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace Smartsheet.Api.Internal.Http
         public long ContentLength
         {
             get { return contentLength; }
-            set { this.contentLength = value; }
+            set { contentLength = value; }
         }
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace Smartsheet.Api.Internal.Http
         public byte[] Content
         {
             get { return content; }
-            set { this.content = value; }
+            set { content = value; }
         }
         
         /// <summary>

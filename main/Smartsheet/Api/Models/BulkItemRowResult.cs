@@ -55,7 +55,7 @@ namespace Smartsheet.Api.Models
         public int? ResultCode
         {
             get { return resultCode; }
-            set { this.resultCode = value; }
+            set { resultCode = value; }
         }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace Smartsheet.Api.Models
         public string Message
         {
             get { return message; }
-            set { this.message = value; }
+            set { message = value; }
         }
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace Smartsheet.Api.Models
         public IList<Row> Result
         {
             get { return result; }
-            set { this.result = value; }
+            set { result = value; }
         }
 
         /// <summary>
@@ -85,7 +85,7 @@ namespace Smartsheet.Api.Models
         public IList<BulkItemFailure> FailedItems
         {
             get { return failedItems; }
-            set { this.failedItems = value; }
+            set { failedItems = value; }
         }
     }
 }

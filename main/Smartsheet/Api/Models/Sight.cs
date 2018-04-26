@@ -80,7 +80,7 @@ namespace Smartsheet.Api.Models
         public int? ColumnCount
         {
             get { return columnCount; }
-            set { this.columnCount = value; }
+            set { columnCount = value; }
         }
 
         /// <summary>
@@ -90,7 +90,7 @@ namespace Smartsheet.Api.Models
         public IList<Widget> Widgets
         {
             get { return widgets; }
-            set { this.widgets = value; }
+            set { widgets = value; }
         }
 
         /// <summary>
@@ -100,7 +100,7 @@ namespace Smartsheet.Api.Models
         public Boolean? Favorite
         {
             get { return favorite; }
-            set { this.favorite = value; }
+            set { favorite = value; }
         }
 
         /// <summary>
@@ -111,7 +111,7 @@ namespace Smartsheet.Api.Models
         public AccessLevel? AccessLevel
         {
             get { return accessLevel; }
-            set { this.accessLevel = value; }
+            set { accessLevel = value; }
         }
 
         /// <summary>
@@ -121,7 +121,7 @@ namespace Smartsheet.Api.Models
         public string Permalink
         {
             get { return permalink; }
-            set { this.permalink = value; }
+            set { permalink = value; }
         }
 
         /// <summary>
@@ -131,7 +131,7 @@ namespace Smartsheet.Api.Models
         public DateTime? CreatedAt
         {
             get { return createdAt; }
-            set { this.createdAt = value; }
+            set { createdAt = value; }
         }
 
         /// <summary>
@@ -141,7 +141,7 @@ namespace Smartsheet.Api.Models
         public DateTime? ModifiedAt
         {
             get { return modifiedAt; }
-            set { this.modifiedAt = value; }
+            set { modifiedAt = value; }
         }
 
         /// <summary>
@@ -153,7 +153,7 @@ namespace Smartsheet.Api.Models
         public Workspace Workspace
         {
             get { return workspace; }
-            set { this.workspace = value; }
+            set { workspace = value; }
         }
 
         /// <summary>
@@ -163,7 +163,7 @@ namespace Smartsheet.Api.Models
         public string BackgroundColor
         {
             get { return backgroundColor; }
-            set { this.backgroundColor = value; }
+            set { backgroundColor = value; }
         }
     }
 }

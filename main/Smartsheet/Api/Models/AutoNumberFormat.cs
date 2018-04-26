@@ -47,7 +47,7 @@ namespace Smartsheet.Api.Models
         public string Prefix
         {
             get { return prefix; }
-            set { this.prefix = value; }
+            set { prefix = value; }
         }
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace Smartsheet.Api.Models
         public string Suffix
         {
             get { return suffix; }
-            set { this.suffix = value; }
+            set { suffix = value; }
         }
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace Smartsheet.Api.Models
         public string Fill
         {
             get { return fill; }
-            set { this.fill = value; }
+            set { fill = value; }
         }
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace Smartsheet.Api.Models
         public long? StartingNumber
         {
             get { return startingNumber; }
-            set { this.startingNumber = value; }
+            set { startingNumber = value; }
         }
     }
 }

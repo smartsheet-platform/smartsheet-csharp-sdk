@@ -71,7 +71,7 @@ namespace Smartsheet.Api.Models
         public string Label
         {
             get { return label; }
-            set { this.label = value; }
+            set { label = value; }
         }
 
         /// <summary>
@@ -81,7 +81,7 @@ namespace Smartsheet.Api.Models
         public string LabelFormat
         {
             get { return labelFormat; }
-            set { this.labelFormat = value; }
+            set { labelFormat = value; }
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace Smartsheet.Api.Models
         public object ObjectValue
         {
             get { return objectValue; }
-            set { this.objectValue = value; }
+            set { objectValue = value; }
         }
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace Smartsheet.Api.Models
         public Cell Cell
         {
             get { return cell; }
-            set { this.cell = value; }
+            set { cell = value; }
         }
 
         /// <summary>
@@ -111,7 +111,7 @@ namespace Smartsheet.Api.Models
         public string ValueFormat
         {
             get { return valueFormat; }
-            set { this.valueFormat = value; }
+            set { valueFormat = value; }
         }
 
         /// <summary>
@@ -121,7 +121,7 @@ namespace Smartsheet.Api.Models
         public int? Order
         {
             get { return order; }
-            set { this.order = value; }
+            set { order = value; }
         }
 
         /// <summary>
@@ -131,7 +131,7 @@ namespace Smartsheet.Api.Models
         public long? ColumnId
         {
             get { return columnId; }
-            set { this.columnId = value; }
+            set { columnId = value; }
         }
     }
 }

@@ -57,7 +57,7 @@ namespace Smartsheet.Api.Models
         public long? RowId
         {
             get { return rowId; }
-            set { this.rowId = value; }
+            set { rowId = value; }
         }
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace Smartsheet.Api.Models
         public int? RowNumber
         {
             get { return rowNumber; }
-            set { this.rowNumber = value; }
+            set { rowNumber = value; }
         }
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace Smartsheet.Api.Models
         public string Type
         {
             get { return type; }
-            set { this.type = value; }
+            set { type = value; }
         }
 
         /// <summary>
@@ -87,7 +87,7 @@ namespace Smartsheet.Api.Models
         public Duration Lag
         {
             get { return lag; }
-            set { this.lag = value; }
+            set { lag = value; }
         }
 
         /// <summary>
@@ -97,7 +97,7 @@ namespace Smartsheet.Api.Models
         public bool? Invalid
         {
             get { return invalid; }
-            set { this.invalid = value; }
+            set { invalid = value; }
         }
 
         /// <summary>
@@ -107,7 +107,7 @@ namespace Smartsheet.Api.Models
         public bool? InCriticalPath
         {
             get { return inCriticalPath; }
-            set { this.inCriticalPath = value; }
+            set { inCriticalPath = value; }
         }
     }
 }

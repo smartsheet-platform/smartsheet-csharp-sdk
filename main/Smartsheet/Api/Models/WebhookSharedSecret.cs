@@ -41,7 +41,7 @@ namespace Smartsheet.Api.Models
         public string SharedSecret
         {
             get { return sharedSecret; }
-            set { this.sharedSecret = value; }
+            set { sharedSecret = value; }
         }
     }
 }

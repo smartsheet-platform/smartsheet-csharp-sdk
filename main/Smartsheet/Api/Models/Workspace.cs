@@ -37,7 +37,7 @@ namespace Smartsheet.Api.Models
         public AccessLevel? AccessLevel
         {
             get { return accessLevel; }
-            set { this.accessLevel = value; }
+            set { accessLevel = value; }
         }
 
         /// <summary>
@@ -100,5 +100,4 @@ namespace Smartsheet.Api.Models
             }
         }
     }
-
 }

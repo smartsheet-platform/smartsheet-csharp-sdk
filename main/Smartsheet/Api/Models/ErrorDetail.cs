@@ -67,7 +67,7 @@ namespace Smartsheet.Api.Models
         public string AlternateEmailAddress 
         {
             get { return alternateEmailAddress; }
-            set { this.alternateEmailAddress = value; }
+            set { alternateEmailAddress = value; }
         }
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace Smartsheet.Api.Models
         public int? Index
         {
             get { return index; }
-            set { this.index = value; }
+            set { index = value; }
         }
 
         /// <summary>
@@ -87,7 +87,7 @@ namespace Smartsheet.Api.Models
         public int? MaxSheetCount
         {
             get { return maxSheetCount; }
-            set { this.maxSheetCount = value; }
+            set { maxSheetCount = value; }
         }
 
         /// <summary>
@@ -97,7 +97,7 @@ namespace Smartsheet.Api.Models
         public string PrimaryEmailAddress
         {
             get { return primaryEmailAddress; }
-            set { this.primaryEmailAddress = value; }
+            set { primaryEmailAddress = value; }
         }
 
         /// <summary>
@@ -107,7 +107,7 @@ namespace Smartsheet.Api.Models
         public long? RowId
         {
             get { return rowId; }
-            set { this.rowId = value; }
+            set { rowId = value; }
         }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace Smartsheet.Api.Models
         public long? TopContainerId
         {
             get { return topContainerId; }
-            set { this.topContainerId = value; }
+            set { topContainerId = value; }
         }
 
         /// <summary>
@@ -127,7 +127,7 @@ namespace Smartsheet.Api.Models
         public DestinationType? TopContainerType
         {
             get { return topContainerType; }
-            set { this.topContainerType = value; }
+            set { topContainerType = value; }
         }
     }
 }

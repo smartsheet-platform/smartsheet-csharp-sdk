@@ -82,7 +82,7 @@ namespace Smartsheet.Api.Models
         public string Description
         {
             get { return description; }
-            set { this.description = value; }
+            set { description = value; }
         }
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace Smartsheet.Api.Models
         public AccessLevel? AccessLevel
         {
             get { return accessLevel; }
-            set { this.accessLevel = value;}
+            set { accessLevel = value;}
         }
 
         /// <summary>
@@ -102,7 +102,7 @@ namespace Smartsheet.Api.Models
         public string Image
         {
             get { return image; }
-            set { this.image = value; }
+            set { image = value; }
         }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Smartsheet.Api.Models
         public string LargeImage
         {
             get { return largeImage; }
-            set { this.largeImage = value; }
+            set { largeImage = value; }
         }
 
         /// <summary>
@@ -122,7 +122,7 @@ namespace Smartsheet.Api.Models
         public string Locale
         {
             get { return locale; }
-            set { this.locale = value; }
+            set { locale = value; }
         }
 
         /// <summary>
@@ -132,7 +132,7 @@ namespace Smartsheet.Api.Models
         public string Type
         {
             get { return type; }
-            set { this.type = value; }
+            set { type = value; }
         }
 
         /// <summary>
@@ -142,7 +142,7 @@ namespace Smartsheet.Api.Models
         public IList<string> Tags
         {
             get { return tags; }
-            set { this.tags = value; }
+            set { tags = value; }
         }
 
         /// <summary>
@@ -152,7 +152,7 @@ namespace Smartsheet.Api.Models
         public IList<string> Categories
         {
             get { return categories; }
-            set { this.categories = value; }
+            set { categories = value; }
         }
 
         /// <summary>
@@ -162,7 +162,7 @@ namespace Smartsheet.Api.Models
         public bool? Blank
         {
             get { return blank; }
-            set { this.blank = value; }
+            set { blank = value; }
         }
 
         /// <summary>
@@ -172,7 +172,7 @@ namespace Smartsheet.Api.Models
         public GlobalTemplate? GlobalTemplate
         {
             get { return globalTemplate; }
-            set { this.globalTemplate = value; }
+            set { globalTemplate = value; }
         }
     }
 }

@@ -56,7 +56,7 @@ namespace Smartsheet.Api.Models
         public long? Id
         {
             get { return id; }
-            set { this.id = value; }
+            set { id = value; }
         }
 
         /// <summary>
@@ -66,7 +66,7 @@ namespace Smartsheet.Api.Models
         public User SentBy
         {
             get { return sentBy; }
-            set { this.sentBy = value; }
+            set { sentBy = value; }
         }
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace Smartsheet.Api.Models
         public Schedule Schedule
         {
             get { return schedule; }
-            set { this.schedule = value; }
+            set { schedule = value; }
         }
 
         /// <summary>
@@ -86,7 +86,7 @@ namespace Smartsheet.Api.Models
         public DateTime? CreatedAt
         {
             get { return createdAt; }
-            set { this.createdAt = value; }
+            set { createdAt = value; }
         }
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace Smartsheet.Api.Models
         public DateTime? ModifiedAt
         {
             get { return modifiedAt; }
-            set { this.modifiedAt = value; }
+            set { modifiedAt = value; }
         }
     }
 }

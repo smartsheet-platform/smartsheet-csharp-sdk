@@ -78,7 +78,7 @@ namespace Smartsheet.Api.Models
         public ScheduleType? Type
         {
             get { return type; }
-            set { this.type = value; }
+            set { type = value; }
         }
 
         /// <summary>
@@ -88,7 +88,7 @@ namespace Smartsheet.Api.Models
         public DateTime StartAt
         {
             get { return startAt; }
-            set { this.startAt = value; }
+            set { startAt = value; }
         }
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace Smartsheet.Api.Models
         public DateTime EndAt
         {
             get { return endAt; }
-            set { this.endAt = value; }
+            set { endAt = value; }
         }
         
         /// <summary>
@@ -108,7 +108,7 @@ namespace Smartsheet.Api.Models
         public int? DayOfMonth
         {
             get { return dayOfMonth; }
-            set { this.dayOfMonth = value; }
+            set { dayOfMonth = value; }
         }
 
         /// <summary>
@@ -118,7 +118,7 @@ namespace Smartsheet.Api.Models
         public DayOrdinal DayOrdinal
         {
             get { return dayOrdinal; }
-            set { this.dayOrdinal = value; }
+            set { dayOrdinal = value; }
         }
 
         /// <summary>
@@ -128,7 +128,7 @@ namespace Smartsheet.Api.Models
         public IList<DayDescriptor> DayDescriptors
         {
             get { return dayDescriptors; }
-            set { this.dayDescriptors = value; }
+            set { dayDescriptors = value; }
         }
 
         /// <summary>
@@ -138,7 +138,7 @@ namespace Smartsheet.Api.Models
         public int? RepeatEvery
         {
             get { return repeatEvery; }
-            set { this.repeatEvery = value; }
+            set { repeatEvery = value; }
         }
 
         /// <summary>
@@ -148,7 +148,7 @@ namespace Smartsheet.Api.Models
         public DateTime LastSentAt
         {
             get { return lastSentAt; }
-            set { this.lastSentAt = value; }
+            set { lastSentAt = value; }
         }
 
         /// <summary>
@@ -158,7 +158,7 @@ namespace Smartsheet.Api.Models
         public DateTime NextSendAt
         {
             get { return nextSendAt; }
-            set { this.nextSendAt = value; }
+            set { nextSendAt = value; }
         }
     }
 }

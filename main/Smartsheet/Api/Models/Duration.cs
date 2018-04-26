@@ -81,7 +81,7 @@ namespace Smartsheet.Api.Models
         public bool? Negative
         {
             get { return negative; }
-            set { this.negative = value; }
+            set { negative = value; }
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace Smartsheet.Api.Models
         public bool? Elapsed
         {
             get { return elapsed; }
-            set { this.elapsed = value; }
+            set { elapsed = value; }
         }
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace Smartsheet.Api.Models
         public double? Weeks
         {
             get { return weeks; }
-            set { this.weeks = value; }
+            set { weeks = value; }
         }
 
         /// <summary>
@@ -111,7 +111,7 @@ namespace Smartsheet.Api.Models
         public double? Days
         {
             get { return days; }
-            set { this.days = value; }
+            set { days = value; }
         }
 
         /// <summary>
@@ -121,7 +121,7 @@ namespace Smartsheet.Api.Models
         public double? Hours
         {
             get { return hours; }
-            set { this.hours = value; }
+            set { hours = value; }
         }
 
         /// <summary>
@@ -131,7 +131,7 @@ namespace Smartsheet.Api.Models
         public double? Minutes
         {
             get { return minutes; }
-            set { this.minutes = value; }
+            set { minutes = value; }
         }
 
         /// <summary>
@@ -141,7 +141,7 @@ namespace Smartsheet.Api.Models
         public double? Seconds
         {
             get { return seconds; }
-            set { this.seconds = value; }
+            set { seconds = value; }
         }
 
         /// <summary>
@@ -151,7 +151,7 @@ namespace Smartsheet.Api.Models
         public double? Milliseconds
         {
             get { return milliseconds; }
-            set { this.milliseconds = value; }
+            set { milliseconds = value; }
         }
 
         public ObjectValueType ObjectType

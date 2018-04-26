@@ -75,7 +75,7 @@ namespace Smartsheet.Api.Models
         public Hyperlink Hyperlink
         {
             get { return hyperlink; }
-            set { this.hyperlink = value; }
+            set { hyperlink = value; }
         }
 
         /// <summary>
@@ -85,7 +85,7 @@ namespace Smartsheet.Api.Models
         public IList<CellDataItem> CellData
         {
             get { return cellData; }
-            set { this.cellData = value; }
+            set { cellData = value; }
         }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace Smartsheet.Api.Models
         public IList<Column> Columns
         {
             get { return columns; }
-            set { this.columns = value; }
+            set { columns = value; }
         }
 
         /// <summary>
@@ -105,7 +105,7 @@ namespace Smartsheet.Api.Models
         public string Html
         {
             get { return html; }
-            set { this.html = value; }
+            set { html = value; }
         }
 
         /// <summary>
@@ -115,7 +115,7 @@ namespace Smartsheet.Api.Models
         public IList<ShortcutDataItem> ShortcutData
         {
             get { return shortcutData; }
-            set { this.shortcutData = value; }
+            set { shortcutData = value; }
         }
 
         /// <summary>
@@ -125,7 +125,7 @@ namespace Smartsheet.Api.Models
         public string HtmlContent
         {
             get { return htmlContent; }
-            set { this.htmlContent = value; }
+            set { htmlContent = value; }
         }
 
         /// <summary>
@@ -135,7 +135,7 @@ namespace Smartsheet.Api.Models
         public string PrivateId
         {
             get { return privateId; }
-            set { this.privateId = value; }
+            set { privateId = value; }
         }
 
         /// <summary>
@@ -145,7 +145,7 @@ namespace Smartsheet.Api.Models
         public int? Height
         {
             get { return height; }
-            set { this.height = value; }
+            set { height = value; }
         }
 
         /// <summary>
@@ -155,7 +155,7 @@ namespace Smartsheet.Api.Models
         public int? Width
         {
             get { return width; }
-            set { this.width = value; }
+            set { width = value; }
         }
 
         /// <summary>
@@ -165,7 +165,7 @@ namespace Smartsheet.Api.Models
         public string FileName
         {
             get { return fileName; }
-            set { this.fileName = value; }
+            set { fileName = value; }
         }
 
         /// <summary>
@@ -175,7 +175,7 @@ namespace Smartsheet.Api.Models
         public string Format
         {
             get { return format; }
-            set { this.format = value; }
+            set { format = value; }
         }
 
         /// <summary>
@@ -185,7 +185,7 @@ namespace Smartsheet.Api.Models
         public string BackgroundColor
         {
             get { return backgroundColor; }
-            set { this.backgroundColor = value; }
+            set { backgroundColor = value; }
         }
 
         /// <summary>
@@ -195,7 +195,7 @@ namespace Smartsheet.Api.Models
         public Object Axes
         {
             get { return axes; }
-            set { this.axes = value; }
+            set { axes = value; }
         }
 
         /// <summary>
@@ -205,7 +205,7 @@ namespace Smartsheet.Api.Models
         public Object Legend
         {
             get { return legend; }
-            set { this.legend = value; }
+            set { legend = value; }
         }
 
         /// <summary>
@@ -215,7 +215,7 @@ namespace Smartsheet.Api.Models
         public Object Series
         {
             get { return series; }
-            set { this.series = value; }
+            set { series = value; }
         }
     }
 }

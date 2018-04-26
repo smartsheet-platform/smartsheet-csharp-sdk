@@ -43,7 +43,7 @@ namespace Smartsheet.Api.Models
         public int? TotalCount
         {
             get { return totalCount; }
-            set { this.totalCount = value; }
+            set { totalCount = value; }
         }
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Smartsheet.Api.Models
         public IList<SearchResultItem> Results
         {
             get { return results; }
-            set { this.results = value; }
+            set { results = value; }
         }
     }
 }

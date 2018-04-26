@@ -88,7 +88,7 @@ namespace Smartsheet.Api.Models
         public IList<Sheet> Sheets
         {
             get { return sheets; }
-            set { this.sheets = value; }
+            set { sheets = value; }
         }
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace Smartsheet.Api.Models
         public IList<Report> Reports
         {
             get { return reports; }
-            set { this.reports = value; }
+            set { reports = value; }
         }
 
         /// <summary>
@@ -108,7 +108,7 @@ namespace Smartsheet.Api.Models
         public IList<Folder> Folders
         {
             get { return folders; }
-            set { this.folders = value; }
+            set { folders = value; }
         }
         
         /// <summary>
@@ -118,7 +118,7 @@ namespace Smartsheet.Api.Models
         public IList<Template> Templates
         {
             get { return templates; }
-            set { this.templates = value; }
+            set { templates = value; }
         }
 
         /// <summary>
@@ -128,7 +128,7 @@ namespace Smartsheet.Api.Models
         public IList<Sight> Sights
         {
             get { return sights; }
-            set { this.sights = value; }
+            set { sights = value; }
         }
         
         /// <summary>

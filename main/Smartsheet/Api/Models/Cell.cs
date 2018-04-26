@@ -146,7 +146,7 @@ namespace Smartsheet.Api.Models
         public ColumnType? ColumnType
         {
             get { return columnType; }
-            set { this.columnType = value; }
+            set { columnType = value; }
         }
 
         /// <summary>
@@ -156,7 +156,7 @@ namespace Smartsheet.Api.Models
         public ObjectValue ObjectValue
         {
             get { return objectValue; }
-            set { this.objectValue = value;    }
+            set { objectValue = value;    }
         }
 
         /// <summary>
@@ -176,7 +176,7 @@ namespace Smartsheet.Api.Models
         public string DisplayValue
         {
             get { return displayValue; }
-            set { this.displayValue = value; }
+            set { displayValue = value; }
         }
 
         /// <summary>
@@ -186,7 +186,7 @@ namespace Smartsheet.Api.Models
         public long? ColumnId
         {
             get { return columnId; }
-            set { this.columnId = value; }
+            set { columnId = value; }
         }
 
         /// <summary>
@@ -196,7 +196,7 @@ namespace Smartsheet.Api.Models
         public Hyperlink Hyperlink
         {
             get { return hyperlink; }
-            set { this.hyperlink = value; }
+            set { hyperlink = value; }
         }
 
         /// <summary>
@@ -206,7 +206,7 @@ namespace Smartsheet.Api.Models
         public string Formula
         {
             get { return formula; }
-            set { this.formula = value; }
+            set { formula = value; }
         }
 
 
@@ -218,7 +218,7 @@ namespace Smartsheet.Api.Models
         public bool? Strict
         {
             get { return strict; }
-            set { this.strict = value; }
+            set { strict = value; }
         }
 
         /// <summary>
@@ -229,7 +229,7 @@ namespace Smartsheet.Api.Models
         public Image Image
         {
             get { return image; }
-            set { this.image = value; }
+            set { image = value; }
         }
 
         /// <summary>
@@ -241,7 +241,7 @@ namespace Smartsheet.Api.Models
         public bool? OverrideValidation 
         {
             get { return overrideValidation; }
-            set { this.overrideValidation = value;}
+            set { overrideValidation = value;}
         }
 
         /// <summary>

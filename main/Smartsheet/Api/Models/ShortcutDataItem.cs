@@ -47,7 +47,7 @@ namespace Smartsheet.Api.Models
         public string Label
         {
             get { return label; }
-            set { this.label = value; }
+            set { label = value; }
         }
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace Smartsheet.Api.Models
         public string LabelFormat
         {
             get { return labelFormat; }
-            set { this.labelFormat = value; }
+            set { labelFormat = value; }
         }
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace Smartsheet.Api.Models
         public AttachmentType? AttachmentType
         {
             get { return attachmentType; }
-            set { this.attachmentType = value; }
+            set { attachmentType = value; }
         }
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace Smartsheet.Api.Models
         public Hyperlink Hyperlink
         {
             get { return hyperlink; }
-            set { this.hyperlink = value; }
+            set { hyperlink = value; }
         }
         
         /// <summary>
@@ -87,7 +87,7 @@ namespace Smartsheet.Api.Models
         public int? Order
         {
             get { return order; }
-            set { this.order = value; }
+            set { order = value; }
         }
 
         /// <summary>
@@ -97,7 +97,7 @@ namespace Smartsheet.Api.Models
         public string MimeType
         {
             get { return mimeType; }
-            set { this.mimeType = value; }
+            set { mimeType = value; }
         }
     }
 }

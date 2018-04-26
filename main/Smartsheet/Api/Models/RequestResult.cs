@@ -49,7 +49,7 @@ namespace Smartsheet.Api.Models
         public int? ResultCode
         {
             get { return resultCode; }
-            set { this.resultCode = value; }
+            set { resultCode = value; }
         }
         
         /// <summary>
@@ -62,7 +62,7 @@ namespace Smartsheet.Api.Models
         public string Message
         {
             get { return message; }
-            set { this.message = value; }
+            set { message = value; }
         }
         
         /// <summary>
@@ -75,7 +75,7 @@ namespace Smartsheet.Api.Models
         public T Result
         {
             get { return result; }
-            set { this.result = value; }
+            set { result = value; }
         }
 
         /// <summary>
@@ -88,7 +88,7 @@ namespace Smartsheet.Api.Models
         public int? Version
         {
             get { return version; }
-            set { this.version = value; }
+            set { version = value; }
         }
     }
 }

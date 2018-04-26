@@ -59,7 +59,7 @@ namespace Smartsheet.Api.Models
         public bool? ToTop
         {
             get { return toTop; }
-            set { this.toTop = value; }
+            set { toTop = value; }
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Smartsheet.Api.Models
         public bool? ToBottom
         {
             get { return toBottom; }
-            set { this.toBottom = value; }
+            set { toBottom = value; }
         }
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace Smartsheet.Api.Models
         public long? ParentId
         {
             get { return parentId; }
-            set { this.parentId = value; }
+            set { parentId = value; }
         }
         
         /// <summary>
@@ -89,7 +89,7 @@ namespace Smartsheet.Api.Models
         public long? SiblingId
         {
             get { return siblingId; }
-            set { this.siblingId = value; }
+            set { siblingId = value; }
         }
         
         /// <summary>
@@ -99,7 +99,7 @@ namespace Smartsheet.Api.Models
         public IList<Row> Rows
         {
             get { return rows; }
-            set { this.rows = value; }
+            set { rows = value; }
         }
 
                 /// <summary>

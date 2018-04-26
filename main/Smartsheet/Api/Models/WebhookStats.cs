@@ -50,7 +50,7 @@ namespace Smartsheet.Api.Models
         public int? LastCallbackAttemptRetryCount
         {
             get { return lastCallbackAttemptRetryCount; }
-            set { this.lastCallbackAttemptRetryCount = value; }
+            set { lastCallbackAttemptRetryCount = value; }
         }
 
         /// <summary>
@@ -60,7 +60,7 @@ namespace Smartsheet.Api.Models
         public DateTime? LastCallbackAttempt
         {
             get { return lastCallbackAttempt; }
-            set { this.lastCallbackAttempt = value; }
+            set { lastCallbackAttempt = value; }
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Smartsheet.Api.Models
         public DateTime? LastSuccessfulCallback
         {
             get { return lastSuccessfulCallback; }
-            set { this.lastSuccessfulCallback = value; }
+            set { lastSuccessfulCallback = value; }
         }
     }
 }

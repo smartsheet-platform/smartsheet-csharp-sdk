@@ -157,7 +157,7 @@ namespace Smartsheet.Api.Models
         public bool? Admin
         {
             get { return admin; }
-            set { this.admin = value; }
+            set { admin = value; }
         }
 
         /// <summary>
@@ -167,7 +167,7 @@ namespace Smartsheet.Api.Models
         public bool? LicensedSheetCreator
         {
             get { return licensedSheetCreator; }
-            set { this.licensedSheetCreator = value; }
+            set { licensedSheetCreator = value; }
         }
 
         /// <summary>
@@ -195,7 +195,7 @@ namespace Smartsheet.Api.Models
         public UserStatus? Status
         {
             get { return status; }
-            set { this.status = value; }
+            set { status = value; }
         }
         
         /// <summary>
@@ -240,7 +240,7 @@ namespace Smartsheet.Api.Models
         public string Company
         {
             get { return company; }
-            set { this.company = value; }
+            set { company = value; }
         }
 
         /// <summary>
@@ -249,7 +249,7 @@ namespace Smartsheet.Api.Models
         public string Department
         {
             get { return department; }
-            set { this.department = value; }
+            set { department = value; }
         }
 
         /// <summary>
@@ -258,7 +258,7 @@ namespace Smartsheet.Api.Models
         public string MobilePhone
         {
             get { return mobilePhone; }
-            set { this.mobilePhone = value; }
+            set { mobilePhone = value; }
         }
 
         /// <summary>
@@ -267,7 +267,7 @@ namespace Smartsheet.Api.Models
         public Image ProfileImage
         {
             get { return profileImage; }
-            set { this.profileImage = value; }
+            set { profileImage = value; }
         }
 
         /// <summary>
@@ -276,7 +276,7 @@ namespace Smartsheet.Api.Models
         public string Role
         {
             get { return role; }
-            set { this.role = value; }
+            set { role = value; }
         }
 
         /// <summary>
@@ -285,7 +285,7 @@ namespace Smartsheet.Api.Models
         public string Title
         {
             get { return title; }
-            set { this.title = value; }
+            set { title = value; }
         }
 
         /// <summary>
@@ -294,7 +294,7 @@ namespace Smartsheet.Api.Models
         public string WorkPhone
         {
             get { return workPhone; }
-            set { this.workPhone = value; }
+            set { workPhone = value; }
         }
     }
 }

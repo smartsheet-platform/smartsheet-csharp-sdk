@@ -49,7 +49,7 @@ namespace Smartsheet.Api.Models
         public IList<Criteria> Criteria
         {
             get { return criteria; }
-            set { this.criteria = value; }
+            set { criteria = value; }
         }
 
         /// <summary>
@@ -59,7 +59,7 @@ namespace Smartsheet.Api.Models
         public bool? IncludeParent
         {
             get { return includeParent; }
-            set { this.includeParent = value; }
+            set { includeParent = value; }
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Smartsheet.Api.Models
         public SheetFilterOperator? Operator
         {
             get { return _operator; }
-            set { this._operator = value; }
+            set { _operator = value; }
         }
     }
 }

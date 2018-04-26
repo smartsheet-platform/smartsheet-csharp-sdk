@@ -116,7 +116,7 @@ namespace Smartsheet.Api.Models
         public int? Index
         {
             get { return index; }
-            set { this.index = value; }
+            set { index = value; }
         }
 
         /// <summary>
@@ -126,7 +126,7 @@ namespace Smartsheet.Api.Models
         public string Title
         {
             get { return title; }
-            set { this.title = value; }
+            set { title = value; }
         }
 
         /// <summary>
@@ -136,7 +136,7 @@ namespace Smartsheet.Api.Models
         public bool? Primary
         {
             get { return primary; }
-            set { this.primary = value; }
+            set { primary = value; }
         }
 
         /// <summary>
@@ -146,7 +146,7 @@ namespace Smartsheet.Api.Models
         public ColumnType? Type
         {
             get { return type; }
-            set { this.type = value; }
+            set { type = value; }
         }
 
         /// <summary>
@@ -156,7 +156,7 @@ namespace Smartsheet.Api.Models
         public IList<string> Options
         {
             get { return options; }
-            set { this.options = value; }
+            set { options = value; }
         }
 
         /// <summary>
@@ -166,7 +166,7 @@ namespace Smartsheet.Api.Models
         public bool? Hidden
         {
             get { return hidden; }
-            set { this.hidden = value; }
+            set { hidden = value; }
         }
 
         /// <summary>
@@ -176,7 +176,7 @@ namespace Smartsheet.Api.Models
         public Symbol? Symbol
         {
             get { return symbol; }
-            set { this.symbol = value; }
+            set { symbol = value; }
         }
 
         /// <summary>
@@ -185,8 +185,8 @@ namespace Smartsheet.Api.Models
         /// <returns> the system column Type </returns>
         public SystemColumnType? SystemColumnType
         {
-            get {return systemColumnType; }
-            set { this.systemColumnType = value; }
+            get { return systemColumnType; }
+            set { systemColumnType = value; }
         }
 
         /// <summary>
@@ -196,7 +196,7 @@ namespace Smartsheet.Api.Models
         public AutoNumberFormat AutoNumberFormat
         {
             get { return autoNumberFormat; }
-            set { this.autoNumberFormat = value; }
+            set { autoNumberFormat = value; }
         }
 
         /// <summary>
@@ -207,7 +207,7 @@ namespace Smartsheet.Api.Models
         public IList<Contact> ContactOptions
         {
             get { return contactOptions; }
-            set { this.contactOptions = value; }
+            set { contactOptions = value; }
         }
 
         /// <summary>
@@ -217,7 +217,7 @@ namespace Smartsheet.Api.Models
         public IList<ColumnTag> Tags
         {
             get { return tags; }
-            set { this.tags = value; }
+            set { tags = value; }
         }
 
         /// <summary>

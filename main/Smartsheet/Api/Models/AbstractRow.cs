@@ -150,7 +150,7 @@ namespace Smartsheet.Api.Models
         public AccessLevel? AccessLevel
         {
             get { return accessLevel; }
-            set { this.accessLevel = value; }
+            set { accessLevel = value; }
         }
 
         /// <summary>
@@ -160,7 +160,7 @@ namespace Smartsheet.Api.Models
         public int? Version
         {
             get { return version; }
-            set { this.version = value; }
+            set { version = value; }
         }
 
         /// <summary>
@@ -170,7 +170,7 @@ namespace Smartsheet.Api.Models
         public bool? Expanded
         {
             get { return expanded; }
-            set { this.expanded = value; }
+            set { expanded = value; }
         }
 
         /// <summary>
@@ -180,9 +180,8 @@ namespace Smartsheet.Api.Models
         public long? SheetId
         {
             get { return sheetId; }
-            set { this.sheetId = value; }
+            set { sheetId = value; }
         }
-
 
         /// <summary>
         /// Gets the row number.
@@ -191,9 +190,8 @@ namespace Smartsheet.Api.Models
         public int? RowNumber
         {
             get { return rowNumber; }
-            set { this.rowNumber = value; }
+            set { rowNumber = value; }
         }
-
 
         /// <summary>
         /// Gets the parent row number.
@@ -202,7 +200,7 @@ namespace Smartsheet.Api.Models
         public int? ParentRowNumber
         {
             get { return parentRowNumber; }
-            set { this.parentRowNumber = value; }
+            set { parentRowNumber = value; }
         }
 
         /// <summary>
@@ -232,7 +230,7 @@ namespace Smartsheet.Api.Models
         public IList<TCell> Cells
         {
             get { return cells; }
-            set { this.cells = value; }
+            set { cells = value; }
         }
 
         /// <summary>
@@ -242,7 +240,7 @@ namespace Smartsheet.Api.Models
         public IList<Discussion> Discussions
         {
             get { return discussions; }
-            set { this.discussions = value; }
+            set { discussions = value; }
         }
 
         /// <summary>
@@ -252,7 +250,7 @@ namespace Smartsheet.Api.Models
         public IList<Attachment> Attachments
         {
             get { return attachments; }
-            set { this.attachments = value; }
+            set { attachments = value; }
         }
 
         /// <summary>
@@ -262,7 +260,7 @@ namespace Smartsheet.Api.Models
         public IList<TColumn> Columns
         {
             get { return columns; }
-            set { this.columns = value; }
+            set { columns = value; }
         }
 
         /// <summary>
@@ -272,7 +270,7 @@ namespace Smartsheet.Api.Models
         public DateTime? CreatedAt
         {
             get { return createdAt; }
-            set { this.createdAt = value; }
+            set { createdAt = value; }
         }
 
         /// <summary>
@@ -282,7 +280,7 @@ namespace Smartsheet.Api.Models
         public DateTime? ModifiedAt
         {
             get { return modifiedAt; }
-            set { this.modifiedAt = value; }
+            set { modifiedAt = value; }
         }
 
         /// <summary>

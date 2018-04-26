@@ -37,7 +37,7 @@ namespace Smartsheet.Api.Models
         public PaperSize? PaperSize
         {
             get { return paperSize; }
-            set { this.paperSize = value; }
+            set { paperSize = value; }
         }
     }
 }

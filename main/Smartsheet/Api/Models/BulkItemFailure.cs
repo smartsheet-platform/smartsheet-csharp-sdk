@@ -53,7 +53,7 @@ namespace Smartsheet.Api.Models
         public Error Error
         {
             get { return error; }
-            set { this.error = value; }
+            set { error = value; }
         }
         
         /// <summary>

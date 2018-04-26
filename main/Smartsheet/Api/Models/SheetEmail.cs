@@ -44,7 +44,7 @@ namespace Smartsheet.Api.Models
         public SheetEmailFormat? Format
         {
             get { return format; }
-            set { this.format = value; }
+            set { format = value; }
         }
         
         /// <summary>
@@ -54,7 +54,7 @@ namespace Smartsheet.Api.Models
         public FormatDetails FormatDetails
         {
             get { return formatDetails; }
-            set { this.formatDetails = value; }
+            set { formatDetails = value; }
         }
 
         /// <summary>

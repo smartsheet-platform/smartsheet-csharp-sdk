@@ -27,7 +27,7 @@ namespace Smartsheet.Api.Models
         public string Email
         {
             get { return email; }
-            set { this.email = value; }
+            set { email = value; }
         }
 
         /// <summary>
@@ -37,7 +37,7 @@ namespace Smartsheet.Api.Models
         public bool? Confirmed
         {
             get { return confirmed; }
-            set { this.confirmed = value; }
+            set { confirmed = value; }
         }
 
         /// <summary>

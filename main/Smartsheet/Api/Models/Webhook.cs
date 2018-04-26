@@ -109,7 +109,7 @@ namespace Smartsheet.Api.Models
         public string ApiClientId
         {
             get { return apiClientId; }
-            set { this.apiClientId = value; }
+            set { apiClientId = value; }
         }
 
         /// <summary>
@@ -119,7 +119,7 @@ namespace Smartsheet.Api.Models
         public string ApiClientName
         {
             get { return apiClientName; }
-            set { this.apiClientName = value; }
+            set { apiClientName = value; }
         }
 
         /// <summary>
@@ -129,7 +129,7 @@ namespace Smartsheet.Api.Models
         public string Scope
         {
             get { return scope; }
-            set { this.scope = value; }
+            set { scope = value; }
         }
 
         /// <summary>
@@ -139,7 +139,7 @@ namespace Smartsheet.Api.Models
         public long? ScopeObjectId
         {
             get { return scopeObjectId; }
-            set { this.scopeObjectId = value; }
+            set { scopeObjectId = value; }
         }
 
         /// <summary>
@@ -149,7 +149,7 @@ namespace Smartsheet.Api.Models
         public IList<string> Events
         {
             get { return events; }
-            set { this.events = value; }
+            set { events = value; }
         }
 
         /// <summary>
@@ -159,7 +159,7 @@ namespace Smartsheet.Api.Models
         public string CallbackUrl
         {
             get { return callbackUrl; }
-            set { this.callbackUrl = value; }
+            set { callbackUrl = value; }
         }
 
         /// <summary>
@@ -169,7 +169,7 @@ namespace Smartsheet.Api.Models
         public string SharedSecret
         {
             get { return sharedSecret; }
-            set { this.sharedSecret = value; }
+            set { sharedSecret = value; }
         }
 
         /// <summary>
@@ -179,7 +179,7 @@ namespace Smartsheet.Api.Models
         public bool? Enabled
         {
             get { return enabled; }
-            set { this.enabled = value; }
+            set { enabled = value; }
         }
 
         /// <summary>
@@ -189,7 +189,7 @@ namespace Smartsheet.Api.Models
         public WebhookStatus? Status
         {
             get { return status; }
-            set { this.status = value; }
+            set { status = value; }
         }
 
         /// <summary>
@@ -199,7 +199,7 @@ namespace Smartsheet.Api.Models
         public string DisabledDetails
         {
             get { return disabledDetails; }
-            set { this.disabledDetails = value; }
+            set { disabledDetails = value; }
         }
 
         /// <summary>
@@ -209,7 +209,7 @@ namespace Smartsheet.Api.Models
         public int? Version
         {
             get { return version; }
-            set { this.version = value; }
+            set { version = value; }
         }
 
         /// <summary>
@@ -219,7 +219,7 @@ namespace Smartsheet.Api.Models
         public WebhookStats Stats
         {
             get { return stats; }
-            set { this.stats = value; }
+            set { stats = value; }
         }
 
         /// <summary>
@@ -229,7 +229,7 @@ namespace Smartsheet.Api.Models
         public DateTime? CreatedAt
         {
             get { return createdAt; }
-            set { this.createdAt = value; }
+            set { createdAt = value; }
         }
 
         /// <summary>
@@ -239,7 +239,7 @@ namespace Smartsheet.Api.Models
         public DateTime? ModifiedAt
         {
             get { return modifiedAt; }
-            set { this.modifiedAt = value; }
+            set { modifiedAt = value; }
         }
     }
 }

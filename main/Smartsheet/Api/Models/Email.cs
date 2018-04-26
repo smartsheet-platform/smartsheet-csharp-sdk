@@ -52,7 +52,7 @@ namespace Smartsheet.Api.Models
         public IList<Recipient> SendTo
         {
             get { return sendTo; }
-            set { this.sendTo = value; }
+            set { sendTo = value; }
         }
 
         /// <summary>
@@ -62,7 +62,7 @@ namespace Smartsheet.Api.Models
         public string Subject
         {
             get { return subject; }
-            set { this.subject = value; }
+            set { subject = value; }
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Smartsheet.Api.Models
         public string Message
         {
             get { return message; }
-            set { this.message = value; }
+            set { message = value; }
         }
 
         /// <summary>
@@ -82,7 +82,7 @@ namespace Smartsheet.Api.Models
         public bool? CcMe
         {
             get { return ccMe; }
-            set { this.ccMe = value; }
+            set { ccMe = value; }
         }
     }
 }

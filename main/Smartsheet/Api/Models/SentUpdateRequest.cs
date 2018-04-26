@@ -88,7 +88,7 @@ namespace Smartsheet.Api.Models
         public long? UpdateRequestId
         {
             get { return updateRequestId; }
-            set { this.updateRequestId = value; }
+            set { updateRequestId = value; }
         }
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace Smartsheet.Api.Models
         public DateTime SentAt
         {
             get { return sentAt; }
-            set { this.sentAt = value; }
+            set { sentAt = value; }
         }
 
         /// <summary>
@@ -108,7 +108,7 @@ namespace Smartsheet.Api.Models
         public User SentBy
         {
             get { return sentBy; }
-            set { this.sentBy = value; }
+            set { sentBy = value; }
         }
 
         /// <summary>
@@ -118,7 +118,7 @@ namespace Smartsheet.Api.Models
         public UpdateRequestStatus? Status
         {
             get { return status; }
-            set { this.status = value; }
+            set { status = value; }
         }
 
         /// <summary>
@@ -127,7 +127,7 @@ namespace Smartsheet.Api.Models
         public IList<long> RowIds
         {
             get { return rowIds; }
-            set { this.rowIds = value; }
+            set { rowIds = value; }
         }
 
         /// <summary>
@@ -146,7 +146,7 @@ namespace Smartsheet.Api.Models
         public bool? IncludeAttachments
         {
             get { return includeAttachments; }
-            set { this.includeAttachments = value; }
+            set { includeAttachments = value; }
         }
 
         /// <summary>
@@ -156,7 +156,7 @@ namespace Smartsheet.Api.Models
         public bool? IncludeDiscussions
         {
             get { return includeDiscussions; }
-            set { this.includeDiscussions = value; }
+            set { includeDiscussions = value; }
         }
 
         /// <summary>
@@ -166,7 +166,7 @@ namespace Smartsheet.Api.Models
         public Recipient SentTo
         {
             get { return sentTo; }
-            set { this.sentTo = value; }
+            set { sentTo = value; }
         }
 
         /// <summary>
@@ -176,7 +176,7 @@ namespace Smartsheet.Api.Models
         public string Subject
         {
             get { return subject; }
-            set { this.subject = value; }
+            set { subject = value; }
         }
 
         /// <summary>
@@ -186,7 +186,7 @@ namespace Smartsheet.Api.Models
         public string Message
         {
             get { return message; }
-            set { this.message = value; }
+            set { message = value; }
         }
     }
 }

@@ -41,7 +41,7 @@ namespace Smartsheet.Api.Models
         public DateTime? ModifiedAt
         {
             get { return modifiedAt; }
-            set { this.modifiedAt = value; }
+            set { modifiedAt = value; }
         }
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Smartsheet.Api.Models
         public User ModifiedBy
         {
             get { return modifiedBy; }
-            set { this.modifiedBy = value; }
+            set { modifiedBy = value; }
         }
     }
 }

@@ -83,7 +83,7 @@ namespace Smartsheet.Api.Models
         public string Title
         {
             get { return title; }
-            set { this.title = value; }
+            set { title = value; }
         }
 
         /// <summary>
@@ -93,7 +93,7 @@ namespace Smartsheet.Api.Models
         public IList<Comment> Comments
         {
             get { return comments; }
-            set { this.comments = value; }
+            set { comments = value; }
         }
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace Smartsheet.Api.Models
         public Comment Comment
         {
             get { return comment; }
-            set { this.comment = value; }
+            set { comment = value; }
         }
 
         /// <summary>
@@ -113,7 +113,7 @@ namespace Smartsheet.Api.Models
         public IList<Attachment> CommentAttachments
         {
             get { return commentAttachments; }
-            set { this.commentAttachments = value; }
+            set { commentAttachments = value; }
         }
 
         /// <summary>
@@ -122,7 +122,7 @@ namespace Smartsheet.Api.Models
         public int? CommentCount
         {
             get { return commentCount; }
-            set { this.commentCount = value; }
+            set { commentCount = value; }
         }
 
         /// <summary>
@@ -132,7 +132,7 @@ namespace Smartsheet.Api.Models
         public DateTime? LastCommentedAt
         {
             get { return lastCommentedAt; }
-            set { this.lastCommentedAt = value; }
+            set { lastCommentedAt = value; }
         }
 
         /// <summary>
@@ -142,7 +142,7 @@ namespace Smartsheet.Api.Models
         public User LastCommentedUser
         {
             get { return lastCommentedUser; }
-            set { this.lastCommentedUser = value; }
+            set { lastCommentedUser = value; }
         }
 
         /// <summary>
@@ -152,7 +152,7 @@ namespace Smartsheet.Api.Models
         public AccessLevel? AccessLevel
         {
             get { return accessLevel; }
-            set { this.accessLevel = value; }
+            set { accessLevel = value; }
         }
 
         /// <summary>

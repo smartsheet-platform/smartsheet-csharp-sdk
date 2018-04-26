@@ -106,7 +106,7 @@ namespace Smartsheet.Api.Models
         /// <returns> the includeAttachments flag </returns>
         public bool? IncludeAttachments
         {
-            get    { return includeAttachments; }
+            get { return includeAttachments; }
             set { includeAttachments = value; }
         }
 

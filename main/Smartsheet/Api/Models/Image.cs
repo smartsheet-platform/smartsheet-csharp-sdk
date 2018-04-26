@@ -49,7 +49,7 @@ namespace Smartsheet.Api.Models
         public string Id
         {
             get { return id; }
-            set { this.id = value; }
+            set { id = value; }
         }
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace Smartsheet.Api.Models
         public string AltText
         {
             get { return altText; }
-            set { this.altText = value; }
+            set { altText = value; }
         }
     }
 }

@@ -42,7 +42,7 @@ namespace Smartsheet.Api.Internal.Http
         public HttpStatusCode StatusCode
         {
             get { return statusCode; }
-            set { this.statusCode = value; }
+            set { statusCode = value; }
         }
     }
 }

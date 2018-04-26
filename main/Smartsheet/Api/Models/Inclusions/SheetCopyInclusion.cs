@@ -53,7 +53,7 @@ namespace Smartsheet.Api.Models
         FORMS,
 
         /// <summary>
-        /// includeS everything (data, attachments, discussions, cellLinks, and forms).
+        /// includes everything (data, attachments, discussions, cellLinks, and forms).
         /// </summary>
         ALL,
     }

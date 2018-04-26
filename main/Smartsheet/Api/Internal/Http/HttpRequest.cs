@@ -49,7 +49,7 @@ namespace Smartsheet.Api.Internal.Http
         public Uri Uri
         {
             get { return uri; }
-            set { this.uri = value; }
+            set { uri = value; }
         }
 
         /// <summary>
@@ -59,7 +59,7 @@ namespace Smartsheet.Api.Internal.Http
         public virtual HttpMethod? Method
         {
             get { return method; }
-            set { this.method = value; }
+            set { method = value; }
         }
     }
 }

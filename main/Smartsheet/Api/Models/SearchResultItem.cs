@@ -87,7 +87,7 @@ namespace Smartsheet.Api.Models
         public string Text
         {
             get { return text; }
-            set { this.text = value; }
+            set { text = value; }
         }
         
         /// <summary>
@@ -97,7 +97,7 @@ namespace Smartsheet.Api.Models
         public long? ObjectId
         {
             get { return objectId; }
-            set { this.objectId = value; }
+            set { objectId = value; }
         }
 
         /// <summary>
@@ -107,7 +107,7 @@ namespace Smartsheet.Api.Models
         public SearchObjectType? ObjectType
         {
             get { return objectType; }
-            set { this.objectType = value; }
+            set { objectType = value; }
         }
         
         /// <summary>
@@ -117,7 +117,7 @@ namespace Smartsheet.Api.Models
         public long? ParentObjectId
         {
             get { return parentObjectId; }
-            set { this.parentObjectId = value; }
+            set { parentObjectId = value; }
         }
 
         /// <summary>
@@ -127,7 +127,7 @@ namespace Smartsheet.Api.Models
         public ObjectType? ParentObjectType
         {
             get { return parentObjectType; }
-            set { this.parentObjectType = value; }
+            set { parentObjectType = value; }
         }
         
         /// <summary>
@@ -137,7 +137,7 @@ namespace Smartsheet.Api.Models
         public string ParentObjectName
         {
             get { return parentObjectName; }
-            set { this.parentObjectName = value; }
+            set { parentObjectName = value; }
         }
         
         /// <summary>
@@ -147,7 +147,7 @@ namespace Smartsheet.Api.Models
         public IList<string> ContextData
         {
             get { return contextData; }
-            set { this.contextData = value; }
+            set { contextData = value; }
         }
 
         /// <summary>
@@ -157,7 +157,7 @@ namespace Smartsheet.Api.Models
         public AttachmentType? AttachmentType
         {
             get { return attachmentType; }
-            set { this.attachmentType = value; }
+            set { attachmentType = value; }
         }
 
         /// <summary>
@@ -167,7 +167,7 @@ namespace Smartsheet.Api.Models
         public string MimeType
         {
             get { return mimeType; }
-            set { this.mimeType = value; }
+            set { mimeType = value; }
         }
 
         /// <summary>
@@ -177,7 +177,7 @@ namespace Smartsheet.Api.Models
         public bool? Favorite
         {
             get { return favorite; }
-            set { this.favorite = value; }
+            set { favorite = value; }
         }
 
         /// <summary>
@@ -186,7 +186,7 @@ namespace Smartsheet.Api.Models
         public bool? ParentObjectFavorite
         {
             get { return parentObjectFavorite; }
-            set { this.parentObjectFavorite = value; }
+            set { parentObjectFavorite = value; }
         }
     }
 }

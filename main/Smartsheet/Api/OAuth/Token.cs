@@ -50,7 +50,7 @@ namespace Smartsheet.Api.OAuth
         public string AccessToken
         {
             get { return accessToken; }
-            set { this.accessToken = value; }
+            set { accessToken = value; }
         }
 
         /// <summary>
@@ -60,7 +60,7 @@ namespace Smartsheet.Api.OAuth
         public string TokenType
         {
             get { return tokenType; }
-            set { this.tokenType = value; }
+            set { tokenType = value; }
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Smartsheet.Api.OAuth
         public string RefreshToken
         {
             get { return refreshToken; }
-            set { this.refreshToken = value; }
+            set { refreshToken = value; }
         }
 
         /// <summary>
@@ -80,7 +80,7 @@ namespace Smartsheet.Api.OAuth
         public long? ExpiresInSeconds
         {
             get { return expiresInSeconds; }
-            set { this.expiresInSeconds = value; }
+            set { expiresInSeconds = value; }
         }
     }
 }

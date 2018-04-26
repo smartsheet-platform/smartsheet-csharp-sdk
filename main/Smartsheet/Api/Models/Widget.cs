@@ -97,7 +97,7 @@ namespace Smartsheet.Api.Models
         public WidgetType Type
         {
             get { return type; }
-            set { this.type = value; }
+            set { type = value; }
         }
 
         /// <summary>
@@ -107,7 +107,7 @@ namespace Smartsheet.Api.Models
         public string Title
         {
             get { return title; }
-            set { this.title = value; }
+            set { title = value; }
         }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace Smartsheet.Api.Models
         public bool? ShowTitle
         {
             get { return showTitle; }
-            set { this.showTitle = value; }
+            set { showTitle = value; }
         }
 
         /// <summary>
@@ -127,7 +127,7 @@ namespace Smartsheet.Api.Models
         public bool? ShowTitleIcon
         {
             get { return showTitleIcon; }
-            set { this.showTitleIcon = value; }
+            set { showTitleIcon = value; }
         }
 
         /// <summary>
@@ -137,7 +137,7 @@ namespace Smartsheet.Api.Models
         public string TitleFormat
         {
             get { return titleFormat; }
-            set { this.titleFormat = value; }
+            set { titleFormat = value; }
         }
 
         /// <summary>
@@ -147,7 +147,7 @@ namespace Smartsheet.Api.Models
         public int? XPosition
         {
             get { return xPosition; }
-            set { this.xPosition = value; }
+            set { xPosition = value; }
         }
 
         /// <summary>
@@ -157,7 +157,7 @@ namespace Smartsheet.Api.Models
         public int? YPosition
         {
             get { return yPosition; }
-            set { this.yPosition = value; }
+            set { yPosition = value; }
         }
 
         /// <summary>
@@ -167,7 +167,7 @@ namespace Smartsheet.Api.Models
         public int? Height
         {
             get { return height; }
-            set { this.height = value; }
+            set { height = value; }
         }
 
         /// <summary>
@@ -177,7 +177,7 @@ namespace Smartsheet.Api.Models
         public int? Width
         {
             get { return width; }
-            set { this.width = value; }
+            set { width = value; }
         }
 
         /// <summary>
@@ -187,7 +187,7 @@ namespace Smartsheet.Api.Models
         public int? Version
         {
             get { return version; }
-            set { this.version = value; }
+            set { version = value; }
         }
 
         /// <summary>
@@ -198,7 +198,7 @@ namespace Smartsheet.Api.Models
         public WidgetContent Contents
         {
             get { return contents; }
-            set { this.contents = value; }
+            set { contents = value; }
         }
     }
 }

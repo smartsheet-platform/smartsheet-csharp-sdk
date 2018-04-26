@@ -35,7 +35,7 @@ namespace Smartsheet.Api.Models
         public virtual string Name
         {
             get { return name; }
-            set { this.name = value; }
+            set { name = value; }
         }
     }
 }

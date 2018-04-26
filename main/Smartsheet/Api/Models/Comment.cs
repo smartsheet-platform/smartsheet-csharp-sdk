@@ -63,7 +63,7 @@ namespace Smartsheet.Api.Models
         public string Text
         {
             get { return text; }
-            set { this.text = value; }
+            set { text = value; }
         }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace Smartsheet.Api.Models
         public User CreatedBy
         {
             get { return createdBy; }
-            set { this.createdBy = value; }
+            set { createdBy = value; }
         }
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace Smartsheet.Api.Models
         public IList<Attachment> Attachments
         {
             get { return attachments; }
-            set { this.attachments = value; }
+            set { attachments = value; }
         }
 
         /// <summary>
@@ -93,7 +93,7 @@ namespace Smartsheet.Api.Models
         public long? DiscussionId
         {
             get { return discussionId; }
-            set { this.discussionId = value; }
+            set { discussionId = value; }
         }
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace Smartsheet.Api.Models
         public DateTime? CreatedAt
         {
             get { return createdAt; }
-            set { this.createdAt = value; }
+            set { createdAt = value; }
         }
 
         /// <summary>
@@ -113,7 +113,7 @@ namespace Smartsheet.Api.Models
         public DateTime? ModifiedAt
         {
             get { return modifiedAt; }
-            set { this.modifiedAt = value; }
+            set { modifiedAt = value; }
         }
 
         /// <summary>

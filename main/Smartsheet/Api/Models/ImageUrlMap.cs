@@ -51,7 +51,7 @@ namespace Smartsheet.Api.Models
         public IList<ImageUrl> ImageUrls
         {
             get { return imageUrls; }
-            set { this.imageUrls = value; }
+            set { imageUrls = value; }
         }
     }
 }

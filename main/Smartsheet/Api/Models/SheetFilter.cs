@@ -46,7 +46,7 @@ namespace Smartsheet.Api.Models
         public SheetFilterType? FilterType
         {
             get { return filterType; }
-            set { this.filterType = value; }
+            set { filterType = value; }
         }
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace Smartsheet.Api.Models
         public SheetFilterDetails Query
         {
             get { return query; }
-            set { this.query = value; }
+            set { query = value; }
         }
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace Smartsheet.Api.Models
         public int? Version
         {
             get { return version; }
-            set { this.version = value; }
+            set { version = value; }
         }
     }
 }

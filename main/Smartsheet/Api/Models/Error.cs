@@ -50,7 +50,7 @@ namespace Smartsheet.Api.Models
         public int? ErrorCode
         {
             get { return errorCode; }
-            set { this.errorCode = value; }
+            set { errorCode = value; }
         }
 
         /// <summary>
@@ -60,7 +60,7 @@ namespace Smartsheet.Api.Models
         public string Message
         {
             get { return message; }
-            set { this.message = value; }
+            set { message = value; }
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Smartsheet.Api.Models
         public string RefId
         {
             get { return refId; }
-            set { this.refId = value; }
+            set { refId = value; }
         }
 
         /// <summary>
@@ -80,7 +80,7 @@ namespace Smartsheet.Api.Models
         public object Detail
         {
             get { return detail; }
-            set { this.detail = value; }
+            set { detail = value; }
         }
     }
 }

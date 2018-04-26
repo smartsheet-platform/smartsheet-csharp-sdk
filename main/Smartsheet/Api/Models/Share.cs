@@ -95,7 +95,7 @@ namespace Smartsheet.Api.Models
         public AccessLevel? AccessLevel
         {
             get { return accessLevel; }
-            set { this.accessLevel = value; }
+            set { accessLevel = value; }
         }
 
         /// <summary>
@@ -105,7 +105,7 @@ namespace Smartsheet.Api.Models
         public string Email
         {
             get { return email; }
-            set { this.email = value; }
+            set { email = value; }
         }
 
         /// <summary>
@@ -191,7 +191,7 @@ namespace Smartsheet.Api.Models
         public DateTime? CreatedAt
         {
             get { return createdAt;    }
-            set { this.createdAt = value; }
+            set { createdAt = value; }
         }
 
         /// <summary>
@@ -201,7 +201,7 @@ namespace Smartsheet.Api.Models
         public DateTime? ModifiedAt
         {
             get { return modifiedAt; }
-            set { this.modifiedAt = value; }
+            set { modifiedAt = value; }
         }
 
         /// <summary>

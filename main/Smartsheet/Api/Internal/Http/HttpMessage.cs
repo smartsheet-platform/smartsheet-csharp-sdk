@@ -50,7 +50,7 @@ namespace Smartsheet.Api.Internal.Http
         public IDictionary<string, string> Headers
         {
             get { return headers; }
-            set { this.headers = value; }
+            set { headers = value; }
         }
 
         /// <summary>
@@ -60,7 +60,7 @@ namespace Smartsheet.Api.Internal.Http
         public HttpEntity Entity
         {
             get { return entity; }
-            set { this.entity = value; }
+            set { entity = value; }
         }
     }
 }

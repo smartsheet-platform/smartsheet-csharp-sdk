@@ -53,7 +53,7 @@ namespace Smartsheet.Api.Models
         public IList<User> Users
         {
             get { return users; }
-            set { this.users = value; }
+            set { users = value; }
         }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace Smartsheet.Api.Models
         public AccessLevel? AccessLevel
         {
             get { return accessLevel; }
-            set { this.accessLevel = value; }
+            set { accessLevel = value; }
         }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace Smartsheet.Api.Models
         public string Subject
         {
             get { return subject; }
-            set { this.subject = value; }
+            set { subject = value; }
         }
         
         /// <summary>
@@ -83,7 +83,7 @@ namespace Smartsheet.Api.Models
         public string Message
         {
             get { return message; }
-            set { this.message = value; }
+            set { message = value; }
         }
         
         /// <summary>
@@ -93,7 +93,7 @@ namespace Smartsheet.Api.Models
         public bool? CCMe
         {
             get { return ccMe; }
-            set { this.ccMe = value; }
+            set { ccMe = value; }
         }
 
         /// <summary>

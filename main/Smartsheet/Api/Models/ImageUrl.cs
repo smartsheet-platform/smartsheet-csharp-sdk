@@ -56,7 +56,7 @@ namespace Smartsheet.Api.Models
         public string ImageId
         {
             get { return imageId; }
-            set { this.imageId = value; }
+            set { imageId = value; }
         }
 
         /// <summary>
@@ -84,7 +84,7 @@ namespace Smartsheet.Api.Models
         public string Url
         {
             get { return url; }
-            set { this.url = value; }
+            set { url = value; }
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace Smartsheet.Api.Models
         public Error Error
         {
             get { return error; }
-            set { this.error = value; }
+            set { error = value; }
         }
 
         /// <summary>

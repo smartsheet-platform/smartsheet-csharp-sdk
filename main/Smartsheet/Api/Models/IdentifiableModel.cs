@@ -34,7 +34,7 @@ namespace Smartsheet.Api.Models
         public virtual long? Id
         {
             get { return id; }
-            set { this.id = value; }
+            set { id = value; }
         }
 
         /// <summary>
