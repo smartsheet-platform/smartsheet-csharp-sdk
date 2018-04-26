@@ -115,7 +115,7 @@ namespace Smartsheet.Api.Models
         /// The Version number that is incremented every time a sheet is modified. </summary>
         private int? version;
 
-        /// Row location-specifier attributes
+        // Row location-specifier attributes
  
         /// <summary>
         /// Represents the parent row ID. </summary>

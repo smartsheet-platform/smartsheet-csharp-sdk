@@ -108,6 +108,7 @@ namespace Smartsheet.Api.Internal
         /// <param name="file"> the file path </param>
         /// <param name="fileType"> the file type </param>
         /// <param name="overrideValidation"></param>
+        /// <param name="altText"> alt text for image </param>
         /// <returns> the Row object </returns>
         /// <exception cref="System.InvalidOperationException"> if any argument is null or an empty string </exception>
         /// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -128,6 +129,8 @@ namespace Smartsheet.Api.Internal
         /// <param name="path"> the url path </param>
         /// <param name="file"> the file </param>
         /// <param name="contentType"> the content Type </param>
+        /// <param name="overrideValidation"> override column validation </param>
+        /// <param name="altText"> image alternate text </param>
         /// <returns> the attachment </returns>
         /// <exception cref="FileNotFoundException"> the file not found exception </exception>
         /// <exception cref="SmartsheetException"> the Smartsheet exception </exception>

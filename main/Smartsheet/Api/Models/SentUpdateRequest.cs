@@ -110,7 +110,6 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// <summary>
         /// Gets the flag that indicates if Attachments should be included in the Email.
         /// </summary>
         /// <returns> the include Attachments </returns>
@@ -140,6 +139,7 @@ namespace Smartsheet.Api.Models
             set { message = value; }
         }
 
+        /// <summary>
         /// Get the date and time for when the sent update request was sent to the recipient.
         /// </summary>
         /// <returns> the timestamp </returns>

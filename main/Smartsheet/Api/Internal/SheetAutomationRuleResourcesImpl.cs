@@ -38,7 +38,7 @@ namespace Smartsheet.Api.Internal
         /// <para>Mirrors to the following Smartsheet REST API method: POST /sheets/{sheetId}/automationrules</para>
         /// </summary>
         /// <param name="sheetId"> the Id of the sheet </param>
-        /// <param name="pagination"> the pagination parameters </param>
+        /// <param name="paging"> the pagination parameters </param>
         /// <returns> a list of automation rules </returns>
         /// <exception cref="System.InvalidOperationException"> if any argument is null or an empty string </exception>
         /// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>

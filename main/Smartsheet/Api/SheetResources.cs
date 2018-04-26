@@ -407,7 +407,7 @@ namespace Smartsheet.Api
         /// 
         /// <para>Mirrors to the following Smartsheet REST API method: POST /sheets/{sheetId}/sort</para>
         /// </summary>
-        /// <param name="id"> the sheet Id </param>
+        /// <param name="sheetId"> the sheet Id </param>
         /// <param name="sortSpecifier"> the sort criteria </param>
         /// <returns> the Sheet (note that if there is no such resource, this method will throw a ResourceNotFoundException rather than returning null). </returns>
         /// <exception cref="System.InvalidOperationException"> if any argument is null or an empty string </exception>

@@ -32,11 +32,11 @@ namespace Smartsheet.Api.Models
         private string readOnlyFullAccessibleBy;
 
         /// <summary>
-        /// <summary>
         /// Default view for published reort (GRID, CARDS, CALENDAR)
         /// </summary>
         private string readOnlyFullDefaultView;
 
+        /// <summary>
         /// If true, a rich version of the report is published with the ability to download row attachments and discussions.
         /// </summary>
         private bool? readOnlyFullEnabled;

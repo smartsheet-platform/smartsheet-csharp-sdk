@@ -100,7 +100,6 @@ namespace Smartsheet.Api.Internal
         /// <para>Issue an HTTP DELETE request</para>
         /// </summary>
         /// <param name="endpoint"> the API endpoint </param>
-        /// <param name="parameters"> optional list of resource parameters </param>
         /// <returns> a JSON response string </returns>
         /// <exception cref="System.InvalidOperationException"> if any argument is null or an empty string </exception>
         /// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>

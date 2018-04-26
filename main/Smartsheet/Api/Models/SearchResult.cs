@@ -32,7 +32,6 @@ namespace Smartsheet.Api.Models
         private IList<SearchResultItem> results;
 
         /// <summary>
-        /// <summary>
         /// Represents total count of Results.
         /// </summary>
         private int? totalCount;
@@ -47,6 +46,7 @@ namespace Smartsheet.Api.Models
             set { results = value; }
         }
 
+        /// <summary>
         /// Gets the total count of Results.
         /// </summary>
         /// <returns> the total count </returns>
