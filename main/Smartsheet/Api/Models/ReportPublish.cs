@@ -25,11 +25,6 @@ namespace Smartsheet.Api.Models
     public class ReportPublish
     {
         /// <summary>
-        /// If true, a rich version of the report is published with the ability to download row attachments and discussions.
-        /// </summary>
-        private bool? readOnlyFullEnabled;
-
-        /// <summary>
         /// Flag to indicate who can access the 'Read-Only Full’ view of the published report:
         ///        if "ALL", report is available to anyone who has the link
         ///        if "ORG", report is available only to members of the report owner's organization
@@ -37,9 +32,14 @@ namespace Smartsheet.Api.Models
         private string readOnlyFullAccessibleBy;
 
         /// <summary>
-        /// URL for 'Read-Only Full’ view of the published report
+        /// <summary>
+        /// Default view for published reort (GRID, CARDS, CALENDAR)
         /// </summary>
-        private string readOnlyFullUrl;
+        private string readOnlyFullDefaultView;
+
+        /// If true, a rich version of the report is published with the ability to download row attachments and discussions.
+        /// </summary>
+        private bool? readOnlyFullEnabled;
 
         /// <summary>
         /// Flag to show or hide the left nav toolbar for the read only report
@@ -47,18 +47,9 @@ namespace Smartsheet.Api.Models
         private bool? readOnlyFullShowToolbar;
 
         /// <summary>
-        /// Default view for published reort (GRID, CARDS, CALENDAR)
+        /// URL for 'Read-Only Full’ view of the published report
         /// </summary>
-        private string readOnlyFullDefaultView;
-
-        /// <summary>
-        /// If true, a rich version of the report is published with the ability to download row attachments and discussions
-        /// </summary>
-        public bool? ReadOnlyFullEnabled
-        {
-            get { return readOnlyFullEnabled; }
-            set { readOnlyFullEnabled = value; }
-        }
+        private string readOnlyFullUrl;
 
         /// <summary>
         /// if "ALL", it is available to anyone who has the link.
@@ -72,12 +63,21 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// URL for 'Read-Only Full’ view of the published report. Only returned in a response if readOnlyFullEnabled = true.
+        /// The read only full default view
         /// </summary>
-        public string ReadOnlyFullUrl
+        public string ReadOnlyFullDefaultView
         {
-            get { return readOnlyFullUrl; }
-            set { readOnlyFullUrl = value; }
+            get { return readOnlyFullDefaultView; }
+            set { readOnlyFullDefaultView = value; }
+        }
+
+        /// <summary>
+        /// If true, a rich version of the report is published with the ability to download row attachments and discussions
+        /// </summary>
+        public bool? ReadOnlyFullEnabled
+        {
+            get { return readOnlyFullEnabled; }
+            set { readOnlyFullEnabled = value; }
         }
 
         /// <summary>
@@ -90,12 +90,12 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// The read only full default view
+        /// URL for 'Read-Only Full’ view of the published report. Only returned in a response if readOnlyFullEnabled = true.
         /// </summary>
-        public string ReadOnlyFullDefaultView
+        public string ReadOnlyFullUrl
         {
-            get { return readOnlyFullDefaultView; }
-            set { readOnlyFullDefaultView = value; }
+            get { return readOnlyFullUrl; }
+            set { readOnlyFullUrl = value; }
         }
     }
 }

@@ -18,7 +18,6 @@
 
 namespace Smartsheet.Api.Models
 {
-
     /// <summary>
     /// Type of global template. </summary>
     /// <seealso href="http://smartsheet-platform.github.io/api-docs/#template-object">Template Object Help</seealso>

@@ -27,44 +27,14 @@ namespace Smartsheet.Api.Models
     public class Column : IdentifiableModel
     {
         /// <summary>
-        /// Represents the position, (zero-based).
+        /// Represents the system column Type.
         /// </summary>
-        private int? index;
-
-        /// <summary>
-        /// Represents the title.
-        /// </summary>
-        private string title;
-
-        /// <summary>
-        /// Represents the primary flag.
-        /// </summary>
-        private bool? primary;
+        private SystemColumnType? systemColumnType;
 
         /// <summary>
         /// Represents the column Type.
         /// </summary>
         private ColumnType? type;
-
-        /// <summary>
-        /// Represents the list of options for the column.
-        /// </summary>
-        private IList<string> options;
-
-        /// <summary>
-        /// Represents the hidden flag for the column.
-        /// </summary>
-        private bool? hidden;
-
-        /// <summary>
-        /// Represents the symbol used for the column.
-        /// </summary>
-        private Symbol? symbol;
-
-        /// <summary>
-        /// Represents the system column Type.
-        /// </summary>
-        private SystemColumnType? systemColumnType;
 
         /// <summary>
         /// Represents the format for the auto-generated numbers (if the SystemColumnType is an AUTO_NUMBER).
@@ -77,20 +47,20 @@ namespace Smartsheet.Api.Models
         private IList<Contact> contactOptions;
 
         /// <summary>
-        /// Represents the tags to indicate a special Type of column.
-        /// </summary>
-        private IList<ColumnTag> tags;
-
-        /// <summary>
-        /// Display width of the column in pixels
-        /// </summary>
-        private long? width;
-
-        /// <summary>
         /// The format descriptor. Only returned if the include query string parameter contains format and this column 
         /// has a non-default format applied to it.
         /// </summary>
         private string format;
+
+        /// <summary>
+        /// Represents the hidden flag for the column.
+        /// </summary>
+        private bool? hidden;
+
+        /// <summary>
+        /// Represents the position, (zero-based).
+        /// </summary>
+        private int? index;
 
         /// <summary>
         /// Indicates whether the column is locked. In a response, a value of true indicates that the column has 
@@ -105,38 +75,48 @@ namespace Smartsheet.Api.Models
         private bool? lockedForUser;
 
         /// <summary>
+        /// Represents the list of options for the column.
+        /// </summary>
+        private IList<string> options;
+
+        /// <summary>
+        /// Represents the primary flag.
+        /// </summary>
+        private bool? primary;
+
+        /// <summary>
+        /// Represents the symbol used for the column.
+        /// </summary>
+        private Symbol? symbol;
+
+        /// <summary>
+        /// Represents the tags to indicate a special Type of column.
+        /// </summary>
+        private IList<ColumnTag> tags;
+
+        /// <summary>
+        /// Represents the title.
+        /// </summary>
+        private string title;
+
+        /// <summary>
         /// Indicates whether validation has been enabled for the column (value = true)
         /// </summary>
         private bool? validation;
 
         /// <summary>
-        /// Gets or sets the position of the column (zero-based).
+        /// Display width of the column in pixels
         /// </summary>
-        /// <returns> the index </returns>
-        public int? Index
-        {
-            get { return index; }
-            set { index = value; }
-        }
+        private long? width;
 
         /// <summary>
-        /// Gets the title for the column.
+        /// Gets the system column Type.
         /// </summary>
-        /// <returns> the title </returns>
-        public string Title
+        /// <returns> the system column Type </returns>
+        public SystemColumnType? SystemColumnType
         {
-            get { return title; }
-            set { title = value; }
-        }
-
-        /// <summary>
-        /// Gets the primary flag for the column.
-        /// </summary>
-        /// <returns> the primary flag </returns>
-        public bool? Primary
-        {
-            get { return primary; }
-            set { primary = value; }
+            get { return systemColumnType; }
+            set { systemColumnType = value; }
         }
 
         /// <summary>
@@ -147,46 +127,6 @@ namespace Smartsheet.Api.Models
         {
             get { return type; }
             set { type = value; }
-        }
-
-        /// <summary>
-        /// Gets the list of options for the column.
-        /// </summary>
-        /// <returns> the options </returns>
-        public IList<string> Options
-        {
-            get { return options; }
-            set { options = value; }
-        }
-
-        /// <summary>
-        /// Gets the hidden flag.
-        /// </summary>
-        /// <returns> the hidden flag </returns>
-        public bool? Hidden
-        {
-            get { return hidden; }
-            set { hidden = value; }
-        }
-
-        /// <summary>
-        /// Gets the symbol for the column.
-        /// </summary>
-        /// <returns> the symbol </returns>
-        public Symbol? Symbol
-        {
-            get { return symbol; }
-            set { symbol = value; }
-        }
-
-        /// <summary>
-        /// Gets the system column Type.
-        /// </summary>
-        /// <returns> the system column Type </returns>
-        public SystemColumnType? SystemColumnType
-        {
-            get { return systemColumnType; }
-            set { systemColumnType = value; }
         }
 
         /// <summary>
@@ -211,25 +151,6 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// Gets the tags that indicate a special Type of column.
-        /// </summary>
-        /// <returns> the tags </returns>
-        public IList<ColumnTag> Tags
-        {
-            get { return tags; }
-            set { tags = value; }
-        }
-
-        /// <summary>
-        /// Display width of the column in pixels
-        /// </summary>
-        public long? Width
-        {
-            get { return width; }
-            set { width = value; }
-        }
-
-        /// <summary>
         /// <para>The format descriptor.</para>
         /// Only returned if the include query string parameter contains format and this
         /// column has a non-default format applied to it.
@@ -238,6 +159,26 @@ namespace Smartsheet.Api.Models
         {
             get { return format; }
             set { format = value; }
+        }
+
+        /// <summary>
+        /// Gets the hidden flag.
+        /// </summary>
+        /// <returns> the hidden flag </returns>
+        public bool? Hidden
+        {
+            get { return hidden; }
+            set { hidden = value; }
+        }
+
+        /// <summary>
+        /// Gets or sets the position of the column (zero-based).
+        /// </summary>
+        /// <returns> the index </returns>
+        public int? Index
+        {
+            get { return index; }
+            set { index = value; }
         }
 
         /// <summary>
@@ -261,12 +202,71 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
+        /// Gets the list of options for the column.
+        /// </summary>
+        /// <returns> the options </returns>
+        public IList<string> Options
+        {
+            get { return options; }
+            set { options = value; }
+        }
+
+        /// <summary>
+        /// Gets the primary flag for the column.
+        /// </summary>
+        /// <returns> the primary flag </returns>
+        public bool? Primary
+        {
+            get { return primary; }
+            set { primary = value; }
+        }
+
+        /// <summary>
+        /// Gets the symbol for the column.
+        /// </summary>
+        /// <returns> the symbol </returns>
+        public Symbol? Symbol
+        {
+            get { return symbol; }
+            set { symbol = value; }
+        }
+
+        /// <summary>
+        /// Gets the tags that indicate a special Type of column.
+        /// </summary>
+        /// <returns> the tags </returns>
+        public IList<ColumnTag> Tags
+        {
+            get { return tags; }
+            set { tags = value; }
+        }
+
+        /// <summary>
+        /// Gets the title for the column.
+        /// </summary>
+        /// <returns> the title </returns>
+        public string Title
+        {
+            get { return title; }
+            set { title = value; }
+        }
+
+        /// <summary>
         /// Indicates whether validation has been enabled for the column (value = true)
         /// </summary>
         public bool? Validation
         {
             get { return validation; }
             set { validation = value; }
+        }
+
+        /// <summary>
+        /// Display width of the column in pixels
+        /// </summary>
+        public long? Width
+        {
+            get { return width; }
+            set { width = value; }
         }
 
         /// <summary>

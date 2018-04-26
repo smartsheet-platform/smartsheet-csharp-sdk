@@ -28,9 +28,9 @@ namespace Smartsheet.Api.Models
     public class ProjectSettings
     {
         /// <summary>
-        /// Working days of a week for a project sheet. 
+        /// Length of a workday for a project sheet. Valid value must be above or equal to 1 hour, and less than or equal to 24 hours.
         /// </summary>
-        private IList<string> workingDays;
+        private float? lengthOfDay;
 
         /// <summary>
         /// Non-working days for a project sheet. The format for the timestamp array must be an array of strings that are valid ISO-8601 dates ('YYYY-MM-DD’).
@@ -38,17 +38,17 @@ namespace Smartsheet.Api.Models
         private IList<DateTime> nonWorkingDays;
 
         /// <summary>
-        /// Length of a workday for a project sheet. Valid value must be above or equal to 1 hour, and less than or equal to 24 hours.
+        /// Working days of a week for a project sheet. 
         /// </summary>
-        private float? lengthOfDay;
+        private IList<string> workingDays;
 
         /// <summary>
-        /// Get a list of working days in the week.
+        /// Get the length of the workday for a project seheet.
         /// </summary>
-        public IList<string> WorkingDays
+        public float? LengthOfDay
         {
-            get { return workingDays; }
-            set { workingDays = value; }
+            get { return lengthOfDay; }
+            set { lengthOfDay = value; }
         }
 
         /// <summary>
@@ -61,12 +61,12 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// Get the length of the workday for a project seheet.
+        /// Get a list of working days in the week.
         /// </summary>
-        public float? LengthOfDay
+        public IList<string> WorkingDays
         {
-            get { return lengthOfDay; }
-            set { lengthOfDay = value; }
+            get { return workingDays; }
+            set { workingDays = value; }
         }
     }
 }

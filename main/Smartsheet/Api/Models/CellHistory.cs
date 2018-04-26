@@ -26,13 +26,13 @@ namespace Smartsheet.Api.Models
     public class CellHistory : Cell
     {
         /// <summary>
+        /// The date the cell was modified. </summary>
+        private DateTime? modifiedAt;
+
+        /// <summary>
         /// Represents the user that modified the cell.
         /// </summary>
         private User modifiedBy;
-
-        /// <summary>
-        /// The date the cell was modified. </summary>
-        private DateTime? modifiedAt;
 
         /// <summary>
         /// Gets the date the cell was modified.

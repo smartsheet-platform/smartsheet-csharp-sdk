@@ -18,8 +18,6 @@
 
 namespace Smartsheet.Api.Models
 {
-
-
     /// <summary>
     /// Represents the discussion parent Type.
     /// </summary>
@@ -28,5 +26,4 @@ namespace Smartsheet.Api.Models
         SHEET,
         ROW
     }
-
 }

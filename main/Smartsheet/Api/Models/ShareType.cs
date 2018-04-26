@@ -26,5 +26,4 @@ namespace Smartsheet.Api.Models
         USER,
         GROUP
     }
-
 }

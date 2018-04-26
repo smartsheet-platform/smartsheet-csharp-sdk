@@ -18,8 +18,6 @@
 
 namespace Smartsheet.Api.Models
 {
-
-
     /// <summary>
     /// Represents the Format details when generating a digital copy (PDF/EXCEL) of a sheet.
     /// </summary>

@@ -26,19 +26,20 @@ namespace Smartsheet.Api.Models
     public class Cell
     {
         /// <summary>
+        /// Represents the column Id for this cell.
+        /// </summary>
+        private long? columnId;
+
+        /// <summary>
         /// Represents the column Type.
         /// </summary>
         private ColumnType? columnType;
 
         /// <summary>
-        /// Represents the value.
+        /// The format descriptor describing this cell's conditional format. Only returned if the include query 
+        /// string parameter contains format and this cell has a conditional format applied.
         /// </summary>
-        private object value;
-
-        /// <summary>
-        /// is an object representation of a cell's value and is currently used for adding or updating predecessor cell values
-        /// </summary>
-        ObjectValue objectValue;
+        private string conditionalFormat;
 
         /// <summary>
         /// Represents the display value.
@@ -46,14 +47,10 @@ namespace Smartsheet.Api.Models
         private string displayValue;
 
         /// <summary>
-        /// Represents the column Id for this cell.
+        /// The format descriptor. Only returned if the include query string parameter contains format and this cell 
+        /// has a non-default format applied.
         /// </summary>
-        private long? columnId;
-
-        /// <summary>
-        /// Represents a hyperlink to a URL, sheet, or report.
-        /// </summary>
-        private Hyperlink hyperlink;
+        private string format;
 
         /// <summary>
         /// The formula for the cell.
@@ -61,9 +58,14 @@ namespace Smartsheet.Api.Models
         private string formula;
 
         /// <summary>
-        /// Represents the Strict flag.
+        /// Represents a hyperlink to a URL, sheet, or report.
         /// </summary>
-        private bool? strict;
+        private Hyperlink hyperlink;
+
+        /// <summary>
+        /// The image that the cell contains. Only returned if the cell contains an image
+        /// </summary>
+        private Image image;
 
         /// <summary>
         /// An inbound link from a cell in another sheet. This cell's value mirrors the linked cell's value
@@ -77,21 +79,9 @@ namespace Smartsheet.Api.Models
         private IList<CellLink> linksOutToCells;
 
         /// <summary>
-        /// The format descriptor. Only returned if the include query string parameter contains format and this cell 
-        /// has a non-default format applied.
+        /// is an object representation of a cell's value and is currently used for adding or updating predecessor cell values
         /// </summary>
-        private string format;
-
-        /// <summary>
-        /// The format descriptor describing this cell's conditional format. Only returned if the include query 
-        /// string parameter contains format and this cell has a conditional format applied.
-        /// </summary>
-        private string conditionalFormat;
-
-        /// <summary>
-        /// The image that the cell contains. Only returned if the cell contains an image
-        /// </summary>
-        private Image image;
+        ObjectValue objectValue;
 
         /// <summary>
         /// (Admin only) Indicates whether the cell value can contain a value outside of the validation limits (value = true). 
@@ -101,42 +91,23 @@ namespace Smartsheet.Api.Models
         private bool? overrideValidation;
 
         /// <summary>
-        /// An array of CellLink objects. Zero or more outbound links from this cell to cells in other sheets 
-        /// whose values mirror this cell's value.
+        /// Represents the Strict flag.
         /// </summary>
-        private IList<CellLink> LinksOutToCells
-        {
-            get { return linksOutToCells; }
-            set { linksOutToCells = value; }
-        }
+        private bool? strict;
 
         /// <summary>
-        /// An inbound link from a cell in another sheet. This cell's value mirrors the linked cell's value.
+        /// Represents the value.
         /// </summary>
-        public CellLink LinkInFromCell
-        {
-            get { return linkInFromCell; }
-            set { linkInFromCell = value; }
-        }
+        private object value;
 
         /// <summary>
-        /// The format descriptor. Only returned if the include query string parameter contains format and this cell 
-        /// has a non-default format applied.
+        /// Gets the column Id for this cell.
         /// </summary>
-        public string Format
+        /// <returns> the column Id </returns>
+        public long? ColumnId
         {
-            get { return format; }
-            set { format = value; }
-        }
-
-        /// <summary>
-        /// The format descriptor describing this cell's conditional format. Only returned if the include query string 
-        /// parameter contains format and this cell has a conditional format applied.
-        /// </summary>
-        public string ConditionalFormat
-        {
-            get { return conditionalFormat; }
-            set { conditionalFormat = value; }
+            get { return columnId; }
+            set { columnId = value; }
         }
 
         /// <summary>
@@ -150,23 +121,13 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// An object representation of a cell's value that is currently used for adding or updating predecessor cell values.
+        /// The format descriptor describing this cell's conditional format. Only returned if the include query string 
+        /// parameter contains format and this cell has a conditional format applied.
         /// </summary>
-        /// <returns> the ObjectValue </returns>
-        public ObjectValue ObjectValue
+        public string ConditionalFormat
         {
-            get { return objectValue; }
-            set { objectValue = value;    }
-        }
-
-        /// <summary>
-        /// Gets the value.
-        /// </summary>
-        /// <returns> the value </returns>
-        public object Value
-        {
-            get { return value; }
-            set { this.value = value; }
+            get { return conditionalFormat; }
+            set { conditionalFormat = value; }
         }
 
         /// <summary>
@@ -180,23 +141,13 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// Gets the column Id for this cell.
+        /// The format descriptor. Only returned if the include query string parameter contains format and this cell 
+        /// has a non-default format applied.
         /// </summary>
-        /// <returns> the column Id </returns>
-        public long? ColumnId
+        public string Format
         {
-            get { return columnId; }
-            set { columnId = value; }
-        }
-
-        /// <summary>
-        /// A hyperlink to a URL, sheet, or report
-        /// </summary>
-        /// <returns> the link </returns>
-        public Hyperlink Hyperlink
-        {
-            get { return hyperlink; }
-            set { hyperlink = value; }
+            get { return format; }
+            set { format = value; }
         }
 
         /// <summary>
@@ -209,16 +160,14 @@ namespace Smartsheet.Api.Models
             set { formula = value; }
         }
 
-
         /// <summary>
-        /// Gets the Strict value for this cell.
+        /// A hyperlink to a URL, sheet, or report
         /// </summary>
-        /// <seealso href="http://www.Smartsheet.com/developers/Api-documentation#h.lay2yj3x1pp8">Column Types</seealso>
-        /// <returns> the Strict </returns>
-        public bool? Strict
+        /// <returns> the link </returns>
+        public Hyperlink Hyperlink
         {
-            get { return strict; }
-            set { strict = value; }
+            get { return hyperlink; }
+            set { hyperlink = value; }
         }
 
         /// <summary>
@@ -233,15 +182,65 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
+        /// An inbound link from a cell in another sheet. This cell's value mirrors the linked cell's value.
+        /// </summary>
+        public CellLink LinkInFromCell
+        {
+            get { return linkInFromCell; }
+            set { linkInFromCell = value; }
+        }
+
+        /// <summary>
+        /// An array of CellLink objects. Zero or more outbound links from this cell to cells in other sheets 
+        /// whose values mirror this cell's value.
+        /// </summary>
+        private IList<CellLink> LinksOutToCells
+        {
+            get { return linksOutToCells; }
+            set { linksOutToCells = value; }
+        }
+
+        /// <summary>
+        /// An object representation of a cell's value that is currently used for adding or updating predecessor cell values.
+        /// </summary>
+        /// <returns> the ObjectValue </returns>
+        public ObjectValue ObjectValue
+        {
+            get { return objectValue; }
+            set { objectValue = value;    }
+        }
+
+        /// <summary>
         /// (Admin only) Indicates whether the cell value can contain a value outside of the validation limits (value = true). 
         /// When using this parameter, you must also set strict to false to bypass value type checking. This property is 
         /// honored for POST or PUT actions that update rows.
         /// </summary>
         /// <returns> the override validation flag </returns>
-        public bool? OverrideValidation 
+        public bool? OverrideValidation
         {
             get { return overrideValidation; }
-            set { overrideValidation = value;}
+            set { overrideValidation = value; }
+        }
+
+        /// <summary>
+        /// Gets the Strict value for this cell.
+        /// </summary>
+        /// <seealso href="http://www.Smartsheet.com/developers/Api-documentation#h.lay2yj3x1pp8">Column Types</seealso>
+        /// <returns> the Strict </returns>
+        public bool? Strict
+        {
+            get { return strict; }
+            set { strict = value; }
+        }
+
+        /// <summary>
+        /// Gets the value.
+        /// </summary>
+        /// <returns> the value </returns>
+        public object Value
+        {
+            get { return value; }
+            set { this.value = value; }
         }
 
         /// <summary>

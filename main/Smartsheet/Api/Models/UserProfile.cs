@@ -24,9 +24,9 @@ namespace Smartsheet.Api.Models
     public class UserProfile : UserModel
     {
         /// <summary>
-        /// user's current timezone id
+        /// account details
         /// </summary>
-        private string timeZone;
+        private Account account;
 
         /// <summary>
         /// the user's locale
@@ -34,17 +34,17 @@ namespace Smartsheet.Api.Models
         private string locale;
 
         /// <summary>
-        /// account details
+        /// user's current timezone id
         /// </summary>
-        private Account account;
+        private string timeZone;
 
         /// <summary>
-        /// Current user’s time zone ID
+        /// Account object representing the current user’s customer account
         /// </summary>
-        public string TimeZone
+        public Account Account
         {
-            get { return timeZone; }
-            set { timeZone = value; }
+            get { return account; }
+            set { account = value; }
         }
 
         /// <summary>
@@ -57,12 +57,12 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// Account object representing the current user’s customer account
+        /// Current user’s time zone ID
         /// </summary>
-        public Account Account
+        public string TimeZone
         {
-            get { return account; }
-            set { account = value; }
+            get { return timeZone; }
+            set { timeZone = value; }
         }
     }
 }

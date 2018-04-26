@@ -25,40 +25,20 @@ namespace Smartsheet.Api.Models
     public class AutoNumberFormat
     {
         /// <summary>
-        /// Represents the Prefix. </summary>
-        private string prefix;
-
-        /// <summary>
-        /// Represents the Suffix. </summary>
-        private string suffix;
-
-        /// <summary>
         /// Represents the Fill. </summary>
         private string fill;
+
+        /// <summary>
+        /// Represents the Prefix. </summary>
+        private string prefix;
 
         /// <summary>
         /// Represents the starting number. </summary>
         private long? startingNumber;
 
         /// <summary>
-        /// Gets the Prefix.
-        /// </summary>
-        /// <returns> the Prefix </returns>
-        public string Prefix
-        {
-            get { return prefix; }
-            set { prefix = value; }
-        }
-
-        /// <summary>
-        /// Gets the Suffix.
-        /// </summary>
-        /// <returns> the Suffix </returns>
-        public string Suffix
-        {
-            get { return suffix; }
-            set { suffix = value; }
-        }
+        /// Represents the Suffix. </summary>
+        private string suffix;
 
         /// <summary>
         /// Gets the Fill.
@@ -71,6 +51,16 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
+        /// Gets the Prefix.
+        /// </summary>
+        /// <returns> the Prefix </returns>
+        public string Prefix
+        {
+            get { return prefix; }
+            set { prefix = value; }
+        }
+
+        /// <summary>
         /// Gets the starting number.
         /// </summary>
         /// <returns> the starting number </returns>
@@ -78,6 +68,16 @@ namespace Smartsheet.Api.Models
         {
             get { return startingNumber; }
             set { startingNumber = value; }
+        }
+
+        /// <summary>
+        /// Gets the Suffix.
+        /// </summary>
+        /// <returns> the Suffix </returns>
+        public string Suffix
+        {
+            get { return suffix; }
+            set { suffix = value; }
         }
     }
 }

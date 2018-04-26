@@ -24,6 +24,11 @@ namespace Smartsheet.Api.Models
     public class Error
     {
         /// <summary>
+        /// Additional error detail if it is available
+        /// </summary>
+        private object detail;
+
+        /// <summary>
         /// Represents the error code.
         /// </summary>
         private int? errorCode;
@@ -39,9 +44,14 @@ namespace Smartsheet.Api.Models
         private string refId;
 
         /// <summary>
-        /// Additional error detail if it is available
+        /// Gets additional error detail if available
         /// </summary>
-        private object detail;
+        /// <returns> error detail </returns>
+        public object Detail
+        {
+            get { return detail; }
+            set { detail = value; }
+        }
 
         /// <summary>
         /// Gets the error code.
@@ -71,16 +81,6 @@ namespace Smartsheet.Api.Models
         {
             get { return refId; }
             set { refId = value; }
-        }
-
-        /// <summary>
-        /// Gets additional error detail if available
-        /// </summary>
-        /// <returns> error detail </returns>
-        public object Detail
-        {
-            get { return detail; }
-            set { detail = value; }
         }
     }
 }

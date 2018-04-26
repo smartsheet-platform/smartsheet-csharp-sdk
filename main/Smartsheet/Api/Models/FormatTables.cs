@@ -28,21 +28,7 @@ namespace Smartsheet.Api.Models
     {
         private string defaults;
 
-        private IList<FontFamily> fontFamily;
-
-        private IList<string> fontSize;
-
         private IList<string> bold;
-
-        private IList<string> italic;
-
-        private IList<string> underline;
-
-        private IList<string> strikethrough;
-
-        private IList<string> horizontalAlign;
-
-        private IList<string> verticalAlign;
 
         private IList<string> color;
 
@@ -50,11 +36,25 @@ namespace Smartsheet.Api.Models
 
         private IList<string> decimalCount;
 
-        private IList<string> thousandsSeparator;
+        private IList<FontFamily> fontFamily;
+
+        private IList<string> fontSize;
+
+        private IList<string> horizontalAlign;
+
+        private IList<string> italic;
 
         private IList<string> numberFormat;
 
+        private IList<string> strikethrough;
+
         private IList<string> textWrap;
+
+        private IList<string> thousandsSeparator;
+
+        private IList<string> underline;
+
+        private IList<string> verticalAlign;
 
         /// <summary>
         /// A format descriptor where each element describes the formats
@@ -67,77 +67,12 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// Font families with additional font information
-        /// </summary>
-        public IList<FontFamily> FontFamily
-        {
-            get { return fontFamily; }
-            set { fontFamily = value; }
-        }
-
-        /// <summary>
-        /// Font sizes in points
-        /// </summary>
-        public IList<string> FontSize
-        {
-            get { return fontSize; }
-            set { fontSize = value; }
-        }
-
-        /// <summary>
         /// Possible values: none, on.
         /// </summary>
         public IList<string> Bold
         {
             get { return bold; }
             set { bold = value; }
-        }
-
-        /// <summary>
-        /// Possible values: none, on.
-        /// </summary>
-        public IList<string> Italic
-        {
-            get { return italic; }
-            set { italic = value; }
-        }
-
-        /// <summary>
-        /// Possible values: none, on.
-        /// </summary>
-        public IList<string> Underline
-        {
-            get { return underline; }
-            set { underline = value; }
-        }
-
-        /// <summary>
-        /// Possible values: none, on.
-        /// </summary>
-        public IList<string> Strikethrough
-        {
-            get { return strikethrough; }
-            set { strikethrough = value; }
-        }
-
-        /// <summary>
-        /// Possible values: none, on.
-        /// </summary>
-        public IList<string> HorizontalAlign
-        {
-            get { return horizontalAlign; }
-            set { horizontalAlign = value; }
-        }
-
-        /// <summary>
-        /// Vertical alignment, possible values:
-        /// none, middle, bottom.
-        /// Note: “default” is the default value, which is equivalent to “top”.
-        /// </summary>
-        public IList<string> VerticalAlign
-        {
-            get { return verticalAlign; }
-            set { verticalAlign = value; }
         }
 
         /// <summary>
@@ -171,12 +106,39 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// Possible values: none, on
+        /// Font families with additional font information
         /// </summary>
-        public IList<string> ThousandsSeparator
+        public IList<FontFamily> FontFamily
         {
-            get { return thousandsSeparator; }
-            set { thousandsSeparator = value; }
+            get { return fontFamily; }
+            set { fontFamily = value; }
+        }
+
+        /// <summary>
+        /// Font sizes in points
+        /// </summary>
+        public IList<string> FontSize
+        {
+            get { return fontSize; }
+            set { fontSize = value; }
+        }
+
+        /// <summary>
+        /// Possible values: none, on.
+        /// </summary>
+        public IList<string> HorizontalAlign
+        {
+            get { return horizontalAlign; }
+            set { horizontalAlign = value; }
+        }
+
+        /// <summary>
+        /// Possible values: none, on.
+        /// </summary>
+        public IList<string> Italic
+        {
+            get { return italic; }
+            set { italic = value; }
         }
 
         /// <summary>
@@ -189,12 +151,50 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
+        /// Possible values: none, on.
+        /// </summary>
+        public IList<string> Strikethrough
+        {
+            get { return strikethrough; }
+            set { strikethrough = value; }
+        }
+
+        /// <summary>
         /// Possible values: none, on
         /// </summary>
         public IList<string> TextWrap
         {
             get { return textWrap; }
             set { textWrap = value; }
+        }
+
+        /// <summary>
+        /// Possible values: none, on
+        /// </summary>
+        public IList<string> ThousandsSeparator
+        {
+            get { return thousandsSeparator; }
+            set { thousandsSeparator = value; }
+        }
+
+        /// <summary>
+        /// Possible values: none, on.
+        /// </summary>
+        public IList<string> Underline
+        {
+            get { return underline; }
+            set { underline = value; }
+        }
+
+        /// <summary>
+        /// Vertical alignment, possible values:
+        /// none, middle, bottom.
+        /// Note: “default” is the default value, which is equivalent to “top”.
+        /// </summary>
+        public IList<string> VerticalAlign
+        {
+            get { return verticalAlign; }
+            set { verticalAlign = value; }
         }
     }
 }

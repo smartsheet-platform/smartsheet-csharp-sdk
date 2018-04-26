@@ -21,59 +21,43 @@ using System.Collections.Generic;
 
 namespace Smartsheet.Api.Models
 {
-
     /// <summary>
     /// Represents the Comment object.
     /// </summary>
     public class Comment : IdentifiableModel
     {
-
         /// <summary>
-        /// Represents the Text for the Comment. </summary>
-        private string text;
-
-        /// <summary>
-        /// Represents the user that created the Comment. </summary>
-        private User createdBy;
-
-        ///// <summary>
-        ///// Represents the date the Comment was modified. </summary>
-        //private DateTime? modifiedDate;
+        /// Represents the discussion ID. </summary>
+        private long? discussionId;
 
         /// <summary>
         /// Represents the Attachments for the Comment. </summary>
         private IList<Attachment> attachments;
 
         /// <summary>
-        /// Represents the discussion ID. </summary>
-        private long? discussionId;
-
-        /// <summary>
         /// The date the Comment was created. </summary>
         private DateTime? createdAt;
+
+        /// <summary>
+        /// Represents the user that created the Comment. </summary>
+        private User createdBy;
 
         /// <summary>
         /// The date the Comment was last modified. </summary>
         private DateTime? modifiedAt;
 
         /// <summary>
-        /// Gets the Text for the Comment.
-        /// </summary>
-        /// <returns> the Text </returns>
-        public string Text
-        {
-            get { return text; }
-            set { text = value; }
-        }
+        /// Represents the Text for the Comment. </summary>
+        private string text;
 
         /// <summary>
-        /// Gets user that created the Comment.
+        /// Gets the discussion Id.
         /// </summary>
-        /// <returns> the created by </returns>
-        public User CreatedBy
+        /// <returns> the discussion Id </returns>
+        public long? DiscussionId
         {
-            get { return createdBy; }
-            set { createdBy = value; }
+            get { return discussionId; }
+            set { discussionId = value; }
         }
 
         /// <summary>
@@ -87,16 +71,6 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// Gets the discussion Id.
-        /// </summary>
-        /// <returns> the discussion Id </returns>
-        public long? DiscussionId
-        {
-            get { return discussionId; }
-            set { discussionId = value; }
-        }
-
-        /// <summary>
         /// Gets the date the Comment was created.
         /// </summary>
         /// <returns> the created at </returns>
@@ -107,6 +81,16 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
+        /// Gets user that created the Comment.
+        /// </summary>
+        /// <returns> the created by </returns>
+        public User CreatedBy
+        {
+            get { return createdBy; }
+            set { createdBy = value; }
+        }
+
+        /// <summary>
         /// Gets the date the Comment was modified.
         /// </summary>
         /// <returns> the modified at </returns>
@@ -114,6 +98,16 @@ namespace Smartsheet.Api.Models
         {
             get { return modifiedAt; }
             set { modifiedAt = value; }
+        }
+
+        /// <summary>
+        /// Gets the Text for the Comment.
+        /// </summary>
+        /// <returns> the Text </returns>
+        public string Text
+        {
+            get { return text; }
+            set { text = value; }
         }
 
         /// <summary>

@@ -29,29 +29,19 @@ namespace Smartsheet.Api.Models
     public class WebhookStats
     {
         /// <summary>
-        /// The number of retries the webhook had performed as of the last callback attempt.
-        /// </summary>
-        private int? lastCallbackAttemptRetryCount;
-
-        /// <summary>
         /// When this webhook last made a callback attempt.
         /// </summary>
         private DateTime? lastCallbackAttempt;
 
         /// <summary>
+        /// The number of retries the webhook had performed as of the last callback attempt.
+        /// </summary>
+        private int? lastCallbackAttemptRetryCount;
+
+        /// <summary>
         /// When this webhook last made a successful callback.
         /// </summary>
         private DateTime? lastSuccessfulCallback;
-
-        /// <summary>
-        /// Get the number of retries the webhook had performed as of the last callback attempt.
-        /// </summary>
-        /// <returns> the retry count </returns>
-        public int? LastCallbackAttemptRetryCount
-        {
-            get { return lastCallbackAttemptRetryCount; }
-            set { lastCallbackAttemptRetryCount = value; }
-        }
 
         /// <summary>
         /// Get the timestamp from last callback attempt.
@@ -61,6 +51,16 @@ namespace Smartsheet.Api.Models
         {
             get { return lastCallbackAttempt; }
             set { lastCallbackAttempt = value; }
+        }
+
+        /// <summary>
+        /// Get the number of retries the webhook had performed as of the last callback attempt.
+        /// </summary>
+        /// <returns> the retry count </returns>
+        public int? LastCallbackAttemptRetryCount
+        {
+            get { return lastCallbackAttemptRetryCount; }
+            set { lastCallbackAttemptRetryCount = value; }
         }
 
         /// <summary>

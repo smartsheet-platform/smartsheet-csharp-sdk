@@ -32,16 +32,14 @@ namespace Smartsheet.Api.Models
         where TCell : Cell
     {
         /// <summary>
-        /// Represents the columns for the sheet.
+        /// Represents the ID of the sheet/template from which the sheet was created.
         /// </summary>
-        [CLSCompliant(false)]
-        protected IList<TColumn> columns;
+        private long? fromId;
 
         /// <summary>
-        /// Represents the rows for the sheet.
+        /// Represents the owner Id of the owner
         /// </summary>
-        [CLSCompliant(false)]
-        protected IList<TRow> rows;
+        private long? ownerId;
 
         /// <summary>
         /// Represents the access level for the sheet.
@@ -49,19 +47,15 @@ namespace Smartsheet.Api.Models
         private AccessLevel? accessLevel;
 
         /// <summary>
-        /// Represents the discussions for the sheet.
-        /// </summary>
-        private IList<Discussion> discussions;
-
-        /// <summary>
         /// Represents the attachments for the sheet.
         /// </summary>
         private IList<Attachment> attachments;
 
         /// <summary>
-        /// Represents the read only flag for the sheet.
+        /// Represents the columns for the sheet.
         /// </summary>
-        private bool? readOnly;
+        [CLSCompliant(false)]
+        protected IList<TColumn> columns;
 
         /// <summary>
         /// Represents the creation timestamp for the sheet.
@@ -69,19 +63,9 @@ namespace Smartsheet.Api.Models
         private DateTime? createdAt;
 
         /// <summary>
-        /// Represents the modification timestamp for the sheet.
+        /// Get a list of cross-sheet references used by this sheet
         /// </summary>
-        private DateTime? modifiedAt;
-
-        /// <summary>
-        /// Represents the direct URL to the sheet.
-        /// </summary>
-        private string permalink;
-
-        /// <summary>
-        /// Represents the Gantt enabled flag.
-        /// </summary>
-        private bool? ganttEnabled;
+        private IList<CrossSheetReference> crossSheetReferences;
 
         /// <summary>
         /// Represents the dependencies enabled flag. </summary>
@@ -90,19 +74,9 @@ namespace Smartsheet.Api.Models
         private bool? dependenciesEnabled;
 
         /// <summary>
-        /// Represents the version for the sheet
+        /// Represents the discussions for the sheet.
         /// </summary>
-        private int? version;
-
-        /// <summary>
-        /// Represents the ID of the sheet/template from which the sheet was created.
-        /// </summary>
-        private long? fromId;
-
-        /// <summary>
-        /// Represents the ID of the sheet/template from which the sheet was created.
-        /// </summary>
-        private long? totalRowCount;
+        private IList<Discussion> discussions;
 
         /// <summary>
         /// Represents the effective attachment options
@@ -110,19 +84,9 @@ namespace Smartsheet.Api.Models
         private IList<AttachmentType> effectiveAttachmentOptions;
 
         /// <summary>
-        /// Indicates whether resource management is enabled for a sheet
-        /// </summary>
-        private bool? resourceManagementEnabled;
-
-        /// <summary>
         /// Identifies whether the sheet is marked as a favorite
         /// </summary>
         private bool? favorite;
-
-        /// <summary>
-        /// Identifies whether it is enabled to show parent rows for filters.
-        /// </summary>
-        private bool? showParentRowsForFilters;
 
         /// <summary>
         /// List of sheet filters
@@ -130,14 +94,14 @@ namespace Smartsheet.Api.Models
         private IList<SheetFilter> filters;
 
         /// <summary>
-        /// Represents the user settings
+        /// Represents the Gantt enabled flag.
         /// </summary>
-        private SheetUserSettings userSettings;
+        private bool? ganttEnabled;
 
         /// <summary>
-        /// Represents the source of the sheet
+        /// Represents the modification timestamp for the sheet.
         /// </summary>
-        private Source source;
+        private DateTime? modifiedAt;
 
         /// <summary>
         /// Represents the owner of the sheet
@@ -145,9 +109,9 @@ namespace Smartsheet.Api.Models
         private string owner;
 
         /// <summary>
-        /// Represents the owner Id of the owner
+        /// Represents the direct URL to the sheet.
         /// </summary>
-        private long? ownerId;
+        private string permalink;
 
         /// <summary>
         /// Sheet’s project settings containing the working days, non-working days, and length of day for a project sheet.
@@ -155,17 +119,54 @@ namespace Smartsheet.Api.Models
         private ProjectSettings projectSettings;
 
         /// <summary>
-        /// Get a list of cross-sheet references used by this sheet
+        /// Represents the read only flag for the sheet.
         /// </summary>
-        private IList<CrossSheetReference> crossSheetReferences;
+        private bool? readOnly;
 
         /// <summary>
-        /// Represents the email of the owner
+        /// Indicates whether resource management is enabled for a sheet
         /// </summary>
-        public string Owner
+        private bool? resourceManagementEnabled;
+
+        /// <summary>
+        /// Represents the rows for the sheet.
+        /// </summary>
+        [CLSCompliant(false)]
+        protected IList<TRow> rows;
+
+        /// <summary>
+        /// Identifies whether it is enabled to show parent rows for filters.
+        /// </summary>
+        private bool? showParentRowsForFilters;
+
+        /// <summary>
+        /// Represents the source of the sheet
+        /// </summary>
+        private Source source;
+
+        /// <summary>
+        /// Represents the ID of the sheet/template from which the sheet was created.
+        /// </summary>
+        private long? totalRowCount;
+
+        /// <summary>
+        /// Represents the user settings
+        /// </summary>
+        private SheetUserSettings userSettings;
+
+        /// <summary>
+        /// Represents the version for the sheet
+        /// </summary>
+        private int? version;
+
+        /// <summary>
+        /// Gets the Id of the sheet/template from which the sheet was created.
+        /// </summary>
+        /// <returns> the from Id </returns>
+        public long? FromId
         {
-            get { return owner; }
-            set { owner = value; }
+            get { return fromId; }
+            set { fromId = value; }
         }
 
         /// <summary>
@@ -175,36 +176,6 @@ namespace Smartsheet.Api.Models
         {
             get { return ownerId; }
             set { ownerId = value; }
-        }
-
-        /// <summary>
-        /// Gets the dependencies enabled flag.
-        /// </summary>
-        /// <returns> the dependencies enabled </returns>
-        public bool? DependenciesEnabled
-        {
-            get { return dependenciesEnabled; }
-            set { dependenciesEnabled = value; }
-        }
-
-        /// <summary>
-        /// Gets the columns for the sheet.
-        /// </summary>
-        /// <returns> the columns </returns>
-        public IList<TColumn> Columns
-        {
-            get { return columns; }
-            set { columns = value; }
-        }
-
-        /// <summary>
-        /// Gets the rows for the sheet.
-        /// </summary>
-        /// <returns> the rows </returns>
-        public IList<TRow> Rows
-        {
-            get { return rows; }
-            set { rows = value; }
         }
 
         /// <summary>
@@ -218,16 +189,6 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// Gets the discussions for the sheet.
-        /// </summary>
-        /// <returns> the discussions </returns>
-        public IList<Discussion> Discussions
-        {
-            get { return discussions; }
-            set { discussions = value; }
-        }
-
-        /// <summary>
         /// Gets the attachments for the sheet.
         /// </summary>
         /// <returns> the attachments </returns>
@@ -238,13 +199,13 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// Gets the read only flag for the sheet.
+        /// Gets the columns for the sheet.
         /// </summary>
-        /// <returns> the read only </returns>
-        public bool? ReadOnly
+        /// <returns> the columns </returns>
+        public IList<TColumn> Columns
         {
-            get { return readOnly; }
-            set { readOnly = value; }
+            get { return columns; }
+            set { columns = value; }
         }
 
         /// <summary>
@@ -257,65 +218,33 @@ namespace Smartsheet.Api.Models
             set { createdAt = value; }
         }
 
-
         /// <summary>
-        /// Gets the date and time the sheet was last modified.
+        /// Gets the list of cross-sheet references used by this sheet
         /// </summary>
-        /// <returns> the modified at </returns>
-        public DateTime? ModifiedAt
+        public IList<CrossSheetReference> CrossSheetReferences
         {
-            get { return modifiedAt; }
-            set { modifiedAt = value; }
+            get { return crossSheetReferences; }
+            set { crossSheetReferences = value; }
         }
 
         /// <summary>
-        /// Gets the Permalink for the sheet.
+        /// Gets the dependencies enabled flag.
         /// </summary>
-        /// <returns> the Permalink </returns>
-        public string Permalink
+        /// <returns> the dependencies enabled </returns>
+        public bool? DependenciesEnabled
         {
-            get { return permalink; }
-            set { permalink = value; }
+            get { return dependenciesEnabled; }
+            set { dependenciesEnabled = value; }
         }
 
         /// <summary>
-        /// Gets the Gantt enabled flag.
+        /// Gets the discussions for the sheet.
         /// </summary>
-        /// <returns> the Gantt enabled flag </returns>
-        public bool? GanttEnabled
+        /// <returns> the discussions </returns>
+        public IList<Discussion> Discussions
         {
-            get { return ganttEnabled; }
-            set { ganttEnabled = value; }
-        }
-
-        /// <summary>
-        /// Gets the version for the sheet.
-        /// </summary>
-        /// <returns> the version </returns>
-        public int? Version
-        {
-            get { return version; }
-            set { version = value; }
-        }
-
-        /// <summary>
-        /// Gets the Id of the sheet/template from which the sheet was created.
-        /// </summary>
-        /// <returns> the from Id </returns>
-        public long? FromId
-        {
-            get { return fromId; }
-            set { fromId = value; }
-        }
-
-        /// <summary>
-        /// The total number of rows in the sheet.
-        /// </summary>
-        /// <returns> The total number of rows in the sheet </returns>
-        public long? TotalRowCount
-        {
-            get { return totalRowCount; }
-            set { totalRowCount = value; }
+            get { return discussions; }
+            set { discussions = value; }
         }
 
         /// <summary>
@@ -329,16 +258,6 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// Indicates whether resource management is enabled.
-        /// </summary>
-        /// <returns> true if enabled, false otherwise </returns>
-        public bool? ResourceManagementEnabled
-        {
-            get { return resourceManagementEnabled; }
-            set { resourceManagementEnabled = value; }
-        }
-
-        /// <summary>
         /// Returned only if the user has marked this sheet as a favorite in their Home tab (value = “true”).
         /// </summary>
         /// <returns> true if marked as favorite, false otherwise </returns>
@@ -346,16 +265,6 @@ namespace Smartsheet.Api.Models
         {
             get { return favorite; }
             set { favorite = value; }
-        }
-
-        /// <summary>
-        /// Returned only if there are column filters on the sheet. Value = “true” if “show parent rows” is enabled for the filters.
-        /// </summary>
-        /// <returns> “true” if “show parent rows” is enabled for the filters </returns>
-        public bool? ShowParentRowsForFilters
-        {
-            get { return showParentRowsForFilters; }
-            set { showParentRowsForFilters = value; }
         }
 
         /// <summary>
@@ -369,13 +278,91 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// A SheetUserSettings object containing the current user’s sheet-specific settings..
+        /// Gets the Gantt enabled flag.
         /// </summary>
-        /// <returns> SheetUserSettings object </returns>
-        public SheetUserSettings UserSettings
+        /// <returns> the Gantt enabled flag </returns>
+        public bool? GanttEnabled
         {
-            get { return userSettings; }
-            set { userSettings = value; }
+            get { return ganttEnabled; }
+            set { ganttEnabled = value; }
+        }
+
+        /// <summary>
+        /// Gets the date and time the sheet was last modified.
+        /// </summary>
+        /// <returns> the modified at </returns>
+        public DateTime? ModifiedAt
+        {
+            get { return modifiedAt; }
+            set { modifiedAt = value; }
+        }
+
+        /// <summary>
+        /// Represents the email of the owner
+        /// </summary>
+        public string Owner
+        {
+            get { return owner; }
+            set { owner = value; }
+        }
+
+        /// <summary>
+        /// Gets the Permalink for the sheet.
+        /// </summary>
+        /// <returns> the Permalink </returns>
+        public string Permalink
+        {
+            get { return permalink; }
+            set { permalink = value; }
+        }
+
+        /// <summary>
+        /// Gets sheet’s project settings containing the working days, non-working days, and length of day for a project sheet
+        /// </summary>
+        public ProjectSettings ProjectSettings
+        {
+            get { return projectSettings; }
+            set { projectSettings = value; }
+        }
+
+        /// <summary>
+        /// Gets the read only flag for the sheet.
+        /// </summary>
+        /// <returns> the read only </returns>
+        public bool? ReadOnly
+        {
+            get { return readOnly; }
+            set { readOnly = value; }
+        }
+
+        /// <summary>
+        /// Indicates whether resource management is enabled.
+        /// </summary>
+        /// <returns> true if enabled, false otherwise </returns>
+        public bool? ResourceManagementEnabled
+        {
+            get { return resourceManagementEnabled; }
+            set { resourceManagementEnabled = value; }
+        }
+
+        /// <summary>
+        /// Gets the rows for the sheet.
+        /// </summary>
+        /// <returns> the rows </returns>
+        public IList<TRow> Rows
+        {
+            get { return rows; }
+            set { rows = value; }
+        }
+
+        /// <summary>
+        /// Returned only if there are column filters on the sheet. Value = “true” if “show parent rows” is enabled for the filters.
+        /// </summary>
+        /// <returns> “true” if “show parent rows” is enabled for the filters </returns>
+        public bool? ShowParentRowsForFilters
+        {
+            get { return showParentRowsForFilters; }
+            set { showParentRowsForFilters = value; }
         }
 
         /// <summary>
@@ -389,21 +376,33 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// Gets sheet’s project settings containing the working days, non-working days, and length of day for a project sheet
+        /// The total number of rows in the sheet.
         /// </summary>
-        public ProjectSettings ProjectSettings
+        /// <returns> The total number of rows in the sheet </returns>
+        public long? TotalRowCount
         {
-            get { return projectSettings; }
-            set { projectSettings = value; }
+            get { return totalRowCount; }
+            set { totalRowCount = value; }
         }
 
         /// <summary>
-        /// Gets the list of cross-sheet references used by this sheet
+        /// A SheetUserSettings object containing the current user’s sheet-specific settings..
         /// </summary>
-        public IList<CrossSheetReference> CrossSheetReferences
+        /// <returns> SheetUserSettings object </returns>
+        public SheetUserSettings UserSettings
         {
-            get { return crossSheetReferences; }
-            set { crossSheetReferences = value; }
+            get { return userSettings; }
+            set { userSettings = value; }
+        }
+
+        /// <summary>
+        /// Gets the version for the sheet.
+        /// </summary>
+        /// <returns> the version </returns>
+        public int? Version
+        {
+            get { return version; }
+            set { version = value; }
         }
 
         /// <summary>

@@ -35,14 +35,39 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// When used as a predecessor’s lag value, indicates whether the lag is negative (if true), or positive (false).
+        /// The number of days for this duration.
         /// </summary>
-        private bool? negative;
+        private double? days;
 
         /// <summary>
         /// If true, indicates this duration represents elapsed time, which ignores non-working time.
         /// </summary>
         private bool? elapsed;
+
+        /// <summary>
+        /// The number of hours for this duration.
+        /// </summary>
+        private double? hours;
+
+        /// <summary>
+        /// The number of milliseconds for this duration.
+        /// </summary>
+        private double? milliseconds;
+
+        /// <summary>
+        /// The number of minutes for this duration.
+        /// </summary>
+        private double? minutes;
+
+        /// <summary>
+        /// When used as a predecessor’s lag value, indicates whether the lag is negative (if true), or positive (false).
+        /// </summary>
+        private bool? negative;
+
+        /// <summary>
+        /// The number of seconds for this duration.
+        /// </summary>
+        private double? seconds;
 
         /// <summary>
         /// The number of weeks for this duration.
@@ -52,36 +77,11 @@ namespace Smartsheet.Api.Models
         /// <summary>
         /// The number of days for this duration.
         /// </summary>
-        private double? days;
-
-        /// <summary>
-        /// The number of hours for this duration.
-        /// </summary>
-        private double? hours;
-
-        /// <summary>
-        /// The number of minutes for this duration.
-        /// </summary>
-        private double? minutes;
-
-        /// <summary>
-        /// The number of seconds for this duration.
-        /// </summary>
-        private double? seconds;
-
-        /// <summary>
-        /// The number of milliseconds for this duration.
-        /// </summary>
-        private double? milliseconds;
-
-        /// <summary>
-        /// When used as a predecessor’s lag value, indicates whether the lag is negative (if true), or positive (false).
-        /// </summary>
-        /// <returns> the negative flag </returns>
-        public bool? Negative
+        /// <returns> the number of days in duration </returns>
+        public double? Days
         {
-            get { return negative; }
-            set { negative = value; }
+            get { return days; }
+            set { days = value; }
         }
 
         /// <summary>
@@ -95,26 +95,6 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// The number of weeks for this duration.
-        /// </summary>
-        /// <returns> the number of weeks in duration </returns>
-        public double? Weeks
-        {
-            get { return weeks; }
-            set { weeks = value; }
-        }
-
-        /// <summary>
-        /// The number of days for this duration.
-        /// </summary>
-        /// <returns> the number of days in duration </returns>
-        public double? Days
-        {
-            get { return days; }
-            set { days = value; }
-        }
-
-        /// <summary>
         /// The number of hours for this duration.
         /// </summary>
         /// <returns> the number of hours in duration </returns>
@@ -125,6 +105,15 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
+        /// The number of milliseconds for this duration.
+        /// </summary>
+        /// <returns> the number of milliseconds in duration </returns>
+        public double? Milliseconds
+        {
+            get { return milliseconds; }
+            set { milliseconds = value; }
+        }
+        /// <summary>
         /// The number of minutes for this duration.
         /// </summary>
         /// <returns> the number of minutes in duration </returns>
@@ -132,6 +121,16 @@ namespace Smartsheet.Api.Models
         {
             get { return minutes; }
             set { minutes = value; }
+        }
+
+        /// <summary>
+        /// When used as a predecessor’s lag value, indicates whether the lag is negative (if true), or positive (false).
+        /// </summary>
+        /// <returns> the negative flag </returns>
+        public bool? Negative
+        {
+            get { return negative; }
+            set { negative = value; }
         }
 
         /// <summary>
@@ -145,13 +144,13 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// The number of milliseconds for this duration.
+        /// The number of weeks for this duration.
         /// </summary>
-        /// <returns> the number of milliseconds in duration </returns>
-        public double? Milliseconds
+        /// <returns> the number of weeks in duration </returns>
+        public double? Weeks
         {
-            get { return milliseconds; }
-            set { milliseconds = value; }
+            get { return weeks; }
+            set { weeks = value; }
         }
 
         public ObjectValueType ObjectType

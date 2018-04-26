@@ -31,16 +31,16 @@ namespace Smartsheet.Api.Models
         private string id;
 
         /// <summary>
-        /// Original width (in pixels) of the uploaded image. </summary>
-        private long? width;
+        /// Alternate Text for the image. </summary>
+        private string altText;
 
         /// <summary>
         /// Original height (in pixels) of the uploaded image. </summary>
         private long? height;
 
         /// <summary>
-        /// Alternate Text for the image. </summary>
-        private string altText;
+        /// Original width (in pixels) of the uploaded image. </summary>
+        private long? width;
 
         /// <summary>
         /// Get Image Id.
@@ -53,12 +53,13 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// Get the Width (in pixels) of the uploaded image.
+        /// Alternate Text for the image.
         /// </summary>
-        public long? Width
+        /// <returns> the altText </returns>
+        public string AltText
         {
-            get { return width; }
-            set { width = value; }
+            get { return altText; }
+            set { altText = value; }
         }
 
         /// <summary>
@@ -71,13 +72,12 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// Alternate Text for the image.
+        /// Get the Width (in pixels) of the uploaded image.
         /// </summary>
-        /// <returns> the altText </returns>
-        public string AltText
+        public long? Width
         {
-            get { return altText; }
-            set { altText = value; }
+            get { return width; }
+            set { width = value; }
         }
     }
 }

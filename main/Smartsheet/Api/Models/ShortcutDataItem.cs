@@ -11,16 +11,6 @@ namespace Smartsheet.Api.Models
     public class ShortcutDataItem
     {
         /// <summary>
-        /// Label for the data point
-        /// </summary>
-        private string label;
-
-        /// <summary>
-        /// formatDescriptor
-        /// </summary>
-        private string labelFormat;
-
-        /// <summary>
         /// Attachment type (one of FILE, GOOGLE_DRIVE, LINK, BOX_COM, DROPBOX, EVERNOTE, EGNYTE, ONEDRIVE, SMARTSHEET)
         /// </summary>
         private AttachmentType? attachmentType;
@@ -31,14 +21,44 @@ namespace Smartsheet.Api.Models
         private Hyperlink hyperlink;
 
         /// <summary>
-        /// The display order for the ShortcutWidgetItem
+        /// Label for the data point
         /// </summary>
-        private int? order;
+        private string label;
+
+        /// <summary>
+        /// formatDescriptor
+        /// </summary>
+        private string labelFormat;
 
         /// <summary>
         /// Certain attachment types will also include a mimeType
         /// </summary>
         private string mimeType;
+        
+        /// <summary>
+        /// The display order for the ShortcutWidgetItem
+        /// </summary>
+        private int? order;
+
+        /// <summary>
+        /// Attachment type (one of FILE, GOOGLE_DRIVE, LINK, BOX_COM, DROPBOX, EVERNOTE, EGNYTE, ONEDRIVE, SMARTSHEET).
+        /// </summary>
+        /// <returns> the attachment type </returns>
+        public AttachmentType? AttachmentType
+        {
+            get { return attachmentType; }
+            set { attachmentType = value; }
+        }
+
+        /// <summary>
+        /// Hyperlink object.
+        /// </summary>
+        /// <returns> the Link </returns>
+        public Hyperlink Hyperlink
+        {
+            get { return hyperlink; }
+            set { hyperlink = value; }
+        }
 
         /// <summary>
         /// Label for the data point. 
@@ -61,25 +81,15 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// Attachment type (one of FILE, GOOGLE_DRIVE, LINK, BOX_COM, DROPBOX, EVERNOTE, EGNYTE, ONEDRIVE, SMARTSHEET).
+        /// Certain attachment types will also include a mimeType.
         /// </summary>
-        /// <returns> the attachment type </returns>
-        public AttachmentType? AttachmentType
+        /// <returns> the MIME type </returns>
+        public string MimeType
         {
-            get { return attachmentType; }
-            set { attachmentType = value; }
+            get { return mimeType; }
+            set { mimeType = value; }
         }
 
-        /// <summary>
-        /// Hyperlink object.
-        /// </summary>
-        /// <returns> the Link </returns>
-        public Hyperlink Hyperlink
-        {
-            get { return hyperlink; }
-            set { hyperlink = value; }
-        }
-        
         /// <summary>
         /// The display order for the CellDataItem.
         /// </summary>
@@ -88,16 +98,6 @@ namespace Smartsheet.Api.Models
         {
             get { return order; }
             set { order = value; }
-        }
-
-        /// <summary>
-        /// Certain attachment types will also include a mimeType.
-        /// </summary>
-        /// <returns> the MIME type </returns>
-        public string MimeType
-        {
-            get { return mimeType; }
-            set { mimeType = value; }
         }
     }
 }

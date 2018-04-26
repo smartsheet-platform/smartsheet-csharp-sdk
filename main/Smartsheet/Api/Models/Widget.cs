@@ -34,51 +34,6 @@ namespace Smartsheet.Api.Models
         private WidgetType type;
 
         /// <summary>
-        /// (Optional) Title of the widget
-        /// </summary>
-        private string title;
-
-        /// <summary>
-        /// True indicates that the client should display the widget title. Note that this is independent of the “title” string which may be null or empty.
-        /// </summary>
-        private bool? showTitle;
-
-        /// <summary>
-        /// True indicates that the client should display the Sheet icon in the widget title
-        /// </summary>
-        private bool? showTitleIcon;
-
-        /// <summary>
-        /// FormatDescriptor
-        /// </summary>
-        private string titleFormat;
-
-        /// <summary>
-        /// X-coordinate of widget’s position on the Sight
-        /// </summary>
-        private int? xPosition;
-
-        /// <summary>
-        /// Y-coordinate of widget’s position on the Sight
-        /// </summary>
-        private int? yPosition;
-
-        /// <summary>
-        /// Number of Rows that the widget occupies on the Sight
-        /// </summary>
-        private int? height;
-
-        /// <summary>
-        /// Number of Columns that the widget occupies on the Sight
-        /// </summary>
-        private int? width;
-
-        /// <summary>
-        /// Widget version number
-        /// </summary>
-        private int? version;
-
-        /// <summary>
         /// Data that specifies the contents of the widget. _Note: the type of WidgetContent object (and attributes within) will depend on the value of Widget.type:
         /// CELLLINK - CellLinkWidgetContent
         /// SHEETSUMMARY - CellLinkWidgetContent
@@ -91,6 +46,51 @@ namespace Smartsheet.Api.Models
         WidgetContent contents;
 
         /// <summary>
+        /// Number of Rows that the widget occupies on the Sight
+        /// </summary>
+        private int? height;
+
+        /// <summary>
+        /// True indicates that the client should display the widget title. Note that this is independent of the “title” string which may be null or empty.
+        /// </summary>
+        private bool? showTitle;
+
+        /// <summary>
+        /// True indicates that the client should display the Sheet icon in the widget title
+        /// </summary>
+        private bool? showTitleIcon;
+
+        /// <summary>
+        /// (Optional) Title of the widget
+        /// </summary>
+        private string title;
+
+        /// <summary>
+        /// FormatDescriptor
+        /// </summary>
+        private string titleFormat;
+
+        /// <summary>
+        /// Widget version number
+        /// </summary>
+        private int? version;
+
+        /// <summary>
+        /// Number of Columns that the widget occupies on the Sight
+        /// </summary>
+        private int? width;
+
+        /// <summary>
+        /// X-coordinate of widget’s position on the Sight
+        /// </summary>
+        private int? xPosition;
+
+        /// <summary>
+        /// Y-coordinate of widget’s position on the Sight
+        /// </summary>
+        private int? yPosition;
+
+        /// <summary>
         /// Get the Type of widget.
         /// </summary>
         /// <returns> the WidgetType </returns>
@@ -101,13 +101,24 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// (Optional) Title of the widget.
+        /// Get the data that specifies the contents of the widget. 
+        /// See description of contents variable for valid objects.
         /// </summary>
-        /// <returns> the Title </returns>
-        public string Title
+        /// <returns> the contents </returns>
+        public WidgetContent Contents
         {
-            get { return title; }
-            set { title = value; }
+            get { return contents; }
+            set { contents = value; }
+        }
+
+        /// <summary>
+        /// Number of Rows that the widget occupies on the Sight.
+        /// </summary>
+        /// <returns> the Height </returns>
+        public int? Height
+        {
+            get { return height; }
+            set { height = value; }
         }
 
         /// <summary>
@@ -131,6 +142,16 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
+        /// (Optional) Title of the widget.
+        /// </summary>
+        /// <returns> the Title </returns>
+        public string Title
+        {
+            get { return title; }
+            set { title = value; }
+        }
+
+        /// <summary>
         /// The title format FormatDescriptor string.
         /// </summary>
         /// <returns> the FormatDescriptor </returns>
@@ -138,6 +159,25 @@ namespace Smartsheet.Api.Models
         {
             get { return titleFormat; }
             set { titleFormat = value; }
+        }
+
+        /// <summary>
+        /// Widget version number.
+        /// </summary>
+        /// <returns> the Version </returns>
+        public int? Version
+        {
+            get { return version; }
+            set { version = value; }
+        }
+        /// <summary>
+        /// Number of Columns that the widget occupies on the Sight.
+        /// </summary>
+        /// <returns> the Width </returns>
+        public int? Width
+        {
+            get { return width; }
+            set { width = value; }
         }
 
         /// <summary>
@@ -158,47 +198,6 @@ namespace Smartsheet.Api.Models
         {
             get { return yPosition; }
             set { yPosition = value; }
-        }
-
-        /// <summary>
-        /// Number of Rows that the widget occupies on the Sight.
-        /// </summary>
-        /// <returns> the Height </returns>
-        public int? Height
-        {
-            get { return height; }
-            set { height = value; }
-        }
-
-        /// <summary>
-        /// Number of Columns that the widget occupies on the Sight.
-        /// </summary>
-        /// <returns> the Width </returns>
-        public int? Width
-        {
-            get { return width; }
-            set { width = value; }
-        }
-
-        /// <summary>
-        /// Widget version number.
-        /// </summary>
-        /// <returns> the Version </returns>
-        public int? Version
-        {
-            get { return version; }
-            set { version = value; }
-        }
-
-        /// <summary>
-        /// Get the data that specifies the contents of the widget. 
-        /// See description of contents variable for valid objects.
-        /// </summary>
-        /// <returns> the contents </returns>
-        public WidgetContent Contents
-        {
-            get { return contents; }
-            set { contents = value; }
         }
     }
 }

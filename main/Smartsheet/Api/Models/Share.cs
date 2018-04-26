@@ -32,9 +32,9 @@ namespace Smartsheet.Api.Models
         private string id;
 
         /// <summary>
-        /// Indicates what type of share this is
+        /// Represents the groupId if the share is of type GROUP
         /// </summary>
-        private ShareType? type;
+        private long? groupId;
 
         /// <summary>
         /// Represents the userId if the share is of type USER
@@ -42,19 +42,14 @@ namespace Smartsheet.Api.Models
         private long? userId;
 
         /// <summary>
-        /// Represents the groupId if the share is of type GROUP
+        /// Indicates what type of share this is
         /// </summary>
-        private long? groupId;
+        private ShareType? type;
 
         /// <summary>
-        /// Represents the subject of the email that will optionally be sent to notify the recipient
+        /// Represents the access level for this specific share.
         /// </summary>
-        private string subject;
-
-        /// <summary>
-        /// Represents the message to be included in the body of the email
-        /// </summary>
-        private string message;
+        private AccessLevel? accessLevel;
 
         /// <summary>
         /// Represents the flag to indicate whether or not to send a copy of the email to the sharer
@@ -62,9 +57,24 @@ namespace Smartsheet.Api.Models
         private bool? ccMe;
 
         /// <summary>
-        /// Represents the access level for this specific share.
+        /// Time that the share was created.
         /// </summary>
-        private AccessLevel? accessLevel;
+        private DateTime? createdAt;
+
+        /// <summary>
+        /// Represents the Email for this specific share.
+        /// </summary>
+        private string email;
+
+        /// <summary>
+        /// Represents the message to be included in the body of the email
+        /// </summary>
+        private string message;
+
+        /// <summary>
+        /// Time that the share was modified.
+        /// </summary>
+        private DateTime? modifiedAt;
 
         /// <summary>
         /// The scope of this share. One of the following values:
@@ -74,39 +84,9 @@ namespace Smartsheet.Api.Models
         private string scope;
 
         /// <summary>
-        /// Time that the share was created.
+        /// Represents the subject of the email that will optionally be sent to notify the recipient
         /// </summary>
-        private DateTime? createdAt;
-
-        /// <summary>
-        /// Time that the share was modified.
-        /// </summary>
-        private DateTime? modifiedAt;
-
-        /// <summary>
-        /// Represents the Email for this specific share.
-        /// </summary>
-        private string email;
-
-        /// <summary>
-        /// Gets the access level for this specific share.
-        /// </summary>
-        /// <returns> the access level </returns>
-        public AccessLevel? AccessLevel
-        {
-            get { return accessLevel; }
-            set { accessLevel = value; }
-        }
-
-        /// <summary>
-        /// Gets the Email for this specific share.
-        /// </summary>
-        /// <returns> the Email </returns>
-        public string Email
-        {
-            get { return email; }
-            set { email = value; }
-        }
+        private string subject;
 
         /// <summary>
         /// Share ID, unlike other Smartsheet object ids, this id is an alphanumeric string.
@@ -119,12 +99,12 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// The type of this share. One of USER or GROUP.
+        /// Group ID if the share is a group share, else null.
         /// </summary>
-        public ShareType? Type
+        public long? GroupId
         {
-            get { return type; }
-            set { type = value; }
+            get { return groupId; }
+            set { groupId = value; }
         }
 
         /// <summary>
@@ -137,32 +117,22 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// Group ID if the share is a group share, else null.
+        /// The type of this share. One of USER or GROUP.
         /// </summary>
-        public long? GroupId
+        public ShareType? Type
         {
-            get { return groupId; }
-            set { groupId = value; }
+            get { return type; }
+            set { type = value; }
         }
 
         /// <summary>
-        /// The subject of the email that will optionally be sent to notify the recipient.
-        /// This attribute can be specified in a request, but will never be present in a response.
+        /// Gets the access level for this specific share.
         /// </summary>
-        public string Subject
+        /// <returns> the access level </returns>
+        public AccessLevel? AccessLevel
         {
-            get { return subject; }
-            set { subject = value; }
-        }
-
-        /// <summary>
-        /// The message to be included in the body of the email that will optionally be sent to the recipient.
-        /// This attribute can be specified in a request, but will never be present in a response.
-        /// </summary>
-        public string Message
-        {
-            get { return message; }
-            set { message = value; }
+            get { return accessLevel; }
+            set { accessLevel = value; }
         }
 
         /// <summary>
@@ -176,22 +146,33 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// The scop of this share. One of ITEM or WORKSPACE.
-        /// </summary>
-        public string Scope
-        {
-            get { return scope; }
-            set { scope = value; }
-        }
-
-        /// <summary>
         /// Gets the Time that the share was created.
         /// </summary>
         /// <returns> the DateTime </returns>
         public DateTime? CreatedAt
         {
-            get { return createdAt;    }
+            get { return createdAt; }
             set { createdAt = value; }
+        }
+
+        /// <summary>
+        /// Gets the Email for this specific share.
+        /// </summary>
+        /// <returns> the Email </returns>
+        public string Email
+        {
+            get { return email; }
+            set { email = value; }
+        }
+
+        /// <summary>
+        /// The message to be included in the body of the email that will optionally be sent to the recipient.
+        /// This attribute can be specified in a request, but will never be present in a response.
+        /// </summary>
+        public string Message
+        {
+            get { return message; }
+            set { message = value; }
         }
 
         /// <summary>
@@ -202,6 +183,25 @@ namespace Smartsheet.Api.Models
         {
             get { return modifiedAt; }
             set { modifiedAt = value; }
+        }
+
+        /// <summary>
+        /// The scop of this share. One of ITEM or WORKSPACE.
+        /// </summary>
+        public string Scope
+        {
+            get { return scope; }
+            set { scope = value; }
+        }
+
+        /// <summary>
+        /// The subject of the email that will optionally be sent to notify the recipient.
+        /// This attribute can be specified in a request, but will never be present in a response.
+        /// </summary>
+        public string Subject
+        {
+            get { return subject; }
+            set { subject = value; }
         }
 
         /// <summary>

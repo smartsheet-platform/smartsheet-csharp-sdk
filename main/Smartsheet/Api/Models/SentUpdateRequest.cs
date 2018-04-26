@@ -27,24 +27,9 @@ namespace Smartsheet.Api.Models
     public class SentUpdateRequest : IdentifiableModel
     {
         /// <summary>
-        /// ID of the originating update request.
+        /// IDs of columns included in the request.
         /// </summary>
-        private long? updateRequestId;
-
-        /// <summary>
-        /// The date and time for when the sent update request was sent to the recipient.
-        /// </summary>
-        private DateTime sentAt;
-
-        /// <summary>
-        /// User object containing name and email of the sender.
-        /// </summary>
-        private User sentBy;
-
-        /// <summary>
-        /// The status of the sent update request.
-        /// </summary>
-        private UpdateRequestStatus? status; 
+        private IList<long> columnIds;
 
         /// <summary>
         /// IDs of rows update is requested.
@@ -52,9 +37,9 @@ namespace Smartsheet.Api.Models
         private IList<long> rowIds;
 
         /// <summary>
-        /// IDs of columns included in the request.
+        /// ID of the originating update request.
         /// </summary>
-        private IList<long> columnIds;
+        private long? updateRequestId;
 
         /// <summary>
         /// A flag to indicate whether or not the Attachments were included in the email.
@@ -67,58 +52,42 @@ namespace Smartsheet.Api.Models
         private bool? includeDiscussions;
 
         /// <summary>
-        /// Recipient object.
-        /// </summary>
-        private Recipient sentTo;
-
-        /// <summary>
-        /// The subject of the email.
-        /// </summary>
-        private string subject;
-        
-        /// <summary>
         /// The message of the email.
         /// </summary>
         private string message;
 
         /// <summary>
-        /// Get the ID of the originating update request.
+        /// The date and time for when the sent update request was sent to the recipient.
         /// </summary>
-        /// <returns> the update request Id </returns>
-        public long? UpdateRequestId
-        {
-            get { return updateRequestId; }
-            set { updateRequestId = value; }
-        }
+        private DateTime sentAt;
 
         /// <summary>
-        /// Get the date and time for when the sent update request was sent to the recipient.
+        /// User object containing name and email of the sender.
         /// </summary>
-        /// <returns> the timestamp </returns>
-        public DateTime SentAt
-        {
-            get { return sentAt; }
-            set { sentAt = value; }
-        }
+        private User sentBy;
 
         /// <summary>
-        /// Gets the User object containing name and email of the sender.
+        /// Recipient object.
         /// </summary>
-        /// <returns> the User </returns>
-        public User SentBy
-        {
-            get { return sentBy; }
-            set { sentBy = value; }
-        }
+        private Recipient sentTo;
 
         /// <summary>
-        /// Gets the status of the sent update request.
+        /// The status of the sent update request.
         /// </summary>
-        /// <returns> the UpdateRequestStatus </returns>
-        public UpdateRequestStatus? Status
+        private UpdateRequestStatus? status;
+
+        /// <summary>
+        /// The subject of the email.
+        /// </summary>
+        private string subject;
+
+        /// <summary>
+        /// IDs of columns included in the request.
+        /// </summary>
+        public IList<long> ColumnIds
         {
-            get { return status; }
-            set { status = value; }
+            get { return columnIds; }
+            set { columnIds = value; }
         }
 
         /// <summary>
@@ -131,14 +100,16 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// IDs of columns included in the request.
+        /// Get the ID of the originating update request.
         /// </summary>
-        public IList<long> ColumnIds
+        /// <returns> the update request Id </returns>
+        public long? UpdateRequestId
         {
-            get { return columnIds; }
-            set { columnIds = value; }
+            get { return updateRequestId; }
+            set { updateRequestId = value; }
         }
 
+        /// <summary>
         /// <summary>
         /// Gets the flag that indicates if Attachments should be included in the Email.
         /// </summary>
@@ -160,6 +131,35 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
+        /// Gets the Message.
+        /// </summary>
+        /// <returns> the Message </returns>
+        public string Message
+        {
+            get { return message; }
+            set { message = value; }
+        }
+
+        /// Get the date and time for when the sent update request was sent to the recipient.
+        /// </summary>
+        /// <returns> the timestamp </returns>
+        public DateTime SentAt
+        {
+            get { return sentAt; }
+            set { sentAt = value; }
+        }
+
+        /// <summary>
+        /// Gets the User object containing name and email of the sender.
+        /// </summary>
+        /// <returns> the User </returns>
+        public User SentBy
+        {
+            get { return sentBy; }
+            set { sentBy = value; }
+        }
+
+        /// <summary>
         /// Gets the Recipient
         /// </summary>
         /// <returns> the Recipients </returns>
@@ -170,6 +170,16 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
+        /// Gets the status of the sent update request.
+        /// </summary>
+        /// <returns> the UpdateRequestStatus </returns>
+        public UpdateRequestStatus? Status
+        {
+            get { return status; }
+            set { status = value; }
+        }
+
+        /// <summary>
         /// Gets the Subject.
         /// </summary>
         /// <returns> the Subject </returns>
@@ -177,16 +187,6 @@ namespace Smartsheet.Api.Models
         {
             get { return subject; }
             set { subject = value; }
-        }
-
-        /// <summary>
-        /// Gets the Message.
-        /// </summary>
-        /// <returns> the Message </returns>
-        public string Message
-        {
-            get { return message; }
-            set { message = value; }
         }
     }
 }

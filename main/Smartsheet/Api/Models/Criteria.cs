@@ -22,7 +22,6 @@ using System.Runtime.Serialization;
 
 namespace Smartsheet.Api.Models
 {
-
     /// <summary>
     /// Represents the Criteria object.
     /// </summary>

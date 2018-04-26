@@ -35,24 +35,48 @@ namespace Smartsheet.Api.Models
         private long? sheetId;
 
         /// <summary>
-        /// Represents the row number. </summary>
-        private int? rowNumber;
+        /// The user's permissions on the sheet. </summary>
+        private AccessLevel? accessLevel;
 
         /// <summary>
-        /// Represents the parent row number. </summary>
-        private int? parentRowNumber;
+        /// Represents the Attachments for this row. </summary>
+        private IList<Attachment> attachments;
 
         /// <summary>
-        /// Represents the parent row ID. </summary>
-        private long? parentId;
+        /// Represents the Cells for this row. </summary>
+        private IList<TCell> cells;
 
         /// <summary>
-        /// Represents the sibling row ID. </summary>
-        private long? siblingId;
+        /// Represents the Columns for this row. </summary>
+        private IList<TColumn> columns;
+
+        /// <summary>
+        /// Describes the row's conditional format </summary>
+        private string conditionalFormat;
+
+        /// <summary>
+        /// Represents the date and time the row was created. </summary>
+        private DateTime? createdAt;
+
+        /// <summary>
+        /// User object containing the name and email of the creator of this row.</summary>
+        private User createdBy;
+
+        /// <summary>
+        /// Represents the Discussions for this row. </summary>
+        private IList<Discussion> discussions;
+
+        /// <summary>
+        /// A read-only flag to indicate if the row is Expanded or collapsed. </summary>
+        private bool? expanded;
 
         /// <summary>
         /// true if this row is filtered out by a column filter </summary>
         private bool? filteredOut;
+
+        /// <summary>
+        /// Format descriptors </summary>
+        private string format;
 
         /// <summary>
         /// Only returned, with a value of true, if the sheet is a project sheet with dependencies</summary>
@@ -65,22 +89,41 @@ namespace Smartsheet.Api.Models
         /// <summary>
         /// Indicates whether the row is locked for the requesting user </summary>
         private bool? lockedForUser;
+        
+        /// <summary>
+        /// Represents the date and time the row was modified. </summary>
+        private DateTime? modifiedAt;
 
         /// <summary>
-        /// Format descriptors </summary>
-        private string format;
+        /// User object containing the name and email of the last user to modify this row.</summary>
+        private User modifiedBy;
 
         /// <summary>
-        /// Describes the row's conditional format </summary>
-        private string conditionalFormat;
+        /// Represents the parent row number. </summary>
+        private int? parentRowNumber;
 
         /// <summary>
-        /// Adds or moves the row to the top of the sheet </summary>
-        private bool? toTop;
+        /// URL that represents a direct link to the row in Smartsheet
+        /// </summary>
+        private string permalink;
 
         /// <summary>
-        /// Adds or moves the row to the bottom of the sheet </summary>
-        private bool? toBottom;
+        /// Represents the row number. </summary>
+        private int? rowNumber;
+
+        /// <summary>
+        /// The Version number that is incremented every time a sheet is modified. </summary>
+        private int? version;
+
+        /// Row location-specifier attributes
+ 
+        /// <summary>
+        /// Represents the parent row ID. </summary>
+        private long? parentId;
+
+        /// <summary>
+        /// Represents the sibling row ID. </summary>
+        private long? siblingId;
 
         /// <summary>
         /// Specifies the location for a new or moved row </summary>
@@ -95,83 +138,12 @@ namespace Smartsheet.Api.Models
         private int? outdent;
 
         /// <summary>
-        /// User object containing the name and email of the creator of this row.</summary>
-        private User createdBy;
+        /// Adds or moves the row to the bottom of the sheet </summary>
+        private bool? toBottom;
 
         /// <summary>
-        /// User object containing the name and email of the last user to modify this row.</summary>
-        private User modifiedBy;
-
-        /// <summary>
-        /// Represents the Cells for this row. </summary>
-        private IList<TCell> cells;
-
-        /// <summary>
-        /// Represents the Discussions for this row. </summary>
-        private IList<Discussion> discussions;
-
-        /// <summary>
-        /// Represents the Attachments for this row. </summary>
-        private IList<Attachment> attachments;
-
-        /// <summary>
-        /// Represents the Columns for this row. </summary>
-        private IList<TColumn> columns;
-
-        /// <summary>
-        /// Represents the date and time the row was created. </summary>
-        private DateTime? createdAt;
-
-        /// <summary>
-        /// Represents the date and time the row was modified. </summary>
-        private DateTime? modifiedAt;
-
-        /// <summary>
-        /// A read-only flag to indicate if the row is Expanded or collapsed. </summary>
-        private bool? expanded;
-
-        /// <summary>
-        /// The Version number that is incremented every time a sheet is modified. </summary>
-        private int? version;
-
-        /// <summary>
-        /// The user's permissions on the sheet. </summary>
-        private AccessLevel? accessLevel;
-
-        /// <summary>
-        /// URL that represents a direct link to the row in Smartsheet
-        /// </summary>
-        private string permalink;
-
-        /// <summary>
-        /// Gets the user's permissions on the sheet.
-        /// </summary>
-        /// <returns> the access level </returns>
-        public AccessLevel? AccessLevel
-        {
-            get { return accessLevel; }
-            set { accessLevel = value; }
-        }
-
-        /// <summary>
-        /// Gets the Version number that is incremented every time a sheet is modified.
-        /// </summary>
-        /// <returns> the Version </returns>
-        public int? Version
-        {
-            get { return version; }
-            set { version = value; }
-        }
-
-        /// <summary>
-        /// Checks if the row is Expanded.
-        /// </summary>
-        /// <returns> true, if is Expanded </returns>
-        public bool? Expanded
-        {
-            get { return expanded; }
-            set { expanded = value; }
-        }
+        /// Adds or moves the row to the top of the sheet </summary>
+        private bool? toTop;
 
         /// <summary>
         /// Gets the Id of the sheet.
@@ -184,63 +156,13 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// Gets the row number.
+        /// Gets the user's permissions on the sheet.
         /// </summary>
-        /// <returns> the row number </returns>
-        public int? RowNumber
+        /// <returns> the access level </returns>
+        public AccessLevel? AccessLevel
         {
-            get { return rowNumber; }
-            set { rowNumber = value; }
-        }
-
-        /// <summary>
-        /// Gets the parent row number.
-        /// </summary>
-        /// <returns> the parent row number </returns>
-        public int? ParentRowNumber
-        {
-            get { return parentRowNumber; }
-            set { parentRowNumber = value; }
-        }
-
-        /// <summary>
-        /// If this is a child row, the ID of the parent row, else omitted from response
-        /// </summary>
-        /// <returns> the ParentId </returns>
-        public long? ParentId
-        {
-            get { return parentId; }
-            set { parentId = value; }
-        }
-
-        /// <summary>
-        /// The ID of the previous sibling row at the same hierarchical level of this row, if any, else omitted from response
-        /// </summary>
-        /// <returns> the SiblingId </returns>
-        public long? SiblingId
-        {
-            get { return siblingId; }
-            set { siblingId = value; }
-        }
-
-        /// <summary>
-        /// Gets the Cells.
-        /// </summary>
-        /// <returns> the Cells </returns>
-        public IList<TCell> Cells
-        {
-            get { return cells; }
-            set { cells = value; }
-        }
-
-        /// <summary>
-        /// Gets the Discussions.
-        /// </summary>
-        /// <returns> the Discussions </returns>
-        public IList<Discussion> Discussions
-        {
-            get { return discussions; }
-            set { discussions = value; }
+            get { return accessLevel; }
+            set { accessLevel = value; }
         }
 
         /// <summary>
@@ -254,6 +176,16 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
+        /// Gets the Cells.
+        /// </summary>
+        /// <returns> the Cells </returns>
+        public IList<TCell> Cells
+        {
+            get { return cells; }
+            set { cells = value; }
+        }
+
+        /// <summary>
         /// Gets the Columns.
         /// </summary>
         /// <returns> the Columns </returns>
@@ -261,6 +193,18 @@ namespace Smartsheet.Api.Models
         {
             get { return columns; }
             set { columns = value; }
+        }
+
+        /// <summary>
+        /// Format descriptor describing this row’s conditional format (see Formatting)
+        ///    Only returned if the include query string parameter contains format and this 
+        ///    row has a conditional format applied.
+        /// </summary>
+        /// <returns> the conditional format </returns>
+        public string ConditionalFormat
+        {
+            get { return conditionalFormat; }
+            set { conditionalFormat = value; }
         }
 
         /// <summary>
@@ -274,13 +218,33 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// Gets and Sets the date and time a row was last modified.
+        /// User object containing name and email of the creator of this row
         /// </summary>
-        /// <returns> the modified at </returns>
-        public DateTime? ModifiedAt
+        /// <returns>User object</returns>
+        public User CreatedBy
         {
-            get { return modifiedAt; }
-            set { modifiedAt = value; }
+            get { return createdBy; }
+            set { createdBy = value; }
+        }
+
+        /// <summary>
+        /// Gets the Discussions.
+        /// </summary>
+        /// <returns> the Discussions </returns>
+        public IList<Discussion> Discussions
+        {
+            get { return discussions; }
+            set { discussions = value; }
+        }
+
+        /// <summary>
+        /// Checks if the row is Expanded.
+        /// </summary>
+        /// <returns> true, if is Expanded </returns>
+        public bool? Expanded
+        {
+            get { return expanded; }
+            set { expanded = value; }
         }
 
         /// <summary>
@@ -293,6 +257,29 @@ namespace Smartsheet.Api.Models
         {
             get { return filteredOut; }
             set { filteredOut = value; }
+        }
+
+        /// <summary>
+        /// Only returned if the include query string parameter contains format and 
+        /// this row has a non-default format applied.
+        /// </summary>
+        /// <returns> the format </returns>
+        public string Format
+        {
+            get { return format; }
+            set { format = value; }
+        }
+
+        /// <summary>
+        /// Only returned, with a value of true, 
+        /// if the sheet is a project sheet with dependencies enabled 
+        /// and this row is in the critical path.
+        /// </summary>
+        /// <returns> true if is in critical path </returns>
+        public bool? InCriticalPath
+        {
+            get { return inCriticalPath; }
+            set { inCriticalPath = value; }
         }
 
         /// <summary>
@@ -318,51 +305,83 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// Only returned if the include query string parameter contains format and 
-        /// this row has a non-default format applied.
+        /// Gets and Sets the date and time a row was last modified.
         /// </summary>
-        /// <returns> the format </returns>
-        public string Format
+        /// <returns> the modified at </returns>
+        public DateTime? ModifiedAt
         {
-            get { return format; }
-            set { format = value; }
+            get { return modifiedAt; }
+            set { modifiedAt = value; }
         }
 
         /// <summary>
-        /// Format descriptor describing this row’s conditional format (see Formatting)
-        ///    Only returned if the include query string parameter contains format and this 
-        ///    row has a conditional format applied.
+        /// User object containing name and email of the last person to modify this row
         /// </summary>
-        /// <returns> the conditional format </returns>
-        public string ConditionalFormat
+        /// <returns>User object</returns>
+        public User ModifiedBy
         {
-            get { return conditionalFormat; }
-            set { conditionalFormat = value; }
+            get { return modifiedBy; }
+            set { modifiedBy = value; }
         }
 
         /// <summary>
-        /// Flag used to specify the location at which to create or move a row. 
-        /// Indicates that the row should be added to the top of the sheet. 
-        /// This attribute can be specified in a request, but will never be present in a response.
+        /// Gets the parent row number.
         /// </summary>
-        /// <returns> true if row should be added to top </returns>
-        public bool? ToTop
+        /// <returns> the parent row number </returns>
+        public int? ParentRowNumber
         {
-            get { return toTop; }
-            set { toTop = value; }
+            get { return parentRowNumber; }
+            set { parentRowNumber = value; }
         }
 
         /// <summary>
-        /// Flag used to specify the location at which to create or move a row. 
-        /// Indicates that the row should be added to the bottom of the sheet, 
-        /// or, if used in conjunction with parentId, added as the last child of the parent. 
-        /// This attribute can be specified in a request, but will never be present in a response.
+        /// URL that represents a direct link to the Row in Smartsheet 
+        /// Only returned if the include query string parameter contains rowPermalink.
         /// </summary>
-        /// <returns> true if row should be added to bottom </returns>
-        public bool? ToBottom
+        public string Permalink
         {
-            get { return toBottom; }
-            set { toBottom = value; }
+            get { return permalink; }
+            set { permalink = value; }
+        }
+
+        /// <summary>
+        /// Gets the row number.
+        /// </summary>
+        /// <returns> the row number </returns>
+        public int? RowNumber
+        {
+            get { return rowNumber; }
+            set { rowNumber = value; }
+        }
+
+        /// <summary>
+        /// Gets the Version number that is incremented every time a sheet is modified.
+        /// </summary>
+        /// <returns> the Version </returns>
+        public int? Version
+        {
+            get { return version; }
+            set { version = value; }
+        }
+
+        /// <summary>
+        /// If this is a child row, the ID of the parent row, else omitted from response
+        /// </summary>
+        /// <returns> the ParentId </returns>
+        public long? ParentId
+        {
+            get { return parentId; }
+            set { parentId = value; }
+        }
+
+        /// <summary>
+        /// The ID of the previous sibling row at the same hierarchical level of this row, if any, else omitted from response
+        /// </summary>
+        /// <returns> the SiblingId </returns>
+        public long? SiblingId
+        {
+            get { return siblingId; }
+            set { siblingId = value; }
         }
 
         /// <summary>
@@ -401,45 +420,28 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// User object containing name and email of the creator of this row
+        /// Flag used to specify the location at which to create or move a row. 
+        /// Indicates that the row should be added to the bottom of the sheet, 
+        /// or, if used in conjunction with parentId, added as the last child of the parent. 
+        /// This attribute can be specified in a request, but will never be present in a response.
         /// </summary>
-        /// <returns>User object</returns>
-        public User CreatedBy
+        /// <returns> true if row should be added to bottom </returns>
+        public bool? ToBottom
         {
-            get { return createdBy; }
-            set { createdBy = value; }
+            get { return toBottom; }
+            set { toBottom = value; }
         }
 
         /// <summary>
-        /// User object containing name and email of the last person to modify this row
+        /// Flag used to specify the location at which to create or move a row. 
+        /// Indicates that the row should be added to the top of the sheet. 
+        /// This attribute can be specified in a request, but will never be present in a response.
         /// </summary>
-        /// <returns>User object</returns>
-        public User ModifiedBy
+        /// <returns> true if row should be added to top </returns>
+        public bool? ToTop
         {
-            get { return modifiedBy; }
-            set { modifiedBy = value; }
-        }
-        
-        /// <summary>
-        /// Only returned, with a value of true, 
-        /// if the sheet is a project sheet with dependencies enabled 
-        /// and this row is in the critical path.
-        /// </summary>
-        /// <returns> true if is in critical path </returns>
-        public bool? InCriticalPath
-        {
-            get { return inCriticalPath; }
-            set { inCriticalPath = value; }
-        }
-
-        /// <summary>
-        /// URL that represents a direct link to the Row in Smartsheet 
-        /// Only returned if the include query string parameter contains rowPermalink.
-        /// </summary>
-        public string Permalink
-        {
-            get { return permalink; }
-            set { permalink = value; }
+            get { return toTop; }
+            set { toTop = value; }
         }
 
         /// <summary>

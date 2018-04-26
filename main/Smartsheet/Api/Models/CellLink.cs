@@ -36,6 +36,26 @@ namespace Smartsheet.Api.Models
     public class CellLink
     {
         /// <summary>
+        /// The column Id of the linked cell
+        /// </summary>
+        private long? columnId;
+
+        /// <summary>
+        /// The row Id of the linked cell
+        /// </summary>
+        private long? rowId;
+
+        /// <summary>
+        /// The sheet Id of the sheet that the linked cell belongs to
+        /// </summary>
+        private long? sheetId;
+
+        /// <summary>
+        /// The sheet name of the linked cell
+        /// </summary>
+        private string sheetName;
+
+        /// <summary>
         /// One of the following values:
         /// OK: the link is in a good state
         /// BROKEN: the row or sheet linked to was deleted
@@ -45,55 +65,20 @@ namespace Smartsheet.Api.Models
         private string status;
 
         /// <summary>
-        /// The sheet Id of the sheet that the linked cell belongs to
-        /// </summary>
-        private long? sheetId;
-
-        /// <summary>
-        /// The row Id of the linked cell
-        /// </summary>
-        private long? rowId;
-
-        /// <summary>
-        /// The column Id of the linked cell
-        /// </summary>
-        private long? columnId;
-
-        /// <summary>
-        /// The sheet name of the linked cell
-        /// </summary>
-        private string sheetName;
-
-        /// <summary>
         /// If true, update will serialize a null to reset the linkInFromCell
         /// </summary>
         private bool isNull = true;
 
         /// <summary>
-        /// One of the following values:
-        /// <list type="bullet">
-        /// <item><term>OK:</term><description>the link is in a good state</description></item>
-        /// <item><term>BROKEN:</term><description>the row or sheet linked to was deleted</description></item>
-        /// <item><term>INACCESSIBLE:</term><description>the sheet linked to cannot be viewed by this user</description></item>
-        /// <item><description>Several other values indicating unusual error conditions: 
-        /// BLOCKED, CIRCULAR, DISABLED, INVALID, and NOT_SHARED.</description></item>
-        /// </list>
+        /// Column Id of the linked cell
         /// </summary>
-        public string Status
+        public long? ColumnId
         {
-            get { return status; }
-            set { status = value; }
-        }
-
-        /// <summary>
-        /// Sheet Id of the sheet that the linked cell belongs to
-        /// </summary>
-        public long? SheetId
-        {
-            get { return sheetId; }
-            set {
+            get { return columnId; }
+            set
+            {
                 isNull = false;
-                sheetId = value; 
+                columnId = value;
             }
         }
 
@@ -110,14 +95,15 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// Column Id of the linked cell
+        /// Sheet Id of the sheet that the linked cell belongs to
         /// </summary>
-        public long? ColumnId
+        public long? SheetId
         {
-            get { return columnId; }
-            set {
+            get { return sheetId; }
+            set
+            {
                 isNull = false;
-                columnId = value; 
+                sheetId = value;
             }
         }
 
@@ -128,6 +114,22 @@ namespace Smartsheet.Api.Models
         {
             get { return sheetName; }
             set { sheetName = value; }
+        }
+
+        /// <summary>
+        /// One of the following values:
+        /// <list type="bullet">
+        /// <item><term>OK:</term><description>the link is in a good state</description></item>
+        /// <item><term>BROKEN:</term><description>the row or sheet linked to was deleted</description></item>
+        /// <item><term>INACCESSIBLE:</term><description>the sheet linked to cannot be viewed by this user</description></item>
+        /// <item><description>Several other values indicating unusual error conditions: 
+        /// BLOCKED, CIRCULAR, DISABLED, INVALID, and NOT_SHARED.</description></item>
+        /// </list>
+        /// </summary>
+        public string Status
+        {
+            get { return status; }
+            set { status = value; }
         }
 
         [JsonIgnore]

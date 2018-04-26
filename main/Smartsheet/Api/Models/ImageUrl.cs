@@ -30,10 +30,8 @@ namespace Smartsheet.Api.Models
         private string imageId;
 
         /// <summary>
-        /// Image width (in pixels).
-        /// In the Get Image URLs request, this (optional) attribute represents requested width; 
-        /// in the response, it represents actual width of the image returned. (See Get Image URLs.)</summary>
-        private long? width;
+        /// Error object. Present in the Get Image URLs response only if an error occurred retrieving the image.</summary>
+        Error error;
 
         /// <summary>
         /// Image height (in pixels).
@@ -46,8 +44,10 @@ namespace Smartsheet.Api.Models
         private string url;
 
         /// <summary>
-        /// Error object. Present in the Get Image URLs response only if an error occurred retrieving the image.</summary>
-        Error error;
+        /// Image width (in pixels).
+        /// In the Get Image URLs request, this (optional) attribute represents requested width; 
+        /// in the response, it represents actual width of the image returned. (See Get Image URLs.)</summary>
+        private long? width;
 
         /// <summary>
         /// Get Image Id.
@@ -60,12 +60,13 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// Get the Width (in pixels) of the uploaded image.
+        /// Get the Error object. Present in the Get Image URLs response only if an error occurred retrieving the image.
         /// </summary>
-        public long? Width
+        /// <returns> the Error </returns>
+        public Error Error
         {
-            get { return width; }
-            set { width = value; }
+            get { return error; }
+            set { error = value; }
         }
 
         /// <summary>
@@ -88,13 +89,12 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// Get the Error object. Present in the Get Image URLs response only if an error occurred retrieving the image.
+        /// Get the Width (in pixels) of the uploaded image.
         /// </summary>
-        /// <returns> the Error </returns>
-        public Error Error
+        public long? Width
         {
-            get { return error; }
-            set { error = value; }
+            get { return width; }
+            set { width = value; }
         }
 
         /// <summary>

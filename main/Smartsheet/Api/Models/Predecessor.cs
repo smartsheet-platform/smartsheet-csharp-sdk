@@ -26,19 +26,14 @@ namespace Smartsheet.Api.Models
         private long? rowId;
 
         /// <summary>
-        /// The row number of the predecessor row.
-        /// </summary>
-        private int? rowNumber;
-
-        /// <summary>
         /// The type of the predecessor. One of FS, FF, SS, or SF.
         /// </summary>
         private string type;
 
         /// <summary>
-        /// The lag value of this predecessor. Omitted if there is no lag.
+        /// True if this predecessor is in the critical path.
         /// </summary>
-        private Duration lag;
+        private bool? inCriticalPath;
 
         /// <summary>
         /// True if the row referenced by rowId is not a valid row in this sheet, or there is a circular reference 
@@ -46,9 +41,14 @@ namespace Smartsheet.Api.Models
         private bool? invalid;
 
         /// <summary>
-        /// True if this predecessor is in the critical path.
+        /// The lag value of this predecessor. Omitted if there is no lag.
         /// </summary>
-        private bool? inCriticalPath;
+        private Duration lag;
+        
+        /// <summary>
+        /// The row number of the predecessor row.
+        /// </summary>
+        private int? rowNumber;
 
         /// <summary>
         /// The ID of the predecessor row.
@@ -58,16 +58,6 @@ namespace Smartsheet.Api.Models
         {
             get { return rowId; }
             set { rowId = value; }
-        }
-
-        /// <summary>
-        /// The number of the predecessor row.
-        /// </summary>
-        /// <returns> the rowNumber </returns>
-        public int? RowNumber
-        {
-            get { return rowNumber; }
-            set { rowNumber = value; }
         }
 
         /// <summary>
@@ -81,13 +71,13 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// The lag value of this predecessor.  
+        /// True if this predecessor is in the critical path.
         /// </summary>
-        /// <returns> the lag </returns>
-        public Duration Lag
+        /// <returns> the value of the inCriticalPath flag </returns>
+        public bool? InCriticalPath
         {
-            get { return lag; }
-            set { lag = value; }
+            get { return inCriticalPath; }
+            set { inCriticalPath = value; }
         }
 
         /// <summary>
@@ -101,13 +91,23 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// True if this predecessor is in the critical path.
+        /// The lag value of this predecessor.  
         /// </summary>
-        /// <returns> the value of the inCriticalPath flag </returns>
-        public bool? InCriticalPath
+        /// <returns> the lag </returns>
+        public Duration Lag
         {
-            get { return inCriticalPath; }
-            set { inCriticalPath = value; }
+            get { return lag; }
+            set { lag = value; }
+        }
+
+        /// <summary>
+        /// The number of the predecessor row.
+        /// </summary>
+        /// <returns> the rowNumber </returns>
+        public int? RowNumber
+        {
+            get { return rowNumber; }
+            set { rowNumber = value; }
         }
     }
 }

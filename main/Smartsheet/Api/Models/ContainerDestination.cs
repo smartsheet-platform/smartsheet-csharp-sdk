@@ -26,11 +26,31 @@ namespace Smartsheet.Api.Models
     /// </summary>
     public class ContainerDestination
     {
-        private DestinationType? destinationType;
-
+        /// <summary>
+        /// Id of the destination container (when copying or moving a Sheet or a Folder). Required if destinationType is 
+        ///     "folder" or "workspace" If destinationType is "home", this value must be null.
+        /// </summary>
         private long? destinationId;
 
+        /// <summary>
+        /// home, workspace, or folder
+        /// </summary>
+        private DestinationType? destinationType;
+
+        /// <summary>
+        /// Name of the newly created object
+        /// </summary>
         private string newName;
+
+        /// <summary>
+        /// ID of the destination container (when copying or moving a Sheet or a Folder).
+        /// Required if destinationType is "folder" or "workspace" If destinationType is "home", this value must be null.
+        /// </summary>
+        public long? DestinationId
+        {
+            get { return destinationId; }
+            set { destinationId = value; }
+        }
 
         /// <summary>
         /// Type of the destination container (when copying or moving a Sheet or a Folder). 
@@ -42,26 +62,8 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// <para>
-        /// ID of the destination container (when copying or moving a Sheet or a Folder).
-        /// </para>
-        /// <para>
-        /// Required if destinationType is "folder" or "workspace" If destinationType is "home", this value must be null.
-        /// </para>
-        /// </summary>
-        public long? DestinationId
-        {
-            get { return destinationId; }
-            set { destinationId = value; }
-        }
-
-        /// <summary>
-        /// <para>
         /// Name of the newly created object (when creating a copy of a Sheet, Folder, or Workspace).
-        /// </para>
-        /// <para>
         /// This attribute is not supported for "move" operations (i.e., a moved Sheet, Folder or Workspace retains its original name).
-        /// </para>
         /// </summary>
         public string NewName
         {

@@ -28,12 +28,16 @@ namespace Smartsheet.Api.Models
     public class Discussion : IdentifiableModel
     {
         /// <summary>
-        /// Represents the title for the discussion. </summary>
-        private string title;
+        /// Represents the Id of the directly associated row or sheet </summary>
+        private long? parentId;
 
         /// <summary>
-        /// Represents the comments for the discussion. </summary>
-        private IList<Comment> comments;
+        /// Represents the "SHEET" or "ROW": present only when the direct association is not clear </summary>
+        private DiscussionParentType? parentType;
+
+        /// <summary>
+        /// Users permission on the discussion </summary>
+        private AccessLevel? accessLevel;
 
         /// <summary>
         /// Represents the comment for the discussion (outbound only - singular "comment") </summary>
@@ -49,6 +53,14 @@ namespace Smartsheet.Api.Models
         private int? commentCount;
 
         /// <summary>
+        /// Represents the comments for the discussion. </summary>
+        private IList<Comment> comments;
+
+        /// <summary>
+        /// Represents the User object containing name and email of the creator of the discussion </summary>
+        private User createdBy;
+
+        /// <summary>
         /// Represents the date a comment was last added to a discussion. </summary>
         private DateTime? lastCommentedAt;
 
@@ -57,43 +69,39 @@ namespace Smartsheet.Api.Models
         private User lastCommentedUser;
 
         /// <summary>
-        /// Users permission on the discussion </summary>
-        private AccessLevel? accessLevel;
-
-        /// <summary>
-        /// Represents the Id of the directly associated row or sheet </summary>
-        private long? parentId;
-
-        /// <summary>
-        /// Represents the "SHEET" or "ROW": present only when the direct association is not clear </summary>
-        private DiscussionParentType? parentType;
-
-        /// <summary>
-        /// Represents the User object containing name and email of the creator of the discussion </summary>
-        private User createdBy;
-
-        /// <summary>
         /// Represents the read only status of the discussion </summary>
         private bool? readOnly;
 
         /// <summary>
-        /// the title for the discussion.
+        /// Represents the title for the discussion. </summary>
+        private string title;
+
+        /// <summary>
+        /// Id of the directly associated row or sheet: present only when the direct association is not clear (see Get All Discussions)
         /// </summary>
-        /// <returns> the title </returns>
-        public string Title
+        public long? ParentId
         {
-            get { return title; }
-            set { title = value; }
+            get { return parentId; }
+            set { parentId = value; }
         }
 
         /// <summary>
-        /// The comments for the discussion.
+        /// "SHEET" or "ROW": present only when the direct association is not clear (see Get All Discussions)
         /// </summary>
-        /// <returns> the comments </returns>
-        public IList<Comment> Comments
+        public DiscussionParentType? ParentType
         {
-            get { return comments; }
-            set { comments = value; }
+            get { return parentType; }
+            set { parentType = value; }
+        }
+
+        /// <summary>
+        /// User's permissions on the discussion
+        /// </summary>
+        /// <returns> the access level </returns>
+        public AccessLevel? AccessLevel
+        {
+            get { return accessLevel; }
+            set { accessLevel = value; }
         }
 
         /// <summary>
@@ -126,6 +134,25 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
+        /// The comments for the discussion.
+        /// </summary>
+        /// <returns> the comments </returns>
+        public IList<Comment> Comments
+        {
+            get { return comments; }
+            set { comments = value; }
+        }
+
+        /// <summary>
+        /// User object containing name and email of the creator of the discussion
+        /// </summary>
+        public User CreatedBy
+        {
+            get { return createdBy; }
+            set { createdBy = value; }
+        }
+
+        /// <summary>
         /// Time of most recent comment
         /// </summary>
         /// <returns> the last commented at </returns>
@@ -146,49 +173,22 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// User's permissions on the discussion
-        /// </summary>
-        /// <returns> the access level </returns>
-        public AccessLevel? AccessLevel
-        {
-            get { return accessLevel; }
-            set { accessLevel = value; }
-        }
-
-        /// <summary>
-        /// Id of the directly associated row or sheet: present only when the direct association is not clear (see Get All Discussions)
-        /// </summary>
-        public long? ParentId
-        {
-            get { return parentId; }
-            set { parentId = value; }
-        }
-
-        /// <summary>
-        /// "SHEET" or "ROW": present only when the direct association is not clear (see Get All Discussions)
-        /// </summary>
-        public DiscussionParentType? ParentType
-        {
-            get { return parentType; }
-            set { parentType = value; }
-        }
-
-        /// <summary>
-        /// User object containing name and email of the creator of the discussion
-        /// </summary>
-        public User CreatedBy
-        {
-            get { return createdBy; }
-            set { createdBy = value; }
-        }
-
-        /// <summary>
         /// Indicates whether the user can modify the discussion
         /// </summary>
         public bool? ReadOnly
         {
             get { return readOnly; }
             set { readOnly = value; }
+        }
+
+        /// <summary>
+        /// the title for the discussion.
+        /// </summary>
+        /// <returns> the title </returns>
+        public string Title
+        {
+            get { return title; }
+            set { title = value; }
         }
 
         /// <summary>

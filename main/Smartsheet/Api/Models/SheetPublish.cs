@@ -26,24 +26,14 @@ namespace Smartsheet.Api.Models
     public class SheetPublish
     {
         /// <summary>
-        /// Represents the read-only lite (static HTML UI) flag.
-        /// </summary>
-        private bool? readOnlyLiteEnabled;
-
-        /// <summary>
-        /// Represents the read-only full (fancy UI) flag.
-        /// </summary>
-        private bool? readOnlyFullEnabled;
-
-        /// <summary>
-        /// Represents the read-write enabled flag.
-        /// </summary>
-        private bool? readWriteEnabled;
-
-        /// <summary>
         /// Represents the iCal enabled flag.
         /// </summary>
         private bool? icalEnabled;
+
+        /// <summary>
+        /// Represents the iCal URL.
+        /// </summary>
+        private string icalUrl;
 
         /// <summary>
         /// Flag to indicate who can access the 'Read-Only Full’ view of the published sheet:
@@ -53,31 +43,14 @@ namespace Smartsheet.Api.Models
         private string readOnlyFullAccessibleBy;
 
         /// <summary>
-        /// Flag to indicate who can access the 'Edit by Anyone’ view of the published sheet:
-        ///        If “ALL”, it is available to anyone who has the link.
-        ///        If “ORG”, it is available only to members of the sheet owner’s Smartsheet organization.
+        /// Default view for read only published sheet. (GRID, CARDS, CALENDAR)
         /// </summary>
-        private string readWriteAccessibleBy;
+        private string readOnlyFullDefaultView;
 
         /// <summary>
-        /// Represents the read-only lite (static HTML UI) URL.
+        /// Represents the read-only full (fancy UI) flag.
         /// </summary>
-        private string readOnlyLiteUrl;
-
-        /// <summary>
-        /// Represents the read-only full URL.
-        /// </summary>
-        private string readOnlyFullUrl;
-
-        /// <summary>
-        /// Represents the read-write URL.
-        /// </summary>
-        private string readWriteUrl;
-
-        /// <summary>
-        /// Represents the iCal URL.
-        /// </summary>
-        private string icalUrl;
+        private bool? readOnlyFullEnabled;
 
         /// <summary>
         /// Flag to show or hide the left nav toolbar for the read only sheet.
@@ -85,19 +58,116 @@ namespace Smartsheet.Api.Models
         private bool? readOnlyFullShowToolbar;
 
         /// <summary>
-        /// Flag to show or hide the left nav toolbar for the read/write sheet.
+        /// Represents the read-only full URL.
         /// </summary>
-        private bool? readWriteShowToolbar;
+        private string readOnlyFullUrl;
 
         /// <summary>
-        /// Default view for read only published sheet. (GRID, CARDS, CALENDAR)
+        /// Represents the read-only lite (static HTML UI) flag.
         /// </summary>
-        private string readOnlyFullDefaultView;
+        private bool? readOnlyLiteEnabled;
+
+        /// <summary>
+        /// Represents the read-only lite (static HTML UI) URL.
+        /// </summary>
+        private string readOnlyLiteUrl;
+
+        /// <summary>
+        /// Flag to indicate who can access the 'Edit by Anyone’ view of the published sheet:
+        ///        If “ALL”, it is available to anyone who has the link.
+        ///        If “ORG”, it is available only to members of the sheet owner’s Smartsheet organization.
+        /// </summary>
+        private string readWriteAccessibleBy;
 
         /// <summary>
         /// Default view for read write published sheet. (GRID, CARDS, CALENDAR)
         /// </summary>
         private string readWriteDefaultView;
+
+        /// <summary>
+        /// Represents the read-write enabled flag.
+        /// </summary>
+        private bool? readWriteEnabled;
+
+        /// <summary>
+        /// Flag to show or hide the left nav toolbar for the read/write sheet.
+        /// </summary>
+        private bool? readWriteShowToolbar;
+
+        /// <summary>
+        /// Represents the read-write URL.
+        /// </summary>
+        private string readWriteUrl;
+
+        /// <summary>
+        /// Gets the ical enabled flag.
+        /// </summary>
+        /// <returns> the ical enabled flag </returns>
+        public bool? IcalEnabled
+        {
+            get { return icalEnabled; }
+            set { icalEnabled = value; }
+        }
+
+        /// <summary>
+        /// Gets the ical Url.
+        /// </summary>
+        /// <returns> the ical Url </returns>
+        public string IcalUrl
+        {
+            get { return icalUrl; }
+            set { icalUrl = value; }
+        }
+
+        /// <summary>
+        /// Flag to indicate who can access the 'Read-Only Full’ view of the published sheet.
+        /// </summary>
+        /// <returns> the access flag </returns>
+        public string ReadOnlyFullAccessibleBy
+        {
+            get { return readOnlyFullAccessibleBy; }
+            set { readOnlyFullAccessibleBy = value; }
+        }
+
+        /// <summary>
+        /// Get the read only full default view
+        /// </summary>
+        /// <returns> Valid options are "GRID", "CARDS", "CALENDAR" </returns>
+        public string ReadOnlyFullDefaultView
+        {
+            get { return readOnlyFullDefaultView; }
+            set { readOnlyFullDefaultView = value; }
+        }
+
+        /// <summary>
+        /// Gets the read only full (fancy UI) enabled flag.
+        /// </summary>
+        /// <returns> the read only full enabled flag </returns>
+        public bool? ReadOnlyFullEnabled
+        {
+            get { return readOnlyFullEnabled; }
+            set { readOnlyFullEnabled = value; }
+        }
+
+        /// <summary>
+        /// Get the read only full show toolbar flag
+        /// </summary>
+        /// <returns> the flag </returns>
+        public bool? ReadOnlyFullShowToolbar
+        {
+            get { return readOnlyFullShowToolbar; }
+            set { readOnlyFullShowToolbar = value; }
+        }
+
+        /// <summary>
+        /// Gets the read only full (fancy UI) Url.
+        /// </summary>
+        /// <returns> the read only full Url </returns>
+        public string ReadOnlyFullUrl
+        {
+            get { return readOnlyFullUrl; }
+            set { readOnlyFullUrl = value; }
+        }
 
         /// <summary>
         /// Gets the read only lite enabled flag.
@@ -110,45 +180,15 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// Gets the read only full (fancy UI) enabled flag.
+        /// Gets the read only lite Url flag.
         /// </summary>
-        /// <returns> the read only full enabled flag </returns>
-        public bool? ReadOnlyFullEnabled
+        /// <returns> the read only lite Url flag </returns>
+        public string ReadOnlyLiteUrl
         {
-            get { return readOnlyFullEnabled; }
-            set { readOnlyFullEnabled = value; }
+            get { return readOnlyLiteUrl; }
+            set { readOnlyLiteUrl = value; }
         }
-        
-        /// <summary>
-        /// Gets the read write enabled flag.
-        /// </summary>
-        /// <returns> the read write enabled flag </returns>
-        public bool? ReadWriteEnabled
-        {
-            get { return readWriteEnabled; }
-            set { readWriteEnabled = value; }
-        }
-        
-        /// <summary>
-        /// Gets the ical enabled flag.
-        /// </summary>
-        /// <returns> the ical enabled flag </returns>
-        public bool? IcalEnabled
-        {
-            get { return icalEnabled; }
-            set { icalEnabled = value; }
-        }
-        
-        /// <summary>
-        /// Flag to indicate who can access the 'Read-Only Full’ view of the published sheet.
-        /// </summary>
-        /// <returns> the access flag </returns>
-        public string ReadOnlyFullAccessibleBy
-        {
-            get { return readOnlyFullAccessibleBy; }
-            set { readOnlyFullAccessibleBy = value; }
-        }
-        
+
         /// <summary>
         /// Flag to indicate who can access the 'Edit by Anyone’ view of the published sheet.
         /// </summary>
@@ -160,55 +200,25 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// Gets the read only lite Url flag.
+        /// Get the read write default view
         /// </summary>
-        /// <returns> the read only lite Url flag </returns>
-        public string ReadOnlyLiteUrl
+        /// <returns> Valid options are "GRID", "CARDS", "CALENDAR" </returns>
+        public string ReadWriteDefaultView
         {
-            get { return readOnlyLiteUrl; }
-            set { readOnlyLiteUrl = value; }
+            get { return readWriteDefaultView; }
+            set { readWriteDefaultView = value; }
         }
-        
+
         /// <summary>
-        /// Gets the read only full (fancy UI) Url.
+        /// Gets the read write enabled flag.
         /// </summary>
-        /// <returns> the read only full Url </returns>
-        public string ReadOnlyFullUrl
+        /// <returns> the read write enabled flag </returns>
+        public bool? ReadWriteEnabled
         {
-            get { return readOnlyFullUrl; }
-            set { readOnlyFullUrl = value;    }
+            get { return readWriteEnabled; }
+            set { readWriteEnabled = value; }
         }
-        
-        /// <summary>
-        /// Gets the read write Url.
-        /// </summary>
-        /// <returns> the read write Url </returns>
-        public string ReadWriteUrl
-        {
-            get { return readWriteUrl; }
-            set { readWriteUrl = value; }
-        }
-        
-        /// <summary>
-        /// Gets the ical Url.
-        /// </summary>
-        /// <returns> the ical Url </returns>
-        public string IcalUrl
-        {
-            get { return icalUrl; }
-            set { icalUrl = value; }
-        }
-        
-        /// <summary>
-        /// Get the read only full show toolbar flag
-        /// </summary>
-        /// <returns> the flag </returns>
-        public bool? ReadOnlyFullShowToolbar
-        {
-            get { return readOnlyFullShowToolbar; }
-            set { readOnlyFullShowToolbar = value; }
-        }
-                
+
         /// <summary>
         /// Get the read/write show toolbar flag
         /// </summary>
@@ -217,25 +227,15 @@ namespace Smartsheet.Api.Models
             get { return readWriteShowToolbar; }
             set { readWriteShowToolbar = value; }
         }
-                
+
         /// <summary>
-        /// Get the read only full default view
+        /// Gets the read write Url.
         /// </summary>
-        /// <returns> Valid options are "GRID", "CARDS", "CALENDAR" </returns>
-        public string ReadOnlyFullDefaultView
+        /// <returns> the read write Url </returns>
+        public string ReadWriteUrl
         {
-            get { return readOnlyFullDefaultView; }
-            set { readOnlyFullDefaultView = value; }
-        }
-        
-        /// <summary>
-        /// Get the read write default view
-        /// </summary>
-        /// <returns> Valid options are "GRID", "CARDS", "CALENDAR" </returns>
-        public string ReadWriteDefaultView
-        {
-            get { return readWriteDefaultView; }
-            set { readWriteDefaultView = value; }
+            get { return readWriteUrl; }
+            set { readWriteUrl = value; }
         }
         
         /// <summary>

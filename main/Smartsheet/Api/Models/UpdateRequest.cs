@@ -31,16 +31,6 @@ namespace Smartsheet.Api.Models
         private long? id;
 
         /// <summary>
-        /// User object containing name and email of the sender.
-        /// </summary>
-        private User sentBy;
-
-        /// <summary>
-        /// The schedule for which update requests will be sent out.
-        /// </summary>
-        private Schedule schedule;
-
-        /// <summary>
         /// The date and time for when this request was originally created. Read-only.
         /// </summary>
         private DateTime? createdAt;
@@ -51,32 +41,22 @@ namespace Smartsheet.Api.Models
         private DateTime? modifiedAt;
 
         /// <summary>
+        /// The schedule for which update requests will be sent out.
+        /// </summary>
+        private Schedule schedule;
+
+        /// <summary>
+        /// User object containing name and email of the sender.
+        /// </summary>
+        private User sentBy;
+
+        /// <summary>
         /// ID of the update request.
         /// </summary>
         public long? Id
         {
             get { return id; }
             set { id = value; }
-        }
-
-        /// <summary>
-        /// Gets the User object containing name and email of the sender.
-        /// </summary>
-        /// <returns> the User </returns>
-        public User SentBy
-        {
-            get { return sentBy; }
-            set { sentBy = value; }
-        }
-
-        /// <summary>
-        /// Gets the schedule for which update requests will be sent out.
-        /// </summary>
-        /// <returns> the Schedule </returns>
-        public Schedule Schedule
-        {
-            get { return schedule; }
-            set { schedule = value; }
         }
 
         /// <summary>
@@ -97,6 +77,26 @@ namespace Smartsheet.Api.Models
         {
             get { return modifiedAt; }
             set { modifiedAt = value; }
+        }
+
+        /// <summary>
+        /// Gets the schedule for which update requests will be sent out.
+        /// </summary>
+        /// <returns> the Schedule </returns>
+        public Schedule Schedule
+        {
+            get { return schedule; }
+            set { schedule = value; }
+        }
+
+        /// <summary>
+        /// Gets the User object containing name and email of the sender.
+        /// </summary>
+        /// <returns> the User </returns>
+        public User SentBy
+        {
+            get { return sentBy; }
+            set { sentBy = value; }
         }
     }
 }

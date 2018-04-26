@@ -27,14 +27,9 @@ namespace Smartsheet.Api.Models
     public class Attachment : NamedModel
     {
         /// <summary>
-        /// Represents the URL.
+        /// Represents the parent ID. 
         /// </summary>
-        private string url;
-
-        /// <summary>
-        /// Represents the URL expiration time.
-        /// </summary>
-        private long? urlExpiresInMillis;
+        private long? parentId;
 
         /// <summary>
         /// Represents the attachment Type.
@@ -52,24 +47,6 @@ namespace Smartsheet.Api.Models
         private DateTime? createdAt;
 
         /// <summary>
-        /// Represents the MIME Type. </summary>
-        private string mimeType;
-
-        /// <summary>
-        /// Represents the parent Type.
-        /// </summary>
-        private AttachmentParentType? parentType;
-
-        /// <summary>
-        /// Represents the parent ID. </summary>
-        private long? parentId;
-
-        /// <summary>
-        /// Represents the attachment size.
-        /// </summary>
-        private long? sizeInKb;
-
-        /// <summary>
         /// User object containing name and email of the creator of this attachment
         /// </summary>
         private User createdBy;
@@ -80,41 +57,38 @@ namespace Smartsheet.Api.Models
         private string description;
 
         /// <summary>
-        /// Applicable when attaching to sheet or row only
+        /// Represents the MIME Type. 
         /// </summary>
-        public string Description
-        {
-            get { return description; }
-            set { description = value; }
-        }
+        private string mimeType;
 
         /// <summary>
-        /// User object containing name and email of the creator of this attachment
+        /// Represents the parent Type.
         /// </summary>
-        public User CreatedBy
-        {
-            get { return createdBy; }
-            set { createdBy = value; }
-        }
+        private AttachmentParentType? parentType;
 
         /// <summary>
-        /// Gets the URL.
+        /// Represents the attachment size.
         /// </summary>
-        /// <returns> The Url. </returns>
-        public string Url
-        {
-            get { return url; }
-            set { url = value; }
-        }
+        private long? sizeInKb;
 
         /// <summary>
-        /// Gets the Url expires in millis.
+        /// Represents the URL.
         /// </summary>
-        /// <returns> the Url expires in millis </returns>
-        public long? UrlExpiresInMillis
+        private string url;
+
+        /// <summary>
+        /// Represents the URL expiration time.
+        /// </summary>
+        private long? urlExpiresInMillis;
+
+        /// <summary>
+        /// Gets the parent Id.
+        /// </summary>
+        /// <returns> the parent Id </returns>
+        public long? ParentId
         {
-            get { return urlExpiresInMillis; }
-            set { urlExpiresInMillis = value; }
+            get { return parentId; }
+            set { parentId = value; }
         }
 
         /// <summary>
@@ -148,6 +122,24 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
+        /// User object containing name and email of the creator of this attachment
+        /// </summary>
+        public User CreatedBy
+        {
+            get { return createdBy; }
+            set { createdBy = value; }
+        }
+
+        /// <summary>
+        /// Applicable when attaching to sheet or row only
+        /// </summary>
+        public string Description
+        {
+            get { return description; }
+            set { description = value; }
+        }
+
+        /// <summary>
         /// Gets the mime Type.
         /// </summary>
         /// <returns> the mime Type </returns>
@@ -168,16 +160,6 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// Gets the parent Id.
-        /// </summary>
-        /// <returns> the parent Id </returns>
-        public long? ParentId
-        {
-            get { return parentId; }
-            set { parentId = value; }
-        }
-
-        /// <summary>
         /// Gets the size in kb.
         /// </summary>
         /// <returns> the size in kb </returns>
@@ -185,6 +167,26 @@ namespace Smartsheet.Api.Models
         {
             get { return sizeInKb; }
             set { sizeInKb = value; }
+        }
+
+        /// <summary>
+        /// Gets the URL.
+        /// </summary>
+        /// <returns> The Url. </returns>
+        public string Url
+        {
+            get { return url; }
+            set { url = value; }
+        }
+
+        /// <summary>
+        /// Gets the Url expires in millis.
+        /// </summary>
+        /// <returns> the Url expires in millis </returns>
+        public long? UrlExpiresInMillis
+        {
+            get { return urlExpiresInMillis; }
+            set { urlExpiresInMillis = value; }
         }
 
         /// <summary>

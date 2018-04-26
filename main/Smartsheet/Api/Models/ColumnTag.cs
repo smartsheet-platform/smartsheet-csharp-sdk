@@ -18,8 +18,6 @@
 
 namespace Smartsheet.Api.Models
 {
-
-
     /// <summary>
     /// Represents the Tags to indicate a special column.
     /// </summary>
@@ -36,5 +34,4 @@ namespace Smartsheet.Api.Models
         GANTT_ASSIGNED_RESOURCE,
         GANTT_ALLOCATION
     }
-
 }

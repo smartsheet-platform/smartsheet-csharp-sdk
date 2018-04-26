@@ -18,8 +18,6 @@
 
 namespace Smartsheet.Api.Models
 {
-
-
     /// <summary>
     /// Represents page dimensions in the Smartsheet REST API.
     /// </summary>

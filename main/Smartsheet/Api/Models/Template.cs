@@ -26,14 +26,34 @@ namespace Smartsheet.Api.Models
     public class Template : NamedModel
     {
         /// <summary>
-        /// Represents the Description for the template.
+        /// Type of the template. One of “sheet” or “report”
         /// </summary>
-        private string description;
+        private string type;
 
         /// <summary>
         /// Represents the access level for the template.
         /// </summary>
         private AccessLevel? accessLevel;
+
+        /// <summary>
+        /// Flag indicating whether the template is blank
+        /// </summary>
+        private bool? blank;
+
+        /// <summary>
+        /// List of categories this template belongs to
+        /// </summary>
+        private IList<string> categories;
+
+        /// <summary>
+        /// Represents the Description for the template.
+        /// </summary>
+        private string description;
+
+        /// <summary>
+        /// Type of global template. One of: “BLANK_SHEET”, “TASK_LIST”, or “PROJECT_SHEET”
+        /// </summary>
+        private GlobalTemplate? globalTemplate;
 
         /// <summary>
         /// URL to the small preview image for this template.
@@ -51,29 +71,49 @@ namespace Smartsheet.Api.Models
         private string locale;
 
         /// <summary>
-        /// Type of the template. One of “sheet” or “report”
-        /// </summary>
-        private string type;
-
-        /// <summary>
         /// List of search tags for this template
         /// </summary>
         private IList<string> tags;
 
         /// <summary>
-        /// List of categories this template belongs to
+        /// Gets the type of the template. One of “sheet” or “report”.
         /// </summary>
-        private IList<string> categories;
+        /// <returns> "sheet" or "report" </returns>
+        public string Type
+        {
+            get { return type; }
+            set { type = value; }
+        }
 
         /// <summary>
-        /// Flag indicating whether the template is blank
+        /// Gets the access level of the template.
         /// </summary>
-        private bool? blank;
+        /// <returns> the access level </returns>
+        public AccessLevel? AccessLevel
+        {
+            get { return accessLevel; }
+            set { accessLevel = value; }
+        }
 
         /// <summary>
-        /// Type of global template. One of: “BLANK_SHEET”, “TASK_LIST”, or “PROJECT_SHEET”
+        /// Gets the flag indicating whether the template is blank.
         /// </summary>
-        private GlobalTemplate? globalTemplate;
+        /// <returns> blank flag </returns>
+        public bool? Blank
+        {
+            get { return blank; }
+            set { blank = value; }
+        }
+
+        /// <summary>
+        /// Gets the list of categories this template belongs to.
+        /// </summary>
+        /// <returns> list of categories </returns>
+        public IList<string> Categories
+        {
+            get { return categories; }
+            set { categories = value; }
+        }
 
         /// <summary>
         /// Gets the Description of the template.
@@ -86,13 +126,13 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// Gets the access level of the template.
+        /// Gets the type of global template.
         /// </summary>
-        /// <returns> the access level </returns>
-        public AccessLevel? AccessLevel
+        /// <returns> template type </returns>
+        public GlobalTemplate? GlobalTemplate
         {
-            get { return accessLevel; }
-            set { accessLevel = value;}
+            get { return globalTemplate; }
+            set { globalTemplate = value; }
         }
 
         /// <summary>
@@ -126,16 +166,6 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// Gets the type of the template. One of “sheet” or “report”.
-        /// </summary>
-        /// <returns> "sheet" or "report" </returns>
-        public string Type
-        {
-            get { return type; }
-            set { type = value; }
-        }
-
-        /// <summary>
         /// Gets the list of search tags for this template.
         /// </summary>
         /// <returns> list of tags </returns>
@@ -143,36 +173,6 @@ namespace Smartsheet.Api.Models
         {
             get { return tags; }
             set { tags = value; }
-        }
-
-        /// <summary>
-        /// Gets the list of categories this template belongs to.
-        /// </summary>
-        /// <returns> list of categories </returns>
-        public IList<string> Categories
-        {
-            get { return categories; }
-            set { categories = value; }
-        }
-
-        /// <summary>
-        /// Gets the flag indicating whether the template is blank.
-        /// </summary>
-        /// <returns> blank flag </returns>
-        public bool? Blank
-        {
-            get { return blank; }
-            set { blank = value; }
-        }
-
-        /// <summary>
-        /// Gets the type of global template.
-        /// </summary>
-        /// <returns> template type </returns>
-        public GlobalTemplate? GlobalTemplate
-        {
-            get { return globalTemplate; }
-            set { globalTemplate = value; }
         }
     }
 }

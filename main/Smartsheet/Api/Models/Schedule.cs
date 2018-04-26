@@ -32,14 +32,9 @@ namespace Smartsheet.Api.Models
         private ScheduleType? type;
 
         /// <summary>
-        /// The date, time and time zone at which the first delivery will start.
+        /// A string array of day descriptors
         /// </summary>
-        private DateTime startAt;
-
-        /// <summary>
-        /// The date, time and time zone at which the delivery schedule will end.
-        /// </summary>
-        private DateTime endAt;
+        private IList<DayDescriptor> dayDescriptors;
 
         /// <summary>
         /// The day within the month
@@ -52,14 +47,9 @@ namespace Smartsheet.Api.Models
         private DayOrdinal dayOrdinal;
 
         /// <summary>
-        /// A string array of day descriptors
+        /// The date, time and time zone at which the delivery schedule will end.
         /// </summary>
-        private IList<DayDescriptor> dayDescriptors;
-
-        /// <summary>
-        /// Frequency on which the request will be delivered. 
-        /// </summary>
-        private int? repeatEvery;
+        private DateTime endAt;
 
         /// <summary>
         /// The date and time for when the last request was sent. Read-only.
@@ -72,6 +62,16 @@ namespace Smartsheet.Api.Models
         private DateTime nextSendAt;
 
         /// <summary>
+        /// Frequency on which the request will be delivered. 
+        /// </summary>
+        private int? repeatEvery;
+
+        /// <summary>
+        /// The date, time and time zone at which the first delivery will start.
+        /// </summary>
+        private DateTime startAt;
+
+        /// <summary>
         /// Gets the scheudle type
         /// </summary>
         /// <returns> the ScheduleType </returns>
@@ -82,25 +82,15 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// Gets the date, time and time zone at which the first delivery will start
+        /// A string array of day descriptors.
         /// </summary>
-        /// <returns> the timestamp </returns>
-        public DateTime StartAt
+        /// <returns> the array of day descriptors </returns>
+        public IList<DayDescriptor> DayDescriptors
         {
-            get { return startAt; }
-            set { startAt = value; }
+            get { return dayDescriptors; }
+            set { dayDescriptors = value; }
         }
 
-        /// <summary>
-        /// Gets the date, time and time zone at which the delivery schedule will end.
-        /// </summary>
-        /// <returns> the timestamp </returns>
-        public DateTime EndAt
-        {
-            get { return endAt; }
-            set { endAt = value; }
-        }
-        
         /// <summary>
         /// Get the day within the month.
         /// </summary>
@@ -122,23 +112,13 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// A string array of day descriptors.
+        /// Gets the date, time and time zone at which the delivery schedule will end.
         /// </summary>
-        /// <returns> the array of day descriptors </returns>
-        public IList<DayDescriptor> DayDescriptors
+        /// <returns> the timestamp </returns>
+        public DateTime EndAt
         {
-            get { return dayDescriptors; }
-            set { dayDescriptors = value; }
-        }
-
-        /// <summary>
-        /// Gets the frequency on which the request will be delivered.
-        /// </summary>
-        /// <returns> the repeat frequency </returns>
-        public int? RepeatEvery
-        {
-            get { return repeatEvery; }
-            set { repeatEvery = value; }
+            get { return endAt; }
+            set { endAt = value; }
         }
 
         /// <summary>
@@ -159,6 +139,26 @@ namespace Smartsheet.Api.Models
         {
             get { return nextSendAt; }
             set { nextSendAt = value; }
+        }
+
+        /// <summary>
+        /// Gets the frequency on which the request will be delivered.
+        /// </summary>
+        /// <returns> the repeat frequency </returns>
+        public int? RepeatEvery
+        {
+            get { return repeatEvery; }
+            set { repeatEvery = value; }
+        }
+
+        /// <summary>
+        /// Gets the date, time and time zone at which the first delivery will start
+        /// </summary>
+        /// <returns> the timestamp </returns>
+        public DateTime StartAt
+        {
+            get { return startAt; }
+            set { startAt = value; }
         }
     }
 }

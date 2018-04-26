@@ -26,6 +26,16 @@ namespace Smartsheet.Api.Models
     public abstract class Email
     {
         /// <summary>
+        /// Represents the CC me flag.
+        /// </summary>
+        private bool? ccMe;
+
+        /// <summary>
+        /// Represents the Message.
+        /// </summary>
+        private string message;
+
+        /// <summary>
         /// Represents the Email recipient(s).
         /// </summary>
         private IList<Recipient> sendTo;
@@ -36,14 +46,24 @@ namespace Smartsheet.Api.Models
         private string subject;
 
         /// <summary>
-        /// Represents the Message.
+        /// Gets the carbon copy me flag.
         /// </summary>
-        private string message;
+        /// <returns> the cc me </returns>
+        public bool? CcMe
+        {
+            get { return ccMe; }
+            set { ccMe = value; }
+        }
 
         /// <summary>
-        /// Represents the CC me flag.
+        /// Gets the Message.
         /// </summary>
-        private bool? ccMe;
+        /// <returns> the Message </returns>
+        public string Message
+        {
+            get { return message; }
+            set { message = value; }
+        }
 
         /// <summary>
         /// Gets the list of Recipients
@@ -63,26 +83,6 @@ namespace Smartsheet.Api.Models
         {
             get { return subject; }
             set { subject = value; }
-        }
-
-        /// <summary>
-        /// Gets the Message.
-        /// </summary>
-        /// <returns> the Message </returns>
-        public string Message
-        {
-            get { return message; }
-            set { message = value; }
-        }
-
-        /// <summary>
-        /// Gets the carbon copy me flag.
-        /// </summary>
-        /// <returns> the cc me </returns>
-        public bool? CcMe
-        {
-            get { return ccMe; }
-            set { ccMe = value; }
         }
     }
 }

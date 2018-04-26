@@ -26,18 +26,9 @@ namespace Smartsheet.Api.Models
     /// </summary>
     public class Favorite
     {
-        private ObjectType? type;
-
         private long? objectId;
 
-        /// <summary>
-        /// One of: workspace, folder, sheet, report, template, sight
-        /// </summary>
-        public ObjectType? Type
-        {
-            get { return type; }
-            set { type = value; }
-        }
+        private ObjectType? type;
 
         /// <summary>
         /// ID of the favorited item. If type is "template", only private sheet-type template ID is allowed.
@@ -46,6 +37,15 @@ namespace Smartsheet.Api.Models
         {
             get { return objectId; }
             set { objectId = value; }
+        }
+
+        /// <summary>
+        /// One of: workspace, folder, sheet, report, template, sight
+        /// </summary>
+        public ObjectType? Type
+        {
+            get { return type; }
+            set { type = value; }
         }
 
         /// <summary>

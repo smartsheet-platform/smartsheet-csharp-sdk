@@ -32,14 +32,14 @@ namespace Smartsheet.Api.Models
         private bool? favorite;
 
         /// <summary>
+        /// Represents the child folders contained in the folder.
+        /// </summary>
+        private IList<Folder> folders;
+
+        /// <summary>
         /// Direct URL to folder
         /// </summary>
         private string permalink;
-
-        /// <summary>
-        /// Represents the sheets contained in the folder.
-        /// </summary>
-        private IList<Sheet> sheets;
 
         /// <summary>
         /// Represents the reports contained in the folder.
@@ -47,19 +47,19 @@ namespace Smartsheet.Api.Models
         private IList<Report> reports;
 
         /// <summary>
-        /// Represents the child folders contained in the folder.
+        /// Represents the sheets contained in the folder.
         /// </summary>
-        private IList<Folder> folders;
-
-        /// <summary>
-        /// Represents the templates contained in the folder.
-        /// </summary>
-        private IList<Template> templates;
+        private IList<Sheet> sheets;
 
         /// <summary>
         /// Represents the Sights contained in the folder.
         /// </summary>
         private IList<Sight> sights;
+
+        /// <summary>
+        /// Represents the templates contained in the folder.
+        /// </summary>
+        private IList<Template> templates;
 
         /// <summary>
         /// Gets and sets whether this folder is favorited.
@@ -69,6 +69,16 @@ namespace Smartsheet.Api.Models
         {
             get { return favorite; }
             set { favorite = value; }
+        }
+
+        /// <summary>
+        /// Gets the folders contained in this folder.
+        /// </summary>
+        /// <returns> the folders </returns>
+        public IList<Folder> Folders
+        {
+            get { return folders; }
+            set { folders = value; }
         }
 
         /// <summary>
@@ -82,16 +92,6 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// Gets the sheets in the folder.
-        /// </summary>
-        /// <returns> the sheets </returns>
-        public IList<Sheet> Sheets
-        {
-            get { return sheets; }
-            set { sheets = value; }
-        }
-
-        /// <summary>
         /// Gets the reports in the folder.
         /// </summary>
         /// <returns> the sheets </returns>
@@ -102,23 +102,13 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// Gets the folders contained in this folder.
+        /// Gets the sheets in the folder.
         /// </summary>
-        /// <returns> the folders </returns>
-        public IList<Folder> Folders
+        /// <returns> the sheets </returns>
+        public IList<Sheet> Sheets
         {
-            get { return folders; }
-            set { folders = value; }
-        }
-        
-        /// <summary>
-        /// Gets the templates contained in this folder.
-        /// </summary>
-        /// <returns> the templates </returns>
-        public IList<Template> Templates
-        {
-            get { return templates; }
-            set { templates = value; }
+            get { return sheets; }
+            set { sheets = value; }
         }
 
         /// <summary>
@@ -130,7 +120,17 @@ namespace Smartsheet.Api.Models
             get { return sights; }
             set { sights = value; }
         }
-        
+
+        /// <summary>
+        /// Gets the templates contained in this folder.
+        /// </summary>
+        /// <returns> the templates </returns>
+        public IList<Template> Templates
+        {
+            get { return templates; }
+            set { templates = value; }
+        }
+
         /// <summary>
         /// A convenience class for setting up a folder with the appropriate fields for updating the folder.
         /// </summary>

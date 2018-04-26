@@ -41,14 +41,14 @@ namespace Smartsheet.Api.Models
         private bool? includeAttachments;
 
         /// <summary>
-        /// Include discussions in email
-        /// </summary>
-        private bool? includeDiscussions;
-
-        /// <summary>
         /// Specifies which columns to include in message
         /// </summary>
         private IList<long> includeColumnIds;
+
+        /// <summary>
+        /// Include discussions in email
+        /// </summary>
+        private bool? includeDiscussions;
 
         /// <summary>
         /// Email body
@@ -111,16 +111,6 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// Gets the flag indicating if discussions should be included with the email
-        /// </summary>
-        /// <returns> the includeDiscussions flag </returns>
-        public bool? IncludeDiscussions
-        {
-            get { return includeDiscussions; }
-            set { includeDiscussions = value; }
-        }
-
-        /// <summary>
         /// Gets the list of included columns
         /// </summary>
         /// <returns> the list of included columns </returns>
@@ -128,6 +118,16 @@ namespace Smartsheet.Api.Models
         {
             get { return includeColumnIds; }
             set { includeColumnIds = value; }
+        }
+
+        /// <summary>
+        /// Gets the flag indicating if discussions should be included with the email
+        /// </summary>
+        /// <returns> the includeDiscussions flag </returns>
+        public bool? IncludeDiscussions
+        {
+            get { return includeDiscussions; }
+            set { includeDiscussions = value; }
         }
 
         /// <summary>

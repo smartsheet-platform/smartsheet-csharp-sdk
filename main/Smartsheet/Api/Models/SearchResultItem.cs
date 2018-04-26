@@ -26,19 +26,9 @@ namespace Smartsheet.Api.Models
     public class SearchResultItem
     {
         /// <summary>
-        /// Represents the text for this specific search RequestResult.
-        /// </summary>
-        private string text;
-
-        /// <summary>
         /// Represents the object Id for this specific search RequestResult.
         /// </summary>
         private long? objectId;
-
-        /// <summary>
-        /// Represents the object type (row, discussion, attach) for this specific search RequestResult.
-        /// </summary>
-        private SearchObjectType? objectType;
 
         /// <summary>
         /// Represents the parent object Id for this specific search RequestResult.
@@ -46,19 +36,14 @@ namespace Smartsheet.Api.Models
         private long? parentObjectId;
 
         /// <summary>
+        /// Represents the object type (row, discussion, attach) for this specific search RequestResult.
+        /// </summary>
+        private SearchObjectType? objectType;
+
+        /// <summary>
         /// Represents the parent object type for this specific search RequestResult.
         /// </summary>
         private ObjectType? parentObjectType;
-
-        /// <summary>
-        /// Represents the parent object name for this specific search RequestResult.
-        /// </summary>
-        private string parentObjectName;
-
-        /// <summary>
-        /// Represents the context data for this specific search RequestResult.
-        /// </summary>
-        private IList<string> contextData;
 
         /// <summary>
         /// Represents the attachment type if the search result item is an attachment
@@ -66,9 +51,9 @@ namespace Smartsheet.Api.Models
         private AttachmentType? attachmentType;
 
         /// <summary>
-        /// Represents the MIME type
+        /// Represents the context data for this specific search RequestResult.
         /// </summary>
-        private string mimeType;
+        private IList<string> contextData;
 
         /// <summary>
         /// If the search result item is a favorite
@@ -76,20 +61,25 @@ namespace Smartsheet.Api.Models
         private bool? favorite;
 
         /// <summary>
+        /// Represents the MIME type
+        /// </summary>
+        private string mimeType;
+
+        /// <summary>
         /// If the parent object of the search item is a favorite
         /// </summary>
         private bool? parentObjectFavorite;
 
         /// <summary>
-        /// Gets the text for this specific search RequestResult.
+        /// Represents the parent object name for this specific search RequestResult.
         /// </summary>
-        /// <returns> the text </returns>
-        public string Text
-        {
-            get { return text; }
-            set { text = value; }
-        }
-        
+        private string parentObjectName;
+
+        /// <summary>
+        /// Represents the text for this specific search RequestResult.
+        /// </summary>
+        private string text;
+
         /// <summary>
         /// Gets the object Id for this specific search RequestResult.
         /// </summary>
@@ -98,6 +88,16 @@ namespace Smartsheet.Api.Models
         {
             get { return objectId; }
             set { objectId = value; }
+        }
+
+        /// <summary>
+        /// Gets the parent object Id for this specific search RequestResult.
+        /// </summary>
+        /// <returns> the parent object Id </returns>
+        public long? ParentObjectId
+        {
+            get { return parentObjectId; }
+            set { parentObjectId = value; }
         }
 
         /// <summary>
@@ -111,16 +111,6 @@ namespace Smartsheet.Api.Models
         }
         
         /// <summary>
-        /// Gets the parent object Id for this specific search RequestResult.
-        /// </summary>
-        /// <returns> the parent object Id </returns>
-        public long? ParentObjectId
-        {
-            get { return parentObjectId; }
-            set { parentObjectId = value; }
-        }
-
-        /// <summary>
         /// Gets the parent object type for this specific search RequestResult.
         /// </summary>
         /// <returns> the parent object type </returns>
@@ -130,26 +120,6 @@ namespace Smartsheet.Api.Models
             set { parentObjectType = value; }
         }
         
-        /// <summary>
-        /// Gets the parent object name for this specific search RequestResult.
-        /// </summary>
-        /// <returns> the parent object name </returns>
-        public string ParentObjectName
-        {
-            get { return parentObjectName; }
-            set { parentObjectName = value; }
-        }
-        
-        /// <summary>
-        /// Gets the context data for this specific search RequestResult.
-        /// </summary>
-        /// <returns> the context data </returns>
-        public IList<string> ContextData
-        {
-            get { return contextData; }
-            set { contextData = value; }
-        }
-
         /// <summary>
         /// Gets the attachment type if the search result item is an attachment
         /// </summary>
@@ -161,13 +131,13 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// Gets the MIME type
+        /// Gets the context data for this specific search RequestResult.
         /// </summary>
-        /// <returns> the MIME type </returns>
-        public string MimeType
+        /// <returns> the context data </returns>
+        public IList<string> ContextData
         {
-            get { return mimeType; }
-            set { mimeType = value; }
+            get { return contextData; }
+            set { contextData = value; }
         }
 
         /// <summary>
@@ -181,12 +151,42 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
+        /// Gets the MIME type
+        /// </summary>
+        /// <returns> the MIME type </returns>
+        public string MimeType
+        {
+            get { return mimeType; }
+            set { mimeType = value; }
+        }
+
+        /// <summary>
         /// Indicates whether the search result item parent is a favorite
         /// </summary>
         public bool? ParentObjectFavorite
         {
             get { return parentObjectFavorite; }
             set { parentObjectFavorite = value; }
+        }
+
+        /// <summary>
+        /// Gets the parent object name for this specific search RequestResult.
+        /// </summary>
+        /// <returns> the parent object name </returns>
+        public string ParentObjectName
+        {
+            get { return parentObjectName; }
+            set { parentObjectName = value; }
+        }
+
+        /// <summary>
+        /// Gets the text for this specific search RequestResult.
+        /// </summary>
+        /// <returns> the text </returns>
+        public string Text
+        {
+            get { return text; }
+            set { text = value; }
         }
     }
 }

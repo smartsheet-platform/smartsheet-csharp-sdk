@@ -11,24 +11,14 @@ namespace Smartsheet.Api.Models
     public class AlternateEmail : IdentifiableModel
     {
         /// <summary>
-        /// The user's alternate email address
-        /// </summary>
-        private string email;
-
-        /// <summary>
         /// Flag indicating whether the alternate email address has been confirmed
         /// </summary>
         private bool? confirmed;
 
         /// <summary>
-        /// The email address string for AlternateEmail.
+        /// The user's alternate email address
         /// </summary>
-        /// <returns> the Email</returns>
-        public string Email
-        {
-            get { return email; }
-            set { email = value; }
-        }
+        private string email;
 
         /// <summary>
         /// The confirmed flag for AlternateEmail.
@@ -38,6 +28,16 @@ namespace Smartsheet.Api.Models
         {
             get { return confirmed; }
             set { confirmed = value; }
+        }
+
+        /// <summary>
+        /// The email address string for AlternateEmail.
+        /// </summary>
+        /// <returns> the Email</returns>
+        public string Email
+        {
+            get { return email; }
+            set { email = value; }
         }
 
         /// <summary>

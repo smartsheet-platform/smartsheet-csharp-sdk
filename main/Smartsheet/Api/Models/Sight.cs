@@ -29,44 +29,9 @@ namespace Smartsheet.Api.Models
     public class Sight : NamedModel
     {
         /// <summary>
-        /// Number of columns that the Sight contains
-        /// </summary>
-        private int? columnCount;
-
-        /// <summary>
-        /// Array of Widget objects
-        /// </summary>
-        private IList<Widget> widgets;
-
-        /// <summary>
-        /// Indicates whether the user has marked the Sight as a favorite
-        /// </summary>
-        private bool? favorite;
-
-        /// <summary>
         /// User’s permissions on the Sight. Valid values
         /// </summary>
         private AccessLevel? accessLevel;
-
-        /// <summary>
-        /// URL that represents a direct link to the Sight in Smartsheet
-        /// </summary>
-        private string permalink;
-
-        /// <summary>
-        /// Time of creation
-        /// </summary>
-        private DateTime? createdAt;
-
-        /// <summary>
-        /// Time of last modification
-        /// </summary>
-        private DateTime? modifiedAt;
-
-        /// <summary>
-        /// A Workspace object, limited to only 2 attributes: Id, Name
-        /// </summary>
-        private Workspace workspace;
 
         /// <summary>
         /// The background color of the Sight
@@ -74,34 +39,39 @@ namespace Smartsheet.Api.Models
         private string backgroundColor;
 
         /// <summary>
-        /// Get the number of columns that the Sight contains.
+        /// Number of columns that the Sight contains
         /// </summary>
-        /// <returns> the columnCount </returns>
-        public int? ColumnCount
-        {
-            get { return columnCount; }
-            set { columnCount = value; }
-        }
+        private int? columnCount;
 
         /// <summary>
-        /// Array of Widget objects.
+        /// Time of creation
         /// </summary>
-        /// <returns> the list </returns>
-        public IList<Widget> Widgets
-        {
-            get { return widgets; }
-            set { widgets = value; }
-        }
+        private DateTime? createdAt;
 
         /// <summary>
-        /// Indicates whether the user has marked the Sight as a favorite.
+        /// Indicates whether the user has marked the Sight as a favorite
         /// </summary>
-        /// <returns> the favorite flag </returns>
-        public Boolean? Favorite
-        {
-            get { return favorite; }
-            set { favorite = value; }
-        }
+        private bool? favorite;
+
+        /// <summary>
+        /// Time of last modification
+        /// </summary>
+        private DateTime? modifiedAt;
+
+        /// <summary>
+        /// URL that represents a direct link to the Sight in Smartsheet
+        /// </summary>
+        private string permalink;
+
+        /// <summary>
+        /// Array of Widget objects
+        /// </summary>
+        private IList<Widget> widgets;
+
+        /// <summary>
+        /// A Workspace object, limited to only 2 attributes: Id, Name
+        /// </summary>
+        private Workspace workspace;
 
         /// <summary>
         /// User’s permissions on the Sight. valid values:
@@ -115,13 +85,23 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// URL that represents a direct link to the Sight in Smartsheet
+        /// Get the background color of the Sight
         /// </summary>
-        /// <returns> the permalink </returns>
-        public string Permalink
+        /// <returns> the background color </returns>
+        public string BackgroundColor
         {
-            get { return permalink; }
-            set { permalink = value; }
+            get { return backgroundColor; }
+            set { backgroundColor = value; }
+        }
+
+        /// <summary>
+        /// Get the number of columns that the Sight contains.
+        /// </summary>
+        /// <returns> the columnCount </returns>
+        public int? ColumnCount
+        {
+            get { return columnCount; }
+            set { columnCount = value; }
         }
 
         /// <summary>
@@ -135,6 +115,16 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
+        /// Indicates whether the user has marked the Sight as a favorite.
+        /// </summary>
+        /// <returns> the favorite flag </returns>
+        public Boolean? Favorite
+        {
+            get { return favorite; }
+            set { favorite = value; }
+        }
+
+        /// <summary>
         /// Time of last modification
         /// </summary>
         /// <returns> the DateTime </returns>
@@ -142,6 +132,26 @@ namespace Smartsheet.Api.Models
         {
             get { return modifiedAt; }
             set { modifiedAt = value; }
+        }
+
+        /// <summary>
+        /// URL that represents a direct link to the Sight in Smartsheet
+        /// </summary>
+        /// <returns> the permalink </returns>
+        public string Permalink
+        {
+            get { return permalink; }
+            set { permalink = value; }
+        }
+
+        /// <summary>
+        /// Array of Widget objects.
+        /// </summary>
+        /// <returns> the list </returns>
+        public IList<Widget> Widgets
+        {
+            get { return widgets; }
+            set { widgets = value; }
         }
 
         /// <summary>
@@ -154,16 +164,6 @@ namespace Smartsheet.Api.Models
         {
             get { return workspace; }
             set { workspace = value; }
-        }
-
-        /// <summary>
-        /// Get the background color of the Sight
-        /// </summary>
-        /// <returns> the background color </returns>
-        public string BackgroundColor
-        {
-            get { return backgroundColor; }
-            set { backgroundColor = value; }
         }
     }
 }

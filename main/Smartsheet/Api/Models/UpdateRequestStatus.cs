@@ -27,5 +27,4 @@ namespace Smartsheet.Api.Models
         CANCELED,
         COMPLETE
     }
-
 }

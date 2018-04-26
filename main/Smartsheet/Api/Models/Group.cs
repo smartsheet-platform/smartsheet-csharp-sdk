@@ -26,24 +26,9 @@ namespace Smartsheet.Api.Models
     public class Group : NamedModel
     {
         /// <summary>
-        /// Group description
-        /// </summary>
-        private string description;
-
-        /// <summary>
-        /// The group owners email address
-        /// </summary>
-        private string owner;
-
-        /// <summary>
         /// Group owner's user id
         /// </summary>
         private long? ownerId;
-
-        /// <summary>
-        /// Array of GroupMember objects
-        /// </summary>
-        private IList<GroupMember> members;
 
         /// <summary>
         /// Group creation time
@@ -51,18 +36,24 @@ namespace Smartsheet.Api.Models
         private DateTime? createdAt;
 
         /// <summary>
+        /// Group description
+        /// </summary>
+        private string description;
+
+        /// <summary>
+        /// Array of GroupMember objects
+        /// </summary>
+        private IList<GroupMember> members;
+
+        /// <summary>
         /// Time the group was last modified
         /// </summary>
         private DateTime? modifiedAt;
 
         /// <summary>
-        /// Group owner’s email address
+        /// The group owners email address
         /// </summary>
-        public string Owner
-        {
-            get { return owner; }
-            set { owner = value; }
-        }
+        private string owner;
 
         /// <summary>
         /// Group owner’s User ID
@@ -71,15 +62,6 @@ namespace Smartsheet.Api.Models
         {
             get { return ownerId; }
             set { ownerId = value; }
-        }
-
-        /// <summary>
-        /// List of GroupMember objects
-        /// </summary>
-        public IList<GroupMember> Members
-        {
-            get { return members; }
-            set { members = value; }
         }
 
         /// <summary>
@@ -92,6 +74,24 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
+        /// Group description
+        /// </summary>
+        public string Description
+        {
+            get { return description; }
+            set { description = value; }
+        }
+
+        /// <summary>
+        /// List of GroupMember objects
+        /// </summary>
+        public IList<GroupMember> Members
+        {
+            get { return members; }
+            set { members = value; }
+        }
+
+        /// <summary>
         /// Time of last modification
         /// </summary>
         public DateTime? ModifiedAt
@@ -101,12 +101,12 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// Group description
+        /// Group owner’s email address
         /// </summary>
-        public string Description
+        public string Owner
         {
-            get { return description; }
-            set { description = value; }
+            get { return owner; }
+            set { owner = value; }
         }
 
         /// <summary>

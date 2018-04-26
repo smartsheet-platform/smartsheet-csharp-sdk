@@ -26,24 +26,24 @@ namespace Smartsheet.Api.Models
     public class BulkItemFailure
     {
         /// <summary>
-        /// The index of the failed item in the bulk request array. </summary>
-        private long? index;
+        /// The id of the Row that failed. Applicable only to bulk row operations. </summary>
+        private long? rowId;
 
         /// <summary>
         /// The error caused by the failed item.</summary>
         private Error error;
 
         /// <summary>
-        /// The id of the Row that failed. Applicable only to bulk row operations. </summary>
-        private long? rowId;
+        /// The index of the failed item in the bulk request array. </summary>
+        private long? index;
 
         /// <summary>
-        /// The index of the failed item in the bulk request array.
+        /// Get the id of the Row that failed.
         /// </summary>
-        public long? Index
+        public long? RowId
         {
-            get { return index; }
-            set { index = value; }
+            get { return rowId; }
+            set { rowId = value; }
         }
 
         /// <summary>
@@ -55,14 +55,14 @@ namespace Smartsheet.Api.Models
             get { return error; }
             set { error = value; }
         }
-        
+
         /// <summary>
-        /// Get the id of the Row that failed.
+        /// The index of the failed item in the bulk request array.
         /// </summary>
-        public long? RowId
+        public long? Index
         {
-            get { return rowId; }
-            set { rowId = value; }
+            get { return index; }
+            set { index = value; }
         }
     }
 }

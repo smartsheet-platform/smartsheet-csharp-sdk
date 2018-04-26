@@ -29,6 +29,31 @@ namespace Smartsheet.Api.Models
     public abstract class UserModel : IdentifiableModel
     {
         /// <summary>
+        /// Represents the Admin flag which allows managing users and accounts.
+        /// </summary>
+        private bool? admin;
+
+        /// <summary>
+        /// An array of AlternateEmail objects representing the alternate email addresses associated with the user account
+        /// </summary>
+        private IList<AlternateEmail> alternateEmails;
+
+        /// <summary>
+        /// Company name from the user's profile
+        /// </summary>
+        private string company;
+
+        /// <summary>
+        /// Timestamp of viewing an Enterprise Custom Welcome Screen by the current user
+        /// </summary>
+        private DateTime? customWelcomeScreenViewed;
+
+        /// <summary>
+        /// Department name from the user's profile
+        /// </summary>
+        private string department;
+
+        /// <summary>
         /// Represents the email address.
         /// </summary>
         private string email;
@@ -39,44 +64,9 @@ namespace Smartsheet.Api.Models
         private string firstName;
 
         /// <summary>
-        /// Represents the user's last name.
-        /// </summary>
-        private string lastName;
-
-        /// <summary>
-        /// Represents the Admin flag which allows managing users and accounts.
-        /// </summary>
-        private bool? admin;
-
-        /// <summary>
-        /// Represents the licensed sheet creator flag which allows creating and owning sheets.
-        /// </summary>
-        private bool? licensedSheetCreator;
-
-        /// <summary>
-        /// Flag indicating whether the user is a resource viewer (can access resource views)
-        /// </summary>
-        private bool? resourceViewer;
-
-        /// <summary>
         /// Flag indicating whether the user is a group admin (can create and edit groups)
         /// </summary>
         private bool? groupAdmin;
-
-        /// <summary>
-        /// Represents the user status (active, pending, declined).
-        /// </summary>
-        private UserStatus? status;
-
-        /// <summary>
-        /// An array of AlternateEmail objects representing the alternate email addresses associated with the user account
-        /// </summary>
-        private IList<AlternateEmail> alternateEmails;
-
-        /// <summary>
-        /// The number of sheets owned by the current user within the organization
-        /// </summary>
-        private int? sheetCount;
 
         /// <summary>
         /// Last login time of the current user
@@ -84,19 +74,14 @@ namespace Smartsheet.Api.Models
         private DateTime? lastLogin;
 
         /// <summary>
-        /// Timestamp of viewing an Enterprise Custom Welcome Screen by the current user
+        /// Represents the user's last name.
         /// </summary>
-        private DateTime? customWelcomeScreenViewed;
+        private string lastName;
 
         /// <summary>
-        /// Company name from the user's profile
+        /// Represents the licensed sheet creator flag which allows creating and owning sheets.
         /// </summary>
-        private string company;
-
-        /// <summary>
-        /// Department name from the user's profile
-        /// </summary>
-        private string department;
+        private bool? licensedSheetCreator;
 
         /// <summary>
         /// User's mobile phone number from the profile
@@ -109,9 +94,24 @@ namespace Smartsheet.Api.Models
         private Image profileImage;
 
         /// <summary>
+        /// Flag indicating whether the user is a resource viewer (can access resource views)
+        /// </summary>
+        private bool? resourceViewer;
+
+        /// <summary>
         /// User's role
         /// </summary>
         private string role;
+
+        /// <summary>
+        /// The number of sheets owned by the current user within the organization
+        /// </summary>
+        private int? sheetCount;
+
+        /// <summary>
+        /// Represents the user status (active, pending, declined).
+        /// </summary>
+        private UserStatus? status;
 
         /// <summary>
         /// User's title
@@ -122,6 +122,52 @@ namespace Smartsheet.Api.Models
         /// Work phone number for the user's profile
         /// </summary>
         private string workPhone;
+
+        /// <summary>
+        /// Gets the Admin flag which allows managing users and accounts.
+        /// </summary>
+        /// <returns> the admin </returns>
+        public bool? Admin
+        {
+            get { return admin; }
+            set { admin = value; }
+        }
+
+        /// <summary>
+        /// Get list of alternate email addresses associated with this user account
+        /// </summary>
+        public IList<AlternateEmail> AlternateEmails
+        {
+            get { return alternateEmails; }
+            set { alternateEmails = value; }
+        }
+
+        /// <summary>
+        /// Gets the user's company name
+        /// </summary>
+        public string Company
+        {
+            get { return company; }
+            set { company = value; }
+        }
+
+        /// <summary>
+        /// Get the timestamp of the viewing of an Enterprise Custom Welcome Screen by the current user
+        /// </summary>
+        public DateTime? CustomWelcomeScreenViewed
+        {
+            get { return customWelcomeScreenViewed; }
+            set { customWelcomeScreenViewed = value; }
+        }
+
+        /// <summary>
+        /// Gets the user's department
+        /// </summary>
+        public string Department
+        {
+            get { return department; }
+            set { department = value; }
+        }
 
         /// <summary>
         /// Current user’s email address
@@ -142,22 +188,21 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
+        /// Get the last login time of the current user
+        /// </summary>
+        public DateTime? LastLogin
+        {
+            get { return lastLogin; }
+            set { lastLogin = value; }
+        }
+
+        /// <summary>
         /// Current user’s last name
         /// </summary>
         public string LastName
         {
             get { return lastName; }
             set { lastName = value; }
-        }
-
-        /// <summary>
-        /// Gets the Admin flag which allows managing users and accounts.
-        /// </summary>
-        /// <returns> the admin </returns>
-        public bool? Admin
-        {
-            get { return admin; }
-            set { admin = value; }
         }
 
         /// <summary>
@@ -171,85 +216,12 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// Flag indicating whether the user is a resource viewer (can access resource views)
-        /// </summary>
-        public bool? ResourceViewer
-        {
-            get { return resourceViewer; }
-            set { resourceViewer = value; }
-        }
-
-        /// <summary>
         /// Flag indicating whether the user is a group admin (can create and edit groups)
         /// </summary>
         public bool? GroupAdmin
         {
             get { return groupAdmin; }
             set { groupAdmin = value; }
-        }
-
-        /// <summary>
-        /// Gets the status of the user (active, pending, declined).
-        /// </summary>
-        /// <returns> the Status </returns>
-        public UserStatus? Status
-        {
-            get { return status; }
-            set { status = value; }
-        }
-        
-        /// <summary>
-        /// Get list of alternate email addresses associated with this user account
-        /// </summary>
-        public IList<AlternateEmail> AlternateEmails
-        {
-            get { return alternateEmails; }
-            set { alternateEmails = value;  }
-        }
-
-        /// <summary>
-        /// Get the number of sheets owned by the current user within the organization
-        /// </summary>
-        public int? SheetCount
-        {
-            get { return sheetCount; }
-            set { sheetCount = value; }
-        }
-
-        /// <summary>
-        /// Get the last login time of the current user
-        /// </summary>
-        public DateTime? LastLogin
-        {
-            get { return lastLogin; }
-            set { lastLogin = value; }
-        }
-
-        /// <summary>
-        /// Get the timestamp of the viewing of an Enterprise Custom Welcome Screen by the current user
-        /// </summary>
-        public DateTime? CustomWelcomeScreenViewed
-        {
-            get { return customWelcomeScreenViewed; }
-            set { customWelcomeScreenViewed = value; }
-        }
-
-        /// <summary>
-        /// Gets the user's company name
-        /// </summary>
-        public string Company
-        {
-            get { return company; }
-            set { company = value; }
-        }
-
-        /// <summary>
-        /// Gets the user's department
-        /// </summary>
-        public string Department
-        {
-            get { return department; }
-            set { department = value; }
         }
 
         /// <summary>
@@ -271,6 +243,15 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
+        /// Flag indicating whether the user is a resource viewer (can access resource views)
+        /// </summary>
+        public bool? ResourceViewer
+        {
+            get { return resourceViewer; }
+            set { resourceViewer = value; }
+        }
+
+        /// <summary>
         /// Gets the user's role
         /// </summary>
         public string Role
@@ -279,6 +260,25 @@ namespace Smartsheet.Api.Models
             set { role = value; }
         }
 
+        /// <summary>
+        /// Get the number of sheets owned by the current user within the organization
+        /// </summary>
+        public int? SheetCount
+        {
+            get { return sheetCount; }
+            set { sheetCount = value; }
+        }
+
+        /// <summary>
+        /// Gets the status of the user (active, pending, declined).
+        /// </summary>
+        /// <returns> the Status </returns>
+        public UserStatus? Status
+        {
+            get { return status; }
+            set { status = value; }
+        }
+        
         /// <summary>
         /// Get the user's title
         /// </summary>

@@ -27,24 +27,15 @@ namespace Smartsheet.Api.Models
     public class SearchResult
     {
         /// <summary>
-        /// Represents total count of Results.
-        /// </summary>
-        private int? totalCount;
-
-        /// <summary>
         /// A list of items returned from the search Results.
         /// </summary>
         private IList<SearchResultItem> results;
 
         /// <summary>
-        /// Gets the total count of Results.
+        /// <summary>
+        /// Represents total count of Results.
         /// </summary>
-        /// <returns> the total count </returns>
-        public int? TotalCount
-        {
-            get { return totalCount; }
-            set { totalCount = value; }
-        }
+        private int? totalCount;
 
         /// <summary>
         /// Gets the list of Results from the search.
@@ -54,6 +45,15 @@ namespace Smartsheet.Api.Models
         {
             get { return results; }
             set { results = value; }
+        }
+
+        /// Gets the total count of Results.
+        /// </summary>
+        /// <returns> the total count </returns>
+        public int? TotalCount
+        {
+            get { return totalCount; }
+            set { totalCount = value; }
         }
     }
 }

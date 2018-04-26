@@ -34,9 +34,9 @@ namespace Smartsheet.Api.Models
     public class Hyperlink
     {
         /// <summary>
-        /// Represents the URL.
+        /// If non-null, this hyperlink is a link to the report with this Id.
         /// </summary>
-        private string url;
+        private long? reportId;
 
         /// <summary>
         /// Represents the sheet Id.
@@ -44,14 +44,14 @@ namespace Smartsheet.Api.Models
         private long? sheetId;
 
         /// <summary>
-        /// If non-null, this hyperlink is a link to the report with this Id.
-        /// </summary>
-        private long? reportId;
-
-        /// <summary>
         /// If non-null, this hyperlink is a link to the Sight with this Id.
         /// </summary>
         private long? sightId;
+
+        /// <summary>
+        /// Represents the URL.
+        /// </summary>
+        private string url;
 
         /// <summary>
         /// If true, update will serialize a null to reset the hyperlink
@@ -67,6 +67,20 @@ namespace Smartsheet.Api.Models
             set {
                 isNull = false;
                 reportId = value;
+            }
+        }
+
+        /// <summary>
+        /// If non-null, this hyperlink is a link to the sheet with this Id.
+        /// </summary>
+        /// <returns> the sheet Id </returns>
+        public long? SheetId
+        {
+            get { return sheetId; }
+            set
+            {
+                isNull = false;
+                sheetId = value;
             }
         }
 
@@ -94,19 +108,6 @@ namespace Smartsheet.Api.Models
             set {
                 isNull = false;
                 url = value;
-            }
-        }
-
-        /// <summary>
-        /// If non-null, this hyperlink is a link to the sheet with this Id.
-        /// </summary>
-        /// <returns> the sheet Id </returns>
-        public long? SheetId
-        {
-            get { return sheetId; }
-            set {
-                isNull = false;
-                sheetId = value; 
             }
         }
 

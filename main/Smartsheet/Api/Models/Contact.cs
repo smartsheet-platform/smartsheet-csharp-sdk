@@ -20,7 +20,6 @@ using System.Collections.Generic;
 
 namespace Smartsheet.Api.Models
 {
-
     /// <summary>
     /// Represents a user’s personal 
     /// in Smartsheet
@@ -33,15 +32,6 @@ namespace Smartsheet.Api.Models
         private string email;
 
         /// <summary>
-        /// Contact’s email address
-        /// </summary>
-        public string Email
-        {
-            get { return email; }
-            set { email = value; }
-        }
-
-        /// <summary>
         /// Contact ID, unlike other Smartsheet object ids, this id is an alphanumeric string.
         /// </summary>
         public new string Id
@@ -49,6 +39,15 @@ namespace Smartsheet.Api.Models
             // This should hide inherited member "Id".
             get { return id; }
             set { id = value; }
+        }
+
+        /// <summary>
+        /// Contact’s email address
+        /// </summary>
+        public string Email
+        {
+            get { return email; }
+            set { email = value; }
         }
     }
 }

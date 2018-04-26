@@ -20,27 +20,15 @@ using System.Collections.Generic;
 
 namespace Smartsheet.Api.Models
 {
-
-
     /// <summary>
     /// Represents the Home object. </summary>
     /// <seealso href="http://help.Smartsheet.com/customer/portal/articles/522237-the-home-tab">Home Tab Help</seealso>
     public class Home
     {
         /// <summary>
-        /// Represents the Sheets in the home location.
-        /// </summary>
-        private IList<Sheet> sheets;
-
-        /// <summary>
         /// Represents the Folders in the home location.
         /// </summary>
         private IList<Folder> folders;
-
-        /// <summary>
-        /// Represents the Templates in the home location.
-        /// </summary>
-        private IList<Template> templates;
 
         /// <summary>
         /// Represents the Reports in the home location.
@@ -48,9 +36,9 @@ namespace Smartsheet.Api.Models
         private IList<Report> reports;
 
         /// <summary>
-        /// Represents the Workspaces in the home location.
+        /// Represents the Sheets in the home location.
         /// </summary>
-        private IList<Workspace> workspaces;
+        private IList<Sheet> sheets;
 
         /// <summary>
         /// Represents the Sights in the home location
@@ -58,15 +46,15 @@ namespace Smartsheet.Api.Models
         private IList<Sight> sights;
 
         /// <summary>
-        /// Gets the Sheets in the home location.
+        /// Represents the Templates in the home location.
         /// </summary>
-        /// <returns> the Sheets </returns>
-        public IList<Sheet> Sheets
-        {
-            get { return sheets; }
-            set { sheets = value; }
-        }
-        
+        private IList<Template> templates;
+
+        /// <summary>
+        /// Represents the Workspaces in the home location.
+        /// </summary>
+        private IList<Workspace> workspaces;
+
         /// <summary>
         /// Gets the Folders in the home location.
         /// </summary>
@@ -75,16 +63,6 @@ namespace Smartsheet.Api.Models
         {
             get { return folders; }
             set { folders = value; }
-        }
-        
-        /// <summary>
-        /// Gets the Templates in the home location.
-        /// </summary>
-        /// <returns> the Templates </returns>
-        public IList<Template> Templates
-        {
-            get { return templates; }
-            set { templates = value; }
         }
 
         /// <summary>
@@ -98,13 +76,13 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// Gets the Workspaces in the home location.
+        /// Gets the Sheets in the home location.
         /// </summary>
-        /// <returns> the Workspaces </returns>
-        public IList<Workspace> Workspaces
+        /// <returns> the Sheets </returns>
+        public IList<Sheet> Sheets
         {
-            get { return workspaces; }
-            set { workspaces = value; }
+            get { return sheets; }
+            set { sheets = value; }
         }
 
         /// <summary>
@@ -116,6 +94,25 @@ namespace Smartsheet.Api.Models
             get { return sights; }
             set { sights = value; }
         }
-    }
 
+        /// <summary>
+        /// Gets the Templates in the home location.
+        /// </summary>
+        /// <returns> the Templates </returns>
+        public IList<Template> Templates
+        {
+            get { return templates; }
+            set { templates = value; }
+        }
+
+        /// <summary>
+        /// Gets the Workspaces in the home location.
+        /// </summary>
+        /// <returns> the Workspaces </returns>
+        public IList<Workspace> Workspaces
+        {
+            get { return workspaces; }
+            set { workspaces = value; }
+        }
+    }
 }

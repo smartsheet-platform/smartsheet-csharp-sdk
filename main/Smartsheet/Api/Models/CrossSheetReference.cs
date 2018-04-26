@@ -25,7 +25,6 @@ namespace Smartsheet.Api.Models
 {
     public class CrossSheetReference : NamedModel
     {
-
         /// <summary>
         /// the final column in the reference block
         /// </summary>
