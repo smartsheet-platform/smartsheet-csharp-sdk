@@ -19,7 +19,6 @@
 namespace Smartsheet.Api
 {
     using Api.Models;
-    using Api.Models.Inclusions;
     using System;
     using System.Collections.Generic;
     using SearchResult = Api.Models.SearchResult;

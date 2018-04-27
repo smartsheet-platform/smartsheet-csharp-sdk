@@ -20,10 +20,16 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.Runtime.Serialization;
 
-namespace Smartsheet.Api.Models.Inclusions
+namespace Smartsheet.Api.Models
 {
+    /// <summary>
+    /// Represents specific elements to include in a response. 
+    /// </summary>
     public enum SearchInclusion
     {
+        /// <summary>
+        /// When specified with a value of favoriteFlag, response indicates which returned items are favorites
+        /// </summary>
         [EnumMember(Value = "favoriteFlag")]
         FAVORITE_FLAG
     }

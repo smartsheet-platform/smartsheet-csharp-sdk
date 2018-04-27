@@ -21,8 +21,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Smartsheet.Api.Models.Inclusions
+namespace Smartsheet.Api.Models
 {
+    /// <summary>
+    /// A comma-separated list of optional elements to not include in the response.
+    /// </summary>
     public enum HomeExclusion
     {
         PERMALINKS
