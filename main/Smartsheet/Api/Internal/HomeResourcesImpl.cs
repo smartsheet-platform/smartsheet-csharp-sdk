@@ -22,7 +22,6 @@ namespace Smartsheet.Api.Internal
     using System.Collections.Generic;
     using Smartsheet.Api.Internal.Util;
     using Smartsheet.Api.Models;
-    using Smartsheet.Api.Models.Inclusions;
     using Home = Api.Models.Home;
 
     /// <summary>

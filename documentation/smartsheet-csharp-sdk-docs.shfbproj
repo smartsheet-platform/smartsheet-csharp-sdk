@@ -13,7 +13,7 @@
     <RootNamespace>Documentation</RootNamespace>
     <Name>Documentation</Name>
     <!-- SHFB properties -->
-    <FrameworkVersion>.NET Framework 4.0</FrameworkVersion>
+    <FrameworkVersion>.NET Framework 4.5.2</FrameworkVersion>
     <OutputPath>.\Website\</OutputPath>
     <HtmlHelpName>smartsheet-csharp-sdk-docs</HtmlHelpName>
     <Language>en-US</Language>
@@ -32,9 +32,9 @@
     <PresentationStyle>VS2013</PresentationStyle>
     <Preliminary>False</Preliminary>
     <NamingMethod>MemberName</NamingMethod>
-    <HelpTitle>Smartsheet C# SDK Documentation v2.2.1</HelpTitle>
+    <HelpTitle>Smartsheet C# SDK Documentation v2.3.0</HelpTitle>
     <FeedbackEMailAddress>api%40smartsheet.com</FeedbackEMailAddress>
-    <CopyrightText>&amp;#169%3b 2014-2017. All Rights Reserved Smartsheet.com</CopyrightText>
+    <CopyrightText>&amp;#169%3b 2014-2018. All Rights Reserved Smartsheet.com</CopyrightText>
     <CopyrightHref>Smartsheet</CopyrightHref>
     <ContentPlacement>BelowNamespaces</ContentPlacement>
     <DocumentationSources>
@@ -90,6 +90,7 @@
     </TransformComponentArguments>
     <HelpFileVersion>1.0.0.0</HelpFileVersion>
     <RootNamespaceTitle>Smartsheet C# SDK Help Topics</RootNamespaceTitle>
+    <SaveComponentCacheCapacity>100</SaveComponentCacheCapacity>
   </PropertyGroup>
   <!-- There are no properties for these groups.  AnyCPU needs to appear in order for Visual Studio to perform
 			 the build.  The others are optional common platform types that may appear. -->
