@@ -36,34 +36,36 @@ namespace IntegrationTestSDK
 
         private static void ListSheetShares(SmartsheetClient smartsheet, long sheetId)
         {
-            PaginatedResult<Share> shares = smartsheet.SheetResources.ShareResources.ListShares(sheetId, null, ShareScope.Item);
+            PaginatedResult<Share> shares = smartsheet.SheetResources.ShareResources.ListShares(sheetId, shareScope: ShareScope.Item);
             Assert.IsTrue(shares.Data.Count == 2);
             Assert.IsTrue(shares.Data[0].Email == "aditi.nioding@smartsheet.com" || shares.Data[1].Email == "aditi.nioding@smartsheet.com");
         }
 
         private static void ListWorkspaceShares(SmartsheetClient smartsheet, long workspaceId)
         {
-            PaginatedResult<Share> shares = smartsheet.WorkspaceResources.ShareResources.ListShares(workspaceId, null, ShareScope.Workspace);
+            PaginatedResult<Share> shares = smartsheet.WorkspaceResources.ShareResources.ListShares(workspaceId, shareScope: ShareScope.Workspace);
             Assert.IsTrue(shares.Data.Count == 2);
             Assert.IsTrue(shares.Data[0].Email == "aditi.nioding@smartsheet.com" || shares.Data[1].Email == "aditi.nioding@smartsheet.com");
         }
 
         private static void ListReportShares(SmartsheetClient smartsheet, long reportId)
         {
-            PaginatedResult<Share> shares = smartsheet.ReportResources.ShareResources.ListShares(reportId, null, ShareScope.Workspace);
+            PaginatedResult<Share> shares = smartsheet.ReportResources.ShareResources.ListShares(reportId, shareScope: ShareScope.Workspace);
             Assert.IsTrue(shares.Data.Count == 2);
             Assert.IsTrue(shares.Data[0].Email == "aditi.nioding@smartsheet.com" || shares.Data[1].Email == "aditi.nioding@smartsheet.com");
         }
 
         private static string ShareWorkspace(SmartsheetClient smartsheet, long workspaceId, Share share)
         {
-            string workspaceShareId = smartsheet.WorkspaceResources.ShareResources.ShareTo(workspaceId, new Share[] { share }, true)[0].Id;
+            string workspaceShareId = smartsheet.WorkspaceResources.ShareResources
+                .ShareTo(workspaceId, new Share[] { share }, sendEmail: true)[0].Id;
             return workspaceShareId;
         }
 
         private static string ShareSheet(SmartsheetClient smartsheet, long sheetId, Share share)
         {
-            string sheetShareId = smartsheet.SheetResources.ShareResources.ShareTo(sheetId, new Share[] { share }, true)[0].Id;
+            string sheetShareId = smartsheet.SheetResources.ShareResources
+                .ShareTo(sheetId, new Share[] { share }, sendEmail: true)[0].Id;
             return sheetShareId;
         }
 
@@ -86,7 +88,7 @@ namespace IntegrationTestSDK
 
         private static long CreateReport(SmartsheetClient smartsheet)
         {
-            PaginatedResult<Report> reportResult = smartsheet.ReportResources.ListReports(null);
+            PaginatedResult<Report> reportResult = smartsheet.ReportResources.ListReports();
             Assert.IsTrue(reportResult.Data.Count > 0);
             long reportId = reportResult.Data[0].Id.Value;
             return reportId;
@@ -105,9 +107,9 @@ namespace IntegrationTestSDK
         private static long CreateSheet(SmartsheetClient smartsheet)
         {
             Column[] columnsToCreate = new Column[] {
-            new Column.CreateSheetColumnBuilder("col 1", true, ColumnType.TEXT_NUMBER).Build(),
-            new Column.CreateSheetColumnBuilder("col 2", false, ColumnType.DATE).Build(),
-            new Column.CreateSheetColumnBuilder("col 3", false, ColumnType.TEXT_NUMBER).Build(),
+            new Column.CreateSheetColumnBuilder("col 1", primary: true, type: ColumnType.TEXT_NUMBER).Build(),
+            new Column.CreateSheetColumnBuilder("col 2", primary: false, type: ColumnType.DATE).Build(),
+            new Column.CreateSheetColumnBuilder("col 3", primary: false, type: ColumnType.TEXT_NUMBER).Build(),
             };
             Sheet createdSheet = smartsheet.SheetResources.CreateSheet(new Sheet.CreateSheetBuilder("new sheet", columnsToCreate).Build());
             Assert.IsTrue(createdSheet.Columns.Count == 3);

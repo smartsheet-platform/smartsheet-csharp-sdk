@@ -30,7 +30,7 @@ namespace IntegrationTestSDK
             smartsheet.WorkspaceResources.DeleteWorkspace(workspaceId);
             try
             {
-                smartsheet.WorkspaceResources.GetWorkspace(workspaceId, null, null);
+                smartsheet.WorkspaceResources.GetWorkspace(workspaceId);
                 Assert.Fail("Cannot get a workspace that was deleted.");
             }
             catch
@@ -41,7 +41,7 @@ namespace IntegrationTestSDK
 
         private static void ListWorkspaces(SmartsheetClient smartsheet, long workspaceId)
         {
-            PaginatedResult<Workspace> workspaceResult = smartsheet.WorkspaceResources.ListWorkspaces(null);
+            PaginatedResult<Workspace> workspaceResult = smartsheet.WorkspaceResources.ListWorkspaces();
             Assert.IsTrue(workspaceResult.Data.Count > 0);
             bool contains = false;
             foreach (Workspace ws in workspaceResult.Data)
@@ -56,7 +56,11 @@ namespace IntegrationTestSDK
         }
         private static void GetWorkspace(SmartsheetClient smartsheet, long workspaceId)
         {
-            Workspace workspace = smartsheet.WorkspaceResources.GetWorkspace(workspaceId, true, new WorkspaceInclusion[] { WorkspaceInclusion.SOURCE });
+            Workspace workspace = smartsheet.WorkspaceResources.GetWorkspace(
+                workspaceId,
+                loadAll: true,
+                include: new WorkspaceInclusion[] { WorkspaceInclusion.SOURCE }
+            );
             Assert.IsTrue(workspace.Id.Value == workspaceId);
         }
 

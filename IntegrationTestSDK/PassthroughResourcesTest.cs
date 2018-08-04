@@ -25,7 +25,7 @@ namespace IntegrationTestSDK
                     "]" +
                 "}";
 
-            string jsonResponse = smartsheet.PassthroughResources.PostRequest("sheets", payload, null);
+            string jsonResponse = smartsheet.PassthroughResources.PostRequest("sheets", payload);
 
             long id = 0;
             JsonReader reader = new JsonTextReader(new StringReader(jsonResponse));
@@ -87,7 +87,7 @@ namespace IntegrationTestSDK
             Assert.AreEqual(name, "my new sheet");
 
             payload = "{\"name\": \"my new new sheet\"}";
-            jsonResponse = smartsheet.PassthroughResources.PutRequest("sheets/" + id, payload, null);
+            jsonResponse = smartsheet.PassthroughResources.PutRequest("sheets/" + id, payload);
 
             name = null;
             reader = new JsonTextReader(new StringReader(jsonResponse));

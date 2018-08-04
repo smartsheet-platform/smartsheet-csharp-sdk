@@ -56,7 +56,7 @@ namespace IntegrationTestSDK
         private long AddCommentWithAttachment(SmartsheetClient smartsheet, long sheetId, long discussionId)
         {
             Comment addedCommentWithAttachment = smartsheet.SheetResources.DiscussionResources.CommentResources
-            .AddCommentWithAttachment(sheetId, discussionId, new Comment.AddCommentBuilder("commented2").Build(), path, null);
+            .AddCommentWithAttachment(sheetId, discussionId, new Comment.AddCommentBuilder("commented2").Build(), path);
             //Assert.IsTrue(addedCommentWithAttachment.DiscussionId == discussionId);
             Assert.IsTrue(addedCommentWithAttachment.Text == "commented2");
             Assert.IsTrue(addedCommentWithAttachment.Attachments.Count == 1);
@@ -78,7 +78,7 @@ namespace IntegrationTestSDK
             Comment commentToAdd = new Comment.AddCommentBuilder("this is a comment").Build();
             Discussion discussion = smartsheet.SheetResources.DiscussionResources.CreateDiscussion(sheetId, new Discussion.CreateDiscussionBuilder("a discussion", commentToAdd).Build());
 
-            Discussion discussion2 = smartsheet.SheetResources.DiscussionResources.CreateDiscussionWithAttachment(sheetId, new Discussion.CreateDiscussionBuilder("a discussion", commentToAdd).Build(), path, null);
+            Discussion discussion2 = smartsheet.SheetResources.DiscussionResources.CreateDiscussionWithAttachment(sheetId, new Discussion.CreateDiscussionBuilder("a discussion", commentToAdd).Build(), path);
             Assert.IsTrue(discussion2.Comments[0].Attachments[0].Name == "TestFile.txt");
             
             long discussionId = discussion.Id.Value;
@@ -87,9 +87,9 @@ namespace IntegrationTestSDK
         private static long CreateSheet(SmartsheetClient smartsheet)
         {
             Column[] columnsToCreate = new Column[] {
-            new Column.CreateSheetColumnBuilder("col 1", true, ColumnType.TEXT_NUMBER).Build(),
-            new Column.CreateSheetColumnBuilder("col 2", false, ColumnType.DATE).Build(),
-            new Column.CreateSheetColumnBuilder("col 3", false, ColumnType.TEXT_NUMBER).Build(),
+            new Column.CreateSheetColumnBuilder("col 1", primary: true, type: ColumnType.TEXT_NUMBER).Build(),
+            new Column.CreateSheetColumnBuilder("col 2", primary: false, type: ColumnType.DATE).Build(),
+            new Column.CreateSheetColumnBuilder("col 3", primary: false, type: ColumnType.TEXT_NUMBER).Build(),
             };
             Sheet createdSheet = smartsheet.SheetResources.CreateSheet(new Sheet.CreateSheetBuilder("new sheet", columnsToCreate).Build());
             Assert.IsTrue(createdSheet.Columns.Count == 3);

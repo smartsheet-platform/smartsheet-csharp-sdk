@@ -54,10 +54,10 @@ namespace IntegrationTestSDK
 
         private static void AddValuesToSheet(SmartsheetClient smartsheet, long sheetId, string query)
         {
-            Sheet sheet = smartsheet.SheetResources.GetSheet(sheetId, null, null, null, null, null, null, null);
+            Sheet sheet = smartsheet.SheetResources.GetSheet(sheetId);
             long columnId = sheet.Columns[0].Id.Value;
             Cell cell = new Cell.AddCellBuilder(columnId, query).SetStrict(false).Build();
-            Row[] rows = new Row[] { new Row.AddRowBuilder(true, null, null, null, false).SetCells(new Cell[] { cell }).Build() };
+            Row[] rows = new Row[] { new Row.AddRowBuilder(toTop: true, above: false).SetCells(new Cell[] { cell }).Build() };
 
             smartsheet.SheetResources.RowResources.AddRows(sheetId, rows);
         }
@@ -65,9 +65,9 @@ namespace IntegrationTestSDK
         private static long CreateSheet(SmartsheetClient smartsheet)
         {
             Column[] columnsToCreate = new Column[] {
-            new Column.CreateSheetColumnBuilder("col 1", true, ColumnType.TEXT_NUMBER).Build(),
-            new Column.CreateSheetColumnBuilder("col 2", false, ColumnType.DATE).Build(),
-            new Column.CreateSheetColumnBuilder("col 3", false, ColumnType.TEXT_NUMBER).Build(),
+            new Column.CreateSheetColumnBuilder("col 1", primary: true, type: ColumnType.TEXT_NUMBER).Build(),
+            new Column.CreateSheetColumnBuilder("col 2", primary: false, type: ColumnType.DATE).Build(),
+            new Column.CreateSheetColumnBuilder("col 3", primary: false, type: ColumnType.TEXT_NUMBER).Build(),
             };
             Sheet createdSheet = smartsheet.SheetResources.CreateSheet(new Sheet.CreateSheetBuilder("new sheet", columnsToCreate).Build());
             Assert.IsTrue(createdSheet.Columns.Count == 3);

@@ -21,11 +21,11 @@ namespace IntegrationTestSDK
             Discussion createdDiscussion = smartsheet.SheetResources.DiscussionResources.CreateDiscussion(sheetId, discussionToCreate);
             long createdDiscussionId = createdDiscussion.Id.Value;
             string path = "../../../IntegrationTestSDK/TestFile.txt";
-            Discussion createdDiscussionWithFile = smartsheet.SheetResources.DiscussionResources.CreateDiscussionWithAttachment(sheetId, discussionToCreate, path, null);
+            Discussion createdDiscussionWithFile = smartsheet.SheetResources.DiscussionResources.CreateDiscussionWithAttachment(sheetId, discussionToCreate, path);
             Assert.IsTrue(createdDiscussionWithFile.Comments[0].Attachments[0].Name == "TestFile.txt");
 
 
-            PaginatedResult<Discussion> discussions = smartsheet.SheetResources.DiscussionResources.ListDiscussions(sheetId, new DiscussionInclusion[] { DiscussionInclusion.COMMENTS, DiscussionInclusion.ATTACHMENTS }, null);
+            PaginatedResult<Discussion> discussions = smartsheet.SheetResources.DiscussionResources.ListDiscussions(sheetId, new DiscussionInclusion[] { DiscussionInclusion.COMMENTS, DiscussionInclusion.ATTACHMENTS });
             Assert.IsTrue(discussions.TotalCount == 2);
             Assert.IsTrue(discussions.Data.Count == 2);
             Assert.IsTrue(discussions.Data[0].Id.Value == createdDiscussion.Id.Value || discussions.Data[0].Id.Value == createdDiscussionWithFile.Id.Value);
@@ -38,16 +38,16 @@ namespace IntegrationTestSDK
             Assert.IsTrue(getDiscussionWithFile.Comments[0].Attachments.Count == 1);
             Assert.IsTrue(getDiscussionWithFile.Comments[0].Attachments[0].Name == "TestFile.txt");
 
-            Row row = new Row.AddRowBuilder(true, null, null, null, null).Build();
+            Row row = new Row.AddRowBuilder(toTop: true).Build();
             IList<Row> rows = smartsheet.SheetResources.RowResources.AddRows(sheetId, new Row[] { row });
             Assert.IsTrue(rows.Count == 1);
             Assert.IsTrue(rows[0].Id.HasValue);
             long rowId = rows[0].Id.Value;
             Comment comment = new Comment.AddCommentBuilder("a comment!").Build();
             Discussion discussionToCreateOnRow = new Discussion.CreateDiscussionBuilder("discussion on row", comment).Build();
-            Discussion discussionCreatedOnRow = smartsheet.SheetResources.RowResources.DiscussionResources.CreateDiscussionWithAttachment(sheetId, rowId, discussionToCreateOnRow, path, null);
+            Discussion discussionCreatedOnRow = smartsheet.SheetResources.RowResources.DiscussionResources.CreateDiscussionWithAttachment(sheetId, rowId, discussionToCreateOnRow, path);
             PaginatedResult<Discussion> discussionsOnRow = smartsheet.SheetResources.RowResources.DiscussionResources
-            .ListDiscussions(sheetId, rowId, new DiscussionInclusion[] { DiscussionInclusion.COMMENTS }, null);
+            .ListDiscussions(sheetId, rowId, new DiscussionInclusion[] { DiscussionInclusion.COMMENTS });
             Assert.IsTrue(discussionsOnRow.Data.Count == 1);
             Assert.IsTrue(discussionsOnRow.Data[0].Title == "discussion on row");
             Assert.IsTrue(discussionsOnRow.Data[0].Comments[0].Text == "discussion on row\n\na comment!");
@@ -58,9 +58,9 @@ namespace IntegrationTestSDK
         private static long CreateSheet(SmartsheetClient smartsheet)
         {
             Column[] columnsToCreate = new Column[] {
-            new Column.CreateSheetColumnBuilder("col 1", true, ColumnType.TEXT_NUMBER).Build(),
-            new Column.CreateSheetColumnBuilder("col 2", false, ColumnType.DATE).Build(),
-            new Column.CreateSheetColumnBuilder("col 3", false, ColumnType.TEXT_NUMBER).Build(),
+            new Column.CreateSheetColumnBuilder("col 1", primary: true, type: ColumnType.TEXT_NUMBER).Build(),
+            new Column.CreateSheetColumnBuilder("col 2", primary: false, type: ColumnType.DATE).Build(),
+            new Column.CreateSheetColumnBuilder("col 3", primary: false, type: ColumnType.TEXT_NUMBER).Build(),
             };
             Sheet createdSheet = smartsheet.SheetResources.CreateSheet(new Sheet.CreateSheetBuilder("new sheet", columnsToCreate).Build());
             Assert.IsTrue(createdSheet.Columns.Count == 3);

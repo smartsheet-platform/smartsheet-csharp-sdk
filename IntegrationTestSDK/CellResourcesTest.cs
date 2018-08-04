@@ -17,14 +17,14 @@ namespace IntegrationTestSDK
             
             long sheetId = CreateSheet(smartsheet);
 
-            PaginatedResult<Column> columnsResult = smartsheet.SheetResources.ColumnResources.ListColumns(sheetId, null, null);
+            PaginatedResult<Column> columnsResult = smartsheet.SheetResources.ColumnResources.ListColumns(sheetId);
             long columnId = columnsResult.Data[0].Id.Value;
 
-            Cell[] cellsToAdd = new Cell[] { new Cell.AddCellBuilder(columnId, true).SetValue("hello").SetStrict(false).Build() };
+            Cell[] cellsToAdd = new Cell[] { new Cell.AddCellBuilder(columnId, value: "hello").SetStrict(false).Build() };
 
             long rowId = AddRows(smartsheet, sheetId, columnId, cellsToAdd);
 
-            PaginatedResult<CellHistory> histories = smartsheet.SheetResources.RowResources.CellResources.GetCellHistory(sheetId, rowId, columnId, new CellInclusion[] { CellInclusion.COLUMN_TYPE }, null);
+            PaginatedResult<CellHistory> histories = smartsheet.SheetResources.RowResources.CellResources.GetCellHistory(sheetId, rowId, columnId, new CellInclusion[] { CellInclusion.COLUMN_TYPE });
             Assert.IsTrue(histories.Data[0].ColumnType == ColumnType.TEXT_NUMBER);
             Assert.IsTrue(histories.Data.Count == 1);
             Assert.IsTrue(histories.Data[0].ColumnId == columnId);
@@ -34,7 +34,7 @@ namespace IntegrationTestSDK
 
         private static long AddRows(SmartsheetClient smartsheet, long sheetId, long columnId, Cell[] cellsToAdd)
         {
-            Row row = new Row.AddRowBuilder(true, null, null, null, null).SetCells(cellsToAdd).Build();
+            Row row = new Row.AddRowBuilder(toTop: true).SetCells(cellsToAdd).Build();
             IList<Row> rows = smartsheet.SheetResources.RowResources.AddRows(sheetId, new Row[] { row });
             Assert.IsTrue(rows.Count == 1);
             long rowId = rows[0].Id.Value;
@@ -55,9 +55,9 @@ namespace IntegrationTestSDK
         private static long CreateSheet(SmartsheetClient smartsheet)
         {
             Column[] columnsToCreate = new Column[] {
-            new Column.CreateSheetColumnBuilder("col 1", true, ColumnType.TEXT_NUMBER).Build(),
-            new Column.CreateSheetColumnBuilder("col 2", false, ColumnType.DATE).Build(),
-            new Column.CreateSheetColumnBuilder("col 3", false, ColumnType.TEXT_NUMBER).Build(),
+            new Column.CreateSheetColumnBuilder("col 1", primary: true, type: ColumnType.TEXT_NUMBER).Build(),
+            new Column.CreateSheetColumnBuilder("col 2", primary: false, type: ColumnType.DATE).Build(),
+            new Column.CreateSheetColumnBuilder("col 3", primary: false, type: ColumnType.TEXT_NUMBER).Build(),
             };
             Sheet createdSheet = smartsheet.SheetResources.CreateSheet(new Sheet.CreateSheetBuilder("new sheet", columnsToCreate).Build());
             Assert.IsTrue(createdSheet.Columns.Count == 3);

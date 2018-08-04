@@ -28,7 +28,7 @@ namespace IntegrationTestSDK
             smartsheet.SheetResources.DeleteSheet(sheetId);
             try
             {
-                smartsheet.SheetResources.GetSheet(sheetId, null, null, null, null, null, null, null);
+                smartsheet.SheetResources.GetSheet(sheetId);
                 Assert.Fail("Exception should have been thrown because Sheet should have been deleted.");
             }
             catch
@@ -47,7 +47,15 @@ namespace IntegrationTestSDK
 
         private static void UpdatePublishSheetStatus(SmartsheetClient smartsheet, long sheetId)
         {
-            SheetPublish sheetPublish = smartsheet.SheetResources.UpdatePublishStatus(sheetId, new SheetPublish.PublishStatusBuilder(true, false, false, false).Build());
+            SheetPublish sheetPublish = smartsheet.SheetResources.UpdatePublishStatus(
+                sheetId,
+                new SheetPublish.PublishStatusBuilder(
+                    readOnlyLiteEnabled: true,
+                    readOnlyFullEnabled: false,
+                    readWriteEnabled: false,
+                    icalEnabled: false
+                ).Build()
+            );
             Assert.IsTrue(sheetPublish.ReadOnlyLiteEnabled.Value);
             Assert.IsTrue(!sheetPublish.ReadOnlyFullEnabled.Value);
         }
@@ -67,20 +75,20 @@ namespace IntegrationTestSDK
         private static long CreateSheet(SmartsheetClient smartsheet)
         {
             Column[] columnsToCreate = new Column[] {
-            new Column.CreateSheetColumnBuilder("col 1", true, ColumnType.TEXT_NUMBER).Build(),
-            new Column.CreateSheetColumnBuilder("col 2", false, ColumnType.DATE).Build(),
-            new Column.CreateSheetColumnBuilder("col 3", false, ColumnType.TEXT_NUMBER).Build(),
+            new Column.CreateSheetColumnBuilder("col 1", primary: true, type: ColumnType.TEXT_NUMBER).Build(),
+            new Column.CreateSheetColumnBuilder("col 2", primary: false, type: ColumnType.DATE).Build(),
+            new Column.CreateSheetColumnBuilder("col 3", primary: false, type: ColumnType.TEXT_NUMBER).Build(),
             };
             Sheet createdSheet = smartsheet.SheetResources.CreateSheet(new Sheet.CreateSheetBuilder("new sheet", columnsToCreate).Build());
             Assert.IsTrue(createdSheet.Columns.Count == 3);
             Assert.IsTrue(createdSheet.Columns[1].Title == "col 2");
 
-            Cell cellA = new Cell.AddCellBuilder((long)createdSheet.Columns[0].Id, true).SetValue("A").SetStrict(false).Build();
-            Cell cellB = new Cell.AddCellBuilder((long)createdSheet.Columns[0].Id, true).SetValue("B").SetStrict(false).Build();
-            Cell cellC = new Cell.AddCellBuilder((long)createdSheet.Columns[0].Id, true).SetValue("C").SetStrict(false).Build();
-            Row rowA = new Row.AddRowBuilder(true, null, null, null, null).SetCells(new Cell[] { cellA }).Build();
-            Row rowB = new Row.AddRowBuilder(true, null, null, null, null).SetCells(new Cell[] { cellB }).Build();
-            Row rowC = new Row.AddRowBuilder(true, null, null, null, null).SetCells(new Cell[] { cellC }).Build();
+            Cell cellA = new Cell.AddCellBuilder((long)createdSheet.Columns[0].Id, value: "A").SetStrict(false).Build();
+            Cell cellB = new Cell.AddCellBuilder((long)createdSheet.Columns[0].Id, value: "B").SetStrict(false).Build();
+            Cell cellC = new Cell.AddCellBuilder((long)createdSheet.Columns[0].Id, value: "C").SetStrict(false).Build();
+            Row rowA = new Row.AddRowBuilder(toTop: true).SetCells(new Cell[] { cellA }).Build();
+            Row rowB = new Row.AddRowBuilder(toTop: true).SetCells(new Cell[] { cellB }).Build();
+            Row rowC = new Row.AddRowBuilder(toTop: true).SetCells(new Cell[] { cellC }).Build();
             smartsheet.SheetResources.RowResources.AddRows((long)createdSheet.Id, new Row[] { rowA, rowB, rowC });
         
             return createdSheet.Id.Value;
@@ -88,7 +96,7 @@ namespace IntegrationTestSDK
 
         private static void SortSheet(SmartsheetClient smartsheet, long sheetId)
         {
-            Sheet sheet = smartsheet.SheetResources.GetSheet(sheetId, null, null, null, null, null, null, null);
+            Sheet sheet = smartsheet.SheetResources.GetSheet(sheetId);
             SortSpecifier specifier = new SortSpecifier();
             SortCriterion criterion = new SortCriterion();
             criterion.ColumnId = (long)sheet.Columns[0].Id;
