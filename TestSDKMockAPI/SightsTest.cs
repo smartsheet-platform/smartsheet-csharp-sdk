@@ -16,7 +16,7 @@ namespace TestSDKMockAPI
         public void ListSights()
         {
             SmartsheetClient ss = HelperFunctions.SetupClient("List Sights");
-            PaginatedResult<Sight> sights = ss.SightResources.ListSights(null, null);
+            PaginatedResult<Sight> sights = ss.SightResources.ListSights();
             Assert.AreEqual(6, (long)sights.TotalCount);
         }
 
@@ -57,7 +57,7 @@ namespace TestSDKMockAPI
             SightPublish publish = new SightPublish();
             publish.ReadOnlyFullEnabled = true;
             publish.ReadOnlyFullAccessibleBy = "ALL";
-            ss.SightResources.SetPublishStatus(812, publish);
+            ss.SightResources.SetPublishStatus(sightId: 812, sightPublish: publish);
         }
 
         [TestMethod]

@@ -41,7 +41,7 @@ namespace TestSDKMockAPI
                 .SetAssumedUser("john.doe@smartsheet.com")
                 .Build();
 
-            var result = ss.SheetResources.GetSheet(123, null, null, null, null, null, null, null);
+            var result = ss.SheetResources.GetSheet(123);
         }
     }
 }

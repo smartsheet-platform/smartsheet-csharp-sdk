@@ -20,7 +20,8 @@ namespace TestSDKMockAPI
                 AttachmentType = AttachmentType.LINK,
                 Url = "http://www.google.com"
             };
-            Attachment resultAttachment = ss.SheetResources.AttachmentResources.AttachUrl(1, attachment);
+            Attachment resultAttachment = ss.SheetResources.AttachmentResources
+                .AttachUrl(sheetId: 1, attachment: attachment);
             Assert.AreEqual("John Doe", resultAttachment.CreatedBy.Name);
         }
 
@@ -28,7 +29,7 @@ namespace TestSDKMockAPI
         public void SerializeHome()
         {
             SmartsheetClient ss = HelperFunctions.SetupClient("Serialization - Home");
-            var result = ss.HomeResources.GetHome(null);
+            var result = ss.HomeResources.GetHome();
             Assert.AreEqual("editor share sheet", result.Sheets[0].Name);
             Assert.AreEqual("folder sheet", result.Folders[1].Sheets[0].Name);
             Assert.AreEqual("admin report", result.Reports[0].Name);
@@ -115,7 +116,7 @@ namespace TestSDKMockAPI
                     Locked = false
                 }
             };
-            var result = ss.SheetResources.ColumnResources.AddColumns(1, columns);
+            var result = ss.SheetResources.ColumnResources.AddColumns(sheetId: 1, columns: columns);
             Assert.AreEqual(2, result[0].Id);
         }
 
@@ -155,7 +156,7 @@ namespace TestSDKMockAPI
                 GroupAdmin = false,
                 ResourceViewer = true
             };
-            var result = ss.UserResources.AddUser(user, null, null);
+            var result = ss.UserResources.AddUser(user);
             Assert.AreEqual(1050, result.ProfileImage.Height);
             Assert.AreEqual("abc", result.ProfileImage.Id);
         }
@@ -205,7 +206,7 @@ namespace TestSDKMockAPI
                     Email = "not.not.john.doe@smartsheet.com"
                 }
             };
-            var result = ss.UserResources.AddAlternateEmail(1, alternateEmails);
+            var result = ss.UserResources.AddAlternateEmail(userId: 1, altEmails: alternateEmails);
             Assert.AreEqual(false, result[0].Confirmed);
         }
 
@@ -241,7 +242,7 @@ namespace TestSDKMockAPI
                     }
                 }
             };
-            var result = ss.SheetResources.RowResources.AddRows(1, rows);
+            var result = ss.SheetResources.RowResources.AddRows(sheetId: 1, rows: rows);
             Assert.AreEqual(
                 "=CALCSTART(Duration17, Start8, Finish8, 0, 300875506)",
                 result[0].Cells[2].Formula);
@@ -252,7 +253,7 @@ namespace TestSDKMockAPI
         public void SerializeIndexResult()
         {
             SmartsheetClient ss = HelperFunctions.SetupClient("Serialization - IndexResult");
-            var result = ss.UserResources.ListUsers(null, null);
+            var result = ss.UserResources.ListUsers();
             Assert.AreEqual("John Doe", result.Data[0].Name);
         }
 
@@ -260,7 +261,7 @@ namespace TestSDKMockAPI
         public void SerializeImage()
         {
             SmartsheetClient ss = HelperFunctions.SetupClient("Serialization - Image");
-            var result = ss.SheetResources.RowResources.GetRow(1, 2, null, null);
+            var result = ss.SheetResources.RowResources.GetRow(sheetId: 1, rowId: 2);
             Assert.AreEqual("puppy.jpg", result.Cells[0].Image.AltText);
         }
 
@@ -315,7 +316,7 @@ namespace TestSDKMockAPI
                     }
                 }
             };
-            var result = ss.SheetResources.RowResources.AddRowsAllowPartialSuccess(1, rows);
+            var result = ss.SheetResources.RowResources.AddRowsAllowPartialSuccess(sheetId: 1, rows: rows);
             Assert.AreEqual("PARTIAL_SUCCESS", result.Message);
             Assert.AreEqual("Some Value", result.Result[0].Cells[0].DisplayValue);
             Assert.AreEqual(1036, result.FailedItems[0].Error.ErrorCode);
@@ -367,7 +368,7 @@ namespace TestSDKMockAPI
                     }
                 }
             };
-            var result = ss.SheetResources.RowResources.AddRows(1, rows);
+            var result = ss.SheetResources.RowResources.AddRows(sheetId: 1, rows: rows);
             Assert.AreEqual("https://app.smartsheet.com/b/home?lx=a", result[0].Cells[1].Hyperlink.Url);
             Assert.AreEqual("https://app.smartsheet.com/b/home?lx=b", result[0].Cells[2].Hyperlink.Url);
         }
@@ -397,7 +398,7 @@ namespace TestSDKMockAPI
                     }
                 }
             };
-            var result = ss.SheetResources.RowResources.UpdateRows(1, rows);
+            var result = ss.SheetResources.RowResources.UpdateRows(sheetId: 1,  rows: rows);
             Assert.AreEqual("Linked Sheet Name", result[0].Cells[0].LinkInFromCell.SheetName);
         }
 
@@ -421,7 +422,7 @@ namespace TestSDKMockAPI
         public void SerializeReport()
         {
             SmartsheetClient ss = HelperFunctions.SetupClient("Serialization - Report");
-            var result = ss.ReportResources.GetReport(1, null, null, null);
+            var result = ss.ReportResources.GetReport(1);
             Assert.AreEqual(11, result.TotalRowCount);
             Assert.AreEqual(AttachmentType.EVERNOTE, result.EffectiveAttachmentOptions[3]);
             Assert.AreEqual(2, result.Columns[0].VirtualId);
@@ -443,7 +444,7 @@ namespace TestSDKMockAPI
                     CcMe = true
                 }
             };
-            var result = ss.SheetResources.ShareResources.ShareTo(1, shares, true);
+            var result = ss.SheetResources.ShareResources.ShareTo(objectId: 1, shares: shares, sendEmail: true);
             Assert.AreEqual("abc", result[0].Id);
         }
 
@@ -451,7 +452,7 @@ namespace TestSDKMockAPI
         public void SerializeSendViaEmail()
         {
             SmartsheetClient ss = HelperFunctions.SetupClient("Serialization - Send via Email");
-            var emails = new SheetEmail
+            var email = new SheetEmail
             {
                 SendTo = new List<Recipient>
                 {
@@ -473,7 +474,7 @@ namespace TestSDKMockAPI
                     PaperSize = PaperSize.LETTER
                 }
             };
-            ss.SheetResources.SendSheet(1, emails);
+            ss.SheetResources.SendSheet(sheetId: 1, email: email);
         }
 
         [TestMethod]
@@ -503,14 +504,14 @@ namespace TestSDKMockAPI
                     4
                 }
             };
-            ss.SheetResources.RowResources.SendRows(1, multiRowEmails);
+            ss.SheetResources.RowResources.SendRows(sheetId: 1, email: multiRowEmails);
         }
 
         [TestMethod]
         public void SerializeTemplate()
         {
             SmartsheetClient ss = HelperFunctions.SetupClient("Serialization - Template");
-            var result = ss.TemplateResources.ListPublicTemplates(null);
+            var result = ss.TemplateResources.ListPublicTemplates();
             Assert.AreEqual(100, result.PageSize);
             Assert.AreEqual("Create and customize a new sheet", result.Data[0].Description);
             Assert.AreEqual("Featured Templates", result.Data[0].Categories[0]);
@@ -558,7 +559,8 @@ namespace TestSDKMockAPI
                     RepeatEvery = 1
                 }
             };
-            var result = ss.SheetResources.UpdateRequestResources.CreateUpdateRequest(1, updateRequest);
+            var result = ss.SheetResources.UpdateRequestResources
+                .CreateUpdateRequest(sheetId: 1, updateRequest: updateRequest);
             Assert.AreEqual("Jane Doe", result.SentBy.Name);
             Assert.AreEqual(DateTime.Parse("2018-04-06T18:00:00Z").ToUniversalTime(), result.Schedule.NextSendAt);
         }
@@ -567,7 +569,8 @@ namespace TestSDKMockAPI
         public void SerializeSentUpdateRequests()
         {
             SmartsheetClient ss = HelperFunctions.SetupClient("Serialization - Sent Update Requests");
-            var result = ss.SheetResources.UpdateRequestResources.GetSentUpdateRequest(1, 2);
+            var result = ss.SheetResources.UpdateRequestResources
+                .GetSentUpdateRequest(sheetId: 1, sentUpdateRequestId: 2);
             Assert.AreEqual(3, result.UpdateRequestId);
             Assert.AreEqual("Jane Doe", result.SentBy.Name);
             Assert.AreEqual("john.doe@smartsheet.com", result.SentTo.Email);
@@ -620,7 +623,7 @@ namespace TestSDKMockAPI
                 DestinationType = DestinationType.HOME,
                 NewName = "Copy of Some Folder"
             };
-            var result = ss.FolderResources.CopyFolder(1, destination, null, null);
+            var result = ss.FolderResources.CopyFolder(folderId: 1, destination: destination);
             Assert.AreEqual("https://app.smartsheet.com/b/home?lx=a", result.Permalink);
         }
 
@@ -638,7 +641,7 @@ namespace TestSDKMockAPI
                 EndColumnId = 6
             };
             var result = ss.SheetResources.CrossSheetReferenceResources
-                .CreateCrossSheetReference(1, crossSheetReference);
+                .CreateCrossSheetReference(sheetId: 1, crossSheetReference: crossSheetReference);
             Assert.AreEqual("Some Cross Sheet Reference", result.Name);
         }
     }
