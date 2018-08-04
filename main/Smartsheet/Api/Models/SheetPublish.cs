@@ -255,7 +255,7 @@ namespace Smartsheet.Api.Models
             /// <param name="readOnlyFullEnabled"> Status of Read-Only Full </param>
             /// <param name="readWriteEnabled"> Status of Edit by Anyone </param>
             /// <param name="icalEnabled"> Status of iCal </param>
-            public PublishStatusBuilder(bool? readOnlyLiteEnabled, bool? readOnlyFullEnabled, bool? readWriteEnabled, bool? icalEnabled)
+            public PublishStatusBuilder(bool? readOnlyLiteEnabled = null, bool? readOnlyFullEnabled = null, bool? readWriteEnabled = null, bool? icalEnabled = null)
             {
                 this.readOnlyLiteEnabled = readOnlyLiteEnabled;
                 this.readOnlyFullEnabled = readOnlyFullEnabled;

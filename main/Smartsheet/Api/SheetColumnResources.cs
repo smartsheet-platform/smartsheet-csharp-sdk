@@ -45,7 +45,7 @@ namespace Smartsheet.Api
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        PaginatedResult<Column> ListColumns(long sheetId, IEnumerable<ColumnInclusion> include, PaginationParameters paging);
+        PaginatedResult<Column> ListColumns(long sheetId, IEnumerable<ColumnInclusion> include = null, PaginationParameters paging = null);
 
         /// <summary>
         /// <para>Inserts one or more columns into the Sheet specified in the URL.</para>
@@ -94,7 +94,7 @@ namespace Smartsheet.Api
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        Column GetColumn(long sheetId, long columnId, IEnumerable<ColumnInclusion> include);
+        Column GetColumn(long sheetId, long columnId, IEnumerable<ColumnInclusion> include = null);
 
 
         /// <summary>

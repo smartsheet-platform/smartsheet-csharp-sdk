@@ -64,7 +64,7 @@ namespace Smartsheet.Api.Internal
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        public virtual PaginatedResult<Share> ListShares(long objectId, PaginationParameters paging, ShareScope shareScope)
+        public virtual PaginatedResult<Share> ListShares(long objectId, PaginationParameters paging = null, ShareScope? shareScope = null)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
             if (paging != null)
@@ -124,7 +124,7 @@ namespace Smartsheet.Api.Internal
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        public virtual IList<Share> ShareTo(long objectId, IEnumerable<Share> shares, bool? sendEmail)
+        public virtual IList<Share> ShareTo(long objectId, IEnumerable<Share> shares, bool? sendEmail = null)
         {
             StringBuilder path = new StringBuilder(MasterResourceType + "/" + objectId + "/shares");
             if (sendEmail != null)

@@ -61,8 +61,8 @@ namespace Smartsheet.Api
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        SearchResult Search(string query, IEnumerable<SearchInclusion> includes, SearchLocation? location,
-            DateTime? modifiedSince, IEnumerable<SearchScope> scopes);
+        SearchResult Search(string query, IEnumerable<SearchInclusion> includes = null, SearchLocation? location = null,
+            DateTime? modifiedSince = null, IEnumerable<SearchScope> scopes = null);
 
         /// <summary>
         /// <para>Searches a sheet for the specified text.</para>

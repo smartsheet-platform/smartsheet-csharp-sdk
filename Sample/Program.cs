@@ -4,7 +4,6 @@ using System.Collections.Generic;
 // Add nuget reference to smartsheet-csharp-sdk (https://www.nuget.org/packages/smartsheet-csharp-sdk/)
 using Smartsheet.Api;
 using Smartsheet.Api.Models;
-using Smartsheet.Api.Models.Inclusions;
 using System.Linq;
 
 namespace sdk_csharp_sample
@@ -20,7 +19,7 @@ namespace sdk_csharp_sample
                 .Build();
 
             // List all sheets
-            PaginatedResult<Sheet> sheets = ss.SheetResources.ListSheets(new List<SheetInclusion>{SheetInclusion.SHEET_VERSION}, null, null);
+            PaginatedResult<Sheet> sheets = ss.SheetResources.ListSheets(new List<SheetInclusion>{SheetInclusion.SHEET_VERSION});
             Console.WriteLine("Found " + sheets.TotalCount + " sheets");
 
             if (sheets.TotalCount > 0)
@@ -32,7 +31,7 @@ namespace sdk_csharp_sample
                 Console.WriteLine("Loading sheet id: " + sheetId);
 
                 // Load the entire sheet
-                var sheet = ss.SheetResources.GetSheet(sheetId, null, null, null, null, null, null, null);
+                var sheet = ss.SheetResources.GetSheet(sheetId);
                 Console.WriteLine("Loaded " + sheet.Rows.Count + " rows from sheet: " + sheet.Name);
 
                 // Display the first 5 rows

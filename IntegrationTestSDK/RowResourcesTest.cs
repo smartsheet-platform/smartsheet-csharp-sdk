@@ -15,13 +15,15 @@ namespace IntegrationTestSDK
         {
             SmartsheetClient smartsheet = new SmartsheetBuilder().SetMaxRetryTimeout(30000).Build();
 
-            long templateId = smartsheet.TemplateResources.ListPublicTemplates(null).Data[0].Id.Value;
+            long templateId = smartsheet.TemplateResources.ListPublicTemplates().Data[0].Id.Value;
             long sheetId = CreateSheetFromTemplate(smartsheet, templateId);
 
-            PaginatedResult<Column> columnsResult = smartsheet.SheetResources.ColumnResources.ListColumns(sheetId, null, null);
+            PaginatedResult<Column> columnsResult = smartsheet.SheetResources.ColumnResources.ListColumns(sheetId);
             long columnId = columnsResult.Data[0].Id.Value;
 
-            Cell[] cellsToAdd = new Cell[] { new Cell.AddCellBuilder(columnId, true).SetValue("hello").SetStrict(false).Build() };
+            Cell[] cellsToAdd = new Cell[] {
+                new Cell.AddCellBuilder(columnId, value: "hello").SetStrict(false).Build()
+            };
 
             long rowId = AddRows(smartsheet, sheetId, columnId, cellsToAdd);
 
@@ -57,7 +59,7 @@ namespace IntegrationTestSDK
             smartsheet.SheetResources.RowResources.DeleteRows(sheetId, new long[] { rowId }, false);
             try
             {
-                smartsheet.SheetResources.RowResources.GetRow(sheetId, rowId, new RowInclusion[] { RowInclusion.COLUMNS }, null);
+                smartsheet.SheetResources.RowResources.GetRow(sheetId, rowId, new RowInclusion[] { RowInclusion.COLUMNS });
                 Assert.Fail("Cannot get a deleted row.");
             }
             catch
@@ -68,16 +70,25 @@ namespace IntegrationTestSDK
 
         private static void CopyRowToCreatedSheet(SmartsheetClient smartsheet, long sheetId, long rowId)
         {
-            long tempSheetId = smartsheet.SheetResources.CreateSheet(new Sheet.CreateSheetBuilder("tempSheet", new Column[] { new Column.CreateSheetColumnBuilder("col1", true, ColumnType.TEXT_NUMBER).Build() }).Build()).Id.Value;
+            long tempSheetId = smartsheet.SheetResources.CreateSheet(
+                new Sheet.CreateSheetBuilder("tempSheet", new Column[] {
+                    new Column.CreateSheetColumnBuilder("col1", primary: true, type: ColumnType.TEXT_NUMBER).Build()
+                }).Build()
+            ).Id.Value;
             CopyOrMoveRowDestination destination = new CopyOrMoveRowDestination { SheetId = tempSheetId };
             CopyOrMoveRowDirective directive = new CopyOrMoveRowDirective { RowIds = new long[] { rowId }, To = destination };
-            CopyOrMoveRowResult result = smartsheet.SheetResources.RowResources.CopyRowsToAnotherSheet(sheetId, directive, new CopyRowInclusion[] { CopyRowInclusion.CHILDREN }, false);
+            CopyOrMoveRowResult result = smartsheet.SheetResources.RowResources.CopyRowsToAnotherSheet(
+                sheetId,
+                directive,
+                new CopyRowInclusion[] { CopyRowInclusion.CHILDREN },
+                ignoreRowsNotFound: false
+            );
             smartsheet.SheetResources.DeleteSheet(tempSheetId);
         }
 
         private static long AddRows(SmartsheetClient smartsheet, long sheetId, long columnId, Cell[] cellsToAdd)
         {
-            Row row = new Row.AddRowBuilder(true, null, null, null, null).SetCells(cellsToAdd).Build();
+            Row row = new Row.AddRowBuilder(toTop: true).SetCells(cellsToAdd).Build();
             IList<Row> rows = smartsheet.SheetResources.RowResources.AddRows(sheetId, new Row[] { row });
             Assert.IsTrue(rows.Count == 1);
             long rowId = rows[0].Id.Value;
@@ -99,7 +110,10 @@ namespace IntegrationTestSDK
         private static long CreateSheetFromTemplate(SmartsheetClient smartsheet, long templateId)
         {
             // Create a new sheet off of that template.
-            Sheet newSheet = smartsheet.SheetResources.CreateSheetFromTemplate(new Sheet.CreateSheetFromTemplateBuilder("New Sheet", templateId).Build(), new TemplateInclusion[] { TemplateInclusion.DATA });
+            Sheet newSheet = smartsheet.SheetResources.CreateSheetFromTemplate(
+                new Sheet.CreateSheetFromTemplateBuilder("New Sheet", templateId).Build(),
+                new TemplateInclusion[] { TemplateInclusion.DATA }
+            );
             return newSheet.Id.Value;
         }
     }

@@ -59,7 +59,7 @@ namespace Smartsheet.Api.Internal
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        public virtual PaginatedResult<Column> ListColumns(long sheetId, IEnumerable<ColumnInclusion> include, PaginationParameters paging)
+        public virtual PaginatedResult<Column> ListColumns(long sheetId, IEnumerable<ColumnInclusion> include = null, PaginationParameters paging = null)
         {
             StringBuilder path = new StringBuilder("sheets/" + sheetId + "/columns");
             IDictionary<string, string> parameters = new Dictionary<string, string>();
@@ -127,7 +127,7 @@ namespace Smartsheet.Api.Internal
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        public virtual Column GetColumn(long sheetId, long columnId, IEnumerable<ColumnInclusion> include)
+        public virtual Column GetColumn(long sheetId, long columnId, IEnumerable<ColumnInclusion> include = null)
         {
             StringBuilder path = new StringBuilder("sheets/" + sheetId + "/columns/" + columnId);
             if (include != null)

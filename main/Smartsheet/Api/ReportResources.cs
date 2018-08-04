@@ -48,7 +48,7 @@ namespace Smartsheet.Api
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        Report GetReport(long reportId, IEnumerable<ReportInclusion> include, int? pageSize, int? page);
+        Report GetReport(long reportId, IEnumerable<ReportInclusion> include = null, int? pageSize = null, int? page = null);
 
         /// <summary>
         /// <para>Gets the list of all Reports that the User has access to, in alphabetical order, by name.</para>
@@ -69,7 +69,7 @@ namespace Smartsheet.Api
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        PaginatedResult<Report> ListReports(PaginationParameters paging, DateTime? modifiedSince = null);
+        PaginatedResult<Report> ListReports(PaginationParameters paging = null, DateTime? modifiedSince = null);
 
         /// <summary>
         /// <para>Gets the Report in the format specified, based on the Report ID.</para>

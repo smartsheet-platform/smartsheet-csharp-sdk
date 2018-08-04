@@ -16,7 +16,8 @@ namespace TestSDKMockAPI
         public void ListAutomationRules()
         {
             SmartsheetClient ss = HelperFunctions.SetupClient("List Automation Rules");
-            PaginatedResult<AutomationRule> automationRules = ss.SheetResources.AutomationRuleResources.ListAutomationRules(324, null);
+            PaginatedResult<AutomationRule> automationRules = ss.SheetResources.AutomationRuleResources
+                .ListAutomationRules(sheetId: 324);
             Assert.AreEqual(2, (long)automationRules.TotalCount);
         }
 
@@ -24,7 +25,8 @@ namespace TestSDKMockAPI
         public void GetAutomationRule()
         {
             SmartsheetClient ss = HelperFunctions.SetupClient("Get Automation Rule");
-            AutomationRule automationRule = ss.SheetResources.AutomationRuleResources.GetAutomationRule(324, 284);
+            AutomationRule automationRule = ss.SheetResources.AutomationRuleResources
+                .GetAutomationRule(sheetId: 324, automationRuleId: 284);
             Assert.AreEqual(284, (long)automationRule.Id);
         }
 

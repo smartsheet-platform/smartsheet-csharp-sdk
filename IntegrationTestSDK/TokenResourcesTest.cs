@@ -100,7 +100,7 @@ namespace IntegrationTestSDK
             smartsheet.TokenResources.RevokeAccessToken();
             try
             {
-                smartsheet.SheetResources.ListSheets(null, null);
+                smartsheet.SheetResources.ListSheets();
                 Assert.Fail();
             }
             catch

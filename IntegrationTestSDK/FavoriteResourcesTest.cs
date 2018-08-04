@@ -38,7 +38,7 @@ namespace IntegrationTestSDK
             //smartsheet.FavoriteResources().RemoveFavorites(ObjectType.TEMPLATE, new long[] { templateId });
             smartsheet.FavoriteResources.RemoveFavorites(ObjectType.WORKSPACE, new long[] { workspaceId });
 
-            PaginatedResult<Favorite> favsResult = smartsheet.FavoriteResources.ListFavorites(new PaginationParameters(true, null, null));
+            PaginatedResult<Favorite> favsResult = smartsheet.FavoriteResources.ListFavorites(new PaginationParameters(includeAll: true));
             Assert.IsTrue(favsResult.Data.Count == 0);
         }
 
@@ -60,7 +60,7 @@ namespace IntegrationTestSDK
 
         private static void RemoveAllFavoritesBeforeRunningTest(SmartsheetClient smartsheet)
         {
-            PaginatedResult<Favorite> favsToDelete = smartsheet.FavoriteResources.ListFavorites(new PaginationParameters(true, null, null));
+            PaginatedResult<Favorite> favsToDelete = smartsheet.FavoriteResources.ListFavorites(new PaginationParameters(includeAll: true));
             for (int i = 0; i < 6; i++)
             {
                 IList<long> set = new List<long>();
@@ -150,9 +150,9 @@ namespace IntegrationTestSDK
         private static long CreateSheet(SmartsheetClient smartsheet)
         {
             Column[] columnsToCreate = new Column[] {
-            new Column.CreateSheetColumnBuilder("col 1", true, ColumnType.TEXT_NUMBER).Build(),
-            new Column.CreateSheetColumnBuilder("col 2", false, ColumnType.DATE).Build(),
-            new Column.CreateSheetColumnBuilder("col 3", false, ColumnType.TEXT_NUMBER).Build(),
+            new Column.CreateSheetColumnBuilder("col 1", primary: true, type: ColumnType.TEXT_NUMBER).Build(),
+            new Column.CreateSheetColumnBuilder("col 2", primary: false, type: ColumnType.DATE).Build(),
+            new Column.CreateSheetColumnBuilder("col 3", primary: false, type: ColumnType.TEXT_NUMBER).Build(),
             };
             Sheet createdSheet = smartsheet.SheetResources.CreateSheet(new Sheet.CreateSheetBuilder("new sheet", columnsToCreate).Build());
             Assert.IsTrue(createdSheet.Columns.Count == 3);

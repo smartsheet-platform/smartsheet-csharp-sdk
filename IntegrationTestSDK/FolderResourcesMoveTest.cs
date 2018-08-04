@@ -37,11 +37,11 @@ namespace IntegrationTestSDK
 
             long movedFolderId = newMovedFolder.Id.Value;
 
-            Folder movedFolder = smartsheet.FolderResources.GetFolder(movedFolderId, null);
+            Folder movedFolder = smartsheet.FolderResources.GetFolder(movedFolderId);
             Assert.IsTrue(movedFolder.Name == "SubFolder1");
 
             // Assert the Folder which use to contain the moved Folder is now empty.
-            PaginatedResult<Folder> foldersResult = smartsheet.FolderResources.ListFolders(createdFolderInHomeId1, null);
+            PaginatedResult<Folder> foldersResult = smartsheet.FolderResources.ListFolders(createdFolderInHomeId1);
             Assert.IsTrue(foldersResult.Data.Count == 0);
 
 
@@ -54,7 +54,7 @@ namespace IntegrationTestSDK
             smartsheet.FolderResources.DeleteFolder(folder2);
             try
             {
-                smartsheet.FolderResources.GetFolder(folder2, null);
+                smartsheet.FolderResources.GetFolder(folder2);
                 Assert.Fail("Exception should have been thrown. Cannot get a deleted folder.");
             }
             catch
@@ -64,7 +64,7 @@ namespace IntegrationTestSDK
             smartsheet.FolderResources.DeleteFolder(folder1);
             try
             {
-                smartsheet.FolderResources.GetFolder(folder1, null);
+                smartsheet.FolderResources.GetFolder(folder1);
                 Assert.Fail("Exception should have been thrown. Cannot get a deleted folder.");
             }
             catch

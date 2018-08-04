@@ -79,7 +79,7 @@ namespace Smartsheet.Api.Internal
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        public virtual Discussion CreateDiscussionWithAttachment(long sheetId, long rowId, Discussion discussion, string file, string fileType)
+        public virtual Discussion CreateDiscussionWithAttachment(long sheetId, long rowId, Discussion discussion, string file, string fileType = null)
         {
             return this.CreateResourceWithAttachment("sheets/" + sheetId + "/rows/" + rowId + "/discussions", discussion, "discussion", file, fileType);
         }
@@ -100,7 +100,7 @@ namespace Smartsheet.Api.Internal
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        public virtual PaginatedResult<Discussion> ListDiscussions(long sheetId, long rowId, IEnumerable<DiscussionInclusion> include, PaginationParameters paging)
+        public virtual PaginatedResult<Discussion> ListDiscussions(long sheetId, long rowId, IEnumerable<DiscussionInclusion> include = null, PaginationParameters paging = null)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
             if (paging != null)

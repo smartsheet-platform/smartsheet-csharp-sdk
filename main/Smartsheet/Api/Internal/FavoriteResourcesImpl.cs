@@ -81,7 +81,7 @@ namespace Smartsheet.Api.Internal
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        public virtual PaginatedResult<Favorite> ListFavorites(PaginationParameters paging)
+        public virtual PaginatedResult<Favorite> ListFavorites(PaginationParameters paging = null)
         {
             StringBuilder path = new StringBuilder("favorites");
             if (paging != null)

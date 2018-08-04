@@ -61,7 +61,7 @@ namespace IntegrationTestSDK
             smartsheet.FolderResources.DeleteFolder(createdFolderInFolderId);
             try
             {
-                smartsheet.FolderResources.GetFolder(createdFolderInFolderId, null);
+                smartsheet.FolderResources.GetFolder(createdFolderInFolderId);
                 Assert.Fail("Exception should have been thrown. Cannot get a deleted folder.");
             }
             catch
@@ -71,7 +71,7 @@ namespace IntegrationTestSDK
             smartsheet.FolderResources.DeleteFolder(createdFolderInHomeId);
             try
             {
-                smartsheet.FolderResources.GetFolder(createdFolderInHomeId, null);
+                smartsheet.FolderResources.GetFolder(createdFolderInHomeId);
                 Assert.Fail("Exception should have been thrown. Cannot get a deleted folder.");
             }
             catch
@@ -82,7 +82,7 @@ namespace IntegrationTestSDK
 
         private static void GetFolderInHome(SmartsheetClient smartsheet, long createdFolderInHomeId, long createdFolderInFolderId)
         {
-            Folder getFolder = smartsheet.FolderResources.GetFolder(createdFolderInHomeId, null);
+            Folder getFolder = smartsheet.FolderResources.GetFolder(createdFolderInHomeId);
             Assert.IsTrue(getFolder.Id == createdFolderInHomeId);
             Assert.IsTrue(getFolder.Name == folderInHomeName);
             Assert.IsTrue(getFolder.Folders.Count == 1);
@@ -98,7 +98,7 @@ namespace IntegrationTestSDK
 
         private static void ListFoldersInFolder(SmartsheetClient smartsheet, long createdFolderInHomeId, long createdFolderInFolderId)
         {
-            PaginatedResult<Folder> folderResults = smartsheet.FolderResources.ListFolders(createdFolderInHomeId, null);
+            PaginatedResult<Folder> folderResults = smartsheet.FolderResources.ListFolders(createdFolderInHomeId);
             Assert.IsTrue(folderResults.Data.Count == 1);
             Assert.IsTrue(folderResults.TotalCount == 1);
             Assert.IsTrue(folderResults.Data[0].Id == createdFolderInFolderId);

@@ -52,7 +52,7 @@ namespace IntegrationTestSDK
 
         private static void ListGroups(SmartsheetClient smartsheet)
         {
-            PaginatedResult<Group> groups = smartsheet.GroupResources.ListGroups(null);
+            PaginatedResult<Group> groups = smartsheet.GroupResources.ListGroups();
             Assert.IsTrue(groups.Data.Count == 1);
             Assert.IsTrue(groups.Data[0].Name == "a group");
         }

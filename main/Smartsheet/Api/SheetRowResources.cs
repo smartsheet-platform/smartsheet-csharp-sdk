@@ -80,7 +80,7 @@ namespace Smartsheet.Api
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        Row GetRow(long sheetId, long rowId, IEnumerable<RowInclusion> include, IEnumerable<RowExclusion> exclude);
+        Row GetRow(long sheetId, long rowId, IEnumerable<RowInclusion> include = null, IEnumerable<RowExclusion> exclude = null);
 
         /// <summary>
         /// <para>Copies Row(s) from the Sheet specified in the URL to (the bottom of) another sheet.</para>
@@ -102,7 +102,7 @@ namespace Smartsheet.Api
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        CopyOrMoveRowResult CopyRowsToAnotherSheet(long sheetId, CopyOrMoveRowDirective directive, IEnumerable<CopyRowInclusion> include, bool? ignoreRowsNotFound);
+        CopyOrMoveRowResult CopyRowsToAnotherSheet(long sheetId, CopyOrMoveRowDirective directive, IEnumerable<CopyRowInclusion> include = null, bool? ignoreRowsNotFound = null);
 
         /// <summary>
         /// <para>Deletes the Row specified in the URL.</para>
@@ -120,7 +120,7 @@ namespace Smartsheet.Api
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        IList<long> DeleteRows(long sheetId, IEnumerable<long> ids, bool? ignoreRowsNotFound);
+        IList<long> DeleteRows(long sheetId, IEnumerable<long> ids, bool? ignoreRowsNotFound = null);
 
         /// <summary>
         /// <para>Moves Row(s) from the Sheet specified in the URL to (the bottom of) another sheet.</para>
@@ -143,7 +143,7 @@ namespace Smartsheet.Api
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        CopyOrMoveRowResult MoveRowsToAnotherSheet(long sheetId, CopyOrMoveRowDirective directive, IEnumerable<MoveRowInclusion> include, bool? ignoreRowsNotFound);
+        CopyOrMoveRowResult MoveRowsToAnotherSheet(long sheetId, CopyOrMoveRowDirective directive, IEnumerable<MoveRowInclusion> include = null, bool? ignoreRowsNotFound = null);
 
         /// <summary>
         /// <para>Sends one or more Rows via email.</para>

@@ -20,12 +20,12 @@ namespace IntegrationTestSDK
             long reportId = 1176442848470916;
             string reportName = "New Blank Report";
 
-            Report report = smartsheet.ReportResources.GetReport(reportId, new ReportInclusion[] { ReportInclusion.ATTACHMENTS, ReportInclusion.DISCUSSIONS }, null, null);
+            Report report = smartsheet.ReportResources.GetReport(reportId, new ReportInclusion[] { ReportInclusion.ATTACHMENTS, ReportInclusion.DISCUSSIONS });
             Assert.IsTrue(report.Name == reportName);
             SheetEmail email = new SheetEmail.CreateSheetEmail(new Recipient[] { new Recipient { Email = "ericyan99@outlook.com" } }, SheetEmailFormat.PDF).SetCcMe(true).Build();
             smartsheet.ReportResources.SendReport(reportId, email);
 
-            PaginatedResult<Report> reportResults = smartsheet.ReportResources.ListReports(null);
+            PaginatedResult<Report> reportResults = smartsheet.ReportResources.ListReports();
             Assert.IsTrue(reportResults.Data.Count == 1);
             Assert.IsTrue(reportResults.Data[0].Name == reportName);
         }

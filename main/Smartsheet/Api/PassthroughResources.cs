@@ -37,7 +37,7 @@ namespace Smartsheet.Api
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        string GetRequest(string endpoint, IDictionary<string, string> parameters);
+        string GetRequest(string endpoint, IDictionary<string, string> parameters = null);
 
         /// <summary>
         /// <para>Issue an HTTP POST request</para>
@@ -52,7 +52,7 @@ namespace Smartsheet.Api
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        string PostRequest(string endpoint, string payload, IDictionary<string, string> parameters);
+        string PostRequest(string endpoint, string payload, IDictionary<string, string> parameters = null);
     
         /// <summary>
         /// <para>Issue an HTTP PUT request</para>
@@ -67,7 +67,7 @@ namespace Smartsheet.Api
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        string PutRequest(string endpoint, string payload, IDictionary<string, string> parameters);
+        string PutRequest(string endpoint, string payload, IDictionary<string, string> parameters = null);
 
         /// <summary>
         /// <para>Issue an HTTP DELETE request</para>

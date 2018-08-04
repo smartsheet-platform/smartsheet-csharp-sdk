@@ -44,7 +44,7 @@ namespace Smartsheet.Api
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        PaginatedResult<Attachment> ListAttachments(long sheetId, long rowId, PaginationParameters paging);
+        PaginatedResult<Attachment> ListAttachments(long sheetId, long rowId, PaginationParameters paging = null);
 
         /// <summary>
         /// <para>Attaches a file to the Row.</para>
@@ -64,7 +64,7 @@ namespace Smartsheet.Api
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        Attachment AttachFile(long sheetId, long rowId, string file, string fileType);
+        Attachment AttachFile(long sheetId, long rowId, string file, string fileType = null);
 
         /// <summary>
         /// <para>Attaches a URL to the Row.</para>

@@ -80,7 +80,7 @@ namespace Smartsheet.Api.Internal
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        public virtual PaginatedResult<Workspace> ListWorkspaces(PaginationParameters paging)
+        public virtual PaginatedResult<Workspace> ListWorkspaces(PaginationParameters paging = null)
         {
             StringBuilder path = new StringBuilder("workspaces");
             if (paging != null)
@@ -109,7 +109,7 @@ namespace Smartsheet.Api.Internal
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        public virtual Workspace GetWorkspace(long workspaceId, bool? loadAll, IEnumerable<WorkspaceInclusion> include)
+        public virtual Workspace GetWorkspace(long workspaceId, bool? loadAll = null, IEnumerable<WorkspaceInclusion> include = null)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
             if (loadAll.HasValue)
@@ -195,7 +195,7 @@ namespace Smartsheet.Api.Internal
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        public virtual Workspace CopyWorkspace(long workspaceId, ContainerDestination destination, IEnumerable<WorkspaceCopyInclusion> include, IEnumerable<WorkspaceRemapExclusion> skipRemap)
+        public virtual Workspace CopyWorkspace(long workspaceId, ContainerDestination destination, IEnumerable<WorkspaceCopyInclusion> include = null, IEnumerable<WorkspaceRemapExclusion> skipRemap = null)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
             if (include != null)

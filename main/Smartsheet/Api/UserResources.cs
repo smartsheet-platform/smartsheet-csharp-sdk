@@ -43,7 +43,7 @@ namespace Smartsheet.Api
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        PaginatedResult<User> ListUsers(IEnumerable<string> emails, PaginationParameters paging);
+        PaginatedResult<User> ListUsers(IEnumerable<string> emails = null, PaginationParameters paging = null);
 
         /// <summary>
         /// <para>Add a user to the organization</para>
@@ -59,7 +59,7 @@ namespace Smartsheet.Api
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        User AddUser(User user, bool? sendEmail, bool? allowInviteAccountAdmin);
+        User AddUser(User user, bool? sendEmail = null, bool? allowInviteAccountAdmin = null);
 
         /// <summary>
         /// <para>Get the current user.</para>
@@ -119,7 +119,7 @@ namespace Smartsheet.Api
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        void RemoveUser(long userId, long? transferTo, bool? transferSheets, bool? removeFromSharing);
+        void RemoveUser(long userId, long? transferTo = null, bool? transferSheets = null, bool? removeFromSharing = null);
 
         /// <summary>
         /// <para>List all user alternate email(s).</para>
@@ -134,7 +134,7 @@ namespace Smartsheet.Api
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        PaginatedResult<AlternateEmail> ListAlternateEmails(long userId, PaginationParameters pagination);
+        PaginatedResult<AlternateEmail> ListAlternateEmails(long userId, PaginationParameters pagination = null);
 
         /// <summary>
         /// <para>Get alternate email.</para>
@@ -205,14 +205,14 @@ namespace Smartsheet.Api
         /// </summary>
         /// <param name="userId"> the Id of the user </param>
         /// <param name="file"> path to the image file</param>
-        /// <param name="fileType">fileType content type of the image file</param>
+        /// <param name="fileType"> content type of the image file</param>
         /// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
         /// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
         /// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        User AddProfileImage(long userId, string file, string fileType);
+        User AddProfileImage(long userId, string file, string fileType = null);
 
         /// <summary>
         /// <para>Return the UserSheetResources object that provides access to sheets resources associated with

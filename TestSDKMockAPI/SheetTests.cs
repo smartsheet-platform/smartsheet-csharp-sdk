@@ -17,7 +17,7 @@ namespace TestSDKMockAPI
         {
             SmartsheetClient ss =  HelperFunctions.SetupClient("List Sheets - No Params");
 
-            PaginatedResult<Sheet> sheets = ss.SheetResources.ListSheets(null, null);
+            PaginatedResult<Sheet> sheets = ss.SheetResources.ListSheets();
             
             Assert.IsNotNull(sheets.Data.Where(s => s.Name.Equals("Copy of Sample Sheet")).FirstOrDefault());
         }
@@ -27,7 +27,8 @@ namespace TestSDKMockAPI
         {
             SmartsheetClient ss =  HelperFunctions.SetupClient("List Sheets - Include Owner Info");
 
-            PaginatedResult<Sheet> sheets = ss.SheetResources.ListSheets(new List<SheetInclusion>{SheetInclusion.OWNER_INFO}, null);
+            PaginatedResult<Sheet> sheets = ss.SheetResources
+                .ListSheets(new List<SheetInclusion>{SheetInclusion.OWNER_INFO});
 
             Assert.IsNotNull(sheets.Data.Where(s => s.Owner.Equals("john.doe@smartsheet.com")).FirstOrDefault());
         }

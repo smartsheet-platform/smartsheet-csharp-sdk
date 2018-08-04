@@ -14,7 +14,7 @@ namespace IntegrationTestSDK
         {
             SmartsheetClient smartsheet = new SmartsheetBuilder().SetMaxRetryTimeout(30000).Build();
             
-            PaginatedResult<Contact> contactResults = smartsheet.ContactResources.ListContacts(null);
+            PaginatedResult<Contact> contactResults = smartsheet.ContactResources.ListContacts();
             Assert.IsTrue(contactResults.TotalCount >= 0);
         }
     }

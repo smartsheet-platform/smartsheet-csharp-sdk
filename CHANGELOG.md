@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Changed
+- Updated endpoints across the SDK to have functionally optional parameters to align with documented optional parameters. This does not deprecate any existing code.
 
 ## [2.3.0] - 2018-04-18
 ### Added

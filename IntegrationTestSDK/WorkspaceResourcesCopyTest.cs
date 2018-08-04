@@ -35,7 +35,7 @@ namespace IntegrationTestSDK
 
             long copiedWorkspaceId = newCopiedWorkspace.Id.Value;
 
-            Workspace copiedWorkspace = smartsheet.WorkspaceResources.GetWorkspace(copiedWorkspaceId, null, null);
+            Workspace copiedWorkspace = smartsheet.WorkspaceResources.GetWorkspace(copiedWorkspaceId);
             Assert.IsTrue(copiedWorkspace.Name == "Workspace1Copy");
 
             smartsheet.WorkspaceResources.DeleteWorkspace(workspaceId);
@@ -47,7 +47,7 @@ namespace IntegrationTestSDK
             smartsheet.FolderResources.DeleteFolder(folder1);
             try
             {
-                smartsheet.FolderResources.GetFolder(folder1, null);
+                smartsheet.FolderResources.GetFolder(folder1);
                 Assert.Fail("Exception should have been thrown. Cannot get a deleted folder.");
             }
             catch
