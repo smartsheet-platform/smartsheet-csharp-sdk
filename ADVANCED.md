@@ -44,7 +44,7 @@ string payload =
     "]" +
   "}";
 
-string jsonResponse = smartsheet.PassthroughResources.PostRequest("sheets", payload, null);
+string jsonResponse = smartsheet.PassthroughResources.PostRequest("sheets", payload);
 
 long id = 0;
 JsonReader reader = new JsonTextReader(new StringReader(jsonResponse));
