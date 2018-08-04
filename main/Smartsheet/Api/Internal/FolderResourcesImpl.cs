@@ -59,7 +59,7 @@ namespace Smartsheet.Api.Internal
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        public virtual Folder GetFolder(long folderId, IEnumerable<FolderInclusion> include)
+        public virtual Folder GetFolder(long folderId, IEnumerable<FolderInclusion> include = null)
         {
             StringBuilder path = new StringBuilder("folders/" + folderId);
             if (include != null)
@@ -124,7 +124,7 @@ namespace Smartsheet.Api.Internal
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        public virtual PaginatedResult<Folder> ListFolders(long folderId, PaginationParameters paging)
+        public virtual PaginatedResult<Folder> ListFolders(long folderId, PaginationParameters paging = null)
         {
             StringBuilder path = new StringBuilder("folders/" + folderId + "/folders");
             if (paging != null)
@@ -174,7 +174,7 @@ namespace Smartsheet.Api.Internal
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        public virtual Folder CopyFolder(long folderId, ContainerDestination destination, IEnumerable<FolderCopyInclusion> include, IEnumerable<FolderRemapExclusion> skipRemap)
+        public virtual Folder CopyFolder(long folderId, ContainerDestination destination, IEnumerable<FolderCopyInclusion> include = null, IEnumerable<FolderRemapExclusion> skipRemap = null)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
             if (include != null)

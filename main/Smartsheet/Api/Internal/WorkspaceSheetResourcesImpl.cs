@@ -76,7 +76,7 @@ namespace Smartsheet.Api.Internal
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        public virtual Sheet CreateSheetFromTemplate(long workspaceId, Sheet sheet, IEnumerable<TemplateInclusion> includes)
+        public virtual Sheet CreateSheetFromTemplate(long workspaceId, Sheet sheet, IEnumerable<TemplateInclusion> includes = null)
         {
             StringBuilder path = new StringBuilder("workspaces/" + workspaceId + "/sheets");
             if (includes != null)
@@ -102,7 +102,7 @@ namespace Smartsheet.Api.Internal
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        public virtual Sheet ImportCsvSheet(long workspaceId, string file, string sheetName, int? headerRowIndex, int? primaryColumnIndex)
+        public virtual Sheet ImportCsvSheet(long workspaceId, string file, string sheetName = null, int? headerRowIndex = null, int? primaryColumnIndex = null)
         {
             return ImportSheet(workspaceId, file, sheetName, headerRowIndex, primaryColumnIndex, "text/csv");
         }
@@ -123,7 +123,7 @@ namespace Smartsheet.Api.Internal
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        public virtual Sheet ImportXlsSheet(long workspaceId, string file, string sheetName, int? headerRowIndex, int? primaryColumnIndex)
+        public virtual Sheet ImportXlsSheet(long workspaceId, string file, string sheetName = null, int? headerRowIndex = null, int? primaryColumnIndex = null)
         {
             return ImportSheet(workspaceId, file, sheetName, headerRowIndex, primaryColumnIndex, 
                 "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");

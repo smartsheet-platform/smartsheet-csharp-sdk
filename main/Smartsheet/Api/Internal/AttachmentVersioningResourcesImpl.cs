@@ -64,7 +64,7 @@ namespace Smartsheet.Api.Internal
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        public virtual Attachment AttachNewVersion(long sheetId, long attachmentId, string file, string fileType)
+        public virtual Attachment AttachNewVersion(long sheetId, long attachmentId, string file, string fileType = null)
         {
             return AttachFile("sheets/" + sheetId + "/attachments/" + attachmentId + "/versions", file, fileType);
         }
@@ -103,7 +103,7 @@ namespace Smartsheet.Api.Internal
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        public virtual PaginatedResult<Attachment> ListVersions(long sheetId, long attachmentId, PaginationParameters paging)
+        public virtual PaginatedResult<Attachment> ListVersions(long sheetId, long attachmentId, PaginationParameters paging = null)
         {
             StringBuilder path = new StringBuilder("sheets/" + sheetId + "/attachments/" + attachmentId + "/versions");
             if (paging != null)

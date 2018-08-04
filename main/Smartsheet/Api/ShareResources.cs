@@ -48,7 +48,7 @@ namespace Smartsheet.Api
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        PaginatedResult<Share> ListShares(long objectId, PaginationParameters paging, ShareScope shareScope);
+        PaginatedResult<Share> ListShares(long objectId, PaginationParameters paging = null, ShareScope? shareScope = null);
 
         /// <summary>
         /// <para>Get a Share.</para>
@@ -89,7 +89,7 @@ namespace Smartsheet.Api
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        IList<Share> ShareTo(long objectId, IEnumerable<Share> shares, bool? sendEmail);
+        IList<Share> ShareTo(long objectId, IEnumerable<Share> shares, bool? sendEmail = null);
 
         ///// <summary>
         ///// <para>Share the object.</para>

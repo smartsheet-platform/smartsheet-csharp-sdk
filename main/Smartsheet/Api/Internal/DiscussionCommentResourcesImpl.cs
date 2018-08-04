@@ -68,7 +68,7 @@ namespace Smartsheet.Api.Internal
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        public virtual Comment AddCommentWithAttachment(long sheetId, long discussionId, Comment comment, string file, string fileType)
+        public virtual Comment AddCommentWithAttachment(long sheetId, long discussionId, Comment comment, string file, string fileType = null)
         {
             return this.CreateResourceWithAttachment("sheets/" + sheetId + "/discussions/" + discussionId + "/comments", comment, "comment", file, fileType);
         }

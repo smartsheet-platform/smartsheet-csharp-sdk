@@ -70,7 +70,7 @@ namespace Smartsheet.Api.Models
             /// <param name="parentId"> Indicates that the row should be added as the first child of this row. </param>
             /// <param name="siblingId"> Indicates that the row should be added as the next row at the same hierarchical level of this row. </param>
             /// <param name="above"> Optionally used in conjunction with siblingId with a value of true to indicate that the row should be added above the specified sibling row. </param>
-            public AddRowBuilder(bool? toTop, bool? toBottom, long? parentId, long? siblingId, bool? above)
+            public AddRowBuilder(bool? toTop = null, bool? toBottom = null, long? parentId = null, long? siblingId = null, bool? above = null)
             {
                 this.toTop = toTop;
                 this.toBottom = toBottom;

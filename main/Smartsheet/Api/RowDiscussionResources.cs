@@ -63,7 +63,7 @@ namespace Smartsheet.Api
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        Discussion CreateDiscussionWithAttachment(long sheetId, long rowId, Discussion discussion, string file, string fileType);
+        Discussion CreateDiscussionWithAttachment(long sheetId, long rowId, Discussion discussion, string file, string fileType = null);
 
         /// <summary>
         /// <para>Gets a list of all Discussions associated with the specified Row.</para>
@@ -81,7 +81,7 @@ namespace Smartsheet.Api
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        PaginatedResult<Discussion> ListDiscussions(long sheetId, long rowId, IEnumerable<DiscussionInclusion> include, PaginationParameters paging);
+        PaginatedResult<Discussion> ListDiscussions(long sheetId, long rowId, IEnumerable<DiscussionInclusion> include = null, PaginationParameters paging = null);
     }
 
 }

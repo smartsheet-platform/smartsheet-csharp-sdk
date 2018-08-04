@@ -43,7 +43,7 @@ namespace Smartsheet.Api
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        Folder GetFolder(long folderId, IEnumerable<FolderInclusion> include);
+        Folder GetFolder(long folderId, IEnumerable<FolderInclusion> include = null);
 
         /// <summary>
         /// <para>Updates a folder.</para>
@@ -94,7 +94,7 @@ namespace Smartsheet.Api
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        PaginatedResult<Folder> ListFolders(long folderId, PaginationParameters paging);
+        PaginatedResult<Folder> ListFolders(long folderId, PaginationParameters paging = null);
 
         /// <summary>
         /// <para>Creates a Folder in the specified Folder.</para>
@@ -133,7 +133,7 @@ namespace Smartsheet.Api
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        Folder CopyFolder(long folderId, ContainerDestination destination, IEnumerable<FolderCopyInclusion> include, IEnumerable<FolderRemapExclusion> skipRemap);
+        Folder CopyFolder(long folderId, ContainerDestination destination, IEnumerable<FolderCopyInclusion> include = null, IEnumerable<FolderRemapExclusion> skipRemap = null);
 
         /// <summary>
         /// <para>Moves the specified Folder to another location.</para>

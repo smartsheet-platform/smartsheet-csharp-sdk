@@ -61,7 +61,7 @@ namespace Smartsheet.Api
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        PaginatedResult<Favorite> ListFavorites(PaginationParameters paging);
+        PaginatedResult<Favorite> ListFavorites(PaginationParameters paging = null);
 
         /// <summary>
         /// <para>Removes one or multiple objects from the user’s list of Favorite items.</para>

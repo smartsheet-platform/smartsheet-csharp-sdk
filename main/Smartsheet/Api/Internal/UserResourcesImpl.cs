@@ -73,7 +73,7 @@ namespace Smartsheet.Api.Internal
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        public virtual PaginatedResult<User> ListUsers(IEnumerable<string> emails, PaginationParameters paging)
+        public virtual PaginatedResult<User> ListUsers(IEnumerable<string> emails = null, PaginationParameters paging = null)
         {
             StringBuilder path = new StringBuilder("users");
 
@@ -107,7 +107,7 @@ namespace Smartsheet.Api.Internal
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        public virtual User AddUser(User user, bool? sendEmail, bool? allowInviteAccountAdmin)
+        public virtual User AddUser(User user, bool? sendEmail = null, bool? allowInviteAccountAdmin = null)
         {
             StringBuilder path = new StringBuilder("users");
             IDictionary<string, string> parameters = new Dictionary<string, string>();
@@ -189,7 +189,7 @@ namespace Smartsheet.Api.Internal
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        public virtual void RemoveUser(long userId, long? transferTo, bool? transferSheets, bool? removeFromSharing)
+        public virtual void RemoveUser(long userId, long? transferTo = null, bool? transferSheets = null, bool? removeFromSharing = null)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
             if (transferTo != null)
@@ -220,7 +220,7 @@ namespace Smartsheet.Api.Internal
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        public PaginatedResult<AlternateEmail> ListAlternateEmails(long userId, PaginationParameters pagination)
+        public PaginatedResult<AlternateEmail> ListAlternateEmails(long userId, PaginationParameters pagination = null)
         {
             StringBuilder path = new StringBuilder("users/" + userId + "/alternateemails");
 
@@ -344,14 +344,14 @@ namespace Smartsheet.Api.Internal
         /// </summary>
         /// <param name="userId"> the Id of the user </param>
         /// <param name="file"> path to the image file</param>
-        /// <param name="fileType">fileType content type of the image file</param>
+        /// <param name="fileType"> content type of the image file</param>
         /// <exception cref="System.InvalidOperationException"> if any argument is null or an empty string </exception>
         /// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
         /// <exception cref="AuthorizationException"> if there is any problem with the REST API authorization (access token) </exception>
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        public virtual User AddProfileImage(long userId, string file, string fileType)
+        public virtual User AddProfileImage(long userId, string file, string fileType = null)
         {
             return AttachProfileImage("users/" + userId + "/profileimage", file, fileType);
         }

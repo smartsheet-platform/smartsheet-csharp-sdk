@@ -63,7 +63,7 @@ namespace Smartsheet.Api.Internal
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        public virtual PaginatedResult<CellHistory> GetCellHistory(long sheetId, long rowId, long columnId, IEnumerable<CellInclusion> include, PaginationParameters paging)
+        public virtual PaginatedResult<CellHistory> GetCellHistory(long sheetId, long rowId, long columnId, IEnumerable<CellInclusion> include = null, PaginationParameters paging = null)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
             if (paging != null)
@@ -86,27 +86,6 @@ namespace Smartsheet.Api.Internal
         /// <param name="columnId"> the column Id</param>
         /// <param name="file"> the file path </param>
         /// <param name="fileType"> the file type </param>
-        /// <returns> the Row object </returns>
-        /// <exception cref="System.InvalidOperationException"> if any argument is null or an empty string </exception>
-        /// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
-        /// <exception cref="AuthorizationException"> if there is any problem with the REST API authorization (access token) </exception>
-        /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
-        /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
-        /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        public virtual void AddImageToCell(long sheetId, long rowId, long columnId, string file, string fileType)
-        {
-            AddImage("sheets/" + sheetId + "/rows/" + rowId + "/columns/" + columnId + "/cellimages", file, fileType, false, null);
-        }
-
-        /// <summary>
-        /// <para>Uploads an image to the specified cell within a sheet.</para>
-        /// <para>Mirrors to the following Smartsheet REST API method: POST /sheets/{sheetId}/rows/{rowId}/columns/{columnId}/cellimages</para>
-        /// </summary>
-        /// <param name="sheetId"> the sheet Id </param>
-        /// <param name="rowId"> the row Id </param>
-        /// <param name="columnId"> the column Id</param>
-        /// <param name="file"> the file path </param>
-        /// <param name="fileType"> the file type </param>
         /// <param name="overrideValidation"></param>
         /// <param name="altText"> alt text for image </param>
         /// <returns> the Row object </returns>
@@ -116,8 +95,8 @@ namespace Smartsheet.Api.Internal
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        public virtual void AddImageToCell(long sheetId, long rowId, long columnId, string file, string fileType, 
-            bool overrideValidation, string altText)
+        public virtual void AddImageToCell(long sheetId, long rowId, long columnId, string file, string fileType = null, 
+            bool overrideValidation = false, string altText = null)
         {
             AddImage("sheets/" + sheetId + "/rows/" + rowId + "/columns/" + columnId + "/cellimages", file, fileType,
                 overrideValidation, altText);

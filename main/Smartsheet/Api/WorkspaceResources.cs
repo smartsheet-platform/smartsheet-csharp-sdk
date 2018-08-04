@@ -42,7 +42,7 @@ namespace Smartsheet.Api
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        PaginatedResult<Workspace> ListWorkspaces(PaginationParameters paging);
+        PaginatedResult<Workspace> ListWorkspaces(PaginationParameters paging = null);
 
         /// <summary>
         /// <para>Gets the specified Workspace (and lists its contents).</para>
@@ -63,7 +63,7 @@ namespace Smartsheet.Api
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        Workspace GetWorkspace(long workspaceid, bool? loadAll, IEnumerable<WorkspaceInclusion> include);
+        Workspace GetWorkspace(long workspaceid, bool? loadAll = null, IEnumerable<WorkspaceInclusion> include = null);
 
         /// <summary>
         /// <para>Create a workspace.</para>
@@ -115,7 +115,7 @@ namespace Smartsheet.Api
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        Workspace CopyWorkspace(long workspaceId, ContainerDestination destination, IEnumerable<WorkspaceCopyInclusion> include, IEnumerable<WorkspaceRemapExclusion> skipRemap);
+        Workspace CopyWorkspace(long workspaceId, ContainerDestination destination, IEnumerable<WorkspaceCopyInclusion> include = null, IEnumerable<WorkspaceRemapExclusion> skipRemap = null);
 
         /// <summary>
         /// <para>Deletes the specified Workspace (and its contents).</para>

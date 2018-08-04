@@ -36,7 +36,7 @@ namespace Smartsheet.Api.Models
         /// <param name="pageSize">The maximum number of items to return per page. Unless otherwise stated for a specific endpoint, 
         /// defaults to 100 if not specified.</param>
         /// <param name="page">Which page to return. Defaults to 1 if not specified.</param>
-        public PaginationParameters(bool includeAll, int? pageSize, int? page)
+        public PaginationParameters(bool includeAll, int? pageSize = null, int? page = null)
         {
             this.includeAll = includeAll;
             this.pageSize = pageSize;

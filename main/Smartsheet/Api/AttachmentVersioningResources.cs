@@ -47,7 +47,7 @@ namespace Smartsheet.Api
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        Attachment AttachNewVersion(long sheetId, long attachmentId, string file, string fileType);
+        Attachment AttachNewVersion(long sheetId, long attachmentId, string file, string fileType = null);
 
         /// <summary>
         /// <para>Deletes all versions of the attachment corresponding to the specified Attachment ID.
@@ -80,6 +80,6 @@ namespace Smartsheet.Api
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        PaginatedResult<Attachment> ListVersions(long sheetId, long attachmentId, PaginationParameters paging);
+        PaginatedResult<Attachment> ListVersions(long sheetId, long attachmentId, PaginationParameters paging = null);
     }
 }
