@@ -69,6 +69,11 @@ namespace Smartsheet.Api.Models
         private string backgroundColor;
 
         /// <summary>
+        /// Represents the WebContentWidgetContent object
+        /// </summary>
+        private string url;
+
+        /// <summary>
         /// The widget has when clicked attribute set to that hyperlink (if present and non-null).
         /// </summary>
         /// <returns> the Link </returns>
@@ -216,6 +221,16 @@ namespace Smartsheet.Api.Models
         {
             get { return series; }
             set { series = value; }
+        }
+
+        /// <summary>
+        /// Gets the URL for the webContent widget
+        /// </summary>
+        /// <returns> the url </returns>
+        public string Url
+        {
+            get { return url; }
+            set { url = value; }
         }
     }
 }
