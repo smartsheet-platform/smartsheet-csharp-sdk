@@ -160,6 +160,11 @@ namespace Smartsheet.Api.Models
         private int? version;
 
         /// <summary>
+        /// Represents the workspace for the sheet (Id and name only)
+        /// </summary>
+        private Workspace workspace;
+
+        /// <summary>
         /// Gets the Id of the sheet/template from which the sheet was created.
         /// </summary>
         /// <returns> the from Id </returns>
@@ -403,6 +408,16 @@ namespace Smartsheet.Api.Models
         {
             get { return version; }
             set { version = value; }
+        }
+
+        /// <summary>
+        /// Gets the workspace (ID and Name only) for the sheet
+        /// </summary>
+        /// <returns> the workspace </returns>
+        public Workspace Workspace
+        {
+            get { return workspace; }
+            set { workspace = value; }
         }
 
         /// <summary>
