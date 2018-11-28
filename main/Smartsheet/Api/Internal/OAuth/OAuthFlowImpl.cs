@@ -430,6 +430,36 @@ namespace Smartsheet.Api.Internal.OAuth
             request.Uri = new Uri(tokenURL);
             request.Method = HttpMethod.DELETE;
             // Set authorization header 
+            request.Headers = new Dictionary<string, string>();
+            request.Headers["Authorization"] = "Bearer " + token.AccessToken;
+            HttpResponse response = httpClient.Request(request);
+            // Another error by not getting a 200 RequestResult
+            if (response.StatusCode != HttpStatusCode.OK)
+            {
+                throw new OAuthTokenException("Token request failed with http error code: " + response.StatusCode);
+            }
+            httpClient.ReleaseConnection();
+        }
+
+        /// <summary>
+        /// Revoke token.
+        /// </summary>
+        /// <param name="token"> the  token </param>
+        /// <exception cref="OAuthTokenException"> the o auth token exception </exception>
+        /// <exception cref="JSONSerializationException"> the JSON serializer exception </exception>
+        /// <exception cref="System.UriFormatException"> the URI syntax exception </exception>
+        /// <exception cref="InvalidRequestException"> the invalid request exception </exception>
+        /// <exception cref="System.InvalidOperationException"> if any other error occurred during the operation </exception>
+        public virtual void RevokeAllForApiClient(Token token)
+        {
+            // Create the request and send it to get the response/token.
+            HttpRequest request = new HttpRequest();
+            IDictionary<string, string> @params = new Dictionary<string, string>();
+            @params["deleteAllForApiClient"] = "true";
+            request.Uri = new Uri(GenerateURL(tokenURL, @params));
+            request.Method = HttpMethod.DELETE;
+            // Set authorization header 
+            request.Headers = new Dictionary<string, string>();
             request.Headers["Authorization"] = "Bearer " + token.AccessToken;
             HttpResponse response = httpClient.Request(request);
             // Another error by not getting a 200 RequestResult

@@ -68,6 +68,11 @@ namespace Smartsheet.Api.Models
         private IList<CrossSheetReference> crossSheetReferences;
 
         /// <summary>
+        /// Get a list of contact references used by MULTI_CONTACT columns in this sheet
+        /// </summary>
+        private IList<ContactObjectValue> contactReferences;
+
+        /// <summary>
         /// Represents the dependencies enabled flag. </summary>
         /// <seealso href="http://help.Smartsheet.com/customer/portal/articles/765727-using-the-dependencies-functionality">
         /// Dependencies Functionality</seealso>
@@ -160,6 +165,11 @@ namespace Smartsheet.Api.Models
         private int? version;
 
         /// <summary>
+        /// Represents the workspace for the sheet (Id and name only)
+        /// </summary>
+        private Workspace workspace;
+
+        /// <summary>
         /// Gets the Id of the sheet/template from which the sheet was created.
         /// </summary>
         /// <returns> the from Id </returns>
@@ -225,6 +235,15 @@ namespace Smartsheet.Api.Models
         {
             get { return crossSheetReferences; }
             set { crossSheetReferences = value; }
+        }
+
+        /// <summary>
+        /// Gets the list of contact references for this sheet
+        /// </summary>
+        public IList<ContactObjectValue> ContactReferences
+        {
+            get { return contactReferences; }
+            set { contactReferences = value;  }
         }
 
         /// <summary>
@@ -403,6 +422,16 @@ namespace Smartsheet.Api.Models
         {
             get { return version; }
             set { version = value; }
+        }
+
+        /// <summary>
+        /// Gets the workspace (ID and Name only) for the sheet
+        /// </summary>
+        /// <returns> the workspace </returns>
+        public Workspace Workspace
+        {
+            get { return workspace; }
+            set { workspace = value; }
         }
 
         /// <summary>

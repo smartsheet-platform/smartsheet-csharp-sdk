@@ -86,7 +86,32 @@ namespace Smartsheet.Api.Internal
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
         public virtual Sight GetSight(long sightId)
         {
-            return this.GetResource<Sight>("sights/" + sightId, typeof(Sight));
+            return GetSight(sightId, null);
+        }
+
+        /// <summary>
+        /// <para>Gets a specified Sight.</para>
+        /// 
+        /// <para>Mirrors to the following Smartsheet REST API method: GET /sights/{sightId}</para>
+        /// </summary>
+        /// <param name="sightId"> the Id of the Sight </param>
+        /// <param name="level"> compatibility level </param>
+        /// <returns> the Sight resource (note that if there is no such resource, this method will throw 
+        /// ResourceNotFoundException rather than returning null). </returns>
+        /// <exception cref="System.InvalidOperationException"> if any argument is null or an empty string </exception>
+        /// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+        /// <exception cref="AuthorizationException"> if there is any problem with the REST API authorization (access token) </exception>
+        /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+        /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
+        /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+        public virtual Sight GetSight(long sightId, int? level)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            if (level != null)
+            {
+                parameters.Add("level", level.ToString());
+            }
+            return this.GetResource<Sight>("sights/" + sightId + QueryUtil.GenerateUrl(null, parameters), typeof(Sight));
         }
 
         /// <summary>

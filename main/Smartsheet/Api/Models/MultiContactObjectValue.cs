@@ -23,40 +23,30 @@ using System.Text;
 
 namespace Smartsheet.Api.Models
 {
-    public class ContactObjectValue : Contact, ObjectValue
+    class MultiContactObjectValue : ObjectValue
     {
-        /// <summary>
-        /// Part of the ContactOverlay, if contactReferences is present in the sheet, refIndex will indicate
-        /// the offset into the list containing this Contact
-        /// </summary>
-        private int? refIndex;
+        public MultiContactObjectValue(IList<ContactObjectValue> values)
+        {
+            this.values = values;
+        }
 
         /// <summary>
-        /// ID of the contact image
+        /// the list of contacts
         /// </summary>
-        private string imageId;
+        private IList<ContactObjectValue> values;
 
         public ObjectValueType ObjectType
         {
-            get { return ObjectValueType.CONTACT; }
+            get { return ObjectValueType.MULTI_CONTACT; }
         }
 
         /// <summary>
-        /// Gets the offset in the contactReferences for this Contact
+        /// Gets the array of Contact objects
         /// </summary>
-        public int? RefIndex
+        public IList<ContactObjectValue> Values
         {
-            get { return refIndex; }
-            set { refIndex = value; }
-        }
-
-        /// <summary>
-        /// Gets the ID for the contact image
-        /// </summary>
-        public string ImageId
-        {
-            get { return imageId; }
-            set { imageId = value; }
+            get { return values; }
+            set { values = value; }
         }
     }
 }

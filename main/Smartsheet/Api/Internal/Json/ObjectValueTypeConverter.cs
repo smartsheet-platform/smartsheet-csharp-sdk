@@ -61,6 +61,8 @@ namespace Smartsheet.Api.Internal.Json
                         contactObjectValue.Name = superset.name;
                         contactObjectValue.Email = superset.email;
                         contactObjectValue.Id = superset.id;
+                        contactObjectValue.RefIndex = superset.refIndex;
+                        contactObjectValue.ImageId = superset.imageId;
                         objectValue = contactObjectValue;
                         break;
 
@@ -68,6 +70,10 @@ namespace Smartsheet.Api.Internal.Json
                     case ObjectValueType.DATETIME:
                     case ObjectValueType.ABSTRACT_DATETIME:
                         objectValue = new DateObjectValue(parsedObjectType, superset.value);
+                        break;
+
+                    case ObjectValueType.MULTI_CONTACT:
+                        objectValue = new MultiContactObjectValue(superset.values);
                         break;
 
                     default:
@@ -130,6 +136,11 @@ namespace Smartsheet.Api.Internal.Json
             public string id;
             public string name;
             public string email;
+            public int refIndex;
+            public string imageId;
+
+            // MULTI_CONTACT
+            public List<ContactObjectValue> values;
 
             // Various other types
             public string value;

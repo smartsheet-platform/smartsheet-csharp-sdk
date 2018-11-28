@@ -4,7 +4,6 @@ using System.Collections.Generic;
 // Add nuget reference to smartsheet-csharp-sdk (https://www.nuget.org/packages/smartsheet-csharp-sdk/)
 using Smartsheet.Api;
 using Smartsheet.Api.Models;
-using Smartsheet.Api.Models.Inclusions;
 using System.Linq;
 
 namespace sdk_csharp_sample

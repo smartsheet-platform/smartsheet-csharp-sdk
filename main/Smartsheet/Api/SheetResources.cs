@@ -143,6 +143,41 @@ namespace Smartsheet.Api
                     long? ifVersionAfter);
 
         /// <summary>
+        /// <para>Gets a sheet.</para>
+        /// 
+        /// <para>Mirrors to the following Smartsheet REST API method: GET /sheets/{sheetId}</para>
+        /// </summary>
+        /// <param name="sheetId"> the Id of the sheet </param>
+        /// <param name="includes"> used to specify the optional objects to include. </param>
+        /// <param name="excludes"> used to specify the optional objects to include. </param>
+        /// <param name="rowIds"> used to specify the optional objects to include. </param>
+        /// <param name="rowNumbers"> used to specify the optional objects to include. </param>
+        /// <param name="columnIds"> used to specify the optional objects to include. </param>
+        /// <param name="pageSize"> used to specify the optional objects to include. </param>
+        /// <param name="page"> used to specify the optional objects to include. </param>
+        /// <param name="ifVersionAfter"> only fetch sheet if more recent version available </param>
+        /// <param name="level"> compatibility level </param>
+        /// <returns> the sheet resource (note that if there is no such resource, this method will throw 
+        /// ResourceNotFoundException rather than returning null). </returns>
+        /// <exception cref="System.InvalidOperationException"> if any argument is null or an empty string </exception>
+        /// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+        /// <exception cref="AuthorizationException"> if there is any problem with the REST API authorization (access token) </exception>
+        /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+        /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
+        /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+        Sheet GetSheet(
+                    long sheetId,
+                    IEnumerable<SheetLevelInclusion> includes,
+                    IEnumerable<SheetLevelExclusion> excludes,
+                    IEnumerable<long> rowIds,
+                    IEnumerable<int> rowNumbers,
+                    IEnumerable<long> columnIds,
+                    long? pageSize,
+                    long? page,
+                    long? ifVersionAfter,
+                    int? level);
+
+        /// <summary>
         /// <para>Gets a sheet as an Excel file.</para>
         /// 
         /// <para>Mirrors to the following Smartsheet REST API method:<br />
@@ -417,6 +452,23 @@ namespace Smartsheet.Api
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
         Sheet SortSheet(long sheetId, SortSpecifier sortSpecifier);
+
+        /// <summary>
+        /// <para>Sorts a sheet according to the sort criteria.</para>
+        /// 
+        /// <para>Mirrors to the following Smartsheet REST API method: POST /sheets/{sheetId}/sort</para>
+        /// </summary>
+        /// <param name="sheetId"> the sheet Id </param>
+        /// <param name="sortSpecifier"> the sort criteria </param>
+        /// <param name="level"> compatibility level </param>
+        /// <returns> the Sheet (note that if there is no such resource, this method will throw a ResourceNotFoundException rather than returning null). </returns>
+        /// <exception cref="System.InvalidOperationException"> if any argument is null or an empty string </exception>
+        /// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+        /// <exception cref="AuthorizationException"> if there is any problem with the REST API authorization (access token) </exception>
+        /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+        /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
+        /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+        Sheet SortSheet(long sheetId, SortSpecifier sortSpecifier, int? level);
 
         /// <summary>
         /// <para>Imports a sheet (from CSV). </para>

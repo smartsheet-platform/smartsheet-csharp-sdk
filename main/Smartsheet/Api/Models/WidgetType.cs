@@ -70,6 +70,11 @@ namespace Smartsheet.Api.Models
         /// <summary>
         /// TitleWidgetContent object
         /// </summary>
-        TITLE
+        TITLE,
+
+        /// <summary>
+        /// WebContent object
+        /// </summary>
+        WEBCONTENT
     }
 }

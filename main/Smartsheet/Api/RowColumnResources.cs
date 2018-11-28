@@ -50,6 +50,27 @@ namespace Smartsheet.Api
         PaginatedResult<CellHistory> GetCellHistory(long sheetId, long rowId, long columnId, IEnumerable<CellInclusion> include, PaginationParameters paging);
 
         /// <summary>
+        /// <para>Gets the cell modification history.</para>
+        /// <para>Mirrors to the following Smartsheet REST API method: GET /sheets/{sheetId}/rows/{rowId}/columns/{columnId}/history</para>
+        /// <remarks><para>This operation supports pagination of results. For more information, see Paging.</para>
+        /// <para>This is a resource-intensive operation and incurs 10 additional requests against the rate limit.</para></remarks>
+        /// </summary>
+        /// <param name="sheetId"> the sheet Id </param>
+        /// <param name="rowId"> the row Id </param>
+        /// <param name="columnId"> the column Id</param>
+        /// <param name="include"> the elements to include in the response </param>
+        /// <param name="paging"> the pagination </param>
+        /// <param name="level"> compatibility level </param>
+        /// <returns> the row object </returns>
+        /// <exception cref="System.InvalidOperationException"> if any argument is null or an empty string </exception>
+        /// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+        /// <exception cref="AuthorizationException"> if there is any problem with the REST API authorization (access token) </exception>
+        /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+        /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
+        /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+        PaginatedResult<CellHistory> GetCellHistory(long sheetId, long rowId, long columnId, IEnumerable<CellInclusion> include, PaginationParameters paging, int? level);
+
+        /// <summary>
         /// <para>Uploads an image to the specified cell within a sheet.</para>
         /// <para>Mirrors to the following Smartsheet REST API method: POST /sheets/{sheetId}/rows/{rowId}/columns/{columnId}/cellimages</para>
         /// </summary>

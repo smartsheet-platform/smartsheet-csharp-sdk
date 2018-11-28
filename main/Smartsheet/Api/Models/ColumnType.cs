@@ -66,7 +66,11 @@ namespace Smartsheet.Api.Models
         /// web application when configuring a project sheet.) Additionally, the API does not support updating data 
         /// in the End Date column under any circumstance, and does not support updating data in the Start Date column
         /// if Predecessor is set for that row. </summary>
-        ABSTRACT_DATETIME
+        ABSTRACT_DATETIME,
+
+        /// <summary>
+        /// Represents the MULTI_CONTACT_LIST (multi-assign) column type. </summary>
+        MULTI_CONTACT_LIST
     }
 
 }

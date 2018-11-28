@@ -35,7 +35,7 @@ namespace Smartsheet.Api.Models
         /// <summary>
         /// Non-working days for a project sheet. The format for the timestamp array must be an array of strings that are valid ISO-8601 dates ('YYYY-MM-DD’).
         /// </summary>
-        private IList<DateTime> nonWorkingDays;
+        private IList<string> nonWorkingDays;
 
         /// <summary>
         /// Working days of a week for a project sheet. 
@@ -54,7 +54,7 @@ namespace Smartsheet.Api.Models
         /// <summary>
         /// Get a list of non working days in the year.
         /// </summary>
-        public IList<DateTime> NonWorkingDays
+        public IList<string> NonWorkingDays
         {
             get { return nonWorkingDays; }
             set { nonWorkingDays = value; }
