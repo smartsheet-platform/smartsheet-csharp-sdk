@@ -105,6 +105,12 @@ namespace Smartsheet.Api.Models
         private bool? validation;
 
         /// <summary>
+        /// Determines the compatibility level of this client, 0 for existing types, 1 for multi-assign,
+        /// greather than 1 for future types.
+        /// </summary>
+        private int? version;
+
+        /// <summary>
         /// Display width of the column in pixels
         /// </summary>
         private long? width;
@@ -258,6 +264,15 @@ namespace Smartsheet.Api.Models
         {
             get { return validation; }
             set { validation = value; }
+        }
+
+        /// <summary>
+        /// Gets the column compatiblity version, 0 for existing types, 1 for multi-assign, > 1 future use
+        /// </summary>
+        public int? Version
+        {
+            get { return version;  }
+            set { version = value; }
         }
 
         /// <summary>

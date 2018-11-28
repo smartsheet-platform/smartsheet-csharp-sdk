@@ -85,6 +85,11 @@ namespace Smartsheet.Api.Models
         /// <summary>
         /// cross sheet references
         /// </summary>
-        CROSS_SHEET_REFERENCES
+        CROSS_SHEET_REFERENCES,
+
+        /// <summary>
+        /// contact references
+        /// </summary>
+        CONTACT_REFERENCES,
     }
 }

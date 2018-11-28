@@ -68,6 +68,11 @@ namespace Smartsheet.Api.Models
         private IList<CrossSheetReference> crossSheetReferences;
 
         /// <summary>
+        /// Get a list of contact references used by MULTI_CONTACT columns in this sheet
+        /// </summary>
+        private IList<ContactObjectValue> contactReferences;
+
+        /// <summary>
         /// Represents the dependencies enabled flag. </summary>
         /// <seealso href="http://help.Smartsheet.com/customer/portal/articles/765727-using-the-dependencies-functionality">
         /// Dependencies Functionality</seealso>
@@ -230,6 +235,15 @@ namespace Smartsheet.Api.Models
         {
             get { return crossSheetReferences; }
             set { crossSheetReferences = value; }
+        }
+
+        /// <summary>
+        /// Gets the list of contact references for this sheet
+        /// </summary>
+        public IList<ContactObjectValue> ContactReferences
+        {
+            get { return contactReferences; }
+            set { contactReferences = value;  }
         }
 
         /// <summary>
