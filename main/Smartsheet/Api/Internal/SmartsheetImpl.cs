@@ -31,6 +31,7 @@ namespace Smartsheet.Api.Internal
     using HttpClient = Api.Internal.Http.HttpClient;
     using HttpResponse = Api.Internal.Http.HttpResponse;
     using Utils = Api.Internal.Utility.Utility;
+    using System.Net;
 
     /// <summary>
     /// This is the implementation of Smartsheet interface.
@@ -258,6 +259,8 @@ namespace Smartsheet.Api.Internal
         {
             Utils.ThrowIfNull(baseURI);
             Utils.ThrowIfEmpty(baseURI);
+
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
             this.baseURI = new Uri(baseURI);
             this.accessToken = accessToken;
