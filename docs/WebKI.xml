@@ -87,6 +87,7 @@
   <HelpKINode Title="AbstractSheet(Of TRow, TColumn, TCell).AccessLevel property" Url="html/P_Smartsheet_Api_Models_AbstractSheet_3_AccessLevel.htm" />
   <HelpKINode Title="AbstractSheet(Of TRow, TColumn, TCell).Attachments property" Url="html/P_Smartsheet_Api_Models_AbstractSheet_3_Attachments.htm" />
   <HelpKINode Title="AbstractSheet(Of TRow, TColumn, TCell).Columns property" Url="html/P_Smartsheet_Api_Models_AbstractSheet_3_Columns.htm" />
+  <HelpKINode Title="AbstractSheet(Of TRow, TColumn, TCell).ContactReferences property" Url="html/P_Smartsheet_Api_Models_AbstractSheet_3_ContactReferences.htm" />
   <HelpKINode Title="AbstractSheet(Of TRow, TColumn, TCell).CreatedAt property" Url="html/P_Smartsheet_Api_Models_AbstractSheet_3_CreatedAt.htm" />
   <HelpKINode Title="AbstractSheet(Of TRow, TColumn, TCell).CrossSheetReferences property" Url="html/P_Smartsheet_Api_Models_AbstractSheet_3_CrossSheetReferences.htm" />
   <HelpKINode Title="AbstractSheet(Of TRow, TColumn, TCell).DependenciesEnabled property" Url="html/P_Smartsheet_Api_Models_AbstractSheet_3_DependenciesEnabled.htm" />
@@ -111,6 +112,7 @@
   <HelpKINode Title="AbstractSheet(Of TRow, TColumn, TCell).TotalRowCount property" Url="html/P_Smartsheet_Api_Models_AbstractSheet_3_TotalRowCount.htm" />
   <HelpKINode Title="AbstractSheet(Of TRow, TColumn, TCell).UserSettings property" Url="html/P_Smartsheet_Api_Models_AbstractSheet_3_UserSettings.htm" />
   <HelpKINode Title="AbstractSheet(Of TRow, TColumn, TCell).Version property" Url="html/P_Smartsheet_Api_Models_AbstractSheet_3_Version.htm" />
+  <HelpKINode Title="AbstractSheet(Of TRow, TColumn, TCell).Workspace property" Url="html/P_Smartsheet_Api_Models_AbstractSheet_3_Workspace.htm" />
   <HelpKINode Title="AbstractSheet&lt;TRow, TColumn, TCell&gt; class">
     <HelpKINode Title="AbstractSheet(TRow, TColumn, TCell) Class" Url="html/T_Smartsheet_Api_Models_AbstractSheet_3.htm" />
     <HelpKINode Title="about AbstractSheet&lt;TRow, TColumn, TCell&gt; class" Url="html/T_Smartsheet_Api_Models_AbstractSheet_3.htm" />
@@ -120,6 +122,7 @@
   <HelpKINode Title="AbstractSheet&lt;TRow, TColumn, TCell&gt;.AccessLevel property" Url="html/P_Smartsheet_Api_Models_AbstractSheet_3_AccessLevel.htm" />
   <HelpKINode Title="AbstractSheet&lt;TRow, TColumn, TCell&gt;.Attachments property" Url="html/P_Smartsheet_Api_Models_AbstractSheet_3_Attachments.htm" />
   <HelpKINode Title="AbstractSheet&lt;TRow, TColumn, TCell&gt;.Columns property" Url="html/P_Smartsheet_Api_Models_AbstractSheet_3_Columns.htm" />
+  <HelpKINode Title="AbstractSheet&lt;TRow, TColumn, TCell&gt;.ContactReferences property" Url="html/P_Smartsheet_Api_Models_AbstractSheet_3_ContactReferences.htm" />
   <HelpKINode Title="AbstractSheet&lt;TRow, TColumn, TCell&gt;.CreatedAt property" Url="html/P_Smartsheet_Api_Models_AbstractSheet_3_CreatedAt.htm" />
   <HelpKINode Title="AbstractSheet&lt;TRow, TColumn, TCell&gt;.CrossSheetReferences property" Url="html/P_Smartsheet_Api_Models_AbstractSheet_3_CrossSheetReferences.htm" />
   <HelpKINode Title="AbstractSheet&lt;TRow, TColumn, TCell&gt;.DependenciesEnabled property" Url="html/P_Smartsheet_Api_Models_AbstractSheet_3_DependenciesEnabled.htm" />
@@ -144,6 +147,7 @@
   <HelpKINode Title="AbstractSheet&lt;TRow, TColumn, TCell&gt;.TotalRowCount property" Url="html/P_Smartsheet_Api_Models_AbstractSheet_3_TotalRowCount.htm" />
   <HelpKINode Title="AbstractSheet&lt;TRow, TColumn, TCell&gt;.UserSettings property" Url="html/P_Smartsheet_Api_Models_AbstractSheet_3_UserSettings.htm" />
   <HelpKINode Title="AbstractSheet&lt;TRow, TColumn, TCell&gt;.Version property" Url="html/P_Smartsheet_Api_Models_AbstractSheet_3_Version.htm" />
+  <HelpKINode Title="AbstractSheet&lt;TRow, TColumn, TCell&gt;.Workspace property" Url="html/P_Smartsheet_Api_Models_AbstractSheet_3_Workspace.htm" />
   <HelpKINode Title="ABSTRACT_DATETIME enumeration member">
     <HelpKINode Title="ColumnType Enumeration" Url="html/T_Smartsheet_Api_Models_ColumnType.htm" />
     <HelpKINode Title="ObjectValueType Enumeration" Url="html/T_Smartsheet_Api_Models_ObjectValueType.htm" />
@@ -167,8 +171,8 @@
     <HelpKINode Title="Workspace.AccessLevel Property " Url="html/P_Smartsheet_Api_Models_Workspace_AccessLevel.htm" />
   </HelpKINode>
   <HelpKINode Title="AccessScope enumeration">
-    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_OAuth_AccessScope.htm" />
     <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_Models_AccessScope.htm" />
+    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_OAuth_AccessScope.htm" />
   </HelpKINode>
   <HelpKINode Title="AccessToken property">
     <HelpKINode Title="SmartsheetBuilder.AccessToken Property " Url="html/P_Smartsheet_Api_SmartsheetBuilder_AccessToken.htm" />
@@ -231,8 +235,8 @@
     <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_OAuth_AccessScope.htm" />
   </HelpKINode>
   <HelpKINode Title="ADMIN_USERS enumeration member">
-    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_Models_AccessScope.htm" />
     <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_OAuth_AccessScope.htm" />
+    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_Models_AccessScope.htm" />
   </HelpKINode>
   <HelpKINode Title="ADMIN_WORKSPACES enumeration member">
     <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_Models_AccessScope.htm" />
@@ -513,8 +517,8 @@
   <HelpKINode Title="CANCELED enumeration member" Url="html/T_Smartsheet_Api_Models_UpdateRequestStatus.htm" />
   <HelpKINode Title="Categories property" Url="html/P_Smartsheet_Api_Models_Template_Categories.htm" />
   <HelpKINode Title="CcMe property">
-    <HelpKINode Title="Share.CcMe Property " Url="html/P_Smartsheet_Api_Models_Share_CcMe.htm" />
     <HelpKINode Title="Email.CcMe Property " Url="html/P_Smartsheet_Api_Models_Email_CcMe.htm" />
+    <HelpKINode Title="Share.CcMe Property " Url="html/P_Smartsheet_Api_Models_Share_CcMe.htm" />
   </HelpKINode>
   <HelpKINode Title="CCMe property">
     <HelpKINode Title="MultiShare.CCMe Property " Url="html/P_Smartsheet_Api_Models_MultiShare_CCMe.htm" />
@@ -734,6 +738,7 @@
   <HelpKINode Title="Column.UpdateColumnBuilder.SetWidth method" Url="html/M_Smartsheet_Api_Models_Column_UpdateColumnBuilder_SetWidth.htm" />
   <HelpKINode Title="Column.UpdateColumnBuilder.UpdateColumnBuilder constructor" Url="html/M_Smartsheet_Api_Models_Column_UpdateColumnBuilder__ctor.htm" />
   <HelpKINode Title="Column.Validation property" Url="html/P_Smartsheet_Api_Models_Column_Validation.htm" />
+  <HelpKINode Title="Column.Version property" Url="html/P_Smartsheet_Api_Models_Column_Version.htm" />
   <HelpKINode Title="Column.Width property" Url="html/P_Smartsheet_Api_Models_Column_Width.htm" />
   <HelpKINode Title="ColumnCount property" Url="html/P_Smartsheet_Api_Models_Sight_ColumnCount.htm" />
   <HelpKINode Title="ColumnId property">
@@ -824,7 +829,18 @@
   <HelpKINode Title="Contact.Contact constructor" Url="html/M_Smartsheet_Api_Models_Contact__ctor.htm" />
   <HelpKINode Title="Contact.Email property" Url="html/P_Smartsheet_Api_Models_Contact_Email.htm" />
   <HelpKINode Title="Contact.Id property" Url="html/P_Smartsheet_Api_Models_Contact_Id.htm" />
+  <HelpKINode Title="ContactObjectValue class">
+    <HelpKINode Title="ContactObjectValue Class" Url="html/T_Smartsheet_Api_Models_ContactObjectValue.htm" />
+    <HelpKINode Title="about ContactObjectValue class" Url="html/T_Smartsheet_Api_Models_ContactObjectValue.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Smartsheet_Api_Models_ContactObjectValue__ctor.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Smartsheet_Api_Models_ContactObjectValue.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ContactObjectValue.ContactObjectValue constructor" Url="html/M_Smartsheet_Api_Models_ContactObjectValue__ctor.htm" />
+  <HelpKINode Title="ContactObjectValue.ImageId property" Url="html/P_Smartsheet_Api_Models_ContactObjectValue_ImageId.htm" />
+  <HelpKINode Title="ContactObjectValue.ObjectType property" Url="html/P_Smartsheet_Api_Models_ContactObjectValue_ObjectType.htm" />
+  <HelpKINode Title="ContactObjectValue.RefIndex property" Url="html/P_Smartsheet_Api_Models_ContactObjectValue_RefIndex.htm" />
   <HelpKINode Title="ContactOptions property" Url="html/P_Smartsheet_Api_Models_Column_ContactOptions.htm" />
+  <HelpKINode Title="ContactReferences property" Url="html/P_Smartsheet_Api_Models_AbstractSheet_3_ContactReferences.htm" />
   <HelpKINode Title="ContactResources interface">
     <HelpKINode Title="ContactResources Interface" Url="html/T_Smartsheet_Api_ContactResources.htm" />
     <HelpKINode Title="about ContactResources interface" Url="html/T_Smartsheet_Api_ContactResources.htm" />
@@ -834,6 +850,7 @@
   <HelpKINode Title="ContactResources.GetContact method" Url="html/M_Smartsheet_Api_ContactResources_GetContact.htm" />
   <HelpKINode Title="ContactResources.ListContacts method" Url="html/M_Smartsheet_Api_ContactResources_ListContacts.htm" />
   <HelpKINode Title="CONTACT_LIST enumeration member" Url="html/T_Smartsheet_Api_Models_ColumnType.htm" />
+  <HelpKINode Title="CONTACT_REFERENCES enumeration member" Url="html/T_Smartsheet_Api_Models_SheetLevelInclusion.htm" />
   <HelpKINode Title="ContainerDestination class">
     <HelpKINode Title="ContainerDestination Class" Url="html/T_Smartsheet_Api_Models_ContainerDestination.htm" />
     <HelpKINode Title="about ContainerDestination class" Url="html/T_Smartsheet_Api_Models_ContainerDestination.htm" />
@@ -959,8 +976,8 @@
     <HelpKINode Title="methods" Url="html/Methods_T_Smartsheet_Api_Models_Workspace_CreateWorkspaceBuilder.htm" />
   </HelpKINode>
   <HelpKINode Title="CREATE_SHEETS enumeration member">
-    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_OAuth_AccessScope.htm" />
     <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_Models_AccessScope.htm" />
+    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_OAuth_AccessScope.htm" />
   </HelpKINode>
   <HelpKINode Title="CREATE_SIGHTS enumeration member" Url="html/T_Smartsheet_Api_OAuth_AccessScope.htm" />
   <HelpKINode Title="Criteria class">
@@ -1496,7 +1513,7 @@
     <HelpKINode Title="Column.UpdateColumnBuilder.GetAutoNumberFormat Method " Url="html/M_Smartsheet_Api_Models_Column_UpdateColumnBuilder_GetAutoNumberFormat.htm" />
   </HelpKINode>
   <HelpKINode Title="GetCcMe method" Url="html/M_Smartsheet_Api_Models_Share_CreateShareBuilder_GetCcMe.htm" />
-  <HelpKINode Title="GetCellHistory method" Url="html/M_Smartsheet_Api_RowColumnResources_GetCellHistory.htm" />
+  <HelpKINode Title="GetCellHistory method" Url="html/Overload_Smartsheet_Api_RowColumnResources_GetCellHistory.htm" />
   <HelpKINode Title="GetCells method">
     <HelpKINode Title="Row.AddRowBuilder.GetCells Method " Url="html/M_Smartsheet_Api_Models_Row_AddRowBuilder_GetCells.htm" />
     <HelpKINode Title="Row.UpdateRowBuilder.GetCells Method " Url="html/M_Smartsheet_Api_Models_Row_UpdateRowBuilder_GetCells.htm" />
@@ -1523,8 +1540,8 @@
   <HelpKINode Title="GetContact method" Url="html/M_Smartsheet_Api_ContactResources_GetContact.htm" />
   <HelpKINode Title="GetCrossSheetReference method" Url="html/M_Smartsheet_Api_SheetCrossSheetReferenceResources_GetCrossSheetReference.htm" />
   <HelpKINode Title="GetCurrentUser method" Url="html/M_Smartsheet_Api_UserResources_GetCurrentUser.htm" />
-  <HelpKINode Title="getDescription method" Url="html/M_Smartsheet_Api_Models_Group_CreateGroupBuilder_getDescription.htm" />
   <HelpKINode Title="GetDescription method" Url="html/M_Smartsheet_Api_Models_Group_UpdateGroupBuilder_GetDescription.htm" />
+  <HelpKINode Title="getDescription method" Url="html/M_Smartsheet_Api_Models_Group_CreateGroupBuilder_getDescription.htm" />
   <HelpKINode Title="GetDiscussion method" Url="html/M_Smartsheet_Api_SheetDiscussionResources_GetDiscussion.htm" />
   <HelpKINode Title="getEmail method" Url="html/M_Smartsheet_Api_Models_GroupMember_AddGroupMemberBuilder_getEmail.htm" />
   <HelpKINode Title="GetEmail method">
@@ -1608,7 +1625,7 @@
     <HelpKINode Title="SheetResources.GetPublishStatus Method " Url="html/M_Smartsheet_Api_SheetResources_GetPublishStatus.htm" />
     <HelpKINode Title="SightResources.GetPublishStatus Method " Url="html/M_Smartsheet_Api_SightResources_GetPublishStatus.htm" />
   </HelpKINode>
-  <HelpKINode Title="GetReport method" Url="html/M_Smartsheet_Api_ReportResources_GetReport.htm" />
+  <HelpKINode Title="GetReport method" Url="html/Overload_Smartsheet_Api_ReportResources_GetReport.htm" />
   <HelpKINode Title="GetReportAsCSV method" Url="html/M_Smartsheet_Api_ReportResources_GetReportAsCSV.htm" />
   <HelpKINode Title="GetReportAsExcel method" Url="html/M_Smartsheet_Api_ReportResources_GetReportAsExcel.htm" />
   <HelpKINode Title="GetRequest method" Url="html/M_Smartsheet_Api_PassthroughResources_GetRequest.htm" />
@@ -1630,7 +1647,7 @@
     <HelpKINode Title="Row.AddRowBuilder.GetSiblingId Method " Url="html/M_Smartsheet_Api_Models_Row_AddRowBuilder_GetSiblingId.htm" />
     <HelpKINode Title="Row.UpdateRowBuilder.GetSiblingId Method " Url="html/M_Smartsheet_Api_Models_Row_UpdateRowBuilder_GetSiblingId.htm" />
   </HelpKINode>
-  <HelpKINode Title="GetSight method" Url="html/M_Smartsheet_Api_SightResources_GetSight.htm" />
+  <HelpKINode Title="GetSight method" Url="html/Overload_Smartsheet_Api_SightResources_GetSight.htm" />
   <HelpKINode Title="GetStrict method">
     <HelpKINode Title="Cell.AddCellBuilder.GetStrict Method " Url="html/M_Smartsheet_Api_Models_Cell_AddCellBuilder_GetStrict.htm" />
     <HelpKINode Title="Cell.UpdateCellBuilder.GetStrict Method " Url="html/M_Smartsheet_Api_Models_Cell_UpdateCellBuilder_GetStrict.htm" />
@@ -1758,8 +1775,11 @@
   <HelpKINode Title="GroupResources.RemoveGroupMember method" Url="html/M_Smartsheet_Api_GroupResources_RemoveGroupMember.htm" />
   <HelpKINode Title="GroupResources.UpdateGroup method" Url="html/M_Smartsheet_Api_GroupResources_UpdateGroup.htm" />
   <HelpKINode Title="HARVEY_BALLS enumeration member" Url="html/T_Smartsheet_Api_Models_Symbol.htm" />
+  <HelpKINode Title="HAS_ALL_OF enumeration member" Url="html/T_Smartsheet_Api_Models_CriteriaOperator.htm" />
+  <HelpKINode Title="HAS_ANY_OF enumeration member" Url="html/T_Smartsheet_Api_Models_CriteriaOperator.htm" />
   <HelpKINode Title="HAS_ATTACHMENTS enumeration member" Url="html/T_Smartsheet_Api_Models_CriteriaOperator.htm" />
   <HelpKINode Title="HAS_COMMENTS enumeration member" Url="html/T_Smartsheet_Api_Models_CriteriaOperator.htm" />
+  <HelpKINode Title="HAS_NONE_OF enumeration member" Url="html/T_Smartsheet_Api_Models_CriteriaOperator.htm" />
   <HelpKINode Title="HEARTS enumeration member" Url="html/T_Smartsheet_Api_Models_Symbol.htm" />
   <HelpKINode Title="Height property">
     <HelpKINode Title="Image.Height Property " Url="html/P_Smartsheet_Api_Models_Image_Height.htm" />
@@ -1864,7 +1884,10 @@
   <HelpKINode Title="Image.Id property" Url="html/P_Smartsheet_Api_Models_Image_Id.htm" />
   <HelpKINode Title="Image.Image constructor" Url="html/M_Smartsheet_Api_Models_Image__ctor.htm" />
   <HelpKINode Title="Image.Width property" Url="html/P_Smartsheet_Api_Models_Image_Width.htm" />
-  <HelpKINode Title="ImageId property" Url="html/P_Smartsheet_Api_Models_ImageUrl_ImageId.htm" />
+  <HelpKINode Title="ImageId property">
+    <HelpKINode Title="ContactObjectValue.ImageId Property " Url="html/P_Smartsheet_Api_Models_ContactObjectValue_ImageId.htm" />
+    <HelpKINode Title="ImageUrl.ImageId Property " Url="html/P_Smartsheet_Api_Models_ImageUrl_ImageId.htm" />
+  </HelpKINode>
   <HelpKINode Title="ImageUrl class">
     <HelpKINode Title="ImageUrl Class" Url="html/T_Smartsheet_Api_Models_ImageUrl.htm" />
     <HelpKINode Title="about ImageUrl class" Url="html/T_Smartsheet_Api_Models_ImageUrl.htm" />
@@ -2183,6 +2206,8 @@
   <HelpKINode Title="MultiShare.ShareToManyBuilder.Users property" Url="html/P_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder_Users.htm" />
   <HelpKINode Title="MultiShare.Subject property" Url="html/P_Smartsheet_Api_Models_MultiShare_Subject.htm" />
   <HelpKINode Title="MultiShare.Users property" Url="html/P_Smartsheet_Api_Models_MultiShare_Users.htm" />
+  <HelpKINode Title="MULTI_CONTACT enumeration member" Url="html/T_Smartsheet_Api_Models_ObjectValueType.htm" />
+  <HelpKINode Title="MULTI_CONTACT_LIST enumeration member" Url="html/T_Smartsheet_Api_Models_ColumnType.htm" />
   <HelpKINode Title="Name property">
     <HelpKINode Title="FontFamily.Name Property " Url="html/P_Smartsheet_Api_Models_FontFamily_Name.htm" />
     <HelpKINode Title="NamedModel.Name Property " Url="html/P_Smartsheet_Api_Models_NamedModel_Name.htm" />
@@ -2207,6 +2232,7 @@
   <HelpKINode Title="NonWorkingDays property" Url="html/P_Smartsheet_Api_Models_ProjectSettings_NonWorkingDays.htm" />
   <HelpKINode Title="NotifhyAllSharedUsers property" Url="html/P_Smartsheet_Api_Models_AutomationAction_NotifhyAllSharedUsers.htm" />
   <HelpKINode Title="NOTIFICATION_ACTION enumeration member" Url="html/T_Smartsheet_Api_Models_AutomationActionType.htm" />
+  <HelpKINode Title="NOT_ALL_OF enumeration member" Url="html/T_Smartsheet_Api_Models_CriteriaOperator.htm" />
   <HelpKINode Title="NOT_BETWEEN enumeration member" Url="html/T_Smartsheet_Api_Models_CriteriaOperator.htm" />
   <HelpKINode Title="NOT_EQUAL enumeration member" Url="html/T_Smartsheet_Api_Models_CriteriaOperator.htm" />
   <HelpKINode Title="NOT_FUTURE enumeration member" Url="html/T_Smartsheet_Api_Models_CriteriaOperator.htm" />
@@ -2238,6 +2264,7 @@
   <HelpKINode Title="OAuthFlow.NewAuthorizationURL method" Url="html/M_Smartsheet_Api_OAuth_OAuthFlow_NewAuthorizationURL.htm" />
   <HelpKINode Title="OAuthFlow.ObtainNewToken method" Url="html/M_Smartsheet_Api_OAuth_OAuthFlow_ObtainNewToken.htm" />
   <HelpKINode Title="OAuthFlow.RefreshToken method" Url="html/M_Smartsheet_Api_OAuth_OAuthFlow_RefreshToken.htm" />
+  <HelpKINode Title="OAuthFlow.RevokeAllForApiClient method" Url="html/M_Smartsheet_Api_OAuth_OAuthFlow_RevokeAllForApiClient.htm" />
   <HelpKINode Title="OAuthFlow.RevokeToken method" Url="html/M_Smartsheet_Api_OAuth_OAuthFlow_RevokeToken.htm" />
   <HelpKINode Title="OAuthFlowBuilder class">
     <HelpKINode Title="OAuthFlowBuilder Class" Url="html/T_Smartsheet_Api_OAuth_OAuthFlowBuilder.htm" />
@@ -2279,6 +2306,7 @@
   </HelpKINode>
   <HelpKINode Title="ObjectType enumeration" Url="html/T_Smartsheet_Api_Models_ObjectType.htm" />
   <HelpKINode Title="ObjectType property">
+    <HelpKINode Title="ContactObjectValue.ObjectType Property " Url="html/P_Smartsheet_Api_Models_ContactObjectValue_ObjectType.htm" />
     <HelpKINode Title="Duration.ObjectType Property " Url="html/P_Smartsheet_Api_Models_Duration_ObjectType.htm" />
     <HelpKINode Title="ExplicitNull.ObjectType Property " Url="html/P_Smartsheet_Api_Models_ExplicitNull_ObjectType.htm" />
     <HelpKINode Title="ObjectValue.ObjectType Property " Url="html/P_Smartsheet_Api_Models_ObjectValue_ObjectType.htm" />
@@ -2532,8 +2560,8 @@
   <HelpKINode Title="ReadWriteUrl property" Url="html/P_Smartsheet_Api_Models_SheetPublish_ReadWriteUrl.htm" />
   <HelpKINode Title="READ_CONTACTS enumeration member" Url="html/T_Smartsheet_Api_OAuth_AccessScope.htm" />
   <HelpKINode Title="READ_SHEETS enumeration member">
-    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_Models_AccessScope.htm" />
     <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_OAuth_AccessScope.htm" />
+    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_Models_AccessScope.htm" />
   </HelpKINode>
   <HelpKINode Title="READ_SIGHTS enumeration member" Url="html/T_Smartsheet_Api_OAuth_AccessScope.htm" />
   <HelpKINode Title="READ_USERS enumeration member" Url="html/T_Smartsheet_Api_OAuth_AccessScope.htm" />
@@ -2553,6 +2581,7 @@
     <HelpKINode Title="Error.RefId Property " Url="html/P_Smartsheet_Api_Models_Error_RefId.htm" />
     <HelpKINode Title="SmartsheetRestException.RefId Property " Url="html/P_Smartsheet_Api_SmartsheetRestException_RefId.htm" />
   </HelpKINode>
+  <HelpKINode Title="RefIndex property" Url="html/P_Smartsheet_Api_Models_ContactObjectValue_RefIndex.htm" />
   <HelpKINode Title="RefreshAccessToken method" Url="html/M_Smartsheet_Api_TokenResources_RefreshAccessToken.htm" />
   <HelpKINode Title="RefreshToken method" Url="html/M_Smartsheet_Api_OAuth_OAuthFlow_RefreshToken.htm" />
   <HelpKINode Title="RefreshToken property" Url="html/P_Smartsheet_Api_OAuth_Token_RefreshToken.htm" />
@@ -2613,7 +2642,7 @@
   </HelpKINode>
   <HelpKINode Title="ReportResources property" Url="html/P_Smartsheet_Api_SmartsheetClient_ReportResources.htm" />
   <HelpKINode Title="ReportResources.GetPublishStatus method" Url="html/M_Smartsheet_Api_ReportResources_GetPublishStatus.htm" />
-  <HelpKINode Title="ReportResources.GetReport method" Url="html/M_Smartsheet_Api_ReportResources_GetReport.htm" />
+  <HelpKINode Title="ReportResources.GetReport method" Url="html/Overload_Smartsheet_Api_ReportResources_GetReport.htm" />
   <HelpKINode Title="ReportResources.GetReportAsCSV method" Url="html/M_Smartsheet_Api_ReportResources_GetReportAsCSV.htm" />
   <HelpKINode Title="ReportResources.GetReportAsExcel method" Url="html/M_Smartsheet_Api_ReportResources_GetReportAsExcel.htm" />
   <HelpKINode Title="ReportResources.ListReports method" Url="html/M_Smartsheet_Api_ReportResources_ListReports.htm" />
@@ -2675,7 +2704,8 @@
     <HelpKINode Title="RequestResult(T).ResultCode Property " Url="html/P_Smartsheet_Api_Models_RequestResult_1_ResultCode.htm" />
   </HelpKINode>
   <HelpKINode Title="Results property" Url="html/P_Smartsheet_Api_Models_SearchResult_Results.htm" />
-  <HelpKINode Title="RevokeAccessToken method" Url="html/M_Smartsheet_Api_TokenResources_RevokeAccessToken.htm" />
+  <HelpKINode Title="RevokeAccessToken method" Url="html/Overload_Smartsheet_Api_TokenResources_RevokeAccessToken.htm" />
+  <HelpKINode Title="RevokeAllForApiClient method" Url="html/M_Smartsheet_Api_OAuth_OAuthFlow_RevokeAllForApiClient.htm" />
   <HelpKINode Title="RevokeToken method" Url="html/M_Smartsheet_Api_OAuth_OAuthFlow_RevokeToken.htm" />
   <HelpKINode Title="RICHTEXT enumeration member" Url="html/T_Smartsheet_Api_Models_WidgetType.htm" />
   <HelpKINode Title="Role property" Url="html/P_Smartsheet_Api_Models_UserModel_Role.htm" />
@@ -2757,7 +2787,7 @@
     <HelpKINode Title="methods" Url="html/Methods_T_Smartsheet_Api_RowColumnResources.htm" />
   </HelpKINode>
   <HelpKINode Title="RowColumnResources.AddImageToCell method" Url="html/Overload_Smartsheet_Api_RowColumnResources_AddImageToCell.htm" />
-  <HelpKINode Title="RowColumnResources.GetCellHistory method" Url="html/M_Smartsheet_Api_RowColumnResources_GetCellHistory.htm" />
+  <HelpKINode Title="RowColumnResources.GetCellHistory method" Url="html/Overload_Smartsheet_Api_RowColumnResources_GetCellHistory.htm" />
   <HelpKINode Title="RowDiscussionResources interface">
     <HelpKINode Title="RowDiscussionResources Interface" Url="html/T_Smartsheet_Api_RowDiscussionResources.htm" />
     <HelpKINode Title="about RowDiscussionResources interface" Url="html/T_Smartsheet_Api_RowDiscussionResources.htm" />
@@ -3534,7 +3564,7 @@
   <HelpKINode Title="SheetResources.SendSheet method" Url="html/M_Smartsheet_Api_SheetResources_SendSheet.htm" />
   <HelpKINode Title="SheetResources.SendUpdateRequest method" Url="html/M_Smartsheet_Api_SheetResources_SendUpdateRequest.htm" />
   <HelpKINode Title="SheetResources.ShareResources property" Url="html/P_Smartsheet_Api_SheetResources_ShareResources.htm" />
-  <HelpKINode Title="SheetResources.SortSheet method" Url="html/M_Smartsheet_Api_SheetResources_SortSheet.htm" />
+  <HelpKINode Title="SheetResources.SortSheet method" Url="html/Overload_Smartsheet_Api_SheetResources_SortSheet.htm" />
   <HelpKINode Title="SheetResources.UpdatePublishStatus method" Url="html/M_Smartsheet_Api_SheetResources_UpdatePublishStatus.htm" />
   <HelpKINode Title="SheetResources.UpdateRequestResources property" Url="html/P_Smartsheet_Api_SheetResources_UpdateRequestResources.htm" />
   <HelpKINode Title="SheetResources.UpdateSheet method" Url="html/M_Smartsheet_Api_SheetResources_UpdateSheet.htm" />
@@ -3662,7 +3692,7 @@
   <HelpKINode Title="SightResources.CopySight method" Url="html/M_Smartsheet_Api_SightResources_CopySight.htm" />
   <HelpKINode Title="SightResources.DeleteSight method" Url="html/M_Smartsheet_Api_SightResources_DeleteSight.htm" />
   <HelpKINode Title="SightResources.GetPublishStatus method" Url="html/M_Smartsheet_Api_SightResources_GetPublishStatus.htm" />
-  <HelpKINode Title="SightResources.GetSight method" Url="html/M_Smartsheet_Api_SightResources_GetSight.htm" />
+  <HelpKINode Title="SightResources.GetSight method" Url="html/Overload_Smartsheet_Api_SightResources_GetSight.htm" />
   <HelpKINode Title="SightResources.ListSights method" Url="html/M_Smartsheet_Api_SightResources_ListSights.htm" />
   <HelpKINode Title="SightResources.MoveSight method" Url="html/M_Smartsheet_Api_SightResources_MoveSight.htm" />
   <HelpKINode Title="SightResources.SetPublishStatus method" Url="html/M_Smartsheet_Api_SightResources_SetPublishStatus.htm" />
@@ -3739,6 +3769,7 @@
   <HelpKINode Title="Smartsheet.Api.Models.Comment class" Url="html/T_Smartsheet_Api_Models_Comment.htm" />
   <HelpKINode Title="Smartsheet.Api.Models.Comment.AddCommentBuilder class" Url="html/T_Smartsheet_Api_Models_Comment_AddCommentBuilder.htm" />
   <HelpKINode Title="Smartsheet.Api.Models.Contact class" Url="html/T_Smartsheet_Api_Models_Contact.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.ContactObjectValue class" Url="html/T_Smartsheet_Api_Models_ContactObjectValue.htm" />
   <HelpKINode Title="Smartsheet.Api.Models.ContainerDestination class" Url="html/T_Smartsheet_Api_Models_ContainerDestination.htm" />
   <HelpKINode Title="Smartsheet.Api.Models.CopyOrMoveRowDestination class" Url="html/T_Smartsheet_Api_Models_CopyOrMoveRowDestination.htm" />
   <HelpKINode Title="Smartsheet.Api.Models.CopyOrMoveRowDirective class" Url="html/T_Smartsheet_Api_Models_CopyOrMoveRowDirective.htm" />
@@ -4017,7 +4048,7 @@
   <HelpKINode Title="SortCriterion.Direction property" Url="html/P_Smartsheet_Api_Models_SortCriterion_Direction.htm" />
   <HelpKINode Title="SortCriterion.SortCriterion constructor" Url="html/M_Smartsheet_Api_Models_SortCriterion__ctor.htm" />
   <HelpKINode Title="SortDirection enumeration" Url="html/T_Smartsheet_Api_Models_SortDirection.htm" />
-  <HelpKINode Title="SortSheet method" Url="html/M_Smartsheet_Api_SheetResources_SortSheet.htm" />
+  <HelpKINode Title="SortSheet method" Url="html/Overload_Smartsheet_Api_SheetResources_SortSheet.htm" />
   <HelpKINode Title="SortSpecifier class">
     <HelpKINode Title="SortSpecifier Class" Url="html/T_Smartsheet_Api_Models_SortSpecifier.htm" />
     <HelpKINode Title="about SortSpecifier class" Url="html/T_Smartsheet_Api_Models_SortSpecifier.htm" />
@@ -4174,7 +4205,7 @@
   <HelpKINode Title="TokenResources property" Url="html/P_Smartsheet_Api_SmartsheetClient_TokenResources.htm" />
   <HelpKINode Title="TokenResources.GetAccessToken method" Url="html/M_Smartsheet_Api_TokenResources_GetAccessToken.htm" />
   <HelpKINode Title="TokenResources.RefreshAccessToken method" Url="html/M_Smartsheet_Api_TokenResources_RefreshAccessToken.htm" />
-  <HelpKINode Title="TokenResources.RevokeAccessToken method" Url="html/M_Smartsheet_Api_TokenResources_RevokeAccessToken.htm" />
+  <HelpKINode Title="TokenResources.RevokeAccessToken method" Url="html/Overload_Smartsheet_Api_TokenResources_RevokeAccessToken.htm" />
   <HelpKINode Title="TokenType property" Url="html/P_Smartsheet_Api_OAuth_Token_TokenType.htm" />
   <HelpKINode Title="TokenURL property" Url="html/P_Smartsheet_Api_OAuth_OAuthFlowBuilder_TokenURL.htm" />
   <HelpKINode Title="ToQueryString method" Url="html/M_Smartsheet_Api_Models_PaginationParameters_ToQueryString.htm" />
@@ -4285,6 +4316,7 @@
     <HelpKINode Title="Attachment.Url Property " Url="html/P_Smartsheet_Api_Models_Attachment_Url.htm" />
     <HelpKINode Title="Hyperlink.Url Property " Url="html/P_Smartsheet_Api_Models_Hyperlink_Url.htm" />
     <HelpKINode Title="ImageUrl.Url Property " Url="html/P_Smartsheet_Api_Models_ImageUrl_Url.htm" />
+    <HelpKINode Title="WidgetContent.Url Property " Url="html/P_Smartsheet_Api_Models_WidgetContent_Url.htm" />
   </HelpKINode>
   <HelpKINode Title="UrlExpiresInMillis property">
     <HelpKINode Title="Attachment.UrlExpiresInMillis Property " Url="html/P_Smartsheet_Api_Models_Attachment_UrlExpiresInMillis.htm" />
@@ -4420,6 +4452,7 @@
   <HelpKINode Title="Version property">
     <HelpKINode Title="AbstractRow(TColumn, TCell).Version Property " Url="html/P_Smartsheet_Api_Models_AbstractRow_2_Version.htm" />
     <HelpKINode Title="AbstractSheet(TRow, TColumn, TCell).Version Property " Url="html/P_Smartsheet_Api_Models_AbstractSheet_3_Version.htm" />
+    <HelpKINode Title="Column.Version Property " Url="html/P_Smartsheet_Api_Models_Column_Version.htm" />
     <HelpKINode Title="RequestResult(T).Version Property " Url="html/P_Smartsheet_Api_Models_RequestResult_1_Version.htm" />
     <HelpKINode Title="SheetFilter.Version Property " Url="html/P_Smartsheet_Api_Models_SheetFilter_Version.htm" />
     <HelpKINode Title="Webhook.Version Property " Url="html/P_Smartsheet_Api_Models_Webhook_Version.htm" />
@@ -4431,6 +4464,7 @@
   <HelpKINode Title="VirtualColumnId property" Url="html/P_Smartsheet_Api_Models_ReportCell_VirtualColumnId.htm" />
   <HelpKINode Title="VirtualId property" Url="html/P_Smartsheet_Api_Models_ReportColumn_VirtualId.htm" />
   <HelpKINode Title="WEATHER enumeration member" Url="html/T_Smartsheet_Api_Models_Symbol.htm" />
+  <HelpKINode Title="WEBCONTENT enumeration member" Url="html/T_Smartsheet_Api_Models_WidgetType.htm" />
   <HelpKINode Title="Webhook class">
     <HelpKINode Title="Webhook Class" Url="html/T_Smartsheet_Api_Models_Webhook.htm" />
     <HelpKINode Title="about Webhook class" Url="html/T_Smartsheet_Api_Models_Webhook.htm" />
@@ -4530,6 +4564,7 @@
   <HelpKINode Title="WidgetContent.PrivateId property" Url="html/P_Smartsheet_Api_Models_WidgetContent_PrivateId.htm" />
   <HelpKINode Title="WidgetContent.Series property" Url="html/P_Smartsheet_Api_Models_WidgetContent_Series.htm" />
   <HelpKINode Title="WidgetContent.ShortcutData property" Url="html/P_Smartsheet_Api_Models_WidgetContent_ShortcutData.htm" />
+  <HelpKINode Title="WidgetContent.Url property" Url="html/P_Smartsheet_Api_Models_WidgetContent_Url.htm" />
   <HelpKINode Title="WidgetContent.WidgetContent constructor" Url="html/M_Smartsheet_Api_Models_WidgetContent__ctor.htm" />
   <HelpKINode Title="WidgetContent.Width property" Url="html/P_Smartsheet_Api_Models_WidgetContent_Width.htm" />
   <HelpKINode Title="Widgets property" Url="html/P_Smartsheet_Api_Models_Sight_Widgets.htm" />
@@ -4555,7 +4590,10 @@
     <HelpKINode Title="SearchObjectType Enumeration" Url="html/T_Smartsheet_Api_Models_SearchObjectType.htm" />
   </HelpKINode>
   <HelpKINode Title="Workspace field" Url="html/F_Smartsheet_Api_Models_ShareScope_Workspace.htm" />
-  <HelpKINode Title="Workspace property" Url="html/P_Smartsheet_Api_Models_Sight_Workspace.htm" />
+  <HelpKINode Title="Workspace property">
+    <HelpKINode Title="AbstractSheet(TRow, TColumn, TCell).Workspace Property " Url="html/P_Smartsheet_Api_Models_AbstractSheet_3_Workspace.htm" />
+    <HelpKINode Title="Sight.Workspace Property " Url="html/P_Smartsheet_Api_Models_Sight_Workspace.htm" />
+  </HelpKINode>
   <HelpKINode Title="Workspace.AccessLevel property" Url="html/P_Smartsheet_Api_Models_Workspace_AccessLevel.htm" />
   <HelpKINode Title="Workspace.CreateWorkspaceBuilder class">
     <HelpKINode Title="Workspace.CreateWorkspaceBuilder Class" Url="html/T_Smartsheet_Api_Models_Workspace_CreateWorkspaceBuilder.htm" />
@@ -4610,8 +4648,8 @@
   <HelpKINode Title="WorkspaceSheetResources.ImportXlsSheet method" Url="html/M_Smartsheet_Api_WorkspaceSheetResources_ImportXlsSheet.htm" />
   <HelpKINode Title="WORKSPACE_NAMES enumeration member" Url="html/T_Smartsheet_Api_Models_SearchScope.htm" />
   <HelpKINode Title="WRITE_SHEETS enumeration member">
-    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_OAuth_AccessScope.htm" />
     <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_Models_AccessScope.htm" />
+    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_OAuth_AccessScope.htm" />
   </HelpKINode>
   <HelpKINode Title="XPosition property" Url="html/P_Smartsheet_Api_Models_Widget_XPosition.htm" />
   <HelpKINode Title="YEARLY enumeration member" Url="html/T_Smartsheet_Api_Models_ScheduleType.htm" />

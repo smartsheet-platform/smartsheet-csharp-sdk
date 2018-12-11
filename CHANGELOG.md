@@ -6,6 +6,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2.4.0] - 2018-11-28
+### Added
+- WebContent as a valid widget type for Sights
+- Missing Workspace item to Sheet model
+- Support for Multi-Assign feature
+- deleteAllForApiClient parameter to OAuth revoke
+
+### Changed
+- ProjectSettings nonWorkingDays should be a string (modified from DateTime)
+
 ## [2.3.0] - 2018-04-18
 ### Added
 - [Automation rules](http://smartsheet-platform.github.io/api-docs/?shell#automation-rules)
