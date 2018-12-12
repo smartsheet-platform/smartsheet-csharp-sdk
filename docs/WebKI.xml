@@ -171,8 +171,8 @@
     <HelpKINode Title="Workspace.AccessLevel Property " Url="html/P_Smartsheet_Api_Models_Workspace_AccessLevel.htm" />
   </HelpKINode>
   <HelpKINode Title="AccessScope enumeration">
-    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_Models_AccessScope.htm" />
     <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_OAuth_AccessScope.htm" />
+    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_Models_AccessScope.htm" />
   </HelpKINode>
   <HelpKINode Title="AccessToken property">
     <HelpKINode Title="SmartsheetBuilder.AccessToken Property " Url="html/P_Smartsheet_Api_SmartsheetBuilder_AccessToken.htm" />
@@ -235,8 +235,8 @@
     <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_OAuth_AccessScope.htm" />
   </HelpKINode>
   <HelpKINode Title="ADMIN_USERS enumeration member">
-    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_OAuth_AccessScope.htm" />
     <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_Models_AccessScope.htm" />
+    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_OAuth_AccessScope.htm" />
   </HelpKINode>
   <HelpKINode Title="ADMIN_WORKSPACES enumeration member">
     <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_Models_AccessScope.htm" />
@@ -1081,8 +1081,8 @@
   <HelpKINode Title="DeleteWebhook method" Url="html/M_Smartsheet_Api_WebhookResources_DeleteWebhook.htm" />
   <HelpKINode Title="DeleteWorkspace method" Url="html/M_Smartsheet_Api_WorkspaceResources_DeleteWorkspace.htm" />
   <HelpKINode Title="DELETE_SHEETS enumeration member">
-    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_OAuth_AccessScope.htm" />
     <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_Models_AccessScope.htm" />
+    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_OAuth_AccessScope.htm" />
   </HelpKINode>
   <HelpKINode Title="DELETE_SIGHTS enumeration member" Url="html/T_Smartsheet_Api_OAuth_AccessScope.htm" />
   <HelpKINode Title="Department property" Url="html/P_Smartsheet_Api_Models_UserModel_Department.htm" />
@@ -1543,11 +1543,11 @@
   <HelpKINode Title="GetDescription method" Url="html/M_Smartsheet_Api_Models_Group_UpdateGroupBuilder_GetDescription.htm" />
   <HelpKINode Title="getDescription method" Url="html/M_Smartsheet_Api_Models_Group_CreateGroupBuilder_getDescription.htm" />
   <HelpKINode Title="GetDiscussion method" Url="html/M_Smartsheet_Api_SheetDiscussionResources_GetDiscussion.htm" />
-  <HelpKINode Title="getEmail method" Url="html/M_Smartsheet_Api_Models_GroupMember_AddGroupMemberBuilder_getEmail.htm" />
   <HelpKINode Title="GetEmail method">
-    <HelpKINode Title="AlternateEmail.AlternateEmailBuilder.GetEmail Method " Url="html/M_Smartsheet_Api_Models_AlternateEmail_AlternateEmailBuilder_GetEmail.htm" />
     <HelpKINode Title="Share.CreateShareBuilder.GetEmail Method " Url="html/M_Smartsheet_Api_Models_Share_CreateShareBuilder_GetEmail.htm" />
+    <HelpKINode Title="AlternateEmail.AlternateEmailBuilder.GetEmail Method " Url="html/M_Smartsheet_Api_Models_AlternateEmail_AlternateEmailBuilder_GetEmail.htm" />
   </HelpKINode>
+  <HelpKINode Title="getEmail method" Url="html/M_Smartsheet_Api_Models_GroupMember_AddGroupMemberBuilder_getEmail.htm" />
   <HelpKINode Title="GetEmailAddress method" Url="html/M_Smartsheet_Api_Models_User_AddUserBuilder_GetEmailAddress.htm" />
   <HelpKINode Title="GetExpanded method">
     <HelpKINode Title="Row.AddRowBuilder.GetExpanded Method " Url="html/M_Smartsheet_Api_Models_Row_AddRowBuilder_GetExpanded.htm" />
@@ -2560,8 +2560,8 @@
   <HelpKINode Title="ReadWriteUrl property" Url="html/P_Smartsheet_Api_Models_SheetPublish_ReadWriteUrl.htm" />
   <HelpKINode Title="READ_CONTACTS enumeration member" Url="html/T_Smartsheet_Api_OAuth_AccessScope.htm" />
   <HelpKINode Title="READ_SHEETS enumeration member">
-    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_OAuth_AccessScope.htm" />
     <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_Models_AccessScope.htm" />
+    <HelpKINode Title="AccessScope Enumeration" Url="html/T_Smartsheet_Api_OAuth_AccessScope.htm" />
   </HelpKINode>
   <HelpKINode Title="READ_SIGHTS enumeration member" Url="html/T_Smartsheet_Api_OAuth_AccessScope.htm" />
   <HelpKINode Title="READ_USERS enumeration member" Url="html/T_Smartsheet_Api_OAuth_AccessScope.htm" />
@@ -3041,11 +3041,11 @@
     <HelpKINode Title="Column.UpdateColumnBuilder.SetAutoNumberFormat Method " Url="html/M_Smartsheet_Api_Models_Column_UpdateColumnBuilder_SetAutoNumberFormat.htm" />
   </HelpKINode>
   <HelpKINode Title="SetBaseURI method" Url="html/M_Smartsheet_Api_SmartsheetBuilder_SetBaseURI.htm" />
+  <HelpKINode Title="SetCCMe method" Url="html/M_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder_SetCCMe.htm" />
   <HelpKINode Title="SetCcMe method">
     <HelpKINode Title="Share.CreateShareBuilder.SetCcMe Method " Url="html/M_Smartsheet_Api_Models_Share_CreateShareBuilder_SetCcMe.htm" />
     <HelpKINode Title="SheetEmail.CreateSheetEmail.SetCcMe Method " Url="html/M_Smartsheet_Api_Models_SheetEmail_CreateSheetEmail_SetCcMe.htm" />
   </HelpKINode>
-  <HelpKINode Title="SetCCMe method" Url="html/M_Smartsheet_Api_Models_MultiShare_ShareToManyBuilder_SetCCMe.htm" />
   <HelpKINode Title="SetCells method">
     <HelpKINode Title="Row.AddRowBuilder.SetCells Method " Url="html/M_Smartsheet_Api_Models_Row_AddRowBuilder_SetCells.htm" />
     <HelpKINode Title="Row.UpdateRowBuilder.SetCells Method " Url="html/M_Smartsheet_Api_Models_Row_UpdateRowBuilder_SetCells.htm" />
