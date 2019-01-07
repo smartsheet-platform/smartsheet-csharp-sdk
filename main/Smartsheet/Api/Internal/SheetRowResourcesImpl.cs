@@ -154,7 +154,16 @@ namespace Smartsheet.Api.Internal
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
         public virtual Row GetRow(long sheetId, long rowId, IEnumerable<RowInclusion> include, IEnumerable<RowExclusion> exclude)
         {
-            return this.GetResource<Row>("sheets/" + sheetId + "/rows/" + rowId, typeof(Row));
+            Dictionary<string, string> parameters = new Dictionary<string, string>();
+            if (include != null)
+            {
+                parameters.Add("include", QueryUtil.GenerateCommaSeparatedList(include));
+            }
+            if (exclude != null)
+            {
+                parameters.Add("exclude", QueryUtil.GenerateCommaSeparatedList(exclude));
+            }
+            return this.GetResource<Row>("sheets/" + sheetId + "/rows/" + rowId + QueryUtil.GenerateUrl(null, parameters), typeof(Row));
         }
 
         /// <summary>
