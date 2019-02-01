@@ -210,11 +210,11 @@ namespace sdk_csharp_sample
     }
 }
 ```
-## Working With SmartsheetGov.com Accounts
+## Working With Smartsheetgov.com Accounts
 
-If you need to access SmartsheetGov you will need to specify the SmartsheetGov API URI as the base URI during creation of the Smartsheet client object. SmartsheetGov uses a base URI of https://api.smartsheetgov.com/2.0/. The base URI is defined as a constant in the SmartsheetBuilder class (i.e. `SmartsheetBuilder.GOV_BASE_URI`).
+If you need to access Smartsheetgov you will need to specify the Smartsheetgov API URI as the base URI during creation of the Smartsheet client object. SmartsheetGov uses a base URI of https://api.smartsheetgov.com/2.0/. The base URI is defined as a constant in the SmartsheetBuilder class (i.e. `SmartsheetBuilder.GOV_BASE_URI`).
 
-Invoke the SmartsheetBuilder with the base URI pointing to SmartsheetGov:
+Invoke the SmartsheetBuilder with the base URI pointing to Smartsheetgov:
 
 ```csharp
 using Smartsheet.Api;
