@@ -91,7 +91,7 @@ namespace Smartsheet.Api
         public const string DEFAULT_BASE_URI = "https://api.smartsheet.com/2.0/";
 
         /// <summary>
-        /// <para>Represents the base URI of the SmartsheetGov REST API.</para>
+        /// <para>Represents the base URI of the Smartsheetgov REST API.</para>
         /// 
         /// <para>It is a constant with Value "https://api.smartsheetgov.com/2.0".</para>
         /// </summary>
