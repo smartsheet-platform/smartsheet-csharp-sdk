@@ -16,6 +16,8 @@
 //    limitations under the License.
 //    %[license]
 
+using System.Collections.Generic;
+
 namespace Smartsheet.Api.Models
 {
     /// <summary>
@@ -28,6 +30,11 @@ namespace Smartsheet.Api.Models
         /// </summary>
         private Account account;
 
+        /// <summary>
+        /// groups this user belongs to
+        /// </summary>
+        private IList<Group> groups;
+        
         /// <summary>
         /// the user's locale
         /// </summary>
@@ -45,6 +52,15 @@ namespace Smartsheet.Api.Models
         {
             get { return account; }
             set { account = value; }
+        }
+
+        /// <summary>
+        /// List of groups this user belongs to
+        /// </summary>
+        public IList<Group> Groups
+        {
+            get { return groups; }
+            set { groups = value; }
         }
 
         /// <summary>

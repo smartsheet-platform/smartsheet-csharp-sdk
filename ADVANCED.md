@@ -210,3 +210,50 @@ namespace sdk_csharp_sample
     }
 }
 ```
+## Working With SmartsheetGov.com Accounts
+
+If you need to access SmartsheetGov you will need to specify the SmartsheetGov API URI as the base URI during creation of the Smartsheet client object. SmartsheetGov uses a base URI of https://api.smartsheetgov.com/2.0/. The base URI is defined as a constant in the SmartsheetBuilder class (i.e. `SmartsheetBuilder.GOV_BASE_URI`).
+
+Invoke the SmartsheetBuilder with the base URI pointing to SmartsheetGov:
+
+```csharp
+using Smartsheet.Api;
+using Smartsheet.Api.Models;
+
+static void Sample()
+{
+    // Initialize client
+    SmartsheetClient ss = new SmartsheetBuilder()
+        .SetBaseURI(SmartsheetBuilder.GOV_BASE_URI)
+        // TODO: Set your API access in environment variable SMARTSHEET_ACCESS_TOKEN or else here
+        // .SetAccessToken("ll352u9jujauoqz4gstvsae05")
+        .Build();
+
+    // List all sheets
+    PaginatedResult<Sheet> sheets = ss.SheetResources.ListSheets(
+        null,               // IEnumerable<SheetInclusion> includes
+        null,               // PaginationParameters
+        null                // Nullable<DateTime> modifiedSince = null
+    );
+    Console.WriteLine("Found " + sheets.TotalCount + " sheets");
+
+    long sheetId = (long) sheets.Data[0].Id;                // Default to first sheet
+
+    // sheetId = 567034672138842;                         // TODO: Uncomment if you wish to read a specific sheet
+
+    Console.WriteLine("Loading sheet id: " + sheetId);
+
+    // Load the entire sheet
+    var sheet = ss.SheetResources.GetSheet(
+        5670346721388420,           // long sheetId
+        null,                       // IEnumerable<SheetLevelInclusion> includes
+        null,                       // IEnumerable<SheetLevelExclusion> excludes
+        null,                       // IEnumerable<long> rowIds
+        null,                       // IEnumerable<int> rowNumbers
+        null,                       // IEnumerable<long> columnIds
+        null,                       // Nullable<long> pageSize
+        null                        // Nullable<long> page
+    );
+    Console.WriteLine("Loaded " + sheet.Rows.Count + " rows from sheet: " + sheet.Name);
+}
+```

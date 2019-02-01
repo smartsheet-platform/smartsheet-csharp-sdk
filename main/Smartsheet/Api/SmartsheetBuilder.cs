@@ -84,11 +84,18 @@ namespace Smartsheet.Api
         private string changeAgent;
 
         /// <summary>
-        /// <para>Represents the default base URI of the SmartsheetClient REST API.</para>
+        /// <para>Represents the default base URI of the Smartsheet REST API.</para>
         /// 
-        /// <para>It is a constant with Value "https://Api.SmartsheetClient.com/2.0".</para>
+        /// <para>It is a constant with Value "https://api.smartsheet.com/2.0".</para>
         /// </summary>
         public const string DEFAULT_BASE_URI = "https://api.smartsheet.com/2.0/";
+
+        /// <summary>
+        /// <para>Represents the base URI of the SmartsheetGov REST API.</para>
+        /// 
+        /// <para>It is a constant with Value "https://api.smartsheetgov.com/2.0".</para>
+        /// </summary>
+        public const string GOV_BASE_URI = "https://api.smartsheetgov.com/2.0/";
 
         /// <summary>
         /// Constructor.
