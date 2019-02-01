@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2.6.0] - 2019-1-31
+### Added
+- Added group inclusion to GetCurrentUser
+- Added BASE URI definition for SmartsheetGov
+
+### Fixed
+- Fixed GetRow to process include and exclude parameters
+
 ## [2.5.0] - 2018-12-11
 ### Added
 - Added opt-in for TLS 1.2. TLS 1.0 will be disabled soon for Smartsheet API.
