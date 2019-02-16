@@ -100,6 +100,16 @@ The generated SDK class documentation is here: [http://smartsheet-platform.githu
 ## Contributing
 If you would like to contribute a change to the SDK, please fork a branch and then submit a pull request. [More info here.](https://help.github.com/articles/using-pull-requests)
 
+### Development Environment
+The SDK has been successfully developed on both Visual Studio 2015 and 2017 (Community Edition), on Windows 10 devices.
+
+The documentation requires the [Sandcastle Help File Builder](https://github.com/EWSoftware/SHFB/releases) and its Visual Studio extension to build; these dependencies should be optional, and Visual Studio will merely warn you and leave the documentation project unloaded if you don't have it installed.
+
+### Testing
+The project `TestSDKMockAPI` contains tests that execute against the [Mock API](https://github.com/smartsheet-platform/smartsheet-sdk-tests).
+
+The project `IntegrationTestSDK` contains tests that execute against the live API, using the credentials found in your environment. _Running these tests will make changes to the Smartsheet account running the tests_.
+
 ## Support
 If you have any questions or issues with this SDK please post on [StackOverflow using the tag "smartsheet-api"](http://stackoverflow.com/questions/tagged/smartsheet-api) or contact us directly at api@smartsheet.com.
 
