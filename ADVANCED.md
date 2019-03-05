@@ -103,7 +103,7 @@ Invoke the SmartsheetBuilder with a custom HttpClient:
 
 ```csharp
 // Initialize client
-SmartsheetClient ss = new SmartsheetBuilder()
+SmartsheetClient smartsheet = new SmartsheetBuilder()
     .SetHttpClient(new ProxyHttpClient("localhost", 8888))
     .Build();
 ``` 
@@ -131,7 +131,7 @@ The following example shows how to override the default retry/timeout logic.
 Invoke the SmartsheetBuilder with a custom HttpClient:
 ```csharp
 // Initialize client
-SmartsheetClient ss = new SmartsheetBuilder()
+SmartsheetClient smartsheet = new SmartsheetBuilder()
     .SetHttpClient(new RetryHttpClient())
     .Build();
 ```
@@ -223,14 +223,14 @@ using Smartsheet.Api.Models;
 static void Sample()
 {
     // Initialize client
-    SmartsheetClient ss = new SmartsheetBuilder()
+    SmartsheetClient smartsheet = new SmartsheetBuilder()
         .SetBaseURI(SmartsheetBuilder.GOV_BASE_URI)
         // TODO: Set your API access in environment variable SMARTSHEET_ACCESS_TOKEN or else here
         // .SetAccessToken("ll352u9jujauoqz4gstvsae05")
         .Build();
 
     // List all sheets
-    PaginatedResult<Sheet> sheets = ss.SheetResources.ListSheets(
+    PaginatedResult<Sheet> sheets = smartsheet.SheetResources.ListSheets(
         null,               // IEnumerable<SheetInclusion> includes
         null,               // PaginationParameters
         null                // Nullable<DateTime> modifiedSince = null
@@ -244,7 +244,7 @@ static void Sample()
     Console.WriteLine("Loading sheet id: " + sheetId);
 
     // Load the entire sheet
-    var sheet = ss.SheetResources.GetSheet(
+    var sheet = smartsheet.SheetResources.GetSheet(
         5670346721388420,           // long sheetId
         null,                       // IEnumerable<SheetLevelInclusion> includes
         null,                       // IEnumerable<SheetLevelExclusion> excludes
