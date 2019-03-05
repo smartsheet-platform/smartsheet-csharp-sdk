@@ -131,7 +131,7 @@ The following example shows how to override the default retry/timeout logic.
 Invoke the SmartsheetBuilder with a custom HttpClient:
 ```csharp
 // Initialize client
-SmartsheetClient smartsheedt = new SmartsheetBuilder()
+SmartsheetClient smartsheet = new SmartsheetBuilder()
     .SetHttpClient(new RetryHttpClient())
     .Build();
 ```
