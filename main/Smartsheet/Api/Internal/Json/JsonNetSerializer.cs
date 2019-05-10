@@ -340,6 +340,20 @@ namespace Smartsheet.Api.Internal.Json
             return result;
         }
 
+        /// <summary>
+        /// De-serialize a CopyOrMoveRowResult object from JSON.
+        /// 
+        /// Parameters: 
+        ///     - inputStream : the input stream from which the JSON will be read
+        /// 
+        /// Returns: the de-serialized CopyOrMoveRowResult
+        /// 
+        /// Exceptions: - IllegalArgumentException : if any argument is null - JSONSerializationException : if there is any
+        /// other error occurred during the operation
+        /// </summary>
+        /// <param name="inputStream"> the input stream </param>
+        /// <returns> the CopyOrMoveRowResult </returns>
+        /// <exception cref="JsonSerializationException"> the JSON serializer exception </exception>
         public virtual CopyOrMoveRowResult DeserializeRowResult(StreamReader inputStream)
         {
             Utils.ThrowIfNull(inputStream);
@@ -362,6 +376,39 @@ namespace Smartsheet.Api.Internal.Json
             return result;
         }
 
-    }
+        /// <summary>
+        /// De-serialize to a EventResult (holds pagination info) object from JSON.
+        /// 
+        /// Parameters:
+        ///     - inputStream : the input stream from which the JSON will be read
+        /// 
+        /// Returns: the de-serialized EventResult
+        /// 
+        /// Exceptions: - IllegalArgumentException : if any argument is null - JSONSerializationException : if there is any
+        /// other error occurred during the operation
+        /// </summary>
+        /// <param name="inputStream"> the input stream </param>
+        /// <returns> the EventResult containing a list of Event </returns>
+        /// <exception cref="JsonSerializationException"> the JSON serializer exception </exception>
+        public virtual EventResult DeserializeEventResult(StreamReader inputStream)
+        {
+            Utils.ThrowIfNull(inputStream);
 
+            EventResult result = null;
+            try
+            {
+                result = serializer.Deserialize<EventResult>(new Newtonsoft.Json.JsonTextReader(inputStream));
+            }
+            catch (Newtonsoft.Json.JsonException ex)
+            {
+                throw new JsonSerializationException(ex);
+            }
+            catch (IOException ex)
+            {
+                throw new JsonSerializationException(ex);
+            }
+
+            return result;
+        }
+    }
 }

@@ -153,5 +153,11 @@ namespace Smartsheet.Api
         /// </summary>
         /// <returns> the passthrough resources instance </returns>
         PassthroughResources PassthroughResources { get; }
+
+        /// <summary>
+        /// <para>Returns the EventResources instance that provides access to event resources.</para>
+        /// </summary>
+        /// <returns> the event resources instance </returns>
+        EventResources EventResources { get; }
     }
 }
