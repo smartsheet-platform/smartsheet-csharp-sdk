@@ -260,7 +260,6 @@ class Program
     {
         // Initialize client
         SmartsheetClient smartsheet = new SmartsheetBuilder()
-            // .SetAccessToken("feo3t736fc2lpansdevs4a1as")       // TODO: Set your API access in environment variable SMARTSHEET_ACCESS_TOKEN or else here
             .SetHttpClient(new RetryHttpClient())
             .Build();
 
