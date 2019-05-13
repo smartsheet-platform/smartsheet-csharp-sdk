@@ -259,9 +259,7 @@ class Program
     static void Main(string[] args)
     {
         // Initialize client
-        SmartsheetClient smartsheet = new SmartsheetBuilder()
-            .SetHttpClient(new RetryHttpClient())
-            .Build();
+        SmartsheetClient smartsheet = new SmartsheetBuilder().Build();
 
         // begin listing events in the stream starting with the `since` parameter
         DateTime lastWeek = DateTime.Today.AddDays(-7);
