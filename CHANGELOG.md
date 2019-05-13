@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2.68.0] - 2019-5-13
+### Added
+- Implement Event Reporting
+
 ## [2.6.0] - 2019-1-31
 ### Added
 - Added group inclusion to GetCurrentUser

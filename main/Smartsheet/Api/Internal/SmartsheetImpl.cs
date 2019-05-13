@@ -242,6 +242,15 @@ namespace Smartsheet.Api.Internal
         private PassthroughResources passthrough;
 
         /// <summary>
+        /// Represents the AtomicReference for event resources.
+        /// 
+        /// It will be initialized in the constructor and will not change afterwards. The underlying value will be initially set
+        /// as null, and can be set via corresponding setter, therefore effectively the assumed user can be updated in the
+        /// SmartsheetImpl in thread safe manner.
+        /// </summary>
+        private EventResources events;
+
+        /// <summary>
         /// static logger 
         /// </summary>
         private static Logger logger = LogManager.GetCurrentClassLogger();
@@ -578,6 +587,19 @@ namespace Smartsheet.Api.Internal
             {
                 Interlocked.CompareExchange<PassthroughResources>(ref passthrough, new PassthroughResourcesImpl(this), null);
                 return passthrough;
+            }
+        }
+
+        /// <summary>
+        /// Returns the EventResources instance that provides access to event resources.
+        /// </summary>
+        /// <returns> the event resources </returns>
+        public virtual EventResources EventResources
+        {
+            get
+            {
+                Interlocked.CompareExchange<EventResources>(ref events, new EventResourcesImpl(this), null);
+                return events;
             }
         }
 

@@ -210,6 +210,74 @@ namespace sdk_csharp_sample
     }
 }
 ```
+
+## Event Reporting
+The following sample demonstrates best practices for consuming the event stream from the Smartsheet Event Reporting
+feature.
+
+The sample uses the `smartsheet.EventResources.ListEvents` method to request a list of events from the stream. The
+first request sets the `since` parameter with the point in time (i.e. event occurrence datetime) in the stream from 
+which to start consuming events. The `since` parameter can be set with a datetime value that is either formatted as 
+ISO 8601 (e.g. 2010-01-01T00:00:00Z) or as UNIX epoch (in which case the `numericDates` parameter must also be set to 
+`true`. By default the `numericDates` parameter is set to `false`).
+
+To consume the next list of events after the initial list of events is returned, set the `streamPosition` parameter 
+with the `NextStreamPosition` property obtained from the previous request and don't set the `since` parameter with 
+any values. This is because when using the `ListEvents` method, either the `since` parameter or the `streamPosition`
+parameter should be set, but never both.
+
+Note that the `MoreAvailable` property in a response indicates whether more events are immediately available for
+consumption. If events are not immediately available, they may still be generating so subsequent requests should keep
+using the same `NextStreamPosition` value until the next list of events is retrieved.
+
+Many events have additional information available as part of the event. That information can be accessed using the 
+Dictionary stored in the `AdditionalDetails` property. Information about the additional details provided can be found
+[here.](https://smartsheet-platform.github.io/event-reporting-docs/)
+
+```csharp
+class Program
+{
+    // this example is looking specifically for new sheet events
+    private static void PrintNewSheetEventsInList(IList<Event> events)
+    {
+        //  enumerate all events in the list of returned events
+        foreach (Event _event in events)
+        {
+            // find all created sheets
+            if (_event.ObjectType == EventObjectType.SHEET && _event.Action == EventAction.CREATE)
+            {
+                // additional details are available for some events, they can be accessed as a Dictionary
+                // in the AdditionalDetails property
+                if (_event.AdditionalDetails.ContainsKey("sheetName"))
+                {
+                    Console.WriteLine(_event.AdditionalDetails["sheetName"]);
+                }
+            }
+        }
+    }
+
+    static void Main(string[] args)
+    {
+        // Initialize client
+        SmartsheetClient smartsheet = new SmartsheetBuilder().Build();
+
+        // begin listing events in the stream starting with the `since` parameter
+        DateTime lastWeek = DateTime.Today.AddDays(-7);
+        // this example looks at the previous 7 days of events by providing a since argument set to last week's date 
+        EventResult eventResult = smartsheet.EventResources.ListEvents(lastWeek, null, 1000, false);
+        PrintNewSheetEventsInList(eventResult.Data);
+
+        // continue listing events in the stream by using the `StreamPosition`, if the previous response indicates 
+        // that more data is available.
+        while(eventResult.MoreAvailable == true)
+        {
+            eventResult = smartsheet.EventResources.ListEvents(null, eventResult.NextStreamPosition, 10000, true);
+            PrintNewSheetEventsInList(eventResult.Data);
+        }
+    }    
+}
+```
+
 ## Working With Smartsheetgov.com Accounts
 
 If you need to access Smartsheetgov you will need to specify the Smartsheetgov API URI as the base URI during creation of the Smartsheet client object. SmartsheetGov uses a base URI of https://api.smartsheetgov.com/2.0/. The base URI is defined as a constant in the SmartsheetBuilder class (i.e. `SmartsheetBuilder.GOV_BASE_URI`).

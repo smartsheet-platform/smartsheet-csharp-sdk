@@ -67,6 +67,7 @@
     <Compile Include="AttachmentResourcesTest.cs" />
     <Compile Include="ContactResourcesTest.cs" />
     <Compile Include="CommentResourcesTest.cs" />
+    <Compile Include="EventResourcesTest.cs" />
     <Compile Include="PassthroughResourcesTest.cs" />
     <Compile Include="RowResourcesDeleteSendTest.cs" />
     <Compile Include="SheetResourcesCopyTest.cs" />

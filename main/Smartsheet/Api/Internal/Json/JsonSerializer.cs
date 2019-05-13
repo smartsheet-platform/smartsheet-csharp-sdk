@@ -16,7 +16,6 @@
 //    limitations under the License.
 //    %[license]
 
-using System;
 using System.Collections.Generic;
 
 namespace Smartsheet.Api.Internal.Json
@@ -142,8 +141,8 @@ namespace Smartsheet.Api.Internal.Json
         /// <summary>
         /// De-serialize a CopyOrMoveRowResult object from JSON.
         /// 
-        /// Parameters: - objectClass : the class of the object to de-serialize - inputStream : the input
-        /// stream from which the JSON will be read
+        /// Parameters: 
+        ///     - inputStream : the input stream from which the JSON will be read
         /// 
         /// Returns: the de-serialized CopyOrMoveRowResult
         /// 
@@ -155,6 +154,21 @@ namespace Smartsheet.Api.Internal.Json
         /// <exception cref="JsonSerializationException"> the JSON serializer exception </exception>
         CopyOrMoveRowResult DeserializeRowResult(StreamReader inputStream);
 
+        /// <summary>
+        /// De-serialize to a EventResult (holds pagination info) object from JSON.
+        /// 
+        /// Parameters:
+        ///     - inputStream : the input stream from which the JSON will be read
+        /// 
+        /// Returns: the de-serialized EventResult
+        /// 
+        /// Exceptions: - IllegalArgumentException : if any argument is null - JSONSerializationException : if there is any
+        /// other error occurred during the operation
+        /// </summary>
+        /// <param name="inputStream"> the input stream </param>
+        /// <returns> the EventResult containing a list of Event </returns>
+        /// <exception cref="JsonSerializationException"> the JSON serializer exception </exception>
+        EventResult DeserializeEventResult(StreamReader inputStream);
     }
 
 }

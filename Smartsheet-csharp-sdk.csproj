@@ -78,9 +78,11 @@
     <Compile Include="main\Smartsheet\Api\ContactResources.cs" />
     <Compile Include="main\Smartsheet\Api\DiscussionAttachmentResources.cs" />
     <Compile Include="main\Smartsheet\Api\DiscussionCommentResources.cs" />
+    <Compile Include="main\Smartsheet\Api\EventResources.cs" />
     <Compile Include="main\Smartsheet\Api\FavoriteResources.cs" />
     <Compile Include="main\Smartsheet\Api\ImageUrlsResources.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\ContactResourcesImpl.cs" />
+    <Compile Include="main\Smartsheet\Api\Internal\EventResourceImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\ImageUrlsResourcesImpl.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\Json\CellLinkTypeConverter.cs" />
     <Compile Include="main\Smartsheet\Api\Internal\Json\CellTypeConverter.cs" />
@@ -115,6 +117,11 @@
     <Compile Include="main\Smartsheet\Api\Models\DayOrdinal.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Duration.cs" />
     <Compile Include="main\Smartsheet\Api\Models\ErrorDetail.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Event.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\EventAction.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\EventObjectType.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\EventResult.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\EventSource.cs" />
     <Compile Include="main\Smartsheet\Api\Models\ExplicitNull.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Inclusions\SearchInclusion.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Inclusions\HomeExclusion.cs" />

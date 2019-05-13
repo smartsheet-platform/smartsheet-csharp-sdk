@@ -123,6 +123,8 @@ namespace Smartsheet.Api.Internal.OAuth
             Util.ThrowIfNull(clientId, clientSecret, redirectURL, authorizationURL, tokenURL, httpClient, jsonSerializer);
             Util.ThrowIfEmpty(clientId, clientSecret, redirectURL, authorizationURL, tokenURL);
 
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+
             this.clientId = clientId;
             this.clientSecret = clientSecret;
             this.redirectURL = redirectURL;
