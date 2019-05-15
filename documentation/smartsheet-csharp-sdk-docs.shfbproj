@@ -34,7 +34,7 @@
     <NamingMethod>MemberName</NamingMethod>
     <HelpTitle>Smartsheet C# SDK Documentation v2.6.0</HelpTitle>
     <FeedbackEMailAddress>api%40smartsheet.com</FeedbackEMailAddress>
-    <CopyrightText>&amp;#169%3b 2014-2018. All Rights Reserved Smartsheet.com</CopyrightText>
+    <CopyrightText>&amp;#169%3b 2014-2019. All Rights Reserved Smartsheet.com</CopyrightText>
     <CopyrightHref>Smartsheet</CopyrightHref>
     <ContentPlacement>BelowNamespaces</ContentPlacement>
     <DocumentationSources>
@@ -88,7 +88,7 @@
       <Argument Key="maxVersionParts" Value="" />
       <Argument Key="defaultLanguage" Value="cs" />
     </TransformComponentArguments>
-    <HelpFileVersion>2.6.0.0</HelpFileVersion>
+    <HelpFileVersion>2.68.0.0</HelpFileVersion>
     <RootNamespaceTitle>Smartsheet C# SDK Help Topics</RootNamespaceTitle>
     <SaveComponentCacheCapacity>100</SaveComponentCacheCapacity>
   </PropertyGroup>
