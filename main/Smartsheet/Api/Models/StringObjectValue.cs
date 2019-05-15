@@ -24,7 +24,7 @@ using Newtonsoft.Json;
 
 namespace Smartsheet.Api.Models
 {
-    class StringObjectValue : IPrimitiveObjectValue<string>
+    public class StringObjectValue : IPrimitiveObjectValue<string>
     {
         private string value;
 

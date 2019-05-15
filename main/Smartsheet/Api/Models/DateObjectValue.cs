@@ -23,7 +23,7 @@ using System.Text;
 
 namespace Smartsheet.Api.Models
 {
-    class DateObjectValue : ObjectValue
+    public class DateObjectValue : ObjectValue
     {
         private string value;
         private ObjectValueType objectType;
