@@ -24,7 +24,7 @@ using Newtonsoft.Json;
 
 namespace Smartsheet.Api.Models
 {
-    class BooleanObjectValue : IPrimitiveObjectValue<bool>
+    public class BooleanObjectValue : IPrimitiveObjectValue<bool>
     {
         private bool value;
 

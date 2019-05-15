@@ -23,7 +23,7 @@ using System.Text;
 
 namespace Smartsheet.Api.Models
 {
-    class MultiContactObjectValue : ObjectValue
+    public class MultiContactObjectValue : ObjectValue
     {
         public MultiContactObjectValue(IList<ContactObjectValue> values)
         {

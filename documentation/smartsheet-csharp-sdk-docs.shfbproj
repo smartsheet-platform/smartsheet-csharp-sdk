@@ -88,7 +88,7 @@
       <Argument Key="maxVersionParts" Value="" />
       <Argument Key="defaultLanguage" Value="cs" />
     </TransformComponentArguments>
-    <HelpFileVersion>2.68.0.0</HelpFileVersion>
+    <HelpFileVersion>2.68.1.0</HelpFileVersion>
     <RootNamespaceTitle>Smartsheet C# SDK Help Topics</RootNamespaceTitle>
     <SaveComponentCacheCapacity>100</SaveComponentCacheCapacity>
   </PropertyGroup>
