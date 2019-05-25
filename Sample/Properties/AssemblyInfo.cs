@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 
 [assembly: AssemblyCompany("Smartsheet")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCopyright("Copyright ©  2014")]
+[assembly: AssemblyCopyright("Copyright (c) 2014-2019")]
 [assembly: AssemblyDescription("Library that uses C# to connect to Smartsheet services.")]
 [assembly: AssemblyFileVersion("0.0.0.1")]
 [assembly: AssemblyProduct("Smartsheet_csharp_sdk.Properties")]
