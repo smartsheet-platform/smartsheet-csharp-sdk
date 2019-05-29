@@ -1,0 +1,61 @@
+﻿<Project Sdk="Microsoft.Net.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="..\Properties\" />
+    <Compile Remove="..\Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Compile Include="..\AttachmentResourcesTest.cs" />
+    <Compile Include="..\CellResourcesTest.cs" />
+    <Compile Include="..\ColumnResourcesTest.cs" />
+    <Compile Include="..\CommentResourcesTest.cs" />
+    <Compile Include="..\ContactResourcesTest.cs" />
+    <Compile Include="..\DiscussionResourcesTest.cs" />
+    <Compile Include="..\EventResourcesTest.cs" />
+    <Compile Include="..\FavoriteResourcesTest.cs" />
+    <Compile Include="..\FolderResourcesCopyTest.cs" />
+    <Compile Include="..\FolderResourcesMoveTest.cs" />
+    <Compile Include="..\FolderResourcesTest.cs" />
+    <Compile Include="..\GroupResourcesTest.cs" />
+    <Compile Include="..\HomeResourcesTest.cs" />
+    <Compile Include="..\PassthroughResourcesTest.cs" />
+    <Compile Include="..\ReportResourcesTest.cs" />
+    <Compile Include="..\RowResourcesDeleteSendTest.cs" />
+    <Compile Include="..\RowResourcesTest.cs" />
+    <Compile Include="..\SearchingResourcesTest.cs" />
+    <Compile Include="..\ServerInformationResourcesTest.cs" />
+    <Compile Include="..\ShareResourcesTest.cs" />
+    <Compile Include="..\SheetResourcesCopyTest.cs" />
+    <Compile Include="..\SheetResourcesMoveTest.cs" />
+    <Compile Include="..\SheetResourcesTest.cs" />
+    <Compile Include="..\SheetResourcesUpdateRequestTest.cs" />
+    <Compile Include="..\TokenResourcesTest.cs" />
+    <Compile Include="..\UserResourcesTest.cs" />
+    <Compile Include="..\WorkspaceResourcesCopyTest.cs" />
+    <Compile Include="..\WorkspaceResourcesTest.cs" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.1.0" />
+    <PackageReference Include="MSTest.TestAdapter" Version="1.4.0" />
+    <PackageReference Include="MSTest.TestFramework" Version="1.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\smartsheet-csharp-sdk-v2.csproj" />
+  </ItemGroup>
+
+</Project>

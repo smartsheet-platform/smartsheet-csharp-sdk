@@ -9,7 +9,7 @@ namespace IntegrationTestSDK
     [TestClass]
     public class AttachmentResourcesTest
     {
-        string path = "../../../IntegrationTestSDK/TestFile.txt";
+        string path = "../../../../../IntegrationTestSDK/TestFile.txt";
 
         [TestMethod]
         public void TestAttachmentResources()

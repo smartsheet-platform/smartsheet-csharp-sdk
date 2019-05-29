@@ -1,0 +1,75 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net452</TargetFrameworks>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>    
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <ApplicationIcon />
+    <Win32Resource />
+    <PackageId>smartsheet-csharp-sdk</PackageId>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageLicenseUrl>https://raw.github.com/smartsheet-platform/smartsheet-csharp-sdk/master/LICENSE.txt</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/smartsheet-platform/smartsheet-csharp-sdk</PackageProjectUrl>
+    <PackageIconUrl>https://googledrive.com/host/0B0ESt9lII6BWZUcyZmlsalBDdlE/smartsheetAPI.png</PackageIconUrl>
+    <Title>Smartsheet C# SDK</Title>
+    <Description>Library that uses C# to connect to Smartsheet services.</Description>
+    <Copyright>Copyright 2014-2019</Copyright>
+    <Authors>Smartsheet</Authors>
+    <Product>smartsheet-csharp-sdk</Product>
+    <PackageTags>Smartsheet Collaboration Project Management Excel spreadsheet</PackageTags>
+    <Version>2.68.2</Version>
+    <AssemblyName>smartsheet-csharp-sdk</AssemblyName>
+    <RootNamespace>smartsheet-csharp-sdk</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+    <Compile Remove="Properties\AssemblyInfo.cs" />
+  </ItemGroup>  
+  <ItemGroup>
+    <Compile Remove="docs\**" />
+    <Compile Remove="documentation\**" />
+    <Compile Remove="GTM\**" />
+    <Compile Remove="IntegrationTestSDK\**" />
+    <Compile Remove="packages\**" />
+    <Compile Remove="Sample\**" />
+    <Compile Remove="TestSDKMockAPI\**" />
+    <EmbeddedResource Remove="docs\**" />
+    <EmbeddedResource Remove="documentation\**" />
+    <EmbeddedResource Remove="GTM\**" />
+    <EmbeddedResource Remove="IntegrationTestSDK\**" />
+    <EmbeddedResource Remove="packages\**" />
+    <EmbeddedResource Remove="Sample\**" />
+    <EmbeddedResource Remove="TestSDKMockAPI\**" />
+    <None Remove="docs\**" />
+    <None Remove="documentation\**" />
+    <None Remove="GTM\**" />
+    <None Remove="IntegrationTestSDK\**" />
+    <None Remove="packages\**" />
+    <None Remove="Sample\**" />
+    <None Remove="TestSDKMockAPI\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove=".gitattributes" />
+    <None Remove=".gitignore" />
+    <None Remove="ADVANCED.md" />
+    <None Remove="build.bat" />
+    <None Remove="CHANGELOG.md" />
+    <None Remove="icons\logo.png" />
+    <None Remove="LICENSE.txt" />
+    <None Remove="NLog.config" />
+    <None Remove="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icons\logo.png" />
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <PackageReference Include="NLog" Version="4.6.3" />
+    <PackageReference Include="RestSharp" Version="106.6.9" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net452' ">
+    <Reference Include="System.Management" />
+  </ItemGroup>
+</Project>

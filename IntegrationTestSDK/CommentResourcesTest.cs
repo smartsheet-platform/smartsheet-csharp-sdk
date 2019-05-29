@@ -9,7 +9,7 @@ namespace IntegrationTestSDK
     [TestClass]
     public class CommentResourcesTest
     {
-        private static string path = "../../../IntegrationTestSDK/TestFile.txt";
+        private static string path = "../../../../../IntegrationTestSDK/TestFile.txt";
 
         [TestMethod]
         public void TestCommentResources()

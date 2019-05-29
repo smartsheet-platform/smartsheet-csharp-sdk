@@ -18,7 +18,11 @@
 
 using System;
 using System.IO;
+using System.Reflection;
+using System.Runtime.Versioning;
+#if !NETSTANDARD2_0
 using System.Management;
+#endif
 
 namespace Smartsheet.Api.Internal.Utility
 {
@@ -30,6 +34,14 @@ namespace Smartsheet.Api.Internal.Utility
 
         public static string GetOSFriendlyName()
         {
+            var framework = Assembly
+                .GetEntryAssembly()?
+                .GetCustomAttribute<TargetFrameworkAttribute>()?
+                .FrameworkName;
+
+#if NETSTANDARD2_0
+            return framework + "-" + System.Runtime.InteropServices.RuntimeInformation.OSDescription;
+#else
             string result = string.Empty;
             ManagementObjectCollection.ManagementObjectEnumerator enumerator = null;
 
@@ -61,7 +73,8 @@ namespace Smartsheet.Api.Internal.Utility
                     ((IDisposable)enumerator).Dispose();
                 }
             }
-            return result;
+            return result + "-" + framework;
+#endif
         }
 
         /**

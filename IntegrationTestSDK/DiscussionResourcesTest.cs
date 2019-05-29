@@ -20,7 +20,7 @@ namespace IntegrationTestSDK
             Discussion discussionToCreate = new Discussion.CreateDiscussionBuilder("A discussion", new Comment.AddCommentBuilder("a comment").Build()).Build();
             Discussion createdDiscussion = smartsheet.SheetResources.DiscussionResources.CreateDiscussion(sheetId, discussionToCreate);
             long createdDiscussionId = createdDiscussion.Id.Value;
-            string path = "../../../IntegrationTestSDK/TestFile.txt";
+            string path = "../../../../../IntegrationTestSDK/TestFile.txt";
             Discussion createdDiscussionWithFile = smartsheet.SheetResources.DiscussionResources.CreateDiscussionWithAttachment(sheetId, discussionToCreate, path, null);
             Assert.IsTrue(createdDiscussionWithFile.Comments[0].Attachments[0].Name == "TestFile.txt");
 

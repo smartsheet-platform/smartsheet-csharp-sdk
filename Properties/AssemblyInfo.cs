@@ -1,4 +1,4 @@
-﻿//    #[license]
+//    #[license]
 //    Smartsheet SDK for C#
 //    %%
 //    Copyright (C) 2014 Smartsheet
@@ -29,7 +29,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Smartsheet")]
 [assembly: AssemblyProduct("Smartsheet_csharp_sdk.Properties")]
-[assembly: AssemblyCopyright("Copyright © 2014-2019")]
+[assembly: AssemblyCopyright("Copyright (c) 2014-2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: CLSCompliant(true)]

@@ -12,7 +12,7 @@
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>$description$</description>
     <!--<releaseNotes>Summary of changes made in this release of the package.</releaseNotes>-->
-    <copyright>Copyright 2014-2017</copyright>
+    <copyright>$copyright$</copyright>
     <tags>Smartsheet Collaboration Project Management Excel spreadsheet</tags>
   </metadata>
 </package>
