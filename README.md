@@ -4,7 +4,8 @@ This is a C# SDK to simplify connecting to the [Smartsheet API](http://www.smart
 
 ## System Requirements
 
-The SDK supports C# version 4.0 or later running on .NET platform version 4.5.2 or later. In addition, we support any .NET language compatible with that platform version.
+The SDK supports C# version 4.0 or later and targets .NET Framework version 4.5.2 or later or .NET Standard 2.0 or later. 
+In addition, we support any .NET language compatible with those platform versions.
 
 ## Installation
 The SDK can be installed by using NuGet or by compiling from source. These two alternatives are outlined below.
@@ -25,18 +26,15 @@ Install-Package smartsheet-csharp-sdk
 ```
 
 ### Compile From Source
-You can download and compile the source code for the SDK from Github. Use [git](http://git-scm.com/) to fetch it and use Visual Studio or a program such as [MSBuild](http://msdn.microsoft.com/en-us/library/wea2sca5(v=vs.90).aspx) to build it.
-
-In Visual Studio you can open the entire solution with the file **Smartsheet-csharp-sdk.sln**, or open the specific project **Smartsheet-csharp-sdk.csproj**.
-
-You can also do this via the command line with the following three commands.
-Note: The path to **msbuild** may vary.
+You can download and compile the source code for the SDK from Github. Use [git](http://git-scm.com/) to fetch it and 
+use Visual Studio 2017 or later to build it.
 
 ```dos
 git clone https://github.com/smartsheet-platform/smartsheet-csharp-sdk.git
-cd smartsheet-csharp-sdk
-%WINDIR%\Microsoft.NET\Framework\v4.0.30319\msbuild smartsheet-csharp-sdk.sln /property:Configuration=release /t:rebuild
 ```
+
+In Visual Studio 2017 you can open the entire solution with the file **smartsheet-csharp-sdk-v2.sln**, or open the specific 
+project **smartsheet-csharp-sdk-v2.csproj**.
 
 ## Example Usage
 To call the API, you will need an *access token*, which looks something like this example: ll352u9jujauoqz4gstvsae05. You can find the access token in the UI at Account > Personal Settings > API Access.

@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2.68.2] - 2019-5-29
+### Added
+- Support for .NET Standard 2.0. Nuget.org package contains assemblies for both .NET Framework 4.5.2 and 
+.NET Standard 2.0.
+
 ## [2.68.1] - 2019-5-15
 ### Fixed
 - Added missing public class declarations for some of the ObjectValue types
