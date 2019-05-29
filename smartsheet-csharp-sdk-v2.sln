@@ -5,13 +5,19 @@ VisualStudioVersion = 15.0.27703.2018
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "smartsheet-csharp-sdk-v2", "smartsheet-csharp-sdk-v2.csproj", "{44D56022-C6DC-44B3-AC7A-021F7C25E3DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sdk-csharp-sample-v2", "Sample\sdk-csharp-sample-v2.csproj", "{D5A64D38-071B-4E81-AAC6-B9750DEF0D78}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "integration-test-sdk-net452", "IntegrationTestSDK\net452\integration-test-sdk-net452.csproj", "{A6BC0307-C0AF-463F-B602-0C66578A9C9B}"
 EndProject
-Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "smartsheet-csharp-sdk-docs", "documentation\smartsheet-csharp-sdk-docs.shfbproj", "{3F8D8D90-F2B2-496B-86EF-5A49322D5837}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sdk-csharp-sample-net452", "Sample\net452\sdk-csharp-sample-net452.csproj", "{D5A64D38-071B-4E81-AAC6-B9750DEF0D78}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "integration-test-sdk", "IntegrationTestSDK\integration-test-sdk.csproj", "{A6BC0307-C0AF-463F-B602-0C66578A9C9B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "sdk-csharp-sample-netcoreapp20", "Sample\netcoreapp2.0\sdk-csharp-sample-netcoreapp20.csproj", "{34E6296D-9E56-430F-8ED6-9902FC24F482}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mock-api-test-sdk", "TestSDKMockAPI\mock-api-test-sdk.csproj", "{0C69C4C0-B33D-4E00-82DB-BC47D994F1F8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mock-api-test-sdk-net452", "TestSDKMockAPI\net452\mock-api-test-sdk-net452.csproj", "{0C69C4C0-B33D-4E00-82DB-BC47D994F1F8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "integration-test-sdk-netcoreapp20", "IntegrationTestSDK\netcoreapp2.0\integration-test-sdk-netcoreapp20.csproj", "{F26A9790-9792-4C6C-8830-8417211F7005}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mock-api-test-sdk-netcoreapp20", "TestSDKMockAPI\netcoreapp2.0\mock-api-test-sdk-netcoreapp20.csproj", "{BF873533-FD6F-40A3-A411-A87E0FB6ABD6}"
+EndProject
+Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "smartsheet-csharp-sdk-docs-v2", "documentation\smartsheet-csharp-sdk-docs-v2.shfbproj", "{3F8D8D90-F2B2-496B-86EF-5A49322D5837}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,22 +29,34 @@ Global
 		{44D56022-C6DC-44B3-AC7A-021F7C25E3DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44D56022-C6DC-44B3-AC7A-021F7C25E3DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44D56022-C6DC-44B3-AC7A-021F7C25E3DC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D5A64D38-071B-4E81-AAC6-B9750DEF0D78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D5A64D38-071B-4E81-AAC6-B9750DEF0D78}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D5A64D38-071B-4E81-AAC6-B9750DEF0D78}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D5A64D38-071B-4E81-AAC6-B9750DEF0D78}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3F8D8D90-F2B2-496B-86EF-5A49322D5837}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3F8D8D90-F2B2-496B-86EF-5A49322D5837}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3F8D8D90-F2B2-496B-86EF-5A49322D5837}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3F8D8D90-F2B2-496B-86EF-5A49322D5837}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A6BC0307-C0AF-463F-B602-0C66578A9C9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A6BC0307-C0AF-463F-B602-0C66578A9C9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A6BC0307-C0AF-463F-B602-0C66578A9C9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A6BC0307-C0AF-463F-B602-0C66578A9C9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5A64D38-071B-4E81-AAC6-B9750DEF0D78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5A64D38-071B-4E81-AAC6-B9750DEF0D78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5A64D38-071B-4E81-AAC6-B9750DEF0D78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5A64D38-071B-4E81-AAC6-B9750DEF0D78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34E6296D-9E56-430F-8ED6-9902FC24F482}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34E6296D-9E56-430F-8ED6-9902FC24F482}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34E6296D-9E56-430F-8ED6-9902FC24F482}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34E6296D-9E56-430F-8ED6-9902FC24F482}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0C69C4C0-B33D-4E00-82DB-BC47D994F1F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0C69C4C0-B33D-4E00-82DB-BC47D994F1F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C69C4C0-B33D-4E00-82DB-BC47D994F1F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C69C4C0-B33D-4E00-82DB-BC47D994F1F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F26A9790-9792-4C6C-8830-8417211F7005}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F26A9790-9792-4C6C-8830-8417211F7005}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F26A9790-9792-4C6C-8830-8417211F7005}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F26A9790-9792-4C6C-8830-8417211F7005}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF873533-FD6F-40A3-A411-A87E0FB6ABD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF873533-FD6F-40A3-A411-A87E0FB6ABD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF873533-FD6F-40A3-A411-A87E0FB6ABD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF873533-FD6F-40A3-A411-A87E0FB6ABD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F8D8D90-F2B2-496B-86EF-5A49322D5837}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F8D8D90-F2B2-496B-86EF-5A49322D5837}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F8D8D90-F2B2-496B-86EF-5A49322D5837}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F8D8D90-F2B2-496B-86EF-5A49322D5837}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

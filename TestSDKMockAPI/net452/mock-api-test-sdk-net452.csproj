@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>bin\Debug\net452\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -24,7 +24,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>bin\Release\net452\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -48,23 +48,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AutomationRulesTest.cs" />
-    <Compile Include="ColumnTests.cs" />
-    <Compile Include="HelperFunctions.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RowTests.cs" />
-    <Compile Include="SheetTests.cs" />
-    <Compile Include="SightsTest.cs" />
-    <Compile Include="TestHttpClient.cs" />
+    <Compile Include="..\AutomationRulesTest.cs" />
+    <Compile Include="..\ColumnTests.cs" />
+    <Compile Include="..\HelperFunctions.cs" />
+    <Compile Include="..\Properties\AssemblyInfo.cs" />
+    <Compile Include="..\RowTests.cs" />
+    <Compile Include="..\SheetTests.cs" />
+    <Compile Include="..\SightsTest.cs" />
+    <Compile Include="..\TestHttpClient.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\smartsheet-csharp-sdk-v2.csproj">
+    <ProjectReference Include="..\..\smartsheet-csharp-sdk-v2.csproj">
       <Project>{44d56022-c6dc-44b3-ac7a-021f7c25e3dc}</Project>
       <Name>smartsheet-csharp-sdk-v2</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

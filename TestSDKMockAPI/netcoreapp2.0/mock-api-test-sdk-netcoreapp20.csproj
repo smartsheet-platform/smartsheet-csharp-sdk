@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.Net.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="..\Properties\" />
+    <Compile Remove="..\Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\AutomationRulesTest.cs" />
+    <Compile Include="..\ColumnTests.cs" />
+    <Compile Include="..\HelperFunctions.cs" />
+    <Compile Include="..\RowTests.cs" />
+    <Compile Include="..\SheetTests.cs" />
+    <Compile Include="..\SightsTest.cs" />
+    <Compile Include="..\TestHttpClient.cs" />
+  </ItemGroup>  
+  
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.1.0" />
+    <PackageReference Include="MSTest.TestAdapter" Version="1.4.0" />
+    <PackageReference Include="MSTest.TestFramework" Version="1.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\smartsheet-csharp-sdk-v2.csproj" />
+  </ItemGroup>
+
+</Project>
