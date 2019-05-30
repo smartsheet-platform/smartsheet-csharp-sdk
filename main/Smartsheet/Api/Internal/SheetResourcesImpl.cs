@@ -250,6 +250,7 @@ namespace Smartsheet.Api.Internal
         /// <param name="pageSize"> used to specify the optional objects to include. </param>
         /// <param name="page"> used to specify the optional objects to include. </param>
         /// <param name="ifVersionAfter"> only fetch sheet if more recent version available </param>
+        /// <param name="level"> compatibility level </param>
         /// <returns> the sheet resource (note that if there is no such resource, this method will throw 
         /// ResourceNotFoundException rather than returning null). </returns>
         /// <exception cref="System.InvalidOperationException"> if any argument is null or an empty string </exception>

@@ -61,7 +61,7 @@ namespace Smartsheet.Api
         /// This operation can return a maximum of 500 rows per page.</param>
         /// <param name="page">(optional): Which page number (1-based) to return. 
         /// If not specified, the default value is 1. If a page number is specified that is greater than the number of total pages, the last page will be returned.</param>
-        /// <param name="level">(optional): compatiblity level
+        /// <param name="level">(optional): compatiblity level</param>
         /// <returns> the report resource (note that if there is no such resource, this method will throw 
         /// ResourceNotFoundException rather than returning null). </returns>
         /// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
