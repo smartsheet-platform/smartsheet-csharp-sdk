@@ -6,3 +6,7 @@ solution: smartsheet-csharp-sdk-v2
 before_install:
   - git clone https://github.com/smartsheet-platform/smartsheet-sdk-tests.git
   - smartsheet-sdk-tests/travis_scripts/install_wiremock.sh
+
+script:
+  - dotnet restore
+  - dotnet test
