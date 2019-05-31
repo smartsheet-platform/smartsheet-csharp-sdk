@@ -8,5 +8,5 @@ before_install:
   - smartsheet-sdk-tests/travis_scripts/install_wiremock.sh
 
 script:
-  - dotnet build smartsheet-csharp-sdk-v2.sln
+  - dotnet build smartsheet-csharp-sdk-v2.csproj -f netstandard2.0
   - dotnet test
