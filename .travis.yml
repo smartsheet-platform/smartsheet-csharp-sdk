@@ -1,7 +1,7 @@
 language: csharp
 mono: none
 dotnet: 2.1.502
-solution: smartsheet-csharp-sdk-v2
+solution: smartsheet-csharp-sdk-v2.sln
 
 before_install:
   - git clone https://github.com/smartsheet-platform/smartsheet-sdk-tests.git
