@@ -53,6 +53,7 @@ namespace IntegrationTestSDK
         private static void ListGroups(SmartsheetClient smartsheet)
         {
             PaginatedResult<Group> groups = smartsheet.GroupResources.ListGroups(null);
+            // Don't actually know that there is only one group if its a test account
             // Assert.IsTrue(groups.Data.Count == 1);
             bool found = false;
             foreach(Group group in groups.Data)
