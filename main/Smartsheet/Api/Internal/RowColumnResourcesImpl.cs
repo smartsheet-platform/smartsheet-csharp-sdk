@@ -79,6 +79,7 @@ namespace Smartsheet.Api.Internal
         /// <param name="columnId"> the column Id</param>
         /// <param name="include"> the elements to include in the response </param>
         /// <param name="paging"> the pagination </param>
+        /// <param name="level"> compatibility level </param>
         /// <returns> the row object </returns>
         /// <exception cref="System.InvalidOperationException"> if any argument is null or an empty string </exception>
         /// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
