@@ -13,7 +13,7 @@ namespace IntegrationTestSDK
         {
             SmartsheetClient smartsheet = new SmartsheetBuilder().SetMaxRetryTimeout(30000).Build();
 
-            DateTime lastHour = DateTime.Today.AddHours(-200);
+            DateTime lastHour = DateTime.Today.AddHours(-1);
             EventResult eventResult = smartsheet.EventResources.ListEvents(lastHour, null, 10, false);
             Assert.IsTrue(eventResult.Data.Count <= 10);
             foreach(Event _event in eventResult.Data)
