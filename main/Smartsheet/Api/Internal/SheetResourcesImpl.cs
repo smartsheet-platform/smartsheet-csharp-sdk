@@ -515,10 +515,35 @@ namespace Smartsheet.Api.Internal
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
         public virtual Sheet CopySheet(long sheetId, ContainerDestination destination, IEnumerable<SheetCopyInclusion> include)
         {
+            return this.CopySheet(sheetId, destination, include, null);
+        }
+
+        /// <summary>
+        /// <para>Creates a copy of the specified sheet.</para>
+        /// <para>Mirrors to the following Smartsheet REST API method:<br />
+        /// POST /sheets/{sheetId}/copy</para>
+        /// </summary>
+        /// <param name="sheetId"> the sheet Id </param>
+        /// <param name="destination"> the destination to copy to </param>
+        /// <param name="include"> the elements to copy. Note: Cell history will not be copied, regardless of which include parameter values are specified.</param>
+        /// <param name="exclude"> optional elements to exclude </param>
+        /// <returns> the created folder </returns>
+        /// <exception cref="System.InvalidOperationException"> if any argument is null or an empty string </exception>
+        /// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+        /// <exception cref="AuthorizationException"> if there is any problem with the REST API authorization (access token) </exception>
+        /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+        /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
+        /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+        public virtual Sheet CopySheet(long sheetId, ContainerDestination destination, IEnumerable<SheetCopyInclusion> include, IEnumerable<SheetCopyExclusion> exclude)
+        {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
             if (include != null)
             {
                 parameters.Add("include", QueryUtil.GenerateCommaSeparatedList(include));
+            }
+            if (exclude != null)
+            {
+                parameters.Add("exclude", QueryUtil.GenerateCommaSeparatedList(exclude));
             }
             return this.CreateResource<RequestResult<Sheet>, ContainerDestination>(QueryUtil.GenerateUrl("sheets/" + sheetId + "/copy", parameters), destination).Result;
         }
