@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [2.68.3] - 2019-6-21
 ### Added
 - rules, ruleRecipients and shares to inclusions
-- exlusion to CopySheet method
+- exclusion to CopySheet method
 
 ## [2.68.2] - 2019-5-29
 ### Added
