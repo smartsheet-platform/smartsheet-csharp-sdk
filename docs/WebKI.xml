@@ -254,8 +254,8 @@
     <HelpKINode Title="AccessScope Enumeration" Url="html/7a10d74d-c815-e0f3-9e3b-f87478180e23.htm" />
   </HelpKINode>
   <HelpKINode Title="ADMIN_WORKSPACES enumeration member">
-    <HelpKINode Title="AccessScope Enumeration" Url="html/7a10d74d-c815-e0f3-9e3b-f87478180e23.htm" />
     <HelpKINode Title="AccessScope Enumeration" Url="html/bc472975-1ab8-8301-a084-506c4d360ea1.htm" />
+    <HelpKINode Title="AccessScope Enumeration" Url="html/7a10d74d-c815-e0f3-9e3b-f87478180e23.htm" />
   </HelpKINode>
   <HelpKINode Title="ALL enumeration member">
     <HelpKINode Title="FolderCopyInclusion Enumeration" Url="html/428503b2-e269-13e7-b6ec-23f400c4b698.htm" />
@@ -472,7 +472,6 @@
   <HelpKINode Title="BooleanObjectValue.Serialize method" Url="html/f9ca5dda-1fa3-f953-b55d-cb40fdbfaa01.htm" />
   <HelpKINode Title="BooleanObjectValue.Value property" Url="html/5acddbb2-72f8-82c0-b043-7dc808470d17.htm" />
   <HelpKINode Title="BOX_COM enumeration member" Url="html/bf2470f1-943e-0d19-b895-f9c4a4858c1f.htm" />
-  <HelpKINode Title="BRAND enumeration member" Url="html/5f4488c5-2238-f3a8-73c1-daebc4e6c1e2.htm" />
   <HelpKINode Title="BROKEN enumeration member" Url="html/1fa4ab3b-eca1-613c-09de-6ffb02b9cd67.htm" />
   <HelpKINode Title="Build method">
     <HelpKINode Title="AlternateEmail.AlternateEmailBuilder.Build Method " Url="html/79a6f651-009e-cfad-f1c5-6a913e6429f3.htm" />
@@ -540,8 +539,8 @@
     <HelpKINode Title="Share.CcMe Property " Url="html/838621f5-1de3-5a66-7857-9544b9be8ee3.htm" />
   </HelpKINode>
   <HelpKINode Title="CCMe property">
-    <HelpKINode Title="MultiShare.CCMe Property " Url="html/d2a771f5-d65c-a1e5-9e00-4c59d4ca174e.htm" />
     <HelpKINode Title="MultiShare.ShareToManyBuilder.CCMe Property " Url="html/85ff4c46-3081-83f5-30ef-713d6397208a.htm" />
+    <HelpKINode Title="MultiShare.CCMe Property " Url="html/d2a771f5-d65c-a1e5-9e00-4c59d4ca174e.htm" />
   </HelpKINode>
   <HelpKINode Title="Cell class">
     <HelpKINode Title="Cell Class" Url="html/ae18f636-b2cf-47a5-7893-c259a450ebc7.htm" />
@@ -886,7 +885,7 @@
   <HelpKINode Title="CopyOrMoveRowResult.RowMappings property" Url="html/b9a8272b-9a5c-90f3-332d-5a5b49421a3f.htm" />
   <HelpKINode Title="CopyRowInclusion enumeration" Url="html/013304cb-8a03-986e-b61a-b760b43adb41.htm" />
   <HelpKINode Title="CopyRowsToAnotherSheet method" Url="html/80e456e4-e902-f800-7fee-6a2184f4f4c9.htm" />
-  <HelpKINode Title="CopySheet method" Url="html/f6d3e539-be9a-71ae-7e31-3114aeaf19e2.htm" />
+  <HelpKINode Title="CopySheet method" Url="html/00c7a049-5155-3d2b-3dfd-d8ac7dcd87e2.htm" />
   <HelpKINode Title="CopySight method" Url="html/ba125e3e-ec2e-ff7c-d43f-5121347d7880.htm" />
   <HelpKINode Title="CopyWorkspace method" Url="html/63a7a39d-72aa-7225-a02a-520e0855cafb.htm" />
   <HelpKINode Title="COPY_ROW enumeration member" Url="html/79b65f34-90f1-32bc-091f-b3c65bab3eb7.htm" />
@@ -983,8 +982,8 @@
   <HelpKINode Title="CREATE_CELL_LINK enumeration member" Url="html/79b65f34-90f1-32bc-091f-b3c65bab3eb7.htm" />
   <HelpKINode Title="CREATE_RECURRING_BACKUP enumeration member" Url="html/79b65f34-90f1-32bc-091f-b3c65bab3eb7.htm" />
   <HelpKINode Title="CREATE_SHEETS enumeration member">
-    <HelpKINode Title="AccessScope Enumeration" Url="html/7a10d74d-c815-e0f3-9e3b-f87478180e23.htm" />
     <HelpKINode Title="AccessScope Enumeration" Url="html/bc472975-1ab8-8301-a084-506c4d360ea1.htm" />
+    <HelpKINode Title="AccessScope Enumeration" Url="html/7a10d74d-c815-e0f3-9e3b-f87478180e23.htm" />
   </HelpKINode>
   <HelpKINode Title="CREATE_SIGHTS enumeration member" Url="html/bc472975-1ab8-8301-a084-506c4d360ea1.htm" />
   <HelpKINode Title="Criteria class">
@@ -1103,8 +1102,8 @@
   <HelpKINode Title="DeleteWorkspace method" Url="html/73fe42ec-4f1a-a734-91c5-08895ffbb5b2.htm" />
   <HelpKINode Title="DELETE_RECURRING_BACKUP enumeration member" Url="html/79b65f34-90f1-32bc-091f-b3c65bab3eb7.htm" />
   <HelpKINode Title="DELETE_SHEETS enumeration member">
-    <HelpKINode Title="AccessScope Enumeration" Url="html/7a10d74d-c815-e0f3-9e3b-f87478180e23.htm" />
     <HelpKINode Title="AccessScope Enumeration" Url="html/bc472975-1ab8-8301-a084-506c4d360ea1.htm" />
+    <HelpKINode Title="AccessScope Enumeration" Url="html/7a10d74d-c815-e0f3-9e3b-f87478180e23.htm" />
   </HelpKINode>
   <HelpKINode Title="DELETE_SIGHTS enumeration member" Url="html/bc472975-1ab8-8301-a084-506c4d360ea1.htm" />
   <HelpKINode Title="Department property" Url="html/b94ed4ea-1458-f5c8-a4ec-435d2b0b740f.htm" />
@@ -1383,8 +1382,11 @@
   <HelpKINode Title="FilterResources property" Url="html/09fd70a4-d6d8-b6cb-f3b1-cd4461380e74.htm" />
   <HelpKINode Title="FILTERS enumeration member">
     <HelpKINode Title="ColumnInclusion Enumeration" Url="html/a3a70465-3261-c76a-9b20-5eae99c0e4be.htm" />
+    <HelpKINode Title="FolderCopyInclusion Enumeration" Url="html/428503b2-e269-13e7-b6ec-23f400c4b698.htm" />
     <HelpKINode Title="RowInclusion Enumeration" Url="html/5bdb0d4b-3d6c-1ac3-e1d8-6d95ae66a7d8.htm" />
+    <HelpKINode Title="SheetCopyInclusion Enumeration" Url="html/6e7e3b4f-ec1d-d7e9-1ba0-00121d12c3c4.htm" />
     <HelpKINode Title="SheetLevelInclusion Enumeration" Url="html/b460e0ff-608d-ffb3-157c-b7329dff2bbd.htm" />
+    <HelpKINode Title="WorkspaceCopyInclusion Enumeration" Url="html/5f4488c5-2238-f3a8-73c1-daebc4e6c1e2.htm" />
   </HelpKINode>
   <HelpKINode Title="Filters property" Url="html/6d4c9e54-b6b2-036f-1e17-26fdb3956ac0.htm" />
   <HelpKINode Title="FilterType enumeration" Url="html/c51bd1c1-c2b7-c7b6-fd66-d37ce9d5974a.htm" />
@@ -1584,8 +1586,8 @@
   <HelpKINode Title="GetContact method" Url="html/74975170-2cf3-db86-a95e-88e345609b39.htm" />
   <HelpKINode Title="GetCrossSheetReference method" Url="html/a20b45bc-e9c1-7bd1-ba16-f93ac1ee0b6b.htm" />
   <HelpKINode Title="GetCurrentUser method" Url="html/889a1d8e-2138-2d3b-e214-876ad1c44ab9.htm" />
-  <HelpKINode Title="getDescription method" Url="html/5b1745fb-a189-164e-182c-39ff2bae017c.htm" />
   <HelpKINode Title="GetDescription method" Url="html/12a21fca-ba7f-7638-b4e6-decb5332bdc8.htm" />
+  <HelpKINode Title="getDescription method" Url="html/5b1745fb-a189-164e-182c-39ff2bae017c.htm" />
   <HelpKINode Title="GetDiscussion method" Url="html/73e32a62-e6f9-952e-349a-a58ed3946736.htm" />
   <HelpKINode Title="GetEmail method">
     <HelpKINode Title="AlternateEmail.AlternateEmailBuilder.GetEmail Method " Url="html/029fba77-5974-e2a3-d88a-b11e2ec27afb.htm" />
@@ -2925,6 +2927,16 @@
     <HelpKINode Title="RowInclusion Enumeration" Url="html/5bdb0d4b-3d6c-1ac3-e1d8-6d95ae66a7d8.htm" />
     <HelpKINode Title="SheetLevelInclusion Enumeration" Url="html/b460e0ff-608d-ffb3-157c-b7329dff2bbd.htm" />
   </HelpKINode>
+  <HelpKINode Title="RULES enumeration member">
+    <HelpKINode Title="FolderCopyInclusion Enumeration" Url="html/428503b2-e269-13e7-b6ec-23f400c4b698.htm" />
+    <HelpKINode Title="SheetCopyInclusion Enumeration" Url="html/6e7e3b4f-ec1d-d7e9-1ba0-00121d12c3c4.htm" />
+    <HelpKINode Title="WorkspaceCopyInclusion Enumeration" Url="html/5f4488c5-2238-f3a8-73c1-daebc4e6c1e2.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RULE_RECIPIENTS enumeration member">
+    <HelpKINode Title="FolderCopyInclusion Enumeration" Url="html/428503b2-e269-13e7-b6ec-23f400c4b698.htm" />
+    <HelpKINode Title="SheetCopyInclusion Enumeration" Url="html/6e7e3b4f-ec1d-d7e9-1ba0-00121d12c3c4.htm" />
+    <HelpKINode Title="WorkspaceCopyInclusion Enumeration" Url="html/5f4488c5-2238-f3a8-73c1-daebc4e6c1e2.htm" />
+  </HelpKINode>
   <HelpKINode Title="RYG enumeration member" Url="html/207f97c9-6113-76b0-5d01-4dc19ed7e231.htm" />
   <HelpKINode Title="RYGB enumeration member" Url="html/207f97c9-6113-76b0-5d01-4dc19ed7e231.htm" />
   <HelpKINode Title="RYGG enumeration member" Url="html/207f97c9-6113-76b0-5d01-4dc19ed7e231.htm" />
@@ -3321,7 +3333,11 @@
   <HelpKINode Title="ShareResources.ListShares method" Url="html/8c9e8821-7b75-5a27-65b8-5d62022bf3d3.htm" />
   <HelpKINode Title="ShareResources.ShareTo method" Url="html/3ebb7118-27b4-d085-53ed-5700279cfa77.htm" />
   <HelpKINode Title="ShareResources.UpdateShare method" Url="html/b790bca2-8988-2fa2-2fa2-95fce98e6119.htm" />
-  <HelpKINode Title="SHARES enumeration member" Url="html/5f4488c5-2238-f3a8-73c1-daebc4e6c1e2.htm" />
+  <HelpKINode Title="SHARES enumeration member">
+    <HelpKINode Title="FolderCopyInclusion Enumeration" Url="html/428503b2-e269-13e7-b6ec-23f400c4b698.htm" />
+    <HelpKINode Title="SheetCopyInclusion Enumeration" Url="html/6e7e3b4f-ec1d-d7e9-1ba0-00121d12c3c4.htm" />
+    <HelpKINode Title="WorkspaceCopyInclusion Enumeration" Url="html/5f4488c5-2238-f3a8-73c1-daebc4e6c1e2.htm" />
+  </HelpKINode>
   <HelpKINode Title="ShareScope structure">
     <HelpKINode Title="ShareScope Structure" Url="html/9e46e95d-b5fd-a470-bbc1-d6d271c88fb2.htm" />
     <HelpKINode Title="constructor" Url="html/584b73ac-a1de-06c2-4a92-df5ccf9ad2df.htm" />
@@ -3426,6 +3442,7 @@
   <HelpKINode Title="SheetCommentResources.AttachmentResources property" Url="html/35d328ae-ee7f-51a5-e195-1fea11943ed6.htm" />
   <HelpKINode Title="SheetCommentResources.DeleteComment method" Url="html/dfa2a47f-d4a6-87c3-235d-bc70ae3d1356.htm" />
   <HelpKINode Title="SheetCommentResources.GetComment method" Url="html/c5c985b8-6d86-fc4d-4a00-27e12b220fef.htm" />
+  <HelpKINode Title="SheetCopyExclusion enumeration" Url="html/75780bb9-323c-bbf7-ec40-4149701b4ce4.htm" />
   <HelpKINode Title="SheetCopyInclusion enumeration" Url="html/6e7e3b4f-ec1d-d7e9-1ba0-00121d12c3c4.htm" />
   <HelpKINode Title="SheetCount property" Url="html/74ff6b87-ee18-7181-2b64-efd7de737a8e.htm" />
   <HelpKINode Title="SheetCrossSheetReferenceResources interface">
@@ -3551,7 +3568,7 @@
   <HelpKINode Title="SheetResources.AutomationRuleResources property" Url="html/b2978a9c-bcba-fa2d-6ccb-fc088100b3c4.htm" />
   <HelpKINode Title="SheetResources.ColumnResources property" Url="html/c3af7051-0cbe-0d8b-1c2a-4cc555bd6775.htm" />
   <HelpKINode Title="SheetResources.CommentResources property" Url="html/accfed28-0fce-beb9-f413-49bd3794098a.htm" />
-  <HelpKINode Title="SheetResources.CopySheet method" Url="html/f6d3e539-be9a-71ae-7e31-3114aeaf19e2.htm" />
+  <HelpKINode Title="SheetResources.CopySheet method" Url="html/00c7a049-5155-3d2b-3dfd-d8ac7dcd87e2.htm" />
   <HelpKINode Title="SheetResources.CreateSheet method" Url="html/986a46d7-235f-aeb6-beea-f463081075cc.htm" />
   <HelpKINode Title="SheetResources.CreateSheetFromTemplate method" Url="html/6f861d56-a1d3-677f-f1eb-ebcb340d62b3.htm" />
   <HelpKINode Title="SheetResources.CrossSheetReferenceResources property" Url="html/fdd4b94c-5d2a-c255-a678-7964ef0fb529.htm" />
@@ -3622,6 +3639,7 @@
   <HelpKINode Title="SheetUserSettings.SheetUserSettings constructor" Url="html/19495581-56e7-5851-69bd-f1b49cf4f034.htm" />
   <HelpKINode Title="SHEET_HYPERLINKS enumeration member">
     <HelpKINode Title="FolderRemapExclusion Enumeration" Url="html/b1fbeb0d-8d51-1d32-e873-af32088d5fa4.htm" />
+    <HelpKINode Title="SheetCopyExclusion Enumeration" Url="html/75780bb9-323c-bbf7-ec40-4149701b4ce4.htm" />
     <HelpKINode Title="WorkspaceRemapExclusion Enumeration" Url="html/752af731-595d-297c-6b06-43e962c9af21.htm" />
   </HelpKINode>
   <HelpKINode Title="SHEET_NAMES enumeration member" Url="html/2ec8c9b4-50bd-9098-35ee-843adac8bde1.htm" />
@@ -3884,6 +3902,7 @@
   <HelpKINode Title="Smartsheet.Api.Models.ShareToManyBuilder class" Url="html/f3b046c3-9b5d-f231-3ee4-476e53f1916e.htm" />
   <HelpKINode Title="Smartsheet.Api.Models.ShareType enumeration" Url="html/d993bdd0-6ab8-2f73-65ac-bca545472924.htm" />
   <HelpKINode Title="Smartsheet.Api.Models.Sheet class" Url="html/d2c155db-81d1-39b0-74fb-fb221a9a67ec.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.SheetCopyExclusion enumeration" Url="html/75780bb9-323c-bbf7-ec40-4149701b4ce4.htm" />
   <HelpKINode Title="Smartsheet.Api.Models.SheetCopyInclusion enumeration" Url="html/6e7e3b4f-ec1d-d7e9-1ba0-00121d12c3c4.htm" />
   <HelpKINode Title="Smartsheet.Api.Models.SheetEmail class" Url="html/58f494df-c53c-60e6-4b4d-62b6250d186a.htm" />
   <HelpKINode Title="Smartsheet.Api.Models.SheetEmailFormat enumeration" Url="html/a6130b0f-58d9-9aea-6ec0-1bc03e04f5ba.htm" />
