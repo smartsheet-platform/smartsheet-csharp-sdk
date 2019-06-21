@@ -28,19 +28,9 @@ namespace Smartsheet.Api.Models
     public enum SheetCopyInclusion
     {
         /// <summary>
-        /// Includes the data.
-        /// </summary>
-        DATA,
-
-        /// <summary>
         /// Includes the attachments.
         /// </summary>
         ATTACHMENTS,
-
-        /// <summary>
-        /// Includes the discussions.
-        /// </summary>
-        DISCUSSIONS,
 
         /// <summary>
         /// Includes cell links.
@@ -48,12 +38,42 @@ namespace Smartsheet.Api.Models
         CELL_LINKS,
 
         /// <summary>
+        /// Includes the data.
+        /// </summary>
+        DATA,
+
+        /// <summary>
+        /// Includes the discussions.
+        /// </summary>
+        DISCUSSIONS,
+
+        /// <summary>
+        /// Includes sheet filters
+        /// </summary>
+        FILTERS,
+
+        /// <summary>
         /// Includes the forms.
         /// </summary>
         FORMS,
 
         /// <summary>
-        /// includes everything (data, attachments, discussions, cellLinks, and forms).
+        /// includes notification recipients, must also include rules when using this attribute
+        /// </summary>
+        RULE_RECIPIENTS,
+
+        /// <summary>
+        ///  includes notifications and workflow rules
+        /// </summary>
+        RULES,
+
+        /// <summary>
+        /// Includes shares
+        /// </summary>
+        SHARES,
+
+        /// <summary>
+        /// Deprecated
         /// </summary>
         ALL,
     }
