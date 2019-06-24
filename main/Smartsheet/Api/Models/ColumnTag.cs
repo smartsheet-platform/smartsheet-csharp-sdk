@@ -25,6 +25,7 @@ namespace Smartsheet.Api.Models
     {
         CALENDAR_START_DATE,
         CALENDAR_END_DATE,
+        CARD_DONE,
         GANTT_START_DATE,
         GANTT_END_DATE,
         GANTT_PERCENT_COMPLETE,
