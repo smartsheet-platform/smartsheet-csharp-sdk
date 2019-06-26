@@ -8,7 +8,6 @@ before_install:
   - smartsheet-sdk-tests/travis_scripts/install_wiremock.sh
 
 script:
-  - dotnet restore
   - find * -name *.csproj | xargs -I % dotnet add % package coverlet.msbuild -v 2.5.1
   - dotnet build smartsheet-csharp-sdk-v2.csproj -f netstandard2.0
   - dotnet test IntegrationTestSDK/netcoreapp2.0/integration-test-sdk-netcoreapp20.csproj /p:CollectCoverage=true
