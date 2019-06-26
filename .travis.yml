@@ -13,3 +13,5 @@ script:
   - dotnet test IntegrationTestSDK/netcoreapp2.0/integration-test-sdk-netcoreapp20.csproj /p:CollectCoverage=true
   - smartsheet-sdk-tests/travis_scripts/start_wiremock.sh
   - dotnet test TestSDKMockAPI/netcoreapp2.0/mock-api-test-sdk-netcoreapp20.csproj /p:CollectCoverage=true /p:MergeWith="./coverage.json" /p:CoverletOutputFormat=opencover
+  - dotnet tool install -g coveralls.net --version 1.0.0
+  - csmacnz.coveralls
