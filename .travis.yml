@@ -9,11 +9,11 @@ before_install:
 
 script:
   - dotnet build smartsheet-csharp-sdk-v2.csproj -f netstandard2.0
-  - dotnet test IntegrationTestSDK/netcoreapp2.0/integration-test-sdk-netcoreapp20.csproj /p:CollectCoverage=true /p:CoverletOutput=$TRAVIS_BUILD_DIR
+  - dotnet test IntegrationTestSDK/netcoreapp2.0/integration-test-sdk-netcoreapp20.csproj /p:CollectCoverage=true /p:CoverletOutput=$TRAVIS_BUILD_DIR/it_coverage.json
   - smartsheet-sdk-tests/travis_scripts/start_wiremock.sh
-  - dotnet test TestSDKMockAPI/netcoreapp2.0/mock-api-test-sdk-netcoreapp20.csproj /p:CollectCoverage=true /p:MergeWith="$TRAVIS_BUILD_DIR/coverage.json" /p:CoverletOutput=$TRAVIS_BUILD_DIR /p:CoverletOutputFormat=opencover
+  - dotnet test TestSDKMockAPI/netcoreapp2.0/mock-api-test-sdk-netcoreapp20.csproj /p:CollectCoverage=true /p:MergeWith="$TRAVIS_BUILD_DIR/it_coverage.json" /p:CoverletOutput=$TRAVIS_BUILD_DIR/coverage.opencover.xml /p:CoverletOutputFormat=opencover
   # renaming the old .csproj to avoid https://github.com/dotnet/cli/issues/9738 
   - mv Smartsheet-csharp-sdk.csproj Smartsheet-csharp-sdk.csproj.1
   - dotnet tool install coveralls.net --version 1.0.0 --tool-path tools
   - ls -al
-  - ./tools/csmacnz.Coveralls --opencover -i opencoverCoverage.xml 
+  - ./tools/csmacnz.Coveralls --opencover -i coverage.opencover.xml 
