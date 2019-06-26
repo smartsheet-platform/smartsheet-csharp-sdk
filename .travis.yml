@@ -15,7 +15,6 @@ script:
   - dotnet test TestSDKMockAPI/netcoreapp2.0/mock-api-test-sdk-netcoreapp20.csproj /p:CollectCoverage=true /p:MergeWith="./coverage.json" /p:CoverletOutputFormat=opencover
   # renaming the old .csproj to avoid https://github.com/dotnet/cli/issues/9738 
   - mv Smartsheet-csharp-sdk.csproj Smartsheet-csharp-sdk.csproj.1
-  - dotnet tool install coveralls.net --version 1.0.0 --tool-path tools
-  - ls -al tools
-  - ./tools/csmacnz.coveralls --opencover -i opencoverCoverage.xml --repoToken $env:COVERALLS_REPO_TOKEN --useRelativePaths --commitId $env:APPVEYOR_REPO_COMMIT --commitBranch $env:APPVEYOR_REPO_BRANCH --commitAuthor $env:APPVEYOR_REPO_COMMIT_AUTHOR --commitEmail $env:APPVEYOR_REPO_COMMIT_AUTHOR_EMAIL --commitMessage $env:APPVEYOR_REPO_COMMIT_MESSAGE --jobId $env:APPVEYOR_BUILD_NUMBER --serviceName appveyor
+  - dotnet tool install -g coveralls.net --version 1.0.0 
+  - csmacnz.Coveralls --opencover -i opencoverCoverage.xml --repoToken $env:COVERALLS_REPO_TOKEN --useRelativePaths --commitId $env:APPVEYOR_REPO_COMMIT --commitBranch $env:APPVEYOR_REPO_BRANCH --commitAuthor $env:APPVEYOR_REPO_COMMIT_AUTHOR --commitEmail $env:APPVEYOR_REPO_COMMIT_AUTHOR_EMAIL --commitMessage $env:APPVEYOR_REPO_COMMIT_MESSAGE --jobId $env:APPVEYOR_BUILD_NUMBER --serviceName appveyor
 
