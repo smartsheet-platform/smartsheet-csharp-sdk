@@ -34,6 +34,8 @@ namespace Smartsheet.Api.Models
 
         private IList<Currency> currency;
 
+        private IList<string> dateFormat;
+
         private IList<string> decimalCount;
 
         private IList<FontFamily> fontFamily;
@@ -94,6 +96,15 @@ namespace Smartsheet.Api.Models
         {
             get { return currency; }
             set { currency = value; }
+        }
+
+        /// <summary>
+        /// Available date formats
+        /// </summary>
+        public IList<string> DateFormat
+        {
+            get { return dateFormat; }
+            set { dateFormat = value; }
         }
 
         /// <summary>
