@@ -15,7 +15,7 @@ build_script:
 #---------------------------------#
 #       tests configuration       #
 #---------------------------------#
-environment:
+#environment:
   #TODO: PUT ENVIRONMENT VARS HERE
 
 # TODO: Get the mock API running using a before_test entry as described at https://www.appveyor.com/docs/running-tests/
