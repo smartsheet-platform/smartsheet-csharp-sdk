@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Init;Build;Deploy;Zip;NugetPackage">
+	<!--
+	References:
+		http://msdn.microsoft.com/en-us/library/vstudio/dd393574.aspx
+		http://msdn.microsoft.com/en-us/library/vstudio/ms164313.aspx
+	\-->
+	
+	<PropertyGroup>
+		<MSBuildCommunityTasksPath>$(MSBuildProjectDirectory)</MSBuildCommunityTasksPath>
+	</PropertyGroup>
+	<Import Project="$(MSBuildCommunityTasksPath)\MSBuild.Community.Tasks.Targets" />
+
+	<PropertyGroup>
+		<RootDir>..\</RootDir>
+		<TheDeployDir>$(RootDir)\.deploy</TheDeployDir>
+		<AssemblyCopyright>Copyright (c) 2014-2019</AssemblyCopyright>
+		<Description>Library that uses C# to connect to Smartsheet services.</Description>
+		<TheZipFileName>smartsheet-csharp-sdk-v$(TheVersion).zip</TheZipFileName>
+		<NugetPath>./.nuget/nuget.exe</NugetPath>
+		<Configuration Condition="'$(Configuration)' == ''">Release</Configuration>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<TheProjects Include="$(RootDir)\Smartsheet-csharp-sdk.csproj"></TheProjects>
+		<!-- TODO: Add test SDK project here to build it too -->
+	</ItemGroup>
+
+	<ItemGroup>
+		<DeployFiles Include="$(RootDir)\bin\$(Configuration)\smartsheet-csharp-sdk.dll"></DeployFiles>
+		<DeployFiles Include="$(RootDir)\bin\$(Configuration)\Newtonsoft.Json.dll"></DeployFiles>
+		<DeployFiles Include="$(RootDir)\bin\$(Configuration)\NLog.dll"></DeployFiles>
+		<DeployFiles Include="$(RootDir)\bin\$(Configuration)\NLog.config"></DeployFiles>
+		<DeployFiles Include="$(RootDir)\bin\$(Configuration)\RestSharp.dll"></DeployFiles>
+		<DeployFiles Include="$(RootDir)\bin\$(Configuration)\System.ValueTuple.dll"></DeployFiles>
+		<!-- TODO: Add test DLL project here to make it available too (e.g. for running tests locally against the same binary -->
+	</ItemGroup>
+
+	<Target Name="Init">
+		<ConvertToAbsolutePath Paths="$(RootDir)">
+			<Output TaskParameter="AbsolutePaths" PropertyName="RootDir"/>
+		</ConvertToAbsolutePath>
+		<!-- Apparently the PropertyGroup values are evaluated early and not reevaluated on demand because I had to run this again to get it to accept the new root dir value -->
+		<ConvertToAbsolutePath Paths="$(TheDeployDir)">
+			<Output TaskParameter="AbsolutePaths" PropertyName="TheDeployDir"/>
+		</ConvertToAbsolutePath>
+		<ConvertToAbsolutePath Paths="$(NugetPath)">
+			<Output TaskParameter="AbsolutePaths" PropertyName="NugetPath"/>
+		</ConvertToAbsolutePath>
+
+		<Message Text="Project File Name = $(MSBuildProjectFile)" />
+		<Message Text="Project Extension = $(MSBuildProjectExtension)" />
+		<Message Text="MSBuildProjectDirectory = $(MSBuildProjectDirectory)" />
+		<Message Text="SolutionDir = $(SolutionDir)" />
+
+		<Message Text="RootDir=$(RootDir)" />
+		<Message Text="TheDeployDir=$(TheDeployDir)" />
+
+	</Target>
+
+	<Target Name="Validate">
+		<ItemGroup>
+			<_RequiredProperties Include="TheVersion">
+				<Value>$(TheVersion)</Value>
+			</_RequiredProperties>
+		</ItemGroup>
+
+		<Error 
+			Condition=" '%(_RequiredProperties.Value)'=='' "
+			Text=" Missing required property [%(_RequiredProperties.Identity)]" 
+		/>
+	</Target>
+
+	<Target Name="SetProjectVersion">
+		
+		<ItemGroup>
+			<AssemblyInfoFiles Include="$(RootDir)\Properties\AssemblyInfo.cs" />
+		</ItemGroup>
+
+		<AssemblyInfo 
+			OutputFile="@(AssemblyInfoFiles)" 
+			CodeLanguage="C#"
+			AssemblyTitle="Smartsheet C# SDK"
+			AssemblyDescription="$(Description)"
+			AssemblyConfiguration=""
+			AssemblyCompany="Smartsheet"
+			AssemblyVersion="$(TheVersion)"
+			AssemblyFileVersion="$(TheVersion)"
+			AssemblyCopyright="$(AssemblyCopyright)"  
+		>
+		</AssemblyInfo>
+
+	</Target>
+
+	<Target Name="Clean">
+		<RemoveDir Directories="$(TheDeployDir)" />
+	</Target>
+
+	<Target Name="EnsureDependencies" DependsOnTargets="Init">
+		<!-- Only download a new copy of nuget.exe if we don't have a copy available -->
+		<WebDownload Condition="!Exists('$(NugetPath)')" Filename="$(NugetPath)" FileUri="https://dist.nuget.org/win-x86-commandline/latest/nuget.exe" />
+
+		<Exec Command='$(NugetPath) restore -Verbosity Detailed -NonInteractive -OutputDirectory $(RootDir)\packages\ -Source "https://api.nuget.org/v3/index.json" $(RootDir)\smartsheet-csharp-sdk.sln'></Exec>
+	</Target>
+
+	<Target Name="Build" DependsOnTargets="Validate;EnsureDependencies;SetProjectVersion">
+		<Message Text="Building version: $(TheVersion)" />
+		
+		<Message Text="Absolute project path: %(TheProjects.FullPath)" />
+
+		<MSBuild 
+			Projects="%(TheProjects.FullPath)" 
+			Properties="Configuration=$(Configuration);Platform=AnyCPU;ApplicationVersion=$(TheVersion);SolutionDir=$(RootDir)" 
+			Targets="Rebuild"
+		/>
+	</Target>
+
+	<Target Name="Deploy" DependsOnTargets="Build;Clean">
+		<MakeDir Directories="$(TheDeployDir)" />
+
+		<Copy
+			SourceFiles="%(DeployFiles.FullPath)"
+			DestinationFolder="$(TheDeployDir)"
+		/>
+
+		<!-- Prepares for running tests in $(TheDeployDir) -->
+		<!-- TODO: Copy over test dependencies...
+		<ItemGroup>
+			<TestBinaries Include="$(RootDir)\LessIO.Tests\Bin\$(Configuration)\LessIO.Tests.dll" />
+			<TestBinaries Include="$(RootDir)\LessIO.Tests\Bin\$(Configuration)\xunit.execution.desktop.dll" />
+			<TestBinaries Include="$(RootDir)\LessIO.Tests\Bin\$(Configuration)\xunit.abstractions.dll" />
+			<TestBinaries Include="$(RootDir)\LessIO.Tests\Bin\$(Configuration)\xunit.core.dll" />
+			<TestBinaries Include="$(RootDir)\LessIO.Tests\Bin\$(Configuration)\xunit.assert.dll" />
+		</ItemGroup>
+		
+		<Copy
+			SourceFiles="%(TestBinaries.FullPath)"
+			DestinationFolder="$(TheDeployDir)"
+		/>
+		-->
+	</Target>
+
+	<Target Name="Zip" DependsOnTargets="Deploy">
+		<!-- see https://github.com/loresoft/msbuildtasks/blob/master/Source/MSBuild.Community.Tasks/Zip.cs -->
+		<Zip
+			Files="@(DeployFiles)"
+			Flatten="True"
+			ZipFileName="$(TheDeployDir)\$(TheZipFileName)"
+		/>
+	</Target>
+
+	<Target Name="NugetPackage" DependsOnTargets="Deploy">
+		<!-- 
+			See http://docs.nuget.org/Create/Creating-and-Publishing-a-Package
+		 -->
+		<PropertyGroup>
+			<PackageDir>$(TheDeployDir)\nuget-package</PackageDir>
+		</PropertyGroup>
+
+		<Copy
+			SourceFiles="smartsheet-csharp-sdk.nuspec"
+			DestinationFolder="$(PackageDir)"
+		/>
+		<XmlPoke
+			XmlInputPath="$(PackageDir)\smartsheet-csharp-sdk.nuspec"
+			Query="//package/metadata/version"
+			Value="$(TheVersion)"
+		/>
+		<XmlPoke
+			XmlInputPath="$(PackageDir)\smartsheet-csharp-sdk.nuspec"
+			Query="//package/metadata/description"
+			Value="$(Description)"
+		/>
+		
+		<Exec
+			Command="nuget pack &quot;$(PackageDir)\smartsheet-csharp-sdk.nuspec&quot; -NoDefaultExcludes -Verbosity Normal" 
+			WorkingDirectory="$(PackageDir)"
+			ContinueOnError="true"
+		>
+			<Output TaskParameter="ExitCode" PropertyName="ErrorCode"/>
+		</Exec>
+		<Message Text="nuget exit code:$(ErrorCode)" />
+		<Error
+			Condition="$(ErrorCode)!=0"
+			Text="nuget failed. Make sure you have nuget installed and accessible from the command line. See http://docs.nuget.org/docs/reference/command-line-reference"
+		/>
+		<Message 
+			Text="Nuget package built. To test the nuget package run `nuget install smartsheet-csharp-sdk -source $(PackageDir)`"
+			Importance="high"
+		/>
+		<Message
+			Importance="high"
+			Text="
+
+Next Steps to publish (TODO: REVIEW THESE STEPS):
+- Tag the repo: `git tag v$(TheVersion)`
+- Push the tag to github to create the release: `git push --tags`
+- Upload $(TheZipFileName) at https://github.com/smartsheet-platform/smartsheet-csharp-sdk/releases/tag/v$(TheVersion)
+- Run `nuget push $(PackageDir)\smartsheet-csharp-sdk.$(TheVersion).nupkg -Source https://www.nuget.org/api/v2/package -ApiKey 00000000-0000-0000-0000-00000000` to push to nuget package. Get API Key at https://www.nuget.org/account
+" 
+		/>
+	</Target>
+</Project>
