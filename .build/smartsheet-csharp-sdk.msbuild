@@ -156,24 +156,9 @@
 		<PropertyGroup>
 			<PackageDir>$(TheDeployDir)\nuget-package</PackageDir>
 		</PropertyGroup>
-
-		<Copy
-			SourceFiles="smartsheet-csharp-sdk.nuspec"
-			DestinationFolder="$(PackageDir)"
-		/>
-		<XmlPoke
-			XmlInputPath="$(PackageDir)\smartsheet-csharp-sdk.nuspec"
-			Query="//package/metadata/version"
-			Value="$(TheVersion)"
-		/>
-		<XmlPoke
-			XmlInputPath="$(PackageDir)\smartsheet-csharp-sdk.nuspec"
-			Query="//package/metadata/description"
-			Value="$(Description)"
-		/>
-		
+		<!-- This nuget command is based on what was used in the old build.bat for consistency with exisitng packages at https://github.com/smartsheet-platform/smartsheet-csharp-sdk/blob/a9a0be0cb19ddc78e3c22181a536684d301c63d4/build.bat) -->
 		<Exec
-			Command="nuget pack &quot;$(PackageDir)\smartsheet-csharp-sdk.nuspec&quot; -NoDefaultExcludes -Verbosity Normal" 
+			Command="nuget pack &quot;$(RootDir)Smartsheet-csharp-sdk.csproj&quot; -sym -IncludeReferencedProjects -Prop Configuration=Release" 
 			WorkingDirectory="$(PackageDir)"
 			ContinueOnError="true"
 		>
