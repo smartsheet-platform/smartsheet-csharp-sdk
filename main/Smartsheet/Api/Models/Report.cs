@@ -26,6 +26,8 @@ namespace Smartsheet.Api.Models
     {
         private IList<Sheet> _sourceSheet;
 
+        private Scope scope;
+
         /// <summary>
         /// Array of Sheet objects (without rows), representing the sheets that rows in the report originated from.
         /// Only included in the Get Report response if the include parameter specifies “sourceSheets”.
@@ -34,6 +36,15 @@ namespace Smartsheet.Api.Models
         {
             get { return _sourceSheet; }
             set { _sourceSheet = value; }
+        }
+
+        /// <summary>
+        /// Returns the scope of the report
+        /// </summary>
+        public Scope Scope
+        {
+            get { return scope; }
+            set { scope = value; }
         }
 
         /// <summary>

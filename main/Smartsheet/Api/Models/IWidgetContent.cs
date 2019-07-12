@@ -1,7 +1,7 @@
 ﻿//    #[license]
 //    SmartsheetClient SDK for C#
 //    %%
-//    Copyright (C) 2014 SmartsheetClient
+//    Copyright (C) 2019 SmartsheetClient
 //    %%
 //    Licensed under the Apache License, Version 2.0 (the "License");
 //    you may not use this file except in compliance with the License.
@@ -16,25 +16,17 @@
 //    limitations under the License.
 //    %[license]
 
+using System.Collections.Generic;
+
 namespace Smartsheet.Api.Models
 {
-    /// <summary>
-    /// Represents the source object from which the enclosing report, sheet, sight, or template was created. 
-    /// </summary>
-
-    public class Source : IdentifiableModel
+    public interface IWidgetContent
     {
-        private string type;
-
         /// <summary>
-        /// Type of this source. "report", "sheet", "sight" or "template"
+        /// Gets the objectValue Type.
         /// </summary>
-        /// <returns> "report", "sheet", "sight" or "template" </returns>
-        public string Type
-        {
-            get { return type; }
-            set { type = value; }
-        }
+        /// <returns> the Type </returns>
+        WidgetType WidgetType { get; }
     }
-
 }
+

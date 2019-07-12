@@ -28,11 +28,6 @@ namespace Smartsheet.Api.Models
     public enum WidgetType
     {
         /// <summary>
-        /// CellLinkWidgetContent object
-        /// </summary>
-        CELLLINK,
-
-        /// <summary>
         /// ChartWidgetContent object
         /// </summary>
         CHART,
@@ -45,13 +40,13 @@ namespace Smartsheet.Api.Models
         /// <summary>
         /// CellLinkWidgetContent object
         /// </summary>
-        SHEETSUMMARY,
+        METRIC,
 
         /// <summary>
         /// ReportWidgetContent object
         /// </summary>
         GRIDGANTT,
-        
+
         /// <summary>
         /// RichTextWidgetContent object
         /// </summary>
@@ -60,12 +55,7 @@ namespace Smartsheet.Api.Models
         /// <summary>
         /// ShortcutWidgetContent object
         /// </summary>
-        SHORTCUTICON,
-
-        /// <summary>
-        /// ShortcutWidgetContent object
-        /// </summary>
-        SHORTCUTLIST,
+        SHORTCUT,
 
         /// <summary>
         /// TitleWidgetContent object

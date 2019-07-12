@@ -1,7 +1,7 @@
 ﻿//    #[license]
 //    SmartsheetClient SDK for C#
 //    %%
-//    Copyright (C) 2014 SmartsheetClient
+//    Copyright (C) 2019 SmartsheetClient
 //    %%
 //    Licensed under the Apache License, Version 2.0 (the "License");
 //    you may not use this file except in compliance with the License.
@@ -16,30 +16,35 @@
 //    limitations under the License.
 //    %[license]
 
-using System.Collections.Generic;
-using Newtonsoft.Json.Converters;
-using System.Runtime.Serialization;
-
 namespace Smartsheet.Api.Models
 {
     /// <summary>
-    /// Represents specific elements to include in a response.
-    /// </summary>
-    public enum FolderInclusion
+    /// Represents the WebContentidgetContent object.</summary>
+    /// <seealso href="https://smartsheet-platform.github.io/api-docs/#webcontentwidgetcontent-object">WebContentidgetContent Object Help</seealso>    
+    public class WebContentWidgetContent : IWidgetContent
     {
         /// <summary>
-        /// Includes the owner’s email address and user ID for each sheet.
+        /// Represents the WebContentWidgetContent object
         /// </summary>
-        OWNER_INFO,
+        private string url;
 
         /// <summary>
-        /// Includes the sheet version for any sheet returned in this folder.
+        /// Returns the type for this widget content object
         /// </summary>
-        SHEET_VERSION,
+        public WidgetType WidgetType
+        {
+            get { return WidgetType.WEBCONTENT; }
+        }
 
         /// <summary>
-        /// Includes the source for any sheet that was created from another sheet or template.
+        /// Gets the URL for the webContent widget
         /// </summary>
-        SOURCE
+        /// <returns> the url </returns>
+        public string Url
+        {
+            get { return url; }
+            set { url = value; }
+        }
     }
 }
+
