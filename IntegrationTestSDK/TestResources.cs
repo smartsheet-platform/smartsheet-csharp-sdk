@@ -32,6 +32,19 @@ namespace IntegrationTestSDK
             return sheet;
         }
 
+        public Sheet CreateSheet()
+        {
+            Sheet sheet = smartsheet.SheetResources.CreateSheet(CreateSheetObject());
+            Cell cellA = new Cell.AddCellBuilder(sheet.Columns[1].Id.Value, null).SetValue("A").SetStrict(false).Build();
+            Cell cellB = new Cell.AddCellBuilder(sheet.Columns[1].Id.Value, null).SetValue("B").SetStrict(false).Build();
+            Cell cellC = new Cell.AddCellBuilder(sheet.Columns[1].Id.Value, null).SetValue("C").SetStrict(false).Build();
+            Row rowA = new Row.AddRowBuilder(true, null, null, null, null).SetCells(new Cell[] { cellA }).Build();
+            Row rowB = new Row.AddRowBuilder(true, null, null, null, null).SetCells(new Cell[] { cellB }).Build();
+            Row rowC = new Row.AddRowBuilder(true, null, null, null, null).SetCells(new Cell[] { cellC }).Build();
+            sheet.Rows = smartsheet.SheetResources.RowResources.AddRows(sheet.Id.Value, new Row[] { rowA, rowB, rowC });
+            return sheet;
+        }
+
         public Folder CreateFolderHome()
         {
             Folder folder = new Folder.CreateFolderBuilder("CSharp SDK Test").Build();

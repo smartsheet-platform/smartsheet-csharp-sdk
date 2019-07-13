@@ -63,6 +63,7 @@
     <Compile Include="..\ColumnResourcesTest.cs" />
     <Compile Include="..\CommentResourcesTest.cs" />
     <Compile Include="..\ContactResourcesTest.cs" />
+    <Compile Include="..\CrossSheetReferencesTest.cs" />
     <Compile Include="..\DiscussionResourcesTest.cs" />
     <Compile Include="..\EventResourcesTest.cs" />
     <Compile Include="..\FavoriteResourcesTest.cs" />
