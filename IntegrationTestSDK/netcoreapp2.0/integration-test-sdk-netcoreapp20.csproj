@@ -38,10 +38,9 @@
     <Compile Include="..\SearchingResourcesTest.cs" />
     <Compile Include="..\ServerInformationResourcesTest.cs" />
     <Compile Include="..\ShareResourcesTest.cs" />
-    <Compile Include="..\SheetResourcesCopyTest.cs" />
-    <Compile Include="..\SheetResourcesMoveTest.cs" />
     <Compile Include="..\SheetResourcesTest.cs" />
     <Compile Include="..\SheetResourcesUpdateRequestTest.cs" />
+    <Compile Include="..\TestResources.cs" />
     <Compile Include="..\TokenResourcesTest.cs" />
     <Compile Include="..\UserResourcesTest.cs" />
     <Compile Include="..\WorkspaceResourcesCopyTest.cs" />
