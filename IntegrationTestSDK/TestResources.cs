@@ -16,19 +16,12 @@ namespace IntegrationTestSDK
 
         public Sheet CreateSheetObject()
         {
-            Column colA = new Column.AddColumnBuilder("Favorite", null, ColumnType.CHECKBOX)
-                .SetSymbol(Symbol.STAR)
-                .Build();
-            Column colB = new Column.AddColumnBuilder("Primary Column", null, ColumnType.TEXT_NUMBER)
-                .Build();
+            Column colA = new Column.AddColumnBuilder("Favorite", null, ColumnType.CHECKBOX).SetSymbol(Symbol.STAR).Build();
+            Column colB = new Column.AddColumnBuilder("Primary Column", null, ColumnType.TEXT_NUMBER).Build();
+            Column colC = new Column.AddColumnBuilder("Col 3", null, ColumnType.PICKLIST).SetOptions(new List<string> { "Not Started", "Started", "Completed" }).Build();
+            Column colD = new Column.AddColumnBuilder("Date", null, ColumnType.DATE).Build();
             colB.Primary = true;
-            Column colC = new Column.AddColumnBuilder("Col 3", null, ColumnType.PICKLIST)
-                .SetOptions(new List<string> { "Not Started", "Started", "Completed" })
-                .Build();
-            Column colD = new Column.AddColumnBuilder("Date", null, ColumnType.DATE)
-                .Build();
-            Sheet sheet = new Sheet.CreateSheetBuilder("CSharp SDK Test", new List<Column> { colA, colB, colC, colD })
-                .Build();
+            Sheet sheet = new Sheet.CreateSheetBuilder("CSharp SDK Test", new List<Column> { colA, colB, colC, colD }).Build();
             return sheet;
         }
 
