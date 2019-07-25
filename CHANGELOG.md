@@ -6,25 +6,38 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-## [2.68.3] - 2019-6-21
+## [2.77.0] - 2019-07-25
+### Added 
+- CARD_DONE tag to column tags enumeration
+- `Description` property to Column model
+- ListUsers accepts an `includes` parameter - the only currently accepted argument value is `LAST_LOGIN`
+- 'DateFormat' property to FormatTables model
+- `SOURCE` as include flag to GetSight
+- `SOURCE` and `SCOPE` as include flags to GetReport
+
+### Changed
+- Significant overhaul to Sights (AKA dashboards) - added separate content models for each widget type
+- Started a revamp of ITs to provide better test coverage
+
+## [2.68.3] - 2019-06-21
 ### Added
 - rules, ruleRecipients and shares to inclusions
 - exclusion to CopySheet method
 
-## [2.68.2] - 2019-5-29
+## [2.68.2] - 2019-05-29
 ### Added
 - Support for .NET Standard 2.0. Nuget.org package contains assemblies for both .NET Framework 4.5.2 and 
 .NET Standard 2.0.
 
-## [2.68.1] - 2019-5-15
+## [2.68.1] - 2019-05-15
 ### Fixed
 - Added missing public class declarations for some of the ObjectValue types
 
-## [2.68.0] - 2019-5-13
+## [2.68.0] - 2019-05-13
 ### Added
 - Implement Event Reporting
 
-## [2.6.0] - 2019-1-31
+## [2.6.0] - 2019-01-31
 ### Added
 - Added group inclusion to GetCurrentUser
 - Added BASE URI definition for Smartsheetgov
