@@ -64,6 +64,11 @@ namespace Smartsheet.Api.Models
         private string permalink;
 
         /// <summary>
+        /// the Source object for any Sight that was created from another Sight
+        /// </summary>
+        private Source source;
+
+        /// <summary>
         /// Array of Widget objects
         /// </summary>
         private IList<Widget> widgets;
@@ -142,6 +147,16 @@ namespace Smartsheet.Api.Models
         {
             get { return permalink; }
             set { permalink = value; }
+        }
+
+        /// <summary>
+        /// the Source object for any Sight that was created from another Sight, if any
+        /// </summary>
+        /// <returns>the source object</returns>
+        public Source Source
+        {
+            get { return source; }
+            set { source = value; }
         }
 
         /// <summary>

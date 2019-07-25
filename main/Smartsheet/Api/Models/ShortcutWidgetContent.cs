@@ -1,7 +1,7 @@
 ﻿//    #[license]
 //    SmartsheetClient SDK for C#
 //    %%
-//    Copyright (C) 2014 SmartsheetClient
+//    Copyright (C) 2019 SmartsheetClient
 //    %%
 //    Licensed under the Apache License, Version 2.0 (the "License");
 //    you may not use this file except in compliance with the License.
@@ -17,29 +17,35 @@
 //    %[license]
 
 using System.Collections.Generic;
-using Newtonsoft.Json.Converters;
-using System.Runtime.Serialization;
 
 namespace Smartsheet.Api.Models
 {
     /// <summary>
-    /// Represents specific elements to include in a response.
-    /// </summary>
-    public enum FolderInclusion
+    /// Represents the ShortcutWidgetContent object.</summary>
+    /// <seealso href="https://smartsheet-platform.github.io/api-docs/#shortcutwidgetcontent-object">ShortcutWidgetContent Object Help</seealso>    
+    public class ShortcutWidgetContent : IWidgetContent
     {
         /// <summary>
-        /// Includes the owner’s email address and user ID for each sheet.
+        /// Array of ShortcutDataItem objects
         /// </summary>
-        OWNER_INFO,
+        private IList<ShortcutDataItem> shortcutData;
 
         /// <summary>
-        /// Includes the sheet version for any sheet returned in this folder.
+        /// Returns the type for this widget content object
         /// </summary>
-        SHEET_VERSION,
+        public WidgetType WidgetType
+        {
+            get { return WidgetType.SHORTCUT; }
+        }
 
         /// <summary>
-        /// Includes the source for any sheet that was created from another sheet or template.
+        /// An array of ShortcutDataItem objects.
         /// </summary>
-        SOURCE
+        /// <returns> the array </returns>
+        public IList<ShortcutDataItem> ShortcutData
+        {
+            get { return shortcutData; }
+            set { shortcutData = value; }
+        }
     }
 }

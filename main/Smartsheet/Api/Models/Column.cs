@@ -47,6 +47,11 @@ namespace Smartsheet.Api.Models
         private IList<Contact> contactOptions;
 
         /// <summary>
+        /// Column description.
+        /// </summary>
+        private string description;
+
+        /// <summary>
         /// The format descriptor. Only returned if the include query string parameter contains format and this column 
         /// has a non-default format applied to it.
         /// </summary>
@@ -154,6 +159,16 @@ namespace Smartsheet.Api.Models
         {
             get { return contactOptions; }
             set { contactOptions = value; }
+        }
+
+        /// <summary>
+        /// <para>Gets the column description</para>
+        /// </summary>
+        /// <returns>the column description</returns>
+        public string Description
+        {
+            get { return description; }
+            set { description = value; }
         }
 
         /// <summary>

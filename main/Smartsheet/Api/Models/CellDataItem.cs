@@ -30,14 +30,19 @@ namespace Smartsheet.Api.Models
     public class CellDataItem
     {
         /// <summary>
-        /// Label for the data point. This will be either the column name or a user-provided string
+        /// Column ID for the cell
         /// </summary>
-        private string label;
+        private long? columnId;
 
         /// <summary>
-        /// formatDescriptor
+        /// Row Id for each item
         /// </summary>
-        private string labelFormat;
+        private long? rowId;
+
+        /// <summary>
+        /// Sheet Id for each item
+        /// </summary>
+        private long? sheetId;
 
         /// <summary>
         /// The type of data returned will depend on the cell type and the data in the cell
@@ -50,9 +55,19 @@ namespace Smartsheet.Api.Models
         private Cell cell;
 
         /// <summary>
+        /// CELL
+        /// </summary>
+        private string dataSource;
+
+        /// <summary>
+        /// Label for the data point. This will be either the column name or a user-provided string
+        /// </summary>
+        private string label;
+
+        /// <summary>
         /// formatDescriptor
         /// </summary>
-        private string valueFormat;
+        private string labelFormat;
 
         /// <summary>
         /// The display order for the CellDataItem
@@ -60,28 +75,37 @@ namespace Smartsheet.Api.Models
         private int? order;
 
         /// <summary>
-        /// Column ID for the cell
+        /// formatDescriptor
         /// </summary>
-        private long? columnId;
+        private string valueFormat;
 
         /// <summary>
-        /// Label for the data point. This will be either the column name or a user-provided string.
+        /// Column Id for each item
         /// </summary>
-        /// <returns> the label </returns>
-        public string Label
+        /// <returns>the column Id</returns>
+        public long? ColumnId
         {
-            get { return label; }
-            set { label = value; }
+            get { return columnId; }
+            set { columnId = value; }
         }
 
         /// <summary>
-        /// formatDescriptor.
+        /// Row Id for each item
         /// </summary>
-        /// <returns> the labelFormat </returns>
-        public string LabelFormat
+        /// <returns>the row Id</returns>
+        public long? RowId
         {
-            get { return labelFormat; }
-            set { labelFormat = value; }
+            get { return rowId; }
+            set { rowId = value; }
+        }
+
+        /// <summary>
+        /// Sheet Id for each item
+        /// </summary>
+        /// <returns>the sheet Id</returns>
+        public long? SheetId
+        {
+            get { return sheetId; }
         }
 
         /// <summary>
@@ -105,13 +129,33 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
+        /// CELL
+        /// </summary>
+        /// <returns>the dataSource string</returns>
+        public string DataSource
+        {
+            get { return dataSource; }
+            set { dataSource = value; }
+        }
+
+        /// <summary>
+        /// Label for the data point. This will be either the column name or a user-provided string.
+        /// </summary>
+        /// <returns> the label </returns>
+        public string Label
+        {
+            get { return label; }
+            set { label = value; }
+        }
+
+        /// <summary>
         /// formatDescriptor.
         /// </summary>
-        /// <returns> the valueFormat </returns>
-        public string ValueFormat
+        /// <returns> the labelFormat </returns>
+        public string LabelFormat
         {
-            get { return valueFormat; }
-            set { valueFormat = value; }
+            get { return labelFormat; }
+            set { labelFormat = value; }
         }
 
         /// <summary>
@@ -125,13 +169,13 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
-        /// Column ID for the cell.
+        /// formatDescriptor.
         /// </summary>
-        /// <returns> the column Id </returns>
-        public long? ColumnId
+        /// <returns> the valueFormat </returns>
+        public string ValueFormat
         {
-            get { return columnId; }
-            set { columnId = value; }
+            get { return valueFormat; }
+            set { valueFormat = value; }
         }
     }
 }

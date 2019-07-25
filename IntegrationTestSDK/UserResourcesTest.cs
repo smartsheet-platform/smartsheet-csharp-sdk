@@ -7,47 +7,26 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace IntegrationTestSDK
 {
     [TestClass]
-    public class UserResourcesTest
+    public class UserResourcesTest : TestResources
     {
         private static string email = "test+email@invalidsmartsheet.com";
-        private SmartsheetClient smartsheet;
+        User user;
 
         [TestInitialize]
         public void SetUp()
         {
-            smartsheet = new SmartsheetBuilder().SetMaxRetryTimeout(30000).Build();
-        }
+            smartsheet = CreateClient();
 
-        [TestMethod]
-        public void ListOneUser()
-        {
-            User user1 = smartsheet.UserResources.AddUser(new User.AddUserBuilder("test+email3@invalidsmartsheet.com", false, false).Build(), true, true);
-            User user2 = smartsheet.UserResources.AddUser(new User.AddUserBuilder("test+email4@invalidsmartsheet.com", false, false).Build(), true, true);
-            PaginatedResult<User> users = smartsheet.UserResources.ListUsers(new String[] { "test+email3@invalidsmartsheet.com" }, null);
-            // Verify that the total amount of users in the org went up by one
-            Assert.AreEqual(1, users.TotalCount);
-            Assert.AreEqual(user1.Email, "test+email3@invalidsmartsheet.com");
-            smartsheet.UserResources.RemoveUser((long)user1.Id, null, null, true);
-            smartsheet.UserResources.RemoveUser((long)user2.Id, null, null, true);
-        }
-
-        [TestMethod]
-        public void UpdateUser()
-        {
-            // Create user as admin
-            User user = smartsheet.UserResources.AddUser(new User.AddUserBuilder(email, true, true).Build(), true, true);
-            // Validate user is an admin
-            UserProfile userProfile = smartsheet.UserResources.GetUser((long)user.Id);
-            Assert.AreEqual(userProfile.Admin, true);
-
-            // Change to non-admin
-            smartsheet.UserResources.UpdateUser(new User.UpdateUserBuilder(user.Id, false, false).Build());
-            
-            // Validate user is not admin
-            userProfile = smartsheet.UserResources.GetUser((long)user.Id);
-            Assert.AreEqual(userProfile.Admin, false);
-
-            smartsheet.UserResources.RemoveUser((long)user.Id, null, null, true);
+            // Remove user if it exists from a previous run.
+            PaginatedResult<User> users = smartsheet.UserResources.ListUsers(null, new PaginationParameters(true, null, null));
+            foreach (User tmpUser in users.Data)
+            {
+                if (tmpUser.Email == email)
+                {
+                    smartsheet.UserResources.RemoveUser((long)tmpUser.Id, null, null, true);
+                    break;
+                }
+            }
         }
 
         [TestMethod]
@@ -58,32 +37,82 @@ namespace IntegrationTestSDK
         }
 
         [TestMethod]
-        public void AddRemoveUser()
+        public void TestUserResources()
         {
-            PaginatedResult<User> users = smartsheet.UserResources.ListUsers(null,new PaginationParameters(true,null,null));
-            
-            // Remove user if it exists from a previous run.
-            foreach (User tmpUser in users.Data)
-            {
-                if (tmpUser.Email == email)
-                {
-                    smartsheet.UserResources.RemoveUser((long)tmpUser.Id, null, null, true);
-                    users = smartsheet.UserResources.ListUsers(null, new PaginationParameters(true, null, null));
-                    break; 
-                }
-            }
+            AddUser();
+            GetUser();
+            UpdateUser();
+            ListOneUser();
+            ListAllUsers();
+            RemoveUser();
+        }
 
-            int? userCount = users.TotalCount;
-            User user1 = smartsheet.UserResources.AddUser(new User.AddUserBuilder(email, true, true).Build(), true, true);
+        private void AddUser()
+        {
+            User _user = new User.AddUserBuilder(email, true, true).Build();
+            _user.FirstName = "Mister";
+            _user.LastName = "CSharp";
+            user = smartsheet.UserResources.AddUser(_user, true, true);
+            Assert.IsTrue(user.Admin.Value);
+            Assert.IsTrue(user.LicensedSheetCreator.Value);
+        }
 
-            int? addedUserCount = smartsheet.UserResources.ListUsers(null,new PaginationParameters(true,null,null)).TotalCount;
-            Assert.AreEqual(userCount + 1, addedUserCount);
-            long userId = user1.Id.Value;
-            Assert.IsTrue(user1.Admin.Value);
-            Assert.IsTrue(user1.LicensedSheetCreator.Value);
-            smartsheet.UserResources.RemoveUser(userId, null, null, true);
-            int? removedUserCount = smartsheet.UserResources.ListUsers(null,new PaginationParameters(true,null,null)).TotalCount;
-            Assert.AreEqual(addedUserCount-1, removedUserCount);
+        private void GetUser()
+        {
+            smartsheet.UserResources.GetUser(user.Id.Value);
+        }
+
+        private void UpdateUser()
+        {
+            User _user = new User.UpdateUserBuilder(user.Id.Value, false, false).Build();
+            user = smartsheet.UserResources.UpdateUser(_user);
+            Assert.IsFalse(user.Admin.Value);
+            Assert.IsFalse(user.LicensedSheetCreator.Value);
+        }
+
+        private void ListOneUser()
+        {
+            PaginatedResult<User> users = smartsheet.UserResources.ListUsers(new String[] { "test+email@invalidsmartsheet.com" }, null);
+            Assert.AreEqual(1, users.TotalCount);
+            Assert.AreEqual(users.Data[0].Email, "test+email@invalidsmartsheet.com");
+        }
+
+        private void ListAllUsers()
+        {
+            PaginatedResult<User> users = smartsheet.UserResources.ListUsers(null, null);
+            // current user + added user
+            Assert.IsTrue(users.Data.Count >= 2);
+        }
+
+        private void RemoveUser()
+        {
+            smartsheet.UserResources.RemoveUser(user.Id.Value, null, null, null);
+        }
+
+        [TestMethod]
+        public void TestAlternateEmail()
+        {
+            UserProfile me = smartsheet.UserResources.GetCurrentUser();
+
+            AlternateEmail altEmail1 = new AlternateEmail.AlternateEmailBuilder("test+altemail2@invalidsmartsheet.com").Build();
+            AlternateEmail altEmail2 = new AlternateEmail.AlternateEmailBuilder("test+altemail3@invalidsmartsheet.com").Build();
+            smartsheet.UserResources.AddAlternateEmail(me.Id.Value, new AlternateEmail[] { altEmail1, altEmail2 });
+
+            PaginatedResult<AlternateEmail> altEmails = smartsheet.UserResources.ListAlternateEmails(me.Id.Value, null);
+            Assert.IsTrue(altEmails.Data.Count >= 2);
+
+            AlternateEmail altEmail = smartsheet.UserResources.GetAlternateEmail(me.Id.Value, altEmails.Data[0].Id.Value);
+            Assert.AreEqual(altEmail.Email, "test+altemail2@invalidsmartsheet.com");
+
+            smartsheet.UserResources.DeleteAlternateEmail(me.Id.Value, altEmails.Data[0].Id.Value);
+            smartsheet.UserResources.DeleteAlternateEmail(me.Id.Value, altEmails.Data[1].Id.Value);
+        }
+
+        [TestMethod]
+        public void AddProfileImage()
+        {
+            UserProfile me = smartsheet.UserResources.GetCurrentUser();
+            smartsheet.UserResources.AddProfileImage(me.Id.Value, "../../../../../IntegrationTestSDK/curly.jpg", "image/jpeg");
         }
     }
 }

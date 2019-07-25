@@ -76,6 +76,9 @@ namespace Smartsheet.Api.Internal.Json
             // Handles primitive objectValue serialization
             serializer.Converters.Add(new PrimitiveObjectValueConverter());
 
+            // Handles widget content deserialization
+            serializer.Converters.Add(new WidgetContentConverter());
+
             // Handles Hyperlink serialization in the case of an empty hyperlink (reset)
             serializer.Converters.Add(new HyperlinkConverter());
 

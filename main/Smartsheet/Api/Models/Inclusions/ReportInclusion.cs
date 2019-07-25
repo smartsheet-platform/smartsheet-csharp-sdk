@@ -28,19 +28,34 @@ namespace Smartsheet.Api.Models
     public enum ReportInclusion
     {
         /// <summary>
-        /// Includes the discussions.
-        /// </summary>
-        DISCUSSIONS,
-
-        /// <summary>
         /// Includes the attachments.
         /// </summary>
         ATTACHMENTS,
 
         /// <summary>
+        /// Includes the discussions.
+        /// </summary>
+        DISCUSSIONS,
+
+        /// <summary>
         /// Includes the format.
         /// </summary>
         FORMAT,
+
+        /// <summary>
+        /// when used in combination with a level query parameter, includes the email addresses for multi-contact data
+        /// </summary>
+        OBJECT_VALUE,
+
+        /// <summary>
+        /// Adds the report's scope to the response
+        /// </summary>
+        SCOPE,
+
+        /// <summary>
+        /// Adds the Source object indicating which report the report was created from, if any
+        /// </summary>
+        SOURCE,
 
         /// <summary>
         /// Includes the source.

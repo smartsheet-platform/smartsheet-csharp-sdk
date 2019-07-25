@@ -1,7 +1,7 @@
 ﻿//    #[license]
 //    SmartsheetClient SDK for C#
 //    %%
-//    Copyright (C) 2014 SmartsheetClient
+//    Copyright (C) 2019 SmartsheetClient
 //    %%
 //    Licensed under the Apache License, Version 2.0 (the "License");
 //    you may not use this file except in compliance with the License.
@@ -16,25 +16,20 @@
 //    limitations under the License.
 //    %[license]
 
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using System.Runtime.Serialization;
+
 namespace Smartsheet.Api.Models
 {
     /// <summary>
-    /// Represents the source object from which the enclosing report, sheet, sight, or template was created. 
+    /// Represents specific elements to include in a response.
     /// </summary>
-
-    public class Source : IdentifiableModel
+    public enum SightInclusion
     {
-        private string type;
-
         /// <summary>
-        /// Type of this source. "report", "sheet", "sight" or "template"
+        /// Includes the source for any sheet that was created from another sheet or template.
         /// </summary>
-        /// <returns> "report", "sheet", "sight" or "template" </returns>
-        public string Type
-        {
-            get { return type; }
-            set { type = value; }
-        }
+        SOURCE
     }
-
 }

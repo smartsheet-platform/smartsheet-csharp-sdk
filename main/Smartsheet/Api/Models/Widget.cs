@@ -34,16 +34,10 @@ namespace Smartsheet.Api.Models
         private WidgetType type;
 
         /// <summary>
-        /// Data that specifies the contents of the widget. _Note: the type of WidgetContent object (and attributes within) will depend on the value of Widget.type:
-        /// CELLLINK - CellLinkWidgetContent
-        /// SHEETSUMMARY - CellLinkWidgetContent
-        /// RICHTEXT - RichTextWidgetContent
-        /// SHORTCUTICON - ShortcutWidgetContent
-        /// SHORTCUTLIST - ShortcutWidgetContent
-        /// GRIDGANTT - ReportWidgetContent
-        /// IMAGE - ImageWidgetContent
+        /// Data that specifies the contents of the widget. 
+        /// NOTE: The type of WidgetContent object (and attributes within) depends on the value of widget.type.
         /// </summary>
-        WidgetContent contents;
+        IWidgetContent contents;
 
         /// <summary>
         /// Number of Rows that the widget occupies on the Sight
@@ -51,7 +45,8 @@ namespace Smartsheet.Api.Models
         private int? height;
 
         /// <summary>
-        /// True indicates that the client should display the widget title. Note that this is independent of the “title” string which may be null or empty.
+        /// True indicates that the client should display the widget title. 
+        /// Note that this is independent of the “title” string which may be null or empty.
         /// </summary>
         private bool? showTitle;
 
@@ -105,7 +100,7 @@ namespace Smartsheet.Api.Models
         /// See description of contents variable for valid objects.
         /// </summary>
         /// <returns> the contents </returns>
-        public WidgetContent Contents
+        public IWidgetContent Contents
         {
             get { return contents; }
             set { contents = value; }
