@@ -24,9 +24,18 @@ namespace Smartsheet.Api.Models
     /// </summary>
     public class Report : AbstractSheet<ReportRow, ReportColumn, ReportCell>
     {
+        private Scope scope;
+
         private IList<Sheet> _sourceSheet;
 
-        private Scope scope;
+        /// <summary>
+        /// Returns the scope of the report
+        /// </summary>
+        public Scope Scope
+        {
+            get { return scope; }
+            set { scope = value; }
+        }
 
         /// <summary>
         /// Array of Sheet objects (without rows), representing the sheets that rows in the report originated from.
@@ -36,15 +45,6 @@ namespace Smartsheet.Api.Models
         {
             get { return _sourceSheet; }
             set { _sourceSheet = value; }
-        }
-
-        /// <summary>
-        /// Returns the scope of the report
-        /// </summary>
-        public Scope Scope
-        {
-            get { return scope; }
-            set { scope = value; }
         }
 
         /// <summary>
