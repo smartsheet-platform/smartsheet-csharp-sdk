@@ -106,6 +106,7 @@ namespace Smartsheet.Api.Models
         public long? SheetId
         {
             get { return sheetId; }
+            set { sheetId = value; }
         }
 
         /// <summary>
