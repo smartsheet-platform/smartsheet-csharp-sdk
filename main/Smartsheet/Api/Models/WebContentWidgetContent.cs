@@ -24,7 +24,7 @@ namespace Smartsheet.Api.Models
     public class WebContentWidgetContent : IWidgetContent
     {
         /// <summary>
-        /// Represents the WebContentWidgetContent object
+        /// the URL
         /// </summary>
         private string url;
 

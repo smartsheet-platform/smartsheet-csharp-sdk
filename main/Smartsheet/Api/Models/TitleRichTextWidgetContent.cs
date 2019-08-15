@@ -24,12 +24,12 @@ namespace Smartsheet.Api.Models
     public class TitleRichTextWidgetContent : IWidgetContent
     {
         /// <summary>
-        /// Represents the TitleWidgetContent object
+        /// The hex color, for instance #E6F5FE
         /// </summary>
         private string backgroundColor;
 
         /// <summary>
-        /// HTML snippet to render report
+        /// HTML snippet to render title or rich text
         /// </summary>
         private string htmlContent;
 
