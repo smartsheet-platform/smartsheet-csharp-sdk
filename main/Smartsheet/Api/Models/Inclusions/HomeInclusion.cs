@@ -28,13 +28,18 @@ namespace Smartsheet.Api.Models
     public enum HomeInclusion
     {
         /// <summary>
-        /// Includes the source for any sheet that was created from another sheet or template.
+        /// Includes the owner’s email address and user ID for each sheet.
         /// </summary>
-        SOURCE,
+        OWNER_INFO,
 
         /// <summary>
         /// Includes the sheet version for any sheet returned in Home.
         /// </summary>
-        SHEET_VERSION
+        SHEET_VERSION,
+
+        /// <summary>
+        /// Includes the source for any sheet that was created from another sheet or template.
+        /// </summary>
+        SOURCE
     }
 }
