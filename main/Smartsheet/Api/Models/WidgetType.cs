@@ -65,6 +65,19 @@ namespace Smartsheet.Api.Models
         /// <summary>
         /// WebContent object
         /// </summary>
-        WEBCONTENT
+        WEBCONTENT,
+        
+        /// NOTE: These are level=0 widget types that should be supported for now
+        
+        /// <summary>
+        /// SHORTCUTLIST, SHORTCUTICON (both now SHORTCUT) decode to ShortcutWidgetContent object
+        /// </summary>
+        SHORTCUTLIST,
+        SHORTCUTICON,
+
+        /// <summary>
+        /// SHEETSUMMARY (is now METRIC) decodes to CellLinkWidgetContent object
+        /// </summary>
+        SHEETSUMMARY
     }
 }
