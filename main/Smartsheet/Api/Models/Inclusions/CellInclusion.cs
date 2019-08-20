@@ -32,7 +32,16 @@ namespace Smartsheet.Api.Models
         /// <summary>
         /// The columnType attribute for a cell.
         /// </summary>
-        [EnumMember(Value = "columnType")]
-        COLUMN_TYPE
+        COLUMN_TYPE,
+
+        /// <summary>
+        /// The format attribute for a cell if the revision also included a format change
+        /// </summary>
+        FORMAT,
+
+        /// <summary>
+        /// The objectValue attribute for a cell.
+        /// </summary>
+        OBJECT_VALUE
     }
 }
