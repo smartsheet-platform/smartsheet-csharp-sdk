@@ -28,19 +28,29 @@ namespace Smartsheet.Api.Models
     public enum SheetLevelInclusion
     {
         /// <summary>
-        /// Includes sheet-level and row-level discussions.
-        /// </summary>
-        DISCUSSIONS,
-
-        /// <summary>
         /// Includes sheet-level and row-level attachments.
         /// </summary>
         ATTACHMENTS,
 
         /// <summary>
-        /// Includes column, row, and cell formatting.
+        /// Includes columnType attribute in the row’s cells indicating the type of the column the cell resides in.
         /// </summary>
-        FORMAT,
+        COLUMN_TYPE,
+
+        /// <summary>
+        /// contact references
+        /// </summary>
+        CONTACT_REFERENCES,
+
+        /// <summary>
+        /// cross sheet references
+        /// </summary>
+        CROSS_SHEET_REFERENCES,
+
+        /// <summary>
+        /// Includes sheet-level and row-level discussions.
+        /// </summary>
+        DISCUSSIONS,
 
         /// <summary>
         /// Includes column filters and row.filteredOut attribute.
@@ -53,29 +63,9 @@ namespace Smartsheet.Api.Models
         FILTER_DEFINITIONS,
 
         /// <summary>
-        /// Includes the owner’s email address and user Id for each sheet.
+        /// Includes column, row, and cell formatting.
         /// </summary>
-        OWNER_INFO,
-
-        /// <summary>
-        /// Includes the source object indicating which sheet or template the sheet was created from, if any.
-        /// </summary>
-        SOURCE,
-
-        /// <summary>
-        /// Includes a permalink attribute for each row. A row permalink represents a direct link to the row in the Smartsheet application.
-        /// </summary>
-        ROW_PERMALINK,
-
-        /// <summary>
-        /// Includes columnType attribute in the row’s cells indicating the type of the column the cell resides in.
-        /// </summary>
-        COLUMN_TYPE,
-
-        /// <summary>
-        /// Includes createdBy and modifiedBy attributes on the row, indicating the row’s creator and last modifier.
-        /// </summary>
-        ROW_WRITER_INFO,
+        FORMAT,
 
         /// <summary>
         /// object representation of cell value
@@ -83,13 +73,34 @@ namespace Smartsheet.Api.Models
         OBJECT_VALUE,
 
         /// <summary>
-        /// cross sheet references
+        /// Includes the owner’s email address and user Id for each sheet.
         /// </summary>
-        CROSS_SHEET_REFERENCES,
+        OWNER_INFO,
 
         /// <summary>
-        /// contact references
+        /// Includes a permalink attribute for each row. A row permalink represents a direct link to the row in the Smartsheet application.
         /// </summary>
-        CONTACT_REFERENCES,
+        ROW_PERMALINK,
+
+        /// <summary>
+        /// (DEPRECATED: use WRITER_INFO) Includes createdBy and modifiedBy attributes on the row, indicating the row’s creator and last modifier.
+        /// </summary>
+        ROW_WRITER_INFO,
+
+        /// <summary>
+        /// Includes the source object indicating which sheet or template the sheet was created from, if any.
+        /// </summary>
+        SOURCE,
+
+        /// <summary>
+        /// Includes SheetSummary object.
+        /// </summary>
+        SUMMARY,
+
+        /// <summary>
+        /// Includes createdBy and modifiedBy attributes on the row or summary fields, indicating the row or summary field's creator, 
+        /// and last modifier.
+        /// </summary>
+        WRITER_INFO
     }
 }

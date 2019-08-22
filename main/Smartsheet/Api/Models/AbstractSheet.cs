@@ -104,6 +104,11 @@ namespace Smartsheet.Api.Models
         private bool? ganttEnabled;
 
         /// <summary>
+        /// Indicates whether a sheet summary is present
+        /// </summary>
+        private bool? hasSummaryFields;
+
+        /// <summary>
         /// Represents the modification timestamp for the sheet.
         /// </summary>
         private DateTime? modifiedAt;
@@ -150,9 +155,19 @@ namespace Smartsheet.Api.Models
         private Source source;
 
         /// <summary>
+        /// A SheetSummary object containing a list of defined fields and values for the sheet.
+        /// </summary>
+        private SheetSummary summary;
+
+        /// <summary>
         /// Represents the ID of the sheet/template from which the sheet was created.
         /// </summary>
         private long? totalRowCount;
+
+        /// <summary>
+        /// A SheetUserPermissions object indicating what summary operations are possible for the current user
+        /// </summary>
+        private SheetUserPermissions userPermissions;
 
         /// <summary>
         /// Represents the user settings
@@ -307,6 +322,16 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
+        /// Gets a flag indicating whether the sheet summary is present
+        /// </summary>
+        /// <returns> flag indicating whether the sheet summary is present </returns>
+        public bool? HasSummaryFields
+        {
+            get { return hasSummaryFields; }
+            set { hasSummaryFields = value; }
+        }
+
+        /// <summary>
         /// Gets the date and time the sheet was last modified.
         /// </summary>
         /// <returns> the modified at </returns>
@@ -395,6 +420,16 @@ namespace Smartsheet.Api.Models
         }
 
         /// <summary>
+        /// A SheetSummary object containting the sheet summary if available
+        /// </summary>
+        /// <returns> the sheet summary </returns>
+        public SheetSummary Summary
+        {
+            get { return summary; }
+            set { summary = value; }
+        }
+
+        /// <summary>
         /// The total number of rows in the sheet.
         /// </summary>
         /// <returns> The total number of rows in the sheet </returns>
@@ -402,6 +437,16 @@ namespace Smartsheet.Api.Models
         {
             get { return totalRowCount; }
             set { totalRowCount = value; }
+        }
+
+        /// <summary>
+        /// A SheetUserPermissions object containing the sheet user permissions
+        /// </summary>
+        /// <returns> the sheet user permissions </returns>
+        public SheetUserPermissions UserPermissions
+        {
+            get { return userPermissions; }
+            set { userPermissions = value; }
         }
 
         /// <summary>

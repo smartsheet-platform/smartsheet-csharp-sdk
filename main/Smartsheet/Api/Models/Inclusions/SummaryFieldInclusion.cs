@@ -1,7 +1,7 @@
 ﻿//    #[license]
 //    SmartsheetClient SDK for C#
 //    %%
-//    Copyright (C) 2014 SmartsheetClient
+//    Copyright (C) 2019 SmartsheetClient
 //    %%
 //    Licensed under the Apache License, Version 2.0 (the "License");
 //    you may not use this file except in compliance with the License.
@@ -19,9 +19,17 @@
 namespace Smartsheet.Api.Models
 {
     /// <summary>
-    /// Represents the BulkItemRowResult object. </summary>
-    /// <seealso href="http://smartsheet-platform.github.io/api-docs/?shell#partial-success">Partial Success</seealso>
-    public class BulkItemRowResult : BulkItemResult<Row>
+    /// Represents specific elements to include in a response.
+    /// </summary>
+    public enum SummaryFieldInclusion
     {
+        /// <summary>
+        ///  includes format info for cells, rows, and summary fields
+        /// </summary>
+        FORMAT,
+        /// <summary>
+        /// includes createdBy and modifiedBy attributes for rows and summary fields
+        /// </summary>
+        WRITER_INFO
     }
 }

@@ -107,6 +107,12 @@ namespace Smartsheet.Api.Internal
         /// It will be initialized in the constructor and will not change afterwards.
         /// </summary>
         private SheetCrossSheetReferenceResources crossSheetReferences;
+        /// <summary>
+        /// Represents the associated SheetSummaryResources.
+        /// 
+        /// It will be initialized in the constructor and will not change afterwards.
+        /// </summary>
+        private SheetSummaryResources summary;
 
         /// <summary>
         /// Constructor.
@@ -127,6 +133,7 @@ namespace Smartsheet.Api.Internal
             this.filters = new SheetFilterResourcesImpl(smartsheet);
             this.automationRules = new SheetAutomationRuleResourcesImpl(smartsheet);
             this.crossSheetReferences = new SheetCrossSheetReferencesResourcesImpl(smartsheet);
+            this.summary = new SheetSummaryResourcesImpl(smartsheet);
         }
 
         /// <summary>
@@ -822,6 +829,16 @@ namespace Smartsheet.Api.Internal
         public SheetCrossSheetReferenceResources CrossSheetReferenceResources
         {
             get { return this.crossSheetReferences; }
+        }
+
+        /// <summary>
+        /// Returns the SheetSummaryResources object that provides access to sheet summary resources associated 
+        /// with sheet resources.
+        /// </summary>
+        /// <returns> the associated sheet summary resources </returns>
+        public SheetSummaryResources SummaryResources
+        {
+            get { return this.summary; }
         }
 
         /// <summary>

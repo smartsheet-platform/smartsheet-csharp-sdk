@@ -70,11 +70,11 @@ namespace Smartsheet.Api.Internal.Json
             // Convert all enums to a string representation for serialization
             serializer.Converters.Add(new Newtonsoft.Json.Converters.StringEnumConverter());
 
-            // Handles objectValue serialization
-            serializer.Converters.Add(new ObjectValueTypeConverter());
-
             // Handles primitive objectValue serialization
             serializer.Converters.Add(new PrimitiveObjectValueConverter());
+
+            // Handles objectValue serialization
+            serializer.Converters.Add(new ObjectValueTypeConverter());
 
             // Handles widget content deserialization
             serializer.Converters.Add(new WidgetContentConverter());

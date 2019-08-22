@@ -16,33 +16,29 @@
 //    limitations under the License.
 //    %[license]
 
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using System.Runtime.Serialization;
+using System;
+using System.Collections.Generic;
 
 namespace Smartsheet.Api.Models
 {
-    public enum SearchScope
+    /// <summary>
+    /// Represents the SheetSummary object.</summary>
+    /// <seealso href="http://smartsheet-platform.github.io/api-docs/?shell#sheetsummary-object">SheetSummary Object Help</seealso>    
+    public class SheetSummary
     {
-        [EnumMember(Value = "attachments")]
-        ATTACHMENTS,
-        [EnumMember(Value = "cellData")]
-        CELL_DATA,
-        [EnumMember(Value = "comments")]
-        COMMENTS,
-        [EnumMember(Value = "folderNames")]
-        FOLDER_NAMES,
-        [EnumMember(Value = "reportNames")]
-        REPORT_NAMES,
-        [EnumMember(Value = "sheetNames")]
-        SHEET_NAMES,
-        [EnumMember(Value = "sightNames")]
-        SIGHT_NAMES,
-        [EnumMember(Value = "summaryFields")]
-        SUMMARY_FIELDS,
-        [EnumMember(Value = "templateNames")]
-        TEMPLATE_NAMES,
-        [EnumMember(Value = "workspaceNames")]
-        WORKSPACE_NAMES
+        /// <summary>
+        /// Array of summary (or metadata) fields defined on the sheet.
+        /// </summary>
+        private IList<SummaryField> fields;
+
+        /// <summary>
+        /// Get sheet summary fields
+        /// </summary>
+        /// <returns> fields </returns>
+        public IList<SummaryField> Fields
+        {
+            get { return fields; }
+            set { fields = value; }
+        }
     }
 }

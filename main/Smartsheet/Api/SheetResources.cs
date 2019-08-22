@@ -587,5 +587,12 @@ namespace Smartsheet.Api
         /// </summary>
         /// <returns> the CrossSheetReferenceResources object </returns>
         SheetCrossSheetReferenceResources CrossSheetReferenceResources { get; }
+
+        /// <summary>
+        /// Returns the SheetSummaryResources object that provides access to sheet summary resources associated 
+        /// with sheet resources.
+        /// </summary>
+        /// <returns> the SheetSummaryResources object </returns>
+        SheetSummaryResources SummaryResources { get; }
     }
 }

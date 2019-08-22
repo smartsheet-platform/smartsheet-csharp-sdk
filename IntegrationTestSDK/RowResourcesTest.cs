@@ -24,6 +24,7 @@ namespace IntegrationTestSDK
             Cell[] cellsToAdd = new Cell[] { new Cell.AddCellBuilder(columnId, true).SetValue("hello").SetStrict(false).Build() };
 
             long rowId = AddRows(smartsheet, sheetId, columnId, cellsToAdd);
+            AddRowsWithPartialSuccess(smartsheet, sheetId, cellsToAdd);
 
             CopyRowToCreatedSheet(smartsheet, sheetId, rowId);
 
@@ -95,6 +96,13 @@ namespace IntegrationTestSDK
             return rowId;
         }
 
+        private static void AddRowsWithPartialSuccess(SmartsheetClient smartsheet, long sheetId, Cell[] cellsToAdd)
+        {
+            Row row0 = new Row.AddRowBuilder(true, null, null, null, null).SetCells(cellsToAdd).Build();
+            Row row1 = new Row.AddRowBuilder(true, null, null, null, null).SetCells(cellsToAdd).Build();
+            BulkItemRowResult rows = smartsheet.SheetResources.RowResources.AddRowsAllowPartialSuccess(sheetId, new Row[] { row0, row1 });
+            Assert.IsTrue(rows.Result.Count == 2);
+        }
 
         private static long CreateSheetFromTemplate(SmartsheetClient smartsheet, long templateId)
         {

@@ -1,7 +1,7 @@
 ﻿//    #[license]
 //    SmartsheetClient SDK for C#
 //    %%
-//    Copyright (C) 2014 SmartsheetClient
+//    Copyright (C) 2019 SmartsheetClient
 //    %%
 //    Licensed under the Apache License, Version 2.0 (the "License");
 //    you may not use this file except in compliance with the License.
@@ -19,9 +19,23 @@
 namespace Smartsheet.Api.Models
 {
     /// <summary>
-    /// Represents the BulkItemRowResult object. </summary>
-    /// <seealso href="http://smartsheet-platform.github.io/api-docs/?shell#partial-success">Partial Success</seealso>
-    public class BulkItemRowResult : BulkItemResult<Row>
+    /// Represents specific elements to exclude in a response.
+    /// </summary>
+    public enum SummaryFieldExclusion
     {
+        /// <summary>
+        ///  excludes displayValue info for cells, rows, and summary fields
+        /// </summary>
+        DISPLAY_VALUE,
+
+        /// <summary>
+        /// excludes image attributes for cells and summary fields
+        /// </summary>
+        IMAGE,
+
+        /// <summary>
+        /// excludes alt text for cells and summary fields
+        /// </summary>
+        IMAGE_ALT_TEXT
     }
 }
