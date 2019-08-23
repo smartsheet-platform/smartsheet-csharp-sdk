@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2.83.0] - 2019-08-23
+### Added
+- support for sheet profiles
+- include format and objectValue in the includes for GetCellHistory (Issue #109)
+
+### Changed
+- continue to support level 0 widget types
+
 ## [2.77.0] - 2019-07-25
 ### Added 
 - CARD_DONE tag to column tags enumeration
