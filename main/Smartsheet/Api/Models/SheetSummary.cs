@@ -16,30 +16,29 @@
 //    limitations under the License.
 //    %[license]
 
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using System.Runtime.Serialization;
+using System;
+using System.Collections.Generic;
 
 namespace Smartsheet.Api.Models
 {
     /// <summary>
-    /// Represents specific elements to include in a response.
-    /// </summary>
-    public enum HomeInclusion
+    /// Represents the SheetSummary object.</summary>
+    /// <seealso href="http://smartsheet-platform.github.io/api-docs/?shell#sheetsummary-object">SheetSummary Object Help</seealso>    
+    public class SheetSummary
     {
         /// <summary>
-        /// Includes the owner’s email address and user ID for each sheet.
+        /// Array of summary (or metadata) fields defined on the sheet.
         /// </summary>
-        OWNER_INFO,
+        private IList<SummaryField> fields;
 
         /// <summary>
-        /// Includes the sheet version for any sheet returned in Home.
+        /// Get sheet summary fields
         /// </summary>
-        SHEET_VERSION,
-
-        /// <summary>
-        /// Includes the source for any sheet that was created from another sheet or template.
-        /// </summary>
-        SOURCE
+        /// <returns> fields </returns>
+        public IList<SummaryField> Fields
+        {
+            get { return fields; }
+            set { fields = value; }
+        }
     }
 }

@@ -1,7 +1,7 @@
 ﻿//    #[license]
 //    SmartsheetClient SDK for C#
 //    %%
-//    Copyright (C) 2014 SmartsheetClient
+//    Copyright (C) 2019 SmartsheetClient
 //    %%
 //    Licensed under the Apache License, Version 2.0 (the "License");
 //    you may not use this file except in compliance with the License.
@@ -16,30 +16,26 @@
 //    limitations under the License.
 //    %[license]
 
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using System.Runtime.Serialization;
-
 namespace Smartsheet.Api.Models
 {
     /// <summary>
-    /// Represents specific elements to include in a response.
+    /// Represents specific elements to exclude in a response.
     /// </summary>
-    public enum HomeInclusion
+    public enum SummaryFieldExclusion
     {
         /// <summary>
-        /// Includes the owner’s email address and user ID for each sheet.
+        ///  excludes displayValue info for cells, rows, and summary fields
         /// </summary>
-        OWNER_INFO,
+        DISPLAY_VALUE,
 
         /// <summary>
-        /// Includes the sheet version for any sheet returned in Home.
+        /// excludes image attributes for cells and summary fields
         /// </summary>
-        SHEET_VERSION,
+        IMAGE,
 
         /// <summary>
-        /// Includes the source for any sheet that was created from another sheet or template.
+        /// excludes alt text for cells and summary fields
         /// </summary>
-        SOURCE
+        IMAGE_ALT_TEXT
     }
 }

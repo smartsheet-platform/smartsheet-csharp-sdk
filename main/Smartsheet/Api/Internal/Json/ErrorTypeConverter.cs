@@ -72,6 +72,10 @@ namespace Smartsheet.Api.Internal.Json
                             }
                         }
                     }
+                    else if (reader.TokenType == JsonToken.EndObject)
+                    {
+                        break;
+                    }
                 }
                 return error;
             }

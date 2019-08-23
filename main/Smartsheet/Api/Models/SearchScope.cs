@@ -32,14 +32,14 @@ namespace Smartsheet.Api.Models
         COMMENTS,
         [EnumMember(Value = "folderNames")]
         FOLDER_NAMES,
-        [EnumMember(Value = "profileFields")]
-        PROFILE_FIELDS,
         [EnumMember(Value = "reportNames")]
         REPORT_NAMES,
         [EnumMember(Value = "sheetNames")]
         SHEET_NAMES,
         [EnumMember(Value = "sightNames")]
         SIGHT_NAMES,
+        [EnumMember(Value = "summaryFields")]
+        SUMMARY_FIELDS,
         [EnumMember(Value = "templateNames")]
         TEMPLATE_NAMES,
         [EnumMember(Value = "workspaceNames")]

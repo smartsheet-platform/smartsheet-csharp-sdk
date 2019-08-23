@@ -38,7 +38,8 @@ namespace Smartsheet.Api.Internal.Json
             // because Update Row needs id in the json object. However this a hacky way 
             // of doing it because Add Row cannot contain id in the json object. So In SheetRowResources.AddRows, 
             // we loop over every row and make them null before serializing them.
-            if (property.PropertyName.ToLower().Equals("id") && property.DeclaringType != typeof(Row))
+            if (property.PropertyName.ToLower().Equals("id") && 
+                (property.DeclaringType != typeof(Row)) && property.DeclaringType != typeof(SummaryField))
             {
                 property.ShouldSerialize = (object instance) => false;
             }
