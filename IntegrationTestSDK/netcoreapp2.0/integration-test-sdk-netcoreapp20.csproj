@@ -41,6 +41,7 @@
     <Compile Include="..\ShareResourcesTest.cs" />
     <Compile Include="..\SheetResourcesTest.cs" />
     <Compile Include="..\SheetResourcesUpdateRequestTest.cs" />
+    <Compile Include="..\SheetSummaryResourcesTest.cs" />
     <Compile Include="..\TestResources.cs" />
     <Compile Include="..\TokenResourcesTest.cs" />
     <Compile Include="..\UserResourcesTest.cs" />
