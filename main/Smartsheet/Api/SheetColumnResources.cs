@@ -38,6 +38,7 @@ namespace Smartsheet.Api
         /// <param name="sheetId"> the sheet Id </param>
         /// <param name="include">elements to include in response</param>
         /// <param name="paging">the paging</param>
+        /// <param name="level"> compatibility level </param>
         /// <returns> the list of Columns (note that an empty list will be returned if there is none) </returns>
         /// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
         /// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -45,7 +46,7 @@ namespace Smartsheet.Api
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        PaginatedResult<Column> ListColumns(long sheetId, IEnumerable<ColumnInclusion> include, PaginationParameters paging);
+        PaginatedResult<Column> ListColumns(long sheetId, IEnumerable<ColumnInclusion> include, PaginationParameters paging, int? level);
 
         /// <summary>
         /// <para>Inserts one or more columns into the Sheet specified in the URL.</para>
