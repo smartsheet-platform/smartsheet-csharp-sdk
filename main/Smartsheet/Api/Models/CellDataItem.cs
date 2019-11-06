@@ -55,7 +55,7 @@ namespace Smartsheet.Api.Models
         private Cell cell;
 
         /// <summary>
-        /// CELL
+        /// CELL or SUMMARY_FIELD
         /// </summary>
         private string dataSource;
 
@@ -73,6 +73,11 @@ namespace Smartsheet.Api.Models
         /// The display order for the CellDataItem
         /// </summary>
         private int? order;
+
+        /// <summary>
+        /// SummaryField object if dataSource is SUMMARY_FIELD
+        /// </summary>
+        private SummaryField profileField;
 
         /// <summary>
         /// formatDescriptor
@@ -167,6 +172,16 @@ namespace Smartsheet.Api.Models
         {
             get { return order; }
             set { order = value; }
+        }
+
+        /// <summary>
+        /// Contains the SummaryField when dataSource is SUMMARY_FIELD
+        /// </summary>
+        /// <returns> SummaryField object </returns>
+        public SummaryField ProfileField
+        {
+            get { return profileField; }
+            set { profileField = value; }
         }
 
         /// <summary>

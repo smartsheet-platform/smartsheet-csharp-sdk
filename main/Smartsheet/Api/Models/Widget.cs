@@ -37,7 +37,12 @@ namespace Smartsheet.Api.Models
         /// Data that specifies the contents of the widget. 
         /// NOTE: The type of WidgetContent object (and attributes within) depends on the value of widget.type.
         /// </summary>
-        IWidgetContent contents;
+        private IWidgetContent contents;
+
+        /// <summary>
+        /// Present when the widget is in an error state
+        /// </summary>
+        private Error error;
 
         /// <summary>
         /// Number of Rows that the widget occupies on the Sight
@@ -104,6 +109,15 @@ namespace Smartsheet.Api.Models
         {
             get { return contents; }
             set { contents = value; }
+        }
+
+        /// <summary>
+        /// Error if this widget is in an error state
+        /// </summary>
+        public Error Error
+        {
+            get { return error; }
+            set { error = value; }
         }
 
         /// <summary>
