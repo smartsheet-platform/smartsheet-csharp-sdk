@@ -32,6 +32,7 @@
     <Compile Include="..\FolderResourcesTest.cs" />
     <Compile Include="..\GroupResourcesTest.cs" />
     <Compile Include="..\HomeResourcesTest.cs" />
+    <Compile Include="..\MultiPicklistTest.cs" />
     <Compile Include="..\PassthroughResourcesTest.cs" />
     <Compile Include="..\ReportResourcesTest.cs" />
     <Compile Include="..\RowResourcesDeleteSendTest.cs" />
