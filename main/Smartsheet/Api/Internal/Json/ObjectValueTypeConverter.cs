@@ -17,6 +17,7 @@
 //    %[license]
 
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using Smartsheet.Api.Models;
@@ -73,7 +74,11 @@ namespace Smartsheet.Api.Internal.Json
                         break;
 
                     case ObjectValueType.MULTI_CONTACT:
-                        objectValue = new MultiContactObjectValue(superset.values);
+                        objectValue = new MultiContactObjectValue(superset.values.Select(q => JsonConvert.DeserializeObject<ContactObjectValue>(q.ToString())).ToList());
+                        break;
+
+                    case ObjectValueType.MULTI_PICKLIST:
+                        objectValue = new MultiPicklistObjectValue(superset.values.Cast<string>().ToList());
                         break;
 
                     default:
@@ -139,8 +144,8 @@ namespace Smartsheet.Api.Internal.Json
             public int refIndex;
             public string imageId;
 
-            // MULTI_CONTACT
-            public List<ContactObjectValue> values;
+            // MULTI_CONTACT or MULTI_PICKLIST
+            public IList<object> values;
 
             // Various other types
             public string value;

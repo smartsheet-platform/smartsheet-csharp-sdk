@@ -27,6 +27,7 @@ namespace Smartsheet.Api.Models
         DURATION,
         PREDECESSOR_LIST,
         MULTI_CONTACT,
+        MULTI_PICKLIST,
         NUMBER,
         BOOLEAN,
         STRING,

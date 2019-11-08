@@ -61,14 +61,40 @@ namespace Smartsheet.Api.Internal
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
         public virtual PaginatedResult<Column> ListColumns(long sheetId, IEnumerable<ColumnInclusion> include, PaginationParameters paging)
         {
+            return this.ListColumns(sheetId, include, paging, null);
+        }
+
+        /// <summary>
+        /// <para>Gets a list of all Columns belonging to the Sheet specified in the URL.</para>
+        /// <para>It mirrors to the following Smartsheet REST API method: GET /sheets/{sheetId}/columns</para>
+        /// <remarks>This operation supports pagination of results. For more information, see Paging.</remarks>
+        /// </summary>
+        /// <param name="sheetId"> the sheet Id </param>
+        /// <param name="include">elements to include in response</param>
+        /// <param name="paging">the paging</param>
+        /// <param name="level">compatibility level</param>
+        /// <returns> the list of Columns (note that an empty list will be returned if there is none) </returns>
+        /// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+        /// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+        /// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+        /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+        /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
+        /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+        public virtual PaginatedResult<Column> ListColumns(long sheetId, IEnumerable<ColumnInclusion> include, PaginationParameters paging, int? level)
+        {
             StringBuilder path = new StringBuilder("sheets/" + sheetId + "/columns");
             IDictionary<string, string> parameters = new Dictionary<string, string>();
             if (paging != null)
             {
                 parameters = paging.toDictionary();
-            } if (include != null)
+            }
+            if (include != null)
             {
                 parameters.Add("include", QueryUtil.GenerateCommaSeparatedList(include));
+            }
+            if (level != null)
+            {
+                parameters.Add("level", level.ToString());
             }
             return this.ListResourcesWithWrapper<Column>(QueryUtil.GenerateUrl("sheets/" + sheetId + "/columns", parameters));
         }
