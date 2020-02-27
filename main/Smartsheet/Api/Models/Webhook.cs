@@ -241,5 +241,22 @@ namespace Smartsheet.Api.Models
             get { return version; }
             set { version = value; }
         }
+
+        /// <summary>
+        /// Get the webhook subscope.
+        /// </summary>
+        /// <returns> the subscope </returns>
+        public WebhookSubscope Subscope { get; set; }
+    }
+
+    /// <summary>
+    /// Represents the webhook subscope object. </summary>
+    public class WebhookSubscope
+    {
+        /// <summary>
+        /// A collection of columns to subscribe to. An empty array denotes all columns in the sheet.
+        /// </summary>
+        public long[] ColumnIds { get; set; }
+
     }
 }
