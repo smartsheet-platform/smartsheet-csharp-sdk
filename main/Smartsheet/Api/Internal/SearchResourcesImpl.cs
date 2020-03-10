@@ -117,7 +117,7 @@ namespace Smartsheet.Api.Internal
             {
                 parameters.Add("scopes", QueryUtil.GenerateCommaSeparatedList(scopes));
             }
-            parameters.Add("query", Uri.EscapeDataString(query));
+            parameters.Add("query", query);
             return this.GetResource<SearchResult>("search" + QueryUtil.GenerateUrl(null, parameters), typeof(SearchResult));
         }
 
