@@ -29,6 +29,7 @@
     <Compile Remove="documentation\**" />
     <Compile Remove="GTM\**" />
     <Compile Remove="IntegrationTestSDK\**" />
+    <Compile Remove="oauth-test-netcoreapp20\**" />
     <Compile Remove="packages\**" />
     <Compile Remove="Sample\**" />
     <Compile Remove="TestSDKMockAPI\**" />
@@ -36,6 +37,7 @@
     <EmbeddedResource Remove="documentation\**" />
     <EmbeddedResource Remove="GTM\**" />
     <EmbeddedResource Remove="IntegrationTestSDK\**" />
+    <EmbeddedResource Remove="oauth-test-netcoreapp20\**" />
     <EmbeddedResource Remove="packages\**" />
     <EmbeddedResource Remove="Sample\**" />
     <EmbeddedResource Remove="TestSDKMockAPI\**" />
@@ -43,6 +45,7 @@
     <None Remove="documentation\**" />
     <None Remove="GTM\**" />
     <None Remove="IntegrationTestSDK\**" />
+    <None Remove="oauth-test-netcoreapp20\**" />
     <None Remove="packages\**" />
     <None Remove="Sample\**" />
     <None Remove="TestSDKMockAPI\**" />

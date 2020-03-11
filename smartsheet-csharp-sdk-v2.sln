@@ -19,6 +19,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mock-api-test-sdk-netcoreap
 EndProject
 Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "smartsheet-csharp-sdk-docs-v2", "documentation\smartsheet-csharp-sdk-docs-v2.shfbproj", "{3F8D8D90-F2B2-496B-86EF-5A49322D5837}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "oauth-test-netcoreapp20", "oauth-test-netcoreapp20\oauth-test-netcoreapp20.csproj", "{55F3ADF9-8AFF-4F74-A898-8DF76B469FEB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,8 @@ Global
 		{3F8D8D90-F2B2-496B-86EF-5A49322D5837}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F8D8D90-F2B2-496B-86EF-5A49322D5837}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F8D8D90-F2B2-496B-86EF-5A49322D5837}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55F3ADF9-8AFF-4F74-A898-8DF76B469FEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55F3ADF9-8AFF-4F74-A898-8DF76B469FEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
