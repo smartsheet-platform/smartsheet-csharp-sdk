@@ -70,7 +70,14 @@ namespace Smartsheet.Api.Internal.Json
                     case ObjectValueType.DATE:
                     case ObjectValueType.DATETIME:
                     case ObjectValueType.ABSTRACT_DATETIME:
-                        objectValue = new DateObjectValue(parsedObjectType, superset.value);
+                        if (superset.value is DateTime)
+                        {
+                            objectValue = new DateObjectValue(parsedObjectType, ((DateTime)superset.value).ToString("yyyy-MM-ddTHH:mm:ssZ"));
+                        }
+                        else
+                        {
+                            objectValue = new DateObjectValue(parsedObjectType, (string)superset.value);
+                        }
                         break;
 
                     case ObjectValueType.MULTI_CONTACT:
@@ -99,6 +106,10 @@ namespace Smartsheet.Api.Internal.Json
                 else if (reader.TokenType == JsonToken.Float)
                 {
                     objectValue = new NumberObjectValue((double)reader.Value);
+                }
+                else if (reader.TokenType == JsonToken.Date)
+                {
+                    objectValue = new StringObjectValue(((DateTime)reader.Value).ToString("yyyy-MM-ddTHH:mm:ssZ"));
                 }
                 else
                 {
@@ -148,7 +159,7 @@ namespace Smartsheet.Api.Internal.Json
             public IList<object> values;
 
             // Various other types
-            public string value;
+            public object value;
         }
     }
 }
