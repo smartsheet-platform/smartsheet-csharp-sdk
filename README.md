@@ -2,6 +2,24 @@
 
 This is a C# SDK to simplify connecting to the [Smartsheet API](http://www.smartsheet.com/developers/api-documentation) from .NET applications.
 
+**NOTE ON 2.93.0 RELEASE**
+
+While investigating issue [#113](https://github.com/smartsheet-platform/smartsheet-csharp-sdk/issues/113), it was 
+discovered that by default Newtonsoft Json.NET will deserialize JSON strings that "look like" dates into C# DateTime objects. 
+There is quite the debate about that [here](https://github.com/JamesNK/Newtonsoft.Json/issues/862). We believe this to 
+be undesirable behavior (since JSON doesn't have a date construct, all JSON strings should be handled as C# strings), 
+therefore, in this release we have changed the global behavior to disable this feature of Json.NET. It is possible, even 
+expected, that some of the users of this SDK may have come to rely on the old behavior, however, and so we have provided an 
+opt-out should you decide you need to return to the previous behavior. An example of the opt-out code is here:
+
+```csharp
+SmartsheetClient smartsheet = new SmartsheetBuilder()
+    .SetAccessToken("feo3t736fc2lpansdevs4a1as")       // TODO: Set your API access in environment variable SMARTSHEET_ACCESS_TOKEN or else here
+    .SetHttpClient(new RetryHttpClient())
+    .SetDateTimeFixOptOut(true)
+    .Build();
+```
+   
 ## System Requirements
 
 The SDK supports C# version 4.0 or later and targets .NET Framework version 4.5.2 or later or .NET Standard 2.0 or later. 
