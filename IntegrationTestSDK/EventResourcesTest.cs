@@ -22,7 +22,7 @@ namespace IntegrationTestSDK
                 Assert.IsNotNull(_event.Action);
                 Assert.IsNotNull(_event.ObjectId);
                 Assert.IsNotNull(_event.EventId);
-                Assert.IsTrue(_event.EventTimestamp is DateTime);
+                Assert.IsTrue(_event.EventTimestamp is string);
                 Assert.IsNotNull(_event.UserId);
                 Assert.IsNotNull(_event.RequestUserId);
                 Assert.IsNotNull(_event.Source);
