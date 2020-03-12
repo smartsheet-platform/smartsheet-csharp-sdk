@@ -1,16 +1,13 @@
 # Smartsheet SDK for C# [![Build Status](https://travis-ci.org/smartsheet-platform/smartsheet-csharp-sdk.svg?branch=master)](https://travis-ci.org/smartsheet-platform/smartsheet-csharp-sdk) [![Coverage Status](https://coveralls.io/repos/github/smartsheet-platform/smartsheet-csharp-sdk/badge.svg?branch=master)](https://coveralls.io/github/smartsheet-platform/smartsheet-csharp-sdk?branch=master) [![NuGet](https://img.shields.io/nuget/v/smartsheet-csharp-sdk.svg)](https://www.nuget.org/packages/smartsheet-csharp-sdk/)
 
-This is a C# SDK to simplify connecting to the [Smartsheet API](http://www.smartsheet.com/developers/api-documentation) from .NET applications.
+This is a C# SDK to simplify connecting to the [Smartsheet API](https://smartsheet-platform.github.io/api-docs/) from .NET applications.
 
 **NOTE ON 2.93.0 RELEASE**
 
-While investigating issue [#113](https://github.com/smartsheet-platform/smartsheet-csharp-sdk/issues/113), it was 
-discovered that by default Newtonsoft Json.NET will deserialize JSON strings that "look like" dates into C# DateTime objects. 
-There is quite the debate about that [here](https://github.com/JamesNK/Newtonsoft.Json/issues/862). We believe this to 
+While investigating issue [#113](https://github.com/smartsheet-platform/smartsheet-csharp-sdk/issues/113), the API/SDK team discovered that Newtonsoft Json.NET, by default, deserializes JSON strings that "look like" dates into C# DateTime objects. 
+You can read the discussion [here](https://github.com/JamesNK/Newtonsoft.Json/issues/862). Smartsheet believes this to 
 be undesirable behavior (since JSON doesn't have a date construct, all JSON strings should be handled as C# strings), 
-therefore, in this release we have changed the global behavior to disable this feature of Json.NET. It is possible, even 
-expected, that some of the users of this SDK may have come to rely on the old behavior, however, and so we have provided an 
-opt-out should you decide you need to return to the previous behavior. An example of the opt-out code is here:
+therefore, this release changes the global behavior to disable this feature of Json.NET. If you have implementations that rely on the previous behavior, there is an opt-out feature that you can use. An example of the opt-out code is here:
 
 ```csharp
 SmartsheetClient smartsheet = new SmartsheetBuilder()
