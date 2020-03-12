@@ -6,6 +6,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2.93.0] - 2020-03-12
+### Added 
+- Webhooks for columns support
+
+### Fixed 
+- [Issue 113 - Json deserialization error](https://github.com/smartsheet-platform/smartsheet-csharp-sdk/issues/113)
+
+### Changed
+- disable Newtonsoft default configuration of deserializing strings that "look like" dates into C# DateTime objects, 
+see [README](https://github.com/smartsheet-platform/smartsheet-csharp-sdk/blob/master/README.md) for details on how 
+to opt-out of this change if required.  
+
 ## [2.86.0] - 2019-11-07
 ### Added
 - type and object definitions to support multi-picklist columns

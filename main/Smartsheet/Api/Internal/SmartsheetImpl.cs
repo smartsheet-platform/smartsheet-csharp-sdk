@@ -264,7 +264,22 @@ namespace Smartsheet.Api.Internal
         /// <param name="accessToken"> the access token </param>
         /// <param name="httpClient"> the HTTP client (optional) </param>
         /// <param name="jsonSerializer"> the JSON serializer (optional) </param>
-        public SmartsheetImpl(string baseURI, string accessToken, HttpClient httpClient, JsonSerializer jsonSerializer)
+        public SmartsheetImpl(string baseURI, string accessToken, HttpClient httpClient, JsonSerializer jsonSerializer) 
+            : this(baseURI, accessToken, httpClient, jsonSerializer, false)
+        {
+        }
+
+        /// <summary>
+        /// Creates an instance with given server URI, HttpClient (optional), and JsonSerializer (optional)
+        /// 
+        /// Exceptions: - IllegalArgumentException : if serverURI/Version/AccessToken is null/empty
+        /// </summary>
+        /// <param name="baseURI"> the server uri </param>
+        /// <param name="accessToken"> the access token </param>
+        /// <param name="httpClient"> the HTTP client (optional) </param>
+        /// <param name="jsonSerializer"> the JSON serializer (optional) </param>
+        /// <param name="dateTimeFixOptOut"> opt out of deserializer string ==> DateTime conversion fix </param>
+        public SmartsheetImpl(string baseURI, string accessToken, HttpClient httpClient, JsonSerializer jsonSerializer, bool dateTimeFixOptOut)
         {
             Utils.ThrowIfNull(baseURI);
             Utils.ThrowIfEmpty(baseURI);
@@ -273,7 +288,13 @@ namespace Smartsheet.Api.Internal
 
             this.baseURI = new Uri(baseURI);
             this.accessToken = accessToken;
-            this.jsonSerializer = jsonSerializer == null ? new JsonNetSerializer() : jsonSerializer;
+            if (jsonSerializer == null) {
+                JsonNetSerializer jsonNetSerializer = new JsonNetSerializer();
+                if(dateTimeFixOptOut)
+                    jsonNetSerializer.DateParseHandling = Newtonsoft.Json.DateParseHandling.DateTime;
+                jsonSerializer = jsonNetSerializer;
+            }
+            this.jsonSerializer = jsonSerializer;
             this.httpClient = httpClient == null ? new DefaultHttpClient(new RestClient(), this.jsonSerializer) : httpClient;
             this.UserAgent = null;
         }

@@ -58,6 +58,10 @@ namespace Smartsheet.Api.Internal.Json
             // Set the date Format to ISO 8601
             serializer.DateFormatHandling = Newtonsoft.Json.DateFormatHandling.IsoDateFormat;
 
+            // See https://github.com/JamesNK/Newtonsoft.Json/issues/862 for context
+            // Disable converting strings that "look like" dates to C# DateTime objects
+            serializer.DateParseHandling = Newtonsoft.Json.DateParseHandling.None;
+
             // Only include non-null properties in when serializing
             serializer.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
 
@@ -92,11 +96,21 @@ namespace Smartsheet.Api.Internal.Json
         /// <summary>
         /// Sets if the OBJECT MAPPER should ignore unknown properties or fail when de-serializing the JSON data.
         /// </summary>
-        /// <param name="value">
-        ///            true if it should fail, false otherwise. </param>
+        /// <param name="value"> true if it should fail, false otherwise. </param>
         public Newtonsoft.Json.MissingMemberHandling failOnUnknownProperties
         {
             set { serializer.MissingMemberHandling = value; }
+        }
+
+        /// <summary>
+        /// The default behavior has been set so that the deserializer will not attempt to convert string to C# DateTime objects.
+        /// This is a change in behavior from previous releases. If this breaks your application, opt out of this change by calling
+        /// this method with a value of Newtonsoft.Json.DateParseHandling.DateTime
+        /// </summary>
+        /// <param name="value"> Set to Newtonsoft.Json.DateParseHandling.DateTime to enable handling strings as C# DateTime objects. </param>
+        public Newtonsoft.Json.DateParseHandling DateParseHandling
+        {
+            set { serializer.DateParseHandling = value; }
         }
 
         /// <summary>

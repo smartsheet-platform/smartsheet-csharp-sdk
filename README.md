@@ -1,7 +1,22 @@
 # Smartsheet SDK for C# [![Build Status](https://travis-ci.org/smartsheet-platform/smartsheet-csharp-sdk.svg?branch=master)](https://travis-ci.org/smartsheet-platform/smartsheet-csharp-sdk) [![Coverage Status](https://coveralls.io/repos/github/smartsheet-platform/smartsheet-csharp-sdk/badge.svg?branch=master)](https://coveralls.io/github/smartsheet-platform/smartsheet-csharp-sdk?branch=master) [![NuGet](https://img.shields.io/nuget/v/smartsheet-csharp-sdk.svg)](https://www.nuget.org/packages/smartsheet-csharp-sdk/)
 
-This is a C# SDK to simplify connecting to the [Smartsheet API](http://www.smartsheet.com/developers/api-documentation) from .NET applications.
+This is a C# SDK to simplify connecting to the [Smartsheet API](https://smartsheet-platform.github.io/api-docs/) from .NET applications.
 
+**NOTE ON 2.93.0 RELEASE**
+
+While investigating issue [#113](https://github.com/smartsheet-platform/smartsheet-csharp-sdk/issues/113), the API/SDK team discovered that Newtonsoft Json.NET, by default, deserializes JSON strings that "look like" dates into C# DateTime objects. 
+You can read the discussion [here](https://github.com/JamesNK/Newtonsoft.Json/issues/862). Smartsheet believes this to 
+be undesirable behavior (since JSON doesn't have a date construct, all JSON strings should be handled as C# strings), 
+therefore, this release changes the global behavior to disable this feature of Json.NET. If you have implementations that rely on the previous behavior, there is an opt-out feature that you can use. An example of the opt-out code is here:
+
+```csharp
+SmartsheetClient smartsheet = new SmartsheetBuilder()
+    .SetAccessToken("feo3t736fc2lpansdevs4a1as")       // TODO: Set your API access in environment variable SMARTSHEET_ACCESS_TOKEN or else here
+    .SetHttpClient(new RetryHttpClient())
+    .SetDateTimeFixOptOut(true)
+    .Build();
+```
+   
 ## System Requirements
 
 The SDK supports C# version 4.0 or later and targets .NET Framework version 4.5.2 or later or .NET Standard 2.0 or later. 
