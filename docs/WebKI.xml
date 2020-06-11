@@ -173,8 +173,8 @@
     <HelpKINode Title="Workspace.AccessLevel Property " Url="html/4afdb7ec-61e8-d263-f1fd-6bc0078a9529.htm" />
   </HelpKINode>
   <HelpKINode Title="AccessScope enumeration">
-    <HelpKINode Title="AccessScope Enumeration" Url="html/7a10d74d-c815-e0f3-9e3b-f87478180e23.htm" />
     <HelpKINode Title="AccessScope Enumeration" Url="html/bc472975-1ab8-8301-a084-506c4d360ea1.htm" />
+    <HelpKINode Title="AccessScope Enumeration" Url="html/7a10d74d-c815-e0f3-9e3b-f87478180e23.htm" />
   </HelpKINode>
   <HelpKINode Title="AccessToken property">
     <HelpKINode Title="SmartsheetBuilder.AccessToken Property " Url="html/94fca0d9-6e8e-1571-3287-9317b80ba7b3.htm" />
@@ -255,8 +255,8 @@
   <HelpKINode Title="ADMIN enumeration member" Url="html/93883774-2e81-d0b0-8666-3ecda35fdda6.htm" />
   <HelpKINode Title="Admin property" Url="html/8eba04e9-5543-8a32-34ef-f1ea410a4a4a.htm" />
   <HelpKINode Title="ADMIN_SHEETS enumeration member">
-    <HelpKINode Title="AccessScope Enumeration" Url="html/7a10d74d-c815-e0f3-9e3b-f87478180e23.htm" />
     <HelpKINode Title="AccessScope Enumeration" Url="html/bc472975-1ab8-8301-a084-506c4d360ea1.htm" />
+    <HelpKINode Title="AccessScope Enumeration" Url="html/7a10d74d-c815-e0f3-9e3b-f87478180e23.htm" />
   </HelpKINode>
   <HelpKINode Title="ADMIN_USERS enumeration member">
     <HelpKINode Title="AccessScope Enumeration" Url="html/7a10d74d-c815-e0f3-9e3b-f87478180e23.htm" />
@@ -560,12 +560,12 @@
   <HelpKINode Title="CARD_DONE enumeration member" Url="html/98dd60cf-a81d-2e0a-690c-1fd7c4355c04.htm" />
   <HelpKINode Title="Categories property" Url="html/aaa5500d-ad1d-21db-2386-8843247dc5bb.htm" />
   <HelpKINode Title="CcMe property">
-    <HelpKINode Title="Share.CcMe Property " Url="html/838621f5-1de3-5a66-7857-9544b9be8ee3.htm" />
     <HelpKINode Title="Email.CcMe Property " Url="html/9effdf6b-885c-24a8-66c8-2c5d5aa544c2.htm" />
+    <HelpKINode Title="Share.CcMe Property " Url="html/838621f5-1de3-5a66-7857-9544b9be8ee3.htm" />
   </HelpKINode>
   <HelpKINode Title="CCMe property">
-    <HelpKINode Title="MultiShare.CCMe Property " Url="html/d2a771f5-d65c-a1e5-9e00-4c59d4ca174e.htm" />
     <HelpKINode Title="MultiShare.ShareToManyBuilder.CCMe Property " Url="html/85ff4c46-3081-83f5-30ef-713d6397208a.htm" />
+    <HelpKINode Title="MultiShare.CCMe Property " Url="html/d2a771f5-d65c-a1e5-9e00-4c59d4ca174e.htm" />
   </HelpKINode>
   <HelpKINode Title="Cell class">
     <HelpKINode Title="Cell Class" Url="html/ae18f636-b2cf-47a5-7893-c259a450ebc7.htm" />
@@ -1669,11 +1669,11 @@
   <HelpKINode Title="GetDescription method" Url="html/12a21fca-ba7f-7638-b4e6-decb5332bdc8.htm" />
   <HelpKINode Title="getDescription method" Url="html/5b1745fb-a189-164e-182c-39ff2bae017c.htm" />
   <HelpKINode Title="GetDiscussion method" Url="html/73e32a62-e6f9-952e-349a-a58ed3946736.htm" />
-  <HelpKINode Title="getEmail method" Url="html/b54d0594-1c7f-0708-f1ea-49df4d201a9b.htm" />
   <HelpKINode Title="GetEmail method">
     <HelpKINode Title="AlternateEmail.AlternateEmailBuilder.GetEmail Method " Url="html/029fba77-5974-e2a3-d88a-b11e2ec27afb.htm" />
     <HelpKINode Title="Share.CreateShareBuilder.GetEmail Method " Url="html/247abb56-97b5-0332-8967-c756baba6c2a.htm" />
   </HelpKINode>
+  <HelpKINode Title="getEmail method" Url="html/b54d0594-1c7f-0708-f1ea-49df4d201a9b.htm" />
   <HelpKINode Title="GetEmailAddress method" Url="html/6411e8ad-bded-7a75-ec31-584ee4898db0.htm" />
   <HelpKINode Title="GetExpanded method">
     <HelpKINode Title="Row.AddRowBuilder.GetExpanded Method " Url="html/3db505f6-1f07-478b-7c5c-ebc8e726c758.htm" />
@@ -2750,8 +2750,8 @@
   <HelpKINode Title="ReadWriteUrl property" Url="html/ae4419b5-9aaf-9319-58e3-ca6e76e8ca49.htm" />
   <HelpKINode Title="READ_CONTACTS enumeration member" Url="html/bc472975-1ab8-8301-a084-506c4d360ea1.htm" />
   <HelpKINode Title="READ_SHEETS enumeration member">
-    <HelpKINode Title="AccessScope Enumeration" Url="html/bc472975-1ab8-8301-a084-506c4d360ea1.htm" />
     <HelpKINode Title="AccessScope Enumeration" Url="html/7a10d74d-c815-e0f3-9e3b-f87478180e23.htm" />
+    <HelpKINode Title="AccessScope Enumeration" Url="html/bc472975-1ab8-8301-a084-506c4d360ea1.htm" />
   </HelpKINode>
   <HelpKINode Title="READ_SIGHTS enumeration member" Url="html/bc472975-1ab8-8301-a084-506c4d360ea1.htm" />
   <HelpKINode Title="READ_USERS enumeration member" Url="html/bc472975-1ab8-8301-a084-506c4d360ea1.htm" />
@@ -3270,11 +3270,11 @@
     <HelpKINode Title="Column.UpdateColumnBuilder.SetAutoNumberFormat Method " Url="html/e4bf4a4c-32c2-0393-60e8-25b9e1227d71.htm" />
   </HelpKINode>
   <HelpKINode Title="SetBaseURI method" Url="html/deb88236-7c81-75aa-a1f6-7e1b5d34dcb1.htm" />
-  <HelpKINode Title="SetCcMe method">
-    <HelpKINode Title="SheetEmail.CreateSheetEmail.SetCcMe Method " Url="html/25f64f92-e806-1e22-122c-49273b54f54a.htm" />
-    <HelpKINode Title="Share.CreateShareBuilder.SetCcMe Method " Url="html/bc04caa1-71cc-1edf-bf4d-455031afe9c7.htm" />
-  </HelpKINode>
   <HelpKINode Title="SetCCMe method" Url="html/303335e3-bd8c-5034-3922-e12aee38ebe5.htm" />
+  <HelpKINode Title="SetCcMe method">
+    <HelpKINode Title="Share.CreateShareBuilder.SetCcMe Method " Url="html/bc04caa1-71cc-1edf-bf4d-455031afe9c7.htm" />
+    <HelpKINode Title="SheetEmail.CreateSheetEmail.SetCcMe Method " Url="html/25f64f92-e806-1e22-122c-49273b54f54a.htm" />
+  </HelpKINode>
   <HelpKINode Title="SetCells method">
     <HelpKINode Title="Row.AddRowBuilder.SetCells Method " Url="html/f7cf1925-afa0-7ed2-efae-6a9d0cf58fc8.htm" />
     <HelpKINode Title="Row.UpdateRowBuilder.SetCells Method " Url="html/aee20d3a-10f1-6a5f-5f0c-31c403972ac4.htm" />
@@ -5022,8 +5022,8 @@
     <HelpKINode Title="SummaryFieldInclusion Enumeration" Url="html/bc441d77-f6a5-d55c-8b5f-8b6858c48318.htm" />
   </HelpKINode>
   <HelpKINode Title="WRITE_SHEETS enumeration member">
-    <HelpKINode Title="AccessScope Enumeration" Url="html/bc472975-1ab8-8301-a084-506c4d360ea1.htm" />
     <HelpKINode Title="AccessScope Enumeration" Url="html/7a10d74d-c815-e0f3-9e3b-f87478180e23.htm" />
+    <HelpKINode Title="AccessScope Enumeration" Url="html/bc472975-1ab8-8301-a084-506c4d360ea1.htm" />
   </HelpKINode>
   <HelpKINode Title="XPosition property" Url="html/1c9f5349-d4f5-75d0-8dfa-b8e87ca8ee1f.htm" />
   <HelpKINode Title="YEARLY enumeration member" Url="html/41cab09b-cac4-99a8-312f-848a2bf681a5.htm" />
