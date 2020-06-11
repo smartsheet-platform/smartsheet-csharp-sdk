@@ -6,16 +6,20 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2.93.2] - 2020-06-11
+### Fixed
+- [Double url escaping for the search api call #120](https://github.com/smartsheet-platform/smartsheet-csharp-sdk/issues/120)
+
 ## [2.93.1] - 2020-03-24
 ### Fixed
-- [Issue 117 - Unable to Search Sheet Summar](https://github.com/smartsheet-platform/smartsheet-csharp-sdk/issues/117)
+- [Unable to Search Sheet Summary #117](https://github.com/smartsheet-platform/smartsheet-csharp-sdk/issues/117)
 
 ## [2.93.0] - 2020-03-12
 ### Added 
 - Webhooks for columns support
 
 ### Fixed 
-- [Issue 113 - Json deserialization error](https://github.com/smartsheet-platform/smartsheet-csharp-sdk/issues/113)
+- [Json deserialization error #113](https://github.com/smartsheet-platform/smartsheet-csharp-sdk/issues/113)
 
 ### Changed
 - disable Newtonsoft default configuration of deserializing strings that "look like" dates into C# DateTime objects, 
