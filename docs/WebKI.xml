@@ -255,12 +255,12 @@
   <HelpKINode Title="ADMIN enumeration member" Url="html/93883774-2e81-d0b0-8666-3ecda35fdda6.htm" />
   <HelpKINode Title="Admin property" Url="html/8eba04e9-5543-8a32-34ef-f1ea410a4a4a.htm" />
   <HelpKINode Title="ADMIN_SHEETS enumeration member">
-    <HelpKINode Title="AccessScope Enumeration" Url="html/bc472975-1ab8-8301-a084-506c4d360ea1.htm" />
     <HelpKINode Title="AccessScope Enumeration" Url="html/7a10d74d-c815-e0f3-9e3b-f87478180e23.htm" />
+    <HelpKINode Title="AccessScope Enumeration" Url="html/bc472975-1ab8-8301-a084-506c4d360ea1.htm" />
   </HelpKINode>
   <HelpKINode Title="ADMIN_USERS enumeration member">
-    <HelpKINode Title="AccessScope Enumeration" Url="html/bc472975-1ab8-8301-a084-506c4d360ea1.htm" />
     <HelpKINode Title="AccessScope Enumeration" Url="html/7a10d74d-c815-e0f3-9e3b-f87478180e23.htm" />
+    <HelpKINode Title="AccessScope Enumeration" Url="html/bc472975-1ab8-8301-a084-506c4d360ea1.htm" />
   </HelpKINode>
   <HelpKINode Title="ADMIN_WORKSPACES enumeration member">
     <HelpKINode Title="AccessScope Enumeration" Url="html/bc472975-1ab8-8301-a084-506c4d360ea1.htm" />
@@ -559,13 +559,13 @@
   <HelpKINode Title="CANCELED enumeration member" Url="html/cb524fc5-7ab3-8f97-0337-da7a7a9c440e.htm" />
   <HelpKINode Title="CARD_DONE enumeration member" Url="html/98dd60cf-a81d-2e0a-690c-1fd7c4355c04.htm" />
   <HelpKINode Title="Categories property" Url="html/aaa5500d-ad1d-21db-2386-8843247dc5bb.htm" />
+  <HelpKINode Title="CcMe property">
+    <HelpKINode Title="Share.CcMe Property " Url="html/838621f5-1de3-5a66-7857-9544b9be8ee3.htm" />
+    <HelpKINode Title="Email.CcMe Property " Url="html/9effdf6b-885c-24a8-66c8-2c5d5aa544c2.htm" />
+  </HelpKINode>
   <HelpKINode Title="CCMe property">
     <HelpKINode Title="MultiShare.CCMe Property " Url="html/d2a771f5-d65c-a1e5-9e00-4c59d4ca174e.htm" />
     <HelpKINode Title="MultiShare.ShareToManyBuilder.CCMe Property " Url="html/85ff4c46-3081-83f5-30ef-713d6397208a.htm" />
-  </HelpKINode>
-  <HelpKINode Title="CcMe property">
-    <HelpKINode Title="Email.CcMe Property " Url="html/9effdf6b-885c-24a8-66c8-2c5d5aa544c2.htm" />
-    <HelpKINode Title="Share.CcMe Property " Url="html/838621f5-1de3-5a66-7857-9544b9be8ee3.htm" />
   </HelpKINode>
   <HelpKINode Title="Cell class">
     <HelpKINode Title="Cell Class" Url="html/ae18f636-b2cf-47a5-7893-c259a450ebc7.htm" />
@@ -1167,8 +1167,8 @@
   <HelpKINode Title="DeleteWorkspace method" Url="html/73fe42ec-4f1a-a734-91c5-08895ffbb5b2.htm" />
   <HelpKINode Title="DELETE_RECURRING_BACKUP enumeration member" Url="html/79b65f34-90f1-32bc-091f-b3c65bab3eb7.htm" />
   <HelpKINode Title="DELETE_SHEETS enumeration member">
-    <HelpKINode Title="AccessScope Enumeration" Url="html/bc472975-1ab8-8301-a084-506c4d360ea1.htm" />
     <HelpKINode Title="AccessScope Enumeration" Url="html/7a10d74d-c815-e0f3-9e3b-f87478180e23.htm" />
+    <HelpKINode Title="AccessScope Enumeration" Url="html/bc472975-1ab8-8301-a084-506c4d360ea1.htm" />
   </HelpKINode>
   <HelpKINode Title="DELETE_SIGHTS enumeration member" Url="html/bc472975-1ab8-8301-a084-506c4d360ea1.htm" />
   <HelpKINode Title="Department property" Url="html/b94ed4ea-1458-f5c8-a4ec-435d2b0b740f.htm" />
@@ -1669,11 +1669,11 @@
   <HelpKINode Title="GetDescription method" Url="html/12a21fca-ba7f-7638-b4e6-decb5332bdc8.htm" />
   <HelpKINode Title="getDescription method" Url="html/5b1745fb-a189-164e-182c-39ff2bae017c.htm" />
   <HelpKINode Title="GetDiscussion method" Url="html/73e32a62-e6f9-952e-349a-a58ed3946736.htm" />
+  <HelpKINode Title="getEmail method" Url="html/b54d0594-1c7f-0708-f1ea-49df4d201a9b.htm" />
   <HelpKINode Title="GetEmail method">
     <HelpKINode Title="AlternateEmail.AlternateEmailBuilder.GetEmail Method " Url="html/029fba77-5974-e2a3-d88a-b11e2ec27afb.htm" />
     <HelpKINode Title="Share.CreateShareBuilder.GetEmail Method " Url="html/247abb56-97b5-0332-8967-c756baba6c2a.htm" />
   </HelpKINode>
-  <HelpKINode Title="getEmail method" Url="html/b54d0594-1c7f-0708-f1ea-49df4d201a9b.htm" />
   <HelpKINode Title="GetEmailAddress method" Url="html/6411e8ad-bded-7a75-ec31-584ee4898db0.htm" />
   <HelpKINode Title="GetExpanded method">
     <HelpKINode Title="Row.AddRowBuilder.GetExpanded Method " Url="html/3db505f6-1f07-478b-7c5c-ebc8e726c758.htm" />
@@ -2750,8 +2750,8 @@
   <HelpKINode Title="ReadWriteUrl property" Url="html/ae4419b5-9aaf-9319-58e3-ca6e76e8ca49.htm" />
   <HelpKINode Title="READ_CONTACTS enumeration member" Url="html/bc472975-1ab8-8301-a084-506c4d360ea1.htm" />
   <HelpKINode Title="READ_SHEETS enumeration member">
-    <HelpKINode Title="AccessScope Enumeration" Url="html/7a10d74d-c815-e0f3-9e3b-f87478180e23.htm" />
     <HelpKINode Title="AccessScope Enumeration" Url="html/bc472975-1ab8-8301-a084-506c4d360ea1.htm" />
+    <HelpKINode Title="AccessScope Enumeration" Url="html/7a10d74d-c815-e0f3-9e3b-f87478180e23.htm" />
   </HelpKINode>
   <HelpKINode Title="READ_SIGHTS enumeration member" Url="html/bc472975-1ab8-8301-a084-506c4d360ea1.htm" />
   <HelpKINode Title="READ_USERS enumeration member" Url="html/bc472975-1ab8-8301-a084-506c4d360ea1.htm" />
@@ -3540,8 +3540,8 @@
   </HelpKINode>
   <HelpKINode Title="ShareType enumeration" Url="html/d993bdd0-6ab8-2f73-65ac-bca545472924.htm" />
   <HelpKINode Title="SHARE_SHEETS enumeration member">
-    <HelpKINode Title="AccessScope Enumeration" Url="html/bc472975-1ab8-8301-a084-506c4d360ea1.htm" />
     <HelpKINode Title="AccessScope Enumeration" Url="html/7a10d74d-c815-e0f3-9e3b-f87478180e23.htm" />
+    <HelpKINode Title="AccessScope Enumeration" Url="html/bc472975-1ab8-8301-a084-506c4d360ea1.htm" />
   </HelpKINode>
   <HelpKINode Title="SHARE_SIGHTS enumeration member" Url="html/bc472975-1ab8-8301-a084-506c4d360ea1.htm" />
   <HelpKINode Title="Sheet class">
@@ -4431,6 +4431,7 @@
   <HelpKINode Title="SummaryFieldInclusion enumeration" Url="html/bc441d77-f6a5-d55c-8b5f-8b6858c48318.htm" />
   <HelpKINode Title="SummaryPermissions property" Url="html/eb0346fe-e7a9-1b5c-7989-30ab56c03c46.htm" />
   <HelpKINode Title="SummaryResources property" Url="html/adde5958-964c-976d-a890-d64d5dbead11.htm" />
+  <HelpKINode Title="SUMMARY_FIELD enumeration member" Url="html/b8d92bce-0bb3-0eb6-884a-d38e70e55fdb.htm" />
   <HelpKINode Title="SUMMARY_FIELDS enumeration member" Url="html/2ec8c9b4-50bd-9098-35ee-843adac8bde1.htm" />
   <HelpKINode Title="SUNDAY enumeration member" Url="html/f325691d-5d65-170c-2a91-33bde4518cb4.htm" />
   <HelpKINode Title="SupportedLocales property" Url="html/d22ad176-ac3d-5ac6-4bca-e8a299170bc4.htm" />
@@ -5021,8 +5022,8 @@
     <HelpKINode Title="SummaryFieldInclusion Enumeration" Url="html/bc441d77-f6a5-d55c-8b5f-8b6858c48318.htm" />
   </HelpKINode>
   <HelpKINode Title="WRITE_SHEETS enumeration member">
-    <HelpKINode Title="AccessScope Enumeration" Url="html/7a10d74d-c815-e0f3-9e3b-f87478180e23.htm" />
     <HelpKINode Title="AccessScope Enumeration" Url="html/bc472975-1ab8-8301-a084-506c4d360ea1.htm" />
+    <HelpKINode Title="AccessScope Enumeration" Url="html/7a10d74d-c815-e0f3-9e3b-f87478180e23.htm" />
   </HelpKINode>
   <HelpKINode Title="XPosition property" Url="html/1c9f5349-d4f5-75d0-8dfa-b8e87ca8ee1f.htm" />
   <HelpKINode Title="YEARLY enumeration member" Url="html/41cab09b-cac4-99a8-312f-848a2bf681a5.htm" />
