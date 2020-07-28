@@ -113,6 +113,11 @@ namespace IntegrationTestSDK
         {
             UserProfile me = smartsheet.UserResources.GetCurrentUser();
             smartsheet.UserResources.AddProfileImage(me.Id.Value, "../../../../../IntegrationTestSDK/curly.jpg", "image/jpeg");
+            me = smartsheet.UserResources.GetCurrentUser();
+            Assert.IsNotNull(me.ProfileImage.ImageId);
+            const int squareProfileImageSize = 1050;
+            Assert.AreEqual(squareProfileImageSize, me.ProfileImage.Width);
+            Assert.AreEqual(squareProfileImageSize, me.ProfileImage.Height);
         }
     }
 }
