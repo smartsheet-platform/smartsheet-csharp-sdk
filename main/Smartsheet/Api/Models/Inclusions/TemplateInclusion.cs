@@ -26,19 +26,9 @@ namespace Smartsheet.Api.Models
     public enum TemplateInclusion
     {
         /// <summary>
-        /// Includes the data.
-        /// </summary>
-        DATA,
-
-        /// <summary>
         /// Includes the attachments.
         /// </summary>
         ATTACHMENTS,
-
-        /// <summary>
-        /// Includes the discussions.
-        /// </summary>
-        DISCUSSIONS,
 
         /// <summary>
         /// Includes the cell links.
@@ -46,8 +36,28 @@ namespace Smartsheet.Api.Models
         CELL_LINKS,
 
         /// <summary>
+        /// Includes the data.
+        /// </summary>
+        DATA,
+
+        /// <summary>
+        /// Includes the discussions.
+        /// </summary>
+        DISCUSSIONS,
+
+        /// <summary>
         /// Includes the forms.
         /// </summary>
-        FORMS
+        FORMS,
+
+        /// <summary>
+        ///  includes notification recipients, must also include rules when using this attribute
+        /// </summary>
+        RULE_RECIPIENTS,
+
+        /// <summary>
+        ///  includes notifications and workflow rules
+        /// </summary>
+        RULES
     }
 }
