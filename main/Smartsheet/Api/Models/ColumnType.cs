@@ -73,7 +73,7 @@ namespace Smartsheet.Api.Models
         MULTI_CONTACT_LIST,
 
         /// <summary>
-        /// Represents the MULTI_PICKLIST (multi-assign) column type. </summary>
+        /// Represents the MULTI_PICKLIST (multi-select picklist) column type. </summary>
         MULTI_PICKLIST
     }
 

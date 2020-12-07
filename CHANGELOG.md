@@ -6,6 +6,38 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2.101.0] - 2020-07-28
+### Fixed
+- [image.id versus image.imageId #119](https://github.com/smartsheet-platform/smartsheet-csharp-sdk/issues/119)
+
+## [2.93.2] - 2020-06-11
+### Fixed
+- [Double url escaping for the search api call #120](https://github.com/smartsheet-platform/smartsheet-csharp-sdk/issues/120)
+
+## [2.93.1] - 2020-03-24
+### Fixed
+- [Unable to Search Sheet Summary #117](https://github.com/smartsheet-platform/smartsheet-csharp-sdk/issues/117)
+
+## [2.93.0] - 2020-03-12
+### Added 
+- Webhooks for columns support
+
+### Fixed 
+- [Json deserialization error #113](https://github.com/smartsheet-platform/smartsheet-csharp-sdk/issues/113)
+
+### Changed
+- disable Newtonsoft default configuration of deserializing strings that "look like" dates into C# DateTime objects, 
+see [README](https://github.com/smartsheet-platform/smartsheet-csharp-sdk/blob/master/README.md) for details on how 
+to opt-out of this change if required.  
+
+## [2.86.0] - 2019-11-07
+### Added
+- type and object definitions to support multi-picklist columns
+
+### Changed
+- dashboard widget model to support widgets that are in an error state
+- additions to CellDataItem widget contents to support METRIC widgets containing sheet summary fields
+
 ## [2.83.0] - 2019-08-23
 ### Added
 - support for sheet profiles

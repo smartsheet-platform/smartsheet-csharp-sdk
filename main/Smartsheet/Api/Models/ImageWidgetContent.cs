@@ -37,7 +37,7 @@ namespace Smartsheet.Api.Models
         private string fileName;
 
         /// <summary>
-        /// Format Descriptor <seealso "href="https://smartsheet-platform.github.io/api-docs/?ruby#formatting">FormatDescriptor</seealso>
+        /// Format Descriptor <seealso href="https://smartsheet-platform.github.io/api-docs/?ruby#formatting">FormatDescriptor</seealso>
         /// </summary>
         private string format;
 

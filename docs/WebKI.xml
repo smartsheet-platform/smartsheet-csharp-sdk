@@ -173,8 +173,8 @@
     <HelpKINode Title="Workspace.AccessLevel Property " Url="html/4afdb7ec-61e8-d263-f1fd-6bc0078a9529.htm" />
   </HelpKINode>
   <HelpKINode Title="AccessScope enumeration">
-    <HelpKINode Title="AccessScope Enumeration" Url="html/bc472975-1ab8-8301-a084-506c4d360ea1.htm" />
     <HelpKINode Title="AccessScope Enumeration" Url="html/7a10d74d-c815-e0f3-9e3b-f87478180e23.htm" />
+    <HelpKINode Title="AccessScope Enumeration" Url="html/bc472975-1ab8-8301-a084-506c4d360ea1.htm" />
   </HelpKINode>
   <HelpKINode Title="AccessToken property">
     <HelpKINode Title="SmartsheetBuilder.AccessToken Property " Url="html/94fca0d9-6e8e-1571-3287-9317b80ba7b3.htm" />
@@ -259,12 +259,12 @@
     <HelpKINode Title="AccessScope Enumeration" Url="html/bc472975-1ab8-8301-a084-506c4d360ea1.htm" />
   </HelpKINode>
   <HelpKINode Title="ADMIN_USERS enumeration member">
-    <HelpKINode Title="AccessScope Enumeration" Url="html/7a10d74d-c815-e0f3-9e3b-f87478180e23.htm" />
     <HelpKINode Title="AccessScope Enumeration" Url="html/bc472975-1ab8-8301-a084-506c4d360ea1.htm" />
+    <HelpKINode Title="AccessScope Enumeration" Url="html/7a10d74d-c815-e0f3-9e3b-f87478180e23.htm" />
   </HelpKINode>
   <HelpKINode Title="ADMIN_WORKSPACES enumeration member">
-    <HelpKINode Title="AccessScope Enumeration" Url="html/7a10d74d-c815-e0f3-9e3b-f87478180e23.htm" />
     <HelpKINode Title="AccessScope Enumeration" Url="html/bc472975-1ab8-8301-a084-506c4d360ea1.htm" />
+    <HelpKINode Title="AccessScope Enumeration" Url="html/7a10d74d-c815-e0f3-9e3b-f87478180e23.htm" />
   </HelpKINode>
   <HelpKINode Title="ALL enumeration member">
     <HelpKINode Title="FolderCopyInclusion Enumeration" Url="html/428503b2-e269-13e7-b6ec-23f400c4b698.htm" />
@@ -598,6 +598,7 @@
   <HelpKINode Title="Cell.Hyperlink property" Url="html/a2e3cb9e-a0d7-b7b2-253e-c68bed69aa7f.htm" />
   <HelpKINode Title="Cell.Image property" Url="html/b80f33f0-7ac5-9b99-b0e7-1696090bfb6d.htm" />
   <HelpKINode Title="Cell.LinkInFromCell property" Url="html/ad7ed9b3-7419-73f2-ee8c-643356c61284.htm" />
+  <HelpKINode Title="Cell.LinksOutToCells property" Url="html/434cefb0-bd3a-319b-cf9c-d9882543c448.htm" />
   <HelpKINode Title="Cell.ObjectValue property" Url="html/d8f67050-f62d-c60b-6f2f-35747a947eb2.htm" />
   <HelpKINode Title="Cell.OverrideValidation property" Url="html/cc442cf6-713d-13c5-1b2f-c66a7a7acdc5.htm" />
   <HelpKINode Title="Cell.Strict property" Url="html/f9a16305-ba30-b62b-bd08-15d38a474937.htm" />
@@ -633,6 +634,7 @@
   <HelpKINode Title="CellDataItem.LabelFormat property" Url="html/163b4109-6d55-9362-211e-9922dc4545dd.htm" />
   <HelpKINode Title="CellDataItem.ObjectValue property" Url="html/d1be5c0e-1ee0-e197-a98b-a29c886fe585.htm" />
   <HelpKINode Title="CellDataItem.Order property" Url="html/cbc4e842-8065-baa0-04e4-8691ce81697e.htm" />
+  <HelpKINode Title="CellDataItem.ProfileField property" Url="html/30e20a33-4376-d3c7-4fdb-0938a51f574f.htm" />
   <HelpKINode Title="CellDataItem.RowId property" Url="html/1ea4c0ff-57b8-0323-b43c-64f4af1871f7.htm" />
   <HelpKINode Title="CellDataItem.SheetId property" Url="html/11f2a525-1e41-9575-f7e7-1f5b09941cd7.htm" />
   <HelpKINode Title="CellDataItem.ValueFormat property" Url="html/d4faf589-a8c3-8f12-b86c-8818ec1cc823.htm" />
@@ -808,6 +810,7 @@
   <HelpKINode Title="ColumnIds property">
     <HelpKINode Title="RowEmail.ColumnIds Property " Url="html/a897ac29-0808-e7de-342b-f0dd4d79aec5.htm" />
     <HelpKINode Title="SentUpdateRequest.ColumnIds Property " Url="html/47775e51-559e-62d7-a269-a2b2cdc36f4a.htm" />
+    <HelpKINode Title="WebhookSubscope.ColumnIds Property " Url="html/62454854-8ac8-03c7-8fc2-ba0868da5acb.htm" />
   </HelpKINode>
   <HelpKINode Title="ColumnInclusion enumeration" Url="html/a3a70465-3261-c76a-9b20-5eae99c0e4be.htm" />
   <HelpKINode Title="ColumnResources property" Url="html/c3af7051-0cbe-0d8b-1c2a-4cc555bd6775.htm" />
@@ -1041,8 +1044,8 @@
   <HelpKINode Title="CREATE_CELL_LINK enumeration member" Url="html/79b65f34-90f1-32bc-091f-b3c65bab3eb7.htm" />
   <HelpKINode Title="CREATE_RECURRING_BACKUP enumeration member" Url="html/79b65f34-90f1-32bc-091f-b3c65bab3eb7.htm" />
   <HelpKINode Title="CREATE_SHEETS enumeration member">
-    <HelpKINode Title="AccessScope Enumeration" Url="html/7a10d74d-c815-e0f3-9e3b-f87478180e23.htm" />
     <HelpKINode Title="AccessScope Enumeration" Url="html/bc472975-1ab8-8301-a084-506c4d360ea1.htm" />
+    <HelpKINode Title="AccessScope Enumeration" Url="html/7a10d74d-c815-e0f3-9e3b-f87478180e23.htm" />
   </HelpKINode>
   <HelpKINode Title="CREATE_SIGHTS enumeration member" Url="html/bc472975-1ab8-8301-a084-506c4d360ea1.htm" />
   <HelpKINode Title="Criteria class">
@@ -1164,8 +1167,8 @@
   <HelpKINode Title="DeleteWorkspace method" Url="html/73fe42ec-4f1a-a734-91c5-08895ffbb5b2.htm" />
   <HelpKINode Title="DELETE_RECURRING_BACKUP enumeration member" Url="html/79b65f34-90f1-32bc-091f-b3c65bab3eb7.htm" />
   <HelpKINode Title="DELETE_SHEETS enumeration member">
-    <HelpKINode Title="AccessScope Enumeration" Url="html/bc472975-1ab8-8301-a084-506c4d360ea1.htm" />
     <HelpKINode Title="AccessScope Enumeration" Url="html/7a10d74d-c815-e0f3-9e3b-f87478180e23.htm" />
+    <HelpKINode Title="AccessScope Enumeration" Url="html/bc472975-1ab8-8301-a084-506c4d360ea1.htm" />
   </HelpKINode>
   <HelpKINode Title="DELETE_SIGHTS enumeration member" Url="html/bc472975-1ab8-8301-a084-506c4d360ea1.htm" />
   <HelpKINode Title="Department property" Url="html/b94ed4ea-1458-f5c8-a4ec-435d2b0b740f.htm" />
@@ -1339,6 +1342,7 @@
   <HelpKINode Title="Error property">
     <HelpKINode Title="BulkItemFailure.Error Property " Url="html/0d394ee5-df93-8999-26bf-72dc267c5c2e.htm" />
     <HelpKINode Title="ImageUrl.Error Property " Url="html/2057852c-f1ec-deb4-5d84-cbd020484f72.htm" />
+    <HelpKINode Title="Widget.Error Property " Url="html/4e853b29-eddf-1d6b-1180-6b86420e1471.htm" />
   </HelpKINode>
   <HelpKINode Title="Error.Detail property" Url="html/baa6578c-9035-5f38-edf1-c82729c0ca53.htm" />
   <HelpKINode Title="Error.Error constructor" Url="html/61cb6e55-c7aa-4179-1362-39153dd2cf7c.htm" />
@@ -1662,14 +1666,14 @@
   <HelpKINode Title="GetContact method" Url="html/74975170-2cf3-db86-a95e-88e345609b39.htm" />
   <HelpKINode Title="GetCrossSheetReference method" Url="html/a20b45bc-e9c1-7bd1-ba16-f93ac1ee0b6b.htm" />
   <HelpKINode Title="GetCurrentUser method" Url="html/889a1d8e-2138-2d3b-e214-876ad1c44ab9.htm" />
-  <HelpKINode Title="GetDescription method" Url="html/12a21fca-ba7f-7638-b4e6-decb5332bdc8.htm" />
   <HelpKINode Title="getDescription method" Url="html/5b1745fb-a189-164e-182c-39ff2bae017c.htm" />
+  <HelpKINode Title="GetDescription method" Url="html/12a21fca-ba7f-7638-b4e6-decb5332bdc8.htm" />
   <HelpKINode Title="GetDiscussion method" Url="html/73e32a62-e6f9-952e-349a-a58ed3946736.htm" />
-  <HelpKINode Title="getEmail method" Url="html/b54d0594-1c7f-0708-f1ea-49df4d201a9b.htm" />
   <HelpKINode Title="GetEmail method">
     <HelpKINode Title="AlternateEmail.AlternateEmailBuilder.GetEmail Method " Url="html/029fba77-5974-e2a3-d88a-b11e2ec27afb.htm" />
     <HelpKINode Title="Share.CreateShareBuilder.GetEmail Method " Url="html/247abb56-97b5-0332-8967-c756baba6c2a.htm" />
   </HelpKINode>
+  <HelpKINode Title="getEmail method" Url="html/b54d0594-1c7f-0708-f1ea-49df4d201a9b.htm" />
   <HelpKINode Title="GetEmailAddress method" Url="html/6411e8ad-bded-7a75-ec31-584ee4898db0.htm" />
   <HelpKINode Title="GetExpanded method">
     <HelpKINode Title="Row.AddRowBuilder.GetExpanded Method " Url="html/3db505f6-1f07-478b-7c5c-ebc8e726c758.htm" />
@@ -1907,6 +1911,7 @@
     <HelpKINode Title="Image.Height Property " Url="html/b5011a1c-440d-ebf2-6bf0-c29c28a5bcba.htm" />
     <HelpKINode Title="ImageUrl.Height Property " Url="html/c3d057d0-9d9c-f347-b462-5867194ce310.htm" />
     <HelpKINode Title="ImageWidgetContent.Height Property " Url="html/83fcd45a-f010-575a-bb27-3775a35a59b0.htm" />
+    <HelpKINode Title="ProfileImage.Height Property " Url="html/9b1399fb-bb24-5b74-58b6-574d4041cd62.htm" />
     <HelpKINode Title="Widget.Height Property " Url="html/15e4f247-0c0a-50ae-d096-5bb9a2caa524.htm" />
   </HelpKINode>
   <HelpKINode Title="Hidden property" Url="html/7aca4acb-b1f9-e5c2-3169-1af3079c8279.htm" />
@@ -2014,6 +2019,7 @@
   <HelpKINode Title="ImageId property">
     <HelpKINode Title="ContactObjectValue.ImageId Property " Url="html/8c244545-fddd-ce49-4988-d550b67ab74c.htm" />
     <HelpKINode Title="ImageUrl.ImageId Property " Url="html/7578e6e7-3e7b-cd61-0280-8d7999c7df8e.htm" />
+    <HelpKINode Title="ProfileImage.ImageId Property " Url="html/05d4df8b-aa9a-171d-06b1-5e0792c635c6.htm" />
   </HelpKINode>
   <HelpKINode Title="ImageUrl class">
     <HelpKINode Title="ImageUrl Class" Url="html/deb8599e-4815-7271-c2cd-bad9cbd84f32.htm" />
@@ -2209,6 +2215,7 @@
   <HelpKINode Title="LicensedSheetCreator property" Url="html/a09e1877-c0db-b817-c60a-ce115c483d84.htm" />
   <HelpKINode Title="LINK enumeration member" Url="html/bf2470f1-943e-0d19-b895-f9c4a4858c1f.htm" />
   <HelpKINode Title="LinkInFromCell property" Url="html/ad7ed9b3-7419-73f2-ee8c-643356c61284.htm" />
+  <HelpKINode Title="LinksOutToCells property" Url="html/434cefb0-bd3a-319b-cf9c-d9882543c448.htm" />
   <HelpKINode Title="LIST enumeration member" Url="html/c51bd1c1-c2b7-c7b6-fd66-d37ce9d5974a.htm" />
   <HelpKINode Title="ListAlternateEmails method" Url="html/a8aefcef-1495-5761-28cd-4825f243e14c.htm" />
   <HelpKINode Title="ListAttachments method">
@@ -2217,7 +2224,7 @@
     <HelpKINode Title="SheetAttachmentResources.ListAttachments Method " Url="html/d9fa29ae-7ded-508e-4c0b-e1df34776bff.htm" />
   </HelpKINode>
   <HelpKINode Title="ListAutomationRules method" Url="html/c0e6d278-d962-2c54-b587-b2dc9253060c.htm" />
-  <HelpKINode Title="ListColumns method" Url="html/de3cf652-0cac-0f77-711e-d73b2459f1b0.htm" />
+  <HelpKINode Title="ListColumns method" Url="html/f678f278-eb7e-feca-4c8f-dbc391ec8abb.htm" />
   <HelpKINode Title="ListContacts method" Url="html/725a3269-5005-da10-7f83-f208de2523c1.htm" />
   <HelpKINode Title="ListCrossSheetReferences method" Url="html/c8b92443-2f69-b541-0177-36e132b2d24b.htm" />
   <HelpKINode Title="ListDiscussions method">
@@ -2333,6 +2340,14 @@
   <HelpKINode Title="MultiContactObjectValue.MultiContactObjectValue constructor" Url="html/70e48c74-24e3-5502-26e0-0ca3c1d617c1.htm" />
   <HelpKINode Title="MultiContactObjectValue.ObjectType property" Url="html/9e99a9a8-04f1-3a74-ff76-d7555834628c.htm" />
   <HelpKINode Title="MultiContactObjectValue.Values property" Url="html/406c98d9-e559-8975-4fa7-586a112a2eea.htm" />
+  <HelpKINode Title="MultiPicklistObjectValue class">
+    <HelpKINode Title="MultiPicklistObjectValue Class" Url="html/1860fdeb-6c10-e181-0b74-1f9764aa8e14.htm" />
+    <HelpKINode Title="constructor" Url="html/a78664c9-22b0-472d-9f95-b075d90b6f58.htm" />
+    <HelpKINode Title="properties" Url="html/eb320c07-92e6-cefd-420e-30687f5d377d.htm" />
+  </HelpKINode>
+  <HelpKINode Title="MultiPicklistObjectValue.MultiPicklistObjectValue constructor" Url="html/a78664c9-22b0-472d-9f95-b075d90b6f58.htm" />
+  <HelpKINode Title="MultiPicklistObjectValue.ObjectType property" Url="html/89316ea6-396f-0904-31f9-b8f5d02329eb.htm" />
+  <HelpKINode Title="MultiPicklistObjectValue.Values property" Url="html/48021c1c-23e3-2795-929d-00292945add6.htm" />
   <HelpKINode Title="MultiRowEmail class">
     <HelpKINode Title="MultiRowEmail Class" Url="html/2b265f48-aa27-67dd-0914-4847bddae42b.htm" />
     <HelpKINode Title="constructor" Url="html/d2058c1c-93a9-f3fc-a0ba-50a6687a46ae.htm" />
@@ -2368,6 +2383,10 @@
   <HelpKINode Title="MultiShare.Users property" Url="html/78315c7e-23a4-9457-4aaf-13d81c661360.htm" />
   <HelpKINode Title="MULTI_CONTACT enumeration member" Url="html/507c1ece-0e74-3dfe-010d-5083e16354ca.htm" />
   <HelpKINode Title="MULTI_CONTACT_LIST enumeration member" Url="html/dbf68033-8d2d-5af0-b7e8-93ab0e4caf37.htm" />
+  <HelpKINode Title="MULTI_PICKLIST enumeration member">
+    <HelpKINode Title="ColumnType Enumeration" Url="html/dbf68033-8d2d-5af0-b7e8-93ab0e4caf37.htm" />
+    <HelpKINode Title="ObjectValueType Enumeration" Url="html/507c1ece-0e74-3dfe-010d-5083e16354ca.htm" />
+  </HelpKINode>
   <HelpKINode Title="Name property">
     <HelpKINode Title="FontFamily.Name Property " Url="html/e86efd03-aef0-b5c8-8562-7c18fb449844.htm" />
     <HelpKINode Title="NamedModel.Name Property " Url="html/4f932fb4-a5e9-99bd-2098-13825174354c.htm" />
@@ -2480,6 +2499,7 @@
     <HelpKINode Title="Event.ObjectType Property " Url="html/2ba8d378-5947-c740-29c4-7b505d372f0b.htm" />
     <HelpKINode Title="ExplicitNull.ObjectType Property " Url="html/6a891e7a-23c8-648a-c1a9-0621f4daa87b.htm" />
     <HelpKINode Title="MultiContactObjectValue.ObjectType Property " Url="html/9e99a9a8-04f1-3a74-ff76-d7555834628c.htm" />
+    <HelpKINode Title="MultiPicklistObjectValue.ObjectType Property " Url="html/89316ea6-396f-0904-31f9-b8f5d02329eb.htm" />
     <HelpKINode Title="NumberObjectValue.ObjectType Property " Url="html/22fafa22-166b-96e1-8e88-2a36baadd63c.htm" />
     <HelpKINode Title="ObjectValue.ObjectType Property " Url="html/8239e396-3ce7-06a1-d2e2-2dc96741e807.htm" />
     <HelpKINode Title="PredecessorList.ObjectType Property " Url="html/ab018acd-4c05-9b50-a6cc-687c87ee1664.htm" />
@@ -2658,7 +2678,17 @@
   <HelpKINode Title="PRIORITY enumeration member" Url="html/207f97c9-6113-76b0-5d01-4dc19ed7e231.htm" />
   <HelpKINode Title="PRIORITY_HML enumeration member" Url="html/207f97c9-6113-76b0-5d01-4dc19ed7e231.htm" />
   <HelpKINode Title="PrivateId property" Url="html/8bf5495c-f08f-97c8-a173-b3f8d2b10d22.htm" />
+  <HelpKINode Title="ProfileField property" Url="html/30e20a33-4376-d3c7-4fdb-0938a51f574f.htm" />
+  <HelpKINode Title="ProfileImage class">
+    <HelpKINode Title="ProfileImage Class" Url="html/dd1bd85e-e08d-4301-a63c-53db34add2f2.htm" />
+    <HelpKINode Title="constructor" Url="html/f0e18a0d-f1c7-7040-fdc9-11e08b0e3a9d.htm" />
+    <HelpKINode Title="properties" Url="html/3242740f-2a1c-d694-15ff-8093ce5eb1df.htm" />
+  </HelpKINode>
   <HelpKINode Title="ProfileImage property" Url="html/0d2d90bb-e8bb-ecb1-5637-fa72cb0ac34a.htm" />
+  <HelpKINode Title="ProfileImage.Height property" Url="html/9b1399fb-bb24-5b74-58b6-574d4041cd62.htm" />
+  <HelpKINode Title="ProfileImage.ImageId property" Url="html/05d4df8b-aa9a-171d-06b1-5e0792c635c6.htm" />
+  <HelpKINode Title="ProfileImage.ProfileImage constructor" Url="html/f0e18a0d-f1c7-7040-fdc9-11e08b0e3a9d.htm" />
+  <HelpKINode Title="ProfileImage.Width property" Url="html/b677bb61-b420-dcda-e9a3-2baa2f6f4419.htm" />
   <HelpKINode Title="PROGRESS enumeration member" Url="html/207f97c9-6113-76b0-5d01-4dc19ed7e231.htm" />
   <HelpKINode Title="ProjectSettings class">
     <HelpKINode Title="ProjectSettings Class" Url="html/c6d31905-4df8-35c5-e985-d0c8ea8a4511.htm" />
@@ -3269,6 +3299,7 @@
   </HelpKINode>
   <HelpKINode Title="SetColumns method" Url="html/3eac2bb0-ebbb-f32b-ee96-0383c069cd1b.htm" />
   <HelpKINode Title="SetComment method" Url="html/8dd70ae5-7a73-5cde-7599-865e61755455.htm" />
+  <HelpKINode Title="SetDateTimeFixOptOut method" Url="html/7870dd2f-4600-ce92-896d-4dab9c1c267f.htm" />
   <HelpKINode Title="SetDescription method">
     <HelpKINode Title="Attachment.CreateAttachmentBuilder.SetDescription Method " Url="html/fa6f607e-07ef-5850-1190-8a9188ec5e39.htm" />
     <HelpKINode Title="Group.CreateGroupBuilder.SetDescription Method " Url="html/40626daa-0aef-ffe4-e45a-1e7a7eb6b5bb.htm" />
@@ -3520,8 +3551,8 @@
   </HelpKINode>
   <HelpKINode Title="ShareType enumeration" Url="html/d993bdd0-6ab8-2f73-65ac-bca545472924.htm" />
   <HelpKINode Title="SHARE_SHEETS enumeration member">
-    <HelpKINode Title="AccessScope Enumeration" Url="html/bc472975-1ab8-8301-a084-506c4d360ea1.htm" />
     <HelpKINode Title="AccessScope Enumeration" Url="html/7a10d74d-c815-e0f3-9e3b-f87478180e23.htm" />
+    <HelpKINode Title="AccessScope Enumeration" Url="html/bc472975-1ab8-8301-a084-506c4d360ea1.htm" />
   </HelpKINode>
   <HelpKINode Title="SHARE_SIGHTS enumeration member" Url="html/bc472975-1ab8-8301-a084-506c4d360ea1.htm" />
   <HelpKINode Title="Sheet class">
@@ -3593,7 +3624,7 @@
   <HelpKINode Title="SheetColumnResources.AddColumns method" Url="html/f43ea217-88c2-5b99-55ac-dcd498f606fc.htm" />
   <HelpKINode Title="SheetColumnResources.DeleteColumn method" Url="html/e04b6d2f-ac34-ff1c-5bdb-72e61c9a2062.htm" />
   <HelpKINode Title="SheetColumnResources.GetColumn method" Url="html/475a9fea-9016-adcf-dc14-d5d45f797699.htm" />
-  <HelpKINode Title="SheetColumnResources.ListColumns method" Url="html/de3cf652-0cac-0f77-711e-d73b2459f1b0.htm" />
+  <HelpKINode Title="SheetColumnResources.ListColumns method" Url="html/f678f278-eb7e-feca-4c8f-dbc391ec8abb.htm" />
   <HelpKINode Title="SheetColumnResources.UpdateColumn method" Url="html/84282f43-c908-d952-77ae-8313595ce140.htm" />
   <HelpKINode Title="SheetCommentResources interface">
     <HelpKINode Title="SheetCommentResources Interface" Url="html/8826ba1c-3e1a-2a52-a57c-48cd7dd1038c.htm" />
@@ -4067,6 +4098,7 @@
   <HelpKINode Title="Smartsheet.Api.Models.MoveRowBuilder class" Url="html/e98977ef-fe1a-65c2-76d3-2bfa6d7db45f.htm" />
   <HelpKINode Title="Smartsheet.Api.Models.MoveRowInclusion enumeration" Url="html/e0a83c0f-4b27-5c9c-9164-4a301683b51c.htm" />
   <HelpKINode Title="Smartsheet.Api.Models.MultiContactObjectValue class" Url="html/dd1ccb40-c3ba-9283-fa0f-b7ab5b672e91.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.MultiPicklistObjectValue class" Url="html/1860fdeb-6c10-e181-0b74-1f9764aa8e14.htm" />
   <HelpKINode Title="Smartsheet.Api.Models.MultiRowEmail class" Url="html/2b265f48-aa27-67dd-0914-4847bddae42b.htm" />
   <HelpKINode Title="Smartsheet.Api.Models.MultiShare class" Url="html/a0a645a7-3cb3-98b8-b1de-0dd4a96e7abb.htm" />
   <HelpKINode Title="Smartsheet.Api.Models.NamedModel class" Url="html/de2400fc-43d7-55e0-5dce-14ccce3d2203.htm" />
@@ -4080,6 +4112,7 @@
   <HelpKINode Title="Smartsheet.Api.Models.PaperSize enumeration" Url="html/31ccd904-d795-cfa3-7df8-4d512c800e2a.htm" />
   <HelpKINode Title="Smartsheet.Api.Models.Predecessor class" Url="html/da4f3be2-6967-1a66-2275-6534be9446cc.htm" />
   <HelpKINode Title="Smartsheet.Api.Models.PredecessorList class" Url="html/00e79965-da87-38d3-e5ae-e411204d2aa2.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.ProfileImage class" Url="html/dd1bd85e-e08d-4301-a63c-53db34add2f2.htm" />
   <HelpKINode Title="Smartsheet.Api.Models.ProjectSettings class" Url="html/c6d31905-4df8-35c5-e985-d0c8ea8a4511.htm" />
   <HelpKINode Title="Smartsheet.Api.Models.PublishStatusBuilder class" Url="html/6f7ff439-55e9-879e-0e86-ed45782e3e6b.htm" />
   <HelpKINode Title="Smartsheet.Api.Models.Recipient class" Url="html/45bae989-d952-1b99-b8ba-7ad900e9bc98.htm" />
@@ -4170,6 +4203,7 @@
   <HelpKINode Title="Smartsheet.Api.Models.WebhookSharedSecret class" Url="html/e64800fa-6ee9-6653-0079-5fefe96c93d9.htm" />
   <HelpKINode Title="Smartsheet.Api.Models.WebhookStats class" Url="html/8209756c-c55d-bd7a-2273-3d6ac98e7975.htm" />
   <HelpKINode Title="Smartsheet.Api.Models.WebhookStatus enumeration" Url="html/c3018f85-75a8-b355-0cf4-ebd46c77f5fb.htm" />
+  <HelpKINode Title="Smartsheet.Api.Models.WebhookSubscope class" Url="html/45de0795-6982-e73d-5084-5b773537ec89.htm" />
   <HelpKINode Title="Smartsheet.Api.Models.Widget class" Url="html/9219fc51-d659-1a4a-f2b3-04b3111b8898.htm" />
   <HelpKINode Title="Smartsheet.Api.Models.WidgetHyperlink class" Url="html/27e9c0b1-14c7-e647-b201-0e95d8f7526b.htm" />
   <HelpKINode Title="Smartsheet.Api.Models.WidgetType enumeration" Url="html/531e482e-9b76-3725-f275-f72940e7b0e5.htm" />
@@ -4246,6 +4280,7 @@
   <HelpKINode Title="SmartsheetBuilder.SetAssumedUser method" Url="html/f9c95791-f113-79fa-85df-e606e1977421.htm" />
   <HelpKINode Title="SmartsheetBuilder.SetBaseURI method" Url="html/deb88236-7c81-75aa-a1f6-7e1b5d34dcb1.htm" />
   <HelpKINode Title="SmartsheetBuilder.SetChangeAgent method" Url="html/8abc23c4-7eb4-06d8-ce3d-e7353c256c55.htm" />
+  <HelpKINode Title="SmartsheetBuilder.SetDateTimeFixOptOut method" Url="html/7870dd2f-4600-ce92-896d-4dab9c1c267f.htm" />
   <HelpKINode Title="SmartsheetBuilder.SetHttpClient method" Url="html/f2a87988-56fa-2dea-ac8a-323af0017a60.htm" />
   <HelpKINode Title="SmartsheetBuilder.SetJsonSerializer method" Url="html/5e3b3e17-a399-bc54-67bd-9bf221e0773f.htm" />
   <HelpKINode Title="SmartsheetBuilder.SetMaxRetryTimeout method" Url="html/c45d5cc2-4ef7-0c76-793b-335b80fc2815.htm" />
@@ -4374,6 +4409,7 @@
     <HelpKINode Title="SentUpdateRequest.Subject Property " Url="html/dfe8be76-d039-131a-565e-34a60e9dcf47.htm" />
     <HelpKINode Title="Share.Subject Property " Url="html/f7b6e706-3208-a3f8-e0a3-d09a3a9c09b3.htm" />
   </HelpKINode>
+  <HelpKINode Title="Subscope property" Url="html/1fee547a-9be8-1863-79ca-89c97fbbe9e7.htm" />
   <HelpKINode Title="Suffix property" Url="html/f66faeb6-eb24-2d04-fc3b-1109f584b276.htm" />
   <HelpKINode Title="SUMMARY enumeration member" Url="html/b460e0ff-608d-ffb3-157c-b7329dff2bbd.htm" />
   <HelpKINode Title="Summary property" Url="html/9f86bfd1-c25c-9b56-3e21-529c7226c009.htm" />
@@ -4407,6 +4443,7 @@
   <HelpKINode Title="SummaryFieldInclusion enumeration" Url="html/bc441d77-f6a5-d55c-8b5f-8b6858c48318.htm" />
   <HelpKINode Title="SummaryPermissions property" Url="html/eb0346fe-e7a9-1b5c-7989-30ab56c03c46.htm" />
   <HelpKINode Title="SummaryResources property" Url="html/adde5958-964c-976d-a890-d64d5dbead11.htm" />
+  <HelpKINode Title="SUMMARY_FIELD enumeration member" Url="html/b8d92bce-0bb3-0eb6-884a-d38e70e55fdb.htm" />
   <HelpKINode Title="SUMMARY_FIELDS enumeration member" Url="html/2ec8c9b4-50bd-9098-35ee-843adac8bde1.htm" />
   <HelpKINode Title="SUNDAY enumeration member" Url="html/f325691d-5d65-170c-2a91-33bde4518cb4.htm" />
   <HelpKINode Title="SupportedLocales property" Url="html/d22ad176-ac3d-5ac6-4bca-e8a299170bc4.htm" />
@@ -4785,6 +4822,7 @@
   <HelpKINode Title="Values property">
     <HelpKINode Title="Criteria.Values Property " Url="html/84d137d3-87b1-d4f2-106e-d59d9d802659.htm" />
     <HelpKINode Title="MultiContactObjectValue.Values Property " Url="html/406c98d9-e559-8975-4fa7-586a112a2eea.htm" />
+    <HelpKINode Title="MultiPicklistObjectValue.Values Property " Url="html/48021c1c-23e3-2795-929d-00292945add6.htm" />
   </HelpKINode>
   <HelpKINode Title="VCR enumeration member" Url="html/207f97c9-6113-76b0-5d01-4dc19ed7e231.htm" />
   <HelpKINode Title="Version property">
@@ -4829,6 +4867,7 @@
   <HelpKINode Title="Webhook.SharedSecret property" Url="html/eb49425f-a433-a6de-8a9a-71568d322878.htm" />
   <HelpKINode Title="Webhook.Stats property" Url="html/3c92b4b7-2685-ac85-be61-e4ec9e3f40ca.htm" />
   <HelpKINode Title="Webhook.Status property" Url="html/25784378-54bd-3dda-0fa9-30718dede339.htm" />
+  <HelpKINode Title="Webhook.Subscope property" Url="html/1fee547a-9be8-1863-79ca-89c97fbbe9e7.htm" />
   <HelpKINode Title="Webhook.Version property" Url="html/c404578a-7ef0-6910-0540-3ba96392233e.htm" />
   <HelpKINode Title="Webhook.Webhook constructor" Url="html/e0248be4-07a6-fe7e-f64d-1f7ce3475ae5.htm" />
   <HelpKINode Title="WebhookResources interface">
@@ -4859,6 +4898,13 @@
   <HelpKINode Title="WebhookStats.LastSuccessfulCallback property" Url="html/e866327f-ca8f-99d0-c62f-2ac31b6f7e84.htm" />
   <HelpKINode Title="WebhookStats.WebhookStats constructor" Url="html/9f4b997c-fdd6-0790-f40a-5b2514f76d36.htm" />
   <HelpKINode Title="WebhookStatus enumeration" Url="html/c3018f85-75a8-b355-0cf4-ebd46c77f5fb.htm" />
+  <HelpKINode Title="WebhookSubscope class">
+    <HelpKINode Title="WebhookSubscope Class" Url="html/45de0795-6982-e73d-5084-5b773537ec89.htm" />
+    <HelpKINode Title="constructor" Url="html/db48ec04-0d95-925d-c338-8dd1ff6d270c.htm" />
+    <HelpKINode Title="properties" Url="html/9056f8d7-92f6-bf30-f4de-357c0a7bc706.htm" />
+  </HelpKINode>
+  <HelpKINode Title="WebhookSubscope.ColumnIds property" Url="html/62454854-8ac8-03c7-8fc2-ba0868da5acb.htm" />
+  <HelpKINode Title="WebhookSubscope.WebhookSubscope constructor" Url="html/db48ec04-0d95-925d-c338-8dd1ff6d270c.htm" />
   <HelpKINode Title="WEB_APP enumeration member" Url="html/1386d9d1-6d48-2a31-09e0-7bc2b4e27b9e.htm" />
   <HelpKINode Title="WEDNESDAY enumeration member" Url="html/f325691d-5d65-170c-2a91-33bde4518cb4.htm" />
   <HelpKINode Title="WEEKDAY enumeration member" Url="html/f325691d-5d65-170c-2a91-33bde4518cb4.htm" />
@@ -4875,6 +4921,7 @@
     <HelpKINode Title="properties" Url="html/521f2471-5476-8008-ac08-aef7f14ccc0a.htm" />
   </HelpKINode>
   <HelpKINode Title="Widget.Contents property" Url="html/3f576457-edc3-712b-7133-c5bd386a6893.htm" />
+  <HelpKINode Title="Widget.Error property" Url="html/4e853b29-eddf-1d6b-1180-6b86420e1471.htm" />
   <HelpKINode Title="Widget.Height property" Url="html/15e4f247-0c0a-50ae-d096-5bb9a2caa524.htm" />
   <HelpKINode Title="Widget.ShowTitle property" Url="html/d499d58b-735f-da71-495c-31d8221464f9.htm" />
   <HelpKINode Title="Widget.ShowTitleIcon property" Url="html/7c5c888e-2618-e2ad-da3c-067b412f6029.htm" />
@@ -4912,6 +4959,7 @@
     <HelpKINode Title="Image.Width Property " Url="html/5125b935-8ff5-d420-2c0d-ca469772ba36.htm" />
     <HelpKINode Title="ImageUrl.Width Property " Url="html/d2f6a85b-882c-126c-2df8-55c04f6e15bd.htm" />
     <HelpKINode Title="ImageWidgetContent.Width Property " Url="html/9fb463db-5173-c068-7849-59e6cc0537ad.htm" />
+    <HelpKINode Title="ProfileImage.Width Property " Url="html/b677bb61-b420-dcda-e9a3-2baa2f6f4419.htm" />
     <HelpKINode Title="Widget.Width Property " Url="html/3cffb83d-1c7f-a202-ebf8-4724c3524d06.htm" />
   </HelpKINode>
   <HelpKINode Title="WorkingDays property" Url="html/254ce60a-0f5d-ada2-13e1-e6deb0914d0e.htm" />
@@ -4987,8 +5035,8 @@
     <HelpKINode Title="SummaryFieldInclusion Enumeration" Url="html/bc441d77-f6a5-d55c-8b5f-8b6858c48318.htm" />
   </HelpKINode>
   <HelpKINode Title="WRITE_SHEETS enumeration member">
-    <HelpKINode Title="AccessScope Enumeration" Url="html/bc472975-1ab8-8301-a084-506c4d360ea1.htm" />
     <HelpKINode Title="AccessScope Enumeration" Url="html/7a10d74d-c815-e0f3-9e3b-f87478180e23.htm" />
+    <HelpKINode Title="AccessScope Enumeration" Url="html/bc472975-1ab8-8301-a084-506c4d360ea1.htm" />
   </HelpKINode>
   <HelpKINode Title="XPosition property" Url="html/1c9f5349-d4f5-75d0-8dfa-b8e87ca8ee1f.htm" />
   <HelpKINode Title="YEARLY enumeration member" Url="html/41cab09b-cac4-99a8-312f-848a2bf681a5.htm" />

@@ -17,6 +17,7 @@
 //    %[license]
 
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using Smartsheet.Api.Models;
@@ -69,11 +70,22 @@ namespace Smartsheet.Api.Internal.Json
                     case ObjectValueType.DATE:
                     case ObjectValueType.DATETIME:
                     case ObjectValueType.ABSTRACT_DATETIME:
-                        objectValue = new DateObjectValue(parsedObjectType, superset.value);
+                        if (superset.value is DateTime)
+                        {
+                            objectValue = new DateObjectValue(parsedObjectType, ((DateTime)superset.value).ToString("yyyy-MM-ddTHH:mm:ssZ"));
+                        }
+                        else
+                        {
+                            objectValue = new DateObjectValue(parsedObjectType, (string)superset.value);
+                        }
                         break;
 
                     case ObjectValueType.MULTI_CONTACT:
-                        objectValue = new MultiContactObjectValue(superset.values);
+                        objectValue = new MultiContactObjectValue(superset.values.Select(q => JsonConvert.DeserializeObject<ContactObjectValue>(q.ToString())).ToList());
+                        break;
+
+                    case ObjectValueType.MULTI_PICKLIST:
+                        objectValue = new MultiPicklistObjectValue(superset.values.Cast<string>().ToList());
                         break;
 
                     default:
@@ -94,6 +106,10 @@ namespace Smartsheet.Api.Internal.Json
                 else if (reader.TokenType == JsonToken.Float)
                 {
                     objectValue = new NumberObjectValue((double)reader.Value);
+                }
+                else if (reader.TokenType == JsonToken.Date)
+                {
+                    objectValue = new StringObjectValue(((DateTime)reader.Value).ToString("yyyy-MM-ddTHH:mm:ssZ"));
                 }
                 else
                 {
@@ -139,11 +155,11 @@ namespace Smartsheet.Api.Internal.Json
             public int refIndex;
             public string imageId;
 
-            // MULTI_CONTACT
-            public List<ContactObjectValue> values;
+            // MULTI_CONTACT or MULTI_PICKLIST
+            public IList<object> values;
 
             // Various other types
-            public string value;
+            public object value;
         }
     }
 }

@@ -194,7 +194,7 @@ namespace Smartsheet.Api.Models
         /// An array of CellLink objects. Zero or more outbound links from this cell to cells in other sheets 
         /// whose values mirror this cell's value.
         /// </summary>
-        private IList<CellLink> LinksOutToCells
+        public IList<CellLink> LinksOutToCells
         {
             get { return linksOutToCells; }
             set { linksOutToCells = value; }

@@ -91,7 +91,7 @@ namespace Smartsheet.Api.Models
         /// <summary>
         /// Link to the user's profile image
         /// </summary>
-        private Image profileImage;
+        private ProfileImage profileImage;
 
         /// <summary>
         /// Flag indicating whether the user is a resource viewer (can access resource views)
@@ -236,7 +236,7 @@ namespace Smartsheet.Api.Models
         /// <summary>
         /// Gets a link to the user's profile image
         /// </summary>
-        public Image ProfileImage
+        public ProfileImage ProfileImage
         {
             get { return profileImage; }
             set { profileImage = value; }

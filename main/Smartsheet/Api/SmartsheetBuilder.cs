@@ -84,6 +84,11 @@ namespace Smartsheet.Api
         private string changeAgent;
 
         /// <summary>
+        /// Optional setting to re-enable the JSON serializers string to C# DateTime conversion
+        /// </summary>
+        private bool dateTimeFixOptOut = false;
+
+        /// <summary>
         /// <para>Represents the default base URI of the Smartsheet REST API.</para>
         /// 
         /// <para>It is a constant with Value "https://api.smartsheet.com/2.0".</para>
@@ -183,6 +188,17 @@ namespace Smartsheet.Api
         }
 
         /// <summary>
+        /// Set optional flag to re-enable JSON deserializers conversion from string to C# DateTime
+        /// </summary>
+        /// <param name="dateTimeFixOptOut"></param>
+        /// <returns></returns>
+        public SmartsheetBuilder SetDateTimeFixOptOut(bool dateTimeFixOptOut)
+        {
+            this.dateTimeFixOptOut = dateTimeFixOptOut;
+            return this;
+        }
+
+        /// <summary>
         /// <para>Gets the http client.</para>
         /// </summary>
         /// <returns> the http client </returns>
@@ -252,7 +268,7 @@ namespace Smartsheet.Api
                 accessToken = Environment.GetEnvironmentVariable("SMARTSHEET_ACCESS_TOKEN");
             }
 
-            SmartsheetImpl smartsheet = new SmartsheetImpl(baseURI, accessToken, httpClient, jsonSerializer);
+            SmartsheetImpl smartsheet = new SmartsheetImpl(baseURI, accessToken, httpClient, jsonSerializer, dateTimeFixOptOut);
 
             if (changeAgent != null)
             {
