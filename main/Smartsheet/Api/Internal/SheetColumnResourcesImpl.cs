@@ -52,7 +52,6 @@ namespace Smartsheet.Api.Internal
         /// <param name="sheetId"> the sheet Id </param>
         /// <param name="include">elements to include in response</param>
         /// <param name="paging">the paging</param>
-        /// <param name="level"> compatibility level </param>
         /// <returns> the list of Columns (note that an empty list will be returned if there is none) </returns>
         /// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
         /// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -60,21 +59,16 @@ namespace Smartsheet.Api.Internal
         /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
-        public virtual PaginatedResult<Column> ListColumns(long sheetId, IEnumerable<ColumnInclusion> include, PaginationParameters paging, int? level)
+        public virtual PaginatedResult<Column> ListColumns(long sheetId, IEnumerable<ColumnInclusion> include, PaginationParameters paging)
         {
             StringBuilder path = new StringBuilder("sheets/" + sheetId + "/columns");
             IDictionary<string, string> parameters = new Dictionary<string, string>();
             if (paging != null)
             {
                 parameters = paging.toDictionary();
-            }
-            if (include != null)
+            } if (include != null)
             {
                 parameters.Add("include", QueryUtil.GenerateCommaSeparatedList(include));
-            }
-            if (level != null)
-            {
-                parameters.Add("level", level.ToString());
             }
             return this.ListResourcesWithWrapper<Column>(QueryUtil.GenerateUrl("sheets/" + sheetId + "/columns", parameters));
         }
