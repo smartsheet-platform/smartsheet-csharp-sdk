@@ -58,6 +58,11 @@ namespace Smartsheet.Api.Models
         private string format;
 
         /// <summary>
+        /// The formula for a column, if set, for instance '=data@row'.
+        /// </summary>
+        private string formula;
+
+        /// <summary>
         /// Represents the hidden flag for the column.
         /// </summary>
         private bool? hidden;
@@ -180,6 +185,16 @@ namespace Smartsheet.Api.Models
         {
             get { return format; }
             set { format = value; }
+        }
+
+        /// <summary>
+        /// <para>The formula for a column.</para>
+        /// </summary>
+        /// <returns>the column formula</returns>
+        public string Formula
+        {
+            get { return formula; }
+            set { formula = value; }
         }
 
         /// <summary>
