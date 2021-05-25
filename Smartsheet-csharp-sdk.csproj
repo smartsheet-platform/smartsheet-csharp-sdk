@@ -172,7 +172,6 @@
     <Compile Include="main\Smartsheet\Api\Models\Webhook.cs" />
     <Compile Include="main\Smartsheet\Api\Models\WebhookStats.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Widget.cs" />
-    <Compile Include="main\Smartsheet\Api\Models\WidgetContent.cs" />
     <Compile Include="main\Smartsheet\Api\Models\WidgetType.cs" />
     <Compile Include="main\Smartsheet\Api\PassthroughResources.cs" />
     <Compile Include="main\Smartsheet\Api\SheetAutomationRuleResources.cs" />
