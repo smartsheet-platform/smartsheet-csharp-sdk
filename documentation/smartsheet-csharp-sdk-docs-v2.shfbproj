@@ -32,9 +32,9 @@
     <PresentationStyle>VS2013</PresentationStyle>
     <Preliminary>False</Preliminary>
     <NamingMethod>Guid</NamingMethod>
-    <HelpTitle>Smartsheet C# SDK Documentation v2.101.0</HelpTitle>
+    <HelpTitle>Smartsheet C# SDK Documentation v2.126.0</HelpTitle>
     <FeedbackEMailAddress>api%40smartsheet.com</FeedbackEMailAddress>
-    <CopyrightText>%28c%29 2014-2020. All Rights Reserved</CopyrightText>
+    <CopyrightText>%28c%29 2014-2021. All Rights Reserved</CopyrightText>
     <CopyrightHref>Smartsheet</CopyrightHref>
     <ContentPlacement>BelowNamespaces</ContentPlacement>
     <DocumentationSources>
@@ -88,7 +88,7 @@
       <Argument Key="maxVersionParts" Value="" />
       <Argument Key="defaultLanguage" Value="cs" />
     </TransformComponentArguments>
-    <HelpFileVersion>2.101.0.0</HelpFileVersion>
+    <HelpFileVersion>2.126.0.0</HelpFileVersion>
     <RootNamespaceTitle>Smartsheet C# SDK Help Topics</RootNamespaceTitle>
     <SaveComponentCacheCapacity>100</SaveComponentCacheCapacity>
   </PropertyGroup>

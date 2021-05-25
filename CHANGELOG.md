@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2.126.0] - 2021-05-24
+### Added
+- add support for column formulas
+
 ## [2.101.0] - 2020-07-28
 ### Fixed
 - [image.id versus image.imageId #119](https://github.com/smartsheet-platform/smartsheet-csharp-sdk/issues/119)
