@@ -12,7 +12,7 @@
     <PackageIconUrl>https://googledrive.com/host/0B0ESt9lII6BWZUcyZmlsalBDdlE/smartsheetAPI.png</PackageIconUrl>
     <Title>Smartsheet C# SDK</Title>
     <Description>Library that uses C# to connect to Smartsheet services.</Description>
-    <Copyright>Copyright 2014-2020</Copyright>
+    <Copyright>Copyright 2014-2021</Copyright>
     <Authors>Smartsheet</Authors>
     <Product>smartsheet-csharp-sdk</Product>
     <PackageTags>Smartsheet Collaboration Project Management Excel spreadsheet</PackageTags>
