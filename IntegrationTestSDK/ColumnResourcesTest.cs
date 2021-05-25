@@ -21,6 +21,9 @@ namespace IntegrationTestSDK
             UpdateColumn(smartsheet, sheetId, columnId);
             DeleteAndGetColumn(smartsheet, sheetId, columnId);
 
+            columnId = AddColumnFormula(smartsheet, sheetId);
+            ClearColumnFormula(smartsheet, sheetId, columnId);
+
             smartsheet.SheetResources.DeleteSheet(sheetId);
         }
 
@@ -34,7 +37,7 @@ namespace IntegrationTestSDK
             }
             catch
             {
-                //Not found.
+                // Not found.
             }
         }
 
@@ -57,6 +60,24 @@ namespace IntegrationTestSDK
             IList<Column> columnsAdded = smartsheet.SheetResources.ColumnResources.AddColumns(sheetId, new Column[] { new Column.AddColumnBuilder("col 4", 3, ColumnType.CONTACT_LIST).Build() });
             Assert.IsTrue(columnsAdded.Count == 1);
             Assert.IsTrue(columnsAdded[0].Title == "col 4");
+        }
+
+        private static long AddColumnFormula(SmartsheetClient smartsheet, long sheetId)
+        {
+            Column col = new Column.AddColumnBuilder("colFormula", 3, ColumnType.DATE).Build();
+            col.Formula = " = TODAY()";
+            IList<Column> columnsAdded = smartsheet.SheetResources.ColumnResources.AddColumns(sheetId, new Column[] { col });
+            Assert.IsTrue(columnsAdded.Count == 1);
+            Assert.IsNotNull(columnsAdded[0].Formula);
+            return columnsAdded[0].Id.Value;
+        }
+
+        private static void ClearColumnFormula(SmartsheetClient smartsheet, long sheetId, long columnId)
+        {
+            Column col = new Column.UpdateColumnBuilder(columnId, "colFormula updated", 2).Build();
+            col.Formula = "";
+            Column updatedColumn = smartsheet.SheetResources.ColumnResources.UpdateColumn(sheetId, col);
+            Assert.IsNull(updatedColumn.Formula);
         }
 
         private static long CreateSheet(SmartsheetClient smartsheet)
