@@ -125,6 +125,7 @@
     <Compile Include="main\Smartsheet\Api\Models\ExplicitNull.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Inclusions\SearchInclusion.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Inclusions\HomeExclusion.cs" />
+    <Compile Include="main\Smartsheet\Api\Models\Inclusions\SheetCopyExclusion.cs" />
     <Compile Include="main\Smartsheet\Api\Models\Inclusions\UserInclusion.cs" />
     <Compile Include="main\Smartsheet\Api\Models\MultiContactObjectValue.cs" />
     <Compile Include="main\Smartsheet\Api\Models\NumberObjectValue.cs" />

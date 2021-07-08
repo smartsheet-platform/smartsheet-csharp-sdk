@@ -2,6 +2,7 @@ documentation/Website
 documentation/obj
 documentation/git-docs
 *.nupkg
+/.deploy/
 
 
 ## Ignore Visual Studio temporary files, build results, and
