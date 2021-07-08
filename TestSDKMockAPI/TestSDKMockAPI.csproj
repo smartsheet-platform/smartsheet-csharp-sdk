@@ -50,8 +50,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutomationRulesTest.cs" />
+    <Compile Include="ClientConfigTests.cs" />
     <Compile Include="ColumnTests.cs" />
     <Compile Include="HelperFunctions.cs" />
+    <Compile Include="SerializationTest.cs" />
     <Compile Include="SheetTests.cs" />
     <Compile Include="RowTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

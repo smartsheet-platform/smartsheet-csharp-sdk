@@ -13,14 +13,16 @@ namespace TestSDKMockAPI
     {
         public static SmartsheetClient SetupClient(string apiScenario)
         {
-            TestHttpClient testHttpClient = new TestHttpClient(apiScenario);
-            SmartsheetClient ss = new SmartsheetBuilder()
-            .SetBaseURI("http://localhost:8082/")
-            .SetAccessToken("aaaaaaaaaaaaaaaaaaaaaaaaaa")
-            .SetHttpClient(testHttpClient)
-            .Build();
+            return SetupClientBase(apiScenario).Build();
+        }
 
-            return ss;
+        public static SmartsheetBuilder SetupClientBase(string apiScenario)
+        {
+            TestHttpClient testHttpClient = new TestHttpClient(apiScenario);
+            return new SmartsheetBuilder()
+                .SetBaseURI("http://localhost:8082/")
+                .SetAccessToken("aaaaaaaaaaaaaaaaaaaaaaaaaa")
+                .SetHttpClient(testHttpClient);
         }
 
         ///<summary>
