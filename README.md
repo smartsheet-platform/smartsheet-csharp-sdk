@@ -11,7 +11,7 @@ therefore, this release changes the global behavior to disable this feature of J
 
 ```csharp
 SmartsheetClient smartsheet = new SmartsheetBuilder()
-    .SetAccessToken("feo3t736fc2lpansdevs4a1as")       // TODO: Set your API access in environment variable SMARTSHEET_ACCESS_TOKEN or else here
+    .SetAccessToken("JKlMNOpQ12RStUVwxYZAbcde3F5g6hijklM789")       // TODO: Set your API access in environment variable SMARTSHEET_ACCESS_TOKEN or else here
     .SetHttpClient(new RetryHttpClient())
     .SetDateTimeFixOptOut(true)
     .Build();
@@ -69,7 +69,7 @@ static void Sample()
     // Initialize client
     SmartsheetClient smartsheet = new SmartsheetBuilder()
         // TODO: Set your API access in environment variable SMARTSHEET_ACCESS_TOKEN or else here
-        // .SetAccessToken("ll352u9jujauoqz4gstvsae05")
+        // .SetAccessToken("JKlMNOpQ12RStUVwxYZAbcde3F5g6hijklM789")
         .Build();
 
     // List all sheets
