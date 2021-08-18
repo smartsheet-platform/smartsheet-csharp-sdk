@@ -325,3 +325,24 @@ static void Sample()
     Console.WriteLine("Loaded " + sheet.Rows.Count + " rows from sheet: " + sheet.Name);
 }
 ```
+
+## Working With Smartsheet Regions Europe Accounts
+
+If you need to access Smartsheet Regions Europe you will need to specify the Smartsheet.eu API URI as the base URI during creation of the Smartsheet client object. Smartsheet.eu uses a base URI of https://api.smartsheet.eu/2.0/. The base URI is defined as a constant in the SmartsheetBuilder class (i.e. `SmartsheetBuilder.EU_BASE_URI`).
+
+Invoke the SmartsheetBuilder with the base URI pointing to Smartsheet.eu:
+
+```csharp
+using Smartsheet.Api;
+using Smartsheet.Api.Models;
+
+static void Sample()
+{
+    // Initialize client
+    SmartsheetClient smartsheet = new SmartsheetBuilder()
+        .SetBaseURI(SmartsheetBuilder.EU_BASE_URI)
+        // TODO: Set your API access in environment variable SMARTSHEET_ACCESS_TOKEN or else here
+        // .SetAccessToken("ll352u9jujauoqz4gstvsae05")
+        .Build();
+
+```
