@@ -1,6 +1,6 @@
 # Smartsheet SDK for C# [![Build Status](https://travis-ci.org/smartsheet-platform/smartsheet-csharp-sdk.svg?branch=master)](https://travis-ci.org/smartsheet-platform/smartsheet-csharp-sdk) [![Coverage Status](https://coveralls.io/repos/github/smartsheet-platform/smartsheet-csharp-sdk/badge.svg?branch=master)](https://coveralls.io/github/smartsheet-platform/smartsheet-csharp-sdk?branch=master) [![NuGet](https://img.shields.io/nuget/v/smartsheet-csharp-sdk.svg)](https://www.nuget.org/packages/smartsheet-csharp-sdk/)
 
-This is a C# SDK to simplify connecting to the [Smartsheet API](https://smartsheet-platform.github.io/api-docs/) from .NET applications.
+This is a C# SDK to simplify connecting to the [Smartsheet API](https://smartsheet.redoc.ly) from .NET applications.
 
 **NOTE ON 2.93.0 RELEASE**
 
@@ -106,7 +106,7 @@ A simple, but complete sample application project is here: https://github.com/sm
 For details about logging, testing, how to use a passthrough option, and how to override HTTP client behavior, see [Advanced Topics](ADVANCED.md).
 
 ## Documentation
-The full Smartsheet API documentation is here: http://smartsheet-platform.github.io/api-docs/?csharp#.
+The full Smartsheet API documentation is here: https://smartsheet.redoc.ly.
 
 The generated SDK class documentation is here: [http://smartsheet-platform.github.io/smartsheet-csharp-sdk/](http://smartsheet-platform.github.io/smartsheet-csharp-sdk/).
 
