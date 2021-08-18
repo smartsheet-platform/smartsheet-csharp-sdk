@@ -232,7 +232,7 @@ using the same `NextStreamPosition` value until the next list of events is retri
 
 Many events have additional information available as part of the event. That information can be accessed using the 
 Dictionary stored in the `AdditionalDetails` property. Information about the additional details provided can be found
-[here.](https://smartsheet-platform.github.io/event-reporting-docs/)
+[here.](https://smartsheet.redoc.ly/tag/eventsDescription)
 
 ```csharp
 class Program
