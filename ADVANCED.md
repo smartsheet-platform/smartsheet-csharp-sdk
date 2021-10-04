@@ -324,6 +324,7 @@ static void Sample()
     );
     Console.WriteLine("Loaded " + sheet.Rows.Count + " rows from sheet: " + sheet.Name);
 }
+
 ```
 
 ## Working With Smartsheet Regions Europe Accounts
@@ -344,5 +345,5 @@ static void Sample()
         // TODO: Set your API access in environment variable SMARTSHEET_ACCESS_TOKEN or else here
         // .SetAccessToken("ll352u9jujauoqz4gstvsae05")
         .Build();
-
+}
 ```
