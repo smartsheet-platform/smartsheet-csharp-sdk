@@ -1,6 +1,6 @@
 # Smartsheet SDK for C# [![Build Status](https://travis-ci.org/smartsheet-platform/smartsheet-csharp-sdk.svg?branch=master)](https://travis-ci.org/smartsheet-platform/smartsheet-csharp-sdk) [![Coverage Status](https://coveralls.io/repos/github/smartsheet-platform/smartsheet-csharp-sdk/badge.svg?branch=master)](https://coveralls.io/github/smartsheet-platform/smartsheet-csharp-sdk?branch=master) [![NuGet](https://img.shields.io/nuget/v/smartsheet-csharp-sdk.svg)](https://www.nuget.org/packages/smartsheet-csharp-sdk/)
 
-This is a C# SDK to simplify connecting to the [Smartsheet API](https://smartsheet-platform.github.io/api-docs/) from .NET applications.
+This is a C# SDK to simplify connecting to the [Smartsheet API](https://smartsheet.redoc.ly) from .NET applications.
 
 **NOTE ON 2.93.0 RELEASE**
 
@@ -11,7 +11,7 @@ therefore, this release changes the global behavior to disable this feature of J
 
 ```csharp
 SmartsheetClient smartsheet = new SmartsheetBuilder()
-    .SetAccessToken("feo3t736fc2lpansdevs4a1as")       // TODO: Set your API access in environment variable SMARTSHEET_ACCESS_TOKEN or else here
+    .SetAccessToken("JKlMNOpQ12RStUVwxYZAbcde3F5g6hijklM789")       // TODO: Set your API access in environment variable SMARTSHEET_ACCESS_TOKEN or else here
     .SetHttpClient(new RetryHttpClient())
     .SetDateTimeFixOptOut(true)
     .Build();
@@ -69,7 +69,7 @@ static void Sample()
     // Initialize client
     SmartsheetClient smartsheet = new SmartsheetBuilder()
         // TODO: Set your API access in environment variable SMARTSHEET_ACCESS_TOKEN or else here
-        // .SetAccessToken("ll352u9jujauoqz4gstvsae05")
+        // .SetAccessToken("JKlMNOpQ12RStUVwxYZAbcde3F5g6hijklM789")
         .Build();
 
     // List all sheets
@@ -106,7 +106,7 @@ A simple, but complete sample application project is here: https://github.com/sm
 For details about logging, testing, how to use a passthrough option, and how to override HTTP client behavior, see [Advanced Topics](ADVANCED.md).
 
 ## Documentation
-The full Smartsheet API documentation is here: http://smartsheet-platform.github.io/api-docs/?csharp#.
+The full Smartsheet API documentation is here: https://smartsheet.redoc.ly.
 
 The generated SDK class documentation is here: [http://smartsheet-platform.github.io/smartsheet-csharp-sdk/](http://smartsheet-platform.github.io/smartsheet-csharp-sdk/).
 

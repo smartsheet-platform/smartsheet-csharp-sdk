@@ -232,7 +232,7 @@ using the same `NextStreamPosition` value until the next list of events is retri
 
 Many events have additional information available as part of the event. That information can be accessed using the 
 Dictionary stored in the `AdditionalDetails` property. Information about the additional details provided can be found
-[here.](https://smartsheet-platform.github.io/event-reporting-docs/)
+[here.](https://smartsheet.redoc.ly/tag/eventsDescription)
 
 ```csharp
 class Program
@@ -323,5 +323,27 @@ static void Sample()
         null                        // Nullable<long> page
     );
     Console.WriteLine("Loaded " + sheet.Rows.Count + " rows from sheet: " + sheet.Name);
+}
+
+```
+
+## Working With Smartsheet Regions Europe Accounts
+
+If you need to access Smartsheet Regions Europe you will need to specify the Smartsheet.eu API URI as the base URI during creation of the Smartsheet client object. Smartsheet.eu uses a base URI of https://api.smartsheet.eu/2.0/. The base URI is defined as a constant in the SmartsheetBuilder class (i.e. `SmartsheetBuilder.EU_BASE_URI`).
+
+Invoke the SmartsheetBuilder with the base URI pointing to Smartsheet.eu:
+
+```csharp
+using Smartsheet.Api;
+using Smartsheet.Api.Models;
+
+static void Sample()
+{
+    // Initialize client
+    SmartsheetClient smartsheet = new SmartsheetBuilder()
+        .SetBaseURI(SmartsheetBuilder.EU_BASE_URI)
+        // TODO: Set your API access in environment variable SMARTSHEET_ACCESS_TOKEN or else here
+        // .SetAccessToken("ll352u9jujauoqz4gstvsae05")
+        .Build();
 }
 ```
