@@ -94,6 +94,16 @@ namespace Smartsheet.Api.OAuth
         /// <summary>
         /// Create and manage workspaces and folders, including sharing
         /// </summary>
-        ADMIN_WORKSPACES
+        ADMIN_WORKSPACES,
+        
+        /// <summary>
+        /// Modify dashboards structure.
+        /// </summary>
+        ADMIN_SIGHTS,
+        
+        /// <summary>
+        /// Create, delete, and update webhooks; get all webhooks; reset shared secret.
+        /// </summary>
+        ADMIN_WEBHOOKS
     }
 }
