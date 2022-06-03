@@ -19,7 +19,6 @@
 using Smartsheet.Api.Internal.Http;
 using Smartsheet.Api.Models;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Text;
@@ -78,7 +77,7 @@ namespace Smartsheet.Api.Internal
         /// <param name="fileType">the file type</param>
         /// <returns>the newly created Attachment</returns>
         /// <exception cref="NotImplementedException"></exception>
-        public Attachment AttachFile(long sheetId, string fileName,
+        public virtual Attachment AttachFile(long sheetId, string fileName,
             byte[] fileBinary, string fileType = "application/octet-stream")
         {
             return AttachFile("sheets/" + sheetId + "/attachments",

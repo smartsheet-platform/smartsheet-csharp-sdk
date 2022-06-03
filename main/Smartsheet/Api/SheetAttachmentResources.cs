@@ -55,7 +55,6 @@ namespace Smartsheet.Api
         /// POST /sheets/{sheetId}/attachments</para>
         /// </summary>
         /// <param name="sheetId"> the sheetId </param>
-        /// <param name="file"> the file path </param>
         /// <param name="fileBinary"></param>
         /// <param name="fileType"> the file type </param>
         /// <param name="fileName"></param>

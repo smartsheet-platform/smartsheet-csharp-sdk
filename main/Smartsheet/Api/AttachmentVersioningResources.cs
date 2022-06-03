@@ -6,9 +6,9 @@
 //    Licensed under the Apache License, Version 2.0 (the "License");
 //    you may not use this file except in compliance with the License.
 //    You may obtain a copy of the License at
-//        
+//
 //            http://www.apache.org/licenses/LICENSE-2.0
-//        
+//
 //    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -23,7 +23,7 @@ namespace Smartsheet.Api
 {
     /// <summary>
     /// <para>This interface provides methods to access Versioning resources that are associated to an Attachment resource.</para>
-    /// 
+    ///
     /// <para>Thread Safety: Implementation of this interface must be thread safe.</para>
     /// </summary>
     public interface AttachmentVersioningResources
@@ -48,6 +48,29 @@ namespace Smartsheet.Api
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
         Attachment AttachNewVersion(long sheetId, long attachmentId, string file, string fileType);
+
+        /// <summary>
+        /// <para>Uploads a new version of a file to a Sheet or Row.
+        /// This operation can be performed using a simple upload or a multipart upload. For more information, see Posting an Attachment.</para>
+        /// <para>It mirrors to the following Smartsheet REST API method:<br />
+        ///  POST /sheets/{sheetId}/attachments/{attachmentId}/versions</para>
+        ///  <remarks><para>Uploading new versions is not supported for attachments on Comments or for URL attachments.</para>
+        ///  <para>This is a resource-intensive operation and incurs 10 additional requests against the rate limit.</para></remarks>
+        /// </summary>
+        /// <param name="sheetId"> the sheet id </param>
+        /// <param name="attachmentId"> the attachment id </param>
+        /// <param name="fileName"></param>
+        /// <param name="binaryBytes"></param>
+        /// <param name="fileType"> the file type, can be null </param>
+        /// <returns> Attachment object for the newly created attachment </returns>
+        /// <exception cref="System.InvalidOperationException"> if any argument is null or empty string </exception>
+        /// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+        /// <exception cref="AuthorizationException"> if there is any problem with  the REST API authorization (access token) </exception>
+        /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+        /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
+        /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+        Attachment AttachNewVersion(long sheetId, long attachmentId,
+            string fileName, byte[] binaryBytes, string fileType = "application/octet-stream");
 
         /// <summary>
         /// <para>Deletes all versions of the attachment corresponding to the specified Attachment ID.
