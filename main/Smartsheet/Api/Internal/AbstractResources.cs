@@ -6,9 +6,9 @@
 //    Licensed under the Apache License, Version 2.0 (the "License");
 //    you may not use this file except in compliance with the License.
 //    You may obtain a copy of the License at
-//        
+//
 //            http://www.apache.org/licenses/LICENSE-2.0
-//        
+//
 //    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -34,7 +34,7 @@ namespace Smartsheet.Api.Internal
 
     /// <summary>
     /// This is the base class of the SmartsheetClient REST API resources.
-    /// 
+    ///
     /// Thread Safety: This class is thread safe because it is immutable and the underlying SmartsheetImpl is thread safe.
     /// </summary>
     public abstract class AbstractResources
@@ -146,7 +146,7 @@ namespace Smartsheet.Api.Internal
 
         /// <summary>
         /// Represents the SmartsheetImpl.
-        /// 
+        ///
         /// It will be initialized in the constructor and will not change afterwards.
         /// </summary>
         protected SmartsheetImpl smartsheet;
@@ -164,12 +164,12 @@ namespace Smartsheet.Api.Internal
 
         /// <summary>
         /// Get a resource from SmartsheetClient REST API.
-        /// 
+        ///
         /// Parameters: - path : the relative path of the resource - objectClass : the resource object class
-        /// 
+        ///
         /// Returns: the resource (note that if there is no such resource, this method will throw ResourceNotFoundException
         /// rather than returning null).
-        /// 
+        ///
         /// Exceptions: -
         ///   InvalidRequestException : if there is any problem with the REST API request
         ///   AuthorizationException : if there is any problem with the REST API authorization (access token)
@@ -239,8 +239,8 @@ namespace Smartsheet.Api.Internal
 
         /// <summary>
         /// Create a resource using SmartsheetClient REST API.
-        /// 
-        /// Exceptions: 
+        ///
+        /// Exceptions:
         ///   IllegalArgumentException : if any argument is null, or path is an empty string
         ///   InvalidRequestException : if there is any problem with the REST API request
         ///   AuthorizationException : if there is any problem with the REST API authorization (access token)
@@ -290,8 +290,8 @@ namespace Smartsheet.Api.Internal
 
         /// <summary>
         /// Create a resource using SmartsheetClient REST API.
-        /// 
-        /// Exceptions: 
+        ///
+        /// Exceptions:
         ///   IllegalArgumentException : if any argument is null, or path is an empty string
         ///   InvalidRequestException : if there is any problem with the REST API request
         ///   AuthorizationException : if there is any problem with the REST API authorization (access token)
@@ -387,7 +387,7 @@ namespace Smartsheet.Api.Internal
 
         /// <summary>
         /// Update a resource using SmartsheetClient REST API.
-        /// 
+        ///
         /// Exceptions:
         ///   IllegalArgumentException : if any argument is null, or path is an empty string
         ///   InvalidRequestException : if there is any problem with the REST API request
@@ -440,7 +440,7 @@ namespace Smartsheet.Api.Internal
 
         /// <summary>
         /// List resources using SmartsheetClient REST API.
-        /// 
+        ///
         /// Exceptions:
         ///   IllegalArgumentException : if any argument is null, or path is an empty string
         ///   InvalidRequestException : if there is any problem with the REST API request
@@ -488,7 +488,7 @@ namespace Smartsheet.Api.Internal
 
         /// <summary>
         /// List resources using SmartsheetClient REST API.
-        /// 
+        ///
         /// Exceptions:
         ///   IllegalArgumentException : if any argument is null, or path is an empty string
         ///   InvalidRequestException : if there is any problem with the REST API request
@@ -537,7 +537,7 @@ namespace Smartsheet.Api.Internal
 
         /// <summary>
         /// Delete a resource from SmartsheetClient REST API.
-        /// 
+        ///
         /// Exceptions:
         ///   IllegalArgumentException : if any argument is null, or path is an empty string
         ///   InvalidRequestException : if there is any problem with the REST API request
@@ -582,7 +582,7 @@ namespace Smartsheet.Api.Internal
 
         /// <summary>
         /// Delete a resource from SmartsheetClient REST API.
-        /// 
+        ///
         /// Exceptions:
         ///   IllegalArgumentException : if any argument is null, or path is an empty string
         ///   InvalidRequestException : if there is any problem with the REST API request
@@ -626,12 +626,12 @@ namespace Smartsheet.Api.Internal
 
         /// <summary>
         /// Post an object to SmartsheetClient REST API and receive a list of objects from response.
-        /// 
+        ///
         /// Parameters: - path : the relative path of the resource collections - objectToPost : the object to post -
         /// objectClassToReceive : the resource object class to receive
-        /// 
+        ///
         /// Returns: the object list
-        /// 
+        ///
         /// Exceptions:
         ///   IllegalArgumentException : if any argument is null, or path is an empty string
         ///   InvalidRequestException : if there is any problem with the REST API request
@@ -682,7 +682,7 @@ namespace Smartsheet.Api.Internal
 
         /// <summary>
         /// Put an object to SmartsheetClient REST API and receive a list of objects from response.
-        /// 
+        ///
         /// Exceptions:
         ///   IllegalArgumentException : if any argument is null, or path is an empty string
         ///   InvalidRequestException : if there is any problem with the REST API request
@@ -734,7 +734,7 @@ namespace Smartsheet.Api.Internal
 
         /// <summary>
         /// Post a file to an import endpoint
-        /// 
+        ///
         /// Exceptions:
         ///   IllegalArgumentException : if any argument is null, or path is an empty string
         ///   InvalidRequestException : if there is any problem with the REST API request
@@ -793,8 +793,62 @@ namespace Smartsheet.Api.Internal
         }
 
         /// <summary>
+        /// Posts an imported file to the specified endpoint.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="path">The path.</param>
+        /// <param name="fileName">Name of the file.</param>
+        /// <param name="file">The file.</param>
+        /// <param name="contentType">Type of the content.</param>
+        /// <returns>T.</returns>
+        /// <exception cref="SmartsheetException"></exception>
+        public virtual T ImportFile<T>(string path, string fileName,
+            byte[] file, string contentType)
+        {
+            Utils.ThrowIfNull(path, file, contentType);
+            Utils.ThrowIfEmpty(path, fileName, contentType);
+
+            HttpRequest request = null;
+            try
+            {
+                request = CreateHttpRequest(new Uri(smartsheet.BaseURI, path), HttpMethod.POST);
+            }
+            catch (Exception e)
+            {
+                throw new SmartsheetException(e);
+            }
+
+            request.Headers["Content-Disposition"] = "attachment";
+            request.Headers["Content-Type"] = contentType;
+
+            HttpEntity entity = new HttpEntity();
+            entity.ContentType = contentType;
+            entity.Content = file;
+            entity.ContentLength = file.Length;
+            request.Entity = entity;
+
+            HttpResponse response = smartsheet.HttpClient.Request(request);
+
+            Object obj = null;
+            switch (response.StatusCode)
+            {
+                case HttpStatusCode.OK:
+                    obj = smartsheet.JsonSerializer.deserializeResult<T>(
+                        response.Entity.GetContent()).Result;
+                    break;
+                default:
+                    HandleError(response);
+                    break;
+            }
+
+            smartsheet.HttpClient.ReleaseConnection();
+
+            return (T)obj;
+        }
+
+        /// <summary>
         /// Create an HttpRequest.
-        /// 
+        ///
         /// Exceptions: Any exception shall be propagated since it's a private method.
         /// </summary>
         /// <param name="uri"> the URI </param>
@@ -806,7 +860,7 @@ namespace Smartsheet.Api.Internal
             request.Uri = uri;
             request.Method = method;
 
-            // Set authorization header 
+            // Set authorization header
             request.Headers = new Dictionary<string, string>();
             request.Headers["Authorization"] = "Bearer " + smartsheet.AccessToken;
 
@@ -827,8 +881,8 @@ namespace Smartsheet.Api.Internal
 
         /// <summary>
         /// Handles an error HttpResponse (non-200) returned by SmartsheetClient REST API.
-        /// 
-        /// Exceptions: 
+        ///
+        /// Exceptions:
         ///   SmartsheetRestException : the exception corresponding to the error
         /// </summary>
         /// <param name="response"> the HttpResponse </param>

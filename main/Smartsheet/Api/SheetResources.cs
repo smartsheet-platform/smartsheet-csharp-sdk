@@ -6,9 +6,9 @@
 //    Licensed under the Apache License, Version 2.0 (the "License");
 //    you may not use this file except in compliance with the License.
 //    You may obtain a copy of the License at
-//        
+//
 //            http://www.apache.org/licenses/LICENSE-2.0
-//        
+//
 //    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -27,14 +27,14 @@ namespace Smartsheet.Api
 
     /// <summary>
     /// <para>This interface provides methods to access sheet resources.</para>
-    /// 
+    ///
     /// <para>Thread Safety: Implementation of this interface must be thread safe.</para>
     /// </summary>
     public interface SheetResources
     {
         /// <summary>
         /// <para>Gets the list of all sheets that the user has access to, in alphabetical order, by name.</para>
-        /// 
+        ///
         /// <para>Mirrors to the following Smartsheet REST API method: GET /Sheets</para>
         /// </summary>
         /// <param name="includes">elements to include in response</param>
@@ -63,7 +63,7 @@ namespace Smartsheet.Api
 
         /// <summary>
         /// <para>Lists all sheets in the organization.</para>
-        /// 
+        ///
         /// <para>Mirrors to the following Smartsheet REST API method: GET /users/sheets</para>
         /// </summary>
         /// <param name="paging">the pagination</param>
@@ -80,7 +80,7 @@ namespace Smartsheet.Api
 
         /// <summary>
         /// <para>Gets a sheet.</para>
-        /// 
+        ///
         /// <para>Mirrors to the following Smartsheet REST API method: GET /sheets/{sheetId}</para>
         /// </summary>
         /// <param name="sheetId"> the Id of the sheet </param>
@@ -91,7 +91,7 @@ namespace Smartsheet.Api
         /// <param name="columnIds"> used to specify the optional objects to include. </param>
         /// <param name="pageSize"> used to specify the optional objects to include. </param>
         /// <param name="page"> used to specify the optional objects to include. </param>
-        /// <returns> the sheet resource (note that if there is no such resource, this method will throw 
+        /// <returns> the sheet resource (note that if there is no such resource, this method will throw
         /// ResourceNotFoundException rather than returning null). </returns>
         /// <exception cref="System.InvalidOperationException"> if any argument is null or an empty string </exception>
         /// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -111,7 +111,7 @@ namespace Smartsheet.Api
 
         /// <summary>
         /// <para>Gets a sheet.</para>
-        /// 
+        ///
         /// <para>Mirrors to the following Smartsheet REST API method: GET /sheets/{sheetId}</para>
         /// </summary>
         /// <param name="sheetId"> the Id of the sheet </param>
@@ -123,7 +123,7 @@ namespace Smartsheet.Api
         /// <param name="pageSize"> used to specify the optional objects to include. </param>
         /// <param name="page"> used to specify the optional objects to include. </param>
         /// <param name="ifVersionAfter"> only fetch sheet if more recent version available </param>
-        /// <returns> the sheet resource (note that if there is no such resource, this method will throw 
+        /// <returns> the sheet resource (note that if there is no such resource, this method will throw
         /// ResourceNotFoundException rather than returning null). </returns>
         /// <exception cref="System.InvalidOperationException"> if any argument is null or an empty string </exception>
         /// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -144,7 +144,7 @@ namespace Smartsheet.Api
 
         /// <summary>
         /// <para>Gets a sheet.</para>
-        /// 
+        ///
         /// <para>Mirrors to the following Smartsheet REST API method: GET /sheets/{sheetId}</para>
         /// </summary>
         /// <param name="sheetId"> the Id of the sheet </param>
@@ -157,7 +157,7 @@ namespace Smartsheet.Api
         /// <param name="page"> used to specify the optional objects to include. </param>
         /// <param name="ifVersionAfter"> only fetch sheet if more recent version available </param>
         /// <param name="level"> compatibility level </param>
-        /// <returns> the sheet resource (note that if there is no such resource, this method will throw 
+        /// <returns> the sheet resource (note that if there is no such resource, this method will throw
         /// ResourceNotFoundException rather than returning null). </returns>
         /// <exception cref="System.InvalidOperationException"> if any argument is null or an empty string </exception>
         /// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -179,7 +179,7 @@ namespace Smartsheet.Api
 
         /// <summary>
         /// <para>Gets a sheet as an Excel file.</para>
-        /// 
+        ///
         /// <para>Mirrors to the following Smartsheet REST API method:<br />
         /// GET /sheets/{sheetId} with "application/vnd.ms-excel" Accept HTTP header</para>
         /// </summary>
@@ -195,7 +195,7 @@ namespace Smartsheet.Api
 
         /// <summary>
         /// <para>Gets a sheet as a PDF file.</para>
-        /// 
+        ///
         /// <para>Mirrors to the following Smartsheet REST API method:<br />
         /// GET /sheets/{sheetId} with "application/pdf" Accept HTTP header</para>
         /// </summary>
@@ -212,7 +212,7 @@ namespace Smartsheet.Api
 
         /// <summary>
         /// <para>Gets a sheet as a CSV file.</para>
-        /// 
+        ///
         /// <para>Mirrors to the following Smartsheet REST API method:<br />
         /// GET /sheets/{sheetId} with "text/csv" Accept HTTP header</para>
         /// </summary>
@@ -228,7 +228,7 @@ namespace Smartsheet.Api
 
         /// <summary>
         /// <para>Creates a sheet in default "Sheets" collection.</para>
-        /// 
+        ///
         /// <para>Mirrors to the following Smartsheet REST API method:<br />
         ///  POST /Sheets</para>
         /// </summary>
@@ -244,7 +244,7 @@ namespace Smartsheet.Api
 
         /// <summary>
         /// <para>Creates a sheet (from existing sheet or template) in default "Sheets" collection.</para>
-        /// 
+        ///
         /// <para>Mirrors to the following Smartsheet REST API method: POST /Sheets</para>
         /// </summary>
         /// <param name="sheet"> the sheet to create </param>
@@ -260,7 +260,7 @@ namespace Smartsheet.Api
 
         ///// <summary>
         ///// <para>Creates a sheet in given folder.</para>
-        ///// 
+        /////
         ///// <para>Mirrors to the following Smartsheet REST API method: POST /folders/{folderId}/Sheets</para>
         ///// </summary>
         ///// <param name="folderId"> the folder Id </param>
@@ -276,7 +276,7 @@ namespace Smartsheet.Api
 
         ///// <summary>
         ///// <para>Creates a sheet (from existing sheet or template) in a given folder.</para>
-        ///// 
+        /////
         ///// <para>Mirrors to the following Smartsheet REST API method: POST /folders/{folderId}/Sheets</para>
         ///// </summary>
         ///// <param name="folderID"> the folder Id </param>
@@ -293,7 +293,7 @@ namespace Smartsheet.Api
 
         /// <summary>
         /// <para>Deletes a sheet.</para>
-        /// 
+        ///
         /// <para>Mirrors to the following Smartsheet REST API method: DELETE /sheets/{sheetId}</para>
         /// </summary>
         /// <param name="sheetId"> the sheet Id </param>
@@ -308,9 +308,9 @@ namespace Smartsheet.Api
         /// <summary>
         /// <para>Updates a sheet.</para>
         /// <para>To modify sheet contents, see Add Rows, Update Rows, and Update Column.</para>
-        /// <para>This operation can be used to update an individual users sheet settings. 
-        /// If the request body contains only the userSettings attribute, 
-        /// this operation may be performed even if the user only has read-only access to the sheet 
+        /// <para>This operation can be used to update an individual users sheet settings.
+        /// If the request body contains only the userSettings attribute,
+        /// this operation may be performed even if the user only has read-only access to the sheet
         /// (i.e., the user has viewer permissions, or the sheet is read-only).</para>
         /// <para>Mirrors to the following Smartsheet REST API method: PUT /sheets/{sheetId}</para>
         /// </summary>
@@ -326,7 +326,7 @@ namespace Smartsheet.Api
 
         /// <summary>
         /// <para>Gets the sheet version without loading the entire sheet.</para>
-        /// 
+        ///
         /// <para>Mirrors to the following Smartsheet REST API method: GET /sheets/{sheetId}/version</para>
         /// </summary>
         /// <param name="sheetId"> the sheet Id </param>
@@ -342,7 +342,7 @@ namespace Smartsheet.Api
 
         /// <summary>
         /// <para>Sends a sheet as a PDF attachment via email to the designated recipients.</para>
-        /// 
+        ///
         /// <para>Mirrors to the following Smartsheet REST API method: POST /sheets/{sheetId}/emails</para>
         /// </summary>
         /// <param name="sheetId"> the sheet Id </param>
@@ -374,7 +374,7 @@ namespace Smartsheet.Api
 
         /// <summary>
         /// <para>Gets the status of the publish settings of the sheet, including the URLs of any enabled publishings.</para>
-        /// 
+        ///
         /// <para>Mirrors to the following Smartsheet REST API method: GET /sheets/{sheetId}/publish</para>
         /// </summary>
         /// <param name="sheetId"> the sheet Id </param>
@@ -389,12 +389,12 @@ namespace Smartsheet.Api
 
         /// <summary>
         /// <para>Sets the publish status of a sheet and returns the new status, including the URLs of any enabled publishings.</para>
-        /// 
+        ///
         /// <para>Mirrors to the following Smartsheet REST API method: PUT /sheets/{sheetId}/publish</para>
         /// </summary>
         /// <param name="sheetId"> the sheet Id </param>
         /// <param name="publish"> the SheetPublish object limited. </param>
-        /// <returns> the update SheetPublish object (note that if there is no such resource, this method will throw a 
+        /// <returns> the update SheetPublish object (note that if there is no such resource, this method will throw a
         /// ResourceNotFoundException rather than returning null). </returns>
         /// <exception cref="System.InvalidOperationException"> if any argument is null or an empty string </exception>
         /// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
@@ -457,7 +457,7 @@ namespace Smartsheet.Api
 
         /// <summary>
         /// <para>Sorts a sheet according to the sort criteria.</para>
-        /// 
+        ///
         /// <para>Mirrors to the following Smartsheet REST API method: POST /sheets/{sheetId}/sort</para>
         /// </summary>
         /// <param name="sheetId"> the sheet Id </param>
@@ -473,7 +473,7 @@ namespace Smartsheet.Api
 
         /// <summary>
         /// <para>Sorts a sheet according to the sort criteria.</para>
-        /// 
+        ///
         /// <para>Mirrors to the following Smartsheet REST API method: POST /sheets/{sheetId}/sort</para>
         /// </summary>
         /// <param name="sheetId"> the sheet Id </param>
@@ -506,6 +506,25 @@ namespace Smartsheet.Api
         Sheet ImportCsvSheet(string file, string sheetName, int? headerRowIndex, int? primaryColumnIndex);
 
         /// <summary>
+        /// <para>Imports a sheet (from CSV). </para>
+        /// <para>Mirrors to the following Smartsheet REST API method: POST /sheets/import</para>
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <param name="file"> path to the CSV file</param>
+        /// <param name="sheetName"> destination sheet name </param>
+        /// <param name="headerRowIndex"> index (0 based) of row to be used for column names </param>
+        /// <param name="primaryColumnIndex"> index (0 based) of primary column </param>
+        /// <returns> the created sheet </returns>
+        /// <exception cref="System.InvalidOperationException"> if any argument is null or an empty string </exception>
+        /// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+        /// <exception cref="AuthorizationException"> if there is any problem with the REST API authorization (access token) </exception>
+        /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+        /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
+        /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+        Sheet ImportCsvSheet(string fileName,byte[] file, string sheetName, int? headerRowIndex,
+            int? primaryColumnIndex);
+
+        /// <summary>
         /// <para>Imports a sheet (from XLSX). </para>
         /// <para>Mirrors to the following Smartsheet REST API method: POST /sheets/import</para>
         /// </summary>
@@ -521,6 +540,27 @@ namespace Smartsheet.Api
         /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
         /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
         Sheet ImportXlsSheet(string file, string sheetName, int? headerRowIndex, int? primaryColumnIndex);
+
+
+        /// <summary>
+        /// <para>Imports a sheet (from XLSX). </para>
+        /// <para>Mirrors to the following Smartsheet REST API method: POST /sheets/import</para>
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <param name="file"> path to the XLSX file</param>
+        /// <param name="sheetName"> destination sheet name </param>
+        /// <param name="headerRowIndex"> index (0 based) of row to be used for column names </param>
+        /// <param name="primaryColumnIndex"> index (0 based) of primary column </param>
+        /// <returns> the created sheet </returns>
+        /// <exception cref="System.InvalidOperationException"> if any argument is null or an empty string </exception>
+        /// <exception cref="InvalidRequestException"> if there is any problem with the REST API request </exception>
+        /// <exception cref="AuthorizationException"> if there is any problem with the REST API authorization (access token) </exception>
+        /// <exception cref="ResourceNotFoundException"> if the resource cannot be found </exception>
+        /// <exception cref="ServiceUnavailableException"> if the REST API service is not available (possibly due to rate limiting) </exception>
+        /// <exception cref="SmartsheetException"> if there is any other error during the operation </exception>
+        Sheet ImportXlsSheet(string fileName,byte[] file, string sheetName, int? headerRowIndex,
+            int? primaryColumnIndex);
+
 
         /// <summary>
         /// <para>Returns the ShareResources object that provides access to share resources associated with sheet resources.</para>
@@ -575,21 +615,21 @@ namespace Smartsheet.Api
         SheetFilterResources FilterResources { get; }
 
         /// <summary>
-        /// <para>Returns the AutomationRuleResources object that provides access to automation rules resources associated with 
+        /// <para>Returns the AutomationRuleResources object that provides access to automation rules resources associated with
         /// sheet resources.</para>
         /// </summary>
         /// <returns> the AutomationRuleResources object </returns>
         SheetAutomationRuleResources AutomationRuleResources { get; }
 
         /// <summary>
-        /// Returns the CrossSheetReferenceResources object that provides access to cross-sheet reference resources associated 
+        /// Returns the CrossSheetReferenceResources object that provides access to cross-sheet reference resources associated
         /// with sheet resources.
         /// </summary>
         /// <returns> the CrossSheetReferenceResources object </returns>
         SheetCrossSheetReferenceResources CrossSheetReferenceResources { get; }
 
         /// <summary>
-        /// Returns the SheetSummaryResources object that provides access to sheet summary resources associated 
+        /// Returns the SheetSummaryResources object that provides access to sheet summary resources associated
         /// with sheet resources.
         /// </summary>
         /// <returns> the SheetSummaryResources object </returns>

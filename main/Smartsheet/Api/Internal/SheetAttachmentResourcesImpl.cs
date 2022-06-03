@@ -6,9 +6,9 @@
 //    Licensed under the Apache License, Version 2.0 (the "License");
 //    you may not use this file except in compliance with the License.
 //    You may obtain a copy of the License at
-//        
+//
 //            http://www.apache.org/licenses/LICENSE-2.0
-//        
+//
 //    Unless required by applicable law or agreed to in writing, software
 //    distributed under the License is distributed on an "AS IS" BASIS,
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -28,7 +28,7 @@ namespace Smartsheet.Api.Internal
 {
     /// <summary>
     /// This is the implementation of the SheetAttachmentResources.
-    /// 
+    ///
     /// Thread Safety: This class is thread safe because it is immutable and its base class is thread safe.
     /// </summary>
     public class SheetAttachmentResourcesImpl : AbstractResources, SheetAttachmentResources
@@ -64,6 +64,27 @@ namespace Smartsheet.Api.Internal
         {
             return AttachFile("sheets/" + sheetId + "/attachments", file, fileType);
         }
+
+        /// <summary>
+        /// <para>Attaches a file to the Sheet.</para>
+        /// <para>This operation will always create a new attachment.
+        /// To upload a new version of the same attachment, use the Attach New Version operation.</para>
+        /// <para>It mirrors to the following Smartsheet REST API method:
+        /// POST /sheets/{sheetId}/attachments</para>
+        /// </summary>
+        /// <param name="sheetId">the sheetId</param>
+        /// <param name="fileName">Name of the file.</param>
+        /// <param name="fileBinary">Content of the file.</param>
+        /// <param name="fileType">the file type</param>
+        /// <returns>the newly created Attachment</returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public Attachment AttachFile(long sheetId, string fileName,
+            byte[] fileBinary, string fileType = "application/octet-stream")
+        {
+            return AttachFile("sheets/" + sheetId + "/attachments",
+                fileName, fileBinary, fileType);
+        }
+
         public virtual Attachment AttachUrl(long sheetId, Attachment attachment)
         {
             return this.CreateResource("sheets/" + sheetId + "/attachments", typeof(Attachment), attachment);
@@ -128,6 +149,43 @@ namespace Smartsheet.Api.Internal
             request.Entity = entity;
 
             HttpResponse response = this.Smartsheet.HttpClient.Request(request);
+
+            Attachment attachment = null;
+            switch (response.StatusCode)
+            {
+                case HttpStatusCode.OK:
+                    attachment = this.Smartsheet.JsonSerializer.deserializeResult<Attachment>(
+                        response.Entity.GetContent()).Result;
+                    break;
+                default:
+                    HandleError(response);
+                    break;
+            }
+
+            this.Smartsheet.HttpClient.ReleaseConnection();
+
+            return attachment;
+        }
+
+        private Attachment AttachFile(string path,string fileName,
+            byte[] file, string contentType = "application/octet-stream")
+        {
+            Utility.Utility.ThrowIfNull(file);
+
+            HttpRequest request = CreateHttpRequest
+                (new Uri(this.Smartsheet.BaseURI, path), HttpMethod.POST);
+
+            request.Headers["Content-Disposition"] = "attachment; filename=\"" + fileName + "\"";
+
+            HttpEntity entity = new HttpEntity();
+            entity.ContentType = contentType;
+
+            entity.Content = file;
+            entity.ContentLength = file.Length;
+            request.Entity = entity;
+
+            HttpResponse response = this.Smartsheet
+                .HttpClient.Request(request);
 
             Attachment attachment = null;
             switch (response.StatusCode)
