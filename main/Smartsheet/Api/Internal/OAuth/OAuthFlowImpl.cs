@@ -648,7 +648,7 @@ namespace Smartsheet.Api.Internal.OAuth
         private string getHash(string str)
         {
             string doHash = string.Concat(this.clientSecret, "|", str);
-            SHA256 sha = new SHA256Managed();
+            var sha = new SHA256CryptoServiceProvider();
             byte[] hash = sha.ComputeHash(Encoding.UTF8.GetBytes(doHash));
             string hashStr = "";
             for (int i = 0; i < (int)hash.Length; i++)
