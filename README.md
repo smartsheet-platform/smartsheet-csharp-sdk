@@ -2,6 +2,9 @@
 
 This is a C# SDK to simplify connecting to the [Smartsheet API](https://smartsheet.redoc.ly) from .NET applications.
 
+## Notice
+This repo has moved to the Smartsheet Organization on GitHub and can be accessed [here](https://github.com/smartsheet/smartsheet-csharp-sdk).
+
 **NOTE ON 2.93.0 RELEASE**
 
 While investigating issue [#113](https://github.com/smartsheet-platform/smartsheet-csharp-sdk/issues/113), the API/SDK team discovered that Newtonsoft Json.NET, by default, deserializes JSON strings that "look like" dates into C# DateTime objects. 
