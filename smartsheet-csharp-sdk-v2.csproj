@@ -70,7 +70,7 @@
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
     <PackageReference Include="NLog" Version="4.6.3" />
-    <PackageReference Include="RestSharp" Version="106.6.9" />
+    <PackageReference Include="RestSharp" Version="106.12.0" />
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'net452' ">
     <Reference Include="System.Management" />
