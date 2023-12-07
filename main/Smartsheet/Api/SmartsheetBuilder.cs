@@ -103,6 +103,13 @@ namespace Smartsheet.Api
         public const string GOV_BASE_URI = "https://api.smartsheetgov.com/2.0/";
 
         /// <summary>
+        /// <para>Represents the base URI of the SmartsheetEurope REST API.</para>
+        /// 
+        /// <para>It is a constant with Value "https://api.smartsheet.eu/2.0".</para>
+        /// </summary>
+        public const string EU_BASE_URI = "https://api.smartsheet.eu/2.0/";
+        
+        /// <summary>
         /// Constructor.
         /// </summary>
         public SmartsheetBuilder()
