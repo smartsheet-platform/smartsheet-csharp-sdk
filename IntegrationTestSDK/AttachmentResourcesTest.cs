@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Smartsheet.Api;
 using Smartsheet.Api.Models;
 using System.Configuration;
+using System.IO;
 
 namespace IntegrationTestSDK
 {
@@ -31,6 +32,8 @@ namespace IntegrationTestSDK
 
             AttachNewVersion(smartsheet, sheetId, attachmentId);
 
+            AttachNewVersionBinaryBytes(smartsheet, sheetId, attachmentId);
+
             ListAttachmentVersions(smartsheet, sheetId, attachmentId);
 
             DeleteAttachment(smartsheet, sheetId, attachmentId);
@@ -47,6 +50,14 @@ namespace IntegrationTestSDK
         private void AttachNewVersion(SmartsheetClient smartsheet, long sheetId, long attachmentId)
         {
             smartsheet.SheetResources.AttachmentResources.VersioningResources.AttachNewVersion(sheetId, attachmentId, path, "text/plain");
+        }
+
+        private void AttachNewVersionBinaryBytes(SmartsheetClient smartsheet, long sheetId, long attachmentId)
+        {
+            var fI = new FileInfo(path);
+            var bytes = File.ReadAllBytes(path);
+            smartsheet.SheetResources.AttachmentResources.VersioningResources.AttachNewVersion(sheetId, attachmentId,
+                fI.Name, bytes, "text/plain");
         }
 
         private static void ListRowAttachments(SmartsheetClient smartsheet, long sheetId, long rowId)
