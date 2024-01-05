@@ -35,8 +35,8 @@ namespace Smartsheet.Api.Internal.Utility
         public static string GetOSFriendlyName()
         {
             var framework = Assembly
-                .GetEntryAssembly()?
-                .GetCustomAttribute<TargetFrameworkAttribute>()?
+                .GetEntryAssembly()
+                .GetCustomAttribute<TargetFrameworkAttribute>()
                 .FrameworkName;
 
 #if NETSTANDARD2_0
